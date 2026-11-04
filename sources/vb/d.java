@@ -1,33 +1,26 @@
 package vb;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public abstract class d {
-    public final int a;
-    public final int b;
+import android.content.Context;
+import ci.u0;
+import g2.q0;
+import mb.g;
+import z7.fa;
 
-    public d(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class d extends u0 {
+    public final g b;
+
+    public d(g gVar) {
+        super(4);
+        this.b = gVar;
     }
 
-    public abstract byte[] a();
-
-    public abstract byte[] b(int i10, byte[] bArr);
-
-    public final String toString() {
-        int i10 = this.a;
-        byte[] bArr = new byte[i10];
-        int i11 = this.b;
-        StringBuilder sb2 = new StringBuilder((i10 + 1) * i11);
-        for (int i12 = 0; i12 < i11; i12++) {
-            bArr = b(i12, bArr);
-            for (int i13 = 0; i13 < i10; i13++) {
-                int i14 = bArr[i13] & 255;
-                sb2.append(i14 < 64 ? '#' : i14 < 128 ? '+' : i14 < 192 ? '.' : ' ');
-            }
-            sb2.append('\n');
-        }
-        return sb2.toString();
+    @Override // ci.u0
+    public final Object Q0(Object obj) {
+        ub.a aVar = (ub.a) obj;
+        Context b10 = this.b.b();
+        m6.e.b.getClass();
+        return new e(aVar, m6.e.a(b10) >= 204700000 ? new q0(b10, aVar) : new b(b10, aVar), fa.b());
     }
 }

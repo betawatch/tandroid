@@ -1,165 +1,159 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.jc;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.vi;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import b8.mf;
+import java.util.HashSet;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.h10;
+import org.telegram.messenger.hp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ty0;
+import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class n extends View {
-    public final int a;
-    public final int b;
-    public final int c;
-    public int d;
-    public final ArrayList e;
-    public float f;
-    public float h;
-    public Integer n;
+public final class n extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.Components.k9 a;
+    public final org.telegram.ui.ActionBar.k5 b;
+    public final org.telegram.ui.ActionBar.k5 c;
+    public final org.telegram.ui.Components.u8 d;
+    public final ImageView e;
+    public TLRPC.Chat f;
+    public boolean h;
+    public final int n;
+    public final wo r;
+    public int s;
 
-    public n(Context context) {
+    public n(Context context, View.OnClickListener onClickListener, boolean z10, int i3) {
         super(context);
-        this.e = new ArrayList();
-        this.a = 20;
-        this.b = 60;
-        this.c = 60;
+        this.n = h10.t0;
+        this.d = new org.telegram.ui.Components.u8((org.telegram.ui.ActionBar.e6) null);
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.a = k9Var;
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(24.0f));
+        boolean z11 = bd.a0;
+        addView(k9Var, mf.d(48, 48.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i3 + 12, 6.0f, z11 ? i3 + 12 : 0.0f, 6.0f));
+        if (z10) {
+            wo woVar = new wo(21, context, null);
+            this.r = woVar;
+            woVar.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
+            woVar.setDrawUnchecked(false);
+            woVar.setDrawBackgroundAsArc(3);
+            boolean z12 = bd.a0;
+            addView(woVar, mf.d(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : i3 + 42, 32.0f, z12 ? i3 + 42 : 0.0f, 0.0f));
+        }
+        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
+        this.b = k5Var;
+        org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.G6, null);
+        k5Var.setTextSize(17);
+        k5Var.setGravity((bd.a0 ? 5 : 3) | 48);
+        boolean z13 = bd.a0;
+        addView(k5Var, mf.d(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 62 : i3 + 73, 9.5f, z13 ? i3 + 73 : 62, 0.0f));
+        org.telegram.ui.ActionBar.k5 k5Var2 = new org.telegram.ui.ActionBar.k5(context);
+        this.c = k5Var2;
+        k5Var2.setTextSize(14);
+        int i10 = org.telegram.ui.ActionBar.k6.y6;
+        org.telegram.ui.ActionBar.r6.Y(k5Var2, i10, null);
+        k5Var2.setLinkTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.J6, false));
+        k5Var2.setGravity((bd.a0 ? 5 : 3) | 48);
+        boolean z14 = bd.a0;
+        addView(k5Var2, mf.d(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? 62 : i3 + 73, 32.5f, z14 ? i3 + 73 : 62, 6.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.msg_panel_clear);
+        imageView.setOnClickListener(onClickListener);
+        int i11 = org.telegram.ui.ActionBar.k6.i6;
+        y h02 = org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 1, -1);
+        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i11);
+        imageView.setBackground(h02);
+        org.telegram.ui.ActionBar.r6.k(imageView, h02, null, N, null);
+        org.telegram.ui.ActionBar.r6.t(imageView, i10, null, PorterDuff.Mode.MULTIPLY);
+        boolean z15 = bd.a0;
+        addView(imageView, mf.d(48, 48.0f, (z15 ? 3 : 5) | 48, z15 ? 7.0f : 0.0f, 6.0f, z15 ? 0.0f : 7.0f, 0.0f));
     }
 
-    public final void a(sg.o0 o0Var) {
-        TLRPC.TL_availableReaction tL_availableReaction;
-        TLRPC.Document document;
-        String V;
-        TLRPC.TL_availableReaction tL_availableReaction2 = o0Var.f != null ? (TLRPC.TL_availableReaction) vi.b0(e20.s0).r.get(o0Var.f) : null;
-        if (tL_availableReaction2 == null) {
-            document = org.telegram.ui.Components.f5.e(e20.s0, o0Var.g);
-            if (document != null && (V = kj.V(document, null, null)) != null) {
-                tL_availableReaction2 = (TLRPC.TL_availableReaction) vi.b0(e20.s0).r.get(V);
-            }
-            tL_availableReaction = tL_availableReaction2;
-        } else {
-            tL_availableReaction = tL_availableReaction2;
-            document = null;
-        }
-        ArrayList arrayList = this.e;
-        if (document != null || tL_availableReaction == null) {
-            org.telegram.ui.Components.f5 m10 = document == null ? org.telegram.ui.Components.f5.m(2, o0Var.g, null, e20.s0) : org.telegram.ui.Components.f5.l(2, e20.s0, document);
-            if (this.n != null) {
-                m10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
-            }
-            sg.d a2 = sg.d.a(m10, false, !m10.c());
-            a2.f(this);
-            arrayList.add(a2);
-            invalidate();
-            return;
-        }
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        imageReceiver.H0(this);
-        int i10 = this.d;
-        this.d = i10 + 1;
-        imageReceiver.v1 = Integer.toString(i10);
-        jc b10 = jc.b(tL_availableReaction.around_animation);
-        StringBuilder sb2 = new StringBuilder();
-        int i11 = this.b;
-        sb2.append(i11);
-        sb2.append("_");
-        sb2.append(i11);
-        sb2.append("_nolimit");
-        imageReceiver.q0(b10, sb2.toString(), null, "tgs", tL_availableReaction, 1);
-        imageReceiver.W(0);
-        imageReceiver.P();
-        arrayList.add(imageReceiver);
-        invalidate();
+    public final void a(TLRPC.Chat chat, boolean z10) {
+        String s6 = a1.g.s(new StringBuilder(), hp.s1(this.n).V2, "/");
+        this.f = chat;
+        org.telegram.ui.Components.u8 u8Var = this.d;
+        u8Var.q(chat);
+        this.b.l(chat.title, false);
+        StringBuilder l10 = com.google.android.recaptcha.internal.a.l(s6);
+        l10.append(org.telegram.messenger.t3.K(chat, false));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(l10.toString());
+        spannableStringBuilder.setSpan(new v31("", (ty0) null), s6.length(), spannableStringBuilder.length(), 33);
+        this.c.l(spannableStringBuilder, false);
+        this.a.e(chat, u8Var);
+        this.h = z10;
     }
 
-    public final void b(float f7, float f10) {
-        setTranslationX(f7 - (getMeasuredWidth() / 2.0f));
-        float measuredHeight = f10 - (getMeasuredHeight() / 2.0f);
-        this.f = measuredHeight;
-        setTranslationY(measuredHeight + this.h);
+    public TLRPC.Chat getCurrentChannel() {
+        return this.f;
+    }
+
+    public ImageView getDeleteButton() {
+        return this.e;
+    }
+
+    public org.telegram.ui.ActionBar.k5 getNameTextView() {
+        return this.b;
+    }
+
+    public org.telegram.ui.ActionBar.k5 getStatusTextView() {
+        return this.c;
     }
 
     @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int L = org.telegram.messenger.i0.L(this.c);
-        int L2 = org.telegram.messenger.i0.L(this.b);
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L((this.h ? 12 : 0) + 60), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i3 = 0;
         int i10 = 0;
         while (true) {
-            ArrayList arrayList = this.e;
-            if (i10 >= arrayList.size()) {
+            try {
+                int[] iArr = org.telegram.ui.ActionBar.k6.p8;
+                if (i3 >= iArr.length) {
+                    break;
+                }
+                i10 = (i10 * 31) + org.telegram.ui.ActionBar.k6.x0(null, iArr[i3], false);
+                i3++;
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
                 return;
             }
-            Object obj = arrayList.get(i10);
-            if (obj instanceof ImageReceiver) {
-                ImageReceiver imageReceiver = (ImageReceiver) obj;
-                float f7 = L2;
-                imageReceiver.y0((getMeasuredWidth() - L2) / 2.0f, (getMeasuredHeight() - L2) / 2.0f, f7, f7);
-                imageReceiver.h(canvas, null);
-            } else if (obj instanceof sg.d) {
-                sg.d dVar = (sg.d) obj;
-                dVar.e((int) ((getMeasuredWidth() - L) / 2.0f), (int) ((getMeasuredHeight() - L) / 2.0f), (int) ((getMeasuredWidth() + L) / 2.0f), (int) ((getMeasuredHeight() + L) / 2.0f));
-                dVar.b(canvas);
-                if (dVar.c()) {
-                    dVar.d(this);
-                    arrayList.remove(dVar);
-                }
+        }
+        if (i10 != this.s) {
+            this.s = i10;
+            TLRPC.Chat chat = this.f;
+            if (chat != null) {
+                this.d.q(chat);
+                this.a.invalidate();
             }
-            i10++;
+        }
+        org.telegram.ui.ActionBar.k5 k5Var = this.c;
+        if (k5Var != null) {
+            k5Var.setLinkTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.J6, false));
         }
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        ArrayList arrayList = this.e;
-        if (!arrayList.isEmpty()) {
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                if (obj instanceof ImageReceiver) {
-                    ((ImageReceiver) obj).R();
-                } else if (obj instanceof sg.d) {
-                    ((sg.d) obj).d(this);
-                }
-            }
-        }
-        arrayList.clear();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int max = Math.max(this.a, this.b);
-        int i12 = this.c;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(Math.max(i12, max)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(Math.max(i12, Math.max(r4, r5))), TLObject.FLAG_30));
-    }
-
-    public void setColor(int i10) {
-        this.n = Integer.valueOf(i10);
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY);
-        PorterDuffColorFilter porterDuffColorFilter2 = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i11 >= arrayList.size()) {
-                return;
-            }
-            Object obj = arrayList.get(i11);
-            if (obj instanceof ImageReceiver) {
-                ((ImageReceiver) obj).o1 = porterDuffColorFilter;
-            } else if (obj instanceof sg.d) {
-                ((sg.d) obj).a.setColorFilter(porterDuffColorFilter2);
-            }
-            i11++;
-        }
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

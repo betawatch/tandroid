@@ -9,7 +9,7 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.io.StreamCorruptedException;
 import java.util.TimeZone;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
 /* loaded from: classes2.dex */
 public final class a implements Externalizable {
@@ -79,42 +79,42 @@ public final class a implements Externalizable {
             long[] jArr = ZoneRules.i;
             int readInt = objectInput.readInt();
             long[] jArr2 = readInt == 0 ? jArr : new long[readInt];
-            for (int i10 = 0; i10 < readInt; i10++) {
-                jArr2[i10] = a(objectInput);
+            for (int i3 = 0; i3 < readInt; i3++) {
+                jArr2[i3] = a(objectInput);
             }
-            int i11 = readInt + 1;
-            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i11];
-            for (int i12 = 0; i12 < i11; i12++) {
-                zoneOffsetArr[i12] = b(objectInput);
+            int i10 = readInt + 1;
+            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i10];
+            for (int i11 = 0; i11 < i10; i11++) {
+                zoneOffsetArr[i11] = b(objectInput);
             }
             int readInt2 = objectInput.readInt();
             if (readInt2 != 0) {
                 jArr = new long[readInt2];
             }
             long[] jArr3 = jArr;
-            for (int i13 = 0; i13 < readInt2; i13++) {
-                jArr3[i13] = a(objectInput);
+            for (int i12 = 0; i12 < readInt2; i12++) {
+                jArr3[i12] = a(objectInput);
             }
-            int i14 = readInt2 + 1;
-            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i14];
-            for (int i15 = 0; i15 < i14; i15++) {
-                zoneOffsetArr2[i15] = b(objectInput);
+            int i13 = readInt2 + 1;
+            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i13];
+            for (int i14 = 0; i14 < i13; i14++) {
+                zoneOffsetArr2[i14] = b(objectInput);
             }
             int readByte2 = objectInput.readByte();
             e[] eVarArr = readByte2 == 0 ? ZoneRules.j : new e[readByte2];
-            for (int i16 = 0; i16 < readByte2; i16++) {
-                eVarArr[i16] = e.a(objectInput);
+            for (int i15 = 0; i15 < readByte2; i15++) {
+                eVarArr[i15] = e.a(objectInput);
             }
             zoneRules = new ZoneRules(jArr2, zoneOffsetArr, jArr3, zoneOffsetArr2, eVarArr);
         } else if (readByte == 2) {
-            int i17 = b.e;
-            long a2 = a(objectInput);
+            int i16 = b.e;
+            long a10 = a(objectInput);
             ZoneOffset b10 = b(objectInput);
             ZoneOffset b11 = b(objectInput);
             if (b10.equals(b11)) {
                 throw new IllegalArgumentException("Offsets must not be equal");
             }
-            zoneRules = new b(a2, b10, b11);
+            zoneRules = new b(a10, b10, b11);
         } else if (readByte == 3) {
             zoneRules = e.a(objectInput);
         } else {
@@ -132,9 +132,9 @@ public final class a implements Externalizable {
 
     public static void d(ZoneOffset zoneOffset, DataOutput dataOutput) {
         int totalSeconds = zoneOffset.getTotalSeconds();
-        int i10 = totalSeconds % 900 == 0 ? totalSeconds / 900 : 127;
-        dataOutput.writeByte(i10);
-        if (i10 == 127) {
+        int i3 = totalSeconds % 900 == 0 ? totalSeconds / 900 : 127;
+        dataOutput.writeByte(i3);
+        if (i3 == 127) {
             dataOutput.writeInt(totalSeconds);
         }
     }
@@ -146,13 +146,13 @@ public final class a implements Externalizable {
 
     public static void c(long j10, DataOutput dataOutput) {
         if (j10 >= -4575744000L && j10 < 10413792000L && j10 % 900 == 0) {
-            int i10 = (int) ((j10 + 4575744000L) / 900);
-            dataOutput.writeByte((i10 >>> 16) & at.e4);
-            dataOutput.writeByte((i10 >>> 8) & at.e4);
-            dataOutput.writeByte(i10 & at.e4);
+            int i3 = (int) ((j10 + 4575744000L) / 900);
+            dataOutput.writeByte((i3 >>> 16) & hs.e4);
+            dataOutput.writeByte((i3 >>> 8) & hs.e4);
+            dataOutput.writeByte(i3 & hs.e4);
             return;
         }
-        dataOutput.writeByte(at.e4);
+        dataOutput.writeByte(hs.e4);
         dataOutput.writeLong(j10);
     }
 

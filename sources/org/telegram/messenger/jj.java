@@ -1,26 +1,47 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class jj {
-    public final int a;
-    public final int b;
-    public final boolean c;
-    public final boolean d;
-    public final boolean e;
-    public final String f;
+import org.telegram.tgnet.TLRPC;
 
-    public jj(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class jj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hp b;
+    public final /* synthetic */ TLRPC.Chat c;
+
+    public /* synthetic */ jj(hp hpVar, TLRPC.Chat chat, int i3) {
+        this.a = i3;
+        this.b = hpVar;
+        this.c = chat;
     }
 
-    public jj(int i10, int i11, boolean z10, boolean z11, boolean z12, String str) {
-        this.a = i10;
-        this.b = i11;
-        this.c = z10;
-        this.d = z11;
-        this.e = z10 && z12;
-        this.f = str;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        TLRPC.Chat chat = this.c;
+        hp hpVar = this.b;
+        switch (i3) {
+            case 0:
+                hpVar.j(chat);
+                break;
+            case 1:
+                hpVar.getNotificationCenter().k(90, chat);
+                break;
+            case 2:
+                hpVar.getClass();
+                hpVar.G(chat.id, true);
+                break;
+            case 3:
+                hpVar.getNotificationCenter().k(90, chat);
+                break;
+            case 4:
+                hpVar.getNotificationCenter().k(hs.r5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
+                break;
+            default:
+                hpVar.T4(null);
+                hpVar.getNotificationCenter().k(hs.T5, Long.valueOf(chat.id), Boolean.valueOf(chat.collapsed_in_dialogs));
+                hpVar.getNotificationCenter().k(3, new Object[0]);
+                break;
+        }
     }
 }

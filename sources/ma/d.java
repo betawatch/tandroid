@@ -1,24 +1,6 @@
 package ma;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d {
-    public static final d a;
-    public static final /* synthetic */ d[] b;
-
-    static {
-        d dVar = new d("DEFAULT", 0);
-        a = dVar;
-        b = new d[]{dVar, new d("SIGNED", 1), new d("FIXED", 2)};
-    }
-
-    public static d valueOf(String str) {
-        return (d) Enum.valueOf(d.class, str);
-    }
-
-    public static d[] values() {
-        return (d[]) b.clone();
-    }
+public interface d extends a {
 }

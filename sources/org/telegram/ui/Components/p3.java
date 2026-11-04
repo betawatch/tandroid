@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class p3 extends LinearLayout {
     public final /* synthetic */ int a = 1;
@@ -25,33 +25,33 @@ public final class p3 extends LinearLayout {
     }
 
     @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i3, int i10) {
         switch (this.a) {
             case 0:
                 o3 o3Var = (o3) this.d;
                 m3 m3Var = (m3) this.c;
                 this.b = true;
-                Point point = org.telegram.messenger.i0.q;
-                int i12 = point.x > point.y ? 3 : 5;
-                m3Var.setItemCount(i12);
-                o3Var.setItemCount(i12);
-                m3Var.getLayoutParams().height = org.telegram.messenger.i0.L(42.0f) * i12;
-                o3Var.getLayoutParams().height = org.telegram.messenger.i0.L(42.0f) * i12;
+                Point point = org.telegram.messenger.g0.q;
+                int i11 = point.x > point.y ? 3 : 5;
+                m3Var.setItemCount(i11);
+                o3Var.setItemCount(i11);
+                m3Var.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
+                o3Var.getLayoutParams().height = org.telegram.messenger.g0.L(42.0f) * i11;
                 this.b = false;
-                super.onMeasure(i10, i11);
+                super.onMeasure(i3, i10);
                 break;
             default:
-                int rotation = ((WindowManager) org.telegram.messenger.w0.b.getSystemService("window")).getDefaultDisplay().getRotation();
+                int rotation = ((WindowManager) org.telegram.messenger.t0.b.getSystemService("window")).getDefaultDisplay().getRotation();
                 this.b = true;
-                if (org.telegram.messenger.i0.Q1()) {
-                    ((TextView) this.c).setPadding(org.telegram.messenger.i0.L(40.0f), 0, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(128.0f));
+                if (org.telegram.messenger.g0.Q1()) {
+                    ((TextView) this.c).setPadding(org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(128.0f));
                 } else if (rotation == 3 || rotation == 1) {
-                    ((TextView) this.c).setPadding(org.telegram.messenger.i0.L(40.0f), 0, org.telegram.messenger.i0.L(40.0f), 0);
+                    ((TextView) this.c).setPadding(org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.g0.L(40.0f), 0);
                 } else {
-                    ((TextView) this.c).setPadding(org.telegram.messenger.i0.L(40.0f), 0, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(128.0f));
+                    ((TextView) this.c).setPadding(org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(128.0f));
                 }
                 this.b = false;
-                super.onMeasure(i10, i11);
+                super.onMeasure(i3, i10);
                 break;
         }
     }
@@ -74,7 +74,7 @@ public final class p3 extends LinearLayout {
         }
     }
 
-    public p3(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+    public p3(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         TextView textView = new TextView(context);
         this.c = textView;
@@ -82,11 +82,11 @@ public final class p3 extends LinearLayout {
         this.d = imageView;
         setOrientation(1);
         setGravity(17);
-        addView(imageView, w7.b6.o(-2, -2));
-        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.z6, p6Var);
+        addView(imageView, b8.mf.o(-2, -2));
+        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.z6, e6Var);
         textView.setGravity(17);
         textView.setTextSize(1, 17.0f);
-        textView.setPadding(org.telegram.messenger.i0.L(40.0f), 0, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(128.0f));
-        addView(textView, w7.b6.t(-2, -2, 17, 0, 24, 0, 0));
+        textView.setPadding(org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(128.0f));
+        addView(textView, b8.mf.t(-2, -2, 17, 0, 24, 0, 0));
     }
 }

@@ -1,33 +1,21 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kq0 implements org.telegram.ui.ActionBar.u1, org.telegram.messenger.gs {
-    public final /* synthetic */ au0 a;
-    public final /* synthetic */ TL_stories.StoryItem b;
+public final class kq0 extends ClippingImageView {
+    public final /* synthetic */ tj0 S;
 
-    public /* synthetic */ kq0(au0 au0Var, TL_stories.StoryItem storyItem) {
-        this.a = au0Var;
-        this.b = storyItem;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kq0(Context context, qr0 qr0Var) {
+        super(context);
+        this.S = qr0Var;
     }
 
-    @Override // org.telegram.messenger.gs
-    public void a(String str) {
-        r0.getStoriesController().r(r0.l1, str, new vg(13, this.a, this.b));
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        ArrayList arrayList = new ArrayList(1);
-        arrayList.add(this.b);
-        au0 au0Var = this.a;
-        org.telegram.ui.ActionBar.k2 k2Var = au0Var.x1;
-        k2Var.getMessagesController().O1().s(arrayList, au0Var.l1);
-        cc.a0(k2Var).Q(R.raw.ic_delete, 36, org.telegram.messenger.dd.G(1, "StoriesDeleted", new Object[0])).j();
-        au0Var.U(false);
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.S.invalidate();
     }
 }

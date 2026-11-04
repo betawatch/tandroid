@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class ResizeAtom extends Atom {
     private Atom base;
@@ -33,26 +33,26 @@ public class ResizeAtom extends Atom {
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         float factor;
-        float f7;
+        float f10;
         double d;
         double d10;
         double d11;
         Box createBox = this.base.createBox(teXEnvironment);
-        int i10 = this.wunit;
-        if (i10 == -1 && this.hunit == -1) {
+        int i3 = this.wunit;
+        if (i3 == -1 && this.hunit == -1) {
             return createBox;
         }
-        if (i10 == -1 || this.hunit == -1) {
-            if (i10 == -1 || this.hunit != -1) {
+        if (i3 == -1 || this.hunit == -1) {
+            if (i3 == -1 || this.hunit != -1) {
                 factor = SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h;
-                f7 = createBox.height;
+                f10 = createBox.height;
             } else {
-                factor = SpaceAtom.getFactor(i10, teXEnvironment) * this.w;
-                f7 = createBox.width;
+                factor = SpaceAtom.getFactor(i3, teXEnvironment) * this.w;
+                f10 = createBox.width;
             }
-            d = factor / f7;
+            d = factor / f10;
         } else {
-            double factor2 = (SpaceAtom.getFactor(i10, teXEnvironment) * this.w) / createBox.width;
+            double factor2 = (SpaceAtom.getFactor(i3, teXEnvironment) * this.w) / createBox.width;
             double factor3 = (SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h) / createBox.height;
             if (!this.keepaspectratio) {
                 d10 = factor3;

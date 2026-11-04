@@ -1,54 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class o90 extends oh.q {
-    public final /* synthetic */ int E = 1;
-    public final /* synthetic */ Object F;
+public final /* synthetic */ class o90 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x90 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o90(kg.q1 q1Var, kg.q1 q1Var2, FrameLayout frameLayout, long j10) {
-        super(q1Var2, frameLayout, j10, true);
-        this.F = q1Var;
+    public /* synthetic */ o90(x90 x90Var, int i3) {
+        this.a = i3;
+        this.b = x90Var;
     }
 
-    @Override // oh.q
-    public final void f(String str, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.l lVar;
-        switch (this.E) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                oh.c cVar = (oh.c) this.F;
-                ew0 ew0Var = cVar.N1;
-                if (!this.e.isEmpty()) {
-                    if (!z11) {
-                        super.f(str, z10, z11);
-                        break;
-                    } else {
-                        cVar.s1.J.setText("");
-                        break;
-                    }
-                } else if (ew0Var.getVisibility() != 4) {
-                    ew0Var.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!z11) {
-                    super.f(str, z10, z11);
+                x90 x90Var = this.b;
+                ci.j1 j1Var = x90Var.f;
+                if (!x90Var.d0.d.r) {
+                    j1Var.x0(j1Var.computeVerticalScrollRange() - (j1Var.computeVerticalScrollExtent() + j1Var.computeVerticalScrollOffset()), org.telegram.messenger.hs.Z3, ni.l.V);
                     break;
                 } else {
-                    lVar = ((org.telegram.ui.ActionBar.k2) ((kg.q1) this.F)).actionBar;
-                    lVar.setSearchFieldText("");
+                    j1Var.x0(-j1Var.computeVerticalScrollOffset(), org.telegram.messenger.hs.Z3, ni.l.V);
                     break;
                 }
+            default:
+                this.b.h(true, false);
+                break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o90(oh.c cVar, org.telegram.ui.ActionBar.k2 k2Var, org.telegram.ui.ActionBar.p2 p2Var, long j10) {
-        super(k2Var, p2Var, j10, false);
-        this.F = cVar;
     }
 }

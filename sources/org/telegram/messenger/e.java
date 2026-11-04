@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class e {
     public final int a;
@@ -17,8 +17,8 @@ public final class e {
     public int f = -1;
     public long g = 0;
 
-    public e(int i10) {
-        this.a = i10;
+    public e(int i3) {
+        this.a = i3;
     }
 
     public final void a() {
@@ -31,11 +31,11 @@ public final class e {
     public final void b() {
         ArrayList arrayList = this.b;
         boolean z10 = this.e;
-        int i10 = this.a;
+        int i3 = this.a;
         if (!z10) {
             this.e = true;
             try {
-                String string = wp.r1(i10).f7.getString("ai_styles", null);
+                String string = hp.s1(i3).e7.getString("ai_styles", null);
                 if (string != null) {
                     SerializedData serializedData = new SerializedData(Base64.getDecoder().decode(string));
                     TL_aicompose.Tones TLdeserialize = TL_aicompose.Tones.TLdeserialize(serializedData, serializedData.readInt32(true), true);
@@ -45,19 +45,19 @@ public final class e {
                         arrayList.addAll(((TL_aicompose.TL_tones) TLdeserialize).tones);
                     }
                 }
-            } catch (Exception e) {
-                f8.g(e, true);
+            } catch (Exception e10) {
+                a8.g(e10, true);
             }
         }
         if (this.f < 0 && System.currentTimeMillis() - this.g >= 1800000) {
             TL_aicompose.getTones gettones = new TL_aicompose.getTones();
             gettones.hash = this.c;
-            this.f = ConnectionsManager.getInstance(i10).sendRequestTyped(gettones, new a3.b(1), new d(this, 0));
+            this.f = ConnectionsManager.getInstance(i3).sendRequestTyped(gettones, new c3.b(1), new d(this, 0));
         }
     }
 
     public final void c() {
-        at.f(this.a).k(at.Y3, this);
+        hs.f(this.a).k(hs.Y3, this);
     }
 
     public final void d() {
@@ -66,6 +66,6 @@ public final class e {
         tL_tones.tones.addAll(this.b);
         SerializedData serializedData = new SerializedData(tL_tones.getObjectSize());
         tL_tones.serializeToStream(serializedData);
-        wp.r1(this.a).f7.edit().putString("ai_styles", Base64.getEncoder().encodeToString(serializedData.toByteArray())).apply();
+        hp.s1(this.a).e7.edit().putString("ai_styles", Base64.getEncoder().encodeToString(serializedData.toByteArray())).apply();
     }
 }

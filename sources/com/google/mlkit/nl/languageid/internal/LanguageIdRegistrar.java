@@ -1,40 +1,41 @@
 package com.google.mlkit.nl.languageid.internal;
 
 import android.content.Context;
-import b2.n0;
 import com.google.firebase.components.ComponentRegistrar;
+import d2.l0;
 import java.util.List;
-import jb.d;
-import nb.b;
-import nb.e;
-import r9.a;
-import r9.j;
-import v7.e9;
-import v7.g9;
-import v7.i9;
+import k2.p1;
+import mb.d;
+import qb.b;
+import qb.e;
+import t9.a;
+import t9.j;
+import x7.g9;
+import x7.i9;
+import x7.k9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class LanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        n0 a2 = a.a(e.class);
-        a2.a(j.a(Context.class));
-        a2.a(new j(2, 0, mb.a.class));
-        a2.f = b.b;
-        a b10 = a2.b();
-        n0 a10 = a.a(nb.a.class);
-        a10.a(j.a(e.class));
-        a10.a(j.a(d.class));
-        a10.f = b.c;
-        Object[] objArr = {b10, a10.b()};
-        for (int i10 = 0; i10 < 2; i10++) {
-            e9 e9Var = g9.b;
-            if (objArr[i10] == null) {
-                throw new NullPointerException(i0.a.i(i10, "at index "));
+        l0 a10 = a.a(e.class);
+        a10.a(j.a(Context.class));
+        a10.a(new j(2, 0, pb.a.class));
+        a10.f = b.b;
+        a b10 = a10.b();
+        l0 a11 = a.a(qb.a.class);
+        a11.a(j.a(e.class));
+        a11.a(j.a(d.class));
+        a11.f = b.c;
+        Object[] objArr = {b10, a11.b()};
+        for (int i3 = 0; i3 < 2; i3++) {
+            g9 g9Var = i9.b;
+            if (objArr[i3] == null) {
+                throw new NullPointerException(p1.i(i3, "at index "));
             }
         }
-        e9 e9Var2 = g9.b;
-        return new i9(2, objArr);
+        g9 g9Var2 = i9.b;
+        return new k9(2, objArr);
     }
 }

@@ -22,7 +22,7 @@ public final class i2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public final e2 a(int i10) {
+    public final e2 a(int i3) {
         throw new IndexOutOfBoundsException();
     }
 
@@ -36,11 +36,11 @@ public final class i2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public final void f(Object[] objArr, int i10) {
+    public final void f(Object[] objArr, int i3) {
         Iterator it = this.a.iterator();
         while (it.hasNext()) {
-            objArr[i10] = it.next();
-            i10++;
+            objArr[i3] = it.next();
+            i3++;
         }
     }
 

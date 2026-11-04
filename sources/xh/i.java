@@ -1,488 +1,300 @@
 package xh;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import ai.s;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Point;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.util.LongSparseArray;
 import android.widget.TextView;
+import ci.ba;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.firebase.messaging.FirebaseMessaging;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicMarkableReference;
+import m.o3;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.at;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.vs;
-import org.telegram.messenger.wp;
+import org.telegram.messenger.ac;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.l10;
+import org.telegram.messenger.w7;
+import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.ActionBar.z4;
-import org.telegram.ui.Cells.ca;
-import org.telegram.ui.Cells.w7;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.xy0;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.Cells.e5;
+import org.telegram.ui.Components.he0;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.Components.vf0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo0;
-import org.telegram.ui.cl0;
-import org.telegram.ui.o10;
-import org.telegram.ui.zh;
-import w7.b6;
+import z9.m;
+import z9.p;
+import z9.r;
+import z9.x;
+import zh.k;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class i extends o10 implements vs {
-    public final long R;
-    public FrameLayout S;
-    public lg.q T;
-    public LinearLayout U;
-    public ph.i V;
-    public p80 W;
-    public boolean Y;
-    public TL_payments.starRefProgram Z;
-    public TL_payments.starRefProgram a0;
-    public boolean d0;
-    public ph.o3 e0;
-    public final d X = new d(this, 0);
-    public String[] b0 = null;
-    public final List c0 = Arrays.asList(1, 3, 6, 12, 24, 36, 0);
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class i implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public i(long j10) {
-        this.R = j10;
-        this.M = true;
-        this.L = org.telegram.messenger.i0.L(60.0f);
+    public /* synthetic */ i(int i3, Object obj, Object obj2) {
+        this.a = i3;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    public static void A0(i iVar, Context context) {
-        if (iVar.V.c0) {
-            FrameLayout frameLayout = new FrameLayout(context);
-            xy0 xy0Var = new xy0(context, iVar.resourceProvider);
-            d dVar = new d(iVar, 1);
-            xy0Var.c(dd.L0(2131754344, null), J0(iVar.a0.commission_permille), null, null);
-            String L0 = dd.L0(2131754342, null);
-            int i10 = iVar.a0.duration_months;
-            xy0Var.c(L0, i10 <= 0 ? dd.L0(2131749207, null) : (i10 < 12 || i10 % 12 != 0) ? dd.G(i10, "Months", new Object[0]) : dd.G(i10 / 12, "Years", new Object[0]), null, null);
-            frameLayout.addView(xy0Var, b6.d(-1, -2.0f, at.E1, 24.0f, 0.0f, 24.0f, 0.0f));
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, iVar.resourceProvider);
-            String L02 = dd.L0(2131754347, null);
-            org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-            x1Var.R = L02;
-            x1Var.T = dd.L0(iVar.Y ? 2131754330 : 2131754316, null);
-            alertDialog$Builder.o(frameLayout);
-            alertDialog$Builder.k(dd.L0(iVar.Y ? 2131754331 : 2131754317, null), new wh.b(dVar, 8));
-            alertDialog$Builder.h(dd.L0(2131752589, null), null);
-            alertDialog$Builder.p();
-        }
-    }
-
-    public static /* synthetic */ void B0(i iVar, org.telegram.ui.ActionBar.x1 x1Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        long j10 = iVar.R;
-        x1Var.dismiss();
-        if (!(tLObject instanceof TL_payments.starRefProgram)) {
-            if (tL_error != null) {
-                cc.d0(tL_error);
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.Document document;
+        TLRPC.Document document2;
+        switch (this.a) {
+            case 0:
+                j jVar = (j) this.c;
+                jVar.b.add((String) this.b);
+                jVar.invalidate();
                 return;
-            }
-            return;
-        }
-        TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) tLObject;
-        TLRPC.UserFull a2 = iVar.getMessagesController().a2(j10);
-        if (a2 != null) {
-            a2.starref_program = starrefprogram;
-            iVar.getMessagesStorage().j2(a2, false);
-            at.f(iVar.currentAccount).k(at.E0, Long.valueOf(j10), a2);
-        }
-        iVar.G0(false);
-    }
-
-    public static /* synthetic */ void C0(i iVar, org.telegram.ui.ActionBar.x1 x1Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        long j10 = iVar.R;
-        x1Var.dismiss();
-        if (!(tLObject instanceof TL_payments.starRefProgram)) {
-            if (tL_error != null) {
-                cc.d0(tL_error);
+            case 1:
+                ((m) this.c).d((String) this.b, Boolean.FALSE);
                 return;
-            }
-            return;
-        }
-        TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) tLObject;
-        TLRPC.UserFull a2 = iVar.getMessagesController().a2(j10);
-        if (a2 != null) {
-            TL_payments.starRefProgram starrefprogram2 = iVar.a0;
-            starrefprogram2.flags |= 2;
-            starrefprogram2.end_date = iVar.getConnectionsManager().getCurrentTime() + (iVar.getConnectionsManager().isTestBackend() ? at.X4 : 86400);
-            a2.starref_program = starrefprogram;
-            iVar.getMessagesStorage().j2(a2, false);
-            at.f(iVar.currentAccount).k(at.E0, Long.valueOf(j10), a2);
-        }
-        iVar.G0(true);
-    }
-
-    public static void D0(i iVar, int i10) {
-        ph.o3 o3Var = iVar.e0;
-        if (o3Var == null) {
-            return;
-        }
-        int i11 = o3Var.G(i10).d;
-        if (i11 != 4) {
-            if (i11 == 2) {
-                iVar.presentFragment(new s3(iVar.R));
+            case 2:
+                p pVar = (p) this.c;
+                String str = (String) this.b;
+                o3 o3Var = pVar.f.d;
+                o3Var.getClass();
+                String b10 = ba.e.b(1024, str);
+                synchronized (((AtomicMarkableReference) o3Var.g)) {
+                    try {
+                        String str2 = (String) ((AtomicMarkableReference) o3Var.g).getReference();
+                        if (b10 == null ? str2 == null : b10.equals(str2)) {
+                            return;
+                        }
+                        ((AtomicMarkableReference) o3Var.g).set(b10, true);
+                        ((aa.g) o3Var.b).b.a(new s(o3Var, 14));
+                        return;
+                    } finally {
+                    }
+                }
+            case 3:
+                p pVar2 = (p) this.c;
+                Throwable th2 = (Throwable) this.b;
+                Map map = Collections.EMPTY_MAP;
+                m mVar = pVar2.f;
+                Thread currentThread = Thread.currentThread();
+                mVar.getClass();
+                long currentTimeMillis = System.currentTimeMillis();
+                r rVar = mVar.n;
+                if (rVar == null || !rVar.e.get()) {
+                    long j10 = currentTimeMillis / 1000;
+                    String g7 = mVar.g();
+                    if (g7 == null) {
+                        Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
+                        return;
+                    }
+                    ba.c cVar = new ba.c(g7, j10, map);
+                    x xVar = mVar.m;
+                    xVar.getClass();
+                    String concat = "Persisting non-fatal event for session ".concat(g7);
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", concat, null);
+                    }
+                    xVar.g(th2, currentThread, "error", cVar, false);
+                    return;
+                }
                 return;
-            }
-            return;
-        }
-        LinearLayout linearLayout = new LinearLayout(iVar.getParentActivity());
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(org.telegram.messenger.i0.L(24.0f), 0, org.telegram.messenger.i0.L(24.0f), 0);
-        TextView textView = new TextView(iVar.getParentActivity());
-        textView.setTextSize(1, 16.0f);
-        int i12 = t6.G6;
-        a7.V(textView, i12, iVar.resourceProvider);
-        textView.setText(org.telegram.messenger.i0.W2(dd.L0(2131754322, null)));
-        linearLayout.addView(textView, b6.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        cl0 cl0Var = new cl0(iVar.getParentActivity(), 4);
-        cl0Var.setPadding(org.telegram.messenger.i0.L(15.0f), 0, 0, 0);
-        cl0Var.setTextSize(1, 16.0f);
-        a7.V(cl0Var, i12, iVar.resourceProvider);
-        cl0Var.setText(org.telegram.messenger.i0.W2(dd.L0(2131754321, null)));
-        linearLayout.addView(cl0Var, b6.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        cl0 cl0Var2 = new cl0(iVar.getParentActivity(), 4);
-        cl0Var2.setPadding(org.telegram.messenger.i0.L(15.0f), 0, 0, 0);
-        cl0Var2.setTextSize(1, 16.0f);
-        a7.V(cl0Var2, i12, iVar.resourceProvider);
-        cl0Var2.setText(org.telegram.messenger.i0.W2(dd.L0(2131754320, null)));
-        linearLayout.addView(cl0Var2, b6.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        cl0 cl0Var3 = new cl0(iVar.getParentActivity(), 4);
-        cl0Var3.setPadding(org.telegram.messenger.i0.L(15.0f), 0, 0, 0);
-        cl0Var3.setTextSize(1, 16.0f);
-        a7.V(cl0Var3, i12, iVar.resourceProvider);
-        cl0Var3.setText(org.telegram.messenger.i0.W2(dd.L0(2131754319, null)));
-        linearLayout.addView(cl0Var3, b6.k(0.0f, 0.0f, 0.0f, 10.0f, -1, -2));
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, iVar.getParentActivity(), iVar.resourceProvider);
-        alertDialog$Builder.a.R = dd.L0(2131754347, null);
-        alertDialog$Builder.o(linearLayout);
-        alertDialog$Builder.k(dd.L0(2131754323, null), new wh.b(iVar, 9));
-        alertDialog$Builder.h(dd.L0(2131752589, null), null);
-        alertDialog$Builder.d(-1);
-        alertDialog$Builder.p();
-    }
-
-    public static String J0(int i10) {
-        float f7 = i10 / 10.0f;
-        if (((int) f7) != f7) {
-            return String.format(Locale.US, "%.1f%%", Float.valueOf(f7));
-        }
-        Locale locale = Locale.US;
-        return a1.g.k(i10 / 10, "%");
-    }
-
-    public final void G0(boolean z10) {
-        org.telegram.ui.ActionBar.k2 k2Var;
-        if (getParentLayout() == null || getParentLayout().getFragmentStack() == null) {
-            finishFragment();
-            k2Var = null;
-        } else {
-            z4 parentLayout = getParentLayout();
-            List fragmentStack = parentLayout.getFragmentStack();
-            int size = fragmentStack.size() - 1;
-            while (true) {
-                if (size <= 0) {
-                    size = -1;
-                    k2Var = null;
-                    break;
+            case 4:
+                ((za.h) this.c).a((Intent) this.b);
+                return;
+            case 5:
+                FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.c;
+                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.b;
+                he0 he0Var = FirebaseMessaging.m;
+                try {
+                    taskCompletionSource.setResult(firebaseMessaging.a());
+                    return;
+                } catch (Exception e10) {
+                    taskCompletionSource.setException(e10);
+                    return;
+                }
+            case 6:
+                za.m mVar2 = (za.m) this.c;
+                TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.b;
+                try {
+                    taskCompletionSource2.setResult(mVar2.a());
+                    return;
+                } catch (Exception e11) {
+                    taskCompletionSource2.setException(e11);
+                    return;
+                }
+            case 7:
+                zf.c cVar2 = (zf.c) this.c;
+                TLObject tLObject = (TLObject) this.b;
+                if (tLObject != null) {
+                    if (tLObject instanceof TL_account.TL_savedRingtonesNotModified) {
+                        cVar2.f(true);
+                    } else if (tLObject instanceof TL_account.TL_savedRingtones) {
+                        TL_account.TL_savedRingtones tL_savedRingtones = (TL_account.TL_savedRingtones) tLObject;
+                        ArrayList<TLRPC.Document> arrayList = tL_savedRingtones.ringtones;
+                        ArrayList arrayList2 = cVar2.e;
+                        if (!cVar2.f) {
+                            cVar2.f(false);
+                            cVar2.f = true;
+                        }
+                        HashMap hashMap = new HashMap();
+                        int size = arrayList2.size();
+                        int i3 = 0;
+                        while (i3 < size) {
+                            Object obj = arrayList2.get(i3);
+                            i3++;
+                            zf.b bVar = (zf.b) obj;
+                            if (bVar.b != null && (document = bVar.a) != null) {
+                                hashMap.put(Long.valueOf(document.id), bVar.b);
+                            }
+                        }
+                        arrayList2.clear();
+                        SharedPreferences d = cVar2.d();
+                        d.edit().clear().apply();
+                        SharedPreferences.Editor edit = d.edit();
+                        edit.putInt("count", arrayList.size());
+                        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                            TLRPC.Document document3 = arrayList.get(i10);
+                            String str3 = (String) hashMap.get(Long.valueOf(document3.id));
+                            SerializedData serializedData = new SerializedData(document3.getObjectSize());
+                            document3.serializeToStream(serializedData);
+                            edit.putString("tone_document" + i10, Utilities.f(serializedData.toByteArray()));
+                            if (str3 != null) {
+                                edit.putString("tone_local_path" + i10, str3);
+                            }
+                            zf.b bVar2 = new zf.b();
+                            bVar2.a = document3;
+                            bVar2.b = str3;
+                            int i11 = cVar2.d;
+                            cVar2.d = i11 + 1;
+                            bVar2.c = i11;
+                            arrayList2.add(bVar2);
+                        }
+                        edit.apply();
+                        hs.f(cVar2.c).k(hs.e5, new Object[0]);
+                        SharedPreferences.Editor edit2 = cVar2.d().edit();
+                        long j11 = tL_savedRingtones.hash;
+                        zf.c.g = j11;
+                        SharedPreferences.Editor putLong = edit2.putLong("hash", j11);
+                        long currentTimeMillis2 = System.currentTimeMillis();
+                        zf.c.h = currentTimeMillis2;
+                        putLong.putLong("lastReload", currentTimeMillis2).apply();
+                    }
+                    cVar2.b();
+                    return;
+                }
+                return;
+            case 8:
+                zf.c cVar3 = (zf.c) this.c;
+                ArrayList arrayList3 = (ArrayList) this.b;
+                for (int i12 = 0; i12 < arrayList3.size(); i12++) {
+                    zf.b bVar3 = (zf.b) arrayList3.get(i12);
+                    if (bVar3 != null && ((TextUtils.isEmpty(bVar3.b) || !new File(bVar3.b).exists()) && (document2 = bVar3.a) != null)) {
+                        w7.G(cVar3.c);
+                        File I = w7.I(document2);
+                        if (I == null || !I.exists()) {
+                            g0.h3(new i(9, cVar3, document2));
+                        }
+                    }
+                }
+                return;
+            case 9:
+                zf.c cVar4 = (zf.c) this.c;
+                TLRPC.Document document4 = (TLRPC.Document) this.b;
+                w7.G(cVar4.c).X(document4, document4, 0, 0);
+                return;
+            case 10:
+                zf.d dVar = (zf.d) this.c;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
+                int i13 = dVar.a;
+                if (tL_error.text.equals("RINGTONE_DURATION_TOO_LONG")) {
+                    hs.e().k(hs.P4, 4, bd.a0("TooLongError", null, 2131744051, new Object[0]), bd.a0("ErrorRingtoneDurationTooLong", null, 2131751105, Integer.valueOf(hp.s1(i13).k4)));
+                    return;
+                } else if (tL_error.text.equals("RINGTONE_SIZE_TOO_BIG")) {
+                    hs.e().k(hs.P4, 4, bd.a0("TooLargeError", null, 2131744052, new Object[0]), bd.a0("ErrorRingtoneSizeTooBig", null, 2131751103, Integer.valueOf(hp.s1(i13).l4 / 1024)));
+                    return;
                 } else {
-                    k2Var = (org.telegram.ui.ActionBar.k2) fragmentStack.get(size);
-                    if ((k2Var instanceof ProfileActivity) && ((ProfileActivity) k2Var).a() == this.R) {
-                        break;
-                    } else {
-                        size--;
+                    hs.e().k(hs.P4, 4, bd.a0("InvalidFormatError", null, 2131749189, new Object[0]), bd.M0(2131751104, null));
+                    return;
+                }
+            case 11:
+                ((xg.d) this.c).a((TLRPC.Chat) this.b);
+                return;
+            default:
+                k kVar = (k) this.c;
+                e5 e5Var = (e5) this.b;
+                int i14 = kVar.k;
+                d2 d2Var = kVar.g;
+                TLRPC.TL_chatInviteImporter importer = e5Var.getImporter();
+                kVar.r = importer;
+                LongSparseArray longSparseArray = kVar.d;
+                TLRPC.User user = (TLRPC.User) longSparseArray.get(importer.user_id);
+                if (user == null) {
+                    return;
+                }
+                d2Var.getMessagesController().X3(user, false, false);
+                Point point = g0.q;
+                boolean z10 = point.x > point.y;
+                if (user.photo == null || z10) {
+                    kVar.b = true;
+                    d2Var.dismissCurrentDialog();
+                    Bundle bundle = new Bundle();
+                    ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+                    bundle.putLong("user_id", user.id);
+                    bundle.putBoolean("removeFragmentOnChatOpen", false);
+                    d2Var.presentFragment(profileActivity);
+                    return;
+                }
+                if (kVar.s == null) {
+                    zh.j jVar2 = new zh.j(kVar, d2Var.getParentActivity(), (tj0) e5Var.getParent(), d2Var.getResourceProvider(), kVar.a);
+                    kVar.s = jVar2;
+                    TLRPC.TL_chatInviteImporter tL_chatInviteImporter = kVar.r;
+                    k9 avatarImageView = e5Var.getAvatarImageView();
+                    TextView textView = jVar2.e;
+                    vf0 vf0Var = jVar2.h;
+                    jVar2.r = tL_chatInviteImporter;
+                    jVar2.w = avatarImageView;
+                    TLRPC.User a22 = hp.s1(i14).a2(Long.valueOf(tL_chatInviteImporter.user_id));
+                    ac m10 = ac.m(i14, 0, a22);
+                    ac m11 = ac.m(i14, 1, a22);
+                    if (hp.s1(i14).b2(tL_chatInviteImporter.user_id) == null) {
+                        hp.s1(i14).g3(a22, false, 0);
                     }
+                    vf0Var.setParentAvatarImage(avatarImageView);
+                    vf0Var.M(tL_chatInviteImporter.user_id, true);
+                    vf0Var.H(null, m10, m11, true);
+                    jVar2.d.setText(l10.p((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
+                    textView.setText(tL_chatInviteImporter.about);
+                    textView.setVisibility(TextUtils.isEmpty(tL_chatInviteImporter.about) ? 8 : 0);
+                    jVar2.E.requestLayout();
+                    kVar.s.setOnDismissListener(new ba(kVar, 15));
+                    kVar.s.show();
+                    return;
                 }
-            }
-            if (k2Var != null) {
-                for (int size2 = fragmentStack.size() - 1; size2 > size; size2--) {
-                    ((ActionBarLayout) parentLayout).c0((org.telegram.ui.ActionBar.k2) fragmentStack.get(size2), false);
-                }
-                finishFragment();
-            } else {
-                finishFragment();
-                k2Var = parentLayout.getBackgroundFragment();
-            }
-        }
-        if (k2Var != null) {
-            if (z10) {
-                cc.a0(k2Var).I(R.raw.linkbroken, dd.L0(2131754339, null), org.telegram.messenger.i0.W2(dd.L0(2131754340, null))).j();
-            } else {
-                cc.a0(k2Var).I(R.raw.contact_check, dd.L0(2131754325, null), dd.L0(2131754326, null)).j();
-            }
+                return;
         }
     }
 
-    public final void H0(ArrayList arrayList, q51 q51Var) {
-        if (getParentActivity() == null) {
-            return;
-        }
-        bi.t0 t0Var = (bi.t0) super.o0(getParentActivity());
-        b51 b51Var = new b51(-2);
-        b51Var.c = t0Var;
-        arrayList.add(b51Var);
-        arrayList.add(g.i(R.drawable.menu_feature_premium, dd.L0(2131753151, null), dd.L0(2131753152, null)));
-        arrayList.add(g.i(R.drawable.msg_channel, dd.L0(2131753149, null), dd.L0(2131753150, null)));
-        arrayList.add(g.i(R.drawable.menu_feature_links2, dd.L0(2131753147, null), dd.L0(2131753148, null)));
-        arrayList.add(b51.B(1, null));
-        arrayList.add(b51.u(dd.L0(2131754344, null)));
-        int i10 = getMessagesController().i6;
-        int i11 = this.a0.commission_permille;
-        int i12 = getMessagesController().j6;
-        zh zhVar = new zh(13);
-        a aVar = new a(this, 1);
-        b51 b51Var2 = new b51(15);
-        b51Var2.z = i11;
-        b51Var2.C = aVar;
-        w7 w7Var = new w7();
-        w7Var.a = i10;
-        w7Var.b = i12;
-        w7Var.e = new ca(zhVar, 7);
-        b51Var2.G = w7Var;
-        b51Var2.B = -1L;
-        b51Var2.B = this.Z == null ? -1 : r4.commission_permille;
-        arrayList.add(b51Var2);
-        arrayList.add(b51.C(dd.L0(2131754343, null)));
-        arrayList.add(b51.u(dd.L0(2131754342, null)));
-        String[] strArr = this.b0;
-        List list = this.c0;
-        if (strArr == null) {
-            this.b0 = new String[list.size()];
-            for (int i13 = 0; i13 < list.size(); i13++) {
-                int intValue = ((Integer) list.get(i13)).intValue();
-                if (intValue == 0) {
-                    this.b0[i13] = dd.L0(2131749207, null);
-                } else if (intValue < 12 || intValue % 12 != 0) {
-                    this.b0[i13] = dd.G(intValue, "MonthsShort", new Object[0]);
-                } else {
-                    this.b0[i13] = dd.G(intValue / 12, "YearsShort", new Object[0]);
-                }
-            }
-        }
-        String[] strArr2 = this.b0;
-        int indexOf = list.indexOf(Integer.valueOf(this.a0.duration_months));
-        a aVar2 = new a(this, 2);
-        b51 b51Var3 = new b51(14);
-        b51Var3.p = strArr2;
-        b51Var3.z = indexOf;
-        b51Var3.C = aVar2;
-        b51Var3.B = -1L;
-        TL_payments.starRefProgram starrefprogram = this.Z;
-        if (starrefprogram != null) {
-            if (starrefprogram.duration_months > 0) {
-                int size = list.size() - 1;
-                while (true) {
-                    if (size < 0) {
-                        break;
-                    }
-                    if (((Integer) list.get(size)).intValue() > 0 && ((Integer) list.get(size)).intValue() <= this.Z.duration_months) {
-                        b51Var3.B = size;
-                        break;
-                    }
-                    size--;
-                }
-            } else {
-                b51Var3.B = list.size() - 1;
-            }
-        }
-        arrayList.add(b51Var3);
-        arrayList.add(b51.C(dd.L0(2131754341, null)));
-        arrayList.add(e.i(2, getThemedColor(t6.ik), dd.L0(2131754337, null), dd.L0(2131754338, null)));
-        arrayList.add(b51.B(3, null));
-        if (!this.Y && this.a0.end_date == 0) {
-            b51 e = b51.e(4, dd.L0(2131754324, null));
-            e.r = true;
-            arrayList.add(e);
-            arrayList.add(b51.B(5, null));
-        }
-        arrayList.add(b51.B(6, null));
-        arrayList.add(b51.B(7, null));
-    }
-
-    public final TL_payments.starRefProgram I0() {
-        TL_payments.starRefProgram starrefprogram = new TL_payments.starRefProgram();
-        starrefprogram.commission_permille = Utilities.j(50, getMessagesController().j6, getMessagesController().i6);
-        starrefprogram.duration_months = 1;
-        return starrefprogram;
-    }
-
-    public final void K0(boolean z10) {
-        this.V.i(dd.L0((this.Y || this.a0.end_date != 0) ? 2131754332 : 2131754318, null), z10, true);
-        d dVar = this.X;
-        org.telegram.messenger.i0.r(dVar);
-        dVar.run();
-        this.W.setText(org.telegram.messenger.i0.T2(dd.L0((this.Y || this.a0.end_date != 0) ? 2131754328 : 2131754315, null), new d(this, 2)));
-        L0();
-        ph.o3 o3Var = this.e0;
-        if (o3Var != null) {
-            o3Var.O(z10);
-        }
-    }
-
-    public final void L0() {
-        TL_payments.starRefProgram starrefprogram;
-        ph.i iVar = this.V;
-        TL_payments.starRefProgram starrefprogram2 = this.a0;
-        iVar.setEnabled(starrefprogram2.end_date == 0 && !((starrefprogram = this.Z) != null && starrefprogram.commission_permille == starrefprogram2.commission_permille && starrefprogram.duration_months == starrefprogram2.duration_months));
-    }
-
-    @Override // org.telegram.ui.o10, org.telegram.ui.ActionBar.k2
-    public final View createView(Context context) {
-        this.G = false;
-        this.E = org.telegram.messenger.i0.L(238.0f);
-        a7.i(t6.i5, new bo0(this, context, 13), null);
-        super.createView(context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.S = frameLayout;
-        frameLayout.setClickable(true);
-        lg.q qVar = new lg.q(context, 1, 3);
-        this.T = qVar;
-        lg.h hVar = qVar.b;
-        hVar.z = t6.Tk;
-        hVar.A = t6.Uk;
-        hVar.b();
-        this.T.setStarParticlesView(this.e);
-        this.S.addView(this.T, b6.d(at.U2, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
-        j0(dd.L0(2131753143, null), dd.L0(2131753144, null), this.S, null);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.U = linearLayout;
-        linearLayout.setOrientation(1);
-        a7.i(t6.d6, this.U, getResourceProvider());
-        View view = new View(context);
-        a7.i(t6.d7, view, getResourceProvider());
-        this.U.addView(view, new LinearLayout.LayoutParams(b6.z(-1.0f), b6.z(1.0f / org.telegram.messenger.i0.p)));
-        ph.i iVar = new ph.i(3, context, this.resourceProvider, true);
-        iVar.setRoundRadius(24);
-        this.V = iVar;
-        iVar.i(dd.L0(2131754332, null), false, true);
-        this.V.setOnClickListener(new rh.u1(11, this, context));
-        this.U.addView(this.V, b6.k(10.0f, 10.0f, 10.0f, 7.0f, -1, 48));
-        p80 p80Var = new p80(context, this.resourceProvider);
-        this.W = p80Var;
-        a7.V(p80Var, t6.z6, getResourceProvider());
-        a7.H(this.W, t6.Uc, getResourceProvider());
-        this.W.setTextSize(1, 12.0f);
-        this.W.setGravity(17);
-        this.U.addView(this.W, b6.k(32.0f, 1.0f, 32.0f, 8.0f, -1, -2));
-        K0(false);
-        ((FrameLayout) this.fragmentView).addView(this.U, b6.e(-1, -2, 87));
-        this.c.setPadding(0, 0, 0, org.telegram.messenger.i0.L(84.0f));
-        this.c.setOnItemClickListener(new ag.y0(this, 24));
-        s4.j jVar = new s4.j();
-        jVar.m = false;
-        jVar.C = false;
-        jVar.o(gr.h);
-        jVar.n(350L);
-        this.c.setItemAnimator(jVar);
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k2
-    public final int getNavigationBarColor() {
-        return getThemedColor(t6.d6);
-    }
-
-    @Override // org.telegram.ui.o10
-    public final s4.g0 k0() {
-        ph.o3 o3Var = new ph.o3(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new qh.d(this, 26), getResourceProvider(), 4);
-        this.e0 = o3Var;
-        return o3Var;
-    }
-
-    @Override // org.telegram.ui.o10
-    public final kg.g2 m0() {
-        kg.g gVar = new kg.g(getParentActivity(), 4);
-        gVar.c();
-        return gVar;
-    }
-
-    @Override // org.telegram.ui.o10
-    public final View o0(Context context) {
-        throw null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k2
-    public final boolean onFragmentCreate() {
-        this.d0 = true;
-        this.Y = true;
-        this.a0 = I0();
-        this.Z = null;
-        wp messagesController = getMessagesController();
-        long j10 = this.R;
-        TLRPC.UserFull a2 = messagesController.a2(j10);
-        if (a2 != null) {
-            this.Y = false;
-            TL_payments.starRefProgram starrefprogram = a2.starref_program;
-            this.a0 = starrefprogram;
-            if (starrefprogram == null) {
-                this.Y = true;
-                this.a0 = I0();
-                this.Z = null;
-            } else {
-                TL_payments.starRefProgram starrefprogram2 = new TL_payments.starRefProgram();
-                this.Z = starrefprogram2;
-                TL_payments.starRefProgram starrefprogram3 = this.a0;
-                starrefprogram2.commission_permille = starrefprogram3.commission_permille;
-                starrefprogram2.duration_months = starrefprogram3.duration_months;
-            }
-        } else {
-            TLRPC.User Z1 = getMessagesController().Z1(Long.valueOf(j10));
-            if (Z1 != null) {
-                getMessagesController().U2(Z1, getClassGuid(), true, new a(this, 0));
-            }
-        }
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.k2
-    public final void onFragmentDestroy() {
-        this.d0 = false;
-        org.telegram.messenger.i0.r(this.X);
-        super.onFragmentDestroy();
-    }
-
-    @Override // org.telegram.ui.o10, org.telegram.ui.ActionBar.k2
-    public final void onInsets(int i10, int i11, int i12, int i13) {
-        this.c.setPadding(0, 0, 0, org.telegram.messenger.i0.L(84.0f) + i13);
-        this.c.setClipToPadding(false);
-        this.U.setPadding(0, 0, 0, i13);
-    }
-
-    @Override // org.telegram.ui.o10, org.telegram.ui.ActionBar.k2
-    public final void onPause() {
-        super.onPause();
-        lg.q qVar = this.T;
-        if (qVar != null) {
-            qVar.setPaused(true);
-            this.T.setDialogVisible(true);
-        }
-    }
-
-    @Override // org.telegram.ui.o10, org.telegram.ui.ActionBar.k2
-    public final void onResume() {
-        super.onResume();
-        lg.q qVar = this.T;
-        if (qVar != null) {
-            qVar.setPaused(false);
-            this.T.setDialogVisible(false);
-        }
-    }
-
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+    public /* synthetic */ i(p pVar, Throwable th2) {
+        this.a = 3;
+        Map map = Collections.EMPTY_MAP;
+        this.c = pVar;
+        this.b = th2;
     }
 }

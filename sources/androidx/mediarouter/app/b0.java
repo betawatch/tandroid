@@ -9,14 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import b8.d1;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import s4.c1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b0 extends s4.g0 {
+public final class b0 extends u4.h0 {
     public final ArrayList c = new ArrayList();
     public final LayoutInflater d;
     public final Drawable e;
@@ -29,10 +29,10 @@ public final class b0 extends s4.g0 {
         this.r = c0Var;
         Context context = c0Var.n;
         this.d = LayoutInflater.from(context);
-        this.e = v7.a0.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = v7.a0.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = v7.a0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = v7.a0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = d1.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = d1.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = d1.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = d1.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         D();
     }
 
@@ -43,47 +43,47 @@ public final class b0 extends s4.g0 {
         arrayList.add(new y(c0Var.n.getString(R.string.mr_chooser_title)));
         ArrayList arrayList2 = c0Var.s;
         int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
-            arrayList.add(new y((p4.w) obj));
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList2.get(i3);
+            i3++;
+            arrayList.add(new y((r4.w) obj));
         }
         f();
     }
 
-    @Override // s4.g0
+    @Override // u4.h0
     public final int b() {
         return this.c.size();
     }
 
-    @Override // s4.g0
-    public final int d(int i10) {
-        return ((y) this.c.get(i10)).b;
+    @Override // u4.h0
+    public final int d(int i3) {
+        return ((y) this.c.get(i3)).b;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0054, code lost:
     
         if (r2 != null) goto L25;
      */
-    @Override // s4.g0
+    @Override // u4.h0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void t(c1 c1Var, int i10) {
+    public final void t(u4.d1 d1Var, int i3) {
         Drawable createFromStream;
-        int d = d(i10);
-        y yVar = (y) this.c.get(i10);
+        int d = d(i3);
+        y yVar = (y) this.c.get(i3);
         if (d == 1) {
-            ((x) c1Var).v.setText(yVar.a.toString());
+            ((x) d1Var).v.setText(yVar.a.toString());
             return;
         }
         if (d != 2) {
             Log.w("RecyclerAdapter", "Cannot bind item to ViewHolder because of wrong view type");
             return;
         }
-        a0 a0Var = (a0) c1Var;
-        p4.w wVar = (p4.w) yVar.a;
+        a0 a0Var = (a0) d1Var;
+        r4.w wVar = (r4.w) yVar.a;
         View view = a0Var.v;
         view.setVisibility(0);
         a0Var.x.setVisibility(4);
@@ -95,20 +95,20 @@ public final class b0 extends s4.g0 {
         if (uri != null) {
             try {
                 createFromStream = Drawable.createFromStream(b0Var.r.n.getContentResolver().openInputStream(uri), null);
-            } catch (IOException e) {
-                Log.w("RecyclerAdapter", "Failed to load " + uri, e);
+            } catch (IOException e10) {
+                Log.w("RecyclerAdapter", "Failed to load " + uri, e10);
             }
         }
-        int i11 = wVar.n;
-        createFromStream = i11 != 1 ? i11 != 2 ? wVar.e() ? b0Var.n : b0Var.e : b0Var.h : b0Var.f;
+        int i10 = wVar.n;
+        createFromStream = i10 != 1 ? i10 != 2 ? wVar.e() ? b0Var.n : b0Var.e : b0Var.h : b0Var.f;
         imageView.setImageDrawable(createFromStream);
     }
 
-    @Override // s4.g0
-    public final c1 w(ViewGroup viewGroup, int i10) {
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
         LayoutInflater layoutInflater = this.d;
-        if (i10 != 1) {
-            if (i10 == 2) {
+        if (i3 != 1) {
+            if (i3 == 2) {
                 return new a0(this, layoutInflater.inflate(R.layout.mr_picker_route_item, viewGroup, false));
             }
             throw new IllegalStateException();

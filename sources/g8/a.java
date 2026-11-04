@@ -1,93 +1,140 @@
 package g8;
 
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-import n6.l;
-import r7.n;
-import w7.h0;
+import b8.y9;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends o6.a {
-    public static final Parcelable.Creator<a> CREATOR = new g(2);
-    public final long a;
-    public final int b;
-    public final boolean c;
-    public final String d;
-    public final r7.j e;
+public final class a extends Binder implements j, IInterface {
+    public final /* synthetic */ int a;
+    public final TaskCompletionSource b;
 
-    public a(long j10, int i10, boolean z10, String str, r7.j jVar) {
-        this.a = j10;
-        this.b = i10;
-        this.c = z10;
-        this.d = str;
-        this.e = jVar;
+    public a(int i3, TaskCompletionSource taskCompletionSource) {
+        this.a = i3;
+        attachInterface(this, "com.google.android.gms.wallet.internal.IWalletServiceCallbacks");
+        this.b = taskCompletionSource;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof a)) {
-            return false;
+    @Override // g8.j
+    public void H(int i3, boolean z10) {
+        switch (this.a) {
+            case 1:
+                y9.a(new Status(i3, null, null, null), Boolean.valueOf(z10), this.b);
+                break;
         }
-        a aVar = (a) obj;
-        return this.a == aVar.a && this.b == aVar.b && this.c == aVar.c && l.k(this.d, aVar.d) && l.k(this.e, aVar.e);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Boolean.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        String str;
-        StringBuilder t10 = a1.g.t("LastLocationRequest[");
-        long j10 = this.a;
-        if (j10 != Long.MAX_VALUE) {
-            t10.append("maxAge=");
-            n.a(j10, t10);
+    @Override // g8.j
+    public void m0(Status status, boolean z10) {
+        switch (this.a) {
+            case 1:
+                y9.a(status, Boolean.valueOf(z10), this.b);
+                break;
         }
-        int i10 = this.b;
-        if (i10 != 0) {
-            t10.append(", ");
-            if (i10 == 0) {
-                str = "GRANULARITY_PERMISSION_LEVEL";
-            } else if (i10 == 1) {
-                str = "GRANULARITY_COARSE";
-            } else {
-                if (i10 != 2) {
-                    throw new IllegalArgumentException();
+    }
+
+    @Override // g8.j
+    public void o(Status status, x8.i iVar) {
+        switch (this.a) {
+            case 0:
+                int i3 = x8.a.c;
+                boolean b10 = status.b();
+                TaskCompletionSource taskCompletionSource = this.b;
+                if (!b10) {
+                    taskCompletionSource.setException(m.l(status));
+                    break;
+                } else {
+                    taskCompletionSource.setResult(iVar);
+                    break;
                 }
-                str = "GRANULARITY_FINE";
-            }
-            t10.append(str);
         }
-        if (this.c) {
-            t10.append(", bypass");
-        }
-        String str2 = this.d;
-        if (str2 != null) {
-            t10.append(", moduleId=");
-            t10.append(str2);
-        }
-        r7.j jVar = this.e;
-        if (jVar != null) {
-            t10.append(", impersonation=");
-            t10.append(jVar);
-        }
-        t10.append(']');
-        return t10.toString();
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 8);
-        parcel.writeLong(this.a);
-        h0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        h0.s(parcel, 3, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        h0.l(parcel, 4, this.d);
-        h0.k(parcel, 5, this.e, i10);
-        h0.r(parcel, q6);
+    @Override // android.os.Binder
+    public final boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
+        boolean z10;
+        if (i3 <= 16777215) {
+            parcel.enforceInterface(getInterfaceDescriptor());
+        } else if (super.onTransact(i3, parcel, parcel2, i10)) {
+            return true;
+        }
+        switch (i3) {
+            case 1:
+                parcel.readInt();
+                return true;
+            case 2:
+                parcel.readInt();
+                return true;
+            case 3:
+                int readInt = parcel.readInt();
+                int i11 = c.a;
+                z10 = parcel.readInt() != 0;
+                H(readInt, z10);
+                return true;
+            case 4:
+                parcel.readInt();
+                return true;
+            case 5:
+            default:
+                return false;
+            case 6:
+                parcel.readInt();
+                int i12 = c.a;
+                parcel.readInt();
+                return true;
+            case 7:
+                return true;
+            case 8:
+                return true;
+            case 9:
+                Status status = (Status) c.a(parcel, Status.CREATOR);
+                z10 = parcel.readInt() != 0;
+                m0(status, z10);
+                return true;
+            case 10:
+                return true;
+            case 11:
+                return true;
+            case 12:
+                return true;
+            case 13:
+                return true;
+            case 14:
+                Status status2 = (Status) c.a(parcel, Status.CREATOR);
+                x8.i iVar = (x8.i) c.a(parcel, x8.i.CREATOR);
+                o(status2, iVar);
+                return true;
+            case 15:
+                return true;
+            case 16:
+                return true;
+            case 17:
+                return true;
+            case 18:
+                parcel.readInt();
+                return true;
+            case 19:
+                return true;
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
+    }
+
+    public final void H0(Status status, boolean z10) {
+    }
+
+    public final void I0(Status status, x8.i iVar) {
+    }
+
+    public final void J0(int i3, boolean z10) {
     }
 }

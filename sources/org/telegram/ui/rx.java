@@ -1,38 +1,20 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rx implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sx b;
+public final class rx extends FrameLayout {
+    public yh.l a;
 
-    public /* synthetic */ rx(sx sxVar, int i10) {
-        this.a = i10;
-        this.b = sxVar;
+    public yh.l getSubtitleTextView() {
+        return this.a;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                sx sxVar = this.b;
-                zx zxVar = sxVar.n0;
-                Context context = sxVar.getContext();
-                i10 = ((org.telegram.ui.ActionBar.k2) zxVar).currentAccount;
-                zxVar.showDialog(new kg.q0(3, i10, context, zxVar, null));
-                break;
-            default:
-                zx zxVar2 = this.b.n0;
-                yw ywVar = zxVar2.M0;
-                if (ywVar != null) {
-                    ywVar.dismiss();
-                    zxVar2.M0 = null;
-                    break;
-                }
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i10);
     }
 }

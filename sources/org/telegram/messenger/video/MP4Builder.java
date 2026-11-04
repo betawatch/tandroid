@@ -2,13 +2,13 @@ package org.telegram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import c3.i0;
-import f5.t;
-import f5.u;
-import f5.v;
-import f5.w;
-import f5.x;
-import f5.y;
+import b8.fe;
+import h5.t;
+import h5.u;
+import h5.v;
+import h5.w;
+import h5.x;
+import h5.y;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.RandomAccessFile;
@@ -21,9 +21,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import v7.r8;
+import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -60,35 +60,35 @@ public class MP4Builder {
         return this.currentMp4Movie.addTrack(mediaFormat, z10);
     }
 
-    public void createCtts(Track track, f5.p pVar) {
+    public void createCtts(Track track, h5.p pVar) {
         int[] sampleCompositions = track.getSampleCompositions();
         if (sampleCompositions == null) {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        f5.d dVar = null;
-        for (int i10 : sampleCompositions) {
-            if (dVar == null || dVar.b != i10) {
-                dVar = new f5.d(1, i10);
+        h5.d dVar = null;
+        for (int i3 : sampleCompositions) {
+            if (dVar == null || dVar.b != i3) {
+                dVar = new h5.d(1, i3);
                 arrayList.add(dVar);
             } else {
                 dVar.a++;
             }
         }
-        f5.e eVar = new f5.e("ctts");
+        h5.e eVar = new h5.e("ctts");
         eVar.e = Collections.EMPTY_LIST;
-        i0.s(le.a.c(f5.e.f, eVar, eVar, arrayList));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.e.f, eVar, eVar, arrayList));
         eVar.e = arrayList;
         pVar.a(eVar);
     }
 
-    public f5.i createFileTypeBox(boolean z10) {
+    public h5.i createFileTypeBox(boolean z10) {
         LinkedList linkedList = new LinkedList();
         linkedList.add("isom");
         linkedList.add("iso2");
         linkedList.add(z10 ? "hvc1" : "avc1");
         linkedList.add("mp41");
-        f5.i iVar = new f5.i("ftyp");
+        h5.i iVar = new h5.i("ftyp");
         List list = Collections.EMPTY_LIST;
         iVar.a = "isom";
         iVar.b = 512L;
@@ -101,7 +101,7 @@ public class MP4Builder {
         FileOutputStream fileOutputStream = new FileOutputStream(mp4Movie.getCacheFile());
         this.fos = fileOutputStream;
         this.fc = fileOutputStream.getChannel();
-        f5.i createFileTypeBox = createFileTypeBox(z11);
+        h5.i createFileTypeBox = createFileTypeBox(z11);
         createFileTypeBox.getBox(this.fc);
         long size = createFileTypeBox.getSize() + this.dataOffset;
         this.dataOffset = size;
@@ -112,37 +112,37 @@ public class MP4Builder {
         return this;
     }
 
-    public f5.l createMovieBox(Mp4Movie mp4Movie) {
-        f5.l lVar = new f5.l("moov");
-        f5.m mVar = new f5.m("mvhd");
+    public h5.l createMovieBox(Mp4Movie mp4Movie) {
+        h5.l lVar = new h5.l("moov");
+        h5.m mVar = new h5.m("mvhd");
         mVar.r = 1.0d;
         mVar.s = 1.0f;
-        jc.d dVar = jc.d.j;
+        mc.d dVar = mc.d.j;
         mVar.w = dVar;
         Date date = new Date();
-        i0.s(le.a.c(f5.m.Q, mVar, mVar, date));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.m.R, mVar, mVar, date));
         mVar.e = date;
         long j10 = 4294967296L;
-        if (r8.a(date) >= 4294967296L) {
+        if (fe.a(date) >= 4294967296L) {
             mVar.h();
         }
         Date date2 = new Date();
-        i0.s(le.a.c(f5.m.R, mVar, mVar, date2));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.m.S, mVar, mVar, date2));
         mVar.f = date2;
-        if (r8.a(date2) >= 4294967296L) {
+        if (fe.a(date2) >= 4294967296L) {
             mVar.h();
         }
-        i0.s(le.a.c(f5.m.U, mVar, mVar, dVar));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.m.V, mVar, mVar, dVar));
         mVar.w = dVar;
         long timescale = getTimescale(mp4Movie);
         ArrayList<Track> tracks = mp4Movie.getTracks();
         int size = tracks.size();
-        int i10 = 0;
+        int i3 = 0;
         long j11 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Track track = tracks.get(i11);
-            i11++;
+        int i10 = 0;
+        while (i10 < size) {
+            Track track = tracks.get(i10);
+            i10++;
             Track track2 = track;
             track2.prepare();
             long j12 = j10;
@@ -153,29 +153,29 @@ public class MP4Builder {
             j10 = j12;
         }
         long j13 = j10;
-        i0.s(le.a.c(f5.m.T, mVar, mVar, new Long(j11)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.m.U, mVar, mVar, new Long(j11)));
         mVar.n = j11;
         if (j11 >= j13) {
             mVar.h();
         }
-        i0.s(le.a.c(f5.m.S, mVar, mVar, new Long(timescale)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.m.T, mVar, mVar, new Long(timescale)));
         mVar.h = timescale;
         long size2 = mp4Movie.getTracks().size() + 1;
-        i0.s(le.a.c(f5.m.V, mVar, mVar, new Long(size2)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.m.W, mVar, mVar, new Long(size2)));
         mVar.x = size2;
         lVar.a(mVar);
         ArrayList<Track> tracks2 = mp4Movie.getTracks();
         int size3 = tracks2.size();
-        while (i10 < size3) {
-            Track track3 = tracks2.get(i10);
-            i10++;
+        while (i3 < size3) {
+            Track track3 = tracks2.get(i3);
+            i3++;
             lVar.a(createTrackBox(track3, mp4Movie));
         }
         return lVar;
     }
 
-    public f5.b createStbl(Track track) {
-        f5.p pVar = new f5.p("stbl");
+    public h5.b createStbl(Track track) {
+        h5.p pVar = new h5.p("stbl");
         createStsd(track, pVar);
         createStts(track, pVar);
         createCtts(track, pVar);
@@ -186,15 +186,15 @@ public class MP4Builder {
         return pVar;
     }
 
-    public void createStco(Track track, f5.p pVar) {
+    public void createStco(Track track, h5.p pVar) {
         ArrayList arrayList = new ArrayList();
         ArrayList<Sample> samples = track.getSamples();
         int size = samples.size();
         long j10 = -1;
-        int i10 = 0;
-        while (i10 < size) {
-            Sample sample = samples.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Sample sample = samples.get(i3);
+            i3++;
             Sample sample2 = sample;
             long offset = sample2.getOffset();
             if (j10 != -1 && j10 != offset) {
@@ -206,68 +206,68 @@ public class MP4Builder {
             j10 = sample2.getSize() + offset;
         }
         long[] jArr = new long[arrayList.size()];
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            jArr[i11] = ((Long) arrayList.get(i11)).longValue();
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            jArr[i10] = ((Long) arrayList.get(i10)).longValue();
         }
         t tVar = new t("stco");
         tVar.f = new long[0];
-        i0.s(le.a.c(t.n, tVar, tVar, jArr));
+        com.google.android.recaptcha.internal.a.t(we.a.c(t.n, tVar, tVar, jArr));
         tVar.f = jArr;
         pVar.a(tVar);
     }
 
-    public void createStsc(Track track, f5.p pVar) {
-        f5.r rVar = new f5.r("stsc");
+    public void createStsc(Track track, h5.p pVar) {
+        h5.r rVar = new h5.r("stsc");
         rVar.e = Collections.EMPTY_LIST;
         LinkedList linkedList = new LinkedList();
-        i0.s(le.a.c(f5.r.h, rVar, rVar, linkedList));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.r.h, rVar, rVar, linkedList));
         rVar.e = linkedList;
         int size = track.getSamples().size();
-        int i10 = -1;
-        int i11 = 1;
-        int i12 = 0;
-        for (int i13 = 0; i13 < size; i13++) {
-            Sample sample = track.getSamples().get(i13);
+        int i3 = -1;
+        int i10 = 1;
+        int i11 = 0;
+        for (int i12 = 0; i12 < size; i12++) {
+            Sample sample = track.getSamples().get(i12);
             long size2 = sample.getSize() + sample.getOffset();
-            i12++;
-            if (i13 == size - 1 || size2 != track.getSamples().get(i13 + 1).getOffset()) {
-                if (i10 != i12) {
-                    i0.s(le.a.b(f5.r.f, rVar, rVar));
-                    rVar.e.add(new f5.q(i11, i12, 1L));
-                    i10 = i12;
+            i11++;
+            if (i12 == size - 1 || size2 != track.getSamples().get(i12 + 1).getOffset()) {
+                if (i3 != i11) {
+                    com.google.android.recaptcha.internal.a.t(we.a.b(h5.r.f, rVar, rVar));
+                    rVar.e.add(new h5.q(i10, i11, 1L));
+                    i3 = i11;
                 }
-                i11++;
-                i12 = 0;
+                i10++;
+                i11 = 0;
             }
         }
         pVar.a(rVar);
     }
 
-    public void createStsd(Track track, f5.p pVar) {
+    public void createStsd(Track track, h5.p pVar) {
         pVar.a(track.getSampleDescriptionBox());
     }
 
-    public void createStss(Track track, f5.p pVar) {
+    public void createStss(Track track, h5.p pVar) {
         long[] syncSamples = track.getSyncSamples();
         if (syncSamples == null || syncSamples.length <= 0) {
             return;
         }
         u uVar = new u("stss");
-        i0.s(le.a.c(u.h, uVar, uVar, syncSamples));
+        com.google.android.recaptcha.internal.a.t(we.a.c(u.h, uVar, uVar, syncSamples));
         uVar.e = syncSamples;
         pVar.a(uVar);
     }
 
-    public void createStsz(Track track, f5.p pVar) {
-        f5.o oVar = new f5.o("stsz");
+    public void createStsz(Track track, h5.p pVar) {
+        h5.o oVar = new h5.o("stsz");
         oVar.f = new long[0];
         long[] jArr = this.track2SampleSizes.get(track);
-        i0.s(le.a.c(f5.o.s, oVar, oVar, jArr));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.o.s, oVar, oVar, jArr));
         oVar.f = jArr;
         pVar.a(oVar);
     }
 
-    public void createStts(Track track, f5.p pVar) {
+    public void createStts(Track track, h5.p pVar) {
         ArrayList arrayList = new ArrayList();
         v vVar = null;
         for (long j10 : track.getSampleDurations()) {
@@ -280,7 +280,7 @@ public class MP4Builder {
         }
         w wVar = new w("stts");
         wVar.e = Collections.EMPTY_LIST;
-        i0.s(le.a.c(w.f, wVar, wVar, arrayList));
+        com.google.android.recaptcha.internal.a.t(we.a.c(w.f, wVar, wVar, arrayList));
         wVar.e = arrayList;
         pVar.a(wVar);
     }
@@ -288,97 +288,97 @@ public class MP4Builder {
     public x createTrackBox(Track track, Mp4Movie mp4Movie) {
         x xVar = new x("trak");
         y yVar = new y("tkhd");
-        jc.d dVar = jc.d.j;
+        mc.d dVar = mc.d.j;
         yVar.x = dVar;
-        ji.f c10 = le.a.c(y.Z, yVar, yVar, new Boolean(true));
+        ui.f c2 = we.a.c(y.a0, yVar, yVar, new Boolean(true));
+        com.googlecode.mp4parser.g.a().getClass();
+        com.googlecode.mp4parser.g.b(c2);
+        yVar.g(yVar.d() | 1);
+        ui.f c10 = we.a.c(y.b0, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c10);
-        yVar.g(yVar.d() | 1);
-        ji.f c11 = le.a.c(y.a0, yVar, yVar, new Boolean(true));
+        yVar.g(yVar.d() | 2);
+        ui.f c11 = we.a.c(y.c0, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c11);
-        yVar.g(yVar.d() | 2);
-        ji.f c12 = le.a.c(y.b0, yVar, yVar, new Boolean(true));
-        com.googlecode.mp4parser.g.a().getClass();
-        com.googlecode.mp4parser.g.b(c12);
         yVar.g(yVar.d() | 4);
         if (track.isAudio()) {
-            i0.s(le.a.c(y.W, yVar, yVar, dVar));
+            com.google.android.recaptcha.internal.a.t(we.a.c(y.X, yVar, yVar, dVar));
             yVar.x = dVar;
         } else {
-            jc.d matrix = mp4Movie.getMatrix();
-            i0.s(le.a.c(y.W, yVar, yVar, matrix));
+            mc.d matrix = mp4Movie.getMatrix();
+            com.google.android.recaptcha.internal.a.t(we.a.c(y.X, yVar, yVar, matrix));
             yVar.x = matrix;
         }
-        i0.s(le.a.c(y.U, yVar, yVar, new Integer(0)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.V, yVar, yVar, new Integer(0)));
         yVar.s = 0;
         Date creationTime = track.getCreationTime();
-        i0.s(le.a.c(y.P, yVar, yVar, creationTime));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.Q, yVar, yVar, creationTime));
         yVar.e = creationTime;
-        if (r8.a(creationTime) >= 4294967296L) {
+        if (fe.a(creationTime) >= 4294967296L) {
             yVar.h();
         }
         long timescale = (getTimescale(mp4Movie) * track.getDuration()) / track.getTimeScale();
-        i0.s(le.a.c(y.S, yVar, yVar, new Long(timescale)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.T, yVar, yVar, new Long(timescale)));
         yVar.n = timescale;
         if (timescale >= 4294967296L) {
             yVar.g(1);
         }
         double height = track.getHeight();
-        i0.s(le.a.c(y.Y, yVar, yVar, new Double(height)));
-        yVar.D = height;
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.Z, yVar, yVar, new Double(height)));
+        yVar.E = height;
         double width = track.getWidth();
-        i0.s(le.a.c(y.X, yVar, yVar, new Double(width)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.Y, yVar, yVar, new Double(width)));
         yVar.y = width;
-        i0.s(le.a.c(y.T, yVar, yVar, new Integer(0)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.U, yVar, yVar, new Integer(0)));
         yVar.r = 0;
         Date date = new Date();
-        i0.s(le.a.c(y.Q, yVar, yVar, date));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.R, yVar, yVar, date));
         yVar.f = date;
-        if (r8.a(date) >= 4294967296L) {
+        if (fe.a(date) >= 4294967296L) {
             yVar.h();
         }
         long trackId = track.getTrackId() + 1;
-        i0.s(le.a.c(y.R, yVar, yVar, new Long(trackId)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.S, yVar, yVar, new Long(trackId)));
         yVar.h = trackId;
         float volume = track.getVolume();
-        i0.s(le.a.c(y.V, yVar, yVar, new Float(volume)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(y.W, yVar, yVar, new Float(volume)));
         yVar.w = volume;
         xVar.a(yVar);
-        f5.h hVar = new f5.h("mdia", 2);
+        h5.h hVar = new h5.h("mdia", 2);
         xVar.a(hVar);
-        f5.k kVar = new f5.k("mdhd");
+        h5.k kVar = new h5.k("mdhd");
         kVar.e = new Date();
         kVar.f = new Date();
         kVar.r = "eng";
         Date creationTime2 = track.getCreationTime();
-        i0.s(le.a.c(f5.k.E, kVar, kVar, creationTime2));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.k.F, kVar, kVar, creationTime2));
         kVar.e = creationTime2;
         long duration = track.getDuration();
-        i0.s(le.a.c(f5.k.G, kVar, kVar, new Long(duration)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.k.H, kVar, kVar, new Long(duration)));
         kVar.n = duration;
         long timeScale = track.getTimeScale();
-        i0.s(le.a.c(f5.k.F, kVar, kVar, new Long(timeScale)));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.k.G, kVar, kVar, new Long(timeScale)));
         kVar.h = timeScale;
-        i0.s(le.a.c(f5.k.H, kVar, kVar, "eng"));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.k.I, kVar, kVar, "eng"));
         kVar.r = "eng";
         hVar.a(kVar);
-        f5.j jVar = new f5.j("hdlr");
+        h5.j jVar = new h5.j("hdlr");
         jVar.f = null;
         jVar.s = true;
         String str = track.isAudio() ? "SoundHandle" : "VideoHandle";
-        i0.s(le.a.c(f5.j.y, jVar, jVar, str));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.j.y, jVar, jVar, str));
         jVar.f = str;
         String handler = track.getHandler();
-        i0.s(le.a.c(f5.j.D, jVar, jVar, handler));
+        com.google.android.recaptcha.internal.a.t(we.a.c(h5.j.E, jVar, jVar, handler));
         jVar.e = handler;
         hVar.a(jVar);
-        f5.h hVar2 = new f5.h("minf", 3);
+        h5.h hVar2 = new h5.h("minf", 3);
         hVar2.a(track.getMediaHeaderBox());
-        f5.h hVar3 = new f5.h("dinf", 0);
-        f5.h hVar4 = new f5.h("dref", 1);
+        h5.h hVar3 = new h5.h("dinf", 0);
+        h5.h hVar4 = new h5.h("dref", 1);
         hVar3.a(hVar4);
-        f5.g gVar = new f5.g("url ");
+        h5.g gVar = new h5.g("url ");
         gVar.g(1);
         hVar4.a(gVar);
         hVar2.a(hVar3);
@@ -393,16 +393,16 @@ public class MP4Builder {
         }
         ArrayList<Track> tracks = this.currentMp4Movie.getTracks();
         int size = tracks.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Track track = tracks.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Track track = tracks.get(i3);
+            i3++;
             Track track2 = track;
             ArrayList<Sample> samples = track2.getSamples();
             int size2 = samples.size();
             long[] jArr = new long[size2];
-            for (int i11 = 0; i11 < size2; i11++) {
-                jArr[i11] = samples.get(i11).getSize();
+            for (int i10 = 0; i10 < size2; i10++) {
+                jArr[i10] = samples.get(i10).getSize();
             }
             this.track2SampleSizes.put(track2, jArr);
         }
@@ -415,18 +415,18 @@ public class MP4Builder {
         this.fos.close();
     }
 
-    public long getLastFrameTimestamp(int i10) {
-        return this.currentMp4Movie.getLastFrameTimestamp(i10);
+    public long getLastFrameTimestamp(int i3) {
+        return this.currentMp4Movie.getLastFrameTimestamp(i3);
     }
 
     public long getTimescale(Mp4Movie mp4Movie) {
         long timeScale = !mp4Movie.getTracks().isEmpty() ? mp4Movie.getTracks().iterator().next().getTimeScale() : 0L;
         ArrayList<Track> tracks = mp4Movie.getTracks();
         int size = tracks.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Track track = tracks.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Track track = tracks.get(i3);
+            i3++;
             timeScale = gcd(track.getTimeScale(), timeScale);
         }
         return timeScale;
@@ -436,7 +436,7 @@ public class MP4Builder {
         this.allowSyncFiles = z10;
     }
 
-    public long writeSampleData(int i10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z10) {
+    public long writeSampleData(int i3, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z10) {
         boolean z11;
         if (this.writeNewMdat) {
             this.mdat.setContentSize(0L);
@@ -460,7 +460,7 @@ public class MP4Builder {
         } else {
             z11 = false;
         }
-        this.currentMp4Movie.addSample(i10, this.dataOffset, bufferInfo);
+        this.currentMp4Movie.addSample(i3, this.dataOffset, bufferInfo);
         if (z10) {
             this.sizeBuffer.position(0);
             this.sizeBuffer.putInt(bufferInfo.size - 4);
@@ -493,7 +493,7 @@ public class MP4Builder {
         if (this.allowSyncFiles) {
             this.fos.getFD().sync();
         }
-        org.telegram.messenger.i0.E(this.currentMp4Movie.getCacheFile(), file);
+        g0.E(this.currentMp4Movie.getCacheFile(), file);
         RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
         try {
             FileChannel channel = randomAccessFile.getChannel();
@@ -507,16 +507,16 @@ public class MP4Builder {
                 this.track2SampleSizes.clear();
                 ArrayList<Track> tracks = this.currentMp4Movie.getTracks();
                 int size = tracks.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Track track = tracks.get(i10);
-                    i10++;
+                int i3 = 0;
+                while (i3 < size) {
+                    Track track = tracks.get(i3);
+                    i3++;
                     Track track2 = track;
                     ArrayList<Sample> samples = track2.getSamples();
                     int size2 = samples.size();
                     long[] jArr = new long[size2];
-                    for (int i11 = 0; i11 < size2; i11++) {
-                        jArr[i11] = samples.get(i11).getSize();
+                    for (int i10 = 0; i10 < size2; i10++) {
+                        jArr[i10] = samples.get(i10).getSize();
                     }
                     this.track2SampleSizes.put(track2, jArr);
                 }
@@ -535,14 +535,14 @@ public class MP4Builder {
         }
     }
 
-    public void createSidx(Track track, f5.p pVar) {
+    public void createSidx(Track track, h5.p pVar) {
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-    public static class InterleaveChunkMdat implements f5.b {
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+    public static class InterleaveChunkMdat implements h5.b {
         private long contentSize;
         private long dataOffset;
-        private f5.f parent;
+        private h5.f parent;
 
         private InterleaveChunkMdat() {
             this.contentSize = 1073741824L;
@@ -553,7 +553,7 @@ public class MP4Builder {
             return j10 + 8 < 4294967296L;
         }
 
-        @Override // f5.b
+        @Override // h5.b
         public void getBox(WritableByteChannel writableByteChannel) {
             ByteBuffer allocate = ByteBuffer.allocate(16);
             long size = getSize();
@@ -562,7 +562,7 @@ public class MP4Builder {
             } else {
                 allocate.putInt((int) 1);
             }
-            allocate.put(e5.c.d("mdat"));
+            allocate.put(g5.c.d("mdat"));
             if (isSmallBox(size)) {
                 allocate.put(new byte[8]);
             } else {
@@ -580,17 +580,17 @@ public class MP4Builder {
             return this.dataOffset;
         }
 
-        @Override // f5.b
-        public f5.f getParent() {
+        @Override // h5.b
+        public h5.f getParent() {
             return this.parent;
         }
 
-        @Override // f5.b
+        @Override // h5.b
         public long getSize() {
             return this.contentSize + 16;
         }
 
-        @Override // f5.b
+        @Override // h5.b
         public String getType() {
             return "mdat";
         }
@@ -603,12 +603,12 @@ public class MP4Builder {
             this.dataOffset = j10;
         }
 
-        @Override // f5.b
-        public void setParent(f5.f fVar) {
+        @Override // h5.b
+        public void setParent(h5.f fVar) {
             this.parent = fVar;
         }
 
-        public void parse(com.googlecode.mp4parser.f fVar, ByteBuffer byteBuffer, long j10, e5.a aVar) {
+        public void parse(com.googlecode.mp4parser.f fVar, ByteBuffer byteBuffer, long j10, g5.a aVar) {
         }
     }
 }

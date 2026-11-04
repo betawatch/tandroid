@@ -3,16 +3,17 @@ package com.google.android.datatransport.runtime.scheduling.jobscheduling;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.media.session.a0;
 import android.util.Base64;
-import ea.d;
+import ha.c;
 import java.util.concurrent.Executor;
-import l5.i;
-import l5.s;
-import org.telegram.ui.Components.d11;
-import v5.a;
+import k4.j;
+import n5.i;
+import n5.s;
+import org.telegram.ui.Components.zo0;
+import org.telegram.ui.hb1;
+import x5.a;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -22,15 +23,15 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
         String queryParameter = intent.getData().getQueryParameter("backendName");
         String queryParameter2 = intent.getData().getQueryParameter("extras");
         int intValue = Integer.valueOf(intent.getData().getQueryParameter("priority")).intValue();
-        int i10 = intent.getExtras().getInt("attemptNumber");
+        int i3 = intent.getExtras().getInt("attemptNumber");
         s.b(context);
-        a0 a2 = i.a();
-        a2.y(queryParameter);
-        a2.d = a.b(intValue);
+        j a10 = i.a();
+        a10.I(queryParameter);
+        a10.c = a.b(intValue);
         if (queryParameter2 != null) {
-            a2.c = Base64.decode(queryParameter2, 0);
+            a10.b = Base64.decode(queryParameter2, 0);
         }
-        d dVar = s.a().d;
-        ((Executor) dVar.e).execute(new d11(dVar, a2.f(), i10, new r5.a(0), 18));
+        c cVar = s.a().d;
+        ((Executor) cVar.e).execute(new zo0(cVar, a10.l(), i3, new hb1(13), 22));
     }
 }

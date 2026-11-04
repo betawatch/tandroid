@@ -1,41 +1,31 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.util.AbstractMap;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class s implements w {
-    public final int a;
+public final class s extends n {
+    public final /* synthetic */ t c;
 
-    public s(int i10) {
-        this.a = i10;
+    public s(t tVar) {
+        this.c = tVar;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return w.class;
+    @Override // java.util.List
+    public final /* synthetic */ Object get(int i3) {
+        t tVar = this.c;
+        x7.x6.a(i3, tVar.e);
+        int i10 = i3 + i3;
+        Object[] objArr = tVar.d;
+        Object obj = objArr[i10];
+        obj.getClass();
+        Object obj2 = objArr[i10 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof w)) {
-            return false;
-        }
-        if (this.a != ((s) ((w) obj)).a) {
-            return false;
-        }
-        Object obj2 = v.a;
-        return obj2.equals(obj2);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (v.a.hashCode() ^ 2041407134);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + v.a + ')';
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.e;
     }
 }

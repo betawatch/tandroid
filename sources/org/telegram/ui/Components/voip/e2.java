@@ -8,9 +8,9 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.w5;
+import org.telegram.ui.ActionBar.d4;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class e2 extends View {
     public final TextPaint a;
@@ -25,9 +25,9 @@ public final class e2 extends View {
         this.a = textPaint;
         this.b = new Paint(1);
         textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTextSize(org.telegram.messenger.i0.L(13.0f));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
         textPaint.setColor(-1);
-        textPaint.setTypeface(org.telegram.messenger.i0.o());
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
         this.c = textPaint.measureText(str);
         this.d = str;
     }
@@ -41,15 +41,15 @@ public final class e2 extends View {
     }
 
     @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
         if (z10) {
-            Utilities.e.c(new w5(this, 11));
+            Utilities.e.c(new d4(this, 15));
         }
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.c), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.c), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
     }
 }

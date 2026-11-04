@@ -1,27 +1,27 @@
 package a9;
 
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class l extends h implements Set, j$.util.Set {
-    public static final /* synthetic */ int c = 0;
-    public transient m b;
+public final class l extends q6.a {
+    public static final Parcelable.Creator<l> CREATOR = new c(9);
+    public final int a;
+    public final int b;
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
-        }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (set.size() == 0) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
+    public l(int i3, int i10) {
+        this.a = i3;
+        this.b = i10;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.r(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        j8.a.t(parcel, s6);
     }
 }

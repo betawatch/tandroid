@@ -1,41 +1,63 @@
 package x7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class z implements c0 {
-    public final int a;
-
-    public z(int i10) {
-        this.a = i10;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return c0.class;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public abstract class z {
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String sb2;
+        int i3 = 0;
+        int i10 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i10 >= length) {
+                break;
+            }
+            Object obj = objArr[i10];
+            if (obj == null) {
+                sb2 = "null";
+            } else {
+                try {
+                    sb2 = obj.toString();
+                } catch (Exception e10) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e10);
+                    StringBuilder u10 = a1.g.u("<", str2, " threw ");
+                    u10.append(e10.getClass().getName());
+                    u10.append(">");
+                    sb2 = u10.toString();
+                }
+            }
+            objArr[i10] = sb2;
+            i10++;
         }
-        if (!(obj instanceof c0)) {
-            return false;
+        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
+        int i11 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i3 >= length2 || (indexOf = str.indexOf("%s", i11)) == -1) {
+                break;
+            }
+            sb3.append((CharSequence) str, i11, indexOf);
+            sb3.append(objArr[i3]);
+            i3++;
+            i11 = indexOf + 2;
         }
-        if (this.a != ((z) ((c0) obj)).a) {
-            return false;
+        sb3.append((CharSequence) str, i11, str.length());
+        if (i3 < length2) {
+            sb3.append(" [");
+            sb3.append(objArr[i3]);
+            for (int i12 = i3 + 1; i12 < objArr.length; i12++) {
+                sb3.append(", ");
+                sb3.append(objArr[i12]);
+            }
+            sb3.append(']');
         }
-        Object obj2 = b0.a;
-        return obj2.equals(obj2);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (b0.a.hashCode() ^ 2041407134);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + b0.a + ')';
+        return sb3.toString();
     }
 }

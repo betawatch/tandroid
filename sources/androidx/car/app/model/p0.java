@@ -2,20 +2,20 @@ package androidx.car.app.model;
 
 import androidx.car.app.model.SearchCallbackDelegateImpl;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p0 implements androidx.car.app.utils.b {
+public final /* synthetic */ class p0 implements androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ SearchCallbackDelegateImpl.SearchCallbackStub b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ p0(SearchCallbackDelegateImpl.SearchCallbackStub searchCallbackStub, String str, int i10) {
-        this.a = i10;
+    public /* synthetic */ p0(SearchCallbackDelegateImpl.SearchCallbackStub searchCallbackStub, String str, int i3) {
+        this.a = i3;
         this.b = searchCallbackStub;
         this.c = str;
     }
 
-    @Override // androidx.car.app.utils.b
+    @Override // androidx.car.app.utils.a
     public final Object a() {
         Object lambda$onSearchSubmitted$1;
         Object lambda$onSearchTextChanged$0;

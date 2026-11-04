@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class p4 extends AtomicReference implements Runnable {
     public static final i4 c = new i4();
@@ -22,7 +22,7 @@ public final class p4 extends AtomicReference implements Runnable {
         Runnable runnable = (Runnable) get();
         h4 h4Var = null;
         boolean z10 = false;
-        int i10 = 0;
+        int i3 = 0;
         while (true) {
             boolean z11 = runnable instanceof h4;
             i4 i4Var = d;
@@ -33,8 +33,8 @@ public final class p4 extends AtomicReference implements Runnable {
             } else {
                 h4Var = (h4) runnable;
             }
-            i10++;
-            if (i10 <= 1000) {
+            i3++;
+            if (i3 <= 1000) {
                 Thread.yield();
             } else if (runnable == i4Var || compareAndSet(runnable, i4Var)) {
                 z10 = Thread.interrupted() || z10;
@@ -68,8 +68,8 @@ public final class p4 extends AtomicReference implements Runnable {
                         if (!compareAndSet(currentThread, i4Var)) {
                             a(currentThread);
                         }
-                        if (e4.f.f(q4Var, null, new x3(th2))) {
-                            e4.h(q4Var);
+                        if (d4.f.f(q4Var, null, new w3(th2))) {
+                            d4.h(q4Var);
                             return;
                         }
                         return;
@@ -77,8 +77,8 @@ public final class p4 extends AtomicReference implements Runnable {
                         if (!compareAndSet(currentThread, i4Var)) {
                             a(currentThread);
                         }
-                        if (e4.f.f(q4Var, null, e4.h)) {
-                            e4.h(q4Var);
+                        if (d4.f.f(q4Var, null, d4.h)) {
+                            d4.h(q4Var);
                         }
                         throw th3;
                     }
@@ -91,10 +91,10 @@ public final class p4 extends AtomicReference implements Runnable {
                 return;
             }
             if (call == null) {
-                call = e4.h;
+                call = d4.h;
             }
-            if (e4.f.f(q4Var, null, call)) {
-                e4.h(q4Var);
+            if (d4.f.f(q4Var, null, call)) {
+                d4.h(q4Var);
             }
         }
     }
@@ -102,6 +102,6 @@ public final class p4 extends AtomicReference implements Runnable {
     @Override // java.util.concurrent.atomic.AtomicReference
     public final String toString() {
         Runnable runnable = (Runnable) get();
-        return a1.g.C(runnable == c ? "running=[DONE]" : runnable instanceof h4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a1.g.n("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
+        return a1.g.C(runnable == c ? "running=[DONE]" : runnable instanceof h4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a1.g.q("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
     }
 }

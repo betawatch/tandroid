@@ -2,31 +2,29 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class em implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ im b;
+    public final /* synthetic */ an b;
 
-    public /* synthetic */ em(im imVar, int i10) {
-        this.a = i10;
-        this.b = imVar;
+    public /* synthetic */ em(an anVar, int i3) {
+        this.a = i3;
+        this.b = anVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                im imVar = this.b;
-                imVar.getClass();
-                imVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                imVar.invalidate();
+                an anVar = this.b;
+                anVar.getClass();
+                anVar.F.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                im imVar2 = this.b;
-                imVar2.getClass();
-                imVar2.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                imVar2.invalidate();
+                an anVar2 = this.b;
+                anVar2.getClass();
+                anVar2.F.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

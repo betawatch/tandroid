@@ -1,264 +1,219 @@
 package org.telegram.messenger;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.os.Bundle;
-import android.text.TextUtils;
+import android.os.AsyncTask;
+import android.os.SystemClock;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.d70;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.re1;
-import org.telegram.ui.v70;
-import org.telegram.ui.web.HttpGetFileTask;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
+import java.net.HttpURLConnection;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.UnknownHostException;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qb implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+public final class qb extends AsyncTask {
+    public final String a;
+    public final File b;
+    public final String c;
+    public int d;
+    public RandomAccessFile e = null;
+    public boolean f = true;
+    public long g;
+    public final int h;
+    public final /* synthetic */ zb i;
 
-    public /* synthetic */ qb(sb sbVar, int i10, String str, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, long j10) {
-        this.e = sbVar;
-        this.b = i10;
-        this.c = str;
-        this.f = inputFile;
-        this.h = inputEncryptedFile;
-        this.n = bArr;
-        this.r = bArr2;
-        this.d = j10;
+    public qb(zb zbVar, String str, File file, String str2, int i3) {
+        this.i = zbVar;
+        this.a = str;
+        this.b = file;
+        this.c = str2;
+        this.h = i3;
     }
 
-    /* JADX WARN: Type inference failed for: r2v3 */
-    /* JADX WARN: Type inference failed for: r2v4, types: [java.lang.String, org.telegram.ui.ActionBar.p6] */
-    /* JADX WARN: Type inference failed for: r2v9 */
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.zx zxVar;
-        ?? r22;
-        org.telegram.ui.Components.cc a02;
-        int i10 = this.a;
-        Object obj = this.r;
-        Object obj2 = this.n;
-        Object obj3 = this.h;
-        Object obj4 = this.f;
-        Object obj5 = this.c;
-        Object obj6 = this.e;
-        switch (i10) {
-            case 0:
-                sb sbVar = (sb) obj6;
-                String str = (String) obj5;
-                sbVar.getClass();
-                i0.g3(new rb(this.b, str, (TLRPC.InputFile) obj4, (TLRPC.InputEncryptedFile) obj3, (byte[]) obj2, (byte[]) obj, this.d));
-                sbVar.b.u.remove(str);
-                break;
-            case 1:
-                LaunchActivity launchActivity = (LaunchActivity) obj6;
-                TLObject tLObject = (TLObject) obj4;
-                String str2 = (String) obj5;
-                String str3 = (String) obj3;
-                TLRPC.User user = (TLRPC.User) obj2;
-                String str4 = (String) obj;
-                ArrayList arrayList = launchActivity.f0;
-                ArrayList arrayList2 = launchActivity.d0;
-                ArrayList arrayList3 = launchActivity.E0;
-                if (tLObject instanceof TLRPC.TL_attachMenuBotsBot) {
-                    TLRPC.TL_attachMenuBotsBot tL_attachMenuBotsBot = (TLRPC.TL_attachMenuBotsBot) tLObject;
-                    int i11 = this.b;
-                    wp.r1(i11).V3(tL_attachMenuBotsBot.users, false);
-                    TLRPC.TL_attachMenuBot tL_attachMenuBot = tL_attachMenuBotsBot.bot;
-                    if (str2 != null) {
-                        LaunchActivity.G0(launchActivity, launchActivity.O, tL_attachMenuBot, str2, false);
-                        break;
-                    } else {
-                        org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) i0.a.g(1, arrayList2);
-                        if (i0.Q1() && !(k2Var instanceof org.telegram.ui.un) && !arrayList.isEmpty()) {
-                            k2Var = (org.telegram.ui.ActionBar.k2) i0.a.g(1, arrayList);
-                        }
-                        org.telegram.ui.ActionBar.k2 k2Var2 = k2Var;
-                        ArrayList arrayList4 = new ArrayList();
-                        if (!TextUtils.isEmpty(str3)) {
-                            String[] split = str3.split(" ");
-                            int length = split.length;
-                            int i12 = 0;
-                            while (i12 < length) {
-                                int i13 = i12;
-                                String str5 = split[i13];
-                                Pattern pattern = vi.R1;
-                                String[] strArr = split;
-                                ArrayList<TLRPC.AttachMenuPeerType> arrayList5 = tL_attachMenuBot.peer_types;
-                                int i14 = length;
-                                int size = arrayList5.size();
-                                int i15 = 0;
-                                while (i15 < size) {
-                                    TLRPC.AttachMenuPeerType attachMenuPeerType = arrayList5.get(i15);
-                                    int i16 = i15 + 1;
-                                    TLRPC.AttachMenuPeerType attachMenuPeerType2 = attachMenuPeerType;
-                                    ArrayList<TLRPC.AttachMenuPeerType> arrayList6 = arrayList5;
-                                    if ((((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeSameBotPM) || (attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeBotPM)) && str5.equals("bots")) || (((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeBroadcast) && str5.equals("channels")) || (((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypeChat) && str5.equals("groups")) || ((attachMenuPeerType2 instanceof TLRPC.TL_attachMenuPeerTypePM) && str5.equals("users"))))) {
-                                        arrayList4.add(str5);
-                                        i12 = i13 + 1;
-                                        split = strArr;
-                                        length = i14;
-                                    } else {
-                                        arrayList5 = arrayList6;
-                                        i15 = i16;
-                                    }
-                                }
-                                i12 = i13 + 1;
-                                split = strArr;
-                                length = i14;
-                            }
-                        }
-                        if (arrayList4.isEmpty()) {
-                            zxVar = null;
-                        } else {
-                            Bundle bundle = new Bundle();
-                            bundle.putInt("dialogsType", 14);
-                            bundle.putBoolean("onlySelect", true);
-                            bundle.putBoolean("allowGroups", arrayList4.contains("groups"));
-                            bundle.putBoolean("allowMegagroups", arrayList4.contains("groups"));
-                            bundle.putBoolean("allowLegacyGroups", arrayList4.contains("groups"));
-                            bundle.putBoolean("allowUsers", arrayList4.contains("users"));
-                            bundle.putBoolean("allowChannels", arrayList4.contains("channels"));
-                            bundle.putBoolean("allowBots", arrayList4.contains("bots"));
-                            zxVar = new org.telegram.ui.zx(bundle);
-                            zxVar.C2 = new v70(launchActivity, user, str4, i11);
-                        }
-                        if (tL_attachMenuBot.inactive) {
-                            org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(launchActivity);
-                            m6Var.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.ia, false));
-                            org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.L5, m6Var, null);
-                            m6Var.setAttachBot(tL_attachMenuBot);
-                            re1.a(launchActivity, new org.telegram.ui.sq(launchActivity, i11, this.d, zxVar, k2Var2, user, str4), null);
-                            break;
-                        } else {
-                            if (zxVar != null) {
-                                if (k2Var2 != null) {
-                                    k2Var2.dismissCurrentDialog();
-                                }
-                                for (int i17 = 0; i17 < arrayList3.size(); i17++) {
-                                    if (((Dialog) arrayList3.get(i17)).isShowing()) {
-                                        ((Dialog) arrayList3.get(i17)).dismiss();
-                                    }
-                                }
-                                arrayList3.clear();
-                                launchActivity.t0(zxVar);
-                            } else {
-                                if (k2Var2 instanceof org.telegram.ui.un) {
-                                    org.telegram.ui.un unVar = (org.telegram.ui.un) k2Var2;
-                                    if (vi.t(tL_attachMenuBot, unVar.j() != null ? unVar.j() : unVar.e)) {
-                                        unVar.ra(user.id, str4, false);
-                                    } else {
-                                        a02 = org.telegram.ui.Components.cc.a0(k2Var2);
-                                        r22 = 0;
-                                    }
-                                } else {
-                                    r22 = 0;
-                                    a02 = org.telegram.ui.Components.cc.a0(k2Var2);
-                                }
-                                m5.o(r22, 2131753140, a02, r22);
-                            }
-                            break;
-                        }
-                    }
-                } else {
-                    m5.o(null, 2131753109, org.telegram.ui.Components.cc.a0((org.telegram.ui.ActionBar.k2) i0.a.g(1, arrayList2)), null);
-                    break;
-                }
-                break;
-            default:
-                TLObject tLObject2 = (TLObject) obj6;
-                org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) obj5;
-                Context context = (Context) obj4;
-                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) obj3;
-                org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) obj2;
-                org.telegram.tgnet.e eVar = (org.telegram.tgnet.e) obj;
-                if (tLObject2 instanceof TLRPC.TL_messages_preparedInlineMessage) {
-                    TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) tLObject2;
-                    TLRPC.BotInlineMessage botInlineMessage = tL_messages_preparedInlineMessage.result.send_message;
-                    boolean z10 = botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaWebPage;
-                    int i18 = this.b;
-                    long j10 = this.d;
-                    if (z10) {
-                        TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
-                        if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
-                            String str6 = tL_botInlineMessageMediaWebPage.url;
-                            xh.u0 u0Var = new xh.u0(x1Var, context, i18, j10, tL_messages_preparedInlineMessage, p6Var, qVar, eVar);
-                            int[] iArr = new int[1];
-                            vs[] vsVarArr = new vs[1];
-                            TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
-                            getwebpagepreview.message = str6;
-                            iArr[0] = ConnectionsManager.getInstance(i18).sendRequestTyped(getwebpagepreview, new a3.b(1), new org.telegram.ui.f0(iArr, u0Var, vsVarArr, i18, 8));
-                            x1Var.setOnCancelListener(new eg.k(new org.telegram.ui.Wallet.x0(iArr, i18, vsVarArr, 24), 2));
-                            break;
-                        }
-                    }
-                    File[] fileArr = new File[1];
-                    d70 d70Var = new d70(x1Var, context, i18, j10, tL_messages_preparedInlineMessage, fileArr, p6Var, qVar, eVar);
-                    TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
-                    if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
-                        TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
-                        TLRPC.BotInlineMessage botInlineMessage2 = botInlineResult.send_message;
-                        if ((botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaAuto) || (botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaWebPage)) {
-                            String str7 = botInlineResult.content.url;
-                            String B = ic.B(str7, null);
-                            String C = TextUtils.isEmpty(B) ? b8.C(tL_messages_preparedInlineMessage.result.content.mime_type) : sc.e.h(".", B);
-                            File file = new File(b8.z(4), Utilities.a(str7) + C);
-                            if (file.exists()) {
-                                d70Var.run();
-                                break;
-                            } else {
-                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new rh.q2(14, fileArr, d70Var), null);
-                                httpGetFileTask.setDestFile(file);
-                                httpGetFileTask.setMaxSize(8388608L);
-                                httpGetFileTask.execute(str7);
-                                x1Var.setOnCancelListener(new eg.k(httpGetFileTask, 3));
-                                break;
-                            }
-                        }
-                    }
-                    d70Var.run();
-                    break;
-                } else {
-                    eVar.a("MESSAGE_EXPIRED", null);
-                    break;
-                }
-                break;
+    public final void a(long j10, long j11) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (j10 != j11) {
+            long j12 = this.g;
+            if (j12 != 0 && j12 >= elapsedRealtime - 100) {
+                return;
+            }
         }
+        this.g = elapsedRealtime;
+        Utilities.d.c(new pb(this, j10, j11, 0));
     }
 
-    public /* synthetic */ qb(TLObject tLObject, int i10, org.telegram.ui.ActionBar.x1 x1Var, Context context, long j10, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.ui.web.q qVar, org.telegram.tgnet.e eVar) {
-        this.e = tLObject;
-        this.b = i10;
-        this.c = x1Var;
-        this.f = context;
-        this.d = j10;
-        this.h = p6Var;
-        this.n = qVar;
-        this.r = eVar;
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00b0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0145 A[Catch: all -> 0x014b, TRY_LEAVE, TryCatch #7 {all -> 0x014b, blocks: (B:72:0x0141, B:74:0x0145), top: B:71:0x0141 }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0151 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        InputStream inputStream;
+        URLConnection uRLConnection;
+        InputStream inputStream2;
+        List<String> list;
+        String str;
+        RandomAccessFile randomAccessFile;
+        int responseCode;
+        boolean z10 = false;
+        try {
+            uRLConnection = new URL(this.a).openConnection();
+            try {
+                uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A5297c Safari/602.1");
+                uRLConnection.setConnectTimeout(5000);
+                uRLConnection.setReadTimeout(5000);
+                if (uRLConnection instanceof HttpURLConnection) {
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) uRLConnection;
+                    httpURLConnection.setInstanceFollowRedirects(true);
+                    int responseCode2 = httpURLConnection.getResponseCode();
+                    if (responseCode2 == 302 || responseCode2 == 301 || responseCode2 == 303) {
+                        String headerField = httpURLConnection.getHeaderField("Location");
+                        String headerField2 = httpURLConnection.getHeaderField("Set-Cookie");
+                        uRLConnection = new URL(headerField).openConnection();
+                        uRLConnection.setRequestProperty("Cookie", headerField2);
+                        uRLConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A5297c Safari/602.1");
+                    }
+                }
+                uRLConnection.connect();
+                inputStream2 = uRLConnection.getInputStream();
+            } catch (Throwable th2) {
+                th = th2;
+                inputStream = null;
+            }
+        } catch (Throwable th3) {
+            th = th3;
+            inputStream = null;
+            uRLConnection = null;
+        }
+        try {
+            this.e = new RandomAccessFile(this.b, "rws");
+        } catch (Throwable th4) {
+            inputStream = inputStream2;
+            th = th4;
+            if (th instanceof SocketTimeoutException) {
+                if (t0.s()) {
+                    this.f = false;
+                }
+            } else if (th instanceof UnknownHostException) {
+                this.f = false;
+            } else if (th instanceof SocketException) {
+                if (th.getMessage() != null && th.getMessage().contains("ECONNRESET")) {
+                    this.f = false;
+                }
+            } else if (th instanceof FileNotFoundException) {
+                this.f = false;
+            }
+            a8.g(th, true);
+            inputStream2 = inputStream;
+            if (this.f) {
+            }
+            return Boolean.valueOf(z10);
+        }
+        if (this.f) {
+            try {
+                if ((uRLConnection instanceof HttpURLConnection) && (responseCode = ((HttpURLConnection) uRLConnection).getResponseCode()) != 200 && responseCode != 202 && responseCode != 304) {
+                    this.f = false;
+                }
+            } catch (Exception e10) {
+                a8.g(e10, true);
+            }
+            if (uRLConnection != null) {
+                try {
+                    Map<String, List<String>> headerFields = uRLConnection.getHeaderFields();
+                    if (headerFields != null && (list = headerFields.get("content-Length")) != null && !list.isEmpty() && (str = list.get(0)) != null) {
+                        this.d = Utilities.z(str).intValue();
+                    }
+                } catch (Exception e11) {
+                    a8.g(e11, true);
+                }
+            }
+            if (inputStream2 != null) {
+                try {
+                    byte[] bArr = new byte[32768];
+                    int i3 = 0;
+                    while (!isCancelled()) {
+                        try {
+                            int read = inputStream2.read(bArr);
+                            if (read > 0) {
+                                this.e.write(bArr, 0, read);
+                                i3 += read;
+                                int i10 = this.d;
+                                if (i10 > 0) {
+                                    a(i3, i10);
+                                }
+                            } else if (read == -1) {
+                                try {
+                                    int i11 = this.d;
+                                    if (i11 != 0) {
+                                        long j10 = i11;
+                                        a(j10, j10);
+                                    }
+                                    z10 = true;
+                                } catch (Exception e12) {
+                                    e = e12;
+                                    z10 = true;
+                                    a8.g(e, true);
+                                    randomAccessFile = this.e;
+                                    if (randomAccessFile != null) {
+                                    }
+                                    if (inputStream2 != null) {
+                                    }
+                                    return Boolean.valueOf(z10);
+                                } catch (Throwable th5) {
+                                    th = th5;
+                                    z10 = true;
+                                    a8.g(th, true);
+                                    randomAccessFile = this.e;
+                                    if (randomAccessFile != null) {
+                                    }
+                                    if (inputStream2 != null) {
+                                    }
+                                    return Boolean.valueOf(z10);
+                                }
+                            }
+                        } catch (Exception e13) {
+                            e = e13;
+                        }
+                    }
+                } catch (Throwable th6) {
+                    th = th6;
+                }
+            }
+            try {
+                randomAccessFile = this.e;
+                if (randomAccessFile != null) {
+                    randomAccessFile.close();
+                    this.e = null;
+                }
+            } catch (Throwable th7) {
+                a8.g(th7, true);
+            }
+            if (inputStream2 != null) {
+                try {
+                    inputStream2.close();
+                } catch (Throwable th8) {
+                    a8.g(th8, true);
+                }
+            }
+        }
+        return Boolean.valueOf(z10);
     }
 
-    public /* synthetic */ qb(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, String str2, TLRPC.User user, String str3, long j10) {
-        this.e = launchActivity;
-        this.f = tLObject;
-        this.b = i10;
-        this.c = str;
-        this.h = str2;
-        this.n = user;
-        this.r = str3;
-        this.d = j10;
+    @Override // android.os.AsyncTask
+    public final void onCancelled() {
+        this.i.U(this, 2);
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        this.i.U(this, ((Boolean) obj).booleanValue() ? 2 : 1);
     }
 }

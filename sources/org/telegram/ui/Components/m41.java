@@ -1,50 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class m41 extends uk0 {
-    public final /* synthetic */ t41 e3;
-    public final /* synthetic */ x41 f3;
+public final /* synthetic */ class m41 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m41(x41 x41Var, Context context, t41 t41Var) {
-        super(context, null);
-        this.f3 = x41Var;
-        this.e3 = t41Var;
+    public /* synthetic */ m41(int i3, View view) {
+        this.a = i3;
+        this.b = view;
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final boolean E0(float f7) {
-        return f7 >= ((float) (org.telegram.messenger.i0.L(58.0f) + this.f3.E));
-    }
-
-    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        this.f3.F = true;
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return super.onInterceptTouchEvent(motionEvent) || this.e3.d(this, motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.f3.L != null) {
-            return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                n41 n41Var = (n41) this.b;
+                n41Var.getClass();
+                n41Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n41Var.invalidate();
+                break;
+            case 1:
+                t41 t41Var = (t41) this.b;
+                t41Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t41Var.b = floatValue;
+                t41Var.setTranslationY(floatValue);
+                break;
+            default:
+                m61 m61Var = (m61) this.b;
+                m61Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m61Var.setAnimationIdicatorProgress(floatValue2);
+                l61 l61Var = m61Var.E;
+                if (l61Var != null) {
+                    ((y00) l61Var).x(floatValue2);
+                    break;
+                }
+                break;
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.f3.H) {
-            return;
-        }
-        super.requestLayout();
     }
 }

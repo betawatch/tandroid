@@ -1,134 +1,39 @@
 package androidx.datastore.preferences.protobuf;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Map;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class w extends a {
-    private static Map<Object, w> defaultInstanceMap = new ConcurrentHashMap();
-    protected int memoizedSerializedSize;
-    protected i1 unknownFields;
+public final class w implements r0 {
+    public static final w b = new w(0);
+    public final /* synthetic */ int a;
 
-    public w() {
-        this.memoizedHashCode = 0;
-        this.unknownFields = i1.f;
-        this.memoizedSerializedSize = -1;
+    public /* synthetic */ w(int i3) {
+        this.a = i3;
     }
 
-    public static w e(Class cls) {
-        w wVar = defaultInstanceMap.get(cls);
-        if (wVar == null) {
-            try {
-                Class.forName(cls.getName(), true, cls.getClassLoader());
-                wVar = defaultInstanceMap.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
-            }
-        }
-        if (wVar != null) {
-            return wVar;
-        }
-        w wVar2 = (w) ((w) r1.a(cls)).d(6);
-        if (wVar2 == null) {
-            throw new IllegalStateException();
-        }
-        defaultInstanceMap.put(cls, wVar2);
-        return wVar2;
-    }
-
-    public static Object f(Method method, w wVar, Object... objArr) {
-        try {
-            return method.invoke(wVar, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e7) {
-            Throwable cause = e7.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
-            }
-            if (cause instanceof Error) {
-                throw ((Error) cause);
-            }
-            throw new RuntimeException("Unexpected exception thrown by generated accessor method.", cause);
+    @Override // androidx.datastore.preferences.protobuf.r0
+    public final a1 a(Class cls) {
+        switch (this.a) {
+            case 0:
+                if (!z.class.isAssignableFrom(cls)) {
+                    throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+                }
+                try {
+                    return (a1) z.d(cls.asSubclass(z.class)).c(3);
+                } catch (Exception e10) {
+                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e10);
+                }
+            default:
+                throw new IllegalStateException("This should never be called.");
         }
     }
 
-    public static void h(Class cls, w wVar) {
-        defaultInstanceMap.put(cls, wVar);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.a
-    public final int a() {
-        if (this.memoizedSerializedSize == -1) {
-            y0 y0Var = y0.c;
-            y0Var.getClass();
-            this.memoizedSerializedSize = y0Var.a(getClass()).e(this);
+    @Override // androidx.datastore.preferences.protobuf.r0
+    public final boolean b(Class cls) {
+        switch (this.a) {
+            case 0:
+                return z.class.isAssignableFrom(cls);
+            default:
+                return false;
         }
-        return this.memoizedSerializedSize;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.a
-    public final void c(j jVar) {
-        y0 y0Var = y0.c;
-        y0Var.getClass();
-        b1 a2 = y0Var.a(getClass());
-        k0 k0Var = jVar.c;
-        if (k0Var == null) {
-            k0Var = new k0(jVar);
-        }
-        a2.b(this, k0Var);
-    }
-
-    public abstract Object d(int i10);
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!((w) d(6)).getClass().isInstance(obj)) {
-            return false;
-        }
-        y0 y0Var = y0.c;
-        y0Var.getClass();
-        return y0Var.a(getClass()).i(this, (w) obj);
-    }
-
-    public final boolean g() {
-        byte byteValue = ((Byte) d(1)).byteValue();
-        if (byteValue == 1) {
-            return true;
-        }
-        if (byteValue == 0) {
-            return false;
-        }
-        y0 y0Var = y0.c;
-        y0Var.getClass();
-        boolean f7 = y0Var.a(getClass()).f(this);
-        d(2);
-        return f7;
-    }
-
-    public final int hashCode() {
-        int i10 = this.memoizedHashCode;
-        if (i10 != 0) {
-            return i10;
-        }
-        y0 y0Var = y0.c;
-        y0Var.getClass();
-        int h = y0Var.a(getClass()).h(this);
-        this.memoizedHashCode = h;
-        return h;
-    }
-
-    public final String toString() {
-        String obj = super.toString();
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append("# ");
-        sb2.append(obj);
-        r0.k(this, sb2, 0);
-        return sb2.toString();
     }
 }

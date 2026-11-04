@@ -1,52 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qu0 implements org.telegram.messenger.r20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ru0 b;
-
-    public /* synthetic */ qu0(ru0 ru0Var, int i10) {
-        this.a = i10;
-        this.b = ru0Var;
+public final class qu0 extends nv0 {
+    public qu0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
-        int i10;
-        int i11;
-        switch (this.a) {
-            case 0:
-                PrivacyControlActivity privacyControlActivity = this.b.d;
-                privacyControlActivity.K = ((Integer) obj).intValue();
-                org.telegram.messenger.i0.Z3(privacyControlActivity.i0, privacyControlActivity.c);
-                privacyControlActivity.J0();
-                break;
-            default:
-                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
-                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
-                updatebirthday.flags |= 1;
-                updatebirthday.birthday = tL_birthday;
-                ru0 ru0Var = this.b;
-                PrivacyControlActivity privacyControlActivity2 = ru0Var.d;
-                TLRPC.UserFull a2 = privacyControlActivity2.getMessagesController().a2(privacyControlActivity2.getUserConfig().e());
-                TL_account.TL_birthday tL_birthday2 = a2 != null ? a2.birthday : null;
-                if (a2 != null) {
-                    a2.flags2 |= 32;
-                    a2.birthday = tL_birthday;
-                    privacyControlActivity2.getMessagesStorage().j2(a2, false);
-                }
-                privacyControlActivity2.getMessagesController().l2();
-                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new tp0(ru0Var, a2, tL_birthday2, 1), 1024);
-                i10 = ((org.telegram.ui.ActionBar.k2) privacyControlActivity2).currentAccount;
-                org.telegram.messenger.wp.r1(i10).h4(0L, "BIRTHDAY_SETUP");
-                i11 = ((org.telegram.ui.ActionBar.k2) privacyControlActivity2).currentAccount;
-                org.telegram.messenger.at.f(i11).k(org.telegram.messenger.at.g5, new Object[0]);
-                privacyControlActivity2.K0(true);
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ei.c3 c3Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.g5 g5Var = this.e;
+        if (g5Var == null || (c3Var = g5Var.k) == null) {
+            return;
         }
+        c3Var.P0(false);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().L()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
+        }
+        accessibilityNodeInfo.setText(org.telegram.messenger.bd.M0(2131754798, null));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.bd.M0(2131747825, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, org.telegram.messenger.bd.M0(2131754818, null)));
     }
 }

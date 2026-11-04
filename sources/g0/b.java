@@ -7,17 +7,18 @@ import android.content.pm.ShortcutInfo;
 import android.os.Build;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
-import e0.l0;
+import com.google.android.gms.internal.play_billing.s1;
+import e0.k0;
+import f0.g;
 import java.util.Arrays;
-import w7.q6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b {
     public final c a;
 
     public b(Context context, ShortcutInfo shortcutInfo) {
-        l0[] l0VarArr;
+        k0[] k0VarArr;
         String string;
         c cVar = new c();
         this.a = cVar;
@@ -37,39 +38,39 @@ public final class b {
         }
         cVar.j = shortcutInfo.getCategories();
         PersistableBundle extras = shortcutInfo.getExtras();
-        f0.f fVar = null;
+        g gVar = null;
         if (extras == null || !extras.containsKey("extraPersonCount")) {
-            l0VarArr = null;
+            k0VarArr = null;
         } else {
-            int i10 = extras.getInt("extraPersonCount");
-            l0VarArr = new l0[i10];
-            int i11 = 0;
-            while (i11 < i10) {
+            int i3 = extras.getInt("extraPersonCount");
+            k0VarArr = new k0[i3];
+            int i10 = 0;
+            while (i10 < i3) {
                 StringBuilder sb2 = new StringBuilder("extraPerson_");
-                int i12 = i11 + 1;
-                sb2.append(i12);
+                int i11 = i10 + 1;
+                sb2.append(i11);
                 PersistableBundle persistableBundle = extras.getPersistableBundle(sb2.toString());
                 String string2 = persistableBundle.getString("name");
                 String string3 = persistableBundle.getString("uri");
                 String string4 = persistableBundle.getString("key");
                 boolean z10 = persistableBundle.getBoolean("isBot");
                 boolean z11 = persistableBundle.getBoolean("isImportant");
-                l0 l0Var = new l0();
-                l0Var.a = string2;
-                l0Var.b = null;
-                l0Var.c = string3;
-                l0Var.d = string4;
-                l0Var.e = z10;
-                l0Var.f = z11;
-                l0VarArr[i11] = l0Var;
-                i11 = i12;
+                k0 k0Var = new k0();
+                k0Var.a = string2;
+                k0Var.b = null;
+                k0Var.c = string3;
+                k0Var.d = string4;
+                k0Var.e = z10;
+                k0Var.f = z11;
+                k0VarArr[i10] = k0Var;
+                i10 = i11;
             }
         }
-        cVar.i = l0VarArr;
+        cVar.i = k0VarArr;
         shortcutInfo.getUserHandle();
         shortcutInfo.getLastChangedTimestamp();
-        int i13 = Build.VERSION.SDK_INT;
-        if (i13 >= 30) {
+        int i12 = Build.VERSION.SDK_INT;
+        if (i12 >= 30) {
             shortcutInfo.isCached();
         }
         shortcutInfo.isDynamic();
@@ -79,21 +80,21 @@ public final class b {
         shortcutInfo.isEnabled();
         shortcutInfo.hasKeyFieldsOnly();
         c cVar2 = this.a;
-        if (i13 < 29) {
+        if (i12 < 29) {
             PersistableBundle extras2 = shortcutInfo.getExtras();
             if (extras2 != null && (string = extras2.getString("extraLocusId")) != null) {
-                fVar = new f0.f(string);
+                gVar = new g(string);
             }
         } else if (shortcutInfo.getLocusId() != null) {
             LocusId locusId = shortcutInfo.getLocusId();
-            q6.a(locusId, "locusId cannot be null");
+            s1.a(locusId, "locusId cannot be null");
             String id2 = locusId.getId();
             if (TextUtils.isEmpty(id2)) {
                 throw new IllegalArgumentException("id cannot be empty");
             }
-            fVar = new f0.f(id2);
+            gVar = new g(id2);
         }
-        cVar2.k = fVar;
+        cVar2.k = gVar;
         this.a.m = shortcutInfo.getRank();
         this.a.n = shortcutInfo.getExtras();
     }

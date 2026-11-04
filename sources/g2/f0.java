@@ -1,122 +1,61 @@
 package g2;
 
-import android.net.Uri;
-import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.MulticastSocket;
-import java.net.SocketTimeoutException;
+import d2.k1;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f0 extends c {
-    public final int a;
-    public final byte[] b;
-    public final DatagramPacket c;
-    public Uri d;
-    public DatagramSocket e;
-    public MulticastSocket f;
-    public InetAddress h;
-    public boolean n;
-    public int r;
+public final class f0 {
+    public Object a;
+    public Object b;
+    public Object c;
+    public Object d;
+    public Object e = new k1();
+    public Object f;
+    public Object g;
+    public Object h;
+    public Object i;
+    public Object j;
 
-    public f0() {
-        super(true);
-        this.a = 8000;
-        byte[] bArr = new byte[2000];
-        this.b = bArr;
-        this.c = new DatagramPacket(bArr, 0, 2000);
+    public f0(k2.i0 i0Var, k2.c0 c0Var, h0 h0Var, int i3, int i10, int i11, int i12) {
+        this.a = i0Var;
+        this.c = c0Var;
+        this.d = h0Var;
+        this.f = h0Var.a(i0Var.t, new o(this, 1));
+        this.g = new b0(this, i3);
+        this.h = new c0(this, i10);
+        this.i = new d0(this, i11);
+        this.j = new e0(this, i12);
+        a0 a0Var = new a0(this, 0);
+        this.b = a0Var;
+        i0Var.m.a(a0Var);
     }
 
-    @Override // g2.h
-    public final void close() {
-        this.d = null;
-        MulticastSocket multicastSocket = this.f;
-        if (multicastSocket != null) {
-            try {
-                InetAddress inetAddress = this.h;
-                inetAddress.getClass();
-                multicastSocket.leaveGroup(inetAddress);
-            } catch (IOException unused) {
-            }
-            this.f = null;
+    public void a(String str, String str2) {
+        HashMap hashMap = (HashMap) this.f;
+        if (hashMap == null) {
+            throw new IllegalStateException("Property \"autoMetadata\" has not been set");
         }
-        DatagramSocket datagramSocket = this.e;
-        if (datagramSocket != null) {
-            datagramSocket.close();
-            this.e = null;
-        }
-        this.h = null;
-        this.r = 0;
-        if (this.n) {
-            this.n = false;
-            transferEnded();
-        }
+        hashMap.put(str, str2);
     }
 
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.d;
-    }
-
-    @Override // g2.h
-    public final long open(n nVar) {
-        Uri uri = nVar.a;
-        this.d = uri;
-        String host = uri.getHost();
-        host.getClass();
-        int port = this.d.getPort();
-        transferInitializing(nVar);
-        try {
-            this.h = InetAddress.getByName(host);
-            InetSocketAddress inetSocketAddress = new InetSocketAddress(this.h, port);
-            if (this.h.isMulticastAddress()) {
-                MulticastSocket multicastSocket = new MulticastSocket(inetSocketAddress);
-                this.f = multicastSocket;
-                multicastSocket.joinGroup(this.h);
-                this.e = this.f;
-            } else {
-                this.e = new DatagramSocket(inetSocketAddress);
-            }
-            this.e.setSoTimeout(this.a);
-            this.n = true;
-            transferStarted(nVar);
-            return -1L;
-        } catch (IOException e) {
-            throw new e0(e, 2001);
-        } catch (SecurityException e7) {
-            throw new e0(e7, 2006);
+    public n5.h b() {
+        String str = ((String) this.a) == null ? " transportName" : "";
+        if (((n5.l) this.c) == null) {
+            str = str.concat(" encodedPayload");
         }
-    }
-
-    @Override // b2.p
-    public final int read(byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
-            return 0;
+        if (((Long) this.d) == null) {
+            str = t4.c.q(str, " eventMillis");
         }
-        int i12 = this.r;
-        DatagramPacket datagramPacket = this.c;
-        if (i12 == 0) {
-            try {
-                DatagramSocket datagramSocket = this.e;
-                datagramSocket.getClass();
-                datagramSocket.receive(datagramPacket);
-                int length = datagramPacket.getLength();
-                this.r = length;
-                bytesTransferred(length);
-            } catch (SocketTimeoutException e) {
-                throw new e0(e, 2002);
-            } catch (IOException e7) {
-                throw new e0(e7, 2001);
-            }
+        if (((Long) this.e) == null) {
+            str = t4.c.q(str, " uptimeMillis");
         }
-        int length2 = datagramPacket.getLength();
-        int i13 = this.r;
-        int min = Math.min(i13, i11);
-        System.arraycopy(this.b, length2 - i13, bArr, i10, min);
-        this.r -= min;
-        return min;
+        if (((HashMap) this.f) == null) {
+            str = t4.c.q(str, " autoMetadata");
+        }
+        if (str.isEmpty()) {
+            return new n5.h((String) this.a, (Integer) this.b, (n5.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f, (Integer) this.g, (String) this.h, (byte[]) this.i, (byte[]) this.j);
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
     }
 }

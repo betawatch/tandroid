@@ -1,13 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import android.os.Build;
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
+import b8.ib;
+import b8.tb;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzau extends j implements p {
     final /* synthetic */ zzav zza;
@@ -18,26 +19,26 @@ final class zzau extends j implements p {
         this.zza = zzavVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzau(this.zza, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzau) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzau) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        b.b(obj);
+        gd.a aVar = gd.a.a;
+        ib.b(obj);
         zzav zzavVar = this.zza;
-        int i10 = Build.VERSION.SDK_INT;
+        int i3 = Build.VERSION.SDK_INT;
         zzyu zzf = zzyx.zzf();
         zzyv zzf2 = zzyw.zzf();
-        zzf2.zzw(String.valueOf(i10));
-        zzf.zze(bd.j.b(zzf2.zzk()));
+        zzf2.zzw(String.valueOf(i3));
+        zzf.zze(tb.a(zzf2.zzk()));
         return zzas.zzb(zzavVar, (zzyx) zzf.zzk());
     }
 }

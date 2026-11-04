@@ -3,16 +3,16 @@ package org.telegram.ui.ActionBar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class c extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ l c;
+    public final /* synthetic */ k c;
 
-    public /* synthetic */ c(l lVar, boolean z10, int i10) {
-        this.a = i10;
-        this.c = lVar;
+    public /* synthetic */ c(k kVar, boolean z10, int i3) {
+        this.a = i3;
+        this.c = kVar;
         this.b = z10;
     }
 
@@ -20,16 +20,16 @@ public final class c extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float f7 = this.b ? 1.0f : 0.0f;
-                l lVar = this.c;
-                lVar.D1 = f7;
-                lVar.f();
+                float f10 = this.b ? 1.0f : 0.0f;
+                k kVar = this.c;
+                kVar.E1 = f10;
+                kVar.f();
                 break;
             default:
-                float f10 = this.b ? 1.0f : 0.0f;
-                l lVar2 = this.c;
-                lVar2.D1 = f10;
-                lVar2.f();
+                float f11 = this.b ? 1.0f : 0.0f;
+                k kVar2 = this.c;
+                kVar2.E1 = f11;
+                kVar2.f();
                 break;
         }
     }

@@ -2,14 +2,15 @@ package t0;
 
 import android.content.ClipDescription;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.text.TextUtils;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
-import m2.t;
+import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class d extends InputConnectionWrapper {
     public final /* synthetic */ e a;
@@ -38,28 +39,34 @@ public final class d extends InputConnectionWrapper {
             }
             try {
                 resultReceiver = (ResultReceiver) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_RESULT_RECEIVER" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_RESULT_RECEIVER");
-                try {
-                    Uri uri = (Uri) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_URI" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_URI");
-                    ClipDescription clipDescription = (ClipDescription) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION");
-                    Uri uri2 = (Uri) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_LINK_URI" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_LINK_URI");
-                    int i10 = bundle.getInt(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS");
-                    Bundle bundle2 = (Bundle) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_OPTS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_OPTS");
-                    if (uri != null && clipDescription != null) {
-                        z10 = eVar.o(new t(uri, clipDescription, uri2), i10, bundle2);
+            } catch (Throwable th2) {
+                th = th2;
+                resultReceiver = null;
+            }
+            try {
+                Uri uri = (Uri) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_URI" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_URI");
+                ClipDescription clipDescription = (ClipDescription) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_DESCRIPTION");
+                Uri uri2 = (Uri) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_LINK_URI" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_LINK_URI");
+                int i3 = bundle.getInt(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS");
+                Bundle bundle2 = (Bundle) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_OPTS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_OPTS");
+                if (uri != null && clipDescription != null) {
+                    y00 y00Var = new y00();
+                    if (Build.VERSION.SDK_INT >= 25) {
+                        y00Var.a = new g(uri, clipDescription, uri2);
+                    } else {
+                        y00Var.a = new p7.d(uri, clipDescription, uri2, 12);
                     }
-                    if (resultReceiver != null) {
-                        resultReceiver.send(z10 ? 1 : 0, null);
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                    if (resultReceiver != null) {
-                        resultReceiver.send(0, null);
-                    }
-                    throw th;
+                    z10 = eVar.m(y00Var, i3, bundle2);
+                }
+                if (resultReceiver != null) {
+                    resultReceiver.send(z10 ? 1 : 0, null);
                 }
             } catch (Throwable th3) {
                 th = th3;
-                resultReceiver = null;
+                if (resultReceiver != null) {
+                    resultReceiver.send(0, null);
+                }
+                throw th;
             }
         }
         if (z10) {

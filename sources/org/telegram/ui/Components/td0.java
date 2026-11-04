@@ -1,62 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class td0 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ImageView c;
-    public Switch d;
-    public boolean e;
+public final class td0 {
+    public final /* synthetic */ org.telegram.ui.tp0 a;
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.invalidate();
+    public td0(org.telegram.ui.tp0 tp0Var) {
+        this.a = tp0Var;
+    }
+
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        org.telegram.messenger.g0.h3(new o2(this, Integer.parseInt(str), 8));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        org.telegram.messenger.g0.h3(new rd0(this, 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f10) {
+        this.a.K = f10;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i3) {
+        this.a.J = i3 * 1000;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i3) {
+        org.telegram.ui.tp0 tp0Var = this.a;
+        tp0Var.I = i3 * 1000;
+        String str = tp0Var.s;
+        if (str != null) {
+            ud0.a(tp0Var, str);
+            tp0Var.s = null;
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e) {
-            canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(70.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int parseInt = Integer.parseInt(str);
+        org.telegram.ui.tp0 tp0Var = this.a;
+        boolean z10 = tp0Var.H;
+        boolean z11 = false;
+        int i3 = 1;
+        tp0Var.H = parseInt == 1 || parseInt == 3;
+        tp0Var.b(z10);
+        if (parseInt != 0) {
+            if (parseInt == 1) {
+                z11 = true;
+            } else if (parseInt != 2) {
+                if (parseInt == 3) {
+                    z11 = true;
+                    i3 = 2;
+                }
+            }
+            i3 = 3;
+        } else {
+            i3 = 4;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int L = org.telegram.messenger.i0.L(13.0f) + this.a.getMeasuredHeight();
-        TextView textView = this.b;
-        textView.layout(textView.getLeft(), L, textView.getRight(), textView.getMeasuredHeight() + L);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        TextView textView = this.a;
-        measureChildWithMargins(textView, i10, 0, i11, 0);
-        TextView textView2 = this.b;
-        measureChildWithMargins(textView2, i10, 0, i11, 0);
-        measureChildWithMargins(this.c, i10, 0, i11, 0);
-        Switch r72 = this.d;
-        if (r72 != null) {
-            measureChildWithMargins(r72, i10, 0, i11, 0);
+        if (i3 == 3 && tp0Var.h.getVisibility() != 4) {
+            org.telegram.messenger.g0.i3(new rd0(this, 1), 300L);
         }
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.m5.b(20.0f, textView2.getMeasuredHeight() + textView.getMeasuredHeight(), org.telegram.messenger.i0.L(64.0f)) + (this.e ? 1 : 0));
-    }
-
-    public void setChecked(boolean z10) {
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.c(z10, true);
-        }
+        org.telegram.messenger.g0.h3(new ci.c8(this, z11, i3, 4));
     }
 }

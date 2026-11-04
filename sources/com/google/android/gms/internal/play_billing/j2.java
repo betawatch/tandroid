@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class j2 extends LinkedHashMap {
     public static final j2 b;
@@ -19,7 +19,7 @@ public final class j2 extends LinkedHashMap {
         j2Var.a = false;
     }
 
-    public static int a(Object obj) {
+    public static int b(Object obj) {
         if (!(obj instanceof byte[])) {
             if (obj instanceof m3) {
                 throw new UnsupportedOperationException();
@@ -29,17 +29,17 @@ public final class j2 extends LinkedHashMap {
         byte[] bArr = (byte[]) obj;
         int length = bArr.length;
         Charset charset = a2.a;
-        int i10 = length;
+        int i3 = length;
         for (byte b10 : bArr) {
-            i10 = (i10 * 31) + b10;
+            i3 = (i3 * 31) + b10;
         }
-        if (i10 == 0) {
+        if (i3 == 0) {
             return 1;
         }
-        return i10;
+        return i3;
     }
 
-    public final void b() {
+    public final void c() {
         if (!this.a) {
             throw new UnsupportedOperationException();
         }
@@ -47,7 +47,7 @@ public final class j2 extends LinkedHashMap {
 
     @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
     public final void clear() {
-        b();
+        c();
         super.clear();
     }
 
@@ -83,16 +83,16 @@ public final class j2 extends LinkedHashMap {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
-        int i10 = 0;
+        int i3 = 0;
         for (Map.Entry entry : entrySet()) {
-            i10 += a(entry.getValue()) ^ a(entry.getKey());
+            i3 += b(entry.getValue()) ^ b(entry.getKey());
         }
-        return i10;
+        return i3;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
     public final Object put(Object obj, Object obj2) {
-        b();
+        c();
         Charset charset = a2.a;
         obj.getClass();
         obj2.getClass();
@@ -101,7 +101,7 @@ public final class j2 extends LinkedHashMap {
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
     public final void putAll(Map map) {
-        b();
+        c();
         for (Object obj : map.keySet()) {
             Charset charset = a2.a;
             obj.getClass();
@@ -112,7 +112,7 @@ public final class j2 extends LinkedHashMap {
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
     public final Object remove(Object obj) {
-        b();
+        c();
         return super.remove(obj);
     }
 }

@@ -3,44 +3,43 @@ package k0;
 import android.app.AlertDialog;
 import android.hardware.fingerprint.FingerprintManager;
 import android.support.v4.media.session.a0;
-import androidx.biometric.t;
 import androidx.biometric.u;
-import androidx.biometric.w;
-import androidx.biometric.y;
-import androidx.lifecycle.z;
+import androidx.biometric.v;
+import androidx.biometric.x;
+import androidx.biometric.z;
+import bb.c;
 import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import k6.h;
-import org.telegram.messenger.dd;
-import org.telegram.ui.Wallet.u0;
+import org.telegram.messenger.bd;
+import org.telegram.ui.Wallet.t0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ a(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ a(Object obj, int i3) {
+        this.a = i3;
         this.b = obj;
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationError(int i10, CharSequence charSequence) {
+    public final void onAuthenticationError(int i3, CharSequence charSequence) {
         switch (this.a) {
             case 0:
-                ((w) ((a0) ((h) this.b).b).d).a(i10, charSequence);
+                ((x) ((a0) ((c) this.b).b).d).a(i3, charSequence);
                 break;
             default:
-                u0 u0Var = (u0) this.b;
-                if (u0Var.f() && !u0Var.f) {
-                    if (i10 != 5) {
-                        u0Var.a();
+                t0 t0Var = (t0) this.b;
+                if (t0Var.f() && !t0Var.f) {
+                    if (i3 != 5) {
+                        t0Var.a();
                         break;
                     } else {
-                        u0Var.c("AUTH_CANCELED");
+                        t0Var.c("AUTH_CANCELED");
                         break;
                     }
                 }
@@ -51,24 +50,24 @@ public final class a extends FingerprintManager.AuthenticationCallback {
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationFailed() {
         AlertDialog alertDialog;
-        int i10 = this.a;
+        int i3 = this.a;
         Object obj = this.b;
-        switch (i10) {
+        switch (i3) {
             case 0:
-                WeakReference weakReference = ((w) ((a0) ((h) obj).b).d).a;
-                if (weakReference.get() != null && ((y) weakReference.get()).n) {
-                    y yVar = (y) weakReference.get();
-                    if (yVar.u == null) {
-                        yVar.u = new z();
+                WeakReference weakReference = ((x) ((a0) ((c) obj).b).d).a;
+                if (weakReference.get() != null && ((z) weakReference.get()).n) {
+                    z zVar = (z) weakReference.get();
+                    if (zVar.u == null) {
+                        zVar.u = new androidx.lifecycle.z();
                     }
-                    y.h(yVar.u, Boolean.TRUE);
+                    z.h(zVar.u, Boolean.TRUE);
                     break;
                 }
                 break;
             default:
-                u0 u0Var = (u0) obj;
-                if (u0Var.f() && (alertDialog = u0Var.i) != null) {
-                    alertDialog.setMessage(dd.L0(2131743143, null));
+                t0 t0Var = (t0) obj;
+                if (t0Var.f() && (alertDialog = t0Var.i) != null) {
+                    alertDialog.setMessage(bd.M0(2131743127, null));
                     break;
                 }
                 break;
@@ -76,23 +75,23 @@ public final class a extends FingerprintManager.AuthenticationCallback {
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationHelp(int i10, CharSequence charSequence) {
+    public final void onAuthenticationHelp(int i3, CharSequence charSequence) {
         AlertDialog alertDialog;
         switch (this.a) {
             case 0:
-                WeakReference weakReference = ((w) ((a0) ((h) this.b).b).d).a;
+                WeakReference weakReference = ((x) ((a0) ((c) this.b).b).d).a;
                 if (weakReference.get() != null) {
-                    y yVar = (y) weakReference.get();
-                    if (yVar.t == null) {
-                        yVar.t = new z();
+                    z zVar = (z) weakReference.get();
+                    if (zVar.t == null) {
+                        zVar.t = new androidx.lifecycle.z();
                     }
-                    y.h(yVar.t, charSequence);
+                    z.h(zVar.t, charSequence);
                     break;
                 }
                 break;
             default:
-                u0 u0Var = (u0) this.b;
-                if (u0Var.f() && (alertDialog = u0Var.i) != null) {
+                t0 t0Var = (t0) this.b;
+                if (t0Var.f() && (alertDialog = t0Var.i) != null) {
                     alertDialog.setMessage(charSequence);
                     break;
                 }
@@ -109,9 +108,9 @@ public final class a extends FingerprintManager.AuthenticationCallback {
         a0 a0Var;
         switch (this.a) {
             case 0:
-                h hVar = (h) this.b;
+                c cVar = (c) this.b;
                 FingerprintManager.CryptoObject cryptoObject = authenticationResult.getCryptoObject();
-                u uVar = null;
+                v vVar = null;
                 if (cryptoObject != null) {
                     if (cryptoObject.getCipher() != null) {
                         a0Var = new a0(cryptoObject.getCipher());
@@ -120,35 +119,35 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                     } else if (cryptoObject.getMac() != null) {
                         a0Var = new a0(cryptoObject.getMac());
                     }
-                    hVar.getClass();
+                    cVar.getClass();
                     if (a0Var != null) {
                         Cipher cipher = (Cipher) a0Var.c;
                         if (cipher != null) {
-                            uVar = new u(cipher);
+                            vVar = new v(cipher);
                         } else {
                             Signature signature = (Signature) a0Var.b;
                             if (signature != null) {
-                                uVar = new u(signature);
+                                vVar = new v(signature);
                             } else {
                                 Mac mac = (Mac) a0Var.d;
                                 if (mac != null) {
-                                    uVar = new u(mac);
+                                    vVar = new v(mac);
                                 }
                             }
                         }
                     }
-                    ((w) ((a0) hVar.b).d).b(new t(uVar, 2));
+                    ((x) ((a0) cVar.b).d).b(new u(vVar, 2));
                     break;
                 }
                 a0Var = null;
-                hVar.getClass();
+                cVar.getClass();
                 if (a0Var != null) {
                 }
-                ((w) ((a0) hVar.b).d).b(new t(uVar, 2));
+                ((x) ((a0) cVar.b).d).b(new u(vVar, 2));
             default:
-                u0 u0Var = (u0) this.b;
-                if (!u0Var.f) {
-                    u0Var.c(null);
+                t0 t0Var = (t0) this.b;
+                if (!t0Var.f) {
+                    t0Var.c(null);
                     break;
                 }
                 break;

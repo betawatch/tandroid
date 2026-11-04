@@ -1,38 +1,63 @@
 package org.telegram.messenger;
 
-import j$.util.concurrent.ConcurrentHashMap;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dc b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+public final class cc {
+    public String a;
+    public final boolean b;
+    public Bitmap c;
+    public Drawable d;
+    public int e;
 
-    public /* synthetic */ cc(dc dcVar, long j10, long j11, int i10) {
-        this.a = i10;
-        this.b = dcVar;
-        this.c = j10;
-        this.d = j11;
+    public cc(Bitmap bitmap, String str, int i3) {
+        this.c = bitmap;
+        this.a = str;
+        this.e = i3;
+        if (str != null) {
+            zb.D().H(this.a);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                dc dcVar = this.b;
-                ConcurrentHashMap concurrentHashMap = dcVar.h.u;
-                String str = dcVar.a.e;
-                long j10 = this.c;
-                long j11 = this.d;
-                concurrentHashMap.put(str, new long[]{j10, j11});
-                i0.g3(new cc(dcVar, j10, j11, 1));
-                break;
-            default:
-                wb wbVar = this.b.a;
-                at.f(wbVar.o).k(at.X1, wbVar.e, Long.valueOf(this.c), Long.valueOf(this.d));
-                break;
+    public final void a() {
+        Bitmap bitmap;
+        if (this.a == null) {
+            if (this.b && (bitmap = this.c) != null) {
+                bitmap.recycle();
+            }
+            this.c = null;
+            this.d = null;
+            return;
         }
+        boolean p10 = zb.D().p(this.a);
+        if (!zb.D().J(this.a, false) && p10) {
+            Bitmap bitmap2 = this.c;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
+            } else {
+                Drawable drawable = this.d;
+                if (drawable != null) {
+                    if (drawable instanceof ch0) {
+                        ((ch0) drawable).C(false);
+                    } else if (drawable instanceof org.telegram.ui.Components.t5) {
+                        ((org.telegram.ui.Components.t5) drawable).u();
+                    } else if (drawable instanceof BitmapDrawable) {
+                        ((BitmapDrawable) drawable).getBitmap().recycle();
+                    }
+                }
+            }
+        }
+        this.a = null;
+        this.c = null;
+        this.d = null;
+    }
+
+    public cc(Bitmap bitmap) {
+        this.c = bitmap;
+        this.b = true;
     }
 }

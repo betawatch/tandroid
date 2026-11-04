@@ -1,59 +1,30 @@
 package e9;
 
-import j$.util.Objects;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.content.Context;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.FilesMigrationService;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b implements Iterator {
-    public final Iterator a;
-    public Object b = null;
-    public Collection c = null;
-    public Iterator d = d1.a;
-    public final /* synthetic */ p1 e;
-    public final /* synthetic */ int f;
-
-    public b(p1 p1Var, int i10) {
-        this.f = i10;
-        this.e = p1Var;
-        this.a = p1Var.e.entrySet().iterator();
+public abstract /* synthetic */ class b {
+    public static /* synthetic */ Notification.Builder a(Context context, String str) {
+        return new Notification.Builder(context, str);
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext() || this.d.hasNext();
+    public static /* synthetic */ Notification.Builder b(FilesMigrationService filesMigrationService, String str) {
+        return new Notification.Builder(filesMigrationService, str);
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!this.d.hasNext()) {
-            Map.Entry entry = (Map.Entry) this.a.next();
-            this.b = entry.getKey();
-            Collection collection = (Collection) entry.getValue();
-            this.c = collection;
-            this.d = collection.iterator();
-        }
-        Object obj = this.b;
-        Object next = this.d.next();
-        switch (this.f) {
-            case 0:
-                return next;
-            default:
-                return new j0(obj, next);
-        }
+    public static /* synthetic */ NotificationChannel c(String str) {
+        return new NotificationChannel("Assistant_verifier", str, 2);
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.d.remove();
-        Collection collection = this.c;
-        Objects.requireNonNull(collection);
-        if (collection.isEmpty()) {
-            this.a.remove();
-        }
-        p1 p1Var = this.e;
-        p1Var.f--;
+    public static /* synthetic */ SurfaceTexture d() {
+        return new SurfaceTexture(false);
+    }
+
+    public static /* synthetic */ void e() {
     }
 }

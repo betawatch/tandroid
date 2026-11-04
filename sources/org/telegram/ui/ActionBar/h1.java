@@ -1,40 +1,146 @@
 package org.telegram.ui.ActionBar;
 
+import android.R;
+import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class h1 extends FrameLayout {
-    public final Drawable a;
+public abstract class h1 {
+    public static final xq w = ni.l.V;
+    public final FrameLayout a;
+    public FrameLayout b;
+    public ViewGroup c;
+    public View d;
+    public boolean f;
+    public boolean g;
+    public View l;
+    public ValueAnimator m;
+    public float p;
+    public float q;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean e = false;
+    public final mi.b0 h = new mi.b0(this, 14);
+    public int i = -1;
+    public int j = -1;
+    public int k = -1;
+    public final g2.g n = new g2.g((int[]) null);
+    public final ArrayList o = new ArrayList();
+    public final g1 t = new g1(this, 0);
+    public final boolean u = true;
 
-    public h1(Context context, p6 p6Var) {
-        this(t6.H8, context, p6Var);
+    public h1(FrameLayout frameLayout) {
+        this.a = frameLayout;
+        org.telegram.messenger.g0.h3(new lg.n(this, 22));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, getWidth(), getHeight());
-            drawable.draw(canvas);
+    public static Activity a(Context context) {
+        if (context instanceof Activity) {
+            return (Activity) context;
+        }
+        if (context instanceof ContextThemeWrapper) {
+            return a(((ContextThemeWrapper) context).getBaseContext());
+        }
+        return null;
+    }
+
+    public abstract boolean b();
+
+    public final void c() {
+        d();
+        View view = this.a;
+        Activity a10 = a(view.getContext());
+        if (a10 != null) {
+            this.c = (ViewGroup) ((ViewGroup) a10.getWindow().getDecorView()).findViewById(R.id.content);
+        }
+        View view2 = this.b;
+        if (view2 == null) {
+            while (true) {
+                view2 = null;
+                if (view != null) {
+                    if (!(view.getParent() instanceof l3)) {
+                        if (!(view.getParent() instanceof View)) {
+                            break;
+                        } else {
+                            view = (View) view.getParent();
+                        }
+                    } else {
+                        view2 = view;
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        this.d = view2;
+        if (view2 != null) {
+            this.l = view2;
+            view2.getViewTreeObserver().addOnPreDrawListener(this.t);
         }
     }
 
-    public void setColor(int i10) {
-        setBackgroundColor(i10);
+    public final void d() {
+        ValueAnimator valueAnimator = this.m;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        View view = this.l;
+        if (view != null) {
+            view.getViewTreeObserver().removeOnPreDrawListener(this.t);
+            this.l = null;
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(int i10, Context context, p6 p6Var) {
-        super(context);
-        int w02 = t6.w0(i10, p6Var);
-        int w03 = t6.w0(t6.b7, p6Var);
-        this.a = t6.X0(getContext(), R.drawable.greydivider, w03);
-        setBackgroundColor(w02);
+    public abstract void e(float f10, float f11, boolean z10);
+
+    public abstract void f();
+
+    public abstract void g(int i3, boolean z10);
+
+    public final void h(int i3) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.o;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            ((View) arrayList.get(i10)).getLayoutParams().height = i3;
+            ((View) arrayList.get(i10)).requestLayout();
+            i10++;
+        }
+    }
+
+    public int i() {
+        return 0;
+    }
+
+    public final void j() {
+        ValueAnimator valueAnimator = this.m;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.f = false;
+        this.e = false;
+        this.n.e();
+        this.m = null;
+        h(-1);
+        this.o.clear();
+        this.d.requestLayout();
+        boolean z10 = this.s;
+        e(0.0f, z10 ? 1.0f : 0.0f, z10);
+        if (!(this instanceof dh.k)) {
+            this.a.setTranslationY(0.0f);
+        }
+        f();
     }
 }

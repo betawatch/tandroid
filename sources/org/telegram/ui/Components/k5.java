@@ -1,39 +1,40 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.view.View;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class k5 {
-    public ArrayList a;
-    public HashMap b;
-    public ArrayList c;
+public final class k5 implements m5 {
+    public final WeakReference a;
+    public final boolean b;
+    public Layout c;
+    public p5 d;
+    public Rect e;
+    public g5 f;
+    public org.telegram.messenger.e6 h;
+    public boolean n;
+    public float r;
+    public float s;
+    public boolean w;
 
-    public final void a() {
-        ArrayList arrayList = this.a;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((j5) arrayList.get(i10)).d.spanDrawn = false;
-        }
+    public k5(View view, boolean z10) {
+        this.a = new WeakReference(view);
+        this.b = z10;
     }
 
-    public final void b(int i10) {
-        j5 j5Var = (j5) this.a.remove(i10);
-        HashMap hashMap = this.b;
-        m5 m5Var = (m5) hashMap.get(j5Var.c);
-        if (m5Var == null) {
-            throw new RuntimeException("!!!");
+    @Override // org.telegram.ui.Components.m5
+    public final void invalidate() {
+        View view = (View) this.a.get();
+        if (view == null) {
+            return;
         }
-        ArrayList arrayList = m5Var.b;
-        arrayList.remove(j5Var);
-        m5Var.a();
-        if (arrayList.isEmpty()) {
-            hashMap.remove(j5Var.c);
-            this.c.remove(m5Var);
-        }
-        f5 f5Var = j5Var.f;
-        if (f5Var != null) {
-            f5Var.o(j5Var);
+        if (!this.b || view.getParent() == null) {
+            view.invalidate();
+        } else {
+            ((View) view.getParent()).invalidate();
         }
     }
 }

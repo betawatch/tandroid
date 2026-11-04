@@ -1,179 +1,182 @@
 package org.telegram.ui;
 
-import android.os.AsyncTask;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Locale;
-import java.util.Scanner;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class im0 extends AsyncTask {
-    public final /* synthetic */ oc.a a;
-    public final /* synthetic */ qm0 b;
+public final class im0 extends FrameLayout {
+    public int E;
+    public int F;
+    public int G;
+    public boolean H;
+    public final /* synthetic */ km0 I;
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public float d;
+    public float e;
+    public float f;
+    public float h;
+    public int n;
+    public float r;
+    public float s;
+    public int w;
+    public int x;
+    public int y;
 
-    public im0(qm0 qm0Var, oc.a aVar) {
-        this.b = qm0Var;
-        this.a = aVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public im0(km0 km0Var, Context context) {
+        super(context);
+        this.I = km0Var;
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = 600.0f;
+        this.e = 600.0f;
+        this.f = -1.0f;
+        this.h = -1.0f;
+        this.n = 0;
+        this.r = 0.0f;
+        this.s = 0.0f;
+        Paint paint = new Paint();
+        this.a = paint;
+        paint.setColor(1073412858);
+        this.a.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        this.a.setStyle(Paint.Style.STROKE);
+        Paint paint2 = new Paint();
+        this.b = paint2;
+        paint2.setColor(-1);
+        Paint paint3 = new Paint();
+        this.c = paint3;
+        paint3.setColor(-939524096);
+        setBackgroundColor(-13421773);
+        setOnTouchListener(new e0(this, 4));
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(11:0|1|(2:2|3)|(9:(13:46|47|(3:49|50|(1:52))|(1:7)(2:42|(1:44)(1:45))|8|9|10|11|12|13|14|15|(3:23|24|25)(3:19|20|21))|12|13|14|15|(1:17)|23|24|25)|5|(0)(0)|8|9|10|11|(2:(0)|(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0134, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x016c, code lost:
-    
-        org.telegram.messenger.f8.g(r0, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x016f, code lost:
-    
-        if (r5 == null) goto L51;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0084, code lost:
-    
-        if (r5.endsWith(".smart-glocal.com/cds/v1/tokenize/card") == false) goto L14;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0098 A[Catch: all -> 0x0087, Exception -> 0x0094, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000f, B:47:0x0063, B:50:0x0076, B:52:0x007e, B:7:0x008e, B:8:0x00af, B:42:0x0098, B:44:0x00a0, B:45:0x00a8), top: B:2:0x000f }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0176  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x008e A[Catch: all -> 0x0087, Exception -> 0x0094, TRY_ENTER, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000f, B:47:0x0063, B:50:0x0076, B:52:0x007e, B:7:0x008e, B:8:0x00af, B:42:0x0098, B:44:0x00a0, B:45:0x00a8), top: B:2:0x000f }] */
-    /* JADX WARN: Type inference failed for: r8v0 */
-    /* JADX WARN: Type inference failed for: r8v1, types: [java.net.HttpURLConnection] */
-    /* JADX WARN: Type inference failed for: r8v2 */
-    @Override // android.os.AsyncTask
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object doInBackground(Object[] objArr) {
-        HttpURLConnection httpURLConnection;
-        ?? r82;
-        JSONObject jSONObject;
-        String string;
-        int responseCode;
-        qm0 qm0Var = this.b;
-        oc.a aVar = this.a;
-        try {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        km0 km0Var = this.I;
+        BitmapDrawable bitmapDrawable = km0Var.b;
+        if (bitmapDrawable != null) {
             try {
-                try {
-                    jSONObject = new JSONObject();
-                    JSONObject jSONObject2 = new JSONObject();
-                    jSONObject2.put("number", aVar.a);
-                    jSONObject2.put("expiration_month", String.format(Locale.US, "%02d", aVar.c));
-                    jSONObject2.put("expiration_year", "" + aVar.d);
-                    jSONObject2.put("security_code", "" + aVar.b);
-                    jSONObject.put("card", jSONObject2);
-                } catch (Throwable th2) {
-                    th = th2;
-                    r82 = aVar;
-                    if (r82 != 0) {
-                        r82.disconnect();
-                    }
-                    throw th;
-                }
-            } catch (Throwable th3) {
-                th = th3;
-                r82 = 0;
-                if (r82 != 0) {
-                }
-                throw th;
+                int i3 = this.y;
+                int i10 = this.E;
+                bitmapDrawable.setBounds(i3, i10, this.w + i3, this.x + i10);
+                km0Var.b.draw(canvas);
+            } catch (Throwable th2) {
+                org.telegram.messenger.a8.g(th2, true);
             }
-        } catch (Exception e) {
-            e = e;
-            httpURLConnection = null;
         }
-        try {
-            if (qm0Var.C0.native_params != null) {
-                try {
-                    string = new JSONObject(qm0Var.C0.native_params.data).getString("tokenize_url");
-                    if (string != null) {
-                        try {
-                            if (string.startsWith("https://")) {
-                            }
-                        } catch (Exception unused) {
-                        }
-                    }
-                } catch (Exception unused2) {
-                }
-                httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : qm0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
-                httpURLConnection.setConnectTimeout(30000);
-                httpURLConnection.setReadTimeout(80000);
-                httpURLConnection.setUseCaches(false);
-                httpURLConnection.setDoOutput(true);
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setRequestProperty("Content-Type", "application/json");
-                httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", qm0Var.j0);
-                OutputStream outputStream = httpURLConnection.getOutputStream();
-                outputStream.write(jSONObject.toString().getBytes("UTF-8"));
-                outputStream.close();
-                responseCode = httpURLConnection.getResponseCode();
-                if (responseCode >= 200 || responseCode >= 300) {
-                    boolean z10 = org.telegram.messenger.v2.a;
-                    StringBuilder sb2 = new StringBuilder("");
-                    InputStream errorStream = httpURLConnection.getErrorStream();
-                    String next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
-                    errorStream.close();
-                    sb2.append(next);
-                    org.telegram.messenger.f8.d(sb2.toString());
-                    httpURLConnection.disconnect();
-                    return null;
-                }
-                JSONObject jSONObject3 = new JSONObject();
-                InputStream inputStream = httpURLConnection.getInputStream();
-                String next2 = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
-                inputStream.close();
-                jSONObject3.put("token", new JSONObject(next2).getJSONObject("data").getString("token"));
-                jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "card");
-                String jSONObject4 = jSONObject3.toString();
-                httpURLConnection.disconnect();
-                return jSONObject4;
-            }
-            outputStream.write(jSONObject.toString().getBytes("UTF-8"));
-            outputStream.close();
-            responseCode = httpURLConnection.getResponseCode();
-            if (responseCode >= 200) {
-            }
-            boolean z102 = org.telegram.messenger.v2.a;
-            StringBuilder sb22 = new StringBuilder("");
-            InputStream errorStream2 = httpURLConnection.getErrorStream();
-            String next3 = new Scanner(errorStream2, "UTF-8").useDelimiter("\\A").next();
-            errorStream2.close();
-            sb22.append(next3);
-            org.telegram.messenger.f8.d(sb22.toString());
-            httpURLConnection.disconnect();
-            return null;
-        } finally {
+        canvas.drawRect(this.y, this.E, r0 + this.w, this.h, this.c);
+        float f10 = this.y;
+        float f11 = this.h;
+        canvas.drawRect(f10, f11, this.f, f11 + this.e, this.c);
+        float f12 = this.f + this.d;
+        float f13 = this.h;
+        canvas.drawRect(f12, f13, this.y + this.w, f13 + this.e, this.c);
+        canvas.drawRect(this.y, this.h + this.e, r0 + this.w, this.E + this.x, this.c);
+        float f14 = this.f;
+        float f15 = this.h;
+        canvas.drawRect(f14, f15, f14 + this.d, f15 + this.e, this.a);
+        int L = org.telegram.messenger.g0.L(1.0f);
+        float f16 = L;
+        float f17 = this.f + f16;
+        float f18 = L * 3;
+        canvas.drawRect(f17, this.h + f16, f17 + org.telegram.messenger.g0.L(20.0f), this.h + f18, this.b);
+        float f19 = this.f;
+        float f20 = this.h + f16;
+        canvas.drawRect(f19 + f16, f20, f19 + f18, f20 + org.telegram.messenger.g0.L(20.0f), this.b);
+        float L2 = ((this.f + this.d) - f16) - org.telegram.messenger.g0.L(20.0f);
+        float f21 = this.h;
+        canvas.drawRect(L2, f21 + f16, (this.f + this.d) - f16, f21 + f18, this.b);
+        float f22 = this.f + this.d;
+        float f23 = this.h + f16;
+        canvas.drawRect(f22 - f18, f23, f22 - f16, f23 + org.telegram.messenger.g0.L(20.0f), this.b);
+        canvas.drawRect(this.f + f16, ((this.h + this.e) - f16) - org.telegram.messenger.g0.L(20.0f), this.f + f18, (this.h + this.e) - f16, this.b);
+        float f24 = this.f + f16;
+        canvas.drawRect(f24, (this.h + this.e) - f18, f24 + org.telegram.messenger.g0.L(20.0f), (this.h + this.e) - f16, this.b);
+        float L3 = ((this.f + this.d) - f16) - org.telegram.messenger.g0.L(20.0f);
+        float f25 = this.h + this.e;
+        canvas.drawRect(L3, f25 - f18, (this.f + this.d) - f16, f25 - f16, this.b);
+        canvas.drawRect((this.f + this.d) - f18, ((this.h + this.e) - f16) - org.telegram.messenger.g0.L(20.0f), (this.f + this.d) - f16, (this.h + this.e) - f16, this.b);
+        for (int i11 = 1; i11 < 3; i11++) {
+            float f26 = this.f;
+            float f27 = i11;
+            float f28 = (this.d / 3.0f) * f27;
+            float f29 = this.h;
+            canvas.drawRect(f28 + f26, f29 + f16, f26 + f16 + f28, (f29 + this.e) - f16, this.b);
+            float f30 = this.f;
+            float A = a1.g.A(this.e, 3.0f, f27, this.h);
+            canvas.drawRect(f30 + f16, A, (f30 - f16) + this.d, A + f16, this.b);
         }
-        string = null;
-        httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : qm0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
-        httpURLConnection.setConnectTimeout(30000);
-        httpURLConnection.setReadTimeout(80000);
-        httpURLConnection.setUseCaches(false);
-        httpURLConnection.setDoOutput(true);
-        httpURLConnection.setRequestMethod("POST");
-        httpURLConnection.setRequestProperty("Content-Type", "application/json");
-        httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", qm0Var.j0);
-        OutputStream outputStream2 = httpURLConnection.getOutputStream();
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        String str = (String) obj;
-        qm0 qm0Var = this.b;
-        if (qm0Var.Q0) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        km0 km0Var;
+        Bitmap bitmap;
+        super.onLayout(z10, i3, i10, i11, i12);
+        this.F = (i11 - i3) - org.telegram.messenger.g0.L(28.0f);
+        int L = (i12 - i10) - org.telegram.messenger.g0.L(28.0f);
+        this.G = L;
+        if (this.F == 0 || L == 0 || (bitmap = (km0Var = this.I).a) == null) {
             return;
         }
-        if (str == null) {
-            org.telegram.ui.Components.s4.v0(org.telegram.messenger.dd.L0(2131747420, null), qm0Var);
+        float f10 = this.f - this.y;
+        float f11 = this.w;
+        float f12 = f10 / f11;
+        float f13 = this.h - this.E;
+        float f14 = this.x;
+        float f15 = f13 / f14;
+        float f16 = this.d / f11;
+        float f17 = this.e / f14;
+        float width = bitmap.getWidth();
+        float height = km0Var.a.getHeight();
+        int i13 = this.F;
+        float f18 = i13 / width;
+        int i14 = this.G;
+        if (f18 > i14 / height) {
+            this.x = i14;
+            this.w = (int) Math.ceil(width * r5);
         } else {
-            qm0Var.w0 = str;
-            qm0Var.z0();
+            this.w = i13;
+            this.x = (int) Math.ceil(height * f18);
         }
-        qm0Var.N0(true, false);
-        qm0Var.J0(false);
+        this.y = org.telegram.messenger.g0.L(14.0f) + ((this.F - this.w) / 2);
+        int L2 = org.telegram.messenger.g0.L(14.0f) + ((this.G - this.x) / 2);
+        this.E = L2;
+        if (this.f != -1.0f || this.h != -1.0f) {
+            float f19 = this.w;
+            this.f = (f12 * f19) + this.y;
+            float f20 = this.x;
+            this.h = (f15 * f20) + L2;
+            this.d = f16 * f19;
+            this.e = f17 * f20;
+        } else if (this.H) {
+            this.h = L2;
+            this.f = this.y;
+            this.d = this.w;
+            this.e = this.x;
+        } else {
+            if (this.w > this.x) {
+                this.h = L2;
+                this.f = org.telegram.messenger.g0.L(14.0f) + ((this.F - r11) / 2);
+                float f21 = this.x;
+                this.d = f21;
+                this.e = f21;
+            } else {
+                this.f = this.y;
+                this.h = org.telegram.messenger.g0.L(14.0f) + ((this.G - r9) / 2);
+                float f22 = this.w;
+                this.d = f22;
+                this.e = f22;
+            }
+        }
+        invalidate();
     }
 }

@@ -1,49 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class hh0 extends org.telegram.ui.Cells.q1 {
-    public int hd;
-    public int id;
-    public int jd;
-    public final /* synthetic */ ih0 kd;
+public final /* synthetic */ class hh0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jh0 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hh0(ih0 ih0Var, Context context, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, i10, true, null, p6Var);
-        this.kd = ih0Var;
-        this.hd = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.id = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.jd = -1;
+    public /* synthetic */ hh0(jh0 jh0Var, String str, int i3) {
+        this.a = i3;
+        this.b = jh0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Cells.q1
-    public final nh.h S2() {
-        return nh.h.d(1, this, this.kd.E);
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (!this.gb.x0 || i11 == 0 || this.hd == Integer.MAX_VALUE || i13 == 0 || this.id == Integer.MAX_VALUE) {
-            return;
-        }
-        if (this.jd == (getMessageObject() == null ? 0 : getMessageObject().f1())) {
-            if (!this.kd.v0) {
-                setTranslationY(-(i11 - this.hd));
-                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.gr.h).start();
-            }
-            this.hd = getTop();
-            this.id = getBottom();
-            this.jd = getMessageObject() != null ? getMessageObject().f1() : 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                jh0 jh0Var = this.b;
+                String str = this.c;
+                jh0Var.getClass();
+                org.telegram.messenger.g0.h3(new hh0(jh0Var, str, 1));
+                break;
+            default:
+                jh0 jh0Var2 = this.b;
+                String str2 = this.c;
+                kg.v1 v1Var = jh0Var2.h;
+                int i3 = jh0Var2.n.s;
+                v1Var.g(str2, true, (i3 == 1 || i3 == 3) ? false : true, true, false, 0L, false, 0, 0);
+                Utilities.g.c(new hc0(jh0Var2, str2, new ArrayList(jh0Var2.n.x), 11));
+                break;
         }
     }
 }

@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class m2 {
     public static m2 i;
@@ -28,7 +28,7 @@ public final class m2 {
     public final WeakHashMap d = new WeakHashMap(0);
     public TypedValue e;
     public boolean f;
-    public j2.f g;
+    public l2.e g;
     public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
     public static final k2 j = new k2(6);
 
@@ -49,15 +49,15 @@ public final class m2 {
         return m2Var;
     }
 
-    public static synchronized PorterDuffColorFilter h(int i10, PorterDuff.Mode mode) {
+    public static synchronized PorterDuffColorFilter h(int i3, PorterDuff.Mode mode) {
         PorterDuffColorFilter porterDuffColorFilter;
         synchronized (m2.class) {
             k2 k2Var = j;
             k2Var.getClass();
-            int i11 = (31 + i10) * 31;
-            porterDuffColorFilter = (PorterDuffColorFilter) k2Var.a(Integer.valueOf(mode.hashCode() + i11));
+            int i10 = (31 + i3) * 31;
+            porterDuffColorFilter = (PorterDuffColorFilter) k2Var.a(Integer.valueOf(mode.hashCode() + i10));
             if (porterDuffColorFilter == null) {
-                porterDuffColorFilter = new PorterDuffColorFilter(i10, mode);
+                porterDuffColorFilter = new PorterDuffColorFilter(i3, mode);
             }
         }
         return porterDuffColorFilter;
@@ -95,27 +95,27 @@ public final class m2 {
         }
     }
 
-    public final Drawable c(Context context, int i10) {
+    public final Drawable c(Context context, int i3) {
         if (this.e == null) {
             this.e = new TypedValue();
         }
         TypedValue typedValue = this.e;
-        context.getResources().getValue(i10, typedValue, true);
+        context.getResources().getValue(i3, typedValue, true);
         long j10 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e = e(context, j10);
-        if (e != null) {
-            return e;
+        Drawable e10 = e(context, j10);
+        if (e10 != null) {
+            return e10;
         }
         LayerDrawable layerDrawable = null;
         if (this.g != null) {
-            if (i10 == R.drawable.abc_cab_background_top_material) {
+            if (i3 == R.drawable.abc_cab_background_top_material) {
                 layerDrawable = new LayerDrawable(new Drawable[]{g(context, R.drawable.abc_cab_background_internal_bg), g(context, R.drawable.abc_cab_background_top_mtrl_alpha)});
-            } else if (i10 == R.drawable.abc_ratingbar_material) {
-                layerDrawable = j2.f.q(this, context, R.dimen.abc_star_big);
-            } else if (i10 == R.drawable.abc_ratingbar_indicator_material) {
-                layerDrawable = j2.f.q(this, context, R.dimen.abc_star_medium);
-            } else if (i10 == R.drawable.abc_ratingbar_small_material) {
-                layerDrawable = j2.f.q(this, context, R.dimen.abc_star_small);
+            } else if (i3 == R.drawable.abc_ratingbar_material) {
+                layerDrawable = l2.e.i(this, context, R.dimen.abc_star_big);
+            } else if (i3 == R.drawable.abc_ratingbar_indicator_material) {
+                layerDrawable = l2.e.i(this, context, R.dimen.abc_star_medium);
+            } else if (i3 == R.drawable.abc_ratingbar_small_material) {
+                layerDrawable = l2.e.i(this, context, R.dimen.abc_star_small);
             }
         }
         if (layerDrawable != null) {
@@ -141,26 +141,26 @@ public final class m2 {
         return null;
     }
 
-    public final synchronized Drawable f(int i10, Context context, boolean z10) {
+    public final synchronized Drawable f(int i3, Context context, boolean z10) {
         Drawable k10;
         try {
             if (!this.f) {
                 this.f = true;
-                Drawable g10 = g(context, R.drawable.abc_vector_test);
-                if (g10 == null || (!(g10 instanceof x4.o) && !"android.graphics.drawable.VectorDrawable".equals(g10.getClass().getName()))) {
+                Drawable g7 = g(context, R.drawable.abc_vector_test);
+                if (g7 == null || (!(g7 instanceof z4.o) && !"android.graphics.drawable.VectorDrawable".equals(g7.getClass().getName()))) {
                     this.f = false;
                     throw new IllegalStateException("This app has been built with an incorrect configuration. Please configure your build for VectorDrawableCompat.");
                 }
             }
-            k10 = k(context, i10);
+            k10 = k(context, i3);
             if (k10 == null) {
-                k10 = c(context, i10);
+                k10 = c(context, i3);
             }
             if (k10 == null) {
-                k10 = context.getDrawable(i10);
+                k10 = context.getDrawable(i3);
             }
             if (k10 != null) {
-                k10 = m(context, i10, z10, k10);
+                k10 = m(context, i3, z10, k10);
             }
             if (k10 != null) {
                 l1.a(k10);
@@ -171,20 +171,20 @@ public final class m2 {
         return k10;
     }
 
-    public final synchronized Drawable g(Context context, int i10) {
-        return f(i10, context, false);
+    public final synchronized Drawable g(Context context, int i3) {
+        return f(i3, context, false);
     }
 
-    public final synchronized ColorStateList i(Context context, int i10) {
+    public final synchronized ColorStateList i(Context context, int i3) {
         ColorStateList colorStateList;
         a0.m mVar;
         WeakHashMap weakHashMap = this.a;
         ColorStateList colorStateList2 = null;
-        colorStateList = (weakHashMap == null || (mVar = (a0.m) weakHashMap.get(context)) == null) ? null : (ColorStateList) mVar.c(i10);
+        colorStateList = (weakHashMap == null || (mVar = (a0.m) weakHashMap.get(context)) == null) ? null : (ColorStateList) mVar.c(i3);
         if (colorStateList == null) {
-            j2.f fVar = this.g;
-            if (fVar != null) {
-                colorStateList2 = fVar.s(context, i10);
+            l2.e eVar = this.g;
+            if (eVar != null) {
+                colorStateList2 = eVar.j(context, i3);
             }
             if (colorStateList2 != null) {
                 if (this.a == null) {
@@ -195,14 +195,14 @@ public final class m2 {
                     mVar2 = new a0.m();
                     this.a.put(context, mVar2);
                 }
-                mVar2.a(i10, colorStateList2);
+                mVar2.a(i3, colorStateList2);
             }
             colorStateList = colorStateList2;
         }
         return colorStateList;
     }
 
-    public final Drawable k(Context context, int i10) {
+    public final Drawable k(Context context, int i3) {
         int next;
         a0.l lVar = this.b;
         if (lVar == null || lVar.isEmpty()) {
@@ -210,7 +210,7 @@ public final class m2 {
         }
         a0.m mVar = this.c;
         if (mVar != null) {
-            String str = (String) mVar.c(i10);
+            String str = (String) mVar.c(i3);
             if ("appcompat_skip_skip".equals(str)) {
                 return null;
             }
@@ -225,16 +225,16 @@ public final class m2 {
         }
         TypedValue typedValue = this.e;
         Resources resources = context.getResources();
-        resources.getValue(i10, typedValue, true);
+        resources.getValue(i3, typedValue, true);
         long j10 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e = e(context, j10);
-        if (e != null) {
-            return e;
+        Drawable e10 = e(context, j10);
+        if (e10 != null) {
+            return e10;
         }
         CharSequence charSequence = typedValue.string;
         if (charSequence != null && charSequence.toString().endsWith(".xml")) {
             try {
-                XmlResourceParser xml = resources.getXml(i10);
+                XmlResourceParser xml = resources.getXml(i3);
                 AttributeSet asAttributeSet = Xml.asAttributeSet(xml);
                 do {
                     next = xml.next();
@@ -246,44 +246,44 @@ public final class m2 {
                     throw new XmlPullParserException("No start tag found");
                 }
                 String name = xml.getName();
-                this.c.a(i10, name);
+                this.c.a(i3, name);
                 l2 l2Var = (l2) this.b.get(name);
                 if (l2Var != null) {
-                    e = l2Var.a(context, xml, asAttributeSet, context.getTheme());
+                    e10 = l2Var.a(context, xml, asAttributeSet, context.getTheme());
                 }
-                if (e != null) {
-                    e.setChangingConfigurations(typedValue.changingConfigurations);
-                    b(context, j10, e);
+                if (e10 != null) {
+                    e10.setChangingConfigurations(typedValue.changingConfigurations);
+                    b(context, j10, e10);
                 }
-            } catch (Exception e7) {
-                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e7);
+            } catch (Exception e11) {
+                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e11);
             }
         }
-        if (e == null) {
-            this.c.a(i10, "appcompat_skip_skip");
+        if (e10 == null) {
+            this.c.a(i3, "appcompat_skip_skip");
         }
-        return e;
+        return e10;
     }
 
-    public final synchronized void l(j2.f fVar) {
-        this.g = fVar;
+    public final synchronized void l(l2.e eVar) {
+        this.g = eVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x00e4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Drawable m(Context context, int i10, boolean z10, Drawable drawable) {
+    public final Drawable m(Context context, int i3, boolean z10, Drawable drawable) {
         boolean z11;
         int round;
-        PorterDuffColorFilter h10;
-        ColorStateList i11 = i(context, i10);
+        PorterDuffColorFilter h7;
+        ColorStateList i10 = i(context, i3);
         PorterDuff.Mode mode = null;
-        if (i11 != null) {
+        if (i10 != null) {
             int[] iArr = l1.a;
             Drawable mutate = drawable.mutate();
-            mutate.setTintList(i11);
-            if (this.g != null && i10 == R.drawable.abc_switch_thumb_material) {
+            mutate.setTintList(i10);
+            if (this.g != null && i3 == R.drawable.abc_switch_thumb_material) {
                 mode = PorterDuff.Mode.MULTIPLY;
             }
             if (mode != null) {
@@ -291,62 +291,62 @@ public final class m2 {
             }
             return mutate;
         }
-        j2.f fVar = this.g;
-        int i12 = R.attr.colorControlNormal;
-        if (fVar != null) {
-            if (i10 == R.drawable.abc_seekbar_track_material) {
+        l2.e eVar = this.g;
+        int i11 = R.attr.colorControlNormal;
+        if (eVar != null) {
+            if (i3 == R.drawable.abc_seekbar_track_material) {
                 LayerDrawable layerDrawable = (LayerDrawable) drawable;
                 Drawable findDrawableByLayerId = layerDrawable.findDrawableByLayerId(android.R.id.background);
-                int c10 = a3.c(context, R.attr.colorControlNormal);
+                int c2 = z2.c(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode2 = q.b;
-                j2.f.A(findDrawableByLayerId, c10, mode2);
-                j2.f.A(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), a3.c(context, R.attr.colorControlNormal), mode2);
-                j2.f.A(layerDrawable.findDrawableByLayerId(android.R.id.progress), a3.c(context, R.attr.colorControlActivated), mode2);
+                l2.e.p(findDrawableByLayerId, c2, mode2);
+                l2.e.p(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), z2.c(context, R.attr.colorControlNormal), mode2);
+                l2.e.p(layerDrawable.findDrawableByLayerId(android.R.id.progress), z2.c(context, R.attr.colorControlActivated), mode2);
                 return drawable;
             }
-            if (i10 == R.drawable.abc_ratingbar_material || i10 == R.drawable.abc_ratingbar_indicator_material || i10 == R.drawable.abc_ratingbar_small_material) {
+            if (i3 == R.drawable.abc_ratingbar_material || i3 == R.drawable.abc_ratingbar_indicator_material || i3 == R.drawable.abc_ratingbar_small_material) {
                 LayerDrawable layerDrawable2 = (LayerDrawable) drawable;
                 Drawable findDrawableByLayerId2 = layerDrawable2.findDrawableByLayerId(android.R.id.background);
-                int b10 = a3.b(context, R.attr.colorControlNormal);
+                int b10 = z2.b(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode3 = q.b;
-                j2.f.A(findDrawableByLayerId2, b10, mode3);
-                j2.f.A(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), a3.c(context, R.attr.colorControlActivated), mode3);
-                j2.f.A(layerDrawable2.findDrawableByLayerId(android.R.id.progress), a3.c(context, R.attr.colorControlActivated), mode3);
+                l2.e.p(findDrawableByLayerId2, b10, mode3);
+                l2.e.p(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), z2.c(context, R.attr.colorControlActivated), mode3);
+                l2.e.p(layerDrawable2.findDrawableByLayerId(android.R.id.progress), z2.c(context, R.attr.colorControlActivated), mode3);
                 return drawable;
             }
         }
-        j2.f fVar2 = this.g;
+        l2.e eVar2 = this.g;
         boolean z12 = false;
-        if (fVar2 != null) {
+        if (eVar2 != null) {
             PorterDuff.Mode mode4 = q.b;
-            if (!j2.f.e((int[]) fVar2.a, i10)) {
-                if (j2.f.e((int[]) fVar2.c, i10)) {
-                    i12 = R.attr.colorControlActivated;
+            if (!l2.e.b((int[]) eVar2.a, i3)) {
+                if (l2.e.b((int[]) eVar2.c, i3)) {
+                    i11 = R.attr.colorControlActivated;
                 } else {
-                    boolean e = j2.f.e((int[]) fVar2.d, i10);
-                    i12 = android.R.attr.colorBackground;
-                    if (e) {
+                    boolean b11 = l2.e.b((int[]) eVar2.d, i3);
+                    i11 = android.R.attr.colorBackground;
+                    if (b11) {
                         mode4 = PorterDuff.Mode.MULTIPLY;
-                    } else if (i10 == R.drawable.abc_list_divider_mtrl_alpha) {
+                    } else if (i3 == R.drawable.abc_list_divider_mtrl_alpha) {
                         round = Math.round(40.8f);
-                        i12 = android.R.attr.colorForeground;
+                        i11 = android.R.attr.colorForeground;
                         z11 = true;
                         if (z11) {
                             int[] iArr2 = l1.a;
                             Drawable mutate2 = drawable.mutate();
-                            int c11 = a3.c(context, i12);
+                            int c10 = z2.c(context, i11);
                             synchronized (q.class) {
-                                h10 = h(c11, mode4);
+                                h7 = h(c10, mode4);
                             }
-                            mutate2.setColorFilter(h10);
+                            mutate2.setColorFilter(h7);
                             if (round != -1) {
                                 mutate2.setAlpha(round);
                             }
                             z12 = true;
                         }
-                    } else if (i10 != R.drawable.abc_dialog_material_background) {
+                    } else if (i3 != R.drawable.abc_dialog_material_background) {
                         z11 = false;
-                        i12 = 0;
+                        i11 = 0;
                         round = -1;
                         if (z11) {
                         }

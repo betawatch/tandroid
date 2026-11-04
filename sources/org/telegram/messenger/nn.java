@@ -1,280 +1,118 @@
 package org.telegram.messenger;
 
 import android.content.Context;
+import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nn implements Runnable {
-    public final /* synthetic */ int a = 3;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
     public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ nn(int i10, Context context, long j10, long j11, org.telegram.ui.ActionBar.z2[] z2VarArr, org.telegram.ui.ActionBar.p6 p6Var) {
-        this.b = i10;
-        this.e = context;
+    public /* synthetic */ nn(hp hpVar, long j10, int i3, int i10, long j11, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z10, org.telegram.ui.tf tfVar) {
+        this.h = hpVar;
         this.c = j10;
+        this.b = i3;
+        this.e = i10;
         this.d = j11;
-        this.f = z2VarArr;
-        this.h = p6Var;
+        this.n = tL_messages_affectedHistory;
+        this.f = z10;
+        this.r = tfVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0200  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0205  */
-    /* JADX WARN: Type inference failed for: r11v1 */
-    /* JADX WARN: Type inference failed for: r11v3 */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0091, code lost:
+    
+        if (0 == 0) goto L22;
+     */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        gw gwVar;
-        SQLiteCursor sQLiteCursor;
-        SQLiteDatabase sQLiteDatabase;
-        int i10;
-        NativeByteBuffer byteBufferValue;
         switch (this.a) {
             case 0:
-                wp wpVar = (wp) this.e;
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.f;
-                int[] iArr = (int[]) this.h;
-                long j10 = this.c;
-                long j11 = this.d;
-                if (j10 == 0) {
-                    is messagesStorage = wpVar.getMessagesStorage();
-                    messagesStorage.a.c(new dq(messagesStorage, j11, 3));
-                }
-                TLRPC.TL_messages_deleteSavedHistory tL_messages_deleteSavedHistory = new TLRPC.TL_messages_deleteSavedHistory();
-                tL_messages_deleteSavedHistory.peer = wpVar.i1(j11);
-                tL_messages_deleteSavedHistory.parent_peer = inputPeer;
-                if (this.b == 0 && j10 == 0) {
-                    int i11 = 0;
-                    while (true) {
-                        if (i11 >= wpVar.F1().j.size()) {
-                            gwVar = null;
-                        } else if (((gw) wpVar.F1().j.get(i11)).a == j11) {
-                            gwVar = (gw) wpVar.F1().j.get(i11);
-                        } else {
-                            i11++;
-                        }
-                    }
-                    if (gwVar != null) {
-                        iArr[0] = Math.max(iArr[0], gwVar.c);
-                        hw F1 = wpVar.F1();
-                        F1.g -= F1.j(j11);
-                        F1.l();
-                    }
-                    int i12 = iArr[0];
-                    if (i12 <= 0) {
-                        i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    }
-                    tL_messages_deleteSavedHistory.max_id = i12;
-                }
-                wpVar.getConnectionsManager().sendRequest(tL_messages_deleteSavedHistory, new im(wpVar, j11, iArr, inputPeer, 1), 64);
-                return;
-            case 1:
-                is isVar = (is) this.e;
-                int i13 = this.b;
-                long j12 = this.c;
-                String str = (String) this.f;
-                long j13 = this.d;
-                String str2 = (String) this.h;
-                isVar.getClass();
+                final hp hpVar = (hp) this.h;
+                final long j10 = this.c;
+                final int i3 = this.b;
+                final int i10 = this.e;
+                final TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) this.n;
+                final org.telegram.ui.tf tfVar = (org.telegram.ui.tf) this.r;
+                qr messagesStorage = hpVar.getMessagesStorage();
+                messagesStorage.getClass();
+                final ArrayList arrayList = new ArrayList();
+                SQLiteCursor sQLiteCursor = null;
                 try {
-                    isVar.b.beginTransaction();
-                    int i14 = 0;
-                    int i15 = 0;
-                    while (i15 < 2) {
-                        SQLiteDatabase sQLiteDatabase2 = isVar.b;
+                    try {
+                        SQLiteDatabase sQLiteDatabase = messagesStorage.b;
                         Locale locale = Locale.US;
-                        SQLiteCursor queryFinalized = sQLiteDatabase2.queryFinalized("SELECT data FROM " + (i15 == 0 ? "messages_v2" : "messages_topics") + " WHERE mid = " + i13 + " AND uid = " + j12, new Object[i14]);
-                        try {
-                            if (!queryFinalized.next() || (byteBufferValue = queryFinalized.byteBufferValue(i14)) == null) {
-                                i10 = i15;
-                            } else {
-                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(i14), i14);
-                                if (TLdeserialize != null) {
-                                    i10 = i15;
-                                    TLdeserialize.readAttachPath(byteBufferValue, isVar.getUserConfig().n);
-                                } else {
-                                    i10 = i15;
-                                }
-                                byteBufferValue.reuse();
-                                if (TLdeserialize != null) {
-                                    TLRPC.MessageMedia messageMedia = TLdeserialize.media;
-                                    if (messageMedia instanceof TLRPC.TL_messageMediaWidget) {
-                                        TLRPC.TL_messageMediaWidget tL_messageMediaWidget = (TLRPC.TL_messageMediaWidget) messageMedia;
-                                        if (str != null) {
-                                            tL_messageMediaWidget.public_data = str.isEmpty() ? null : str;
-                                            tL_messageMediaWidget.public_data_hash = j13;
-                                        }
-                                        if (str2 != null) {
-                                            tL_messageMediaWidget.chat_data = str2.isEmpty() ? null : str2;
-                                        }
-                                        SQLitePreparedStatement executeFast = isVar.b.executeFast("UPDATE " + (i10 == 0 ? "messages_v2" : "messages_topics") + " SET data = ? WHERE mid = ? AND uid = ?");
-                                        kj.q5(TLdeserialize);
-                                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
-                                        TLdeserialize.serializeToStream(nativeByteBuffer);
-                                        executeFast.requery();
-                                        executeFast.bindByteBuffer(1, nativeByteBuffer);
-                                        executeFast.bindInteger(2, i13);
-                                        executeFast.bindLong(3, j12);
-                                        executeFast.step();
-                                        nativeByteBuffer.reuse();
-                                        executeFast.dispose();
-                                    }
-                                }
-                            }
-                            queryFinalized.dispose();
-                            i15 = i10 + 1;
-                            i14 = 0;
-                        } catch (Exception e) {
-                            e = e;
-                            sQLiteCursor = queryFinalized;
+                        sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT mid FROM messages_v2 WHERE uid = " + j10 + " AND date >= " + i3 + " AND date <= " + i10, new Object[0]);
+                        while (sQLiteCursor.next()) {
                             try {
-                                isVar.o(e, true);
-                                SQLiteDatabase sQLiteDatabase3 = isVar.b;
-                                if (sQLiteDatabase3 != null) {
-                                    sQLiteDatabase3.commitTransaction();
-                                }
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                    return;
-                                }
-                                return;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                sQLiteDatabase = isVar.b;
-                                if (sQLiteDatabase != null) {
-                                    sQLiteDatabase.commitTransaction();
-                                }
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                throw th;
+                                arrayList.add(Integer.valueOf(sQLiteCursor.intValue(0)));
+                            } catch (Exception e10) {
+                                messagesStorage.o(e10, true);
                             }
-                        } catch (Throwable th3) {
-                            th = th3;
-                            sQLiteCursor = queryFinalized;
-                            sQLiteDatabase = isVar.b;
-                            if (sQLiteDatabase != null) {
-                            }
-                            if (sQLiteCursor != null) {
-                            }
-                            throw th;
                         }
+                        sQLiteCursor.dispose();
+                    } catch (Exception e11) {
+                        messagesStorage.o(e11, true);
+                        break;
                     }
-                    isVar.b.commitTransaction();
-                    SQLiteDatabase sQLiteDatabase4 = isVar.b;
-                    if (sQLiteDatabase4 != null) {
-                        sQLiteDatabase4.commitTransaction();
-                        return;
+                    sQLiteCursor.dispose();
+                    hpVar.getMessagesStorage().P0(j10, arrayList, false, true, 0, 0);
+                    hpVar.getMessagesStorage().R1(j10, 0L, arrayList, null);
+                    final long j11 = this.d;
+                    final boolean z10 = this.f;
+                    g0.h3(new Runnable() { // from class: org.telegram.messenger.qn
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            hp hpVar2 = hp.this;
+                            hs notificationCenter = hpVar2.getNotificationCenter();
+                            long j12 = j11;
+                            notificationCenter.k(hs.w, arrayList, Long.valueOf(j12), Boolean.FALSE);
+                            int i11 = tL_messages_affectedHistory.offset;
+                            org.telegram.ui.tf tfVar2 = tfVar;
+                            if (i11 > 0) {
+                                hpVar2.d0(j10, j12, i3, i10, z10, tfVar2);
+                            } else {
+                                tfVar2.run();
+                            }
+                        }
+                    });
+                    return;
+                } catch (Throwable th2) {
+                    if (0 != 0) {
+                        sQLiteCursor.dispose();
                     }
-                    return;
-                } catch (Exception e7) {
-                    e = e7;
-                    sQLiteCursor = null;
-                } catch (Throwable th4) {
-                    th = th4;
-                    sQLiteCursor = null;
+                    throw th2;
                 }
-                break;
-            case 2:
-                z60 z60Var = (z60) this.e;
-                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.f;
-                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) this.h;
-                z60Var.u();
-                int i16 = this.b;
-                wp r12 = wp.r1(i16);
-                long j14 = this.c;
-                long j15 = this.d;
-                boolean q22 = r12.q2(j14, j15, null);
-                pt.t(i16).G(j14, j15, !q22);
-                if (org.telegram.ui.Components.cc.a(k2Var)) {
-                    org.telegram.ui.Components.cc.z(k2Var, !q22 ? 3 : 4, !q22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, p6Var).j();
-                    return;
-                }
-                return;
-            case 3:
-                Context context = (Context) this.e;
-                org.telegram.ui.ActionBar.z2[] z2VarArr = (org.telegram.ui.ActionBar.z2[]) this.f;
-                org.telegram.ui.ActionBar.p6 p6Var2 = (org.telegram.ui.ActionBar.p6) this.h;
-                int i17 = this.b;
-                rh.r g10 = rh.r.g(i17);
-                long j16 = this.c;
-                g10.f(context, j16, this.d, new xh.q2(z2VarArr, context, i17, j16, p6Var2, 2));
-                return;
             default:
-                th.j0 j0Var = (th.j0) this.e;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.h;
-                j0Var.c(this.b);
-                if ("BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
-                    Context context2 = j0Var.getContext();
-                    th.b bVar = new th.b();
-                    long j17 = this.d;
-                    long j18 = this.c;
-                    new rh.x7(context2, bVar, j18, 17, "", new a3.h0(j0Var, j17, tL_textWithEntities, j18), j0Var.M).show();
-                    return;
-                }
-                if (!"GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
-                    new org.telegram.ui.Components.cc(j0Var.b, new th.b()).f0(tL_error, true);
-                    return;
-                }
-                th.s0 s0Var = j0Var.P;
-                if (s0Var != null) {
-                    s0Var.w();
-                    return;
-                }
+                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
                 return;
         }
     }
 
-    public /* synthetic */ nn(wp wpVar, long j10, long j11, TLRPC.InputPeer inputPeer, int i10, int[] iArr) {
-        this.e = wpVar;
+    public /* synthetic */ nn(TLObject tLObject, int i3, long j10, long j11, int i10, boolean z10, Context context, String str) {
+        this.h = tLObject;
+        this.b = i3;
         this.c = j10;
         this.d = j11;
-        this.f = inputPeer;
-        this.b = i10;
-        this.h = iArr;
-    }
-
-    public /* synthetic */ nn(is isVar, int i10, long j10, String str, long j11, String str2) {
-        this.e = isVar;
-        this.b = i10;
-        this.c = j10;
-        this.f = str;
-        this.d = j11;
-        this.h = str2;
-    }
-
-    public /* synthetic */ nn(z60 z60Var, int i10, long j10, long j11, org.telegram.ui.un unVar, org.telegram.ui.ActionBar.p6 p6Var) {
-        this.e = z60Var;
-        this.b = i10;
-        this.c = j10;
-        this.d = j11;
-        this.f = unVar;
-        this.h = p6Var;
-    }
-
-    public /* synthetic */ nn(th.j0 j0Var, int i10, TLRPC.TL_error tL_error, long j10, long j11, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.e = j0Var;
-        this.b = i10;
-        this.f = tL_error;
-        this.c = j10;
-        this.d = j11;
-        this.h = tL_textWithEntities;
+        this.e = i10;
+        this.f = z10;
+        this.n = context;
+        this.r = str;
     }
 }

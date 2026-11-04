@@ -1,94 +1,93 @@
 package b1;
 
-import ad.j;
+import ai.s;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import kotlin.jvm.internal.i;
-import ld.p;
-import v7.c0;
+import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
+import dd.k;
+import java.util.concurrent.Executor;
+import kotlin.jvm.internal.j;
+import od.l;
+import v0.h;
+import w0.i;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements p {
+public final /* synthetic */ class e implements l {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ e(int i10) {
-        this.a = i10;
+    public /* synthetic */ e(int i3, Object obj, Object obj2) {
+        this.a = i3;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // ld.p
-    public final Object invoke(Object obj, Object obj2) {
-        cd.b bVar;
-        int i10 = this.a;
-        j jVar = j.a;
-        switch (i10) {
+    @Override // od.l
+    public final Object invoke(Object obj) {
+        switch (this.a) {
             case 0:
-                ld.a f7 = (ld.a) obj2;
-                i.e(f7, "f");
-                int i11 = d.d;
-                c0.a((CancellationSignal) obj, f7);
+                Executor executor = (Executor) this.b;
+                h hVar = (h) this.c;
+                i e10 = (i) obj;
+                j.e(e10, "e");
+                executor.execute(new g(hVar, e10, 1));
                 break;
             case 1:
-                ld.a f10 = (ld.a) obj2;
-                i.e(f10, "f");
+                CancellationSignal cancellationSignal = (CancellationSignal) this.b;
+                c1.e eVar = (c1.e) this.c;
+                Context context = eVar.e;
+                z5.f fVar = (z5.f) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.h.a((CancellationSignal) obj)) {
-                    f10.invoke();
-                    break;
-                }
-                break;
-            case 2:
-                String acc = (String) obj;
-                cd.f element = (cd.f) obj2;
-                i.e(acc, "acc");
-                i.e(element, "element");
-                if (acc.length() != 0) {
-                    break;
-                } else {
-                    break;
-                }
-            case 3:
-                cd.h acc2 = (cd.h) obj;
-                cd.f element2 = (cd.f) obj2;
-                i.e(acc2, "acc");
-                i.e(element2, "element");
-                cd.h minusKey = acc2.minusKey(element2.getKey());
-                cd.i iVar = cd.i.a;
-                if (minusKey != iVar) {
-                    cd.d dVar = cd.d.a;
-                    cd.e eVar = (cd.e) minusKey.get(dVar);
-                    if (eVar == null) {
-                        bVar = new cd.b(element2, minusKey);
-                    } else {
-                        cd.h minusKey2 = minusKey.minusKey(dVar);
-                        if (minusKey2 == iVar) {
-                            break;
-                        } else {
-                            bVar = new cd.b(eVar, new cd.b(element2, minusKey2));
+                if (!a1.h.a(cancellationSignal)) {
+                    Intent intent = new Intent(context, (Class<?>) HiddenActivity.class);
+                    d.a(eVar.i, intent, "BEGIN_SIGN_IN");
+                    intent.putExtra("EXTRA_FLOW_PENDING_INTENT", fVar.a);
+                    try {
+                        context.startActivity(intent);
+                    } catch (Exception unused) {
+                        CredentialProviderPlayServicesImpl.Companion.getClass();
+                        if (!a1.h.a(cancellationSignal)) {
+                            eVar.f().execute(new s(eVar, 18));
                         }
                     }
-                    break;
                 }
-                break;
-            case 4:
-                ld.a f11 = (ld.a) obj2;
-                i.e(f11, "f");
+                return k.a;
+            case 2:
+                CancellationSignal cancellationSignal2 = (CancellationSignal) this.b;
+                d1.e eVar2 = (d1.e) this.c;
+                Context context2 = eVar2.e;
+                PendingIntent result = (PendingIntent) obj;
+                j.e(result, "result");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.h.a((CancellationSignal) obj)) {
-                    f11.invoke();
-                    break;
+                if (!a1.h.a(cancellationSignal2)) {
+                    Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
+                    d.a(eVar2.i, intent2, "CREATE_PUBLIC_KEY_CREDENTIAL");
+                    intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", result);
+                    try {
+                        context2.startActivity(intent2);
+                    } catch (Exception unused2) {
+                        CredentialProviderPlayServicesImpl.Companion.getClass();
+                        if (!a1.h.a(cancellationSignal2)) {
+                            Executor executor2 = eVar2.g;
+                            if (executor2 == null) {
+                                j.h("executor");
+                                throw null;
+                            }
+                            executor2.execute(new d1.d(eVar2, 0));
+                        }
+                    }
                 }
-                break;
+                return k.a;
             default:
-                ld.a f12 = (ld.a) obj2;
-                i.e(f12, "f");
-                CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.h.a((CancellationSignal) obj)) {
-                    f12.invoke();
-                    break;
-                }
+                xd.c cVar = (xd.c) this.b;
+                cVar.c.removeCallbacks((u9.k) this.c);
                 break;
         }
-        return jVar;
+        return k.a;
     }
 }

@@ -1,69 +1,49 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class gw {
-    public long a;
-    public boolean b;
-    public int c;
-    public kj d;
-    public int e;
-    public long f;
-    public long g;
-    public long h;
-    public boolean i;
-    public int j;
-    public int k;
+public final /* synthetic */ class gw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yy b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ zi d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ ky f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ ky n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ HashMap s;
+    public final /* synthetic */ boolean w;
 
-    public static gw a(int i10, TLRPC.Message message) {
-        gw gwVar = new gw();
-        gwVar.a = kj.R1(e20.i(i10).e(), message);
-        gwVar.b = false;
-        gwVar.c = message.id;
-        gwVar.d = new kj(i10, message, null, null, null, null, null, false, false, 0L, false, false, true, 0);
-        return gwVar;
+    public /* synthetic */ gw(yy yyVar, TLObject tLObject, zi ziVar, String str, ky kyVar, boolean z10, ky kyVar2, Object obj, HashMap hashMap, boolean z11, int i3) {
+        this.a = i3;
+        this.b = yyVar;
+        this.c = tLObject;
+        this.d = ziVar;
+        this.e = str;
+        this.f = kyVar;
+        this.h = z10;
+        this.n = kyVar2;
+        this.r = obj;
+        this.s = hashMap;
+        this.w = z11;
     }
 
-    public static gw b(int i10, TLRPC.savedDialog saveddialog, ArrayList arrayList) {
-        TLRPC.Message message;
-        gw gwVar = new gw();
-        gwVar.a = o5.o(saveddialog.peer);
-        gwVar.b = saveddialog.pinned;
-        gwVar.c = saveddialog.top_message;
-        gwVar.f = saveddialog.unread_count;
-        gwVar.g = saveddialog.read_inbox_max_id;
-        gwVar.h = saveddialog.read_outbox_max_id;
-        int i11 = 0;
-        while (true) {
-            if (i11 >= arrayList.size()) {
-                message = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
                 break;
-            }
-            message = (TLRPC.Message) arrayList.get(i11);
-            if (gwVar.c == message.id) {
+            case 1:
+                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
                 break;
-            }
-            i11++;
+            default:
+                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
+                break;
         }
-        TLRPC.Message message2 = message;
-        if (message2 != null) {
-            gwVar.d = new kj(i10, message2, null, null, null, null, null, false, false, 0L, false, false, true, 0);
-        }
-        return gwVar;
-    }
-
-    public final int c() {
-        TLRPC.Message message;
-        kj kjVar = this.d;
-        return (kjVar == null || (message = kjVar.k) == null) ? this.j : (message.flags & 32768) != 0 ? message.edit_date : message.date;
-    }
-
-    public final boolean d() {
-        TLRPC.Message message;
-        kj kjVar = this.d;
-        return (kjVar == null || (message = kjVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionHistoryClear)) ? false : true;
     }
 }

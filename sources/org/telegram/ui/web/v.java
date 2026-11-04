@@ -1,62 +1,59 @@
 package org.telegram.ui.web;
 
-import java.io.File;
-import org.telegram.messenger.r20;
-import org.telegram.ui.v8;
+import ei.p7;
+import org.json.JSONObject;
+import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v implements r20 {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ z0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class v implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ t0 d;
+    public final /* synthetic */ p7 e;
 
-    public /* synthetic */ v(z0 z0Var, org.telegram.ui.ActionBar.x1 x1Var, String str, String str2, String str3) {
-        this.b = z0Var;
-        this.e = x1Var;
-        this.c = str;
-        this.d = str2;
-        this.f = str3;
+    public /* synthetic */ v(String[] strArr, int i3, t0 t0Var, p7 p7Var, int i10) {
+        this.a = i10;
+        this.b = strArr;
+        this.c = i3;
+        this.d = t0Var;
+        this.e = p7Var;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                x0 x0Var = (x0) this.e;
-                xh.g1 g1Var = (xh.g1) this.f;
-                String str = this.d;
-                String str2 = (String) obj;
-                z0 z0Var = this.b;
-                String str3 = this.c;
-                if (str2 == null) {
-                    z0Var.y(x0Var, "secure_storage_failed", z0.B("req_id", str3, "error", "RESTORE_CANCELLED"));
-                    break;
-                } else {
+                int i3 = this.c;
+                t0 t0Var = this.d;
+                p7 p7Var = this.e;
+                String[] strArr = this.b;
+                if (strArr[0] != null) {
                     try {
-                        g1Var.j(str2);
-                        z0Var.y(x0Var, "secure_storage_key_restored", z0.B("req_id", str3, "value", (String) g1Var.f(str).first));
+                        JSONObject jSONObject = new JSONObject();
+                        jSONObject.put("status", strArr[0]);
+                        w0.w(i3, t0Var, p7Var, "phone_requested", jSONObject);
                         break;
-                    } catch (Exception e) {
-                        z0Var.y(x0Var, "secure_storage_failed", z0.B("req_id", str3, "error", e.getMessage()));
+                    } catch (Exception e10) {
+                        a8.g(e10, true);
                         return;
                     }
                 }
-            default:
-                z0 z0Var2 = this.b;
-                org.telegram.messenger.i0.g3(new v8(z0Var2, (File) obj, (org.telegram.ui.ActionBar.x1) this.e, this.c, this.d, (String) this.f, 16));
                 break;
+            default:
+                String[] strArr2 = this.b;
+                int i10 = this.c;
+                t0 t0Var2 = this.d;
+                p7 p7Var2 = this.e;
+                try {
+                    JSONObject jSONObject2 = new JSONObject();
+                    jSONObject2.put("status", strArr2[0]);
+                    w0.w(i10, t0Var2, p7Var2, "write_access_requested", jSONObject2);
+                    break;
+                } catch (Exception e11) {
+                    a8.g(e11, true);
+                }
         }
-    }
-
-    public /* synthetic */ v(z0 z0Var, x0 x0Var, String str, xh.g1 g1Var, String str2) {
-        this.b = z0Var;
-        this.e = x0Var;
-        this.c = str;
-        this.f = g1Var;
-        this.d = str2;
     }
 }

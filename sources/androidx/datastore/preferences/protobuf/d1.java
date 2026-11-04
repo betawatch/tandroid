@@ -11,103 +11,94 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class d1 extends AbstractMap {
-    public static final /* synthetic */ int h = 0;
-    public final int a;
-    public List b = Collections.EMPTY_LIST;
-    public Map c;
-    public boolean d;
-    public volatile a0.a e;
-    public Map f;
+    public static final /* synthetic */ int f = 0;
+    public List a;
+    public Map b;
+    public boolean c;
+    public volatile a0.a d;
+    public Map e;
 
-    public d1(int i10) {
-        this.a = i10;
+    public static d1 g() {
+        d1 d1Var = new d1();
+        d1Var.a = Collections.EMPTY_LIST;
         Map map = Collections.EMPTY_MAP;
-        this.c = map;
-        this.f = map;
+        d1Var.b = map;
+        d1Var.e = map;
+        return d1Var;
     }
 
-    public final int a(Comparable comparable) {
-        int i10;
-        int size = this.b.size();
-        int i11 = size - 1;
-        if (i11 >= 0) {
-            int compareTo = comparable.compareTo(((g1) this.b.get(i11)).a);
+    public final int b(Comparable comparable) {
+        int i3;
+        int size = this.a.size();
+        int i10 = size - 1;
+        if (i10 >= 0) {
+            int compareTo = comparable.compareTo(((e1) this.a.get(i10)).a);
             if (compareTo > 0) {
-                i10 = size + 1;
-                return -i10;
+                i3 = size + 1;
+                return -i3;
             }
             if (compareTo == 0) {
-                return i11;
+                return i10;
             }
         }
-        int i12 = 0;
-        while (i12 <= i11) {
-            int i13 = (i12 + i11) / 2;
-            int compareTo2 = comparable.compareTo(((g1) this.b.get(i13)).a);
+        int i11 = 0;
+        while (i11 <= i10) {
+            int i12 = (i11 + i10) / 2;
+            int compareTo2 = comparable.compareTo(((e1) this.a.get(i12)).a);
             if (compareTo2 < 0) {
-                i11 = i13 - 1;
+                i10 = i12 - 1;
             } else {
                 if (compareTo2 <= 0) {
-                    return i13;
+                    return i12;
                 }
-                i12 = i13 + 1;
+                i11 = i12 + 1;
             }
         }
-        i10 = i12 + 1;
-        return -i10;
+        i3 = i11 + 1;
+        return -i3;
     }
 
-    public final void b() {
-        if (this.d) {
+    public final void c() {
+        if (this.c) {
             throw new UnsupportedOperationException();
         }
     }
 
-    public final Map.Entry c(int i10) {
-        return (Map.Entry) this.b.get(i10);
-    }
-
     @Override // java.util.AbstractMap, java.util.Map
     public final void clear() {
-        b();
-        if (!this.b.isEmpty()) {
-            this.b.clear();
+        c();
+        if (!this.a.isEmpty()) {
+            this.a.clear();
         }
-        if (this.c.isEmpty()) {
+        if (this.b.isEmpty()) {
             return;
         }
-        this.c.clear();
+        this.b.clear();
     }
 
     @Override // java.util.AbstractMap, java.util.Map
     public final boolean containsKey(Object obj) {
         Comparable comparable = (Comparable) obj;
-        return a(comparable) >= 0 || this.c.containsKey(comparable);
+        return b(comparable) >= 0 || this.b.containsKey(comparable);
     }
 
-    public final Iterable d() {
-        return this.c.isEmpty() ? r0.b : this.c.entrySet();
+    public final Map.Entry d(int i3) {
+        return (Map.Entry) this.a.get(i3);
     }
 
-    public final SortedMap e() {
-        b();
-        if (this.c.isEmpty() && !(this.c instanceof TreeMap)) {
-            TreeMap treeMap = new TreeMap();
-            this.c = treeMap;
-            this.f = treeMap.descendingMap();
-        }
-        return (SortedMap) this.c;
+    public final Set e() {
+        return this.b.isEmpty() ? Collections.EMPTY_SET : this.b.entrySet();
     }
 
     @Override // java.util.AbstractMap, java.util.Map
     public final Set entrySet() {
-        if (this.e == null) {
-            this.e = new a0.a(1, this);
+        if (this.d == null) {
+            this.d = new a0.a(1, this);
         }
-        return this.e;
+        return this.d;
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -121,100 +112,102 @@ public final class d1 extends AbstractMap {
         d1 d1Var = (d1) obj;
         int size = size();
         if (size == d1Var.size()) {
-            int size2 = this.b.size();
-            if (size2 != d1Var.b.size()) {
+            int size2 = this.a.size();
+            if (size2 != d1Var.a.size()) {
                 return ((AbstractSet) entrySet()).equals(d1Var.entrySet());
             }
-            for (int i10 = 0; i10 < size2; i10++) {
-                if (c(i10).equals(d1Var.c(i10))) {
+            for (int i3 = 0; i3 < size2; i3++) {
+                if (d(i3).equals(d1Var.d(i3))) {
                 }
             }
             if (size2 != size) {
-                return this.c.equals(d1Var.c);
+                return this.b.equals(d1Var.b);
             }
             return true;
         }
         return false;
     }
 
-    public final Object f(Comparable comparable, Object obj) {
-        b();
-        int a2 = a(comparable);
-        if (a2 >= 0) {
-            return ((g1) this.b.get(a2)).setValue(obj);
+    public final SortedMap f() {
+        c();
+        if (this.b.isEmpty() && !(this.b instanceof TreeMap)) {
+            TreeMap treeMap = new TreeMap();
+            this.b = treeMap;
+            this.e = treeMap.descendingMap();
         }
-        b();
-        boolean isEmpty = this.b.isEmpty();
-        int i10 = this.a;
-        if (isEmpty && !(this.b instanceof ArrayList)) {
-            this.b = new ArrayList(i10);
+        return (SortedMap) this.b;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object get(Object obj) {
+        Comparable comparable = (Comparable) obj;
+        int b10 = b(comparable);
+        return b10 >= 0 ? ((e1) this.a.get(b10)).b : this.b.get(comparable);
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    /* renamed from: h, reason: merged with bridge method [inline-methods] */
+    public final Object put(Comparable comparable, Object obj) {
+        c();
+        int b10 = b(comparable);
+        if (b10 >= 0) {
+            return ((e1) this.a.get(b10)).setValue(obj);
         }
-        int i11 = -(a2 + 1);
-        if (i11 >= i10) {
-            return e().put(comparable, obj);
+        c();
+        if (this.a.isEmpty() && !(this.a instanceof ArrayList)) {
+            this.a = new ArrayList(16);
         }
-        if (this.b.size() == i10) {
-            g1 g1Var = (g1) this.b.remove(i10 - 1);
-            e().put(g1Var.a, g1Var.b);
+        int i3 = -(b10 + 1);
+        if (i3 >= 16) {
+            return f().put(comparable, obj);
         }
-        this.b.add(i11, new g1(this, comparable, obj));
+        if (this.a.size() == 16) {
+            e1 e1Var = (e1) this.a.remove(15);
+            f().put(e1Var.a, e1Var.b);
+        }
+        this.a.add(i3, new e1(this, comparable, obj));
         return null;
     }
 
-    public final Object g(int i10) {
-        b();
-        Object obj = ((g1) this.b.remove(i10)).b;
-        if (!this.c.isEmpty()) {
-            Iterator it = e().entrySet().iterator();
-            List list = this.b;
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int hashCode() {
+        int size = this.a.size();
+        int i3 = 0;
+        for (int i10 = 0; i10 < size; i10++) {
+            i3 += ((e1) this.a.get(i10)).hashCode();
+        }
+        return this.b.size() > 0 ? this.b.hashCode() + i3 : i3;
+    }
+
+    public final Object i(int i3) {
+        c();
+        Object obj = ((e1) this.a.remove(i3)).b;
+        if (!this.b.isEmpty()) {
+            Iterator it = f().entrySet().iterator();
+            List list = this.a;
             Map.Entry entry = (Map.Entry) it.next();
-            list.add(new g1(this, (Comparable) entry.getKey(), entry.getValue()));
+            list.add(new e1(this, (Comparable) entry.getKey(), entry.getValue()));
             it.remove();
         }
         return obj;
     }
 
     @Override // java.util.AbstractMap, java.util.Map
-    public final Object get(Object obj) {
-        Comparable comparable = (Comparable) obj;
-        int a2 = a(comparable);
-        return a2 >= 0 ? ((g1) this.b.get(a2)).b : this.c.get(comparable);
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        int size = this.b.size();
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += ((g1) this.b.get(i11)).hashCode();
-        }
-        return this.c.size() > 0 ? this.c.hashCode() + i10 : i10;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final /* synthetic */ Object put(Object obj, Object obj2) {
-        if (obj == null) {
-            return f(null, obj2);
-        }
-        throw new ClassCastException();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
     public final Object remove(Object obj) {
-        b();
+        c();
         Comparable comparable = (Comparable) obj;
-        int a2 = a(comparable);
-        if (a2 >= 0) {
-            return g(a2);
+        int b10 = b(comparable);
+        if (b10 >= 0) {
+            return i(b10);
         }
-        if (this.c.isEmpty()) {
+        if (this.b.isEmpty()) {
             return null;
         }
-        return this.c.remove(comparable);
+        return this.b.remove(comparable);
     }
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int size() {
-        return this.c.size() + this.b.size();
+        return this.b.size() + this.a.size();
     }
 }

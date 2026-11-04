@@ -1,17 +1,15 @@
 package fe;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import od.p;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface g {
-    void a();
+public final /* synthetic */ class g extends kotlin.jvm.internal.i implements p {
+    public static final g a = new g(2, i.class, "createSegment", "createSegment(JLkotlinx/coroutines/sync/SemaphoreSegment;)Lkotlinx/coroutines/sync/SemaphoreSegment;", 1);
 
-    void g(boolean z10);
-
-    boolean l();
-
-    boolean m(float f7);
-
-    void n();
-
-    void z();
+    @Override // od.p
+    public final Object invoke(Object obj, Object obj2) {
+        int i3 = i.a;
+        return new j(((Number) obj).longValue(), (j) obj2, 0);
+    }
 }

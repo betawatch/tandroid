@@ -1,175 +1,69 @@
 package org.telegram.messenger;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.LongSparseArray;
-import java.util.regex.Pattern;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.i01;
-import org.telegram.ui.Components.p21;
-import org.telegram.ui.Components.sz0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sz implements Runnable {
-    public final /* synthetic */ int a;
+public final class sz {
+    public final String b;
+    public int a = 0;
+    public final ArrayList d = new ArrayList();
+    public final long c = System.currentTimeMillis();
 
-    public /* synthetic */ sz(int i10) {
-        this.a = i10;
+    public sz(String str) {
+        this.b = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                int i10 = uz.a;
-                break;
-            case 1:
-                d00.y = null;
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.t6.F(false);
-                break;
-            case 3:
-                int i11 = org.telegram.ui.un.bd;
-                break;
-            case 4:
-                sg.k0.b(true);
-                break;
-            case 5:
-                at e = at.e();
-                Boolean bool = Boolean.TRUE;
-                e.k(at.n4, Boolean.FALSE, bool, bool);
-                break;
-            case 6:
-                org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
-                if (T != null) {
-                    org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
-                    i2Var.a = true;
-                    T.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), i2Var);
-                    break;
-                }
-                break;
-            case 7:
-                Pattern pattern = org.telegram.ui.Components.s4.a;
-                break;
-            case 8:
-                i0.r(org.telegram.ui.Components.f5.w);
-                try {
-                    if (org.telegram.ui.Components.f5.r != null) {
-                        for (int i12 = 0; i12 < org.telegram.ui.Components.f5.r.size(); i12++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.f5.r.valueAt(i12);
-                            int i13 = 0;
-                            while (i13 < longSparseArray.size()) {
-                                if (!((org.telegram.ui.Components.f5) longSparseArray.valueAt(i13)).a) {
-                                    longSparseArray.removeAt(i13);
-                                    i13--;
-                                }
-                                i13++;
-                            }
-                        }
-                        break;
-                    }
-                } catch (Exception unused) {
-                    boolean z10 = v2.a;
-                    return;
-                }
-                break;
-            case 9:
-                org.telegram.ui.Components.w7 w7Var = org.telegram.ui.Components.w7.P2;
-                break;
-            case 10:
-                hw.h();
-                break;
-            case 11:
-                LaunchActivity launchActivity = LaunchActivity.I1;
-                if (launchActivity != null && !launchActivity.isFinishing()) {
-                    Intent intent = new Intent("android.intent.action.VIEW_DOWNLOADS");
-                    intent.setFlags(268468224);
-                    LaunchActivity.I1.startActivity(intent);
-                    break;
-                }
-                break;
-            case 12:
-                org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
-                if (Q != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", e20.i(Q.getCurrentAccount()).e());
-                    bundle.putInt("chatMode", 1);
-                    Q.presentFragment(new org.telegram.ui.un(bundle));
-                    break;
-                }
-                break;
-            case 13:
-                MediaController.B().B0(0, 0, false, false);
-                break;
-            case 14:
-                MediaController.B().B0(0, 0, false, false);
-                break;
-            case 15:
-                break;
-            case 16:
-                int i14 = org.telegram.ui.Components.jn.r1;
-                break;
-            case 17:
-                PhotoViewer.v1().H0(false, false);
-                break;
-            case 18:
-                PhotoViewer.v1().H0(false, false);
-                break;
-            case 19:
-                int[] iArr = org.telegram.ui.Components.mt.X1;
-                break;
-            case 20:
-                at.e().k(at.F2, new Object[0]);
-                break;
-            case 21:
-                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
-                    VoIPService.getSharedInstance().setMicMute(false, true, false);
-                    break;
-                }
-                break;
-            case 22:
-                at.e().k(98, 512);
-                break;
-            case 23:
-                at.e().k(99, 512);
-                break;
-            case 24:
-                org.telegram.ui.ActionBar.k2 Q2 = LaunchActivity.Q();
-                if (Q2 != null) {
-                    org.telegram.ui.ActionBar.i2 i2Var2 = new org.telegram.ui.ActionBar.i2();
-                    i2Var2.a = true;
-                    Q2.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), i2Var2);
-                    break;
-                }
-                break;
-            case 25:
-                int i15 = sz0.f;
-                break;
-            case 26:
-                SharedPreferences.Editor edit = wp.d1().edit();
-                i01.f = Boolean.TRUE;
-                edit.putBoolean("nothanos", true).apply();
-                break;
-            case 27:
-                SharedPreferences.Editor edit2 = wp.d1().edit();
-                i01.f = Boolean.TRUE;
-                edit2.putBoolean("nothanos", true).apply();
-                break;
-            case 28:
-                int i16 = p21.l0;
-                break;
-            default:
-                hw.h();
-                break;
+    public static void a(rz rzVar) {
+        if (rzVar != null) {
+            if (rzVar.b < 0) {
+                sz szVar = rzVar.e;
+                int i3 = szVar.a;
+                szVar.a = i3 - 1;
+                rzVar.d = i3;
+            }
+            rzVar.b = System.currentTimeMillis();
         }
     }
 
-    private final void a() {
+    public static void b(sz szVar) {
+        if (szVar != null) {
+            ArrayList arrayList = szVar.d;
+            long currentTimeMillis = System.currentTimeMillis() - szVar.c;
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(szVar.b);
+            sb2.append(" total=");
+            sb2.append(currentTimeMillis);
+            sb2.append("ms\n");
+            for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                if (arrayList.get(i3) != null) {
+                    sb2.append("#");
+                    sb2.append(i3);
+                    int i10 = ((rz) arrayList.get(i3)).d;
+                    for (int i11 = 0; i11 < i10; i11++) {
+                        sb2.append(" ");
+                    }
+                    sb2.append(" ");
+                    sb2.append(arrayList.get(i3));
+                    sb2.append("\n");
+                }
+            }
+            a8.b(sb2.toString());
+        }
+    }
+
+    public static void c(sz szVar, String str) {
+        if (szVar != null) {
+            szVar.d.add(new qz(szVar, str));
+        }
+    }
+
+    public static rz d(sz szVar, String str) {
+        if (szVar == null) {
+            return null;
+        }
+        rz rzVar = new rz(szVar, str);
+        szVar.d.add(rzVar);
+        return rzVar;
     }
 }

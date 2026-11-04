@@ -1,32 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ky0 {
-    public final int a;
-    public final int b;
+public final class ky0 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public TextView a;
+    public jy0 b;
+    public TLRPC.TL_help_termsOfService c;
+    public int d;
 
-    public ky0(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
-    }
-
-    public final int a() {
-        return this.b - this.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a() {
+        jy0 jy0Var = this.b;
+        int i3 = this.d;
+        org.telegram.ui.h80 h80Var = (org.telegram.ui.h80) jy0Var;
+        h80Var.getClass();
+        org.telegram.messenger.h10.i(i3).a0 = null;
+        org.telegram.messenger.h10.i(i3).v(false);
+        LaunchActivity launchActivity = h80Var.a;
+        ArrayList arrayList = launchActivity.e0;
+        if (!arrayList.isEmpty()) {
+            ((org.telegram.ui.ActionBar.d2) k2.p1.h(1, arrayList)).onResume();
         }
-        if (obj == null || ky0.class != obj.getClass()) {
-            return false;
-        }
-        ky0 ky0Var = (ky0) obj;
-        return this.b == ky0Var.b && this.a == ky0Var.a;
+        launchActivity.D0.animate().alpha(0.0f).setDuration(150L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.fz(h80Var, 17)).start();
+        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
+        tL_help_acceptTermsOfService.id = this.c.id;
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new ei.u5(22));
     }
 
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
+    public void setDelegate(jy0 jy0Var) {
+        this.b = jy0Var;
     }
 }

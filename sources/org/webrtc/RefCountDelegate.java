@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 class RefCountDelegate implements RefCounted {
     private final AtomicInteger refCount = new AtomicInteger(1);
@@ -33,12 +33,12 @@ class RefCountDelegate implements RefCounted {
     }
 
     public boolean safeRetain() {
-        int i10 = this.refCount.get();
-        while (i10 != 0) {
-            if (this.refCount.weakCompareAndSet(i10, i10 + 1)) {
+        int i3 = this.refCount.get();
+        while (i3 != 0) {
+            if (this.refCount.weakCompareAndSet(i3, i3 + 1)) {
                 return true;
             }
-            i10 = this.refCount.get();
+            i3 = this.refCount.get();
         }
         return false;
     }

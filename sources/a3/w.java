@@ -1,52 +1,87 @@
 package a3;
 
-import android.content.Context;
-import android.util.Pair;
-import android.util.SparseArray;
-import e9.x1;
-import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.ArrayList;
+import java.util.Collections;
+import k2.p1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class w {
-    public static final b q = new b(0);
-    public final Context a;
-    public final u b;
-    public final SparseArray c;
-    public final boolean d;
-    public final f e;
-    public final e2.g0 f;
-    public final CopyOnWriteArraySet g;
-    public final long h;
-    public final b0 i;
-    public e2.j0 j = new e2.j0();
-    public e2.i0 k;
-    public Pair l;
-    public int m;
-    public int n;
-    public long o;
-    public int p;
+    public static final u g = new u(0);
+    public static final u h = new u(1);
+    public int d;
+    public int e;
+    public int f;
+    public final v[] b = new v[5];
+    public final ArrayList a = new ArrayList();
+    public int c = -1;
 
-    public w(q qVar) {
-        this.a = qVar.a;
-        u uVar = qVar.c;
-        uVar.getClass();
-        this.b = uVar;
-        this.c = new SparseArray();
-        e9.l0 l0Var = e9.n0.b;
-        x1 x1Var = x1.e;
-        this.d = qVar.d;
-        e2.g0 g0Var = qVar.e;
-        this.f = g0Var;
-        long j10 = qVar.g;
-        this.h = j10 != -9223372036854775807L ? -j10 : -9223372036854775807L;
-        b0 b0Var = qVar.h;
-        this.i = b0Var;
-        this.e = new f(qVar.b, b0Var, g0Var);
-        this.g = new CopyOnWriteArraySet();
-        new b2.w().a();
-        this.o = -9223372036854775807L;
-        this.p = -1;
-        this.n = 0;
+    public final void a(float f10, int i3) {
+        v vVar;
+        int i10 = this.c;
+        ArrayList arrayList = this.a;
+        if (i10 != 1) {
+            Collections.sort(arrayList, g);
+            this.c = 1;
+        }
+        int i11 = this.f;
+        v[] vVarArr = this.b;
+        if (i11 > 0) {
+            int i12 = i11 - 1;
+            this.f = i12;
+            vVar = vVarArr[i12];
+        } else {
+            vVar = new v();
+        }
+        int i13 = this.d;
+        this.d = i13 + 1;
+        vVar.a = i13;
+        vVar.b = i3;
+        vVar.c = f10;
+        arrayList.add(vVar);
+        this.e += i3;
+        while (true) {
+            int i14 = this.e;
+            if (i14 <= 2000) {
+                return;
+            }
+            int i15 = i14 - 2000;
+            v vVar2 = (v) arrayList.get(0);
+            int i16 = vVar2.b;
+            if (i16 <= i15) {
+                this.e -= i16;
+                arrayList.remove(0);
+                int i17 = this.f;
+                if (i17 < 5) {
+                    this.f = i17 + 1;
+                    vVarArr[i17] = vVar2;
+                }
+            } else {
+                vVar2.b = i16 - i15;
+                this.e -= i15;
+            }
+        }
+    }
+
+    public final float b() {
+        int i3 = this.c;
+        ArrayList arrayList = this.a;
+        if (i3 != 0) {
+            Collections.sort(arrayList, h);
+            this.c = 0;
+        }
+        float f10 = 0.5f * this.e;
+        int i10 = 0;
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            v vVar = (v) arrayList.get(i11);
+            i10 += vVar.b;
+            if (i10 >= f10) {
+                return vVar.c;
+            }
+        }
+        if (arrayList.isEmpty()) {
+            return Float.NaN;
+        }
+        return ((v) p1.h(1, arrayList)).c;
     }
 }

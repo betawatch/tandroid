@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pe extends org.telegram.ui.ih0 {
-    public final /* synthetic */ Object A0;
-    public final /* synthetic */ int z0;
+public final class pe implements q1.d {
+    public boolean a = false;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ ht0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pe(Object obj, Context context, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
-        super(context, p6Var);
-        this.z0 = i10;
-        this.A0 = obj;
+    public pe(float f10, ht0 ht0Var) {
+        this.b = f10;
+        this.c = ht0Var;
     }
 
-    @Override // org.telegram.ui.ih0
-    public final void l(long j10) {
-        switch (this.z0) {
-            case 0:
-                ((ChatActivityEnterView) this.A0).setEffectId(j10);
-                break;
-            default:
-                bi biVar = (bi) this.A0;
-                ih ihVar = biVar.C2;
-                biVar.H2 = j10;
-                ihVar.setEffect(j10);
-                break;
+    @Override // q1.d
+    public final void a(q1.g gVar, float f10, float f11) {
+        if (this.a || f10 < this.b) {
+            return;
+        }
+        this.a = true;
+        try {
+            this.c.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
         }
     }
 }

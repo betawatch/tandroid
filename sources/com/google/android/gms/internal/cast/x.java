@@ -13,10 +13,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class x {
-    public static final g6.b j = new g6.b("ConnectivityMonitor", null);
+    public static final i6.b j = new i6.b("ConnectivityMonitor", null);
     public final j4 a;
     public final ConnectivityManager c;
     public boolean f;

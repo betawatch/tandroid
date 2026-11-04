@@ -1,157 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.os.Build;
 import android.view.View;
-import android.view.animation.AnimationUtils;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class kf0 extends Drawable {
-    public final Paint a;
-    public final int b;
-    public boolean c;
-    public float d;
-    public long e;
-    public View f;
-    public int g = org.telegram.messenger.at.e4;
-    public float h = 300.0f;
+public final class kf0 {
+    public static final float[] m = new ColorMatrix().getArray();
+    public static final float[] n;
+    public static final mb.b o;
+    public final pi.d a;
+    public final pi.c b;
+    public final eh.c c;
+    public final eh.c d;
+    public final eh.c e;
+    public final si.d f;
+    public final ue.b g;
+    public final ue.b h;
+    public int i;
+    public boolean j;
+    public float k;
+    public float l;
 
-    public kf0(int i10) {
-        this.b = org.telegram.messenger.i0.L(i10);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
+    static {
+        ColorMatrix colorMatrix = new ColorMatrix();
+        org.telegram.messenger.g0.i(colorMatrix, 0.65f);
+        org.telegram.messenger.g0.n2(colorMatrix, 0.5f);
+        n = colorMatrix.getArray();
+        o = new mb.b(18);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.c != z10) {
-            this.c = z10;
-            if (!z11) {
-                this.d = z10 ? 1.0f : 0.0f;
-            }
-            this.e = AnimationUtils.currentAnimationTimeMillis();
-            invalidateSelf();
+    public kf0(pi.q qVar, pi.a aVar) {
+        ue.b bVar = new ue.b();
+        this.g = bVar;
+        ue.b bVar2 = new ue.b();
+        this.h = bVar2;
+        if (Build.VERSION.SDK_INT >= 31) {
+            pi.d dVar = aVar.g;
+            this.a = dVar;
+            this.b = dVar != null ? dVar.d(4) : null;
+        } else {
+            this.a = null;
+            this.b = null;
+        }
+        jf0 jf0Var = new jf0(this, null);
+        jf0 jf0Var2 = new jf0(this, new if0(aVar.c));
+        eh.c cVar = new eh.c(jf0Var, jf0Var, jf0Var);
+        cVar.j = qVar;
+        cVar.g = bVar;
+        cVar.f = bVar2;
+        this.c = cVar;
+        eh.c cVar2 = new eh.c(jf0Var2, jf0Var2, jf0Var2);
+        cVar2.j = qVar;
+        cVar2.g = bVar;
+        cVar2.f = bVar2;
+        this.d = cVar2;
+        cVar2.k = true;
+        si.d dVar2 = new si.d(jf0Var2, new if0(aVar.f));
+        this.f = dVar2;
+        eh.c cVar3 = new eh.c(dVar2, dVar2, dVar2);
+        cVar3.j = qVar;
+        cVar3.g = bVar;
+        cVar3.f = bVar2;
+        this.e = cVar3;
+        cVar3.k = true;
+    }
+
+    public final void a() {
+        Iterator it = this.h.iterator();
+        while (it.hasNext()) {
+            ((gh.g) it.next()).updateColors();
+        }
+        Iterator it2 = this.g.iterator();
+        while (it2.hasNext()) {
+            ((View) it2.next()).invalidate();
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        int i10;
-        Canvas canvas2;
-        gd0 gd0Var;
-        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        long j10 = currentAnimationTimeMillis - this.e;
-        this.e = currentAnimationTimeMillis;
-        if (j10 > 18) {
-            j10 = 16;
-        }
-        boolean z10 = this.c;
-        if (z10) {
-            float f7 = this.d;
-            if (f7 < 1.0f) {
-                float f10 = (j10 / this.h) + f7;
-                this.d = f10;
-                if (f10 >= 1.0f) {
-                    this.d = 1.0f;
-                } else {
-                    View view = this.f;
-                    if (view != null) {
-                        view.invalidate();
+    public final void b(float f10) {
+        pi.d dVar;
+        ColorMatrixColorFilter colorMatrixColorFilter;
+        if (this.k != f10) {
+            this.k = f10;
+            if (Build.VERSION.SDK_INT >= 31 && (dVar = this.a) != null) {
+                if (f10 > 0.0f) {
+                    float[] fArr = m;
+                    int length = fArr.length;
+                    float[] fArr2 = new float[length];
+                    for (int i3 = 0; i3 < length; i3++) {
+                        fArr2[i3] = org.telegram.messenger.g0.T1(fArr[i3], n[i3], f10);
                     }
-                    invalidateSelf();
-                }
-                Rect bounds = getBounds();
-                i10 = this.g;
-                if (i10 != 255) {
-                    canvas.save();
-                    canvas2 = canvas;
+                    colorMatrixColorFilter = new ColorMatrixColorFilter(fArr2);
                 } else {
-                    canvas2 = canvas;
-                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i10, 31);
+                    colorMatrixColorFilter = null;
                 }
-                canvas2.translate(c3.i0.z(1.0f, this.d, org.telegram.messenger.i0.L(1.0f), bounds.centerX()), bounds.centerY());
-                float f11 = this.d * 500.0f;
-                float interpolation = f11 >= 100.0f ? gr.j.getInterpolation(f11 / 100.0f) * (-5.0f) : f11 < 484.0f ? (gr.j.getInterpolation((f11 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
-                int i11 = this.b;
-                canvas2.scale((i11 * 1.45f) / org.telegram.messenger.i0.L(28.0f), (i11 * 1.5f) / org.telegram.messenger.i0.L(28.0f));
-                canvas2.rotate(interpolation);
-                gd0Var = org.telegram.ui.ActionBar.t6.x3;
-                if (gd0Var != null) {
-                    Paint paint = this.a;
-                    gd0Var.b(canvas2, paint, f11);
-                    canvas2.scale(1.0f, -1.0f);
-                    org.telegram.ui.ActionBar.t6.x3.b(canvas2, paint, f11);
-                }
-                canvas2.restore();
-            }
-        }
-        if (!z10) {
-            float f12 = this.d;
-            if (f12 > 0.0f) {
-                float f13 = f12 - (j10 / this.h);
-                this.d = f13;
-                if (f13 <= 0.0f) {
-                    this.d = 0.0f;
-                } else {
-                    View view2 = this.f;
-                    if (view2 != null) {
-                        view2.invalidate();
+                if (dVar.k != colorMatrixColorFilter) {
+                    dVar.k = colorMatrixColorFilter;
+                    for (int i10 = 0; i10 < dVar.b; i10++) {
+                        ((pi.b) dVar.a.get(i10)).c(colorMatrixColorFilter);
                     }
-                    invalidateSelf();
                 }
             }
+            a();
         }
-        Rect bounds2 = getBounds();
-        i10 = this.g;
-        if (i10 != 255) {
-        }
-        canvas2.translate(c3.i0.z(1.0f, this.d, org.telegram.messenger.i0.L(1.0f), bounds2.centerX()), bounds2.centerY());
-        float f112 = this.d * 500.0f;
-        if (f112 >= 100.0f) {
-        }
-        int i112 = this.b;
-        canvas2.scale((i112 * 1.45f) / org.telegram.messenger.i0.L(28.0f), (i112 * 1.5f) / org.telegram.messenger.i0.L(28.0f));
-        canvas2.rotate(interpolation);
-        gd0Var = org.telegram.ui.ActionBar.t6.x3;
-        if (gd0Var != null) {
-        }
-        canvas2.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.g = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
     }
 }

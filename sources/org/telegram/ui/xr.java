@@ -1,85 +1,58 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.KeyEvent;
+import android.app.Activity;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class xr extends bs {
-    public final /* synthetic */ int b2;
-    public final /* synthetic */ int c2;
-    public final /* synthetic */ zr d2;
+public final /* synthetic */ class xr implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ is b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xr(zr zrVar, Context context, int i10, int i11) {
-        super(context);
-        this.d2 = zrVar;
-        this.b2 = i10;
-        this.c2 = i11;
-        this.J1 = 1.0f;
-        this.K1 = new o1.j(this, bs.X1);
-        this.L1 = new o1.j(this, bs.Y1);
-        this.M1 = new o1.j(this, bs.Z1);
-        this.N1 = new o1.j(this, bs.a2);
-        this.O1 = true;
-        this.P1 = 1.0f;
-        this.Q1 = 1.0f;
-        this.W1 = false;
-        setBackground(null);
-        org.telegram.ui.ActionBar.a7.V(this, org.telegram.ui.ActionBar.t6.G6, null);
-        setMovementMethod(null);
-        addTextChangedListener(new n0(this, 6));
+    public /* synthetic */ xr(is isVar, int i3) {
+        this.a = i3;
+        this.b = isVar;
     }
 
-    @Override // android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4) {
-            return false;
-        }
-        int keyCode = keyEvent.getKeyCode();
-        zr zrVar = this.d2;
-        int length = zrVar.f.length;
-        int i10 = this.b2;
-        if (i10 >= length) {
-            return false;
-        }
-        if (keyEvent.getAction() != 1) {
-            return isFocused();
-        }
-        if (keyCode == 67 && zrVar.f[i10].length() == 1) {
-            zrVar.f[i10].D();
-            zrVar.f[i10].setText("");
-            return true;
-        }
-        if (keyCode == 67 && zrVar.f[i10].length() == 0 && i10 > 0) {
-            bs[] bsVarArr = zrVar.f;
-            bsVarArr[i10 - 1].setSelection(bsVarArr[i10 - 1].length());
-            for (int i11 = 0; i11 < i10; i11++) {
-                if (i11 == i10 - 1) {
-                    zrVar.f[i10 - 1].requestFocus();
-                } else {
-                    zrVar.f[i11].clearFocus();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                is isVar = this.b;
+                isVar.K = false;
+                isVar.z.invalidate();
+                isVar.m();
+                break;
+            case 1:
+                is isVar2 = this.b;
+                Activity activity = isVar2.w;
+                if (activity instanceof LaunchActivity) {
+                    LaunchActivity launchActivity = (LaunchActivity) activity;
+                    if (launchActivity.M() != null && launchActivity.M().getLastFragment() != null) {
+                        launchActivity.M().getLastFragment().dismissCurrentDialog();
+                    }
+                    launchActivity.t0(new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(5)));
                 }
-            }
-            zrVar.f[i10 - 1].D();
-            zrVar.f[i10 - 1].setText("");
-            return true;
-        }
-        if (keyCode >= 7 && keyCode <= 16) {
-            String num = Integer.toString(keyCode - 7);
-            if (zrVar.f[i10].getText() != null && num.equals(zrVar.f[i10].getText().toString())) {
-                if (i10 >= this.c2 - 1) {
-                    zrVar.a();
-                } else {
-                    zrVar.f[i10 + 1].requestFocus();
+                isVar2.K = false;
+                isVar2.z.invalidate();
+                isVar2.m();
+                break;
+            case 2:
+                is isVar3 = this.b;
+                gs gsVar = isVar3.l;
+                if (gsVar != null) {
+                    gsVar.J();
                 }
-                return true;
-            }
-            if (zrVar.f[i10].length() > 0) {
-                zrVar.f[i10].D();
-            }
-            zrVar.f[i10].setText(num);
+                isVar3.o();
+                break;
+            default:
+                is isVar4 = this.b;
+                gs gsVar2 = isVar4.l;
+                if (gsVar2 != null) {
+                    gsVar2.r();
+                }
+                isVar4.o();
+                break;
         }
-        return true;
     }
 }

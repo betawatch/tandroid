@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class g {
     public final Paint a;
@@ -26,32 +26,32 @@ public final class g {
     public boolean l;
     public float m;
     public float n;
-    public kg.k2 o;
-    public gg.c p;
+    public vg.w1 o;
+    public r4.u p;
 
     public g() {
-        this(64, at.i3, at.q2);
+        this(64, hs.i3, hs.q2);
     }
 
-    public final void a(float f7, Canvas canvas, RectF rectF, View view) {
+    public final void a(float f10, Canvas canvas, RectF rectF, View view) {
         c(view);
-        canvas.drawRoundRect(rectF, f7, f7, this.a);
+        canvas.drawRoundRect(rectF, f10, f10, this.a);
         if (this.k) {
             boolean z10 = this.l;
             Paint paint = this.c;
             if (z10) {
                 rectF.inset(paint.getStrokeWidth() / 2.0f, paint.getStrokeWidth() / 2.0f);
             }
-            canvas.drawRoundRect(rectF, f7, f7, paint);
+            canvas.drawRoundRect(rectF, f10, f10, paint);
         }
     }
 
-    public final void b(int i10, int i11) {
-        float f7 = this.e;
-        int[] iArr = {0, i0.b.o(i10, i11), 0};
+    public final void b(int i3, int i10) {
+        float f10 = this.e;
+        int[] iArr = {0, i0.a.o(i3, i10), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(i10, at.i3), 0}, (float[]) null, tileMode);
+        this.b = new LinearGradient(0.0f, 0.0f, f10, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(i3, hs.i3), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -66,13 +66,13 @@ public final class g {
             if (j10 != 0) {
                 long j11 = currentTimeMillis - j10;
                 if (j11 > 10) {
-                    float f7 = ((j11 / 1200.0f) * this.n) + this.g;
-                    this.g = f7;
-                    if (f7 > this.m) {
+                    float f10 = ((j11 / 1200.0f) * this.n) + this.g;
+                    this.g = f10;
+                    if (f10 > this.m) {
                         this.g = 0.0f;
-                        gg.c cVar = this.p;
-                        if (cVar != null) {
-                            cVar.run();
+                        r4.u uVar = this.p;
+                        if (uVar != null) {
+                            uVar.run();
                         }
                     }
                     this.h = currentTimeMillis;
@@ -81,20 +81,20 @@ public final class g {
                 this.h = currentTimeMillis;
             }
         }
-        int i10 = this.f;
-        float f10 = (((r0 * 2) + i10) * this.g) - this.e;
+        int i3 = this.f;
+        float f11 = (((r0 * 2) + i3) * this.g) - this.e;
         Matrix matrix = this.i;
         matrix.reset();
-        matrix.setTranslate(f10, 0.0f);
+        matrix.setTranslate(f11, 0.0f);
         this.b.setLocalMatrix(matrix);
         this.d.setLocalMatrix(matrix);
     }
 
-    public g(int i10, int i11) {
-        this(i10, i11, at.q2);
+    public g(int i3, int i10) {
+        this(i3, i10, hs.q2);
     }
 
-    public g(int i10, int i11, int i12) {
+    public g(int i3, int i10, int i11) {
         Paint paint = new Paint(1);
         this.a = paint;
         Paint paint2 = new Paint(1);
@@ -105,16 +105,16 @@ public final class g {
         this.l = false;
         this.m = 1.2f;
         this.n = 1.0f;
-        int L = org.telegram.messenger.i0.L(i12);
+        int L = org.telegram.messenger.g0.L(i11);
         this.e = L;
-        float f7 = L;
-        int[] iArr = {0, i0.b.o(-1, i10), 0};
+        float f10 = L;
+        int[] iArr = {0, i0.a.o(-1, i3), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(-1, i11), 0}, (float[]) null, tileMode);
+        this.b = new LinearGradient(0.0f, 0.0f, f10, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(-1, i10), 0}, (float[]) null, tileMode);
         paint.setShader(this.b);
         paint2.setShader(this.d);
         paint2.setStyle(Paint.Style.STROKE);
-        paint2.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
+        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
     }
 }

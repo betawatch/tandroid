@@ -1,138 +1,78 @@
 package w2;
 
-import e9.c0;
-import e9.k0;
-import e9.l0;
-import e9.n0;
-import e9.r;
-import e9.s1;
-import e9.x1;
-import java.util.ArrayList;
-import th.m1;
-import v7.t6;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c implements a {
-    public static final c0 b = new c0(new r(new m1(16), s1.b), new r(new m1(17), s1.c));
-    public final ArrayList a = new ArrayList();
+public final class c implements d1 {
+    public final d1 a;
+    public boolean b;
+    public final /* synthetic */ d c;
 
-    @Override // w2.a
-    public final long a(long j10) {
-        int i10 = 0;
-        long j11 = -9223372036854775807L;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            long j12 = ((z3.a) arrayList.get(i10)).b;
-            long j13 = ((z3.a) arrayList.get(i10)).d;
-            if (j10 < j12) {
-                j11 = j11 == -9223372036854775807L ? j12 : Math.min(j11, j12);
-            } else {
-                if (j10 < j13) {
-                    j11 = j11 == -9223372036854775807L ? j13 : Math.min(j11, j13);
-                }
-                i10++;
-            }
-        }
-        if (j11 != -9223372036854775807L) {
-            return j11;
-        }
-        return Long.MIN_VALUE;
+    public c(d dVar, d1 d1Var) {
+        this.c = dVar;
+        this.a = d1Var;
     }
 
-    @Override // w2.a
-    public final n0 b(long j10) {
-        ArrayList arrayList = this.a;
-        if (!arrayList.isEmpty()) {
-            if (j10 >= ((z3.a) arrayList.get(0)).b) {
-                ArrayList arrayList2 = new ArrayList();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    z3.a aVar = (z3.a) arrayList.get(i10);
-                    if (j10 >= aVar.b && j10 < aVar.d) {
-                        arrayList2.add(aVar);
-                    }
-                    if (j10 < aVar.b) {
-                        break;
-                    }
-                }
-                x1 A = n0.A(b, arrayList2);
-                k0 t10 = n0.t();
-                for (int i11 = 0; i11 < A.d; i11++) {
-                    t10.d(((z3.a) A.get(i11)).a);
-                }
-                return t10.f();
-            }
-        }
-        l0 l0Var = n0.b;
-        return x1.e;
+    @Override // w2.d1
+    public final void a() {
+        this.a.a();
     }
 
-    @Override // w2.a
-    public final boolean c(z3.a aVar, long j10) {
-        long j11 = aVar.b;
-        t6.f(j11 != -9223372036854775807L);
-        t6.f(aVar.c != -9223372036854775807L);
-        boolean z10 = j11 <= j10 && j10 < aVar.d;
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (j11 >= ((z3.a) arrayList.get(size)).b) {
-                arrayList.add(size + 1, aVar);
-                return z10;
-            }
-        }
-        arrayList.add(0, aVar);
-        return z10;
+    @Override // w2.d1
+    public final boolean f() {
+        return !this.c.a() && this.a.f();
     }
 
-    @Override // w2.a
-    public final void clear() {
-        this.a.clear();
+    @Override // w2.d1
+    public final int m(long j10) {
+        if (this.c.a()) {
+            return -3;
+        }
+        return this.a.m(j10);
     }
 
-    @Override // w2.a
-    public final long d(long j10) {
-        ArrayList arrayList = this.a;
-        if (arrayList.isEmpty()) {
-            return -9223372036854775807L;
+    @Override // w2.d1
+    public final int o(tf.b bVar, j2.h hVar, int i3) {
+        d dVar = this.c;
+        if (dVar.a()) {
+            return -3;
         }
-        if (j10 < ((z3.a) arrayList.get(0)).b) {
-            return -9223372036854775807L;
+        if (this.b) {
+            hVar.setFlags(4);
+            return -4;
         }
-        long j11 = ((z3.a) arrayList.get(0)).b;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            long j12 = ((z3.a) arrayList.get(i10)).b;
-            long j13 = ((z3.a) arrayList.get(i10)).d;
-            if (j13 > j10) {
-                if (j12 > j10) {
-                    break;
-                }
-                j11 = Math.max(j11, j12);
-            } else {
-                j11 = Math.max(j11, j13);
+        long q10 = dVar.q();
+        int o10 = this.a.o(bVar, hVar, i3);
+        if (dVar.e != -9223372036854775807L && o10 != -3) {
+            dVar.e = -9223372036854775807L;
+        }
+        if (o10 != -5) {
+            long j10 = dVar.h;
+            if (j10 == Long.MIN_VALUE || ((o10 != -4 || hVar.e < j10) && !(o10 == -3 && q10 == Long.MIN_VALUE && !hVar.d))) {
+                return o10;
             }
+            hVar.clear();
+            hVar.setFlags(4);
+            this.b = true;
+            return -4;
         }
-        return j11;
-    }
-
-    @Override // w2.a
-    public final void e(long j10) {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i10 >= arrayList.size()) {
-                return;
+        long j11 = dVar.f;
+        long j12 = dVar.h;
+        d2.v vVar = (d2.v) bVar.b;
+        vVar.getClass();
+        int i10 = vVar.O;
+        int i11 = vVar.N;
+        if (i11 != 0 || i10 != 0) {
+            if (j11 != 0) {
+                i11 = 0;
             }
-            long j11 = ((z3.a) arrayList.get(i10)).b;
-            if (j10 > j11 && j10 > ((z3.a) arrayList.get(i10)).d) {
-                arrayList.remove(i10);
-                i10--;
-            } else if (j10 < j11) {
-                return;
+            if (j12 != Long.MIN_VALUE) {
+                i10 = 0;
             }
-            i10++;
+            d2.u a10 = vVar.a();
+            a10.M = i11;
+            a10.N = i10;
+            bVar.b = new d2.v(a10);
         }
+        return -5;
     }
 }

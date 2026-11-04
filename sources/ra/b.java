@@ -1,96 +1,32 @@
 package ra;
 
-import java.io.IOException;
+import android.content.Context;
+import b8.ke;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingRegistrar;
+import java.util.concurrent.Executor;
+import t9.r;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Runnable {
+public final /* synthetic */ class b implements t9.d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c b;
+    public final /* synthetic */ r b;
 
-    public /* synthetic */ b(c cVar, int i10) {
-        this.a = i10;
-        this.b = cVar;
+    public /* synthetic */ b(r rVar, int i3) {
+        this.a = i3;
+        this.b = rVar;
     }
 
-    /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x006e  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        sa.a t02;
-        sa.a i10;
-        int i11;
+    @Override // t9.d
+    public final Object q1(ke keVar) {
+        FirebaseMessaging lambda$getComponents$0;
         switch (this.a) {
             case 0:
-                this.b.b();
-                return;
-            case 1:
-                c cVar = this.b;
-                synchronized (c.m) {
-                    try {
-                        l9.h hVar = cVar.a;
-                        hVar.a();
-                        m4.c r10 = m4.c.r(hVar.a);
-                        try {
-                            t02 = cVar.c.t0();
-                            if (r10 != null) {
-                                r10.u0();
-                            }
-                        } catch (Throwable th2) {
-                            if (r10 != null) {
-                                r10.u0();
-                            }
-                            throw th2;
-                        }
-                    } finally {
-                    }
-                }
-                try {
-                    int i12 = t02.b;
-                    if (!(i12 == 5)) {
-                        if (!(i12 == 3)) {
-                            if (cVar.d.a(t02)) {
-                                i10 = cVar.c(t02);
-                                cVar.f(i10);
-                                cVar.m(t02, i10);
-                                if (i10.b == 4) {
-                                    cVar.l(i10.a);
-                                }
-                                i11 = i10.b;
-                                if (i11 != 5) {
-                                    cVar.j(new e());
-                                    return;
-                                } else if (i11 == 2 || i11 == 1) {
-                                    cVar.j(new IOException("Installation ID could not be validated with the Firebase servers (maybe it was deleted). Firebase Installations will need to create a new Installation ID and auth token. Please retry your last request."));
-                                    return;
-                                } else {
-                                    cVar.k(i10);
-                                    return;
-                                }
-                            }
-                            return;
-                        }
-                    }
-                    i10 = cVar.i(t02);
-                    cVar.f(i10);
-                    cVar.m(t02, i10);
-                    if (i10.b == 4) {
-                    }
-                    i11 = i10.b;
-                    if (i11 != 5) {
-                    }
-                } catch (e e) {
-                    cVar.j(e);
-                    return;
-                }
+                return new d((Context) keVar.a(Context.class), ((n9.h) keVar.a(n9.h.class)).d(), keVar.I(e.class), keVar.f(bb.b.class), (Executor) keVar.g(this.b));
             default:
-                this.b.b();
-                return;
+                lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(this.b, keVar);
+                return lambda$getComponents$0;
         }
     }
 }

@@ -2,33 +2,22 @@ package g8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
-import e6.p;
-import w7.h0;
+import f6.c0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e extends o6.a implements q {
-    public static final Parcelable.Creator<e> CREATOR = new p(29);
-    public final Status a;
-    public final f b;
+public final class e extends q6.a {
+    public static final Parcelable.Creator<e> CREATOR = new c0(7);
+    public final byte[] a;
 
-    public e(Status status, f fVar) {
-        this.a = status;
-        this.b = fVar;
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status a() {
-        return this.a;
+    public e(byte[] bArr) {
+        this.a = bArr;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.k(parcel, 1, this.a, i10);
-        h0.k(parcel, 2, this.b, i10);
-        h0.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.d(parcel, 2, this.a);
+        j8.a.t(parcel, s6);
     }
 }

@@ -1,89 +1,39 @@
 package q2;
 
-import android.content.Context;
-import android.graphics.Point;
-import b2.w0;
-import b2.x;
-import e0.f0;
-import e2.l0;
-import h2.h;
-import h2.j;
-import h2.l;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import org.telegram.tgnet.TLObject;
-import v7.t6;
+import b8.od;
+import d2.u;
+import d2.u0;
+import d2.v;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends l {
-    public final Context o;
-    public final int p;
+public final class c {
+    public static final int[] d = {8, 13, 11, 2, 0, 1, 7};
+    public mb.b a;
+    public boolean b;
+    public int c;
 
-    public c(Context context) {
-        super(new h[1], new a[1]);
-        this.o = context;
-        this.p = -1;
-    }
-
-    @Override // h2.l
-    public final h f() {
-        return new h(1, 0);
-    }
-
-    @Override // h2.l
-    public final j g() {
-        return new a(this);
-    }
-
-    @Override // h2.e
-    public final String getName() {
-        return "BitmapFactoryImageDecoder";
-    }
-
-    @Override // h2.l
-    public final h2.f h(Throwable th2) {
-        return new d("Unexpected decode error", th2);
-    }
-
-    @Override // h2.l
-    public final h2.f i(h hVar, j jVar, boolean z10) {
-        a aVar = (a) jVar;
-        ByteBuffer byteBuffer = hVar.c;
-        byteBuffer.getClass();
-        t6.p(byteBuffer.hasArray());
-        t6.f(byteBuffer.arrayOffset() == 0);
-        try {
-            int i10 = this.p;
-            if (i10 == -1) {
-                Context context = this.o;
-                if (context != null) {
-                    Point y3 = l0.y(context);
-                    int i11 = y3.x;
-                    int i12 = y3.y;
-                    x xVar = hVar.a;
-                    if (xVar != null) {
-                        int i13 = xVar.R;
-                        if (i13 != -1) {
-                            i11 *= i13;
-                        }
-                        int i14 = xVar.S;
-                        if (i14 != -1) {
-                            i12 *= i14;
-                        }
-                    }
-                    i10 = (Math.max(i11, i12) * 2) - 1;
-                } else {
-                    i10 = TLObject.FLAG_12;
-                }
-            }
-            aVar.a = f0.b(byteBuffer.remaining(), i10, byteBuffer.array());
-            aVar.timeUs = hVar.e;
-            return null;
-        } catch (w0 e) {
-            return new d("Could not decode image data with BitmapFactory.", e);
-        } catch (IOException e7) {
-            return new d(e7);
+    public static void a(int i3, ArrayList arrayList) {
+        if (od.d(i3, 0, 7, d) == -1 || arrayList.contains(Integer.valueOf(i3))) {
+            return;
         }
+        arrayList.add(Integer.valueOf(i3));
+    }
+
+    public final v b(v vVar) {
+        if (!this.b || !this.a.l(vVar)) {
+            return vVar;
+        }
+        u a10 = vVar.a();
+        String str = vVar.k;
+        a10.r = u0.n("application/x-media3-cues");
+        a10.P = this.a.q0(vVar);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(vVar.s);
+        sb2.append(str != null ? " ".concat(str) : "");
+        a10.j = sb2.toString();
+        a10.w = Long.MAX_VALUE;
+        return new v(a10);
     }
 }

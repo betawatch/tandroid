@@ -1,6 +1,7 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Method from annotation default annotation not found: zzb */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class b0 {
+public @interface b0 {
 }

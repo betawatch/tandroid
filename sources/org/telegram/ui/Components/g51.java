@@ -1,18 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class g51 extends f51 {
-    public g51(String str) {
-        super(str != null ? str.replace((char) 8238, ' ') : str, (zz0) null);
-    }
+public interface g51 {
+    boolean b();
 
-    @Override // org.telegram.ui.Components.f51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setTypeface(org.telegram.messenger.i0.o());
-        textPaint.setUnderlineText(false);
-    }
+    void r(boolean z10, float[] fArr);
 }

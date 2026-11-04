@@ -1,13 +1,29 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.Drawable;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface nc {
-    void j(ImageReceiver imageReceiver);
+public final /* synthetic */ class nc implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fg b;
+    public final /* synthetic */ xc c;
 
-    void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12);
+    public /* synthetic */ nc(fg fgVar, xc xcVar, int i3) {
+        this.a = i3;
+        this.b = fgVar;
+        this.c = xcVar;
+    }
 
-    void s(int i10, Drawable drawable);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                this.c.a();
+                break;
+            default:
+                this.b.run();
+                this.c.a();
+                break;
+        }
+    }
 }

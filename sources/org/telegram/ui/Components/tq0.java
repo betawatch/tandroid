@@ -1,30 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tq0 implements org.telegram.messenger.r20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ au0 b;
+import android.content.Context;
 
-    public /* synthetic */ tq0(au0 au0Var, int i10) {
-        this.a = i10;
-        this.b = au0Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class tq0 extends ScrollSlidingTextTabStrip {
+    public final /* synthetic */ ws0 q0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tq0(ws0 ws0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.q0 = ws0Var;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
-        int i10 = this.a;
-        int i11 = 7;
-        au0 au0Var = this.b;
-        th.y4 y4Var = (th.y4) obj;
-        switch (i10) {
-            case 0:
-                org.telegram.messenger.i0.h3(new hi0(i11, au0Var, y4Var), 100L);
-                break;
-            default:
-                int[] iArr = au0.s2;
-                org.telegram.messenger.i0.h3(new hi0(i11, au0Var, y4Var), 100L);
-                break;
-        }
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
+    public final int e(int i3) {
+        return this.q0.f1(i3);
     }
 }

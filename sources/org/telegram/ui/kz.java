@@ -1,30 +1,27 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz implements org.telegram.messenger.r20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h00 b;
+public final class kz extends org.telegram.ui.Components.iz {
+    public final /* synthetic */ int V;
+    public final /* synthetic */ Object W;
 
-    public /* synthetic */ kz(h00 h00Var, int i10) {
-        this.a = i10;
-        this.b = h00Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ kz(int i3, Context context, Object obj) {
+        super(context, null);
+        this.V = i3;
+        this.W = obj;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.iz
+    public final int getColumnsCount() {
+        switch (this.V) {
             case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                this.b.s0((TL_chatlists.TL_exportedChatlistInvite) obj);
-                break;
+                return ((wz) this.W).s;
             default:
-                this.b.r0((TL_chatlists.TL_exportedChatlistInvite) obj);
-                break;
+                return ((uz) this.W).d.s;
         }
     }
 }

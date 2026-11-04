@@ -1,104 +1,70 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wd implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class wd extends FrameLayout {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.Components.o5 b;
+    public final TextView c;
+    public final TextView d;
+    public final DecimalFormat e;
+    public boolean f;
 
-    public /* synthetic */ wd(Object obj, Object obj2, boolean z10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = z10;
+    public wd(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.a = e6Var;
+        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
+        addView(f10, b8.mf.d(-1, -2.0f, org.telegram.messenger.hs.E1, 17.0f, 9.0f, 130.0f, 9.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, e6Var);
+        f10.addView(textView, b8.mf.o(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.y6, e6Var);
+        f10.addView(textView2, b8.mf.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
+        org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(context);
+        this.b = o5Var;
+        o5Var.setTypeface(org.telegram.messenger.g0.o());
+        o5Var.setTextSize(1, 13.0f);
+        addView(o5Var, b8.mf.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+        DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
+        decimalFormatSymbols.setDecimalSeparator('.');
+        DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
+        this.e = decimalFormat;
+        decimalFormat.setMinimumFractionDigits(2);
+        decimalFormat.setMaximumFractionDigits(12);
+        decimalFormat.setGroupingUsed(false);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        TLRPC.TL_chatInviteExported tL_chatInviteExported;
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.i0.g3(new ag.n0((le) this.c, tL_error, tLObject, (TwoStepVerificationActivity) this.d, this.b, 5));
-                break;
-            case 1:
-                org.telegram.messenger.i0.g3(new kp((org.telegram.ui.Components.sw0) this.c, tLObject, this.b, (org.telegram.ui.ActionBar.x1) this.d, 4));
-                break;
-            case 2:
-                org.telegram.messenger.i0.g3(new ag.n0((nx) this.c, tL_error, tLObject, (String) this.d, this.b, 11));
-                break;
-            case 3:
-                org.telegram.messenger.i0.g3(new kp((a50) this.c, tLObject, (TLRPC.ChatFull) this.d, this.b, 6));
-                break;
-            case 4:
-                ig0 ig0Var = (ig0) this.c;
-                TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) this.d;
-                if (tL_error == null) {
-                    TLRPC.TL_messages_exportedChatInvites tL_messages_exportedChatInvites = (TLRPC.TL_messages_exportedChatInvites) tLObject;
-                    if (tL_messages_exportedChatInvites.invites.size() > 0 && tL_chatInviteExported2 != null) {
-                        for (int i10 = 0; i10 < tL_messages_exportedChatInvites.invites.size(); i10++) {
-                            if (((TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.get(i10)).link.equals(tL_chatInviteExported2.link)) {
-                                tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tL_messages_exportedChatInvites.invites.remove(i10);
-                                TLRPC.TL_chatInviteExported tL_chatInviteExported3 = tL_chatInviteExported;
-                                org.telegram.messenger.i0.g3(new vf0(ig0Var, tL_chatInviteExported3, tL_error, tLObject, this.b, 0));
-                                break;
-                            }
-                        }
-                    }
-                }
-                tL_chatInviteExported = null;
-                TLRPC.TL_chatInviteExported tL_chatInviteExported32 = tL_chatInviteExported;
-                org.telegram.messenger.i0.g3(new vf0(ig0Var, tL_chatInviteExported32, tL_error, tLObject, this.b, 0));
-            case 5:
-                org.telegram.messenger.i0.g3(new ag.n0((qm0) this.c, tL_error, this.b, tLObject, (String) this.d, 13));
-                break;
-            case 6:
-                org.telegram.messenger.i0.g3(new kp((rh.v5) this.c, (int[]) this.d, tLObject, this.b, 13));
-                break;
-            case 7:
-                org.telegram.messenger.i0.g3(new kp((vh.e1) this.c, tLObject, (String) this.d, this.b, 15));
-                break;
-            default:
-                zf.m1 m1Var = (zf.m1) this.c;
-                String str = (String) this.d;
-                a0.h hVar = m1Var.h;
-                ArrayList arrayList = m1Var.g;
-                int i11 = m1Var.m;
-                if (tL_error == null) {
-                    TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject;
-                    m1Var.n = str.toLowerCase();
-                    org.telegram.messenger.wp.r1(i11).V3(tL_channels_channelParticipants.users, false);
-                    org.telegram.messenger.wp.r1(i11).P3(tL_channels_channelParticipants.chats, false);
-                    arrayList.clear();
-                    hVar.b();
-                    arrayList.addAll(tL_channels_channelParticipants.participants);
-                    long e = org.telegram.messenger.e20.i(i11).e();
-                    int size = tL_channels_channelParticipants.participants.size();
-                    for (int i12 = 0; i12 < size; i12++) {
-                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i12);
-                        long C1 = org.telegram.messenger.kj.C1(channelParticipant.peer);
-                        if (this.b || C1 != e) {
-                            hVar.k(channelParticipant, C1);
-                        } else {
-                            arrayList.remove(channelParticipant);
-                        }
-                    }
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.f) {
+            org.telegram.ui.ActionBar.e6 e6Var = this.a;
+            Paint d = e6Var != null ? e6Var.d("paintDivider") : org.telegram.ui.ActionBar.k6.k0;
+            if (d != null) {
+                canvas.drawLine(org.telegram.messenger.bd.a0 ? 0.0f : org.telegram.messenger.g0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.bd.a0 ? org.telegram.messenger.g0.L(17.0f) : 0), getMeasuredHeight() - 1, d);
+            }
         }
     }
 
-    public /* synthetic */ wd(Object obj, boolean z10, Object obj2, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
-        this.d = obj2;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i10);
     }
 }

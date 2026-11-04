@@ -1,120 +1,68 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.WeakHashMap;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class u9 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class u9 implements Runnable {
+    public boolean a;
+    public int b;
+    public int c;
+    public final /* synthetic */ v9 d;
 
-    public /* synthetic */ u9(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+    public u9(v9 v9Var) {
+        this.d = v9Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        int i10 = this.a;
-        Object obj = this.b;
-        Object obj2 = this.c;
-        switch (i10) {
-            case 0:
-                s9 s9Var = (s9) obj;
-                if (s9Var != null) {
-                    s9Var.d.add((w9) obj2);
-                    break;
-                }
-                break;
-            case 1:
-                rz0 rz0Var = (rz0) obj2;
-                rz0Var.k = o5.update(rz0Var.l, (View) obj, rz0Var.k, rz0Var.b);
-                break;
-            default:
-                org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) obj2;
-                org.telegram.ui.Wallet.c4 c4Var = d4Var.m;
-                if (c4Var != null) {
-                    c4Var.setPaused(!d4Var.n);
-                }
-                d4Var.a.isAttachedToWindow();
-                int i11 = d4Var.v0;
-                if (-1 != i11) {
-                    if (i11 >= 0) {
-                        org.telegram.messenger.at.f(i11).n(d4Var.x0, 67);
-                    }
-                    d4Var.v0 = -1;
-                    break;
-                }
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Bitmap bitmap;
+        v9 v9Var = this.d;
+        Paint paint = v9Var.w;
+        if (v9Var.f == null) {
+            v9Var.f = new Bitmap[2];
+            v9Var.i = new Canvas[2];
         }
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        switch (this.a) {
-            case 0:
-                w9 w9Var = (w9) this.c;
-                s9 s9Var = (s9) this.b;
-                if (s9Var != null) {
-                    ArrayList arrayList = s9Var.d;
-                    arrayList.remove(w9Var);
-                    if (s9Var.e.isEmpty() && arrayList.isEmpty()) {
-                        s9Var.n.c();
-                    }
+        int i3 = (int) (this.b / 15.0f);
+        int i10 = 0;
+        while (i10 < 2) {
+            int i11 = (int) ((i10 == 0 ? v9Var.s : this.c) / 15.0f);
+            Bitmap bitmap2 = v9Var.f[i10];
+            if (bitmap2 != null && ((bitmap2.getHeight() != i11 || v9Var.f[i10].getWidth() != i3) && (bitmap = v9Var.f[i10]) != null)) {
+                bitmap.recycle();
+                v9Var.f[i10] = null;
+            }
+            System.currentTimeMillis();
+            Bitmap[] bitmapArr = v9Var.f;
+            if (bitmapArr[i10] == null) {
+                try {
+                    bitmapArr[i10] = Bitmap.createBitmap(i3, i11, Bitmap.Config.ARGB_8888);
+                    v9Var.i[i10] = new Canvas(v9Var.f[i10]);
+                    v9Var.i[i10].scale(i3 / v9Var.e[i10].getWidth(), i11 / v9Var.e[i10].getHeight());
+                } catch (Throwable th2) {
+                    org.telegram.messenger.a8.g(th2, true);
                 }
-                w9Var.n = null;
-                Paint paint = w9Var.h;
-                w9Var.o = null;
-                paint.setShader(null);
-                break;
-            case 1:
-                o5.release((View) this.b, ((rz0) this.c).k);
-                break;
-            default:
-                org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) this.c;
-                org.telegram.ui.Cells.s0 s0Var = d4Var.a;
-                d4Var.f();
-                d4Var.M = false;
-                d4Var.N = 0L;
-                d4Var.k();
-                o1.j jVar = d4Var.Z;
-                if (jVar != null) {
-                    jVar.d();
-                    d4Var.Z = null;
-                }
-                d4Var.a0 = 1.0f;
-                s0Var.invalidate();
-                if (s0Var.getParent() instanceof View) {
-                    ((View) s0Var.getParent()).invalidate();
-                }
-                d4Var.l();
-                org.telegram.ui.Wallet.m6 m6Var = d4Var.k;
-                org.telegram.ui.Cells.s0 s0Var2 = (org.telegram.ui.Cells.s0) this.b;
-                WeakHashMap weakHashMap = m6Var.e;
-                weakHashMap.remove(s0Var2);
-                if (weakHashMap.isEmpty()) {
-                    m6Var.a();
-                }
-                s0Var.isAttachedToWindow();
-                int i10 = d4Var.v0;
-                if (-1 != i10) {
-                    if (i10 >= 0) {
-                        org.telegram.messenger.at.f(i10).n(d4Var.x0, 67);
-                    }
-                    d4Var.v0 = -1;
-                }
-                org.telegram.ui.Wallet.c4 c4Var = d4Var.m;
-                if (c4Var != null) {
-                    c4Var.setPaused(true);
-                }
-                d4Var.l.stop();
-                d4Var.H = false;
-                break;
+            }
+            if (i10 == 1) {
+                v9Var.f[i10].eraseColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, v9Var.y));
+            } else {
+                v9Var.f[i10].eraseColor(0);
+            }
+            paint.setAlpha(org.telegram.messenger.hs.e4);
+            Utilities.stackBlurBitmap(v9Var.e[i10], 15);
+            Canvas canvas = v9Var.i[i10];
+            if (canvas != null) {
+                canvas.drawBitmap(v9Var.e[i10], 0.0f, 0.0f, paint);
+            }
+            if (this.a) {
+                return;
+            } else {
+                i10++;
+            }
         }
+        org.telegram.messenger.g0.h3(new vf(this, 12));
     }
 }

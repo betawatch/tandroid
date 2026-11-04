@@ -18,19 +18,19 @@ public final class t2 extends x2 implements y1 {
     }
 
     @Override // j$.util.stream.x2, j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i10) {
-        a(i10);
+    public final /* bridge */ /* synthetic */ e2 a(int i3) {
+        a(i3);
         throw null;
     }
 
     @Override // j$.util.stream.x2, j$.util.stream.e2
-    public final d2 a(int i10) {
+    public final d2 a(int i3) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i10) {
-        t3.M(this, (Double[]) objArr, i10);
+    public final /* synthetic */ void f(Object[] objArr, int i3) {
+        t3.M(this, (Double[]) objArr, i3);
     }
 
     @Override // j$.util.stream.d2

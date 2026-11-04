@@ -66,8 +66,8 @@ public abstract class t3 implements b8 {
                 try {
                     g gVar = (g) it.next();
                     hashSet.add(gVar == null ? null : gVar == g.CONCURRENT ? Collector.Characteristics.CONCURRENT : gVar == g.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
-                } catch (ClassCastException e7) {
-                    j$.util.g.a(e7, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e10) {
+                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }
@@ -81,8 +81,8 @@ public abstract class t3 implements b8 {
                 try {
                     Collector.Characteristics characteristics = (Collector.Characteristics) it2.next();
                     hashSet.add(characteristics == null ? null : characteristics == Collector.Characteristics.CONCURRENT ? g.CONCURRENT : characteristics == Collector.Characteristics.UNORDERED ? g.UNORDERED : g.IDENTITY_FINISH);
-                } catch (ClassCastException e10) {
-                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e11) {
+                    j$.util.g.a(e11, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }
@@ -112,17 +112,17 @@ public abstract class t3 implements b8 {
 
     public static Spliterator X(w6 w6Var, Spliterator spliterator, long j10, long j11) {
         long Z = Z(j10, j11);
-        int i10 = s5.a[w6Var.ordinal()];
-        if (i10 == 1) {
+        int i3 = s5.a[w6Var.ordinal()];
+        if (i3 == 1) {
             return new p7(spliterator, j10, Z);
         }
-        if (i10 == 2) {
+        if (i3 == 2) {
             return new m7((j$.util.x0) spliterator, j10, Z);
         }
-        if (i10 == 3) {
+        if (i3 == 3) {
             return new n7((j$.util.a1) spliterator, j10, Z);
         }
-        if (i10 != 4) {
+        if (i3 != 4) {
             throw new IllegalStateException("Unknown shape " + w6Var);
         }
         return new l7((j$.util.u0) spliterator, j10, Z);
@@ -135,17 +135,17 @@ public abstract class t3 implements b8 {
     }
 
     public static x2 i0(w6 w6Var) {
-        int i10 = f2.a[w6Var.ordinal()];
-        if (i10 == 1) {
+        int i3 = f2.a[w6Var.ordinal()];
+        if (i3 == 1) {
             return a;
         }
-        if (i10 == 2) {
+        if (i3 == 2) {
             return b;
         }
-        if (i10 == 3) {
+        if (i3 == 3) {
             return c;
         }
-        if (i10 == 4) {
+        if (i3 == 4) {
             return d;
         }
         throw new IllegalStateException("Unknown shape " + w6Var);
@@ -172,12 +172,12 @@ public abstract class t3 implements b8 {
         long j12 = j11 - j10;
         w1 Y = Y(j12, intFunction);
         Y.o(j12);
-        for (int i10 = 0; i10 < j10 && spliterator.tryAdvance(new a1(11)); i10++) {
+        for (int i3 = 0; i3 < j10 && spliterator.tryAdvance(new a1(11)); i3++) {
         }
         if (j11 == e2Var.count()) {
             spliterator.forEachRemaining(Y);
         } else {
-            for (int i11 = 0; i11 < j12 && spliterator.tryAdvance(Y); i11++) {
+            for (int i10 = 0; i10 < j12 && spliterator.tryAdvance(Y); i10++) {
             }
         }
         Y.end();
@@ -185,17 +185,17 @@ public abstract class t3 implements b8 {
     }
 
     public static g2 e0(w6 w6Var, e2 e2Var, e2 e2Var2) {
-        int i10 = f2.a[w6Var.ordinal()];
-        if (i10 == 1) {
+        int i3 = f2.a[w6Var.ordinal()];
+        if (i3 == 1) {
             return new p2(e2Var, e2Var2);
         }
-        if (i10 == 2) {
+        if (i3 == 2) {
             return new m2((a2) e2Var, (a2) e2Var2);
         }
-        if (i10 == 3) {
+        if (i3 == 3) {
             return new n2((c2) e2Var, (c2) e2Var2);
         }
-        if (i10 != 4) {
+        if (i3 != 4) {
             throw new IllegalStateException("Unknown shape " + w6Var);
         }
         return new l2((y1) e2Var, (y1) e2Var2);
@@ -240,12 +240,12 @@ public abstract class t3 implements b8 {
         h5Var.accept(num.intValue());
     }
 
-    public static void H(i5 i5Var, Long l4) {
+    public static void H(i5 i5Var, Long l10) {
         if (d8.a) {
             d8.a(i5Var.getClass(), "{0} calling Sink.OfLong.accept(Long)");
             throw null;
         }
-        i5Var.accept(l4.longValue());
+        i5Var.accept(l10.longValue());
     }
 
     public static u1 s0(long j10) {
@@ -332,14 +332,14 @@ public abstract class t3 implements b8 {
         return new p5(i1Var, l0(j11), j10, j11);
     }
 
-    public static void N(a2 a2Var, Integer[] numArr, int i10) {
+    public static void N(a2 a2Var, Integer[] numArr, int i3) {
         if (d8.a) {
             d8.a(a2Var.getClass(), "{0} calling Node.OfInt.copyInto(Integer[], int)");
             throw null;
         }
         int[] iArr = (int[]) a2Var.b();
-        for (int i11 = 0; i11 < iArr.length; i11++) {
-            numArr[i10 + i11] = Integer.valueOf(iArr[i11]);
+        for (int i10 = 0; i10 < iArr.length; i10++) {
+            numArr[i3 + i10] = Integer.valueOf(iArr[i10]);
         }
     }
 
@@ -351,12 +351,12 @@ public abstract class t3 implements b8 {
         j$.util.x0 x0Var = (j$.util.x0) a2Var.spliterator();
         u1 s02 = s0(j12);
         s02.o(j12);
-        for (int i10 = 0; i10 < j10 && x0Var.tryAdvance((IntConsumer) new z1(0)); i10++) {
+        for (int i3 = 0; i3 < j10 && x0Var.tryAdvance((IntConsumer) new z1(0)); i3++) {
         }
         if (j11 == a2Var.count()) {
             x0Var.forEachRemaining((IntConsumer) s02);
         } else {
-            for (int i11 = 0; i11 < j12 && x0Var.tryAdvance((IntConsumer) s02); i11++) {
+            for (int i10 = 0; i10 < j12 && x0Var.tryAdvance((IntConsumer) s02); i10++) {
             }
         }
         s02.end();
@@ -403,14 +403,14 @@ public abstract class t3 implements b8 {
         }
     }
 
-    public static void O(c2 c2Var, Long[] lArr, int i10) {
+    public static void O(c2 c2Var, Long[] lArr, int i3) {
         if (d8.a) {
             d8.a(c2Var.getClass(), "{0} calling Node.OfInt.copyInto(Long[], int)");
             throw null;
         }
         long[] jArr = (long[]) c2Var.b();
-        for (int i11 = 0; i11 < jArr.length; i11++) {
-            lArr[i10 + i11] = Long.valueOf(jArr[i11]);
+        for (int i10 = 0; i10 < jArr.length; i10++) {
+            lArr[i3 + i10] = Long.valueOf(jArr[i10]);
         }
     }
 
@@ -422,12 +422,12 @@ public abstract class t3 implements b8 {
         j$.util.a1 a1Var = (j$.util.a1) c2Var.spliterator();
         v1 t02 = t0(j12);
         t02.o(j12);
-        for (int i10 = 0; i10 < j10 && a1Var.tryAdvance((LongConsumer) new b2(0)); i10++) {
+        for (int i3 = 0; i3 < j10 && a1Var.tryAdvance((LongConsumer) new b2(0)); i3++) {
         }
         if (j11 == c2Var.count()) {
             a1Var.forEachRemaining((LongConsumer) t02);
         } else {
-            for (int i11 = 0; i11 < j12 && a1Var.tryAdvance((LongConsumer) t02); i11++) {
+            for (int i10 = 0; i10 < j12 && a1Var.tryAdvance((LongConsumer) t02); i10++) {
             }
         }
         t02.end();
@@ -493,14 +493,14 @@ public abstract class t3 implements b8 {
         return new z2(iArr);
     }
 
-    public static void M(y1 y1Var, Double[] dArr, int i10) {
+    public static void M(y1 y1Var, Double[] dArr, int i3) {
         if (d8.a) {
             d8.a(y1Var.getClass(), "{0} calling Node.OfDouble.copyInto(Double[], int)");
             throw null;
         }
         double[] dArr2 = (double[]) y1Var.b();
-        for (int i11 = 0; i11 < dArr2.length; i11++) {
-            dArr[i10 + i11] = Double.valueOf(dArr2[i11]);
+        for (int i10 = 0; i10 < dArr2.length; i10++) {
+            dArr[i3 + i10] = Double.valueOf(dArr2[i10]);
         }
     }
 
@@ -512,12 +512,12 @@ public abstract class t3 implements b8 {
         j$.util.u0 u0Var = (j$.util.u0) y1Var.spliterator();
         t1 h02 = h0(j12);
         h02.o(j12);
-        for (int i10 = 0; i10 < j10 && u0Var.tryAdvance((DoubleConsumer) new x1(0)); i10++) {
+        for (int i3 = 0; i3 < j10 && u0Var.tryAdvance((DoubleConsumer) new x1(0)); i3++) {
         }
         if (j11 == y1Var.count()) {
             u0Var.forEachRemaining((DoubleConsumer) h02);
         } else {
-            for (int i11 = 0; i11 < j12 && u0Var.tryAdvance((DoubleConsumer) h02); i11++) {
+            for (int i10 = 0; i10 < j12 && u0Var.tryAdvance((DoubleConsumer) h02); i10++) {
             }
         }
         h02.end();

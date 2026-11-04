@@ -1,80 +1,41 @@
 package u7;
 
-import a9.o;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
-import w7.z7;
+import android.os.BadParcelableException;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+import k2.p1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b extends o implements ListIterator {
-    public final int b;
-    public int c;
-    public final d d;
+public abstract class b {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, int i10) {
-        super(5);
-        int size = dVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(z7.c(i10, size, "index"));
+    static {
+        b.class.getClassLoader();
+    }
+
+    public static void a(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(p1.i(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
-        this.b = size;
-        this.c = i10;
-        this.d = dVar;
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+    public static void c(Parcel parcel, IInterface iInterface) {
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
         }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
     }
 }

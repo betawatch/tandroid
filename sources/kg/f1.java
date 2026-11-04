@@ -1,206 +1,49 @@
 package kg;
 
-import android.view.KeyEvent;
-import java.util.ArrayList;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.e20;
-import org.telegram.ui.Components.y9;
-import org.telegram.ui.du0;
-import th.e7;
-import th.f7;
-import th.k7;
-import th.o7;
-import th.z2;
+import ei.i7;
+import org.telegram.messenger.hp;
+import org.telegram.ui.Cells.p2;
+import org.telegram.ui.Cells.t2;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.wm;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class f1 implements z4.e {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final class f1 implements p2 {
+    public final /* synthetic */ i1 a;
 
-    public /* synthetic */ f1(KeyEvent.Callback callback, Object obj, int i10) {
-        this.a = i10;
-        this.c = callback;
-        this.b = obj;
+    public f1(i1 i1Var) {
+        this.a = i1Var;
     }
 
-    @Override // z4.e
-    public final void a(int i10) {
-        int i11 = this.a;
-        KeyEvent.Callback callback = this.c;
-        switch (i11) {
-            case 0:
-                i1 i1Var = (i1) callback;
-                ArrayList arrayList = i1Var.k1;
-                if (((du0) arrayList.get(i10)).a == 0) {
-                    i1Var.E1.setTitle(dd.L0(2131751350, null));
-                    i1Var.E1.requestLayout();
-                } else if (((du0) arrayList.get(i10)).a == 14) {
-                    i1Var.E1.setTitle(dd.L0(2131743831, null));
-                    i1Var.E1.requestLayout();
-                } else if (((du0) arrayList.get(i10)).a == 40) {
-                    i1Var.E1.setTitle(dd.L0(2131750838, null));
-                    i1Var.E1.requestLayout();
-                } else if (((du0) arrayList.get(i10)).a == 28) {
-                    i1Var.E1.setTitle(dd.L0(2131744277, null));
-                    i1Var.E1.requestLayout();
-                }
-                d();
-                break;
-            default:
-                o7 o7Var = (o7) this.b;
-                th.q qVar = (th.q) callback;
-                z2 currentPeerView = qVar.getCurrentPeerView();
-                if (currentPeerView != null) {
-                    ((f7) qVar.B0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
-                    qVar.F();
-                    k7 k7Var = o7Var.t0;
-                    if (k7Var != null) {
-                        if (i10 >= 3) {
-                            if (i10 > qVar.z0.b() - 4) {
-                                o7Var.t0.c(true);
-                                break;
-                            }
-                        } else {
-                            k7Var.c(false);
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Cells.p2
+    public final boolean m() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.p2
+    public final void u(t2 t2Var) {
+        i1 i1Var = this.a;
+        wm wmVar = i1Var.f;
+        if (hp.s1(i1Var.r).P1().K(t2Var.getDialogId())) {
+            wmVar.getOrCreateStoryViewer().getClass();
+            wmVar.getOrCreateStoryViewer().R(i1Var.c, t2Var.getDialogId(), i7.a((tj0) t2Var.getParent()));
         }
     }
 
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                y9 y9Var = (y9) this.b;
-                y9Var.b = f7;
-                y9Var.c = i10;
-                y9Var.invalidate();
-                i1 i1Var = (i1) this.c;
-                i1Var.x1 = i10;
-                i1Var.y1 = i11 > 0 ? i10 + 1 : i10 - 1;
-                i1Var.z1 = f7;
-                d();
-                break;
-            default:
-                th.q qVar = (th.q) this.c;
-                qVar.I0 = i10;
-                qVar.J0 = i11 > 0 ? i10 + 1 : i10 - 1;
-                qVar.K0 = f7;
-                long j10 = e20.i(qVar.y0).n;
-                int i12 = qVar.I0;
-                if (i12 >= 0 && (qVar.x0 != null ? qVar.w0 == j10 : !(i12 >= qVar.A0.size() || ((Long) qVar.A0.get(qVar.I0)).longValue() != j10))) {
-                    ((f7) qVar.B0).d(1.0f - qVar.K0);
-                    break;
-                } else {
-                    int i13 = qVar.J0;
-                    if (i13 >= 0 && (qVar.x0 != null ? qVar.w0 == j10 : !(i13 >= qVar.A0.size() || ((Long) qVar.A0.get(qVar.J0)).longValue() != j10))) {
-                        ((f7) qVar.B0).d(qVar.K0);
-                        break;
-                    } else {
-                        ((f7) qVar.B0).d(0.0f);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Cells.p2
+    public final void l(t2 t2Var) {
     }
 
-    @Override // z4.e
-    public final void c(int i10) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                th.q qVar = (th.q) this.c;
-                ((f7) qVar.B0).d.d0();
-                Runnable runnable = qVar.G0;
-                if (runnable != null && i10 == 0) {
-                    runnable.run();
-                    qVar.G0 = null;
-                }
-                qVar.F0 = i10;
-                o7 o7Var = ((e7) qVar).R0;
-                if (o7Var.n0.F0 == 1) {
-                    org.telegram.messenger.i0.r(o7Var.b1);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Cells.p2
+    public final void r(t2 t2Var) {
     }
 
-    public void d() {
-        int i10;
-        int i11;
-        i1 i1Var = (i1) this.c;
-        d1 d1Var = i1Var.o1;
-        ArrayList arrayList = i1Var.k1;
-        int i12 = 0;
-        while (true) {
-            float f7 = 0.0f;
-            if (i12 >= d1Var.getChildCount()) {
-                break;
-            }
-            h1 h1Var = (h1) d1Var.getChildAt(i12);
-            if (!i1Var.s1 || !(h1Var.f instanceof v0)) {
-                int i13 = h1Var.a;
-                t0 t0Var = h1Var.e;
-                if (i13 == i1Var.x1) {
-                    f7 = (-h1Var.getMeasuredWidth()) * i1Var.z1;
-                    t0Var.setOffset(f7);
-                } else if (i13 == i1Var.y1) {
-                    f7 = ((-h1Var.getMeasuredWidth()) * i1Var.z1) + h1Var.getMeasuredWidth();
-                    t0Var.setOffset(f7);
-                } else {
-                    t0Var.setOffset(h1Var.getMeasuredWidth());
-                }
-            }
-            if (h1Var.f instanceof v0) {
-                h1Var.setTranslationX(-f7);
-                h1Var.b.setTranslationX(f7);
-                h1Var.c.setTranslationX(f7);
-            }
-            i12++;
-        }
-        int i14 = i1Var.x1;
-        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((du0) arrayList.get(i1Var.x1)).a) == 0 || i11 == 14 || i11 == 28);
-        int i15 = i1Var.y1;
-        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((du0) arrayList.get(i1Var.y1)).a) == 0 || i10 == 14 || i10 == 28);
-        if (z10 && z11) {
-            i1Var.m1 = 1.0f;
-            float f10 = i1Var.z1;
-            if (f10 == 0.0f) {
-                f10 = 1.0f;
-            }
-            i1Var.l1 = f10;
-            i1Var.n1 = true;
-        } else if (z10) {
-            float f11 = 1.0f - i1Var.z1;
-            i1Var.l1 = f11;
-            i1Var.m1 = f11;
-            i1Var.n1 = true;
-        } else if (z11) {
-            float f12 = i1Var.z1;
-            i1Var.l1 = f12;
-            i1Var.m1 = f12;
-            i1Var.n1 = false;
-        } else {
-            i1Var.l1 = 0.0f;
-            i1Var.m1 = 0.0f;
-            i1Var.n1 = true;
-        }
-        int i16 = (int) ((1.0f - i1Var.l1) * 255.0f);
-        if (i16 != i1Var.B1) {
-            i1Var.B1 = i16;
-            i1Var.p1.invalidate();
-            org.telegram.messenger.i0.g3(new gg.c(this, 24));
-        }
+    @Override // org.telegram.ui.Cells.p2
+    public final void w(t2 t2Var) {
     }
 
-    private final void e(int i10) {
+    @Override // org.telegram.ui.Cells.p2
+    public final void q() {
     }
 }

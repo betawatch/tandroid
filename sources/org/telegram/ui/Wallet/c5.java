@@ -1,56 +1,49 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.x71;
+import java.util.ArrayList;
+import org.telegram.messenger.cs;
+import org.telegram.messenger.hs;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class c5 extends a3 {
-    public final /* synthetic */ ViewGroup T1;
-    public final /* synthetic */ View[] U1;
-    public final /* synthetic */ Context V1;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class c5 implements cs {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TL_wallet.walletTransaction[] b;
+    public final /* synthetic */ ei.s c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c5(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.p6 p6Var, ViewGroup viewGroup2, View[] viewArr, Context context2) {
-        super(context, viewGroup, p6Var);
-        this.T1 = viewGroup2;
-        this.U1 = viewArr;
-        this.V1 = context2;
+    public c5(int i3, TL_wallet.walletTransaction[] wallettransactionArr, ei.s sVar) {
+        this.a = i3;
+        this.b = wallettransactionArr;
+        this.c = sVar;
     }
 
-    @Override // org.telegram.ui.Wallet.a3, org.telegram.ui.Components.ha
-    public final void T0(float f7) {
-        super.T0(f7);
-        if (this.T1 instanceof x71) {
-            this.r0.setBounds(0, (int) f7, this.b.getWidth(), this.b.getHeight());
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ha
-    public final boolean Z0() {
-        return !(this.T1 instanceof x71);
-    }
-
-    @Override // org.telegram.ui.Wallet.a3
-    public final int d1() {
-        return org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, this.I0);
-    }
-
-    @Override // org.telegram.ui.Wallet.a3, org.telegram.ui.ActionBar.z2, android.app.Dialog
-    public final void show() {
-        super.show();
-        if (this.T1 instanceof x71) {
-            View[] viewArr = this.U1;
-            if (viewArr[0] == null) {
-                b5 b5Var = new b5(this, this.V1);
-                viewArr[0] = b5Var;
-                this.b.addView(b5Var, 0, w7.b6.e(-1, 50, 80));
+    @Override // org.telegram.messenger.cs
+    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+        TL_wallet.walletTransaction[] wallettransactionArr;
+        TL_wallet.walletTransaction wallettransaction;
+        if (i3 == hs.a4 || i3 == hs.b4) {
+            ArrayList arrayList = k0.x(this.a).B().c;
+            int size = arrayList.size();
+            int i11 = 0;
+            while (true) {
+                wallettransactionArr = this.b;
+                if (i11 >= size) {
+                    wallettransaction = null;
+                    break;
+                }
+                Object obj = arrayList.get(i11);
+                i11++;
+                wallettransaction = (TL_wallet.walletTransaction) obj;
+                TL_wallet.walletTransaction wallettransaction2 = wallettransactionArr[0];
+                if (wallettransaction == wallettransaction2 || k0.i0(wallettransaction2, wallettransaction)) {
+                    break;
+                }
             }
-            this.b.setBackground(null);
-            this.b.setPadding(0, 0, 0, 0);
-            this.k1.setPadding(0, 0, 0, 0);
+            if (wallettransaction != null) {
+                wallettransactionArr[0] = wallettransaction;
+                this.c.a(wallettransaction);
+            }
         }
     }
 }

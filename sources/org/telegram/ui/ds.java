@@ -1,34 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ds implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ns b;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    public /* synthetic */ ds(ns nsVar, int i10) {
-        this.a = i10;
-        this.b = nsVar;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class ds extends org.telegram.ui.ActionBar.f1 {
+    public final /* synthetic */ es o;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ds(es esVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = esVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ns.d0(this.b);
-                break;
-            case 1:
-                ns nsVar = this.b;
-                if (nsVar.J) {
-                    nsVar.d.d.requestFocus();
-                    org.telegram.messenger.i0.J3(nsVar.d.d);
-                    break;
-                }
-                break;
-            default:
-                ns nsVar2 = this.b;
-                nsVar2.presentFragment(un.ma(nsVar2.H), true);
-                break;
+    @Override // org.telegram.ui.ActionBar.f1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        is isVar = this.o.a;
+        isVar.k = null;
+        isVar.K = false;
+        if (isVar.R) {
+            isVar.m();
         }
     }
 }

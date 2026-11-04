@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class FencedAtom extends Atom {
     private static final int DELIMITER_FACTOR = 901;
@@ -16,9 +16,9 @@ public class FencedAtom extends Atom {
         this(atom, symbolAtom, null, symbolAtom2);
     }
 
-    private static void center(Box box, float f7) {
+    private static void center(Box box, float f10) {
         float height = box.getHeight();
-        box.setShift((-(((box.getDepth() + height) / 2.0f) - height)) - f7);
+        box.setShift((-(((box.getDepth() + height) / 2.0f) - height)) - f10);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -31,8 +31,8 @@ public class FencedAtom extends Atom {
         float max2 = Math.max((max / 500.0f) * 901.0f, (max * 2.0f) - factor);
         HorizontalBox horizontalBox = new HorizontalBox();
         if (this.middle != null) {
-            for (int i10 = 0; i10 < this.middle.size(); i10++) {
-                MiddleAtom middleAtom = this.middle.get(i10);
+            for (int i3 = 0; i3 < this.middle.size(); i3++) {
+                MiddleAtom middleAtom = this.middle.get(i3);
                 Atom atom = middleAtom.base;
                 if (atom instanceof SymbolAtom) {
                     Box create = DelimiterFactory.create(((SymbolAtom) atom).getName(), teXEnvironment, max2);

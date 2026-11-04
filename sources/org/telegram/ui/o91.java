@@ -1,28 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class o91 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v91 b;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ o91(v91 v91Var, int i10) {
-        this.a = i10;
-        this.b = v91Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class o91 implements xw0 {
+    public final /* synthetic */ TLRPC.TL_forumTopic a;
+    public final /* synthetic */ p91 b;
+
+    public o91(p91 p91Var, TLRPC.TL_forumTopic tL_forumTopic) {
+        this.b = p91Var;
+        this.a = tL_forumTopic;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c(false);
-                break;
-            case 1:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            default:
-                this.b.c(false);
-                break;
-        }
+    @Override // org.telegram.ui.xw0
+    public final void a0() {
+        s91 s91Var = this.b.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        s91.Z(s91Var, tL_forumTopic.id);
+        org.telegram.messenger.g0.i3(new qv0(26, this, tL_forumTopic), 300L);
+    }
+
+    @Override // org.telegram.ui.xw0
+    public final void l(lh0 lh0Var) {
     }
 }

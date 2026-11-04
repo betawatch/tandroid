@@ -1,25 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class re0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ve0 b;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ re0(ve0 ve0Var, int i10) {
-        this.a = i10;
-        this.b = ve0Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class re0 {
+    public int a;
+    public ArrayList b;
+    public String c;
+    public final byte[] d;
+    public boolean e;
+    public int f = 10;
+
+    public re0(TLRPC.TL_messages_votesList tL_messages_votesList, byte[] bArr) {
+        this.a = tL_messages_votesList.count;
+        this.b = tL_messages_votesList.votes;
+        this.c = tL_messages_votesList.next_offset;
+        this.d = bArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.e();
-                break;
-            default:
-                this.b.g();
-                break;
+    public final int a() {
+        if (this.b.size() <= 15) {
+            return 0;
         }
+        return this.e ? 1 : 2;
+    }
+
+    public final int b() {
+        return this.e ? Math.min(this.f, this.b.size()) : this.b.size();
     }
 }

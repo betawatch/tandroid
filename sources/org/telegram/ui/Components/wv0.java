@@ -1,36 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class wv0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class wv0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xv0 b;
+    public final /* synthetic */ l2.e b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ wv0(xv0 xv0Var, int i10) {
+    public /* synthetic */ wv0(l2.e eVar, int i3, int i10) {
         this.a = i10;
-        this.b = xv0Var;
+        this.b = eVar;
+        this.c = i3;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                xv0 xv0Var = this.b;
-                xv0Var.D = 1.0f;
-                xv0Var.invalidate();
-                xv0Var.G = null;
+                ArrayList arrayList = (ArrayList) this.b.d;
+                Float f10 = (Float) valueAnimator.getAnimatedValue();
+                f10.getClass();
+                arrayList.set(this.c, f10);
                 break;
             case 1:
-                xv0 xv0Var2 = this.b;
-                xv0Var2.m(((Float) xv0Var2.w.getAnimatedValue()).floatValue());
-                xv0Var2.w = null;
+                ArrayList arrayList2 = (ArrayList) this.b.e;
+                Float f11 = (Float) valueAnimator.getAnimatedValue();
+                f11.getClass();
+                arrayList2.set(this.c, f11);
+                break;
+            case 2:
+                ArrayList arrayList3 = (ArrayList) this.b.f;
+                Float f12 = (Float) valueAnimator.getAnimatedValue();
+                f12.getClass();
+                arrayList3.set(this.c, f12);
+                break;
+            case 3:
+                ArrayList arrayList4 = (ArrayList) this.b.d;
+                Float f13 = (Float) valueAnimator.getAnimatedValue();
+                f13.getClass();
+                arrayList4.set(this.c, f13);
+                break;
+            case 4:
+                ArrayList arrayList5 = (ArrayList) this.b.e;
+                Float f14 = (Float) valueAnimator.getAnimatedValue();
+                f14.getClass();
+                arrayList5.set(this.c, f14);
                 break;
             default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
+                ArrayList arrayList6 = (ArrayList) this.b.f;
+                Float f15 = (Float) valueAnimator.getAnimatedValue();
+                f15.getClass();
+                arrayList6.set(this.c, f15);
                 break;
         }
     }

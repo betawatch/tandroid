@@ -1,40 +1,54 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c8 extends ImageReceiver {
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 J1;
-    public final /* synthetic */ d8 K1;
+public final class c8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ f8 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c8(d8 d8Var, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(null);
-        this.K1 = d8Var;
-        this.J1 = p6Var;
+    public /* synthetic */ c8(f8 f8Var, boolean z10, int i3) {
+        this.a = i3;
+        this.c = f8Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean x0(Drawable drawable, String str, int i10, boolean z10, int i11) {
-        d8 d8Var = this.K1;
-        ImageView imageView = d8Var.J;
-        if ((drawable instanceof BitmapDrawable) && d8Var.K == 0) {
-            int J0 = org.telegram.messenger.i0.J0(((BitmapDrawable) drawable).getBitmap());
-            d8Var.K = J0;
-            if (J0 == -1 || J0 == 0) {
-                int i12 = org.telegram.ui.ActionBar.t6.q5;
-                org.telegram.ui.ActionBar.p6 p6Var = this.J1;
-                d8Var.K = org.telegram.ui.ActionBar.t6.w0(i12, p6Var);
-                org.telegram.ui.ActionBar.a7.C(imageView, org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(12.0f), d8Var.K), org.telegram.ui.ActionBar.a7.N(i12), p6Var);
-            } else {
-                imageView.setBackground(org.telegram.ui.ActionBar.t6.d0(org.telegram.messenger.i0.L(12.0f), d8Var.K));
-            }
-            invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    this.c.h.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    this.c.y.setVisibility(4);
+                    break;
+                }
+                break;
         }
-        return super.x0(drawable, str, i10, z10, i11);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (this.b) {
+                    this.c.h.setVisibility(0);
+                    break;
+                }
+                break;
+            default:
+                if (this.b) {
+                    this.c.y.setVisibility(0);
+                    break;
+                }
+                break;
+        }
     }
 }

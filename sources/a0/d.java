@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class d implements Iterator, Map.Entry {
     public int a;
@@ -27,15 +27,15 @@ public final class d implements Iterator, Map.Entry {
         }
         Map.Entry entry = (Map.Entry) obj;
         Object key = entry.getKey();
-        int i10 = this.b;
+        int i3 = this.b;
         f fVar = this.d;
-        return kotlin.jvm.internal.i.a(key, fVar.e(i10)) && kotlin.jvm.internal.i.a(entry.getValue(), fVar.h(this.b));
+        return kotlin.jvm.internal.j.a(key, fVar.f(i3)) && kotlin.jvm.internal.j.a(entry.getValue(), fVar.i(this.b));
     }
 
     @Override // java.util.Map.Entry
     public final Object getKey() {
         if (this.c) {
-            return this.d.e(this.b);
+            return this.d.f(this.b);
         }
         throw new IllegalStateException("This container does not support retaining Map.Entry objects");
     }
@@ -43,7 +43,7 @@ public final class d implements Iterator, Map.Entry {
     @Override // java.util.Map.Entry
     public final Object getValue() {
         if (this.c) {
-            return this.d.h(this.b);
+            return this.d.i(this.b);
         }
         throw new IllegalStateException("This container does not support retaining Map.Entry objects");
     }
@@ -58,11 +58,11 @@ public final class d implements Iterator, Map.Entry {
         if (!this.c) {
             throw new IllegalStateException("This container does not support retaining Map.Entry objects");
         }
-        int i10 = this.b;
+        int i3 = this.b;
         f fVar = this.d;
-        Object e = fVar.e(i10);
-        Object h = fVar.h(this.b);
-        return (e == null ? 0 : e.hashCode()) ^ (h != null ? h.hashCode() : 0);
+        Object f10 = fVar.f(i3);
+        Object i10 = fVar.i(this.b);
+        return (f10 == null ? 0 : f10.hashCode()) ^ (i10 != null ? i10.hashCode() : 0);
     }
 
     @Override // java.util.Iterator
@@ -80,7 +80,7 @@ public final class d implements Iterator, Map.Entry {
         if (!this.c) {
             throw new IllegalStateException();
         }
-        this.d.f(this.b);
+        this.d.g(this.b);
         this.b--;
         this.a--;
         this.c = false;
@@ -89,7 +89,7 @@ public final class d implements Iterator, Map.Entry {
     @Override // java.util.Map.Entry
     public final Object setValue(Object obj) {
         if (this.c) {
-            return this.d.g(this.b, obj);
+            return this.d.h(this.b, obj);
         }
         throw new IllegalStateException("This container does not support retaining Map.Entry objects");
     }

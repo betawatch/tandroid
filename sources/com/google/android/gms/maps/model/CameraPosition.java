@@ -3,35 +3,34 @@ package com.google.android.gms.maps.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import g8.g;
+import i7.p;
 import java.util.Arrays;
-import m4.c;
-import n6.l;
-import o6.a;
-import w7.h0;
+import m2.t;
+import p6.m;
+import q6.a;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class CameraPosition extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<CameraPosition> CREATOR = new g(9);
+    public static final Parcelable.Creator<CameraPosition> CREATOR = new p(16);
     public final LatLng a;
     public final float b;
     public final float c;
     public final float d;
 
-    public CameraPosition(LatLng latLng, float f7, float f10, float f11) {
-        l.h(latLng, "camera target must not be null.");
+    public CameraPosition(LatLng latLng, float f10, float f11, float f12) {
+        m.h(latLng, "camera target must not be null.");
         boolean z10 = false;
-        if (f10 >= 0.0f && f10 <= 90.0f) {
+        if (f11 >= 0.0f && f11 <= 90.0f) {
             z10 = true;
         }
         if (!z10) {
-            throw new IllegalArgumentException("Tilt needs to be between 0 and 90 inclusive: " + f10);
+            throw new IllegalArgumentException("Tilt needs to be between 0 and 90 inclusive: " + f11);
         }
         this.a = latLng;
-        this.b = f7;
-        this.c = f10 + 0.0f;
-        this.d = (((double) f11) <= 0.0d ? (f11 % 360.0f) + 360.0f : f11) % 360.0f;
+        this.b = f10;
+        this.c = f11 + 0.0f;
+        this.d = (((double) f12) <= 0.0d ? (f12 % 360.0f) + 360.0f : f12) % 360.0f;
     }
 
     public final boolean equals(Object obj) {
@@ -50,24 +49,24 @@ public final class CameraPosition extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        c cVar = new c(this);
-        cVar.u(this.a, "target");
-        cVar.u(Float.valueOf(this.b), "zoom");
-        cVar.u(Float.valueOf(this.c), "tilt");
-        cVar.u(Float.valueOf(this.d), "bearing");
-        return cVar.toString();
+        t tVar = new t(this);
+        tVar.A(this.a, "target");
+        tVar.A(Float.valueOf(this.b), "zoom");
+        tVar.A(Float.valueOf(this.c), "tilt");
+        tVar.A(Float.valueOf(this.d), "bearing");
+        return tVar.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.k(parcel, 2, this.a, i10);
-        h0.s(parcel, 3, 4);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.l(parcel, 2, this.a, i3);
+        j8.a.r(parcel, 3, 4);
         parcel.writeFloat(this.b);
-        h0.s(parcel, 4, 4);
+        j8.a.r(parcel, 4, 4);
         parcel.writeFloat(this.c);
-        h0.s(parcel, 5, 4);
+        j8.a.r(parcel, 5, 4);
         parcel.writeFloat(this.d);
-        h0.r(parcel, q6);
+        j8.a.t(parcel, s6);
     }
 }

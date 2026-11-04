@@ -1,23 +1,34 @@
 package o2;
 
-import b2.x;
-import e2.k0;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b {
-    public static final c3.s f = new c3.s();
-    public final c3.o a;
-    public final x b;
-    public final k0 c;
-    public final z3.k d;
-    public final boolean e;
+    public final String a;
+    public final String b;
+    public final int c;
+    public final int d;
 
-    public b(c3.o oVar, x xVar, k0 k0Var, z3.k kVar, boolean z10) {
-        this.a = oVar;
-        this.b = xVar;
-        this.c = k0Var;
-        this.d = kVar;
-        this.e = z10;
+    public b(int i3, int i10, String str, String str2) {
+        this.a = str;
+        this.b = str2;
+        this.c = i3;
+        this.d = i10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        return this.c == bVar.c && this.d == bVar.d && Objects.equals(this.a, bVar.a) && Objects.equals(this.b, bVar.b);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, Integer.valueOf(this.c), Integer.valueOf(this.d));
     }
 }

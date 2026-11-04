@@ -1,192 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.util.Property;
+import android.animation.ValueAnimator;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.io.File;
-import org.telegram.messenger.ApplicationLoaderImpl;
-import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b61 extends org.telegram.ui.ActionBar.z2 {
-    public final Drawable i1;
-    public final a61 j1;
-    public AnimatorSet k1;
-    public final View l1;
-    public final LinearLayout m1;
-    public int n1;
-    public final int[] o1;
+public final /* synthetic */ class b61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b61(Context context, org.telegram.messenger.g1 g1Var) {
-        super(context, false);
-        final int i10 = 0;
-        this.o1 = new int[2];
-        setCanceledOnTouchOutside(false);
-        this.u0 = false;
-        this.v0 = false;
-        Drawable f7 = i0.a.f(context, R.drawable.sheet_shadow_round);
-        this.i1 = f7;
-        f7.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.h5, false), PorterDuff.Mode.MULTIPLY));
-        jg.l0 l0Var = new jg.l0(this, context, 29);
-        l0Var.setWillNotDraw(false);
-        this.b = l0Var;
-        a61 a61Var = new a61(this, context);
-        this.j1 = a61Var;
-        final int i11 = 1;
-        a61Var.setFillViewport(true);
-        a61Var.setWillNotDraw(false);
-        a61Var.setClipToPadding(false);
-        a61Var.setVerticalScrollBarEnabled(false);
-        l0Var.addView(a61Var, w7.b6.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 130.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.m1 = linearLayout;
-        linearLayout.setOrientation(1);
-        a61Var.addView(linearLayout, w7.b6.x(-1, -2, 51));
-        TextView textView = new TextView(context);
-        org.telegram.messenger.a30.n(textView, 1, 20.0f);
-        int i12 = org.telegram.ui.ActionBar.t6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.t6.x0(null, i12, false));
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(org.telegram.messenger.dd.L0(2131754229, null));
-        linearLayout.addView(textView, w7.b6.t(-2, -2, 49, 23, 16, 23, 0));
-        TextView textView2 = new TextView(getContext());
-        textView2.setTextColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.r5, false));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setMovementMethod(new org.telegram.messenger.e0(false));
-        int i13 = org.telegram.ui.ActionBar.t6.k5;
-        textView2.setLinkTextColor(org.telegram.ui.ActionBar.t6.x0(null, i13, false));
-        textView2.setText(org.telegram.messenger.dd.a0(null, null, 2131754242, g1Var.a, Integer.valueOf(g1Var.c)));
-        textView2.setGravity(49);
-        linearLayout.addView(textView2, w7.b6.t(-2, -2, 49, 23, 0, 23, 5));
-        String str = g1Var.b;
-        if (!TextUtils.isEmpty(str)) {
-            TextView textView3 = new TextView(getContext());
-            textView3.setTextColor(org.telegram.ui.ActionBar.t6.x0(null, i12, false));
-            textView3.setTextSize(1, 14.0f);
-            textView3.setMovementMethod(new org.telegram.messenger.e0(false));
-            textView3.setLinkTextColor(org.telegram.ui.ActionBar.t6.x0(null, i13, false));
-            textView3.setText(org.telegram.messenger.k6.m(str, textView3.getPaint().getFontMetricsInt(), false, null, 0));
-            org.telegram.messenger.at.i(textView3);
-            textView3.setGravity(51);
-            linearLayout.addView(textView3, w7.b6.t(-2, -2, 51, 23, 15, 23, 0));
-        }
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, org.telegram.messenger.i0.f1(), 83);
-        layoutParams.bottomMargin = org.telegram.messenger.i0.L(130.0f);
-        View view = new View(context);
-        this.l1 = view;
-        view.setBackgroundColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.V5, false));
-        view.setAlpha(0.0f);
-        view.setTag(1);
-        l0Var.addView(view, layoutParams);
-        vh.d dVar = new vh.d(context, null, true);
-        File g10 = org.telegram.messenger.w0.a.g();
-        if (g10 != null) {
-            dVar.i(org.telegram.messenger.dd.a0(null, null, 2131754225, new Object[0]), false, true);
-            dVar.setOnClickListener(new sr(23, this, g10));
-        } else {
-            dVar.i(org.telegram.messenger.dd.a0(null, null, 2131754227, new Object[0]), false, true);
-            dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z51
-                public final /* synthetic */ b61 b;
+    public /* synthetic */ b61(n61 n61Var, int i3) {
+        this.a = i3;
+        this.b = n61Var;
+    }
 
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    switch (i10) {
-                        case 0:
-                            if (((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q()) {
-                                org.telegram.messenger.k1.e().b(false);
-                            }
-                            this.b.dismiss();
-                            break;
-                        default:
-                            this.b.dismiss();
-                            break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                n61 n61Var = this.b;
+                n61Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = n61Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (n61Var.E) {
+                        n61Var.E(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        n61Var.E(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        n61Var.E(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        n61Var.E(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    n61Var.c = floatValue;
+                    n61Var.v(true);
+                    d61 d61Var = n61Var.N;
+                    if (d61Var != null) {
+                        d61Var.w.invalidate();
+                        n61Var.N.w.g1();
+                        n61Var.N.invalidate();
+                        break;
                     }
                 }
-            });
+                break;
+            case 1:
+                n61 n61Var2 = this.b;
+                n61Var2.getClass();
+                n61Var2.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                n61 n61Var3 = this.b;
+                n61Var3.O.onAnimationUpdate(valueAnimator);
+                n61Var3.N.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n61Var3.N.w.g1();
+                n61Var3.N.invalidate();
+                break;
+            default:
+                n61 n61Var4 = this.b;
+                n61Var4.getClass();
+                n61Var4.U = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
         }
-        l0Var.addView(dVar, w7.b6.d(-1, 48.0f, 87, 20.0f, 0.0f, 20.0f, 60.0f));
-        vh.d dVar2 = new vh.d(context, null, false);
-        dVar2.i(org.telegram.messenger.dd.L0(2131754224, null), false, true);
-        dVar2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.z51
-            public final /* synthetic */ b61 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i11) {
-                    case 0:
-                        if (((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q()) {
-                            org.telegram.messenger.k1.e().b(false);
-                        }
-                        this.b.dismiss();
-                        break;
-                    default:
-                        this.b.dismiss();
-                        break;
-                }
-            }
-        });
-        l0Var.addView(dVar2, w7.b6.d(-1, 48.0f, 87, 20.0f, 4.0f, 20.0f, 8.0f));
-    }
-
-    public static void I0(b61 b61Var) {
-        View childAt = b61Var.m1.getChildAt(0);
-        int[] iArr = b61Var.o1;
-        childAt.getLocationInWindow(iArr);
-        int max = Math.max(iArr[1] - org.telegram.messenger.i0.L(24.0f), 0);
-        if (r0.getMeasuredHeight() + iArr[1] <= b61Var.b.getTranslationY() + (b61Var.c.getMeasuredHeight() - org.telegram.messenger.i0.L(113.0f))) {
-            b61Var.J0(false);
-        } else {
-            b61Var.J0(true);
-        }
-        if (b61Var.n1 != max) {
-            b61Var.n1 = max;
-            b61Var.j1.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z2
-    public final boolean H() {
-        return false;
-    }
-
-    public final void J0(boolean z10) {
-        View view = this.l1;
-        if ((!z10 || view.getTag() == null) && (z10 || view.getTag() != null)) {
-            return;
-        }
-        view.setTag(z10 ? null : 1);
-        if (z10) {
-            view.setVisibility(0);
-        }
-        AnimatorSet animatorSet = this.k1;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.k1 = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
-        this.k1.setDuration(150L);
-        this.k1.addListener(new ha0(10, this, z10));
-        this.k1.start();
     }
 }

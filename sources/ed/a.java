@@ -1,130 +1,124 @@
 package ed;
 
-import java.io.Serializable;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a implements cd.c, d, Serializable {
-    private final cd.c completion;
+public class a implements Iterator {
+    public final /* synthetic */ int a;
+    public int b;
+    public final Object c;
 
-    public a(cd.c cVar) {
-        this.completion = cVar;
+    public a(Object[] array) {
+        this.a = 1;
+        kotlin.jvm.internal.j.e(array, "array");
+        this.c = array;
     }
 
-    public cd.c create(cd.c completion) {
-        kotlin.jvm.internal.i.e(completion, "completion");
-        throw new UnsupportedOperationException("create(Continuation) has not been overridden");
-    }
-
-    @Override // ed.d
-    public d getCallerFrame() {
-        cd.c cVar = this.completion;
-        if (cVar instanceof d) {
-            return (d) cVar;
-        }
-        return null;
-    }
-
-    public final cd.c getCompletion() {
-        return this.completion;
-    }
-
-    public StackTraceElement getStackTraceElement() {
-        int i10;
-        String str;
-        Method method;
-        Object invoke;
-        Method method2;
-        Object invoke2;
-        e eVar = (e) getClass().getAnnotation(e.class);
-        String str2 = null;
-        if (eVar == null) {
-            return null;
-        }
-        int v = eVar.v();
-        if (v > 1) {
-            throw new IllegalStateException(("Debug metadata version mismatch. Expected: 1, got " + v + ". Please update the Kotlin standard library.").toString());
-        }
-        try {
-            Field declaredField = getClass().getDeclaredField("label");
-            declaredField.setAccessible(true);
-            Object obj = declaredField.get(this);
-            Integer num = obj instanceof Integer ? (Integer) obj : null;
-            i10 = (num != null ? num.intValue() : 0) - 1;
-        } catch (Exception unused) {
-            i10 = -1;
-        }
-        int i11 = i10 >= 0 ? eVar.l()[i10] : -1;
-        f fVar = g.b;
-        f fVar2 = g.a;
-        if (fVar == null) {
-            try {
-                f fVar3 = new f(Class.class.getDeclaredMethod("getModule", null), getClass().getClassLoader().loadClass("java.lang.Module").getDeclaredMethod("getDescriptor", null), getClass().getClassLoader().loadClass("java.lang.module.ModuleDescriptor").getDeclaredMethod("name", null));
-                g.b = fVar3;
-                fVar = fVar3;
-            } catch (Exception unused2) {
-                g.b = fVar2;
-                fVar = fVar2;
-            }
-        }
-        if (fVar != fVar2 && (method = fVar.a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = fVar.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
-            Method method3 = fVar.c;
-            Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
-            if (invoke3 instanceof String) {
-                str2 = (String) invoke3;
-            }
-        }
-        if (str2 == null) {
-            str = eVar.c();
-        } else {
-            str = str2 + '/' + eVar.c();
-        }
-        return new StackTraceElement(str, eVar.m(), eVar.f(), i11);
-    }
-
-    public abstract Object invokeSuspend(Object obj);
-
-    @Override // cd.c
-    public final void resumeWith(Object obj) {
-        cd.c cVar = this;
-        while (true) {
-            a aVar = (a) cVar;
-            cd.c cVar2 = aVar.completion;
-            kotlin.jvm.internal.i.b(cVar2);
-            try {
-                obj = aVar.invokeSuspend(obj);
-                if (obj == dd.a.a) {
-                    return;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        switch (this.a) {
+            case 0:
+                if (this.b < ((d) this.c).h()) {
                 }
-            } catch (Throwable th2) {
-                obj = l9.b.a(th2);
-            }
-            aVar.releaseIntercepted();
-            if (!(cVar2 instanceof a)) {
-                cVar2.resumeWith(obj);
+                break;
+            case 1:
+                if (this.b < ((Object[]) this.c).length) {
+                }
+                break;
+            default:
+                if (this.b < ((zc.b) this.c).a) {
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        switch (this.a) {
+            case 0:
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                d dVar = (d) this.c;
+                int i3 = this.b;
+                this.b = i3 + 1;
+                return dVar.get(i3);
+            case 1:
+                try {
+                    Object[] objArr = (Object[]) this.c;
+                    int i10 = this.b;
+                    this.b = i10 + 1;
+                    return objArr[i10];
+                } catch (ArrayIndexOutOfBoundsException e10) {
+                    this.b--;
+                    throw new NoSuchElementException(e10.getMessage());
+                }
+            default:
+                zc.b bVar = (zc.b) this.c;
+                String[] strArr = bVar.c;
+                int i11 = this.b;
+                String str = strArr[i11];
+                String str2 = bVar.b[i11];
+                if (str == null) {
+                    str = "";
+                }
+                zc.a aVar = new zc.a();
+                if (str2 == null) {
+                    throw new IllegalArgumentException("Object must not be null");
+                }
+                aVar.a = str2.trim();
+                if (str2.length() == 0) {
+                    throw new IllegalArgumentException("String must not be empty");
+                }
+                aVar.b = str;
+                aVar.c = bVar;
+                this.b++;
+                return aVar;
+        }
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            case 1:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            default:
+                zc.b bVar = (zc.b) this.c;
+                int i3 = this.b;
+                int i10 = i3 - 1;
+                this.b = i10;
+                int i11 = bVar.a;
+                if (i10 >= i11) {
+                    throw new IllegalArgumentException("Must be false");
+                }
+                int i12 = (i11 - i10) - 1;
+                if (i12 > 0) {
+                    String[] strArr = bVar.b;
+                    System.arraycopy(strArr, i3, strArr, i10, i12);
+                    String[] strArr2 = bVar.c;
+                    System.arraycopy(strArr2, i3, strArr2, i10, i12);
+                }
+                int i13 = bVar.a - 1;
+                bVar.a = i13;
+                bVar.b[i13] = null;
+                bVar.c[i13] = null;
                 return;
-            }
-            cVar = cVar2;
         }
     }
 
-    public String toString() {
-        StringBuilder sb2 = new StringBuilder("Continuation at ");
-        Object stackTraceElement = getStackTraceElement();
-        if (stackTraceElement == null) {
-            stackTraceElement = getClass().getName();
-        }
-        sb2.append(stackTraceElement);
-        return sb2.toString();
+    public a(d dVar) {
+        this.a = 0;
+        this.c = dVar;
     }
 
-    public cd.c create(Object obj, cd.c completion) {
-        kotlin.jvm.internal.i.e(completion, "completion");
-        throw new UnsupportedOperationException("create(Any?;Continuation) has not been overridden");
-    }
-
-    public void releaseIntercepted() {
+    public a(zc.b bVar) {
+        this.a = 2;
+        this.c = bVar;
+        this.b = 0;
     }
 }

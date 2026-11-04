@@ -9,15 +9,14 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import android.util.TypedValue;
 import android.util.Xml;
-import c3.i0;
+import b8.be;
 import java.lang.reflect.Array;
-import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hs;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import w7.u;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -65,15 +64,15 @@ public abstract class c {
     public static ColorStateList b(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
         int depth;
         int color;
-        float f7;
-        int attributeCount;
-        int i10;
-        char c10;
-        int[] iArr;
-        int i11;
-        int d;
         float f10;
-        int i12;
+        int attributeCount;
+        int i3;
+        char c2;
+        int[] iArr;
+        int i10;
+        int d;
+        float f11;
+        int i11;
         TypedValue typedValue;
         ?? r02 = resources;
         AttributeSet attributeSet2 = attributeSet;
@@ -86,8 +85,8 @@ public abstract class c {
         int depth2 = xmlPullParser.getDepth() + 1;
         int[][] iArr2 = new int[20][];
         int[] iArr3 = new int[20];
+        int i12 = 0;
         int i13 = 0;
-        int i14 = 0;
         while (true) {
             int next = xmlPullParser.next();
             if (next == z10 || ((depth = xmlPullParser.getDepth()) < depth2 && next == 3)) {
@@ -95,8 +94,8 @@ public abstract class c {
             }
             if (next == 2 && depth <= depth2 && xmlPullParser.getName().equals("item")) {
                 int[] iArr4 = d0.a.a;
-                ?? obtainAttributes = theme2 == null ? r02.obtainAttributes(attributeSet2, iArr4) : theme2.obtainStyledAttributes(attributeSet2, iArr4, i13, i13);
-                int resourceId = obtainAttributes.getResourceId(i13, -1);
+                ?? obtainAttributes = theme2 == null ? r02.obtainAttributes(attributeSet2, iArr4) : theme2.obtainStyledAttributes(attributeSet2, iArr4, i12, i12);
+                int resourceId = obtainAttributes.getResourceId(i12, -1);
                 if (resourceId != -1) {
                     ThreadLocal threadLocal = a;
                     TypedValue typedValue2 = (TypedValue) threadLocal.get();
@@ -107,207 +106,207 @@ public abstract class c {
                         typedValue = typedValue2;
                     }
                     r02.getValue(resourceId, typedValue, z10);
-                    int i15 = typedValue.type;
-                    if (i15 < 28 || i15 > 31) {
+                    int i14 = typedValue.type;
+                    if (i14 < 28 || i14 > 31) {
                         try {
                             color = a(r02, r02.getXml(resourceId), theme2).getDefaultColor();
                         } catch (Exception unused) {
-                            color = obtainAttributes.getColor(i13, -65281);
+                            color = obtainAttributes.getColor(i12, -65281);
                         }
-                        f7 = !obtainAttributes.hasValue(z10) ? obtainAttributes.getFloat(z10, 1.0f) : obtainAttributes.hasValue(3) ? obtainAttributes.getFloat(3, 1.0f) : 1.0f;
-                        char c11 = z10;
-                        float f11 = (Build.VERSION.SDK_INT >= 31 || !obtainAttributes.hasValue(2)) ? obtainAttributes.getFloat(4, -1.0f) : obtainAttributes.getFloat(2, -1.0f);
+                        f10 = !obtainAttributes.hasValue(z10) ? obtainAttributes.getFloat(z10, 1.0f) : obtainAttributes.hasValue(3) ? obtainAttributes.getFloat(3, 1.0f) : 1.0f;
+                        char c10 = z10;
+                        float f12 = (Build.VERSION.SDK_INT >= 31 || !obtainAttributes.hasValue(2)) ? obtainAttributes.getFloat(4, -1.0f) : obtainAttributes.getFloat(2, -1.0f);
                         obtainAttributes.recycle();
                         attributeCount = attributeSet2.getAttributeCount();
                         int[] iArr5 = new int[attributeCount];
-                        i10 = i13;
-                        int i16 = i10;
-                        while (i10 < attributeCount) {
-                            int attributeNameResource = attributeSet2.getAttributeNameResource(i10);
+                        i3 = i12;
+                        int i15 = i3;
+                        while (i3 < attributeCount) {
+                            int attributeNameResource = attributeSet2.getAttributeNameResource(i3);
                             if (attributeNameResource != 16843173 && attributeNameResource != 16843551 && attributeNameResource != R.attr.alpha && attributeNameResource != R.attr.lStar) {
-                                int i17 = i16 + 1;
-                                if (!attributeSet2.getAttributeBooleanValue(i10, false)) {
+                                int i16 = i15 + 1;
+                                if (!attributeSet2.getAttributeBooleanValue(i3, false)) {
                                     attributeNameResource = -attributeNameResource;
                                 }
-                                iArr5[i16] = attributeNameResource;
-                                i16 = i17;
+                                iArr5[i15] = attributeNameResource;
+                                i15 = i16;
                             }
-                            i10++;
+                            i3++;
                         }
-                        int[] trimStateSet = StateSet.trimStateSet(iArr5, i16);
-                        float f12 = 0.0f;
-                        float f13 = 100.0f;
-                        c10 = (f11 >= 0.0f || f11 > 100.0f) ? (char) 0 : c11;
-                        if (f7 == 1.0f || c10 != 0) {
-                            int b10 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, at.e4);
-                            if (c10 == 0) {
-                                a a2 = a.a(color);
-                                float f14 = a2.a;
-                                float f15 = a2.b;
+                        int[] trimStateSet = StateSet.trimStateSet(iArr5, i15);
+                        float f13 = 0.0f;
+                        float f14 = 100.0f;
+                        c2 = (f12 >= 0.0f || f12 > 100.0f) ? (char) 0 : c10;
+                        if (f10 == 1.0f || c2 != 0) {
+                            int b10 = be.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, hs.e4);
+                            if (c2 == 0) {
+                                a a10 = a.a(color);
+                                float f15 = a10.a;
+                                float f16 = a10.b;
                                 k kVar = k.k;
-                                if (f15 < 1.0d || Math.round(f11) <= 0.0d || Math.round(f11) >= 100.0d) {
+                                if (f16 < 1.0d || Math.round(f12) <= 0.0d || Math.round(f12) >= 100.0d) {
                                     iArr = trimStateSet;
-                                    i11 = depth2;
-                                    d = b.d(f11);
+                                    i10 = depth2;
+                                    d = b.d(f12);
                                 } else {
-                                    float min = f14 < 0.0f ? 0.0f : Math.min(360.0f, f14);
-                                    float f16 = f15;
-                                    char c12 = c11;
+                                    float min = f15 < 0.0f ? 0.0f : Math.min(360.0f, f15);
+                                    float f17 = f16;
+                                    char c11 = c10;
                                     a aVar = null;
                                     while (true) {
-                                        if (Math.abs(f12 - f15) >= 0.4f) {
-                                            float f17 = 1000.0f;
+                                        if (Math.abs(f13 - f16) >= 0.4f) {
+                                            float f18 = 1000.0f;
                                             iArr = trimStateSet;
-                                            float f18 = f13;
-                                            float f19 = 0.0f;
-                                            float f20 = 1000.0f;
+                                            float f19 = f14;
+                                            float f20 = 0.0f;
+                                            float f21 = 1000.0f;
                                             a aVar2 = null;
                                             while (true) {
-                                                if (Math.abs(f19 - f18) <= 0.01f) {
-                                                    i11 = depth2;
+                                                if (Math.abs(f20 - f19) <= 0.01f) {
+                                                    i10 = depth2;
                                                     break;
                                                 }
-                                                float B = i0.B(f18, f19, 2.0f, f19);
-                                                float f21 = f18;
-                                                int c13 = a.b(B, f16, min).c(k.k);
-                                                float e = b.e(Color.red(c13));
-                                                float e7 = b.e(Color.green(c13));
-                                                float e10 = b.e(Color.blue(c13));
-                                                float[] fArr = b.d[c11];
-                                                float f22 = (e7 * fArr[c11]) + (e * fArr[0]);
-                                                float f23 = fArr[2];
-                                                i11 = depth2;
-                                                float x10 = i0.x(e10, f23, f22, 100.0f);
+                                                float z11 = com.google.android.recaptcha.internal.a.z(f19, f20, 2.0f, f20);
+                                                float f22 = f19;
+                                                int c12 = a.b(z11, f17, min).c(k.k);
+                                                float e10 = b.e(Color.red(c12));
+                                                float e11 = b.e(Color.green(c12));
+                                                float e12 = b.e(Color.blue(c12));
+                                                float[] fArr = b.d[c10];
+                                                float f23 = (e11 * fArr[c10]) + (e10 * fArr[0]);
+                                                float f24 = fArr[2];
+                                                i10 = depth2;
+                                                float x10 = com.google.android.recaptcha.internal.a.x(e12, f24, f23, 100.0f);
                                                 float cbrt = x10 <= 0.008856452f ? x10 * 903.2963f : (((float) Math.cbrt(x10)) * 116.0f) - 16.0f;
-                                                float abs = Math.abs(f11 - cbrt);
+                                                float abs = Math.abs(f12 - cbrt);
                                                 if (abs < 0.2f) {
-                                                    a a10 = a.a(c13);
-                                                    f10 = cbrt;
-                                                    a b11 = a.b(a10.c, a10.b, min);
-                                                    float f24 = a10.d - b11.d;
-                                                    float f25 = a10.e - b11.e;
-                                                    float f26 = a10.f - b11.f;
-                                                    float pow = (float) (Math.pow(Math.sqrt((f26 * f26) + (f25 * f25) + (f24 * f24)), 0.63d) * 1.41d);
+                                                    a a11 = a.a(c12);
+                                                    f11 = cbrt;
+                                                    a b11 = a.b(a11.c, a11.b, min);
+                                                    float f25 = a11.d - b11.d;
+                                                    float f26 = a11.e - b11.e;
+                                                    float f27 = a11.f - b11.f;
+                                                    float pow = (float) (Math.pow(Math.sqrt((f27 * f27) + (f26 * f26) + (f25 * f25)), 0.63d) * 1.41d);
                                                     if (pow <= 1.0f) {
-                                                        f20 = pow;
-                                                        f17 = abs;
-                                                        aVar2 = a10;
+                                                        f21 = pow;
+                                                        f18 = abs;
+                                                        aVar2 = a11;
                                                     }
                                                 } else {
-                                                    f10 = cbrt;
+                                                    f11 = cbrt;
                                                 }
-                                                if (f17 == 0.0f && f20 == 0.0f) {
+                                                if (f18 == 0.0f && f21 == 0.0f) {
                                                     break;
                                                 }
-                                                if (f10 < f11) {
-                                                    f18 = f21;
-                                                    f19 = B;
+                                                if (f11 < f12) {
+                                                    f19 = f22;
+                                                    f20 = z11;
                                                 } else {
-                                                    f18 = B;
+                                                    f19 = z11;
                                                 }
-                                                depth2 = i11;
+                                                depth2 = i10;
                                             }
                                             a aVar3 = aVar2;
-                                            if (c12 == 0) {
+                                            if (c11 == 0) {
                                                 if (aVar3 == null) {
-                                                    f15 = f16;
+                                                    f16 = f17;
                                                 } else {
                                                     aVar = aVar3;
-                                                    f12 = f16;
+                                                    f13 = f17;
                                                 }
-                                                f16 = i0.B(f15, f12, 2.0f, f12);
+                                                f17 = com.google.android.recaptcha.internal.a.z(f16, f13, 2.0f, f13);
                                                 trimStateSet = iArr;
-                                                depth2 = i11;
-                                                f13 = 100.0f;
+                                                depth2 = i10;
+                                                f14 = 100.0f;
                                             } else {
                                                 if (aVar3 != null) {
                                                     d = aVar3.c(kVar);
                                                     break;
                                                 }
-                                                f16 = i0.B(f15, f12, 2.0f, f12);
+                                                f17 = com.google.android.recaptcha.internal.a.z(f16, f13, 2.0f, f13);
                                                 trimStateSet = iArr;
-                                                depth2 = i11;
-                                                f13 = 100.0f;
-                                                c12 = 0;
+                                                depth2 = i10;
+                                                f14 = 100.0f;
+                                                c11 = 0;
                                             }
                                         } else {
                                             iArr = trimStateSet;
-                                            i11 = depth2;
-                                            d = aVar == null ? b.d(f11) : aVar.c(kVar);
+                                            i10 = depth2;
+                                            d = aVar == null ? b.d(f12) : aVar.c(kVar);
                                         }
                                     }
                                 }
                                 color = d;
                             } else {
                                 iArr = trimStateSet;
-                                i11 = depth2;
+                                i10 = depth2;
                             }
                             color = (16777215 & color) | (b10 << 24);
                         } else {
                             iArr = trimStateSet;
-                            i11 = depth2;
+                            i10 = depth2;
                         }
-                        i12 = i14 + 1;
-                        if (i12 > iArr3.length) {
-                            int[] iArr6 = new int[i14 <= 4 ? 8 : i14 * 2];
-                            System.arraycopy(iArr3, 0, iArr6, 0, i14);
+                        i11 = i13 + 1;
+                        if (i11 > iArr3.length) {
+                            int[] iArr6 = new int[i13 <= 4 ? 8 : i13 * 2];
+                            System.arraycopy(iArr3, 0, iArr6, 0, i13);
                             iArr3 = iArr6;
                         }
-                        iArr3[i14] = color;
-                        if (i12 > iArr2.length) {
-                            ?? r12 = (Object[]) Array.newInstance(iArr2.getClass().getComponentType(), i14 > 4 ? i14 * 2 : 8);
-                            System.arraycopy(iArr2, 0, r12, 0, i14);
+                        iArr3[i13] = color;
+                        if (i11 > iArr2.length) {
+                            ?? r12 = (Object[]) Array.newInstance(iArr2.getClass().getComponentType(), i13 > 4 ? i13 * 2 : 8);
+                            System.arraycopy(iArr2, 0, r12, 0, i13);
                             iArr2 = r12;
                         }
-                        iArr2[i14] = iArr;
+                        iArr2[i13] = iArr;
                         iArr2 = iArr2;
                         attributeSet2 = attributeSet;
                         theme2 = theme;
-                        i14 = i12;
-                        z10 = c11;
-                        depth2 = i11;
-                        i13 = 0;
+                        i13 = i11;
+                        z10 = c10;
+                        depth2 = i10;
+                        i12 = 0;
                         r02 = resources;
                     }
                 }
-                color = obtainAttributes.getColor(i13, -65281);
+                color = obtainAttributes.getColor(i12, -65281);
                 if (!obtainAttributes.hasValue(z10)) {
                 }
-                char c112 = z10;
+                char c102 = z10;
                 if (Build.VERSION.SDK_INT >= 31) {
                 }
                 obtainAttributes.recycle();
                 attributeCount = attributeSet2.getAttributeCount();
                 int[] iArr52 = new int[attributeCount];
-                i10 = i13;
-                int i162 = i10;
-                while (i10 < attributeCount) {
+                i3 = i12;
+                int i152 = i3;
+                while (i3 < attributeCount) {
                 }
-                int[] trimStateSet2 = StateSet.trimStateSet(iArr52, i162);
-                float f122 = 0.0f;
-                float f132 = 100.0f;
-                if (f11 >= 0.0f) {
+                int[] trimStateSet2 = StateSet.trimStateSet(iArr52, i152);
+                float f132 = 0.0f;
+                float f142 = 100.0f;
+                if (f12 >= 0.0f) {
                 }
-                if (f7 == 1.0f) {
+                if (f10 == 1.0f) {
                 }
-                int b102 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, at.e4);
-                if (c10 == 0) {
+                int b102 = be.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, hs.e4);
+                if (c2 == 0) {
                 }
                 color = (16777215 & color) | (b102 << 24);
-                i12 = i14 + 1;
-                if (i12 > iArr3.length) {
+                i11 = i13 + 1;
+                if (i11 > iArr3.length) {
                 }
-                iArr3[i14] = color;
-                if (i12 > iArr2.length) {
+                iArr3[i13] = color;
+                if (i11 > iArr2.length) {
                 }
-                iArr2[i14] = iArr;
+                iArr2[i13] = iArr;
                 iArr2 = iArr2;
                 attributeSet2 = attributeSet;
                 theme2 = theme;
-                i14 = i12;
-                z10 = c112;
-                depth2 = i11;
-                i13 = 0;
+                i13 = i11;
+                z10 = c102;
+                depth2 = i10;
+                i12 = 0;
                 r02 = resources;
             } else {
                 r02 = resources;
@@ -315,13 +314,13 @@ public abstract class c {
                 theme2 = theme;
                 z10 = z10;
                 depth2 = depth2;
-                i13 = 0;
+                i12 = 0;
             }
         }
-        int[] iArr7 = new int[i14];
-        int[][] iArr8 = new int[i14][];
-        System.arraycopy(iArr3, 0, iArr7, 0, i14);
-        System.arraycopy(iArr2, 0, iArr8, 0, i14);
+        int[] iArr7 = new int[i13];
+        int[][] iArr8 = new int[i13][];
+        System.arraycopy(iArr3, 0, iArr7, 0, i13);
+        System.arraycopy(iArr2, 0, iArr8, 0, i13);
         return new ColorStateList(iArr8, iArr7);
     }
 }

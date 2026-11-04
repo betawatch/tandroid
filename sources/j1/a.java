@@ -6,88 +6,88 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import r0.h0;
-import r2.y;
-import s0.c;
+import org.telegram.ui.Components.nh;
+import r0.i0;
+import s0.d;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends y {
+public final class a extends nh {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(3);
+        super(17);
         this.c = bVar;
     }
 
-    @Override // r2.y
-    public final c I(int i10) {
-        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
-    }
-
-    @Override // r2.y
-    public final c Q(int i10) {
+    @Override // org.telegram.ui.Components.nh
+    public final d A(int i3) {
         b bVar = this.c;
-        int i11 = i10 == 2 ? bVar.k : bVar.l;
-        if (i11 == Integer.MIN_VALUE) {
+        int i10 = i3 == 2 ? bVar.k : bVar.l;
+        if (i10 == Integer.MIN_VALUE) {
             return null;
         }
-        return I(i11);
+        return y(i10);
     }
 
-    @Override // r2.y
-    public final boolean a0(int i10, int i11, Bundle bundle) {
+    @Override // org.telegram.ui.Components.nh
+    public final boolean D(int i3, int i10, Bundle bundle) {
+        int i11;
         int i12;
-        int i13;
         b bVar = this.c;
         View view = bVar.i;
-        if (i10 == -1) {
-            WeakHashMap weakHashMap = h0.a;
-            return view.performAccessibilityAction(i11, bundle);
+        if (i3 == -1) {
+            WeakHashMap weakHashMap = i0.a;
+            return view.performAccessibilityAction(i10, bundle);
         }
-        if (i11 != 1) {
-            if (i11 == 2) {
-                if (bVar.l != i10) {
+        if (i10 != 1) {
+            if (i10 == 2) {
+                if (bVar.l != i3) {
                     return false;
                 }
                 bVar.l = TLObject.FLAG_31;
-                bVar.m(i10, 8);
+                bVar.m(i3, 8);
                 return true;
             }
-            if (i11 != 64) {
-                if (i11 != 128) {
-                    return bVar.k(i10, i11);
+            if (i10 != 64) {
+                if (i10 != 128) {
+                    return bVar.k(i3, i10);
                 }
-                if (bVar.k != i10) {
+                if (bVar.k != i3) {
                     return false;
                 }
                 bVar.k = TLObject.FLAG_31;
                 view.invalidate();
-                bVar.m(i10, 65536);
+                bVar.m(i3, 65536);
                 return true;
             }
             AccessibilityManager accessibilityManager = bVar.h;
-            if (accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled() && (i13 = bVar.k) != i10) {
-                if (i13 != Integer.MIN_VALUE) {
+            if (accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled() && (i12 = bVar.k) != i3) {
+                if (i12 != Integer.MIN_VALUE) {
                     bVar.k = TLObject.FLAG_31;
                     view.invalidate();
-                    bVar.m(i13, 65536);
+                    bVar.m(i12, 65536);
                 }
-                bVar.k = i10;
+                bVar.k = i3;
                 view.invalidate();
-                bVar.m(i10, 32768);
+                bVar.m(i3, 32768);
                 return true;
             }
-        } else if ((view.isFocused() || view.requestFocus()) && (i12 = bVar.l) != i10) {
-            if (i12 != Integer.MIN_VALUE) {
+        } else if ((view.isFocused() || view.requestFocus()) && (i11 = bVar.l) != i3) {
+            if (i11 != Integer.MIN_VALUE) {
                 bVar.l = TLObject.FLAG_31;
-                bVar.m(i12, 8);
+                bVar.m(i11, 8);
             }
-            bVar.l = i10;
-            bVar.m(i10, 8);
+            bVar.l = i3;
+            bVar.m(i3, 8);
             return true;
         }
         return false;
+    }
+
+    @Override // org.telegram.ui.Components.nh
+    public final d y(int i3) {
+        return new d(AccessibilityNodeInfo.obtain(this.c.j(i3).a));
     }
 }

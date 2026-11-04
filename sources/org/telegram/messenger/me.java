@@ -1,222 +1,36 @@
 package org.telegram.messenger;
 
-import android.graphics.SurfaceTexture;
-import java.util.ArrayList;
-import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.Components.b40;
+import org.telegram.ui.Components.c40;
+import org.telegram.ui.Components.k40;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class me implements t61 {
+public final /* synthetic */ class me implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ kj c;
-    public final /* synthetic */ MediaController d;
+    public final /* synthetic */ double b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ me(MediaController mediaController, int i10, kj kjVar, int i11) {
-        this.a = i11;
-        this.d = mediaController;
-        this.b = i10;
-        this.c = kjVar;
+    public /* synthetic */ me(Runnable runnable, double d, int i3) {
+        this.a = i3;
+        this.c = runnable;
+        this.b = d;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void onError(v61 v61Var, Exception exc) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        double d = this.b;
+        Runnable runnable = this.c;
+        switch (i3) {
             case 0:
+                MediaController mediaController = (MediaController) ((mi.b0) runnable).b;
+                hs.f(mediaController.i1).k(hs.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d));
                 break;
             default:
-                f8.g(exc, true);
+                k40 k40Var = ((c40) ((b40) runnable).b).I0;
+                hs.f(k40Var.e).k(hs.k2, Integer.valueOf(k40Var.V), Double.valueOf(d));
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final /* synthetic */ void onSeekFinished(j2.a aVar) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final /* synthetic */ void onSeekStarted(j2.a aVar) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final void onStateChanged(boolean z10, int i10) {
-        int i11 = this.a;
-        int i12 = this.b;
-        switch (i11) {
-            case 0:
-                MediaController mediaController = this.d;
-                ArrayList arrayList = mediaController.R0;
-                if (i12 == mediaController.m0) {
-                    kj kjVar = this.c;
-                    if (i10 == 4 || ((i10 == 1 || i10 == 2) && z10 && kjVar.b0 >= 0.999f)) {
-                        kjVar.b0 = 1.0f;
-                        at.f(kjVar.I1).k(at.e2, Integer.valueOf(kjVar.f1()), 0);
-                        if (!mediaController.a0()) {
-                            if (arrayList.isEmpty() || (arrayList.size() <= 1 && kj.R4(kjVar.k))) {
-                                mediaController.q(true, mediaController.F(), kj.R4(kjVar.k), false);
-                            } else {
-                                mediaController.U(true);
-                            }
-                        }
-                    } else {
-                        if (mediaController.i0 != null && mediaController.t0 != 0.0f && (i10 == 3 || i10 == 1)) {
-                            mediaController.i0.q0((int) (r10.U() * mediaController.t0), false);
-                            mediaController.t0 = 0.0f;
-                        }
-                    }
-                    if (mediaController.i0 != null && b5.d.u()) {
-                        mediaController.i0.t0(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                MediaController mediaController2 = this.d;
-                if (i12 == mediaController2.m0) {
-                    MediaController.f(mediaController2, this.c, null, true, z10, i10);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                return false;
-            default:
-                MediaController mediaController = this.d;
-                if (mediaController.E0 == null) {
-                    return false;
-                }
-                int i10 = mediaController.I0;
-                if (i10 == 2) {
-                    org.telegram.ui.k4 k4Var = mediaController.L0;
-                    if (k4Var != null) {
-                        if (mediaController.M0) {
-                            k4Var.setDrawingReady(true);
-                        }
-                        if (mediaController.L0.getParent() == null) {
-                            mediaController.N0.addView(mediaController.L0);
-                        }
-                        if (mediaController.G0.getSurfaceTexture() != surfaceTexture) {
-                            mediaController.G0.setSurfaceTexture(surfaceTexture);
-                        }
-                        mediaController.E0.A0(mediaController.G0);
-                    }
-                    mediaController.I0 = 0;
-                } else if (i10 == 1) {
-                    if (mediaController.J0 != null) {
-                        if (mediaController.H0 == null) {
-                            try {
-                                PipRoundVideoView pipRoundVideoView = new PipRoundVideoView();
-                                mediaController.H0 = pipRoundVideoView;
-                                pipRoundVideoView.d(mediaController.J0, new a(this, 15));
-                            } catch (Exception unused) {
-                                mediaController.H0 = null;
-                            }
-                        }
-                        PipRoundVideoView pipRoundVideoView2 = mediaController.H0;
-                        if (pipRoundVideoView2 != null) {
-                            if (pipRoundVideoView2.c.getSurfaceTexture() != surfaceTexture) {
-                                mediaController.H0.c.setSurfaceTexture(surfaceTexture);
-                            }
-                            mediaController.E0.A0(mediaController.H0.c);
-                        }
-                    }
-                    mediaController.I0 = 0;
-                } else {
-                    if (!PhotoViewer.F1() || PhotoViewer.v1().S2 == null) {
-                        return false;
-                    }
-                    PhotoViewer.v1().T2 = surfaceTexture;
-                }
-                return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                float f10 = i11 == 0 ? 1.0f : (i10 * f7) / i11;
-                MediaController mediaController = this.d;
-                mediaController.O0 = f10;
-                org.telegram.ui.k4 k4Var = mediaController.L0;
-                if (k4Var != null) {
-                    k4Var.a(f10, 0);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final void onRenderedFirstFrame() {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                MediaController mediaController = this.d;
-                org.telegram.ui.k4 k4Var = mediaController.L0;
-                if (k4Var != null && !k4Var.d) {
-                    mediaController.M0 = true;
-                    k4Var.setDrawingReady(true);
-                    mediaController.N0.setTag(1);
-                    break;
-                }
-                break;
-        }
-    }
-
-    private final void b() {
-    }
-
-    private final /* synthetic */ void c(j2.a aVar) {
-    }
-
-    private final /* synthetic */ void d(j2.a aVar) {
-    }
-
-    private final /* synthetic */ void e(j2.a aVar) {
-    }
-
-    private final /* synthetic */ void f(j2.a aVar) {
-    }
-
-    private final /* synthetic */ void g(j2.a aVar) {
-    }
-
-    private final /* synthetic */ void h(j2.a aVar) {
-    }
-
-    private final /* synthetic */ void i(SurfaceTexture surfaceTexture) {
-    }
-
-    private final /* synthetic */ void j(SurfaceTexture surfaceTexture) {
-    }
-
-    private final void a(v61 v61Var, Exception exc) {
-    }
-
-    private final void k(int i10, int i11, float f7, int i12) {
     }
 }

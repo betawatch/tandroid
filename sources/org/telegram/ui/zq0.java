@@ -1,89 +1,195 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.util.Property;
+import android.app.Activity;
+import android.text.SpannableString;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class zq0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class zq0 implements org.telegram.ui.Components.fx {
+    public final /* synthetic */ fr0 a;
 
-    public zq0(PhotoViewer photoViewer, int i10) {
-        this.b = photoViewer;
-        this.a = i10;
+    public zq0(fr0 fr0Var) {
+        this.a = fr0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        float min;
-        int i10;
-        PhotoViewer photoViewer = this.b;
-        photoViewer.q6 = null;
-        photoViewer.P0.setVisibility(8);
-        photoViewer.S0.setVisibility(8);
-        photoViewer.n0.setVisibility(8);
-        photoViewer.F.setVisibility(8);
-        photoViewer.e1.setVisibility(8);
-        photoViewer.f1.setVisibility(8);
-        photoViewer.g1.setVisibility(8);
-        org.telegram.ui.Components.be0 be0Var = photoViewer.C1;
-        if (be0Var != null) {
-            be0Var.setVisibility(4);
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ int f() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final void i(int i3) {
+        boolean z10 = i3 != 0;
+        fr0 fr0Var = this.a;
+        fr0Var.C0 = z10;
+        fr0Var.e.requestLayout();
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final boolean k() {
+        EditTextBoldCursor editField = this.a.c0.getEditField();
+        if (editField == null) {
+            return false;
         }
-        photoViewer.o1.setVisibility(8);
-        photoViewer.o1.setAlpha(0.0f);
-        photoViewer.o1.setTranslationY(-org.telegram.messenger.i0.L(10.0f));
-        photoViewer.O0.setRotationX(0.0f);
-        photoViewer.o1.setEnabled(false);
-        photoViewer.K = false;
-        if (photoViewer.i2) {
-            photoViewer.Q1.setVisibility(4);
+        editField.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final void l(String str) {
+        EditTextBoldCursor editField = this.a.c0.getEditField();
+        if (editField == null) {
+            return;
         }
-        int i11 = photoViewer.c2;
-        if (i11 == 0 || i11 == 4 || ((i11 == 2 || i11 == 5) && photoViewer.g7.size() > 1)) {
-            photoViewer.N0.setVisibility(8);
-            photoViewer.O0.setVisibility(8);
-            photoViewer.v3();
+        int selectionEnd = editField.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
         }
-        Bitmap n10 = photoViewer.C4.n();
-        if (photoViewer.c2 == 11) {
-            photoViewer.i6 = photoViewer.Y5;
-            photoViewer.h6 = photoViewer.X5;
-            photoViewer.j6 = photoViewer.a6;
-            photoViewer.k6 = photoViewer.b6;
-            photoViewer.f6 = 0.0f;
+        try {
+            CharSequence m10 = org.telegram.messenger.i6.m(str, editField.getPaint().getFontMetricsInt(), false, null, 0);
+            editField.setText(editField.getText().insert(selectionEnd, m10));
+            int length = selectionEnd + m10.length();
+            editField.setSelection(length, length);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
-        if (n10 != null) {
-            float q6 = photoViewer.C4.q();
-            float o10 = photoViewer.C4.o();
-            float min2 = Math.min(photoViewer.m1(2) / q6, photoViewer.j1(2, false) / o10);
-            if (photoViewer.c2 == 1) {
-                photoViewer.d6 = -org.telegram.messenger.i0.L(36.0f);
-                min = photoViewer.n1(false);
-            } else {
-                photoViewer.d6 = (-org.telegram.messenger.i0.L(93.0f)) + (!photoViewer.s ? org.telegram.messenger.i0.m / 2 : 0);
-                org.telegram.messenger.ze zeVar = photoViewer.X4.c;
-                min = (zeVar == null || !((i10 = zeVar.k) == 90 || i10 == 270)) ? Math.min(photoViewer.m1(photoViewer.u4) / q6, photoViewer.k1() / o10) : Math.min(photoViewer.m1(photoViewer.u4) / o10, photoViewer.k1() / q6);
-            }
-            photoViewer.e6 = min2 / min;
-            Rect rect = photoViewer.s2;
-            photoViewer.c6 = (rect.left / 2) - (rect.right / 2);
-            photoViewer.n6 = System.currentTimeMillis();
-            photoViewer.R6 = true;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final void n() {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        fr0 fr0Var = this.a;
+        Activity parentActivity = fr0Var.getParentActivity();
+        e6Var = ((org.telegram.ui.ActionBar.d2) fr0Var).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, e6Var);
+        String M0 = org.telegram.messenger.bd.M0(2131752068, null);
+        org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
+        s1Var.S = M0;
+        s1Var.U = org.telegram.messenger.bd.M0(2131752069, null);
+        alertDialog$Builder.k(org.telegram.messenger.bd.M0(2131752099, null), new ci0(this, 5));
+        alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131752589, null), null);
+        alertDialog$Builder.p();
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ float p() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
+        fr0 fr0Var = this.a;
+        EditTextBoldCursor editField = fr0Var.c0.getEditField();
+        if (editField == null) {
+            return;
         }
-        AnimatorSet animatorSet = new AnimatorSet();
-        photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.i6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.I1.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, org.telegram.messenger.i0.L(186.0f), 0.0f));
-        photoViewer.p6.setDuration(200L);
-        photoViewer.p6.addListener(new org.telegram.ui.Components.voip.i2(this, 23));
-        photoViewer.p6.start();
+        int selectionEnd = editField.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
+        }
+        try {
+            SpannableString spannableString = new SpannableString(str);
+            org.telegram.ui.Components.p5 p5Var = document != null ? new org.telegram.ui.Components.p5(document, editField.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.p5(j10, editField.getPaint().getFontMetricsInt());
+            p5Var.cacheType = fr0Var.S.c;
+            spannableString.setSpan(p5Var, 0, spannableString.length(), 33);
+            editField.setText(editField.getText().insert(selectionEnd, spannableString));
+            int length = selectionEnd + spannableString.length();
+            editField.setSelection(length, length);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final boolean z() {
+        return this.a.C0;
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void o(org.telegram.ui.Components.n31 n31Var) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void s(int i3) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void t(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void y(long j10) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void w() {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void e(Object obj, Object obj2) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.vi viVar, boolean z10, int i3) {
+    }
+
+    @Override // org.telegram.ui.Components.fx
+    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i3, int i10) {
     }
 }

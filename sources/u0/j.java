@@ -1,101 +1,57 @@
 package u0;
 
-import android.app.Activity;
+import android.content.ClipData;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.text.Editable;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.text.Selection;
+import android.text.Spanned;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j implements ActionMode.Callback {
-    public final ActionMode.Callback a;
-    public final TextView b;
-    public Class c;
-    public Method d;
-    public boolean e;
-    public boolean f = false;
-
-    public j(ActionMode.Callback callback, TextView textView) {
-        this.a = callback;
-        this.b = textView;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        return this.a.onActionItemClicked(actionMode, menuItem);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        return this.a.onCreateActionMode(actionMode, menu);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        this.a.onDestroyActionMode(actionMode);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        TextView textView = this.b;
+public final class j {
+    public static r0.g a(View view, r0.g gVar) {
+        CharSequence coerceToStyledText;
+        if (Log.isLoggable("ReceiveContent", 3)) {
+            Log.d("ReceiveContent", "onReceive: " + gVar);
+        }
+        r0.f fVar = gVar.a;
+        if (fVar.e() == 2) {
+            return gVar;
+        }
+        ClipData a10 = fVar.a();
+        int l10 = fVar.l();
+        TextView textView = (TextView) view;
+        Editable editable = (Editable) textView.getText();
         Context context = textView.getContext();
-        PackageManager packageManager = context.getPackageManager();
-        boolean z10 = this.f;
-        Class<?> cls = Integer.TYPE;
-        if (!z10) {
-            this.f = true;
-            try {
-                Class<?> cls2 = Class.forName("com.android.internal.view.menu.MenuBuilder");
-                this.c = cls2;
-                this.d = cls2.getDeclaredMethod("removeItemAt", cls);
-                this.e = true;
-            } catch (ClassNotFoundException | NoSuchMethodException unused) {
-                this.c = null;
-                this.d = null;
-                this.e = false;
+        boolean z10 = false;
+        for (int i3 = 0; i3 < a10.getItemCount(); i3++) {
+            ClipData.Item itemAt = a10.getItemAt(i3);
+            if ((l10 & 1) != 0) {
+                coerceToStyledText = itemAt.coerceToText(context);
+                if (coerceToStyledText instanceof Spanned) {
+                    coerceToStyledText = coerceToStyledText.toString();
+                }
+            } else {
+                coerceToStyledText = itemAt.coerceToStyledText(context);
             }
-        }
-        try {
-            Method declaredMethod = (this.e && this.c.isInstance(menu)) ? this.d : menu.getClass().getDeclaredMethod("removeItemAt", cls);
-            for (int size = menu.size() - 1; size >= 0; size--) {
-                MenuItem item = menu.getItem(size);
-                if (item.getIntent() != null && "android.intent.action.PROCESS_TEXT".equals(item.getIntent().getAction())) {
-                    declaredMethod.invoke(menu, Integer.valueOf(size));
+            if (coerceToStyledText != null) {
+                if (z10) {
+                    editable.insert(Selection.getSelectionEnd(editable), "\n");
+                    editable.insert(Selection.getSelectionEnd(editable), coerceToStyledText);
+                } else {
+                    int selectionStart = Selection.getSelectionStart(editable);
+                    int selectionEnd = Selection.getSelectionEnd(editable);
+                    int max = Math.max(0, Math.min(selectionStart, selectionEnd));
+                    int max2 = Math.max(0, Math.max(selectionStart, selectionEnd));
+                    Selection.setSelection(editable, max2);
+                    editable.replace(max, max2, coerceToStyledText);
+                    z10 = true;
                 }
             }
-            ArrayList arrayList = new ArrayList();
-            if (context instanceof Activity) {
-                for (ResolveInfo resolveInfo : packageManager.queryIntentActivities(new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain"), 0)) {
-                    if (!context.getPackageName().equals(resolveInfo.activityInfo.packageName)) {
-                        ActivityInfo activityInfo = resolveInfo.activityInfo;
-                        if (activityInfo.exported) {
-                            String str = activityInfo.permission;
-                            if (str != null && context.checkSelfPermission(str) != 0) {
-                            }
-                        }
-                    }
-                    arrayList.add(resolveInfo);
-                }
-            }
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i10);
-                MenuItem add = menu.add(0, 0, i10 + 100, resolveInfo2.loadLabel(packageManager));
-                Intent putExtra = new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain").putExtra("android.intent.extra.PROCESS_TEXT_READONLY", !((textView instanceof Editable) && textView.onCheckIsTextEditor() && textView.isEnabled()));
-                ActivityInfo activityInfo2 = resolveInfo2.activityInfo;
-                add.setIntent(putExtra.setClassName(activityInfo2.packageName, activityInfo2.name)).setShowAsAction(1);
-            }
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException unused2) {
         }
-        return this.a.onPrepareActionMode(actionMode, menu);
+        return null;
     }
 }

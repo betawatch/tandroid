@@ -13,15 +13,15 @@ import android.view.InflateException;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.SubMenu;
+import b8.oc;
 import java.io.IOException;
-import l.o;
+import l.n;
 import m.l1;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.r7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -50,14 +50,14 @@ public final class h extends MenuInflater {
     }
 
     public final void b(XmlPullParser xmlPullParser, AttributeSet attributeSet, Menu menu) {
-        int i10;
+        int i3;
         XmlPullParser xmlPullParser2;
         ColorStateList colorStateList;
         int resourceId;
         g gVar = new g(this, menu);
         int eventType = xmlPullParser.getEventType();
         while (true) {
-            i10 = 2;
+            i3 = 2;
             if (eventType == 2) {
                 String name = xmlPullParser.getName();
                 if (!name.equals("menu")) {
@@ -79,7 +79,7 @@ public final class h extends MenuInflater {
                 throw new RuntimeException("Unexpected end of document");
             }
             Menu menu2 = gVar.a;
-            if (eventType != i10) {
+            if (eventType != i3) {
                 if (eventType == 3) {
                     String name2 = xmlPullParser.getName();
                     if (z11 && name2.equals(str)) {
@@ -87,7 +87,7 @@ public final class h extends MenuInflater {
                         z11 = false;
                         str = null;
                         eventType = xmlPullParser2.next();
-                        i10 = 2;
+                        i3 = 2;
                         z10 = z10;
                         z11 = z11;
                     } else if (name2.equals("group")) {
@@ -99,8 +99,8 @@ public final class h extends MenuInflater {
                         gVar.g = true;
                     } else if (name2.equals("item")) {
                         if (!gVar.h) {
-                            o oVar = gVar.z;
-                            if (oVar == null || !oVar.a.hasSubMenu()) {
+                            n nVar = gVar.z;
+                            if (nVar == null || !nVar.a.hasSubMenu()) {
                                 gVar.h = true;
                                 gVar.b(menu2.add(gVar.b, gVar.i, gVar.j, gVar.k));
                             } else {
@@ -158,7 +158,7 @@ public final class h extends MenuInflater {
                             String string3 = obtainStyledAttributes2.getString(14);
                             boolean z12 = string3 != null;
                             if (z12 && gVar.w == 0 && gVar.x == null) {
-                                gVar.z = (o) gVar.a(string3, f, this.b);
+                                gVar.z = (n) gVar.a(string3, f, this.b);
                             } else {
                                 if (z12) {
                                     Log.w("SupportMenuInflater", "Ignoring attribute 'actionProviderClass'. Action view already specified.");
@@ -173,7 +173,7 @@ public final class h extends MenuInflater {
                                 gVar.D = null;
                             }
                             if (obtainStyledAttributes2.hasValue(18)) {
-                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = r7.a(context, resourceId)) == null) {
+                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = oc.a(context, resourceId)) == null) {
                                     colorStateList = obtainStyledAttributes2.getColorStateList(18);
                                 }
                                 gVar.C = colorStateList;
@@ -195,7 +195,7 @@ public final class h extends MenuInflater {
                             z11 = true;
                         }
                         eventType = xmlPullParser2.next();
-                        i10 = 2;
+                        i3 = 2;
                         z10 = z10;
                         z11 = z11;
                     }
@@ -204,30 +204,30 @@ public final class h extends MenuInflater {
                 z10 = z10;
             }
             eventType = xmlPullParser2.next();
-            i10 = 2;
+            i3 = 2;
             z10 = z10;
             z11 = z11;
         }
     }
 
     @Override // android.view.MenuInflater
-    public final void inflate(int i10, Menu menu) {
-        if (!(menu instanceof l.l)) {
-            super.inflate(i10, menu);
+    public final void inflate(int i3, Menu menu) {
+        if (!(menu instanceof l.k)) {
+            super.inflate(i3, menu);
             return;
         }
         XmlResourceParser xmlResourceParser = null;
         try {
             try {
                 try {
-                    xmlResourceParser = this.c.getResources().getLayout(i10);
+                    xmlResourceParser = this.c.getResources().getLayout(i3);
                     b(xmlResourceParser, Xml.asAttributeSet(xmlResourceParser), menu);
                     xmlResourceParser.close();
-                } catch (IOException e7) {
-                    throw new InflateException("Error inflating menu XML", e7);
+                } catch (IOException e10) {
+                    throw new InflateException("Error inflating menu XML", e10);
                 }
-            } catch (XmlPullParserException e10) {
-                throw new InflateException("Error inflating menu XML", e10);
+            } catch (XmlPullParserException e11) {
+                throw new InflateException("Error inflating menu XML", e11);
             }
         } catch (Throwable th2) {
             if (xmlResourceParser != null) {

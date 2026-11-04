@@ -1,39 +1,49 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLitePreparedStatement;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ah implements Runnable {
-    public final /* synthetic */ vi a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ double d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ li b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ ah(vi viVar, long j10, int i10, double d) {
-        this.a = viVar;
-        this.b = j10;
-        this.c = i10;
-        this.d = d;
+    public /* synthetic */ ah(li liVar, ArrayList arrayList, int i3) {
+        this.a = i3;
+        this.b = liVar;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        vi viVar = this.a;
-        long j10 = this.b;
-        int i10 = this.c;
-        double d = this.d;
-        try {
-            SQLitePreparedStatement executeFast = viVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
-            executeFast.requery();
-            executeFast.bindLong(1, j10);
-            executeFast.bindInteger(2, i10);
-            executeFast.bindDouble(3, d);
-            executeFast.bindInteger(4, ((int) System.currentTimeMillis()) / 1000);
-            executeFast.step();
-            executeFast.dispose();
-        } catch (Exception e) {
-            f8.g(e, true);
+        int i3 = this.a;
+        ArrayList arrayList = this.c;
+        li liVar = this.b;
+        switch (i3) {
+            case 0:
+                liVar.getNotificationCenter().k(56, Long.valueOf(zi.B0(((zi) arrayList.get(0)).k)), null, Boolean.TRUE, arrayList, null, 0, -1, Boolean.FALSE);
+                break;
+            default:
+                try {
+                    ArrayList arrayList2 = new ArrayList();
+                    ArrayList arrayList3 = new ArrayList();
+                    a0.h hVar = new a0.h();
+                    a0.h hVar2 = new a0.h();
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        try {
+                            qr.d((TLRPC.Message) arrayList.get(i10), hVar, hVar2);
+                        } catch (Exception e10) {
+                            liVar.getMessagesStorage().o(e10, true);
+                        }
+                    }
+                    liVar.getMessagesStorage().K0(hVar, hVar2, arrayList2, arrayList3, 0);
+                    break;
+                } catch (Exception e11) {
+                    a8.g(e11, true);
+                    return;
+                }
         }
     }
 }

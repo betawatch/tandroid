@@ -1,42 +1,34 @@
 package bi;
 
-import android.content.Context;
+import android.graphics.Outline;
 import android.view.View;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.v51;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class i0 extends a51 {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class i0 extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j0 b;
 
-    static {
-        a51.h(new i0());
+    public /* synthetic */ i0(j0 j0Var, int i3) {
+        this.a = i3;
+        this.b = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
-        j0 j0Var = (j0) view;
-        a aVar = (a) b51Var.G;
-        h0 h0Var = (h0) b51Var.H;
-        j0Var.a = aVar;
-        j0Var.E = h0Var;
-        j0Var.c(aVar);
-        j0Var.j();
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        j0 j0Var = new j0(i10, context, p6Var);
-        j0Var.setBackground(new h2(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, p6Var)));
-        return j0Var;
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean f() {
-        return false;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
+            case 0:
+                float translationY = view.getTranslationY() + view.getTop();
+                float translationX = view.getTranslationX() + view.getLeft();
+                j0 j0Var = this.b;
+                outline.setRoundRect(Math.round(j0Var.n - translationX), Math.round(j0Var.r - translationY), Math.round(j0Var.s - translationX), Math.round(j0Var.w - translationY), j0Var.x);
+                break;
+            default:
+                int height = view.getHeight();
+                j0 j0Var2 = this.b;
+                outline.setRoundRect(j0Var2.b0, j0Var2.c0, view.getWidth() - j0Var2.b0, view.getHeight() - j0Var2.d0, ((height - r4) - j0Var2.d0) / 2.0f);
+                break;
+        }
     }
 }

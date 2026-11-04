@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.c0;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzc extends j implements p {
     Object zza;
@@ -24,30 +24,30 @@ final class zzc extends j implements p {
         this.zze = zzxnVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzc(this.zzc, this.zzd, this.zze, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzc) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzc) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0026, code lost:
     
         if (r5 != r0) goto L10;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
-        a aVar = a.a;
-        int i10 = this.zzb;
-        if (i10 == 0) {
-            b.b(obj);
+        gd.a aVar = gd.a.a;
+        int i3 = this.zzb;
+        if (i3 == 0) {
+            ib.b(obj);
             zzgrVar = this.zzc;
             zzg zzgVar = this.zzd;
             zzxn zzxnVar = this.zze;
@@ -55,12 +55,12 @@ final class zzc extends j implements p {
             this.zzb = 1;
             obj = zzgVar.zzd(zzxnVar, this);
         } else {
-            if (i10 != 1) {
-                b.b(obj);
+            if (i3 != 1) {
+                ib.b(obj);
                 return obj;
             }
             zzgrVar = (zzgr) this.zza;
-            b.b(obj);
+            ib.b(obj);
         }
         this.zza = null;
         this.zzb = 2;

@@ -9,74 +9,75 @@ import android.graphics.drawable.RippleDrawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import v7.r7;
+import b8.kg;
+import b8.oc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class v extends ImageView {
-    public final e2.c a;
-    public final a5.a b;
+    public final g2.d a;
+    public final kg b;
     public boolean c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
-        b3.a(context);
+    public v(Context context, AttributeSet attributeSet, int i3) {
+        super(context, attributeSet, i3);
+        a3.a(context);
         this.c = false;
-        a3.a(this, getContext());
-        e2.c cVar = new e2.c(this);
-        this.a = cVar;
-        cVar.k(attributeSet, i10);
-        a5.a aVar = new a5.a(this);
-        this.b = aVar;
-        aVar.t(attributeSet, i10);
+        z2.a(this, getContext());
+        g2.d dVar = new g2.d(this);
+        this.a = dVar;
+        dVar.x(attributeSet, i3);
+        kg kgVar = new kg(this);
+        this.b = kgVar;
+        kgVar.t(attributeSet, i3);
     }
 
     @Override // android.widget.ImageView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.b();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.b();
         }
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            aVar.c();
+        kg kgVar = this.b;
+        if (kgVar != null) {
+            kgVar.d();
         }
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            return cVar.i();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            return dVar.v();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            return cVar.j();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            return dVar.w();
         }
         return null;
     }
 
     public ColorStateList getSupportImageTintList() {
-        c3 c3Var;
-        a5.a aVar = this.b;
-        if (aVar == null || (c3Var = (c3) aVar.d) == null) {
+        b3 b3Var;
+        kg kgVar = this.b;
+        if (kgVar == null || (b3Var = (b3) kgVar.d) == null) {
             return null;
         }
-        return (ColorStateList) c3Var.c;
+        return (ColorStateList) b3Var.c;
     }
 
     public PorterDuff.Mode getSupportImageTintMode() {
-        c3 c3Var;
-        a5.a aVar = this.b;
-        if (aVar == null || (c3Var = (c3) aVar.d) == null) {
+        b3 b3Var;
+        kg kgVar = this.b;
+        if (kgVar == null || (b3Var = (b3) kgVar.d) == null) {
             return null;
         }
-        return (PorterDuff.Mode) c3Var.d;
+        return (PorterDuff.Mode) b3Var.d;
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -87,62 +88,62 @@ public class v extends ImageView {
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.l();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.y();
         }
     }
 
     @Override // android.view.View
-    public void setBackgroundResource(int i10) {
-        super.setBackgroundResource(i10);
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.m(i10);
+    public void setBackgroundResource(int i3) {
+        super.setBackgroundResource(i3);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.z(i3);
         }
     }
 
     @Override // android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         super.setImageBitmap(bitmap);
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            aVar.c();
+        kg kgVar = this.b;
+        if (kgVar != null) {
+            kgVar.d();
         }
     }
 
     @Override // android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
-        a5.a aVar = this.b;
-        if (aVar != null && drawable != null && !this.c) {
-            aVar.b = drawable.getLevel();
+        kg kgVar = this.b;
+        if (kgVar != null && drawable != null && !this.c) {
+            kgVar.b = drawable.getLevel();
         }
         super.setImageDrawable(drawable);
-        if (aVar != null) {
-            aVar.c();
+        if (kgVar != null) {
+            kgVar.d();
             if (this.c) {
                 return;
             }
-            ImageView imageView = (ImageView) aVar.c;
+            ImageView imageView = (ImageView) kgVar.c;
             if (imageView.getDrawable() != null) {
-                imageView.getDrawable().setLevel(aVar.b);
+                imageView.getDrawable().setLevel(kgVar.b);
             }
         }
     }
 
     @Override // android.widget.ImageView
-    public void setImageLevel(int i10) {
-        super.setImageLevel(i10);
+    public void setImageLevel(int i3) {
+        super.setImageLevel(i3);
         this.c = true;
     }
 
     @Override // android.widget.ImageView
-    public void setImageResource(int i10) {
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            ImageView imageView = (ImageView) aVar.c;
-            if (i10 != 0) {
-                Drawable b10 = r7.b(imageView.getContext(), i10);
+    public void setImageResource(int i3) {
+        kg kgVar = this.b;
+        if (kgVar != null) {
+            ImageView imageView = (ImageView) kgVar.c;
+            if (i3 != 0) {
+                Drawable b10 = oc.b(imageView.getContext(), i3);
                 if (b10 != null) {
                     l1.a(b10);
                 }
@@ -150,56 +151,56 @@ public class v extends ImageView {
             } else {
                 imageView.setImageDrawable(null);
             }
-            aVar.c();
+            kgVar.d();
         }
     }
 
     @Override // android.widget.ImageView
     public void setImageURI(Uri uri) {
         super.setImageURI(uri);
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            aVar.c();
+        kg kgVar = this.b;
+        if (kgVar != null) {
+            kgVar.d();
         }
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.q(colorStateList);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.D(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.r(mode);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.E(mode);
         }
     }
 
     public void setSupportImageTintList(ColorStateList colorStateList) {
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            if (((c3) aVar.d) == null) {
-                aVar.d = new c3();
+        kg kgVar = this.b;
+        if (kgVar != null) {
+            if (((b3) kgVar.d) == null) {
+                kgVar.d = new b3();
             }
-            c3 c3Var = (c3) aVar.d;
-            c3Var.c = colorStateList;
-            c3Var.b = true;
-            aVar.c();
+            b3 b3Var = (b3) kgVar.d;
+            b3Var.c = colorStateList;
+            b3Var.b = true;
+            kgVar.d();
         }
     }
 
     public void setSupportImageTintMode(PorterDuff.Mode mode) {
-        a5.a aVar = this.b;
-        if (aVar != null) {
-            if (((c3) aVar.d) == null) {
-                aVar.d = new c3();
+        kg kgVar = this.b;
+        if (kgVar != null) {
+            if (((b3) kgVar.d) == null) {
+                kgVar.d = new b3();
             }
-            c3 c3Var = (c3) aVar.d;
-            c3Var.d = mode;
-            c3Var.a = true;
-            aVar.c();
+            b3 b3Var = (b3) kgVar.d;
+            b3Var.d = mode;
+            b3Var.a = true;
+            kgVar.d();
         }
     }
 }

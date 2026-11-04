@@ -1,52 +1,77 @@
 package og;
 
-import org.telegram.messenger.dd;
-import org.telegram.messenger.i0;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.r8;
-import w7.b6;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import android.graphics.Path;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class f extends e {
-    @Override // og.e, og.d
-    public final void d() {
-        this.c.setLayoutParams(b6.d(40, 40.0f, (dd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        boolean z10 = dd.X;
-        this.d.setLayoutParams(b6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 69.0f, 0.0f, z10 ? 69.0f : 20.0f, 0.0f));
-        boolean z11 = dd.X;
-        this.e.setLayoutParams(b6.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 69.0f, 0.0f, z11 ? 69.0f : 20.0f, 0.0f));
+public class f {
+    public final ng.a a;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
+    public final Path e;
+    public final Path f;
+    public final Path g;
+    public ValueAnimator h;
+    public ValueAnimator i;
+    public int j;
+    public final float[] k;
+    public final float[] l;
+    public int m;
+    public boolean n;
+    public float o;
+    public final e6 p;
+
+    public f(ng.a aVar, boolean z10, e6 e6Var) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        Paint paint3 = new Paint(1);
+        this.d = paint3;
+        this.e = new Path();
+        this.f = new Path();
+        this.g = new Path();
+        this.n = true;
+        this.o = 1.0f;
+        this.p = e6Var;
+        this.a = aVar;
+        paint2.setStrokeWidth(g0.N(2.0f));
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        if (!mg.g.B1) {
+            paint2.setStrokeJoin(Paint.Join.ROUND);
+        }
+        paint2.setColor(aVar.h);
+        paint.setStrokeWidth(g0.N(1.0f));
+        paint.setStyle(style);
+        paint.setColor(aVar.h);
+        paint3.setStrokeWidth(g0.N(10.0f));
+        paint3.setStyle(style);
+        paint3.setStrokeCap(Paint.Cap.ROUND);
+        paint3.setColor(aVar.h);
+        long[] jArr = aVar.a;
+        this.k = new float[z10 ? jArr.length * 8 : jArr.length << 2];
+        long[] jArr2 = aVar.a;
+        this.l = new float[z10 ? jArr2.length * 8 : jArr2.length << 2];
     }
 
-    public void setGiveaway(TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        a7.Y(this.e, t6.r5, this.a);
-        boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
-        c cVar = this.d;
-        r8 r8Var = this.b;
-        if (z10) {
-            TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
-            r8Var.g(26);
-            cVar.k(dd.H(',', "BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
-            setSubtitle(dd.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]));
-        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            cVar.k(dd.L0(2131753328, null));
-            r8Var.g(16);
-            TL_stories.TL_prepaidGiveaway tL_prepaidGiveaway = (TL_stories.TL_prepaidGiveaway) prepaidGiveaway;
-            int i10 = tL_prepaidGiveaway.months;
-            if (i10 == 12) {
-                r8Var.i(-31392, -2796986);
-            } else if (i10 == 6) {
-                r8Var.i(-10703110, -12481584);
-            } else {
-                r8Var.i(-6631068, -11945404);
-            }
-            setSubtitle(dd.G(prepaidGiveaway.quantity, "BoostingPreparedGiveawaySubscriptionsPlural", dd.G(tL_prepaidGiveaway.months, "Months", new Object[0])));
+    public void a() {
+        ng.a aVar = this.a;
+        int i3 = aVar.g;
+        e6 e6Var = this.p;
+        if (i3 < 0 || !k6.f1(i3)) {
+            this.m = i0.a.h(k6.w0(k6.d6, e6Var)) < 0.5d ? aVar.i : aVar.h;
+        } else {
+            this.m = k6.w0(aVar.g, e6Var);
         }
-        g9 g9Var = this.c;
-        g9Var.setImageDrawable(r8Var);
-        g9Var.setRoundRadius(i0.L(20.0f));
+        this.c.setColor(this.m);
+        this.b.setColor(this.m);
+        this.d.setColor(this.m);
     }
 }

@@ -1,54 +1,95 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class tx0 extends View {
-    public int a;
-    public int b;
-    public final /* synthetic */ wx0 c;
+public final /* synthetic */ class tx0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wm b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+    public final /* synthetic */ org.telegram.messenger.zi e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tx0(wx0 wx0Var, Context context) {
-        super(context);
-        this.c = wx0Var;
-        this.a = 0;
-        this.b = 0;
+    public /* synthetic */ tx0(wm wmVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.messenger.zi ziVar, int i3) {
+        this.a = i3;
+        this.b = wmVar;
+        this.c = activity;
+        this.d = e6Var;
+        this.e = ziVar;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = this.b;
-        ProfileActivity profileActivity = this.c.e;
-        if (i12 != profileActivity.a.getMeasuredHeight()) {
-            this.a = 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        org.telegram.messenger.zi ziVar = this.e;
+        org.telegram.ui.ActionBar.e6 e6Var = this.d;
+        final Activity activity = this.c;
+        wm wmVar = this.b;
+        final int i10 = 2;
+        switch (i3) {
+            case 0:
+                final int i11 = 1;
+                org.telegram.ui.Components.fc.a0(wmVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.bd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.ux0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, e6Var)).j();
+                wmVar.eb(ziVar);
+                wmVar.gb(ziVar);
+                break;
+            case 1:
+                final int i12 = 0;
+                org.telegram.ui.Components.fc.a0(wmVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.bd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.ux0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, e6Var)).j();
+                wmVar.eb(ziVar);
+                wmVar.gb(ziVar);
+                break;
+            default:
+                org.telegram.ui.Components.fc.a0(wmVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.bd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.ux0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                sf.c.t(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, e6Var)).j();
+                wmVar.eb(ziVar);
+                wmVar.gb(ziVar);
+                break;
         }
-        this.b = profileActivity.a.getMeasuredHeight();
-        int childCount = profileActivity.a.getChildCount();
-        if (childCount != profileActivity.d.e.M2) {
-            setMeasuredDimension(profileActivity.a.getMeasuredWidth(), this.a);
-            return;
-        }
-        int i13 = 0;
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = profileActivity.a.getChildAt(i14);
-            profileActivity.a.getClass();
-            int R = RecyclerView.R(childAt);
-            if (R >= 0 && R != profileActivity.B3) {
-                i13 += profileActivity.a.getChildAt(i14).getMeasuredHeight();
-            }
-        }
-        View view = profileActivity.fragmentView;
-        int measuredHeight = (((view == null ? 0 : view.getMeasuredHeight()) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.i0.m) - i13;
-        if (measuredHeight > profileActivity.j4()) {
-            measuredHeight = 0;
-        }
-        int i15 = measuredHeight > 0 ? measuredHeight : 0;
-        int measuredWidth = profileActivity.a.getMeasuredWidth();
-        this.a = i15;
-        setMeasuredDimension(measuredWidth, i15);
     }
 }

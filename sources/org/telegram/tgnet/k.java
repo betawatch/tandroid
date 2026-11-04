@@ -1,30 +1,13 @@
 package org.telegram.tgnet;
 
-import android.os.AsyncTask;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NativeByteBuffer b;
-    public final /* synthetic */ AsyncTask c;
-
-    public /* synthetic */ k(AsyncTask asyncTask, NativeByteBuffer nativeByteBuffer, int i10) {
-        this.a = i10;
-        this.c = asyncTask;
-        this.b = nativeByteBuffer;
+public abstract /* synthetic */ class k {
+    public static void a(ResultCallback resultCallback, Throwable th2) {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((ConnectionsManager.GoogleDnsLoadTask) this.c).lambda$onPostExecute$1(this.b);
-                break;
-            default:
-                ((ConnectionsManager.MozillaDnsLoadTask) this.c).lambda$onPostExecute$1(this.b);
-                break;
-        }
+    public static void b(ResultCallback resultCallback, TLRPC.TL_error tL_error) {
     }
 }

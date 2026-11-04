@@ -2,17 +2,17 @@ package androidx.car.app;
 
 import androidx.car.app.model.x0;
 import androidx.car.app.navigation.model.NavigationTemplate;
-import e9.e2;
-import e9.k2;
-import e9.y0;
+import g9.e2;
+import g9.t0;
+import g9.z1;
 import j$.util.Objects;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class SessionInfo {
-    private static final y0 CLUSTER_SUPPORTED_TEMPLATES_API_6;
-    private static final y0 CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
+    private static final t0 CLUSTER_SUPPORTED_TEMPLATES_API_6;
+    private static final t0 CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
     public static final SessionInfo DEFAULT_SESSION_INFO;
     public static final int DISPLAY_TYPE_CLUSTER = 1;
     public static final int DISPLAY_TYPE_MAIN = 0;
@@ -21,14 +21,14 @@ public class SessionInfo {
     private final String mSessionId;
 
     static {
-        int i10 = y0.c;
-        CLUSTER_SUPPORTED_TEMPLATES_API_6 = new k2(NavigationTemplate.class);
-        CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6 = e2.s;
+        int i3 = t0.c;
+        CLUSTER_SUPPORTED_TEMPLATES_API_6 = new e2(NavigationTemplate.class);
+        CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6 = z1.s;
         DEFAULT_SESSION_INFO = new SessionInfo(0, "main");
     }
 
-    public SessionInfo(int i10, String str) {
-        this.mDisplayType = i10;
+    public SessionInfo(int i3, String str) {
+        this.mDisplayType = i3;
         this.mSessionId = str;
     }
 
@@ -51,9 +51,9 @@ public class SessionInfo {
         return this.mSessionId;
     }
 
-    public Set<Class<? extends x0>> getSupportedTemplates(int i10) {
+    public Set<Class<? extends x0>> getSupportedTemplates(int i3) {
         if (this.mDisplayType == 1) {
-            return i10 >= 6 ? CLUSTER_SUPPORTED_TEMPLATES_API_6 : CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
+            return i3 >= 6 ? CLUSTER_SUPPORTED_TEMPLATES_API_6 : CLUSTER_SUPPORTED_TEMPLATES_LESS_THAN_API_6;
         }
         return null;
     }

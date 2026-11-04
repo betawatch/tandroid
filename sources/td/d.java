@@ -1,31 +1,29 @@
 package td;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import b8.tb;
+import ed.o;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import kotlin.jvm.internal.j;
+
 /* loaded from: classes.dex */
-public final class d implements k {
-    public final c[] a;
-
-    public d(c[] cVarArr) {
-        this.a = cVarArr;
-    }
-
-    @Override // td.k
-    public final void a(Throwable th2) {
-        b();
-    }
-
-    public final void b() {
-        for (c cVar : this.a) {
-            o0 o0Var = cVar.f;
-            if (o0Var == null) {
-                kotlin.jvm.internal.i.h("handle");
-                throw null;
-            }
-            o0Var.dispose();
+public abstract class d extends f {
+    public static List a(b bVar) {
+        j.e(bVar, "<this>");
+        Iterator it = bVar.iterator();
+        if (!it.hasNext()) {
+            return o.a;
         }
-    }
-
-    public final String toString() {
-        return "DisposeHandlersOnCancel[" + this.a + ']';
+        Object next = it.next();
+        if (!it.hasNext()) {
+            return tb.a(next);
+        }
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(next);
+        while (it.hasNext()) {
+            arrayList.add(it.next());
+        }
+        return arrayList;
     }
 }

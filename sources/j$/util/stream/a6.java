@@ -27,22 +27,22 @@ public final class a6 extends w5 {
         long length = jArr.length;
         j5 j5Var = this.a;
         j5Var.o(length);
-        int i10 = 0;
+        int i3 = 0;
         if (!this.b) {
             int length2 = jArr.length;
-            while (i10 < length2) {
-                j5Var.accept(jArr[i10]);
-                i10++;
+            while (i3 < length2) {
+                j5Var.accept(jArr[i3]);
+                i3++;
             }
         } else {
             int length3 = jArr.length;
-            while (i10 < length3) {
-                long j10 = jArr[i10];
+            while (i3 < length3) {
+                long j10 = jArr[i3];
                 if (j5Var.q()) {
                     break;
                 }
                 j5Var.accept(j10);
-                i10++;
+                i3++;
             }
         }
         j5Var.end();

@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import ad.j;
 import android.webkit.JavascriptInterface;
+import dd.k;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import td.s;
-import td.t;
+import wd.s;
+import wd.t;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzld {
     final /* synthetic */ zzly zza;
@@ -33,7 +33,7 @@ public final class zzld {
     @JavascriptInterface
     public final void zzlce(String str) {
         zzly zzlyVar = this.zza;
-        Long l4 = zzlyVar.zzr().zzb;
+        Long l10 = zzlyVar.zzr().zzb;
         zzb();
         zzwn zzM = zzwn.zzM(zzdb.zza(str));
         zzzl zzi = zzzm.zzi();
@@ -56,16 +56,16 @@ public final class zzld {
         zzg.zzi().name();
         if (zzg.zzi() != zzzk.zzb) {
             zzg.zzi().name();
-            int i10 = zzcg.zza;
+            int i3 = zzcg.zza;
             zzcg zza = zzcf.zza(zzg.zzi());
             zzly zzlyVar = this.zza;
             zzlyVar.zzz().hashCode();
-            ((t) zzlyVar.zzz()).L(zza);
+            ((t) zzlyVar.zzz()).Q(zza);
             return;
         }
         zzly zzlyVar2 = this.zza;
         zzlyVar2.zzz().hashCode();
-        if (((t) zzlyVar2.zzz()).A(j.a)) {
+        if (((t) zzlyVar2.zzz()).C(k.a)) {
             return;
         }
         zzlyVar2.zzz().hashCode();
@@ -90,7 +90,7 @@ public final class zzld {
         map = this.zza.zzd;
         s sVar = (s) map.remove(zzi.zzk());
         if (sVar != null) {
-            ((t) sVar).A(zzi);
+            ((t) sVar).C(zzi);
         }
     }
 }

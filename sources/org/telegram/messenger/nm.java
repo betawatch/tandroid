@@ -1,89 +1,55 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nm implements RequestDelegate {
+public final /* synthetic */ class nm implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ hp b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ nm(f1 f1Var, long j10, int i10, int i11) {
-        this.a = i11;
-        this.d = f1Var;
-        this.b = j10;
-        this.c = i10;
+    public /* synthetic */ nm(hp hpVar, long j10, Runnable runnable, int i3) {
+        this.a = i3;
+        this.b = hpVar;
+        this.c = j10;
+        this.d = runnable;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        Runnable runnable = this.d;
+        long j10 = this.c;
+        hp hpVar = this.b;
+        switch (i3) {
             case 0:
-                wp wpVar = (wp) this.d;
-                wpVar.t8.remove(this.b + "_" + this.c);
-                if (tL_error == null && tLObject != null) {
-                    wpVar.L3((TLRPC.Updates) tLObject, false);
+                if (runnable != null) {
+                    hpVar.getClass();
+                    runnable.run();
+                }
+                hpVar.getNotificationCenter().k(hs.X4, Long.valueOf(j10), 0L);
+                break;
+            case 1:
+                hpVar.V2(0, j10, true);
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
                 break;
-            case 1:
-                y00 y00Var = (y00) this.d;
-                a0.h hVar = new a0.h();
-                boolean z10 = tLObject instanceof TLRPC.TL_messages_savedDialogs;
-                long j10 = this.b;
-                int i10 = this.c;
-                int i11 = 0;
-                if (!z10) {
-                    if (!(tLObject instanceof TLRPC.TL_messages_savedDialogsSlice)) {
-                        if (!(tLObject instanceof TLRPC.TL_messages_savedDialogsNotModified)) {
-                            if (!(tLObject instanceof TLRPC.TL_messages_forumTopics)) {
-                                i0.g3(new p00(y00Var, j10, 0));
-                                break;
-                            } else {
-                                TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) tLObject;
-                                while (i11 < tL_messages_forumTopics.messages.size()) {
-                                    hVar.k(tL_messages_forumTopics.messages.get(i11), tL_messages_forumTopics.messages.get(i11).id);
-                                    i11++;
-                                }
-                                i0.g3(new o00(y00Var, tL_messages_forumTopics, j10, tL_messages_forumTopics, hVar, i10));
-                                break;
-                            }
-                        } else {
-                            i0.g3(new pr(y00Var, j10, (TLRPC.TL_messages_savedDialogsNotModified) tLObject, 5));
-                            break;
-                        }
-                    } else {
-                        TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice = (TLRPC.TL_messages_savedDialogsSlice) tLObject;
-                        while (i11 < tL_messages_savedDialogsSlice.messages.size()) {
-                            hVar.k(tL_messages_savedDialogsSlice.messages.get(i11), tL_messages_savedDialogsSlice.messages.get(i11).id);
-                            i11++;
-                        }
-                        i0.g3(new d2(y00Var, tL_messages_savedDialogsSlice, j10, hVar, i10, 7));
-                        break;
-                    }
-                } else {
-                    TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) tLObject;
-                    while (i11 < tL_messages_savedDialogs.messages.size()) {
-                        hVar.k(tL_messages_savedDialogs.messages.get(i11), tL_messages_savedDialogs.messages.get(i11).id);
-                        i11++;
-                    }
-                    i0.g3(new d2(y00Var, tL_messages_savedDialogs, j10, hVar, i10, 8));
+            default:
+                hpVar.V2(0, j10, true);
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
-            default:
-                i0.g3(new org.telegram.ui.z(this.c, 0, this.b, (org.telegram.ui.h4) this.d, tLObject));
                 break;
         }
     }
 
-    public /* synthetic */ nm(org.telegram.ui.h4 h4Var, int i10, long j10) {
-        this.a = 2;
-        this.d = h4Var;
-        this.c = i10;
-        this.b = j10;
+    public /* synthetic */ nm(hp hpVar, Runnable runnable, long j10) {
+        this.a = 0;
+        this.b = hpVar;
+        this.d = runnable;
+        this.c = j10;
     }
 }

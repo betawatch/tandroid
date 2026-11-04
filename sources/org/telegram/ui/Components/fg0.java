@@ -1,38 +1,53 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public enum fg0 {
-    d(2131746746, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
-    e(2131746702, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24),
-    f(2131746701, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24),
-    h(2131746755, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
-    n(2131746750, R.drawable.gift, R.drawable.input_gift_s),
-    r(2131746744, R.drawable.action_share, R.drawable.msg_share),
-    s(2131746756, R.drawable.filled_profile_call_24, R.drawable.outline_profile_call_24),
-    w(2131746742, R.drawable.filled_profile_video_24, R.drawable.outline_profile_video_24),
-    x(2131746749, R.drawable.filled_profile_member_24, R.drawable.outline_profile_member_24),
-    y(2131746745, R.drawable.report, R.drawable.msg_report),
-    D(2131746748, R.drawable.leave, R.drawable.leave),
-    E(2131746741, R.drawable.live_stream, R.drawable.live_stream),
-    F(2131746747, R.drawable.live_stream, R.drawable.live_stream),
-    G(2131746757, R.drawable.filled_profile_story, R.drawable.outline_profile_story),
-    H(2131746743, R.drawable.filled_profile_stop_24, R.drawable.outline_profile_stop_24),
-    I(2131746752, R.drawable.filled_profile_photo, R.drawable.outline_profile_photo),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF16(2131746751, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
-    J(2131746754, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
-    K(2131745512, R.drawable.filled_profile_settings, R.drawable.outline_profile_settings);
+public final /* synthetic */ class fg0 implements ya0, ab0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kg0 b;
 
-    public final int a;
-    public final int b;
-    public final int c;
+    public /* synthetic */ fg0(kg0 kg0Var, int i3) {
+        this.a = i3;
+        this.b = kg0Var;
+    }
 
-    fg0(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
+    @Override // org.telegram.ui.Components.ya0
+    public String e(int i3) {
+        int i10 = this.a;
+        kg0 kg0Var = this.b;
+        switch (i10) {
+            case 0:
+                return kg0Var.P ? org.telegram.messenger.bd.a0("MilesShort", null, 2131748435, Integer.valueOf(i3)) : org.telegram.messenger.bd.a0("KMetersShort", null, 2131749069, Integer.valueOf(i3));
+            default:
+                if (!kg0Var.P) {
+                    if (i3 == 1) {
+                        return org.telegram.messenger.bd.a0("MetersShort", null, 2131748450, 50);
+                    }
+                    if (i3 > 1) {
+                        i3--;
+                    }
+                    return org.telegram.messenger.bd.a0("MetersShort", null, 2131748450, Integer.valueOf(i3 * 100));
+                }
+                if (i3 == 1) {
+                    return org.telegram.messenger.bd.a0("FootsShort", null, 2131750602, Integer.valueOf(org.telegram.messenger.hs.Z3));
+                }
+                if (i3 > 1) {
+                    i3--;
+                }
+                Locale locale = Locale.US;
+                return k2.p1.i(i3, ".");
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ab0
+    public void l(cb0 cb0Var, int i3) {
+        kg0 kg0Var = this.b;
+        try {
+            kg0Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
+        kg0Var.c(true);
     }
 }

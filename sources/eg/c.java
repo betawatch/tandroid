@@ -1,163 +1,93 @@
 package eg;
 
-import android.content.Context;
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
-import org.telegram.messenger.at;
-import org.telegram.messenger.i0;
+import java.nio.ShortBuffer;
+import org.telegram.messenger.video.AudioBufferConverter;
+import org.telegram.messenger.video.AudioConversions;
+import org.telegram.messenger.video.AudioDecoder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class c {
-    public final ScaleGestureDetector a;
-    public q b;
-    public float c;
-    public float d;
-    public final float f;
-    public VelocityTracker g;
-    public boolean h;
-    public long k;
-    public boolean l;
-    public final float e = i0.L(1.0f);
-    public int i = -1;
-    public int j = 0;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class c extends a {
+    public final AudioDecoder b;
+    public final AudioBufferConverter c = new AudioBufferConverter();
+    public long d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public ShortBuffer i;
+    public boolean j;
 
-    public c(Context context) {
-        this.f = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
-        this.a = new ScaleGestureDetector(context, new b(this, 0));
+    public c(String str) {
+        this.b = new AudioDecoder(str);
     }
 
-    public final void a(MotionEvent motionEvent) {
-        float x10;
-        float y3;
-        float x11;
-        float y10;
-        float x12;
-        float y11;
-        p pVar;
-        this.a.onTouchEvent(motionEvent);
-        int action = motionEvent.getAction() & at.e4;
-        if (action == 0) {
-            this.i = motionEvent.getPointerId(0);
-            this.k = SystemClock.elapsedRealtime();
-        } else if (action == 1 || action == 3) {
-            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (pVar = this.b.M) != null) {
-                pVar.n();
-            }
-            this.i = -1;
-        } else if (action == 6) {
-            int action2 = (65280 & motionEvent.getAction()) >> 8;
-            if (motionEvent.getPointerId(action2) == this.i) {
-                int i10 = action2 == 0 ? 1 : 0;
-                this.i = motionEvent.getPointerId(i10);
-                this.c = motionEvent.getX(i10);
-                this.d = motionEvent.getY(i10);
-            }
+    @Override // eg.a
+    public final short a() {
+        if (!this.j) {
+            throw new RuntimeException("Audio input has no remaining value.");
         }
-        int i11 = this.i;
-        if (i11 == -1) {
-            i11 = 0;
+        int i3 = this.f;
+        if (i3 < this.e) {
+            this.f = i3 + 1;
+            return (short) 0;
         }
-        this.j = motionEvent.findPointerIndex(i11);
-        int action3 = motionEvent.getAction();
-        if (action3 != 0) {
-            if (action3 == 1) {
-                if (this.h) {
-                    if (this.g != null) {
-                        try {
-                            x12 = motionEvent.getX(this.j);
-                        } catch (Exception unused) {
-                            x12 = motionEvent.getX();
-                        }
-                        this.c = x12;
-                        try {
-                            y11 = motionEvent.getY(this.j);
-                        } catch (Exception unused2) {
-                            y11 = motionEvent.getY();
-                        }
-                        this.d = y11;
-                        this.g.addMovement(motionEvent);
-                        this.g.computeCurrentVelocity(1000);
-                        if (Math.max(Math.abs(this.g.getXVelocity()), Math.abs(this.g.getYVelocity())) >= this.f) {
-                            this.b.getClass();
-                        }
-                    }
-                    this.h = false;
-                }
-                VelocityTracker velocityTracker = this.g;
-                if (velocityTracker != null) {
-                    velocityTracker.recycle();
-                    this.g = null;
-                }
-                this.l = false;
+        f();
+        ShortBuffer shortBuffer = this.i;
+        short s6 = (shortBuffer == null || shortBuffer.remaining() <= 0) ? (short) 0 : this.i.get();
+        f();
+        ShortBuffer shortBuffer2 = this.i;
+        if (shortBuffer2 != null && shortBuffer2.remaining() >= 1) {
+            return s6;
+        }
+        this.j = false;
+        return s6;
+    }
+
+    @Override // eg.a
+    public final int b() {
+        return this.b.getSampleRate();
+    }
+
+    @Override // eg.a
+    public final boolean c() {
+        return this.j;
+    }
+
+    @Override // eg.a
+    public final void d() {
+        this.i = null;
+        this.j = false;
+        AudioDecoder audioDecoder = this.b;
+        audioDecoder.stop();
+        audioDecoder.release();
+    }
+
+    @Override // eg.a
+    public final void e(int i3, int i10) {
+        this.g = i3;
+        this.h = i10;
+        this.j = true;
+        this.b.start();
+        this.e = AudioConversions.usToShorts(this.d, this.g, this.h);
+        this.f = 0;
+    }
+
+    public final void f() {
+        ShortBuffer shortBuffer = this.i;
+        if (shortBuffer == null || shortBuffer.remaining() <= 0) {
+            AudioDecoder audioDecoder = this.b;
+            AudioDecoder.DecodedBufferData decode = audioDecoder.decode();
+            if (decode.index < 0) {
+                this.i = null;
                 return;
             }
-            if (action3 != 2) {
-                if (action3 != 3) {
-                    return;
-                }
-                VelocityTracker velocityTracker2 = this.g;
-                if (velocityTracker2 != null) {
-                    velocityTracker2.recycle();
-                    this.g = null;
-                }
-                this.l = false;
-                this.h = false;
-                return;
-            }
+            this.i = this.c.convert(decode.byteBuffer.asShortBuffer(), audioDecoder.getSampleRate(), audioDecoder.getChannelCount(), this.g, this.h);
+            audioDecoder.releaseOutputBuffer(decode.index);
         }
-        if (!this.l) {
-            VelocityTracker obtain = VelocityTracker.obtain();
-            this.g = obtain;
-            if (obtain != null) {
-                obtain.addMovement(motionEvent);
-            }
-            try {
-                x11 = motionEvent.getX(this.j);
-            } catch (Exception unused3) {
-                x11 = motionEvent.getX();
-            }
-            this.c = x11;
-            try {
-                y10 = motionEvent.getY(this.j);
-            } catch (Exception unused4) {
-                y10 = motionEvent.getY();
-            }
-            this.d = y10;
-            this.h = false;
-            this.l = true;
-            return;
-        }
-        try {
-            x10 = motionEvent.getX(this.j);
-        } catch (Exception unused5) {
-            x10 = motionEvent.getX();
-        }
-        try {
-            y3 = motionEvent.getY(this.j);
-        } catch (Exception unused6) {
-            y3 = motionEvent.getY();
-        }
-        float f7 = x10 - this.c;
-        float f10 = y3 - this.d;
-        if (!this.h) {
-            this.h = ((float) Math.sqrt((double) ((f10 * f10) + (f7 * f7)))) >= this.e;
-        }
-        if (this.h) {
-            q qVar = this.b;
-            if (!qVar.F) {
-                o.f(qVar.L, f7, f10);
-                qVar.r(false);
-            }
-            this.c = x10;
-            this.d = y3;
-            VelocityTracker velocityTracker3 = this.g;
-            if (velocityTracker3 != null) {
-                velocityTracker3.addMovement(motionEvent);
-            }
-        }
+    }
+
+    public c(String str, int i3) {
+        this.b = new AudioDecoder(str, i3);
     }
 }

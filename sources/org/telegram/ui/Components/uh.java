@@ -1,185 +1,69 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.widget.TextView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class uh extends FrameLayout {
-    public final org.telegram.ui.ActionBar.p6 a;
-    public final bi b;
-    public uk0 c;
-    public uk0 d;
-    public int e;
-    public boolean f;
-    public boolean h;
+public final class uh extends wh {
+    public TLRPC.User b;
+    public TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ bi d;
 
-    public uh(Context context, org.telegram.ui.ActionBar.p6 p6Var, bi biVar) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uh(bi biVar, Context context) {
         super(context);
-        this.a = p6Var;
-        this.b = biVar;
+        this.d = biVar;
+        setWillNotDraw(false);
+        setFocusable(true);
+        setFocusableInTouchMode(true);
+        int i3 = bi.F4;
+        org.telegram.ui.ActionBar.e6 e6Var = biVar.J0;
+        rh.b bVar = new rh.b(context);
+        bVar.d = e6Var;
+        bVar.R = true;
+        TextView textView = bVar.a;
+        textView.setTextSize(1, 11.0f);
+        textView.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+        bVar.b.setVisibility(8);
+        bVar.b(false);
+        k9 k9Var = new k9(context);
+        bVar.c = k9Var;
+        bVar.addView(k9Var, b8.mf.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.x = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ql, e6Var);
+        bVar.s = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ol, e6Var);
+        bVar.w = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Pl, e6Var);
+        bVar.a();
+        this.a = bVar;
+        bVar.getBackupImageView().a.h1 = new a3(10);
+        addView(this.a, b8.mf.c(-1.0f, -1));
     }
 
-    public abstract void B(int i10, int i11);
-
-    public boolean F(int i10) {
-        return false;
+    public final void a(boolean z10) {
+        boolean z11 = this.c != null && (-this.b.id) == this.d.R2;
+        this.a.f(z11, z10);
+        ch0 B = this.a.getBackupImageView().getImageReceiver().B();
+        if (!z10) {
+            if (B != null) {
+                B.stop();
+                B.T(false, 0.0f);
+                return;
+            }
+            return;
+        }
+        if (!z11 || B == null) {
+            return;
+        }
+        B.K(0);
+        B.P(-1);
+        B.T(false, 0.0f);
+        B.start();
     }
 
-    public boolean J(boolean z10, int i10, int i11, long j10, boolean z11) {
-        return false;
-    }
-
-    public boolean K() {
-        return !(this instanceof xh.j3);
-    }
-
-    public boolean M() {
-        return true;
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public boolean c() {
-        return true;
-    }
-
-    public boolean e() {
-        return this instanceof kk;
-    }
-
-    public boolean f() {
-        return false;
-    }
-
-    public boolean g() {
-        return this instanceof kk;
-    }
-
-    public int getButtonsHideOffset() {
-        return org.telegram.messenger.i0.L(i() != 0 ? 12.0f : 17.0f);
-    }
-
-    public int getCurrentItemTop() {
-        return 0;
-    }
-
-    public int getCustomActionBarBackground() {
-        return 0;
-    }
-
-    public int getCustomBackground() {
-        return 0;
-    }
-
-    public int getFirstOffset() {
-        return 0;
-    }
-
-    public int getListTopPadding() {
-        return 0;
-    }
-
-    public int getSelectedItemsCount() {
-        return 0;
-    }
-
-    public ArrayList<org.telegram.ui.ActionBar.c7> getThemeDescriptions() {
-        return null;
-    }
-
-    public boolean h() {
-        return false;
-    }
-
-    public int i() {
-        return 0;
-    }
-
-    public boolean j() {
-        return false;
-    }
-
-    public void m(float f7, float f10) {
-        l(f7);
-    }
-
-    public boolean n(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean p() {
-        return false;
-    }
-
-    public boolean r() {
-        return true;
-    }
-
-    public void setBlur3Capture(uk0 uk0Var) {
-        int i10 = bi.E4;
-        this.b.X0.b(uk0Var);
-        this.c = uk0Var;
-    }
-
-    public void D(int i10) {
-    }
-
-    public void G(uh uhVar) {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void l(float f7) {
-    }
-
-    public void q(int i10) {
-    }
-
-    public void u(float f7) {
-    }
-
-    public void w(int i10) {
-    }
-
-    public void A() {
-    }
-
-    public void C() {
-    }
-
-    public void H() {
-    }
-
-    public void I() {
-    }
-
-    public void d() {
-    }
-
-    public void k() {
-    }
-
-    public void o() {
-    }
-
-    public void s() {
-    }
-
-    public void t() {
-    }
-
-    public void x() {
-    }
-
-    public void y() {
-    }
-
-    public void z(int i10, boolean z10) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a(false);
     }
 }

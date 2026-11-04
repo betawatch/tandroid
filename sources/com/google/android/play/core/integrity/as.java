@@ -1,53 +1,53 @@
 package com.google.android.play.core.integrity;
 
-import a9.h0;
-import a9.j0;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import c9.e0;
+import c9.g0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.common.PlayCoreDialogWrapperActivity;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-final class as extends h0 {
+final class as extends e0 {
     final TaskCompletionSource a;
-    final a9.e b;
-    private final j0 c;
+    final c9.c b;
+    private final g0 c;
     private final String d;
     private final k e;
     private final Activity f;
 
-    public as(Context context, k kVar, Activity activity, TaskCompletionSource taskCompletionSource, a9.e eVar) {
+    public as(Context context, k kVar, Activity activity, TaskCompletionSource taskCompletionSource, c9.c cVar) {
         super("com.google.android.play.core.integrity.protocol.IRequestDialogCallback");
-        this.c = new j0("RequestDialogCallbackImpl");
+        this.c = new g0("RequestDialogCallbackImpl");
         this.d = context.getPackageName();
         this.e = kVar;
         this.a = taskCompletionSource;
         this.f = activity;
-        this.b = eVar;
+        this.b = cVar;
     }
 
-    @Override // a9.i0
+    @Override // c9.f0
     public final void b(Bundle bundle) {
         this.b.d(this.a);
         this.c.b("onRequestDialog(%s)", this.d);
-        com.google.android.gms.common.api.f a2 = this.e.a(bundle);
-        if (a2 != null) {
-            this.a.trySetException(a2);
+        com.google.android.gms.common.api.f a10 = this.e.a(bundle);
+        if (a10 != null) {
+            this.a.trySetException(a10);
             return;
         }
         PendingIntent pendingIntent = (PendingIntent) bundle.getParcelable("dialog.intent");
         if (pendingIntent == null) {
-            j0 j0Var = this.c;
+            g0 g0Var = this.c;
             Object[] objArr = {this.d};
-            j0Var.getClass();
+            g0Var.getClass();
             if (Log.isLoggable("PlayCore", 6)) {
-                Log.e("PlayCore", j0.d(j0Var.a, "onRequestDialog(%s): got null dialog intent", objArr));
+                Log.e("PlayCore", g0.d(g0Var.a, "onRequestDialog(%s): got null dialog intent", objArr));
             }
             this.a.trySetResult(0);
             return;
@@ -56,11 +56,11 @@ final class as extends h0 {
         intent.putExtra("confirmation_intent", pendingIntent);
         intent.setFlags(TLObject.FLAG_29);
         intent.putExtra("result_receiver", new ar(this, this.b.a()));
-        j0 j0Var2 = this.c;
+        g0 g0Var2 = this.c;
         Object[] objArr2 = new Object[0];
-        j0Var2.getClass();
+        g0Var2.getClass();
         if (Log.isLoggable("PlayCore", 3)) {
-            Log.d("PlayCore", j0.d(j0Var2.a, "Starting dialog intent...", objArr2));
+            Log.d("PlayCore", g0.d(g0Var2.a, "Starting dialog intent...", objArr2));
         }
         this.f.startActivityForResult(intent, 0);
     }

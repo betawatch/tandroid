@@ -1,71 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class uy0 extends FrameLayout {
-    public final xy0 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
+public final class uy0 extends MetricAffectingSpan {
+    public final int a;
+    public final ty0 b;
 
-    public uy0(xy0 xy0Var, View view, boolean z10) {
-        super(xy0Var.getContext());
-        this.d = false;
-        this.e = true;
-        this.a = xy0Var;
-        setWillNotDraw(false);
-        if (!z10) {
-            setPadding(org.telegram.messenger.i0.L(12.66f), org.telegram.messenger.i0.L(9.33f), org.telegram.messenger.i0.L(12.66f), org.telegram.messenger.i0.L(9.33f));
+    public uy0(ty0 ty0Var, int i3) {
+        this.b = ty0Var;
+        if (i3 > 0) {
+            this.a = i3;
         }
-        addView(view, w7.b6.c(-1.0f, -1));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10 = this.b;
-        xy0 xy0Var = this.a;
-        if (z10 || this.c) {
-            canvas2 = canvas;
-            float L = org.telegram.messenger.i0.L(10.0f);
-            float[] fArr = xy0Var.c;
-            boolean z11 = this.b;
-            float f7 = (z11 && this.d) ? L : 0.0f;
-            fArr[1] = f7;
-            fArr[0] = f7;
-            float f10 = (z11 && this.e) ? L : 0.0f;
-            fArr[3] = f10;
-            fArr[2] = f10;
-            boolean z12 = this.c;
-            float f11 = (z12 && this.e) ? L : 0.0f;
-            fArr[5] = f11;
-            fArr[4] = f11;
-            if (!z12 || !this.d) {
-                L = 0.0f;
+    public final void a(TextPaint textPaint) {
+        ty0 ty0Var = this.b;
+        if (x7.u.a(ty0Var.a, 49152)) {
+            float textSize = textPaint.getTextSize();
+            textPaint.setTextSize(0.75f * textSize);
+            if (x7.u.a(ty0Var.a, 32768)) {
+                textPaint.baselineShift -= (int) (textSize * 0.35f);
+            } else if (x7.u.a(ty0Var.a, TLObject.FLAG_14)) {
+                textPaint.baselineShift += (int) (textSize * 0.12f);
             }
-            fArr[7] = L;
-            fArr[6] = L;
-            xy0Var.b.rewind();
-            RectF rectF = org.telegram.messenger.i0.P;
-            float f12 = xy0Var.h;
-            rectF.set(f12, f12, getWidth() - xy0Var.h, (xy0Var.h * (this.c ? -1.0f : 1.0f)) + getHeight());
-            if (!this.e) {
-                rectF.right += xy0Var.f;
-            }
-            xy0Var.b.addRoundRect(rectF, xy0Var.c, Path.Direction.CW);
-            canvas2.drawPath(xy0Var.b, xy0Var.e);
-        } else {
-            float f13 = xy0Var.h;
-            canvas2 = canvas;
-            canvas2.drawRect(f13, f13, getWidth() - xy0Var.h, getHeight() + xy0Var.h, xy0Var.e);
         }
-        super.onDraw(canvas2);
+    }
+
+    public final ty0 b() {
+        return this.b;
+    }
+
+    public final boolean c() {
+        return (this.b.a & 256) > 0;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i3 = this.a;
+        if (i3 != 0) {
+            textPaint.setTextSize(i3);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        int i3 = this.a;
+        if (i3 != 0) {
+            textPaint.setTextSize(i3);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 }

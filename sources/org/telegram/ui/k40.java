@@ -1,132 +1,94 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class k40 extends AnimatorListenerAdapter {
+public final class k40 implements View.OnKeyListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ Object d;
+    public boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 c;
 
-    public /* synthetic */ k40(Object obj, float f7, Runnable runnable, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f7;
-        this.c = runnable;
+    public /* synthetic */ k40(int i3, org.telegram.ui.ActionBar.d2 d2Var) {
+        this.a = i3;
+        this.c = d2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i3, KeyEvent keyEvent) {
         int i10 = this.a;
-        Runnable runnable = this.c;
-        float f7 = this.b;
-        Object obj = this.d;
+        org.telegram.ui.ActionBar.d2 d2Var = this.c;
         switch (i10) {
             case 0:
-                l40 l40Var = (l40) obj;
-                l40Var.h = f7;
-                l40Var.a.invalidate();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 1:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                photoViewer.p6 = null;
-                photoViewer.f6 = 0.0f;
-                photoViewer.b6 = 0.0f;
-                photoViewer.g6 = 0.0f;
-                float u22 = photoViewer.u2(false);
-                photoViewer.e6 = u22;
-                photoViewer.a6 = u22;
-                photoViewer.e0.invalidate();
-                CropAreaView cropAreaView = photoViewer.C1.b.a;
-                float u23 = photoViewer.u2(false);
-                cropAreaView.n0 = 0.0f;
-                cropAreaView.o0 = u23;
-                cropAreaView.p0 = 0.0f;
-                cropAreaView.q0 = 0.0f;
-                cropAreaView.invalidate();
-                photoViewer.C1.c.setRotated(false);
-                if (Math.abs(f7) > 0.0f) {
-                    org.telegram.ui.Components.be0 be0Var = photoViewer.C1;
-                    eg.f fVar = be0Var.c;
-                    if (fVar != null) {
-                        fVar.b(0.0f);
-                        fVar.setRotated(false);
-                    }
-                    if (be0Var.b.m(f7)) {
-                        org.telegram.ui.ActionBar.a7.t(photoViewer.b1, org.telegram.ui.ActionBar.t6.ng, photoViewer.v2, PorterDuff.Mode.MULTIPLY);
+                r40 r40Var = (r40) d2Var;
+                if (i3 == 67) {
+                    if (keyEvent.getAction() != 0) {
+                        if (keyEvent.getAction() == 1 && this.b && !r40Var.b0.isEmpty()) {
+                            r40Var.h.c((org.telegram.ui.Components.y10) k2.p1.h(1, r40Var.b0));
+                            r40Var.x0();
+                            r40Var.p0();
+                            break;
+                        }
                     } else {
-                        photoViewer.b1.setColorFilter((ColorFilter) null);
+                        this.b = r40Var.f.r.length() == 0;
                     }
-                }
-                org.telegram.messenger.ze zeVar = photoViewer.X4.c;
-                if (zeVar != null) {
-                    zeVar.b = 0.0f;
-                    zeVar.a = 0.0f;
-                    zeVar.f = 1.0f;
-                    zeVar.e = 1.0f;
-                }
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 2:
-                rh.i4 i4Var = (rh.i4) obj;
-                i4Var.D = f7;
-                i4Var.invalidate();
-                if (animator == i4Var.E && runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 3:
-                th.d1 d1Var = (th.d1) obj;
-                d1Var.n = f7;
-                d1Var.invalidate();
-                if (animator == d1Var.r && runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 4:
-                vh.z1 z1Var = (vh.z1) obj;
-                z1Var.h = f7;
-                z1Var.i();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
                 }
                 break;
             default:
-                vh.o8 o8Var = (vh.o8) obj;
-                o8Var.L = null;
-                o8Var.I = f7;
-                o8Var.j();
-                o8Var.r.invalidate();
-                o8Var.n.invalidate();
-                runnable.run();
-                o8Var.P.e();
-                org.telegram.messenger.at.e().k(99, 512);
-                org.telegram.messenger.at.e().o();
-                o8Var.n();
-                Runnable runnable2 = o8Var.Q;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    o8Var.Q = null;
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) d2Var;
+                ArrayList arrayList = usersSelectActivity.Q;
+                if (i3 == 67) {
+                    if (keyEvent.getAction() != 0) {
+                        if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
+                            org.telegram.ui.Components.y10 y10Var = (org.telegram.ui.Components.y10) k2.p1.h(1, arrayList);
+                            usersSelectActivity.b.b(y10Var);
+                            if (usersSelectActivity.y == 2) {
+                                if (y10Var.getUid() == -9223372036854775800L) {
+                                    usersSelectActivity.L &= -2;
+                                } else if (y10Var.getUid() == -9223372036854775799L) {
+                                    usersSelectActivity.L &= -3;
+                                } else if (y10Var.getUid() == Long.MIN_VALUE) {
+                                    usersSelectActivity.L &= -5;
+                                } else if (y10Var.getUid() == -9223372036854775807L) {
+                                    usersSelectActivity.L &= -9;
+                                }
+                            } else if (y10Var.getUid() == Long.MIN_VALUE) {
+                                int i11 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -2;
+                            } else if (y10Var.getUid() == -9223372036854775807L) {
+                                int i12 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -3;
+                            } else if (y10Var.getUid() == -9223372036854775806L) {
+                                int i13 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -5;
+                            } else if (y10Var.getUid() == -9223372036854775805L) {
+                                int i14 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -9;
+                            } else if (y10Var.getUid() == -9223372036854775804L) {
+                                int i15 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -17;
+                            } else if (y10Var.getUid() == -9223372036854775803L) {
+                                int i16 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -33;
+                            } else if (y10Var.getUid() == -9223372036854775802L) {
+                                int i17 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -65;
+                            } else if (y10Var.getUid() == -9223372036854775801L) {
+                                int i18 = org.telegram.messenger.hp.C8;
+                                usersSelectActivity.L &= -129;
+                            }
+                            usersSelectActivity.d0();
+                            usersSelectActivity.b0();
+                            break;
+                        }
+                    } else {
+                        this.b = usersSelectActivity.c.length() == 0;
+                    }
                 }
-                o8Var.r.invalidate();
-                o8Var.h0.invalidate();
                 break;
         }
+        return true;
     }
 }

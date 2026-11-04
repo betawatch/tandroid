@@ -3,7 +3,7 @@ package g;
 import java.lang.ref.WeakReference;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final int a;
@@ -17,7 +17,7 @@ public abstract class g {
         c = new Object();
     }
 
-    public static void b(r rVar) {
+    public static void c(s sVar) {
         synchronized (c) {
             try {
                 a0.g gVar = b;
@@ -25,7 +25,7 @@ public abstract class g {
                 a0.b bVar = new a0.b(gVar);
                 while (bVar.hasNext()) {
                     g gVar2 = (g) ((WeakReference) bVar.next()).get();
-                    if (gVar2 == rVar || gVar2 == null) {
+                    if (gVar2 == sVar || gVar2 == null) {
                         bVar.remove();
                     }
                 }
@@ -37,5 +37,5 @@ public abstract class g {
 
     public abstract void a();
 
-    public abstract boolean c(int i10);
+    public abstract boolean d(int i3);
 }

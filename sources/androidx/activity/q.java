@@ -1,58 +1,47 @@
 package androidx.activity;
 
-import androidx.fragment.app.a0;
-import java.util.ListIterator;
+import android.window.OnBackInvokedCallback;
+import ei.r9;
+import gi.va;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class q extends kotlin.jvm.internal.j implements ld.a {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ x c;
+public final /* synthetic */ class q implements OnBackInvokedCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q(x xVar, int i10) {
-        super(0);
-        this.b = i10;
-        this.c = xVar;
+    public /* synthetic */ q(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v2 */
-    /* JADX WARN: Type inference failed for: r3v3 */
-    /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
-    @Override // ld.a
-    public final Object invoke() {
-        a0 a0Var;
-        switch (this.b) {
+    public final void onBackInvoked() {
+        switch (this.a) {
             case 0:
-                this.c.b();
+                od.a onBackInvoked = (od.a) this.b;
+                kotlin.jvm.internal.j.e(onBackInvoked, "$onBackInvoked");
+                onBackInvoked.invoke();
                 break;
             case 1:
-                x xVar = this.c;
-                a0 a0Var2 = xVar.c;
-                if (a0Var2 == null) {
-                    bd.g gVar = xVar.b;
-                    ListIterator listIterator = gVar.listIterator(gVar.size());
-                    while (true) {
-                        if (listIterator.hasPrevious()) {
-                            a0Var = listIterator.previous();
-                            if (((a0) a0Var).a) {
-                            }
-                        } else {
-                            a0Var = 0;
-                        }
-                    }
-                    a0Var2 = a0Var;
+                r9 r9Var = (r9) this.b;
+                LaunchActivity launchActivity = LaunchActivity.K1;
+                if (launchActivity == null) {
+                    r9Var.p();
+                    break;
+                } else {
+                    launchActivity.onBackPressed();
+                    break;
                 }
-                xVar.c = null;
-                if (a0Var2 != null) {
-                    a0Var2.a();
-                }
+            case 2:
+                ((g.s) this.b).s();
+                break;
+            case 3:
+                ((va) this.b).L();
                 break;
             default:
-                this.c.b();
+                ((Runnable) this.b).run();
                 break;
         }
-        return ad.j.a;
     }
 }

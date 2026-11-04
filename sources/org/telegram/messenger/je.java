@@ -1,43 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.Components.z60;
+import java.io.File;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class je implements Runnable {
+public final class je extends File {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ vs c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ je(vs vsVar, Object obj, float f7, int i10) {
-        this.a = i10;
-        this.c = vsVar;
-        this.d = obj;
-        this.b = f7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ je(int i3, File file, String str) {
+        super(file, str);
+        this.a = i3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.io.File
+    public final boolean delete() {
         switch (this.a) {
             case 0:
-                MediaController mediaController = (MediaController) this.c;
-                kj kjVar = (kj) this.d;
-                if (mediaController.i0 != null && mediaController.u0 != null && !mediaController.g0) {
-                    if (mediaController.L(kjVar)) {
-                        mediaController.i0(mediaController.u0, this.b);
-                    }
-                    mediaController.i0.h0();
-                    break;
+                if (r2.a) {
+                    a8.d("delete voice file (trimmed)");
+                }
+                break;
+            case 1:
+                if (r2.a) {
+                    a8.d("delete voice file (from resume)");
                 }
                 break;
             default:
-                org.telegram.ui.h4 h4Var = (org.telegram.ui.h4) this.c;
-                z60 z60Var = (z60) this.d;
-                h4Var.h0.M.c(true, 0.0f);
-                z60Var.p = new org.telegram.ui.a0(h4Var, this.b, 0);
-                z60Var.Z();
+                if (r2.a) {
+                    a8.d("delete camera file");
+                }
                 break;
         }
+        return super.delete();
     }
 }

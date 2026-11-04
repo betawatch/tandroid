@@ -1,28 +1,128 @@
 package uh;
 
-import g.o;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b extends o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ i d;
+public final class b extends Drawable {
+    public final TextPaint a;
+    public final TextPaint b;
+    public RadialProgress2 c;
+    public boolean d;
+    public StaticLayout g;
+    public StaticLayout h;
+    public CharSequence e = "";
+    public CharSequence f = "";
+    public int m = -1;
+    public final int i = g0.L(64.0f);
+    public final int j = g0.L(10.66f);
+    public final int k = g0.L(12.0f);
+    public final int l = g0.L(4.0f);
 
-    public /* synthetic */ b(i iVar, int i10) {
-        this.c = i10;
-        this.d = iVar;
+    public b() {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        textPaint.setTextSize(g0.L(15.0f));
+        textPaint.setTypeface(g0.o());
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        textPaint2.setTextSize(g0.L(13.0f));
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        switch (this.c) {
-            case 0:
-                this.d.w.getClass();
-                break;
-            default:
-                this.d.w.getClass();
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        boolean z10 = this.d;
+        TextPaint textPaint = this.b;
+        TextPaint textPaint2 = this.a;
+        if (z10) {
+            int alpha = textPaint2.getAlpha();
+            int alpha2 = textPaint.getAlpha();
+            textPaint2.setColor(k6.x0(null, k6.G6, false));
+            textPaint2.setAlpha(alpha);
+            textPaint.setColor(k6.x0(null, k6.y6, false));
+            textPaint.setAlpha(alpha2);
         }
-        return 1;
+        int width = getBounds().width();
+        int i3 = this.i;
+        if (width > 0 && (width != this.m || this.g == null || this.h == null)) {
+            this.m = width;
+            int i10 = (width - i3) - this.k;
+            if (i10 <= 0) {
+                this.g = null;
+                this.h = null;
+            } else {
+                float f10 = i10;
+                CharSequence ellipsize = TextUtils.ellipsize(this.e, textPaint2, f10, TextUtils.TruncateAt.MIDDLE);
+                CharSequence ellipsize2 = TextUtils.ellipsize(this.f, textPaint, f10, TextUtils.TruncateAt.END);
+                Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+                this.g = new StaticLayout(ellipsize, textPaint2, i10, alignment, 1.0f, 0.0f, false);
+                this.h = new StaticLayout(ellipsize2, textPaint, i10, alignment, 1.0f, 0.0f, false);
+            }
+        }
+        if (this.g == null || this.h == null) {
+            return;
+        }
+        Rect bounds = getBounds();
+        float f11 = bounds.left + i3;
+        float f12 = bounds.top + this.j;
+        this.c.r(g0.L(10.0f) + bounds.left, g0.L(9.0f) + bounds.top, g0.L(42.0f) + g0.L(10.0f) + bounds.left, g0.L(42.0f) + g0.L(9.0f) + bounds.top);
+        canvas.save();
+        canvas.translate(f11, f12);
+        this.g.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(f11, this.g.getHeight() + f12 + this.l);
+        this.h.draw(canvas);
+        canvas.restore();
+        this.c.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        Paint.FontMetricsInt fontMetricsInt = this.a.getFontMetricsInt();
+        int i3 = fontMetricsInt.descent - fontMetricsInt.ascent;
+        int i10 = this.j;
+        int i11 = i3 + i10 + this.l;
+        Paint.FontMetricsInt fontMetricsInt2 = this.b.getFontMetricsInt();
+        return (fontMetricsInt2.descent - fontMetricsInt2.ascent) + i11 + i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.m = -1;
+        this.g = null;
+        this.h = null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        this.c.E = i3 / 255.0f;
+        this.a.setAlpha(i3);
+        this.b.setAlpha(i3);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+        this.b.setColorFilter(colorFilter);
+        invalidateSelf();
     }
 }

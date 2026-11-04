@@ -1,45 +1,43 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gr implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LongSparseIntArray b;
+public final /* synthetic */ class gr implements Runnable {
+    public final /* synthetic */ qr a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.Reaction d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ r10 n;
 
-    public /* synthetic */ gr(LongSparseIntArray longSparseIntArray, int i10) {
-        this.a = i10;
-        this.b = longSparseIntArray;
+    public /* synthetic */ gr(qr qrVar, String str, long j10, TLRPC.Reaction reaction, int i3, int i10, boolean z10, r10 r10Var) {
+        this.a = qrVar;
+        this.b = str;
+        this.c = j10;
+        this.d = reaction;
+        this.e = i3;
+        this.f = i10;
+        this.h = z10;
+        this.n = r10Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        Long l4 = (Long) obj;
-        Long l10 = (Long) obj2;
-        switch (this.a) {
-            case 0:
-                long longValue = l4.longValue();
-                LongSparseIntArray longSparseIntArray = this.b;
-                int i10 = longSparseIntArray.get(longValue);
-                int i11 = longSparseIntArray.get(l10.longValue());
-                if (i10 <= i11) {
-                    if (i10 < i11) {
-                    }
-                }
-                break;
-            default:
-                long longValue2 = l4.longValue();
-                LongSparseIntArray longSparseIntArray2 = this.b;
-                int i12 = longSparseIntArray2.get(longValue2);
-                int i13 = longSparseIntArray2.get(l10.longValue());
-                if (i12 >= i13) {
-                    if (i12 > i13) {
-                    }
-                }
-                break;
-        }
-        return 0;
+    /*  JADX ERROR: Type inference failed
+        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
+        */
+    @Override // java.lang.Runnable
+    public final void run() {
+        /*
+            Method dump skipped, instructions count: 667
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.gr.run():void");
     }
 }

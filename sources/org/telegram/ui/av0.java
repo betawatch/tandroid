@@ -1,149 +1,108 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class av0 implements p50, org.telegram.ui.Components.nv0, org.telegram.ui.ActionBar.u1, org.telegram.messenger.as, r0.m, org.telegram.ui.Components.gg0, org.telegram.ui.Components.jk0, fe.e, org.telegram.messenger.k9 {
+public final class av0 implements fp {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ TLRPC.ChatParticipant b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ ProfileActivity e;
 
-    public /* synthetic */ av0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public av0(ProfileActivity profileActivity, int i3, TLRPC.ChatParticipant chatParticipant, boolean z10, boolean[] zArr) {
+        this.e = profileActivity;
+        this.a = i3;
+        this.b = chatParticipant;
+        this.c = z10;
+        this.d = zArr;
     }
 
-    @Override // r0.m
-    public r0.j1 R0(View view, r0.j1 j1Var) {
-        RectF rectF = ProfileActivity.S6;
-        int i10 = j1Var.a.f(519).d;
-        ProfileActivity profileActivity = this.b;
-        profileActivity.I6 = i10;
-        FrameLayout frameLayout = profileActivity.s5;
-        if (frameLayout != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) frameLayout.getLayoutParams();
-            int i11 = profileActivity.I6 + profileActivity.H6;
-            if (marginLayoutParams != null && marginLayoutParams.bottomMargin != i11) {
-                marginLayoutParams.bottomMargin = i11;
-                profileActivity.s5.setLayoutParams(marginLayoutParams);
-            }
-        }
-        if (profileActivity.N != null) {
-            profileActivity.H3();
-            org.telegram.ui.Components.wq0 wq0Var = profileActivity.N.a0;
-            if (wq0Var != null) {
-                wq0Var.setButtonOffset(profileActivity.I6 + profileActivity.H6);
-            }
-        }
-        return r0.j1.b;
+    @Override // org.telegram.ui.fp
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.e;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
     }
 
-    @Override // org.telegram.ui.Components.jk0
-    public boolean f(int i10, View view) {
-        ProfileActivity profileActivity = this.b;
-        gy0 gy0Var = profileActivity.e;
-        if (gy0Var.x || gy0Var.w.isEmpty()) {
-            return false;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, profileActivity.getParentActivity(), profileActivity.z0);
-        String L0 = org.telegram.messenger.dd.L0(2131752056, null);
-        org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-        x1Var.R = L0;
-        x1Var.T = org.telegram.messenger.dd.L0(2131752061, null);
-        alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131752099, null), new av0(profileActivity, 10));
-        alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
-        profileActivity.showDialog(x1Var);
-        TextView textView = (TextView) x1Var.d(-1);
-        if (textView == null) {
-            return true;
-        }
-        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.q7, null);
-        return true;
-    }
-
-    @Override // org.telegram.ui.p50
-    public void g(int i10, ArrayList arrayList) {
-        TLRPC.ChatParticipants chatParticipants;
-        RectF rectF = ProfileActivity.S6;
-        HashSet hashSet = new HashSet();
-        ArrayList arrayList2 = new ArrayList();
-        ProfileActivity profileActivity = this.b;
-        TLRPC.ChatFull chatFull = profileActivity.t2;
-        if (chatFull != null && (chatParticipants = chatFull.participants) != null && chatParticipants.participants != null) {
-            for (int i11 = 0; i11 < profileActivity.t2.participants.participants.size(); i11++) {
-                hashSet.add(Long.valueOf(profileActivity.t2.participants.participants.get(i11).user_id));
-            }
-        }
-        profileActivity.getMessagesController().o(profileActivity.D2, profileActivity, arrayList, i10, new f3(arrayList2, 5), new f3(profileActivity, 6), new pd0(profileActivity, arrayList2, hashSet, 26));
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+    @Override // org.telegram.ui.fp
+    public final void b(int i3, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.ChatFull chatFull;
+        boolean z10;
+        int i10 = 0;
+        TLRPC.ChatParticipant chatParticipant = this.b;
+        ProfileActivity profileActivity = this.e;
         int i11 = this.a;
-        ProfileActivity profileActivity = this.b;
-        switch (i11) {
-            case 2:
-                RectF rectF = ProfileActivity.S6;
-                profileActivity.getMessagesController().w(profileActivity.d1);
-                if (org.telegram.ui.Components.cc.a(profileActivity)) {
-                    org.telegram.ui.Components.cc.d(profileActivity, true).j();
-                    break;
+        if (i11 == 0) {
+            if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
+                if (i3 == 1) {
+                    TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+                    tL_chatChannelParticipant.channelParticipant = tL_channelParticipantAdmin;
+                    tL_channelParticipantAdmin.flags |= 4;
+                } else {
+                    tL_chatChannelParticipant.channelParticipant = new TLRPC.TL_channelParticipant();
                 }
-                break;
-            case 9:
-                RectF rectF2 = ProfileActivity.S6;
-                profileActivity.getClass();
-                org.telegram.messenger.uz.l = null;
-                org.telegram.messenger.uz.m = null;
-                org.telegram.messenger.uz.y();
-                profileActivity.getConnectionsManager().switchBackend(true);
-                break;
-            default:
-                gy0 gy0Var = profileActivity.e;
-                gy0Var.w.clear();
-                org.telegram.messenger.wp.d1().edit().remove("settingsSearchRecent2").commit();
-                gy0Var.f();
-                break;
+                tL_chatChannelParticipant.channelParticipant.inviter_id = profileActivity.getUserConfig().e();
+                tL_chatChannelParticipant.channelParticipant.peer = new TLRPC.TL_peerUser();
+                TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+                channelParticipant.peer.user_id = chatParticipant.user_id;
+                channelParticipant.date = chatParticipant.date;
+                channelParticipant.banned_rights = tL_chatBannedRights;
+                channelParticipant.admin_rights = tL_chatAdminRights;
+                channelParticipant.rank = str;
+            } else if (chatParticipant != null) {
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i3 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
+                tL_chatParticipantAdmin.date = chatParticipant.date;
+                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
+                int indexOf = profileActivity.u2.participants.participants.indexOf(chatParticipant);
+                if (indexOf >= 0) {
+                    profileActivity.u2.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                }
+            }
+            if (i3 != 1 || this.c) {
+                return;
+            }
+            this.d[0] = true;
+            return;
         }
-    }
-
-    @Override // org.telegram.messenger.as
-    public void i(boolean z10) {
-        ProfileActivity profileActivity = this.b;
-        profileActivity.I1 = 0;
-        org.telegram.messenger.at notificationCenter = profileActivity.getNotificationCenter();
-        int i10 = org.telegram.messenger.at.t;
-        notificationCenter.n(profileActivity, i10);
-        profileActivity.getNotificationCenter().k(i10, new Object[0]);
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().k(org.telegram.messenger.at.K2, Long.valueOf(-profileActivity.D2.id), null, profileActivity.D2, Boolean.valueOf(z10));
-    }
-
-    @Override // org.telegram.messenger.k9
-    public boolean run() {
-        ProfileActivity profileActivity = this.b;
-        return profileActivity.C2 != null || profileActivity.u4();
-    }
-
-    @Override // fe.e
-    public void v(int i10, float f7, float f10, fe.f fVar) {
-        RectF rectF = ProfileActivity.S6;
-        this.b.p5();
-    }
-
-    @Override // org.telegram.ui.p50
-    public /* synthetic */ void e(TLRPC.User user) {
-    }
-
-    @Override // fe.e
-    public /* synthetic */ void E(float f7, int i10) {
+        if (i11 == 1 && i3 == 0 && profileActivity.E2.megagroup && (chatFull = profileActivity.u2) != null && chatFull.participants != null) {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= profileActivity.u2.participants.participants.size()) {
+                    z10 = false;
+                    break;
+                } else {
+                    if (org.telegram.messenger.zi.C1(((TLRPC.TL_chatChannelParticipant) profileActivity.u2.participants.participants.get(i12)).channelParticipant.peer) == chatParticipant.user_id) {
+                        TLRPC.ChatFull chatFull2 = profileActivity.u2;
+                        chatFull2.participants_count--;
+                        chatFull2.participants.participants.remove(i12);
+                        z10 = true;
+                        break;
+                    }
+                    i12++;
+                }
+            }
+            TLRPC.ChatFull chatFull3 = profileActivity.u2;
+            if (chatFull3 != null && chatFull3.participants != null) {
+                while (true) {
+                    if (i10 >= profileActivity.u2.participants.participants.size()) {
+                        break;
+                    }
+                    if (profileActivity.u2.participants.participants.get(i10).user_id == chatParticipant.user_id) {
+                        profileActivity.u2.participants.participants.remove(i10);
+                        z10 = true;
+                        break;
+                    }
+                    i10++;
+                }
+            }
+            if (z10) {
+                profileActivity.G5(true);
+                profileActivity.J5();
+                profileActivity.d.f();
+            }
+        }
     }
 }

@@ -326,11 +326,11 @@ public abstract /* synthetic */ class a {
 
     public static int k(ChronoZonedDateTime chronoZonedDateTime, o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i10 = h.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i10 == 1) {
+            int i3 = h.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i3 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i10 == 2) {
+            if (i3 == 2) {
                 return chronoZonedDateTime.h().getTotalSeconds();
             }
             return chronoZonedDateTime.r().j(oVar);
@@ -441,8 +441,8 @@ public abstract /* synthetic */ class a {
         return spliterator.estimateSize();
     }
 
-    public static boolean o(Spliterator spliterator, int i10) {
-        return (spliterator.characteristics() & i10) == i10;
+    public static boolean o(Spliterator spliterator, int i3) {
+        return (spliterator.characteristics() & i3) == i3;
     }
 
     public static Instant x(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {

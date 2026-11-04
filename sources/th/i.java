@@ -1,53 +1,27 @@
 package th;
 
-import android.view.ViewGroup;
-import org.telegram.ui.Components.dk0;
-import org.telegram.ui.tw;
+import android.view.View;
+import b8.be;
+import org.telegram.messenger.g0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i extends hg.c {
-    public final boolean d;
-    public final /* synthetic */ tw e;
+public final class i extends l41 {
+    public final /* synthetic */ int n3;
 
-    public i(tw twVar, boolean z10) {
-        this.e = twVar;
-        this.d = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(d2 d2Var, h hVar, int i3) {
+        super(d2Var, hVar, null, null);
+        this.n3 = i3;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        boolean z10 = this.d;
-        tw twVar = this.e;
-        return (z10 ? twVar.D : twVar.y).size();
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        l lVar = (l) c1Var.a;
-        lVar.b = i10;
-        boolean z10 = this.d;
-        tw twVar = this.e;
-        if (z10) {
-            lVar.setDialogId(((j) twVar.D.get(i10)).c);
-        } else {
-            lVar.setDialogId(((j) twVar.y.get(i10)).c);
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        l lVar = new l(this.e, viewGroup.getContext());
-        boolean z10 = this.d;
-        lVar.N = z10;
-        if (z10) {
-            lVar.d(1.0f, 1.0f, 0.0f, false);
-        }
-        return new dk0(lVar);
+    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        int min = Math.min(g0.L(220.0f), View.MeasureSpec.getSize(i3));
+        View.MeasureSpec.getSize(i10);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(g0.L(be.b(this.n3, 1, 5) * 48), TLObject.FLAG_30));
     }
 }

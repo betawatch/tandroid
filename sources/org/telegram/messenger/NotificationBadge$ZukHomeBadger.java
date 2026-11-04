@@ -4,17 +4,17 @@ import android.net.Uri;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class NotificationBadge$ZukHomeBadger implements ms {
+public class NotificationBadge$ZukHomeBadger implements ur {
     public final Uri a = Uri.parse("content://com.android.badge/badge");
 
-    @Override // org.telegram.messenger.ms
-    public final void a(int i10) {
-        i0.g3(new ir(8, this, org.telegram.ui.Cells.f1.i(i10, "app_badge_count")));
+    @Override // org.telegram.messenger.ur
+    public final void a(int i3) {
+        g0.h3(new pq(10, this, org.telegram.ui.Cells.f1.k(i3, "app_badge_count")));
     }
 
-    @Override // org.telegram.messenger.ms
+    @Override // org.telegram.messenger.ur
     public final List b() {
         return Collections.singletonList("com.zui.launcher");
     }

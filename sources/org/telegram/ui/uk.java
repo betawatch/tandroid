@@ -1,37 +1,34 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
+import android.app.Activity;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class uk extends ps0 {
-    public uk(ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
+public final class uk extends org.telegram.ui.Components.a10 {
+    public final /* synthetic */ wm k1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uk(wm wmVar, Activity activity, org.telegram.ui.ActionBar.d2 d2Var) {
+        super(activity, d2Var);
+        this.k1 = wmVar;
     }
 
-    @Override // org.telegram.ui.ps0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        if (f7 > 0.0f) {
-            View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.q1) {
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-                int max = (int) Math.max(f12, f11);
-                int min = (int) Math.min(f13, q1Var.getMeasuredHeight() + f11);
-                RectF rectF = org.telegram.messenger.i0.P;
-                rectF.set(f10, max, q1Var.getMeasuredWidth() + f10, min);
-                canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
-                canvas.translate(f10, f11 + q1Var.getPaddingTop());
-                q1Var.Kb = true;
-                q1Var.h1(canvas);
-                if (q1Var.B3() && q1Var.getCurrentMessagesGroup() == null) {
-                    q1Var.v1(1.0f, canvas, false);
-                }
-                q1Var.Kb = false;
-                canvas.restore();
-            }
+    @Override // org.telegram.ui.Components.a10
+    public final void I0() {
+        wm wmVar = this.k1;
+        wmVar.f8();
+        UndoView undoView = wmVar.N3;
+        if (undoView == null) {
+            return;
         }
+        undoView.j(75, 0L, null);
+        wmVar.getMessagesController().k4(wmVar.k6, "CONVERT_GIGAGROUP");
+    }
+
+    @Override // org.telegram.ui.Components.a10
+    public final void J0() {
+        wm wmVar = this.k1;
+        wmVar.getMessagesController().S(wmVar.getParentActivity(), wmVar.e, wmVar, new x0(this, 21));
     }
 }

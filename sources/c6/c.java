@@ -1,55 +1,46 @@
 package c6;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-import w7.h0;
+import android.util.Log;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.r;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import org.telegram.messenger.d1;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends o6.a {
-    public final long a;
-    public final long b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public static final g6.b f = new g6.b("AdBreakStatus", null);
-    public static final Parcelable.Creator<c> CREATOR = new v(9);
+public final class c implements Runnable {
+    public static final d1 c = new d1("RevokeAccessOperation", new String[0]);
+    public final String a;
+    public final r b;
 
-    public c(long j10, long j11, String str, String str2, long j12) {
-        this.a = j10;
-        this.b = j11;
-        this.c = str;
-        this.d = str2;
-        this.e = j12;
+    public c(String str) {
+        m.e(str);
+        this.a = str;
+        this.b = new r(null, 0);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        d1 d1Var = c;
+        Status status = Status.h;
+        try {
+            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://accounts.google.com/o/oauth2/revoke?token=" + this.a).openConnection();
+            httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            int responseCode = httpURLConnection.getResponseCode();
+            if (responseCode == 200) {
+                status = Status.e;
+            } else {
+                Log.e(d1Var.a, d1Var.b.concat("Unable to revoke access!"));
+            }
+            d1Var.a("Response Code: " + responseCode, new Object[0]);
+        } catch (IOException e10) {
+            Log.e(d1Var.a, d1Var.b.concat("IOException when revoking access: ".concat(String.valueOf(e10.toString()))));
+        } catch (Exception e11) {
+            Log.e(d1Var.a, d1Var.b.concat("Exception when revoking access: ".concat(String.valueOf(e11.toString()))));
         }
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        c cVar = (c) obj;
-        return this.a == cVar.a && this.b == cVar.b && g6.a.d(this.c, cVar.c) && g6.a.d(this.d, cVar.d) && this.e == cVar.e;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Long.valueOf(this.b), this.c, this.d, Long.valueOf(this.e)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 2, 8);
-        parcel.writeLong(this.a);
-        h0.s(parcel, 3, 8);
-        parcel.writeLong(this.b);
-        h0.l(parcel, 4, this.c);
-        h0.l(parcel, 5, this.d);
-        h0.s(parcel, 6, 8);
-        parcel.writeLong(this.e);
-        h0.r(parcel, q6);
+        this.b.a(status);
     }
 }

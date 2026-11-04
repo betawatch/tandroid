@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class CarText {
     private final List<SpanWrapper> mSpans;
@@ -16,7 +16,7 @@ public final class CarText {
     private final String mText;
     private final List<String> mTextVariants;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static final class Builder {
         CharSequence mText;
         List<CharSequence> mTextVariants = new ArrayList();
@@ -101,8 +101,8 @@ public final class CarText {
             return Collections.EMPTY_LIST;
         }
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < this.mTextVariants.size(); i10++) {
-            arrayList.add(getCharSequence(this.mTextVariants.get(i10), this.mSpansForVariants.get(i10)));
+        for (int i3 = 0; i3 < this.mTextVariants.size(); i3++) {
+            arrayList.add(getCharSequence(this.mTextVariants.get(i3), this.mSpansForVariants.get(i3)));
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -133,10 +133,10 @@ public final class CarText {
                 }
             }
         }
-        return androidx.car.app.utils.h.g(arrayList);
+        return androidx.car.app.utils.g.g(arrayList);
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class SpanWrapper {
         private final CarSpan mCarSpan;
         private final int mEnd;
@@ -189,7 +189,7 @@ public final class CarText {
             sb2.append(", ");
             sb2.append(this.mEnd);
             sb2.append(", flags: ");
-            return a1.g.p(sb2, this.mFlags, "]");
+            return a1.g.o(this.mFlags, "]", sb2);
         }
 
         public SpanWrapper() {
@@ -214,12 +214,12 @@ public final class CarText {
         List<CharSequence> list = builder.mTextVariants;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            CharSequence charSequence = list.get(i10);
+        for (int i3 = 0; i3 < list.size(); i3++) {
+            CharSequence charSequence = list.get(i3);
             arrayList.add(charSequence.toString());
             arrayList2.add(getSpans(charSequence));
         }
-        this.mTextVariants = androidx.car.app.utils.h.g(arrayList);
-        this.mSpansForVariants = androidx.car.app.utils.h.g(arrayList2);
+        this.mTextVariants = androidx.car.app.utils.g.g(arrayList);
+        this.mSpansForVariants = androidx.car.app.utils.g.g(arrayList2);
     }
 }

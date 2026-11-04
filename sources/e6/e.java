@@ -1,61 +1,63 @@
 package e6;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.ui.Cells.f1;
+import android.os.Bundle;
+import com.google.android.gms.cast.CastDevice;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String o10;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                o10 = "null";
-            } else {
-                try {
-                    o10 = obj.toString();
-                } catch (Exception e) {
-                    String C = a1.g.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
-                    o10 = f1.o("<", C, " threw ", e.getClass().getName(), ">");
+public final class e implements com.google.android.gms.common.api.b {
+    public final CastDevice a;
+    public final f6.e0 b;
+    public final Bundle c;
+    public final String d = UUID.randomUUID().toString();
+
+    public /* synthetic */ e(android.support.v4.media.session.a0 a0Var) {
+        this.a = (CastDevice) a0Var.b;
+        this.b = (f6.e0) a0Var.c;
+        this.c = (Bundle) a0Var.d;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0058, code lost:
+    
+        if (r3 == r1) goto L27;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        e eVar = (e) obj;
+        if (p6.m.k(this.a, eVar.a)) {
+            Bundle bundle = eVar.c;
+            Bundle bundle2 = this.c;
+            if (bundle2 != null && bundle != null) {
+                if (bundle2.size() == bundle.size()) {
+                    Set<String> keySet = bundle2.keySet();
+                    if (keySet.containsAll(bundle.keySet())) {
+                        for (String str : keySet) {
+                            if (!p6.m.k(bundle2.get(str), bundle.get(str))) {
+                                break;
+                            }
+                        }
+                        if (p6.m.k(this.d, eVar.d)) {
+                            return true;
+                        }
+                    }
                 }
             }
-            objArr[i11] = o10;
-            i11++;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
-            }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
-        }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
-            }
-            sb2.append(']');
-        }
-        return sb2.toString();
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.c, 0, this.d});
     }
 }

@@ -1,18 +1,38 @@
 package p2;
 
-import j$.util.DesugarCollections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import org.telegram.ui.Components.i9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class q implements t2.a {
-    public final String a;
-    public final List b;
-    public final boolean c;
+public interface q {
+    byte[] C0();
 
-    public q(String str, List list, boolean z10) {
-        this.a = str;
-        this.b = DesugarCollections.unmodifiableList(list);
-        this.c = z10;
-    }
+    void F1(byte[] bArr);
+
+    o J1(byte[] bArr, List list, int i3, HashMap hashMap);
+
+    int L1();
+
+    void U0(byte[] bArr, byte[] bArr2);
+
+    p W();
+
+    void W0(byte[] bArr);
+
+    boolean l2(String str, byte[] bArr);
+
+    void m(i9 i9Var);
+
+    byte[] o1(byte[] bArr, byte[] bArr2);
+
+    Map r(byte[] bArr);
+
+    j2.b r0(byte[] bArr);
+
+    void release();
+
+    void v0(byte[] bArr, l2.k kVar);
 }

@@ -1,86 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.KeyEvent;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class x10 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ KeyEvent.Callback d;
+public abstract class x10 extends org.telegram.ui.ActionBar.t2 {
+    public b5.l j1;
+    public u10 k1;
+    public LinearLayout l1;
+    public TextView[] m1;
+    public float n1;
+    public int o1;
 
-    public /* synthetic */ x10(KeyEvent.Callback callback, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = callback;
-        this.b = i10;
-        this.c = i11;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        s4.g0 adapter;
-        switch (this.a) {
-            case 0:
-                y10 y10Var = (y10) this.d;
-                y10Var.L = this.b;
-                y10Var.M = this.c;
-                y10Var.F.setColorFilter(new PorterDuffColorFilter(y10Var.L, PorterDuff.Mode.MULTIPLY));
-                y10Var.E.setColor(y10Var.L);
-                y10Var.r.setColor(y10Var.M);
-                y10Var.J.d(i0.b.o(y10Var.M, 38));
-                break;
-            case 1:
-                au0 au0Var = (au0) this.d;
-                ts0[] ts0VarArr = au0Var.m0;
-                au0Var.L1.e();
-                au0Var.q1 = false;
-                int[] iArr = au0Var.o1;
-                int i11 = this.c;
-                int i12 = this.b;
-                iArr[i12] = i11;
-                for (int i13 = 0; i13 < ts0VarArr.length; i13++) {
-                    ts0 ts0Var = ts0VarArr[i13];
-                    if (ts0Var != null && ts0Var.h != null && (((i10 = ts0Var.E) == 0 || au0.y0(i10)) && (adapter = ts0VarArr[i13].h.getAdapter()) != null)) {
-                        int b10 = adapter.b();
-                        if (i13 == 0) {
-                            au0Var.v1[0].g(false);
-                        }
-                        ts0VarArr[i13].x.y1(iArr[i12]);
-                        ts0VarArr[i13].h.a0();
-                        if (adapter.b() == b10) {
-                            org.telegram.messenger.i0.a4(ts0VarArr[i13].h);
-                        } else {
-                            adapter.f();
-                        }
-                        ts0VarArr[i13].n.setVisibility(8);
-                    }
-                }
-                au0Var.f1();
-                break;
-            case 2:
-                org.telegram.ui.Components.voip.r rVar = (org.telegram.ui.Components.voip.r) this.d;
-                int i14 = this.b;
-                rVar.D0 = i14;
-                rVar.E0 = i14;
-                int i15 = this.c;
-                rVar.F0 = i15;
-                rVar.T.setColor(i15);
-                if (rVar.S > 0.0f) {
-                    rVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                xh.m2 m2Var = (xh.m2) this.d;
-                m2Var.S = i0.b.f(1.0f, this.b, this.c);
-                m2Var.l();
-                break;
+    public static void I0(org.telegram.ui.x20 x20Var) {
+        TextView[] textViewArr = x20Var.m1;
+        int i3 = x20Var.o1;
+        TextView textView = textViewArr[i3];
+        TextView textView2 = i3 < textViewArr.length + (-1) ? textViewArr[i3 + 1] : null;
+        x20Var.b.getMeasuredWidth();
+        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
+        float measuredWidth2 = (x20Var.b.getMeasuredWidth() / 2) - measuredWidth;
+        if (textView2 != null) {
+            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * x20Var.n1;
         }
+        for (int i10 = 0; i10 < textViewArr.length; i10++) {
+            int i11 = x20Var.o1;
+            float f10 = 0.9f;
+            float f11 = 0.7f;
+            if (i10 >= i11 && i10 <= i11 + 1) {
+                if (i10 == i11) {
+                    float f12 = x20Var.n1;
+                    f11 = 1.0f - (0.3f * f12);
+                    f10 = 1.0f - (f12 * 0.1f);
+                } else {
+                    float f13 = x20Var.n1;
+                    f11 = 0.7f + (0.3f * f13);
+                    f10 = 0.9f + (f13 * 0.1f);
+                }
+            }
+            textViewArr[i10].setAlpha(f11);
+            textViewArr[i10].setScaleX(f10);
+            textViewArr[i10].setScaleY(f10);
+        }
+        x20Var.l1.setTranslationX(measuredWidth2);
+        x20Var.k1.invalidate();
     }
 }

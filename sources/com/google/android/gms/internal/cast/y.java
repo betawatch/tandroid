@@ -2,9 +2,9 @@ package com.google.android.gms.internal.cast;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements i5.e, b0 {
+public final /* synthetic */ class y implements k5.e, b0 {
     public static final /* synthetic */ y a = new y();
     public static final /* synthetic */ y b = new y();
     public static final y c = new y();
@@ -18,7 +18,6 @@ public final /* synthetic */ class y implements i5.e, b0 {
     public static final y w = new y();
     public static final y x = new y();
     public static final y y = new y();
-    public static final y D = new y();
     public static final y E = new y();
     public static final y F = new y();
     public static final y G = new y();
@@ -35,26 +34,27 @@ public final /* synthetic */ class y implements i5.e, b0 {
     public static final y R = new y();
     public static final y S = new y();
     public static final y T = new y();
+    public static final y U = new y();
 
-    @Override // i5.e
+    @Override // k5.e
     public Object apply(Object obj) {
-        r1 r1Var = (r1) obj;
+        q1 q1Var = (q1) obj;
         try {
-            int i10 = r1Var.i();
-            byte[] bArr = new byte[i10];
-            w4 w4Var = new w4(bArr, i10);
-            f6 a2 = c6.c.a(r1.class);
-            s5 s5Var = w4Var.a;
-            if (s5Var == null) {
-                s5Var = new s5(w4Var);
+            int i3 = q1Var.i();
+            byte[] bArr = new byte[i3];
+            w4 w4Var = new w4(bArr, i3);
+            e6 a10 = b6.c.a(q1.class);
+            r5 r5Var = w4Var.a;
+            if (r5Var == null) {
+                r5Var = new r5(w4Var);
             }
-            a2.e(r1Var, s5Var);
-            if (i10 - w4Var.d == 0) {
+            a10.e(q1Var, r5Var);
+            if (i3 - w4Var.d == 0) {
                 return bArr;
             }
             throw new IllegalStateException("Did not write as much data as expected.");
-        } catch (IOException e7) {
-            throw new RuntimeException(a1.g.n("Serializing ", r1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
+        } catch (IOException e10) {
+            throw new RuntimeException(a1.g.q("Serializing ", q1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
         }
     }
 

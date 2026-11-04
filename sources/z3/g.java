@@ -1,18 +1,14 @@
 package z3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import e3.b0;
+import e3.p;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g implements Comparable {
-    public final long a;
-    public final byte[] b;
+public interface g {
+    long D(p pVar);
 
-    public g(long j10, byte[] bArr) {
-        this.a = j10;
-        this.b = bArr;
-    }
+    b0 O();
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Long.compare(this.a, ((g) obj).a);
-    }
+    void u0(long j10);
 }

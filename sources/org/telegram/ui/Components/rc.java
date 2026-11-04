@@ -1,50 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class rc extends FrameLayout {
-    public jg.l0 a;
-    public pc b;
-    public boolean c;
+public final /* synthetic */ class rc implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sc b;
+    public final /* synthetic */ boolean c;
 
-    public final void a(pc pcVar, FrameLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = pcVar;
-            pcVar.setVisibility(8);
-            addView(pcVar, layoutParams);
-        }
-    }
-
-    public final void b(jg.l0 l0Var, FrameLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = l0Var;
-            addView(l0Var, layoutParams);
-        }
-    }
-
-    public pc getEditView() {
-        return this.b;
-    }
-
-    public View getReplyView() {
-        return this.a;
-    }
-
-    public void setEditMode(boolean z10) {
+    public /* synthetic */ rc(sc scVar, boolean z10, int i3) {
+        this.a = i3;
+        this.b = scVar;
         this.c = z10;
-        this.a.setVisibility(z10 ? 8 : 0);
-        this.b.setVisibility(z10 ? 0 : 8);
     }
 
-    public void setEditSuggestionMode(boolean z10) {
-        setEditMode(z10);
-        if (z10) {
-            this.a.setVisibility(0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean z10 = this.c;
+                sc scVar = this.b;
+                if (!z10) {
+                    scVar.Z0.setVisibility(8);
+                    break;
+                } else {
+                    scVar.getClass();
+                    break;
+                }
+            default:
+                boolean z11 = this.c;
+                sc scVar2 = this.b;
+                if (!z11) {
+                    scVar2.V0.setVisibility(8);
+                    break;
+                } else {
+                    scVar2.getClass();
+                    break;
+                }
         }
-        this.b.a[0].setOnlyIconMode(z10);
-        this.b.a[1].setOnlyIconMode(z10);
     }
 }

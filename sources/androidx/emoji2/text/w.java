@@ -1,144 +1,55 @@
 package androidx.emoji2.text;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.content.res.Configuration;
-import android.icu.text.DecimalFormatSymbols;
-import android.os.LocaleList;
-import android.os.UserManager;
-import android.view.PointerIcon;
-import android.view.View;
-import j$.util.stream.IntStream;
-import java.util.Locale;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Typeface;
+import android.text.style.ReplacementSpan;
+import com.google.android.gms.internal.play_billing.s1;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class w {
-    public static boolean a(NotificationManager notificationManager) {
-        return notificationManager.areNotificationsEnabled();
+public final class w extends ReplacementSpan {
+    public final p b;
+    public final Paint.FontMetricsInt a = new Paint.FontMetricsInt();
+    public float c = 1.0f;
+
+    public w(p pVar) {
+        s1.a(pVar, "metadata cannot be null");
+        this.b = pVar;
     }
 
-    public static IntStream b(CharSequence charSequence) {
-        IntStream convert;
-        convert = IntStream.VivifiedWrapper.convert(charSequence.chars());
-        return convert;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        l.a().getClass();
+        p pVar = this.b;
+        ui.f fVar = pVar.b;
+        Typeface typeface = (Typeface) fVar.e;
+        Typeface typeface2 = paint.getTypeface();
+        paint.setTypeface(typeface);
+        canvas.drawText((char[]) fVar.c, pVar.a * 2, 2, f10, i12, paint);
+        paint.setTypeface(typeface2);
     }
 
-    public static IntStream c(CharSequence charSequence) {
-        IntStream convert;
-        convert = IntStream.VivifiedWrapper.convert(charSequence.codePoints());
-        return convert;
-    }
-
-    public static LocaleList d(Locale... localeArr) {
-        return new LocaleList(localeArr);
-    }
-
-    public static DecimalFormatSymbols e(Locale locale) {
-        return DecimalFormatSymbols.getInstance(locale);
-    }
-
-    public static LocaleList f(Configuration configuration) {
-        return configuration.getLocales();
-    }
-
-    public static boolean g(Context context) {
-        return ((UserManager) context.getSystemService(UserManager.class)).isUserUnlocked();
-    }
-
-    public static void h(View view, String str) {
-        int i10;
-        str.getClass();
-        i10 = 0;
-        switch (str) {
-            case "col-resize":
-            case "ew-resize":
-            case "e-resize":
-            case "w-resize":
-                i10 = 1014;
-                break;
-            case "se-resize":
-            case "nw-resize":
-            case "nwse-resize":
-                i10 = 1017;
-                break;
-            case "n-resize":
-            case "s-resize":
-            case "row-resize":
-            case "ns-resize":
-                i10 = 1015;
-                break;
-            case "vertical-text":
-                i10 = 1009;
-                break;
-            case "progress":
-            case "wait":
-                i10 = 1004;
-                break;
-            case "ne-resize":
-            case "sw-resize":
-            case "nesw-resize":
-                i10 = 1016;
-                break;
-            case "pointer":
-                i10 = 1002;
-                break;
-            case "zoom-in":
-                i10 = 1018;
-                break;
-            case "cell":
-                i10 = 1006;
-                break;
-            case "copy":
-                i10 = 1011;
-                break;
-            case "grab":
-                i10 = 1020;
-                break;
-            case "help":
-                i10 = 1003;
-                break;
-            case "move":
-            case "all-scroll":
-                i10 = 1013;
-                break;
-            case "none":
-                break;
-            case "text":
-                i10 = 1008;
-                break;
-            case "grabbing":
-                i10 = 1021;
-                break;
-            case "alias":
-                i10 = 1010;
-                break;
-            case "not-allowed":
-            case "no-drop":
-                i10 = 1012;
-                break;
-            case "zoom-out":
-                i10 = 1019;
-                break;
-            case "context-menu":
-                i10 = 1001;
-                break;
-            case "crosshair":
-                i10 = 1007;
-                break;
-            default:
-                view.setPointerIcon(null);
-                return;
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        Paint.FontMetricsInt fontMetricsInt2 = this.a;
+        paint.getFontMetricsInt(fontMetricsInt2);
+        float abs = Math.abs(fontMetricsInt2.descent - fontMetricsInt2.ascent) * 1.0f;
+        p pVar = this.b;
+        this.c = abs / (pVar.b().a(14) != 0 ? ((ByteBuffer) r8.d).getShort(r1 + r8.a) : (short) 0);
+        r1.a b10 = pVar.b();
+        int a10 = b10.a(14);
+        if (a10 != 0) {
+            ((ByteBuffer) b10.d).getShort(a10 + b10.a);
         }
-        view.setPointerIcon(PointerIcon.getSystemIcon(view.getContext(), i10));
-    }
-
-    public static void i(Notification.Action.Builder builder, boolean z10) {
-        builder.setAllowGeneratedReplies(z10);
-    }
-
-    public static void j(Notification.Builder builder) {
-        builder.setRemoteInputHistory(null);
+        short s6 = (short) ((pVar.b().a(12) != 0 ? ((ByteBuffer) r5.d).getShort(r7 + r5.a) : (short) 0) * this.c);
+        if (fontMetricsInt != null) {
+            fontMetricsInt.ascent = fontMetricsInt2.ascent;
+            fontMetricsInt.descent = fontMetricsInt2.descent;
+            fontMetricsInt.top = fontMetricsInt2.top;
+            fontMetricsInt.bottom = fontMetricsInt2.bottom;
+        }
+        return s6;
     }
 }

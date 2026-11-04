@@ -1,30 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class g41 implements uu0 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ h41 c;
+import android.view.View;
+import java.io.Serializable;
 
-    public g41(h41 h41Var) {
-        this.c = h41Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class g41 implements org.telegram.messenger.s10, org.telegram.messenger.t10 {
+    public final /* synthetic */ h41 a;
+
+    @Override // org.telegram.messenger.t10
+    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(this.a.c0(r31Var, view));
     }
 
-    @Override // org.telegram.ui.Components.uu0
-    public final void L(int i10, boolean z10) {
-        if (this.a == i10 && this.b == z10) {
-            return;
-        }
-        this.a = i10;
-        this.b = z10;
-        if (i10 > org.telegram.messenger.i0.L(20.0f)) {
-            h41 h41Var = this.c;
-            if (h41Var.g0) {
-                return;
-            }
-            h41Var.n0.q0 = false;
-            h41Var.g0 = true;
-        }
+    @Override // org.telegram.messenger.s10
+    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.b0((r31) obj, (View) obj2);
     }
 }

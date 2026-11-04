@@ -1,33 +1,58 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.R;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yq implements fq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ pr b;
+public final class yq implements ActionMode.Callback {
+    public final /* synthetic */ zq a;
 
-    public yq(pr prVar, TLObject tLObject) {
-        this.b = prVar;
-        this.a = tLObject;
+    public yq(zq zqVar) {
+        this.a = zqVar;
     }
 
-    @Override // org.telegram.ui.fq
-    public final void a(TLRPC.User user) {
-        pr.h0(this.b, user);
-    }
-
-    @Override // org.telegram.ui.fq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-            pr.b0(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        ClipboardManager clipboardManager;
+        ClipData primaryClip;
+        int i3;
+        if (menuItem.getItemId() != 16908322) {
+            return true;
         }
+        zq zqVar = this.a;
+        xq xqVar = zqVar.getParent() instanceof xq ? (xq) zqVar.getParent() : null;
+        if (xqVar != null && (clipboardManager = (ClipboardManager) zqVar.getContext().getSystemService(ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
+            String charSequence = primaryClip.getItemAt(0).getText().toString();
+            try {
+                i3 = Integer.parseInt(charSequence);
+            } catch (Exception unused) {
+                i3 = -1;
+            }
+            if (i3 > 0) {
+                xqVar.c(charSequence, true);
+            }
+        }
+        zqVar.m();
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        menu.add(0, R.id.paste, 0, R.string.paste);
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
     }
 }

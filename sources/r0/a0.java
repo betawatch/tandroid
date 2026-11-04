@@ -1,24 +1,72 @@
 package r0;
 
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.os.Build;
 import android.view.View;
 import android.view.WindowInsets;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static j1 a(View view) {
-        WindowInsets rootWindowInsets = view.getRootWindowInsets();
-        if (rootWindowInsets == null) {
-            return null;
+    public static void a(WindowInsets windowInsets, View view) {
+        View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = (View.OnApplyWindowInsetsListener) view.getTag(R.id.tag_window_insets_animation_callback);
+        if (onApplyWindowInsetsListener != null) {
+            onApplyWindowInsetsListener.onApplyWindowInsets(view, windowInsets);
         }
-        j1 h = j1.h(null, rootWindowInsets);
-        g1 g1Var = h.a;
-        g1Var.r(h);
-        g1Var.d(view.getRootView());
-        return h;
     }
 
-    public static void b(View view, int i10, int i11) {
-        view.setScrollIndicators(i10, i11);
+    public static k1 b(View view, k1 k1Var, Rect rect) {
+        WindowInsets g7 = k1Var.g();
+        if (g7 != null) {
+            return k1.h(view, view.computeSystemWindowInsets(g7, rect));
+        }
+        rect.setEmpty();
+        return k1Var;
+    }
+
+    public static ColorStateList c(View view) {
+        return view.getBackgroundTintList();
+    }
+
+    public static PorterDuff.Mode d(View view) {
+        return view.getBackgroundTintMode();
+    }
+
+    public static float e(View view) {
+        return view.getElevation();
+    }
+
+    public static void f(View view, ColorStateList colorStateList) {
+        view.setBackgroundTintList(colorStateList);
+    }
+
+    public static void g(View view, PorterDuff.Mode mode) {
+        view.setBackgroundTintMode(mode);
+    }
+
+    public static void h(View view, float f10) {
+        view.setElevation(f10);
+    }
+
+    public static void i(View view, m mVar) {
+        z zVar = mVar != null ? new z(view, mVar) : null;
+        if (Build.VERSION.SDK_INT < 30) {
+            view.setTag(R.id.tag_on_apply_window_listener, zVar);
+        }
+        if (view.getTag(R.id.tag_compat_insets_dispatch) != null) {
+            return;
+        }
+        if (zVar != null) {
+            view.setOnApplyWindowInsetsListener(zVar);
+        } else {
+            view.setOnApplyWindowInsetsListener((View.OnApplyWindowInsetsListener) view.getTag(R.id.tag_window_insets_animation_callback));
+        }
+    }
+
+    public static void j(View view) {
+        view.stopNestedScroll();
     }
 }

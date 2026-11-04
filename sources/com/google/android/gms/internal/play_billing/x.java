@@ -3,17 +3,17 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class x extends t {
-    public final transient com.google.android.gms.internal.cast.i0 c;
+    public final transient b8.m c;
     public final transient Object[] d;
     public final transient int e;
 
-    public x(com.google.android.gms.internal.cast.i0 i0Var, Object[] objArr, int i10) {
-        this.c = i0Var;
+    public x(b8.m mVar, Object[] objArr, int i3) {
+        this.c = mVar;
         this.d = objArr;
-        this.e = i10;
+        this.e = i3;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -29,18 +29,18 @@ public final class x extends t {
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return o().listIterator(0);
+    @Override // com.google.android.gms.internal.play_billing.o
+    public final int h(Object[] objArr) {
+        return k().h(objArr);
     }
 
-    @Override // com.google.android.gms.internal.play_billing.o
-    public final int l(Object[] objArr) {
-        return o().l(objArr);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return k().listIterator(0);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t
-    public final r r() {
+    public final r n() {
         return new w(this);
     }
 

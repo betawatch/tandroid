@@ -1,13 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bj implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ dj b;
 
-    public /* synthetic */ bj(dj djVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ bj(dj djVar, int i3) {
+        this.a = i3;
         this.b = djVar;
     }
 
@@ -17,9 +17,9 @@ public final /* synthetic */ class bj implements Runnable {
             case 0:
                 dj djVar = this.b;
                 if (djVar.f != null) {
-                    djVar.w = org.telegram.messenger.m5.h(new StringBuilder("+"), djVar.f.phone, af.b.c());
+                    djVar.w = org.telegram.messenger.k5.i(new StringBuilder("+"), djVar.f.phone, mf.b.c());
                     djVar.s = djVar.f;
-                    org.telegram.messenger.i0.g3(new bj(djVar, 1));
+                    org.telegram.messenger.g0.h3(new bj(djVar, 1));
                     break;
                 }
                 break;

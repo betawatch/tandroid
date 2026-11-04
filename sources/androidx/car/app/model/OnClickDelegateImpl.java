@@ -5,13 +5,13 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnClickListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class OnClickDelegateImpl implements b0 {
     private final boolean mIsParkedOnly;
     private final IOnClickListener mListener;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class OnClickListenerStub extends IOnClickListener.Stub {
         private final c0 mOnClickListener;
 
@@ -27,7 +27,7 @@ public class OnClickDelegateImpl implements b0 {
 
         @Override // androidx.car.app.model.IOnClickListener
         public void onClick(IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.h.b(iOnDoneCallback, "onClick", new f(this, 1));
+            androidx.car.app.utils.g.b(iOnDoneCallback, "onClick", new f(this, 1));
         }
     }
 
@@ -45,13 +45,13 @@ public class OnClickDelegateImpl implements b0 {
         return this.mIsParkedOnly;
     }
 
-    public void sendClick(androidx.car.app.j jVar) {
+    public void sendClick(androidx.car.app.k kVar) {
         try {
             IOnClickListener iOnClickListener = this.mListener;
             Objects.requireNonNull(iOnClickListener);
-            iOnClickListener.onClick(androidx.car.app.utils.h.a());
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+            iOnClickListener.onClick(androidx.car.app.utils.g.a());
+        } catch (RemoteException e10) {
+            throw new RuntimeException(e10);
         }
     }
 

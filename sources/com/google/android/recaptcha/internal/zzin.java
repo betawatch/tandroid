@@ -1,22 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
-import kotlin.jvm.internal.d;
-import kotlin.jvm.internal.i;
-import kotlin.jvm.internal.q;
-import l9.b;
-import ld.p;
-import td.b0;
-import td.c0;
-import td.f1;
+import kotlin.jvm.internal.s;
+import od.p;
+import wd.a1;
+import wd.y;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzin extends j implements p {
     final /* synthetic */ Exception zza;
@@ -32,25 +27,24 @@ final class zzin extends j implements p {
         this.zzc = zzipVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         zzin zzinVar = new zzin(this.zza, this.zzb, this.zzc, cVar);
         zzinVar.zzd = obj;
         return zzinVar;
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzin) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzin) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
         zzys zzysVar;
-        String str;
-        a aVar = a.a;
-        b.b(obj);
-        c0 c0Var = (c0) this.zzd;
+        gd.a aVar = gd.a.a;
+        ib.b(obj);
+        z zVar = (z) this.zzd;
         Exception exc = this.zza;
         if (exc instanceof zzdm) {
             zzysVar = ((zzdm) exc).zza();
@@ -66,34 +60,7 @@ final class zzin extends j implements p {
         zzyt zzytVar = (zzyt) zzysVar.zzk();
         zzytVar.zzl();
         zzytVar.zzk();
-        d a2 = q.a(exc.getClass());
-        LinkedHashMap linkedHashMap = d.c;
-        Class jClass = a2.a;
-        i.e(jClass, "jClass");
-        if (!jClass.isAnonymousClass()) {
-            if (jClass.isLocalClass()) {
-                String simpleName = jClass.getSimpleName();
-                Method enclosingMethod = jClass.getEnclosingMethod();
-                if (enclosingMethod != null) {
-                    rd.j.i(simpleName, enclosingMethod.getName() + '$', simpleName);
-                } else {
-                    Constructor<?> enclosingConstructor = jClass.getEnclosingConstructor();
-                    if (enclosingConstructor != null) {
-                        rd.j.i(simpleName, enclosingConstructor.getName() + '$', simpleName);
-                    } else {
-                        int indexOf = simpleName.indexOf(36, 0);
-                        if (indexOf != -1) {
-                            i.d(simpleName.substring(indexOf + 1, simpleName.length()), "substring(...)");
-                        }
-                    }
-                }
-            } else if (jClass.isArray()) {
-                Class<?> componentType = jClass.getComponentType();
-                if (componentType.isPrimitive() && (str = (String) linkedHashMap.get(componentType.getName())) != null) {
-                    str.concat("Array");
-                }
-            }
-        }
+        s.a(exc.getClass()).b();
         exc.getMessage();
         zziz zzizVar2 = this.zzb;
         zzcs zzb = zzizVar2.zzb();
@@ -106,8 +73,8 @@ final class zzin extends j implements p {
         if (zzd.length() == 0) {
             zzd = "recaptcha.m.Main.rge";
         }
-        f1 f1Var = (f1) c0Var.c().get(b0.b);
-        if (f1Var != null ? f1Var.isActive() : true) {
+        a1 a1Var = (a1) zVar.c().get(y.b);
+        if (a1Var != null ? a1Var.isActive() : true) {
             zzip zzipVar = this.zzc;
             zzpp zzh = zzpp.zzh();
             byte[] zzd2 = zzytVar.zzd();
@@ -116,6 +83,6 @@ final class zzin extends j implements p {
             byte[] zzd3 = zza.zzd();
             zzipVar.zzb.zzd().zzb(zzd, (String[]) Arrays.copyOf(new String[]{zzi, zzh2.zzi(zzd3, 0, zzd3.length)}, 2));
         }
-        return ad.j.a;
+        return k.a;
     }
 }

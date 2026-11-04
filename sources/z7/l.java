@@ -1,10 +1,78 @@
 package z7;
 
-import java.util.Collection;
-import java.util.Set;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface l extends Collection {
-    Set zza();
+public final class l extends b8.y implements ListIterator {
+    public final int b;
+    public int c;
+    public final n d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l(n nVar, int i3) {
+        super(10);
+        int size = nVar.size();
+        if (i3 < 0 || i3 > size) {
+            throw new IndexOutOfBoundsException(x7.x6.c(i3, size, "index"));
+        }
+        this.b = size;
+        this.c = i3;
+        this.d = nVar;
+    }
+
+    public final Object a(int i3) {
+        return this.d.get(i3);
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        int i3 = this.c;
+        this.c = i3 + 1;
+        return a(i3);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i3 = this.c - 1;
+        this.c = i3;
+        return a(i3);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
+    }
 }

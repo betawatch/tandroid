@@ -1,20 +1,51 @@
 package w7;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class c {
-    public static final c a;
-    public static final /* synthetic */ c[] b;
+import x7.o5;
 
-    static {
-        c cVar = new c("DEFAULT", 0);
-        a = cVar;
-        b = new c[]{cVar, new c("SIGNED", 1), new c("FIXED", 2)};
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class c extends d {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ d e;
+
+    public c(d dVar, int i3, int i10) {
+        this.e = dVar;
+        this.c = i3;
+        this.d = i10;
     }
 
-    public static c[] values() {
-        return (c[]) b.clone();
+    @Override // java.util.List
+    public final Object get(int i3) {
+        o5.a(i3, this.d);
+        return this.e.get(i3 + this.c);
+    }
+
+    @Override // w7.a
+    public final int i() {
+        return this.e.j() + this.c + this.d;
+    }
+
+    @Override // w7.a
+    public final int j() {
+        return this.e.j() + this.c;
+    }
+
+    @Override // w7.a
+    public final Object[] k() {
+        return this.e.k();
+    }
+
+    @Override // w7.d, java.util.List
+    /* renamed from: l, reason: merged with bridge method [inline-methods] */
+    public final d subList(int i3, int i10) {
+        o5.b(i3, i10, this.d);
+        int i11 = this.c;
+        return this.e.subList(i3 + i11, i10 + i11);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

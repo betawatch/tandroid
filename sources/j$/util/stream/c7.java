@@ -11,14 +11,14 @@ public final class c7 extends d7 implements Consumer {
         return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    public c7(int i10) {
-        this.b = new Object[i10];
+    public c7(int i3) {
+        this.b = new Object[i3];
     }
 
     @Override // java.util.function.Consumer
     public final void accept(Object obj) {
-        int i10 = this.a;
-        this.a = i10 + 1;
-        this.b[i10] = obj;
+        int i3 = this.a;
+        this.a = i3 + 1;
+        this.b[i3] = obj;
     }
 }

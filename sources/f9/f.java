@@ -1,60 +1,22 @@
 package f9;
 
-import java.io.InputStream;
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import org.telegram.tgnet.TLObject;
-import v7.c8;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class f {
-    static {
-        new e();
+public final class f extends d {
+    public final char a;
+    public final char b;
+
+    public f(char c2, char c10) {
+        this.a = c2;
+        this.b = c10;
     }
 
-    public static byte[] a(ArrayDeque arrayDeque, int i10) {
-        if (arrayDeque.isEmpty()) {
-            return new byte[0];
-        }
-        byte[] bArr = (byte[]) arrayDeque.remove();
-        if (bArr.length == i10) {
-            return bArr;
-        }
-        int length = i10 - bArr.length;
-        byte[] copyOf = Arrays.copyOf(bArr, i10);
-        while (length > 0) {
-            byte[] bArr2 = (byte[]) arrayDeque.remove();
-            int min = Math.min(length, bArr2.length);
-            System.arraycopy(bArr2, 0, copyOf, i10 - length, min);
-            length -= min;
-        }
-        return copyOf;
+    @Override // f9.i
+    public final boolean c(char c2) {
+        return c2 == this.a || c2 == this.b;
     }
 
-    public static byte[] b(InputStream inputStream) {
-        inputStream.getClass();
-        ArrayDeque arrayDeque = new ArrayDeque(20);
-        int min = Math.min(TLObject.FLAG_13, Math.max(128, Integer.highestOneBit(0) * 2));
-        int i10 = 0;
-        while (i10 < 2147483639) {
-            int min2 = Math.min(min, 2147483639 - i10);
-            byte[] bArr = new byte[min2];
-            arrayDeque.add(bArr);
-            int i11 = 0;
-            while (i11 < min2) {
-                int read = inputStream.read(bArr, i11, min2 - i11);
-                if (read == -1) {
-                    return a(arrayDeque, i10);
-                }
-                i11 += read;
-                i10 += read;
-            }
-            min = c8.e(min * (min < 4096 ? 4 : 2));
-        }
-        if (inputStream.read() == -1) {
-            return a(arrayDeque, 2147483639);
-        }
-        throw new OutOfMemoryError("input is too large to fit in a byte array");
+    public final String toString() {
+        return "CharMatcher.anyOf(\"" + i.a(this.a) + i.a(this.b) + "\")";
     }
 }

@@ -1,44 +1,30 @@
 package c3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.hardware.display.DisplayManager;
+import android.view.Choreographer;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a0 {
-    public final c0 a;
-    public final c0 b;
+public abstract class a0 implements DisplayManager.DisplayListener {
+    public final Choreographer a;
+    public final DisplayManager b;
+    public volatile long c = -9223372036854775807L;
+    public volatile long d = -9223372036854775807L;
 
-    public a0(c0 c0Var, c0 c0Var2) {
-        this.a = c0Var;
-        this.b = c0Var2;
+    public a0(Choreographer choreographer, DisplayManager displayManager) {
+        this.a = choreographer;
+        this.b = displayManager;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && a0.class == obj.getClass()) {
-            a0 a0Var = (a0) obj;
-            if (this.a.equals(a0Var.a) && this.b.equals(a0Var.b)) {
-                return true;
-            }
-        }
-        return false;
+    public abstract void a();
+
+    public abstract void b();
+
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayAdded(int i3) {
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
-
-    public final String toString() {
-        String str;
-        StringBuilder sb2 = new StringBuilder("[");
-        c0 c0Var = this.a;
-        sb2.append(c0Var);
-        c0 c0Var2 = this.b;
-        if (c0Var.equals(c0Var2)) {
-            str = "";
-        } else {
-            str = ", " + c0Var2;
-        }
-        return a1.g.r(sb2, str, "]");
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayRemoved(int i3) {
     }
 }

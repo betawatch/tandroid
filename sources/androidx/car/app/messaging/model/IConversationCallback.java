@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public interface IConversationCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$messaging$model$IConversationCallback".replace('$', '.');
@@ -15,12 +15,12 @@ public interface IConversationCallback extends IInterface {
 
     void onTextReply(IOnDoneCallback iOnDoneCallback, String str);
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static abstract class Stub extends Binder implements IConversationCallback {
         static final int TRANSACTION_onMarkAsRead = 2;
         static final int TRANSACTION_onTextReply = 3;
 
-        /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
         public static class Proxy implements IConversationCallback {
             private IBinder mRemote;
 
@@ -76,20 +76,20 @@ public interface IConversationCallback extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        public boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
             String str = IConversationCallback.DESCRIPTOR;
-            if (i10 >= 1 && i10 <= 16777215) {
+            if (i3 >= 1 && i3 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i10 == 1598968902) {
+            if (i3 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i10 == 2) {
+            if (i3 == 2) {
                 onMarkAsRead(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             } else {
-                if (i10 != 3) {
-                    return super.onTransact(i10, parcel, parcel2, i11);
+                if (i3 != 3) {
+                    return super.onTransact(i3, parcel, parcel2, i10);
                 }
                 onTextReply(IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()), parcel.readString());
             }
@@ -102,7 +102,7 @@ public interface IConversationCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class Default implements IConversationCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

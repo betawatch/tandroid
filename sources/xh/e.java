@@ -1,39 +1,29 @@
 package xh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.v51;
+import android.view.animation.Interpolator;
+import b8.be;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class e extends a51 {
-    static {
-        a51.h(new e());
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e implements Interpolator {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Interpolator d;
+
+    public /* synthetic */ e(boolean z10, float f10, float f11, Interpolator interpolator) {
+        this.a = z10;
+        this.b = f10;
+        this.c = f11;
+        this.d = interpolator;
     }
 
-    public static b51 i(int i10, int i11, CharSequence charSequence, String str) {
-        b51 K = b51.K(e.class);
-        K.d = i10;
-        K.z = i11;
-        K.k = R.drawable.filled_earn_stars;
-        K.l = charSequence;
-        K.m = str;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
-        ((f) view).a(b51Var.z, b51Var.k, b51Var.l, b51Var.m);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, uk0 uk0Var, int i10, p6 p6Var) {
-        return new f(context, p6Var);
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f10) {
+        boolean z10 = this.a;
+        float f11 = this.b;
+        float f12 = this.c;
+        Interpolator interpolator = this.d;
+        return z10 ? 1.0f - interpolator.getInterpolation(1.0f - be.a((f10 - f11) / (f12 - f11), 0.0f, 1.0f)) : interpolator.getInterpolation(be.a((f10 - f11) / (f12 - f11), 0.0f, 1.0f));
     }
 }

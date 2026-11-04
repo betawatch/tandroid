@@ -1,32 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class j41 extends UndoView {
-    public final /* synthetic */ SessionsActivity j0;
+public final class j41 implements fp {
+    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j41(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.j0 = sessionsActivity;
+    public j41(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z10, boolean[] zArr) {
+        this.a = tL_chatChannelParticipant;
+        this.b = z10;
+        this.c = zArr;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void d(int i10, boolean z10) {
-        int i11;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.k2) this.j0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new sl0(9, this, tL_authorization));
+    @Override // org.telegram.ui.fp
+    public final void b(int i3, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
+        if (i3 == 0) {
+            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant.admin_rights = null;
+            channelParticipant.rank = "";
+        } else {
+            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant2.admin_rights = tL_chatAdminRights;
+            channelParticipant2.rank = str;
+            if (this.b) {
+                this.c[0] = true;
+            }
         }
-        super.d(i10, z10);
+    }
+
+    @Override // org.telegram.ui.fp
+    public final void a(TLRPC.User user) {
     }
 }

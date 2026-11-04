@@ -1,28 +1,34 @@
 package k2;
 
-import m4.n1;
+import android.os.Handler;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g0 implements e2.o, e2.j {
-    public final /* synthetic */ long a;
+public final /* synthetic */ class g0 implements Executor {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ g0(long j10) {
-        this.a = j10;
+    public /* synthetic */ g0(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // e2.j
-    public void accept(Object obj) {
-        ((n1) obj).f(this.a);
-    }
-
-    @Override // e2.o
-    public void invoke(Object obj) {
-        z zVar;
-        s0 s0Var = (s0) obj;
-        w0 w0Var = s0Var.b;
-        if (s0Var.equals(w0Var.j) && (zVar = w0Var.n) != null) {
-            zVar.f(this.a);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((g2.j0) this.b).d(runnable);
+                break;
+            case 1:
+                ((Handler) this.b).post(runnable);
+                break;
+            case 2:
+                g2.n0.W(((o4.e0) this.b).l, runnable);
+                break;
+            default:
+                ((r4.b) this.b).post(runnable);
+                break;
         }
     }
 }

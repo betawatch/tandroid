@@ -1,79 +1,59 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ iq b;
+public final class aq implements fq {
+    public final /* synthetic */ nq a;
 
-    public /* synthetic */ aq(iq iqVar, int i10) {
-        this.a = i10;
-        this.b = iqVar;
+    public aq(nq nqVar) {
+        this.a = nqVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        iq iqVar = this.b;
-        int i11 = 1;
-        switch (i10) {
-            case 0:
-                TLRPC.User user = iqVar.w;
-                fq fqVar = iqVar.X0;
-                if (fqVar != null) {
-                    fqVar.b(0, iqVar.K ? iqVar.M : null, null, iqVar.S);
-                }
-                Bundle g10 = a1.g.g("scrollToTopOnResume", true);
-                g10.putLong("chat_id", iqVar.x.id);
-                if (!iqVar.getMessagesController().E(g10, iqVar, null, null)) {
-                    iqVar.y0(false);
-                    break;
-                } else {
-                    un unVar = new un(g10);
-                    iqVar.presentFragment(unVar, true);
-                    if (org.telegram.ui.Components.cc.a(unVar)) {
-                        boolean z10 = iqVar.Z0;
-                        if (!z10 || !iqVar.K) {
-                            if (!z10 && !iqVar.L && iqVar.K) {
-                                org.telegram.ui.Components.cc.C(user.first_name, unVar).j();
-                                break;
-                            }
-                        } else {
-                            String str = user.first_name;
-                            org.telegram.ui.Components.eb ebVar = new org.telegram.ui.Components.eb(unVar.getParentActivity(), unVar.xa);
-                            ebVar.d(R.raw.ic_admin, "Shield");
-                            org.telegram.messenger.m5.q("UserAddedAsAdminHint", null, 2131743794, new Object[]{str}, ebVar.b);
-                            org.telegram.ui.Components.wb.g(unVar, ebVar, 1500).j();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 1:
-                iqVar.w0(false);
-                break;
-            default:
-                if (iqVar.r) {
-                    long j10 = iqVar.n;
-                    org.telegram.ui.ActionBar.x1[] x1VarArr = {new org.telegram.ui.ActionBar.x1(3, iqVar.getParentActivity(), null)};
-                    iqVar.getMessagesController().Z4(iqVar.s, j10, true, false, true, new qg(x1VarArr, 2), new qg(x1VarArr, 3));
-                    x1VarArr[0].r(300L);
-                }
-                fq fqVar2 = iqVar.X0;
-                if (fqVar2 != null) {
-                    TLRPC.TL_chatAdminRights tL_chatAdminRights = iqVar.M;
-                    if (!tL_chatAdminRights.change_info && !tL_chatAdminRights.post_messages && !tL_chatAdminRights.manage_direct_messages && !tL_chatAdminRights.manage_welcome_messages && !tL_chatAdminRights.edit_messages && !tL_chatAdminRights.delete_messages && !tL_chatAdminRights.ban_users && !tL_chatAdminRights.invite_users && ((!iqVar.G || !tL_chatAdminRights.manage_topics) && !tL_chatAdminRights.pin_messages && !tL_chatAdminRights.manage_ranks && !tL_chatAdminRights.add_admins && !tL_chatAdminRights.anonymous && !tL_chatAdminRights.manage_call && ((!iqVar.E || (!tL_chatAdminRights.post_stories && !tL_chatAdminRights.edit_stories && !tL_chatAdminRights.delete_stories)) && !tL_chatAdminRights.other))) {
-                        i11 = 0;
-                    }
-                    fqVar2.b(i11, tL_chatAdminRights, iqVar.O, iqVar.S);
-                    iqVar.finishFragment();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.fq
+    public final void c(long j10, TLObject tLObject) {
+        nq nqVar = this.a;
+        if (nqVar.K.f(j10) == null) {
+            gq B0 = nqVar.B0();
+            nqVar.F.add(tLObject);
+            nqVar.K.k(tLObject, j10);
+            nqVar.E0(nqVar.F);
+            nqVar.F0(B0);
         }
+    }
+
+    @Override // org.telegram.ui.fq
+    public final void d(long j10) {
+        nq nqVar = this.a;
+        if (nqVar.K.f(j10) == null) {
+            gq B0 = nqVar.B0();
+            TLRPC.TL_channelParticipantBanned tL_channelParticipantBanned = new TLRPC.TL_channelParticipantBanned();
+            if (j10 > 0) {
+                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                tL_channelParticipantBanned.peer = tL_peerUser;
+                tL_peerUser.user_id = j10;
+            } else {
+                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                tL_channelParticipantBanned.peer = tL_peerChannel;
+                tL_peerChannel.channel_id = -j10;
+            }
+            tL_channelParticipantBanned.date = nqVar.getConnectionsManager().getCurrentTime();
+            tL_channelParticipantBanned.kicked_by = org.telegram.messenger.h10.i(nqVar.getAccountInstance().a).n;
+            nqVar.r.kicked_count++;
+            nqVar.F.add(tL_channelParticipantBanned);
+            nqVar.K.k(tL_channelParticipantBanned, j10);
+            nqVar.E0(nqVar.F);
+            nqVar.F0(B0);
+        }
+    }
+
+    @Override // org.telegram.ui.fq
+    public final /* synthetic */ void a(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.fq
+    public final /* synthetic */ void b(long j10) {
     }
 }

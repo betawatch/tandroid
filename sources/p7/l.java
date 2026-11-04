@@ -1,35 +1,59 @@
 package p7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import w7.h0;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l extends o6.a {
-    public static final Parcelable.Creator<l> CREATOR = new m8.i(29);
-    public final boolean a;
+public final class l extends n {
+    public final transient n c;
 
-    public l(boolean z10) {
-        this.a = z10;
+    public l(n nVar) {
+        this.c = nVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // p7.n, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean contains(Object obj) {
+        return this.c.contains(obj);
+    }
+
+    @Override // java.util.List
+    public final Object get(int i3) {
+        n nVar = this.c;
+        a.e(i3, nVar.size());
+        return nVar.get((nVar.size() - 1) - i3);
+    }
+
+    @Override // p7.n, java.util.List
+    public final int indexOf(Object obj) {
+        int lastIndexOf = this.c.lastIndexOf(obj);
+        if (lastIndexOf >= 0) {
+            return (r0.size() - 1) - lastIndexOf;
         }
-        return (obj instanceof l) && this.a == ((l) obj).a;
+        return -1;
     }
 
-    public final int hashCode() {
-        return this.a ? 1 : 0;
+    @Override // p7.n, java.util.List
+    public final int lastIndexOf(Object obj) {
+        int indexOf = this.c.indexOf(obj);
+        if (indexOf >= 0) {
+            return (r0.size() - 1) - indexOf;
+        }
+        return -1;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        h0.r(parcel, q6);
+    @Override // p7.n
+    public final n m() {
+        return this.c;
+    }
+
+    @Override // p7.n, java.util.List
+    /* renamed from: n */
+    public final n subList(int i3, int i10) {
+        n nVar = this.c;
+        a.m(i3, i10, nVar.size());
+        return nVar.subList(nVar.size() - i10, nVar.size() - i3).m();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.size();
     }
 }

@@ -1,8 +1,8 @@
 package a0;
 
-import w7.w5;
+import x7.n;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class k {
     public int[] a;
@@ -11,22 +11,22 @@ public final class k {
     public final boolean equals(Object obj) {
         if (obj instanceof k) {
             k kVar = (k) obj;
-            int i10 = kVar.b;
-            int i11 = this.b;
-            if (i10 == i11) {
+            int i3 = kVar.b;
+            int i10 = this.b;
+            if (i3 == i10) {
                 int[] iArr = this.a;
                 int[] iArr2 = kVar.a;
-                od.e a2 = w5.a(0, i11);
-                int i12 = a2.a;
-                int i13 = a2.b;
-                if (i12 > i13) {
+                rd.e a10 = n.a(0, i10);
+                int i11 = a10.a;
+                int i12 = a10.b;
+                if (i11 > i12) {
                     return true;
                 }
-                while (iArr[i12] == iArr2[i12]) {
-                    if (i12 == i13) {
+                while (iArr[i11] == iArr2[i11]) {
+                    if (i11 == i12) {
                         return true;
                     }
-                    i12++;
+                    i11++;
                 }
                 return false;
             }
@@ -36,38 +36,38 @@ public final class k {
 
     public final int hashCode() {
         int[] iArr = this.a;
-        int i10 = this.b;
-        int i11 = 0;
-        for (int i12 = 0; i12 < i10; i12++) {
-            i11 += iArr[i12] * 31;
+        int i3 = this.b;
+        int i10 = 0;
+        for (int i11 = 0; i11 < i3; i11++) {
+            i10 += iArr[i11] * 31;
         }
-        return i11;
+        return i10;
     }
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder();
         sb2.append((CharSequence) "[");
         int[] iArr = this.a;
-        int i10 = this.b;
-        int i11 = 0;
+        int i3 = this.b;
+        int i10 = 0;
         while (true) {
-            if (i11 >= i10) {
+            if (i10 >= i3) {
                 sb2.append((CharSequence) "]");
                 break;
             }
-            int i12 = iArr[i11];
-            if (i11 == -1) {
+            int i11 = iArr[i10];
+            if (i10 == -1) {
                 sb2.append((CharSequence) "...");
                 break;
             }
-            if (i11 != 0) {
+            if (i10 != 0) {
                 sb2.append((CharSequence) ", ");
             }
-            sb2.append(i12);
-            i11++;
+            sb2.append(i11);
+            i10++;
         }
         String sb3 = sb2.toString();
-        kotlin.jvm.internal.i.d(sb3, "StringBuilder().apply(builderAction).toString()");
+        kotlin.jvm.internal.j.d(sb3, "StringBuilder().apply(builderAction).toString()");
         return sb3;
     }
 }

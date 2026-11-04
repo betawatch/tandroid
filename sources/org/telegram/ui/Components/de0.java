@@ -1,108 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class de0 extends View {
-    public Paint a;
-    public Paint b;
-    public int c;
-    public int d;
-    public float e;
-    public boolean f;
-    public int h;
-    public int n;
-    public ce0 r;
+public final class de0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ie0 b;
 
-    public final void a(int i10, boolean z10) {
-        ce0 ce0Var;
-        int i11 = this.h;
-        if (i10 < i11) {
-            i10 = i11;
-        } else {
-            int i12 = this.n;
-            if (i10 > i12) {
-                i10 = i12;
-            }
+    public /* synthetic */ de0(ie0 ie0Var, int i3) {
+        this.a = i3;
+        this.b = ie0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.G = null;
+                break;
+            default:
+                this.b.u();
+                break;
         }
-        this.e = (i10 - i11) / (this.n - i11);
-        invalidate();
-        if (!z10 || (ce0Var = this.r) == null) {
-            return;
-        }
-        ce0Var.o(((Integer) getTag()).intValue(), getProgress());
-    }
-
-    public int getProgress() {
-        return (int) ((this.e * (this.n - r0)) + this.h);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        int measuredHeight = getMeasuredHeight();
-        int i10 = this.c;
-        int i11 = (measuredHeight - i10) / 2;
-        int measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
-        float f7 = i10 / 2;
-        canvas.drawRect(f7, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), getMeasuredWidth() - r9, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), this.a);
-        if (this.h == 0) {
-            canvas.drawRect(f7, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), measuredWidth, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), paint);
-        } else if (this.e > 0.5f) {
-            canvas.drawRect((getMeasuredWidth() / 2) - org.telegram.messenger.i0.L(1.0f), (getMeasuredHeight() - i10) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + i10) / 2, paint);
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), measuredWidth, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), paint);
-        } else {
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - i10) / 2, org.telegram.messenger.i0.L(1.0f) + (getMeasuredWidth() / 2), (getMeasuredHeight() + i10) / 2, paint);
-            canvas.drawRect(measuredWidth, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), getMeasuredWidth() / 2, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), paint);
-        }
-        canvas.drawCircle(measuredWidth + r9, r9 + i11, f7, paint);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10 = this.c;
-        if (motionEvent != null) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            float measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
-            if (motionEvent.getAction() == 0) {
-                float measuredHeight = (getMeasuredHeight() - i10) / 2;
-                if (measuredWidth - measuredHeight <= x10 && x10 <= i10 + measuredWidth + measuredHeight && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                    this.f = true;
-                    this.d = (int) (x10 - measuredWidth);
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    invalidate();
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (this.f) {
-                    this.f = false;
-                    invalidate();
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 2 && this.f) {
-                float f7 = (int) (x10 - this.d);
-                this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
-                ce0 ce0Var = this.r;
-                if (ce0Var != null) {
-                    ce0Var.o(((Integer) getTag()).intValue(), getProgress());
-                }
-                invalidate();
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void setDelegate(ce0 ce0Var) {
-        this.r = ce0Var;
-    }
-
-    public void setProgress(int i10) {
-        a(i10, true);
     }
 }

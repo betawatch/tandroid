@@ -1,77 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ge extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class ge extends ImageView {
+    public float a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ ge(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
-        this.a = i10;
-        this.c = chatActivityEnterView;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ge(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (animator.equals(chatActivityEnterView.s2)) {
-                    chatActivityEnterView.s2 = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
+    @Override // android.view.View
+    public final float getTranslationX() {
+        return this.a;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        de deVar;
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (chatActivityEnterView.p5) {
-                    chatActivityEnterView.w1.setVisibility(this.b ? 0 : 8);
-                    break;
-                }
-                break;
-            case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                if (animator.equals(chatActivityEnterView2.s2)) {
-                    chatActivityEnterView2.p1.setVisibility(8);
-                    if (this.b && (deVar = chatActivityEnterView2.J1) != null) {
-                        deVar.setVisibility(8);
-                    }
-                    chatActivityEnterView2.s2 = null;
-                    break;
-                }
-                break;
-            case 2:
-                ChatActivityEnterView chatActivityEnterView3 = this.c;
-                chatActivityEnterView3.M1 = null;
-                if (!this.b) {
-                    chatActivityEnterView3.J1.setVisibility(8);
-                    break;
-                }
-                break;
-            default:
-                float f7 = this.b ? 1.0f : 0.0f;
-                ChatActivityEnterView chatActivityEnterView4 = this.c;
-                chatActivityEnterView4.w0 = f7;
-                gf gfVar = chatActivityEnterView4.U0;
-                if (gfVar != null) {
-                    gfVar.Z();
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        this.a = f10;
+        float L = org.telegram.messenger.g0.L(-44.0f) + this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        float f11 = L + chatActivityEnterView.E + chatActivityEnterView.y;
+        ie ieVar = chatActivityEnterView.L1;
+        float L2 = org.telegram.messenger.g0.L((ieVar == null || ieVar.getVisibility() != 0) ? 0.0f : -44.0f);
+        ie ieVar2 = chatActivityEnterView.L1;
+        float alpha = (L2 * (ieVar2 == null ? 0.0f : ieVar2.getAlpha())) + f11;
+        ie ieVar3 = chatActivityEnterView.y1;
+        float L3 = org.telegram.messenger.g0.L((ieVar3 == null || ieVar3.getVisibility() != 0) ? 0.0f : -44.0f);
+        ie ieVar4 = chatActivityEnterView.y1;
+        super.setTranslationX((L3 * (ieVar4 != null ? ieVar4.getAlpha() : 0.0f)) + alpha);
     }
 }

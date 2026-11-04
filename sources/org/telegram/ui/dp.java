@@ -1,35 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class dp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
+import android.content.DialogInterface;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.DatePicker;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-    public /* synthetic */ dp(qp qpVar, int i10) {
-        this.a = i10;
-        this.b = qpVar;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class dp implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+
+    public /* synthetic */ dp(int i3, View view) {
+        this.a = i3;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                qp qpVar = this.b;
-                org.telegram.ui.ActionBar.x1 x1Var = qpVar.r;
-                if (x1Var != null) {
-                    x1Var.setOnCancelListener(new lg(qpVar, 2));
-                    qpVar.showDialog(qpVar.r);
-                    break;
+                DatePicker datePicker = (DatePicker) this.b;
+                int childCount = datePicker.getChildCount();
+                for (int i3 = 0; i3 < childCount; i3++) {
+                    View childAt = datePicker.getChildAt(i3);
+                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+                    layoutParams.width = -1;
+                    childAt.setLayoutParams(layoutParams);
                 }
                 break;
-            case 1:
-                qp qpVar2 = this.b;
-                qpVar2.getMessagesController().T2(0, qpVar2.E, true);
-                break;
             default:
-                qp qpVar3 = this.b;
-                qpVar3.getMessagesController().T2(0, qpVar3.E, true);
+                org.telegram.messenger.g0.h3(new og((EditTextBoldCursor) this.b, 1));
                 break;
         }
     }

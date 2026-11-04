@@ -1,11 +1,10 @@
 package org.telegram.ui.Components;
 
 import android.content.DialogInterface;
-import java.util.regex.Pattern;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n1 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a = 1;
@@ -13,23 +12,23 @@ public final /* synthetic */ class n1 implements DialogInterface.OnCancelListene
     public final /* synthetic */ int[] c;
     public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ n1(int i10, int[] iArr, org.telegram.ui.y60 y60Var) {
-        this.b = i10;
+    public /* synthetic */ n1(int i3, int[] iArr, org.telegram.ui.ly lyVar) {
+        this.b = i3;
         this.c = iArr;
-        this.d = y60Var;
+        this.d = lyVar;
     }
 
     @Override // android.content.DialogInterface.OnCancelListener
     public final void onCancel(DialogInterface dialogInterface) {
-        int i10 = this.a;
+        int i3 = this.a;
         Runnable runnable = this.d;
         int[] iArr = this.c;
-        int i11 = this.b;
-        switch (i10) {
+        int i10 = this.b;
+        switch (i3) {
             case 0:
-                for (int i12 : iArr) {
-                    if (i12 != 0) {
-                        ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                for (int i11 : iArr) {
+                    if (i11 != 0) {
+                        ConnectionsManager.getInstance(i10).cancelRequest(i11, true);
                     }
                 }
                 if (runnable != null) {
@@ -38,8 +37,8 @@ public final /* synthetic */ class n1 implements DialogInterface.OnCancelListene
                 }
                 break;
             default:
-                Pattern pattern = LaunchActivity.D1;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
+                String str = LaunchActivity.E1;
+                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
                 if (runnable != null) {
                     runnable.run();
                     break;
@@ -48,9 +47,9 @@ public final /* synthetic */ class n1 implements DialogInterface.OnCancelListene
         }
     }
 
-    public /* synthetic */ n1(int[] iArr, int i10, Runnable runnable) {
+    public /* synthetic */ n1(int[] iArr, int i3, Runnable runnable) {
         this.c = iArr;
-        this.b = i10;
+        this.b = i3;
         this.d = runnable;
     }
 }

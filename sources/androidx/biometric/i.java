@@ -4,37 +4,41 @@ import android.app.KeyguardManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
+import b8.k0;
+import b8.n0;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
+    public final /* synthetic */ q b;
 
-    public /* synthetic */ i(p pVar, int i10) {
-        this.a = i10;
-        this.b = pVar;
+    public /* synthetic */ i(q qVar, int i3) {
+        this.a = i3;
+        this.b = qVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x00d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00f0, code lost:
     
-        if (r10 == false) goto L62;
+        if (r11 == false) goto L75;
      */
     @Override // androidx.lifecycle.a0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void k0(Object obj) {
+    public final void v(Object obj) {
         boolean z10;
-        int i10 = this.a;
-        p pVar = this.b;
-        switch (i10) {
+        int i3 = this.a;
+        int i10 = 0;
+        CharSequence charSequence = null;
+        q qVar = this.b;
+        switch (i3) {
             case 0:
                 e eVar = (e) obj;
                 if (eVar != null) {
                     int i11 = eVar.a;
-                    CharSequence charSequence = eVar.b;
+                    CharSequence charSequence2 = eVar.b;
                     switch (i11) {
                         case 1:
                         case 2:
@@ -56,39 +60,38 @@ public final class i implements androidx.lifecycle.a0 {
                             i11 = 8;
                             break;
                     }
-                    Context n10 = pVar.n();
+                    Context n4 = qVar.n();
                     int i12 = Build.VERSION.SDK_INT;
-                    int i13 = 0;
-                    if (i12 < 29 && ((i11 == 7 || i11 == 9) && n10 != null)) {
-                        KeyguardManager a2 = g0.a(n10);
-                        if ((a2 == null ? false : g0.b(a2)) && v7.k.a(pVar.l0.c())) {
-                            pVar.S();
-                            pVar.l0.d(null);
+                    if (i12 < 29 && ((i11 == 7 || i11 == 9) && n4 != null)) {
+                        KeyguardManager a10 = h0.a(n4);
+                        if ((a10 == null ? false : h0.b(a10)) && k0.a(qVar.m0.c())) {
+                            qVar.S();
+                            qVar.m0.d(null);
                             break;
                         }
                     }
-                    if (pVar.R()) {
-                        if (charSequence == null) {
-                            charSequence = v7.n.a(pVar.n(), i11);
+                    if (qVar.R()) {
+                        if (charSequence2 == null) {
+                            charSequence2 = n0.a(qVar.n(), i11);
                         }
                         if (i11 == 5) {
-                            int i14 = pVar.l0.l;
-                            if (i14 == 0 || i14 == 3) {
-                                pVar.U(i11, charSequence);
+                            int i13 = qVar.m0.l;
+                            if (i13 == 0 || i13 == 3) {
+                                qVar.U(i11, charSequence2);
                             }
-                            pVar.O();
+                            qVar.O();
                         } else {
-                            if (pVar.l0.w) {
-                                pVar.T(i11, charSequence);
+                            if (qVar.m0.w) {
+                                qVar.T(i11, charSequence2);
                             } else {
-                                pVar.W(charSequence);
-                                Handler handler = pVar.k0;
-                                f fVar = new f(pVar, i11, charSequence, 1);
-                                Context n11 = pVar.n();
-                                if (n11 != null) {
+                                qVar.W(charSequence2);
+                                Handler handler = qVar.l0;
+                                f fVar = new f(qVar, i11, charSequence2, 1);
+                                Context n10 = qVar.n();
+                                if (n10 != null) {
                                     String str = Build.MODEL;
                                     if (i12 == 28 && str != null) {
-                                        for (String str2 : n11.getResources().getStringArray(R.array.hide_fingerprint_instantly_prefixes)) {
+                                        for (String str2 : n10.getResources().getStringArray(R.array.hide_fingerprint_instantly_prefixes)) {
                                             if (str.startsWith(str2)) {
                                                 z10 = true;
                                                 break;
@@ -98,29 +101,42 @@ public final class i implements androidx.lifecycle.a0 {
                                     z10 = false;
                                     break;
                                 }
-                                i13 = 2000;
-                                handler.postDelayed(fVar, i13);
+                                i10 = 2000;
+                                handler.postDelayed(fVar, i10);
                             }
-                            pVar.l0.w = true;
+                            qVar.m0.w = true;
                         }
                     } else {
-                        if (charSequence == null) {
-                            charSequence = pVar.q(R.string.default_error_msg) + " " + i11;
+                        if (charSequence2 == null) {
+                            charSequence2 = qVar.q(R.string.default_error_msg) + " " + i11;
                         }
-                        pVar.T(i11, charSequence);
+                        qVar.T(i11, charSequence2);
                     }
-                    pVar.l0.d(null);
+                    qVar.m0.d(null);
                 }
                 break;
             default:
                 if (((Boolean) obj).booleanValue()) {
-                    pVar.N(1);
-                    pVar.O();
-                    y yVar = pVar.l0;
-                    if (yVar.x == null) {
-                        yVar.x = new androidx.lifecycle.z();
+                    if (qVar.Q()) {
+                        qVar.S();
+                    } else {
+                        z zVar = qVar.m0;
+                        String str3 = zVar.k;
+                        if (str3 != null) {
+                            charSequence = str3;
+                        } else {
+                            l6.n nVar = zVar.f;
+                            if (nVar != null && (charSequence = (CharSequence) nVar.d) == null) {
+                                charSequence = "";
+                            }
+                        }
+                        if (charSequence == null) {
+                            charSequence = qVar.q(R.string.default_error_msg);
+                        }
+                        qVar.T(13, charSequence);
+                        qVar.N(2);
                     }
-                    y.h(yVar.x, Boolean.FALSE);
+                    qVar.m0.g(false);
                     break;
                 }
                 break;

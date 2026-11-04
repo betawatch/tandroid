@@ -6,10 +6,10 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class x2 {
     public static final Unsafe a;
@@ -39,28 +39,28 @@ public abstract class x2 {
         Class<?> cls4;
         Field m10;
         w2 w2Var2;
-        Unsafe g10 = g();
-        a = g10;
+        Unsafe g7 = g();
+        a = g7;
         b = m0.a;
         Class<?> cls5 = Long.TYPE;
         boolean k10 = k(cls5);
         Class<?> cls6 = Integer.TYPE;
         boolean k11 = k(cls6);
-        if (g10 != null) {
+        if (g7 != null) {
             if (!m0.a()) {
-                w2Var = new v2(g10);
+                w2Var = new v2(g7);
             } else if (k10) {
-                w2Var = new u2(g10, 1);
+                w2Var = new u2(g7, 1);
             } else if (k11) {
-                w2Var = new u2(g10, 0);
+                w2Var = new u2(g7, 0);
             }
             c = w2Var;
             Class<?> cls7 = Byte.TYPE;
-            if (g10 != null) {
+            if (g7 != null) {
                 cls = cls5;
             } else {
                 try {
-                    cls3 = g10.getClass();
+                    cls3 = g7.getClass();
                     cls = cls5;
                     try {
                         cls3.getMethod("objectFieldOffset", Field.class);
@@ -295,7 +295,7 @@ public abstract class x2 {
         w2Var = null;
         c = w2Var;
         Class<?> cls72 = Byte.TYPE;
-        if (g10 != null) {
+        if (g7 != null) {
         }
         cls2 = cls6;
         z10 = false;
@@ -331,13 +331,13 @@ public abstract class x2 {
     public static Object b(Class cls) {
         try {
             return a.allocateInstance(cls);
-        } catch (InstantiationException e7) {
-            throw new IllegalStateException(e7);
+        } catch (InstantiationException e10) {
+            throw new IllegalStateException(e10);
         }
     }
 
-    public static void c(long j10, Object obj, int i10) {
-        c.b(j10, obj, i10);
+    public static void c(long j10, Object obj, int i3) {
+        c.b(j10, obj, i3);
     }
 
     public static void d(Object obj, long j10, Object obj2) {
@@ -372,14 +372,14 @@ public abstract class x2 {
     public static void i(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
         int k10 = c.k(obj, j11);
-        int i10 = ((~((int) j10)) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i10) | (k10 & (~(at.e4 << i10))));
+        int i3 = ((~((int) j10)) & 3) << 3;
+        c(j11, obj, ((255 & b10) << i3) | (k10 & (~(hs.e4 << i3))));
     }
 
     public static void j(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int i10 = (((int) j10) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i10) | (c.k(obj, j11) & (~(at.e4 << i10))));
+        int i3 = (((int) j10) & 3) << 3;
+        c(j11, obj, ((255 & b10) << i3) | (c.k(obj, j11) & (~(hs.e4 << i3))));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

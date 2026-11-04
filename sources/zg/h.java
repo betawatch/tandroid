@@ -1,198 +1,57 @@
 package zg;
 
-import android.graphics.PointF;
-import android.graphics.RectF;
+import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
-import z7.fe;
+import android.widget.FrameLayout;
+import b8.mf;
+import java.util.Date;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.g0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class h implements ViewTreeObserver.OnPreDrawListener, View.OnAttachStateChangeListener {
-    public static final int[] f = new int[2];
-    public static final RectF h = new RectF();
-    public static final float[] n = new float[2];
-    public final View a;
-    public ViewTreeObserver b;
-    public boolean c;
-    public final WeakHashMap d = new WeakHashMap();
-    public final RectF e = new RectF();
+public final class h extends FrameLayout {
+    public final k5 a;
+    public long b;
 
-    public h(View view) {
-        this.a = view;
-        view.addOnAttachStateChangeListener(this);
-        a();
+    public h(Context context, e6 e6Var) {
+        super(context);
+        k5 k5Var = new k5(context);
+        k5Var.setTextSize(16);
+        r6.Y(k5Var, k6.j5, e6Var);
+        k5Var.setGravity(bd.a0 ? 5 : 3);
+        addView(k5Var);
+        k5 k5Var2 = new k5(context);
+        this.a = k5Var2;
+        k5Var2.setTextSize(16);
+        r6.Y(k5Var2, k6.L6, e6Var);
+        k5Var2.setGravity(bd.a0 ? 3 : 5);
+        addView(k5Var2);
+        k5Var.l(bd.a0("BoostingDateAndTime", null, 2131753539, new Object[0]), false);
+        boolean z10 = bd.a0;
+        k5Var.setLayoutParams(mf.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 21.0f, 0.0f, z10 ? 21.0f : 0.0f, 0.0f));
+        boolean z11 = bd.a0;
+        k5Var2.setLayoutParams(mf.d(-1, -2.0f, (z11 ? 3 : 5) | 16, z11 ? 21.0f : 0.0f, 0.0f, z11 ? 0.0f : 21.0f, 0.0f));
+        r6.i(k6.h5, this, e6Var);
     }
 
-    public static boolean b(View view, ViewGroup viewGroup, PointF pointF) {
-        RectF rectF = h;
-        boolean c10 = c(view, viewGroup, rectF);
-        if (c10) {
-            pointF.x = rectF.left;
-            pointF.y = rectF.top;
-        }
-        return c10;
+    public long getSelectedTime() {
+        return this.b;
     }
 
-    public static boolean c(View view, View view2, RectF rectF) {
-        float f7 = 0.0f;
-        View view3 = view;
-        float f10 = 0.0f;
-        float f11 = 0.0f;
-        while (view3 != null && view3 != view2) {
-            f10 += view3.getX();
-            f11 += view3.getY();
-            Object parent = view3.getParent();
-            if (!(parent instanceof View)) {
-                break;
-            }
-            view3 = (View) parent;
-            f10 -= view3.getScrollX();
-            f11 -= view3.getScrollY();
-        }
-        if (view3 != view2) {
-            if (view3 != null) {
-                float f12 = 0.0f;
-                while (view2 != view3) {
-                    float x10 = view2.getX() + f7;
-                    float y3 = view2.getY() + f12;
-                    Object parent2 = view2.getParent();
-                    if (parent2 instanceof View) {
-                        view2 = (View) parent2;
-                        f12 = y3 - view2.getScrollY();
-                        f7 = x10 - view2.getScrollX();
-                    }
-                }
-                float[] fArr = n;
-                fArr[0] = f7;
-                fArr[1] = f12;
-                f10 -= fArr[0];
-                f11 -= fArr[1];
-            }
-            return false;
-        }
-        rectF.set(f10, f11, view.getWidth() + f10, view.getHeight() + f11);
-        return true;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(g0.L(50.0f), TLObject.FLAG_30));
     }
 
-    public final void a() {
-        ViewTreeObserver viewTreeObserver;
-        View view = this.a;
-        if (view.isAttachedToWindow() && (viewTreeObserver = view.getViewTreeObserver()) != null && viewTreeObserver.isAlive()) {
-            this.b = viewTreeObserver;
-            if (this.c) {
-                return;
-            }
-            viewTreeObserver.addOnPreDrawListener(this);
-            this.c = true;
-        }
-    }
-
-    public final void d(View view, ViewGroup viewGroup, f fVar, boolean z10) {
-        ViewTreeObserver viewTreeObserver;
-        ViewTreeObserver viewTreeObserver2;
-        g gVar = new g(viewGroup, fVar);
-        gVar.d = z10;
-        WeakHashMap weakHashMap = this.d;
-        List list = (List) weakHashMap.get(view);
-        if (list == null) {
-            list = new ArrayList(1);
-            weakHashMap.put(view, list);
-        }
-        list.add(gVar);
-        RectF rectF = this.e;
-        c(view, viewGroup, rectF);
-        gVar.c.set(rectF);
-        if (!this.c) {
-            a();
-        }
-        if (z10) {
-            fe feVar = new fe();
-            l.d dVar = new l.d(feVar, 16);
-            feVar.a = view;
-            feVar.b = this;
-            view.addOnAttachStateChangeListener(dVar);
-            if (!view.isAttachedToWindow() || (viewTreeObserver2 = (ViewTreeObserver) feVar.c) == (viewTreeObserver = view.getViewTreeObserver())) {
-                return;
-            }
-            if (viewTreeObserver2 != null) {
-                if (viewTreeObserver2.isAlive()) {
-                    ((ViewTreeObserver) feVar.c).removeOnPreDrawListener(this);
-                }
-                feVar.c = null;
-            }
-            feVar.c = viewTreeObserver;
-            if (viewTreeObserver.isAlive()) {
-                viewTreeObserver.addOnPreDrawListener(this);
-            }
-        }
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewTreeObserver viewTreeObserver = this.a.getViewTreeObserver();
-        ViewTreeObserver viewTreeObserver2 = this.b;
-        if (viewTreeObserver != viewTreeObserver2) {
-            if (this.c && viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-                this.b.removeOnPreDrawListener(this);
-            }
-            this.c = false;
-            this.b = null;
-            a();
-        }
-        WeakHashMap weakHashMap = this.d;
-        if (!weakHashMap.isEmpty()) {
-            for (Map.Entry entry : weakHashMap.entrySet()) {
-                View view = (View) entry.getKey();
-                List<g> list = (List) entry.getValue();
-                if (view != null && list != null) {
-                    for (g gVar : list) {
-                        boolean z10 = gVar.d;
-                        RectF rectF = gVar.c;
-                        ViewGroup viewGroup = gVar.a;
-                        RectF rectF2 = this.e;
-                        if (z10) {
-                            int[] iArr = f;
-                            view.getLocationOnScreen(iArr);
-                            rectF2.set(iArr[0], iArr[1], view.getWidth() + r10, view.getHeight() + iArr[1]);
-                            viewGroup.getLocationOnScreen(iArr);
-                            rectF2.offset(-iArr[0], -iArr[1]);
-                        } else if (!c(view, viewGroup, rectF2)) {
-                        }
-                        if (!gVar.e || !rectF2.equals(rectF)) {
-                            rectF.set(rectF2);
-                            gVar.e = true;
-                            try {
-                                gVar.b.l(new RectF(rectF2), view);
-                            } catch (Throwable unused) {
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return true;
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        a();
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        ViewTreeObserver viewTreeObserver;
-        if (view == this.a) {
-            if (this.c && (viewTreeObserver = this.b) != null && viewTreeObserver.isAlive()) {
-                this.b.removeOnPreDrawListener(this);
-            }
-            this.c = false;
-            this.b = null;
-        }
+    public void setDate(long j10) {
+        this.b = j10;
+        Date date = new Date(j10);
+        this.a.l(bd.a0("formatDateAtTime", null, 2131742793, bd.E0().q0().format(date), bd.E0().p0().format(date)), false);
     }
 }

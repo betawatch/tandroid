@@ -1,17 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.opengl.GLES20;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.os.SystemClock;
+import android.view.TextureView;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class g40 extends b4.b {
-    public final int g;
-    public final int h;
+public final class g40 extends TextureView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public g40() {
-        super(R.raw.round_blur_stage_2_frag);
-        this.g = GLES20.glGetUniformLocation(this.a, "bTexture");
-        this.h = GLES20.glGetUniformLocation(this.a, "center");
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g40(int i3, Context context, Object obj) {
+        super(context);
+        this.a = i3;
+        this.b = obj;
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        wi.s0 s0Var;
+        switch (this.a) {
+            case 0:
+                j40 j40Var = (j40) this.b;
+                if (!j40Var.I0 && (s0Var = j40Var.R) != null && s0Var.a == 3) {
+                    j40Var.I0 = true;
+                    try {
+                        j40Var.G0 = SystemClock.elapsedRealtimeNanos();
+                        j40Var.D();
+                    } finally {
+                        j40Var.I0 = false;
+                    }
+                }
+                super.invalidate();
+                return;
+            default:
+                super.invalidate();
+                return;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i3, int i10) {
+        switch (this.a) {
+            case 1:
+                View.MeasureSpec.getSize(i3);
+                super.onMeasure(i3, i10);
+                break;
+            case 2:
+                yh.e eVar = (yh.e) this.b;
+                setMeasuredDimension(eVar.g, eVar.h);
+                break;
+            default:
+                super.onMeasure(i3, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.TextureView
+    public void setTransform(Matrix matrix) {
+        switch (this.a) {
+            case 1:
+                super.setTransform(matrix);
+                py pyVar = ((nd0) this.b).m0;
+                if (pyVar != null) {
+                    int width = getWidth();
+                    int height = getHeight();
+                    ca caVar = pyVar.J;
+                    if (caVar != null) {
+                        Matrix matrix2 = caVar.v;
+                        matrix.invert(matrix2);
+                        float f10 = width;
+                        float f11 = height;
+                        matrix2.preScale(f10, f11);
+                        matrix2.postScale(1.0f / f10, 1.0f / f11);
+                        caVar.c(matrix2);
+                        pyVar.c(false, false, false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.setTransform(matrix);
+                break;
+        }
     }
 }

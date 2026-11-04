@@ -1,66 +1,47 @@
 package ji;
 
-import mg.l;
-import org.telegram.messenger.i0;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.cs;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.lr;
+import org.telegram.ui.ActionBar.s1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Runnable {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class c implements lr {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
-    public final /* synthetic */ e c;
+    public final /* synthetic */ s1 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ cs e;
 
-    public /* synthetic */ c(f fVar, e eVar, int i10) {
-        this.a = i10;
-        this.b = fVar;
-        this.c = eVar;
+    public /* synthetic */ c(cs csVar, s1 s1Var, long j10, boolean z10, int i3) {
+        this.a = i3;
+        this.e = csVar;
+        this.b = s1Var;
+        this.c = j10;
+        this.d = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.lr
+    public final void run(long j10) {
         switch (this.a) {
             case 0:
-                f fVar = this.b;
-                e eVar = (e) fVar.c;
-                e eVar2 = this.c;
-                if (eVar == eVar2) {
-                    fVar.d = null;
-                    fVar.k(eVar2);
+                e eVar = (e) this.e;
+                eVar.getClass();
+                this.b.dismiss();
+                if (j10 != 0) {
+                    eVar.b = -j10;
+                    eVar.c = eVar.getMessagesController().M0(Long.valueOf(j10));
+                    eVar.b0(this.c, this.d);
                     break;
                 }
                 break;
-            case 1:
-                f fVar2 = this.b;
-                e eVar3 = (e) fVar2.c;
-                e eVar4 = this.c;
-                if (eVar3 == eVar4) {
-                    c cVar = (c) fVar2.d;
-                    if (cVar != null) {
-                        i0.r(cVar);
-                        fVar2.d = null;
-                    }
-                    int i10 = eVar4.d;
-                    if (i10 != 0) {
-                        c cVar2 = new c(fVar2, eVar4, 2);
-                        fVar2.e = cVar2;
-                        i0.h3(cVar2, 20000L);
-                        l lVar = eVar4.a;
-                        ((ConnectionsManager) lVar.b).checkWebProxyInternal(eVar4.b, i10, new d(fVar2, eVar4));
-                        break;
-                    } else {
-                        fVar2.k(eVar4);
-                        break;
-                    }
-                }
-                break;
             default:
-                f fVar3 = this.b;
-                e eVar5 = (e) fVar3.c;
-                e eVar6 = this.c;
-                if (eVar5 == eVar6) {
-                    fVar3.e = null;
-                    fVar3.k(eVar6);
+                b0 b0Var = (b0) this.e;
+                b0Var.getClass();
+                this.b.dismiss();
+                if (j10 != 0) {
+                    b0Var.K0(hp.s1(b0Var.a).M0(Long.valueOf(j10)), this.c, this.d);
                     break;
                 }
                 break;

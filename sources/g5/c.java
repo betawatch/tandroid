@@ -1,65 +1,21 @@
 package g5;
 
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-import org.telegram.messenger.at;
+import com.googlecode.mp4parser.e;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends a {
-    public final long[] D;
-    public int h;
-    public int n;
-    public double r;
-    public double s;
-    public int w;
-    public String x;
-    public int y;
-
-    public c(String str) {
-        super(str);
-        this.r = 72.0d;
-        this.s = 72.0d;
-        this.w = 1;
-        this.x = "";
-        this.y = 24;
-        this.D = new long[3];
+public abstract class c extends e {
+    static {
+        mc.c.a(c.class);
     }
 
-    @Override // com.googlecode.mp4parser.b, f5.b
-    public final void getBox(WritableByteChannel writableByteChannel) {
-        writableByteChannel.write(d());
-        ByteBuffer allocate = ByteBuffer.allocate(78);
-        allocate.position(6);
-        e5.b.p(this.f, allocate);
-        e5.b.p(0, allocate);
-        e5.b.p(0, allocate);
-        long[] jArr = this.D;
-        allocate.putInt((int) jArr[0]);
-        allocate.putInt((int) jArr[1]);
-        allocate.putInt((int) jArr[2]);
-        e5.b.p(this.h, allocate);
-        e5.b.p(this.n, allocate);
-        e5.b.n(allocate, this.r);
-        e5.b.n(allocate, this.s);
-        allocate.putInt((int) 0);
-        e5.b.p(this.w, allocate);
-        allocate.put((byte) (e5.b.l(this.x) & at.e4));
-        allocate.put(e5.b.b(this.x));
-        int l4 = e5.b.l(this.x);
-        while (l4 < 31) {
-            l4++;
-            allocate.put((byte) 0);
+    public static byte[] d(String str) {
+        byte[] bArr = new byte[4];
+        if (str != null) {
+            for (int i3 = 0; i3 < Math.min(4, str.length()); i3++) {
+                bArr[i3] = (byte) str.charAt(i3);
+            }
         }
-        e5.b.p(this.y, allocate);
-        e5.b.p(65535, allocate);
-        writableByteChannel.write((ByteBuffer) allocate.rewind());
-        c(writableByteChannel);
-    }
-
-    @Override // com.googlecode.mp4parser.b, f5.b
-    public final long getSize() {
-        long b10 = b();
-        return 78 + b10 + (b10 + 86 >= 4294967296L ? 16 : 8);
+        return bArr;
     }
 }

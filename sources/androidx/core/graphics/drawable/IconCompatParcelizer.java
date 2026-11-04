@@ -1,14 +1,14 @@
 package androidx.core.graphics.drawable;
 
+import a5.b;
+import a5.c;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.nio.charset.Charset;
-import y4.b;
-import y4.c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class IconCompatParcelizer {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -104,9 +104,9 @@ public class IconCompatParcelizer {
                 iconCompat.c = iconCompat.b.toString().getBytes(Charset.forName("UTF-16"));
                 break;
         }
-        int i10 = iconCompat.a;
-        if (-1 != i10) {
-            bVar.j(i10, 1);
+        int i3 = iconCompat.a;
+        if (-1 != i3) {
+            bVar.j(i3, 1);
         }
         byte[] bArr = iconCompat.c;
         if (bArr != null) {
@@ -119,13 +119,13 @@ public class IconCompatParcelizer {
         if (parcelable != null) {
             bVar.k(parcelable, 3);
         }
-        int i11 = iconCompat.e;
-        if (i11 != 0) {
-            bVar.j(i11, 4);
+        int i10 = iconCompat.e;
+        if (i10 != 0) {
+            bVar.j(i10, 4);
         }
-        int i12 = iconCompat.f;
-        if (i12 != 0) {
-            bVar.j(i12, 5);
+        int i11 = iconCompat.f;
+        if (i11 != 0) {
+            bVar.j(i11, 5);
         }
         ColorStateList colorStateList = iconCompat.g;
         if (colorStateList != null) {

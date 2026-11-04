@@ -1,71 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class a00 extends mn0 {
-    public final boolean d;
+public final /* synthetic */ class a00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FragmentContextView b;
 
-    public a00(boolean z10) {
-        this.d = z10;
+    public /* synthetic */ a00(FragmentContextView fragmentContextView, int i3) {
+        this.a = i3;
+        this.b = fragmentContextView;
     }
 
-    @Override // org.telegram.ui.Components.mn0
-    public final boolean a() {
-        return k() > j();
-    }
-
-    @Override // org.telegram.ui.Components.mn0
-    public final boolean b() {
-        return k() < i();
-    }
-
-    @Override // org.telegram.ui.Components.mn0
-    public final void c(boolean z10) {
-        float h = h();
-        if (z10) {
-            h *= -1.0f;
-        }
-        l(Math.min(i(), Math.max(j(), k() + h)));
-    }
-
-    @Override // org.telegram.ui.Components.mn0
-    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.e(view, accessibilityNodeInfo);
-        if (this.d) {
-            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a);
-            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        FragmentContextView fragmentContextView = this.b;
+        switch (i3) {
+            case 0:
+                fragmentContextView.P.g = 0.0f;
+                fragmentContextView.N.invalidate();
+                break;
+            default:
+                float[] fArr = FragmentContextView.X0;
+                fragmentContextView.o(true);
+                break;
         }
     }
-
-    @Override // org.telegram.ui.Components.mn0
-    public final boolean g(View view, int i10, Bundle bundle) {
-        if (super.g(view, i10, bundle)) {
-            return true;
-        }
-        if (i10 != ((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a).getId()) {
-            return false;
-        }
-        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
-        return true;
-    }
-
-    public float h() {
-        return 0.05f;
-    }
-
-    public float i() {
-        return 1.0f;
-    }
-
-    public float j() {
-        return 0.0f;
-    }
-
-    public abstract float k();
-
-    public abstract void l(float f7);
 }

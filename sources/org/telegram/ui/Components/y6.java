@@ -1,47 +1,52 @@
 package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w7 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ z7 b;
+    public final /* synthetic */ f60 c;
 
-    public /* synthetic */ y6(w7 w7Var, TLRPC.TL_error tL_error, int i10) {
-        this.a = i10;
-        this.b = w7Var;
-        this.c = tL_error;
+    public /* synthetic */ y6(z7 z7Var, f60 f60Var, int i3) {
+        this.a = i3;
+        this.b = z7Var;
+        this.c = f60Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        FrameLayout frameLayout;
-        org.telegram.ui.ActionBar.p6 p6Var;
-        switch (this.a) {
+        int i3 = this.a;
+        f60 f60Var = this.c;
+        z7 z7Var = this.b;
+        switch (i3) {
             case 0:
-                w7 w7Var = this.b;
-                frameLayout = (FrameLayout) w7Var.b;
-                p6Var = w7Var.I0;
+                z7Var.getClass();
+                f60Var.u();
+                z7Var.P0(1);
                 break;
             case 1:
-                w7 w7Var2 = this.b;
-                frameLayout = (FrameLayout) w7Var2.b;
-                p6Var = w7Var2.I0;
+                z7Var.getClass();
+                f60Var.u();
+                z7Var.P0(2);
                 break;
             case 2:
-                w7 w7Var3 = this.b;
-                frameLayout = (FrameLayout) w7Var3.b;
-                p6Var = w7Var3.I0;
+                z7Var.getClass();
+                f60Var.u();
+                z7Var.P0(4);
+                break;
+            case 3:
+                z7Var.getClass();
+                f60Var.u();
+                z7Var.P0(7);
                 break;
             default:
-                w7 w7Var4 = this.b;
-                frameLayout = (FrameLayout) w7Var4.b;
-                p6Var = w7Var4.I0;
+                z7Var.U0(true);
+                org.telegram.messenger.k5.o(null, 2131753912, new fc((FrameLayout) z7Var.b, z7Var.J0), R.raw.saved_messages, 36);
+                f60Var.u();
                 break;
         }
-        org.telegram.ui.Cells.f1.s(frameLayout, p6Var, this.c, false);
     }
 }

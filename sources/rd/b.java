@@ -2,67 +2,85 @@ package rd;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b implements Iterator {
-    public final String a;
-    public int b;
-    public int c;
-    public int d;
+    public final /* synthetic */ int a = 0;
+    public final int b;
+    public final int c;
+    public boolean d;
     public int e;
 
-    public b(String str) {
-        this.a = str;
+    public b(char c2, char c10, int i3) {
+        boolean z10 = false;
+        this.b = i3;
+        this.c = c10;
+        if (i3 <= 0 ? j.f(c2, c10) >= 0 : j.f(c2, c10) <= 0) {
+            z10 = true;
+        }
+        this.d = z10;
+        this.e = z10 ? c2 : c10;
     }
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        int i10;
-        int i11;
-        int i12 = this.b;
-        if (i12 != 0) {
-            return i12 == 1;
+        switch (this.a) {
         }
-        if (this.e < 0) {
-            this.b = 2;
-            return false;
-        }
-        String str = this.a;
-        int length = str.length();
-        int length2 = str.length();
-        for (int i13 = this.c; i13 < length2; i13++) {
-            char charAt = str.charAt(i13);
-            if (charAt == '\n' || charAt == '\r') {
-                i10 = (charAt == '\r' && (i11 = i13 + 1) < str.length() && str.charAt(i11) == '\n') ? 2 : 1;
-                length = i13;
-                this.b = 1;
-                this.e = i10;
-                this.d = length;
-                return true;
-            }
-        }
-        i10 = -1;
-        this.b = 1;
-        this.e = i10;
-        this.d = length;
-        return true;
+        return this.d;
     }
 
     @Override // java.util.Iterator
     public final Object next() {
-        if (!hasNext()) {
+        switch (this.a) {
+            case 0:
+                int i3 = this.e;
+                if (i3 != this.c) {
+                    this.e = this.b + i3;
+                } else {
+                    if (!this.d) {
+                        throw new NoSuchElementException();
+                    }
+                    this.d = false;
+                }
+                return Character.valueOf((char) i3);
+            default:
+                return Integer.valueOf(nextInt());
+        }
+    }
+
+    public int nextInt() {
+        int i3 = this.e;
+        if (i3 != this.c) {
+            this.e = this.b + i3;
+            return i3;
+        }
+        if (!this.d) {
             throw new NoSuchElementException();
         }
-        this.b = 0;
-        int i10 = this.d;
-        int i11 = this.c;
-        this.c = this.e + i10;
-        return this.a.subSequence(i11, i10).toString();
+        this.d = false;
+        return i3;
     }
 
     @Override // java.util.Iterator
     public final void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            default:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+        }
+    }
+
+    public b(int i3, int i10, int i11) {
+        this.b = i11;
+        this.c = i10;
+        boolean z10 = false;
+        if (i11 <= 0 ? i3 >= i10 : i3 <= i10) {
+            z10 = true;
+        }
+        this.d = z10;
+        this.e = z10 ? i3 : i10;
     }
 }

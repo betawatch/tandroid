@@ -1,33 +1,27 @@
 package db;
 
-import android.util.Log;
-import ld.p;
+import android.os.Build;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends ed.j implements p {
-    public /* synthetic */ Object a;
+public final class c implements ma.d {
+    public static final c a = new c();
+    public static final ma.c b = ma.c.c("packageName");
+    public static final ma.c c = ma.c.c("versionName");
+    public static final ma.c d = ma.c.c("appBuildVersion");
+    public static final ma.c e = ma.c.c("deviceManufacturer");
+    public static final ma.c f = ma.c.c("currentProcessDetails");
+    public static final ma.c g = ma.c.c("appProcessDetails");
 
-    @Override // ed.a
-    public final cd.c create(Object obj, cd.c cVar) {
-        c cVar2 = new c(2, cVar);
-        cVar2.a = obj;
-        return cVar2;
-    }
-
-    @Override // ld.p
-    public final Object invoke(Object obj, Object obj2) {
-        c cVar = (c) create((String) obj, (cd.c) obj2);
-        ad.j jVar = ad.j.a;
-        cVar.invokeSuspend(jVar);
-        return jVar;
-    }
-
-    @Override // ed.a
-    public final Object invokeSuspend(Object obj) {
-        dd.a aVar = dd.a.a;
-        l9.b.b(obj);
-        Log.e("SessionConfigFetcher", "Error failing to fetch the remote configs: " + ((String) this.a));
-        return ad.j.a;
+    @Override // ma.a
+    public final void a(Object obj, Object obj2) {
+        a aVar = (a) obj;
+        ma.e eVar = (ma.e) obj2;
+        eVar.a(b, aVar.a);
+        eVar.a(c, aVar.b);
+        eVar.a(d, aVar.c);
+        eVar.a(e, Build.MANUFACTURER);
+        eVar.a(f, aVar.d);
+        eVar.a(g, aVar.e);
     }
 }

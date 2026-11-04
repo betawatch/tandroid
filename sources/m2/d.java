@@ -1,29 +1,27 @@
 package m2;
 
-import b2.x;
-import e9.n0;
-import java.util.ArrayList;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d {
-    public final x a;
-    public final n0 b;
-    public final s c;
-    public final String d;
-    public final ArrayList e;
-    public final ArrayList f;
-    public final ArrayList g;
-    public final ArrayList h;
+public final class d extends ContentObserver {
+    public final ContentResolver a;
+    public final Uri b;
+    public final /* synthetic */ e c;
 
-    public d(x xVar, ArrayList arrayList, s sVar, String str, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5) {
-        this.a = xVar;
-        this.b = n0.u(arrayList);
-        this.c = sVar;
-        this.d = str;
-        this.e = arrayList2;
-        this.f = arrayList3;
-        this.g = arrayList4;
-        this.h = arrayList5;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(e eVar, Handler handler, ContentResolver contentResolver, Uri uri) {
+        super(handler);
+        this.c = eVar;
+        this.a = contentResolver;
+        this.b = uri;
+    }
+
+    @Override // android.database.ContentObserver
+    public final void onChange(boolean z10) {
+        this.c.c();
     }
 }

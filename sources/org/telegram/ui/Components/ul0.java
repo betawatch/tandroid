@@ -1,27 +1,16 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ul0 {
-    public static final ul0 a;
-    public static final ul0 b;
-    public static final /* synthetic */ ul0[] c;
+public final class ul0 extends u4.k {
+    public final /* synthetic */ org.telegram.ui.cw F;
 
-    static {
-        ul0 ul0Var = new ul0("LINE", 0);
-        a = ul0Var;
-        ul0 ul0Var2 = new ul0("TAB", 1);
-        b = ul0Var2;
-        c = new ul0[]{ul0Var, ul0Var2};
+    public ul0(org.telegram.ui.cw cwVar) {
+        this.F = cwVar;
     }
 
-    public static ul0 valueOf(String str) {
-        return (ul0) Enum.valueOf(ul0.class, str);
-    }
-
-    public static ul0[] values() {
-        return (ul0[]) c.clone();
+    @Override // u4.k
+    public final void P(u4.d1 d1Var) {
+        this.F.invalidate();
     }
 }

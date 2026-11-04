@@ -1,159 +1,172 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_iv;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements View.OnClickListener {
+public final /* synthetic */ class c implements org.telegram.messenger.ic, org.telegram.ui.ActionBar.p1, ab0, ya0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g0 b;
 
-    public /* synthetic */ c(g0 g0Var, int i10) {
-        this.a = i10;
-        this.b = g0Var;
+    public /* synthetic */ c(int i3) {
+        this.a = i3;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        final int i11 = 0;
-        final int i12 = 1;
-        g0 g0Var = this.b;
-        switch (i10) {
-            case 0:
-                g0Var.dismiss();
-                break;
-            case 1:
-                org.telegram.ui.Cells.m3 m3Var = g0Var.s2;
-                org.telegram.messenger.i0.v1(m3Var.d);
-                g0Var.A2 = m3Var.getText().toString();
-                g0Var.v1();
-                g0Var.u1(true);
-                g0Var.p1();
-                break;
-            case 2:
-                if (g0Var.c2 != null) {
-                    TL_iv.RichMessage l1 = g0Var.l1();
-                    if (l1 != null) {
-                        g0Var.c2.a(l1);
-                    }
-                } else if (g0Var.b2 != null && g0Var.m1() != null) {
-                    g0Var.b2.a(g0Var.m1());
-                }
-                g0Var.dismiss();
-                break;
-            case 3:
-                g0Var.dismiss();
-                break;
+    @Override // org.telegram.ui.Components.ya0
+    public String e(int i3) {
+        switch (this.a) {
             case 4:
-                g0Var.H2 = false;
-                g0Var.X0();
-                g0Var.G2.O(true);
-                g0Var.I0();
-                break;
+                if (i3 == 0) {
+                    return org.telegram.messenger.bd.M0(2131748539, null);
+                }
+                Calendar calendar = Calendar.getInstance();
+                int i10 = calendar.get(1);
+                calendar.add(6, i3);
+                long timeInMillis = calendar.getTimeInMillis();
+                if (calendar.get(1) != i10) {
+                    return org.telegram.messenger.bd.E0().y0().format(timeInMillis);
+                }
+                return org.telegram.messenger.bd.E0().A0().format(timeInMillis) + ", " + org.telegram.messenger.bd.E0().w0().format(timeInMillis);
             case 5:
-                final g0 g0Var2 = this.b;
-                z60 F = z60.F(g0Var2.c, g0Var2.I0, view);
-                F.X = org.telegram.messenger.i0.L(450.0f);
-                F.t = false;
-                F.Y = true;
-                ScrollView scrollView = new ScrollView(g0Var2.getContext());
-                LinearLayout linearLayout = new LinearLayout(g0Var2.getContext());
-                linearLayout.setOrientation(1);
-                scrollView.addView(linearLayout);
-                F.q(scrollView);
-                ArrayList o10 = org.telegram.messenger.u10.o(null);
-                ArrayList n10 = org.telegram.messenger.u10.n();
-                if (!TextUtils.isEmpty(g0Var2.k2)) {
-                    g0Var2.g1(F, linearLayout, true, n31.K0(n31.O0(g0Var2.k2, null, null)), null);
+                if (i3 == 0) {
+                    return org.telegram.messenger.bd.M0(2131748539, null);
                 }
-                int size = o10.size();
-                int i13 = 0;
-                while (i13 < size) {
-                    int i14 = i13 + 1;
-                    final org.telegram.messenger.n10 n10Var = (org.telegram.messenger.n10) o10.get(i13);
-                    if (!TextUtils.equals(n10Var.a, g0Var2.k2)) {
-                        g0Var2.g1(F, linearLayout, false, n10Var.b, new Runnable() { // from class: org.telegram.ui.Components.g
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i11) {
-                                    case 0:
-                                        g0 g0Var3 = g0Var2;
-                                        g0Var3.h1();
-                                        String str = n10Var.a;
-                                        g0Var3.k2 = str;
-                                        n31.S0(str);
-                                        g0Var3.p1();
-                                        break;
-                                    default:
-                                        g0 g0Var4 = g0Var2;
-                                        g0Var4.h1();
-                                        String str2 = n10Var.a;
-                                        g0Var4.k2 = str2;
-                                        n31.S0(str2);
-                                        g0Var4.p1();
-                                        break;
-                                }
-                            }
-                        });
-                    }
-                    i13 = i14;
+                Calendar calendar2 = Calendar.getInstance();
+                int i11 = calendar2.get(1);
+                calendar2.add(6, i3);
+                long timeInMillis2 = calendar2.getTimeInMillis();
+                int i12 = calendar2.get(1);
+                if (i12 != i11 || i3 >= 7) {
+                    return i12 == i11 ? org.telegram.messenger.bd.E0().w0().format(timeInMillis2) : org.telegram.messenger.bd.E0().y0().format(timeInMillis2);
                 }
-                View h1Var = new org.telegram.ui.ActionBar.h1(g0Var2.getContext(), g0Var2.I0);
-                h1Var.setTag(R.id.fit_width_tag, 1);
-                linearLayout.addView(h1Var, w7.b6.o(-1, 8));
-                int size2 = n10.size();
-                while (i11 < size2) {
-                    Object obj = n10.get(i11);
-                    i11++;
-                    final org.telegram.messenger.n10 n10Var2 = (org.telegram.messenger.n10) obj;
-                    g0Var2.g1(F, linearLayout, TextUtils.equals(n10Var2.a, g0Var2.k2), n10Var2.b, new Runnable() { // from class: org.telegram.ui.Components.g
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i12) {
-                                case 0:
-                                    g0 g0Var3 = g0Var2;
-                                    g0Var3.h1();
-                                    String str = n10Var2.a;
-                                    g0Var3.k2 = str;
-                                    n31.S0(str);
-                                    g0Var3.p1();
-                                    break;
-                                default:
-                                    g0 g0Var4 = g0Var2;
-                                    g0Var4.h1();
-                                    String str2 = n10Var2.a;
-                                    g0Var4.k2 = str2;
-                                    n31.S0(str2);
-                                    g0Var4.p1();
-                                    break;
-                            }
-                        }
-                    });
-                }
-                F.Z();
-                break;
+                return org.telegram.messenger.bd.E0().A0().format(timeInMillis2) + ", " + org.telegram.messenger.bd.E0().w0().format(timeInMillis2);
             case 6:
-                g0.d1(g0Var, view);
-                break;
+                return String.format("%02d", Integer.valueOf(i3));
             case 7:
-                if (!g0Var.J2) {
-                    org.telegram.messenger.i0.g(g0Var.m1());
-                    break;
-                }
-                break;
+                return String.format("%02d", Integer.valueOf(i3));
             case 8:
-                g0Var.dismiss();
+                return String.format("%02d", Integer.valueOf(i3));
+            case 9:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 10:
+                Calendar calendar3 = Calendar.getInstance();
+                calendar3.set(5, 1);
+                calendar3.set(2, i3);
+                return calendar3.getDisplayName(2, 1, Locale.getDefault());
+            case 11:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 12:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 13:
+                if (i3 == 0) {
+                    return org.telegram.messenger.bd.M0(2131748539, null);
+                }
+                Calendar calendar4 = Calendar.getInstance();
+                int i13 = calendar4.get(1);
+                calendar4.add(6, i3);
+                long timeInMillis3 = calendar4.getTimeInMillis();
+                return calendar4.get(1) == i13 ? org.telegram.messenger.bd.E0().w0().format(timeInMillis3) : org.telegram.messenger.bd.E0().y0().format(timeInMillis3);
+            case 14:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 15:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 16:
+            case 23:
+            case 27:
+            default:
+                switch (i3) {
+                    case 0:
+                        return org.telegram.messenger.bd.M0(2131749094, null);
+                    case 1:
+                        return org.telegram.messenger.bd.M0(2131750830, null);
+                    case 2:
+                        return org.telegram.messenger.bd.M0(2131748691, null);
+                    case 3:
+                        return org.telegram.messenger.bd.M0(2131754173, null);
+                    case 4:
+                        return org.telegram.messenger.bd.M0(2131748670, null);
+                    case 5:
+                        return org.telegram.messenger.bd.M0(2131749072, null);
+                    case 6:
+                        return org.telegram.messenger.bd.M0(2131749074, null);
+                    case 7:
+                        return org.telegram.messenger.bd.M0(2131753895, null);
+                    case 8:
+                        return org.telegram.messenger.bd.M0(2131745575, null);
+                    case 9:
+                        return org.telegram.messenger.bd.M0(2131747838, null);
+                    case 10:
+                        return org.telegram.messenger.bd.M0(2131747843, null);
+                    default:
+                        return org.telegram.messenger.bd.M0(2131751606, null);
+                }
+            case 17:
+                return org.telegram.messenger.bd.G(i3 + 1, "Times", new Object[0]);
+            case 18:
+                return org.telegram.messenger.bd.G(i3 + 1, "Minutes", new Object[0]);
+            case 19:
+                return org.telegram.messenger.bd.M0(2131747916, null);
+            case 20:
+                if (i3 == 0) {
+                    return org.telegram.messenger.bd.M0(2131748539, null);
+                }
+                Calendar calendar5 = Calendar.getInstance();
+                int i14 = calendar5.get(1);
+                calendar5.add(6, i3);
+                long timeInMillis4 = calendar5.getTimeInMillis();
+                if (calendar5.get(1) != i14) {
+                    return org.telegram.messenger.bd.E0().y0().format(timeInMillis4);
+                }
+                return org.telegram.messenger.bd.E0().A0().format(timeInMillis4) + ", " + org.telegram.messenger.bd.E0().w0().format(timeInMillis4);
+            case 21:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 22:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 24:
+                boolean z10 = org.telegram.messenger.bd.c0;
+                String format = String.format("%02d", Integer.valueOf((i3 % 12 != 0 || z10) ? i3 % (z10 ? 24 : 12) : 12));
+                return i3 >= 24 ? org.telegram.messenger.bd.a0(null, null, 2131752747, format) : format;
+            case 25:
+                return String.format("%02d", Integer.valueOf(i3));
+            case 26:
+                return i3 == 0 ? org.telegram.messenger.bd.M0(2131745371, null) : (i3 < 1 || i3 >= 16) ? i3 == 16 ? org.telegram.messenger.bd.c0(30) : i3 == 17 ? org.telegram.messenger.bd.c0(60) : i3 == 18 ? org.telegram.messenger.bd.c0(3600) : i3 == 19 ? org.telegram.messenger.bd.c0(86400) : i3 == 20 ? org.telegram.messenger.bd.c0(604800) : "" : org.telegram.messenger.bd.c0(i3);
+            case 28:
+                return k2.p1.i(i3, "");
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
+            case 2:
+                s1Var.dismiss();
+                break;
+            case 16:
+                s1Var.dismiss();
+                break;
+            case 23:
+                s1Var.dismiss();
                 break;
             default:
-                g0Var.q1(0, 0, true);
-                g0Var.dismiss();
+                Pattern pattern = t4.a;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ab0
+    public void l(cb0 cb0Var, int i3) {
+        Pattern pattern = t4.a;
+    }
+
+    @Override // org.telegram.messenger.ic
+    public void s(Exception exc) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.a8.g(exc, true);
+                break;
+            default:
+                org.telegram.messenger.a8.g(exc, true);
                 break;
         }
     }

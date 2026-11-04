@@ -1,95 +1,44 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class or implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vr b;
+public final class or extends View {
+    public final Paint a;
+    public final Matrix b;
+    public LinearGradient c;
+    public int d;
+    public float e;
+    public float f;
 
-    public /* synthetic */ or(vr vrVar, int i10) {
-        this.a = i10;
-        this.b = vrVar;
+    public or(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new Matrix();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Context context;
-        boolean z10;
-        CharSequence charSequence;
-        int i10 = this.a;
-        vr vrVar = this.b;
-        boolean z11 = false;
-        switch (i10) {
-            case 0:
-                vrVar.i1(false);
-                break;
-            default:
-                Context context2 = vrVar.getContext();
-                org.telegram.ui.ActionBar.p6 p6Var = vrVar.I0;
-                int i11 = vrVar.a;
-                long j10 = vrVar.i2;
-                ArrayList<Long> arrayList = vrVar.j2.joined_chat_ids;
-                pr prVar = new pr(vrVar, 5);
-                Pattern pattern = s4.a;
-                LinearLayout f7 = org.telegram.messenger.m5.f(context2, 1);
-                org.telegram.ui.ActionBar.x1[] x1VarArr = new org.telegram.ui.ActionBar.x1[1];
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context2, p6Var);
-                Object obj = null;
-                String L0 = org.telegram.messenger.dd.L0(2131751959, null);
-                org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-                x1Var.R = L0;
-                x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.dd.G(arrayList.size(), "CommunityBanWillRemoveFromChats", org.telegram.messenger.o5.s(i11, j10)));
-                alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
-                alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
-                alertDialog$Builder.o(f7);
-                int size = arrayList.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    Long l4 = arrayList.get(i12);
-                    i12++;
-                    Long l10 = l4;
-                    long longValue = l10.longValue();
-                    TLRPC.Chat L02 = org.telegram.messenger.wp.r1(i11).L0(l10);
-                    TLRPC.ChatFull M0 = org.telegram.messenger.wp.r1(i11).M0(longValue);
-                    if (L02 == null) {
-                        obj = null;
-                    } else {
-                        org.telegram.ui.ActionBar.x1 x1Var2 = x1Var;
-                        jg.a3 a3Var = new jg.a3(context2, p6Var, z11);
-                        ((TextView) a3Var.d).setText(org.telegram.messenger.o5.m(L02));
-                        TextView textView = (TextView) a3Var.b;
-                        if (M0 != null) {
-                            context = context2;
-                            z10 = false;
-                            charSequence = org.telegram.messenger.dd.G(M0.participants_count, "Members", new Object[0]);
-                        } else {
-                            context = context2;
-                            z10 = false;
-                            charSequence = null;
-                        }
-                        textView.setText(charSequence);
-                        ((g9) a3Var.c).e(L02, new r8(L02));
-                        a3Var.setBackground(org.telegram.ui.ActionBar.t6.N0(z10));
-                        a3Var.setOnClickListener(new org.telegram.ui.zn(x1VarArr, prVar, longValue, 2));
-                        f7.addView(a3Var, w7.b6.o(-1, -2));
-                        z11 = z10;
-                        obj = null;
-                        x1Var = x1Var2;
-                        context2 = context;
-                    }
-                }
-                org.telegram.ui.ActionBar.x1 x1Var3 = x1Var;
-                x1VarArr[z11 ? 1 : 0] = x1Var3;
-                x1Var3.show();
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.e + this.f, this.a);
+    }
+
+    public void setColor(int i3) {
+        if (this.d != i3) {
+            this.d = i3;
+            int alpha = Color.alpha(i3);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i3, (alpha * org.telegram.messenger.hs.I3) / org.telegram.messenger.hs.e4), i0.a.o(i3, (alpha * org.telegram.messenger.hs.W2) / org.telegram.messenger.hs.e4), i0.a.o(i3, (alpha * org.telegram.messenger.hs.a2) / org.telegram.messenger.hs.e4), i0.a.o(i3, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+            this.c = linearGradient;
+            this.a.setShader(linearGradient);
+            this.c.setLocalMatrix(this.b);
+            invalidate();
         }
     }
 }

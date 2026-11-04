@@ -1,24 +1,23 @@
 package com.google.android.recaptcha.internal;
 
-import ad.c;
-import ad.h;
-import ib.a;
-import l9.b;
+import b8.hb;
+import b8.ib;
+import dd.c;
 import org.telegram.tgnet.TLObject;
-import td.e0;
+import wd.b0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
-        int i10 = zzby.zza;
-        this.zza = a.a(zzie.zza);
+        int i3 = zzby.zza;
+        this.zza = hb.b(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
-        return (zzhm) ((h) zzifVar.zza).a();
+        return (zzhm) zzifVar.zza.getValue();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x002f  */
@@ -26,40 +25,40 @@ public final class zzif {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, cd.c cVar) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, fd.c cVar) {
         zzic zzicVar;
-        int i10;
+        int i3;
         if (cVar instanceof zzic) {
             zzicVar = (zzic) cVar;
-            int i11 = zzicVar.zzc;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                zzicVar.zzc = i11 - TLObject.FLAG_31;
+            int i10 = zzicVar.zzc;
+            if ((i10 & TLObject.FLAG_31) != 0) {
+                zzicVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzicVar.zza;
-                dd.a aVar = dd.a.a;
-                i10 = zzicVar.zzc;
-                if (i10 == 0) {
-                    if (i10 != 1) {
+                gd.a aVar = gd.a.a;
+                i3 = zzicVar.zzc;
+                if (i3 == 0) {
+                    if (i3 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b.b(obj);
+                    ib.b(obj);
                     return obj;
                 }
-                b.b(obj);
+                ib.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
-                Object f7 = e0.f(zzidVar, zzicVar);
-                return f7 == aVar ? aVar : f7;
+                Object e10 = b0.e(zzidVar, zzicVar);
+                return e10 == aVar ? aVar : e10;
             }
         }
         zzicVar = new zzic(zzifVar, cVar);
         Object obj2 = zzicVar.zza;
-        dd.a aVar2 = dd.a.a;
-        i10 = zzicVar.zzc;
-        if (i10 == 0) {
+        gd.a aVar2 = gd.a.a;
+        i3 = zzicVar.zzc;
+        if (i3 == 0) {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, cd.c cVar) {
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, fd.c cVar) {
         return zzc(this, zzcyVar, zzyeVar, cVar);
     }
 }

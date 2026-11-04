@@ -1,50 +1,36 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.voip.Instance;
-import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r0 implements NativeInstance.AudioLevelsCallback, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback, Instance.OnStateUpdatedListener {
+public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ r0(VoIPService voIPService, int i10, int i11) {
-        this.a = i11;
-        this.b = voIPService;
-        this.c = i10;
+    public /* synthetic */ r0(Object obj, Object obj2, Object obj3, boolean z10, int i3) {
+        this.a = i3;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z10;
     }
 
-    @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
-    public void onStateUpdated(int i10, boolean z10) {
-        this.b.lambda$createGroupInstance$80(this.c, i10, z10);
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
-    public void run(long j10) {
-        this.b.lambda$createGroupInstance$79(this.c, j10);
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
-    public void run(long j10, long j11, int i10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 2:
-                this.b.lambda$createGroupInstance$75(this.c, j10, j11, i10, i11);
+            case 0:
+                ((VoIPService.5) this.c).lambda$onFrame$0((String) this.d, (VideoSink) this.e, this.b);
                 break;
             default:
-                this.b.lambda$createGroupInstance$77(this.c, j10, j11, i10, i11);
+                ((VoIPService) this.c).lambda$acknowledgeCall$12((TLObject) this.d, (TLRPC.TL_error) this.e, this.b);
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
-    public void run(long j10, int[] iArr) {
-        this.b.lambda$createGroupInstance$70(this.c, j10, iArr);
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
-        this.b.lambda$createGroupInstance$68(this.c, iArr, fArr, zArr);
     }
 }

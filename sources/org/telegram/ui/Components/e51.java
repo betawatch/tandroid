@@ -1,55 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class e51 extends MetricAffectingSpan {
-    public final CharSequence a;
-    public final int b;
-    public final int c;
-    public final byte d;
-    public final zz0 e;
+public final /* synthetic */ class e51 implements Executor {
+    public final /* synthetic */ org.telegram.messenger.q5 a;
 
-    public e51(CharSequence charSequence, int i10, int i11, byte b10, zz0 zz0Var) {
-        this.a = charSequence;
-        this.b = i10;
-        this.c = i11;
-        this.d = b10;
-        this.e = zz0Var;
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.i0.L(org.telegram.messenger.uz.W0 - 1));
-        byte b10 = this.d;
-        if (b10 == 2) {
-            textPaint.setColor(-1);
-        } else if (b10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Tc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Sc, false));
-        }
-        zz0 zz0Var = this.e;
-        if (zz0Var != null) {
-            zz0Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-            textPaint.setUnderlineText(false);
-        }
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.i0.L(org.telegram.messenger.uz.W0 - 1));
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        zz0 zz0Var = this.e;
-        if (zz0Var != null) {
-            zz0Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-        }
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.postRunnable(runnable);
     }
 }

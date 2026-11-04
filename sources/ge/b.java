@@ -1,105 +1,53 @@
 package ge;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import d1.e;
+import b8.ib;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import kotlin.jvm.internal.j;
+import v0.c;
+import v0.h;
+import w0.d;
+import wd.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b {
-    public int a;
-    public float b;
-    public float c;
-    public Object d;
-    public Object e;
+public final class b implements OnCompleteListener, h {
+    public final /* synthetic */ m a;
 
-    public b(a aVar) {
-        this.d = aVar;
+    public /* synthetic */ b(m mVar) {
+        this.a = mVar;
     }
 
-    public boolean a(View view, MotionEvent motionEvent) {
-        a aVar = (a) this.d;
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        if (action == 0) {
-            b(view, x10, y3);
-            if (aVar.V0(x10, y3)) {
-                this.a |= 1;
-                this.b = x10;
-                this.c = y3;
-                aVar.t0();
-                if (aVar.I1() && view != null) {
-                    if (((e) this.e) != null) {
-                        throw new AssertionError();
-                    }
-                    this.a |= 2;
-                    e eVar = new e(13, this, view);
-                    this.e = eVar;
-                    view.postDelayed(eVar, aVar.getLongPressDuration());
-                    return true;
-                }
-            }
+    @Override // v0.h
+    public void a(Object obj) {
+        d e10 = (d) obj;
+        j.e(e10, "e");
+        m mVar = this.a;
+        if (mVar.w()) {
+            mVar.resumeWith(ib.a(e10));
         }
-        if (action == 1) {
-            int i10 = this.a;
-            if ((i10 & 1) != 0) {
-                if ((i10 & 4) != 0) {
-                    aVar.m(view, x10, y3);
-                    this.a &= -5;
-                } else {
-                    aVar.N(x10, y3);
-                    if ((this.a & 256) == 0 && view != null) {
-                        view.playSoundEffect(0);
-                    }
-                }
-                b(view, x10, y3);
-                return true;
-            }
-        } else if (action != 2) {
-            if (action == 3 && (this.a & 1) != 0) {
-                b(view, x10, y3);
-                return true;
-            }
-        } else if ((this.a & 1) != 0) {
-            aVar.r(x10, y3);
-            if ((this.a & 4) != 0) {
-                aVar.o1(view, x10, y3);
-                return true;
-            }
-            if (aVar.j0() && Math.max(Math.abs(this.b - x10), Math.abs(this.c - y3)) > ViewConfiguration.get(view.getContext()).getScaledTouchSlop() * 1.89f) {
-                b(view, x10, y3);
-                return true;
-            }
-        }
-        return (this.a & 1) != 0;
     }
 
-    public void b(View view, float f7, float f10) {
-        a aVar = (a) this.d;
-        int i10 = this.a;
-        if ((i10 & 2) != 0) {
-            this.a = i10 & (-3);
-            e eVar = (e) this.e;
-            if (eVar == null) {
-                throw new AssertionError();
-            }
-            view.removeCallbacks(eVar);
-            this.e = null;
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        Exception exception = task.getException();
+        m mVar = this.a;
+        if (exception != null) {
+            mVar.resumeWith(ib.a(exception));
+        } else if (task.isCanceled()) {
+            mVar.n(null);
+        } else {
+            mVar.resumeWith(task.getResult());
         }
-        int i11 = this.a;
-        if ((i11 & 8) != 0) {
-            this.a = i11 & (-9);
-            aVar.u(view, f7, f10);
-        }
-        if ((this.a & 4) != 0) {
-            aVar.m(view, f7, f10);
-            this.a &= -5;
-        }
-        if ((this.a & 1) != 0) {
-            aVar.G0();
-            this.a &= -2;
+    }
+
+    @Override // v0.h
+    public void onResult(Object obj) {
+        c result = (c) obj;
+        j.e(result, "result");
+        m mVar = this.a;
+        if (mVar.w()) {
+            mVar.resumeWith(result);
         }
     }
 }

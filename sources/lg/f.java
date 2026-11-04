@@ -1,114 +1,90 @@
 package lg;
 
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.animation.PathInterpolator;
-import org.telegram.messenger.vi;
-import org.telegram.ui.ActionBar.l1;
-import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Cells.z9;
-import sg.k0;
-import sg.o0;
+import java.util.ArrayList;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class f extends GestureDetector.SimpleOnGestureListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class f {
+    public static volatile f[] g = new f[4];
+    public static final Object[] h = new Object[4];
+    public final int a;
+    public long b;
+    public TL_account.connectedBots c;
+    public final ArrayList d = new ArrayList();
+    public boolean e;
+    public boolean f;
 
-    public /* synthetic */ f(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    static {
+        for (int i3 = 0; i3 < 4; i3++) {
+            h[i3] = new Object();
+        }
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public boolean onDoubleTap(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 2:
-                y9 y9Var = (y9) this.b;
-                int i10 = y9Var.Y5;
-                boolean z10 = false;
-                if (y9Var.kd == 2 && vi.b0(i10).Q() != null) {
-                    boolean G5 = y9Var.getMessageObject().G5(o0.b(vi.b0(i10).Q()), false);
-                    y9Var.s3(y9Var.getMessageObject(), null, false, false, false, false);
-                    y9Var.requestLayout();
-                    k0.b(false);
-                    z10 = true;
-                    if (G5) {
-                        z9 z9Var = y9Var.ld;
-                        k0.d(z9Var.x, null, z9Var.n[1], null, motionEvent.getX(), motionEvent.getY(), o0.b(vi.b0(i10).Q()), y9Var.Y5, 0);
-                        k0.f();
-                    }
-                    y9Var.getViewTreeObserver().addOnPreDrawListener(new l1(this, 1));
+    public f(int i3) {
+        this.a = i3;
+    }
+
+    public static f a(int i3) {
+        f fVar;
+        f fVar2 = g[i3];
+        if (fVar2 != null) {
+            return fVar2;
+        }
+        synchronized (h[i3]) {
+            try {
+                fVar = g[i3];
+                if (fVar == null) {
+                    f[] fVarArr = g;
+                    f fVar3 = new f(i3);
+                    fVarArr[i3] = fVar3;
+                    fVar = fVar3;
                 }
-                return z10;
-            default:
-                return super.onDoubleTap(motionEvent);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return fVar;
+    }
+
+    public final void b() {
+        this.f = false;
+        c(null);
+    }
+
+    public final void c(u10 u10Var) {
+        boolean z10;
+        if (u10Var != null) {
+            this.d.add(u10Var);
+        }
+        if (this.e) {
+            return;
+        }
+        if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
+            this.e = true;
+            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new ci.d0(this, 15));
+        } else if (z10) {
+            d();
         }
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public boolean onDown(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                g gVar = (g) this.b;
-                gVar.n = true;
-                gVar.b();
-                return true;
-            case 1:
-                return true;
-            default:
-                return super.onDown(motionEvent);
-        }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                h hVar = ((g) this.b).a;
-                hVar.d -= f7 * 0.5f;
-                hVar.i -= f10 * 0.05f;
-                return true;
-            default:
-                return super.onScroll(motionEvent, motionEvent2, f7, f10);
-        }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public boolean onSingleTapUp(MotionEvent motionEvent) {
-        int i10 = this.a;
-        View view = this.b;
-        switch (i10) {
-            case 0:
-                g gVar = (g) view;
-                h hVar = gVar.a;
-                if (Math.abs(hVar.d) <= 10.0f) {
-                    float max = Math.max(1.0f, gVar.getWidth() / 2.0f);
-                    float x10 = ((max - motionEvent.getX()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
-                    float y3 = ((max - motionEvent.getY()) * ((((float) Math.random()) * 30.0f) + 40.0f)) / max;
-                    gVar.b();
-                    float f7 = hVar.d;
-                    float f10 = hVar.i;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    gVar.d = ofFloat;
-                    ofFloat.setDuration(220L);
-                    gVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
-                    gVar.d.addUpdateListener(new bg.j(this, f7, x10, f10, y3, 1));
-                    gVar.d.addListener(new bg.e(this, 9));
-                    gVar.d.start();
-                    break;
+    public final void d() {
+        int i3 = 0;
+        while (true) {
+            ArrayList arrayList = this.d;
+            if (i3 >= arrayList.size()) {
+                arrayList.clear();
+                hs.f(this.a).k(hs.Z3, new Object[0]);
+                return;
+            } else {
+                if (arrayList.get(i3) != null) {
+                    ((u10) arrayList.get(i3)).a(this.c);
                 }
-                break;
-            case 1:
-                oh.o oVar = (oh.o) view;
-                if (!oVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (oVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= oVar.e.f.getRight() || oVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= oVar.e.f.getBottom())) {
-                    oVar.e.e(false);
-                }
-                break;
+                i3++;
+            }
         }
-        return super.onSingleTapUp(motionEvent);
     }
 }

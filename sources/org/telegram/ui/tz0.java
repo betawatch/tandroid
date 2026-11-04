@@ -1,45 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tz0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.video.a b;
-    public final /* synthetic */ org.telegram.ui.Components.cc c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.Components.so0 e;
+public final class tz0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ g11 d;
 
-    public /* synthetic */ tz0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.cc ccVar, Context context, org.telegram.ui.Components.so0 so0Var, int i10) {
-        this.a = i10;
-        this.b = aVar;
-        this.c = ccVar;
-        this.d = context;
-        this.e = so0Var;
+    public /* synthetic */ tz0(g11 g11Var, int i3) {
+        this.c = i3;
+        this.d = g11Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        org.telegram.ui.Components.so0 so0Var = this.e;
-        Context context = this.d;
-        org.telegram.ui.Components.cc ccVar = this.c;
-        org.telegram.messenger.video.a aVar = this.b;
-        int i11 = 2;
-        switch (i10) {
+    @Override // g.p
+    public final int i(int i3) {
+        int i10;
+        ArrayList arrayList;
+        int i11;
+        switch (this.c) {
             case 0:
-                aVar.run();
-                ccVar.c(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131754487, null), -1, 2, new dv(context, i11), so0Var)).j();
-                break;
-            case 1:
-                aVar.run();
-                ccVar.c(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131754487, null), -1, 2, new dv(context, 5), so0Var)).j();
-                break;
+                g11 g11Var = this.d;
+                return (g11Var.x0.indexOfKey(i3) >= 0 || g11Var.A0.indexOfKey(i3) >= 0 || i3 == g11Var.f || i3 == g11Var.E || i3 == g11Var.n || i3 == g11Var.h || i3 == g11Var.w || i3 == g11Var.a || i3 == g11Var.y) ? g11Var.s0.J : ((i3 < g11Var.F || i3 >= g11Var.G) && !g11Var.R) ? 5 : 8;
             default:
-                aVar.run();
-                ccVar.c(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131754487, null), -1, 2, new dv(context, 6), so0Var)).j();
-                break;
+                g11 g11Var2 = this.d;
+                r01 r01Var = g11Var2.r0;
+                int d = r01Var.d(i3);
+                if (d == 6) {
+                    return g11Var2.s0.J;
+                }
+                if (d != 5) {
+                    g11 g11Var3 = r01Var.s;
+                    if (g11Var3.a0 != 14 ? i3 <= (i10 = r01Var.c) || (i3 - i10) - 1 >= g11Var3.E1.size() : (arrayList = g11Var3.D1) == null || i3 < (i11 = r01Var.c) || i3 - i11 >= arrayList.size()) {
+                        return 5;
+                    }
+                }
+                return 8;
         }
     }
 }

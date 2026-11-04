@@ -1,16 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class tr extends s4.j {
-    public final /* synthetic */ vr F;
+import java.util.ArrayList;
 
-    public tr(vr vrVar) {
-        this.F = vrVar;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class tr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ur b;
+
+    public /* synthetic */ tr(ur urVar, int i3) {
+        this.a = i3;
+        this.b = urVar;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.b.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ur urVar = this.b;
+                urVar.c = false;
+                urVar.b.run();
+                ArrayList arrayList = urVar.h;
+                if (arrayList.isEmpty() || System.currentTimeMillis() - urVar.f > 3600000) {
+                    arrayList.clear();
+                    urVar.e = false;
+                    urVar.g = null;
+                    urVar.a();
+                    break;
+                }
+                break;
+            default:
+                this.b.i = false;
+                break;
+        }
     }
 }

@@ -1,45 +1,25 @@
 package l9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
-    public final long a;
-    public final long b;
-    public final long c;
+    public static final a c;
+    public static final a d;
+    public final boolean a;
+    public final Throwable b;
 
-    public a(long j10, long j11, long j12) {
-        this.a = j10;
-        this.b = j11;
-        this.c = j12;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    static {
+        if (o.d) {
+            d = null;
+            c = null;
+        } else {
+            d = new a(null, false);
+            c = new a(null, true);
         }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c) {
-                return true;
-            }
-        }
-        return false;
     }
 
-    public final int hashCode() {
-        long j10 = this.a;
-        long j11 = this.b;
-        int i10 = (((((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003;
-        long j12 = this.c;
-        return i10 ^ ((int) ((j12 >>> 32) ^ j12));
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("StartupTime{epochMillis=");
-        sb2.append(this.a);
-        sb2.append(", elapsedRealtime=");
-        sb2.append(this.b);
-        sb2.append(", uptimeMillis=");
-        return a1.g.q(sb2, this.c, "}");
+    public a(Throwable th2, boolean z10) {
+        this.a = z10;
+        this.b = th2;
     }
 }

@@ -1,36 +1,22 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.r20;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j7 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ r20 d;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class j7 {
+    public final CountDownLatch a = new CountDownLatch(1);
+    public int b;
+    public byte[] c;
+    public WalletEngine2.HttpTransport.HostException d;
 
-    public /* synthetic */ j7(WalletEngine2 walletEngine2, String str, r20 r20Var) {
-        this.b = walletEngine2;
-        this.c = str;
-        this.d = r20Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$previewSignMessage$7(this.d, this.c);
-                break;
-            default:
-                this.b.lambda$getTransactionByHash$39(this.c, this.d);
-                break;
+    public final synchronized void a(byte[] bArr, WalletEngine2.HttpTransport.HostException hostException) {
+        if (this.a.getCount() == 0) {
+            return;
         }
-    }
-
-    public /* synthetic */ j7(WalletEngine2 walletEngine2, r20 r20Var, String str) {
-        this.b = walletEngine2;
-        this.d = r20Var;
-        this.c = str;
+        this.c = bArr;
+        this.d = hostException;
+        this.a.countDown();
     }
 }

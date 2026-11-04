@@ -24,9 +24,9 @@ public final class z7 extends x6 {
     public final boolean tryAdvance(Consumer consumer) {
         Object obj;
         Objects.requireNonNull(consumer);
-        boolean a2 = a();
-        if (!a2) {
-            return a2;
+        boolean a10 = a();
+        if (!a10) {
+            return a10;
         }
         t6 t6Var = (t6) this.h;
         long j10 = this.g;
@@ -34,9 +34,9 @@ public final class z7 extends x6 {
             if (j10 >= t6Var.count()) {
                 throw new IndexOutOfBoundsException(Long.toString(j10));
             }
-            for (int i10 = 0; i10 <= t6Var.c; i10++) {
-                long j11 = t6Var.d[i10];
-                Object[] objArr = t6Var.f[i10];
+            for (int i3 = 0; i3 <= t6Var.c; i3++) {
+                long j11 = t6Var.d[i3];
+                Object[] objArr = t6Var.f[i3];
                 if (j10 < objArr.length + j11) {
                     obj = objArr[(int) (j10 - j11)];
                 }
@@ -49,7 +49,7 @@ public final class z7 extends x6 {
             throw new IndexOutOfBoundsException(Long.toString(j10));
         }
         consumer.x(obj);
-        return a2;
+        return a10;
     }
 
     @Override // j$.util.Spliterator

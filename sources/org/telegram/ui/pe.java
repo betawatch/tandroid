@@ -1,266 +1,28 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pe implements RequestDelegate {
+public final /* synthetic */ class pe implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ wm b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ pe(un unVar, int i10) {
-        this.a = i10;
-        this.b = unVar;
+    public /* synthetic */ pe(wm wmVar, long j10, long j11, int i3) {
+        this.a = i3;
+        this.b = wmVar;
+        this.c = j10;
+        this.d = j11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final un unVar = this.b;
-                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.lf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        boolean z10 = false;
-                        switch (i10) {
-                            case 0:
-                                un.y1(unVar, tLObject);
-                                break;
-                            case 1:
-                                un.t0(unVar, tLObject);
-                                break;
-                            case 2:
-                                un unVar2 = unVar;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) org.telegram.messenger.w0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.cc.a(unVar2)) {
-                                            org.telegram.ui.Components.cc a02 = org.telegram.ui.Components.cc.a0(unVar2);
-                                            if (!unVar2.Y9() && tL_exportedMessageLink.link.contains("/c/")) {
-                                                z10 = true;
-                                            }
-                                            a02.k(z10).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        org.telegram.messenger.f8.g(e, true);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                un unVar3 = unVar;
-                                TLObject tLObject3 = tLObject;
-                                unVar3.E5 = 0;
-                                if (tLObject3 == null && unVar3.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, unVar3.getParentActivity(), unVar3.xa);
-                                    alertDialog$Builder.a.R = org.telegram.messenger.dd.L0(R.string.AppName, null);
-                                    alertDialog$Builder.a.T = org.telegram.messenger.dd.L0(2131751272, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
-                                    unVar3.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = unVar3.Z;
-                                    if (mkVar != null) {
-                                        mkVar.a1(null, null, false);
-                                        unVar3.w9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
+                wm.o0(this.b, this.c, this.d);
                 break;
-            case 1:
-                final int i11 = 1;
-                final un unVar2 = this.b;
-                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.lf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        boolean z10 = false;
-                        switch (i11) {
-                            case 0:
-                                un.y1(unVar2, tLObject);
-                                break;
-                            case 1:
-                                un.t0(unVar2, tLObject);
-                                break;
-                            case 2:
-                                un unVar22 = unVar2;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) org.telegram.messenger.w0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.cc.a(unVar22)) {
-                                            org.telegram.ui.Components.cc a02 = org.telegram.ui.Components.cc.a0(unVar22);
-                                            if (!unVar22.Y9() && tL_exportedMessageLink.link.contains("/c/")) {
-                                                z10 = true;
-                                            }
-                                            a02.k(z10).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        org.telegram.messenger.f8.g(e, true);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                un unVar3 = unVar2;
-                                TLObject tLObject3 = tLObject;
-                                unVar3.E5 = 0;
-                                if (tLObject3 == null && unVar3.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, unVar3.getParentActivity(), unVar3.xa);
-                                    alertDialog$Builder.a.R = org.telegram.messenger.dd.L0(R.string.AppName, null);
-                                    alertDialog$Builder.a.T = org.telegram.messenger.dd.L0(2131751272, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
-                                    unVar3.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = unVar3.Z;
-                                    if (mkVar != null) {
-                                        mkVar.a1(null, null, false);
-                                        unVar3.w9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i12 = 2;
-                final un unVar3 = this.b;
-                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.lf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        boolean z10 = false;
-                        switch (i12) {
-                            case 0:
-                                un.y1(unVar3, tLObject);
-                                break;
-                            case 1:
-                                un.t0(unVar3, tLObject);
-                                break;
-                            case 2:
-                                un unVar22 = unVar3;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) org.telegram.messenger.w0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.cc.a(unVar22)) {
-                                            org.telegram.ui.Components.cc a02 = org.telegram.ui.Components.cc.a0(unVar22);
-                                            if (!unVar22.Y9() && tL_exportedMessageLink.link.contains("/c/")) {
-                                                z10 = true;
-                                            }
-                                            a02.k(z10).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        org.telegram.messenger.f8.g(e, true);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                un unVar32 = unVar3;
-                                TLObject tLObject3 = tLObject;
-                                unVar32.E5 = 0;
-                                if (tLObject3 == null && unVar32.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, unVar32.getParentActivity(), unVar32.xa);
-                                    alertDialog$Builder.a.R = org.telegram.messenger.dd.L0(R.string.AppName, null);
-                                    alertDialog$Builder.a.T = org.telegram.messenger.dd.L0(2131751272, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
-                                    unVar32.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = unVar32.Z;
-                                    if (mkVar != null) {
-                                        mkVar.a1(null, null, false);
-                                        unVar32.w9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i13 = 3;
-                final un unVar4 = this.b;
-                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.lf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        boolean z10 = false;
-                        switch (i13) {
-                            case 0:
-                                un.y1(unVar4, tLObject);
-                                break;
-                            case 1:
-                                un.t0(unVar4, tLObject);
-                                break;
-                            case 2:
-                                un unVar22 = unVar4;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject2;
-                                    try {
-                                        ((ClipboardManager) org.telegram.messenger.w0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.cc.a(unVar22)) {
-                                            org.telegram.ui.Components.cc a02 = org.telegram.ui.Components.cc.a0(unVar22);
-                                            if (!unVar22.Y9() && tL_exportedMessageLink.link.contains("/c/")) {
-                                                z10 = true;
-                                            }
-                                            a02.k(z10).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        org.telegram.messenger.f8.g(e, true);
-                                        return;
-                                    }
-                                }
-                                break;
-                            default:
-                                un unVar32 = unVar4;
-                                TLObject tLObject3 = tLObject;
-                                unVar32.E5 = 0;
-                                if (tLObject3 == null && unVar32.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, unVar32.getParentActivity(), unVar32.xa);
-                                    alertDialog$Builder.a.R = org.telegram.messenger.dd.L0(R.string.AppName, null);
-                                    alertDialog$Builder.a.T = org.telegram.messenger.dd.L0(2131751272, null);
-                                    alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747847, null), null);
-                                    unVar32.showDialog(alertDialog$Builder.a);
-                                    mk mkVar = unVar32.Z;
-                                    if (mkVar != null) {
-                                        mkVar.a1(null, null, false);
-                                        unVar32.w9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                un unVar5 = this.b;
-                if (tL_error == null) {
-                    unVar5.getMessagesController().L3((TLRPC.Updates) tLObject, false);
-                    break;
-                } else {
-                    unVar5.getClass();
-                    break;
-                }
             default:
-                un.f1(this.b, tLObject);
+                wm.F1(this.b, this.c, this.d);
                 break;
         }
     }

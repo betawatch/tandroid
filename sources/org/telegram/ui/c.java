@@ -3,37 +3,37 @@ package org.telegram.ui;
 import android.content.Intent;
 import android.net.Uri;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class c implements org.telegram.ui.ActionBar.p1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ c(f fVar, int i10) {
-        this.a = i10;
-        this.b = fVar;
+    public /* synthetic */ c(g gVar, int i3) {
+        this.a = i3;
+        this.b = gVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
         switch (this.a) {
             case 0:
-                f fVar = this.b;
+                g gVar = this.b;
                 try {
                     Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.w0.b.getPackageName()));
-                    fVar.getParentActivity().startActivity(intent);
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    gVar.getParentActivity().startActivity(intent);
                     break;
-                } catch (Exception e) {
-                    org.telegram.messenger.f8.g(e, true);
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
                     return;
                 }
             default:
-                f fVar2 = this.b;
-                fVar2.getClass();
-                gf0 gf0Var = new gf0();
-                gf0Var.F = 2;
-                fVar2.presentFragment(gf0Var, true);
+                g gVar2 = this.b;
+                gVar2.getClass();
+                xd0 xd0Var = new xd0();
+                xd0Var.G = 2;
+                gVar2.presentFragment(xd0Var, true);
                 break;
         }
     }

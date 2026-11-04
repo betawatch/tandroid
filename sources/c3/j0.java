@@ -1,36 +1,17 @@
 package c3;
 
-import java.util.Arrays;
+import d2.a2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j0 {
-    public final int a;
-    public final byte[] b;
-    public final int c;
-    public final int d;
+public interface j0 {
+    public static final v7.s i = new v7.s(4);
 
-    public j0(int i10, int i11, int i12, byte[] bArr) {
-        this.a = i10;
-        this.b = bArr;
-        this.c = i11;
-        this.d = i12;
-    }
+    void a0();
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && j0.class == obj.getClass()) {
-            j0 j0Var = (j0) obj;
-            if (this.a == j0Var.a && this.c == j0Var.c && this.d == j0Var.d && Arrays.equals(this.b, j0Var.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    void f(a2 a2Var);
 
-    public final int hashCode() {
-        return ((((Arrays.hashCode(this.b) + (this.a * 31)) * 31) + this.c) * 31) + this.d;
-    }
+    void i0();
+
+    void onFirstFrameRendered();
 }

@@ -1,61 +1,32 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pw b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.x1 d;
+    public final /* synthetic */ yy b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 d;
+    public final /* synthetic */ TLRPC.TL_messages_editMessage e;
 
-    public /* synthetic */ mw(pw pwVar, Context context, org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        this.a = i10;
-        this.b = pwVar;
-        this.c = context;
-        this.d = x1Var;
+    public /* synthetic */ mw(yy yyVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.d2 d2Var, TLRPC.TL_messages_editMessage tL_messages_editMessage, int i3) {
+        this.a = i3;
+        this.b = yyVar;
+        this.c = tL_error;
+        this.d = d2Var;
+        this.e = tL_messages_editMessage;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        org.telegram.ui.ActionBar.x1 x1Var = this.d;
-        Context context = this.c;
-        pw pwVar = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                pwVar.n = false;
-                if (!((Activity) context).isFinishing()) {
-                    try {
-                        x1Var.dismiss();
-                        break;
-                    } catch (Exception e) {
-                        f8.g(e, true);
-                        return;
-                    }
-                }
+                org.telegram.ui.Components.t4.e0(this.b.currentAccount, this.c, this.d, this.e, new Object[0]);
                 break;
             default:
-                if (!((Activity) context).isFinishing()) {
-                    pwVar.n = false;
-                    try {
-                        x1Var.dismiss();
-                    } catch (Exception e7) {
-                        f8.g(e7, true);
-                    }
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                    String L0 = dd.L0(R.string.AppName, null);
-                    org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder.a;
-                    x1Var2.R = L0;
-                    x1Var2.T = dd.L0(2131751750, null);
-                    alertDialog$Builder.k(dd.L0(2131747847, null), null);
-                    alertDialog$Builder.p().setCanceledOnTouchOutside(true);
-                    break;
-                }
+                org.telegram.ui.Components.t4.e0(this.b.currentAccount, this.c, this.d, this.e, new Object[0]);
                 break;
         }
     }

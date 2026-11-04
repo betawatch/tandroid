@@ -1,18 +1,18 @@
 package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
-import q5.d;
-import v7.o0;
+import p7.d;
+import x7.q0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
     public final float b;
 
-    public IdentifiedLanguage(String str, float f7) {
+    public IdentifiedLanguage(String str, float f10) {
         this.a = str;
-        this.b = f7;
+        this.b = f10;
     }
 
     public final boolean equals(Object obj) {
@@ -39,18 +39,18 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        d dVar = new d("IdentifiedLanguage", 11);
-        d dVar2 = new d(10, false);
-        ((d) dVar.d).d = dVar2;
-        dVar.d = dVar2;
-        dVar2.c = this.a;
+        d dVar = new d("IdentifiedLanguage", 22);
+        d dVar2 = new d(21, false);
+        ((d) dVar.c).c = dVar2;
+        dVar.c = dVar2;
+        dVar2.d = this.a;
         dVar2.b = "languageTag";
         String valueOf = String.valueOf(this.b);
-        o0 o0Var = new o0(10, false);
-        ((d) dVar.d).d = o0Var;
-        dVar.d = o0Var;
-        o0Var.c = valueOf;
-        o0Var.b = "confidence";
+        q0 q0Var = new q0(21, false);
+        ((d) dVar.c).c = q0Var;
+        dVar.c = q0Var;
+        q0Var.d = valueOf;
+        q0Var.b = "confidence";
         return dVar.toString();
     }
 }

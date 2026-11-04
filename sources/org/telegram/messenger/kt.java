@@ -1,27 +1,29 @@
 package org.telegram.messenger;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.PostProcessor;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kt implements PostProcessor {
-    @Override // android.graphics.PostProcessor
-    public final int onPostProcess(Canvas canvas) {
-        Path path = new Path();
-        path.setFillType(Path.FillType.INVERSE_EVEN_ODD);
-        int width = canvas.getWidth();
-        float f7 = width / 2;
-        path.addRoundRect(0.0f, 0.0f, width, canvas.getHeight(), f7, f7, Path.Direction.CW);
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setColor(0);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
-        canvas.drawPath(path, paint);
-        return -3;
+public final /* synthetic */ class kt implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
+
+    public /* synthetic */ kt(int i3, long j10, String str, String str2) {
+        this.a = i3;
+        this.b = str;
+        this.c = str2;
+        this.d = j10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PushListenerController.lambda$processRemoteMessage$6(this.b, this.c, this.d);
+                break;
+            default:
+                PushListenerController.lambda$processRemoteMessage$7(this.b, this.c, this.d);
+                break;
+        }
     }
 }

@@ -20,8 +20,8 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
     @Override // java.lang.Comparable
     public final int compareTo(YearMonth yearMonth) {
         YearMonth yearMonth2 = yearMonth;
-        int i10 = this.a - yearMonth2.a;
-        return i10 == 0 ? this.b - yearMonth2.b : i10;
+        int i3 = this.a - yearMonth2.a;
+        return i3 == 0 ? this.b - yearMonth2.b : i3;
     }
 
     static {
@@ -32,10 +32,10 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         pVar.l(Locale.getDefault(), w.SMART, null);
     }
 
-    public static YearMonth of(int i10, int i11) {
-        j$.time.temporal.a.YEAR.w(i10);
-        j$.time.temporal.a.MONTH_OF_YEAR.w(i11);
-        return new YearMonth(i10, i11);
+    public static YearMonth of(int i3, int i10) {
+        j$.time.temporal.a.YEAR.w(i3);
+        j$.time.temporal.a.MONTH_OF_YEAR.w(i10);
+        return new YearMonth(i3, i10);
     }
 
     @Override // j$.time.temporal.Temporal
@@ -50,8 +50,8 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
                     temporal = LocalDate.I(temporal);
                 }
                 of2 = of(temporal.j(j$.time.temporal.a.YEAR), temporal.j(j$.time.temporal.a.MONTH_OF_YEAR));
-            } catch (b e) {
-                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            } catch (b e10) {
+                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e10);
             }
         }
         if (qVar instanceof ChronoUnit) {
@@ -77,13 +77,13 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         return qVar.between(this, of2);
     }
 
-    public YearMonth(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public YearMonth(int i3, int i10) {
+        this.a = i3;
+        this.b = i10;
     }
 
-    public final YearMonth K(int i10, int i11) {
-        return (this.a == i10 && this.b == i11) ? this : new YearMonth(i10, i11);
+    public final YearMonth K(int i3, int i10) {
+        return (this.a == i3 && this.b == i10) ? this : new YearMonth(i3, i10);
     }
 
     @Override // j$.time.temporal.l
@@ -106,33 +106,33 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i10;
+        int i3;
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i11 = s.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i11 == 1) {
-            i10 = this.b;
+        int i10 = s.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 == 1) {
+            i3 = this.b;
         } else {
-            if (i11 == 2) {
+            if (i10 == 2) {
                 return G();
             }
-            if (i11 == 3) {
-                int i12 = this.a;
-                if (i12 < 1) {
-                    i12 = 1 - i12;
+            if (i10 == 3) {
+                int i11 = this.a;
+                if (i11 < 1) {
+                    i11 = 1 - i11;
                 }
-                return i12;
+                return i11;
             }
-            if (i11 != 4) {
-                if (i11 == 5) {
+            if (i10 != 4) {
+                if (i10 == 5) {
                     return this.a < 1 ? 0 : 1;
                 }
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i10 = this.a;
+            i3 = this.a;
         }
-        return i10;
+        return i3;
     }
 
     public final long G() {
@@ -161,37 +161,37 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
         aVar.w(j10);
-        int i10 = s.a[aVar.ordinal()];
-        if (i10 == 1) {
-            int i11 = (int) j10;
-            j$.time.temporal.a.MONTH_OF_YEAR.w(i11);
-            return K(this.a, i11);
+        int i3 = s.a[aVar.ordinal()];
+        if (i3 == 1) {
+            int i10 = (int) j10;
+            j$.time.temporal.a.MONTH_OF_YEAR.w(i10);
+            return K(this.a, i10);
         }
-        if (i10 == 2) {
+        if (i3 == 2) {
             return I(j10 - G());
         }
-        if (i10 == 3) {
+        if (i3 == 3) {
             if (this.a < 1) {
                 j10 = 1 - j10;
             }
+            int i11 = (int) j10;
+            j$.time.temporal.a.YEAR.w(i11);
+            return K(i11, this.b);
+        }
+        if (i3 == 4) {
             int i12 = (int) j10;
             j$.time.temporal.a.YEAR.w(i12);
             return K(i12, this.b);
         }
-        if (i10 == 4) {
-            int i13 = (int) j10;
-            j$.time.temporal.a.YEAR.w(i13);
-            return K(i13, this.b);
-        }
-        if (i10 != 5) {
+        if (i3 != 5) {
             throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
         }
         if (y(j$.time.temporal.a.ERA) == j10) {
             return this;
         }
-        int i14 = 1 - this.a;
-        j$.time.temporal.a.YEAR.w(i14);
-        return K(i14, this.b);
+        int i13 = 1 - this.a;
+        j$.time.temporal.a.YEAR.w(i13);
+        return K(i13, this.b);
     }
 
     @Override // j$.time.temporal.Temporal
@@ -282,12 +282,12 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         int abs = Math.abs(this.a);
         StringBuilder sb2 = new StringBuilder(9);
         if (abs < 1000) {
-            int i10 = this.a;
-            if (i10 < 0) {
-                sb2.append(i10 - 10000);
+            int i3 = this.a;
+            if (i3 < 0) {
+                sb2.append(i3 - 10000);
                 sb2.deleteCharAt(1);
             } else {
-                sb2.append(i10 + 10000);
+                sb2.append(i3 + 10000);
                 sb2.deleteCharAt(0);
             }
         } else {

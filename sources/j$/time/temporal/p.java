@@ -24,15 +24,15 @@ public abstract class p {
     }
 
     public static int a(l lVar, o oVar) {
-        s l4 = lVar.l(oVar);
-        if (l4.a < -2147483648L || l4.d > 2147483647L) {
+        s l10 = lVar.l(oVar);
+        if (l10.a < -2147483648L || l10.d > 2147483647L) {
             throw new r("Invalid field " + oVar + " for get() method, use getLong() instead");
         }
-        long y3 = lVar.y(oVar);
-        if (l4.d(y3)) {
-            return (int) y3;
+        long y9 = lVar.y(oVar);
+        if (l10.d(y9)) {
+            return (int) y9;
         }
-        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l4 + "): " + y3);
+        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l10 + "): " + y9);
     }
 
     public static Object c(l lVar, j$.time.format.a aVar) {

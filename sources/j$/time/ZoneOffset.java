@@ -35,8 +35,8 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
     */
     public static ZoneOffset M(String str) {
         int P;
+        int i3;
         int i10;
-        int i11;
         char charAt;
         Objects.requireNonNull(str, "offsetId");
         ZoneOffset zoneOffset = (ZoneOffset) e.get(str);
@@ -49,19 +49,19 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
         } else if (length != 3) {
             if (length == 5) {
                 P = P(str, 1, false);
-                i10 = P(str, 3, false);
+                i3 = P(str, 3, false);
             } else if (length == 6) {
                 P = P(str, 1, false);
-                i10 = P(str, 4, true);
+                i3 = P(str, 4, true);
             } else {
                 if (length == 7) {
                     P = P(str, 1, false);
-                    i10 = P(str, 3, false);
-                    i11 = P(str, 5, false);
+                    i3 = P(str, 3, false);
+                    i10 = P(str, 5, false);
                 } else if (length == 9) {
                     P = P(str, 1, false);
-                    i10 = P(str, 4, true);
-                    i11 = P(str, 7, true);
+                    i3 = P(str, 4, true);
+                    i10 = P(str, 7, true);
                 } else {
                     throw new b("Invalid ID for ZoneOffset, invalid format: ".concat(str));
                 }
@@ -70,11 +70,11 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
                     throw new b("Invalid ID for ZoneOffset, plus/minus not found when expected: ".concat(str));
                 }
                 if (charAt == '-') {
-                    return N(-P, -i10, -i11);
+                    return N(-P, -i3, -i10);
                 }
-                return N(P, i10, i11);
+                return N(P, i3, i10);
             }
-            i11 = 0;
+            i10 = 0;
             charAt = str.charAt(0);
             if (charAt == '+') {
             }
@@ -82,8 +82,8 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
             }
         }
         P = P(str, 1, false);
+        i3 = 0;
         i10 = 0;
-        i11 = 0;
         charAt = str.charAt(0);
         if (charAt == '+') {
         }
@@ -97,16 +97,16 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
         return new ZoneRules(this);
     }
 
-    public static int P(CharSequence charSequence, int i10, boolean z10) {
+    public static int P(CharSequence charSequence, int i3, boolean z10) {
         if (z10) {
             String str = (String) charSequence;
-            if (str.charAt(i10 - 1) != ':') {
+            if (str.charAt(i3 - 1) != ':') {
                 throw new b("Invalid ID for ZoneOffset, colon not found when expected: " + ((Object) str));
             }
         }
         String str2 = (String) charSequence;
-        char charAt = str2.charAt(i10);
-        char charAt2 = str2.charAt(i10 + 1);
+        char charAt = str2.charAt(i3);
+        char charAt2 = str2.charAt(i3 + 1);
         if (charAt >= '0' && charAt <= '9' && charAt2 >= '0' && charAt2 <= '9') {
             return (charAt2 - '0') + ((charAt - '0') * 10);
         }
@@ -122,72 +122,72 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
         throw new b("Unable to obtain ZoneOffset from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName());
     }
 
-    public static ZoneOffset N(int i10, int i11, int i12) {
-        if (i10 < -18 || i10 > 18) {
-            throw new b("Zone offset hours not in valid range: value " + i10 + " is not in the range -18 to 18");
+    public static ZoneOffset N(int i3, int i10, int i11) {
+        if (i3 < -18 || i3 > 18) {
+            throw new b("Zone offset hours not in valid range: value " + i3 + " is not in the range -18 to 18");
         }
-        if (i10 > 0) {
-            if (i11 < 0 || i12 < 0) {
+        if (i3 > 0) {
+            if (i10 < 0 || i11 < 0) {
                 throw new b("Zone offset minutes and seconds must be positive because hours is positive");
             }
-        } else if (i10 < 0) {
-            if (i11 > 0 || i12 > 0) {
+        } else if (i3 < 0) {
+            if (i10 > 0 || i11 > 0) {
                 throw new b("Zone offset minutes and seconds must be negative because hours is negative");
             }
-        } else if ((i11 > 0 && i12 < 0) || (i11 < 0 && i12 > 0)) {
+        } else if ((i10 > 0 && i11 < 0) || (i10 < 0 && i11 > 0)) {
             throw new b("Zone offset minutes and seconds must have the same sign");
         }
+        if (i10 < -59 || i10 > 59) {
+            throw new b("Zone offset minutes not in valid range: value " + i10 + " is not in the range -59 to 59");
+        }
         if (i11 < -59 || i11 > 59) {
-            throw new b("Zone offset minutes not in valid range: value " + i11 + " is not in the range -59 to 59");
+            throw new b("Zone offset seconds not in valid range: value " + i11 + " is not in the range -59 to 59");
         }
-        if (i12 < -59 || i12 > 59) {
-            throw new b("Zone offset seconds not in valid range: value " + i12 + " is not in the range -59 to 59");
-        }
-        if (Math.abs(i10) == 18 && (i11 | i12) != 0) {
+        if (Math.abs(i3) == 18 && (i10 | i11) != 0) {
             throw new b("Zone offset not in valid range: -18:00 to +18:00");
         }
-        return O((i11 * 60) + (i10 * 3600) + i12);
+        return O((i10 * 60) + (i3 * 3600) + i11);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static ZoneOffset O(int i10) {
-        if (i10 < -64800 || i10 > 64800) {
+    public static ZoneOffset O(int i3) {
+        if (i3 < -64800 || i3 > 64800) {
             throw new b("Zone offset not in valid range: -18:00 to +18:00");
         }
-        if (i10 % 900 == 0) {
-            Integer valueOf = Integer.valueOf(i10);
+        if (i3 % 900 == 0) {
+            Integer valueOf = Integer.valueOf(i3);
             ConcurrentHashMap concurrentHashMap = d;
             ZoneOffset zoneOffset = (ZoneOffset) concurrentHashMap.get(valueOf);
             if (zoneOffset != null) {
                 return zoneOffset;
             }
-            concurrentHashMap.putIfAbsent(valueOf, new ZoneOffset(i10));
+            concurrentHashMap.putIfAbsent(valueOf, new ZoneOffset(i3));
             ZoneOffset zoneOffset2 = (ZoneOffset) concurrentHashMap.get(valueOf);
             e.putIfAbsent(zoneOffset2.c, zoneOffset2);
             return zoneOffset2;
         }
-        return new ZoneOffset(i10);
+        return new ZoneOffset(i3);
     }
 
-    public ZoneOffset(int i10) {
+    public ZoneOffset(int i3) {
         String sb2;
-        this.b = i10;
-        if (i10 == 0) {
+        this.b = i3;
+        if (i3 == 0) {
             sb2 = "Z";
         } else {
-            int abs = Math.abs(i10);
+            int abs = Math.abs(i3);
             StringBuilder sb3 = new StringBuilder();
-            int i11 = abs / 3600;
-            int i12 = (abs / 60) % 60;
-            sb3.append(i10 < 0 ? "-" : "+");
-            sb3.append(i11 < 10 ? "0" : "");
+            int i10 = abs / 3600;
+            int i11 = (abs / 60) % 60;
+            sb3.append(i3 < 0 ? "-" : "+");
+            sb3.append(i10 < 10 ? "0" : "");
+            sb3.append(i10);
+            sb3.append(i11 < 10 ? ":0" : ":");
             sb3.append(i11);
-            sb3.append(i12 < 10 ? ":0" : ":");
-            sb3.append(i12);
-            int i13 = abs % 60;
-            if (i13 != 0) {
-                sb3.append(i13 < 10 ? ":0" : ":");
-                sb3.append(i13);
+            int i12 = abs % 60;
+            if (i12 != 0) {
+                sb3.append(i12 < 10 ? ":0" : ":");
+                sb3.append(i12);
             }
             sb2 = sb3.toString();
         }
@@ -278,11 +278,11 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
     }
 
     public final void R(DataOutput dataOutput) {
-        int i10 = this.b;
-        int i11 = i10 % 900 == 0 ? i10 / 900 : 127;
-        dataOutput.writeByte(i11);
-        if (i11 == 127) {
-            dataOutput.writeInt(i10);
+        int i3 = this.b;
+        int i10 = i3 % 900 == 0 ? i3 / 900 : 127;
+        dataOutput.writeByte(i10);
+        if (i10 == 127) {
+            dataOutput.writeInt(i3);
         }
     }
 

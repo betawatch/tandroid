@@ -1,52 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import java.util.ArrayList;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class j0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ t0 c;
+public final class j0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ q0 b;
 
-    public /* synthetic */ j0(t0 t0Var, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.c = t0Var;
-        this.b = arrayList;
+    public j0(q0 q0Var, float f10) {
+        this.b = q0Var;
+        this.a = f10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                t0 t0Var = this.c;
-                t0Var.F.setAlpha(0.0f);
-                int i10 = 0;
-                while (true) {
-                    ArrayList arrayList = this.b;
-                    if (i10 >= arrayList.size()) {
-                        t0Var.F.setVisibility(8);
-                        break;
-                    } else {
-                        ((View) arrayList.get(i10)).setAlpha(1.0f);
-                        i10++;
-                    }
-                }
-            default:
-                this.c.F.setAlpha(1.0f);
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList2 = this.b;
-                    if (i11 >= arrayList2.size()) {
-                        break;
-                    } else {
-                        ((View) arrayList2.get(i11)).setAlpha(0.0f);
-                        i11++;
-                    }
-                }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        q0 q0Var = this.b;
+        q0Var.e.getViewTreeObserver().removeOnPreDrawListener(this);
+        float x10 = q0Var.e.getX();
+        float f10 = this.a;
+        if (x10 != f10) {
+            bh.g gVar = q0Var.e;
+            gVar.setTranslationX(f10 - gVar.getX());
         }
+        q0Var.e.animate().translationX(0.0f).setDuration(250L).setStartDelay(0L).setInterpolator(xq.f).start();
+        return true;
     }
 }

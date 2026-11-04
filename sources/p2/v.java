@@ -1,36 +1,13 @@
 package p2;
 
-import b2.x;
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class v {
-    public final x a;
-    public final String b;
-    public final String c;
+    public final byte[] a;
+    public final w2.u b;
 
-    public v(x xVar, String str, String str2) {
-        b2.w a2 = xVar.a();
-        a2.a = null;
-        a2.k = null;
-        this.a = new x(a2);
-        this.b = str;
-        this.c = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof v)) {
-            return false;
-        }
-        v vVar = (v) obj;
-        return Objects.equals(this.a, vVar.a) && Objects.equals(this.b, vVar.b) && Objects.equals(this.c, vVar.c);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, this.b, this.c);
+    public v(m2.t tVar) {
+        this.a = (byte[]) tVar.b;
+        this.b = (w2.u) tVar.c;
     }
 }

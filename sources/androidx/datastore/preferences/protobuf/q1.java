@@ -1,66 +1,53 @@
 package androidx.datastore.preferences.protobuf;
 
-import java.lang.reflect.Field;
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class q1 {
-    public final Unsafe a;
+    public static final o1 a;
 
-    public q1(Unsafe unsafe) {
-        this.a = unsafe;
+    static {
+        a = (n1.e && n1.d && !c.a()) ? new o1(1) : new o1(0);
     }
 
-    public final int a(Class cls) {
-        return this.a.arrayBaseOffset(cls);
-    }
-
-    public final int b(Class cls) {
-        return this.a.arrayIndexScale(cls);
-    }
-
-    public abstract boolean c(Object obj, long j10);
-
-    public abstract byte d(Object obj, long j10);
-
-    public abstract double e(Object obj, long j10);
-
-    public abstract float f(Object obj, long j10);
-
-    public final int g(Object obj, long j10) {
-        return this.a.getInt(obj, j10);
-    }
-
-    public final long h(Object obj, long j10) {
-        return this.a.getLong(obj, j10);
-    }
-
-    public final Object i(Object obj, long j10) {
-        return this.a.getObject(obj, j10);
-    }
-
-    public final long j(Field field) {
-        return this.a.objectFieldOffset(field);
-    }
-
-    public abstract void k(Object obj, long j10, boolean z10);
-
-    public abstract void l(Object obj, long j10, byte b10);
-
-    public abstract void m(Object obj, long j10, double d);
-
-    public abstract void n(Object obj, long j10, float f7);
-
-    public final void o(long j10, Object obj, int i10) {
-        this.a.putInt(obj, j10, i10);
-    }
-
-    public final void p(Object obj, long j10, long j11) {
-        this.a.putLong(obj, j10, j11);
-    }
-
-    public final void q(Object obj, long j10, Object obj2) {
-        this.a.putObject(obj, j10, obj2);
+    public static int a(String str) {
+        int length = str.length();
+        int i3 = 0;
+        int i10 = 0;
+        while (i10 < length && str.charAt(i10) < 128) {
+            i10++;
+        }
+        int i11 = length;
+        while (true) {
+            if (i10 >= length) {
+                break;
+            }
+            char charAt = str.charAt(i10);
+            if (charAt < 2048) {
+                i11 += (127 - charAt) >>> 31;
+                i10++;
+            } else {
+                int length2 = str.length();
+                while (i10 < length2) {
+                    char charAt2 = str.charAt(i10);
+                    if (charAt2 < 2048) {
+                        i3 += (127 - charAt2) >>> 31;
+                    } else {
+                        i3 += 2;
+                        if (55296 <= charAt2 && charAt2 <= 57343) {
+                            if (Character.codePointAt(str, i10) < 65536) {
+                                throw new p1(i10, length2);
+                            }
+                            i10++;
+                        }
+                    }
+                    i10++;
+                }
+                i11 += i3;
+            }
+        }
+        if (i11 >= length) {
+            return i11;
+        }
+        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + (i11 + 4294967296L));
     }
 }

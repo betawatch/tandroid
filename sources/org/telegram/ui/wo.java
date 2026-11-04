@@ -1,89 +1,89 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class wo extends org.telegram.ui.Cells.b9 {
-    public final /* synthetic */ cp D;
-    public ValueAnimator x;
-    public int y;
+public final class wo extends u4.h0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ xo d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wo(cp cpVar, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(12, context, p6Var);
-        this.D = cpVar;
-        this.y = -1;
+    public wo(xo xoVar, Context context) {
+        this.d = xoVar;
+        this.c = context;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.y != -1) {
-            cp cpVar = this.D;
-            if (cpVar.n != null) {
-                ArrayList arrayList = new ArrayList();
-                int i15 = 0;
-                boolean z11 = false;
-                while (true) {
-                    i14 = 1;
-                    if (i15 >= cpVar.n.getChildCount()) {
-                        break;
-                    }
-                    View childAt = cpVar.n.getChildAt(i15);
-                    if (z11) {
-                        arrayList.add(childAt);
-                    } else if (childAt == this) {
-                        z11 = true;
-                    }
-                    i15++;
-                }
-                float height = this.y - getHeight();
-                ValueAnimator valueAnimator = this.x;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                this.x = ofFloat;
-                ofFloat.addUpdateListener(new eg(arrayList, height, i14));
-                this.x.setInterpolator(org.telegram.ui.Components.gr.h);
-                this.x.setDuration(350L);
-                this.x.start();
-            }
-        }
-        this.y = getHeight();
+    @Override // u4.h0
+    public final int b() {
+        xo xoVar = this.d;
+        return (!xoVar.d.isEmpty() ? xoVar.n.size() + 1 : 0) + 2;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v0, types: [java.lang.Object, org.telegram.ui.Cells.b9, org.telegram.ui.wo] */
-    /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v1, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v3, types: [android.text.SpannableStringBuilder] */
-    @Override // org.telegram.ui.Cells.b9
-    public final void setText(CharSequence charSequence) {
-        org.telegram.ui.ActionBar.p6 p6Var;
-        if (charSequence != 0) {
-            charSequence = org.telegram.messenger.i0.W2(charSequence.toString());
-            int indexOf = charSequence.toString().indexOf(10);
-            cp cpVar = this.D;
-            if (indexOf >= 0) {
-                charSequence.replace(indexOf, indexOf + 1, " ");
-                int i10 = org.telegram.ui.ActionBar.t6.p7;
-                p6Var = ((org.telegram.ui.ActionBar.k2) cpVar).resourceProvider;
-                charSequence.setSpan(new org.telegram.ui.Components.l00(i10, p6Var), 0, indexOf, 33);
-            }
-            org.telegram.ui.Components.y41[] y41VarArr = (org.telegram.ui.Components.y41[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.y41.class);
-            org.telegram.ui.ActionBar.n0 n0Var = cpVar.b;
-            String obj = (n0Var == null || n0Var.getText() == null) ? "" : cpVar.b.getText().toString();
-            for (int i11 = 0; i11 < y41VarArr.length; i11++) {
-                charSequence.setSpan(new org.telegram.ui.Cells.h(5, (Object) this, obj), charSequence.getSpanStart(y41VarArr[i11]), charSequence.getSpanEnd(y41VarArr[i11]), 33);
-                charSequence.removeSpan(y41VarArr[i11]);
+    @Override // u4.h0
+    public final int d(int i3) {
+        if (i3 == 0) {
+            return 3;
+        }
+        if (i3 == 1) {
+            return 0;
+        }
+        return i3 == 2 ? 1 : 2;
+    }
+
+    @Override // u4.h0
+    public final void t(u4.d1 d1Var, int i3) {
+        int i10;
+        View view = d1Var.a;
+        int d = d(i3);
+        xo xoVar = this.d;
+        if (d != 0) {
+            if (d == 1) {
+                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.bd.M0(2131747830, null));
+                return;
+            } else {
+                if (d != 2) {
+                    return;
+                }
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) xoVar.n.get(i3 - 3);
+                boolean contains = xoVar.d.contains(tL_availableReaction.reaction);
+                i10 = ((org.telegram.ui.ActionBar.d2) xoVar).currentAccount;
+                ((org.telegram.ui.Cells.x) view).a(tL_availableReaction, contains, i10);
+                return;
             }
         }
-        super.setText(charSequence);
+        org.telegram.ui.Cells.y8 y8Var = (org.telegram.ui.Cells.y8) view;
+        org.telegram.ui.ActionBar.r6.V(y8Var.getTextView(), org.telegram.ui.ActionBar.k6.B6, null);
+        int i11 = xoVar.s;
+        if (i11 == 1) {
+            y8Var.setText(org.telegram.messenger.bd.M0(2131751148, null));
+        } else if (i11 == 0) {
+            y8Var.setText(org.telegram.messenger.bd.M0(2131751160, null));
+        } else if (i11 == 2) {
+            y8Var.setText(org.telegram.messenger.bd.M0(2131751430, null));
+        }
+    }
+
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
+        Context context = this.c;
+        if (i3 == 0) {
+            return new org.telegram.ui.Components.bj0(new org.telegram.ui.Cells.y8(context));
+        }
+        if (i3 == 1) {
+            return new org.telegram.ui.Components.bj0(new org.telegram.ui.Cells.n4(context, 23));
+        }
+        if (i3 != 3) {
+            return new org.telegram.ui.Components.bj0(new org.telegram.ui.Cells.x(context, false, false));
+        }
+        FrameLayout frameLayout = new FrameLayout(context);
+        xo xoVar = this.d;
+        org.telegram.messenger.g0.E2(xoVar.r);
+        frameLayout.addView(xoVar.r);
+        frameLayout.setLayoutParams(new u4.p0(-1, -2));
+        return new org.telegram.ui.Components.bj0(frameLayout);
     }
 }

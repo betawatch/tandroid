@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class n implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ Map a;
@@ -29,78 +29,78 @@ public final class n implements ViewTreeObserver.OnGlobalLayoutListener {
         Map map;
         Map map2;
         p0 p0Var;
-        p4.w wVar;
+        r4.w wVar;
         t tVar = this.c;
-        tVar.U.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-        HashSet hashSet = tVar.X;
-        if (hashSet == null || tVar.Y == null) {
+        tVar.V.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+        HashSet hashSet = tVar.Y;
+        if (hashSet == null || tVar.Z == null) {
             return;
         }
-        int size = hashSet.size() - tVar.Y.size();
+        int size = hashSet.size() - tVar.Z.size();
         j jVar = new j(tVar, 1);
-        int firstVisiblePosition = tVar.U.getFirstVisiblePosition();
-        int i10 = 0;
+        int firstVisiblePosition = tVar.V.getFirstVisiblePosition();
+        int i3 = 0;
         boolean z10 = false;
         while (true) {
-            int childCount = tVar.U.getChildCount();
+            int childCount = tVar.V.getChildCount();
             map = this.a;
             map2 = this.b;
-            if (i10 >= childCount) {
+            if (i3 >= childCount) {
                 break;
             }
-            View childAt = tVar.U.getChildAt(i10);
-            p4.w wVar2 = (p4.w) tVar.V.getItem(firstVisiblePosition + i10);
+            View childAt = tVar.V.getChildAt(i3);
+            r4.w wVar2 = (r4.w) tVar.W.getItem(firstVisiblePosition + i3);
             Rect rect = (Rect) map.get(wVar2);
             int top = childAt.getTop();
-            int i11 = rect != null ? rect.top : (tVar.e0 * size) + top;
+            int i10 = rect != null ? rect.top : (tVar.f0 * size) + top;
             AnimationSet animationSet = new AnimationSet(true);
-            HashSet hashSet2 = tVar.X;
+            HashSet hashSet2 = tVar.Y;
             if (hashSet2 == null || !hashSet2.contains(wVar2)) {
                 wVar = wVar2;
             } else {
                 AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
                 wVar = wVar2;
-                alphaAnimation.setDuration(tVar.y0);
+                alphaAnimation.setDuration(tVar.z0);
                 animationSet.addAnimation(alphaAnimation);
-                i11 = top;
+                i10 = top;
             }
-            TranslateAnimation translateAnimation = new TranslateAnimation(0.0f, 0.0f, i11 - top, 0.0f);
-            translateAnimation.setDuration(tVar.x0);
+            TranslateAnimation translateAnimation = new TranslateAnimation(0.0f, 0.0f, i10 - top, 0.0f);
+            translateAnimation.setDuration(tVar.y0);
             animationSet.addAnimation(translateAnimation);
             animationSet.setFillAfter(true);
             animationSet.setFillEnabled(true);
-            animationSet.setInterpolator(tVar.A0);
+            animationSet.setInterpolator(tVar.B0);
             if (!z10) {
                 animationSet.setAnimationListener(jVar);
                 z10 = true;
             }
             childAt.clearAnimation();
             childAt.startAnimation(animationSet);
-            p4.w wVar3 = wVar;
+            r4.w wVar3 = wVar;
             map.remove(wVar3);
             map2.remove(wVar3);
-            i10++;
+            i3++;
         }
         for (Map.Entry entry : map2.entrySet()) {
-            p4.w wVar4 = (p4.w) entry.getKey();
+            r4.w wVar4 = (r4.w) entry.getKey();
             BitmapDrawable bitmapDrawable = (BitmapDrawable) entry.getValue();
             Rect rect2 = (Rect) map.get(wVar4);
-            if (tVar.Y.contains(wVar4)) {
+            if (tVar.Z.contains(wVar4)) {
                 p0Var = new p0(bitmapDrawable, rect2);
                 p0Var.h = 0.0f;
-                p0Var.e = tVar.z0;
-                p0Var.d = tVar.A0;
+                p0Var.e = tVar.A0;
+                p0Var.d = tVar.B0;
             } else {
-                int i12 = tVar.e0 * size;
+                int i11 = tVar.f0 * size;
                 p0 p0Var2 = new p0(bitmapDrawable, rect2);
-                p0Var2.g = i12;
-                p0Var2.e = tVar.x0;
-                p0Var2.d = tVar.A0;
-                p0Var2.l = new n4.q(tVar, wVar4, false);
-                tVar.Z.add(wVar4);
+                p0Var2.g = i11;
+                p0Var2.e = tVar.y0;
+                p0Var2.d = tVar.B0;
+                p0Var2.l = new tf.b(tVar, wVar4, false);
+                tVar.a0.add(wVar4);
                 p0Var = p0Var2;
             }
-            tVar.U.a.add(p0Var);
+            tVar.V.a.add(p0Var);
         }
     }
 }

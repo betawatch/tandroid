@@ -1,21 +1,21 @@
 package org.telegram.ui.Wallet;
 
 import java.util.ArrayList;
-import org.telegram.messenger.at;
-import org.telegram.messenger.vs;
-import org.telegram.ui.if0;
+import org.telegram.messenger.cs;
+import org.telegram.messenger.hs;
+import org.telegram.ui.tb0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class z implements Runnable, vs {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class z implements Runnable, cs {
     public boolean a;
-    public final /* synthetic */ at b;
-    public final /* synthetic */ if0 c;
+    public final /* synthetic */ hs b;
+    public final /* synthetic */ tb0 c;
     public final /* synthetic */ k0 d;
 
-    public z(at atVar, if0 if0Var, k0 k0Var) {
-        this.b = atVar;
-        this.c = if0Var;
+    public z(hs hsVar, tb0 tb0Var, k0 k0Var) {
+        this.b = hsVar;
+        this.c = tb0Var;
         this.d = k0Var;
     }
 
@@ -29,10 +29,10 @@ public final class z implements Runnable, vs {
         }
         ArrayList arrayList = k0Var.G;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
             if (((g0) obj).d) {
                 return;
             }
@@ -40,9 +40,9 @@ public final class z implements Runnable, vs {
         run();
     }
 
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == at.a4) {
+    @Override // org.telegram.messenger.cs
+    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+        if (i3 == hs.a4) {
             a();
         }
     }
@@ -53,8 +53,8 @@ public final class z implements Runnable, vs {
             return;
         }
         this.a = true;
-        org.telegram.messenger.i0.r(this);
-        this.b.n(this, at.a4);
+        org.telegram.messenger.g0.r(this);
+        this.b.n(this, hs.a4);
         this.c.run();
     }
 }

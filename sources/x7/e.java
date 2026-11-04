@@ -1,51 +1,41 @@
 package x7;
 
-import java.util.Map;
-import java.util.Set;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class e implements q {
-    public transient a a;
-    public transient e9.e b;
+public final class e implements h {
+    public final int a;
 
-    public final Map a() {
-        e9.e eVar = this.b;
-        if (eVar != null) {
-            return eVar;
-        }
-        f fVar = (f) this;
-        e9.e eVar2 = new e9.e(fVar, fVar.c, 1);
-        this.b = eVar2;
-        return eVar2;
+    public e(int i3) {
+        this.a = i3;
     }
 
-    public final Set b() {
-        a aVar = this.a;
-        if (aVar != null) {
-            return aVar;
-        }
-        f fVar = (f) this;
-        a aVar2 = new a(fVar, fVar.c);
-        this.a = aVar2;
-        return aVar2;
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return h.class;
     }
 
+    @Override // java.lang.annotation.Annotation
     public final boolean equals(Object obj) {
-        if (obj == this) {
+        if (this == obj) {
             return true;
         }
-        if (obj instanceof q) {
-            return a().equals(((e) ((q) obj)).a());
+        if (!(obj instanceof h)) {
+            return false;
         }
-        return false;
+        if (this.a != ((e) ((h) obj)).a) {
+            return false;
+        }
+        Object obj2 = g.a;
+        return obj2.equals(obj2);
     }
 
+    @Override // java.lang.annotation.Annotation
     public final int hashCode() {
-        return ((e9.e) a()).b.hashCode();
+        return (this.a ^ 14552422) + (g.a.hashCode() ^ 2041407134);
     }
 
+    @Override // java.lang.annotation.Annotation
     public final String toString() {
-        return ((e9.e) a()).b.toString();
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + g.a + ')';
     }
 }

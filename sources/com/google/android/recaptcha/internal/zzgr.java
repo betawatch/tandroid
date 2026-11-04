@@ -1,10 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import ad.c;
-import ad.h;
-import ib.a;
+import b8.hb;
+import dd.c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzgr {
     private final zzhk zza;
@@ -14,12 +13,12 @@ public final class zzgr {
     private final c zze;
     private final int zzf;
 
-    public zzgr(zzhk zzhkVar, int i10, Integer num) {
+    public zzgr(zzhk zzhkVar, int i3, Integer num) {
         this.zza = zzhkVar;
-        this.zzf = i10;
+        this.zzf = i3;
         this.zzb = num;
-        int i11 = zzby.zza;
-        this.zze = a.a(zzgq.zza);
+        int i10 = zzby.zza;
+        this.zze = hb.b(zzgq.zza);
         zzd();
         this.zzc = zzvl.zzc(zzvl.zzb(System.currentTimeMillis()));
         zzd();
@@ -27,10 +26,10 @@ public final class zzgr {
     }
 
     private final zzdk zzd() {
-        return (zzdk) ((h) this.zze).a();
+        return (zzdk) this.zze.getValue();
     }
 
-    private final zzwk zze(int i10) {
+    private final zzwk zze(int i3) {
         zzwk zzj = zzwn.zzj();
         zzj.zzA(this.zzf);
         zzj.zzr(zzgl.zza());
@@ -38,7 +37,7 @@ public final class zzgr {
         zzj.zzy(zzhkVar.zzb());
         zzj.zzu(zzhkVar.zza().zza());
         zzj.zzB(zzhkVar.zza().zzc());
-        zzj.zzC(i10);
+        zzj.zzC(i3);
         zzj.zzx(this.zzc);
         zzd();
         zzj.zzs(System.currentTimeMillis() - this.zzd);
@@ -55,7 +54,7 @@ public final class zzgr {
 
     public final void zzb() {
         zzwk zze = zze(3);
-        int i10 = zzgl.zza;
+        int i3 = zzgl.zza;
         zzgl.zzb(zze, this.zza.zza().zzb(), null);
     }
 
@@ -70,7 +69,7 @@ public final class zzgr {
         }
         zzwk zze = zze(4);
         zzhk zzhkVar = this.zza;
-        int i10 = zzgl.zza;
+        int i3 = zzgl.zza;
         zzgl.zzb(zze, zzhkVar.zza().zzb(), (zzwa) zzg.zzk());
     }
 }

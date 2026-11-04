@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.c0;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzhq extends j implements p {
     final /* synthetic */ zzht zza;
@@ -22,20 +22,20 @@ final class zzhq extends j implements p {
         this.zzc = zzzdVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzhq(this.zza, this.zzb, this.zzc, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhq) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzhq) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        b.b(obj);
+        gd.a aVar = gd.a.a;
+        ib.b(obj);
         try {
             zzht zzhtVar = this.zza;
             zzig zzb = zzht.zzb(zzhtVar);
@@ -44,10 +44,10 @@ final class zzhq extends j implements p {
                 return zzht.zza(zzhtVar).zza(str, this.zzc);
             }
             throw new zzcg(zzce.zzc, zzcd.zzQ, null, null, 12, null);
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e7) {
-            throw new zzcg(zzce.zzb, zzcd.zzaz, e7.getMessage(), null, 8, null);
+        } catch (zzcg e10) {
+            throw e10;
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzb, zzcd.zzaz, e11.getMessage(), null, 8, null);
         }
     }
 }

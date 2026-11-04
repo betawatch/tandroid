@@ -1,17 +1,24 @@
 package b4;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import g9.i0;
+import java.util.List;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
-    public final int a;
-    public final int[] b;
-    public final int[] c;
-    public final int[] d;
+    public final i0 a;
+    public final long b;
+    public final long c;
+    public final long d;
 
-    public a(int i10, int[] iArr, int[] iArr2, int[] iArr3) {
-        this.a = i10;
-        this.b = iArr;
-        this.c = iArr2;
-        this.d = iArr3;
+    public a(long j10, long j11, List list) {
+        this.a = i0.q(list);
+        this.b = j10;
+        this.c = j11;
+        long j12 = -9223372036854775807L;
+        if (j10 != -9223372036854775807L && j11 != -9223372036854775807L) {
+            j12 = j10 + j11;
+        }
+        this.d = j12;
     }
 }

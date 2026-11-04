@@ -1,98 +1,40 @@
 package org.telegram.messenger;
 
-import java.math.BigInteger;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class bw {
-    public static byte[] a(BigInteger bigInteger) {
-        byte[] byteArray = bigInteger.toByteArray();
-        if (byteArray.length > 256) {
-            byte[] bArr = new byte[256];
-            System.arraycopy(byteArray, 1, bArr, 0, 256);
-            return bArr;
-        }
-        if (byteArray.length >= 256) {
-            return byteArray;
-        }
-        byte[] bArr2 = new byte[256];
-        System.arraycopy(byteArray, 0, bArr2, 256 - byteArray.length, byteArray.length);
-        for (int i10 = 0; i10 < 256 - byteArray.length; i10++) {
-            bArr2[i10] = 0;
-        }
-        return bArr2;
+public final /* synthetic */ class bw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yy b;
+    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ long d;
+
+    public /* synthetic */ bw(yy yyVar, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j10, int i3) {
+        this.a = i3;
+        this.b = yyVar;
+        this.c = tL_updateNewChannelMessage;
+        this.d = j10;
     }
 
-    public static byte[] b(byte[] bArr, TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
-        byte[] bArr2 = tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.p;
-        int i10 = tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.g;
-        Pattern pattern = Utilities.a;
-        if (!ConnectionsManager.native_isGoodPrime(bArr2, i10)) {
-            return null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                yy yyVar = this.b;
+                yyVar.getClass();
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(Integer.valueOf(this.c.message.id));
+                yyVar.getMessagesStorage().c2(-this.d, arrayList, true, -1, 0, false, null);
+                break;
+            default:
+                yy yyVar2 = this.b;
+                yyVar2.getClass();
+                ArrayList arrayList2 = new ArrayList();
+                arrayList2.add(Integer.valueOf(this.c.message.id));
+                yyVar2.getMessagesStorage().c2(-this.d, arrayList2, true, -1, 0, false, null);
+                break;
         }
-        BigInteger valueOf = BigInteger.valueOf(tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.g);
-        a(valueOf);
-        return a(valueOf.modPow(new BigInteger(1, c(bArr, tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow)), new BigInteger(1, tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.p)));
-    }
-
-    public static byte[] c(byte[] bArr, TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
-        byte[] bArr2 = tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt1;
-        byte[] q6 = Utilities.q(bArr2, bArr, bArr2);
-        byte[] bArr3 = tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt2;
-        byte[] m10 = Utilities.m(Utilities.q(bArr3, q6, bArr3), tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt1);
-        byte[] bArr4 = tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt2;
-        return Utilities.q(bArr4, m10, bArr4);
-    }
-
-    public static TLRPC.TL_inputCheckPasswordSRP d(byte[] bArr, long j10, byte[] bArr2, TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
-        if (bArr == null || bArr2 == null || bArr2.length == 0) {
-            return null;
-        }
-        byte[] bArr3 = tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.p;
-        int i10 = tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.g;
-        Pattern pattern = Utilities.a;
-        if (!ConnectionsManager.native_isGoodPrime(bArr3, i10)) {
-            return null;
-        }
-        BigInteger valueOf = BigInteger.valueOf(tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.g);
-        byte[] a2 = a(valueOf);
-        BigInteger bigInteger = new BigInteger(1, tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.p);
-        BigInteger bigInteger2 = new BigInteger(1, Utilities.q(tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.p, a2));
-        BigInteger bigInteger3 = new BigInteger(1, bArr);
-        byte[] bArr4 = new byte[256];
-        Utilities.b.nextBytes(bArr4);
-        BigInteger bigInteger4 = new BigInteger(1, bArr4);
-        byte[] a10 = a(valueOf.modPow(bigInteger4, bigInteger));
-        BigInteger bigInteger5 = new BigInteger(1, bArr2);
-        BigInteger bigInteger6 = BigInteger.ZERO;
-        if (bigInteger5.compareTo(bigInteger6) <= 0 || bigInteger5.compareTo(bigInteger) >= 0) {
-            return null;
-        }
-        byte[] a11 = a(bigInteger5);
-        BigInteger bigInteger7 = new BigInteger(1, Utilities.q(a10, a11));
-        if (bigInteger7.compareTo(bigInteger6) == 0) {
-            return null;
-        }
-        BigInteger subtract = bigInteger5.subtract(bigInteger2.multiply(valueOf.modPow(bigInteger3, bigInteger)).mod(bigInteger));
-        if (subtract.compareTo(bigInteger6) < 0) {
-            subtract = subtract.add(bigInteger);
-        }
-        if (!Utilities.w(subtract, bigInteger)) {
-            return null;
-        }
-        byte[] o10 = Utilities.o(r1.length, a(subtract.modPow(bigInteger4.add(bigInteger7.multiply(bigInteger3)), bigInteger)));
-        byte[] o11 = Utilities.o(r3.length, tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.p);
-        byte[] o12 = Utilities.o(a2.length, a2);
-        for (int i11 = 0; i11 < o11.length; i11++) {
-            o11[i11] = (byte) (o12[i11] ^ o11[i11]);
-        }
-        TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP = new TLRPC.TL_inputCheckPasswordSRP();
-        tL_inputCheckPasswordSRP.M1 = Utilities.q(o11, Utilities.o(r5.length, tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt1), Utilities.o(r2.length, tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt2), a10, a11, o10);
-        tL_inputCheckPasswordSRP.A = a10;
-        tL_inputCheckPasswordSRP.srp_id = j10;
-        return tL_inputCheckPasswordSRP;
     }
 }

@@ -1,32 +1,35 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.view.Surface;
+import android.view.TextureView;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class x2 extends org.telegram.ui.ActionBar.h3 {
-    @Override // org.telegram.ui.ActionBar.h3
-    public final String b() {
-        org.telegram.ui.web.v0 v0Var = this.b;
-        return (v0Var == null || TextUtils.isEmpty(v0Var.getTitle())) ? super.b() : this.b.getTitle();
-    }
+public final class x2 {
+    public long a;
+    public Bitmap b;
 
-    public final void c(l3 l3Var) {
-        if (l3Var == null) {
-            return;
+    public static x2 a(VideoPlayerHolderBase videoPlayerHolderBase, w2 w2Var) {
+        x2 x2Var = new x2();
+        x2Var.a = videoPlayerHolderBase.getCurrentPosition();
+        if (videoPlayerHolderBase.firstFrameRendered) {
+            TextureView textureView = w2Var.n;
+            TextureView textureView2 = w2Var.n;
+            if (textureView != null && textureView.getSurfaceTexture() != null) {
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Surface surface = new Surface(textureView2.getSurfaceTexture());
+                    Bitmap createBitmap = Bitmap.createBitmap(textureView2.getMeasuredWidth(), textureView2.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                    org.telegram.messenger.g0.y0(surface, createBitmap);
+                    surface.release();
+                    x2Var.b = createBitmap;
+                    return x2Var;
+                }
+                x2Var.b = textureView2.getBitmap();
+            }
         }
-        j3 j3Var = l3Var.f;
-        j3Var.L();
-        this.b = j3Var.getWebView();
-        this.d = j3Var.getProxy();
-        org.telegram.ui.web.v0 v0Var = this.b;
-        if (v0Var != null) {
-            v0Var.onPause();
-            this.E = this.b.getTitle();
-            this.F = this.b.getFavicon();
-            this.x = this.b.getUrl();
-            this.q = l3Var.x;
-            this.r = l3Var.y;
-        }
+        return x2Var;
     }
 }

@@ -1,46 +1,45 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m extends i {
-    public static final m e = new m(0, new Object[0]);
-    public final transient Object[] c;
+public final class m extends n {
+    public final transient int c;
     public final transient int d;
+    public final /* synthetic */ n e;
 
-    public m(int i10, Object[] objArr) {
-        this.c = objArr;
+    public m(n nVar, int i3, int i10) {
+        this.e = nVar;
+        this.c = i3;
         this.d = i10;
     }
 
     @Override // java.util.List
-    public final Object get(int i10) {
-        w7.t9.a(i10, this.d);
-        Object obj = this.c[i10];
-        obj.getClass();
-        return obj;
+    public final Object get(int i3) {
+        x7.x6.a(i3, this.d);
+        return this.e.get(i3 + this.c);
     }
 
-    @Override // z7.i, z7.e
-    public final int l(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
+    @Override // z7.j
+    public final int i() {
+        return this.e.j() + this.c + this.d;
     }
 
-    @Override // z7.e
-    public final int m() {
-        return this.d;
+    @Override // z7.j
+    public final int j() {
+        return this.e.j() + this.c;
     }
 
-    @Override // z7.e
-    public final int n() {
-        return 0;
+    @Override // z7.j
+    public final Object[] k() {
+        return this.e.k();
     }
 
-    @Override // z7.e
-    public final Object[] o() {
-        return this.c;
+    @Override // z7.n, java.util.List
+    /* renamed from: l */
+    public final n subList(int i3, int i10) {
+        x7.x6.b(i3, i10, this.d);
+        int i11 = this.c;
+        return this.e.subList(i3 + i11, i10 + i11);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List

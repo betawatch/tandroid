@@ -1,33 +1,70 @@
 package t9;
 
-import android.os.Bundle;
-import android.util.Log;
-import androidx.emoji2.text.f;
-import java.util.ArrayList;
-import th.m1;
+import d2.l0;
+import j$.util.DesugarCollections;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import org.telegram.ui.ActionBar.e3;
+import x7.b0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements v9.a {
-    public final /* synthetic */ f a;
+public final class a {
+    public final String a;
+    public final Set b;
+    public final Set c;
+    public final int d;
+    public final int e;
+    public final d f;
+    public final Set g;
 
-    public /* synthetic */ a(f fVar) {
-        this.a = fVar;
+    public a(String str, Set set, Set set2, int i3, int i10, d dVar, Set set3) {
+        this.a = str;
+        this.b = DesugarCollections.unmodifiableSet(set);
+        this.c = DesugarCollections.unmodifiableSet(set2);
+        this.d = i3;
+        this.e = i10;
+        this.f = dVar;
+        this.g = DesugarCollections.unmodifiableSet(set3);
     }
 
-    @Override // v9.a
-    public void I(Bundle bundle) {
-        ((hb.a) this.a.a).I(bundle);
+    public static l0 a(Class cls) {
+        return new l0(cls, new Class[0]);
     }
 
-    public void a(m1 m1Var) {
-        f fVar = this.a;
-        synchronized (fVar) {
-            ((ArrayList) fVar.b).add(m1Var);
-            ((kb.a) fVar.c).getClass();
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
-            }
+    public static l0 b(r rVar) {
+        r[] rVarArr = new r[0];
+        l0 l0Var = new l0();
+        l0Var.d = null;
+        HashSet hashSet = new HashSet();
+        l0Var.c = hashSet;
+        l0Var.e = new HashSet();
+        l0Var.a = 0;
+        l0Var.b = 0;
+        l0Var.g = new HashSet();
+        hashSet.add(rVar);
+        for (r rVar2 : rVarArr) {
+            b0.a(rVar2, "Null interface");
         }
+        Collections.addAll((HashSet) l0Var.c, rVarArr);
+        return l0Var;
+    }
+
+    public static a c(Object obj, Class cls, Class... clsArr) {
+        HashSet hashSet = new HashSet();
+        HashSet hashSet2 = new HashSet();
+        HashSet hashSet3 = new HashSet();
+        hashSet.add(r.a(cls));
+        for (Class cls2 : clsArr) {
+            b0.a(cls2, "Null interface");
+            hashSet.add(r.a(cls2));
+        }
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new e3(obj, 15), hashSet3);
+    }
+
+    public final String toString() {
+        return "Component<" + Arrays.toString(this.b.toArray()) + ">{" + this.d + ", type=" + this.e + ", deps=" + Arrays.toString(this.c.toArray()) + "}";
     }
 }

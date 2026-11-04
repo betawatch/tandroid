@@ -1,16 +1,40 @@
 package xd;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class d implements cd.c {
-    public static final d a = new d();
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.Choreographer;
+import b8.ib;
+import dd.f;
+import kotlin.jvm.internal.j;
 
-    @Override // cd.c
-    public final cd.h getContext() {
-        return cd.i.a;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public abstract class d {
+    private static volatile Choreographer choreographer;
+
+    static {
+        Object a10;
+        try {
+            a10 = new c(a(Looper.getMainLooper()), false);
+        } catch (Throwable th2) {
+            a10 = ib.a(th2);
+        }
+        if (a10 instanceof f) {
+            a10 = null;
+        }
     }
 
-    @Override // cd.c
-    public final void resumeWith(Object obj) {
+    public static final Handler a(Looper looper) {
+        if (Build.VERSION.SDK_INT < 28) {
+            try {
+                return (Handler) Handler.class.getDeclaredConstructor(Looper.class, Handler.Callback.class, Boolean.TYPE).newInstance(looper, null, Boolean.TRUE);
+            } catch (NoSuchMethodException unused) {
+                return new Handler(looper);
+            }
+        }
+        Object invoke = Handler.class.getDeclaredMethod("createAsync", Looper.class).invoke(null, looper);
+        j.c(invoke, "null cannot be cast to non-null type android.os.Handler");
+        return (Handler) invoke;
     }
 }

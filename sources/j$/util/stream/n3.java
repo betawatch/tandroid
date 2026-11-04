@@ -18,8 +18,8 @@ public final class n3 extends p3 implements i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l4) {
-        t3.H(this, l4);
+    public final /* synthetic */ void x(Long l10) {
+        t3.H(this, l10);
     }
 
     public n3(Spliterator spliterator, t3 t3Var, long[] jArr) {
@@ -39,12 +39,12 @@ public final class n3 extends p3 implements i5 {
 
     @Override // j$.util.stream.p3, j$.util.stream.j5
     public final void accept(long j10) {
-        int i10 = this.f;
-        if (i10 >= this.g) {
+        int i3 = this.f;
+        if (i3 >= this.g) {
             throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
         long[] jArr = this.h;
-        this.f = i10 + 1;
-        jArr[i10] = j10;
+        this.f = i3 + 1;
+        jArr[i3] = j10;
     }
 }

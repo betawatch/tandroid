@@ -1,94 +1,61 @@
 package ii;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class b {
-    public static SparseIntArray b;
-    public static final b c = new b();
-    public final SparseArray a;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.s1 c;
 
-    public b() {
-        this.a = new SparseArray();
+    public /* synthetic */ b(k kVar, org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        this.a = i3;
+        this.b = kVar;
+        this.c = s1Var;
     }
 
-    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i10 = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i10 < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            } else {
-                while (i10 < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th2) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-            }
-            throw th2;
-        }
-    }
-
-    public final String b(String str) {
-        if (str == null) {
-            return null;
-        }
-        return (String) this.a.get(str.hashCode());
-    }
-
-    public final String c(int i10, Context context, String str) {
-        String b10 = str != null ? b(str) : null;
-        if (b10 != null || i10 == 0) {
-            return b10;
-        }
-        if (context != null && i10 != 0) {
-            if (b == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                    try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                        for (int i11 = 0; i11 < readInt32; i11++) {
-                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i3 = 1;
+                final k kVar = this.b;
+                final org.telegram.ui.ActionBar.s1 s1Var = this.c;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: ii.c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i3) {
+                            case 0:
+                                k.B0(kVar, s1Var, tLObject, tL_error);
+                                break;
+                            default:
+                                k.C0(kVar, s1Var, tLObject, tL_error);
+                                break;
                         }
-                        bufferedInputStream.close();
-                        b = sparseIntArray;
-                    } finally {
                     }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            int i12 = b.get(i10);
-            if (i12 != 0) {
-                return (String) this.a.get(i12);
-            }
+                });
+                break;
+            default:
+                final int i10 = 0;
+                final k kVar2 = this.b;
+                final org.telegram.ui.ActionBar.s1 s1Var2 = this.c;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: ii.c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                k.B0(kVar2, s1Var2, tLObject, tL_error);
+                                break;
+                            default:
+                                k.C0(kVar2, s1Var2, tLObject, tL_error);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        return null;
-    }
-
-    public b(a aVar) {
-        SparseArray sparseArray = aVar.a;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

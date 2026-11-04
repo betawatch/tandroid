@@ -1,23 +1,24 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.k20;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.hb1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d0 implements k20 {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class d0 implements n10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e0 b;
 
-    public /* synthetic */ d0(e0 e0Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ d0(e0 e0Var, int i3) {
+        this.a = i3;
         this.b = e0Var;
     }
 
-    @Override // org.telegram.messenger.k20
+    @Override // org.telegram.messenger.n10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -32,7 +33,7 @@ public final /* synthetic */ class d0 implements k20 {
                     disablebackup.proof = walletownershipproof;
                     walletownershipproof.signature = importedWalletProof.signature;
                     walletownershipproof.timestamp = importedWalletProof.timestamp;
-                    ConnectionsManager.getInstance(k0Var.a).sendRequestTyped(disablebackup, new a3.b(1), new d0(e0Var, 1));
+                    ConnectionsManager.getInstance(k0Var.a).sendRequestTyped(disablebackup, new c3.b(1), new d0(e0Var, 1));
                     break;
                 } else {
                     if (str == null) {
@@ -48,7 +49,7 @@ public final /* synthetic */ class d0 implements k20 {
                 if (walletState != null) {
                     k0Var2.l0(walletState);
                     k0Var2.R();
-                    org.telegram.messenger.i0.h3(new org.telegram.ui.Components.voip.n0(19), 1000L);
+                    org.telegram.messenger.g0.i3(new hb1(2), 1000L);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");

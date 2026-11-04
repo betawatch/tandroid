@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.c0;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzlg extends j implements p {
     Object zza;
@@ -25,14 +25,14 @@ final class zzlg extends j implements p {
         this.zze = str;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzlg(this.zzc, this.zzd, this.zze, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlg) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzlg) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0052, code lost:
@@ -51,28 +51,28 @@ final class zzlg extends j implements p {
     
         if (r6 != r0) goto L11;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i10 = this.zzb;
-        if (i10 == 0) {
-            b.b(obj);
+        gd.a aVar = gd.a.a;
+        int i3 = this.zzb;
+        if (i3 == 0) {
+            ib.b(obj);
             zzly zzlyVar = this.zzc;
             this.zzb = 1;
             obj = zzlyVar.zzv(this);
-        } else if (i10 == 1) {
-            b.b(obj);
+        } else if (i3 == 1) {
+            ib.b(obj);
         } else {
-            if (i10 != 2) {
-                b.b(obj);
-                return ad.j.a;
+            if (i3 != 2) {
+                ib.b(obj);
+                return k.a;
             }
             zzhkVar = (zzhk) this.zza;
-            b.b(obj);
+            ib.b(obj);
             this.zza = null;
             this.zzb = 3;
         }

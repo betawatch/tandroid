@@ -1,137 +1,123 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class bp {
-    public static int q = 10;
-    public int a;
-    public String b;
+    public final int a;
+    public final long b;
+    public final ArrayList c = new ArrayList();
     public int d;
-    public volatile int e;
-    public int f;
-    public int g;
-    public int m;
-    public boolean n;
-    public final int o;
-    public boolean p;
-    public ArrayList c = new ArrayList();
-    public ArrayList h = new ArrayList();
-    public ArrayList i = new ArrayList();
-    public final LongSparseIntArray j = new LongSparseIntArray();
-    public final ArrayList k = new ArrayList();
-    public final ArrayList l = new ArrayList();
+    public boolean e;
+    public boolean f;
 
-    public bp() {
-        int i10 = q;
-        q = i10 + 1;
-        this.o = i10;
+    public bp(int i3, long j10) {
+        this.a = i3;
+        this.b = j10;
     }
 
-    public final boolean a(int i10, TLRPC.Dialog dialog) {
-        TLRPC.EncryptedChat Z0;
-        if (dialog == null) {
-            return false;
+    public final TLRPC.Document a() {
+        zi ziVar;
+        ArrayList arrayList = this.c;
+        if (arrayList.isEmpty() || (ziVar = (zi) arrayList.get(0)) == null) {
+            return null;
         }
-        long j10 = dialog.id;
-        if (o5.C(j10) && (Z0 = wp.r1(i10).Z0(Integer.valueOf((int) (4294967295L & j10)))) != null) {
-            j10 = Z0.user_id;
-        }
-        return this.h.contains(Long.valueOf(j10));
+        return ziVar.F0();
     }
 
-    public final boolean b(c cVar, long j10) {
-        TLRPC.Dialog dialog = (TLRPC.Dialog) wp.r1(cVar.a).Q.f(j10);
-        if (dialog == null) {
-            return false;
+    public final void b() {
+        if (this.f || this.e) {
+            return;
         }
-        return c(cVar, j10, dialog);
+        this.f = true;
+        TLRPC.TL_getSavedMusic tL_getSavedMusic = new TLRPC.TL_getSavedMusic();
+        int i3 = this.a;
+        tL_getSavedMusic.id = hp.s1(i3).o1(this.b);
+        tL_getSavedMusic.offset = this.c.size();
+        tL_getSavedMusic.limit = 30;
+        ConnectionsManager.getInstance(i3).sendRequest(tL_getSavedMusic, new s1(this, 6));
     }
 
-    public final boolean c(c cVar, long j10, TLRPC.Dialog dialog) {
-        TLRPC.Chat L0;
-        if (this.i.contains(Long.valueOf(j10))) {
-            return false;
+    public final void c(int i3, int i10) {
+        TLRPC.Document a10 = a();
+        ArrayList arrayList = this.c;
+        zi ziVar = (zi) arrayList.get(i10);
+        zi ziVar2 = (zi) arrayList.get(i3);
+        arrayList.set(i3, ziVar);
+        arrayList.set(i10, ziVar2);
+        if (a() != a10) {
+            e();
         }
-        if (!this.h.contains(Long.valueOf(j10))) {
-            if (dialog.folder_id != 0) {
-                int i10 = this.g;
-                int i11 = wp.D8;
-                if ((i10 & 128) != 0) {
-                    return false;
-                }
-            }
-            int i12 = cVar.a;
-            wp r12 = wp.r1(i12);
-            i5 r10 = i5.r(i12);
-            if ((this.g & 32) != 0 && r12.q2(dialog.id, 0L, null) && dialog.unread_mentions_count == 0) {
-                return false;
-            }
-            if ((this.g & 64) != 0 && r12.U0(dialog) == 0 && !dialog.unread_mark && dialog.unread_mentions_count == 0) {
-                return false;
-            }
-            if (j10 > 0) {
-                TLRPC.User Z1 = r12.Z1(Long.valueOf(j10));
-                if (Z1 == null) {
-                    return false;
-                }
-                if (Z1.bot) {
-                    if ((this.g & 16) == 0) {
-                        return false;
-                    }
-                } else if (Z1.self || Z1.contact || r10.x(j10)) {
-                    if ((this.g & 1) == 0) {
-                        return false;
-                    }
-                } else if ((this.g & 2) == 0) {
-                    return false;
-                }
-            } else {
-                if (j10 >= 0 || (L0 = r12.L0(Long.valueOf(-j10))) == null) {
-                    return false;
-                }
-                if (w3.Y(L0)) {
-                    int i13 = this.g;
-                    int i14 = wp.E8;
-                    if ((i13 & i14) != i14) {
-                        return false;
-                    }
-                } else {
-                    if (w3.X(i12, L0)) {
-                        return false;
-                    }
-                    if (!w3.T(L0) || L0.megagroup) {
-                        if ((this.g & 4) == 0) {
-                            return false;
-                        }
-                    } else if ((this.g & 8) == 0) {
-                        return false;
-                    }
-                }
+        zi ziVar3 = i10 == 0 ? null : (zi) arrayList.get(i10 - 1);
+        TLRPC.Document F0 = ziVar2.F0();
+        TLRPC.Document F02 = ziVar3 == null ? null : ziVar3.F0();
+        TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
+        if (F0 == null) {
+            return;
+        }
+        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+        tL_account_saveMusic.id = tL_inputDocument;
+        tL_inputDocument.id = F0.id;
+        tL_inputDocument.access_hash = F0.access_hash;
+        byte[] bArr = F0.file_reference;
+        tL_inputDocument.file_reference = bArr;
+        if (bArr == null) {
+            tL_inputDocument.file_reference = new byte[0];
+        }
+        if (F02 != null) {
+            tL_account_saveMusic.flags |= 2;
+            TLRPC.TL_inputDocument tL_inputDocument2 = new TLRPC.TL_inputDocument();
+            tL_account_saveMusic.after_id = tL_inputDocument2;
+            tL_inputDocument2.id = F02.id;
+            tL_inputDocument2.access_hash = F02.access_hash;
+            byte[] bArr2 = F02.file_reference;
+            tL_inputDocument2.file_reference = bArr2;
+            if (bArr2 == null) {
+                tL_inputDocument2.file_reference = new byte[0];
             }
         }
-        return true;
+        tL_account_saveMusic.unsave = false;
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_account_saveMusic, null);
     }
 
-    public final boolean d() {
-        int i10 = this.g;
-        int i11 = wp.D8;
-        return (i10 & 512) > 0;
+    public final zi d(TLRPC.Document document) {
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.id = az.p();
+        int i3 = this.a;
+        hp s12 = hp.s1(i3);
+        long j10 = this.b;
+        tL_message.peer_id = s12.z1(j10);
+        tL_message.from_id = hp.s1(i3).z1(j10);
+        TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+        tL_message.media = tL_messageMediaDocument;
+        tL_messageMediaDocument.document = document;
+        zi ziVar = new zi(i3, tL_message, false, false);
+        ziVar.K(true);
+        return ziVar;
     }
 
-    public final boolean e() {
-        return this.a == 0;
-    }
-
-    public final boolean f() {
-        if (!d()) {
-            return false;
+    public final void e() {
+        TLRPC.Document a10 = a();
+        int i3 = this.a;
+        hp s12 = hp.s1(i3);
+        long j10 = this.b;
+        TLRPC.UserFull b22 = s12.b2(j10);
+        if (b22 == null) {
+            return;
         }
-        int i10 = this.g;
-        int i11 = wp.D8;
-        return (i10 & 1024) > 0;
+        if (a10 == null) {
+            b22.flags2 &= -2097153;
+            b22.saved_music = null;
+        } else {
+            b22.flags2 |= TLObject.FLAG_21;
+            b22.saved_music = a10;
+        }
+        qr.a0(i3).j2(b22, false);
+        h10.i(i3).v(true);
+        hs.f(i3).k(hs.V3, Long.valueOf(j10));
     }
 }

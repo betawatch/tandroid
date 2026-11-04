@@ -1,111 +1,26 @@
 package com.google.android.gms.common.api.internal;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.ComponentCallbacks2;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d implements Application.ActivityLifecycleCallbacks, ComponentCallbacks2 {
-    public static final d e = new d();
-    public final AtomicBoolean a = new AtomicBoolean();
-    public final AtomicBoolean b = new AtomicBoolean();
-    public final ArrayList c = new ArrayList();
-    public boolean d = false;
+public abstract class d extends BasePendingResult implements e {
+    public final com.google.android.gms.common.api.d o;
+    public final com.google.android.gms.common.api.e p;
 
-    public static void b(Application application) {
-        d dVar = e;
-        synchronized (dVar) {
-            try {
-                if (!dVar.d) {
-                    application.registerActivityLifecycleCallbacks(dVar);
-                    application.registerComponentCallbacks(dVar);
-                    dVar.d = true;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(com.google.android.gms.common.api.e eVar, com.google.android.gms.common.api.m mVar) {
+        super(mVar);
+        p6.m.h(mVar, "GoogleApiClient must not be null");
+        p6.m.h(eVar, "Api must not be null");
+        this.o = eVar.b;
+        this.p = eVar;
     }
 
-    public final void a(c cVar) {
-        synchronized (e) {
-            this.c.add(cVar);
-        }
-    }
+    public abstract void n(com.google.android.gms.common.api.c cVar);
 
-    public final void c(boolean z10) {
-        synchronized (e) {
-            try {
-                ArrayList arrayList = this.c;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((c) obj).a(z10);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityCreated(Activity activity, Bundle bundle) {
-        boolean compareAndSet = this.a.compareAndSet(true, false);
-        this.b.set(true);
-        if (compareAndSet) {
-            c(false);
-        }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityResumed(Activity activity) {
-        boolean compareAndSet = this.a.compareAndSet(true, false);
-        this.b.set(true);
-        if (compareAndSet) {
-            c(false);
-        }
-    }
-
-    @Override // android.content.ComponentCallbacks2
-    public final void onTrimMemory(int i10) {
-        if (i10 == 20 && this.a.compareAndSet(false, true)) {
-            this.b.set(true);
-            c(true);
-        }
-    }
-
-    @Override // android.content.ComponentCallbacks
-    public final void onLowMemory() {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityDestroyed(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityPaused(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStarted(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStopped(Activity activity) {
-    }
-
-    @Override // android.content.ComponentCallbacks
-    public final void onConfigurationChanged(Configuration configuration) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+    public final void o(Status status) {
+        p6.m.a("Failed result must not be success", !status.b());
+        a(d(status));
     }
 }

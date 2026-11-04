@@ -6,31 +6,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class j {
     public final int a;
-    public final a6.i b;
-    public final hb.a c;
+    public final bb.c b;
+    public final nb.a c;
     public int d;
     public int e;
     public int f;
 
-    public j(int i10) {
-        this.a = i10;
-        if (i10 <= 0) {
+    public j(int i3) {
+        this.a = i3;
+        if (i3 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.b = new a6.i(6);
-        this.c = new hb.a(3);
+        this.b = new bb.c(6);
+        this.c = new nb.a(3);
     }
 
     public final Object a(Object key) {
-        kotlin.jvm.internal.i.e(key, "key");
+        kotlin.jvm.internal.j.e(key, "key");
         synchronized (this.c) {
-            a6.i iVar = this.b;
-            iVar.getClass();
-            Object obj = ((LinkedHashMap) iVar.b).get(key);
+            bb.c cVar = this.b;
+            cVar.getClass();
+            Object obj = ((LinkedHashMap) cVar.b).get(key);
             if (obj != null) {
                 this.e++;
                 return obj;
@@ -42,12 +42,12 @@ public class j {
 
     public final Object b(Object key, Object obj) {
         Object put;
-        kotlin.jvm.internal.i.e(key, "key");
+        kotlin.jvm.internal.j.e(key, "key");
         synchronized (this.c) {
             this.d++;
-            a6.i iVar = this.b;
-            iVar.getClass();
-            put = ((LinkedHashMap) iVar.b).put(key, obj);
+            bb.c cVar = this.b;
+            cVar.getClass();
+            put = ((LinkedHashMap) cVar.b).put(key, obj);
             if (put != null) {
                 this.d--;
             }
@@ -63,18 +63,18 @@ public class j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(int i10) {
+    public final void c(int i3) {
         while (true) {
             synchronized (this.c) {
                 try {
                     if (this.d < 0 || (((LinkedHashMap) this.b.b).isEmpty() && this.d != 0)) {
                         break;
                     }
-                    if (this.d <= i10 || ((LinkedHashMap) this.b.b).isEmpty()) {
+                    if (this.d <= i3 || ((LinkedHashMap) this.b.b).isEmpty()) {
                         break;
                     }
                     Set entrySet = ((LinkedHashMap) this.b.b).entrySet();
-                    kotlin.jvm.internal.i.d(entrySet, "map.entries");
+                    kotlin.jvm.internal.j.d(entrySet, "map.entries");
                     Object obj = null;
                     if (entrySet instanceof List) {
                         List list = (List) entrySet;
@@ -93,13 +93,13 @@ public class j {
                     }
                     Object key = entry.getKey();
                     Object value = entry.getValue();
-                    a6.i iVar = this.b;
-                    iVar.getClass();
-                    kotlin.jvm.internal.i.e(key, "key");
-                    ((LinkedHashMap) iVar.b).remove(key);
-                    int i11 = this.d;
-                    kotlin.jvm.internal.i.e(value, "value");
-                    this.d = i11 - 1;
+                    bb.c cVar = this.b;
+                    cVar.getClass();
+                    kotlin.jvm.internal.j.e(key, "key");
+                    ((LinkedHashMap) cVar.b).remove(key);
+                    int i10 = this.d;
+                    kotlin.jvm.internal.j.e(value, "value");
+                    this.d = i10 - 1;
                 } catch (Throwable th2) {
                     throw th2;
                 }
@@ -111,9 +111,9 @@ public class j {
         String str;
         synchronized (this.c) {
             try {
-                int i10 = this.e;
-                int i11 = this.f + i10;
-                str = "LruCache[maxSize=" + this.a + ",hits=" + this.e + ",misses=" + this.f + ",hitRate=" + (i11 != 0 ? (i10 * 100) / i11 : 0) + "%]";
+                int i3 = this.e;
+                int i10 = this.f + i3;
+                str = "LruCache[maxSize=" + this.a + ",hits=" + this.e + ",misses=" + this.f + ",hitRate=" + (i10 != 0 ? (i3 * 100) / i10 : 0) + "%]";
             } catch (Throwable th2) {
                 throw th2;
             }

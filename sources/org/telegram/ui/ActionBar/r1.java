@@ -1,70 +1,71 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.graphics.drawable.GradientDrawable;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.dd;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
+import org.telegram.ui.Components.fh0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class r1 extends FrameLayout {
-    public final TextView a;
-    public final ImageView b;
+public final class r1 extends Drawable implements z5 {
+    public final View a;
+    public final GradientDrawable b;
+    public final int c;
+    public final int d;
+    public final e6 e;
 
-    public r1(Context context, p6 p6Var) {
-        super(context);
-        int i10 = t6.I5;
-        Drawable h02 = t6.h0(t6.w0(i10, p6Var), 2, -1);
-        w6 N = a7.N(i10);
-        setBackground(h02);
-        a7.k(this, h02, null, N, p6Var);
-        setPadding(org.telegram.messenger.i0.L(23.0f), 0, org.telegram.messenger.i0.L(23.0f), 0);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        a7.t(imageView, t6.J5, p6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, w7.b6.e(-2, 40, (dd.X ? 5 : 3) | 16));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        a7.V(textView, t6.j5, p6Var);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, w7.b6.e(-2, -2, (dd.X ? 5 : 3) | 16));
+    public r1(fh0 fh0Var, int i3, int i10, int i11, e6 e6Var) {
+        this.a = fh0Var;
+        this.c = i10;
+        this.d = i11;
+        this.e = e6Var;
+        GradientDrawable gradientDrawable = new GradientDrawable();
+        this.b = gradientDrawable;
+        gradientDrawable.setColor(i3);
+        gradientDrawable.setCornerRadius(org.telegram.messenger.g0.L(128.0f));
     }
 
-    public final void a(int i10, CharSequence charSequence) {
-        TextView textView = this.a;
-        textView.setText(charSequence);
-        ImageView imageView = this.b;
-        if (i10 == 0) {
-            imageView.setVisibility(4);
-            textView.setPadding(0, 0, 0, 0);
-        } else {
-            imageView.setImageResource(i10);
-            imageView.setVisibility(0);
-            textView.setPadding(dd.X ? 0 : org.telegram.messenger.i0.L(56.0f), 0, dd.X ? org.telegram.messenger.i0.L(56.0f) : 0, 0);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int width = this.a.getWidth();
+        int i3 = this.c;
+        int i10 = (int) ((width - i3) / 2.0f);
+        int height = (int) ((r0.getHeight() - i3) / 2.0f);
+        int width2 = (int) ((r0.getWidth() + i3) / 2.0f);
+        int height2 = (int) ((r0.getHeight() + i3) / 2.0f);
+        GradientDrawable gradientDrawable = this.b;
+        gradientDrawable.setBounds(i10, height, width2, height2);
+        gradientDrawable.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return this.b.getOpacity();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        this.b.setAlpha(i3);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.b.setColorFilter(colorFilter);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i3 = this.d;
+        if (i3 >= 0) {
+            this.b.setColor(k6.w0(i3, this.e));
+            invalidateSelf();
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setGravity(int i10) {
-        this.a.setGravity(i10);
-    }
-
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

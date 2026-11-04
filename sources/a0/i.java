@@ -2,40 +2,40 @@ package a0;
 
 import java.util.ConcurrentModificationException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Object a = new Object();
     public static final Object b = new Object();
 
-    public static final void a(g gVar, int i10) {
-        gVar.a = new int[i10];
-        gVar.b = new Object[i10];
+    public static final void a(g gVar, int i3) {
+        gVar.a = new int[i3];
+        gVar.b = new Object[i3];
     }
 
-    public static final int b(g gVar, Object obj, int i10) {
-        int i11 = gVar.c;
-        if (i11 == 0) {
+    public static final int b(g gVar, Object obj, int i3) {
+        int i10 = gVar.c;
+        if (i10 == 0) {
             return -1;
         }
         try {
-            int a2 = b0.a.a(i11, i10, gVar.a);
-            if (a2 < 0 || kotlin.jvm.internal.i.a(obj, gVar.b[a2])) {
-                return a2;
+            int a10 = b0.a.a(i10, i3, gVar.a);
+            if (a10 < 0 || kotlin.jvm.internal.j.a(obj, gVar.b[a10])) {
+                return a10;
             }
-            int i12 = a2 + 1;
-            while (i12 < i11 && gVar.a[i12] == i10) {
-                if (kotlin.jvm.internal.i.a(obj, gVar.b[i12])) {
+            int i11 = a10 + 1;
+            while (i11 < i10 && gVar.a[i11] == i3) {
+                if (kotlin.jvm.internal.j.a(obj, gVar.b[i11])) {
+                    return i11;
+                }
+                i11++;
+            }
+            for (int i12 = a10 - 1; i12 >= 0 && gVar.a[i12] == i3; i12--) {
+                if (kotlin.jvm.internal.j.a(obj, gVar.b[i12])) {
                     return i12;
                 }
-                i12++;
             }
-            for (int i13 = a2 - 1; i13 >= 0 && gVar.a[i13] == i10; i13--) {
-                if (kotlin.jvm.internal.i.a(obj, gVar.b[i13])) {
-                    return i13;
-                }
-            }
-            return ~i12;
+            return ~i11;
         } catch (IndexOutOfBoundsException unused) {
             throw new ConcurrentModificationException();
         }

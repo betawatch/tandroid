@@ -1,104 +1,116 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class k60 extends org.telegram.ui.Components.s51 {
-    public boolean e;
+public final /* synthetic */ class k60 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ TLRPC.TL_error f;
+    public final /* synthetic */ ly h;
 
-    @Override // org.telegram.ui.Components.s51
-    public final void Z(ArrayList arrayList, org.telegram.ui.Components.q51 q51Var) {
-        org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) mi.e.k.a();
-        org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) mi.e.l.a();
-        arrayList.add(org.telegram.ui.Components.b51.u(org.telegram.messenger.dd.L0(2131749349, null)));
-        org.telegram.ui.Components.b51 x10 = org.telegram.ui.Components.b51.x(11, org.telegram.messenger.dd.L0(2131749348, null));
-        x10.L(k5Var == org.telegram.ui.ActionBar.k5.b);
-        arrayList.add(x10);
-        org.telegram.ui.Components.b51 x11 = org.telegram.ui.Components.b51.x(10, org.telegram.messenger.dd.L0(2131749347, null));
-        x11.L(k5Var == org.telegram.ui.ActionBar.k5.a);
-        arrayList.add(x11);
-        arrayList.add(org.telegram.ui.Components.b51.C(org.telegram.messenger.dd.L0(2131749346, null)));
-        arrayList.add(org.telegram.ui.Components.b51.u(org.telegram.messenger.dd.L0(2131749342, null)));
-        org.telegram.ui.Components.b51 x12 = org.telegram.ui.Components.b51.x(20, org.telegram.messenger.dd.L0(2131749341, null));
-        x12.L(j5Var == org.telegram.ui.ActionBar.j5.a);
-        arrayList.add(x12);
-        org.telegram.ui.Components.b51 x13 = org.telegram.ui.Components.b51.x(21, org.telegram.messenger.dd.L0(2131749340, null));
-        x13.L(j5Var == org.telegram.ui.ActionBar.j5.b);
-        arrayList.add(x13);
-        arrayList.add(org.telegram.ui.Components.b51.C(null));
-        arrayList.add(org.telegram.ui.Components.b51.u(org.telegram.messenger.dd.L0(2131749345, null)));
-        org.telegram.ui.Components.b51 i10 = org.telegram.ui.Components.b51.i(30, org.telegram.messenger.dd.L0(2131749344, null));
-        i10.L(this.e);
-        arrayList.add(i10);
-        arrayList.add(org.telegram.ui.Components.b51.C(org.telegram.messenger.dd.L0(2131749343, null)));
+    public /* synthetic */ k60(LaunchActivity launchActivity, TLObject tLObject, int i3, String str, TLRPC.TL_error tL_error, ly lyVar) {
+        this.b = launchActivity;
+        this.c = tLObject;
+        this.d = i3;
+        this.e = str;
+        this.f = tL_error;
+        this.h = lyVar;
     }
 
-    @Override // org.telegram.ui.Components.s51
-    public final CharSequence a0() {
-        return org.telegram.messenger.dd.L0(2131749339, null);
-    }
-
-    @Override // org.telegram.ui.Components.s51
-    public final void b0(org.telegram.ui.Components.b51 b51Var, View view) {
-        int i10 = b51Var.d;
-        if (i10 == 10 || i10 == 11) {
-            mi.e.k.b(i10 == 10 ? org.telegram.ui.ActionBar.k5.a : org.telegram.ui.ActionBar.k5.b);
-            d0();
-        } else if (i10 == 20 || i10 == 21) {
-            mi.e.l.b(i10 == 21 ? org.telegram.ui.ActionBar.j5.b : org.telegram.ui.ActionBar.j5.a);
-            d0();
-        } else {
-            if (i10 != 30) {
-                return;
-            }
-            this.e = !this.e;
-            this.simpleActionBar.getDoneButton().a(this.e, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.fc a02;
+        int i3;
+        int i10;
+        int i11 = this.a;
+        ly lyVar = this.h;
+        TLRPC.TL_error tL_error = this.f;
+        String str = this.e;
+        TLObject tLObject = this.c;
+        switch (i11) {
+            case 0:
+                String str2 = LaunchActivity.E1;
+                if (tL_error != null) {
+                    org.telegram.ui.ActionBar.d2 T = LaunchActivity.T();
+                    if (T != null) {
+                        if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
+                            a02 = org.telegram.ui.Components.fc.a0(T);
+                            i3 = R.raw.fire_on;
+                            i10 = 2131743890;
+                        } else {
+                            a02 = org.telegram.ui.Components.fc.a0(T);
+                            i3 = R.raw.error;
+                            i10 = 2131743891;
+                        }
+                        org.telegram.messenger.k5.o(null, i10, a02, i3, 36);
+                    }
+                } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
+                    TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
+                    LaunchActivity launchActivity = this.b;
+                    org.telegram.messenger.hp.s1(launchActivity.P).Y3(tL_payments_uniqueStarGift.users, false);
+                    org.telegram.messenger.hp.s1(launchActivity.P).S3(tL_payments_uniqueStarGift.chats, false);
+                    org.telegram.ui.ActionBar.d2 T2 = LaunchActivity.T();
+                    TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
+                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
+                        ci.l6 l6Var = new ci.l6(launchActivity, this.d, 0L, null, null);
+                        l6Var.h2(str, (TL_stars.TL_starGiftUnique) starGift, null);
+                        if (T2 == null) {
+                            l6Var.show();
+                        } else if (T2.getLastStoryViewer() == null || !T2.getLastStoryViewer().L0) {
+                            T2.showDialog(l6Var);
+                        } else {
+                            T2.getLastStoryViewer().t(l6Var);
+                        }
+                    }
+                }
+                try {
+                    lyVar.run();
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+                break;
+            default:
+                String str3 = LaunchActivity.E1;
+                boolean z10 = tLObject instanceof TLRPC.User;
+                LaunchActivity launchActivity2 = this.b;
+                if (z10) {
+                    TLRPC.User user = (TLRPC.User) tLObject;
+                    org.telegram.messenger.hp.s1(this.d).X3(user, false, false);
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", user.id);
+                    launchActivity2.t0(new wm(bundle));
+                } else {
+                    StringBuilder u10 = a1.g.u("cant import contact token. token=", str, " err=");
+                    u10.append(tL_error == null ? null : tL_error.text);
+                    org.telegram.messenger.a8.d(u10.toString());
+                    org.telegram.messenger.k5.p(null, 2131748142, org.telegram.ui.Components.fc.a0((org.telegram.ui.ActionBar.d2) k2.p1.h(1, launchActivity2.e0)), null);
+                }
+                try {
+                    lyVar.run();
+                    break;
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                }
         }
-        this.a.f3.O(true);
     }
 
-    @Override // org.telegram.ui.Components.s51
-    public final boolean c0(org.telegram.ui.Components.b51 b51Var, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.s51, org.telegram.ui.ActionBar.k2
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        this.fragmentView = super.createView(context);
-        this.a.r1();
-        this.a.setSectionsDrawBackground(true);
-        d0();
-        return this.fragmentView;
-    }
-
-    public final void d0() {
-        org.telegram.ui.ActionBar.i5 i5Var = this.simpleActionBar;
-        org.telegram.ui.ActionBar.l5 l5Var = i5Var.n;
-        if (l5Var != null) {
-            i5Var.removeView(l5Var);
-            i5Var.n = null;
-            i5Var.g();
-            i5Var.requestLayout();
-        }
-        this.simpleActionBar.n(org.telegram.messenger.dd.L0(2131745963, null)).a(this.e, false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.k2
-    public final org.telegram.ui.Components.uk0 getListViewForSimpleGlass() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k2
-    public final boolean useSimpleActionBar() {
-        return true;
+    public /* synthetic */ k60(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i3, String str, ly lyVar) {
+        this.b = launchActivity;
+        this.f = tL_error;
+        this.c = tLObject;
+        this.d = i3;
+        this.e = str;
+        this.h = lyVar;
     }
 }

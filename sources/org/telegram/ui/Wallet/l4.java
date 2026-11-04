@@ -1,31 +1,26 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class l4 implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class l4 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.t2[] b;
 
-    public /* synthetic */ l4(b6 b6Var, int i10) {
-        this.a = i10;
-        this.b = b6Var;
+    public /* synthetic */ l4(org.telegram.ui.ActionBar.t2[] t2VarArr, int i3) {
+        this.a = i3;
+        this.b = t2VarArr;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                b6 b6Var = this.b;
-                b6Var.getClass();
-                b6Var.M0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b[0].dismiss();
                 break;
             default:
-                b6 b6Var2 = this.b;
-                b6Var2.getClass();
-                b6Var2.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b6Var2.T0();
+                this.b[0].dismiss();
                 break;
         }
     }

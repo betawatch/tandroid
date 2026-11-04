@@ -1,120 +1,60 @@
 package dh;
 
-import androidx.recyclerview.widget.RecyclerView;
-import ci.p;
-import org.telegram.messenger.i0;
-import org.telegram.ui.jq0;
-import org.telegram.ui.sb;
-import s4.a0;
-import s4.z0;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import b8.mf;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class f extends a0 {
-    public final /* synthetic */ int I;
+public final class f extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public final e a;
+    public boolean b;
+    public boolean c;
+    public u10 d;
 
-    public /* synthetic */ f(int i10) {
-        this.I = i10;
+    public f(Activity activity, e6 e6Var) {
+        super(activity);
+        e eVar = new e(this, activity);
+        this.a = eVar;
+        eVar.setHapticFeedbackEnabled(true);
+        eVar.setImageResource(R.drawable.smiles_tab_clear);
+        r6.t(eVar, k6.Gf, e6Var, PorterDuff.Mode.MULTIPLY);
+        eVar.setScaleType(ImageView.ScaleType.CENTER);
+        eVar.setContentDescription(bd.M0(2131754920, null));
+        eVar.setFocusable(true);
+        eVar.setOnClickListener(new ai.t(4));
+        addView(eVar, mf.e(36, 36, 17));
+        int x02 = k6.x0(null, k6.i6, false);
+        int L = org.telegram.messenger.g0.L(36.0f);
+        int i3 = k6.d6;
+        org.telegram.ui.Cells.y j02 = k6.j0(L, e6Var != null ? e6Var.h(i3) : k6.x0(null, i3, false), x02);
+        n6 N = r6.N(i3);
+        eVar.setBackground(j02);
+        r6.k(eVar, j02, N, null, e6Var);
+        eVar.setOutlineProvider(new cg.q0(18));
+        eVar.setElevation(org.telegram.messenger.g0.L(1.0f));
+        eVar.setClipToOutline(true);
+        setClickable(true);
     }
 
-    @Override // s4.a0
-    public int W0(z0 z0Var) {
-        switch (this.I) {
-            case 4:
-                return 5000;
-            case 8:
-                return i0.L(4000.0f);
-            default:
-                return super.W0(z0Var);
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30));
     }
 
-    @Override // s4.a0, s4.n0
-    public boolean e() {
-        switch (this.I) {
-            case 0:
-                return false;
-            default:
-                return super.e();
-        }
-    }
-
-    @Override // s4.a0, s4.n0
-    public void v0(RecyclerView recyclerView, z0 z0Var, int i10) {
-        switch (this.I) {
-            case 3:
-                p pVar = new p(recyclerView.getContext(), 0);
-                pVar.a = i10;
-                w0(pVar);
-                break;
-            case 14:
-                jq0 jq0Var = new jq0(recyclerView.getContext());
-                jq0Var.a = i10;
-                w0(jq0Var);
-                break;
-            default:
-                super.v0(recyclerView, z0Var, i10);
-                break;
-        }
-    }
-
-    @Override // s4.a0, s4.n0
-    public boolean y0() {
-        switch (this.I) {
-            case 1:
-                return false;
-            case 2:
-                return false;
-            case 3:
-                return true;
-            case 4:
-            case 5:
-            case 8:
-            case 14:
-            default:
-                return super.y0();
-            case 6:
-                return false;
-            case 7:
-                return false;
-            case 9:
-                return true;
-            case 10:
-                return false;
-            case 11:
-                return false;
-            case 12:
-                return false;
-            case 13:
-                return false;
-            case 15:
-                return false;
-            case 16:
-                return false;
-            case 17:
-                return true;
-            case 18:
-                return false;
-            case 19:
-                return false;
-            case 20:
-                return false;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(int i10, boolean z10, int i11) {
-        super(i10, z10);
-        this.I = i11;
-    }
-
-    public f(sb sbVar) {
-        this.I = 3;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f() {
-        super(0, true);
-        this.I = 14;
+    public void setOnBackspace(u10 u10Var) {
+        this.d = u10Var;
     }
 }

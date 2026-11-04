@@ -1,49 +1,42 @@
 package bb;
 
-import android.os.Build;
-import java.util.ArrayList;
+import a1.g;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
     public final String b;
-    public final String c;
-    public final q d;
-    public final ArrayList e;
 
-    public a(String str, String versionName, String appBuildVersion, q qVar, ArrayList arrayList) {
-        String deviceManufacturer = Build.MANUFACTURER;
-        kotlin.jvm.internal.i.e(versionName, "versionName");
-        kotlin.jvm.internal.i.e(appBuildVersion, "appBuildVersion");
-        kotlin.jvm.internal.i.e(deviceManufacturer, "deviceManufacturer");
+    public a(String str, String str2) {
         this.a = str;
-        this.b = versionName;
-        this.c = appBuildVersion;
-        this.d = qVar;
-        this.e = arrayList;
+        if (str2 == null) {
+            throw new NullPointerException("Null version");
+        }
+        this.b = str2;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
-        if (!(obj instanceof a)) {
-            return false;
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            if (this.a.equals(aVar.a) && this.b.equals(aVar.b)) {
+                return true;
+            }
         }
-        a aVar = (a) obj;
-        if (!this.a.equals(aVar.a) || !kotlin.jvm.internal.i.a(this.b, aVar.b) || !kotlin.jvm.internal.i.a(this.c, aVar.c)) {
-            return false;
-        }
-        String str = Build.MANUFACTURER;
-        return kotlin.jvm.internal.i.a(str, str) && this.d.equals(aVar.d) && this.e.equals(aVar.e);
+        return false;
     }
 
     public final int hashCode() {
-        return this.e.hashCode() + ((this.d.hashCode() + a1.g.f(a1.g.f(a1.g.f(this.a.hashCode() * 31, 31, this.b), 31, this.c), 31, Build.MANUFACTURER)) * 31);
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
     }
 
     public final String toString() {
-        return "AndroidApplicationInfo(packageName=" + this.a + ", versionName=" + this.b + ", appBuildVersion=" + this.c + ", deviceManufacturer=" + Build.MANUFACTURER + ", currentProcessDetails=" + this.d + ", appProcessDetails=" + this.e + ')';
+        StringBuilder sb2 = new StringBuilder("LibraryVersion{libraryName=");
+        sb2.append(this.a);
+        sb2.append(", version=");
+        return g.s(sb2, this.b, "}");
     }
 }

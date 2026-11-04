@@ -1,17 +1,16 @@
 package ae;
 
-import java.util.concurrent.atomic.AtomicLongFieldUpdater;
-import td.x0;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class h extends x0 {
-    public c c;
+public final class h implements fd.c {
+    public static final h a = new h();
 
-    @Override // td.a0
-    public final void c(cd.h hVar, Runnable runnable) {
-        c cVar = this.c;
-        AtomicLongFieldUpdater atomicLongFieldUpdater = c.n;
-        cVar.b(runnable, l.g);
+    @Override // fd.c
+    public final fd.h getContext() {
+        return fd.i.a;
+    }
+
+    @Override // fd.c
+    public final void resumeWith(Object obj) {
     }
 }

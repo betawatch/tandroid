@@ -1,176 +1,88 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
-import android.util.SparseArray;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cl implements Runnable {
+public final /* synthetic */ class cl implements n10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wp b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ hp b;
+    public final /* synthetic */ n10 c;
 
-    public /* synthetic */ cl(wp wpVar, int i10, int i11) {
-        this.a = i11;
-        this.b = wpVar;
-        this.c = i10;
+    public /* synthetic */ cl(hp hpVar, n10 n10Var, int i3) {
+        this.a = i3;
+        this.b = hpVar;
+        this.c = n10Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0088  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        int i11;
-        long j10;
-        int i12;
-        int i13;
-        long j11;
+    @Override // org.telegram.messenger.n10
+    public final void a(Object obj, Object obj2) {
+        int i3;
         switch (this.a) {
             case 0:
-                this.b.getConnectionsManager().cancelRequestsForGuid(this.c);
-                break;
-            case 1:
-                wp wpVar = this.b;
-                int i14 = this.c;
-                if ((wpVar.V1 == null && wpVar.W1 == null && !wpVar.T1) || ((i10 = wpVar.U1) != 0 && i14 < i10)) {
-                    a0.h hVar = null;
-                    Utilities.d.c(new yj(wpVar, hVar, hVar, 2));
-                    break;
-                }
-                break;
-            case 2:
-                wp wpVar2 = this.b;
-                int i15 = this.c;
-                if (i15 != 1) {
-                    wpVar2.f4(i15);
+                TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                hp hpVar = this.b;
+                hpVar.getClass();
+                n10 n10Var = this.c;
+                if (messages_chats == null) {
+                    n10Var.a(null, tL_error);
                     break;
                 } else {
-                    wpVar2.k0 = false;
-                    wpVar2.D();
-                    break;
-                }
-            default:
-                final wp wpVar3 = this.b;
-                int i16 = this.c;
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                a0.h hVar2 = wpVar3.K0;
-                int m10 = hVar2.m();
-                int i17 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                int i18 = 0;
-                while (i18 < m10) {
-                    SparseArray sparseArray = (SparseArray) hVar2.n(i18);
-                    if (sparseArray == null) {
-                        i11 = i16;
-                        j10 = elapsedRealtime;
-                    } else {
-                        int size = sparseArray.size();
-                        int i19 = 0;
-                        while (true) {
-                            int i20 = 1000;
-                            if (i19 < size) {
-                                kj kjVar = (kj) sparseArray.valueAt(i19);
-                                TLRPC.Poll poll = ((TLRPC.TL_messageMediaPoll) kjVar.k.media).poll;
-                                int i21 = poll.close_date;
-                                final boolean z10 = (i21 == 0 || poll.closed) ? false : true;
-                                if (z10) {
-                                    if (i21 <= i16) {
-                                        i12 = m10;
-                                        int i22 = i17;
-                                        if (Math.abs(elapsedRealtime - kjVar.u0) >= i20) {
-                                            if (!kjVar.t0 && !z10) {
-                                                sparseArray.remove(kjVar.f1());
-                                                size--;
-                                                i19--;
-                                            }
-                                            i13 = i16;
-                                            j11 = elapsedRealtime;
-                                        } else {
-                                            kjVar.u0 = elapsedRealtime;
-                                            TLRPC.TL_messages_getPollResults tL_messages_getPollResults = new TLRPC.TL_messages_getPollResults();
-                                            i13 = i16;
-                                            j11 = elapsedRealtime;
-                                            tL_messages_getPollResults.peer = wpVar3.i1(kj.B0(kjVar.k));
-                                            tL_messages_getPollResults.msg_id = kjVar.f1();
-                                            TLRPC.Message message = kjVar.k;
-                                            long j12 = 0;
-                                            if (message != null && kjVar.D == 17) {
-                                                TLRPC.MessageMedia o12 = kj.o1(message);
-                                                if (o12 instanceof TLRPC.TL_messageMediaPoll) {
-                                                    j12 = ((TLRPC.TL_messageMediaPoll) o12).poll.hash;
-                                                }
-                                            }
-                                            tL_messages_getPollResults.poll_hash = j12;
-                                            wpVar3.getConnectionsManager().sendRequest(tL_messages_getPollResults, new RequestDelegate() { // from class: org.telegram.messenger.ik
-                                                @Override // org.telegram.tgnet.RequestDelegate
-                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                                    TLRPC.Poll poll2;
-                                                    wp wpVar4 = wp.this;
-                                                    wpVar4.getClass();
-                                                    if (tL_error == null) {
-                                                        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                                                        if (z10) {
-                                                            for (int i23 = 0; i23 < updates.updates.size(); i23++) {
-                                                                TLRPC.Update update = updates.updates.get(i23);
-                                                                if ((update instanceof TL_update.TL_updateMessagePoll) && (poll2 = ((TL_update.TL_updateMessagePoll) update).poll) != null && !poll2.closed) {
-                                                                    wpVar4.M0 = System.currentTimeMillis() - 4000;
-                                                                }
-                                                            }
-                                                        }
-                                                        wpVar4.L3(updates, false);
-                                                    }
-                                                }
-                                            });
-                                        }
-                                        i19++;
-                                        m10 = i12;
-                                        i17 = i22;
-                                        i16 = i13;
-                                        elapsedRealtime = j11;
-                                    } else {
-                                        i17 = Math.min(i17, i21 - i16);
-                                    }
-                                }
-                                i12 = m10;
-                                i20 = 30000;
-                                int i222 = i17;
-                                if (Math.abs(elapsedRealtime - kjVar.u0) >= i20) {
-                                }
-                                i19++;
-                                m10 = i12;
-                                i17 = i222;
-                                i16 = i13;
-                                elapsedRealtime = j11;
-                            } else {
-                                i11 = i16;
-                                j10 = elapsedRealtime;
-                                int i23 = m10;
-                                if (i17 < 5) {
-                                    wpVar3.M0 = Math.min(wpVar3.M0, System.currentTimeMillis() - ((5 - i17) * 1000));
-                                }
-                                if (sparseArray.size() == 0) {
-                                    hVar2.l(hVar2.j(i18));
-                                    m10 = i23 - 1;
-                                    i18--;
-                                } else {
-                                    m10 = i23;
-                                }
-                            }
+                    ArrayList arrayList = new ArrayList(messages_chats.chats.size());
+                    hpVar.S3(messages_chats.chats, true);
+                    ArrayList<TLRPC.Chat> arrayList2 = messages_chats.chats;
+                    int size = arrayList2.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        TLRPC.Chat chat = arrayList2.get(i10);
+                        i10++;
+                        TLRPC.Chat chat2 = chat;
+                        if (chat2.creator && !t3.p0(chat2) && !t3.Y(chat2)) {
+                            arrayList.add(chat2);
                         }
                     }
-                    i18++;
-                    i16 = i11;
-                    elapsedRealtime = j10;
+                    n10Var.a(arrayList, null);
+                    break;
                 }
-                wpVar3.L0 = hVar2.m();
+                break;
+            default:
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                n10 n10Var2 = this.c;
+                if (updates == null) {
+                    if (n10Var2 != null) {
+                        g0.h3(new yh(23, n10Var2, tL_error2));
+                        break;
+                    }
+                } else {
+                    ArrayList<TLRPC.Update> arrayList3 = updates.updates;
+                    int size2 = arrayList3.size();
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 < size2) {
+                            TLRPC.Update update = arrayList3.get(i11);
+                            i11++;
+                            TLRPC.Update update2 = update;
+                            if (update2 instanceof TL_update.TL_updateNewMessage) {
+                                TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) update2).message.action;
+                                if (messageAction instanceof TLRPC.TL_messageActionNoForwardsRequest) {
+                                    i3 = 2;
+                                } else if (messageAction instanceof TLRPC.TL_messageActionNoForwardsToggle) {
+                                    i3 = 1;
+                                }
+                            }
+                        } else {
+                            i3 = 0;
+                        }
+                    }
+                    hp hpVar2 = this.b;
+                    hpVar2.O3(updates, false);
+                    g0.h3(new k7(hpVar2, n10Var2, i3, 13));
+                    break;
+                }
                 break;
         }
     }

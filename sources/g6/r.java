@@ -1,19 +1,26 @@
 package g6;
 
-import c6.y;
-import com.google.android.gms.tasks.Task;
+import android.util.LruCache;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class r extends com.google.android.gms.common.api.j {
-    public static final com.google.android.gms.common.api.e k = new com.google.android.gms.common.api.e("CastApi.API", new a8.d(3), new com.google.android.gms.common.api.d());
+public final class r extends LruCache {
+    public final /* synthetic */ c a;
 
-    public final Task f(String[] strArr) {
-        com.google.android.gms.common.api.internal.v b10 = com.google.android.gms.common.api.internal.w.b();
-        b10.c = new za.c(this, strArr);
-        b10.d = new k6.c[]{y.b};
-        b10.b = false;
-        b10.a = 8425;
-        return e(0, b10.a());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(c cVar) {
+        super(20);
+        this.a = cVar;
+    }
+
+    @Override // android.util.LruCache
+    public final /* bridge */ /* synthetic */ void entryRemoved(boolean z10, Object obj, Object obj2, Object obj3) {
+        ArrayList arrayList = this.a.g;
+        Integer num = (Integer) obj;
+        if (z10) {
+            p6.m.g(arrayList);
+            arrayList.add(num);
+        }
     }
 }

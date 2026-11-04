@@ -2,13 +2,13 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.internal.zzpv;
 import com.google.android.recaptcha.internal.zzpw;
-import i0.a;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
+import k2.p1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zztr {
     public static void zzd(Iterable iterable, List list) {
@@ -20,7 +20,7 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
             int size = list.size();
             for (Object obj : zza) {
                 if (obj == null) {
-                    String j10 = a.j(zzteVar.size() - size, "Element at index ", " is null.");
+                    String j10 = p1.j(zzteVar.size() - size, "Element at index ", " is null.");
                     int size2 = zzteVar.size();
                     while (true) {
                         size2--;
@@ -65,8 +65,8 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
         }
         List list2 = (List) iterable;
         int size5 = list2.size();
-        for (int i10 = 0; i10 < size5; i10++) {
-            Object obj3 = list2.get(i10);
+        for (int i3 = 0; i3 < size5; i3++) {
+            Object obj3 = list2.get(i3);
             if (obj3 == null) {
                 zze(list, size4);
             }
@@ -74,12 +74,12 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
         }
     }
 
-    private static void zze(List list, int i10) {
-        String j10 = a.j(list.size() - i10, "Element at index ", " is null.");
+    private static void zze(List list, int i3) {
+        String j10 = p1.j(list.size() - i3, "Element at index ", " is null.");
         int size = list.size();
         while (true) {
             size--;
-            if (size < i10) {
+            if (size < i3) {
                 throw new NullPointerException(j10);
             }
             list.remove(size);

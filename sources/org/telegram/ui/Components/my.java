@@ -1,34 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.graphics.SurfaceTexture;
+import android.os.Looper;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class my extends org.telegram.ui.Cells.d8 {
-    public final /* synthetic */ int O;
+public final /* synthetic */ class my implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ py b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ my(int i10, Context context, org.telegram.ui.ActionBar.p6 p6Var, boolean z10) {
-        super(context, p6Var, z10);
-        this.O = i10;
+    public /* synthetic */ my(py pyVar, int i3) {
+        this.a = i3;
+        this.b = pyVar;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.O) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(82.0f), TLObject.FLAG_30));
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
                 break;
             case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(82.0f), TLObject.FLAG_30));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(82.0f), TLObject.FLAG_30));
+                py.a(this.b);
                 break;
             default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(82.0f), TLObject.FLAG_30));
+                py pyVar = this.b;
+                zw zwVar = pyVar.c0;
+                SurfaceTexture surfaceTexture = pyVar.x;
+                b51 b51Var = (b51) zwVar.b;
+                if (b51Var.a != null) {
+                    b51Var.a.y0(new Surface(surfaceTexture));
+                    break;
+                }
                 break;
         }
     }

@@ -1,21 +1,6 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e2 {
-    public final long a;
-    public final int b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public Runnable f;
-    public TLRPC.TL_textWithEntities g;
-    public kj h;
-
-    public e2(long j10, int i10) {
-        this.a = j10;
-        this.b = i10;
-    }
+public final class e2 extends org.telegram.ui.Components.wp {
 }

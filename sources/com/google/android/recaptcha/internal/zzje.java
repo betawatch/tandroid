@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzje implements zzjt {
     public static final zzje zza = new zzje();
@@ -11,7 +11,7 @@ public final class zzje implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i3, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 3) {
             throw new zzdm(4, 3, null);
         }
@@ -40,11 +40,11 @@ public final class zzje implements zzjt {
         }
         try {
             Array.set(zza2, intValue, zza4);
-        } catch (Exception e) {
-            if (!(e instanceof ArrayIndexOutOfBoundsException)) {
-                throw new zzdm(4, 25, e);
+        } catch (Exception e10) {
+            if (!(e10 instanceof ArrayIndexOutOfBoundsException)) {
+                throw new zzdm(4, 25, e10);
             }
-            throw new zzdm(4, 22, e);
+            throw new zzdm(4, 22, e10);
         }
     }
 }

@@ -3,15 +3,15 @@ package org.telegram.ui.Components.voip;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class v extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ r b;
     public final /* synthetic */ x c;
 
-    public /* synthetic */ v(x xVar, r rVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ v(x xVar, r rVar, int i3) {
+        this.a = i3;
         this.c = xVar;
         this.b = rVar;
     }
@@ -21,15 +21,15 @@ public final class v extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 x xVar = this.c;
-                xVar.N0 = null;
-                this.b.E = false;
-                r rVar = xVar.E;
+                xVar.O0 = null;
+                this.b.F = false;
+                r rVar = xVar.F;
                 if (rVar != null) {
                     if (rVar.getParent() != null) {
-                        xVar.removeView(xVar.E);
-                        xVar.E.e();
+                        xVar.removeView(xVar.F);
+                        xVar.F.e();
                     }
-                    xVar.E = null;
+                    xVar.F = null;
                     break;
                 }
                 break;
@@ -40,17 +40,17 @@ public final class v extends AnimatorListenerAdapter {
                 this.b.r = false;
                 if (!xVar2.b) {
                     xVar2.d();
-                    xVar2.D = null;
+                    xVar2.E = null;
                     xVar2.d = 0L;
                 }
                 xVar2.c = xVar2.b ? 1.0f : 0.0f;
                 xVar2.l();
                 xVar2.i(false);
                 if (!xVar2.b) {
-                    xVar2.k0.setVisibility(8);
                     xVar2.l0.setVisibility(8);
-                    xVar2.e0.setVisibility(8);
+                    xVar2.m0.setVisibility(8);
                     xVar2.f0.setVisibility(8);
+                    xVar2.g0.setVisibility(8);
                     break;
                 }
                 break;

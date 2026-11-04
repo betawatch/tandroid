@@ -1,27 +1,50 @@
 package l2;
 
-import e9.n0;
+import d2.n1;
+import j$.util.Objects;
+import w2.g0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
-    public final int[] a;
-    public final int b;
+    public final long a;
+    public final n1 b;
     public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+    public final g0 d;
+    public final long e;
+    public final n1 f;
     public final int g;
-    public final n0 h;
+    public final g0 h;
+    public final long i;
+    public final long j;
 
-    public a(int i10, int i11, int[] iArr, int i12, int i13, int i14, int i15, n0 n0Var) {
-        this.b = i10;
-        this.a = iArr;
-        this.c = i11;
-        this.e = i12;
-        this.f = i13;
-        this.g = i14;
-        this.d = i15;
-        this.h = n0Var;
+    public a(long j10, n1 n1Var, int i3, g0 g0Var, long j11, n1 n1Var2, int i10, g0 g0Var2, long j12, long j13) {
+        this.a = j10;
+        this.b = n1Var;
+        this.c = i3;
+        this.d = g0Var;
+        this.e = j11;
+        this.f = n1Var2;
+        this.g = i10;
+        this.h = g0Var2;
+        this.i = j12;
+        this.j = j13;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && Objects.equals(this.b, aVar.b) && Objects.equals(this.d, aVar.d) && Objects.equals(this.f, aVar.f) && Objects.equals(this.h, aVar.h)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), this.b, Integer.valueOf(this.c), this.d, Long.valueOf(this.e), this.f, Integer.valueOf(this.g), this.h, Long.valueOf(this.i), Long.valueOf(this.j));
     }
 }

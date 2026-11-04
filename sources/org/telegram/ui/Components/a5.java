@@ -3,52 +3,39 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b5 b;
+    public final /* synthetic */ c5 b;
     public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ HashSet d;
 
-    public /* synthetic */ a5(b5 b5Var, ArrayList arrayList, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = b5Var;
+    public /* synthetic */ a5(c5 c5Var, ArrayList arrayList, HashSet hashSet, int i3) {
+        this.a = i3;
+        this.b = c5Var;
         this.c = arrayList;
-        this.d = tLObject;
+        this.d = hashSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.i0.g3(new a5(this.b, this.c, this.d, 1));
+                org.telegram.messenger.g0.h3(new a5(this.b, this.c, this.d, 1));
                 break;
             default:
-                b5 b5Var = this.b;
-                int i10 = b5Var.e;
-                HashSet hashSet = new HashSet(this.c);
-                TLObject tLObject = this.d;
-                if (tLObject instanceof Vector) {
-                    ArrayList arrayList = ((Vector) tLObject).objects;
-                    org.telegram.messenger.is.a0(i10).a.c(new y4(b5Var, arrayList, 1));
-                    b5Var.d(arrayList);
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11) instanceof TLRPC.Document) {
-                            hashSet.remove(Long.valueOf(((TLRPC.Document) arrayList.get(i11)).id));
-                        }
-                    }
-                    if (!hashSet.isEmpty()) {
-                        ArrayList<Long> arrayList2 = new ArrayList<>(hashSet);
-                        TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                        tL_messages_getCustomEmojiDocuments.document_id = arrayList2;
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new ag.k0(23, b5Var, arrayList2));
-                        break;
-                    }
+                c5 c5Var = this.b;
+                c5Var.d(this.c);
+                HashSet hashSet = this.d;
+                if (!hashSet.isEmpty()) {
+                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
+                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
+                    ConnectionsManager.getInstance(c5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.ActionBar.h6(12, c5Var, arrayList));
+                    break;
                 }
                 break;
         }

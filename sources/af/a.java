@@ -1,71 +1,53 @@
 package af;
 
-import a1.g;
-import java.util.ArrayList;
+import df.e;
+import gf.p;
+import gf.s;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public String a;
-    public ArrayList b;
-    public ArrayList c;
-    public ArrayList d;
+public final class a implements kf.a {
+    @Override // kf.a
+    public final int a(e eVar, e eVar2) {
+        return (eVar.g < 2 || eVar2.g < 2) ? 0 : 2;
+    }
 
-    public final String a(String str) {
-        String str2;
-        String str3;
-        String str4;
-        String str5 = null;
-        if (str.startsWith(this.a)) {
-            str4 = this.a;
-            str3 = str.substring(str4.length());
-        } else {
-            ArrayList arrayList = this.b;
-            int size = arrayList.size();
-            int i10 = 0;
-            while (true) {
-                if (i10 >= size) {
-                    str2 = null;
-                    break;
-                }
-                Object obj = arrayList.get(i10);
-                i10++;
-                str2 = (String) obj;
-                if (str.startsWith(str2)) {
-                    break;
-                }
-            }
-            if (str2 != null) {
-                str3 = str.substring(str2.length());
-                str4 = null;
-                str5 = str2;
-            } else {
-                str3 = str;
-                str4 = null;
-            }
+    @Override // kf.a
+    public final char b() {
+        return '~';
+    }
+
+    @Override // kf.a
+    public final void c(s sVar, s sVar2, int i3) {
+        ze.a aVar = new ze.a();
+        p pVar = (p) sVar.f;
+        while (pVar != null && pVar != sVar2) {
+            p pVar2 = (p) pVar.f;
+            aVar.b(pVar);
+            pVar = pVar2;
         }
-        ArrayList arrayList2 = this.d;
-        int size2 = arrayList2.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj2 = arrayList2.get(i11);
-            i11++;
-            String a2 = ((d) obj2).a(str3, str4, str5, true);
-            if (a2 != null) {
-                return a2;
-            }
+        aVar.g();
+        p pVar3 = (p) sVar.f;
+        aVar.f = pVar3;
+        if (pVar3 != null) {
+            pVar3.e = aVar;
         }
-        ArrayList arrayList3 = this.d;
-        int size3 = arrayList3.size();
-        int i12 = 0;
-        while (i12 < size3) {
-            Object obj3 = arrayList3.get(i12);
-            i12++;
-            String a10 = ((d) obj3).a(str3, str4, str5, false);
-            if (a10 != null) {
-                return a10;
-            }
+        aVar.e = sVar;
+        sVar.f = aVar;
+        p pVar4 = (p) sVar.b;
+        aVar.b = pVar4;
+        if (((p) aVar.f) == null) {
+            pVar4.d = aVar;
         }
-        return (str4 == null || str3.length() == 0) ? str : g.C(str4, " ", str3);
+    }
+
+    @Override // kf.a
+    public final int d() {
+        return 2;
+    }
+
+    @Override // kf.a
+    public final char e() {
+        return '~';
     }
 }

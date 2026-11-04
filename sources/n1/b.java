@@ -1,66 +1,14 @@
 package n1;
 
-import j$.util.DesugarCollections;
-import java.util.LinkedHashMap;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.jvm.internal.i;
+import android.content.Context;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b {
-    public final LinkedHashMap a;
-    public final AtomicBoolean b;
-
-    public b(LinkedHashMap linkedHashMap, boolean z10) {
-        this.a = linkedHashMap;
-        this.b = new AtomicBoolean(z10);
-    }
-
-    public final Object a(d key) {
-        i.e(key, "key");
-        return this.a.get(key);
-    }
-
-    public final void b(d key, Object obj) {
-        i.e(key, "key");
-        AtomicBoolean atomicBoolean = this.b;
-        if (atomicBoolean.get()) {
-            throw new IllegalStateException("Do mutate preferences once returned to DataStore.");
-        }
-        LinkedHashMap linkedHashMap = this.a;
-        if (obj == null) {
-            if (atomicBoolean.get()) {
-                throw new IllegalStateException("Do mutate preferences once returned to DataStore.");
-            }
-            linkedHashMap.remove(key);
-        } else {
-            if (!(obj instanceof Set)) {
-                linkedHashMap.put(key, obj);
-                return;
-            }
-            Set unmodifiableSet = DesugarCollections.unmodifiableSet(bd.i.p((Iterable) obj));
-            i.d(unmodifiableSet, "unmodifiableSet(value.toSet())");
-            linkedHashMap.put(key, unmodifiableSet);
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        return i.a(this.a, ((b) obj).a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return bd.i.h(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
-    }
-
-    public /* synthetic */ b(boolean z10) {
-        this(new LinkedHashMap(), z10);
+public abstract class b {
+    public static final boolean a(Context context, String name) {
+        j.e(context, "context");
+        j.e(name, "name");
+        return context.deleteSharedPreferences(name);
     }
 }

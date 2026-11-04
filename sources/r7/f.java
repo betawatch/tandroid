@@ -1,56 +1,32 @@
 package r7;
 
-import android.location.Location;
 import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import v7.i5;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f extends b8.b {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TaskCompletionSource c;
+public final class f extends q6.a {
+    public static final Parcelable.Creator<f> CREATOR = new q8.i(2);
+    public final String a;
+    public final String b;
+    public final String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(int i10, TaskCompletionSource taskCompletionSource) {
-        super("com.google.android.gms.location.internal.ILocationStatusCallback", 9);
-        this.b = i10;
-        switch (i10) {
-            case 1:
-                this.c = taskCompletionSource;
-                super("com.google.android.gms.location.internal.ISettingsCallbacks", 9);
-                break;
-            default:
-                this.c = taskCompletionSource;
-                break;
-        }
+    public f(String str, String str2, String str3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 
-    @Override // b8.b
-    public final boolean L0(Parcel parcel, int i10) {
-        switch (this.b) {
-            case 0:
-                if (i10 == 1) {
-                    Status status = (Status) d.a(parcel, Status.CREATOR);
-                    Location location = (Location) d.a(parcel, Location.CREATOR);
-                    d.b(parcel);
-                    i5.a(status, location, this.c);
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    g8.e eVar = (g8.e) d.a(parcel, g8.e.CREATOR);
-                    d.b(parcel);
-                    Status status2 = eVar.a;
-                    g8.d dVar = new g8.d();
-                    dVar.a = eVar;
-                    i5.a(status2, dVar, this.c);
-                    break;
-                }
-                break;
-        }
-        return true;
+    public final String toString() {
+        return a1.g.s(com.google.android.recaptcha.internal.a.n("DocumentId[packageName=", this.a, ", corpusName=", this.b, ", uri="), this.c, "]");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.m(parcel, 1, this.a);
+        j8.a.m(parcel, 2, this.b);
+        j8.a.m(parcel, 3, this.c);
+        j8.a.t(parcel, s6);
     }
 }

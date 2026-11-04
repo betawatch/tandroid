@@ -1,92 +1,72 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yo extends org.telegram.ui.Components.y70 {
-    public final /* synthetic */ Context x;
-    public final /* synthetic */ cp y;
+public final /* synthetic */ class yo implements org.telegram.ui.ActionBar.p1, org.telegram.messenger.so, org.telegram.messenger.lr {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ip b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yo(cp cpVar, Context context, TLRPC.Chat chat, Context context2) {
-        super(context, chat);
-        this.y = cpVar;
-        this.x = context2;
+    public /* synthetic */ yo(ip ipVar, int i3) {
+        this.a = i3;
+        this.b = ipVar;
     }
 
-    @Override // org.telegram.ui.Components.y70
-    public final boolean a(final boolean z10, org.telegram.ui.Components.w70 w70Var) {
-        TLRPC.ChatFull chatFull;
-        int i10;
-        org.telegram.ui.ActionBar.p6 p6Var;
-        cp cpVar = this.y;
-        final int i11 = 1;
-        if (!cpVar.V || (chatFull = cpVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
-            return true;
+    @Override // org.telegram.messenger.so
+    public boolean a(TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 2:
+                this.b.y0(false);
+                return true;
+            case 3:
+                this.b.y0(false);
+                return true;
+            default:
+                return ip.b0(this.b, tL_error);
         }
-        String str = cpVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
-        Context context = this.x;
-        p6Var = ((org.telegram.ui.ActionBar.k2) cpVar).resourceProvider;
-        final int i12 = 0;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, p6Var);
-        String L0 = org.telegram.messenger.dd.L0(2131754204, null);
-        org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-        x1Var.R = L0;
-        x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.dd.G(i10, str, new Object[0]));
-        alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131754206, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.xo
-            public final /* synthetic */ yo b;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.ActionBar.u1
-            public final void h(org.telegram.ui.ActionBar.x1 x1Var2, int i13) {
-                switch (i12) {
-                    case 0:
-                        boolean z11 = z10;
-                        yo yoVar = this.b;
-                        yoVar.setJoinRequest(z11);
-                        yoVar.y.W = true;
-                        break;
-                    default:
-                        boolean z12 = z10;
-                        yo yoVar2 = this.b;
-                        yoVar2.setJoinRequest(z12);
-                        yoVar2.y.W = false;
-                        break;
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
+            case 0:
+                this.b.w0(true);
+                break;
+            case 1:
+                ip ipVar = this.b;
+                ipVar.y0(true);
+                ap apVar = new ap(ipVar, 0);
+                if (!ipVar.L && !ipVar.M) {
+                    ipVar.getMessagesController().m(ipVar.x.id, ipVar.w, 0, ipVar.Z0, ipVar, true, apVar, new yo(ipVar, 3), null);
+                    break;
+                } else {
+                    ipVar.getMessagesController().P4(ipVar.x.id, ipVar.w, ipVar.L ? ipVar.N : ip.t0(false), ipVar.T, false, ipVar, ipVar.a1, ipVar.L, ipVar.Z0, apVar, new yo(ipVar, 2));
+                    break;
                 }
-            }
-        });
-        alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131754205, null), new org.telegram.ui.ActionBar.u1(this) { // from class: org.telegram.ui.xo
-            public final /* synthetic */ yo b;
+            case 2:
+            case 3:
+            default:
+                ip ipVar2 = this.b;
+                ipVar2.getClass();
+                ipVar2.presentFragment(new ra1(6, null));
+                break;
+            case 4:
+                this.b.finishFragment();
+                break;
+            case 5:
+                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                ip ipVar3 = this.b;
+                jo joVar = new jo(1, ipVar3, twoStepVerificationActivity);
+                twoStepVerificationActivity.a0 = 0;
+                twoStepVerificationActivity.c0 = joVar;
+                ipVar3.presentFragment(twoStepVerificationActivity);
+                break;
+        }
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.ActionBar.u1
-            public final void h(org.telegram.ui.ActionBar.x1 x1Var2, int i13) {
-                switch (i11) {
-                    case 0:
-                        boolean z11 = z10;
-                        yo yoVar = this.b;
-                        yoVar.setJoinRequest(z11);
-                        yoVar.y.W = true;
-                        break;
-                    default:
-                        boolean z12 = z10;
-                        yo yoVar2 = this.b;
-                        yoVar2.setJoinRequest(z12);
-                        yoVar2.y.W = false;
-                        break;
-                }
-            }
-        });
-        cpVar.showDialog(x1Var);
-        return false;
+    @Override // org.telegram.messenger.lr
+    public void run(long j10) {
+        ip.Z(this.b, j10);
     }
 }

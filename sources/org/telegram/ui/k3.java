@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class k3 implements org.telegram.ui.web.d0 {
     public final /* synthetic */ l3 a;
@@ -14,13 +14,13 @@ public final class k3 implements org.telegram.ui.web.d0 {
     }
 
     @Override // org.telegram.ui.web.d0
-    public final /* synthetic */ xh.s0 A() {
+    public final /* synthetic */ ii.w0 A() {
         return null;
     }
 
     @Override // org.telegram.ui.web.d0
     public final void b() {
-        u3 u3Var = this.a.L.K;
+        u3 u3Var = this.a.M.L;
         if (u3Var != null) {
             u3Var.a(true);
         }
@@ -39,11 +39,11 @@ public final class k3 implements org.telegram.ui.web.d0 {
     @Override // org.telegram.ui.web.d0
     public final void j() {
         l3 l3Var = this.a;
-        h4 h4Var = l3Var.L;
-        u3 u3Var = h4Var.K;
+        i4 i4Var = l3Var.M;
+        u3 u3Var = i4Var.L;
         if (u3Var == null) {
-            if (h4Var.u0[0] == l3Var) {
-                h4Var.E();
+            if (i4Var.v0[0] == l3Var) {
+                i4Var.E();
             }
         } else {
             if (u3Var.h) {
@@ -51,21 +51,21 @@ public final class k3 implements org.telegram.ui.web.d0 {
             }
             u3Var.h = true;
             u3Var.release();
-            u3Var.K.q();
+            u3Var.L.q();
         }
     }
 
     @Override // org.telegram.ui.web.d0
-    public final void o(int i10, boolean z10) {
-        l3.a(this.a, z10, i10);
+    public final void o(int i3, boolean z10) {
+        l3.a(this.a, z10, i3);
     }
 
     @Override // org.telegram.ui.web.d0
     public final void z() {
         l3 l3Var = this.a;
-        h4 h4Var = l3Var.L;
-        if (h4Var.u0[0] == l3Var) {
-            h4Var.E();
+        i4 i4Var = l3Var.M;
+        if (i4Var.v0[0] == l3Var) {
+            i4Var.E();
         }
     }
 
@@ -90,7 +90,7 @@ public final class k3 implements org.telegram.ui.web.d0 {
     }
 
     @Override // org.telegram.ui.web.d0
-    public final void m(int i10) {
+    public final void m(int i3) {
     }
 
     @Override // org.telegram.ui.web.d0
@@ -98,7 +98,7 @@ public final class k3 implements org.telegram.ui.web.d0 {
     }
 
     @Override // org.telegram.ui.web.d0
-    public final /* synthetic */ void r(int i10) {
+    public final /* synthetic */ void r(int i3) {
     }
 
     @Override // org.telegram.ui.web.d0
@@ -110,7 +110,7 @@ public final class k3 implements org.telegram.ui.web.d0 {
     }
 
     @Override // org.telegram.ui.web.d0
-    public final void x(int i10) {
+    public final void x(int i3) {
     }
 
     @Override // org.telegram.ui.web.d0
@@ -134,7 +134,7 @@ public final class k3 implements org.telegram.ui.web.d0 {
     }
 
     @Override // org.telegram.ui.web.d0
-    public final void u(int i10, int i11, boolean z10) {
+    public final void u(int i3, int i10, boolean z10) {
     }
 
     @Override // org.telegram.ui.web.d0
@@ -142,10 +142,10 @@ public final class k3 implements org.telegram.ui.web.d0 {
     }
 
     @Override // org.telegram.ui.web.d0
-    public final void l(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13, String str2) {
+    public final void q(boolean z10, boolean z11, String str, long j10, int i3, int i10, boolean z12, boolean z13) {
     }
 
     @Override // org.telegram.ui.web.d0
-    public final void q(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13) {
+    public final void l(boolean z10, boolean z11, String str, long j10, int i3, int i10, boolean z12, boolean z13, String str2) {
     }
 }

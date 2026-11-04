@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class z3 extends TL_iv.PageBlock {
     public boolean a;
@@ -12,6 +12,6 @@ public final class z3 extends TL_iv.PageBlock {
     public TL_iv.PageBlock d;
     public TL_iv.RichText e;
     public String f;
-    public z2 i;
+    public a3 i;
     public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class VideoCodecInfo {
     public static final String H264_CONSTRAINED_BASELINE_3_1 = "42e01f";
@@ -58,8 +58,8 @@ public class VideoCodecInfo {
     }
 
     @Deprecated
-    public VideoCodecInfo(int i10, String str, Map<String, String> map) {
-        this.payload = i10;
+    public VideoCodecInfo(int i3, String str, Map<String, String> map) {
+        this.payload = i3;
         this.name = str;
         this.params = map;
     }

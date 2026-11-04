@@ -1,107 +1,35 @@
 package b2;
 
-import android.net.Uri;
-import java.util.Arrays;
-import v7.t6;
+import android.app.Notification;
+import android.media.session.MediaSession;
+import android.support.v4.media.session.MediaSessionCompat$Token;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public static final String p;
-    public static final String q;
-    public static final String r;
-    public static final String s;
-    public static final String t;
-    public final int a;
-    public final int b;
-    public final Uri[] c;
-    public final p0[] d;
-    public final int[] e;
-    public final long[] f;
-    public final String[] g;
-    public final b[] h;
-
-    static {
-        String str = e2.l0.a;
-        i = Integer.toString(0, 36);
-        j = Integer.toString(1, 36);
-        k = Integer.toString(2, 36);
-        l = Integer.toString(3, 36);
-        m = Integer.toString(4, 36);
-        n = Integer.toString(5, 36);
-        o = Integer.toString(6, 36);
-        p = Integer.toString(7, 36);
-        q = Integer.toString(8, 36);
-        r = Integer.toString(9, 36);
-        s = Integer.toString(10, 36);
-        t = Integer.toString(11, 36);
+public abstract class a {
+    public static Notification.MediaStyle a() {
+        return new Notification.MediaStyle();
     }
 
-    public a(int i10, int i11, int[] iArr, p0[] p0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
-        Uri uri;
-        int i12 = 0;
-        t6.f(iArr.length == p0VarArr.length);
-        t6.f(iArr.length == bVarArr.length);
-        this.a = i10;
-        this.b = i11;
-        this.e = iArr;
-        this.d = p0VarArr;
-        this.f = jArr;
-        this.c = new Uri[p0VarArr.length];
-        while (true) {
-            Uri[] uriArr = this.c;
-            if (i12 >= uriArr.length) {
-                this.g = strArr;
-                this.h = bVarArr;
-                return;
-            }
-            p0 p0Var = p0VarArr[i12];
-            if (p0Var == null) {
-                uri = null;
-            } else {
-                k0 k0Var = p0Var.b;
-                k0Var.getClass();
-                uri = k0Var.a;
-            }
-            uriArr[i12] = uri;
-            i12++;
+    public static Notification.MediaStyle b(Notification.MediaStyle mediaStyle, int[] iArr, MediaSessionCompat$Token mediaSessionCompat$Token) {
+        if (iArr != null) {
+            e(mediaStyle, iArr);
         }
+        if (mediaSessionCompat$Token != null) {
+            c(mediaStyle, (MediaSession.Token) mediaSessionCompat$Token.b);
+        }
+        return mediaStyle;
     }
 
-    public final int a(int i10) {
-        int i11;
-        int i12 = i10 + 1;
-        while (true) {
-            int[] iArr = this.e;
-            if (i12 >= iArr.length || (i11 = iArr[i12]) == 0 || i11 == 1) {
-                break;
-            }
-            i12++;
-        }
-        return i12;
+    public static void c(Notification.MediaStyle mediaStyle, MediaSession.Token token) {
+        mediaStyle.setMediaSession(token);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || a.class != obj.getClass()) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.a == aVar.a && this.b == aVar.b && Arrays.equals(this.d, aVar.d) && Arrays.equals(this.e, aVar.e) && Arrays.equals(this.f, aVar.f) && Arrays.equals(this.g, aVar.g) && Arrays.equals(this.h, aVar.h);
+    public static void d(Notification.Builder builder, Notification.MediaStyle mediaStyle) {
+        builder.setStyle(mediaStyle);
     }
 
-    public final int hashCode() {
-        int i10 = ((this.a * 31) + this.b) * 31;
-        int i11 = (int) 0;
-        return (Arrays.hashCode(this.h) + ((((((Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + ((i10 + i11) * 31)) * 31)) * 31)) * 31) + i11) * 961) + Arrays.hashCode(this.g)) * 31)) * 31;
+    public static void e(Notification.MediaStyle mediaStyle, int... iArr) {
+        mediaStyle.setShowActionsInCompactView(iArr);
     }
 }

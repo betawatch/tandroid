@@ -1,106 +1,100 @@
 package org.telegram.messenger;
 
-import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.Components.ap0;
+import org.telegram.ui.Components.ws0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zd implements Runnable {
-    public final /* synthetic */ MediaController a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ kf d;
-    public final /* synthetic */ File e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ long r;
+public final /* synthetic */ class zd implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ cs d;
 
-    public /* synthetic */ zd(MediaController mediaController, boolean z10, boolean z11, kf kfVar, File file, float f7, long j10, boolean z12, long j11) {
-        this.a = mediaController;
-        this.b = z10;
-        this.c = z11;
-        this.d = kfVar;
-        this.e = file;
-        this.f = f7;
-        this.h = j10;
-        this.n = z12;
-        this.r = j11;
+    public /* synthetic */ zd(cs csVar, int i3, int i10, int i11) {
+        this.a = i11;
+        this.d = csVar;
+        this.b = i3;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        char c10;
-        char c11;
-        MediaController mediaController = this.a;
-        boolean z10 = this.b;
-        boolean z11 = this.c;
-        kf kfVar = this.d;
-        File file = this.e;
-        float f7 = this.f;
-        long j10 = this.h;
-        boolean z12 = this.n;
-        long j11 = this.r;
-        String[] strArr = MediaController.U1;
-        if (z10 || z11) {
-            boolean z13 = kfVar.b.W;
-            synchronized (mediaController.b) {
-                c10 = 1;
-                kfVar.b.W = false;
-            }
-            mediaController.b0.remove(kfVar);
-            mediaController.Z.remove(kfVar);
-            mediaController.k(z13 || z10);
-            mediaController.y0();
-        } else {
-            c10 = 1;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i3 = this.a;
+        cs csVar = this.d;
+        switch (i3) {
+            case 0:
+                String[] strArr = MediaController.W1;
+                g0.h3(new ii.j4(this.b, this.c, 7, (MediaController) csVar, tLObject, tL_error));
+                break;
+            case 1:
+                hp hpVar = (hp) csVar;
+                LongSparseIntArray longSparseIntArray = hpVar.Z0;
+                int i10 = 0;
+                if (tL_error == null) {
+                    TLRPC.updates_Difference updates_difference = (TLRPC.updates_Difference) tLObject;
+                    if (updates_difference instanceof TLRPC.TL_updates_differenceTooLong) {
+                        g0.h3(new k2.a0(hpVar, updates_difference, this.b, this.c, 4));
+                        break;
+                    } else {
+                        if (updates_difference instanceof TLRPC.TL_updates_differenceSlice) {
+                            TLRPC.TL_updates_state tL_updates_state = updates_difference.intermediate_state;
+                            hpVar.Y0(tL_updates_state.pts, tL_updates_state.date, tL_updates_state.qts, true);
+                        }
+                        a0.h hVar = new a0.h();
+                        a0.h hVar2 = new a0.h();
+                        for (int i11 = 0; i11 < updates_difference.users.size(); i11++) {
+                            TLRPC.User user = updates_difference.users.get(i11);
+                            hVar.k(user, user.id);
+                        }
+                        for (int i12 = 0; i12 < updates_difference.chats.size(); i12++) {
+                            TLRPC.Chat chat = updates_difference.chats.get(i12);
+                            hVar2.k(chat, chat.id);
+                        }
+                        ArrayList arrayList = new ArrayList();
+                        if (!updates_difference.other_updates.isEmpty()) {
+                            while (i10 < updates_difference.other_updates.size()) {
+                                TLRPC.Update update = updates_difference.other_updates.get(i10);
+                                if (update instanceof TL_update.TL_updateMessageID) {
+                                    arrayList.add((TL_update.TL_updateMessageID) update);
+                                    updates_difference.other_updates.remove(i10);
+                                } else {
+                                    if (hp.Y1(update) == 2) {
+                                        long V1 = hp.V1(update);
+                                        int i13 = longSparseIntArray.get(V1);
+                                        if (i13 == 0 && (i13 = hpVar.getMessagesStorage().N(V1)) != 0) {
+                                            longSparseIntArray.put(V1, i13);
+                                        }
+                                        if (i13 != 0 && hp.W1(update) <= i13) {
+                                            updates_difference.other_updates.remove(i10);
+                                        }
+                                    }
+                                    i10++;
+                                }
+                                i10--;
+                                i10++;
+                            }
+                        }
+                        g0.h3(new yh(26, hpVar, updates_difference));
+                        hpVar.getMessagesStorage().a.c(new cn(hpVar, updates_difference, arrayList, hVar, hVar2, 10));
+                        break;
+                    }
+                } else {
+                    hpVar.g2 = false;
+                    hpVar.getConnectionsManager().setIsUpdating(false);
+                    a8.b("received: isUpdating = false");
+                    break;
+                }
+                break;
+            default:
+                g0.h3(new ap0((ws0) csVar, tL_error, this.b, this.c, tLObject, 0));
+                break;
         }
-        if (z10) {
-            at f10 = at.f(kfVar.c);
-            int i10 = at.c2;
-            kj kjVar = kfVar.a;
-            String file2 = file.toString();
-            Float valueOf = Float.valueOf(f7);
-            Long valueOf2 = Long.valueOf(j10);
-            Object[] objArr = new Object[4];
-            objArr[0] = kjVar;
-            objArr[c10] = file2;
-            objArr[2] = valueOf;
-            objArr[3] = valueOf2;
-            f10.k(i10, objArr);
-            return;
-        }
-        if (z12) {
-            at f11 = at.f(kfVar.c);
-            int i11 = at.a2;
-            kj kjVar2 = kfVar.a;
-            String file3 = file.toString();
-            Float valueOf3 = Float.valueOf(f7);
-            Long valueOf4 = Long.valueOf(j10);
-            c11 = 3;
-            Object[] objArr2 = new Object[4];
-            objArr2[0] = kjVar2;
-            objArr2[c10] = file3;
-            objArr2[2] = valueOf3;
-            objArr2[3] = valueOf4;
-            f11.k(i11, objArr2);
-        } else {
-            c11 = 3;
-        }
-        at f12 = at.f(kfVar.c);
-        int i12 = at.b2;
-        kj kjVar3 = kfVar.a;
-        String file4 = file.toString();
-        Long valueOf5 = Long.valueOf(j11);
-        Long valueOf6 = Long.valueOf(z11 ? file.length() : 0L);
-        Float valueOf7 = Float.valueOf(f7);
-        Long valueOf8 = Long.valueOf(j10);
-        Object[] objArr3 = new Object[6];
-        objArr3[0] = kjVar3;
-        objArr3[c10] = file4;
-        objArr3[2] = valueOf5;
-        objArr3[c11] = valueOf6;
-        objArr3[4] = valueOf7;
-        objArr3[5] = valueOf8;
-        f12.k(i12, objArr3);
     }
 }

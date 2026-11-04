@@ -3,18 +3,19 @@ package org.telegram.messenger;
 import android.os.Bundle;
 import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     public static final /* synthetic */ int n = 0;
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
-    public final void c(xa.l lVar) {
+    public final void c(za.o oVar) {
         long parseLong;
-        Bundle bundle = lVar.a;
+        Bundle bundle = oVar.a;
         String string = bundle.getString("from");
-        if (lVar.b == null) {
+        if (oVar.b == null) {
             a0.f fVar = new a0.f(0);
             for (String str : bundle.keySet()) {
                 Object obj = bundle.get(str);
@@ -25,9 +26,9 @@ public class GcmPushListenerService extends FirebaseMessagingService {
                     }
                 }
             }
-            lVar.b = fVar;
+            oVar.b = fVar;
         }
-        a0.f fVar2 = lVar.b;
+        HashMap hashMap = new HashMap(oVar.b);
         Object obj2 = bundle.get("google.sent_time");
         if (obj2 instanceof Long) {
             parseLong = ((Long) obj2).longValue();
@@ -41,14 +42,14 @@ public class GcmPushListenerService extends FirebaseMessagingService {
             }
             parseLong = 0;
         }
-        if (v2.a) {
-            f8.b("FCM received data: " + fVar2 + " from: " + string);
+        if (r2.a) {
+            a8.b("FCM received data: " + hashMap + " from: " + string);
         }
-        PushListenerController.processRemoteMessage(2, (String) fVar2.get("p"), parseLong);
+        PushListenerController.processRemoteMessage(2, (String) hashMap.get("p"), parseLong);
     }
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
     public final void d(String str) {
-        i0.g3(new o4(str, 4));
+        g0.h3(new l4(str, 4));
     }
 }

@@ -1,26 +1,37 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class o8 extends FrameLayout {
-    public TextView a;
+public final class o8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ q8 c;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public /* synthetic */ o8(q8 q8Var, int i3, int i10) {
+        this.a = i10;
+        this.c = q8Var;
+        this.b = i3;
     }
 
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                q8 q8Var = this.c;
+                q8Var.r = 0;
+                q8Var.setBackgroundColor(this.b);
+                q8Var.invalidate();
+                break;
+            default:
+                int i3 = this.b;
+                q8 q8Var2 = this.c;
+                q8Var2.setBackgroundColor(i3);
+                q8Var2.r = 0;
+                q8Var2.invalidate();
+                break;
+        }
     }
 }

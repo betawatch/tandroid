@@ -1,58 +1,39 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.text.TextPaint;
+import android.view.View;
+import android.widget.ScrollView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class u21 extends Drawable {
-    public final ci0 a;
-    public int b;
-    public final TextPaint c;
+public final class u21 extends ScrollView {
+    public Drawable a;
+    public u5 b;
+    public boolean c;
 
-    public u21(TextPaint textPaint) {
-        bi.s0 s0Var = new bi.s0(this, 5);
-        this.c = textPaint;
-        float textSize = textPaint.getTextSize() * 0.89f;
-        ci0 ci0Var = new ci0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
-        this.a = ci0Var;
-        ci0Var.setCallback(s0Var);
-        ci0Var.K(1);
-        ci0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
-        ci0Var.J(true);
-        ci0Var.start();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int color = this.c.getColor();
-        int i10 = this.b;
-        ci0 ci0Var = this.a;
-        if (color != i10) {
-            ci0Var.Z = true;
-            ci0Var.Q(color, "Comp 1");
-            ci0Var.o();
-            ci0Var.J(true);
-            ci0Var.V(0L);
-            this.b = color;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float e10 = this.b.e(false, canScrollVertically(-1) ? 1.0f : 0.0f) * 0.5f;
+        if (e10 > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
+            }
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (e10 * 255.0f));
+            this.a.draw(canvas);
         }
-        ci0Var.draw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i3, int i10, int i11, int i12) {
+        super.onNestedScroll(view, i3, i10, i11, i12);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
+        }
     }
 }

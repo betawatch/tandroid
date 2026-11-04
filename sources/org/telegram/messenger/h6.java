@@ -1,143 +1,86 @@
 package org.telegram.messenger;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.text.TextPaint;
-import android.text.style.ImageSpan;
-import j$.util.Objects;
+import android.graphics.Rect;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class h6 extends ImageSpan {
-    public Paint.FontMetricsInt a;
-    public float b;
-    public int c;
-    public String d;
-    public boolean e;
-    public int f;
-    public boolean h;
-    public float n;
-    public float r;
+public final class h6 extends e6 {
+    public static final Paint e = new Paint(2);
+    public static final Rect f = new Rect();
+    public d6 c;
+    public boolean d;
 
-    public static void a(Paint.FontMetricsInt fontMetricsInt, int i10) {
-        int i11 = fontMetricsInt.descent;
-        int i12 = fontMetricsInt.ascent;
-        int i13 = i11 - i12;
-        if (i10 <= i13) {
+    @Override // org.telegram.messenger.e6
+    public final boolean a() {
+        Bitmap[][] bitmapArr = i6.f;
+        d6 d6Var = this.c;
+        return bitmapArr[d6Var.a][d6Var.b] != null;
+    }
+
+    @Override // org.telegram.messenger.e6
+    public final void b() {
+        if (a()) {
             return;
         }
-        int i14 = i10 - i13;
-        int i15 = (i14 + 1) / 2;
-        int i16 = i12 - i15;
-        fontMetricsInt.ascent = i16;
-        fontMetricsInt.descent = i11 + (i14 - i15);
-        fontMetricsInt.top = Math.min(fontMetricsInt.top, i16);
-        fontMetricsInt.bottom = Math.max(fontMetricsInt.bottom, fontMetricsInt.descent);
+        d6 d6Var = this.c;
+        i6.i(d6Var.a, d6Var.b);
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        boolean z10;
-        this.n = a1.g.A(this.b, this.c, 2.0f, f7);
-        this.r = ((i14 - i12) / 2.0f) + i12;
-        boolean z11 = true;
-        this.h = true;
-        if (paint.getAlpha() == 255 || !k6.n) {
-            z10 = false;
-        } else {
-            getDrawable().setAlpha(paint.getAlpha());
-            z10 = true;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds;
+        boolean z10 = this.d;
+        d6 d6Var = this.c;
+        if (!a()) {
+            i6.i(d6Var.a, d6Var.b);
+            Paint paint = i6.d;
+            paint.setColor(this.b);
+            Rect bounds2 = getBounds();
+            canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), bounds2.width() * 0.4f, paint);
+            return;
         }
-        float f10 = k6.m;
-        int i15 = this.c;
-        float f11 = f10 - ((i15 - (this.b * i15)) / 2.0f);
-        if (f11 != 0.0f) {
+        if (this.a) {
+            Rect bounds3 = getBounds();
+            int centerX = bounds3.centerX();
+            int centerY = bounds3.centerY();
+            boolean z11 = this.a;
+            int i3 = z11 ? i6.c : i6.b;
+            bounds = f;
+            bounds.left = centerX - (i3 / 2);
+            bounds.right = ((z11 ? i6.c : i6.b) / 2) + centerX;
+            bounds.top = centerY - ((z11 ? i6.c : i6.b) / 2);
+            bounds.bottom = ((z11 ? i6.c : i6.b) / 2) + centerY;
+        } else {
+            bounds = getBounds();
+        }
+        if (canvas.quickReject(bounds.left, bounds.top, bounds.right, bounds.bottom, Canvas.EdgeType.AA)) {
+            return;
+        }
+        if (z10) {
             canvas.save();
-            canvas.translate(0.0f, f11);
-        } else {
-            z11 = false;
+            canvas.scale(-1.0f, 1.0f, bounds.centerX(), bounds.centerY());
         }
-        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
-        if (z11) {
+        canvas.drawBitmap(i6.f[d6Var.a][d6Var.b], (Rect) null, bounds, e);
+        if (z10) {
             canvas.restore();
         }
-        if (z10) {
-            getDrawable().setAlpha(at.e4);
-        }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && h6.class == obj.getClass()) {
-            h6 h6Var = (h6) obj;
-            if (Float.compare(this.b, h6Var.b) == 0 && this.c == h6Var.c && Objects.equals(this.d, h6Var.d)) {
-                return true;
-            }
-        }
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        Paint.FontMetricsInt fontMetricsInt2 = fontMetricsInt;
-        boolean z10 = this.e && fontMetricsInt2 != null;
-        int i12 = z10 ? fontMetricsInt2.top : 0;
-        int i13 = z10 ? fontMetricsInt2.ascent : 0;
-        int i14 = z10 ? fontMetricsInt2.descent : 0;
-        int i15 = z10 ? fontMetricsInt2.bottom : 0;
-        int i16 = z10 ? fontMetricsInt2.leading : 0;
-        if (fontMetricsInt2 == null) {
-            fontMetricsInt2 = new Paint.FontMetricsInt();
-        }
-        Paint.FontMetricsInt fontMetricsInt3 = fontMetricsInt2;
-        int i17 = (int) (this.b * this.c);
-        Paint.FontMetricsInt fontMetricsInt4 = this.a;
-        if (fontMetricsInt4 != null) {
-            fontMetricsInt3.ascent = fontMetricsInt4.ascent;
-            fontMetricsInt3.descent = fontMetricsInt4.descent;
-            fontMetricsInt3.top = fontMetricsInt4.top;
-            fontMetricsInt3.bottom = fontMetricsInt4.bottom;
-            if (getDrawable() != null) {
-                getDrawable().setBounds(0, 0, i17, i17);
-            }
-            if (z10) {
-                fontMetricsInt3.top = i12;
-                fontMetricsInt3.ascent = i13;
-                fontMetricsInt3.descent = i14;
-                fontMetricsInt3.bottom = i15;
-                fontMetricsInt3.leading = i16;
-                a(fontMetricsInt3, this.f);
-            }
-            return i17;
-        }
-        int size = super.getSize(paint, charSequence, i10, i11, fontMetricsInt3);
-        int L = i0.L(8.0f);
-        int L2 = i0.L(10.0f);
-        int i18 = (-L2) - L;
-        fontMetricsInt3.top = i18;
-        int i19 = L2 - L;
-        fontMetricsInt3.bottom = i19;
-        fontMetricsInt3.ascent = i18;
-        fontMetricsInt3.leading = 0;
-        fontMetricsInt3.descent = i19;
-        if (z10) {
-            fontMetricsInt3.top = i12;
-            fontMetricsInt3.ascent = i13;
-            fontMetricsInt3.descent = i14;
-            fontMetricsInt3.bottom = i15;
-            fontMetricsInt3.leading = i16;
-            a(fontMetricsInt3, this.f);
-        }
-        return size;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        e.setAlpha(i3);
     }
 
-    @Override // android.text.style.ReplacementSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        if (getDrawable() instanceof g6) {
-            ((g6) getDrawable()).b = 285212671 & textPaint.getColor();
-        }
-        super.updateDrawState(textPaint);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

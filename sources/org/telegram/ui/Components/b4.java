@@ -1,21 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b4 extends ac0 {
-    public final /* synthetic */ int[] y0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b4(Context context, org.telegram.ui.ActionBar.p6 p6Var, int[] iArr) {
-        super(context, p6Var);
-        this.y0 = iArr;
-    }
-
-    @Override // org.telegram.ui.Components.ac0
-    public final CharSequence d(int i10) {
-        int i11 = this.y0[i10];
-        return i11 == 0 ? org.telegram.messenger.dd.L0(2131753849, null) : i11 < 10080 ? org.telegram.messenger.dd.G(i11 / 1440, "Days", new Object[0]) : i11 < 44640 ? org.telegram.messenger.dd.G(i11 / 1440, "Weeks", new Object[0]) : i11 < 525600 ? org.telegram.messenger.dd.G(i11 / 10080, "Months", new Object[0]) : org.telegram.messenger.dd.G(((i11 * 5) / 31) * 1440, "Years", new Object[0]);
+public final class b4 extends cb0 {
+    @Override // org.telegram.ui.Components.cb0
+    public final CharSequence d(int i3) {
+        return org.telegram.messenger.bd.G(i3, "Minutes", new Object[0]);
     }
 }

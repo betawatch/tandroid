@@ -1,147 +1,120 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.aw0;
+import org.telegram.ui.ra1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class aw0 extends org.telegram.ui.Components.uk0 implements th.l5 {
-    public final /* synthetic */ ProfileActivity e3;
-    public VelocityTracker f3;
-    public final /* synthetic */ ProfileActivity g3;
+public final class aw0 extends org.telegram.ui.Cells.w6 {
+    public final /* synthetic */ bw0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aw0(ProfileActivity profileActivity, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        this.g3 = profileActivity;
-        this.e3 = profileActivity;
-    }
+    public aw0(bw0 bw0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.h = bw0Var;
+        this.f = org.telegram.messenger.h10.t0;
+        final int i3 = 1;
+        setOrientation(1);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        k2.p1.t(textView, 1, 15.0f);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity((org.telegram.messenger.bd.a0 ? 5 : 3) | 16);
+        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.L6, e6Var);
+        addView(textView, b8.mf.t(-1, -2, (org.telegram.messenger.bd.a0 ? 5 : 3) | 48, 21, 15, 21, 0));
+        org.telegram.ui.Components.s70 s70Var = new org.telegram.ui.Components.s70(context, e6Var);
+        this.b = s70Var;
+        org.telegram.ui.ActionBar.r6.V(s70Var, org.telegram.ui.ActionBar.k6.G6, e6Var);
+        s70Var.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.r6.H(s70Var, org.telegram.ui.ActionBar.k6.J6, e6Var);
+        org.telegram.ui.ActionBar.r6.D(s70Var, org.telegram.ui.ActionBar.k6.K6, e6Var);
+        final int i10 = 0;
+        s70Var.setMovementMethod(new org.telegram.messenger.c0(false));
+        s70Var.setGravity(org.telegram.messenger.bd.a0 ? 5 : 3);
+        addView(s70Var, b8.mf.t(-2, -2, org.telegram.messenger.bd.a0 ? 5 : 3, 21, 14, 21, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        addView(linearLayout, b8.mf.k(21.0f, 16.0f, 21.0f, 15.0f, -1, 44));
+        int i11 = 0;
+        while (i11 < 2) {
+            TextView textView2 = new TextView(context);
+            textView2.setBackground(org.telegram.ui.ActionBar.y5.f(org.telegram.ui.ActionBar.k6.Ci, 8.0f));
+            b8.pf.b(textView2, 0.02f, 1.5f);
+            textView2.setLines(1);
+            textView2.setSingleLine(true);
+            textView2.setGravity(1);
+            textView2.setEllipsize(TextUtils.TruncateAt.END);
+            textView2.setGravity(17);
+            org.telegram.messenger.k5.n(textView2, org.telegram.ui.ActionBar.k6.Gi, e6Var, 1, 14.0f);
+            linearLayout.addView(textView2, b8.mf.m(0.5f, 0, 44, i11 == 0 ? 0 : 4, i11 == 0 ? 4 : 0, 0));
+            if (i11 == 0) {
+                this.c = textView2;
+                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.v6
+                    public final /* synthetic */ aw0 b;
 
-    @Override // org.telegram.ui.Components.uk0
-    public final boolean F0(View view) {
-        return view != this.g3.N;
-    }
+                    {
+                        this.b = this;
+                    }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final boolean H0(View view, float f7, float f10) {
-        return !(view instanceof org.telegram.ui.Cells.i);
-    }
-
-    @Override // th.l5
-    public final void a(int[] iArr) {
-        org.telegram.ui.ActionBar.l lVar;
-        lVar = ((org.telegram.ui.ActionBar.k2) this.e3).actionBar;
-        iArr[0] = lVar.getMeasuredHeight();
-        iArr[1] = getMeasuredHeight() - getPaddingBottom();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        View view = this.g3.fragmentView;
-        if (view != null) {
-            view.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        ProfileActivity profileActivity = this.g3;
-        hx0 hx0Var = profileActivity.N;
-        if (hx0Var != null) {
-            if (hx0Var.G()) {
-                hx0 hx0Var2 = profileActivity.N;
-                if (hx0Var2.E1 && hx0Var2.getClosestTab() == 13) {
-                    return false;
-                }
-            }
-            if (profileActivity.N.G()) {
-                hx0 hx0Var3 = profileActivity.N;
-                if (hx0Var3.E1 && (hx0Var3.getClosestTab() == 8 || org.telegram.ui.Components.au0.G0(profileActivity.N.getClosestTab()))) {
-                    return false;
-                }
-            }
-            org.telegram.ui.Components.wq0 wq0Var = profileActivity.N.a0;
-            if (wq0Var != null && wq0Var.g()) {
-                return false;
-            }
-            org.telegram.ui.Components.ar0 ar0Var = profileActivity.N.b0;
-            if (ar0Var != null && ar0Var.f) {
-                return false;
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        RectF rectF = ProfileActivity.S6;
-        this.g3.p5();
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        VelocityTracker velocityTracker;
-        View m10;
-        org.telegram.ui.ActionBar.l lVar;
-        int e42;
-        int action = motionEvent.getAction();
-        ProfileActivity profileActivity = this.g3;
-        if (action == 0) {
-            VelocityTracker velocityTracker2 = this.f3;
-            if (velocityTracker2 == null) {
-                this.f3 = VelocityTracker.obtain();
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        switch (i10) {
+                            case 0:
+                                aw0 aw0Var = this.b;
+                                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.o2(aw0Var, aw0Var.e, 24));
+                                break;
+                            default:
+                                aw0 aw0Var2 = this.b;
+                                int i12 = aw0Var2.e;
+                                ProfileActivity profileActivity = aw0Var2.h.e;
+                                if (i12 != 0) {
+                                    profileActivity.presentFragment(new ra1(8, null));
+                                    break;
+                                } else {
+                                    profileActivity.presentFragment(new org.telegram.ui.g(3));
+                                    break;
+                                }
+                        }
+                    }
+                });
             } else {
-                velocityTracker2.clear();
-            }
-            this.f3.addMovement(motionEvent);
-        } else if (action == 2) {
-            VelocityTracker velocityTracker3 = this.f3;
-            if (velocityTracker3 != null) {
-                velocityTracker3.addMovement(motionEvent);
-                this.f3.computeCurrentVelocity(1000);
-                profileActivity.h2 = this.f3.getYVelocity(motionEvent.getPointerId(motionEvent.getActionIndex()));
-            }
-        } else if ((action == 1 || action == 3) && (velocityTracker = this.f3) != null) {
-            if (action == 1) {
-                velocityTracker.addMovement(motionEvent);
-                this.f3.computeCurrentVelocity(1000);
-                profileActivity.h2 = this.f3.getYVelocity(motionEvent.getPointerId(motionEvent.getActionIndex()));
-            }
-            this.f3.recycle();
-            this.f3 = null;
-        }
-        boolean onTouchEvent = super.onTouchEvent(motionEvent);
-        if (action == 2) {
-            int currentActionBarHeight = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
-            lVar = ((org.telegram.ui.ActionBar.k2) profileActivity).actionBar;
-            int i10 = currentActionBarHeight + (lVar.getOccupyStatusBar() ? org.telegram.messenger.i0.m : 0);
-            if (!profileActivity.m2 || profileActivity.I0) {
-                i10 = profileActivity.a.getMeasuredWidth();
-                e42 = profileActivity.e4();
-            } else {
-                e42 = profileActivity.j4();
-            }
-            if (profileActivity.P1 >= (e42 + i10) - 1.0f) {
-                profileActivity.K4(true);
-                onTouchEvent = false;
-            }
-        }
-        if ((action == 1 || action == 3) && (m10 = profileActivity.c.m(0)) != null) {
-            if (profileActivity.N1) {
-                profileActivity.N1 = false;
-                profileActivity.a.O0 = true;
-            }
-            ProfileActivity.R0(profileActivity, m10, profileActivity.h2);
-        }
-        return onTouchEvent;
-    }
+                this.d = textView2;
+                textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.v6
+                    public final /* synthetic */ aw0 b;
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void r0(View view, View view2) {
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        switch (i3) {
+                            case 0:
+                                aw0 aw0Var = this.b;
+                                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.o2(aw0Var, aw0Var.e, 24));
+                                break;
+                            default:
+                                aw0 aw0Var2 = this.b;
+                                int i12 = aw0Var2.e;
+                                ProfileActivity profileActivity = aw0Var2.h.e;
+                                if (i12 != 0) {
+                                    profileActivity.presentFragment(new ra1(8, null));
+                                    break;
+                                } else {
+                                    profileActivity.presentFragment(new org.telegram.ui.g(3));
+                                    break;
+                                }
+                        }
+                    }
+                });
+            }
+            i11++;
+        }
     }
 }

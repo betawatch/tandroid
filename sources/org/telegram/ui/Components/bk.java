@@ -1,164 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.ImageView;
-import java.lang.ref.WeakReference;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bk implements View.OnTouchListener {
+public final /* synthetic */ class bk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ hk b;
 
-    public /* synthetic */ bk(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ bk(hk hkVar, int i3) {
+        this.a = i3;
+        this.b = hkVar;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        i2.i0 i0Var;
-        u60 u60Var;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                kk kkVar = (kk) this.b;
-                kkVar.getClass();
-                if (motionEvent.getActionMasked() != 1 || view.hasFocus()) {
-                    return false;
-                }
-                kkVar.c0();
-                return false;
+                this.b.b0();
+                break;
             case 1:
-                org.telegram.ui.ActionBar.k1 k1Var = (org.telegram.ui.ActionBar.k1) ((k.a) this.b).b;
-                if (motionEvent.getActionMasked() != 1 || k1Var == null || !k1Var.isShowing()) {
-                    return false;
+                hk hkVar = this.b;
+                EditTextBoldCursor editTextBoldCursor = hkVar.T;
+                if (!hkVar.L && !hkVar.O0 && !hkVar.b.J && hkVar.M0 && hkVar.U0 == null && editTextBoldCursor.hasFocus() && hkVar.isShown()) {
+                    org.telegram.messenger.g0.K3(editTextBoldCursor);
+                    break;
                 }
-                Rect rect = org.telegram.messenger.i0.Q;
-                view.getHitRect(rect);
-                if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                    return false;
-                }
-                k1Var.d(true);
-                return false;
+                break;
             case 2:
-                d50 d50Var = (d50) this.b;
-                if (d50Var.O == null || d50Var.Q == null) {
-                    return false;
+                hk hkVar2 = this.b;
+                if (!hkVar2.L && hkVar2.M0 && hkVar2.isShown()) {
+                    hkVar2.e0();
+                    break;
                 }
-                if (motionEvent.getActionMasked() == 0) {
-                    ValueAnimator valueAnimator = d50Var.a0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    d50Var.B0 = false;
-                    d50Var.z0 = motionEvent.getPointerId(0);
-                    d50Var.A0 = -1;
-                    int i10 = d50Var.Q.a;
-                    if (i10 == 5) {
-                        ImageView imageView = d50Var.H;
-                        li.x0 x0Var = d50Var.O;
-                        if (x0Var != null && i10 == 5) {
-                            boolean z10 = d50Var.i0;
-                            d50Var.i0 = !z10;
-                            li.x0.u();
-                            if (x0Var.Z == 5 && (i0Var = x0Var.V) != null) {
-                                i0Var.S(!z10 ? 0.0f : 1.0f);
-                            }
-                            org.telegram.messenger.y20 y20Var = d50Var.T;
-                            if (y20Var != null) {
-                                y20Var.t = d50Var.i0;
-                            }
-                            imageView.animate().cancel();
-                            org.telegram.messenger.a30.l(imageView.animate(), d50Var.i0 ? 1.0f : 0.0f, 180L);
-                        }
-                    }
-                } else {
-                    if (motionEvent.getActionMasked() == 5 && motionEvent.getPointerCount() == 2) {
-                        li.w0 w0Var = d50Var.Q;
-                        if (w0Var.a == 3 && !w0Var.f) {
-                            d50Var.z0 = motionEvent.getPointerId(0);
-                            d50Var.A0 = motionEvent.getPointerId(1);
-                            float hypot = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
-                            d50Var.x0 = hypot;
-                            d50Var.B0 = hypot > 0.0f;
-                            d50Var.y0 = 0.0f;
-                        }
-                    }
-                    if (motionEvent.getActionMasked() == 2 && d50Var.B0) {
-                        int findPointerIndex = motionEvent.findPointerIndex(d50Var.z0);
-                        int findPointerIndex2 = motionEvent.findPointerIndex(d50Var.A0);
-                        if (findPointerIndex < 0 || findPointerIndex2 < 0) {
-                            d50Var.u();
-                        } else {
-                            float hypot2 = ((float) Math.hypot(motionEvent.getX(findPointerIndex2) - motionEvent.getX(findPointerIndex), motionEvent.getY(findPointerIndex2) - motionEvent.getY(findPointerIndex))) / d50Var.x0;
-                            li.p0 p0Var = d50Var.R;
-                            float f7 = p0Var == null ? 1.0f : p0Var.c;
-                            float max = f7 > 1.0f ? Math.max(0.0f, Math.min(1.0f, (((Math.max(0.0f, hypot2 - 1.0f) / 1.5f) + 1.0f) - 1.0f) / (f7 - 1.0f))) : 0.0f;
-                            d50Var.y0 = max;
-                            d50Var.O.x(max);
-                        }
-                    } else if (motionEvent.getActionMasked() == 6 && d50Var.B0) {
-                        int pointerId = motionEvent.getPointerId(motionEvent.getActionIndex());
-                        if (pointerId == d50Var.z0 || pointerId == d50Var.A0) {
-                            d50Var.u();
-                        }
-                    } else if ((motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) && d50Var.B0) {
-                        d50Var.u();
-                    }
-                }
-                return true;
+                break;
             case 3:
-                z60 z60Var = (z60) ((WeakReference) this.b).get();
-                if (z60Var == null || (u60Var = z60Var.m) == null || !u60Var.isShowing()) {
-                    view.setOnTouchListener(null);
-                    return false;
-                }
-                if (view.getParent() != null) {
-                    view.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                int actionMasked = motionEvent.getActionMasked();
-                if (actionMasked == 2) {
-                    z60Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                } else if (actionMasked == 1) {
-                    z60Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                    View view2 = z60Var.p0;
-                    if (view2 != null) {
-                        z60Var.p0 = null;
-                        view2.setPressed(false);
-                        view2.performClick();
+                hk hkVar3 = this.b;
+                if (!hkVar3.L) {
+                    float f10 = hkVar3.n0;
+                    if (f10 < 1.0f && hkVar3.m0 == null) {
+                        q1.g gVar = new q1.g(new q1.f(f10));
+                        hkVar3.m0 = gVar;
+                        q1.h hVar = new q1.h(1.0f);
+                        hVar.a(0.55f);
+                        hVar.b(65.0f);
+                        gVar.m = hVar;
+                        hkVar3.m0.f(0.001f);
+                        hkVar3.m0.b(new c7(hkVar3, 4));
+                        hkVar3.m0.a(new sa(hkVar3, 2));
+                        hkVar3.m0.h();
+                        break;
                     }
-                    view.setOnTouchListener(null);
-                    z60Var.o0 = null;
-                } else if (actionMasked == 3) {
-                    View view3 = z60Var.p0;
-                    if (view3 != null) {
-                        view3.setPressed(false);
-                        z60Var.p0 = null;
-                    }
-                    view.setOnTouchListener(null);
-                    z60Var.o0 = null;
                 }
-                return true;
+                break;
             case 4:
-                y90 y90Var = (y90) this.b;
-                y90Var.getClass();
-                return org.telegram.ui.kt.p().r(motionEvent, y90Var.getListView(), y90Var.x, null, y90Var.a);
-            case 5:
-                ua0 ua0Var = (ua0) this.b;
-                ua0Var.getClass();
-                if (motionEvent.getAction() == 1) {
-                    ua0Var.c0.a(true);
+                hk hkVar4 = this.b;
+                if (hkVar4.M0 && !hkVar4.L) {
+                    hkVar4.d0();
+                    if (hkVar4.N0) {
+                        hkVar4.e0();
+                        break;
+                    }
                 }
-                return true;
+                break;
             default:
-                dx0 dx0Var = (dx0) this.b;
-                if (dx0Var.I1) {
-                    return false;
+                hk hkVar5 = this.b;
+                if (!hkVar5.q0) {
+                    hkVar5.p0.setVisibility(4);
+                    break;
                 }
-                return org.telegram.ui.kt.p().r(motionEvent, dx0Var.j1, dx0Var.y1, dx0Var.d2, dx0Var.I0);
+                break;
         }
     }
 }

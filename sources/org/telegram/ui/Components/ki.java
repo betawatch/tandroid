@@ -1,33 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ki extends a51 {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        a51.h(new ki());
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
-        li liVar = (li) view;
-        CharSequence charSequence = b51Var.l;
-        CharSequence charSequence2 = b51Var.m;
-        liVar.b.setText(charSequence);
-        liVar.c.setText(charSequence2);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        return new li(context, p6Var);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean f() {
-        return false;
-    }
+public interface ki {
+    void h(ArrayList arrayList, CharSequence charSequence, boolean z10, int i3, int i10, long j10, boolean z11, long j11);
 }

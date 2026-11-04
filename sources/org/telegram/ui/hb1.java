@@ -1,106 +1,205 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
+import android.content.SharedPreferences;
+import android.os.Looper;
+import android.util.LongSparseArray;
+import com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class hb1 extends org.telegram.ui.Components.tk0 {
-    public final /* synthetic */ jb1 c;
+public final /* synthetic */ class hb1 implements Runnable {
+    public final /* synthetic */ int a;
 
-    public hb1(jb1 jb1Var) {
-        this.c = jb1Var;
+    public /* synthetic */ hb1(int i3) {
+        this.a = i3;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return i10 == 3 || i10 == 2;
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a5  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i3 = 1;
+        int i10 = 0;
+        switch (this.a) {
+            case 0:
+                if (VoIPService.getSharedState() != null) {
+                    VoIPService.getSharedState().acceptIncomingCall();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.Wallet.k0[] k0VarArr = org.telegram.ui.Wallet.k0.O;
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.d2 T = LaunchActivity.T();
+                if (T != null) {
+                    org.telegram.ui.Components.ac I = org.telegram.ui.Components.fc.a0(T).I(R.raw.contact_check, org.telegram.messenger.bd.M0(2131743201, null), org.telegram.messenger.bd.M0(2131743199, null));
+                    I.j = 5000;
+                    I.j();
+                    break;
+                }
+                break;
+            case 3:
+                CopyOnWriteArrayList copyOnWriteArrayList = org.telegram.ui.Wallet.o0.i;
+                Iterator it = copyOnWriteArrayList.iterator();
+                while (it.hasNext()) {
+                    WeakReference weakReference = (WeakReference) it.next();
+                    Runnable runnable = (Runnable) weakReference.get();
+                    if (runnable == null) {
+                        copyOnWriteArrayList.remove(weakReference);
+                    } else {
+                        runnable.run();
+                    }
+                }
+                break;
+            case 4:
+                boolean z10 = org.telegram.ui.Wallet.x5.j0;
+                break;
+            case 5:
+                PhotoViewer.v1().H0(false, false);
+                break;
+            case 6:
+                Utilities.e.c(new hb1(8));
+                break;
+            case 7:
+                ArrayList arrayList = new ArrayList();
+                LongSparseArray longSparseArray = new LongSparseArray();
+                try {
+                    File file = new File(org.telegram.messenger.w7.z(4), "webhistory.dat");
+                    if (file.exists()) {
+                        SerializedData serializedData = new SerializedData(file);
+                        long readInt64 = serializedData.readInt64(true);
+                        for (long j10 = 0; j10 < readInt64; j10++) {
+                            org.telegram.ui.web.x0 x0Var = new org.telegram.ui.web.x0();
+                            x0Var.readParams(serializedData, true);
+                            arrayList.add(x0Var);
+                            longSparseArray.put(x0Var.a, x0Var);
+                        }
+                    }
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                }
+                org.telegram.messenger.g0.h3(new hc1(6, arrayList, longSparseArray));
+                break;
+            case 8:
+                try {
+                    File file2 = new File(org.telegram.messenger.w7.z(4), "webhistory.dat");
+                    if (!file2.exists()) {
+                        file2.createNewFile();
+                    }
+                    long size = b8.xf.c.size();
+                    SerializedData serializedData2 = new SerializedData(true);
+                    serializedData2.writeInt64(size);
+                    ArrayList arrayList2 = b8.xf.c;
+                    int size2 = arrayList2.size();
+                    int i11 = 0;
+                    while (i11 < size2) {
+                        Object obj = arrayList2.get(i11);
+                        i11++;
+                        ((org.telegram.ui.web.x0) obj).serializeToStream(serializedData2);
+                    }
+                    SerializedData serializedData3 = new SerializedData(serializedData2.length());
+                    serializedData3.writeInt64(size);
+                    ArrayList arrayList3 = b8.xf.c;
+                    int size3 = arrayList3.size();
+                    while (i10 < size3) {
+                        Object obj2 = arrayList3.get(i10);
+                        i10++;
+                        ((org.telegram.ui.web.x0) obj2).serializeToStream(serializedData3);
+                    }
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                        fileOutputStream.write(serializedData3.toByteArray());
+                        fileOutputStream.close();
+                        break;
+                    } catch (Exception e11) {
+                        org.telegram.messenger.a8.g(e11, true);
+                        return;
+                    }
+                } catch (Exception e12) {
+                    org.telegram.messenger.a8.g(e12, true);
+                    return;
+                }
+            case 9:
+                break;
+            case 10:
+                org.telegram.utils.twidget.p.j();
+                break;
+            case 11:
+                org.telegram.messenger.az.D1 = !org.telegram.messenger.az.D1;
+                org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putBoolean("drawActionBarShadow", org.telegram.messenger.az.D1);
+                org.telegram.messenger.g0.c0(LaunchActivity.K1.A0.getRootView(), new ei.e(27));
+                break;
+            case 12:
+                SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
+                String str = "Blue";
+                String string = sharedPreferences.getString("lastDayTheme", "Blue");
+                if (org.telegram.ui.ActionBar.k6.Q0(string) == null || org.telegram.ui.ActionBar.k6.Q0(string).q()) {
+                    string = "Blue";
+                }
+                String str2 = "Dark Blue";
+                String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+                if (org.telegram.ui.ActionBar.k6.Q0(string2) == null || !org.telegram.ui.ActionBar.k6.Q0(string2).q()) {
+                    string2 = "Dark Blue";
+                }
+                org.telegram.ui.ActionBar.j6 j6Var = org.telegram.ui.ActionBar.k6.I;
+                if (string.equals(string2)) {
+                    if (j6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                        str2 = string2;
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.i6(org.telegram.ui.ActionBar.k6.I.q() ? org.telegram.ui.ActionBar.k6.Q0(str2) : org.telegram.ui.ActionBar.k6.Q0(str), i3), 200L);
+                        break;
+                    }
+                } else {
+                    str2 = string2;
+                }
+                str = string;
+                org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.i6(org.telegram.ui.ActionBar.k6.I.q() ? org.telegram.ui.ActionBar.k6.Q0(str2) : org.telegram.ui.ActionBar.k6.Q0(str), i3), 200L);
+                break;
+            case 13:
+                int i12 = AlarmManagerSchedulerBroadcastReceiver.a;
+                break;
+            case 14:
+                tg.b0.b();
+                break;
+            case 15:
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
+            case 16:
+                Looper myLooper2 = Looper.myLooper();
+                if (myLooper2 != null) {
+                    myLooper2.quit();
+                    break;
+                }
+                break;
+            case 17:
+                org.telegram.messenger.hs.f(org.telegram.messenger.h10.t0).m(org.telegram.messenger.hs.s3, new Object[0]);
+                break;
+            case 18:
+                float[] fArr = vg.w1.V;
+                break;
+            default:
+                xg.e1.l1(0, null);
+                break;
+        }
     }
 
-    @Override // s4.g0
-    public final int b() {
-        jb1 jb1Var = this.c;
-        if (jb1Var.n0) {
-            return 0;
-        }
-        return jb1Var.m0;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        jb1 jb1Var = this.c;
-        if (i10 == jb1Var.j0 || i10 == jb1Var.g0) {
-            return 1;
-        }
-        if (i10 < jb1Var.h0 || i10 >= jb1Var.i0) {
-            return (i10 < jb1Var.k0 || i10 >= jb1Var.l0) ? 0 : 3;
-        }
-        return 2;
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        int i11;
-        View view = c1Var.a;
-        jb1 jb1Var = this.c;
-        nb1 nb1Var = jb1Var.v0;
-        if (d(i10) == 1) {
-            org.telegram.ui.Cells.z3 z3Var = (org.telegram.ui.Cells.z3) view;
-            if (i10 == jb1Var.g0) {
-                z3Var.setText(org.telegram.messenger.dd.L0(2131744019, null));
-            }
-            if (i10 == jb1Var.j0) {
-                z3Var.setText(org.telegram.messenger.dd.L0(2131745773, null));
-            }
-        }
-        if (d(i10) == 2) {
-            org.telegram.ui.Cells.ja jaVar = (org.telegram.ui.Cells.ja) view;
-            jaVar.setTopic((TLRPC.TL_forumTopic) jb1Var.e0.get(i10 - jb1Var.h0));
-            jaVar.d = i10 != jb1Var.i0 - 1;
-        }
-        if (d(i10) == 3) {
-            org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) jb1Var.f0.get(i10 - jb1Var.k0);
-            kb1 kb1Var = (kb1) view;
-            kb1Var.a5 = i10 != jb1Var.l0 - 1;
-            i11 = ((org.telegram.ui.ActionBar.k2) nb1Var).currentAccount;
-            long c22 = org.telegram.messenger.kj.c2(i11, kjVar.k, true, false);
-            if (c22 == 0) {
-                c22 = 1;
-            }
-            TLRPC.TL_forumTopic f7 = nb1Var.s.f(nb1Var.a, c22);
-            if (f7 != null) {
-                kb1Var.f0(f7, org.telegram.messenger.kj.B0(kjVar.k), kjVar, false, false);
-                kb1Var.setTopicIcon(f7);
-            } else {
-                org.telegram.messenger.f8.b("cant find topic " + c22);
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.v2, org.telegram.ui.kb1] */
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        boolean z10;
-        nb1 nb1Var = this.c.v0;
-        if (i10 == 1) {
-            frameLayout = new org.telegram.ui.Cells.z3(viewGroup.getContext(), null);
-        } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.ja(viewGroup.getContext());
-        } else {
-            if (i10 != 3) {
-                throw new RuntimeException("unsupported view type");
-            }
-            ?? kb1Var = new kb1(nb1Var, viewGroup.getContext(), true);
-            z10 = ((org.telegram.ui.ActionBar.k2) nb1Var).inPreviewMode;
-            kb1Var.k0 = z10;
-            frameLayout = kb1Var;
-        }
-        frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.dk0(frameLayout);
+    private final void a() {
     }
 }

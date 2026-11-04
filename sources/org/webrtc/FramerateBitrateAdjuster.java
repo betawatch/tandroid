@@ -1,13 +1,13 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 class FramerateBitrateAdjuster extends BaseBitrateAdjuster {
     private static final int DEFAULT_FRAMERATE_FPS = 30;
 
     @Override // org.webrtc.BaseBitrateAdjuster, org.webrtc.BitrateAdjuster
-    public void setTargets(int i10, double d) {
+    public void setTargets(int i3, double d) {
         this.targetFramerateFps = 30.0d;
-        this.targetBitrateBps = (int) ((i10 * 30) / d);
+        this.targetBitrateBps = (int) ((i3 * 30) / d);
     }
 }

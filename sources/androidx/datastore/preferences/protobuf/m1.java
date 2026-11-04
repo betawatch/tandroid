@@ -1,62 +1,90 @@
 package androidx.datastore.preferences.protobuf;
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import java.lang.reflect.Field;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m1 extends AbstractList implements e0, RandomAccess {
-    public final d0 a;
+public abstract class m1 {
+    public final Unsafe a;
 
-    public m1(d0 d0Var) {
-        this.a = d0Var;
+    public m1(Unsafe unsafe) {
+        this.a = unsafe;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.e0
-    public final void e(g gVar) {
-        throw new UnsupportedOperationException();
+    public final int a(Class cls) {
+        return this.a.arrayBaseOffset(cls);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.e0
-    public final List f() {
-        return DesugarCollections.unmodifiableList(this.a.b);
+    public final int b(Class cls) {
+        return this.a.arrayIndexScale(cls);
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        return (String) this.a.get(i10);
+    public abstract boolean c(Object obj, long j10);
+
+    public abstract double d(Object obj, long j10);
+
+    public abstract float e(Object obj, long j10);
+
+    public final int f(Object obj, long j10) {
+        return this.a.getInt(obj, j10);
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        l1 l1Var = new l1();
-        l1Var.a = this.a.iterator();
-        return l1Var;
+    public final long g(Object obj, long j10) {
+        return this.a.getLong(obj, j10);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.e0
-    public final Object j(int i10) {
-        return this.a.b.get(i10);
+    public final Object h(Object obj, long j10) {
+        return this.a.getObject(obj, j10);
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i10) {
-        k1 k1Var = new k1();
-        k1Var.a = this.a.listIterator(i10);
-        return k1Var;
+    public final long i(Field field) {
+        return this.a.objectFieldOffset(field);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.size();
+    public abstract void j(Object obj, long j10, boolean z10);
+
+    public abstract void k(Object obj, long j10, byte b10);
+
+    public abstract void l(Object obj, long j10, double d);
+
+    public abstract void m(Object obj, long j10, float f10);
+
+    public final void n(long j10, Object obj, int i3) {
+        this.a.putInt(obj, j10, i3);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.e0
-    public final e0 h() {
-        return this;
+    public final void o(Object obj, long j10, long j11) {
+        this.a.putLong(obj, j10, j11);
     }
+
+    public final void p(Object obj, long j10, Object obj2) {
+        this.a.putObject(obj, j10, obj2);
+    }
+
+    public boolean q() {
+        Unsafe unsafe = this.a;
+        if (unsafe == null) {
+            return false;
+        }
+        try {
+            Class<?> cls = unsafe.getClass();
+            cls.getMethod("objectFieldOffset", Field.class);
+            cls.getMethod("arrayBaseOffset", Class.class);
+            cls.getMethod("arrayIndexScale", Class.class);
+            Class<?> cls2 = Long.TYPE;
+            cls.getMethod("getInt", Object.class, cls2);
+            cls.getMethod("putInt", Object.class, cls2, Integer.TYPE);
+            cls.getMethod("getLong", Object.class, cls2);
+            cls.getMethod("putLong", Object.class, cls2, cls2);
+            cls.getMethod("getObject", Object.class, cls2);
+            cls.getMethod("putObject", Object.class, cls2, Object.class);
+            return true;
+        } catch (Throwable th2) {
+            n1.a(th2);
+            return false;
+        }
+    }
+
+    public abstract boolean r();
 }

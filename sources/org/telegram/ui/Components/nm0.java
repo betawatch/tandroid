@@ -1,51 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.tgnet.TLRPC;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class nm0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ mm0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Reaction c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.x1[] d;
-    public final /* synthetic */ View e;
+public abstract class nm0 extends View.AccessibilityDelegate {
+    public static final String c = "android.widget.SeekBar";
+    public final HashMap a = new HashMap(4);
+    public final ai.f2 b = new ai.f2(this, 15);
 
-    public nm0(mm0 mm0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.x1[] x1VarArr, View view) {
-        this.a = mm0Var;
-        this.b = i10;
-        this.c = reaction;
-        this.d = x1VarArr;
-        this.e = view;
+    public abstract boolean a();
+
+    public abstract boolean b();
+
+    public abstract void c(boolean z10);
+
+    public CharSequence d() {
+        return null;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
+    public void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        accessibilityNodeInfo.setClassName(c);
+        CharSequence d = d();
+        if (!TextUtils.isEmpty(d)) {
+            accessibilityNodeInfo.setText(d);
+        }
+        if (a()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_BACKWARD);
+        }
+        if (b()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD);
+        }
+    }
+
+    public final void f(AccessibilityNodeInfo accessibilityNodeInfo) {
+        e(null, accessibilityNodeInfo);
+    }
+
+    public boolean g(View view, int i3, Bundle bundle) {
+        if (i3 != 4096 && i3 != 8192) {
             return false;
         }
-        mm0 mm0Var = this.a;
-        String obj = mm0Var.getText().toString();
-        if (obj.length() > 12) {
-            org.telegram.messenger.i0.E3(mm0Var);
-            return true;
-        }
-        org.telegram.messenger.wp.r1(this.b).i4(obj, sg.o0.d(this.c));
-        org.telegram.ui.ActionBar.x1[] x1VarArr = this.d;
-        org.telegram.ui.ActionBar.x1 x1Var = x1VarArr[0];
-        if (x1Var != null) {
-            x1Var.dismiss();
-        }
-        if (x1VarArr[0] == sm0.H) {
-            sm0.H = null;
-        }
-        View view = this.e;
+        c(i3 == 8192);
         if (view != null) {
-            view.requestFocus();
+            WeakHashMap weakHashMap = r0.i0.a;
+            if (view.isAttachedToWindow()) {
+                HashMap hashMap = this.a;
+                Runnable runnable = (Runnable) hashMap.get(view);
+                if (runnable == null) {
+                    runnable = new j50(14, this, view);
+                    hashMap.put(view, runnable);
+                    view.addOnAttachStateChangeListener(this.b);
+                } else {
+                    view.removeCallbacks(runnable);
+                }
+                view.postDelayed(runnable, 400L);
+            }
         }
         return true;
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        e(view, accessibilityNodeInfo);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final boolean performAccessibilityAction(View view, int i3, Bundle bundle) {
+        if (super.performAccessibilityAction(view, i3, bundle)) {
+            return true;
+        }
+        return g(view, i3, bundle);
     }
 }

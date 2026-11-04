@@ -1,58 +1,65 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u80 implements org.telegram.messenger.r20 {
+public final /* synthetic */ class u80 implements org.telegram.ui.Components.r4, org.telegram.ui.ActionBar.p1, org.telegram.ui.Components.tt0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ e90 b;
 
-    public /* synthetic */ u80(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
-        this.b = launchActivity;
+    public /* synthetic */ u80(e90 e90Var, int i3) {
+        this.a = i3;
+        this.b = e90Var;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
-        org.telegram.ui.ActionBar.k2 lastFragment;
-        int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (i10) {
-            case 0:
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.q0 != null && booleanValue && org.telegram.messenger.tc.c() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof ab0)) {
-                    int b10 = org.telegram.messenger.tc.b();
-                    org.telegram.ui.Components.cc a02 = org.telegram.ui.Components.cc.a0(lastFragment);
-                    org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(b10 / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.t6.Y5));
-                    String L0 = org.telegram.messenger.dd.L0(2131748726, null);
-                    String a03 = org.telegram.messenger.dd.a0("LowPowerEnabledSubtitle", null, 2131748727, String.format("%d%%", Integer.valueOf(b10)));
-                    String L02 = org.telegram.messenger.dd.L0(2131751436, null);
-                    p70 p70Var = new p70(launchActivity, 11);
-                    a02.getClass();
-                    Context W = a02.W();
-                    org.telegram.ui.ActionBar.p6 p6Var = a02.c;
-                    org.telegram.ui.Components.tb tbVar = new org.telegram.ui.Components.tb(W, p6Var);
-                    tbVar.a.setImageDrawable(i9Var);
-                    tbVar.b.setText(L0);
-                    tbVar.c.setText(a03);
-                    org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(a02.W(), p6Var, true);
-                    ubVar.e(L02);
-                    ubVar.b = p70Var;
-                    tbVar.setButton(ubVar);
-                    org.telegram.ui.Components.wb b11 = a02.b(tbVar, 2750);
-                    b11.j = 5000;
-                    b11.j();
+    @Override // org.telegram.ui.Components.r4
+    public void L(int i3, int i10, boolean z10) {
+        this.b.a0(i3);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        e90 e90Var = this.b;
+        e90Var.T.a(e90Var.e);
+        e90Var.finishFragment();
+    }
+
+    @Override // org.telegram.ui.Components.tt0
+    public void l(int i3) {
+        switch (this.a) {
+            case 2:
+                e90 e90Var = this.b;
+                if (i3 >= e90Var.P.size()) {
+                    e90Var.x.setText("");
+                    break;
+                } else {
+                    e90Var.x.setText(org.telegram.messenger.bd.s(e90Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i3)).intValue(), false));
                     break;
                 }
-                break;
             default:
-                TLRPC.User user = (TLRPC.User) obj;
-                Pattern pattern = LaunchActivity.D1;
-                org.telegram.messenger.wp.r1(launchActivity.O).u3(null, user, null, 0, null, false, false);
+                e90 e90Var2 = this.b;
+                e90Var2.G.clearFocus();
+                e90Var2.O = true;
+                ArrayList arrayList = e90Var2.R;
+                if (i3 < arrayList.size()) {
+                    e90Var2.G.setText(((Integer) arrayList.get(i3)).toString());
+                } else {
+                    e90Var2.G.setText("");
+                }
+                e90Var2.O = false;
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.tt0
+    public /* synthetic */ void p() {
+        int i3 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

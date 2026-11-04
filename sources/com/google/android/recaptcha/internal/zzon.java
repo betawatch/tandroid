@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzon implements Iterator {
     final /* synthetic */ zzoo zza;
@@ -15,22 +15,22 @@ final class zzon implements Iterator {
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        int i10 = this.zzb;
+        int i3 = this.zzb;
         zzoo zzooVar = this.zza;
-        return i10 < zzooVar.zza() - zzooVar.zzb();
+        return i3 < zzooVar.zza() - zzooVar.zzb();
     }
 
     @Override // java.util.Iterator
     public final Object next() {
         Object[] objArr;
-        int i10 = this.zzb;
+        int i3 = this.zzb;
         zzoo zzooVar = this.zza;
-        if (i10 >= zzooVar.zza() - zzooVar.zzb()) {
+        if (i3 >= zzooVar.zza() - zzooVar.zzb()) {
             throw new NoSuchElementException();
         }
         objArr = zzooVar.zzb.zzb;
-        Object obj = objArr[zzooVar.zzb() + i10];
-        this.zzb = i10 + 1;
+        Object obj = objArr[zzooVar.zzb() + i3];
+        this.zzb = i3 + 1;
         return obj;
     }
 

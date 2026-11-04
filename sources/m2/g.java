@@ -1,21 +1,16 @@
 package m2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import k2.p1;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g {
-    public final n3.a[] a;
-    public final long[] b;
-    public final String c;
-    public final String d;
+public final class g extends Exception {
+    public final int a;
+    public final boolean b;
 
-    public g(String str, String str2, long[] jArr, n3.a[] aVarArr) {
-        this.c = str;
-        this.d = str2;
-        this.b = jArr;
-        this.a = aVarArr;
-    }
-
-    public final String a() {
-        return this.c + "/" + this.d;
+    public g(int i3, boolean z10) {
+        super(p1.i(i3, "AudioOutput write failed: "));
+        this.b = z10;
+        this.a = i3;
     }
 }

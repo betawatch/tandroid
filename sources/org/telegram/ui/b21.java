@@ -1,67 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.widget.FrameLayout;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b21 extends FrameLayout {
-    public final Path a;
-    public final Paint b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 e;
-    public final /* synthetic */ Integer f;
-    public final /* synthetic */ g31 h;
+public final class b21 extends org.telegram.ui.ActionBar.t2 {
+    public static final /* synthetic */ int m1 = 0;
+    public TLRPC.TL_authorization j1;
+    public SessionsActivity k1;
+    public org.telegram.ui.Components.fh0 l1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b21(g31 g31Var, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.p6 p6Var, Integer num) {
-        super(context);
-        this.h = g31Var;
-        this.c = z10;
-        this.d = z11;
-        this.e = p6Var;
-        this.f = num;
-        this.a = new Path();
-        this.b = new Paint(1);
+    public static void I0(b21 b21Var, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b21Var.getContext());
+        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.bd.M0(2131751767, null)}, new u(11, b21Var, str));
+        alertDialog$Builder.p();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        g31 g31Var = this.h;
-        if (!g31Var.Q0) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        if (!this.c) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        canvas.save();
-        boolean z10 = this.d;
-        Paint paint = this.b;
-        if (z10) {
-            org.telegram.ui.ActionBar.t6.n(paint);
-        }
-        paint.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.G8, this.e));
-        paint.setAlpha((int) (getAlpha() * 255.0f));
-        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + org.telegram.messenger.i0.L(20.0f);
-        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
-        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
-        if (g31Var.n()) {
-            org.telegram.messenger.i0.P.set((width - (g31Var.a1 * width)) + getPaddingLeft(), c3.i0.z(1.0f, g31Var.b1, height, getPaddingTop()), ((width2 - width) * g31Var.a1) + getPaddingLeft() + width, getPaddingTop() + height);
-        } else {
-            org.telegram.messenger.i0.P.set((width - (g31Var.a1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * g31Var.a1) + getPaddingLeft() + width, (height * g31Var.b1) + getPaddingTop());
-        }
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(org.telegram.messenger.i0.P, org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f), Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
+    public static void J0(b21 b21Var) {
+        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
+        TLRPC.TL_authorization tL_authorization = b21Var.j1;
+        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
+        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
+        changeauthorizationsettings.flags = 3;
+        changeauthorizationsettings.hash = tL_authorization.hash;
+        ConnectionsManager.getInstance(b21Var.a).sendRequest(changeauthorizationsettings, new ei.u5(28));
+    }
+
+    @Override // org.telegram.ui.ActionBar.t2, android.app.Dialog
+    public final void show() {
+        super.show();
+        this.l1.d();
     }
 }

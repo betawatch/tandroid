@@ -1,46 +1,23 @@
 package kg;
 
-import android.view.View;
-import org.telegram.ui.Components.jk0;
-import org.telegram.ui.PremiumPreviewFragment;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements org.telegram.ui.ActionBar.u1, jk0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+public enum b0 {
+    d(0, 2131745765, 2131745764),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF30(8, 2131745756, 2131745755),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF45(4, 2131745758, 2131745757),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF60(2, 2131745763, 2131745762);
 
-    public /* synthetic */ b0(q0 q0Var, int i10) {
-        this.a = i10;
-        this.b = q0Var;
-    }
+    public final int a;
+    public final int b;
+    public final int c;
 
-    @Override // org.telegram.ui.Components.jk0
-    public boolean f(int i10, View view) {
-        q0 q0Var = this.b;
-        q0Var.k1.getOnItemClickListener().f(i10, view);
-        if (q0Var.Z1 != 19) {
-            try {
-                view.performHapticFeedback(0);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        switch (this.a) {
-            case 0:
-                q0 q0Var = this.b;
-                q0Var.C2.presentFragment(new PremiumPreviewFragment(0, null));
-                q0Var.dismiss();
-                x1Var.dismiss();
-                break;
-            default:
-                x1Var.dismiss();
-                this.b.i1();
-                break;
-        }
+    b0(int i3, int i10, int i11) {
+        this.a = i3;
+        this.b = i10;
+        this.c = i11;
     }
 }

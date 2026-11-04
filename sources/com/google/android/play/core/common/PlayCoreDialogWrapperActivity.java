@@ -7,19 +7,19 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class PlayCoreDialogWrapperActivity extends Activity {
     public ResultReceiver a;
 
     @Override // android.app.Activity
-    public final void onActivityResult(int i10, int i11, Intent intent) {
+    public final void onActivityResult(int i3, int i10, Intent intent) {
         ResultReceiver resultReceiver;
-        super.onActivityResult(i10, i11, intent);
-        if (i10 == 0 && (resultReceiver = this.a) != null) {
-            if (i11 == -1) {
+        super.onActivityResult(i3, i10, intent);
+        if (i3 == 0 && (resultReceiver = this.a) != null) {
+            if (i10 == -1) {
                 resultReceiver.send(1, new Bundle());
-            } else if (i11 == 0) {
+            } else if (i10 == 0) {
                 resultReceiver.send(2, new Bundle());
             }
         }

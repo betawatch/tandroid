@@ -1,54 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class x3 implements yf.a {
-    public s6 a;
-    public TLRPC.TL_theme b;
-    public TLRPC.TL_chatThemeUniqueGift c;
-    public int d;
-    public int e = -1;
-    public SparseIntArray f;
-    public String g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
+public final /* synthetic */ class x3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i4 b;
 
-    public final long a() {
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme != null) {
-            return tL_theme.id;
-        }
-        TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-        if (tL_chatThemeUniqueGift != null) {
-            return tL_chatThemeUniqueGift.gift.gift_id;
-        }
-        return 0L;
+    public /* synthetic */ x3(i4 i4Var, int i3) {
+        this.a = i3;
+        this.b = i4Var;
     }
 
-    public final TLRPC.ThemeSettings b(int i10) {
-        ArrayList<TLRPC.ThemeSettings> arrayList;
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme == null) {
-            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-            if (tL_chatThemeUniqueGift != null) {
-                arrayList = tL_chatThemeUniqueGift.theme_settings;
-            }
-            return null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.g();
+                break;
+            case 1:
+                this.b.g();
+                break;
+            default:
+                this.b.g();
+                break;
         }
-        arrayList = tL_theme.settings;
-        if (arrayList != null && i10 >= 0 && arrayList.size() > i10) {
-            return arrayList.get(i10);
-        }
-        return null;
     }
 }

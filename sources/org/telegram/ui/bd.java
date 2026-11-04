@@ -1,38 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bd implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kd b;
+public final /* synthetic */ class bd implements org.telegram.ui.Components.ct0, org.telegram.ui.ActionBar.p1, org.telegram.messenger.s10 {
+    public final /* synthetic */ xd a;
 
-    public /* synthetic */ bd(kd kdVar, int i10) {
-        this.a = i10;
-        this.b = kdVar;
+    public /* synthetic */ bd(xd xdVar) {
+        this.a = xdVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.i0.g3(new h0(20, this.b, tLObject));
-                break;
-            case 1:
-                org.telegram.messenger.i0.g3(new h0(18, this.b, tL_error));
-                break;
-            case 2:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    org.telegram.messenger.i0.g3(new ad(this.b, 3));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.messenger.i0.g3(new p1(this.b, tL_error, tLObject, 11));
-                break;
+    @Override // org.telegram.ui.Components.ct0
+    public int c() {
+        return this.a.S0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        this.a.n0.presentFragment(new ra1(6, null));
+    }
+
+    @Override // org.telegram.messenger.s10
+    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        xd xdVar = this.a;
+        cd cdVar = xdVar.t1;
+        int i3 = xdVar.p0;
+        long j10 = xdVar.q0;
+        int i10 = ((org.telegram.ui.Components.r31) obj).d;
+        if (i10 != 1) {
+            if (i10 == 4) {
+                xdVar.n0.presentFragment(new ii.q3(j10));
+            }
+        } else {
+            if (xdVar.s0 >= org.telegram.messenger.hp.s1(i3).z4) {
+                xdVar.k1 = !xdVar.k1;
+                org.telegram.messenger.g0.r(cdVar);
+                org.telegram.messenger.g0.i3(cdVar, 1000L);
+                xdVar.Y0.g3.O(true);
+                return;
+            }
+            if (xdVar.r0 == null) {
+                return;
+            }
+            vg.i0 i0Var = new vg.i0(30, xdVar.p0, xdVar.getContext(), xdVar.n0, xdVar.o0);
+            i0Var.B1(j10);
+            i0Var.z1(xdVar.r0, true);
+            org.telegram.messenger.hp.s1(i3).G0().b(j10, xdVar.r0, new mi.f(12, xdVar, i0Var));
         }
     }
 }

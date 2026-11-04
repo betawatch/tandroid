@@ -1,68 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jd implements org.telegram.messenger.r20 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ String g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
-    public final /* synthetic */ Object j;
+public final /* synthetic */ class jd implements org.telegram.messenger.u10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ jd(lf lfVar, Object obj, org.telegram.messenger.ff ffVar, boolean z10, int i10, int i11, boolean z11, String str, Object obj2) {
-        this.h = lfVar;
-        this.b = obj;
-        this.i = ffVar;
-        this.c = z10;
-        this.d = i10;
-        this.e = i11;
-        this.f = z11;
-        this.g = str;
-        this.j = obj2;
+    public /* synthetic */ jd(ChatActivityEnterView chatActivityEnterView, int i3) {
+        this.a = i3;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.messenger.r20
+    @Override // org.telegram.messenger.u10
     public final void a(Object obj) {
-        int i10 = this.a;
-        Object obj2 = this.i;
-        Object obj3 = this.h;
-        switch (i10) {
+        int i3 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (i3) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
-                int i11 = ChatActivityEnterView.s5;
-                uc ucVar = new uc(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (org.telegram.messenger.gj) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
-                if (!chatActivityEnterView.p1(ucVar)) {
-                    ucVar.run();
-                    break;
-                }
+                chatActivityEnterView.P0((TL_iv.RichMessage) obj);
+                break;
+            case 1:
+                CharSequence charSequence = (CharSequence) obj;
+                chatActivityEnterView.F0.setText(charSequence);
+                chatActivityEnterView.F0.setSelection(charSequence.length(), charSequence.length());
                 break;
             default:
-                lf lfVar = (lf) obj3;
-                uc ucVar2 = new uc(lfVar, this.b, (org.telegram.messenger.ff) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
-                if (!lfVar.a.p1(ucVar2)) {
-                    ucVar2.run();
-                    break;
-                }
+                int i10 = ChatActivityEnterView.t5;
+                chatActivityEnterView.b0((Canvas) obj, false);
                 break;
         }
-    }
-
-    public /* synthetic */ jd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, org.telegram.messenger.gj gjVar, boolean z10, int i10, int i11, Object obj, boolean z11) {
-        this.h = chatActivityEnterView;
-        this.i = document;
-        this.g = str;
-        this.j = gjVar;
-        this.c = z10;
-        this.d = i10;
-        this.e = i11;
-        this.b = obj;
-        this.f = z11;
     }
 }

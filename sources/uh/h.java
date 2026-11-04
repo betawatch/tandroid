@@ -1,229 +1,33 @@
 package uh;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import m.p3;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.uz;
-import org.telegram.messenger.wp;
+import android.graphics.Canvas;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.ac;
+import org.telegram.messenger.t5;
+import org.telegram.messenger.zi;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.s7;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.dk0;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.vq0;
-import s4.c1;
-import th.d5;
-import th.q4;
-import th.x4;
-import vh.n5;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class h extends bk0 {
-    public final Context c;
-    public x4 e;
-    public h f;
-    public p3 h;
-    public boolean r;
-    public final /* synthetic */ i s;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList n = new ArrayList();
+public final class h extends th.c {
+    public final TLRPC.Document b;
+    public final Object c;
 
-    public h(i iVar, Context context) {
-        this.s = iVar;
-        this.c = context;
-        M();
+    public h(Object obj, TLRPC.Document document) {
+        this.b = document;
+        this.c = obj;
+        zi.I2(document);
+        ImageReceiver imageReceiver = this.a;
+        boolean z10 = zi.v4(document) || zi.O4(document);
+        zi.L2(document, true);
+        imageReceiver.p0(ac.b(document), "38_38", t5.f(document, k6.Zc, 1.0f, null), document.size, z10 ? "webp" : null, obj, 0);
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(c1 c1Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.bk0
-    public final String F(int i10) {
-        kj kjVar;
-        TL_stories.StoryItem storyItem;
-        x4 x4Var = this.e;
-        if (x4Var == null || i10 < 0 || i10 >= x4Var.i.size() || (kjVar = (kj) this.e.i.get(i10)) == null || (storyItem = kjVar.l) == null) {
-            return null;
-        }
-        return dd.e0(storyItem.date, true);
-    }
-
-    @Override // org.telegram.ui.Components.bk0
-    public final void G(uk0 uk0Var, float f7, int[] iArr) {
-        int measuredHeight = uk0Var.getChildAt(0).getMeasuredHeight();
-        h hVar = this.f;
-        i iVar = this.s;
-        int i10 = this == hVar ? iVar.e : iVar.d;
-        int ceil = (int) (Math.ceil(b() / i10) * measuredHeight);
-        int measuredHeight2 = uk0Var.getMeasuredHeight() - uk0Var.getPaddingTop();
-        if (measuredHeight == 0) {
-            iArr[1] = 0;
-            iArr[0] = 0;
-        } else {
-            float f10 = f7 * (ceil - measuredHeight2);
-            iArr[0] = ((int) (f10 / measuredHeight)) * i10;
-            iArr[1] = ((int) f10) % measuredHeight;
-        }
-    }
-
-    public final boolean L(int i10) {
-        vq0 vq0Var = this.s.W;
-        x4 x4Var = this.e;
-        if (x4Var == null) {
-            return false;
-        }
-        if (x4Var instanceof q4) {
-            TLRPC.User Z1 = wp.r1(vq0Var.b).Z1(Long.valueOf(vq0Var.d));
-            return Z1 != null && Z1.bot && Z1.bot_has_main_app && Z1.bot_can_edit;
-        }
-        if (i10 < 0 || i10 >= x4Var.i.size()) {
-            return false;
-        }
-        return this.e.m(((kj) this.e.i.get(i10)).f1());
-    }
-
-    public final void M() {
-        if (this.e == null) {
-            return;
-        }
-        i iVar = this.s;
-        if ((!iVar.I || (iVar.H && b() > 1)) && b() > 0) {
-            if (b() < 5) {
-                int max = Math.max(1, b());
-                iVar.d = max;
-                iVar.H = max == 1;
-            } else if (iVar.H || iVar.d == 1) {
-                iVar.H = false;
-                iVar.d = Math.max(2, uz.u1);
-            }
-            iVar.h.y1(iVar.d);
-            iVar.I = true;
-        }
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        if (this.e == null) {
-            return 0;
-        }
-        return this.e.g() + this.d.size();
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        return 19;
-    }
-
-    @Override // s4.g0
-    public final int e() {
-        return b();
-    }
-
-    @Override // s4.g0
-    public void f() {
-        x4 x4Var = this.e;
-        boolean z10 = x4Var instanceof q4;
-        i iVar = this.s;
-        if (z10) {
-            q4 q4Var = (q4) x4Var;
-            ArrayList arrayList = this.d;
-            arrayList.clear();
-            ArrayList F = wp.r1(this.e.c).O1().F(iVar.W.d);
-            if (F != null) {
-                for (int i10 = 0; i10 < F.size(); i10++) {
-                    d5 d5Var = (d5) F.get(i10);
-                    n5 n5Var = d5Var.c;
-                    if (n5Var != null && !n5Var.g && TextUtils.equals(n5Var.K0, q4Var.E)) {
-                        arrayList.add(d5Var);
-                    }
-                }
-            }
-        }
-        super.f();
-        h hVar = this.f;
-        if (hVar != null) {
-            hVar.f();
-        }
-        if (this != iVar.x) {
-            M();
-            iVar.c();
-        }
-    }
-
-    @Override // s4.g0
-    public final void t(c1 c1Var, int i10) {
-        if (this.e == null) {
-            return;
-        }
-        View view = c1Var.a;
-        if (view instanceof s7) {
-            s7 s7Var = (s7) view;
-            s7Var.d0 = true;
-            i iVar = this.s;
-            ArrayList arrayList = this.d;
-            if (i10 >= 0 && i10 < arrayList.size()) {
-                d5 d5Var = (d5) arrayList.get(i10);
-                s7Var.f0 = false;
-                if (d5Var.K == null) {
-                    TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
-                    long j10 = d5Var.a;
-                    int i11 = (int) (j10 ^ (j10 >>> 32));
-                    tL_storyItem.messageId = i11;
-                    tL_storyItem.id = i11;
-                    tL_storyItem.attachPath = d5Var.f;
-                    g gVar = new g(this.e.c, tL_storyItem);
-                    d5Var.K = gVar;
-                    gVar.m = d5Var;
-                }
-                s7Var.k(d5Var.K, this == this.f ? iVar.e : iVar.d, false);
-                s7Var.d0 = true;
-                s7Var.setReorder(false);
-                s7Var.i(false, false);
-                return;
-            }
-            int size = i10 - arrayList.size();
-            if (size < 0 || size >= this.e.i.size()) {
-                s7Var.f0 = false;
-                s7Var.k(null, this == this.f ? iVar.e : iVar.d, false);
-                s7Var.d0 = true;
-                return;
-            }
-            kj kjVar = (kj) this.e.i.get(size);
-            s7Var.f0 = kjVar != null && this.e.m(kjVar.f1());
-            s7Var.setReorder(true);
-            s7Var.k(kjVar, this == this.f ? iVar.e : iVar.d, false);
-            vq0 vq0Var = iVar.W;
-            if (!vq0Var.G.E1 || kjVar == null) {
-                s7Var.i(false, false);
-            } else {
-                s7Var.i(vq0Var.c(kjVar), true);
-            }
-        }
-    }
-
-    @Override // s4.g0
-    public final c1 w(ViewGroup viewGroup, int i10) {
-        vq0 vq0Var = this.s.W;
-        if (this.h == null) {
-            this.h = new p3(viewGroup.getContext(), vq0Var.c);
-        }
-        s7 s7Var = new s7(this.c, this.h, vq0Var.b);
-        s7Var.w0 = true;
-        s7Var.setGradientView(null);
-        s7Var.d0 = true;
-        return new dk0(s7Var);
-    }
-
-    @Override // org.telegram.ui.Components.bk0
-    public final void I() {
+    @Override // th.c
+    public final void c(Canvas canvas, int i3, int i10) {
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.y0(0.0f, 0.0f, i3, i10);
+        imageReceiver.h(canvas, null);
     }
 }

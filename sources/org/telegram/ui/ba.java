@@ -1,58 +1,46 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ba implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class ba implements org.telegram.ui.Components.fj0 {
+    public final /* synthetic */ ka a;
 
-    public /* synthetic */ ba(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public ba(ka kaVar) {
+        this.a = kaVar;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                ConnectionsManager.getInstance(((oa) this.c).currentAccount).cancelRequest(this.b, true);
-                break;
-            case 1:
-                ((fn) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 2:
-                oo ooVar = (oo) this.c;
-                ooVar.N0 = false;
-                ooVar.b = null;
-                ooVar.getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 3:
-                ((ChatActivityEnterView) this.c).P2.getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 4:
-                ConnectionsManager.getInstance(((org.telegram.ui.Components.ux) ((org.telegram.ui.Components.rx) this.c).c.b).F.c1).cancelRequest(this.b, true);
-                break;
-            case 5:
-                ConnectionsManager.getInstance(((a50) this.c).k1.a).cancelRequest(this.b, true);
-                break;
-            case 6:
-                ConnectionsManager.getInstance(((LanguageSelectActivity) this.c).currentAccount).cancelRequest(this.b, true);
-                break;
-            case 7:
-                ((xb0) this.c).getConnectionsManager().cancelRequest(this.b, true);
-                break;
-            case 8:
-                ConnectionsManager.getInstance(((n91) this.c).currentAccount).cancelRequest(this.b, true);
-                break;
-            default:
-                ConnectionsManager.getInstance(((rh.r) this.c).a).cancelRequest(this.b, true);
-                break;
+    @Override // org.telegram.ui.Components.fj0
+    public final void f(int i3, View view) {
+        boolean z10 = view instanceof ha;
+        ka kaVar = this.a;
+        if (!z10) {
+            if (view instanceof fa) {
+                kaVar.j0(true);
+                return;
+            }
+            return;
         }
+        ha haVar = (ha) view;
+        TLRPC.TL_username tL_username = haVar.w;
+        if (tL_username == null || haVar.r) {
+            return;
+        }
+        if (tL_username.editable && kaVar.y == 0) {
+            kaVar.b.y0(0);
+            kaVar.j0(true);
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, kaVar.getParentActivity(), kaVar.getResourceProvider());
+        String M0 = org.telegram.messenger.bd.M0(tL_username.active ? 2131743674 : 2131743681, null);
+        org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
+        s1Var.S = M0;
+        s1Var.U = org.telegram.messenger.bd.M0(tL_username.active ? 2131743672 : 2131743679, null);
+        alertDialog$Builder.k(org.telegram.messenger.bd.M0(tL_username.active ? 2131749333 : 2131745363, null), new cg.e0(this, tL_username, i3, view, 1));
+        alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131752589, null), new org.telegram.messenger.go(15));
+        alertDialog$Builder.p();
     }
 }

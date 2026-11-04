@@ -6,11 +6,11 @@ import android.media.audiofx.NoiseSuppressor;
 import android.os.Build;
 import java.util.List;
 import java.util.UUID;
-import org.telegram.messenger.uz;
+import org.telegram.messenger.az;
 import org.webrtc.Logging;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioEffects {
     private static final UUID AOSP_ACOUSTIC_ECHO_CANCELER = UUID.fromString("bb392ec0-8d4d-11e0-a896-0002a5d5c51b");
@@ -133,17 +133,17 @@ public class WebRtcAudioEffects {
         return isNoiseSuppressorEffectAvailable();
     }
 
-    public void enable(int i10) {
-        Logging.d(TAG, "enable(audioSession=" + i10 + ")");
+    public void enable(int i3) {
+        Logging.d(TAG, "enable(audioSession=" + i3 + ")");
         boolean z10 = false;
         assertTrue(this.aec == null);
         assertTrue(this.ns == null);
         if (isAcousticEchoCancelerSupported()) {
-            AcousticEchoCanceler create = AcousticEchoCanceler.create(i10);
+            AcousticEchoCanceler create = AcousticEchoCanceler.create(i3);
             this.aec = create;
             if (create != null) {
                 boolean enabled = create.getEnabled();
-                boolean z11 = this.shouldEnableAec && canUseAcousticEchoCanceler() && !uz.V;
+                boolean z11 = this.shouldEnableAec && canUseAcousticEchoCanceler() && !az.V;
                 if (this.aec.setEnabled(z11) != 0) {
                     Logging.e(TAG, "Failed to set the AcousticEchoCanceler state");
                 }
@@ -159,14 +159,14 @@ public class WebRtcAudioEffects {
             }
         }
         if (isNoiseSuppressorSupported()) {
-            NoiseSuppressor create2 = NoiseSuppressor.create(i10);
+            NoiseSuppressor create2 = NoiseSuppressor.create(i3);
             this.ns = create2;
             if (create2 == null) {
                 Logging.e(TAG, "Failed to create the NoiseSuppressor instance");
                 return;
             }
             boolean enabled2 = create2.getEnabled();
-            if (this.shouldEnableNs && canUseNoiseSuppressor() && !uz.V) {
+            if (this.shouldEnableNs && canUseNoiseSuppressor() && !az.V) {
                 z10 = true;
             }
             if (this.ns.setEnabled(z10) != 0) {

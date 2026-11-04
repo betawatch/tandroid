@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import ad.j;
-import cd.c;
+import dd.k;
+import fd.c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class zzg {
     private boolean zza;
@@ -13,13 +13,13 @@ public abstract class zzg {
     public abstract Object zzb(String str, c cVar);
 
     public Object zzc(zzcg zzcgVar, c cVar) {
-        return j.a;
+        return k.a;
     }
 
     public abstract Object zzd(zzxn zzxnVar, c cVar);
 
     public Object zze(String str, long j10, Exception exc, c cVar) {
-        return j.a;
+        return k.a;
     }
 
     public Object zzf(Exception exc, c cVar) {

@@ -1,27 +1,35 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gu0 {
-    public static final gu0 a;
-    public static final gu0 b;
-    public static final /* synthetic */ gu0[] c;
+public final class gu0 extends ma {
+    public vr Q1;
 
-    static {
-        gu0 gu0Var = new gu0("DEFAULT", 0);
-        a = gu0Var;
-        gu0 gu0Var2 = new gu0("RECORDING", 1);
-        b = gu0Var2;
-        c = new gu0[]{gu0Var, gu0Var2};
+    public gu0(Context context) {
+        super(context, null, true, false, null);
+        N();
+        this.w1 = true;
+        this.v1 = true;
+        Y0();
+        tj0 tj0Var = this.l1;
+        int i3 = this.u0;
+        tj0Var.setPadding(i3, 0, i3, 0);
+        this.l1.j(new ji(this, 19));
+        this.l1.setOnItemClickListener(new k(this, 14));
     }
 
-    public static gu0 valueOf(String str) {
-        return (gu0) Enum.valueOf(gu0.class, str);
+    @Override // org.telegram.ui.Components.ma
+    public final sj0 L0(tj0 tj0Var) {
+        vr vrVar = new vr(tj0Var, getContext(), this.a, 0, true, this.J0);
+        this.Q1 = vrVar;
+        vrVar.r = false;
+        return vrVar;
     }
 
-    public static gu0[] values() {
-        return (gu0[]) c.clone();
+    @Override // org.telegram.ui.Components.ma
+    public final CharSequence O0() {
+        return org.telegram.messenger.bd.M0(2131745831, null);
     }
 }

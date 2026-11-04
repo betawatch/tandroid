@@ -9,7 +9,7 @@ import java.util.List;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -201,7 +201,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public enum SwitchState {
         IDLE,
         PENDING,
@@ -242,14 +242,14 @@ abstract class CameraCapturer implements CameraVideoCapturer {
             throw new RuntimeException("No cameras attached.");
         }
         if (!asList.contains(this.cameraName)) {
-            throw new IllegalArgumentException(a1.g.r(new StringBuilder("Camera name "), this.cameraName, " does not match any known camera device."));
+            throw new IllegalArgumentException(a1.g.s(new StringBuilder("Camera name "), this.cameraName, " does not match any known camera device."));
         }
     }
 
     public static /* synthetic */ int access$1710(CameraCapturer cameraCapturer) {
-        int i10 = cameraCapturer.openAttemptsRemaining;
-        cameraCapturer.openAttemptsRemaining = i10 - 1;
-        return i10;
+        int i3 = cameraCapturer.openAttemptsRemaining;
+        cameraCapturer.openAttemptsRemaining = i3 - 1;
+        return i3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -262,15 +262,15 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void createSessionInternal(int i10) {
-        this.uiThreadHandler.postDelayed(this.openCameraTimeoutRunnable, i10 + OPEN_CAMERA_TIMEOUT);
+    public void createSessionInternal(int i3) {
+        this.uiThreadHandler.postDelayed(this.openCameraTimeoutRunnable, i3 + OPEN_CAMERA_TIMEOUT);
         this.cameraThreadHandler.postDelayed(new Runnable() { // from class: org.webrtc.CameraCapturer.5
             @Override // java.lang.Runnable
             public void run() {
                 CameraCapturer cameraCapturer = CameraCapturer.this;
                 cameraCapturer.createCameraSession(cameraCapturer.createSessionCallback, CameraCapturer.this.cameraSessionEventsHandler, CameraCapturer.this.applicationContext, CameraCapturer.this.surfaceHelper, CameraCapturer.this.cameraName, CameraCapturer.this.width, CameraCapturer.this.height, CameraCapturer.this.framerate);
             }
-        }, i10);
+        }, i3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -285,7 +285,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     public void switchCameraInternal(CameraVideoCapturer.CameraSwitchHandler cameraSwitchHandler, String str) {
         Logging.d(TAG, "switchCamera internal");
         if (!Arrays.asList(this.cameraEnumerator.getDeviceNames()).contains(str)) {
-            reportCameraSwitchError(sc.e.h("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
+            reportCameraSwitchError(t4.c.f("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
             return;
         }
         synchronized (this.stateLock) {
@@ -334,17 +334,17 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public void changeCaptureFormat(int i10, int i11, int i12) {
-        StringBuilder m10 = i0.a.m("changeCaptureFormat: ", i10, "x", i11, "@");
-        m10.append(i12);
+    public void changeCaptureFormat(int i3, int i10, int i11) {
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("changeCaptureFormat: ", i3, "x", i10, "@");
+        m10.append(i11);
         Logging.d(TAG, m10.toString());
         synchronized (this.stateLock) {
             stopCapture();
-            startCapture(i10, i11, i12);
+            startCapture(i3, i10, i11);
         }
     }
 
-    public abstract void createCameraSession(CameraSession.CreateSessionCallback createSessionCallback, CameraSession.Events events, Context context, SurfaceTextureHelper surfaceTextureHelper, String str, int i10, int i11, int i12);
+    public abstract void createCameraSession(CameraSession.CreateSessionCallback createSessionCallback, CameraSession.Events events, Context context, SurfaceTextureHelper surfaceTextureHelper, String str, int i3, int i10, int i11);
 
     @Override // org.webrtc.VideoCapturer
     public void dispose() {
@@ -393,9 +393,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public void startCapture(int i10, int i11, int i12) {
-        StringBuilder m10 = i0.a.m("startCapture: ", i10, "x", i11, "@");
-        m10.append(i12);
+    public void startCapture(int i3, int i10, int i11) {
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("startCapture: ", i3, "x", i10, "@");
+        m10.append(i11);
         Logging.d(TAG, m10.toString());
         if (this.applicationContext == null) {
             throw new RuntimeException("CameraCapturer must be initialized before calling startCapture.");
@@ -403,9 +403,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
         synchronized (this.stateLock) {
             try {
                 if (!this.sessionOpening && this.currentSession == null) {
-                    this.width = i10;
-                    this.height = i11;
-                    this.framerate = i12;
+                    this.width = i3;
+                    this.height = i10;
+                    this.framerate = i11;
                     this.sessionOpening = true;
                     this.openAttemptsRemaining = 3;
                     createSessionInternal(0);

@@ -1,156 +1,1153 @@
 package org.telegram.ui.Components;
 
-import android.graphics.CornerPathEffect;
-import android.graphics.Path;
-import android.os.Build;
-import android.text.Layout;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
+import j$.util.Comparator$-CC;
+import j$.util.DesugarCollections;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class k80 extends jq {
-    public static CornerPathEffect w;
-    public static int x;
-    public Layout h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public final boolean m;
-    public boolean n;
-    public int o;
-    public int p;
-    public float q;
-    public float r;
-    public float s;
-    public float t;
-    public float u;
-    public float v;
+public abstract class k80 {
+    public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
+    public static final Pattern b = Pattern.compile("\\[\\^([^\\]]+)\\]");
+    public static final Pattern c = Pattern.compile("^(\\d+)[.)]\\s");
 
-    public k80() {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.c = false;
+    public static TL_iv.RichText a(gf.p pVar, TL_iv.PageBlock pageBlock) {
+        h80 h80Var = new h80(pageBlock);
+        pVar.a(h80Var);
+        return k(l(h80.x(h80Var.c)));
     }
 
-    public static CornerPathEffect c() {
-        if (w == null || x != org.telegram.messenger.i0.L(5.0f)) {
-            int L = org.telegram.messenger.i0.L(5.0f);
-            x = L;
-            w = new CornerPathEffect(L);
+    public static List b(TL_iv.RichText richText) {
+        int i3;
+        if (richText == null) {
+            return Collections.singletonList(n(""));
         }
-        return w;
-    }
-
-    @Override // org.telegram.ui.Components.jq, android.graphics.Path
-    public final void addRect(float f7, float f10, float f11, float f12, Path.Direction direction) {
-        Layout layout = this.h;
-        if (layout == null) {
-            f(f7, f10, f11, f12, direction);
-            return;
+        if (o(richText) <= 8192) {
+            return Collections.singletonList(richText);
         }
-        try {
-            float f13 = this.l;
-            float f14 = f10 + f13;
-            float f15 = f12 + f13;
-            float f16 = this.j;
-            if (f16 == -1.0f) {
-                this.j = f14;
-            } else if (f16 != f14) {
-                this.j = f14;
-                this.i++;
+        String p10 = p(richText);
+        ArrayList arrayList = new ArrayList();
+        int i10 = 0;
+        while (i10 < p10.length()) {
+            if (p10.length() - i10 <= 8192) {
+                arrayList.add(n(p10.substring(i10)));
+                return arrayList;
             }
-            float lineRight = layout.getLineRight(this.i);
-            float lineLeft = this.h.getLineLeft(this.i);
-            if (f7 < lineRight) {
-                if (f7 > lineLeft || f11 > lineLeft) {
-                    if (f11 > lineRight) {
-                        f11 = lineRight;
+            int i11 = i10 + TLObject.FLAG_13;
+            int i12 = i10 + 8191;
+            int lastIndexOf = p10.lastIndexOf(10, i12);
+            if (lastIndexOf <= i10) {
+                lastIndexOf = p10.lastIndexOf(32, i12);
+            }
+            if (lastIndexOf <= i10) {
+                i3 = 0;
+            } else {
+                i3 = 1;
+                i11 = lastIndexOf;
+            }
+            arrayList.add(n(p10.substring(i10, i11)));
+            i10 = i11 + i3;
+        }
+        return arrayList;
+    }
+
+    public static TL_iv.textMath c(String str) {
+        TL_iv.textMath textmath = new TL_iv.textMath();
+        String trim = str == null ? "" : str.trim();
+        textmath.source = trim;
+        textmath.tried = true;
+        mi.q a10 = mi.q.a(trim, org.telegram.messenger.g0.L(20.0f), true);
+        if (a10 != null) {
+            textmath.w = a10.b;
+            textmath.h = a10.c;
+            textmath.depth = a10.d;
+            textmath.bitmap = a10.a;
+        }
+        return textmath;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00c3, code lost:
+    
+        if (r5.equals("py") == false) goto L15;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static String d(String str) {
+        char c2 = '\t';
+        int indexOf = str.indexOf(9);
+        if (indexOf >= 0) {
+            str = str.substring(0, indexOf);
+        }
+        String trim = str.trim();
+        int lastIndexOf = trim.lastIndexOf(32);
+        if (lastIndexOf >= 0) {
+            trim = trim.substring(lastIndexOf + 1);
+        }
+        int lastIndexOf2 = trim.lastIndexOf(46);
+        if (lastIndexOf2 < 0 || lastIndexOf2 < trim.lastIndexOf(47)) {
+            return "";
+        }
+        String lowerCase = trim.substring(lastIndexOf2 + 1).toLowerCase();
+        lowerCase.getClass();
+        switch (lowerCase.hashCode()) {
+            case -1237894073:
+                if (lowerCase.equals("gradle")) {
+                    c2 = 0;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case org.telegram.messenger.hs.p1 /* 104 */:
+                if (lowerCase.equals("h")) {
+                    c2 = 1;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case org.telegram.messenger.hs.u1 /* 109 */:
+                if (lowerCase.equals("m")) {
+                    c2 = 2;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3168:
+                if (lowerCase.equals("cc")) {
+                    c2 = 3;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3184:
+                if (lowerCase.equals("cs")) {
+                    c2 = 4;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3328:
+                if (lowerCase.equals("hh")) {
+                    c2 = 5;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3433:
+                if (lowerCase.equals("kt")) {
+                    c2 = 6;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3479:
+                if (lowerCase.equals("md")) {
+                    c2 = 7;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3488:
+                if (lowerCase.equals("mm")) {
+                    c2 = '\b';
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3593:
+                break;
+            case 3632:
+                if (lowerCase.equals("rb")) {
+                    c2 = '\n';
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3649:
+                if (lowerCase.equals("rs")) {
+                    c2 = 11;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 3669:
+                if (lowerCase.equals("sh")) {
+                    c2 = '\f';
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 98979:
+                if (lowerCase.equals("cxx")) {
+                    c2 = '\r';
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 103528:
+                if (lowerCase.equals("hpp")) {
+                    c2 = 14;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 103649:
+                if (lowerCase.equals("htm")) {
+                    c2 = 15;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 106538:
+                if (lowerCase.equals("kts")) {
+                    c2 = 16;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 119768:
+                if (lowerCase.equals("yml")) {
+                    c2 = 17;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            case 120911:
+                if (lowerCase.equals("zsh")) {
+                    c2 = 18;
+                    break;
+                }
+                c2 = 65535;
+                break;
+            default:
+                c2 = 65535;
+                break;
+        }
+        switch (c2) {
+            case 0:
+                return "groovy";
+            case 1:
+                return "c";
+            case 2:
+            case '\b':
+                return "objectivec";
+            case 3:
+            case 5:
+            case '\r':
+            case 14:
+                return "cpp";
+            case 4:
+                return "csharp";
+            case 6:
+            case 16:
+                return "kotlin";
+            case 7:
+                return "markdown";
+            case '\t':
+                return "python";
+            case '\n':
+                return "ruby";
+            case 11:
+                return "rust";
+            case '\f':
+            case 18:
+                return "bash";
+            case 15:
+                return "html";
+            case 17:
+                return "yaml";
+            default:
+                return lowerCase;
+        }
+    }
+
+    public static TL_iv.RichText e(TL_iv.RichText richText) {
+        if (richText == null) {
+            return null;
+        }
+        if (o(richText) <= 8192) {
+            return richText;
+        }
+        String p10 = p(richText);
+        return n(p10.substring(0, Math.min(p10.length(), TLObject.FLAG_13)));
+    }
+
+    public static void f(ArrayList arrayList, List list) {
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            xc.a aVar = (xc.a) it.next();
+            arrayList.add(aVar);
+            ArrayList arrayList2 = aVar.f;
+            f(arrayList, arrayList2 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList2));
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00e7 A[Catch: all -> 0x00a5, TryCatch #3 {all -> 0x00a5, blocks: (B:28:0x0081, B:30:0x0087, B:32:0x008f, B:33:0x00a8, B:35:0x00b0, B:39:0x00bc, B:47:0x00d0, B:49:0x00e7, B:50:0x00eb, B:52:0x00f5, B:54:0x0110, B:55:0x0115, B:56:0x011f, B:58:0x0125, B:60:0x012d, B:62:0x012f, B:65:0x0132, B:66:0x00fa, B:68:0x0102, B:70:0x010a), top: B:27:0x0081, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00f5 A[Catch: all -> 0x00a5, TryCatch #3 {all -> 0x00a5, blocks: (B:28:0x0081, B:30:0x0087, B:32:0x008f, B:33:0x00a8, B:35:0x00b0, B:39:0x00bc, B:47:0x00d0, B:49:0x00e7, B:50:0x00eb, B:52:0x00f5, B:54:0x0110, B:55:0x0115, B:56:0x011f, B:58:0x0125, B:60:0x012d, B:62:0x012f, B:65:0x0132, B:66:0x00fa, B:68:0x0102, B:70:0x010a), top: B:27:0x0081, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0110 A[Catch: all -> 0x00a5, TryCatch #3 {all -> 0x00a5, blocks: (B:28:0x0081, B:30:0x0087, B:32:0x008f, B:33:0x00a8, B:35:0x00b0, B:39:0x00bc, B:47:0x00d0, B:49:0x00e7, B:50:0x00eb, B:52:0x00f5, B:54:0x0110, B:55:0x0115, B:56:0x011f, B:58:0x0125, B:60:0x012d, B:62:0x012f, B:65:0x0132, B:66:0x00fa, B:68:0x0102, B:70:0x010a), top: B:27:0x0081, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0125 A[Catch: all -> 0x00a5, TryCatch #3 {all -> 0x00a5, blocks: (B:28:0x0081, B:30:0x0087, B:32:0x008f, B:33:0x00a8, B:35:0x00b0, B:39:0x00bc, B:47:0x00d0, B:49:0x00e7, B:50:0x00eb, B:52:0x00f5, B:54:0x0110, B:55:0x0115, B:56:0x011f, B:58:0x0125, B:60:0x012d, B:62:0x012f, B:65:0x0132, B:66:0x00fa, B:68:0x0102, B:70:0x010a), top: B:27:0x0081, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00fa A[Catch: all -> 0x00a5, TryCatch #3 {all -> 0x00a5, blocks: (B:28:0x0081, B:30:0x0087, B:32:0x008f, B:33:0x00a8, B:35:0x00b0, B:39:0x00bc, B:47:0x00d0, B:49:0x00e7, B:50:0x00eb, B:52:0x00f5, B:54:0x0110, B:55:0x0115, B:56:0x011f, B:58:0x0125, B:60:0x012d, B:62:0x012f, B:65:0x0132, B:66:0x00fa, B:68:0x0102, B:70:0x010a), top: B:27:0x0081, outer: #2 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static TLRPC.TL_webPage g(org.telegram.messenger.zi ziVar) {
+        String str;
+        TLRPC.Document F0;
+        File i3;
+        TLRPC.Document F02;
+        File i10;
+        boolean z10;
+        int i11;
+        str = "";
+        if (j(ziVar)) {
+            if (ziVar.k != null && (F02 = ziVar.F0()) != null && (i10 = i(ziVar)) != null && i10.length() <= 2097152) {
+                TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = (TLRPC.TL_documentAttributeFilename) org.telegram.messenger.g0.V(TLRPC.TL_documentAttributeFilename.class, F02.attributes);
+                String str2 = tL_documentAttributeFilename != null ? tL_documentAttributeFilename.file_name : null;
+                TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
+                tL_webPage.url = str2 == null ? "" : str2;
+                tL_webPage.display_url = str2 == null ? "" : str2;
+                if (!TextUtils.isEmpty(str2)) {
+                    tL_webPage.flags |= 4;
+                    tL_webPage.title = str2;
+                }
+                TL_iv.TL_page tL_page = new TL_iv.TL_page();
+                tL_page.local = i10;
+                tL_page.url = tL_webPage.url;
+                try {
+                    StringBuilder sb2 = new StringBuilder();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(i10), StandardCharsets.UTF_8));
+                    int i12 = 0;
+                    int i13 = 0;
+                    TL_iv.pageBlockPreformatted pageblockpreformatted = null;
+                    while (true) {
+                        try {
+                            String readLine = bufferedReader.readLine();
+                            if (readLine == null) {
+                                break;
+                            }
+                            if (readLine.length() > 400) {
+                                readLine = readLine.substring(0, 400) + "…";
+                            }
+                            if (!readLine.startsWith("diff ") && !readLine.startsWith("Index: ")) {
+                                z10 = false;
+                                boolean startsWith = readLine.startsWith("@@");
+                                if (i12 > 0 && (z10 || i12 >= 160 || (i12 >= 80 && startsWith))) {
+                                    ArrayList<TL_iv.PageBlock> arrayList = tL_page.blocks;
+                                    TL_iv.pageBlockPreformatted pageblockpreformatted2 = new TL_iv.pageBlockPreformatted();
+                                    pageblockpreformatted2.text = n(sb2.toString());
+                                    pageblockpreformatted2.language = str;
+                                    pageblockpreformatted2.diff = true;
+                                    if (pageblockpreformatted != null) {
+                                        pageblockpreformatted.continuesNext = true;
+                                        pageblockpreformatted2.continuesPrev = true;
+                                    }
+                                    arrayList.add(pageblockpreformatted2);
+                                    sb2.setLength(0);
+                                    i12 = 0;
+                                    pageblockpreformatted = pageblockpreformatted2;
+                                }
+                                if (!z10) {
+                                    str = d(readLine);
+                                } else if (readLine.startsWith("+++ ") && !readLine.startsWith("+++ /dev/null")) {
+                                    str = d(readLine);
+                                }
+                                if (i12 > 0) {
+                                    sb2.append('\n');
+                                }
+                                sb2.append(readLine);
+                                i12++;
+                                int length = readLine.length();
+                                for (i11 = 0; i11 < readLine.length(); i11++) {
+                                    if (readLine.charAt(i11) == '\t') {
+                                        length += 3;
+                                    }
+                                }
+                                i13 = Math.max(i13, length);
+                            }
+                            z10 = true;
+                            boolean startsWith2 = readLine.startsWith("@@");
+                            if (i12 > 0) {
+                                ArrayList<TL_iv.PageBlock> arrayList2 = tL_page.blocks;
+                                TL_iv.pageBlockPreformatted pageblockpreformatted22 = new TL_iv.pageBlockPreformatted();
+                                pageblockpreformatted22.text = n(sb2.toString());
+                                pageblockpreformatted22.language = str;
+                                pageblockpreformatted22.diff = true;
+                                if (pageblockpreformatted != null) {
+                                }
+                                arrayList2.add(pageblockpreformatted22);
+                                sb2.setLength(0);
+                                i12 = 0;
+                                pageblockpreformatted = pageblockpreformatted22;
+                            }
+                            if (!z10) {
+                            }
+                            if (i12 > 0) {
+                            }
+                            sb2.append(readLine);
+                            i12++;
+                            int length2 = readLine.length();
+                            while (i11 < readLine.length()) {
+                            }
+                            i13 = Math.max(i13, length2);
+                        } finally {
+                        }
                     }
-                    if (f7 < lineLeft) {
-                        f7 = lineLeft;
+                    bufferedReader.close();
+                    if (i12 > 0) {
+                        ArrayList<TL_iv.PageBlock> arrayList3 = tL_page.blocks;
+                        TL_iv.pageBlockPreformatted pageblockpreformatted3 = new TL_iv.pageBlockPreformatted();
+                        pageblockpreformatted3.text = n(sb2.toString());
+                        pageblockpreformatted3.language = str;
+                        pageblockpreformatted3.diff = true;
+                        if (pageblockpreformatted != null) {
+                            pageblockpreformatted.continuesNext = true;
+                            pageblockpreformatted3.continuesPrev = true;
+                        }
+                        arrayList3.add(pageblockpreformatted3);
                     }
-                    float f17 = this.k;
-                    float f18 = f7 + f17;
-                    float f19 = f11 + f17;
-                    if (Build.VERSION.SDK_INT < 28) {
-                        f15 -= f15 != ((float) this.h.getHeight()) ? this.h.getSpacingAdd() : 0.0f;
-                    } else if (f15 - f14 > this.p) {
-                        f15 = this.l + (f15 != ((float) this.h.getHeight()) ? this.h.getLineBottom(this.i) - this.h.getSpacingAdd() : 0.0f);
+                    if (!tL_page.blocks.isEmpty()) {
+                        int i14 = 0;
+                        for (int i15 = 0; i15 < tL_page.blocks.size(); i15++) {
+                            i14 += p(tL_page.blocks.get(i15).text).length();
+                        }
+                        for (int i16 = 0; i16 < tL_page.blocks.size(); i16++) {
+                            ((TL_iv.pageBlockPreformatted) tL_page.blocks.get(i16)).codeLength = i14;
+                            ((TL_iv.pageBlockPreformatted) tL_page.blocks.get(i16)).diffColumns = i13;
+                        }
+                        tL_webPage.flags |= 1024;
+                        tL_webPage.cached_page = tL_page;
+                        return tL_webPage;
                     }
-                    int i10 = this.o;
-                    if (i10 < 0) {
-                        f15 += i10;
-                    } else if (i10 > 0) {
-                        f14 += i10;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return null;
+                }
+            }
+        } else if (ziVar.k != null && (F0 = ziVar.F0()) != null && (i3 = i(ziVar)) != null && i3.length() <= 65536) {
+            TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename2 = (TLRPC.TL_documentAttributeFilename) org.telegram.messenger.g0.V(TLRPC.TL_documentAttributeFilename.class, F0.attributes);
+            String str3 = tL_documentAttributeFilename2 != null ? tL_documentAttributeFilename2.file_name : null;
+            TLRPC.TL_webPage tL_webPage2 = new TLRPC.TL_webPage();
+            tL_webPage2.url = str3 == null ? "" : str3;
+            tL_webPage2.display_url = str3 != null ? str3 : "";
+            if (!TextUtils.isEmpty(str3)) {
+                tL_webPage2.flags |= 4;
+                tL_webPage2.title = str3;
+            }
+            TL_iv.TL_page tL_page2 = new TL_iv.TL_page();
+            tL_page2.local = i3;
+            tL_page2.url = tL_webPage2.url;
+            try {
+                FileInputStream fileInputStream = new FileInputStream(i3);
+                try {
+                    byte[] bArr = new byte[(int) i3.length()];
+                    fileInputStream.read(bArr);
+                    String str4 = new String(bArr, StandardCharsets.UTF_8);
+                    fileInputStream.close();
+                    if (str4.length() <= 65536) {
+                        String m10 = m(str4, tL_page2.blocks);
+                        if (!TextUtils.isEmpty(m10)) {
+                            tL_webPage2.flags |= 4;
+                            tL_webPage2.title = m10;
+                        }
+                        tL_webPage2.flags |= 1024;
+                        tL_webPage2.cached_page = tL_page2;
+                        return tL_webPage2;
                     }
-                    float f20 = f14;
-                    float f21 = f15;
-                    if (this.m) {
-                        f(f18 - (org.telegram.messenger.i0.L(5.0f) / 2.0f), f20, f19 + (org.telegram.messenger.i0.L(5.0f) / 2.0f), f21, direction);
-                    } else {
-                        f(f18, f20, f19, f21, direction);
+                } finally {
+                }
+            } catch (Exception e11) {
+                org.telegram.messenger.a8.g(e11, true);
+            }
+        }
+        return null;
+    }
+
+    public static int h(int i3, CharSequence charSequence) {
+        char charAt;
+        if (i3 >= charSequence.length() || (charAt = charSequence.charAt(i3)) == '\n' || charAt == ' ') {
+            return 0;
+        }
+        if (charAt != '+' && charAt != '-') {
+            return 3;
+        }
+        int i10 = i3 + 3;
+        if (i10 < charSequence.length() && charSequence.charAt(i3 + 1) == charAt && charSequence.charAt(i3 + 2) == charAt && charSequence.charAt(i10) == ' ') {
+            return 3;
+        }
+        return charAt == '+' ? 1 : 2;
+    }
+
+    public static File i(org.telegram.messenger.zi ziVar) {
+        TLRPC.Message message = ziVar.k;
+        int i3 = ziVar.I1;
+        File file = !TextUtils.isEmpty(message.attachPath) ? new File(ziVar.k.attachPath) : null;
+        if (file == null || !file.exists()) {
+            org.telegram.messenger.w7.G(i3);
+            file = org.telegram.messenger.w7.N(ziVar.k, false, true);
+        }
+        if (file == null || !file.exists()) {
+            org.telegram.messenger.w7.G(i3);
+            file = org.telegram.messenger.w7.N(ziVar.k, true, true);
+        }
+        if (file == null || !file.exists()) {
+            return null;
+        }
+        return file;
+    }
+
+    public static boolean j(org.telegram.messenger.zi ziVar) {
+        String Q0 = ziVar.Q0();
+        if ("diff".equalsIgnoreCase(Q0) || "patch".equalsIgnoreCase(Q0)) {
+            return true;
+        }
+        String u12 = ziVar.u1();
+        if (u12 == null) {
+            return false;
+        }
+        String lowerCase = u12.toLowerCase();
+        return lowerCase.startsWith("text/x-diff") || lowerCase.startsWith("text/x-patch");
+    }
+
+    public static TL_iv.RichText k(TL_iv.RichText richText) {
+        if (richText == null) {
+            return null;
+        }
+        if (richText instanceof TL_iv.textConcat) {
+            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
+            for (int i3 = 0; i3 < textconcat.texts.size(); i3++) {
+                ArrayList<TL_iv.RichText> arrayList = textconcat.texts;
+                arrayList.set(i3, k(arrayList.get(i3)));
+            }
+            return textconcat;
+        }
+        if (!(richText instanceof j80)) {
+            TL_iv.RichText richText2 = richText.text;
+            if (richText2 != null) {
+                richText.text = k(richText2);
+            }
+            return richText;
+        }
+        j80 j80Var = (j80) richText;
+        TL_iv.RichText k10 = k(j80Var.text);
+        int i10 = j80Var.a;
+        if ((i10 & 4) != 0) {
+            TL_iv.textFixed textfixed = new TL_iv.textFixed();
+            textfixed.text = k10;
+            k10 = textfixed;
+        }
+        if ((i10 & 32) != 0) {
+            TL_iv.textStrike textstrike = new TL_iv.textStrike();
+            textstrike.text = k10;
+            k10 = textstrike;
+        }
+        if ((i10 & 16) != 0) {
+            TL_iv.textUnderline textunderline = new TL_iv.textUnderline();
+            textunderline.text = k10;
+            k10 = textunderline;
+        }
+        if ((i10 & 64) != 0) {
+            TL_iv.textMarked textmarked = new TL_iv.textMarked();
+            textmarked.text = k10;
+            k10 = textmarked;
+        }
+        if ((i10 & 128) != 0) {
+            TL_iv.textSubscript textsubscript = new TL_iv.textSubscript();
+            textsubscript.text = k10;
+            k10 = textsubscript;
+        }
+        if ((i10 & 256) != 0) {
+            TL_iv.textSuperscript textsuperscript = new TL_iv.textSuperscript();
+            textsuperscript.text = k10;
+            k10 = textsuperscript;
+        }
+        if ((i10 & 2) != 0) {
+            TL_iv.textItalic textitalic = new TL_iv.textItalic();
+            textitalic.text = k10;
+            k10 = textitalic;
+        }
+        if ((i10 & 1) == 0) {
+            return k10;
+        }
+        TL_iv.textBold textbold = new TL_iv.textBold();
+        textbold.text = k10;
+        return textbold;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0292  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x02ab A[LOOP:6: B:107:0x02a9->B:108:0x02ab, LOOP_END] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static TL_iv.RichText l(TL_iv.RichText richText) {
+        TL_iv.RichText textconcat;
+        int i3;
+        char c2;
+        TL_iv.textPlain textplain;
+        String str;
+        if (richText == null) {
+            return null;
+        }
+        if (richText instanceof TL_iv.textConcat) {
+            TL_iv.textConcat textconcat2 = (TL_iv.textConcat) richText;
+            for (int i10 = 0; i10 < textconcat2.texts.size(); i10++) {
+                ArrayList<TL_iv.RichText> arrayList = textconcat2.texts;
+                arrayList.set(i10, l(arrayList.get(i10)));
+            }
+            StringBuilder sb2 = new StringBuilder();
+            ArrayList arrayList2 = new ArrayList();
+            ArrayList arrayList3 = new ArrayList();
+            xc.d dVar = new xc.d(new v7.s(27), new kb.a(28));
+            ArrayList<TL_iv.RichText> arrayList4 = textconcat2.texts;
+            int size = arrayList4.size();
+            int i11 = 0;
+            while (i11 < size) {
+                int i12 = i11 + 1;
+                TL_iv.RichText richText2 = arrayList4.get(i11);
+                if ((richText2 instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText2).text) != null && str.length() >= 2 && str.charAt(0) == '<' && str.charAt(str.length() - 1) == '>') {
+                    int length = sb2.length();
+                    try {
+                        dVar.b(sb2, ((TL_iv.textPlain) richText2).text);
+                    } catch (Throwable th2) {
+                        org.telegram.messenger.a8.g(th2, true);
+                        sb2.append(textplain.text);
+                    }
+                    int length2 = sb2.length();
+                    if (length2 > length) {
+                        arrayList2.add(n(sb2.substring(length, length2)));
+                        arrayList3.add(new int[]{length, length2});
+                    }
+                } else {
+                    String p10 = p(richText2);
+                    int length3 = sb2.length();
+                    sb2.append(p10);
+                    int length4 = sb2.length();
+                    arrayList2.add(richText2);
+                    arrayList3.add(new int[]{length3, length4});
+                }
+                i11 = i12;
+            }
+            ArrayList arrayList5 = new ArrayList();
+            int i13 = -1;
+            try {
+                int length5 = sb2.length();
+                ArrayList arrayList6 = dVar.c;
+                if (arrayList6.size() > 0) {
+                    if (length5 > -1) {
+                        int size2 = arrayList6.size();
+                        int i14 = 0;
+                        while (i14 < size2) {
+                            Object obj = arrayList6.get(i14);
+                            i14++;
+                            xc.b bVar = (xc.b) obj;
+                            if (bVar.d <= -1) {
+                                bVar.d = length5;
+                            }
+                        }
+                    }
+                    arrayList5.addAll(DesugarCollections.unmodifiableList(arrayList6));
+                    arrayList6.clear();
+                } else {
+                    arrayList5.addAll(Collections.EMPTY_LIST);
+                }
+            } catch (Throwable th3) {
+                org.telegram.messenger.a8.g(th3, true);
+            }
+            try {
+                int length6 = sb2.length();
+                xc.a aVar = dVar.d;
+                while (true) {
+                    xc.a aVar2 = aVar.e;
+                    if (aVar2 == null) {
+                        break;
+                    }
+                    aVar = aVar2;
+                }
+                if (length6 > -1) {
+                    aVar.b(length6);
+                }
+                ArrayList arrayList7 = aVar.f;
+                List unmodifiableList = arrayList7 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList7);
+                if (unmodifiableList.size() > 0) {
+                    f(arrayList5, unmodifiableList);
+                } else {
+                    f(arrayList5, Collections.EMPTY_LIST);
+                }
+                dVar.d = new xc.a("", 0, Collections.EMPTY_MAP, null);
+            } catch (Throwable th4) {
+                org.telegram.messenger.a8.g(th4, true);
+            }
+            Collections.sort(arrayList5, Comparator$-CC.comparingInt(new cg.d(19)));
+            int size3 = arrayList5.size();
+            int i15 = 0;
+            while (i15 < size3) {
+                Object obj2 = arrayList5.get(i15);
+                i15++;
+                xc.c cVar = (xc.c) obj2;
+                int i16 = cVar.d;
+                if (i16 > i13) {
+                    int i17 = cVar.b;
+                    int i18 = i13;
+                    int i19 = i18;
+                    for (int i20 = 0; i20 < arrayList3.size(); i20++) {
+                        int i21 = ((int[]) arrayList3.get(i20))[0];
+                        int i22 = ((int[]) arrayList3.get(i20))[1];
+                        if (i21 >= i17 && i22 <= i16) {
+                            if (i18 == i13) {
+                                i18 = i20;
+                            }
+                            i19 = i20;
+                        }
+                    }
+                    if (i18 != i13) {
+                        if (i18 == i19) {
+                            textconcat = (TL_iv.RichText) arrayList2.get(i18);
+                        } else {
+                            textconcat = new TL_iv.textConcat();
+                            for (int i23 = i18; i23 <= i19; i23++) {
+                                textconcat.texts.add((TL_iv.RichText) arrayList2.get(i23));
+                            }
+                        }
+                        String str2 = cVar.a;
+                        if (str2 != null) {
+                            String lowerCase = str2.toLowerCase();
+                            lowerCase.getClass();
+                            i3 = 4;
+                            switch (lowerCase.hashCode()) {
+                                case -891985998:
+                                    if (lowerCase.equals("strike")) {
+                                        c2 = 0;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case -891980137:
+                                    if (lowerCase.equals("strong")) {
+                                        c2 = 1;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case org.telegram.messenger.hs.j1 /* 98 */:
+                                    if (lowerCase.equals("b")) {
+                                        c2 = 2;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case org.telegram.messenger.hs.q1 /* 105 */:
+                                    if (lowerCase.equals("i")) {
+                                        c2 = 3;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case org.telegram.messenger.hs.A1 /* 115 */:
+                                    if (lowerCase.equals("s")) {
+                                        c2 = 4;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case org.telegram.messenger.hs.C1 /* 117 */:
+                                    if (lowerCase.equals("u")) {
+                                        c2 = 5;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 3240:
+                                    if (lowerCase.equals("em")) {
+                                        c2 = 6;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 3712:
+                                    if (lowerCase.equals("tt")) {
+                                        c2 = 7;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 99339:
+                                    if (lowerCase.equals(TeXSymbolParser.DELIMITER_ATTR)) {
+                                        c2 = '\b';
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 104430:
+                                    if (lowerCase.equals("ins")) {
+                                        c2 = '\t';
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 114240:
+                                    if (lowerCase.equals("sub")) {
+                                        c2 = '\n';
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 114254:
+                                    if (lowerCase.equals("sup")) {
+                                        c2 = 11;
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 3059181:
+                                    if (lowerCase.equals("code")) {
+                                        c2 = '\f';
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                case 3344077:
+                                    if (lowerCase.equals("mark")) {
+                                        c2 = '\r';
+                                        break;
+                                    }
+                                    c2 = 65535;
+                                    break;
+                                default:
+                                    c2 = 65535;
+                                    break;
+                            }
+                            switch (c2) {
+                                case 0:
+                                case 4:
+                                case '\b':
+                                    i3 = 32;
+                                    break;
+                                case 1:
+                                case 2:
+                                    i3 = 1;
+                                    break;
+                                case 3:
+                                case 6:
+                                    i3 = 2;
+                                    break;
+                                case 5:
+                                case '\t':
+                                    i3 = 16;
+                                    break;
+                                case '\n':
+                                    i3 = 128;
+                                    break;
+                                case 11:
+                                    i3 = 256;
+                                    break;
+                                case '\r':
+                                    i3 = 64;
+                                    break;
+                            }
+                            if (i3 != 0) {
+                                if (textconcat instanceof j80) {
+                                    ((j80) textconcat).a |= i3;
+                                } else {
+                                    j80 j80Var = new j80();
+                                    j80Var.a = i3;
+                                    j80Var.text = textconcat;
+                                    textconcat = j80Var;
+                                }
+                            }
+                            while (i19 >= i18) {
+                                arrayList2.remove(i19);
+                                arrayList3.remove(i19);
+                                i19--;
+                            }
+                            arrayList2.add(i18, textconcat);
+                            arrayList3.add(i18, new int[]{i17, i16});
+                            i13 = -1;
+                        }
+                        i3 = 0;
+                        if (i3 != 0) {
+                        }
+                        while (i19 >= i18) {
+                        }
+                        arrayList2.add(i18, textconcat);
+                        arrayList3.add(i18, new int[]{i17, i16});
+                        i13 = -1;
                     }
                 }
             }
-        } catch (Exception unused) {
+            if (arrayList2.isEmpty()) {
+                return new TL_iv.textEmpty();
+            }
+            if (arrayList2.size() == 1) {
+                TL_iv.RichText richText3 = (TL_iv.RichText) arrayList2.get(0);
+                if ((richText3 instanceof TL_iv.textPlain) || (richText3 instanceof TL_iv.textEmpty)) {
+                    return richText3;
+                }
+            }
+            TL_iv.textConcat textconcat3 = new TL_iv.textConcat();
+            textconcat3.texts.addAll(arrayList2);
+            return textconcat3;
+        }
+        TL_iv.RichText richText4 = richText;
+        while (true) {
+            TL_iv.RichText richText5 = richText4.text;
+            if (richText5 == null) {
+                return richText;
+            }
+            if (richText5 instanceof TL_iv.textConcat) {
+                richText4.text = l(richText5);
+                return richText;
+            }
+            richText4 = richText5;
         }
     }
 
-    public final void d(Layout layout, int i10, float f7) {
-        e(layout, i10, 0.0f, f7);
-    }
-
-    public final void e(Layout layout, int i10, float f7, float f10) {
-        int lineCount;
-        if (layout == null) {
-            this.h = null;
-            this.i = 0;
-            this.j = -1.0f;
-            this.k = f7;
-            this.l = f10;
-            return;
+    public static String m(String str, ArrayList arrayList) {
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        String[] split = str.split("\n", -1);
+        StringBuilder sb2 = new StringBuilder();
+        int i3 = 0;
+        while (i3 < split.length) {
+            Matcher matcher = a.matcher(split[i3]);
+            if (matcher.matches()) {
+                String group = matcher.group(1);
+                StringBuilder sb3 = new StringBuilder(matcher.group(2));
+                i3++;
+                while (i3 < split.length) {
+                    String str2 = split[i3];
+                    if (str2.startsWith("    ") || str2.startsWith("\t")) {
+                        sb3.append('\n');
+                        sb3.append(str2.startsWith("\t") ? str2.substring(1) : str2.substring(4));
+                        i3++;
+                    } else {
+                        if (!str2.trim().isEmpty()) {
+                            break;
+                        }
+                        int i10 = i3 + 1;
+                        int i11 = i10;
+                        while (i11 < split.length && split[i11].trim().isEmpty()) {
+                            i11++;
+                        }
+                        if (i11 >= split.length || (!split[i11].startsWith("    ") && !split[i11].startsWith("\t"))) {
+                            break;
+                        }
+                        sb3.append('\n');
+                        i3 = i10;
+                    }
+                }
+                linkedHashMap.put(group, sb3.toString().trim());
+            } else {
+                sb2.append(split[i3]);
+                if (i3 < split.length - 1) {
+                    sb2.append('\n');
+                }
+                i3++;
+            }
         }
-        this.h = layout;
-        this.i = layout.getLineForOffset(i10);
-        this.j = -1.0f;
-        this.k = f7;
-        this.l = f10;
-        if (Build.VERSION.SDK_INT < 28 || (lineCount = layout.getLineCount()) <= 0) {
-            return;
+        Matcher matcher2 = b.matcher(sb2.toString());
+        StringBuffer stringBuffer = new StringBuffer();
+        while (matcher2.find()) {
+            String group2 = matcher2.group(1);
+            matcher2.appendReplacement(stringBuffer, Matcher.quoteReplacement("<sup>[\\[" + group2 + "\\]](#fn-" + group2 + ")</sup>"));
         }
-        int i11 = lineCount - 1;
-        this.p = layout.getLineBottom(i11) - layout.getLineTop(i11);
-    }
-
-    public final void f(float f7, float f10, float f11, float f12, Path.Direction direction) {
-        float f13 = this.r;
-        float f14 = f7 - f13;
-        float f15 = this.q;
-        float f16 = f10 - f15;
-        float f17 = f11 + f13;
-        float f18 = f12 + f15;
-        this.s = Math.min(this.s, Math.min(f14, f17));
-        this.u = Math.min(this.u, Math.min(f16, f18));
-        this.t = Math.max(this.t, Math.max(f14, f17));
-        this.v = Math.max(this.v, Math.max(f16, f18));
-        super.addRect(f14, f16, f17, f18, direction);
-    }
-
-    @Override // org.telegram.ui.Components.jq, android.graphics.Path
-    public final void reset() {
-        if (this.n) {
-            super.reset();
+        matcher2.appendTail(stringBuffer);
+        String stringBuffer2 = stringBuffer.toString();
+        List<ye.a> asList = Arrays.asList(new bf.g(1), new bf.g(0));
+        Pattern pattern = bd.j.j;
+        ArrayList arrayList2 = new ArrayList(3);
+        ArrayList arrayList3 = new ArrayList(3);
+        arrayList2.addAll(Arrays.asList(new bd.a(), new bd.b(), new bd.c(), new bd.d(0), new bd.e(), new bd.f(), new bd.g(), new bd.k(), new bd.d(1)));
+        arrayList3.addAll(Arrays.asList(new ef.a(0), new ef.a(1)));
+        org.telegram.messenger.g0.L(18.0f);
+        Executors.newCachedThreadPool();
+        new Handler(Looper.getMainLooper());
+        new HashMap(3);
+        arrayList2.add(new wc.c());
+        arrayList2.add(new i80());
+        b8.ke keVar = new b8.ke();
+        if (asList == null) {
+            throw new NullPointerException("extensions must not be null");
         }
+        for (ye.a aVar : asList) {
+            if (aVar instanceof bf.g) {
+                switch (((bf.g) aVar).a) {
+                    case 0:
+                        ((ArrayList) keVar.b).add(new cf.a(0));
+                        break;
+                    default:
+                        ((ArrayList) keVar.c).add(new af.a());
+                        break;
+                }
+            }
+        }
+        keVar.f = new p4.q(arrayList2, arrayList3);
+        ((ArrayList) keVar.b).add(new cf.a(8));
+        ui.f fVar = new ui.f(keVar);
+        ArrayDeque arrayDeque = new ArrayDeque();
+        String str3 = null;
+        boolean z10 = false;
+        for (String str4 : stringBuffer2.split("\n", -1)) {
+            int i12 = 0;
+            while (i12 < str4.length() && i12 < 3 && str4.charAt(i12) == ' ') {
+                i12++;
+            }
+            String substring = str4.substring(i12);
+            if (!z10) {
+                String str5 = "```";
+                if (!substring.startsWith("```")) {
+                    str5 = "~~~";
+                    if (!substring.startsWith("~~~")) {
+                        Matcher matcher3 = c.matcher(str4);
+                        if (matcher3.find()) {
+                            arrayDeque.add(matcher3.group(1));
+                        }
+                    }
+                }
+                z10 = true;
+                str3 = str5;
+            } else if (substring.startsWith(str3)) {
+                str3 = null;
+                z10 = false;
+            }
+        }
+        g80 g80Var = new g80(arrayList, arrayDeque);
+        g80Var.v(fVar.H(stringBuffer2));
+        g80Var.y();
+        if (!linkedHashMap.isEmpty()) {
+            TL_iv.pageBlockDetails pageblockdetails = new TL_iv.pageBlockDetails();
+            String M0 = org.telegram.messenger.bd.M0(2131749199, null);
+            TL_iv.textBold textbold = new TL_iv.textBold();
+            textbold.text = n(M0);
+            pageblockdetails.title = textbold;
+            for (Map.Entry entry : linkedHashMap.entrySet()) {
+                String str6 = (String) entry.getKey();
+                String str7 = (String) entry.getValue();
+                ArrayList arrayList4 = new ArrayList();
+                g80 g80Var2 = new g80(arrayList4, new ArrayDeque());
+                g80Var2.v(fVar.H(str7));
+                g80Var2.y();
+                TL_iv.RichText textconcat = new TL_iv.textConcat();
+                int size = arrayList4.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList4.get(i13);
+                    i13++;
+                    TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) obj;
+                    TL_iv.RichText richText = pageBlock instanceof TL_iv.pageBlockParagraph ? ((TL_iv.pageBlockParagraph) pageBlock).text : pageBlock instanceof TL_iv.pageBlockHeader ? ((TL_iv.pageBlockHeader) pageBlock).text : pageBlock instanceof TL_iv.pageBlockSubheader ? ((TL_iv.pageBlockSubheader) pageBlock).text : pageBlock instanceof TL_iv.pageBlockTitle ? ((TL_iv.pageBlockTitle) pageBlock).text : null;
+                    if (richText != null && !(richText instanceof TL_iv.textEmpty)) {
+                        if (!textconcat.texts.isEmpty()) {
+                            textconcat.texts.add(n("\n\n"));
+                        }
+                        textconcat.texts.add(richText);
+                    }
+                }
+                if (textconcat.texts.isEmpty()) {
+                    textconcat = new TL_iv.textEmpty();
+                } else if (textconcat.texts.size() == 1) {
+                    textconcat = textconcat.texts.get(0);
+                }
+                TL_iv.RichText e10 = e(textconcat);
+                TL_iv.textAnchor textanchor = new TL_iv.textAnchor();
+                textanchor.name = t4.c.f("fn-", str6);
+                textanchor.text = e10;
+                TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+                String q10 = t4.c.q(str6, ". ");
+                TL_iv.textBold textbold2 = new TL_iv.textBold();
+                textbold2.text = n(q10);
+                TL_iv.RichText[] richTextArr = {textbold2, textanchor};
+                TL_iv.textConcat textconcat2 = new TL_iv.textConcat();
+                for (int i14 = 0; i14 < 2; i14++) {
+                    textconcat2.texts.add(richTextArr[i14]);
+                }
+                pageblockparagraph.text = textconcat2;
+                pageblockdetails.blocks.add(pageblockparagraph);
+            }
+            arrayList.add(pageblockdetails);
+        }
+        TL_iv.RichText richText2 = g80Var.b;
+        if (richText2 != null) {
+            return p(richText2);
+        }
+        return null;
     }
 
-    public k80(int i10) {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.m = true;
-        this.c = false;
+    public static TL_iv.textPlain n(String str) {
+        TL_iv.textPlain textplain = new TL_iv.textPlain();
+        if (str == null) {
+            str = "";
+        }
+        textplain.text = str;
+        return textplain;
+    }
+
+    public static int o(TL_iv.RichText richText) {
+        int i3 = 0;
+        if (richText == null || (richText instanceof TL_iv.textEmpty)) {
+            return 0;
+        }
+        if (richText instanceof TL_iv.textPlain) {
+            String str = ((TL_iv.textPlain) richText).text;
+            if (str == null) {
+                return 0;
+            }
+            return str.length();
+        }
+        if (!(richText instanceof TL_iv.textConcat)) {
+            return o(richText.text);
+        }
+        ArrayList<TL_iv.RichText> arrayList = richText.texts;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            TL_iv.RichText richText2 = arrayList.get(i10);
+            i10++;
+            i3 += o(richText2);
+        }
+        return i3;
+    }
+
+    public static String p(TL_iv.RichText richText) {
+        if (richText == null || (richText instanceof TL_iv.textEmpty)) {
+            return "";
+        }
+        if (richText instanceof TL_iv.textPlain) {
+            return ((TL_iv.textPlain) richText).text;
+        }
+        if (!(richText instanceof TL_iv.textConcat)) {
+            return p(richText.text);
+        }
+        StringBuilder sb2 = new StringBuilder();
+        ArrayList<TL_iv.RichText> arrayList = richText.texts;
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            TL_iv.RichText richText2 = arrayList.get(i3);
+            i3++;
+            sb2.append(p(richText2));
+        }
+        return sb2.toString();
     }
 }

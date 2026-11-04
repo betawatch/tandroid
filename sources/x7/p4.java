@@ -1,18 +1,19 @@
 package x7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class p4 implements ja.d {
+public final class p4 implements ma.d {
     public static final p4 a = new p4();
-    public static final ja.c b = new ja.c("maxLabels", i0.a.o(sc.e.m(c0.class, new z(1))));
-    public static final ja.c c = new ja.c("confidenceThreshold", i0.a.o(sc.e.m(c0.class, new z(2))));
-    public static final ja.c d = new ja.c("customLocalModelOptions", i0.a.o(sc.e.m(c0.class, new z(3))));
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        eVar.d(b, null);
-        eVar.d(c, ((i8) obj).a);
-        eVar.d(d, null);
+    static {
+        t4.c.o(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, new e(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)), 9)), 10)), 11)), 12)));
+    }
+
+    @Override // ma.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

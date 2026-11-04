@@ -1,15 +1,16 @@
 package v0;
 
 import android.os.Bundle;
+import ci.u0;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class l extends b2.h {
+public class l extends u0 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(String str, int i10, Bundle data) {
+    public l(String str, int i3, Bundle data) {
         super(str, data);
-        switch (i10) {
+        switch (i3) {
             case 2:
                 super("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
                 if (str.length() <= 0) {
@@ -27,7 +28,7 @@ public class l extends b2.h {
                 }
                 throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
             default:
-                kotlin.jvm.internal.i.e(data, "data");
+                kotlin.jvm.internal.j.e(data, "data");
                 if (str.length() <= 0) {
                     throw new IllegalArgumentException("type should not be empty");
                 }

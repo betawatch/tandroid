@@ -1,95 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ll0 extends Drawable {
-    public final RectF a = new RectF();
-    public final Paint b;
-    public final TextPaint c;
-    public int d;
-    public String e;
-    public final int f;
-    public int g;
-    public final int h;
+public final /* synthetic */ class ll0 implements fj0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 c;
+    public final /* synthetic */ Object d;
 
-    public ll0(int i10) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        this.g = org.telegram.messenger.at.e4;
-        this.h = org.telegram.messenger.at.e4;
-        this.f = i10;
-        textPaint.setTextSize(org.telegram.messenger.i0.L(11));
-        textPaint.setTypeface(org.telegram.messenger.i0.o());
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(org.telegram.messenger.i0.L(1.0f));
-        if (i10 == 0) {
-            this.e = org.telegram.messenger.dd.L0(2131745879, null);
-        } else {
-            this.e = org.telegram.messenger.dd.L0(2131750844, null);
+    public /* synthetic */ ll0(Object obj, int i3, org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = i3;
+        this.c = d2Var;
+    }
+
+    @Override // org.telegram.ui.Components.fj0
+    public final void f(int i3, View view) {
+        switch (this.a) {
+            case 0:
+                tl0 tl0Var = (tl0) this.d;
+                ArrayList arrayList = tl0Var.r;
+                ci.j1 j1Var = tl0Var.d;
+                if (i3 >= 0 && i3 < arrayList.size()) {
+                    if (!org.telegram.messenger.h10.i(this.b).q()) {
+                        new vg.v0(this.c, 24, true).show();
+                        break;
+                    } else {
+                        long j10 = ((ql0) arrayList.get(i3)).a.h;
+                        if (tl0Var.f(tl0Var.h == j10 ? null : ((ql0) arrayList.get(i3)).a)) {
+                            int i10 = 0;
+                            while (i10 < j1Var.getChildCount()) {
+                                if (j1Var.getChildAt(i10) == view) {
+                                    if (i10 <= 1) {
+                                        j1Var.w0(-org.telegram.messenger.g0.L(i10 == 0 ? 90.0f : 50.0f), 0, null);
+                                    } else if (i10 >= j1Var.getChildCount() - 2) {
+                                        j1Var.w0(org.telegram.messenger.g0.L(i10 == j1Var.getChildCount() - 1 ? 80.0f : 50.0f), 0, null);
+                                    }
+                                }
+                                i10++;
+                            }
+                            j1Var.M(new org.telegram.ui.cq(3));
+                            if (tl0Var.h != j10) {
+                                tl0Var.h = j10;
+                                ((sl0) view).a(true, true);
+                                break;
+                            } else {
+                                tl0Var.h = 0L;
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+                vg.h1 h1Var = (vg.h1) this.d;
+                if (view instanceof org.telegram.ui.yr0) {
+                    org.telegram.ui.yr0 yr0Var = (org.telegram.ui.yr0) view;
+                    PremiumPreviewFragment.v0(this.b, yr0Var.f.a);
+                    h1Var.t(new vg.v0(this.c, yr0Var.f.a, false));
+                    break;
+                }
+                break;
         }
-        this.d = (int) Math.ceil(textPaint.measureText(this.e));
-    }
-
-    public final void a() {
-        String L0 = this.f == 0 ? org.telegram.messenger.dd.L0(2131745879, null) : org.telegram.messenger.dd.L0(2131750844, null);
-        if (L0.equals(this.e)) {
-            return;
-        }
-        this.e = L0;
-        this.d = (int) Math.ceil(this.c.measureText(L0));
-    }
-
-    public final void b(int i10) {
-        this.c.setColor(i10);
-        this.b.setColor(i10);
-        this.g = Color.alpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.a;
-        rectF.set(bounds);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), this.b);
-        canvas.drawText(this.e, rectF.left + org.telegram.messenger.i0.L(5.0f), rectF.top + org.telegram.messenger.i0.L(12.0f), this.c);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.i0.L(16.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.i0.L(10.0f) + this.d;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.h != i10) {
-            int i11 = (int) ((i10 / 255.0f) * this.g);
-            this.b.setAlpha(i11);
-            this.c.setAlpha(i11);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

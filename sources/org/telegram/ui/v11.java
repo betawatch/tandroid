@@ -1,42 +1,22 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class v11 extends w7.d6 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public final class v11 implements View.OnLongClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ b21 b;
 
-    public /* synthetic */ v11(ViewGroup viewGroup, int i10) {
-        this.a = i10;
-        this.b = viewGroup;
+    public v11(b21 b21Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = b21Var;
+        this.a = tL_authorization;
     }
 
-    @Override // w7.d6
-    public final void a() {
-        switch (this.a) {
-            case 0:
-                ((g31) this.b).x1 = false;
-                break;
-            case 1:
-                ((qh.g0) this.b).w = false;
-                break;
-            default:
-                ((vh.c1) this.b).i3 = false;
-                break;
-        }
-    }
-
-    @Override // w7.d6
-    public void b() {
-        switch (this.a) {
-            case 0:
-                ((g31) this.b).x1 = true;
-                break;
-            case 2:
-                ((vh.c1) this.b).i3 = true;
-                break;
-        }
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        b21.I0(this.b, this.a.country);
+        return true;
     }
 }

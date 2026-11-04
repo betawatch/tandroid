@@ -1,57 +1,74 @@
 package s4;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
-    public int a;
+    public final int a;
     public int b;
-    public Object c;
+    public int c;
     public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public final /* synthetic */ b j;
 
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj == null || a.class != obj.getClass()) {
-                return false;
+    public a(b bVar, int i3, int i10) {
+        this.j = bVar;
+        this.a = i3;
+        this.b = i10;
+        a();
+    }
+
+    public final void a() {
+        b bVar = this.j;
+        int[] iArr = (int[]) bVar.a;
+        int[] iArr2 = (int[]) bVar.b;
+        int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i10 = Integer.MIN_VALUE;
+        int i11 = Integer.MIN_VALUE;
+        int i12 = 0;
+        int i13 = Integer.MAX_VALUE;
+        int i14 = Integer.MAX_VALUE;
+        int i15 = Integer.MIN_VALUE;
+        for (int i16 = this.a; i16 <= this.b; i16++) {
+            int i17 = iArr[i16];
+            i12 += iArr2[i17];
+            int i18 = (i17 >> 10) & 31;
+            int i19 = (i17 >> 5) & 31;
+            int i20 = i17 & 31;
+            if (i18 > i15) {
+                i15 = i18;
             }
-            a aVar = (a) obj;
-            int i10 = this.a;
-            if (i10 != aVar.a) {
-                return false;
+            if (i18 < i3) {
+                i3 = i18;
             }
-            if (i10 != 8 || Math.abs(this.d - this.b) != 1 || this.d != aVar.b || this.b != aVar.d) {
-                if (this.d != aVar.d || this.b != aVar.b) {
-                    return false;
-                }
-                Object obj2 = this.c;
-                if (obj2 != null) {
-                    if (!obj2.equals(aVar.c)) {
-                        return false;
-                    }
-                } else if (aVar.c != null) {
-                    return false;
-                }
+            if (i19 > i10) {
+                i10 = i19;
+            }
+            if (i19 < i13) {
+                i13 = i19;
+            }
+            if (i20 > i11) {
+                i11 = i20;
+            }
+            if (i20 < i14) {
+                i14 = i20;
             }
         }
-        return true;
+        this.d = i3;
+        this.e = i15;
+        this.f = i13;
+        this.g = i10;
+        this.h = i14;
+        this.i = i11;
+        this.c = i12;
     }
 
-    public final int hashCode() {
-        return (((this.a * 31) + this.b) * 31) + this.d;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append("[");
-        int i10 = this.a;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 8 ? "??" : "mv" : "up" : "rm" : "add");
-        sb2.append(",s:");
-        sb2.append(this.b);
-        sb2.append("c:");
-        sb2.append(this.d);
-        sb2.append(",p:");
-        sb2.append(this.c);
-        sb2.append("]");
-        return sb2.toString();
+    public final int b() {
+        return ((this.i - this.h) + 1) * ((this.g - this.f) + 1) * ((this.e - this.d) + 1);
     }
 }

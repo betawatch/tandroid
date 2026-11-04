@@ -1,61 +1,117 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.ku0;
-import org.telegram.ui.Components.uk0;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y1 implements r0.m, ku0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+public final class y1 extends t2 {
+    public final /* synthetic */ b2 j1;
+    public final /* synthetic */ q4[] k1;
+    public final /* synthetic */ d2 l1;
+    public final /* synthetic */ t2[] m1;
 
-    public /* synthetic */ y1(int i10, FrameLayout frameLayout) {
-        this.a = i10;
-        this.b = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y1(Activity activity, e6 e6Var, b2 b2Var, q4[] q4VarArr, d2 d2Var, t2[] t2VarArr) {
+        super(1, (Context) activity, e6Var, true);
+        this.j1 = b2Var;
+        this.k1 = q4VarArr;
+        this.l1 = d2Var;
+        this.m1 = t2VarArr;
+        boolean z10 = b2Var != null && b2Var.e;
+        this.x = z10;
+        this.n = !z10;
+        q4VarArr[0].setFragmentStack(new ArrayList());
+        ((ActionBarLayout) q4VarArr[0]).c(-1, d2Var);
+        ((ActionBarLayout) q4VarArr[0]).f0();
+        ViewGroup view = q4VarArr[0].getView();
+        int i3 = this.u0;
+        view.setPadding(i3, 0, i3, 0);
+        this.b = q4VarArr[0].getView();
+        this.w0 = false;
+        setOnDismissListener(new ci.h3(6, d2Var, b2Var));
     }
 
-    @Override // r0.m
-    public r0.j1 R0(View view, r0.j1 j1Var) {
-        r0.g1 g1Var = j1Var.a;
-        Rect rect = new Rect();
-        if (Build.VERSION.SDK_INT >= 30) {
-            i0.c f7 = g1Var.f(527);
-            rect.set(f7.a, f7.b, f7.c, f7.d);
+    @Override // org.telegram.ui.ActionBar.t2
+    public final boolean G() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t2
+    public final boolean I(MotionEvent motionEvent) {
+        q4[] q4VarArr;
+        q4 q4Var;
+        b2 b2Var = this.j1;
+        return b2Var != null && b2Var.a && (q4Var = (q4VarArr = this.k1)[0]) != null && q4Var.getFragmentStack().size() <= 1 && (q4VarArr[0].getFragmentStack().size() != 1 || ((d2) q4VarArr[0].getFragmentStack().get(0)).isSwipeBackEnabled(motionEvent));
+    }
+
+    @Override // org.telegram.ui.ActionBar.t2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.z1
+    public final void dismiss() {
+        b2 b2Var;
+        Runnable runnable;
+        if (!this.J && (b2Var = this.j1) != null && (runnable = b2Var.d) != null) {
+            runnable.run();
+        }
+        super.dismiss();
+        ArrayList arrayList = LaunchActivity.K1.Q;
+        q4[] q4VarArr = this.k1;
+        arrayList.remove(q4VarArr[0]);
+        q4VarArr[0] = null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t2, android.app.Dialog
+    public final void onBackPressed() {
+        q4[] q4VarArr = this.k1;
+        q4 q4Var = q4VarArr[0];
+        if (q4Var == null || q4Var.getFragmentStack().size() <= 1) {
+            super.onBackPressed();
         } else {
-            rect.set(g1Var.i().a, g1Var.i().b, g1Var.i().c, g1Var.i().d);
+            ((ActionBarLayout) q4VarArr[0]).I();
         }
-        int i10 = rect.left;
-        int i11 = rect.top;
-        int i12 = rect.right;
-        int i13 = rect.bottom + org.telegram.messenger.i0.n;
-        FrameLayout frameLayout = this.b;
-        frameLayout.setPadding(i10, i11, i12, i13);
-        frameLayout.requestLayout();
-        return j1Var;
     }
 
-    @Override // org.telegram.ui.Components.ku0
-    public void a(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
-        switch (this.a) {
-            case 1:
-                uk0 uk0Var = (uk0) recyclerView;
-                yg.d.a(uk0Var, canvas, rectF, uk0Var, this.b);
-                break;
-            case 2:
-                uk0 uk0Var2 = (uk0) recyclerView;
-                yg.d.a(uk0Var2, canvas, rectF, uk0Var2, this.b);
-                break;
-            default:
-                uk0 uk0Var3 = (uk0) recyclerView;
-                yg.d.a(uk0Var3, canvas, rectF, uk0Var3, this.b);
-                break;
+    @Override // org.telegram.ui.ActionBar.t2, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        q4 q4Var = this.k1[0];
+        t2[] t2VarArr = this.m1;
+        q4Var.setWindow(t2VarArr[0].getWindow());
+        b2 b2Var = this.j1;
+        if (b2Var == null || !b2Var.e) {
+            P(k6.i5);
+        } else {
+            org.telegram.messenger.g0.n3(t2VarArr[0], true);
         }
+        d2 d2Var = this.l1;
+        org.telegram.messenger.g0.q3(this, d2Var.isLightStatusBar());
+        d2Var.onBottomSheetCreated();
+    }
+
+    @Override // org.telegram.ui.ActionBar.t2
+    public final void p0() {
+        q4 q4Var = this.k1[0];
+        if (q4Var != null) {
+            for (d2 d2Var : q4Var.getFragmentStack()) {
+                if (d2Var.getFragmentView() != null) {
+                    d2Var.getFragmentView().requestLayout();
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.t2
+    public final void v() {
+        Runnable runnable;
+        this.l1.onTransitionAnimationEnd(true, false);
+        b2 b2Var = this.j1;
+        if (b2Var == null || (runnable = b2Var.c) == null) {
+            return;
+        }
+        runnable.run();
     }
 }

@@ -1,114 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qi0 extends org.telegram.ui.Components.tk0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public pi0 f;
-    public final zf.m1 h;
-    public final /* synthetic */ NotificationsCustomSettingsActivity n;
+public final /* synthetic */ class qi0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yj0 b;
 
-    public qi0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
-        this.n = notificationsCustomSettingsActivity;
-        this.c = context;
-        zf.m1 m1Var = new zf.m1(true);
-        this.h = m1Var;
-        m1Var.a = new st(this, 25);
+    public /* synthetic */ qi0(yj0 yj0Var, int i3) {
+        this.a = i3;
+        this.b = yj0Var;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    public final Object E(int i10) {
-        if (i10 >= 0 && i10 < this.d.size()) {
-            return this.d.get(i10);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                yj0 yj0Var = this.b;
+                org.telegram.messenger.g0.h3(new hc0(yj0Var, tL_error, tLObject, false, 13));
+                break;
+            case 1:
+                org.telegram.messenger.g0.h3(new tb0(25, this.b, tL_error));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new mi0(this.b, 5));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new tb0(24, this.b, tLObject));
+                break;
         }
-        int e = sc.e.e(1, i10, this.d);
-        zf.m1 m1Var = this.h;
-        ArrayList arrayList = m1Var.e;
-        if (e < 0 || e >= arrayList.size()) {
-            return null;
-        }
-        return m1Var.e.get(e);
-    }
-
-    public final void F(String str) {
-        if (this.f != null) {
-            Utilities.g.a(this.f);
-            this.f = null;
-        }
-        if (str != null) {
-            org.telegram.messenger.r5 r5Var = Utilities.g;
-            pi0 pi0Var = new pi0(this, str, 0);
-            this.f = pi0Var;
-            r5Var.d(pi0Var, 300L);
-            return;
-        }
-        this.d.clear();
-        this.e.clear();
-        this.h.f(null, null);
-        zf.m1 m1Var = this.h;
-        int i10 = this.n.s;
-        m1Var.g(null, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
-        f();
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        int size = this.d.size();
-        ArrayList arrayList = this.h.e;
-        return !arrayList.isEmpty() ? arrayList.size() + 1 + size : size;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        return i10 == this.d.size() ? 1 : 0;
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 != 0) {
-            if (i11 != 1) {
-                return;
-            }
-            ((org.telegram.ui.Cells.z3) view).setText(org.telegram.messenger.dd.L0(2131754376, "AddToExceptions"));
-            return;
-        }
-        org.telegram.ui.Cells.pa paVar = (org.telegram.ui.Cells.pa) view;
-        if (i10 < this.d.size()) {
-            paVar.f((si0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
-            paVar.setAddButtonVisible(false);
-        } else {
-            int e = sc.e.e(1, i10, this.d);
-            ArrayList arrayList = this.h.e;
-            paVar.d((TLObject) arrayList.get(e), null, org.telegram.messenger.dd.L0(2131747908, "NotificationsOn"), e != arrayList.size() - 1);
-            paVar.setAddButtonVisible(true);
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        View paVar;
-        if (i10 != 0) {
-            paVar = new org.telegram.ui.Cells.z3(this.c, null);
-            paVar.setBackgroundColor(0);
-            paVar.setTag(-33024);
-        } else {
-            paVar = new org.telegram.ui.Cells.pa(4, 0, this.c, null, false, true);
-        }
-        return new org.telegram.ui.Components.dk0(paVar);
     }
 }

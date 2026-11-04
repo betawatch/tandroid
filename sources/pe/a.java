@@ -1,53 +1,24 @@
 package pe;
 
-import df.c;
-import se.b;
-import ve.r;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements ye.a {
-    @Override // ye.a
-    public final int a(b bVar, b bVar2) {
-        return (bVar.g < 2 || bVar2.g < 2) ? 0 : 2;
-    }
+public abstract class a {
+    public static final DecelerateInterpolator a;
 
-    @Override // ye.a
-    public final char b() {
-        return '~';
-    }
-
-    @Override // ye.a
-    public final void c(r rVar, r rVar2, int i10) {
-        oe.a aVar = new oe.a();
-        c cVar = (c) rVar.f;
-        while (cVar != null && cVar != rVar2) {
-            c cVar2 = (c) cVar.f;
-            aVar.b(cVar);
-            cVar = cVar2;
-        }
-        aVar.g();
-        c cVar3 = (c) rVar.f;
-        aVar.f = cVar3;
-        if (cVar3 != null) {
-            cVar3.e = aVar;
-        }
-        aVar.e = rVar;
-        rVar.f = aVar;
-        c cVar4 = (c) rVar.b;
-        aVar.b = cVar4;
-        if (((c) aVar.f) == null) {
-            cVar4.d = aVar;
-        }
-    }
-
-    @Override // ye.a
-    public final int d() {
-        return 2;
-    }
-
-    @Override // ye.a
-    public final char e() {
-        return '~';
+    static {
+        new AnticipateOvershootInterpolator();
+        a = new DecelerateInterpolator();
+        new AccelerateInterpolator();
+        new DecelerateInterpolator(1.78f);
+        new LinearInterpolator();
+        new OvershootInterpolator(3.2f);
+        new AccelerateDecelerateInterpolator();
     }
 }

@@ -12,27 +12,27 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
+import b8.oc;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.r7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class d2 implements l.c0 {
-    public static final Method P;
+public abstract class d2 implements l.b0 {
     public static final Method Q;
     public static final Method R;
-    public h1.a D;
-    public View E;
-    public AdapterView.OnItemClickListener F;
-    public final c2 H;
-    public final a2 J;
-    public final Handler K;
-    public Rect M;
-    public boolean N;
-    public final x O;
+    public static final Method S;
+    public b5.i E;
+    public View F;
+    public AdapterView.OnItemClickListener G;
+    public final c2 I;
+    public final a2 K;
+    public final Handler L;
+    public Rect N;
+    public boolean O;
+    public final x P;
     public final Context a;
     public ListAdapter b;
     public r1 c;
@@ -46,42 +46,42 @@ public abstract class d2 implements l.c0 {
     public final int n = 1002;
     public int x = 0;
     public final int y = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public final a2 G = new a2(this, 1);
-    public final b2 I = new b2(this);
-    public final Rect L = new Rect();
+    public final a2 H = new a2(this, 1);
+    public final b2 J = new b2(this);
+    public final Rect M = new Rect();
 
     static {
-        int i10 = Build.VERSION.SDK_INT;
+        int i3 = Build.VERSION.SDK_INT;
         Class cls = Boolean.TYPE;
-        if (i10 <= 28) {
+        if (i3 <= 28) {
             try {
-                P = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", cls);
+                Q = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", cls);
             } catch (NoSuchMethodException unused) {
                 Log.i("ListPopupWindow", "Could not find method setClipToScreenEnabled() on PopupWindow. Oh well.");
             }
             try {
-                R = PopupWindow.class.getDeclaredMethod("setEpicenterBounds", Rect.class);
+                S = PopupWindow.class.getDeclaredMethod("setEpicenterBounds", Rect.class);
             } catch (NoSuchMethodException unused2) {
                 Log.i("ListPopupWindow", "Could not find method setEpicenterBounds(Rect) on PopupWindow. Oh well.");
             }
         }
         if (Build.VERSION.SDK_INT <= 23) {
             try {
-                Q = PopupWindow.class.getDeclaredMethod("getMaxAvailableHeight", View.class, Integer.TYPE, cls);
+                R = PopupWindow.class.getDeclaredMethod("getMaxAvailableHeight", View.class, Integer.TYPE, cls);
             } catch (NoSuchMethodException unused3) {
                 Log.i("ListPopupWindow", "Could not find method getMaxAvailableHeight(View, int, boolean) on PopupWindow. Oh well.");
             }
         }
     }
 
-    public d2(Context context, AttributeSet attributeSet, int i10) {
+    public d2(Context context, AttributeSet attributeSet, int i3) {
         int resourceId;
-        int i11 = 0;
-        this.H = new c2(this, i11);
-        this.J = new a2(this, i11);
+        int i10 = 0;
+        this.I = new c2(this, i10);
+        this.K = new a2(this, i10);
         this.a = context;
-        this.K = new Handler(context.getMainLooper());
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.o, i10, 0);
+        this.L = new Handler(context.getMainLooper());
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.o, i3, 0);
         this.f = obtainStyledAttributes.getDimensionPixelOffset(0, 0);
         int dimensionPixelOffset = obtainStyledAttributes.getDimensionPixelOffset(1, 0);
         this.h = dimensionPixelOffset;
@@ -89,119 +89,115 @@ public abstract class d2 implements l.c0 {
             this.r = true;
         }
         obtainStyledAttributes.recycle();
-        x xVar = new x(context, attributeSet, i10, 0);
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i10, 0);
+        x xVar = new x(context, attributeSet, i3, 0);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i3, 0);
         if (obtainStyledAttributes2.hasValue(2)) {
             xVar.setOverlapAnchor(obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : r7.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : oc.b(context, resourceId));
         obtainStyledAttributes2.recycle();
-        this.O = xVar;
+        this.P = xVar;
         xVar.setInputMethodMode(1);
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final boolean a() {
-        return this.O.isShowing();
+        return this.P.isShowing();
     }
 
     public final int b() {
         return this.f;
     }
 
-    public final void c(int i10) {
-        this.f = i10;
+    public final void c(int i3) {
+        this.f = i3;
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final void dismiss() {
-        x xVar = this.O;
+        x xVar = this.P;
         xVar.dismiss();
         xVar.setContentView(null);
         this.c = null;
-        this.K.removeCallbacks(this.G);
+        this.L.removeCallbacks(this.H);
     }
 
-    @Override // l.c0
+    @Override // l.b0
     public final r1 f() {
         return this.c;
     }
 
-    public final Drawable g() {
-        return this.O.getBackground();
-    }
-
-    @Override // l.c0
-    public final void h() {
-        int i10;
-        int a2;
+    @Override // l.b0
+    public final void g() {
+        int i3;
+        int a10;
         int paddingBottom;
         r1 r1Var;
         r1 r1Var2 = this.c;
         Context context = this.a;
-        x xVar = this.O;
+        x xVar = this.P;
         if (r1Var2 == null) {
-            r1 p5 = p(context, !this.N);
-            this.c = p5;
-            p5.setAdapter(this.b);
-            this.c.setOnItemClickListener(this.F);
+            r1 p10 = p(context, !this.O);
+            this.c = p10;
+            p10.setAdapter(this.b);
+            this.c.setOnItemClickListener(this.G);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
             this.c.setOnItemSelectedListener(new x1(this, 0));
-            this.c.setOnScrollListener(this.I);
+            this.c.setOnScrollListener(this.J);
             xVar.setContentView(this.c);
         }
         Drawable background = xVar.getBackground();
-        Rect rect = this.L;
+        Rect rect = this.M;
         if (background != null) {
             background.getPadding(rect);
-            int i11 = rect.top;
-            i10 = rect.bottom + i11;
+            int i10 = rect.top;
+            i3 = rect.bottom + i10;
             if (!this.r) {
-                this.h = -i11;
+                this.h = -i10;
             }
         } else {
             rect.setEmpty();
-            i10 = 0;
+            i3 = 0;
         }
         boolean z10 = xVar.getInputMethodMode() == 2;
-        View view = this.E;
-        int i12 = this.h;
+        View view = this.F;
+        int i11 = this.h;
         if (Build.VERSION.SDK_INT <= 23) {
-            Method method = Q;
+            Method method = R;
             if (method != null) {
                 try {
-                    a2 = ((Integer) method.invoke(xVar, view, Integer.valueOf(i12), Boolean.valueOf(z10))).intValue();
+                    a10 = ((Integer) method.invoke(xVar, view, Integer.valueOf(i11), Boolean.valueOf(z10))).intValue();
                 } catch (Exception unused) {
                     Log.i("ListPopupWindow", "Could not call getMaxAvailableHeightMethod(View, int, boolean) on PopupWindow. Using the public version.");
                 }
             }
-            a2 = xVar.getMaxAvailableHeight(view, i12);
+            a10 = xVar.getMaxAvailableHeight(view, i11);
         } else {
-            a2 = y1.a(xVar, view, i12, z10);
+            a10 = y1.a(xVar, view, i11, z10);
         }
-        int i13 = this.d;
-        if (i13 == -1) {
-            paddingBottom = a2 + i10;
+        int i12 = this.d;
+        if (i12 == -1) {
+            paddingBottom = a10 + i3;
         } else {
-            int i14 = this.e;
-            int a10 = this.c.a(i14 != -2 ? i14 != -1 ? View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_31), a2);
-            paddingBottom = a10 + (a10 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i10 : 0);
+            int i13 = this.e;
+            int a11 = this.c.a(i13 != -2 ? i13 != -1 ? View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_31), a10);
+            paddingBottom = a11 + (a11 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i3 : 0);
         }
         boolean z11 = xVar.getInputMethodMode() == 2;
         xVar.setWindowLayoutType(this.n);
         if (xVar.isShowing()) {
-            View view2 = this.E;
-            WeakHashMap weakHashMap = r0.h0.a;
+            View view2 = this.F;
+            WeakHashMap weakHashMap = r0.i0.a;
             if (view2.isAttachedToWindow()) {
-                int i15 = this.e;
-                if (i15 == -1) {
-                    i15 = -1;
-                } else if (i15 == -2) {
-                    i15 = this.E.getWidth();
+                int i14 = this.e;
+                if (i14 == -1) {
+                    i14 = -1;
+                } else if (i14 == -2) {
+                    i14 = this.F.getWidth();
                 }
-                if (i13 == -1) {
-                    i13 = z11 ? paddingBottom : -1;
+                if (i12 == -1) {
+                    i12 = z11 ? paddingBottom : -1;
                     if (z11) {
                         xVar.setWidth(this.e == -1 ? -1 : 0);
                         xVar.setHeight(0);
@@ -209,38 +205,38 @@ public abstract class d2 implements l.c0 {
                         xVar.setWidth(this.e == -1 ? -1 : 0);
                         xVar.setHeight(-1);
                     }
-                } else if (i13 == -2) {
-                    i13 = paddingBottom;
+                } else if (i12 == -2) {
+                    i12 = paddingBottom;
                 }
                 xVar.setOutsideTouchable(true);
-                View view3 = this.E;
-                int i16 = i15;
-                int i17 = this.f;
-                int i18 = this.h;
-                int i19 = i16 < 0 ? -1 : i16;
-                if (i13 < 0) {
-                    i13 = -1;
+                View view3 = this.F;
+                int i15 = i14;
+                int i16 = this.f;
+                int i17 = this.h;
+                int i18 = i15 < 0 ? -1 : i15;
+                if (i12 < 0) {
+                    i12 = -1;
                 }
-                xVar.update(view3, i17, i18, i19, i13);
+                xVar.update(view3, i16, i17, i18, i12);
                 return;
             }
             return;
         }
-        int i20 = this.e;
-        if (i20 == -1) {
-            i20 = -1;
-        } else if (i20 == -2) {
-            i20 = this.E.getWidth();
+        int i19 = this.e;
+        if (i19 == -1) {
+            i19 = -1;
+        } else if (i19 == -2) {
+            i19 = this.F.getWidth();
         }
-        if (i13 == -1) {
-            i13 = -1;
-        } else if (i13 == -2) {
-            i13 = paddingBottom;
+        if (i12 == -1) {
+            i12 = -1;
+        } else if (i12 == -2) {
+            i12 = paddingBottom;
         }
-        xVar.setWidth(i20);
-        xVar.setHeight(i13);
+        xVar.setWidth(i19);
+        xVar.setHeight(i12);
         if (Build.VERSION.SDK_INT <= 28) {
-            Method method2 = P;
+            Method method2 = Q;
             if (method2 != null) {
                 try {
                     method2.invoke(xVar, Boolean.TRUE);
@@ -252,40 +248,44 @@ public abstract class d2 implements l.c0 {
             z1.b(xVar, true);
         }
         xVar.setOutsideTouchable(true);
-        xVar.setTouchInterceptor(this.H);
+        xVar.setTouchInterceptor(this.I);
         if (this.w) {
             xVar.setOverlapAnchor(this.s);
         }
         if (Build.VERSION.SDK_INT <= 28) {
-            Method method3 = R;
+            Method method3 = S;
             if (method3 != null) {
                 try {
-                    method3.invoke(xVar, this.M);
-                } catch (Exception e) {
-                    Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e);
+                    method3.invoke(xVar, this.N);
+                } catch (Exception e10) {
+                    Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e10);
                 }
             }
         } else {
-            z1.a(xVar, this.M);
+            z1.a(xVar, this.N);
         }
-        xVar.showAsDropDown(this.E, this.f, this.h, this.x);
+        xVar.showAsDropDown(this.F, this.f, this.h, this.x);
         this.c.setSelection(-1);
-        if ((!this.N || this.c.isInTouchMode()) && (r1Var = this.c) != null) {
+        if ((!this.O || this.c.isInTouchMode()) && (r1Var = this.c) != null) {
             r1Var.setListSelectionHidden(true);
             r1Var.requestLayout();
         }
-        if (this.N) {
+        if (this.O) {
             return;
         }
-        this.K.post(this.J);
+        this.L.post(this.K);
+    }
+
+    public final Drawable h() {
+        return this.P.getBackground();
     }
 
     public final void j(Drawable drawable) {
-        this.O.setBackgroundDrawable(drawable);
+        this.P.setBackgroundDrawable(drawable);
     }
 
-    public final void k(int i10) {
-        this.h = i10;
+    public final void k(int i3) {
+        this.h = i3;
         this.r = true;
     }
 
@@ -297,18 +297,18 @@ public abstract class d2 implements l.c0 {
     }
 
     public void o(ListAdapter listAdapter) {
-        h1.a aVar = this.D;
-        if (aVar == null) {
-            this.D = new h1.a(this, 1);
+        b5.i iVar = this.E;
+        if (iVar == null) {
+            this.E = new b5.i(this, 2);
         } else {
             ListAdapter listAdapter2 = this.b;
             if (listAdapter2 != null) {
-                listAdapter2.unregisterDataSetObserver(aVar);
+                listAdapter2.unregisterDataSetObserver(iVar);
             }
         }
         this.b = listAdapter;
         if (listAdapter != null) {
-            listAdapter.registerDataSetObserver(this.D);
+            listAdapter.registerDataSetObserver(this.E);
         }
         r1 r1Var = this.c;
         if (r1Var != null) {
@@ -320,14 +320,14 @@ public abstract class d2 implements l.c0 {
         return new r1(context, z10);
     }
 
-    public final void q(int i10) {
-        Drawable background = this.O.getBackground();
+    public final void q(int i3) {
+        Drawable background = this.P.getBackground();
         if (background == null) {
-            this.e = i10;
+            this.e = i3;
             return;
         }
-        Rect rect = this.L;
+        Rect rect = this.M;
         background.getPadding(rect);
-        this.e = rect.left + rect.right + i10;
+        this.e = rect.left + rect.right + i3;
     }
 }

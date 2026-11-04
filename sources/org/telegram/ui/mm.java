@@ -1,205 +1,295 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import java.io.File;
+import android.graphics.Typeface;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class mm implements as0 {
-    public final TL_iv.RichMessage a;
-    public final ArrayList b;
-    public final org.telegram.messenger.kj c;
+public final class mm {
+    public org.telegram.messenger.zi a;
+    public int b;
+    public int c;
+    public byte[] e;
+    public boolean f;
+    public boolean h;
+    public String i;
+    public ArrayList j;
+    public TLRPC.TodoItem k;
+    public TLRPC.PollAnswer l;
+    public boolean m;
+    public ArrayList n;
+    public int o;
+    public boolean g = false;
+    public int d = -1;
 
-    public mm(TL_iv.RichMessage richMessage, ArrayList arrayList, org.telegram.messenger.kj kjVar) {
-        this.a = richMessage;
-        this.b = arrayList;
-        this.c = kjVar;
+    public mm(int i3, int i10, org.telegram.messenger.zi ziVar) {
+        TLRPC.Message message;
+        this.a = ziVar;
+        this.b = i3;
+        this.c = i10;
+        boolean z10 = false;
+        if (ziVar != null && (message = ziVar.k) != null && message.rich_message != null) {
+            z10 = true;
+        }
+        this.m = z10;
+        f();
     }
 
-    @Override // org.telegram.ui.as0
-    public final boolean a(int i10) {
-        if (i10 < 0) {
-            return false;
-        }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return false;
-        }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        if (!(pageBlock instanceof TL_iv.pageBlockVideo)) {
-            return false;
-        }
-        TLRPC.Document b10 = e4.b(this.a, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-        if (b10 != null) {
-            return org.telegram.messenger.kj.K4(b10);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.as0
-    public final File b(int i10) {
-        TLRPC.Document b10;
-        TLRPC.PhotoSize w9;
-        if (i10 >= 0) {
-            ArrayList arrayList = this.b;
-            if (i10 < arrayList.size()) {
-                TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-                boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
-                TL_iv.RichMessage richMessage = this.a;
-                if (z10) {
-                    TLRPC.Photo f7 = e4.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-                    if (f7 != null && (w9 = org.telegram.messenger.b8.w(f7.sizes, org.telegram.messenger.i0.Z0(false), false, null, false)) != null) {
-                        return e4.c(w9);
-                    }
-                } else if ((pageBlock instanceof TL_iv.pageBlockVideo) && (b10 = e4.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) != null) {
-                    return e4.c(b10);
-                }
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.as0
-    public final String c(int i10) {
-        TLObject d = d(i10);
-        if (d instanceof TLRPC.Photo) {
-            d = org.telegram.messenger.b8.w(((TLRPC.Photo) d).sizes, org.telegram.messenger.i0.Z0(false), false, null, false);
-        }
-        return org.telegram.messenger.b8.r(null, d);
-    }
-
-    @Override // org.telegram.ui.as0
-    public final TLObject d(int i10) {
-        if (i10 < 0) {
+    public static mm b(int i3, int i10, org.telegram.messenger.zi ziVar) {
+        if (ziVar == null) {
             return null;
         }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
+        org.telegram.messenger.zi.B0(ziVar.k);
+        return new mm(i3, i10, ziVar);
+    }
+
+    public static mm c(org.telegram.messenger.zi ziVar) {
+        TLRPC.Message message = ziVar.k;
+        if (message == null) {
             return null;
         }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
-        TL_iv.RichMessage richMessage = this.a;
-        if (z10) {
-            return e4.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
+        if (message.message == null && (message == null || message.rich_message == null)) {
+            return null;
         }
-        if (pageBlock instanceof TL_iv.pageBlockVideo) {
-            return e4.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-        }
-        return null;
+        return b(0, Math.min(org.telegram.messenger.hp.s1(ziVar.I1).o4, d(ziVar)), ziVar);
     }
 
-    @Override // org.telegram.ui.as0
-    public final boolean e(int i10) {
-        return false;
+    /* JADX WARN: Type inference failed for: r2v7, types: [java.lang.CharSequence, java.lang.Object] */
+    public static int d(org.telegram.messenger.zi ziVar) {
+        ?? r22;
+        TLRPC.Message message = ziVar.k;
+        if (message == null) {
+            return 0;
+        }
+        if (message == null || message.rich_message == null) {
+            String str = message.message;
+            if (str == null) {
+                return 0;
+            }
+            return str.length();
+        }
+        org.telegram.messenger.cv cvVar = ziVar.w2;
+        if (cvVar == null || (r22 = cvVar.q) == 0) {
+            return 0;
+        }
+        return r22.length();
     }
 
-    @Override // org.telegram.ui.as0
-    public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
-        if (tLObject instanceof TLRPC.Photo) {
-            TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(((TLRPC.Photo) tLObject).sizes, org.telegram.messenger.i0.Z0(false), false, null, false);
-            if (w9 == null) {
-                iArr[0] = -1;
-                return null;
+    public final void a(org.telegram.messenger.zi ziVar) {
+        String str;
+        int i3;
+        int i10;
+        TL_iv.RichMessage richMessage;
+        if (this.m) {
+            TLRPC.Message message = ziVar.k;
+            if (message == null || (richMessage = message.rich_message) == null) {
+                org.telegram.messenger.a8.d("ReplyQuote.checkEdit: rich message is null");
+                this.f = false;
+                return;
             }
-            int i10 = w9.size;
-            iArr[0] = i10;
-            if (i10 == 0) {
-                iArr[0] = -1;
-            }
-            return w9;
-        }
-        if (tLObject instanceof TLRPC.Document) {
-            TLRPC.Document document = (TLRPC.Document) tLObject;
-            TLRPC.PhotoSize w10 = org.telegram.messenger.b8.w(document.thumbs, org.telegram.messenger.at.r5, false, null, true);
-            if (w10 == null) {
-                w10 = org.telegram.messenger.b8.w(document.thumbs, 90, false, null, false);
-            }
-            if (w10 != null) {
-                int i11 = w10.size;
-                iArr[0] = i11;
-                if (i11 == 0) {
-                    iArr[0] = -1;
+            this.a = ziVar;
+            String str2 = this.i;
+            if (str2 != null && !TextUtils.isEmpty(str2)) {
+                ArrayList e10 = org.telegram.messenger.gv.e(richMessage);
+                StringBuilder sb2 = new StringBuilder();
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= e10.size()) {
+                        break;
+                    }
+                    if (i11 > 0) {
+                        sb2.append('\n');
+                    }
+                    org.telegram.messenger.gv.b((TL_iv.RichText) e10.get(i11), sb2, null);
+                    i11++;
                 }
-                return w10;
+                if (sb2.indexOf(str2) >= 0) {
+                    int[] f10 = org.telegram.messenger.gv.c(ziVar) ? org.telegram.messenger.gv.f(ziVar, this.i, this.o) : null;
+                    org.telegram.messenger.gv k10 = f10 != null ? org.telegram.messenger.gv.k(f10[0], f10[1], ziVar) : null;
+                    if (k10 != null) {
+                        this.b = f10[0];
+                        this.c = f10[1];
+                        e(k10.b, k10.a);
+                    } else {
+                        this.b = -1;
+                        this.c = -1;
+                    }
+                    this.f = false;
+                    return;
+                }
             }
-            iArr[0] = -1;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.as0
-    public final Object g() {
-        org.telegram.messenger.kj kjVar = this.c;
-        return kjVar != null ? kjVar : this.a;
-    }
-
-    @Override // org.telegram.ui.as0
-    public final TL_iv.PageBlock get(int i10) {
-        return (TL_iv.PageBlock) this.b.get(i10);
-    }
-
-    @Override // org.telegram.ui.as0
-    public final List getAll() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.as0
-    public final void h(TL_iv.PageBlock pageBlock) {
-        org.telegram.messenger.wv wvVar;
-        org.telegram.messenger.kj kjVar = this.c;
-        if (kjVar == null || (wvVar = kjVar.w2) == null) {
+            this.b = 0;
+            this.c = Math.min(org.telegram.messenger.hp.s1(ziVar.I1).o4, d(ziVar));
+            this.f = true;
             return;
         }
-        ArrayList arrayList = wvVar.g;
-        if (pageBlock == null) {
+        TLRPC.Message message2 = ziVar.k;
+        if (message2 == null || (str = message2.message) == null) {
+            org.telegram.messenger.a8.d("ReplyQuote.checkEdit: message is null");
+            this.f = false;
             return;
         }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            org.telegram.messenger.ru ruVar = (org.telegram.messenger.ru) arrayList.get(i10);
-            if (ruVar instanceof org.telegram.messenger.iv) {
-                org.telegram.messenger.iv ivVar = (org.telegram.messenger.iv) ruVar;
-                ArrayList arrayList2 = ivVar.X;
-                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    if (((org.telegram.messenger.ku) arrayList2.get(i11)).b == pageBlock) {
-                        int max = Math.max(0, Math.min(i11, arrayList2.size() - 1));
-                        ValueAnimator valueAnimator = ivVar.k0;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                            ivVar.k0 = null;
+        int i12 = this.c;
+        if (i12 < this.b || i12 > str.length() || this.b > ziVar.k.message.length() || (i3 = this.b) < 0 || (i10 = this.c) < 0) {
+            org.telegram.messenger.a8.d("ReplyQuote.checkEdit: start/end are invalid (" + this.b + ", " + this.c + ", len=" + ziVar.k.message.length() + ")");
+            this.f = false;
+            return;
+        }
+        if (TextUtils.equals(this.i, ziVar.k.message.substring(i3, i10))) {
+            this.a = ziVar;
+            f();
+            this.f = false;
+            return;
+        }
+        int indexOf = ziVar.k.message.indexOf(this.i);
+        if (indexOf >= 0) {
+            this.a = ziVar;
+            this.c = (this.c - this.b) + indexOf;
+            this.b = indexOf;
+            f();
+            this.f = false;
+            return;
+        }
+        this.a = ziVar;
+        this.b = 0;
+        this.c = ziVar.k.message.length();
+        f();
+        this.f = true;
+    }
+
+    public final void e(int i3, ArrayList arrayList) {
+        this.n = arrayList;
+        this.o = i3;
+        if (arrayList == null || arrayList.isEmpty()) {
+            this.n = null;
+            this.i = null;
+            this.j = null;
+        } else {
+            ArrayList arrayList2 = new ArrayList();
+            this.j = arrayList2;
+            String h = org.telegram.messenger.gv.h(arrayList, arrayList2);
+            this.i = h;
+            h.getClass();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v12, types: [org.telegram.tgnet.TLRPC$TL_messageEntitySpoiler] */
+    /* JADX WARN: Type inference failed for: r6v13, types: [org.telegram.tgnet.TLRPC$TL_messageEntityStrike] */
+    /* JADX WARN: Type inference failed for: r6v14, types: [org.telegram.tgnet.TLRPC$TL_messageEntityUnderline] */
+    /* JADX WARN: Type inference failed for: r6v15, types: [org.telegram.tgnet.TLRPC$TL_messageEntityItalic] */
+    /* JADX WARN: Type inference failed for: r6v17, types: [org.telegram.tgnet.TLRPC$TL_messageEntityBold] */
+    public final boolean f() {
+        TLRPC.Message message;
+        String str;
+        int i3;
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji;
+        int i10;
+        if (this.m) {
+            int i11 = this.b;
+            if (i11 >= 0 && (i10 = this.c) >= 0) {
+                org.telegram.messenger.gv k10 = org.telegram.messenger.gv.k(i11, i10, this.a);
+                if (k10 != null) {
+                    e(k10.b, k10.a);
+                    return true;
+                }
+                org.telegram.messenger.a8.d("ReplyQuote: failed to build a rich quote (" + this.b + ", " + this.c + ")");
+                e(0, null);
+                return false;
+            }
+            if (this.n == null) {
+                return false;
+            }
+        } else {
+            org.telegram.messenger.zi ziVar = this.a;
+            if (ziVar == null || (message = ziVar.k) == null || (str = message.message) == null) {
+                org.telegram.messenger.a8.d("ReplyQuote: message is null");
+                return false;
+            }
+            if (this.g) {
+                TLRPC.TodoItem Z = org.telegram.messenger.zi.Z(this.d, ziVar);
+                if (Z == null) {
+                    org.telegram.messenger.a8.d("ReplyQuote: todo task is not found");
+                    return false;
+                }
+                this.k = Z;
+                return true;
+            }
+            if (this.h) {
+                TLRPC.PollAnswer X = org.telegram.messenger.zi.X(ziVar, this.e);
+                if (X == null) {
+                    org.telegram.messenger.a8.d("ReplyQuote: poll item is not found");
+                    return false;
+                }
+                this.l = X;
+                return true;
+            }
+            int i12 = this.c;
+            if (i12 < this.b || i12 > str.length() || this.b > this.a.k.message.length() || (i3 = this.b) < 0 || this.c < 0) {
+                org.telegram.messenger.a8.d("ReplyQuote: start/end are invalid (" + this.b + ", " + this.c + ", len=" + this.a.k.message.length() + ")");
+                return false;
+            }
+            String str2 = this.a.k.message;
+            int max = Math.max(0, i3);
+            while (max < this.c && Character.isWhitespace(str2.charAt(max))) {
+                max++;
+            }
+            int min = Math.min(this.c, str2.length());
+            while (min > max && Character.isWhitespace(str2.charAt(min - 1))) {
+                min--;
+            }
+            if (max == min) {
+                org.telegram.messenger.a8.d("ReplyQuote: message is full of whitespace");
+                return false;
+            }
+            this.i = this.a.k.message.substring(max, min);
+            ArrayList arrayList = this.j;
+            if (arrayList != null) {
+                arrayList.clear();
+            }
+            ArrayList<TLRPC.MessageEntity> arrayList2 = this.a.k.entities;
+            if (arrayList2 != null && !arrayList2.isEmpty()) {
+                for (int i13 = 0; i13 < this.a.k.entities.size(); i13++) {
+                    TLRPC.MessageEntity messageEntity = this.a.k.entities.get(i13);
+                    int i14 = messageEntity.offset;
+                    int i15 = messageEntity.length + i14;
+                    Typeface typeface = org.telegram.messenger.g0.a;
+                    if (Math.max(max, min) >= Math.min(i14, i15) && Math.max(i14, i15) >= Math.min(max, min)) {
+                        if (messageEntity instanceof TLRPC.TL_messageEntityBold) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityBold();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityItalic) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityItalic();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityUnderline) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityUnderline();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityStrike) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityStrike();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntitySpoiler) {
+                            tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntitySpoiler();
+                        } else if (messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) {
+                            TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji2 = new TLRPC.TL_messageEntityCustomEmoji();
+                            TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji3 = (TLRPC.TL_messageEntityCustomEmoji) messageEntity;
+                            tL_messageEntityCustomEmoji2.document_id = tL_messageEntityCustomEmoji3.document_id;
+                            tL_messageEntityCustomEmoji2.document = tL_messageEntityCustomEmoji3.document;
+                            tL_messageEntityCustomEmoji = tL_messageEntityCustomEmoji2;
                         }
-                        if (ivVar.a0 == max && ivVar.b0 == 0.0f) {
-                            return;
+                        int i16 = messageEntity.offset;
+                        int i17 = i16 - max;
+                        int i18 = (i16 + messageEntity.length) - max;
+                        if ((i17 >= 0 || i18 >= 0) && (i17 <= min || i18 <= min)) {
+                            tL_messageEntityCustomEmoji.offset = Math.max(0, i17);
+                            tL_messageEntityCustomEmoji.length = Math.min(i18, min - max) - tL_messageEntityCustomEmoji.offset;
+                            if (this.j == null) {
+                                this.j = new ArrayList();
+                            }
+                            this.j.add(tL_messageEntityCustomEmoji);
                         }
-                        ivVar.a0 = max;
-                        ivVar.b0 = 0.0f;
-                        ivVar.c0 = false;
-                        ivVar.d0 = false;
-                        View view = ivVar.V;
-                        if (view != null) {
-                            view.invalidate();
-                            return;
-                        }
-                        return;
                     }
                 }
             }
         }
-    }
-
-    @Override // org.telegram.ui.as0
-    public final CharSequence i(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.as0
-    public final int j() {
-        return this.b.size();
+        return true;
     }
 }

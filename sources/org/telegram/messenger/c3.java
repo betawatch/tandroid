@@ -1,61 +1,33 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.recaptcha.RecaptchaAction;
-import com.google.android.recaptcha.RecaptchaTasksClient;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c3 implements OnSuccessListener {
+public final /* synthetic */ class c3 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ e3 d;
+    public final /* synthetic */ u10 b;
 
-    public /* synthetic */ c3(String str, String str2, e3 e3Var, int i10) {
-        this.a = i10;
-        this.b = str;
-        this.c = str2;
-        this.d = e3Var;
+    public /* synthetic */ c3(u10 u10Var, int i3) {
+        this.a = i3;
+        this.b = u10Var;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        RecaptchaAction recaptchaAction;
-        int i10 = this.a;
-        e3 e3Var = this.d;
-        String str = this.c;
-        String str2 = this.b;
-        switch (i10) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                RecaptchaTasksClient recaptchaTasksClient = (RecaptchaTasksClient) obj;
-                str2.getClass();
-                int i11 = 1;
-                switch (str2) {
-                    case "SIGNUP":
-                    case "signup":
-                        recaptchaAction = RecaptchaAction.SIGNUP;
-                        break;
-                    case "LOGIN":
-                    case "login":
-                        recaptchaAction = RecaptchaAction.LOGIN;
-                        break;
-                    default:
-                        recaptchaAction = RecaptchaAction.custom(str2);
-                        break;
-                }
-                recaptchaTasksClient.executeTask(recaptchaAction).addOnSuccessListener(new c3(str2, str, e3Var, i11)).addOnFailureListener(new d3(e3Var, 1));
+                g0.h3(new fg(tLObject, this.b, tL_error));
                 break;
             default:
-                String str3 = (String) obj;
-                a1.g.z(str3, a1.g.v("CaptchaController: got token for {action=", str2, ", key_id=", str, "}: "));
-                if (str3 != null) {
-                    e3Var.a(str3);
-                    break;
-                } else {
-                    e3Var.a("RECAPTCHA_FAILED_TOKEN_NULL");
+                u10 u10Var = this.b;
+                if (u10Var != null) {
+                    u10Var.a(tLObject instanceof TLRPC.TL_channels_channelParticipant ? ((TLRPC.TL_channels_channelParticipant) tLObject).participant : null);
                     break;
                 }
+                break;
         }
     }
 }

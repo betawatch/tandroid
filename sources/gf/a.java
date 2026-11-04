@@ -1,53 +1,13 @@
 package gf;
 
-import android.content.Context;
-import android.net.Uri;
-import org.telegram.messenger.i0;
-import org.telegram.messenger.kj;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.x1;
-import org.telegram.ui.h4;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-
-    public /* synthetic */ a(e eVar, x1[] x1VarArr, int i10, Uri uri, Context context, boolean z10) {
-        this.d = eVar;
-        this.e = x1VarArr;
-        this.b = i10;
-        this.f = uri;
-        this.g = context;
-        this.c = z10;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                i0.g3(new c((e) this.d, (x1[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
-                break;
-            default:
-                i0.g3(new c((h4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (kj) this.f, this.c, (String) this.g));
-                break;
+public abstract class a extends p {
+    @Override // gf.p
+    public final void e(p pVar) {
+        if (!(pVar instanceof a)) {
+            throw new IllegalArgumentException("Parent of block must also be block (can not be inline)");
         }
-    }
-
-    public /* synthetic */ a(h4 h4Var, int i10, TLRPC.WebPage webPage, kj kjVar, boolean z10, String str) {
-        this.d = h4Var;
-        this.b = i10;
-        this.e = webPage;
-        this.f = kjVar;
-        this.c = z10;
-        this.g = str;
+        this.b = pVar;
     }
 }

@@ -1,107 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class mu0 extends View {
-    public final ImageReceiver a;
-    public final r8 b;
-    public final Paint c;
-    public float d;
-    public boolean e;
-    public ValueAnimator f;
+public final class mu0 {
+    public final e5 a;
+    public Drawable b;
 
-    public mu0(Context context) {
-        super(context);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.a = imageReceiver;
-        this.b = new r8((org.telegram.ui.ActionBar.p6) null);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        imageReceiver.J0(org.telegram.messenger.i0.L(28.0f));
-        paint.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
-        paint.setStyle(Paint.Style.STROKE);
+    public mu0(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    public final e5 a(TLObject tLObject, int i3, boolean z10) {
+        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i3, z10) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i3, z10) : b(null, null, i3, z10);
+    }
+
+    public final e5 b(TLRPC.User user, TLRPC.Chat chat, int i3, boolean z10) {
+        e5 e5Var = this.a;
+        if (chat != null && chat.verified) {
+            Drawable drawable = this.b;
+            if (drawable == null) {
+                drawable = new xp(org.telegram.ui.ActionBar.k6.f1, org.telegram.ui.ActionBar.k6.i1);
+            }
+            this.b = drawable;
+            e5Var.g(drawable, z10);
+            e5Var.k(null);
+            return e5Var;
         }
-        if (!z11) {
-            this.d = z10 ? 1.0f : 0.0f;
-            invalidate();
-            return;
+        if (chat != null && org.telegram.messenger.m5.f(chat.emoji_status) != 0) {
+            e5Var.j(org.telegram.messenger.m5.f(chat.emoji_status), z10);
+            e5Var.k(Integer.valueOf(i3));
+            return e5Var;
         }
-        ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
-        duration.setInterpolator(gr.f);
-        duration.addUpdateListener(new r60(this, 21));
-        duration.addListener(new t60(this, 22));
-        duration.start();
-        this.f = duration;
-    }
-
-    @Override // android.view.View
-    public final boolean isSelected() {
-        return this.d == 1.0f;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.P();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.R();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        float f7 = (this.d * 0.1f) + 0.9f;
-        canvas.scale(f7, f7);
-        int x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.m5, false);
-        Paint paint = this.c;
-        paint.setColor(x02);
-        paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));
-        float strokeWidth = paint.getStrokeWidth();
-        RectF rectF = org.telegram.messenger.i0.P;
-        rectF.set(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth);
-        canvas.drawArc(rectF, -90.0f, this.d * 360.0f, false, paint);
-        canvas.restore();
-        if (this.e) {
-            return;
+        if (user != null && user.verified) {
+            Drawable drawable2 = this.b;
+            if (drawable2 == null) {
+                drawable2 = new xp(org.telegram.ui.ActionBar.k6.f1, org.telegram.ui.ActionBar.k6.i1);
+            }
+            this.b = drawable2;
+            e5Var.g(drawable2, z10);
+            e5Var.k(null);
+            return e5Var;
         }
-        float strokeWidth2 = paint.getStrokeWidth() * 2.5f * this.d;
-        float f10 = 2.0f * strokeWidth2;
-        float width = getWidth() - f10;
-        float height = getHeight() - f10;
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.y0(strokeWidth2, strokeWidth2, width, height);
-        imageReceiver.h(canvas, null);
+        if (user != null && org.telegram.messenger.m5.f(user.emoji_status) != 0) {
+            e5Var.j(org.telegram.messenger.m5.f(user.emoji_status), z10);
+            e5Var.k(Integer.valueOf(i3));
+            return e5Var;
+        }
+        if (user == null || !user.premium) {
+            e5Var.g(null, z10);
+            e5Var.k(null);
+            return e5Var;
+        }
+        e5Var.g((Drawable) ha.e.d().f, z10);
+        e5Var.k(Integer.valueOf(i3));
+        return e5Var;
     }
 
-    public void setAvatar(TLObject tLObject) {
-        r8 r8Var = this.b;
-        r8Var.l(tLObject);
-        this.a.i0(tLObject, r8Var, null);
-    }
-
-    public void setHideAvatar(boolean z10) {
-        this.e = z10;
-        invalidate();
+    public mu0(int i3, View view) {
+        this.a = new e5(org.telegram.messenger.g0.L(i3), view);
     }
 }

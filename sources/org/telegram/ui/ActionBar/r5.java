@@ -1,27 +1,17 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.Point;
+import b8.jf;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class r5 {
-    public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
-    public final Drawable b;
-    public final Drawable c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-
-    public r5(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout.getBackground();
-        this.c = actionBarPopupWindow$ActionBarPopupWindowLayout.getBackgroundDrawable();
-        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout.getBackgroundColor();
-        this.e = actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingLeft();
-        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingTop();
-        this.g = actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingRight();
-        this.h = actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingBottom();
+public final class r5 extends jf {
+    @Override // b8.jf
+    public final void b(int i3, int i10) {
+        Point point = org.telegram.messenger.g0.q;
+        if ((point.x <= point.y) == (i3 <= i10)) {
+            hs.e().k(hs.z4, new Object[0]);
+        }
     }
 }

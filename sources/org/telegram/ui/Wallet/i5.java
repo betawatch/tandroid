@@ -1,18 +1,14 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ShapeDrawable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class i5 implements rh.d4 {
-    public final /* synthetic */ TL_stars.TL_starGiftUnique a;
-    public final /* synthetic */ TL_wallet.nftItem b;
-    public final /* synthetic */ b6 c;
-
-    public i5(b6 b6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TL_wallet.nftItem nftitem) {
-        this.c = b6Var;
-        this.a = tL_starGiftUnique;
-        this.b = nftitem;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class i5 extends ShapeDrawable.ShaderFactory {
+    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
+    public final Shader resize(int i3, int i10) {
+        return new LinearGradient(0.0f, 0.0f, 0.0f, i10, -765355, -2148011, Shader.TileMode.CLAMP);
     }
 }

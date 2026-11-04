@@ -1,65 +1,65 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ld0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nd0 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.view.ViewGroup;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ ld0(nd0 nd0Var, int i10) {
-        this.a = i10;
-        this.b = nd0Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class ld0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ md0 b;
+
+    public /* synthetic */ ld0(md0 md0Var, int i3) {
+        this.a = i3;
+        this.b = md0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                nd0 nd0Var = this.b;
-                org.telegram.ui.Components.fi0 fi0Var = nd0Var.e;
-                fi0Var.getAnimatedDrawable().N(0, false, false);
-                fi0Var.d();
-                tc0 tc0Var = nd0Var.a;
-                if (tc0Var != null) {
-                    tc0Var.f[0].requestFocus();
+                if (org.telegram.messenger.g0.C1()) {
+                    this.b.h.requestFocus();
                     break;
                 }
                 break;
-            case 1:
-                nd0 nd0Var2 = this.b;
-                int i10 = 0;
-                nd0Var2.x = false;
-                while (true) {
-                    bs[] bsVarArr = nd0Var2.a.f;
-                    if (i10 >= bsVarArr.length) {
-                        break;
-                    } else {
-                        bsVarArr[i10].z(0.0f);
-                        i10++;
-                    }
+            default:
+                md0 md0Var = this.b;
+                if (md0Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) md0Var.getParent()).removeView(md0Var);
                 }
-            case 2:
-                nd0 nd0Var3 = this.b;
-                nd0Var3.postDelayed(new ld0(nd0Var3, 3), 150L);
-                ld0 ld0Var = nd0Var3.y;
-                nd0Var3.removeCallbacks(ld0Var);
-                nd0Var3.postDelayed(ld0Var, 3000L);
-                nd0Var3.x = true;
+                md0Var.c.setVisibility(0);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                md0 md0Var = this.b;
+                md0Var.c.setVisibility(8);
+                int measuredWidth = (int) (md0Var.b.getMeasuredWidth() / 10.0f);
+                int measuredHeight = (int) (md0Var.b.getMeasuredHeight() / 10.0f);
+                Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(createBitmap);
+                canvas.scale(0.1f, 0.1f);
+                canvas.drawColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
+                md0Var.b.draw(canvas);
+                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / org.telegram.messenger.hs.g2));
+                md0Var.d.setBackground(new BitmapDrawable(md0Var.getContext().getResources(), createBitmap));
+                md0Var.d.setAlpha(0.0f);
+                md0Var.d.setVisibility(0);
+                md0Var.b.addView(md0Var);
                 break;
             default:
-                tc0 tc0Var2 = this.b.a;
-                int i11 = 0;
-                tc0Var2.e = false;
-                tc0Var2.f[0].requestFocus();
-                while (true) {
-                    bs[] bsVarArr2 = tc0Var2.f;
-                    if (i11 >= bsVarArr2.length) {
-                        break;
-                    } else {
-                        bsVarArr2[i11].z(0.0f);
-                        i11++;
-                    }
-                }
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

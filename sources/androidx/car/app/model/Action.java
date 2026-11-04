@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class Action {
     public static final int FLAG_DEFAULT = 4;
@@ -26,28 +26,28 @@ public final class Action {
     public static final int TYPE_PAN = 65540;
     public static final Action PAN = new Action(TYPE_PAN);
 
-    private Action(int i10) {
-        if (i10 == 1) {
+    private Action(int i3) {
+        if (i3 == 1) {
             throw new IllegalArgumentException("Standard action constructor used with non standard type");
         }
         this.mTitle = null;
         this.mIcon = null;
         this.mBackgroundColor = CarColor.DEFAULT;
         this.mOnClickDelegate = null;
-        this.mType = i10;
+        this.mType = i3;
         this.mFlags = 0;
         this.mIsEnabled = true;
     }
 
-    public static boolean isStandardActionType(int i10) {
-        return (i10 & 65536) != 0;
+    public static boolean isStandardActionType(int i3) {
+        return (i3 & 65536) != 0;
     }
 
-    public static String typeToString(int i10) {
-        if (i10 == 1) {
+    public static String typeToString(int i3) {
+        if (i3 == 1) {
             return "CUSTOM";
         }
-        switch (i10) {
+        switch (i3) {
             case 65538:
                 return "APP_ICON";
             case TYPE_BACK /* 65539 */:

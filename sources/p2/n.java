@@ -1,20 +1,51 @@
 package p2;
 
-import android.net.Uri;
-import b2.x;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class n {
-    public final Uri a;
-    public final x b;
-    public final String c;
-    public final String d;
+public final class n implements g {
+    public final f a;
 
-    public n(Uri uri, x xVar, String str, String str2) {
-        this.a = uri;
-        this.b = xVar;
-        this.c = str;
-        this.d = str2;
+    public n(f fVar) {
+        this.a = fVar;
+    }
+
+    @Override // p2.g
+    public final UUID a() {
+        return d2.m.b;
+    }
+
+    @Override // p2.g
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // p2.g
+    public final int d() {
+        return 1;
+    }
+
+    @Override // p2.g
+    public final boolean f(String str) {
+        return false;
+    }
+
+    @Override // p2.g
+    public final f g() {
+        return this.a;
+    }
+
+    @Override // p2.g
+    public final j2.b h() {
+        return null;
+    }
+
+    @Override // p2.g
+    public final void b(j jVar) {
+    }
+
+    @Override // p2.g
+    public final void e(j jVar) {
     }
 }

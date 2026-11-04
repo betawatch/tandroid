@@ -1,26 +1,31 @@
 package wd;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends ed.c {
-    public /* synthetic */ Object a;
-    public int b;
-    public final /* synthetic */ u9.b c;
-    public u9.b d;
-    public c e;
+public final class d implements k {
+    public final c[] a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(u9.b bVar, ed.c cVar) {
-        super(cVar);
-        this.c = bVar;
+    public d(c[] cVarArr) {
+        this.a = cVarArr;
     }
 
-    @Override // ed.a
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.b |= TLObject.FLAG_31;
-        return this.c.p(null, this);
+    @Override // wd.k
+    public final void a(Throwable th2) {
+        b();
+    }
+
+    public final void b() {
+        for (c cVar : this.a) {
+            l0 l0Var = cVar.f;
+            if (l0Var == null) {
+                kotlin.jvm.internal.j.h("handle");
+                throw null;
+            }
+            l0Var.dispose();
+        }
+    }
+
+    public final String toString() {
+        return "DisposeHandlersOnCancel[" + this.a + ']';
     }
 }

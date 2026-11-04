@@ -2,23 +2,23 @@ package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.k20;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.y01;
+import org.telegram.ui.ma1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class i implements k20 {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class i implements n10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ k0 b;
 
-    public /* synthetic */ i(k0 k0Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ i(k0 k0Var, int i3) {
+        this.a = i3;
         this.b = k0Var;
     }
 
-    @Override // org.telegram.messenger.k20
+    @Override // org.telegram.messenger.n10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -75,7 +75,7 @@ public final /* synthetic */ class i implements k20 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 k0Var3.B = -1;
                 if (updates != null) {
-                    Utilities.d.c(new y01(24, k0Var3, updates));
+                    Utilities.d.c(new ma1(5, k0Var3, updates));
                     break;
                 } else {
                     StringBuilder sb3 = new StringBuilder("requesting gasless info: ");

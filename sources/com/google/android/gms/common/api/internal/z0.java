@@ -1,147 +1,102 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.SystemClock;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class z0 implements OnCompleteListener {
-    public final h a;
-    public final int b;
-    public final b c;
-    public final long d;
-    public final long e;
+    public static final Status c = new Status(8, "The connection to Google Play services was lost", null, null);
+    public final Object a;
+    public final Object b;
 
-    public z0(h hVar, int i10, b bVar, long j10, long j11) {
-        this.a = hVar;
-        this.b = i10;
-        this.c = bVar;
-        this.d = j10;
-        this.e = j11;
+    public z0(ci.a aVar, m mVar) {
+        this.b = aVar;
+        this.a = mVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0031 A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static n6.e a(q0 q0Var, n6.g gVar, int i10) {
-        n6.f0 f0Var = gVar.Q;
-        n6.e eVar = f0Var == null ? null : f0Var.d;
-        if (eVar != null && eVar.b) {
-            int[] iArr = eVar.d;
-            int i11 = 0;
-            if (iArr == null) {
-                int[] iArr2 = eVar.f;
-                if (iArr2 != null) {
-                    while (i11 < iArr2.length) {
-                        if (iArr2[i11] == i10) {
-                            break;
+    public void a() {
+        boolean f10;
+        Set set = (Set) this.a;
+        for (BasePendingResult basePendingResult : (BasePendingResult[]) set.toArray(new BasePendingResult[0])) {
+            basePendingResult.g.set(null);
+            synchronized (basePendingResult.a) {
+                try {
+                    if (((com.google.android.gms.common.api.m) basePendingResult.c.get()) != null) {
+                        if (!basePendingResult.m) {
                         }
-                        i11++;
+                        f10 = basePendingResult.f();
                     }
-                }
-                if (q0Var.n >= eVar.e) {
-                    return eVar;
-                }
-            } else {
-                while (i11 < iArr.length) {
-                    if (iArr[i11] != i10) {
-                        i11++;
-                    } else if (q0Var.n >= eVar.e) {
-                        break;
-                    }
+                    basePendingResult.c();
+                    f10 = basePendingResult.f();
+                } catch (Throwable th2) {
+                    throw th2;
                 }
             }
+            if (f10) {
+                set.remove(basePendingResult);
+            }
         }
-        return null;
+    }
+
+    public void b(Status status, boolean z10) {
+        HashMap hashMap;
+        HashMap hashMap2;
+        Map map = (Map) this.a;
+        synchronized (map) {
+            hashMap = new HashMap(map);
+        }
+        Map map2 = (Map) this.b;
+        synchronized (map2) {
+            hashMap2 = new HashMap(map2);
+        }
+        for (Map.Entry entry : hashMap.entrySet()) {
+            if (z10 || ((Boolean) entry.getValue()).booleanValue()) {
+                ((BasePendingResult) entry.getKey()).e(status);
+            }
+        }
+        for (Map.Entry entry2 : hashMap2.entrySet()) {
+            if (z10 || ((Boolean) entry2.getValue()).booleanValue()) {
+                ((TaskCompletionSource) entry2.getKey()).trySetException(new com.google.android.gms.common.api.f(status));
+            }
+        }
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
-    public final void onComplete(Task task) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        long j10;
-        long j11;
-        long j12 = this.d;
-        h hVar = this.a;
-        if (hVar.b()) {
-            n6.n nVar = (n6.n) n6.m.a().a;
-            if (nVar == null || nVar.b) {
-                q0 q0Var = (q0) hVar.s.get(this.c);
-                if (q0Var != null) {
-                    com.google.android.gms.common.api.c cVar = q0Var.b;
-                    if (cVar instanceof n6.g) {
-                        n6.g gVar = (n6.g) cVar;
-                        int i15 = 0;
-                        boolean z10 = j12 > 0;
-                        int i16 = gVar.L;
-                        if (nVar != null) {
-                            z10 &= nVar.c;
-                            i10 = nVar.d;
-                            int i17 = nVar.e;
-                            int i18 = nVar.a;
-                            if (gVar.Q == null || gVar.g()) {
-                                i11 = i18;
-                                i12 = i17;
-                            } else {
-                                n6.e a2 = a(q0Var, gVar, this.b);
-                                if (a2 == null) {
-                                    return;
-                                }
-                                boolean z11 = a2.c && j12 > 0;
-                                i11 = i18;
-                                i12 = a2.e;
-                                z10 = z11;
-                            }
-                        } else {
-                            i10 = 5000;
-                            i11 = 0;
-                            i12 = 100;
-                        }
-                        int i19 = i10;
-                        int i20 = -1;
-                        if (task.isSuccessful()) {
-                            i14 = 0;
-                        } else if (task.isCanceled()) {
-                            i15 = -1;
-                            i14 = 100;
-                        } else {
-                            Exception exception = task.getException();
-                            if (exception instanceof com.google.android.gms.common.api.f) {
-                                Status status = ((com.google.android.gms.common.api.f) exception).getStatus();
-                                i13 = status.a;
-                                k6.a aVar = status.d;
-                                if (aVar != null) {
-                                    i14 = i13;
-                                    i15 = aVar.b;
-                                }
-                            } else {
-                                i13 = 101;
-                            }
-                            i14 = i13;
-                            i15 = -1;
-                        }
-                        if (z10) {
-                            long j13 = this.e;
-                            long currentTimeMillis = System.currentTimeMillis();
-                            i20 = (int) (SystemClock.elapsedRealtime() - j13);
-                            j11 = currentTimeMillis;
-                            j10 = j12;
-                        } else {
-                            j10 = 0;
-                            j11 = 0;
-                        }
-                        a1 a1Var = new a1(new n6.j(this.b, i14, i15, j10, j11, null, null, i16, i20), i11, i19, i12);
-                        com.google.android.gms.internal.cast.z zVar = hVar.y;
-                        zVar.sendMessage(zVar.obtainMessage(18, a1Var));
-                    }
-                }
-            }
+    public void onComplete(Task task) {
+        ((Map) ((z0) this.b).b).remove((TaskCompletionSource) this.a);
+    }
+
+    public /* synthetic */ z0(g2.x xVar, z0 z0Var) {
+        this.a = xVar;
+        this.b = z0Var;
+    }
+
+    public z0(int i3) {
+        switch (i3) {
+            case 2:
+                this.a = DesugarCollections.synchronizedMap(new WeakHashMap());
+                this.b = DesugarCollections.synchronizedMap(new WeakHashMap());
+                break;
+            default:
+                this.a = DesugarCollections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
+                this.b = new y0(this);
+                break;
         }
+    }
+
+    public z0(z0 z0Var, TaskCompletionSource taskCompletionSource) {
+        this.a = taskCompletionSource;
+        Objects.requireNonNull(z0Var);
+        this.b = z0Var;
     }
 }

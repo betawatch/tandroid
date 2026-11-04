@@ -1,38 +1,71 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class bc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dc b;
-    public final /* synthetic */ Boolean c;
+import android.graphics.BitmapShader;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.ch0;
 
-    public /* synthetic */ bc(dc dcVar, Boolean bool, int i10) {
-        this.a = i10;
-        this.b = dcVar;
-        this.c = bool;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class bc {
+    public Paint A;
+    public Path B;
+    public boolean a;
+    public float b;
+    public long c;
+    public int d;
+    public BitmapShader e;
+    public org.telegram.ui.Components.t5 f;
+    public ch0 g;
+    public int[] h;
+    public BitmapShader i;
+    public Drawable j;
+    public BitmapShader k;
+    public Drawable l;
+    public Drawable m;
+    public BitmapShader n;
+    public Drawable o;
+    public float p;
+    public float q;
+    public BitmapShader r;
+    public float s;
+    public float t;
+    public float u;
+    public float v;
+    public boolean w;
+    public Drawable x;
+    public RectF y;
+    public ColorFilter z;
+
+    public final void a() {
+        this.f = null;
+        this.g = null;
+        for (int i3 = 0; i3 < 4; i3++) {
+            int[] iArr = this.h;
+            iArr[i3] = iArr[i3];
+        }
+        this.j = null;
+        this.i = null;
+        this.l = null;
+        this.k = null;
+        this.m = null;
+        this.n = null;
+        this.e = null;
+        this.o = null;
+        this.x = null;
+        this.z = null;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Boolean bool = this.c;
-        dc dcVar = this.b;
-        int i11 = 1;
-        switch (i10) {
-            case 0:
-                dcVar.h.u.remove(dcVar.a.e);
-                i0.g3(new bc(dcVar, bool, i11));
-                break;
-            default:
-                wb wbVar = dcVar.a;
-                if (!bool.booleanValue()) {
-                    at.f(wbVar.o).k(at.Z1, wbVar.e, 2);
-                    break;
-                } else {
-                    at.f(wbVar.o).k(at.Y1, wbVar.e, wbVar.p);
-                    break;
-                }
+    public final void b(Rect rect) {
+        if (rect != null) {
+            this.u = rect.left;
+            this.v = rect.top;
+            this.t = rect.width();
+            this.s = rect.height();
         }
     }
 }

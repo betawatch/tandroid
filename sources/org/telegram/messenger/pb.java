@@ -1,55 +1,38 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pb implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qb b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ pb(int i10, String str, boolean z10) {
-        this.c = i10;
-        this.b = str;
-        this.d = z10;
+    public /* synthetic */ pb(qb qbVar, long j10, long j11, int i3) {
+        this.a = i3;
+        this.b = qbVar;
+        this.c = j10;
+        this.d = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        boolean z10 = this.d;
-        int i11 = this.c;
-        String str = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                at.f(i11).k(at.V1, str, Boolean.valueOf(z10));
+                qb qbVar = this.b;
+                ConcurrentHashMap concurrentHashMap = qbVar.i.u;
+                String str = qbVar.a;
+                long j10 = this.c;
+                long j11 = this.d;
+                concurrentHashMap.put(str, new long[]{j10, j11});
+                g0.h3(new pb(qbVar, j10, j11, 1));
                 break;
             default:
-                org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(str);
-                if (mVar != null && mVar.u != null) {
-                    if (!org.telegram.utils.twidget.p.g.contains(mVar)) {
-                        mVar.F = i11;
-                        mVar.G = z10;
-                        ArrayList arrayList = org.telegram.utils.twidget.p.f;
-                        arrayList.remove(mVar);
-                        arrayList.add(mVar);
-                        org.telegram.utils.twidget.p.o();
-                        break;
-                    } else {
-                        mVar.F = i11;
-                        mVar.u.n(i11);
-                        break;
-                    }
-                }
+                qb qbVar2 = this.b;
+                hs.f(qbVar2.h).k(hs.X1, qbVar2.a, Long.valueOf(this.c), Long.valueOf(this.d));
                 break;
         }
-    }
-
-    public /* synthetic */ pb(String str, int i10, boolean z10) {
-        this.b = str;
-        this.c = i10;
-        this.d = z10;
     }
 }

@@ -52,9 +52,9 @@ public final class a3 extends z2 implements u1 {
 
     @Override // j$.util.stream.u1, j$.util.stream.w1
     public final a2 build() {
-        int i10 = this.b;
+        int i3 = this.b;
         int[] iArr = this.a;
-        if (i10 >= iArr.length) {
+        if (i3 >= iArr.length) {
             return this;
         }
         throw new IllegalStateException(String.format("Current size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(iArr.length)));
@@ -70,12 +70,12 @@ public final class a3 extends z2 implements u1 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
-        int i11 = this.b;
+    public final void accept(int i3) {
+        int i10 = this.b;
         int[] iArr = this.a;
-        if (i11 < iArr.length) {
-            this.b = i11 + 1;
-            iArr[i11] = i10;
+        if (i10 < iArr.length) {
+            this.b = i10 + 1;
+            iArr[i10] = i3;
             return;
         }
         throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(iArr.length)));
@@ -83,9 +83,9 @@ public final class a3 extends z2 implements u1 {
 
     @Override // j$.util.stream.j5
     public final void end() {
-        int i10 = this.b;
+        int i3 = this.b;
         int[] iArr = this.a;
-        if (i10 < iArr.length) {
+        if (i3 < iArr.length) {
             throw new IllegalStateException(String.format("End size %d is less than fixed size %d", Integer.valueOf(this.b), Integer.valueOf(iArr.length)));
         }
     }

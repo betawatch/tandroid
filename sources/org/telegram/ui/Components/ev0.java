@@ -1,60 +1,130 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PointF;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class ev0 extends s4.b0 {
-    public final gr r;
-    public int s;
-    public float t;
+public final class ev0 extends FrameLayout {
+    public static int H;
+    public float E;
+    public boolean F;
+    public float G;
+    public final int a;
+    public float b;
+    public boolean c;
+    public boolean d;
+    public final k9 e;
+    public final ImageView f;
+    public final ci.ec h;
+    public final View n;
+    public boolean r;
+    public final int s;
+    public org.telegram.messenger.jz w;
+    public boolean x;
+    public ValueAnimator y;
 
-    public ev0(Context context) {
+    public ev0(Context context, int i3) {
         super(context);
-        this.r = gr.f;
-        this.t = 1.0f;
-    }
-
-    @Override // s4.b0, s4.y0
-    public final void g(View view, s4.x0 x0Var) {
-        int j10 = j(o(), view);
-        int k10 = k(p(), view);
-        int m10 = m((int) Math.sqrt((k10 * k10) + (j10 * j10)));
-        if (m10 > 0) {
-            x0Var.b(-j10, -k10, m10, this.r);
+        this.a = i3;
+        int i10 = H;
+        H = i10 + 1;
+        this.s = i10;
+        if (i3 == 2) {
+            k9 k9Var = new k9(getContext());
+            this.e = k9Var;
+            k9Var.setLayerNum(1);
+            k9Var.setAspectFit(false);
+            k9Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+            addView(k9Var, b8.mf.e(26, 26, 17));
+            this.n = k9Var;
+        } else if (i3 == 1) {
+            ImageView imageView = new ImageView(context);
+            this.f = imageView;
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            addView(imageView, b8.mf.e(24, 24, 17));
+            this.n = imageView;
+        } else {
+            k9 k9Var2 = new k9(getContext());
+            this.e = k9Var2;
+            k9Var2.setLayerNum(1);
+            k9Var2.setAspectFit(true);
+            k9Var2.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+            addView(k9Var2, b8.mf.e(26, 26, 17));
+            this.n = k9Var2;
         }
-        org.telegram.messenger.i0.h3(new vo0(this, 10), Math.max(0, m10));
+        ci.ec ecVar = new ci.ec(context, 26);
+        this.h = ecVar;
+        ecVar.addOnLayoutChangeListener(new v50(this, 1));
+        ecVar.setLines(1);
+        ecVar.setEllipsize(TextUtils.TruncateAt.END);
+        ecVar.setTextSize(1, 11.0f);
+        ecVar.setGravity(1);
+        org.telegram.ui.ActionBar.r6.V(ecVar, org.telegram.ui.ActionBar.k6.G6, null);
+        addView(ecVar, b8.mf.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
+        ecVar.setVisibility(8);
     }
 
-    @Override // s4.b0
-    public final int k(int i10, View view) {
-        return super.k(i10, view) - this.s;
-    }
-
-    @Override // s4.b0
-    public final int m(int i10) {
-        return Math.round(Math.min(super.m(i10), 500) * this.t);
-    }
-
-    @Override // s4.b0
-    public final int n(int i10) {
-        return Math.round(Math.min(super.n(i10), org.telegram.messenger.at.g2) * this.t);
-    }
-
-    @Override // s4.b0
-    public final void q(s4.x0 x0Var) {
-        PointF a2 = a(this.a);
-        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
-            x0Var.d = this.a;
-            h();
+    public final void a(float f10) {
+        int i3 = this.a;
+        if (i3 == 2) {
             return;
         }
-        s4.y0.b(a2);
-        this.k = a2;
-        this.o = (int) (a2.x * 10000.0f);
-        this.p = (int) (a2.y * 10000.0f);
-        x0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
+        boolean z10 = this.r;
+        View view = this.n;
+        if (!z10) {
+            view.setTranslationX(0.0f);
+            view.setTranslationY(0.0f);
+            view.setScaleX(1.0f);
+            view.setScaleY(1.0f);
+            return;
+        }
+        float f11 = i3 == 1 ? 24.0f : 26.0f;
+        float f12 = i3 == 1 ? 38.0f : 44.0f;
+        int i10 = vk0.u0;
+        float f13 = 1.0f - f10;
+        view.setTranslationY((((org.telegram.messenger.g0.L(36.0f - f11) / 2.0f) - (org.telegram.messenger.g0.L(86.0f - f12) / 2.0f)) * f13) - (org.telegram.messenger.g0.L(8.0f) * f10));
+        view.setTranslationX(((org.telegram.messenger.g0.L(33.0f - f11) / 2.0f) - (org.telegram.messenger.g0.L(64.0f - f12) / 2.0f)) * f13);
+        float max = Math.max(0.0f, (f10 - 0.5f) / 0.5f);
+        ci.ec ecVar = this.h;
+        ecVar.setAlpha(max);
+        ecVar.setTranslationY((-org.telegram.messenger.g0.L(40.0f)) * f13);
+        ecVar.setTranslationX((-org.telegram.messenger.g0.L(12.0f)) * f13);
+        view.setPivotX(0.0f);
+        view.setPivotY(0.0f);
+        float f14 = ((f11 / f12) * f13) + f10;
+        view.setScaleX(f14);
+        view.setScaleY(f14);
+    }
+
+    public float getTextWidth() {
+        return this.G;
+    }
+
+    public void setExpanded(boolean z10) {
+        int i3 = this.a;
+        if (i3 == 2) {
+            return;
+        }
+        this.r = z10;
+        float f10 = i3 == 1 ? 24.0f : 26.0f;
+        float f11 = i3 == 1 ? 38.0f : 44.0f;
+        View view = this.n;
+        view.getLayoutParams().width = org.telegram.messenger.g0.L(z10 ? f11 : f10);
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        if (z10) {
+            f10 = f11;
+        }
+        layoutParams.height = org.telegram.messenger.g0.L(f10);
+        this.h.setVisibility(z10 ? 0 : 8);
+        if (i3 == 1 || !this.x) {
+            return;
+        }
+        this.e.setRoundRadius(org.telegram.messenger.g0.L(view.getLayoutParams().width / 2.0f));
     }
 }

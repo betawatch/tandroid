@@ -1,129 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c11 extends ImageView {
-    public static final org.telegram.ui.Cells.g1 x = new org.telegram.ui.Cells.g1(Float.class, "radius", 3);
-    public final Paint a;
-    public final Matrix b;
-    public RadialGradient c;
-    public boolean d;
-    public float e;
-    public float f;
-    public float h;
-    public fi0 n;
-    public ColorFilter r;
-    public final int[] s;
-    public final int[] w;
+public final class c11 {
+    public static final c11 a;
+    public static final c11 b;
+    public static final c11 c;
+    public static final /* synthetic */ c11[] d;
 
-    public c11(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
-        this.s = new int[2];
-        this.w = new int[2];
+    static {
+        c11 c11Var = new c11("TOP", 0);
+        a = c11Var;
+        c11 c11Var2 = new c11("LEFT", 1);
+        b = c11Var2;
+        c11 c11Var3 = new c11("BOTTOM", 2);
+        c = c11Var3;
+        d = new c11[]{c11Var, c11Var2, c11Var3};
     }
 
-    public static void a(Bitmap bitmap, org.telegram.ui.ActionBar.s3 s3Var, fi0 fi0Var) {
-        Drawable drawable = fi0Var.getDrawable();
-        if (drawable != null && fi0Var.isAttachedToWindow() && bitmap.isMutable()) {
-            int[] iArr = new int[2];
-            RectF rectF = new RectF(drawable.getBounds());
-            fi0Var.getImageMatrix().mapRect(rectF);
-            fi0Var.getLocationInWindow(iArr);
-            rectF.offset(fi0Var.getPaddingLeft() + iArr[0], fi0Var.getPaddingTop() + iArr[1]);
-            if (s3Var != null) {
-                s3Var.getLocationInWindow(iArr);
-                rectF.offset(-iArr[0], -iArr[1]);
-            }
-            int max = Math.max(1, ((int) Math.floor(rectF.left)) - 1);
-            int min = Math.min(bitmap.getWidth(), ((int) Math.ceil(rectF.right)) + 1);
-            int max2 = Math.max(0, ((int) Math.floor(rectF.top)) - 1);
-            int min2 = Math.min(bitmap.getHeight(), ((int) Math.ceil(rectF.bottom)) + 1);
-            if (max >= min || max2 >= min2) {
-                return;
-            }
-            int i10 = min - max;
-            int[] iArr2 = new int[i10];
-            for (int i11 = max2; i11 < min2; i11++) {
-                Arrays.fill(iArr2, bitmap.getPixel(max - 1, i11));
-                bitmap.setPixels(iArr2, 0, i10, max, i11, i10, 1);
-            }
-        }
+    public static c11 valueOf(String str) {
+        return (c11) Enum.valueOf(c11.class, str);
     }
 
-    public final void b(float f7, float f10, boolean z10) {
-        this.e = f7;
-        this.f = f10;
-        this.d = z10;
-        RadialGradient radialGradient = this.c;
-        Paint paint = this.a;
-        if (radialGradient == null) {
-            RadialGradient radialGradient2 = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{-16777216, -16777216, 0}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-            this.c = radialGradient2;
-            paint.setShader(radialGradient2);
-        }
-        paint.setXfermode(new PorterDuffXfermode(z10 ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        if (this.h >= 1.0f || this.d) {
-            int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-            super.onDraw(canvas);
-            fi0 fi0Var = this.n;
-            Drawable drawable = fi0Var != null ? fi0Var.getDrawable() : 0;
-            if (drawable != 0 && this.n.isAttachedToWindow()) {
-                this.n.getLocationInWindow(this.s);
-                getLocationInWindow(this.w);
-                ColorFilter colorFilter = drawable.getColorFilter();
-                canvas.save();
-                canvas.translate(this.n.getPaddingLeft() + (r4[0] - r3[0]), this.n.getPaddingTop() + (r4[1] - r3[1]));
-                canvas.concat(this.n.getImageMatrix());
-                drawable.setColorFilter(this.r);
-                drawable.draw(canvas);
-                drawable.setColorFilter(colorFilter);
-                canvas.restore();
-                if ((drawable instanceof Animatable) && ((Animatable) drawable).isRunning()) {
-                    invalidate();
-                }
-            }
-            float f7 = this.h;
-            if (f7 >= 1.0f) {
-                float f10 = f7 / 100.0f;
-                Matrix matrix = this.b;
-                matrix.setScale(f10, f10);
-                matrix.postTranslate(this.e, this.f);
-                this.c.setLocalMatrix(matrix);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a);
-            }
-            canvas.restoreToCount(saveLayer);
-        }
-    }
-
-    public void setRadius(float f7) {
-        this.h = f7;
-        invalidate();
+    public static c11[] values() {
+        return (c11[]) d.clone();
     }
 }

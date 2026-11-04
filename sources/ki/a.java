@@ -1,125 +1,58 @@
 package ki;
 
-import android.media.AudioRecord;
-import android.os.Handler;
-import android.os.SystemClock;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.at;
-import org.telegram.messenger.ne;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class a implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.utils.recorder.audio.d b;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class a extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final RectF d;
+    public final /* synthetic */ e6 e;
 
-    public /* synthetic */ a(org.telegram.utils.recorder.audio.d dVar, int i10) {
-        this.a = i10;
-        this.b = dVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(Context context, e6 e6Var) {
+        super(context);
+        this.e = e6Var;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        Paint paint3 = new Paint(1);
+        this.c = paint3;
+        this.d = new RectF();
+        paint2.setColor(-1);
+        paint.setColor(k6.w0(k6.d6, e6Var));
+        paint3.setColor(k6.w0(k6.kk, e6Var));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.utils.recorder.audio.d dVar = this.b;
-                try {
-                    if (dVar.n) {
-                        dVar.e(null);
-                        return;
-                    }
-                    int minBufferSize = AudioRecord.getMinBufferSize(48000, 16, 2);
-                    if (minBufferSize <= 0) {
-                        minBufferSize = 7680;
-                    }
-                    int max = Math.max(minBufferSize * 2, 7680);
-                    AudioRecord audioRecord = new AudioRecord(0, 48000, 16, 2, max);
-                    dVar.p = audioRecord;
-                    if (audioRecord.getState() != 1) {
-                        throw new IllegalStateException("Unable to initialize AudioRecord");
-                    }
-                    dVar.p.startRecording();
-                    if (dVar.p.getRecordingState() != 3) {
-                        throw new IllegalStateException("Unable to start AudioRecord");
-                    }
-                    dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
-                    dVar.r = SystemClock.elapsedRealtime();
-                    g gVar = dVar.g;
-                    ((k) gVar.c).i.post(new bi.e(gVar, gVar.a, 3));
-                    dVar.i.post(new a(dVar, 2));
-                    return;
-                } catch (Throwable th2) {
-                    dVar.e(org.telegram.utils.recorder.audio.d.a(th2));
-                    return;
-                }
-            case 1:
-                this.b.e(null);
-                return;
-            default:
-                org.telegram.utils.recorder.audio.d dVar2 = this.b;
-                if (dVar2.o) {
-                    return;
-                }
-                if (dVar2.n) {
-                    dVar2.e(null);
-                    return;
-                }
-                ByteBuffer byteBuffer = (ByteBuffer) dVar2.l.poll();
-                if (byteBuffer == null) {
-                    byteBuffer = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
-                }
-                byteBuffer.clear();
-                try {
-                    int read = dVar2.p.read(byteBuffer, byteBuffer.capacity());
-                    if (read <= 0) {
-                        throw new IllegalStateException("AudioRecord read failed: " + read);
-                    }
-                    byteBuffer.limit(read);
-                    int i10 = read / 2;
-                    long j10 = 0;
-                    for (int i11 = 0; i11 + 1 < read; i11 += 2) {
-                        long j11 = byteBuffer.getShort(i11);
-                        j10 += j11 * j11;
-                    }
-                    dVar2.q += i10;
-                    dVar2.m.incrementAndGet();
-                    dVar2.k.post(new org.telegram.utils.recorder.audio.c(0, dVar2, byteBuffer));
-                    long elapsedRealtime = SystemClock.elapsedRealtime();
-                    if (elapsedRealtime - dVar2.r >= 32) {
-                        final double sqrt = i10 == 0 ? 0.0d : Math.sqrt(j10 / i10);
-                        final g gVar2 = dVar2.g;
-                        final long j12 = dVar2.q;
-                        Handler handler = ((k) gVar2.c).i;
-                        final long j13 = gVar2.a;
-                        handler.post(new Runnable() { // from class: ki.f
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                k kVar = (k) g.this.c;
-                                if (j13 == kVar.o && kVar.G == 3) {
-                                    kVar.q = j12;
-                                    long j14 = kVar.j();
-                                    double d = sqrt;
-                                    if (d >= 0.0d) {
-                                        MediaController mediaController = ((ne) kVar.f.b).a;
-                                        mediaController.j1 = j14;
-                                        at.f(mediaController.g1).k(at.k2, Integer.valueOf(mediaController.f1), Double.valueOf(d / 2.0d));
-                                    }
-                                }
-                            }
-                        });
-                        dVar2.r = elapsedRealtime;
-                    }
-                    dVar2.i.post(new a(dVar2, 2));
-                    return;
-                } catch (Throwable th3) {
-                    if (0 == 0) {
-                        dVar2.c(byteBuffer);
-                    }
-                    dVar2.e(dVar2.n ? null : org.telegram.utils.recorder.audio.d.a(th3));
-                    return;
-                }
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i3 = k6.d6;
+        e6 e6Var = this.e;
+        int w02 = k6.w0(i3, e6Var);
+        Paint paint = this.a;
+        paint.setColor(w02);
+        int w03 = k6.w0(k6.kk, e6Var);
+        Paint paint2 = this.c;
+        paint2.setColor(w03);
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.d;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint);
+        rectF.inset(g0.L(1.33f), g0.L(1.33f));
+        canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, paint2);
+        rectF.inset(g0.N(4.67f), g0.N(9.066f));
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.b);
     }
 }

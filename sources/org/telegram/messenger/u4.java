@@ -1,94 +1,105 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.text.Collator;
+import java.util.Comparator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u4 implements RequestDelegate {
+public final /* synthetic */ class u4 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i5 b;
+    public final /* synthetic */ Collator b;
 
-    public /* synthetic */ u4(i5 i5Var, int i10) {
-        this.a = i10;
-        this.b = i5Var;
+    public /* synthetic */ u4(Collator collator, int i3) {
+        this.a = i3;
+        this.b = collator;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        String str;
         switch (this.a) {
             case 0:
-                if (tLObject != null) {
-                    TLRPC.TL_help_inviteText tL_help_inviteText = (TLRPC.TL_help_inviteText) tLObject;
-                    if (tL_help_inviteText.message.length() != 0) {
-                        i0.g3(new e4(1, this.b, tL_help_inviteText));
-                        break;
-                    }
+                String str2 = (String) obj;
+                String str3 = (String) obj2;
+                char charAt = str2.charAt(0);
+                char charAt2 = str3.charAt(0);
+                if (charAt == '#') {
+                    return 1;
                 }
-                break;
+                if (charAt2 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str2, str3);
             case 1:
-                final int i10 = 0;
-                final i5 i5Var = this.b;
-                i0.g3(new Runnable() { // from class: org.telegram.messenger.n4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                i5 i5Var2 = i5Var;
-                                if (tL_error == null) {
-                                    i5Var2.X = (TLRPC.GlobalPrivacySettings) tLObject;
-                                    i5Var2.F = 2;
-                                } else {
-                                    i5Var2.F = 0;
-                                }
-                                i5Var2.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                            default:
-                                i5 i5Var3 = i5Var;
-                                if (tL_error == null) {
-                                    i5Var3.H = ((TLRPC.TL_accountDaysTTL) tLObject).days;
-                                    i5Var3.G = 2;
-                                } else {
-                                    i5Var3.G = 0;
-                                }
-                                i5Var3.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
+                d5 d5Var = (d5) obj;
+                d5 d5Var2 = (d5) obj2;
+                String str4 = d5Var.i;
+                if (str4.length() == 0) {
+                    str4 = d5Var.j;
+                }
+                String str5 = d5Var2.i;
+                if (str5.length() == 0) {
+                    str5 = d5Var2.j;
+                }
+                return this.b.compare(str4, str5);
+            case 2:
+                String str6 = "";
+                if (obj instanceof TLRPC.User) {
+                    TLRPC.User user = (TLRPC.User) obj;
+                    str = g5.m(0, user.first_name, user.last_name);
+                } else if (obj instanceof d5) {
+                    d5 d5Var3 = (d5) obj;
+                    TLRPC.User user2 = d5Var3.m;
+                    str = user2 != null ? g5.m(0, user2.first_name, user2.last_name) : g5.m(0, d5Var3.i, d5Var3.j);
+                } else {
+                    str = "";
+                }
+                if (obj2 instanceof TLRPC.User) {
+                    TLRPC.User user3 = (TLRPC.User) obj2;
+                    str6 = g5.m(0, user3.first_name, user3.last_name);
+                } else if (obj2 instanceof d5) {
+                    d5 d5Var4 = (d5) obj2;
+                    TLRPC.User user4 = d5Var4.m;
+                    str6 = user4 != null ? g5.m(0, user4.first_name, user4.last_name) : g5.m(0, d5Var4.i, d5Var4.j);
+                }
+                return this.b.compare(str, str6);
+            case 3:
+                String str7 = (String) obj;
+                String str8 = (String) obj2;
+                char charAt3 = str7.charAt(0);
+                char charAt4 = str8.charAt(0);
+                if (charAt3 == '#') {
+                    return 1;
+                }
+                if (charAt4 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str7, str8);
+            case 4:
+                String str9 = (String) obj;
+                String str10 = (String) obj2;
+                char charAt5 = str9.charAt(0);
+                char charAt6 = str10.charAt(0);
+                if (charAt5 == '#') {
+                    return 1;
+                }
+                if (charAt6 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str9, str10);
             default:
-                final int i11 = 1;
-                final i5 i5Var2 = this.b;
-                i0.g3(new Runnable() { // from class: org.telegram.messenger.n4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                i5 i5Var22 = i5Var2;
-                                if (tL_error == null) {
-                                    i5Var22.X = (TLRPC.GlobalPrivacySettings) tLObject;
-                                    i5Var22.F = 2;
-                                } else {
-                                    i5Var22.F = 0;
-                                }
-                                i5Var22.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                            default:
-                                i5 i5Var3 = i5Var2;
-                                if (tL_error == null) {
-                                    i5Var3.H = ((TLRPC.TL_accountDaysTTL) tLObject).days;
-                                    i5Var3.G = 2;
-                                } else {
-                                    i5Var3.G = 0;
-                                }
-                                i5Var3.getNotificationCenter().k(47, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
+                String str11 = (String) obj;
+                String str12 = (String) obj2;
+                char charAt7 = str11.charAt(0);
+                char charAt8 = str12.charAt(0);
+                if (charAt7 == '#') {
+                    return 1;
+                }
+                if (charAt8 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str11, str12);
         }
     }
 }

@@ -1,39 +1,13 @@
 package e2;
 
-import android.graphics.SurfaceTexture;
-import android.opengl.EGLContext;
-import android.opengl.EGLDisplay;
-import android.opengl.EGLSurface;
-import android.os.Handler;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l implements SurfaceTexture.OnFrameAvailableListener, Runnable {
-    public static final int[] h = {12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 0, 12327, 12344, 12339, 4, 12344};
-    public final Handler a;
-    public final int[] b = new int[1];
-    public EGLDisplay c;
-    public EGLContext d;
-    public EGLSurface e;
-    public SurfaceTexture f;
-
-    public l(Handler handler) {
-        this.a = handler;
+public final class l extends Exception {
+    public l(j jVar) {
+        this("Unhandled input format:", jVar);
     }
 
-    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
-    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
-        this.a.post(this);
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        SurfaceTexture surfaceTexture = this.f;
-        if (surfaceTexture != null) {
-            try {
-                surfaceTexture.updateTexImage();
-            } catch (RuntimeException unused) {
-            }
-        }
+    public l(String str, j jVar) {
+        super(str + " " + jVar);
     }
 }

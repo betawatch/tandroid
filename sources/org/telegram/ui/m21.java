@@ -1,79 +1,150 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class m21 extends FrameLayout {
-    public final TextView a;
-    public final org.telegram.ui.Components.fi0 b;
-    public final ImageView c;
-    public float d;
-    public ValueAnimator e;
-    public final /* synthetic */ g31 f;
+public final /* synthetic */ class m21 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m21(g31 g31Var, Context context, boolean z10) {
-        super(context);
-        this.f = g31Var;
-        LinearLayout f7 = org.telegram.messenger.m5.f(context, 0);
-        addView(f7, w7.b6.e(-2, -2, z10 ? 3 : 17));
-        org.telegram.ui.Components.fi0 fi0Var = new org.telegram.ui.Components.fi0(context);
-        this.b = fi0Var;
-        fi0Var.f(R.raw.unlock_icon, 20, 20, null);
-        int i10 = org.telegram.ui.ActionBar.t6.If;
-        org.telegram.ui.ActionBar.p6 p6Var = g31Var.Z0;
-        org.telegram.ui.ActionBar.a7.t(fi0Var, i10, p6Var, PorterDuff.Mode.SRC_ATOP);
-        f7.addView(fi0Var, w7.b6.o(20, 20));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.a7.V(textView, i10, p6Var);
-        textView.setTypeface(org.telegram.messenger.i0.o());
-        textView.setTextSize(1, 14.0f);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setLines(1);
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        f7.addView(textView, w7.b6.r(-2, -2, 17));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setImageResource(R.drawable.msg_close);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        org.telegram.ui.ActionBar.a7.t(imageView, org.telegram.ui.ActionBar.t6.Kf, p6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, w7.b6.e(24, 24, 21));
+    public /* synthetic */ m21(int i3, Object obj, Object obj2) {
+        this.a = i3;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public final void a(String str, boolean z10) {
-        this.a.setText(str);
-        b(z10);
-    }
-
-    public final void b(boolean z10) {
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.e = null;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0169  */
+    @Override // org.telegram.tgnet.RequestDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        String str;
+        String str2;
+        JSONException jSONException;
+        long[] jArr;
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new ih0((n21) this.b, tLObject, tL_error, (i9) this.c, 19));
+                break;
+            case 1:
+                org.telegram.messenger.g0.h3(new qv0(14, (c31) this.b, (TLRPC.TL_attachMenuBot) this.c));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new ih0((c31) this.b, tL_error, tLObject, (String) this.c, 20));
+                break;
+            case 3:
+                d41 d41Var = (d41) this.b;
+                org.telegram.messenger.m10 m10Var = (org.telegram.messenger.m10) this.c;
+                int i3 = d41Var.i;
+                String str3 = null;
+                if (tL_error == null) {
+                    if (tLObject instanceof TL_stats.TL_statsGraph) {
+                        try {
+                            ng.b h02 = r41.h0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), i3, d41Var.m);
+                            try {
+                                str3 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
+                                if (i3 == 4 && (jArr = h02.a) != null && jArr.length > 0) {
+                                    long j10 = jArr[jArr.length - 1];
+                                    d41Var.e = new ng.e(h02, j10);
+                                    d41Var.c = j10;
+                                }
+                                str2 = str3;
+                                str3 = h02;
+                            } catch (JSONException e10) {
+                                jSONException = e10;
+                                str2 = str3;
+                                str3 = h02;
+                                jSONException.printStackTrace();
+                                if (tLObject instanceof TL_stats.TL_statsGraphError) {
+                                }
+                                str = str2;
+                                org.telegram.messenger.g0.h3(new ih0(d41Var, str3, str, m10Var, 22));
+                                return;
+                            }
+                        } catch (JSONException e11) {
+                            jSONException = e11;
+                            str2 = null;
+                        }
+                    } else {
+                        str2 = null;
+                    }
+                    if (tLObject instanceof TL_stats.TL_statsGraphError) {
+                        d41Var.l = false;
+                        d41Var.a = true;
+                        d41Var.b = ((TL_stats.TL_statsGraphError) tLObject).error;
+                    }
+                    str = str2;
+                } else {
+                    str = null;
+                }
+                org.telegram.messenger.g0.h3(new ih0(d41Var, str3, str, m10Var, 22));
+                break;
+            case 4:
+                org.telegram.messenger.g0.h3(new wy0((o71) this.b, (String) this.c, tL_error, 4));
+                break;
+            case 5:
+                o71 o71Var = (o71) this.b;
+                TL_account.updateTheme updatetheme = (TL_account.updateTheme) this.c;
+                if (tLObject instanceof TLRPC.TL_theme) {
+                    org.telegram.messenger.g0.h3(new qv0(21, o71Var, (TLRPC.TL_theme) tLObject));
+                    break;
+                } else {
+                    org.telegram.messenger.g0.h3(new wy0(o71Var, tL_error, updatetheme, 5));
+                    break;
+                }
+            case 6:
+                org.telegram.messenger.g0.h3(new wy0((i91) this.b, (String) this.c, tLObject, 9));
+                break;
+            case 7:
+                org.telegram.messenger.g0.h3(new ih0((ra1) this.b, tLObject, (String) this.c, tL_error, 25));
+                break;
+            case 8:
+                ra1 ra1Var = (ra1) this.b;
+                byte[] bArr = (byte[]) this.c;
+                if (tL_error == null) {
+                    org.telegram.messenger.g0.h3(new ja1(ra1Var, bArr, 1));
+                    break;
+                } else {
+                    org.telegram.messenger.g0.h3(new la1(ra1Var, tL_error, 3));
+                    break;
+                }
+            case 9:
+                org.telegram.messenger.g0.h3(new hc1(0, (ic1) this.b, (int[]) this.c));
+                break;
+            case 10:
+                org.telegram.messenger.g0.h3(new ih0((ug.c2) this.b, tLObject, (ug.a2) this.c, tL_error, 29));
+                break;
+            case 11:
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.iv0(tLObject, (org.telegram.messenger.hp) this.b, (xg.u0) this.c, 26));
+                break;
+            default:
+                org.telegram.messenger.hp hpVar = (org.telegram.messenger.hp) this.b;
+                org.telegram.ui.Components.ei eiVar = (org.telegram.ui.Components.ei) this.c;
+                if (tLObject instanceof TLRPC.TL_contacts_found) {
+                    TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
+                    hpVar.Y3(tL_contacts_found.users, false);
+                    ArrayList arrayList = new ArrayList();
+                    for (int i10 = 0; i10 < tL_contacts_found.users.size(); i10++) {
+                        TLRPC.User user = tL_contacts_found.users.get(i10);
+                        if (!user.self && !org.telegram.messenger.l10.x(user) && !org.telegram.messenger.l10.A(user.id)) {
+                            arrayList.add(user);
+                        }
+                    }
+                    org.telegram.messenger.g0.h3(new u9.a(26, eiVar, arrayList));
+                    break;
+                }
+                break;
         }
-        this.d = z10 ? 1.0f : 0.0f;
-        float L = (1.0f - this.d) * org.telegram.messenger.i0.L(-8.0f);
-        org.telegram.ui.Components.fi0 fi0Var = this.b;
-        fi0Var.setTranslationX(L);
-        this.a.setTranslationX((1.0f - this.d) * org.telegram.messenger.i0.L(-8.0f));
-        fi0Var.setAlpha(this.d);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(30.0f), TLObject.FLAG_30));
     }
 }

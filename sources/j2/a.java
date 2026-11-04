@@ -1,50 +1,53 @@
 package j2;
 
-import b2.o1;
-import j$.util.Objects;
-import u2.g0;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public final long a;
-    public final o1 b;
-    public final int c;
-    public final g0 d;
-    public final long e;
-    public final o1 f;
-    public final int g;
-    public final g0 h;
-    public final long i;
-    public final long j;
+public abstract class a {
+    private int flags;
 
-    public a(long j10, o1 o1Var, int i10, g0 g0Var, long j11, o1 o1Var2, int i11, g0 g0Var2, long j12, long j13) {
-        this.a = j10;
-        this.b = o1Var;
-        this.c = i10;
-        this.d = g0Var;
-        this.e = j11;
-        this.f = o1Var2;
-        this.g = i11;
-        this.h = g0Var2;
-        this.i = j12;
-        this.j = j13;
+    public final void addFlag(int i3) {
+        this.flags = i3 | this.flags;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && Objects.equals(this.b, aVar.b) && Objects.equals(this.d, aVar.d) && Objects.equals(this.f, aVar.f) && Objects.equals(this.h, aVar.h)) {
-                return true;
-            }
-        }
-        return false;
+    public void clear() {
+        this.flags = 0;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), this.b, Integer.valueOf(this.c), this.d, Long.valueOf(this.e), this.f, Integer.valueOf(this.g), this.h, Long.valueOf(this.i), Long.valueOf(this.j));
+    public final void clearFlag(int i3) {
+        this.flags = (~i3) & this.flags;
+    }
+
+    public final boolean getFlag(int i3) {
+        return (this.flags & i3) == i3;
+    }
+
+    public final boolean hasSupplementalData() {
+        return getFlag(TLObject.FLAG_28);
+    }
+
+    public final boolean isEndOfStream() {
+        return getFlag(4);
+    }
+
+    public final boolean isFirstSample() {
+        return getFlag(TLObject.FLAG_27);
+    }
+
+    public final boolean isKeyFrame() {
+        return getFlag(1);
+    }
+
+    public final boolean isLastSample() {
+        return getFlag(TLObject.FLAG_29);
+    }
+
+    public final boolean notDependedOn() {
+        return getFlag(67108864);
+    }
+
+    public final void setFlags(int i3) {
+        this.flags = i3;
     }
 }

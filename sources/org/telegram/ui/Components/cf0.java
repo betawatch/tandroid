@@ -1,87 +1,157 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.PhotoViewer;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityNodeProvider;
+import android.widget.Button;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jf0 b;
+public class cf0 extends AccessibilityNodeProvider {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
 
-    public /* synthetic */ cf0(jf0 jf0Var, int i10) {
-        this.a = i10;
-        this.b = jf0Var;
+    public cf0(nh nhVar) {
+        this.b = nhVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i3) {
+        df0 df0Var;
         switch (this.a) {
             case 0:
-                this.b.u();
-                break;
-            case 1:
-                jf0 jf0Var = this.b;
-                PhotoViewer photoViewer = jf0Var.V;
-                if (photoViewer != null) {
-                    if (jf0Var.r != null) {
-                        jf0Var.Z = r2.getCurrentPosition() / jf0Var.r.getVideoDuration();
-                        jf0Var.a0 = jf0Var.r.getBufferedPosition();
+                int[] iArr = {0, 0};
+                gf0 gf0Var = (gf0) this.b;
+                ArrayList arrayList = gf0Var.a;
+                gf0Var.getLocationOnScreen(iArr);
+                if (i3 == -1) {
+                    AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(gf0Var);
+                    gf0Var.onInitializeAccessibilityNodeInfo(obtain);
+                    obtain.setEnabled(true);
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        obtain.addChild(gf0Var, ((df0) arrayList.get(i10)).a);
+                    }
+                    return obtain;
+                }
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= arrayList.size()) {
+                        df0Var = null;
+                    } else if (((df0) arrayList.get(i11)).a == i3) {
+                        df0Var = (df0) arrayList.get(i11);
                     } else {
-                        if (photoViewer.F2 != null) {
-                            float f7 = jf0Var.f();
-                            jf0Var.Z = r1.S() / f7;
-                            jf0Var.a0 = r1.J() / f7;
-                        }
-                    }
-                    jf0Var.b0.invalidate();
-                    org.telegram.messenger.i0.h3(jf0Var.e0, 500L);
-                    break;
-                }
-                break;
-            case 2:
-                jf0 jf0Var2 = this.b;
-                PhotoViewer photoViewer2 = jf0Var2.V;
-                if (photoViewer2 != null) {
-                    if ((photoViewer2.F2 != null || jf0Var2.r != null) && !jf0Var2.c0 && !jf0Var2.Y && !jf0Var2.x && !jf0Var2.s.isInProgress() && jf0Var2.f0) {
-                        v61 v61Var = jf0Var2.V.F2;
-                        boolean z10 = jf0Var2.g0[0] >= (((float) jf0Var2.t()) * jf0Var2.J) * 0.5f;
-                        long e = jf0Var2.e();
-                        long f10 = jf0Var2.f();
-                        if (e != -9223372036854775807L && f10 >= 15000) {
-                            ve0 ve0Var = jf0Var2.r;
-                            if (ve0Var != null) {
-                                PhotoViewer photoViewer3 = jf0Var2.V;
-                                photoViewer3.c4.startRewind(ve0Var, z10, jf0Var2.g0[0], photoViewer3.t1, jf0Var2.R);
-                            } else {
-                                PhotoViewer photoViewer4 = jf0Var2.V;
-                                photoViewer4.c4.startRewind(v61Var, z10, jf0Var2.g0[0], photoViewer4.t1, jf0Var2.R);
-                            }
-                            if (!jf0Var2.E) {
-                                jf0Var2.E = true;
-                                jf0Var2.y(true);
-                                if (!jf0Var2.i0) {
-                                    org.telegram.messenger.i0.h3(jf0Var2.j0, 1500L);
-                                    jf0Var2.i0 = true;
-                                    break;
-                                }
-                            }
-                        }
+                        i11++;
                     }
                 }
-                break;
+                if (df0Var != null) {
+                    RectF rectF = df0Var.d;
+                    if (!rectF.isEmpty()) {
+                        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
+                        obtain2.setSource(gf0Var, i3);
+                        obtain2.setParent(gf0Var);
+                        obtain2.setPackageName(gf0Var.getContext().getPackageName());
+                        obtain2.addAction(16);
+                        obtain2.addAction(64);
+                        obtain2.setClickable(true);
+                        obtain2.setFocusable(true);
+                        obtain2.setEnabled(true);
+                        obtain2.setVisibleToUser(true);
+                        obtain2.setClassName(Button.class.getName());
+                        obtain2.setText(df0Var.l.j());
+                        Rect rect = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                        obtain2.setBoundsInParent(rect);
+                        rect.offset(iArr[0], iArr[1]);
+                        obtain2.setBoundsInScreen(rect);
+                        return obtain2;
+                    }
+                }
+                return null;
             default:
-                jf0 jf0Var3 = this.b;
-                PhotoViewer photoViewer5 = jf0Var3.V;
-                if (photoViewer5 != null && photoViewer5.c4.rewinding) {
-                    org.telegram.messenger.i0.h3(jf0Var3.j0, 1500L);
-                    break;
-                } else {
-                    jf0Var3.E = false;
-                    jf0Var3.y(false);
-                    jf0Var3.i0 = false;
-                    break;
+                s0.d y9 = ((nh) this.b).y(i3);
+                if (y9 == null) {
+                    return null;
                 }
-                break;
+                return y9.a;
         }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public List findAccessibilityNodeInfosByText(String str, int i3) {
+        switch (this.a) {
+            case 1:
+                ((nh) this.b).getClass();
+                return null;
+            default:
+                return super.findAccessibilityNodeInfosByText(str, i3);
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public AccessibilityNodeInfo findFocus(int i3) {
+        switch (this.a) {
+            case 1:
+                s0.d A = ((nh) this.b).A(i3);
+                if (A == null) {
+                    return null;
+                }
+                return A.a;
+            default:
+                return super.findFocus(i3);
+        }
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final boolean performAction(int i3, int i10, Bundle bundle) {
+        df0 df0Var;
+        switch (this.a) {
+            case 0:
+                gf0 gf0Var = (gf0) this.b;
+                ArrayList arrayList = gf0Var.a;
+                if (i3 == -1) {
+                    return gf0Var.performAccessibilityAction(i10, bundle);
+                }
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= arrayList.size()) {
+                        df0Var = null;
+                    } else if (((df0) arrayList.get(i11)).a == i3) {
+                        df0Var = (df0) arrayList.get(i11);
+                    } else {
+                        i11++;
+                    }
+                }
+                if (df0Var != null) {
+                    if (i10 == 64) {
+                        if (((AccessibilityManager) gf0Var.getContext().getSystemService("accessibility")).isTouchExplorationEnabled()) {
+                            AccessibilityEvent obtain = AccessibilityEvent.obtain(32768);
+                            obtain.setPackageName(gf0Var.getContext().getPackageName());
+                            obtain.setSource(gf0Var, i3);
+                            if (gf0Var.getParent() != null) {
+                                gf0Var.getParent().requestSendAccessibilityEvent(gf0Var, obtain);
+                            }
+                        }
+                    } else if (i10 == 16) {
+                        ff0 ff0Var = gf0Var.y;
+                        if (ff0Var != null) {
+                            ProfileActivity.m0(((org.telegram.ui.jt0) ff0Var).b, i3, 0.0f, 0.0f);
+                        }
+                    }
+                    return true;
+                }
+                return false;
+            default:
+                return ((nh) this.b).D(i3, i10, bundle);
+        }
+    }
+
+    public cf0(gf0 gf0Var) {
+        this.b = gf0Var;
     }
 }

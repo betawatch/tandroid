@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class k2 {
     public static final k2 c = new k2();
@@ -29,9 +29,9 @@ public final class k2 {
             throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
         }
         l2 zzb = ((z1) y1Var.a).zzb(cls);
-        int i10 = zzb.d;
+        int i3 = zzb.d;
         l0 l0Var = zzb.a;
-        if ((i10 & 2) == 2) {
+        if ((i3 & 2) == 2) {
             if (f1.class.isAssignableFrom(cls)) {
                 k10 = new f2(o2.d, w0.a, l0Var);
             } else {

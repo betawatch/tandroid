@@ -1,158 +1,127 @@
 package lg;
 
-import android.opengl.GLES20;
-import android.opengl.GLSurfaceView;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-import org.telegram.messenger.f8;
-import org.telegram.tgnet.TLObject;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import b8.mf;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.l10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.mp;
+import org.telegram.ui.Components.u8;
+import org.telegram.ui.Components.xq;
+import org.telegram.ui.wm;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class e implements GLSurfaceView.Renderer {
-    public long a;
-    public boolean b;
-    public int c;
-    public final /* synthetic */ g d;
+public final class e extends FrameLayout {
+    public float E;
+    public final int a;
+    public final u8 b;
+    public final k9 c;
+    public final LinearLayout d;
+    public final h6 e;
+    public final h6 f;
+    public final mp h;
+    public final ImageView n;
+    public boolean r;
+    public long s;
+    public long w;
+    public int x;
+    public String y;
 
-    public e(g gVar) {
-        this.d = gVar;
+    public e(Activity activity, e6 e6Var, wm wmVar) {
+        super(activity);
+        this.a = wmVar.getCurrentAccount();
+        this.r = false;
+        k9 k9Var = new k9(activity);
+        this.c = k9Var;
+        TLRPC.User a22 = wmVar.getMessagesController().a2(Long.valueOf(this.w));
+        u8 u8Var = new u8((e6) null);
+        this.b = u8Var;
+        u8Var.r(a22);
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(16.0f));
+        k9Var.e(a22, u8Var);
+        addView(k9Var, mf.d(32, 32.0f, 19, 10.0f, 0.0f, 10.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        this.d = linearLayout;
+        linearLayout.setOrientation(1);
+        h6 h6Var = new h6(activity, false, false, false);
+        this.e = h6Var;
+        h6Var.n = false;
+        h6Var.getDrawable().r(true, false);
+        h6Var.setTypeface(org.telegram.messenger.g0.o());
+        h6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        h6Var.setText(l10.p(a22));
+        r6.Z(h6Var, k6.G6, e6Var);
+        h6Var.setEllipsizeByGradient(true);
+        linearLayout.addView(h6Var, mf.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
+        h6 h6Var2 = new h6(activity, false, false, false);
+        this.f = h6Var2;
+        h6Var2.n = false;
+        h6Var2.getDrawable().r(true, false);
+        h6Var2.setTextSize(org.telegram.messenger.g0.L(13.0f));
+        h6Var2.setText(bd.M0(2131753700, null));
+        r6.Z(h6Var2, k6.Ue, e6Var);
+        h6Var2.setEllipsizeByGradient(true);
+        linearLayout.addView(h6Var2, mf.o(-1, 17));
+        addView(linearLayout, mf.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
+        mp mpVar = new mp(activity);
+        this.h = mpVar;
+        mpVar.getDrawable().r(true, true);
+        mpVar.b(0.75f, 350L, xq.h);
+        mpVar.setScaleProperty(0.6f);
+        mpVar.setTypeface(org.telegram.messenger.g0.o());
+        int L = org.telegram.messenger.g0.L(14.0f);
+        int i3 = k6.Ci;
+        int w02 = k6.w0(i3, e6Var);
+        int w10 = k6.w(k6.w0(i3, e6Var), k6.r1(0.12f, -1));
+        org.telegram.ui.Cells.y k02 = k6.k0(L, L, L, L, w02, w10, w10);
+        n6 N = r6.N(i3);
+        mpVar.setBackground(k02);
+        r6.k(mpVar, k02, N, null, e6Var);
+        mpVar.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        mpVar.setGravity(5);
+        r6.Z(mpVar, k6.Gi, e6Var);
+        mpVar.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
+        mpVar.setOnClickListener(new ii.m(this, 10));
+        mpVar.setOnWidthUpdatedListener(new d(this, 0));
+        mpVar.setText(bd.M0(this.r ? 2131753701 : 2131753698, null));
+        addView(mpVar, mf.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
+        ImageView imageView = new ImageView(activity);
+        this.n = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.msg_mini_customize);
+        int i10 = k6.i6;
+        org.telegram.ui.Cells.y O = k6.O(k6.w0(i10, e6Var), 0, 0);
+        n6 N2 = r6.N(i10);
+        imageView.setBackground(O);
+        r6.k(imageView, O, null, N2, e6Var);
+        r6.t(imageView, k6.Re, e6Var, PorterDuff.Mode.MULTIPLY);
+        imageView.setOnClickListener(new ai.h(this, wmVar, e6Var, 16));
+        addView(imageView, mf.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 
-    @Override // android.opengl.GLSurfaceView.Renderer
-    public final void onDrawFrame(GL10 gl10) {
-        if (this.d.r) {
-            GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-            GLES20.glClear(TLObject.FLAG_14);
-            return;
-        }
-        if (!this.d.y) {
-            GLES20.glBindFramebuffer(36160, 0);
-            GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-            GLES20.glClear(TLObject.FLAG_14);
-            if (this.d.D) {
-                return;
-            }
-            this.d.D = true;
-            final int i10 = this.d.E;
-            final int i11 = 0;
-            this.d.post(new Runnable(this) { // from class: lg.d
-                public final /* synthetic */ e b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i11) {
-                        case 0:
-                            e eVar = this.b;
-                            g.a(eVar.d, i10);
-                            break;
-                        default:
-                            e eVar2 = this.b;
-                            int i12 = i10;
-                            g gVar = eVar2.d;
-                            if (gVar.e && !gVar.r && i12 == eVar2.d.G) {
-                                g gVar2 = eVar2.d;
-                                gVar2.s = true;
-                                Runnable runnable = gVar2.w;
-                                gVar2.w = null;
-                                if (runnable != null) {
-                                    runnable.run();
-                                    break;
-                                }
-                            }
-                            break;
-                    }
-                }
-            });
-            return;
-        }
-        try {
-            long nanoTime = System.nanoTime();
-            this.d.a.G = this.a == 0 ? 0.016666668f : Math.min(0.1f, (nanoTime - r5) / 1.0E9f);
-            this.a = nanoTime;
-            g gVar = this.d;
-            gVar.a.c.A = gVar.x;
-            this.d.a.onDrawFrame(gl10);
-            int glGetError = GLES20.glGetError();
-            if (glGetError != 0) {
-                throw new IllegalStateException("Diamond GL error: " + glGetError);
-            }
-            if (this.b) {
-                return;
-            }
-            this.b = true;
-            final int i12 = this.c;
-            final int i13 = 1;
-            this.d.post(new Runnable(this) { // from class: lg.d
-                public final /* synthetic */ e b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i13) {
-                        case 0:
-                            e eVar = this.b;
-                            g.a(eVar.d, i12);
-                            break;
-                        default:
-                            e eVar2 = this.b;
-                            int i122 = i12;
-                            g gVar2 = eVar2.d;
-                            if (gVar2.e && !gVar2.r && i122 == eVar2.d.G) {
-                                g gVar22 = eVar2.d;
-                                gVar22.s = true;
-                                Runnable runnable = gVar22.w;
-                                gVar22.w = null;
-                                if (runnable != null) {
-                                    runnable.run();
-                                    break;
-                                }
-                            }
-                            break;
-                    }
-                }
-            });
-        } catch (RuntimeException e) {
-            f8.g(e, true);
-            this.d.r = true;
-            this.d.post(new gg.c(this, 29));
-        }
+    public final void a() {
+        float f10 = this.E;
+        float c2 = this.h.getDrawable().c() + f10 + r1.getPaddingLeft() + r1.getPaddingRight() + org.telegram.messenger.g0.L(12.0f);
+        this.e.setRightPadding(c2);
+        this.f.setRightPadding(c2);
     }
 
-    @Override // android.opengl.GLSurfaceView.Renderer
-    public final void onSurfaceChanged(GL10 gl10, int i10, int i11) {
-        this.b = false;
-        this.c = this.d.G;
-        if (this.d.r) {
-            return;
-        }
-        this.d.a.onSurfaceChanged(gl10, i10, i11);
-    }
-
-    @Override // android.opengl.GLSurfaceView.Renderer
-    public final void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
-        g gVar = this.d;
-        int i10 = gVar.G + 1;
-        gVar.G = i10;
-        this.c = i10;
-        this.b = false;
-        this.a = 0L;
-        this.d.r = false;
-        h hVar = this.d.a;
-        hVar.c = null;
-        try {
-            hVar.onSurfaceCreated(gl10, eGLConfig);
-        } catch (RuntimeException e) {
-            f8.g(e, true);
-            this.d.r = true;
-            this.d.post(new gg.c(this, 29));
-        }
+    public void setLeftMargin(float f10) {
+        this.E = f10;
+        this.c.setTranslationX(f10);
+        this.d.setTranslationX(f10);
+        a();
     }
 }

@@ -1,33 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fh0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gh0 b;
+import android.widget.ImageView;
 
-    public /* synthetic */ fh0(gh0 gh0Var, int i10) {
-        this.a = i10;
-        this.b = gh0Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class fh0 extends org.telegram.ui.Cells.l8 {
+    public ImageView a0;
+
+    @Override // org.telegram.ui.Cells.l8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
+        int L = org.telegram.messenger.bd.a0 ? org.telegram.messenger.g0.L(17.0f) : (i11 - i3) - org.telegram.messenger.g0.L(41.0f);
+        int y9 = org.telegram.messenger.camera.q.y(24.0f, i12 - i10, 2);
+        this.a0.layout(L, y9, org.telegram.messenger.g0.L(24.0f) + L, org.telegram.messenger.g0.L(24.0f) + y9);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.W = null;
-                if (org.telegram.messenger.v2.a) {
-                    org.telegram.messenger.f8.b("chatItemAnimator enable notifications");
-                    break;
-                }
-                break;
-            default:
-                this.b.W = null;
-                if (org.telegram.messenger.v2.a) {
-                    org.telegram.messenger.f8.b("chatItemAnimator enable notifications");
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Cells.l8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
+        this.a0.measure(i3, i10);
     }
 }

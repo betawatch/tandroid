@@ -1,69 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_account;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class sj0 extends org.telegram.ui.Components.a51 {
-    public static final /* synthetic */ int b = 0;
+public final class sj0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uj0 b;
 
-    static {
-        org.telegram.ui.Components.a51.h(new sj0());
+    public sj0(uj0 uj0Var, int i3) {
+        this.b = uj0Var;
+        this.a = i3;
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, org.telegram.ui.Components.b51 b51Var, boolean z10, org.telegram.ui.Components.q51 q51Var, org.telegram.ui.Components.v51 v51Var) {
-        tj0 tj0Var = (tj0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) b51Var.G;
-        View.OnClickListener onClickListener = b51Var.D;
-        TextView textView = tj0Var.n;
-        TextView textView2 = tj0Var.h;
-        org.telegram.ui.ActionBar.p6 p6Var = tj0Var.d;
-        FrameLayout frameLayout = tj0Var.e;
-        org.telegram.ui.Components.g9 g9Var = tj0Var.f;
-        tj0Var.w = passkey.id;
-        long j10 = passkey.software_emoji_id;
-        if (j10 != 0) {
-            g9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.f5.m(tj0Var.c, j10, null, 3));
-            frameLayout.setBackground(null);
-            g9Var.setColorFilter(null);
-            tj0Var.a = false;
-            g9Var.setScaleX(1.0f);
-            g9Var.setScaleY(1.0f);
-        } else {
-            int L = org.telegram.messenger.i0.L(4.0f);
-            int i10 = org.telegram.ui.ActionBar.t6.G6;
-            org.telegram.ui.ActionBar.a7.C(frameLayout, org.telegram.ui.ActionBar.t6.d0(L, org.telegram.ui.ActionBar.t6.r1(0.04f, org.telegram.ui.ActionBar.t6.w0(i10, p6Var))), org.telegram.ui.ActionBar.a7.L(0.04f, i10), p6Var);
-            tj0Var.a();
-            g9Var.setImageResource(R.drawable.msg2_permissions);
-            g9Var.setScaleX(0.666f);
-            g9Var.setScaleY(0.666f);
-            g9Var.setAnimatedEmojiDrawable(null);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length;
+        String code;
+        uj0 uj0Var = this.b;
+        if (!uj0Var.I && (length = editable.length()) >= 1) {
+            int i3 = this.a;
+            if (length > 1) {
+                String obj = editable.toString();
+                uj0Var.I = true;
+                for (int i10 = 0; i10 < Math.min(uj0Var.P - i3, length); i10++) {
+                    if (i10 == 0) {
+                        editable.replace(0, length, obj.substring(i10, i10 + 1));
+                    } else {
+                        uj0Var.d[i3 + i10].setText(obj.substring(i10, i10 + 1));
+                    }
+                }
+                uj0Var.I = false;
+            }
+            if (i3 != uj0Var.P - 1) {
+                int i11 = i3 + 1;
+                EditTextBoldCursor editTextBoldCursor = uj0Var.d[i11];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                uj0Var.d[i11].requestFocus();
+            }
+            int i12 = uj0Var.P;
+            if (i3 == i12 - 1 || (i3 == i12 - 2 && length >= 2)) {
+                code = uj0Var.getCode();
+                if (code.length() == uj0Var.P) {
+                    uj0Var.h(null);
+                }
+            }
         }
-        if (TextUtils.isEmpty(passkey.name)) {
-            textView2.setText(org.telegram.messenger.dd.L0(2131747644, null));
-        } else {
-            textView2.setText(passkey.name);
-        }
-        int i11 = passkey.last_usage_date;
-        if (i11 != 0) {
-            textView.setText(org.telegram.messenger.dd.a0(null, null, 2131747650, org.telegram.messenger.dd.x(i11, false)));
-        } else {
-            textView.setText(org.telegram.messenger.dd.a0(null, null, 2131747663, org.telegram.messenger.dd.x(passkey.date, false)));
-        }
-        tj0Var.r.setOnClickListener(onClickListener);
-        tj0Var.s = z10;
-        tj0Var.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, org.telegram.ui.Components.uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        return new tj0(i10, context, p6Var);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 }

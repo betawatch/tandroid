@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class Glue {
     private static final int[][][] glueTable;
@@ -16,10 +16,10 @@ public class Glue {
         glueTable = glueSettingsParser.createGlueTable();
     }
 
-    public Glue(float f7, float f10, float f11, String str) {
-        this.space = f7;
-        this.stretch = f10;
-        this.shrink = f11;
+    public Glue(float f10, float f11, float f12, String str) {
+        this.space = f10;
+        this.stretch = f11;
+        this.shrink = f12;
         this.name = str;
     }
 
@@ -29,14 +29,14 @@ public class Glue {
         return new GlueBox((this.space / 18.0f) * quad, (this.stretch / 18.0f) * quad, (this.shrink / 18.0f) * quad);
     }
 
-    public static Box get(int i10, int i11, TeXEnvironment teXEnvironment) {
+    public static Box get(int i3, int i10, TeXEnvironment teXEnvironment) {
+        if (i3 > 7) {
+            i3 = 0;
+        }
         if (i10 > 7) {
             i10 = 0;
         }
-        if (i11 > 7) {
-            i11 = 0;
-        }
-        return glueTypes[glueTable[i10][i11][teXEnvironment.getStyle() / 2]].createBox(teXEnvironment);
+        return glueTypes[glueTable[i3][i10][teXEnvironment.getStyle() / 2]].createBox(teXEnvironment);
     }
 
     public String getName() {

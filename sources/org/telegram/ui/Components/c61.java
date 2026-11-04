@@ -1,118 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.io.File;
-import org.telegram.messenger.ApplicationLoaderImpl;
-import org.telegram.ui.IUpdateLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c61 extends IUpdateLayout {
-    public FrameLayout a;
-    public RadialProgress2 b;
-    public org.telegram.ui.Cells.a2 c;
-    public final Activity d;
-    public final ViewGroup e;
+public final class c61 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n61 b;
 
-    public c61(Activity activity, ViewGroup viewGroup) {
-        super(activity, viewGroup);
-        this.d = activity;
-        this.e = viewGroup;
+    public /* synthetic */ c61(n61 n61Var, int i3) {
+        this.a = i3;
+        this.b = n61Var;
     }
 
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void createUpdateUI(int i10) {
-        ViewGroup viewGroup = this.e;
-        if (viewGroup == null || this.a != null) {
-            return;
-        }
-        Activity activity = this.d;
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.a = frameLayout;
-        frameLayout.setVisibility(4);
-        this.a.setTranslationY(org.telegram.messenger.i0.L(44.0f));
-        this.a.setBackground(org.telegram.ui.ActionBar.t6.h0(1090519039, 2, -1));
-        viewGroup.addView(this.a, w7.b6.e(-1, 44, 83));
-        this.a.setOnClickListener(new bh.f(this, i10, 14));
-        org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(this, activity);
-        this.c = a2Var;
-        a2Var.setTextSize(org.telegram.messenger.i0.L(15.0f));
-        this.c.setTypeface(org.telegram.messenger.i0.o());
-        this.c.setTextColor(-1);
-        this.c.setGravity(17);
-        this.a.addView(this.c, w7.b6.g());
-        this.c.c(org.telegram.messenger.dd.L0(2131754229, null), false, true);
-        RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
-        this.b = radialProgress2;
-        int i11 = org.telegram.ui.ActionBar.t6.Ci;
-        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.t6.x0(null, i11, false), org.telegram.ui.ActionBar.t6.x0(null, i11, false));
-        this.b.r(0, 0, org.telegram.messenger.i0.L(22.0f), org.telegram.messenger.i0.L(22.0f));
-        this.b.setCircleRadius(org.telegram.messenger.i0.L(11.0f));
-        this.b.setAsMini();
-    }
-
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void updateAppUpdateViews(int i10, boolean z10) {
-        org.telegram.messenger.k1 e;
-        String str;
-        int i11;
-        if (this.e == null) {
-            return;
-        }
-        if (((!((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q() || (str = (e = org.telegram.messenger.k1.e()).a) == null || (i11 = e.b) == 0) ? null : new org.telegram.messenger.g1(str, i11, e.c)) == null) {
-            FrameLayout frameLayout = this.a;
-            if (frameLayout == null || frameLayout.getTag() == null) {
-                return;
-            }
-            this.a.setTag(null);
-            if (z10) {
-                this.a.animate().translationY(org.telegram.messenger.i0.L(44.0f)).setInterpolator(gr.g).setListener(new q11(this, 5)).setDuration(180L).start();
-                return;
-            } else {
-                this.a.setTranslationY(org.telegram.messenger.i0.L(44.0f));
-                this.a.setVisibility(4);
-                return;
-            }
-        }
-        createUpdateUI(i10);
-        File g10 = org.telegram.messenger.w0.a.g();
-        if (g10 == null || !g10.exists()) {
-            if (!((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q() ? false : org.telegram.messenger.k1.e().j) {
-                this.b.setIcon(3, true, z10);
-                this.b.p(true, !((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q() ? 0.0f : org.telegram.messenger.k1.e().k);
-                this.c.c(org.telegram.messenger.dd.a0(null, null, 2131754226, Integer.valueOf((int) ((!((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q() ? 0.0f : org.telegram.messenger.k1.e().k) * 100.0f))), z10, true);
-            } else {
-                this.b.setIcon(2, true, z10);
-                this.c.c(org.telegram.messenger.dd.L0(2131754229, null), z10, true);
-            }
-        } else {
-            this.b.setIcon(15, true, z10);
-            this.c.c(org.telegram.messenger.dd.L0(2131754225, null), z10, true);
-        }
-        if (this.a.getTag() != null) {
-            return;
-        }
-        this.a.setVisibility(0);
-        this.a.setTag(1);
-        if (z10) {
-            this.a.animate().translationY(0.0f).setInterpolator(gr.g).setListener(null).setDuration(180L).start();
-        } else {
-            this.a.setTranslationY(0.0f);
-        }
-    }
-
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void updateFileProgress(Object[] objArr) {
-        if (this.a == null || this.c == null) {
-            return;
-        }
-        if (!((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q() ? false : org.telegram.messenger.k1.e().j) {
-            float f7 = !((ApplicationLoaderImpl) org.telegram.messenger.w0.a).q() ? 0.0f : org.telegram.messenger.k1.e().k;
-            this.b.p(true, f7);
-            this.c.setText(org.telegram.messenger.dd.a0(null, null, 2131754226, Integer.valueOf((int) (f7 * 100.0f))));
-            this.a.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                n61 n61Var = this.b;
+                View[] viewArr = n61Var.e;
+                View[] viewArr2 = n61Var.e;
+                if (viewArr[1] != null) {
+                    n61Var.F();
+                    n61Var.h.put(n61Var.f[1], viewArr2[1]);
+                    n61Var.removeView(viewArr2[1]);
+                    n61Var.E(viewArr2[0], 0.0f);
+                    viewArr2[1] = null;
+                }
+                n61Var.T = null;
+                n61Var.v(true);
+                d61 d61Var = n61Var.N;
+                if (d61Var != null) {
+                    d61Var.w.invalidate();
+                    n61Var.N.w.g1();
+                    n61Var.N.invalidate();
+                }
+                n61Var.s();
+                n61Var.K.e();
+                break;
+            case 1:
+                n61 n61Var2 = this.b;
+                n61Var2.x = null;
+                View[] viewArr3 = n61Var2.e;
+                if (viewArr3[1] != null) {
+                    if (!n61Var2.G) {
+                        n61Var2.F();
+                    }
+                    n61Var2.h.put(n61Var2.f[1], viewArr3[1]);
+                    n61Var2.removeView(viewArr3[1]);
+                    viewArr3[1].setVisibility(8);
+                    viewArr3[1] = null;
+                }
+                n61Var2.y = false;
+                n61Var2.J = false;
+                d61 d61Var2 = n61Var2.N;
+                if (d61Var2 != null) {
+                    d61Var2.setEnabled(true);
+                }
+                n61Var2.v(false);
+                n61Var2.s();
+                n61Var2.K.e();
+                break;
+            case 2:
+                n61 n61Var3 = this.b;
+                n61Var3.x = null;
+                View[] viewArr4 = n61Var3.e;
+                View view = viewArr4[1];
+                if (view != null) {
+                    n61Var3.removeView(view);
+                    viewArr4[1] = null;
+                }
+                n61Var3.y = false;
+                d61 d61Var3 = n61Var3.N;
+                if (d61Var3 != null) {
+                    d61Var3.setEnabled(true);
+                    d61 d61Var4 = n61Var3.N;
+                    d61Var4.K = false;
+                    d61Var4.a = 1.0f;
+                    d61Var4.w.g1();
+                    n61Var3.N.invalidate();
+                    break;
+                }
+                break;
+            default:
+                n61 n61Var4 = this.b;
+                n61Var4.x = null;
+                View[] viewArr5 = n61Var4.e;
+                if (viewArr5[1] != null) {
+                    if (!n61Var4.G) {
+                        n61Var4.F();
+                    }
+                    n61Var4.h.put(n61Var4.f[1], viewArr5[1]);
+                    n61Var4.removeView(viewArr5[1]);
+                    viewArr5[1].setVisibility(8);
+                    viewArr5[1] = null;
+                }
+                n61Var4.y = false;
+                n61Var4.J = false;
+                d61 d61Var5 = n61Var4.N;
+                if (d61Var5 != null) {
+                    d61Var5.setEnabled(true);
+                }
+                n61Var4.v(false);
+                n61Var4.s();
+                n61Var4.K.e();
+                break;
         }
     }
 }

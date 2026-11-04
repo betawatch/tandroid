@@ -104,12 +104,12 @@ public final class e extends b implements Set, j$.util.Set {
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
-                l a2 = pVar.a();
-                if (a2 == null) {
+                l a10 = pVar.a();
+                if (a10 == null) {
                     break;
                 }
-                Object obj = a2.b;
-                Object obj2 = a2.c;
+                Object obj = a10.b;
+                Object obj2 = a10.c;
                 if (predicate.test(new AbstractMap.SimpleImmutableEntry(obj, obj2)) && concurrentHashMap.g(obj, null, obj2) != null) {
                     z10 = true;
                 }
@@ -121,18 +121,18 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         l[] lVarArr = this.a.a;
-        int i10 = 0;
+        int i3 = 0;
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
-                l a2 = pVar.a();
-                if (a2 == null) {
+                l a10 = pVar.a();
+                if (a10 == null) {
                     break;
                 }
-                i10 += a2.hashCode();
+                i3 += a10.hashCode();
             }
         }
-        return i10;
+        return i3;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -165,11 +165,11 @@ public final class e extends b implements Set, j$.util.Set {
         }
         p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
         while (true) {
-            l a2 = pVar.a();
-            if (a2 == null) {
+            l a10 = pVar.a();
+            if (a10 == null) {
                 return;
             } else {
-                consumer.x(new k(a2.b, a2.c, this.a));
+                consumer.x(new k(a10.b, a10.c, this.a));
             }
         }
     }

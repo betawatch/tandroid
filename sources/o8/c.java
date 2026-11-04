@@ -1,42 +1,7 @@
 package o8;
 
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class c extends b8.b implements d {
-    public c() {
-        super("com.google.android.gms.signin.internal.ISignInCallbacks", 6);
-    }
-
-    @Override // b8.b
-    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
-        switch (i10) {
-            case 3:
-                k7.a.b(parcel);
-                break;
-            case 4:
-                k7.a.b(parcel);
-                break;
-            case 5:
-            default:
-                return false;
-            case 6:
-                k7.a.b(parcel);
-                break;
-            case 7:
-                k7.a.b(parcel);
-                break;
-            case 8:
-                h hVar = (h) k7.a.a(parcel, h.CREATOR);
-                k7.a.b(parcel);
-                C(hVar);
-                break;
-            case 9:
-                k7.a.b(parcel);
-                break;
-        }
-        parcel2.writeNoException();
-        return true;
-    }
+public abstract class c {
+    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("SafetyNet.API", new a6.b(9), new com.google.android.gms.common.api.d());
 }

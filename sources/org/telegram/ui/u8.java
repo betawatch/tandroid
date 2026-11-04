@@ -3,26 +3,26 @@ package org.telegram.ui;
 import android.view.View;
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u8 implements org.telegram.messenger.p20, org.telegram.messenger.q20, r0.m {
-    public final /* synthetic */ j9 a;
+public final /* synthetic */ class u8 implements org.telegram.messenger.s10, org.telegram.messenger.t10, r0.m {
+    public final /* synthetic */ h9 a;
 
-    public /* synthetic */ u8(j9 j9Var) {
-        this.a = j9Var;
+    public /* synthetic */ u8(h9 h9Var) {
+        this.a = h9Var;
     }
 
     @Override // r0.m
-    public r0.j1 R0(View view, r0.j1 j1Var) {
-        return this.a.onInsetsInternal(view, j1Var);
+    public r0.k1 R0(View view, r0.k1 k1Var) {
+        return this.a.onInsetsInternal(view, k1Var);
     }
 
-    @Override // org.telegram.messenger.q20
-    public Boolean a(org.telegram.ui.Components.b51 b51Var, View view, Integer num, Float f7, Float f10) {
+    @Override // org.telegram.messenger.t10
+    public Boolean a(org.telegram.ui.Components.r31 r31Var, View view, Integer num, Float f10, Float f11) {
         boolean z10;
-        Object obj = b51Var.G;
-        if (obj instanceof g9) {
-            this.a.f0(((g9) obj).c, (f9) view);
+        Object obj = r31Var.G;
+        if (obj instanceof e9) {
+            this.a.f0(((e9) obj).c, (d9) view);
             z10 = true;
         } else {
             z10 = false;
@@ -30,8 +30,8 @@ public final /* synthetic */ class u8 implements org.telegram.messenger.p20, org
         return Boolean.valueOf(z10);
     }
 
-    @Override // org.telegram.messenger.p20
-    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        j9.a0(this.a, (org.telegram.ui.Components.b51) obj, (View) obj2);
+    @Override // org.telegram.messenger.s10
+    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        h9.a0(this.a, (org.telegram.ui.Components.r31) obj, (View) obj2);
     }
 }

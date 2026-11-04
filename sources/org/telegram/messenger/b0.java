@@ -1,32 +1,27 @@
 package org.telegram.messenger;
 
 import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b0 extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final class b0 extends CharacterStyle {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
 
-    public b0(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
+    public b0(boolean z10, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = z10;
+        this.b = i3;
+        this.c = e6Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        Runnable runnable = this.b;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
         textPaint.setUnderlineText(false);
-        textPaint.setColor(this.a);
+        if (this.a) {
+            textPaint.setTypeface(g0.o());
+        }
+        textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(this.b, this.c));
     }
 }

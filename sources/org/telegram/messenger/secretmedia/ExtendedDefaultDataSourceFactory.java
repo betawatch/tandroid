@@ -3,11 +3,11 @@ package org.telegram.messenger.secretmedia;
 import android.content.Context;
 import android.net.Uri;
 import android.util.LongSparseArray;
-import g2.d0;
-import g2.g;
-import g2.p;
+import i2.d0;
+import i2.g;
+import i2.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSourceFactory implements g {
     private final g baseDataSourceFactory;
@@ -35,7 +35,7 @@ public final class ExtendedDefaultDataSourceFactory implements g {
         pVar.f = true;
     }
 
-    @Override // g2.g
+    @Override // i2.g
     public ExtendedDefaultDataSource createDataSource() {
         return new ExtendedDefaultDataSource(this.context, this.listener, this.baseDataSourceFactory.createDataSource(), this.mtprotoUris);
     }

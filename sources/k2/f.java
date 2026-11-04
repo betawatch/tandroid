@@ -1,57 +1,53 @@
 package k2;
 
-import bi.t6;
-import j$.util.DesugarArrays;
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import java.util.regex.Pattern;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mt;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements Function {
-    public final /* synthetic */ int a;
+public final class f {
+    public final long a;
+    public final long b;
+    public long c = -9223372036854775807L;
+    public long d = -9223372036854775807L;
+    public long f = -9223372036854775807L;
+    public long g = -9223372036854775807L;
+    public float j = 0.97f;
+    public float i = 1.03f;
+    public float k = 1.0f;
+    public long l = -9223372036854775807L;
+    public long e = -9223372036854775807L;
+    public long h = -9223372036854775807L;
+    public long m = -9223372036854775807L;
+    public long n = -9223372036854775807L;
 
-    public /* synthetic */ f(int i10) {
-        this.a = i10;
+    public f(long j10, long j11) {
+        this.a = j10;
+        this.b = j11;
     }
 
-    public /* synthetic */ Function andThen(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
+    public final void a() {
         long j10;
-        int[] array;
-        switch (this.a) {
-            case 1:
-                String str = (String) obj;
-                Pattern pattern = Utilities.a;
-                try {
-                    j10 = Long.parseLong(str);
-                } catch (Exception unused) {
-                    j10 = 0;
+        long j11 = this.c;
+        if (j11 != -9223372036854775807L) {
+            j10 = this.d;
+            if (j10 == -9223372036854775807L) {
+                long j12 = this.f;
+                if (j12 != -9223372036854775807L && j11 < j12) {
+                    j11 = j12;
                 }
-                break;
-            case 2:
-                array = DesugarArrays.stream(((String) obj).split(",")).mapToInt(new t6(3)).toArray();
-                break;
-            case 9:
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
-                if (channelParticipant != null) {
-                    break;
+                j10 = this.g;
+                if (j10 == -9223372036854775807L || j11 <= j10) {
+                    j10 = j11;
                 }
-                break;
+            }
+        } else {
+            j10 = -9223372036854775807L;
         }
-        return ((mt) obj).a;
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$compose(this, function);
+        if (this.e == j10) {
+            return;
+        }
+        this.e = j10;
+        this.h = j10;
+        this.m = -9223372036854775807L;
+        this.n = -9223372036854775807L;
+        this.l = -9223372036854775807L;
     }
 }

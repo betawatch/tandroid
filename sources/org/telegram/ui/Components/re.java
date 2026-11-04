@@ -1,33 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class re implements hk0 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final class re extends org.telegram.ui.ActionBar.f1 {
+    public final /* synthetic */ ChatActivityEnterView o;
 
-    public re(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public re(ChatActivityEnterView chatActivityEnterView, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.hk0
-    public final void f(int i10, View view) {
-        if (view instanceof xh.u) {
-            String command = ((xh.u) view).getCommand();
-            if (TextUtils.isEmpty(command)) {
-                return;
-            }
-            ChatActivityEnterView chatActivityEnterView = this.a;
-            if (chatActivityEnterView.c()) {
-                s4.L(chatActivityEnterView.O2, chatActivityEnterView.Q2, new f2(4, this, command), chatActivityEnterView.W3);
-                return;
-            }
-            org.telegram.ui.un unVar = chatActivityEnterView.P2;
-            if (unVar == null || !unVar.q7(view)) {
-                s4.Z(chatActivityEnterView.Q, 1, chatActivityEnterView.Q2, new ag.e0(29, this, command));
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.f1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.K0.invalidate();
     }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class o2 {
     public static final Class a;
@@ -30,227 +30,227 @@ public abstract class o2 {
         return list.size() << 2;
     }
 
-    public static void B(int i10, List list, y1 y1Var, boolean z10) {
+    public static void B(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                int intValue = ((Integer) list.get(i11)).intValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                int intValue = ((Integer) list.get(i10)).intValue();
+                r0Var.D(i3, 0);
                 r0Var.C(intValue);
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += r0.P(((Integer) list.get(i13)).intValue());
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            i11 += r0.P(((Integer) list.get(i12)).intValue());
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            r0Var.C(((Integer) list.get(i14)).intValue());
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            r0Var.C(((Integer) list.get(i13)).intValue());
         }
     }
 
-    public static int C(int i10, List list) {
+    public static int C(int i3, List list) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        return r0.R(i10) * size;
+        return r0.R(i3) * size;
     }
 
     public static int D(List list) {
         return list.size() << 3;
     }
 
-    public static void E(int i10, List list, y1 y1Var, boolean z10) {
+    public static void E(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                int intValue = ((Integer) list.get(i11)).intValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                int intValue = ((Integer) list.get(i10)).intValue();
+                r0Var.D(i3, 0);
                 r0Var.H(intValue);
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += r0.T(((Integer) list.get(i13)).intValue());
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            i11 += r0.T(((Integer) list.get(i12)).intValue());
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            r0Var.H(((Integer) list.get(i14)).intValue());
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            r0Var.H(((Integer) list.get(i13)).intValue());
         }
     }
 
-    public static void F(int i10, List list, y1 y1Var, boolean z10) {
+    public static void F(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                int intValue = ((Integer) list.get(i11)).intValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                int intValue = ((Integer) list.get(i10)).intValue();
+                r0Var.D(i3, 0);
                 r0Var.H((intValue >> 31) ^ (intValue << 1));
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            int intValue2 = ((Integer) list.get(i13)).intValue();
-            i12 += r0.T((intValue2 >> 31) ^ (intValue2 << 1));
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            int intValue2 = ((Integer) list.get(i12)).intValue();
+            i11 += r0.T((intValue2 >> 31) ^ (intValue2 << 1));
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            int intValue3 = ((Integer) list.get(i14)).intValue();
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            int intValue3 = ((Integer) list.get(i13)).intValue();
             r0Var.H((intValue3 >> 31) ^ (intValue3 << 1));
         }
     }
 
-    public static void G(int i10, List list, y1 y1Var, boolean z10) {
+    public static void G(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        int i11 = 0;
+        int i10 = 0;
         if (!z10) {
-            while (i11 < list.size()) {
-                int intValue = ((Integer) list.get(i11)).intValue();
-                r0Var.D(i10, 5);
+            while (i10 < list.size()) {
+                int intValue = ((Integer) list.get(i10)).intValue();
+                r0Var.D(i3, 5);
                 r0Var.M(intValue);
-                i11++;
+                i10++;
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Integer) list.get(i13)).getClass();
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            ((Integer) list.get(i12)).getClass();
             Logger logger = r0.f;
-            i12 += 4;
+            i11 += 4;
         }
-        r0Var.H(i12);
-        while (i11 < list.size()) {
-            r0Var.M(((Integer) list.get(i11)).intValue());
-            i11++;
+        r0Var.H(i11);
+        while (i10 < list.size()) {
+            r0Var.M(((Integer) list.get(i10)).intValue());
+            i10++;
         }
     }
 
-    public static void H(int i10, List list, y1 y1Var, boolean z10) {
+    public static void H(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        int i11 = 0;
+        int i10 = 0;
         if (!z10) {
-            while (i11 < list.size()) {
-                int intValue = ((Integer) list.get(i11)).intValue();
-                r0Var.D(i10, 5);
+            while (i10 < list.size()) {
+                int intValue = ((Integer) list.get(i10)).intValue();
+                r0Var.D(i3, 5);
                 r0Var.M(intValue);
-                i11++;
+                i10++;
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Integer) list.get(i13)).getClass();
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            ((Integer) list.get(i12)).getClass();
             Logger logger = r0.f;
-            i12 += 4;
+            i11 += 4;
         }
-        r0Var.H(i12);
-        while (i11 < list.size()) {
-            r0Var.M(((Integer) list.get(i11)).intValue());
-            i11++;
+        r0Var.H(i11);
+        while (i10 < list.size()) {
+            r0Var.M(((Integer) list.get(i10)).intValue());
+            i10++;
         }
     }
 
-    public static void I(int i10, List list, y1 y1Var, boolean z10) {
+    public static void I(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                int intValue = ((Integer) list.get(i11)).intValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                int intValue = ((Integer) list.get(i10)).intValue();
+                r0Var.D(i3, 0);
                 r0Var.C(intValue);
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += r0.P(((Integer) list.get(i13)).intValue());
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            i11 += r0.P(((Integer) list.get(i12)).intValue());
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            r0Var.C(((Integer) list.get(i14)).intValue());
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            r0Var.C(((Integer) list.get(i13)).intValue());
         }
     }
 
-    public static void J(int i10, List list, y1 y1Var, boolean z10) {
+    public static void J(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                boolean booleanValue = ((Boolean) list.get(i11)).booleanValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                boolean booleanValue = ((Boolean) list.get(i10)).booleanValue();
+                r0Var.D(i3, 0);
                 r0Var.B(booleanValue ? (byte) 1 : (byte) 0);
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Boolean) list.get(i13)).getClass();
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            ((Boolean) list.get(i12)).getClass();
             Logger logger = r0.f;
-            i12++;
+            i11++;
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            r0Var.B(((Boolean) list.get(i14)).booleanValue() ? (byte) 1 : (byte) 0);
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            r0Var.B(((Boolean) list.get(i13)).booleanValue() ? (byte) 1 : (byte) 0);
         }
     }
 
-    public static int a(int i10, Object obj, n2 n2Var) {
+    public static int a(int i3, Object obj, n2 n2Var) {
         l0 l0Var = (l0) obj;
-        int T = r0.T(i10 << 3);
-        int c10 = l0Var.c();
-        if (c10 == -1) {
-            c10 = n2Var.zzb(l0Var);
-            l0Var.b(c10);
+        int T = r0.T(i3 << 3);
+        int c2 = l0Var.c();
+        if (c2 == -1) {
+            c2 = n2Var.zzb(l0Var);
+            l0Var.b(c2);
         }
-        return c3.i0.v(c10, c10, T);
+        return a1.g.B(c2, c2, T);
     }
 
-    public static int b(int i10, List list, n2 n2Var) {
+    public static int b(int i3, List list, n2 n2Var) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        int y3 = r0.y(i10) * size;
-        for (int i11 = 0; i11 < size; i11++) {
-            l0 l0Var = (l0) list.get(i11);
-            int c10 = l0Var.c();
-            if (c10 == -1) {
-                c10 = n2Var.zzb(l0Var);
-                l0Var.b(c10);
+        int y9 = r0.y(i3) * size;
+        for (int i10 = 0; i10 < size; i10++) {
+            l0 l0Var = (l0) list.get(i10);
+            int c2 = l0Var.c();
+            if (c2 == -1) {
+                c2 = n2Var.zzb(l0Var);
+                l0Var.b(c2);
             }
-            y3 = c3.i0.v(c10, c10, y3);
+            y9 = a1.g.B(c2, c2, y9);
         }
-        return y3;
+        return y9;
     }
 
     public static int c(List list) {
@@ -264,11 +264,11 @@ public abstract class o2 {
             }
             throw null;
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += r0.O(((Long) list.get(i11)).longValue());
+        int i3 = 0;
+        for (int i10 = 0; i10 < size; i10++) {
+            i3 += r0.O(((Long) list.get(i10)).longValue());
         }
-        return i10;
+        return i3;
     }
 
     public static p2 d(boolean z10) {
@@ -287,133 +287,133 @@ public abstract class o2 {
         return null;
     }
 
-    public static void e(int i10, List list, y1 y1Var) {
+    public static void e(int i3, List list, y1 y1Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!(list instanceof t1)) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                String str = (String) list.get(i11);
-                r0Var.D(i10, 2);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                String str = (String) list.get(i10);
+                r0Var.D(i3, 2);
                 byte[] bArr = r0Var.c;
-                int i12 = r0Var.e;
+                int i11 = r0Var.e;
                 try {
                     int T = r0.T(str.length() * 3);
                     int T2 = r0.T(str.length());
                     if (T2 == T) {
-                        int i13 = i12 + T2;
-                        r0Var.e = i13;
-                        int h = a3.a.h(str, bArr, i13, r0Var.F());
+                        int i12 = i11 + T2;
                         r0Var.e = i12;
-                        r0Var.H((h - i12) - T2);
+                        int h = a3.a.h(str, bArr, i12, r0Var.F());
+                        r0Var.e = i11;
+                        r0Var.H((h - i11) - T2);
                         r0Var.e = h;
                     } else {
                         r0Var.H(a3.a(str));
                         r0Var.e = a3.a.h(str, bArr, r0Var.e, r0Var.F());
                     }
-                } catch (b3 e) {
-                    r0Var.e = i12;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e);
+                } catch (b3 e10) {
+                    r0Var.e = i11;
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
                     byte[] bytes = str.getBytes(j1.a);
                     try {
                         r0Var.H(bytes.length);
                         r0Var.L(bytes, 0, bytes.length);
-                    } catch (s0 e7) {
-                        throw e7;
-                    } catch (IndexOutOfBoundsException e10) {
-                        throw new s0(e10);
+                    } catch (s0 e11) {
+                        throw e11;
+                    } catch (IndexOutOfBoundsException e12) {
+                        throw new s0(e12);
                     }
-                } catch (IndexOutOfBoundsException e11) {
-                    throw new s0(e11);
+                } catch (IndexOutOfBoundsException e13) {
+                    throw new s0(e13);
                 }
             }
             return;
         }
         t1 t1Var = (t1) list;
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            Object a2 = t1Var.a(i14);
-            if (a2 instanceof String) {
-                String str2 = (String) a2;
-                r0Var.D(i10, 2);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            Object a10 = t1Var.a(i13);
+            if (a10 instanceof String) {
+                String str2 = (String) a10;
+                r0Var.D(i3, 2);
                 byte[] bArr2 = r0Var.c;
-                int i15 = r0Var.e;
+                int i14 = r0Var.e;
                 try {
                     int T3 = r0.T(str2.length() * 3);
                     int T4 = r0.T(str2.length());
                     if (T4 == T3) {
-                        int i16 = i15 + T4;
-                        r0Var.e = i16;
-                        int h10 = a3.a.h(str2, bArr2, i16, r0Var.F());
+                        int i15 = i14 + T4;
                         r0Var.e = i15;
-                        r0Var.H((h10 - i15) - T4);
-                        r0Var.e = h10;
+                        int h7 = a3.a.h(str2, bArr2, i15, r0Var.F());
+                        r0Var.e = i14;
+                        r0Var.H((h7 - i14) - T4);
+                        r0Var.e = h7;
                     } else {
                         r0Var.H(a3.a(str2));
                         r0Var.e = a3.a.h(str2, bArr2, r0Var.e, r0Var.F());
                     }
-                } catch (b3 e12) {
-                    r0Var.e = i15;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e12);
+                } catch (b3 e14) {
+                    r0Var.e = i14;
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e14);
                     byte[] bytes2 = str2.getBytes(j1.a);
                     try {
                         r0Var.H(bytes2.length);
                         r0Var.L(bytes2, 0, bytes2.length);
-                    } catch (s0 e13) {
-                        throw e13;
-                    } catch (IndexOutOfBoundsException e14) {
-                        throw new s0(e14);
+                    } catch (s0 e15) {
+                        throw e15;
+                    } catch (IndexOutOfBoundsException e16) {
+                        throw new s0(e16);
                     }
-                } catch (IndexOutOfBoundsException e15) {
-                    throw new s0(e15);
+                } catch (IndexOutOfBoundsException e17) {
+                    throw new s0(e17);
                 }
             } else {
-                q0 q0Var = (q0) a2;
-                r0Var.D(i10, 2);
-                r0Var.H(q0Var.m());
-                r0Var.L(q0Var.b, q0Var.q(), q0Var.m());
+                q0 q0Var = (q0) a10;
+                r0Var.D(i3, 2);
+                r0Var.H(q0Var.i());
+                r0Var.L(q0Var.b, q0Var.m(), q0Var.i());
             }
         }
     }
 
-    public static void f(int i10, List list, y1 y1Var, n2 n2Var) {
+    public static void f(int i3, List list, y1 y1Var, n2 n2Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
         y1Var.getClass();
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            y1Var.b(i10, list.get(i11), n2Var);
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            y1Var.b(i3, list.get(i10), n2Var);
         }
     }
 
-    public static void g(int i10, List list, y1 y1Var, boolean z10) {
+    public static void g(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        int i11 = 0;
+        int i10 = 0;
         if (!z10) {
-            while (i11 < list.size()) {
-                double doubleValue = ((Double) list.get(i11)).doubleValue();
+            while (i10 < list.size()) {
+                double doubleValue = ((Double) list.get(i10)).doubleValue();
                 r0Var.getClass();
                 long doubleToRawLongBits = Double.doubleToRawLongBits(doubleValue);
-                r0Var.D(i10, 1);
+                r0Var.D(i3, 1);
                 r0Var.K(doubleToRawLongBits);
-                i11++;
+                i10++;
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Double) list.get(i13)).getClass();
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            ((Double) list.get(i12)).getClass();
             Logger logger = r0.f;
-            i12 += 8;
+            i11 += 8;
         }
-        r0Var.H(i12);
-        while (i11 < list.size()) {
-            r0Var.K(Double.doubleToRawLongBits(((Double) list.get(i11)).doubleValue()));
-            i11++;
+        r0Var.H(i11);
+        while (i10 < list.size()) {
+            r0Var.K(Double.doubleToRawLongBits(((Double) list.get(i10)).doubleValue()));
+            i10++;
         }
     }
 
@@ -423,12 +423,12 @@ public abstract class o2 {
         q2 q2Var = f1Var.zzb;
         q2 q2Var2 = ((f1) obj2).zzb;
         if (!q2Var2.equals(q2.f)) {
-            int i10 = q2Var.a + q2Var2.a;
-            int[] copyOf = Arrays.copyOf(q2Var.b, i10);
+            int i3 = q2Var.a + q2Var2.a;
+            int[] copyOf = Arrays.copyOf(q2Var.b, i3);
             System.arraycopy(q2Var2.b, 0, copyOf, q2Var.a, q2Var2.a);
-            Object[] copyOf2 = Arrays.copyOf(q2Var.c, i10);
+            Object[] copyOf2 = Arrays.copyOf(q2Var.c, i3);
             System.arraycopy(q2Var2.c, 0, copyOf2, q2Var.a, q2Var2.a);
-            q2Var = new q2(i10, copyOf, copyOf2, true);
+            q2Var = new q2(i3, copyOf, copyOf2, true);
         }
         f1Var.zzb = q2Var;
     }
@@ -440,38 +440,38 @@ public abstract class o2 {
         return true;
     }
 
-    public static int j(int i10, List list) {
+    public static int j(int i3, List list) {
         int size = list.size();
-        int i11 = 0;
+        int i10 = 0;
         if (size == 0) {
             return 0;
         }
-        int y3 = r0.y(i10) * size;
+        int y9 = r0.y(i3) * size;
         if (!(list instanceof t1)) {
-            while (i11 < size) {
-                Object obj = list.get(i11);
+            while (i10 < size) {
+                Object obj = list.get(i10);
                 if (obj instanceof q0) {
-                    int m10 = ((q0) obj).m();
-                    y3 = c3.i0.v(m10, m10, y3);
+                    int i11 = ((q0) obj).i();
+                    y9 = a1.g.B(i11, i11, y9);
                 } else {
-                    y3 = r0.G((String) obj) + y3;
+                    y9 = r0.G((String) obj) + y9;
                 }
-                i11++;
+                i10++;
             }
-            return y3;
+            return y9;
         }
         t1 t1Var = (t1) list;
-        while (i11 < size) {
-            Object a2 = t1Var.a(i11);
-            if (a2 instanceof q0) {
-                int m11 = ((q0) a2).m();
-                y3 = c3.i0.v(m11, m11, y3);
+        while (i10 < size) {
+            Object a10 = t1Var.a(i10);
+            if (a10 instanceof q0) {
+                int i12 = ((q0) a10).i();
+                y9 = a1.g.B(i12, i12, y9);
             } else {
-                y3 = r0.G((String) a2) + y3;
+                y9 = r0.G((String) a10) + y9;
             }
-            i11++;
+            i10++;
         }
-        return y3;
+        return y9;
     }
 
     public static int k(List list) {
@@ -485,91 +485,91 @@ public abstract class o2 {
             }
             throw null;
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += r0.O(((Long) list.get(i11)).longValue());
+        int i3 = 0;
+        for (int i10 = 0; i10 < size; i10++) {
+            i3 += r0.O(((Long) list.get(i10)).longValue());
         }
-        return i10;
+        return i3;
     }
 
-    public static void l(int i10, List list, y1 y1Var) {
+    public static void l(int i3, List list, y1 y1Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
         y1Var.getClass();
-        for (int i11 = 0; i11 < list.size(); i11++) {
+        for (int i10 = 0; i10 < list.size(); i10++) {
             r0 r0Var = (r0) y1Var.a;
-            q0 q0Var = (q0) list.get(i11);
-            r0Var.D(i10, 2);
-            r0Var.H(q0Var.m());
-            r0Var.L(q0Var.b, q0Var.q(), q0Var.m());
+            q0 q0Var = (q0) list.get(i10);
+            r0Var.D(i3, 2);
+            r0Var.H(q0Var.i());
+            r0Var.L(q0Var.b, q0Var.m(), q0Var.i());
         }
     }
 
-    public static void m(int i10, List list, y1 y1Var, n2 n2Var) {
+    public static void m(int i3, List list, y1 y1Var, n2 n2Var) {
         if (list == null || list.isEmpty()) {
             return;
         }
         y1Var.getClass();
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            y1Var.c(i10, list.get(i11), n2Var);
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            y1Var.c(i3, list.get(i10), n2Var);
         }
     }
 
-    public static void n(int i10, List list, y1 y1Var, boolean z10) {
+    public static void n(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        int i11 = 0;
+        int i10 = 0;
         if (!z10) {
-            while (i11 < list.size()) {
-                float floatValue = ((Float) list.get(i11)).floatValue();
+            while (i10 < list.size()) {
+                float floatValue = ((Float) list.get(i10)).floatValue();
                 r0Var.getClass();
                 int floatToRawIntBits = Float.floatToRawIntBits(floatValue);
-                r0Var.D(i10, 5);
+                r0Var.D(i3, 5);
                 r0Var.M(floatToRawIntBits);
-                i11++;
+                i10++;
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Float) list.get(i13)).getClass();
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            ((Float) list.get(i12)).getClass();
             Logger logger = r0.f;
-            i12 += 4;
+            i11 += 4;
         }
-        r0Var.H(i12);
-        while (i11 < list.size()) {
-            r0Var.M(Float.floatToRawIntBits(((Float) list.get(i11)).floatValue()));
-            i11++;
+        r0Var.H(i11);
+        while (i10 < list.size()) {
+            r0Var.M(Float.floatToRawIntBits(((Float) list.get(i10)).floatValue()));
+            i10++;
         }
     }
 
-    public static int o(int i10, List list) {
+    public static int o(int i3, List list) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        int y3 = r0.y(i10) * size;
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            int m10 = ((q0) list.get(i11)).m();
-            y3 = c3.i0.v(m10, m10, y3);
+        int y9 = r0.y(i3) * size;
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            int i11 = ((q0) list.get(i10)).i();
+            y9 = a1.g.B(i11, i11, y9);
         }
-        return y3;
+        return y9;
     }
 
     public static int p(List list) {
         int size = list.size();
         if (size != 0) {
             if (!(list instanceof v1)) {
-                int i10 = 0;
-                for (int i11 = 0; i11 < size; i11++) {
-                    long longValue = ((Long) list.get(i11)).longValue();
-                    i10 += r0.O((longValue >> 63) ^ (longValue << 1));
+                int i3 = 0;
+                for (int i10 = 0; i10 < size; i10++) {
+                    long longValue = ((Long) list.get(i10)).longValue();
+                    i3 += r0.O((longValue >> 63) ^ (longValue << 1));
                 }
-                return i10;
+                return i3;
             }
             if (size > 0) {
                 throw null;
@@ -578,241 +578,241 @@ public abstract class o2 {
         return 0;
     }
 
-    public static void q(int i10, List list, y1 y1Var, boolean z10) {
+    public static void q(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                long longValue = ((Long) list.get(i11)).longValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                long longValue = ((Long) list.get(i10)).longValue();
+                r0Var.D(i3, 0);
                 r0Var.E(longValue);
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += r0.O(((Long) list.get(i13)).longValue());
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            i11 += r0.O(((Long) list.get(i12)).longValue());
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            r0Var.E(((Long) list.get(i14)).longValue());
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            r0Var.E(((Long) list.get(i13)).longValue());
         }
     }
 
     public static int r(List list) {
         int size = list.size();
-        int i10 = 0;
+        int i3 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
-            int i11 = 0;
-            while (i10 < size) {
-                i11 += r0.P(((Integer) list.get(i10)).intValue());
-                i10++;
+            int i10 = 0;
+            while (i3 < size) {
+                i10 += r0.P(((Integer) list.get(i3)).intValue());
+                i3++;
             }
-            return i11;
+            return i10;
         }
         h1 h1Var = (h1) list;
-        int i12 = 0;
-        while (i10 < size) {
-            h1Var.n(i10);
-            i12 += r0.P(h1Var.b[i10]);
-            i10++;
+        int i11 = 0;
+        while (i3 < size) {
+            h1Var.j(i3);
+            i11 += r0.P(h1Var.b[i3]);
+            i3++;
         }
-        return i12;
+        return i11;
     }
 
-    public static void s(int i10, List list, y1 y1Var, boolean z10) {
+    public static void s(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                long longValue = ((Long) list.get(i11)).longValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                long longValue = ((Long) list.get(i10)).longValue();
+                r0Var.D(i3, 0);
                 r0Var.E(longValue);
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += r0.O(((Long) list.get(i13)).longValue());
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            i11 += r0.O(((Long) list.get(i12)).longValue());
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            r0Var.E(((Long) list.get(i14)).longValue());
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            r0Var.E(((Long) list.get(i13)).longValue());
         }
     }
 
     public static int t(List list) {
         int size = list.size();
-        int i10 = 0;
+        int i3 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
-            int i11 = 0;
-            while (i10 < size) {
-                i11 += r0.P(((Integer) list.get(i10)).intValue());
-                i10++;
+            int i10 = 0;
+            while (i3 < size) {
+                i10 += r0.P(((Integer) list.get(i3)).intValue());
+                i3++;
             }
-            return i11;
+            return i10;
         }
         h1 h1Var = (h1) list;
-        int i12 = 0;
-        while (i10 < size) {
-            h1Var.n(i10);
-            i12 += r0.P(h1Var.b[i10]);
-            i10++;
+        int i11 = 0;
+        while (i3 < size) {
+            h1Var.j(i3);
+            i11 += r0.P(h1Var.b[i3]);
+            i3++;
         }
-        return i12;
+        return i11;
     }
 
-    public static void u(int i10, List list, y1 y1Var, boolean z10) {
+    public static void u(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
         if (!z10) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                long longValue = ((Long) list.get(i11)).longValue();
-                r0Var.D(i10, 0);
+            for (int i10 = 0; i10 < list.size(); i10++) {
+                long longValue = ((Long) list.get(i10)).longValue();
+                r0Var.D(i3, 0);
                 r0Var.E((longValue >> 63) ^ (longValue << 1));
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            long longValue2 = ((Long) list.get(i13)).longValue();
-            i12 += r0.O((longValue2 >> 63) ^ (longValue2 << 1));
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            long longValue2 = ((Long) list.get(i12)).longValue();
+            i11 += r0.O((longValue2 >> 63) ^ (longValue2 << 1));
         }
-        r0Var.H(i12);
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            long longValue3 = ((Long) list.get(i14)).longValue();
+        r0Var.H(i11);
+        for (int i13 = 0; i13 < list.size(); i13++) {
+            long longValue3 = ((Long) list.get(i13)).longValue();
             r0Var.E((longValue3 >> 63) ^ (longValue3 << 1));
         }
     }
 
     public static int v(List list) {
         int size = list.size();
-        int i10 = 0;
+        int i3 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
-            int i11 = 0;
-            while (i10 < size) {
-                i11 += r0.T(((Integer) list.get(i10)).intValue());
-                i10++;
+            int i10 = 0;
+            while (i3 < size) {
+                i10 += r0.T(((Integer) list.get(i3)).intValue());
+                i3++;
             }
-            return i11;
+            return i10;
         }
         h1 h1Var = (h1) list;
-        int i12 = 0;
-        while (i10 < size) {
-            h1Var.n(i10);
-            i12 += r0.T(h1Var.b[i10]);
-            i10++;
+        int i11 = 0;
+        while (i3 < size) {
+            h1Var.j(i3);
+            i11 += r0.T(h1Var.b[i3]);
+            i3++;
         }
-        return i12;
+        return i11;
     }
 
-    public static void w(int i10, List list, y1 y1Var, boolean z10) {
+    public static void w(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        int i11 = 0;
+        int i10 = 0;
         if (!z10) {
-            while (i11 < list.size()) {
-                long longValue = ((Long) list.get(i11)).longValue();
-                r0Var.D(i10, 1);
+            while (i10 < list.size()) {
+                long longValue = ((Long) list.get(i10)).longValue();
+                r0Var.D(i3, 1);
                 r0Var.K(longValue);
-                i11++;
+                i10++;
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Long) list.get(i13)).getClass();
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            ((Long) list.get(i12)).getClass();
             Logger logger = r0.f;
-            i12 += 8;
+            i11 += 8;
         }
-        r0Var.H(i12);
-        while (i11 < list.size()) {
-            r0Var.K(((Long) list.get(i11)).longValue());
-            i11++;
+        r0Var.H(i11);
+        while (i10 < list.size()) {
+            r0Var.K(((Long) list.get(i10)).longValue());
+            i10++;
         }
     }
 
     public static int x(List list) {
         int size = list.size();
-        int i10 = 0;
+        int i3 = 0;
         if (size == 0) {
             return 0;
         }
         if (!(list instanceof h1)) {
-            int i11 = 0;
-            while (i10 < size) {
-                int intValue = ((Integer) list.get(i10)).intValue();
-                i11 += r0.T((intValue >> 31) ^ (intValue << 1));
-                i10++;
+            int i10 = 0;
+            while (i3 < size) {
+                int intValue = ((Integer) list.get(i3)).intValue();
+                i10 += r0.T((intValue >> 31) ^ (intValue << 1));
+                i3++;
             }
-            return i11;
+            return i10;
         }
         h1 h1Var = (h1) list;
-        int i12 = 0;
-        while (i10 < size) {
-            h1Var.n(i10);
-            int i13 = h1Var.b[i10];
-            i12 += r0.T((i13 >> 31) ^ (i13 << 1));
-            i10++;
+        int i11 = 0;
+        while (i3 < size) {
+            h1Var.j(i3);
+            int i12 = h1Var.b[i3];
+            i11 += r0.T((i12 >> 31) ^ (i12 << 1));
+            i3++;
         }
-        return i12;
+        return i11;
     }
 
-    public static void y(int i10, List list, y1 y1Var, boolean z10) {
+    public static void y(int i3, List list, y1 y1Var, boolean z10) {
         if (list == null || list.isEmpty()) {
             return;
         }
         r0 r0Var = (r0) y1Var.a;
-        int i11 = 0;
+        int i10 = 0;
         if (!z10) {
-            while (i11 < list.size()) {
-                long longValue = ((Long) list.get(i11)).longValue();
-                r0Var.D(i10, 1);
+            while (i10 < list.size()) {
+                long longValue = ((Long) list.get(i10)).longValue();
+                r0Var.D(i3, 1);
                 r0Var.K(longValue);
-                i11++;
+                i10++;
             }
             return;
         }
-        r0Var.D(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Long) list.get(i13)).getClass();
+        r0Var.D(i3, 2);
+        int i11 = 0;
+        for (int i12 = 0; i12 < list.size(); i12++) {
+            ((Long) list.get(i12)).getClass();
             Logger logger = r0.f;
-            i12 += 8;
+            i11 += 8;
         }
-        r0Var.H(i12);
-        while (i11 < list.size()) {
-            r0Var.K(((Long) list.get(i11)).longValue());
-            i11++;
+        r0Var.H(i11);
+        while (i10 < list.size()) {
+            r0Var.K(((Long) list.get(i10)).longValue());
+            i10++;
         }
     }
 
-    public static int z(int i10, List list) {
+    public static int z(int i3, List list) {
         int size = list.size();
         if (size == 0) {
             return 0;
         }
-        return r0.V(i10) * size;
+        return r0.V(i3) * size;
     }
 }

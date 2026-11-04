@@ -1,7 +1,7 @@
 package com.google.android.gms.tasks;
 
 import android.os.Looper;
-import d8.a;
+import f8.a;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,9 +14,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import n6.l;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class Tasks {
     private Tasks() {
@@ -30,13 +30,13 @@ public final class Tasks {
         if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
             throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
         }
-        l.h(task, "Task must not be null");
+        m.h(task, "Task must not be null");
         if (task.isComplete()) {
             return (TResult) zza(task);
         }
-        zzad zzadVar = new zzad(null);
-        zzb(task, zzadVar);
-        zzadVar.zza();
+        zzaa zzaaVar = new zzaa(null);
+        zzb(task, zzaaVar);
+        zzaaVar.zza();
         return (TResult) zza(task);
     }
 
@@ -47,19 +47,19 @@ public final class Tasks {
 
     public static <TResult> Task<TResult> forCanceled() {
         zzw zzwVar = new zzw();
-        zzwVar.zzc();
+        zzwVar.zze();
         return zzwVar;
     }
 
     public static <TResult> Task<TResult> forException(Exception exc) {
         zzw zzwVar = new zzw();
-        zzwVar.zza(exc);
+        zzwVar.zzc(exc);
         return zzwVar;
     }
 
     public static <TResult> Task<TResult> forResult(TResult tresult) {
         zzw zzwVar = new zzw();
-        zzwVar.zzb(tresult);
+        zzwVar.zza(tresult);
         return zzwVar;
     }
 
@@ -74,10 +74,10 @@ public final class Tasks {
             }
         }
         zzw zzwVar = new zzw();
-        zzaf zzafVar = new zzaf(collection.size(), zzwVar);
+        zzae zzaeVar = new zzae(collection.size(), zzwVar);
         Iterator<? extends Task<?>> it2 = collection.iterator();
         while (it2.hasNext()) {
-            zzb(it2.next(), zzafVar);
+            zzb(it2.next(), zzaeVar);
         }
         return zzwVar;
     }
@@ -91,21 +91,21 @@ public final class Tasks {
     }
 
     public static <T> Task<T> withTimeout(Task<T> task, long j10, TimeUnit timeUnit) {
-        l.h(task, "Task must not be null");
-        l.a("Timeout must be positive", j10 > 0);
-        l.h(timeUnit, "TimeUnit must not be null");
+        m.h(task, "Task must not be null");
+        m.a("Timeout must be positive", j10 > 0);
+        m.h(timeUnit, "TimeUnit must not be null");
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
         final a aVar = new a(Looper.getMainLooper());
-        aVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzx
+        aVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzad
             @Override // java.lang.Runnable
-            public final void run() {
+            public final /* synthetic */ void run() {
                 TaskCompletionSource.this.trySetException(new TimeoutException());
             }
         }, timeUnit.toMillis(j10));
-        task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzy
+        task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzac
             @Override // com.google.android.gms.tasks.OnCompleteListener
-            public final void onComplete(Task task2) {
+            public final /* synthetic */ void onComplete(Task task2) {
                 a.this.removeCallbacksAndMessages(null);
                 TaskCompletionSource taskCompletionSource2 = taskCompletionSource;
                 if (task2.isSuccessful()) {
@@ -116,7 +116,7 @@ public final class Tasks {
                         return;
                     }
                     Exception exception = task2.getException();
-                    exception.getClass();
+                    Objects.requireNonNull(exception);
                     taskCompletionSource2.trySetException(exception);
                 }
             }
@@ -134,28 +134,28 @@ public final class Tasks {
         throw new ExecutionException(task.getException());
     }
 
-    private static void zzb(Task task, zzae zzaeVar) {
+    private static void zzb(Task task, zzab zzabVar) {
         Executor executor = TaskExecutors.zza;
-        task.addOnSuccessListener(executor, zzaeVar);
-        task.addOnFailureListener(executor, zzaeVar);
-        task.addOnCanceledListener(executor, zzaeVar);
+        task.addOnSuccessListener(executor, zzabVar);
+        task.addOnFailureListener(executor, zzabVar);
+        task.addOnCanceledListener(executor, zzabVar);
     }
 
     @Deprecated
     public static <TResult> Task<TResult> call(Executor executor, Callable<TResult> callable) {
-        l.h(executor, "Executor must not be null");
-        l.h(callable, "Callback must not be null");
+        m.h(executor, "Executor must not be null");
+        m.h(callable, "Callback must not be null");
         zzw zzwVar = new zzw();
-        executor.execute(new zzz(zzwVar, callable));
+        executor.execute(new zzx(zzwVar, callable));
         return zzwVar;
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Executor executor, Collection<? extends Task<?>> collection) {
-        return (collection == null || collection.isEmpty()) ? forResult(Collections.EMPTY_LIST) : whenAll(collection).continueWithTask(executor, new zzab(collection));
+        return (collection == null || collection.isEmpty()) ? forResult(Collections.EMPTY_LIST) : whenAll(collection).continueWithTask(executor, new zzz(collection));
     }
 
     public static <TResult> Task<List<TResult>> whenAllSuccess(Executor executor, Collection<? extends Task> collection) {
-        return (collection == null || collection.isEmpty()) ? forResult(Collections.EMPTY_LIST) : (Task<List<TResult>>) whenAll((Collection<? extends Task<?>>) collection).continueWith(executor, new zzaa(collection));
+        return (collection == null || collection.isEmpty()) ? forResult(Collections.EMPTY_LIST) : (Task<List<TResult>>) whenAll((Collection<? extends Task<?>>) collection).continueWith(executor, new zzy(collection));
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Executor executor, Task<?>... taskArr) {
@@ -199,14 +199,14 @@ public final class Tasks {
             if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
                 throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
             }
-            l.h(task, "Task must not be null");
-            l.h(timeUnit, "TimeUnit must not be null");
+            m.h(task, "Task must not be null");
+            m.h(timeUnit, "TimeUnit must not be null");
             if (task.isComplete()) {
                 return (TResult) zza(task);
             }
-            zzad zzadVar = new zzad(null);
-            zzb(task, zzadVar);
-            if (zzadVar.zzb(j10, timeUnit)) {
+            zzaa zzaaVar = new zzaa(null);
+            zzb(task, zzaaVar);
+            if (zzaaVar.zzb(j10, timeUnit)) {
                 return (TResult) zza(task);
             }
             throw new TimeoutException("Timed out waiting for Task");

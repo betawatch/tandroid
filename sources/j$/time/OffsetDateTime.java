@@ -73,8 +73,8 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
                 } else {
                     temporal = G(Instant.H(temporal), L);
                 }
-            } catch (b e) {
-                throw new b("Unable to obtain OffsetDateTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            } catch (b e10) {
+                throw new b("Unable to obtain OffsetDateTime from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e10);
             }
         }
         if (qVar instanceof ChronoUnit) {
@@ -120,11 +120,11 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
     @Override // j$.time.temporal.l
     public final int j(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i10 = m.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i10 == 1) {
+            int i3 = m.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i3 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i10 == 2) {
+            if (i3 == 2) {
                 return this.b.getTotalSeconds();
             }
             return this.a.j(oVar);
@@ -137,9 +137,9 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i10 = m.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i10 != 1) {
-            return i10 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds();
+        int i3 = m.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i3 != 1) {
+            return i3 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds();
         }
         LocalDateTime localDateTime = this.a;
         ZoneOffset zoneOffset = this.b;
@@ -164,11 +164,11 @@ public final class OffsetDateTime implements Temporal, j$.time.temporal.m, Compa
     public final Temporal c(long j10, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            int i10 = m.a[aVar.ordinal()];
-            if (i10 == 1) {
+            int i3 = m.a[aVar.ordinal()];
+            if (i3 == 1) {
                 return G(Instant.I(j10, this.a.b.d), this.b);
             }
-            if (i10 == 2) {
+            if (i3 == 2) {
                 return I(this.a, ZoneOffset.O(aVar.b.a(j10, aVar)));
             }
             return I(this.a.c(j10, oVar), this.b);

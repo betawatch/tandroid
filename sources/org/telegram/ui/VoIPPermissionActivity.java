@@ -8,7 +8,7 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class VoIPPermissionActivity extends Activity {
     @Override // android.app.Activity
@@ -33,25 +33,25 @@ public class VoIPPermissionActivity extends Activity {
             return;
         }
         try {
-            requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? org.telegram.messenger.at.n1 : 101);
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
+            requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? org.telegram.messenger.hs.n1 : 101);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
     @Override // android.app.Activity
-    public final void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        if (i10 == 101 || i10 == 102) {
+    public final void onRequestPermissionsResult(int i3, String[] strArr, int[] iArr) {
+        if (i3 == 101 || i3 == 102) {
             boolean z10 = false;
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
-                if (i11 >= iArr.length) {
+                if (i10 >= iArr.length) {
                     z10 = true;
                     break;
-                } else if (iArr[i11] != 0) {
+                } else if (iArr[i10] != 0) {
                     break;
                 } else {
-                    i11++;
+                    i10++;
                 }
             }
             if (iArr.length > 0 && z10) {
@@ -73,7 +73,7 @@ public class VoIPPermissionActivity extends Activity {
             } else {
                 VoIPPreNotificationService.decline(this, 1);
             }
-            org.telegram.ui.Components.voip.n1.h(this, new ae1(this, 0), i10);
+            org.telegram.ui.Components.voip.n1.h(this, new pu0(this, 27), i3);
         }
     }
 }

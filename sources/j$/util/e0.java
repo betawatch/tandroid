@@ -9,8 +9,8 @@ public final /* synthetic */ class e0 implements DoubleConsumer {
     public final /* synthetic */ int a;
     public final /* synthetic */ Consumer b;
 
-    public /* synthetic */ e0(Consumer consumer, int i10) {
-        this.a = i10;
+    public /* synthetic */ e0(Consumer consumer, int i3) {
+        this.a = i3;
         this.b = consumer;
     }
 

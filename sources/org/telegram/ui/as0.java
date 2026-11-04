@@ -1,35 +1,38 @@
 package org.telegram.ui;
 
-import java.io.File;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.util.SparseIntArray;
+import java.util.Comparator;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public interface as0 {
-    boolean a(int i10);
+public final /* synthetic */ class as0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.hp b;
 
-    File b(int i10);
+    public /* synthetic */ as0(org.telegram.messenger.hp hpVar, int i3) {
+        this.a = i3;
+        this.b = hpVar;
+    }
 
-    String c(int i10);
-
-    TLObject d(int i10);
-
-    boolean e(int i10);
-
-    TLRPC.PhotoSize f(TLObject tLObject, int[] iArr);
-
-    Object g();
-
-    TL_iv.PageBlock get(int i10);
-
-    List getAll();
-
-    void h(TL_iv.PageBlock pageBlock);
-
-    CharSequence i(int i10);
-
-    int j();
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i3;
+        int i10;
+        ls0 ls0Var = (ls0) obj;
+        ls0 ls0Var2 = (ls0) obj2;
+        switch (this.a) {
+            case 0:
+                SparseIntArray sparseIntArray = this.b.P0;
+                i3 = sparseIntArray.get(ls0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i10 = sparseIntArray.get(ls0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
+            default:
+                SparseIntArray sparseIntArray2 = this.b.O0;
+                i3 = sparseIntArray2.get(ls0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i10 = sparseIntArray2.get(ls0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
+        }
+        return i3 - i10;
+    }
 }

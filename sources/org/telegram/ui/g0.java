@@ -2,38 +2,38 @@ package org.telegram.ui;
 
 import android.net.Uri;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g0 implements org.telegram.messenger.j20 {
-    public final /* synthetic */ h4 a;
+public final /* synthetic */ class g0 implements org.telegram.messenger.m10 {
+    public final /* synthetic */ i4 a;
     public final /* synthetic */ String b;
     public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ gf.e d;
+    public final /* synthetic */ sf.b d;
 
-    public /* synthetic */ g0(h4 h4Var, String str, boolean[] zArr, gf.e eVar) {
-        this.a = h4Var;
+    public /* synthetic */ g0(i4 i4Var, String str, boolean[] zArr, sf.b bVar) {
+        this.a = i4Var;
         this.b = str;
         this.c = zArr;
-        this.d = eVar;
+        this.d = bVar;
     }
 
-    @Override // org.telegram.messenger.j20
+    @Override // org.telegram.messenger.m10
     public final Object run() {
         String str = this.b;
-        if (!gf.f.e(Uri.parse(str), false, this.c)) {
+        if (!sf.c.g(Uri.parse(str), false, this.c)) {
             return Boolean.FALSE;
         }
-        h4 h4Var = this.a;
-        gf.e eVar = this.d;
-        if (eVar != null) {
-            eVar.c = new h0(0, h4Var, eVar);
+        i4 i4Var = this.a;
+        sf.b bVar = this.d;
+        if (bVar != null) {
+            bVar.c = new org.telegram.messenger.voip.l0(11, i4Var, bVar);
         } else {
-            u3 u3Var = h4Var.K;
+            u3 u3Var = i4Var.L;
             if (u3Var != null) {
                 u3Var.a(true);
             }
         }
-        gf.f.q(h4Var.L, Uri.parse(str), true, true, false, eVar, null, true, true, false);
+        sf.c.s(i4Var.M, Uri.parse(str), true, true, false, bVar, null, true, true, false, false);
         return Boolean.TRUE;
     }
 }

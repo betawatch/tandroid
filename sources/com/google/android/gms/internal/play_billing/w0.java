@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import b8.pa;
 import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -10,9 +11,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
-import v7.b6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -46,7 +46,7 @@ public final class w0 extends l0 implements g0 {
     /* JADX WARN: Multi-variable type inference failed */
     public static Object h(t0 t0Var) {
         Object obj;
-        Throwable c10;
+        Throwable a10;
         if (t0Var instanceof g0) {
             Object obj2 = ((w0) t0Var).a;
             if (obj2 instanceof b0) {
@@ -59,8 +59,8 @@ public final class w0 extends l0 implements g0 {
             Objects.requireNonNull(obj2);
             return obj2;
         }
-        if ((t0Var instanceof x0) && (c10 = ((x0) t0Var).c()) != null) {
-            return new e0(c10);
+        if ((t0Var instanceof x0) && (a10 = ((x0) t0Var).a()) != null) {
+            return new e0(a10);
         }
         boolean isCancelled = t0Var.isCancelled();
         boolean z10 = true;
@@ -76,8 +76,8 @@ public final class w0 extends l0 implements g0 {
                     try {
                         obj = t0Var.get();
                         break;
-                    } catch (Error e) {
-                        e = e;
+                    } catch (Error e10) {
+                        e = e10;
                         return new e0(e);
                     }
                 } catch (InterruptedException unused) {
@@ -88,13 +88,13 @@ public final class w0 extends l0 implements g0 {
                     }
                     throw th3;
                 }
-            } catch (Error | Exception e7) {
-                e = e7;
+            } catch (Error | Exception e11) {
+                e = e11;
                 return new e0(e);
-            } catch (CancellationException e10) {
-                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e10)) : new b0(e10, false);
-            } catch (ExecutionException e11) {
-                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e11), false) : new e0(e11.getCause());
+            } catch (CancellationException e12) {
+                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e12)) : new b0(e12, false);
+            } catch (ExecutionException e13) {
+                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e13), false) : new e0(e13.getCause());
             }
         }
         if (z11) {
@@ -127,13 +127,13 @@ public final class w0 extends l0 implements g0 {
             w0Var.n = null;
             w0Var.r = null;
             f0 f0Var3 = f0Var2;
-            f0 a2 = l0.h.a(w0Var);
+            f0 a10 = l0.h.a(w0Var);
             f0 f0Var4 = f0Var3;
-            while (a2 != null) {
-                f0 f0Var5 = a2.c;
-                a2.c = f0Var4;
-                f0Var4 = a2;
-                a2 = f0Var5;
+            while (a10 != null) {
+                f0 f0Var5 = a10.c;
+                a10.c = f0Var4;
+                f0Var4 = a10;
+                a10 = f0Var5;
             }
             while (f0Var4 != null) {
                 Runnable runnable = f0Var4.a;
@@ -164,13 +164,25 @@ public final class w0 extends l0 implements g0 {
     public static void k(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (Exception e) {
-            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", c3.i0.n("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
+        } catch (Exception e10) {
+            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.recaptcha.internal.a.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 
+    @Override // com.google.android.gms.internal.play_billing.x0
+    public final Throwable a() {
+        if (!(this instanceof g0)) {
+            return null;
+        }
+        Object obj = this.a;
+        if (obj instanceof e0) {
+            return ((e0) obj).a;
+        }
+        return null;
+    }
+
     @Override // com.google.android.gms.internal.play_billing.t0
-    public final void b(Runnable runnable, Executor executor) {
+    public final void c(Runnable runnable, Executor executor) {
         f0 f0Var;
         f0 f0Var2 = f0.d;
         if (executor == null) {
@@ -188,18 +200,6 @@ public final class w0 extends l0 implements g0 {
             } while (f0Var != f0Var2);
         }
         k(runnable, executor);
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.x0
-    public final Throwable c() {
-        if (!(this instanceof g0)) {
-            return null;
-        }
-        Object obj = this.a;
-        if (obj instanceof e0) {
-            return ((e0) obj).a;
-        }
-        return null;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0056, code lost:
@@ -256,15 +256,15 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String n10 = a1.g.n("inputFuture=[", t0Var.toString(), "]");
+        String q10 = a1.g.q("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
-            return n10;
+            return q10;
         }
         long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
         if (delay <= 0) {
-            return n10;
+            return q10;
         }
-        return n10 + ", remaining delay=[" + delay + " ms]";
+        return q10 + ", remaining delay=[" + delay + " ms]";
     }
 
     @Override // java.util.concurrent.Future
@@ -282,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                b6 b6Var = l0.h;
-                b6Var.c(k0Var3, k0Var2);
-                if (b6Var.g(this, k0Var2, k0Var3)) {
+                pa paVar = l0.h;
+                paVar.c(k0Var3, k0Var2);
+                if (paVar.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -322,14 +322,14 @@ public final class w0 extends l0 implements g0 {
             } catch (CancellationException unused2) {
                 sb2.append("CANCELLED");
                 return;
-            } catch (ExecutionException e) {
+            } catch (ExecutionException e10) {
                 sb2.append("FAILURE, cause=[");
-                sb2.append(e.getCause());
+                sb2.append(e10.getCause());
                 sb2.append("]");
                 return;
-            } catch (Exception e7) {
+            } catch (Exception e11) {
                 sb2.append("UNKNOWN, cause=[");
-                sb2.append(e7.getClass());
+                sb2.append(e11.getClass());
                 sb2.append(" thrown from get()]");
                 return;
             }
@@ -455,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        b6 b6Var = l0.h;
-                        b6Var.c(k0Var3, k0Var2);
-                        if (b6Var.g(this, k0Var2, k0Var3)) {
+                        pa paVar = l0.h;
+                        paVar.c(k0Var3, k0Var2);
+                        if (paVar.g(this, k0Var2, k0Var3)) {
                             j11 = j12;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));

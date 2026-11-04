@@ -1,27 +1,28 @@
 package com.google.android.gms.internal.cast;
 
+import b8.ba;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e0 extends a9.o implements ListIterator {
+public final class e0 extends b8.y implements ListIterator {
     public final int b;
     public int c;
     public final g0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(g0 g0Var, int i10) {
-        super(1);
+    public e0(g0 g0Var, int i3) {
+        super(2);
         int size = g0Var.size();
-        v7.m5.b(i10, size);
+        ba.b(i3, size);
         this.b = size;
-        this.c = i10;
+        this.c = i3;
         this.d = g0Var;
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
+    public final Object a(int i3) {
+        return this.d.get(i3);
     }
 
     @Override // java.util.ListIterator
@@ -44,9 +45,9 @@ public final class e0 extends a9.o implements ListIterator {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
+        int i3 = this.c;
+        this.c = i3 + 1;
+        return a(i3);
     }
 
     @Override // java.util.ListIterator
@@ -59,9 +60,9 @@ public final class e0 extends a9.o implements ListIterator {
         if (!hasPrevious()) {
             throw new NoSuchElementException();
         }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
+        int i3 = this.c - 1;
+        this.c = i3;
+        return a(i3);
     }
 
     @Override // java.util.ListIterator

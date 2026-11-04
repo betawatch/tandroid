@@ -48,21 +48,21 @@ public final class i7 extends x6 implements j$.util.x0 {
 
     @Override // j$.util.d1
     public final boolean tryAdvance(IntConsumer intConsumer) {
-        int i10;
+        int i3;
         Objects.requireNonNull(intConsumer);
-        boolean a2 = a();
-        if (a2) {
+        boolean a10 = a();
+        if (a10) {
             o6 o6Var = (o6) this.h;
             long j10 = this.g;
             int k10 = o6Var.k(j10);
             if (o6Var.c == 0 && k10 == 0) {
-                i10 = ((int[]) o6Var.e)[(int) j10];
+                i3 = ((int[]) o6Var.e)[(int) j10];
             } else {
-                i10 = ((int[][]) o6Var.f)[k10][(int) (j10 - o6Var.d[k10])];
+                i3 = ((int[][]) o6Var.f)[k10][(int) (j10 - o6Var.d[k10])];
             }
-            intConsumer.accept(i10);
+            intConsumer.accept(i3);
         }
-        return a2;
+        return a10;
     }
 
     @Override // j$.util.d1

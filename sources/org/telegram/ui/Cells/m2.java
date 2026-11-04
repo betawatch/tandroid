@@ -1,70 +1,70 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.wp;
+import org.telegram.messenger.hp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.zx;
+import org.telegram.ui.uw;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class m2 extends th.t5 {
-    public final /* synthetic */ v2 S;
+public final class m2 extends ei.o7 {
+    public final /* synthetic */ t2 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m2(v2 v2Var) {
+    public m2(t2 t2Var) {
         super(null, false);
-        this.S = v2Var;
+        this.S = t2Var;
     }
 
-    @Override // th.t5
+    @Override // ei.o7
     public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
-        return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.O0) ? false : true;
+        return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.P0) ? false : true;
     }
 
-    @Override // th.t5
+    @Override // ei.o7
     public final boolean d(long j10) {
-        v2 v2Var = this.S;
-        int i10 = v2Var.F0;
-        zx zxVar = v2Var.D4;
-        if (zxVar == null || v2Var.O0) {
+        t2 t2Var = this.S;
+        int i3 = t2Var.G0;
+        uw uwVar = t2Var.E4;
+        if (uwVar == null || t2Var.P0) {
             return false;
         }
         if (j10 > 0) {
-            TLRPC.User Z1 = wp.r1(i10).Z1(Long.valueOf(j10));
-            if (Z1 == null || Z1.linked_community_id == 0) {
+            TLRPC.User a22 = hp.s1(i3).a2(Long.valueOf(j10));
+            if (a22 == null || a22.linked_community_id == 0) {
                 return false;
             }
-            zxVar.showDialog(new yh.z(zxVar, Z1.linked_community_id));
+            uwVar.showDialog(new ji.b0(uwVar, a22.linked_community_id));
             return true;
         }
-        TLRPC.Chat L0 = wp.r1(i10).L0(Long.valueOf(-j10));
-        if (L0 == null || L0.linked_community_id == 0) {
+        TLRPC.Chat M0 = hp.s1(i3).M0(Long.valueOf(-j10));
+        if (M0 == null || M0.linked_community_id == 0) {
             return false;
         }
-        zxVar.showDialog(new yh.z(zxVar, L0.linked_community_id));
+        uwVar.showDialog(new ji.b0(uwVar, M0.linked_community_id));
         return true;
     }
 
-    @Override // th.t5
+    @Override // ei.o7
     public final void e() {
-        v2 v2Var = this.S;
-        r2 r2Var = v2Var.d0;
-        if (r2Var == null) {
+        t2 t2Var = this.S;
+        p2 p2Var = t2Var.e0;
+        if (p2Var == null) {
             return;
         }
-        r2Var.x(v2Var);
+        p2Var.w(t2Var);
     }
 
-    @Override // th.t5
+    @Override // ei.o7
     public final void f(long j10) {
-        v2 v2Var = this.S;
-        r2 r2Var = v2Var.d0;
-        if (r2Var == null) {
+        t2 t2Var = this.S;
+        p2 p2Var = t2Var.e0;
+        if (p2Var == null) {
             return;
         }
-        if (v2Var.J0 != 0) {
-            r2Var.q();
+        if (t2Var.K0 != 0) {
+            p2Var.q();
         } else {
-            r2Var.u(v2Var);
+            p2Var.u(t2Var);
         }
     }
 }

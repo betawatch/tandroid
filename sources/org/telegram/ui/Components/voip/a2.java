@@ -9,12 +9,12 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
-import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hs;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.w5;
+import org.telegram.ui.ActionBar.d4;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class a2 extends View {
     public StaticLayout a;
@@ -26,7 +26,7 @@ public final class a2 extends View {
     public int h;
     public boolean n;
     public final Drawable r;
-    public final w5 s;
+    public final d4 s;
 
     public a2(Activity activity) {
         super(activity);
@@ -39,24 +39,24 @@ public final class a2 extends View {
         this.f = textPaint;
         this.h = 4;
         this.n = false;
-        this.s = new w5(this, 10);
-        textPaint.setTextSize(org.telegram.messenger.i0.L(15.0f));
+        this.s = new d4(this, 14);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint.setColor(-1);
-        paint.setColor(i0.b.o(-1, at.F3));
-        paint2.setColor(i0.b.o(-1, at.n1));
+        paint.setColor(i0.a.o(-1, hs.F3));
+        paint2.setColor(i0.a.o(-1, hs.n1));
         Drawable drawable = activity.getDrawable(R.drawable.calls_decline);
         this.r = drawable;
-        drawable.setBounds(0, 0, org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f));
+        drawable.setBounds(0, 0, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
     }
 
     public final void a() {
-        w5 w5Var = this.s;
-        removeCallbacks(w5Var);
+        d4 d4Var = this.s;
+        removeCallbacks(d4Var);
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {
             return;
         }
-        String g02 = org.telegram.messenger.i0.g0((int) (sharedInstance.getCallDuration() / 1000), true, false);
+        String g02 = org.telegram.messenger.g0.g0((int) (sharedInstance.getCallDuration() / 1000), true, false);
         String str = this.e;
         if (str == null || !str.equals(g02)) {
             this.e = g02;
@@ -67,64 +67,64 @@ public final class a2 extends View {
             TextPaint textPaint = this.f;
             this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        postDelayed(w5Var, 300L);
+        postDelayed(d4Var, 300L);
         invalidate();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         StaticLayout staticLayout = this.a;
-        int i10 = 0;
-        int L = staticLayout == null ? 0 : org.telegram.messenger.i0.L(21.0f) + staticLayout.getWidth();
+        int i3 = 0;
+        int L = staticLayout == null ? 0 : org.telegram.messenger.g0.L(21.0f) + staticLayout.getWidth();
         canvas.save();
         canvas.translate((getMeasuredWidth() - L) / 2.0f, 0.0f);
         canvas.save();
         if (this.n) {
-            canvas.translate(-org.telegram.messenger.i0.L(7.0f), -org.telegram.messenger.i0.L(3.0f));
+            canvas.translate(-org.telegram.messenger.g0.L(7.0f), -org.telegram.messenger.g0.L(3.0f));
             this.r.draw(canvas);
         } else {
-            canvas.translate(0.0f, (getMeasuredHeight() - org.telegram.messenger.i0.L(11.0f)) / 2.0f);
-            while (i10 < 4) {
-                int i11 = i10 + 1;
-                Paint paint = i11 > this.h ? this.d : this.c;
-                float f7 = i10;
-                float N = org.telegram.messenger.i0.N(4.16f) * f7;
-                float N2 = org.telegram.messenger.i0.N(2.75f) * (3 - i10);
-                float N3 = org.telegram.messenger.i0.N(2.75f) + (org.telegram.messenger.i0.N(4.16f) * f7);
-                float L2 = org.telegram.messenger.i0.L(11.0f);
+            canvas.translate(0.0f, (getMeasuredHeight() - org.telegram.messenger.g0.L(11.0f)) / 2.0f);
+            while (i3 < 4) {
+                int i10 = i3 + 1;
+                Paint paint = i10 > this.h ? this.d : this.c;
+                float f10 = i3;
+                float N = org.telegram.messenger.g0.N(4.16f) * f10;
+                float N2 = org.telegram.messenger.g0.N(2.75f) * (3 - i3);
+                float N3 = org.telegram.messenger.g0.N(2.75f) + (org.telegram.messenger.g0.N(4.16f) * f10);
+                float L2 = org.telegram.messenger.g0.L(11.0f);
                 RectF rectF = this.b;
                 rectF.set(N, N2, N3, L2);
-                canvas.drawRoundRect(rectF, org.telegram.messenger.i0.N(0.7f), org.telegram.messenger.i0.N(0.7f), paint);
-                i10 = i11;
+                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(0.7f), org.telegram.messenger.g0.N(0.7f), paint);
+                i3 = i10;
             }
         }
         canvas.restore();
         if (staticLayout != null) {
-            canvas.translate(org.telegram.messenger.i0.L(21.0f), 0.0f);
+            canvas.translate(org.telegram.messenger.g0.L(21.0f), 0.0f);
             staticLayout.draw(canvas);
         }
         canvas.restore();
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i3, int i10) {
         StaticLayout staticLayout = this.a;
         if (staticLayout != null) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), staticLayout.getHeight());
+            setMeasuredDimension(View.MeasureSpec.getSize(i3), staticLayout.getHeight());
         } else {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.i0.L(15.0f));
+            setMeasuredDimension(View.MeasureSpec.getSize(i3), org.telegram.messenger.g0.L(15.0f));
         }
     }
 
-    public void setSignalBarCount(int i10) {
-        this.h = i10;
+    public void setSignalBarCount(int i3) {
+        this.h = i3;
         invalidate();
     }
 
     @Override // android.view.View
-    public void setVisibility(int i10) {
-        if (getVisibility() != i10) {
-            if (i10 == 0) {
+    public void setVisibility(int i3) {
+        if (getVisibility() != i3) {
+            if (i3 == 0) {
                 this.e = "00:00";
                 String str = this.e;
                 TextPaint textPaint = this.f;
@@ -135,6 +135,6 @@ public final class a2 extends View {
                 this.a = null;
             }
         }
-        super.setVisibility(i10);
+        super.setVisibility(i3);
     }
 }

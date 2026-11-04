@@ -1,36 +1,6 @@
 package cb;
 
-import kotlin.jvm.internal.i;
-import x9.j;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public final ce.d a;
-    public j b = null;
-
-    public a(ce.d dVar) {
-        this.a = dVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.a.equals(aVar.a) && i.a(this.b, aVar.b);
-    }
-
-    public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        j jVar = this.b;
-        return hashCode + (jVar == null ? 0 : jVar.hashCode());
-    }
-
-    public final String toString() {
-        return "Dependency(mutex=" + this.a + ", subscriber=" + this.b + ')';
-    }
+public interface a {
 }

@@ -1,53 +1,9 @@
 package q1;
 
-import android.text.Editable;
-import android.text.method.KeyListener;
-import android.text.method.MetaKeyKeyListener;
-import android.view.KeyEvent;
-import android.view.View;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e implements KeyListener {
-    public final KeyListener a;
-    public final oa.d b;
+public abstract class e {
+    public abstract float a(Object obj);
 
-    public e(KeyListener keyListener) {
-        oa.d dVar = new oa.d(17);
-        this.a = keyListener;
-        this.b = dVar;
-    }
-
-    @Override // android.text.method.KeyListener
-    public final void clearMetaKeyState(View view, Editable editable, int i10) {
-        this.a.clearMetaKeyState(view, editable, i10);
-    }
-
-    @Override // android.text.method.KeyListener
-    public final int getInputType() {
-        return this.a.getInputType();
-    }
-
-    @Override // android.text.method.KeyListener
-    public final boolean onKeyDown(View view, Editable editable, int i10, KeyEvent keyEvent) {
-        boolean z10;
-        this.b.getClass();
-        if (i10 != 67 ? i10 != 112 ? false : hf.b.O(editable, keyEvent, true) : hf.b.O(editable, keyEvent, false)) {
-            MetaKeyKeyListener.adjustMetaAfterKeypress(editable);
-            z10 = true;
-        } else {
-            z10 = false;
-        }
-        return z10 || this.a.onKeyDown(view, editable, i10, keyEvent);
-    }
-
-    @Override // android.text.method.KeyListener
-    public final boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
-        return this.a.onKeyOther(view, editable, keyEvent);
-    }
-
-    @Override // android.text.method.KeyListener
-    public final boolean onKeyUp(View view, Editable editable, int i10, KeyEvent keyEvent) {
-        return this.a.onKeyUp(view, editable, i10, keyEvent);
-    }
+    public abstract void b(Object obj, float f10);
 }

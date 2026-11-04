@@ -1,26 +1,14 @@
 package b5;
 
-import android.webkit.WebView;
-import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
-import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f implements p {
-    public static final String[] a = new String[0];
-
-    @Override // b5.p
-    public final String[] G() {
-        return a;
-    }
-
-    @Override // b5.p
-    public final WebViewProviderBoundaryInterface createWebView(WebView webView) {
-        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
-    }
-
-    @Override // b5.p
-    public final StaticsBoundaryInterface getStatics() {
-        throw new UnsupportedOperationException("This should never happen, if this method was called it means we're trying to reach into WebView APK code on an incompatible device. This most likely means the current method is being called too early, or is being called on start-up rather than lazily");
-    }
+public final class f extends ViewGroup.LayoutParams {
+    public boolean a;
+    public int b;
+    public float c;
+    public boolean d;
+    public int e;
+    public int f;
 }

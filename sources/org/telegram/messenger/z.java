@@ -1,35 +1,32 @@
 package org.telegram.messenger;
 
-import android.view.animation.Interpolator;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class z implements Interpolator {
-    public final /* synthetic */ double a;
-    public final /* synthetic */ double b;
-    public final /* synthetic */ double c;
-    public final /* synthetic */ double d;
+public final class z extends ClickableSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    public z(double d, double d10, double d11, double d12) {
-        this.a = d;
-        this.b = d10;
-        this.c = d11;
-        this.d = d12;
+    public z(int i3, Runnable runnable) {
+        this.a = i3;
+        this.b = runnable;
     }
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        double exp;
-        double d = this.a;
-        double d10 = this.d;
-        double d11 = this.b;
-        if (d < 1.0d) {
-            double exp2 = Math.exp((-f7) * d * d11);
-            double d12 = this.c * f7;
-            exp = 1.0d - (((Math.sin(d12) * d10) + (Math.cos(d12) * 1.0d)) * exp2);
-        } else {
-            exp = 1.0d - (Math.exp((-f7) * d11) * ((d10 * f7) + 1.0d));
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
         }
-        return (float) exp;
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(false);
+        textPaint.setColor(this.a);
     }
 }

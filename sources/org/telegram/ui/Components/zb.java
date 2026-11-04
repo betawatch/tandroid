@@ -1,58 +1,76 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zb implements org.telegram.messenger.r20 {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class zb extends ya {
+    public final x8 a;
+    public final s70 b;
+    public final s70 c;
+    public final LinearLayout d;
 
-    public /* synthetic */ zb(int i10, long j10, TLRPC.Document document) {
-        this.c = i10;
-        this.b = j10;
-        this.d = document;
-    }
-
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
-        TLRPC.StickerSet stickerSet;
-        int i10 = this.a;
-        int i11 = 2;
-        Object obj2 = this.d;
-        long j10 = this.b;
-        int i12 = this.c;
-        switch (i10) {
-            case 0:
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
-                org.telegram.messenger.i0.h3(new org.telegram.ui.ch(27, (wb) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? org.telegram.messenger.dd.L0(2131754435, null) : i12 == 1 ? org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0("TopicContainsEmojiPackSingle", null, 2131744047, stickerSet.title)) : i12 == 2 ? org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0("StoryContainsEmojiPackSingle", null, 2131744717, stickerSet.title)) : org.telegram.messenger.i0.W2(org.telegram.messenger.dd.a0("MessageContainsEmojiPackSingle", null, 2131748611, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
-                break;
-            case 1:
-                ((au0) obj2).getStoriesController().b(i12, j10, (ArrayList) obj);
-                break;
-            default:
-                TLRPC.Document document = (TLRPC.Document) obj2;
-                if (((Boolean) obj).booleanValue()) {
-                    rh.e6.y(i12, false).P(j10);
-                    org.telegram.messenger.i0.g3(new v41(new org.telegram.ui.tl0(j10, i11), document, org.telegram.messenger.dd.L0(2131750111, null), 25));
-                    break;
-                }
-                break;
+    public zb(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var);
+        x8 x8Var = new x8(context, false);
+        this.a = x8Var;
+        x8Var.setStyle(11);
+        x8Var.setAvatarsTextSize(org.telegram.messenger.g0.L(18.0f));
+        addView(x8Var, b8.mf.i(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
+        if (z10) {
+            LinearLayout linearLayout = new LinearLayout(getContext());
+            this.d = linearLayout;
+            linearLayout.setOrientation(1);
+            addView(linearLayout, b8.mf.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
+            ai.e2 e2Var = new ai.e2(5, context, null);
+            this.b = e2Var;
+            org.telegram.messenger.hs.i(e2Var);
+            Typeface typeface = Typeface.SANS_SERIF;
+            e2Var.setTypeface(typeface);
+            e2Var.setTextSize(1, 14.0f);
+            e2Var.setTypeface(org.telegram.messenger.g0.o());
+            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+            e2Var.setEllipsize(truncateAt);
+            e2Var.setMaxLines(1);
+            linearLayout.addView(e2Var);
+            s70 s70Var = new s70(context, null);
+            this.c = s70Var;
+            s70Var.setTypeface(typeface);
+            s70Var.setTextSize(1, 12.0f);
+            s70Var.setEllipsize(truncateAt);
+            s70Var.setSingleLine(false);
+            s70Var.setMaxLines(3);
+            org.telegram.ui.ActionBar.r6.H(s70Var, org.telegram.ui.ActionBar.k6.uj, e6Var);
+            linearLayout.addView(s70Var, b8.mf.t(-2, -2, 0, 0, 0, 0, 0));
+        } else {
+            ai.e2 e2Var2 = new ai.e2(4, context, null);
+            this.b = e2Var2;
+            org.telegram.messenger.hs.i(e2Var2);
+            e2Var2.setTypeface(Typeface.SANS_SERIF);
+            e2Var2.setTextSize(1, 15.0f);
+            e2Var2.setEllipsize(TextUtils.TruncateAt.END);
+            e2Var2.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+            e2Var2.setGravity(org.telegram.messenger.bd.a0 ? 5 : 3);
+            addView(e2Var2, b8.mf.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
+        org.telegram.ui.ActionBar.r6.H(this.b, org.telegram.ui.ActionBar.k6.uj, e6Var);
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.vj));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.k6.tj));
     }
 
-    public /* synthetic */ zb(int i10, wb wbVar, long j10) {
-        this.c = i10;
-        this.d = wbVar;
-        this.b = j10;
+    @Override // org.telegram.ui.Components.fb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 
-    public /* synthetic */ zb(au0 au0Var, long j10, int i10) {
-        this.d = au0Var;
-        this.b = j10;
-        this.c = i10;
+    public void setTextColor(int i3) {
+        this.b.setTextColor(i3);
+        s70 s70Var = this.c;
+        if (s70Var != null) {
+            s70Var.setTextColor(i3);
+        }
     }
 }

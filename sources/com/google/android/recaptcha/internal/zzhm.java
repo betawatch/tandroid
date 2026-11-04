@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
 import java.net.HttpURLConnection;
-import kotlin.jvm.internal.e;
+import kotlin.jvm.internal.f;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzhm {
     private final zzii zza;
@@ -20,14 +20,14 @@ public final class zzhm {
             zza.setDoOutput(true);
             zza.setRequestProperty("Content-Type", "application/x-protobuffer");
             return new zzhl(zza);
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e7) {
-            throw new zzcg(zzce.zzc, zzcd.zzai, e7.getMessage(), null, 8, null);
+        } catch (zzcg e10) {
+            throw e10;
+        } catch (Exception e11) {
+            throw new zzcg(zzce.zzc, zzcd.zzai, e11.getMessage(), null, 8, null);
         }
     }
 
-    public /* synthetic */ zzhm(zzii zziiVar, int i10, e eVar) {
+    public /* synthetic */ zzhm(zzii zziiVar, int i3, f fVar) {
         this.zza = new zzii();
     }
 }

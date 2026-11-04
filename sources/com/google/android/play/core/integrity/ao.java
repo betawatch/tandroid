@@ -1,15 +1,15 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class ao extends IntegrityTokenRequest {
     private final String a;
     private final Long b;
     private final Object c = null;
 
-    public /* synthetic */ ao(String str, Long l4, Object obj, an anVar) {
+    public /* synthetic */ ao(String str, Long l10, Object obj, an anVar) {
         this.a = str;
-        this.b = l4;
+        this.b = l10;
     }
 
     private static boolean a() {
@@ -23,13 +23,13 @@ final class ao extends IntegrityTokenRequest {
 
     public final boolean equals(Object obj) {
         boolean z10;
-        Long l4;
+        Long l10;
         if (obj == this) {
             return true;
         }
         if (obj instanceof IntegrityTokenRequest) {
             IntegrityTokenRequest integrityTokenRequest = (IntegrityTokenRequest) obj;
-            if (this.a.equals(integrityTokenRequest.nonce()) && ((l4 = this.b) != null ? l4.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
+            if (this.a.equals(integrityTokenRequest.nonce()) && ((l10 = this.b) != null ? l10.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
                 z10 = true;
                 return ((obj instanceof ao) || !a()) ? z10 : z10;
             }
@@ -41,8 +41,8 @@ final class ao extends IntegrityTokenRequest {
 
     public final int hashCode() {
         int hashCode = this.a.hashCode() ^ 1000003;
-        Long l4 = this.b;
-        int hashCode2 = (hashCode * 1000003) ^ (l4 == null ? 0 : l4.hashCode());
+        Long l10 = this.b;
+        int hashCode2 = (hashCode * 1000003) ^ (l10 == null ? 0 : l10.hashCode());
         return a() ? hashCode2 * 1000003 : hashCode2;
     }
 

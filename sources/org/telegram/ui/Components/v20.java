@@ -1,171 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.SharedPreferences;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class v20 extends tk0 {
-    public final Context c;
-    public final /* synthetic */ z20 d;
+public final class v20 {
+    public static final v20 d;
+    public static final v20 e;
+    public static final v20 f;
+    public static final v20 h;
+    public static final v20 n;
+    public static final v20 r;
+    public static final v20 s;
+    public static final v20 w;
+    public static final v20 x;
+    public static final /* synthetic */ v20[] y;
+    public final String a;
+    public final int b;
+    public final float c;
 
-    public v20(z20 z20Var, Context context) {
-        this.d = z20Var;
-        this.c = context;
+    static {
+        v20 v20Var = new v20("RoundHint2", 0, "needShowRoundHint2", 3, 0.2f);
+        d = v20Var;
+        v20 v20Var2 = new v20("RoundHintChannel2", 1, "needShowRoundHintChannel2", 3, 0.2f);
+        e = v20Var2;
+        v20 v20Var3 = new v20("ChannelSuggestHint", 2, "channelsuggesthint", 3, 0.2f);
+        f = v20Var3;
+        v20 v20Var4 = new v20("ChannelGiftHint", 3, "channelgifthint", 3, 0.2f);
+        h = v20Var4;
+        v20 v20Var5 = new v20("GroupEmojiPackHintShown", 4, "groupEmojiPackShownHint", 1, 1.0f);
+        n = v20Var5;
+        v20 v20Var6 = new v20("AccountSwitchHint", 5, "accountswitchhint", 3, 1.0f);
+        r = v20Var6;
+        v20 v20Var7 = new v20("GiftMessageHint", 6, "giftMessaheHint", 3, 1.0f);
+        s = v20Var7;
+        v20 v20Var8 = new v20("PlaybackSpeedHint", 7, "playbackspeedhint", 3, 0.2f);
+        w = v20Var8;
+        v20 v20Var9 = new v20();
+        x = v20Var9;
+        y = new v20[]{v20Var, v20Var2, v20Var3, v20Var4, v20Var5, v20Var6, v20Var7, v20Var8, v20Var9};
     }
 
-    @Override // s4.g0
-    public final void A(s4.c1 c1Var) {
-        View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.e5) {
-            ((org.telegram.ui.Cells.e5) view).a();
-        }
+    public v20() {
+        this.a = "hints_controller_" + this;
+        this.b = 3;
+        this.c = 1.0f;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        View view = c1Var.a;
-        if ((view instanceof org.telegram.ui.Cells.e5) && this.d.W1.contains(Long.valueOf(((org.telegram.ui.Cells.e5) view).getUserId()))) {
-            return false;
-        }
-        int i10 = c1Var.f;
-        return i10 == 0 || i10 == 1;
+    public static v20 valueOf(String str) {
+        return (v20) Enum.valueOf(v20.class, str);
     }
 
-    @Override // s4.g0
-    public final int b() {
-        return this.d.i2;
+    public static v20[] values() {
+        return (v20[]) y.clone();
     }
 
-    @Override // s4.g0
-    public final int d(int i10) {
-        z20 z20Var = this.d;
-        if ((i10 >= z20Var.b2 && i10 < z20Var.c2) || (i10 >= z20Var.e2 && i10 < z20Var.f2)) {
-            return 0;
-        }
-        if (i10 == z20Var.Z1) {
-            return 1;
-        }
-        if (i10 == z20Var.g2 || i10 == z20Var.d2) {
-            return 2;
-        }
-        z20Var.getClass();
-        if (i10 == 0) {
-            return 3;
-        }
-        if (i10 == z20Var.a2) {
-            return 4;
-        }
-        return i10 == z20Var.h2 ? 5 : 0;
+    public final void a() {
+        org.telegram.messenger.hp.e1().edit().putInt(this.a, this.b).apply();
     }
 
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        TLObject tLObject;
-        int i11;
-        z20 z20Var = this.d;
-        ArrayList arrayList = z20Var.O1;
-        int i12 = c1Var.f;
-        View view = c1Var.a;
-        if (i12 == 0) {
-            org.telegram.ui.Cells.e5 e5Var = (org.telegram.ui.Cells.e5) view;
-            e5Var.setTag(Integer.valueOf(i10));
-            int i13 = z20Var.b2;
-            if (i10 < i13 || i10 >= z20Var.c2) {
-                int i14 = z20Var.e2;
-                tLObject = (i10 < i14 || i10 >= z20Var.f2) ? null : (TLObject) z20Var.P1.get(i10 - i14);
-            } else {
-                tLObject = (TLObject) arrayList.get(i10 - i13);
-            }
-            if (i10 < z20Var.b2 || i10 >= (i11 = z20Var.c2)) {
-                i11 = z20Var.f2;
-            }
-            TLRPC.User Z1 = org.telegram.messenger.wp.r1(z20Var.a).Z1(Long.valueOf(tLObject instanceof TLRPC.TL_contact ? ((TLRPC.TL_contact) tLObject).user_id : tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.ChannelParticipant ? org.telegram.messenger.kj.C1(((TLRPC.ChannelParticipant) tLObject).peer) : ((TLRPC.ChatParticipant) tLObject).user_id));
-            if (Z1 != null) {
-                e5Var.setCustomImageVisible(z20Var.W1.contains(Long.valueOf(Z1.id)));
-                e5Var.c(Z1, null, null, i10 != i11 - 1);
-                return;
-            }
-            return;
-        }
-        if (i12 == 1) {
-            org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) view;
-            if (i10 == z20Var.Z1) {
-                if ((!z20Var.T1 || z20Var.U1) && z20Var.g2 == -1 && !arrayList.isEmpty()) {
-                    r3 = true;
-                }
-                b5Var.b(R.drawable.msg_link, 7, org.telegram.messenger.dd.L0(2131743416, null), r3);
-                return;
-            }
-            return;
-        }
-        if (i12 != 2) {
-            return;
-        }
-        org.telegram.ui.Cells.z3 z3Var = (org.telegram.ui.Cells.z3) view;
-        if (i10 == z20Var.g2) {
-            z3Var.setText(org.telegram.messenger.dd.L0(2131752336, null));
-        } else if (i10 == z20Var.d2) {
-            if (z20Var.Y1) {
-                z3Var.setText(org.telegram.messenger.dd.L0(2131742850, null));
-            } else {
-                z3Var.setText(org.telegram.messenger.dd.L0(2131749465, null));
-            }
-        }
+    public final void b() {
+        SharedPreferences e12 = org.telegram.messenger.hp.e1();
+        String str = this.a;
+        org.telegram.messenger.hp.e1().edit().putInt(str, e12.getInt(str, 0) + 1).apply();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v10, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r8v5, types: [org.telegram.ui.Cells.b5] */
-    /* JADX WARN: Type inference failed for: r8v6, types: [android.view.View, org.telegram.ui.Cells.z3] */
-    /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r9v12, types: [org.telegram.ui.Components.zz] */
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.e5 e5Var;
-        if (i10 != 0) {
-            Context context = this.c;
-            if (i10 == 1) {
-                ?? b5Var = new org.telegram.ui.Cells.b5(context);
-                int i11 = org.telegram.ui.ActionBar.t6.dh;
-                b5Var.a(i11, i11);
-                b5Var.setDividerColor(org.telegram.ui.ActionBar.t6.Ug);
-                e5Var = b5Var;
-            } else if (i10 == 2) {
-                ?? z3Var = new org.telegram.ui.Cells.z3(context, null);
-                org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.Xg, z3Var, null);
-                z3Var.setTextColor(org.telegram.ui.ActionBar.t6.Eh);
-                e5Var = z3Var;
-            } else if (i10 == 3) {
-                ?? view = new View(context);
-                view.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(56.0f)));
-                e5Var = view;
-            } else if (i10 != 5) {
-                e5Var = new View(context);
-            } else {
-                ?? zzVar = new zz(context, null);
-                zzVar.setViewType(6);
-                zzVar.setIsSingleCell(true);
-                zzVar.e(org.telegram.ui.ActionBar.t6.Tg, org.telegram.ui.ActionBar.t6.Fh, org.telegram.ui.ActionBar.t6.Xg);
-                e5Var = zzVar;
+    public final boolean c() {
+        if (org.telegram.messenger.hp.e1().getInt(this.a, 0) < this.b) {
+            float f10 = this.c;
+            if (f10 >= 1.0f) {
+                return true;
             }
-        } else {
-            org.telegram.ui.Cells.e5 e5Var2 = new org.telegram.ui.Cells.e5(6, 2, this.c, null, false);
-            e5Var2.setCustomRightImage(R.drawable.msg_invited);
-            e5Var2.setNameColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.bh, false));
-            int x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Zg, false);
-            int x03 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.dh, false);
-            e5Var2.O = true;
-            e5Var2.H = x02;
-            e5Var2.I = x03;
-            e5Var2.setDividerColor(org.telegram.ui.ActionBar.t6.Ug);
-            e5Var = e5Var2;
+            if (f10 > 0.0f && Utilities.c.nextFloat() < f10) {
+                return true;
+            }
         }
-        return new dk0(e5Var);
+        return false;
+    }
+
+    public v20(String str, int i3, String str2, int i10, float f10) {
+        this.a = str2;
+        this.b = i10;
+        this.c = f10;
     }
 }

@@ -1,44 +1,76 @@
 package yh;
 
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import java.io.Serializable;
-import org.telegram.messenger.as;
-import org.telegram.messenger.at;
-import org.telegram.messenger.p20;
-import org.telegram.messenger.q20;
-import org.telegram.ui.Components.b51;
-import r0.j1;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class i implements p20, q20, r0.m, as {
-    public final /* synthetic */ l a;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class i extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ j c;
+    public final /* synthetic */ df.c d;
 
-    public /* synthetic */ i(l lVar) {
-        this.a = lVar;
+    public i(df.c cVar, View view, ArrayList arrayList, j jVar) {
+        this.d = cVar;
+        this.a = view;
+        this.b = arrayList;
+        this.c = jVar;
     }
 
-    @Override // r0.m
-    public j1 R0(View view, j1 j1Var) {
-        i0.c f7 = j1Var.a.f(519);
-        this.a.e.setPadding(0, f7.b, 0, f7.d);
-        return j1.b;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        int x10 = (int) motionEvent.getX();
+        int y9 = (int) motionEvent.getY();
+        View view = this.a;
+        int scrollY = view.getScrollY() + y9;
+        int paddingLeft = x10 - view.getPaddingLeft();
+        int paddingTop = scrollY - view.getPaddingTop();
+        df.c cVar = this.d;
+        int i3 = paddingLeft - cVar.a;
+        int i10 = paddingTop - cVar.c;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            if (((f) obj).getBounds().contains(i3, i10)) {
+                cVar.b = true;
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // org.telegram.messenger.q20
-    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
-        return Boolean.valueOf(l.Z(this.a, b51Var, view));
-    }
-
-    @Override // org.telegram.messenger.as
-    public void i(boolean z10) {
-        l lVar = this.a;
-        lVar.finishFragment();
-        lVar.getNotificationCenter().k(at.K2, Long.valueOf(-lVar.c), null, lVar.I, Boolean.valueOf(z10));
-    }
-
-    @Override // org.telegram.messenger.p20
-    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        l.a0(this.a, (b51) obj);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        df.c cVar = this.d;
+        if (cVar.b) {
+            View view = this.a;
+            view.playSoundEffect(0);
+            cVar.b = false;
+            int x10 = (int) motionEvent.getX();
+            int scrollY = view.getScrollY() + ((int) motionEvent.getY());
+            int paddingLeft = x10 - view.getPaddingLeft();
+            int paddingTop = scrollY - view.getPaddingTop();
+            int i3 = paddingLeft - cVar.a;
+            int i10 = paddingTop - cVar.c;
+            ArrayList arrayList = this.b;
+            int size = arrayList.size();
+            int i11 = 0;
+            while (i11 < size) {
+                Object obj = arrayList.get(i11);
+                i11++;
+                f fVar = (f) obj;
+                if (fVar.getBounds().contains(i3, i10)) {
+                    this.c.l(fVar, i3, i10);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

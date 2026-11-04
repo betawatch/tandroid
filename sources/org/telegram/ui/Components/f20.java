@@ -2,31 +2,52 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class f20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ WindowManager c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ View e;
-    public final /* synthetic */ g20 f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h20 b;
 
-    public f20(g20 g20Var, e20 e20Var, jg.l0 l0Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.w7 w7Var) {
-        this.f = g20Var;
-        this.a = e20Var;
-        this.b = l0Var;
-        this.c = windowManager;
-        this.d = frameLayout;
-        this.e = w7Var;
+    public /* synthetic */ f20(h20 h20Var, int i3) {
+        this.a = i3;
+        this.b = h20Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        org.telegram.messenger.at.f(this.f.h).d(new ag.e3(this.a, this.b, this.c, this.d, this.e, 19));
+        switch (this.a) {
+            case 0:
+                h20 h20Var = this.b;
+                if (h20Var.c0 == animator) {
+                    h20Var.c0 = null;
+                    h20Var.b();
+                    break;
+                }
+                break;
+            default:
+                h20 h20Var2 = this.b;
+                if (h20Var2.b0 == animator) {
+                    h20Var2.b0 = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                g20 g20Var = this.b.a0;
+                if (g20Var != null) {
+                    ((org.telegram.ui.ko0) g20Var).a.f0.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

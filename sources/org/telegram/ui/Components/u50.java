@@ -1,28 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u50 implements RequestDelegate {
+public final /* synthetic */ class u50 implements org.telegram.ui.ActionBar.d1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w50 b;
+    public final /* synthetic */ f60 b;
 
-    public /* synthetic */ u50(w50 w50Var, int i10) {
-        this.a = i10;
-        this.b = w50Var;
+    public /* synthetic */ u50(f60 f60Var, int i3) {
+        this.a = i3;
+        this.b = f60Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.ActionBar.d1
+    public final void k(KeyEvent keyEvent) {
+        f60 f60Var;
+        b60 b60Var;
+        f60 f60Var2;
+        b60 b60Var2;
         switch (this.a) {
             case 0:
-                org.telegram.messenger.i0.g3(new jg(this.b, tL_error, tLObject, 9));
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (b60Var = (f60Var = this.b).m) != null && b60Var.isShowing()) {
+                    f60Var.u();
+                    break;
+                }
                 break;
             default:
-                org.telegram.messenger.i0.g3(new at(18, this.b, tL_error));
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (b60Var2 = (f60Var2 = this.b).m) != null && b60Var2.isShowing()) {
+                    f60Var2.u();
+                    break;
+                }
                 break;
         }
     }

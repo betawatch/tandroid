@@ -1,11 +1,55 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public abstract class t {
-    public static final /* synthetic */ int a = 0;
+import java.util.Iterator;
+import java.util.Map;
 
-    static {
-        t.class.getClassLoader();
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class t extends o {
+    public final transient b8.m c;
+    public final transient Object[] d;
+    public final transient int e = 1;
+
+    public t(b8.m mVar, Object[] objArr) {
+        this.c = mVar;
+        this.d = objArr;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.c.get(key))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // z7.j
+    public final int h(Object[] objArr) {
+        n nVar = this.b;
+        if (nVar == null) {
+            nVar = new s(this);
+            this.b = nVar;
+        }
+        return nVar.h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        n nVar = this.b;
+        if (nVar == null) {
+            nVar = new s(this);
+            this.b = nVar;
+        }
+        return nVar.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.e;
     }
 }

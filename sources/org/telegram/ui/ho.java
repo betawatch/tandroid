@@ -1,52 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.beta.R;
+import android.widget.LinearLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ho implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oo b;
+public final class ho extends LinearLayout implements org.telegram.messenger.cs {
+    public org.telegram.ui.Components.k9 a;
+    public org.telegram.ui.Components.y70 b;
+    public int c;
 
-    public /* synthetic */ ho(oo ooVar, int i10) {
-        this.a = i10;
-        this.b = ooVar;
+    public final void a() {
+        org.telegram.ui.Components.k9 k9Var = this.a;
+        int i3 = this.c;
+        TLRPC.TL_messages_stickerSet p02 = org.telegram.messenger.li.b0(i3).p0("tg_placeholders_android");
+        if (p02 == null) {
+            p02 = org.telegram.messenger.li.b0(i3).n0("tg_placeholders_android");
+        }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = p02;
+        if (tL_messages_stickerSet != null && tL_messages_stickerSet.documents.size() >= 3) {
+            k9Var.k(org.telegram.messenger.ac.b(tL_messages_stickerSet.documents.get(2)), "104_104", "tgs", this.b, tL_messages_stickerSet);
+        } else {
+            org.telegram.messenger.li.b0(i3).c1("tg_placeholders_android", false, tL_messages_stickerSet == null);
+            k9Var.setImageDrawable(this.b);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        oo ooVar = this.b;
-        switch (i10) {
-            case 0:
-                oo.a0(ooVar);
-                break;
-            case 1:
-                oo.f0(ooVar);
-                break;
-            case 2:
-                ooVar.b.dismiss();
-                ooVar.finishFragment();
-                break;
-            case 3:
-                ooVar.M.setChecked(ooVar.w0.autotranslation);
-                break;
-            default:
-                ooVar.e.setImageDrawable(ooVar.r);
-                ooVar.b0.o(R.drawable.msg_addphoto, org.telegram.messenger.dd.L0(2131752212, "ChatSetPhotoOrVideo"), true);
-                TLRPC.User user = ooVar.C0;
-                if (user != null) {
-                    user.photo = null;
-                    ooVar.getMessagesController().U3(ooVar.C0, true, false);
-                }
-                ooVar.O0 = true;
-                if (ooVar.R0 == null) {
-                    ooVar.R0 = new org.telegram.ui.Components.ci0(R.raw.camera_outline, org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(50.0f), false, null);
-                }
-                ooVar.b0.e.setTranslationX(-org.telegram.messenger.i0.L(8.0f));
-                ooVar.b0.e.setAnimation(ooVar.R0);
-                break;
+    @Override // org.telegram.messenger.cs
+    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+        if (i3 == org.telegram.messenger.hs.y0 && "tg_placeholders_android".equals((String) objArr[0])) {
+            a();
         }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+        org.telegram.messenger.hs.f(this.c).c(this, org.telegram.messenger.hs.y0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.hs.f(this.c).n(this, org.telegram.messenger.hs.y0);
     }
 }

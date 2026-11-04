@@ -1,64 +1,30 @@
 package i7;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import com.google.android.gms.common.api.k;
-import com.google.android.gms.common.api.l;
-import m.p3;
+import android.os.Parcel;
+import android.os.Parcelable;
+import f6.c0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g extends n6.g {
-    public final w5.b U;
+public final class g extends q6.a {
+    public static final Parcelable.Creator<g> CREATOR = new c0(21);
+    public final String a;
+    public final Bundle b;
 
-    public g(Context context, Looper looper, p3 p3Var, w5.b bVar, k kVar, l lVar) {
-        super(context, looper, 68, p3Var, kVar, lVar, 0);
-        bVar = bVar == null ? w5.b.c : bVar;
-        u9.b bVar2 = new u9.b(3);
-        bVar2.b = Boolean.FALSE;
-        w5.b bVar3 = w5.b.c;
-        bVar.getClass();
-        bVar2.b = Boolean.valueOf(bVar.a);
-        bVar2.c = bVar.b;
-        bVar2.c = e.a();
-        this.U = new w5.b(bVar2);
+    public g(String type, Bundle data) {
+        kotlin.jvm.internal.j.e(type, "type");
+        kotlin.jvm.internal.j.e(data, "data");
+        this.a = type;
+        this.b = data;
     }
 
-    @Override // n6.g, com.google.android.gms.common.api.c
-    public final int m() {
-        return 12800000;
-    }
-
-    @Override // n6.g
-    public final IInterface r(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.credentials.internal.ICredentialsService");
-        return queryLocalInterface instanceof h ? (h) queryLocalInterface : new h(iBinder, "com.google.android.gms.auth.api.credentials.internal.ICredentialsService", 5);
-    }
-
-    @Override // n6.g
-    public final Bundle u() {
-        w5.b bVar = this.U;
-        bVar.getClass();
-        Bundle bundle = new Bundle();
-        bundle.putString("consumer_package", null);
-        bundle.putBoolean("force_save_dialog", bVar.a);
-        bundle.putString("log_session_id", bVar.b);
-        return bundle;
-    }
-
-    @Override // n6.g
-    public final String w() {
-        return "com.google.android.gms.auth.api.credentials.internal.ICredentialsService";
-    }
-
-    @Override // n6.g
-    public final String x() {
-        return "com.google.android.gms.auth.api.credentials.service.START";
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i3) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        int s6 = j8.a.s(dest, 20293);
+        j8.a.m(dest, 1, this.a);
+        j8.a.c(dest, 2, this.b);
+        j8.a.t(dest, s6);
     }
 }

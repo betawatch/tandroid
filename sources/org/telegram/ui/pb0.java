@@ -1,36 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pb0 extends org.telegram.ui.Components.au0 {
-    public final /* synthetic */ xb0 w2;
+public final /* synthetic */ class pb0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qb0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ String d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb0(xb0 xb0Var, Context context, org.telegram.ui.Components.st0 st0Var, xb0 xb0Var2, ob0 ob0Var, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, 0L, st0Var, 0, null, null, null, 8, 0, xb0Var2, ob0Var, 0, p6Var, null);
-        this.w2 = xb0Var;
+    public /* synthetic */ pb0(qb0 qb0Var, String str, String str2, int i3) {
+        this.a = i3;
+        this.b = qb0Var;
+        this.c = str;
+        this.d = str2;
     }
 
-    @Override // org.telegram.ui.Components.au0
-    public final int L0() {
-        return 32;
-    }
-
-    @Override // org.telegram.ui.Components.au0
-    public final boolean X() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.au0
-    public final int a1() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.au0
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.w2.U0;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new mb0(this.b, tL_error, this.c, this.d, tLObject));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new mb0(this.b, tL_error, tLObject, this.c, this.d));
+                break;
+        }
     }
 }

@@ -1,36 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class y11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p21 b;
+import android.content.Context;
 
-    public /* synthetic */ y11(p21 p21Var, int i10) {
-        this.a = i10;
-        this.b = p21Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class y11 extends f21 {
+    public final /* synthetic */ Runnable R1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y11(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
+        super(context, str, str2, charSequence, null, 0, false, null);
+        this.R1 = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                p21 p21Var = this.b;
-                if (p21Var.l()) {
-                    p21Var.m();
-                    break;
-                }
-                break;
-            default:
-                p21 p21Var2 = this.b;
-                f21 f21Var = p21Var2.J;
-                f21Var.z1(true);
-                d21 d21Var = p21Var2.y;
-                d21Var.z1(true);
-                p21Var2.M.a(true, true);
-                org.telegram.messenger.i0.a4(d21Var);
-                org.telegram.messenger.i0.a4(f21Var);
-                break;
+    @Override // org.telegram.ui.Components.f21, org.telegram.ui.ActionBar.t2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.z1
+    public final void dismiss() {
+        super.dismiss();
+        Runnable runnable = this.R1;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 }

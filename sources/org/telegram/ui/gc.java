@@ -1,42 +1,82 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.MotionEvent;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gc extends g31 {
-    public final /* synthetic */ bc e2;
-    public final /* synthetic */ x21[] f2;
-    public final /* synthetic */ zc g2;
+public final class gc extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final u51 b;
+    public final u4.b0 c;
+    public final int d;
+    public int e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gc(zc zcVar, zc zcVar2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.p6 p6Var, int i11, int i12, bc bcVar, x21[] x21VarArr) {
-        super(zcVar2, activity, true, num, i10, true, p6Var, i11, i12);
-        this.g2 = zcVar;
-        this.e2 = bcVar;
-        this.f2 = x21VarArr;
+    public gc(int i3, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity);
+        this.d = i3;
+        this.a = e6Var;
+        u51 u51Var = new u51(3, activity, e6Var);
+        this.b = u51Var;
+        u51Var.setPadding(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(6.0f), 0);
+        u51Var.setClipToPadding(false);
+        u51Var.setAdapter(new ec(this, activity, e6Var, i3));
+        u4.b0 b0Var = new u4.b0();
+        this.c = b0Var;
+        b0Var.j1(0);
+        u51Var.setLayoutManager(b0Var);
+        addView(u51Var, b8.mf.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.ui.g31
-    public final long getDialogId() {
-        return this.g2.a;
-    }
-
-    @Override // org.telegram.ui.g31
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.g31
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.e2.a(Long.valueOf(l4 == null ? 0L : l4.longValue()), num, tL_starGiftUnique);
-        x21 x21Var = this.f2[0];
-        if (x21Var != null) {
-            this.g2.Q = null;
-            x21Var.dismiss();
+    public final void a(int i3, boolean z10) {
+        org.telegram.messenger.xo xoVar = org.telegram.messenger.hp.s1(this.d).q4;
+        int i10 = 0;
+        if (xoVar != null) {
+            ArrayList arrayList = xoVar.c;
+            int i11 = 0;
+            while (true) {
+                if (i11 >= arrayList.size()) {
+                    break;
+                }
+                if (((org.telegram.messenger.wo) arrayList.get(i11)).c == i3) {
+                    i10 = i11;
+                    break;
+                }
+                i11++;
+            }
         }
+        if (i10 != this.e) {
+            this.e = i10;
+            if (!z10) {
+                this.c.h1(i10, (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(56.0f)) / 2);
+            }
+            org.telegram.messenger.g0.d0(this.b, new ci.b8(4, this, z10));
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (getParent() != null) {
+            ViewParent parent = getParent();
+            boolean z10 = true;
+            if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                z10 = false;
+            }
+            parent.requestDisallowInterceptTouchEvent(z10);
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        org.telegram.messenger.g0.d0(this.b, new mi.f(11, this, org.telegram.messenger.hp.s1(this.d).q4));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

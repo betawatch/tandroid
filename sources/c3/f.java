@@ -1,32 +1,58 @@
 package c3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class f {
-    public final long a;
-    public final long b;
-    public final long c;
-    public long d = 0;
+    public long a;
+    public long b;
+    public long c;
+    public long d;
     public long e;
     public long f;
-    public long g;
-    public long h;
+    public final boolean[] g = new boolean[15];
+    public int h;
 
-    public f(long j10, long j11, long j12, long j13, long j14, long j15) {
-        this.a = j10;
-        this.b = j11;
-        this.e = j12;
-        this.f = j13;
-        this.g = j14;
-        this.c = j15;
-        this.h = a(j11, 0L, j12, j13, j14, j15);
+    public final boolean a() {
+        return this.d > 15 && this.h == 0;
     }
 
-    public static long a(long j10, long j11, long j12, long j13, long j14, long j15) {
-        if (j13 + 1 >= j14 || j11 + 1 >= j12) {
-            return j13;
+    public final void b(long j10) {
+        long j11 = this.d;
+        if (j11 == 0) {
+            this.a = j10;
+        } else if (j11 == 1) {
+            long j12 = j10 - this.a;
+            this.b = j12;
+            this.f = j12;
+            this.e = 1L;
+        } else {
+            long j13 = j10 - this.c;
+            int i3 = (int) (j11 % 15);
+            long abs = Math.abs(j13 - this.b);
+            boolean[] zArr = this.g;
+            if (abs <= 1000000) {
+                this.e++;
+                this.f += j13;
+                if (zArr[i3]) {
+                    zArr[i3] = false;
+                    this.h--;
+                }
+            } else if (!zArr[i3]) {
+                zArr[i3] = true;
+                this.h++;
+            }
         }
-        long j16 = (long) ((j10 - j11) * ((j14 - j13) / (j12 - j11)));
-        return e2.l0.j(((j16 + j13) - j15) - (j16 / 20), j13, j14 - 1);
+        this.d++;
+        this.c = j10;
+    }
+
+    public final void c() {
+        this.d = 0L;
+        this.e = 0L;
+        this.f = 0L;
+        this.h = 0;
+        Arrays.fill(this.g, false);
     }
 }

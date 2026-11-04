@@ -1,13 +1,31 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ez0 extends org.telegram.ui.Components.in0 {
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        invalidate();
+public final /* synthetic */ class ez0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ iz0 b;
+
+    public /* synthetic */ ez0(iz0 iz0Var, int i3) {
+        this.a = i3;
+        this.b = iz0Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                iz0 iz0Var = this.b;
+                if (iz0Var.Z == null) {
+                    iz0Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                this.b.dismiss();
+                break;
+        }
     }
 }

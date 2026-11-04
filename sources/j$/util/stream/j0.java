@@ -68,9 +68,9 @@ public final class j0 extends b {
             j0 j0Var2 = null;
             while (true) {
                 if (j0Var != j0Var2) {
-                    Object i10 = j0Var.i();
-                    if (i10 != null && this.j.c.test(i10)) {
-                        d(i10);
+                    Object i3 = j0Var.i();
+                    if (i3 != null && this.j.c.test(i3)) {
+                        d(i3);
                         d dVar = this;
                         while (true) {
                             if (dVar != null) {
@@ -82,7 +82,7 @@ public final class j0 extends b {
                                 dVar = dVar2;
                             } else {
                                 AtomicReference atomicReference = this.h;
-                                while (!atomicReference.compareAndSet(null, i10) && atomicReference.get() == null) {
+                                while (!atomicReference.compareAndSet(null, i3) && atomicReference.get() == null) {
                                 }
                             }
                         }

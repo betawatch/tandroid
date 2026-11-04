@@ -5,30 +5,30 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class ImportingService extends Service implements vs {
-    public e0.r a;
+public class ImportingService extends Service implements cs {
+    public e0.q a;
 
     public ImportingService() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            at.f(i10).b(this, at.v1);
-            at.f(i10).b(this, at.w1);
+        for (int i3 = 0; i3 < 4; i3++) {
+            hs.f(i3).b(this, hs.v1);
+            hs.f(i3).b(this, hs.w1);
         }
     }
 
     public static boolean a() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (rz.C(i10).F.size() != 0) {
+        for (int i3 = 0; i3 < 4; i3++) {
+            if (yy.C(i3).G.size() != 0) {
                 return true;
             }
         }
         return false;
     }
 
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if ((i10 != at.v1 && i10 != at.w1) || a() || a()) {
+    @Override // org.telegram.messenger.cs
+    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+        if ((i3 != hs.v1 && i3 != hs.w1) || a() || a()) {
             return;
         }
         stopSelf();
@@ -46,68 +46,68 @@ public class ImportingService extends Service implements vs {
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.k0(w0.b).b(5, null);
-        for (int i10 = 0; i10 < 4; i10++) {
-            at.f(i10).n(this, at.v1);
-            at.f(i10).n(this, at.w1);
+        new e0.j0(t0.b).b(5, null);
+        for (int i3 = 0; i3 < 4; i3++) {
+            hs.f(i3).n(this, hs.v1);
+            hs.f(i3).n(this, hs.w1);
         }
-        if (v2.a) {
-            f8.b("destroy import service");
+        if (r2.a) {
+            a8.b("destroy import service");
         }
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i10, int i11) {
+    public final int onStartCommand(Intent intent, int i3, int i10) {
         if (!a()) {
-            for (int i12 = 0; i12 < 4; i12++) {
-                if (rz.C(i12).D.m() == 0) {
+            for (int i11 = 0; i11 < 4; i11++) {
+                if (yy.C(i11).E.m() == 0) {
                 }
             }
             stopSelf();
             return 2;
         }
-        if (v2.a) {
-            f8.b("start import service");
+        if (r2.a) {
+            a8.b("start import service");
         }
         if (this.a == null) {
-            pt.i();
-            e0.r rVar = new e0.r(w0.b, null);
-            this.a = rVar;
-            rVar.F.icon = R.drawable.stat_sys_upload;
-            rVar.F.when = System.currentTimeMillis();
-            e0.r rVar2 = this.a;
-            rVar2.y = pt.j0;
-            rVar2.g(dd.L0(org.telegram.messenger.beta.R.string.AppName, null));
-            int i13 = 0;
+            us.i();
+            e0.q qVar = new e0.q(t0.b, null);
+            this.a = qVar;
+            qVar.F.icon = R.drawable.stat_sys_upload;
+            qVar.F.when = System.currentTimeMillis();
+            e0.q qVar2 = this.a;
+            qVar2.y = us.k0;
+            qVar2.g(bd.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            int i12 = 0;
             while (true) {
-                if (i13 >= 4) {
-                    this.a.p(dd.L0(2131749275, null));
-                    this.a.f(dd.L0(2131749275, null));
+                if (i12 >= 4) {
+                    this.a.p(bd.M0(2131749274, null));
+                    this.a.f(bd.M0(2131749274, null));
                     break;
                 }
-                if (rz.C(i13).D.m() != 0) {
-                    this.a.p(dd.L0(2131749276, null));
-                    this.a.f(dd.L0(2131749276, null));
+                if (yy.C(i12).E.m() != 0) {
+                    this.a.p(bd.M0(2131749275, null));
+                    this.a.f(bd.M0(2131749275, null));
                     break;
                 }
-                i13++;
+                i12++;
             }
         }
-        e0.r rVar3 = this.a;
-        rVar3.n = 100;
-        rVar3.o = 0;
-        rVar3.p = true;
+        e0.q qVar3 = this.a;
+        qVar3.n = 100;
+        qVar3.o = 0;
+        qVar3.p = true;
         try {
-            startForeground(5, rVar3.b());
+            startForeground(5, qVar3.b());
         } catch (Throwable th2) {
-            f8.g(th2, true);
+            a8.g(th2, true);
         }
-        new e0.k0(w0.b).e(null, 5, this.a.b());
+        new e0.j0(t0.b).e(null, 5, this.a.b());
         return 2;
     }
 
-    public final void onTimeout(int i10, int i11) {
-        f8.b("ImportingService timeout, type = " + i11);
+    public final void onTimeout(int i3, int i10) {
+        a8.b("ImportingService timeout, type = " + i10);
         try {
             stopForeground(true);
         } catch (Throwable unused) {

@@ -1,152 +1,143 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.Animator;
+import android.os.Bundle;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ll extends org.telegram.ui.Components.g9 {
-    public final /* synthetic */ int G = 0;
-    public Object H;
-    public Object I;
-    public Object J;
+public final class ll extends org.telegram.ui.Cells.i9 {
+    public wm w0;
 
-    public /* synthetic */ ll(Context context) {
-        super(context);
-    }
-
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.G) {
-            case 1:
-                nh.i iVar = (nh.i) this.I;
-                Path path = (Path) this.H;
-                super.draw(canvas);
-                if (((org.telegram.ui.Components.io) this.J).h) {
-                    path.rewind();
-                    RectF rectF = org.telegram.messenger.i0.P;
-                    ImageReceiver imageReceiver = this.a;
-                    rectF.set(imageReceiver.K0, imageReceiver.L0, imageReceiver.y(), this.a.A());
-                    path.addRoundRect(rectF, org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(2.0f), Path.Direction.CW);
-                    canvas.save();
-                    canvas.clipPath(path);
-                    iVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f)));
-                    ImageReceiver imageReceiver2 = this.a;
-                    iVar.setBounds((int) imageReceiver2.K0, (int) imageReceiver2.L0, (int) imageReceiver2.y(), (int) this.a.A());
-                    iVar.draw(canvas);
-                    invalidate();
-                    canvas.restore();
-                    break;
+    @Override // org.telegram.ui.Cells.u9
+    public final void I(int i3, int i10, org.telegram.messenger.zi ziVar) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.messenger.ui S8;
+        wm wmVar = this.w0;
+        if (wmVar != null) {
+            int min = Math.min(i10, wmVar.getMessagesController().o4 + i3);
+            if (ziVar.d1() != 0 && (S8 = this.w0.S8(ziVar.d1())) != null && !S8.i) {
+                ziVar = S8.h;
+            }
+            if (ziVar == null) {
+                return;
+            }
+            mm b10 = mm.b(i3, min, ziVar);
+            if (b10.i == null) {
+                return;
+            }
+            mj mjVar = this.w0.a0;
+            if (mjVar != null && mjVar.getVisibility() == 0) {
+                kVar = ((org.telegram.ui.ActionBar.d2) this.w0).actionBar;
+                if (kVar != null) {
+                    kVar2 = ((org.telegram.ui.ActionBar.d2) this.w0).actionBar;
+                    if (kVar2.v()) {
+                        this.w0.N7(false);
+                    }
                 }
-                break;
-            default:
-                super.draw(canvas);
-                break;
+                this.w0.fc(ziVar, b10);
+                mj mjVar2 = this.w0.a0;
+                if (mjVar2 != null) {
+                    mjVar2.G0();
+                    return;
+                }
+                return;
+            }
+            wm wmVar2 = this.w0;
+            wmVar2.C5 = b10;
+            wmVar2.E5 = ziVar;
+            wmVar2.w5 = new org.telegram.messenger.dj(wmVar2.h != null, wmVar2.U9(), org.telegram.messenger.t3.p0(this.w0.e));
+            wm wmVar3 = this.w0;
+            wmVar3.w5.f(wmVar3.E5, wmVar3.S8(ziVar.d1()), this.w0.a(), this.w0.C5);
+            Bundle l10 = org.telegram.ui.Cells.f1.l(3, "onlySelect", "dialogsType", true);
+            l10.putBoolean("quote", true);
+            l10.putInt("messagesCount", 1);
+            l10.putBoolean("canSelectTopics", true);
+            uw uwVar = new uw(l10);
+            wm wmVar4 = this.w0;
+            uwVar.D2 = wmVar4;
+            wmVar4.presentFragment(uwVar);
         }
     }
 
-    @Override // org.telegram.ui.Components.g9, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.G) {
-            case 0:
-                float[] fArr = (float[]) this.J;
-                nh.i iVar = (nh.i) this.I;
-                Path path = (Path) this.H;
-                super.onDraw(canvas);
-                if (this.r) {
-                    canvas.save();
-                    RectF rectF = org.telegram.messenger.i0.P;
-                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                    int[] iArr = this.a.W0;
-                    float f7 = iArr[0];
-                    fArr[1] = f7;
-                    fArr[0] = f7;
-                    float f10 = iArr[1];
-                    fArr[3] = f10;
-                    fArr[2] = f10;
-                    float f11 = iArr[2];
-                    fArr[5] = f11;
-                    fArr[4] = f11;
-                    float f12 = iArr[3];
-                    fArr[7] = f12;
-                    fArr[6] = f12;
-                    path.rewind();
-                    path.addRoundRect(rectF, fArr, Path.Direction.CW);
-                    canvas.clipPath(path);
-                    iVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f)));
-                    iVar.setBounds(0, 0, getWidth(), getHeight());
-                    iVar.draw(canvas);
-                    canvas.restore();
-                    invalidate();
-                    break;
-                }
-                break;
-            case 1:
-            default:
-                super.onDraw(canvas);
-                break;
-            case 2:
-                org.telegram.ui.Components.voip.g gVar = (org.telegram.ui.Components.voip.g) this.I;
-                super.onDraw(canvas);
-                org.telegram.ui.Components.e50 e50Var = (org.telegram.ui.Components.e50) this.J;
-                if (e50Var.w0) {
-                    int i10 = e50Var.W0;
-                    gVar.f = i10;
-                    RectF rectF2 = org.telegram.messenger.i0.P;
-                    float f13 = i10;
-                    rectF2.set(0.0f, 0.0f, f13, f13);
-                    float width = rectF2.width() / 2.0f;
-                    canvas.drawRoundRect(rectF2, width, width, (Paint) this.H);
-                    rectF2.inset(org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f));
-                    gVar.a(width, canvas, rectF2, null);
-                    invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                org.telegram.ui.Components.voip.g gVar2 = (org.telegram.ui.Components.voip.g) this.I;
-                super.onDraw(canvas);
-                if (((org.telegram.ui.Components.d50) this.J).l0) {
-                    float min = Math.min(getWidth(), getHeight()) * 0.5f;
-                    RectF rectF3 = org.telegram.messenger.i0.P;
-                    rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
-                    canvas.drawRoundRect(rectF3, min, min, (Paint) this.H);
-                    rectF3.inset(org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f));
-                    gVar2.f = getWidth();
-                    gVar2.a(min, canvas, rectF3, null);
-                    invalidate();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Cells.u9
+    public final boolean b() {
+        wm wmVar;
+        wm wmVar2 = this.w0;
+        if ((wmVar2 != null && wmVar2.a() == 489000) || (wmVar = this.w0) == null) {
+            return true;
+        }
+        if (!org.telegram.messenger.m5.C(wmVar.a()) && this.w0.U9()) {
+            return false;
+        }
+        org.telegram.ui.Cells.p9 p9Var = this.W;
+        return p9Var == null || ((org.telegram.ui.Cells.q1) p9Var).getMessageObject() == null || ((org.telegram.ui.Cells.q1) this.W).getMessageObject().k == null || !((org.telegram.ui.Cells.q1) this.W).getMessageObject().k.noforwards;
+    }
+
+    public final void d0(wm wmVar) {
+        int i3 = 0;
+        while (true) {
+            SparseArray sparseArray = this.p0;
+            if (i3 >= sparseArray.size()) {
+                sparseArray.clear();
+                f(false);
+                this.C = null;
+                this.w0 = wmVar;
+                return;
+            }
+            ((Animator) sparseArray.get(sparseArray.keyAt(i3))).cancel();
+            i3++;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ll(org.telegram.ui.Components.io ioVar, Context context, nh.i iVar) {
-        super(context);
-        this.J = ioVar;
-        this.I = iVar;
-        this.H = new Path();
+    @Override // org.telegram.ui.Cells.u9
+    public final boolean e() {
+        org.telegram.ui.Cells.p9 p9Var;
+        wm wmVar;
+        org.telegram.ui.Cells.p9 p9Var2;
+        TLRPC.Chat chat;
+        wm wmVar2 = this.w0;
+        if (wmVar2 == null || wmVar2.a() != 489000) {
+            wm wmVar3 = this.w0;
+            boolean z10 = (wmVar3 != null && wmVar3.U9()) || !((p9Var = this.W) == null || ((org.telegram.ui.Cells.q1) p9Var).getMessageObject() == null || ((org.telegram.ui.Cells.q1) this.W).getMessageObject().k == null || !((org.telegram.ui.Cells.q1) this.W).getMessageObject().k.noforwards);
+            if (!this.s0 && (wmVar = this.w0) != null && wmVar.h == null && (((p9Var2 = this.W) == null || (((org.telegram.ui.Cells.q1) p9Var2).getMessageObject() != null && ((org.telegram.ui.Cells.q1) this.W).getMessageObject().D != 23 && !((org.telegram.ui.Cells.q1) this.W).getMessageObject().U4() && !((org.telegram.ui.Cells.q1) this.W).getMessageObject().A3() && ((((org.telegram.ui.Cells.q1) this.W).getMessageObject().w2 == null || org.telegram.messenger.gv.c(((org.telegram.ui.Cells.q1) this.W).getMessageObject())) && !this.w0.r9.q0))) && !this.w0.getMessagesController().s7.B(this.w0.k6) && !org.telegram.messenger.l10.A(this.w0.k6) && (!z10 || (chat = this.w0.e) == null || org.telegram.messenger.t3.B(chat)))) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ll(org.telegram.ui.Components.d50 d50Var, Context context, Paint paint) {
-        super(context);
-        this.J = d50Var;
-        this.H = paint;
-        this.I = new org.telegram.ui.Components.voip.g();
+    @Override // org.telegram.ui.Cells.u9
+    public final int o() {
+        wm wmVar = this.w0;
+        if (wmVar == null) {
+            return 0;
+        }
+        return wmVar.Va;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ll(org.telegram.ui.Components.e50 e50Var, Context context, Paint paint) {
-        super(context);
-        this.J = e50Var;
-        this.H = paint;
-        this.I = new org.telegram.ui.Components.voip.g();
+    @Override // org.telegram.ui.Cells.u9
+    public final int p() {
+        wm wmVar = this.w0;
+        if (wmVar == null) {
+            return 0;
+        }
+        return (int) wmVar.M9;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final org.telegram.ui.ActionBar.e6 q() {
+        wm wmVar = this.w0;
+        if (wmVar != null) {
+            return wmVar.ya;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int t(int i3) {
+        return org.telegram.ui.ActionBar.k6.w0(i3, this.w0.ya);
     }
 }

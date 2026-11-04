@@ -1,68 +1,100 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.DeadObjectException;
-import android.os.RemoteException;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.content.Intent;
+import android.os.Bundle;
+import b8.kg;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class k1 extends x0 {
-    public final w b;
-    public final TaskCompletionSource c;
-    public final t d;
+public final class k1 extends androidx.fragment.app.s implements l {
+    public static final WeakHashMap m0 = new WeakHashMap();
+    public final kg l0 = new kg(3, (byte) 0);
 
-    public k1(int i10, w wVar, TaskCompletionSource taskCompletionSource, t tVar) {
-        super(i10);
-        this.c = taskCompletionSource;
-        this.b = wVar;
-        this.d = tVar;
-        if (i10 == 2 && wVar.b) {
-            throw new IllegalArgumentException("Best-effort write calls cannot pass methods that should auto-resolve missing features.");
+    @Override // androidx.fragment.app.s
+    public final void A() {
+        this.V = true;
+        kg kgVar = this.l0;
+        kgVar.b = 5;
+        Iterator it = ((Map) kgVar.c).values().iterator();
+        while (it.hasNext()) {
+            ((k) it.next()).onDestroy();
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.l1
-    public final void a(Status status) {
-        this.c.trySetException(this.d.a(status));
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l1
-    public final void b(Exception exc) {
-        this.c.trySetException(exc);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l1
-    public final void c(q0 q0Var) {
-        TaskCompletionSource taskCompletionSource = this.c;
-        try {
-            this.b.c(q0Var.b, taskCompletionSource);
-        } catch (DeadObjectException e) {
-            throw e;
-        } catch (RemoteException e7) {
-            a(l1.e(e7));
-        } catch (RuntimeException e10) {
-            taskCompletionSource.trySetException(e10);
+    @Override // androidx.fragment.app.s
+    public final void F() {
+        this.V = true;
+        kg kgVar = this.l0;
+        kgVar.b = 3;
+        Iterator it = ((Map) kgVar.c).values().iterator();
+        while (it.hasNext()) {
+            ((k) it.next()).onResume();
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.l1
-    public final void d(h1 h1Var, boolean z10) {
-        Boolean valueOf = Boolean.valueOf(z10);
-        Map map = (Map) h1Var.b;
-        TaskCompletionSource taskCompletionSource = this.c;
-        map.put(taskCompletionSource, valueOf);
-        taskCompletionSource.getTask().addOnCompleteListener(new h1(h1Var, taskCompletionSource));
+    @Override // androidx.fragment.app.s
+    public final void G(Bundle bundle) {
+        this.l0.G(bundle);
     }
 
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final boolean f(q0 q0Var) {
-        return this.b.b;
+    @Override // androidx.fragment.app.s
+    public final void H() {
+        this.V = true;
+        kg kgVar = this.l0;
+        kgVar.b = 2;
+        Iterator it = ((Map) kgVar.c).values().iterator();
+        while (it.hasNext()) {
+            ((k) it.next()).onStart();
+        }
     }
 
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final k6.c[] g(q0 q0Var) {
-        return this.b.a;
+    @Override // androidx.fragment.app.s
+    public final void I() {
+        this.V = true;
+        kg kgVar = this.l0;
+        kgVar.b = 4;
+        Iterator it = ((Map) kgVar.c).values().iterator();
+        while (it.hasNext()) {
+            ((k) it.next()).onStop();
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l
+    public final void a(String str, k kVar) {
+        this.l0.D(str, kVar);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l
+    public final k b(Class cls, String str) {
+        return (k) cls.cast(((Map) this.l0.c).get(str));
+    }
+
+    @Override // androidx.fragment.app.s
+    public final void i(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        super.i(str, fileDescriptor, printWriter, strArr);
+        Iterator it = ((Map) this.l0.c).values().iterator();
+        while (it.hasNext()) {
+            ((k) it.next()).dump(str, fileDescriptor, printWriter, strArr);
+        }
+    }
+
+    @Override // androidx.fragment.app.s
+    public final void x(int i3, int i10, Intent intent) {
+        super.x(i3, i10, intent);
+        Iterator it = ((Map) this.l0.c).values().iterator();
+        while (it.hasNext()) {
+            ((k) it.next()).onActivityResult(i3, i10, intent);
+        }
+    }
+
+    @Override // androidx.fragment.app.s
+    public final void z(Bundle bundle) {
+        super.z(bundle);
+        this.l0.E(bundle);
     }
 }

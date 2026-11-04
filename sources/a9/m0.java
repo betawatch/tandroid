@@ -1,37 +1,26 @@
 package a9;
 
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m0 extends k0 {
-    public final /* synthetic */ TaskCompletionSource h;
-    public final /* synthetic */ k0 n;
-    public final /* synthetic */ e r;
+public final class m0 extends q6.a {
+    public static final Parcelable.Creator<m0> CREATOR = new n0(0);
+    public final int a;
+    public final f b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(e eVar, TaskCompletionSource taskCompletionSource, TaskCompletionSource taskCompletionSource2, k0 k0Var) {
-        super(taskCompletionSource);
-        this.h = taskCompletionSource2;
-        this.n = k0Var;
-        this.r = eVar;
+    public m0(int i3, f fVar) {
+        this.a = i3;
+        this.b = fVar;
     }
 
-    @Override // a9.k0
-    public final void b() {
-        synchronized (this.r.f) {
-            try {
-                e eVar = this.r;
-                TaskCompletionSource taskCompletionSource = this.h;
-                eVar.e.add(taskCompletionSource);
-                taskCompletionSource.getTask().addOnCompleteListener(new n4.q(eVar, taskCompletionSource));
-                if (this.r.l.getAndIncrement() > 0) {
-                    this.r.b.b("Already connected to the service.", new Object[0]);
-                }
-                e.b(this.r, this.n);
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.l(parcel, 3, this.b, i3);
+        j8.a.t(parcel, s6);
     }
 }

@@ -5,18 +5,19 @@ import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.os.Build;
 import java.util.Arrays;
+import k2.p1;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 final class WebRtcAudioUtils {
     private static final String TAG = "WebRtcAudioUtilsExternal";
 
-    public static String audioEncodingToString(int i10) {
-        if (i10 == 0) {
+    public static String audioEncodingToString(int i3) {
+        if (i3 == 0) {
             return "INVALID";
         }
-        switch (i10) {
+        switch (i3) {
             case 2:
                 return "PCM_16BIT";
             case 3:
@@ -33,12 +34,12 @@ final class WebRtcAudioUtils {
             case 9:
                 return "MP3";
             default:
-                return i0.a.i(i10, "Invalid encoding: ");
+                return p1.i(i3, "Invalid encoding: ");
         }
     }
 
-    public static String audioSourceToString(int i10) {
-        switch (i10) {
+    public static String audioSourceToString(int i3) {
+        switch (i3) {
             case 0:
                 return "DEFAULT";
             case 1:
@@ -65,12 +66,12 @@ final class WebRtcAudioUtils {
         }
     }
 
-    public static String channelMaskToString(int i10) {
-        return i10 != 12 ? i10 != 16 ? "INVALID" : "IN_MONO" : "IN_STEREO";
+    public static String channelMaskToString(int i3) {
+        return i3 != 12 ? i3 != 16 ? "INVALID" : "IN_MONO" : "IN_STEREO";
     }
 
-    public static String deviceTypeToString(int i10) {
-        switch (i10) {
+    public static String deviceTypeToString(int i3) {
+        switch (i3) {
             case 1:
                 return "TYPE_BUILTIN_EARPIECE";
             case 2:
@@ -178,15 +179,15 @@ final class WebRtcAudioUtils {
         if (isVolumeFixed) {
             return;
         }
-        for (int i10 = 0; i10 < 6; i10++) {
-            int i11 = iArr[i10];
+        for (int i3 = 0; i3 < 6; i3++) {
+            int i10 = iArr[i3];
             StringBuilder sb2 = new StringBuilder();
-            sb2.append("  " + streamTypeToString(i11) + ": ");
+            sb2.append("  " + streamTypeToString(i10) + ": ");
             sb2.append("volume=");
-            sb2.append(audioManager.getStreamVolume(i11));
+            sb2.append(audioManager.getStreamVolume(i10));
             sb2.append(", max=");
-            sb2.append(audioManager.getStreamMaxVolume(i11));
-            logIsStreamMute(str, audioManager, i11, sb2);
+            sb2.append(audioManager.getStreamMaxVolume(i10));
+            logIsStreamMute(str, audioManager, i10, sb2);
             Logging.d(str, sb2.toString());
         }
     }
@@ -195,20 +196,20 @@ final class WebRtcAudioUtils {
         Logging.d(str, "Android SDK: " + Build.VERSION.SDK_INT + ", Release: " + Build.VERSION.RELEASE + ", Brand: " + Build.BRAND + ", Device: " + Build.DEVICE + ", Id: " + Build.ID + ", Hardware: " + Build.HARDWARE + ", Manufacturer: " + Build.MANUFACTURER + ", Model: " + Build.MODEL + ", Product: " + Build.PRODUCT);
     }
 
-    private static void logIsStreamMute(String str, AudioManager audioManager, int i10, StringBuilder sb2) {
+    private static void logIsStreamMute(String str, AudioManager audioManager, int i3, StringBuilder sb2) {
         sb2.append(", muted=");
-        sb2.append(audioManager.isStreamMute(i10));
+        sb2.append(audioManager.isStreamMute(i3));
     }
 
-    public static String modeToString(int i10) {
-        return i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? "MODE_INVALID" : "MODE_IN_COMMUNICATION" : "MODE_IN_CALL" : "MODE_RINGTONE" : "MODE_NORMAL";
+    public static String modeToString(int i3) {
+        return i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? "MODE_INVALID" : "MODE_IN_COMMUNICATION" : "MODE_IN_CALL" : "MODE_RINGTONE" : "MODE_NORMAL";
     }
 
     public static boolean runningOnEmulator() {
         return Build.HARDWARE.equals("goldfish") && Build.BRAND.startsWith("generic_");
     }
 
-    private static String streamTypeToString(int i10) {
-        return i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? "STREAM_INVALID" : "STREAM_NOTIFICATION" : "STREAM_ALARM" : "STREAM_MUSIC" : "STREAM_RING" : "STREAM_SYSTEM" : "STREAM_VOICE_CALL";
+    private static String streamTypeToString(int i3) {
+        return i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? i3 != 5 ? "STREAM_INVALID" : "STREAM_NOTIFICATION" : "STREAM_ALARM" : "STREAM_MUSIC" : "STREAM_RING" : "STREAM_SYSTEM" : "STREAM_VOICE_CALL";
     }
 }

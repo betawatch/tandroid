@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class l {
     public final ViewGroup a;
@@ -21,14 +21,14 @@ public final class l {
     public boolean f;
 
     public l(ViewGroup container) {
-        kotlin.jvm.internal.i.e(container, "container");
+        kotlin.jvm.internal.j.e(container, "container");
         this.a = container;
         this.b = new ArrayList();
         this.c = new ArrayList();
     }
 
     public final void a(u0 operation) {
-        kotlin.jvm.internal.i.e(operation, "operation");
+        kotlin.jvm.internal.j.e(operation, "operation");
         if (operation.b) {
             throw null;
         }
@@ -56,7 +56,7 @@ public final class l {
         if (arrayList.isEmpty()) {
             throw new NoSuchElementException("List is empty.");
         }
-        ((u0) arrayList.get(bd.j.a(arrayList))).getClass();
+        ((u0) arrayList.get(ed.h.b(arrayList))).getClass();
         if (arrayList.size() > 0) {
             ((u0) arrayList.get(0)).getClass();
             throw null;
@@ -73,27 +73,27 @@ public final class l {
         }
         ArrayList arrayList4 = new ArrayList();
         int size = arrayList3.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList3.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList3.get(i3);
+            i3++;
             if (!((k) obj).a()) {
                 arrayList4.add(obj);
             }
         }
         ArrayList arrayList5 = new ArrayList();
         int size2 = arrayList4.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj2 = arrayList4.get(i11);
-            i11++;
+        int i10 = 0;
+        while (i10 < size2) {
+            Object obj2 = arrayList4.get(i10);
+            i10++;
             ((k) obj2).getClass();
         }
         int size3 = arrayList5.size();
-        int i12 = 0;
-        while (i12 < size3) {
-            Object obj3 = arrayList5.get(i12);
-            i12++;
+        int i11 = 0;
+        while (i11 < size3) {
+            Object obj3 = arrayList5.get(i11);
+            i11++;
             ((k) obj3).getClass();
         }
         ArrayList arrayList6 = new ArrayList();
@@ -104,15 +104,15 @@ public final class l {
         }
         arrayList7.isEmpty();
         int size4 = arrayList2.size();
-        int i13 = 0;
-        while (i13 < size4) {
-            Object obj4 = arrayList2.get(i13);
-            i13++;
+        int i12 = 0;
+        while (i12 < size4) {
+            Object obj4 = arrayList2.get(i12);
+            i12++;
             f fVar = (f) obj4;
             Context context = this.a.getContext();
             fVar.getClass();
-            kotlin.jvm.internal.i.d(context, "context");
-            n4.q b10 = fVar.b(context);
+            kotlin.jvm.internal.j.d(context, "context");
+            tf.b b10 = fVar.b(context);
             if (b10 != null) {
                 if (((AnimatorSet) b10.b) != null) {
                     throw null;
@@ -138,13 +138,13 @@ public final class l {
         }
         synchronized (this.b) {
             try {
-                ArrayList o10 = bd.i.o(this.c);
+                ArrayList n4 = ed.g.n(this.c);
                 this.c.clear();
-                int size = o10.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = o10.get(i10);
-                    i10++;
+                int size = n4.size();
+                int i3 = 0;
+                while (i3 < size) {
+                    Object obj = n4.get(i3);
+                    i3++;
                     u0 u0Var = (u0) obj;
                     if (!this.b.isEmpty()) {
                         u0Var.getClass();
@@ -152,11 +152,11 @@ public final class l {
                     }
                     u0Var.getClass();
                 }
-                int size2 = o10.size();
-                int i11 = 0;
-                while (i11 < size2) {
-                    Object obj2 = o10.get(i11);
-                    i11++;
+                int size2 = n4.size();
+                int i10 = 0;
+                while (i10 < size2) {
+                    Object obj2 = n4.get(i10);
+                    i10++;
                     u0 u0Var2 = (u0) obj2;
                     if (this.d) {
                         if (j0.K(2)) {
@@ -174,33 +174,33 @@ public final class l {
                 }
                 if (!this.b.isEmpty()) {
                     f();
-                    ArrayList o11 = bd.i.o(this.b);
-                    if (o11.isEmpty()) {
+                    ArrayList n10 = ed.g.n(this.b);
+                    if (n10.isEmpty()) {
                         return;
                     }
                     this.b.clear();
-                    this.c.addAll(o11);
+                    this.c.addAll(n10);
                     if (j0.K(2)) {
                         Log.v("FragmentManager", "SpecialEffectsController: Executing pending operations");
                     }
-                    b(o11, this.e);
-                    int i12 = 0;
-                    if (o11.size() > 0) {
-                        ((u0) o11.get(0)).getClass();
+                    b(n10, this.e);
+                    int i11 = 0;
+                    if (n10.size() > 0) {
+                        ((u0) n10.get(0)).getClass();
                         throw null;
                     }
                     ArrayList arrayList = new ArrayList();
-                    int size3 = o11.size();
-                    while (i12 < size3) {
-                        Object obj3 = o11.get(i12);
-                        i12++;
+                    int size3 = n10.size();
+                    while (i11 < size3) {
+                        Object obj3 = n10.get(i11);
+                        i11++;
                         ((u0) obj3).getClass();
-                        bd.o.e(arrayList, null);
+                        ed.m.e(null, arrayList);
                     }
                     boolean isEmpty = arrayList.isEmpty();
                     boolean z10 = !isEmpty;
-                    if (o11.size() > 0) {
-                        ((u0) o11.get(0)).getClass();
+                    if (n10.size() > 0) {
+                        ((u0) n10.get(0)).getClass();
                         throw null;
                     }
                     this.d = !z10;
@@ -208,10 +208,10 @@ public final class l {
                         Log.v("FragmentManager", "SpecialEffectsController: Operation seekable = " + z10 + " \ntransition = true");
                     }
                     if (!isEmpty) {
-                        e(o11);
-                        int size4 = o11.size();
-                        for (int i13 = 0; i13 < size4; i13++) {
-                            a((u0) o11.get(i13));
+                        e(n10);
+                        int size4 = n10.size();
+                        for (int i12 = 0; i12 < size4; i12++) {
+                            a((u0) n10.get(i12));
                         }
                     }
                     this.e = false;
@@ -236,20 +236,20 @@ public final class l {
             try {
                 f();
                 e(this.b);
-                ArrayList o10 = bd.i.o(this.c);
-                int size = o10.size();
+                ArrayList n4 = ed.g.n(this.c);
+                int size = n4.size();
+                int i3 = 0;
                 int i10 = 0;
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = o10.get(i11);
-                    i11++;
+                while (i10 < size) {
+                    Object obj = n4.get(i10);
+                    i10++;
                     ((u0) obj).getClass();
                 }
-                int size2 = o10.size();
-                int i12 = 0;
-                while (i12 < size2) {
-                    Object obj2 = o10.get(i12);
-                    i12++;
+                int size2 = n4.size();
+                int i11 = 0;
+                while (i11 < size2) {
+                    Object obj2 = n4.get(i11);
+                    i11++;
                     u0 u0Var = (u0) obj2;
                     if (j0.K(2)) {
                         if (isAttachedToWindow) {
@@ -261,18 +261,18 @@ public final class l {
                     }
                     u0Var.a(this.a);
                 }
-                ArrayList o11 = bd.i.o(this.b);
-                int size3 = o11.size();
-                int i13 = 0;
-                while (i13 < size3) {
-                    Object obj3 = o11.get(i13);
-                    i13++;
+                ArrayList n10 = ed.g.n(this.b);
+                int size3 = n10.size();
+                int i12 = 0;
+                while (i12 < size3) {
+                    Object obj3 = n10.get(i12);
+                    i12++;
                     ((u0) obj3).getClass();
                 }
-                int size4 = o11.size();
-                while (i10 < size4) {
-                    Object obj4 = o11.get(i10);
-                    i10++;
+                int size4 = n10.size();
+                while (i3 < size4) {
+                    Object obj4 = n10.get(i3);
+                    i3++;
                     u0 u0Var2 = (u0) obj4;
                     if (j0.K(2)) {
                         if (isAttachedToWindow) {
@@ -292,8 +292,8 @@ public final class l {
 
     public final void e(List list) {
         int size = list.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            u0 u0Var = (u0) list.get(i10);
+        for (int i3 = 0; i3 < size; i3++) {
+            u0 u0Var = (u0) list.get(i3);
             u0Var.getClass();
             if (!u0Var.a) {
                 u0Var.a = true;
@@ -303,15 +303,15 @@ public final class l {
         Iterator it = list.iterator();
         while (it.hasNext()) {
             ((u0) it.next()).getClass();
-            bd.o.e(arrayList, null);
+            ed.m.e(null, arrayList);
         }
-        List m10 = bd.i.m(bd.i.p(arrayList));
-        int size2 = m10.size();
-        for (int i11 = 0; i11 < size2; i11++) {
-            t0 t0Var = (t0) m10.get(i11);
+        List l10 = ed.g.l(ed.g.o(arrayList));
+        int size2 = l10.size();
+        for (int i10 = 0; i10 < size2; i10++) {
+            t0 t0Var = (t0) l10.get(i10);
             t0Var.getClass();
             ViewGroup container = this.a;
-            kotlin.jvm.internal.i.e(container, "container");
+            kotlin.jvm.internal.j.e(container, "container");
             if (!t0Var.a) {
                 t0Var.c(container);
             }
@@ -322,10 +322,10 @@ public final class l {
     public final void f() {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
             ((u0) obj).getClass();
         }
     }

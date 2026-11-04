@@ -1,6 +1,6 @@
 package org.telegram.tgnet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public interface InputSerializedData {
     TLDataSourceType getDataSourceType();
@@ -19,7 +19,7 @@ public interface InputSerializedData {
 
     void readBytes(byte[] bArr, boolean z10);
 
-    byte[] readData(int i10, boolean z10);
+    byte[] readData(int i3, boolean z10);
 
     double readDouble(boolean z10);
 
@@ -33,5 +33,5 @@ public interface InputSerializedData {
 
     int remaining();
 
-    void skip(int i10);
+    void skip(int i3);
 }

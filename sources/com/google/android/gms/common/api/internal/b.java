@@ -1,37 +1,7 @@
 package com.google.android.gms.common.api.internal;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b {
-    public final int a;
-    public final com.google.android.gms.common.api.e b;
-    public final com.google.android.gms.common.api.b c;
-    public final String d;
-
-    public b(com.google.android.gms.common.api.e eVar, com.google.android.gms.common.api.b bVar, String str) {
-        this.b = eVar;
-        this.c = bVar;
-        this.d = str;
-        this.a = Arrays.hashCode(new Object[]{eVar, bVar, str});
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        return n6.l.k(this.b, bVar.b) && n6.l.k(this.c, bVar.c) && n6.l.k(this.d, bVar.d);
-    }
-
-    public final int hashCode() {
-        return this.a;
-    }
+public interface b {
+    void a(boolean z10);
 }

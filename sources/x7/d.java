@@ -1,57 +1,43 @@
 package x7;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class d implements Map.Entry {
-    public final /* synthetic */ int a;
+public final class d extends b8.m {
+    public final transient Object[] e;
 
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        switch (this.a) {
-            case 0:
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry = (Map.Entry) obj;
-                    if (!w7.u8.a(getKey(), entry.getKey()) || !w7.u8.a(getValue(), entry.getValue())) {
-                    }
+    public d(Object[] objArr) {
+        super(4);
+        this.e = objArr;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:5:0x001b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x001c A[RETURN] */
+    @Override // b8.m, java.util.Map
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object get(Object obj) {
+        Object obj2;
+        if (obj != null) {
+            Object[] objArr = this.e;
+            Object obj3 = objArr[0];
+            obj3.getClass();
+            if (obj3.equals(obj)) {
+                obj2 = objArr[1];
+                obj2.getClass();
+                if (obj2 != null) {
+                    return null;
                 }
-                break;
-            default:
-                if (obj instanceof Map.Entry) {
-                    Map.Entry entry2 = (Map.Entry) obj;
-                    if (!w7.s9.a(getKey(), entry2.getKey()) || !w7.s9.a(getValue(), entry2.getValue())) {
-                    }
-                }
-                break;
+                return obj2;
+            }
         }
-        return false;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        switch (this.a) {
-            case 0:
-                Object key = getKey();
-                Object value = getValue();
-                return (key == null ? 0 : key.hashCode()) ^ (value != null ? value.hashCode() : 0);
-            default:
-                Object key2 = getKey();
-                Object value2 = getValue();
-                return (key2 == null ? 0 : key2.hashCode()) ^ (value2 != null ? value2.hashCode() : 0);
+        obj2 = null;
+        if (obj2 != null) {
         }
     }
 
-    public final String toString() {
-        switch (this.a) {
-            case 0:
-                return getKey() + "=" + getValue();
-            default:
-                return a1.g.C(String.valueOf(getKey()), "=", String.valueOf(getValue()));
-        }
-    }
-
-    public /* synthetic */ d(int i10, boolean z10) {
-        this.a = i10;
+    @Override // java.util.Map
+    public final int size() {
+        return 1;
     }
 }

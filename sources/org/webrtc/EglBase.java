@@ -3,8 +3,9 @@ package org.webrtc;
 import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import java.util.ArrayList;
+import k2.p1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public interface EglBase {
     public static final int EGL_OPENGL_ES2_BIT = 4;
@@ -17,7 +18,7 @@ public interface EglBase {
     public static final int[] CONFIG_PIXEL_RGBA_BUFFER = e.a().setHasAlphaChannel(true).setSupportsPixelBuffer(true).createConfigAttributes();
     public static final int[] CONFIG_RECORDABLE = e.a().setIsRecordable(true).createConfigAttributes();
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class ConfigBuilder {
         private boolean hasAlphaChannel;
         private boolean isRecordable;
@@ -36,8 +37,8 @@ public interface EglBase {
                 arrayList.add(12321);
                 arrayList.add(8);
             }
-            int i10 = this.openGlesVersion;
-            if (i10 == 2 || i10 == 3) {
+            int i3 = this.openGlesVersion;
+            if (i3 == 2 || i3 == 3) {
                 arrayList.add(12352);
                 arrayList.add(Integer.valueOf(this.openGlesVersion == 3 ? 64 : 4));
             }
@@ -51,8 +52,8 @@ public interface EglBase {
             }
             arrayList.add(12344);
             int[] iArr = new int[arrayList.size()];
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                iArr[i11] = ((Integer) arrayList.get(i11)).intValue();
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                iArr[i10] = ((Integer) arrayList.get(i10)).intValue();
             }
             return iArr;
         }
@@ -67,11 +68,11 @@ public interface EglBase {
             return this;
         }
 
-        public ConfigBuilder setOpenGlesVersion(int i10) {
-            if (i10 < 1 || i10 > 3) {
-                throw new IllegalArgumentException(i0.a.j(i10, "OpenGL ES version ", " not supported"));
+        public ConfigBuilder setOpenGlesVersion(int i3) {
+            if (i3 < 1 || i3 > 3) {
+                throw new IllegalArgumentException(p1.j(i3, "OpenGL ES version ", " not supported"));
             }
-            this.openGlesVersion = i10;
+            this.openGlesVersion = i3;
             return this;
         }
 
@@ -81,7 +82,7 @@ public interface EglBase {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public interface Context {
         public static final long NO_CONTEXT = 0;
 
@@ -92,7 +93,7 @@ public interface EglBase {
 
     void createDummyPbufferSurface();
 
-    void createPbufferSurface(int i10, int i11);
+    void createPbufferSurface(int i3, int i10);
 
     void createSurface(SurfaceTexture surfaceTexture);
 

@@ -2,61 +2,62 @@ package m;
 
 import android.content.Context;
 import android.view.View;
+import gi.v5;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends l.w {
+public final class d extends l.v {
     public final /* synthetic */ int l = 0;
     public final /* synthetic */ h m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(h hVar, Context context, l.l lVar, View view) {
-        super(context, lVar, view, true, R.attr.actionOverflowMenuStyle, 0);
+    public d(h hVar, Context context, l.k kVar, View view) {
+        super(context, kVar, view, true, R.attr.actionOverflowMenuStyle, 0);
         this.m = hVar;
         this.f = 8388613;
-        k2.m0 m0Var = hVar.M;
-        this.h = m0Var;
-        l.t tVar = this.i;
-        if (tVar != null) {
-            tVar.e(m0Var);
+        v5 v5Var = hVar.N;
+        this.h = v5Var;
+        l.s sVar = this.i;
+        if (sVar != null) {
+            sVar.h(v5Var);
         }
     }
 
-    @Override // l.w
+    @Override // l.v
     public final void c() {
         switch (this.l) {
             case 0:
                 h hVar = this.m;
-                hVar.J = null;
+                hVar.K = null;
                 hVar.getClass();
                 super.c();
                 break;
             default:
                 h hVar2 = this.m;
-                l.l lVar = hVar2.c;
-                if (lVar != null) {
-                    lVar.c(true);
+                l.k kVar = hVar2.c;
+                if (kVar != null) {
+                    kVar.c(true);
                 }
-                hVar2.I = null;
+                hVar2.J = null;
                 super.c();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(h hVar, Context context, l.e0 e0Var, View view) {
-        super(context, e0Var, view, false, R.attr.actionOverflowMenuStyle, 0);
+    public d(h hVar, Context context, l.d0 d0Var, View view) {
+        super(context, d0Var, view, false, R.attr.actionOverflowMenuStyle, 0);
         this.m = hVar;
-        if ((e0Var.A.x & 32) != 32) {
+        if ((d0Var.A.x & 32) != 32) {
             View view2 = hVar.r;
             this.e = view2 == null ? (View) hVar.n : view2;
         }
-        k2.m0 m0Var = hVar.M;
-        this.h = m0Var;
-        l.t tVar = this.i;
-        if (tVar != null) {
-            tVar.e(m0Var);
+        v5 v5Var = hVar.N;
+        this.h = v5Var;
+        l.s sVar = this.i;
+        if (sVar != null) {
+            sVar.h(v5Var);
         }
     }
 }

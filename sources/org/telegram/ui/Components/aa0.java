@@ -1,161 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.view.ViewGroup;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class aa0 extends Drawable {
-    public Paint a;
-    public Paint b;
-    public long c;
-    public float d;
-    public boolean e;
-    public boolean f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public long l;
-    public org.telegram.ui.Cells.q1 m;
+public final class aa0 {
+    public final int a;
+    public final ly0 b;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
 
-    public final void a() {
-        Rect bounds = getBounds();
-        float centerX = bounds.centerX();
-        float centerY = bounds.centerY();
-        int i10 = bounds.left;
-        float f7 = (i10 - centerX) * (i10 - centerX);
-        int i11 = bounds.top;
-        this.g = (float) Math.ceil(Math.sqrt(c3.i0.z(i11, centerY, i11 - centerY, f7)));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
-    
-        if (r7 >= 0.0f) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0056, code lost:
-    
-        if (r7 >= 0.0f) goto L25;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float f7;
-        org.telegram.ui.Cells.q1 q1Var;
-        Paint paint = this.a;
-        float f10 = this.d;
-        if (f10 == 1.0f) {
-            Rect bounds = getBounds();
-            Paint paint2 = this.b;
-            if (paint2 != null) {
-                paint = paint2;
-            }
-            canvas.drawRect(bounds, paint);
-        } else if (f10 != 0.0f) {
-            float interpolation = this.e ? gr.h.getInterpolation(f10) : 1.0f - gr.h.getInterpolation(1.0f - f10);
-            Rect bounds2 = getBounds();
-            float centerX = bounds2.centerX();
-            float centerY = bounds2.centerY();
-            float f11 = this.j;
-            if (f11 >= 0.0f) {
-                f7 = this.k;
-            }
-            f11 = this.h;
-            if (f11 >= 0.0f) {
-                f7 = this.i;
-            }
-            f7 = centerY;
-            f11 = centerX;
-            float f12 = 1.0f - interpolation;
-            float z10 = c3.i0.z(f11, centerX, f12, centerX);
-            float z11 = c3.i0.z(f7, centerY, f12, centerY);
-            float f13 = this.g * interpolation;
-            Paint paint3 = this.b;
-            if (paint3 != null) {
-                paint = paint3;
-            }
-            canvas.drawCircle(z10, z11, f13, paint);
-        }
-        if (!this.f) {
-            return;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j10 = elapsedRealtime - this.c;
-        if (j10 > 20) {
-            j10 = 17;
-        }
-        this.c = elapsedRealtime;
-        if (this.e) {
-            float f14 = (j10 / 240.0f) + this.d;
-            this.d = f14;
-            if (f14 >= 1.0f) {
-                this.d = 1.0f;
-                this.h = -1.0f;
-                this.i = -1.0f;
-                this.j = -1.0f;
-                this.k = -1.0f;
-                this.f = false;
-            }
-            q1Var = this.m;
-            if (q1Var == null) {
-                q1Var.invalidate();
-                if (q1Var.getParent() != null) {
-                    ((ViewGroup) q1Var.getParent()).invalidate();
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        float f15 = this.d - (j10 / 240.0f);
-        this.d = f15;
-        if (f15 <= 0.0f) {
-            this.d = 0.0f;
-            this.h = -1.0f;
-            this.i = -1.0f;
-            this.j = -1.0f;
-            this.k = -1.0f;
-            this.f = false;
-        }
-        q1Var = this.m;
-        if (q1Var == null) {
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i10, int i11, int i12, int i13) {
-        super.setBounds(i10, i11, i12, i13);
-        a();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(Rect rect) {
-        super.setBounds(rect);
-        a();
+    public aa0(int i3, String str) {
+        this.a = i3;
+        this.b = new ly0(str, 14.0f, org.telegram.messenger.g0.o());
     }
 }

@@ -3,9 +3,9 @@ package com.google.android.gms.tasks;
 import android.app.Activity;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
-import n6.l;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -16,18 +16,18 @@ final class zzw<TResult> extends Task<TResult> {
     private Exception zzf;
 
     private final void zzf() {
-        l.i("Task is not yet complete", this.zzc);
+        m.i("Task is not yet complete", this.zzc);
     }
 
     private final void zzg() {
-        if (this.zzd) {
-            throw new CancellationException("Task is already canceled.");
+        if (this.zzc) {
+            throw DuplicateTaskCompletionException.of(this);
         }
     }
 
     private final void zzh() {
-        if (this.zzc) {
-            throw DuplicateTaskCompletionException.of(this);
+        if (this.zzd) {
+            throw new CancellationException("Task is already canceled.");
         }
     }
 
@@ -104,7 +104,7 @@ final class zzw<TResult> extends Task<TResult> {
         synchronized (this.zza) {
             try {
                 zzf();
-                zzg();
+                zzh();
                 Exception exc = this.zzf;
                 if (exc != null) {
                     throw new RuntimeExecutionException(exc);
@@ -155,33 +155,23 @@ final class zzw<TResult> extends Task<TResult> {
         return zzwVar;
     }
 
-    public final void zza(Exception exc) {
-        l.h(exc, "Exception must not be null");
+    public final void zza(Object obj) {
         synchronized (this.zza) {
-            zzh();
-            this.zzc = true;
-            this.zzf = exc;
-        }
-        this.zzb.zzb(this);
-    }
-
-    public final void zzb(Object obj) {
-        synchronized (this.zza) {
-            zzh();
+            zzg();
             this.zzc = true;
             this.zze = obj;
         }
         this.zzb.zzb(this);
     }
 
-    public final boolean zzc() {
+    public final boolean zzb(Object obj) {
         synchronized (this.zza) {
             try {
                 if (this.zzc) {
                     return false;
                 }
                 this.zzc = true;
-                this.zzd = true;
+                this.zze = obj;
                 this.zzb.zzb(this);
                 return true;
             } catch (Throwable th2) {
@@ -190,8 +180,18 @@ final class zzw<TResult> extends Task<TResult> {
         }
     }
 
+    public final void zzc(Exception exc) {
+        m.h(exc, "Exception must not be null");
+        synchronized (this.zza) {
+            zzg();
+            this.zzc = true;
+            this.zzf = exc;
+        }
+        this.zzb.zzb(this);
+    }
+
     public final boolean zzd(Exception exc) {
-        l.h(exc, "Exception must not be null");
+        m.h(exc, "Exception must not be null");
         synchronized (this.zza) {
             try {
                 if (this.zzc) {
@@ -207,14 +207,14 @@ final class zzw<TResult> extends Task<TResult> {
         }
     }
 
-    public final boolean zze(Object obj) {
+    public final boolean zze() {
         synchronized (this.zza) {
             try {
                 if (this.zzc) {
                     return false;
                 }
                 this.zzc = true;
-                this.zze = obj;
+                this.zzd = true;
                 this.zzb.zzb(this);
                 return true;
             } catch (Throwable th2) {
@@ -306,7 +306,7 @@ final class zzw<TResult> extends Task<TResult> {
         synchronized (this.zza) {
             try {
                 zzf();
-                zzg();
+                zzh();
                 if (!cls.isInstance(this.zzf)) {
                     Exception exc = this.zzf;
                     if (exc == null) {

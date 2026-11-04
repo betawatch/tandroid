@@ -1,51 +1,34 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class jj extends wg.b {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ un w;
+public final class jj extends org.telegram.ui.Components.bo {
+    public final /* synthetic */ wm f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jj(un unVar, org.telegram.ui.ActionBar.p6 p6Var, int i10, int i11) {
-        super(i10, p6Var);
-        this.s = i11;
-        this.w = unVar;
+    public jj(wm wmVar, Context context) {
+        super(context);
+        this.f = wmVar;
     }
 
-    @Override // wg.b, wg.a
-    public final int n0() {
-        int i10;
-        int i11;
-        switch (this.s) {
-            case 0:
-                un unVar = this.w;
-                i10 = ((org.telegram.ui.ActionBar.k2) unVar).currentAccount;
-                if (!w7.b9.c(i10, unVar.xa)) {
-                    return i0.b.o(unVar.getThemedColor(org.telegram.ui.ActionBar.t6.Ge), org.telegram.messenger.at.e4);
-                }
-                sn snVar = unVar.xa;
-                if (snVar == null || snVar.a()) {
-                    a();
-                    return this.d;
-                }
-                a();
-                return i0.b.o(this.d, org.telegram.messenger.at.t3);
-            case 1:
-                return this.w.x.n0();
-            default:
-                un unVar2 = this.w;
-                i11 = ((org.telegram.ui.ActionBar.k2) unVar2).currentAccount;
-                if (!w7.b9.c(i11, unVar2.xa)) {
-                    return i0.b.o(unVar2.getThemedColor(org.telegram.ui.ActionBar.t6.d6), org.telegram.messenger.at.e4);
-                }
-                sn snVar2 = unVar2.xa;
-                if (snVar2 == null || snVar2.a()) {
-                    a();
-                    return this.d;
-                }
-                a();
-                return i0.b.o(this.d, org.telegram.messenger.at.t3);
+    @Override // org.telegram.ui.Components.bo
+    public final void a(boolean z10) {
+        wm wmVar = this.f;
+        wmVar.H7();
+        wmVar.F7();
+        wmVar.I7();
+        wmVar.J7();
+        dk dkVar = wmVar.yb;
+        if (dkVar != null) {
+            dkVar.setTranslationY(wmVar.Q9 + getCurrentHeight());
+        }
+        if (!z10) {
+            wmVar.K9();
+        } else {
+            wmVar.X9 = true;
+            wmVar.Nc();
         }
     }
 }

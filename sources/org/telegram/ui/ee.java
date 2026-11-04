@@ -1,20 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ee extends org.telegram.ui.Components.wk0 {
-    public final /* synthetic */ he c0;
+public final /* synthetic */ class ee implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.nk0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ee(he heVar, Context context, org.telegram.ui.ActionBar.p6 p6Var, le leVar) {
-        super(context, p6Var, leVar);
-        this.c0 = heVar;
+    public /* synthetic */ ee(org.telegram.ui.Components.nk0 nk0Var, int i3) {
+        this.a = i3;
+        this.b = nk0Var;
     }
 
-    @Override // org.telegram.ui.Components.x71, android.view.View
-    public final boolean canScrollHorizontally(int i10) {
-        return this.c0.x.Q0 && super.canScrollHorizontally(i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Components.nk0 nk0Var = this.b;
+                if (!nk0Var.N) {
+                    nk0Var.N = true;
+                    nk0Var.c(new org.telegram.ui.Components.lk0(nk0Var, 0), false);
+                    nk0Var.s.invalidate();
+                    break;
+                }
+                break;
+            default:
+                this.b.dismiss();
+                break;
+        }
     }
 }

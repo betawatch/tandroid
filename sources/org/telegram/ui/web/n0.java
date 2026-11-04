@@ -1,48 +1,44 @@
 package org.telegram.ui.web;
 
-import android.webkit.GeolocationPermissions;
+import android.webkit.JsResult;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n0 implements q0.a {
+public final /* synthetic */ class n0 implements org.telegram.ui.ActionBar.p1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s0 b;
-    public final /* synthetic */ GeolocationPermissions.Callback c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ JsResult c;
 
-    public /* synthetic */ n0(s0 s0Var, GeolocationPermissions.Callback callback, String str, int i10) {
-        this.a = i10;
-        this.b = s0Var;
-        this.c = callback;
-        this.d = str;
+    public /* synthetic */ n0(boolean[] zArr, JsResult jsResult, int i3) {
+        this.a = i3;
+        this.b = zArr;
+        this.c = jsResult;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        Boolean bool = (Boolean) obj;
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
         switch (this.a) {
             case 0:
-                s0 s0Var = this.b;
-                if (s0Var.a != null) {
-                    s0Var.a = null;
-                    boolean booleanValue = bool.booleanValue();
-                    GeolocationPermissions.Callback callback = this.c;
-                    String str = this.d;
-                    if (!booleanValue) {
-                        callback.invoke(str, false, false);
-                        break;
-                    } else {
-                        z0.a(s0Var.e.Q, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new n0(s0Var, callback, str, 1));
-                        break;
-                    }
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    this.c.cancel();
+                    break;
+                }
+                break;
+            case 1:
+                boolean[] zArr2 = this.b;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    this.c.confirm();
+                    break;
                 }
                 break;
             default:
-                s0 s0Var2 = this.b;
-                s0Var2.getClass();
-                this.c.invoke(this.d, bool.booleanValue(), false);
-                if (bool.booleanValue()) {
-                    s0Var2.e.Q.T = true;
+                boolean[] zArr3 = this.b;
+                if (!zArr3[0]) {
+                    zArr3[0] = true;
+                    this.c.confirm();
                     break;
                 }
                 break;

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b {
     public final HashMap a = new HashMap();
@@ -32,18 +32,18 @@ public final class b {
                 c cVar = (c) list.get(size);
                 Method method = cVar.b;
                 try {
-                    int i10 = cVar.a;
-                    if (i10 == 0) {
+                    int i3 = cVar.a;
+                    if (i3 == 0) {
                         method.invoke(sVar, null);
-                    } else if (i10 == 1) {
+                    } else if (i3 == 1) {
                         method.invoke(sVar, tVar);
-                    } else if (i10 == 2) {
+                    } else if (i3 == 2) {
                         method.invoke(sVar, tVar, mVar);
                     }
-                } catch (IllegalAccessException e) {
-                    throw new RuntimeException(e);
-                } catch (InvocationTargetException e7) {
-                    throw new RuntimeException("Failed to call observer method", e7.getCause());
+                } catch (IllegalAccessException e10) {
+                    throw new RuntimeException(e10);
+                } catch (InvocationTargetException e11) {
+                    throw new RuntimeException("Failed to call observer method", e11.getCause());
                 }
             }
         }

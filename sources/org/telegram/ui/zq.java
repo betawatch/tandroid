@@ -1,33 +1,203 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.ClipData;
+import android.content.ClipDescription;
+import android.content.ClipboardManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class zq implements fq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ pr b;
+public abstract class zq extends EditTextBoldCursor {
+    public static final org.telegram.ui.Components.kt0 Y1;
+    public static final org.telegram.ui.Components.kt0 Z1;
+    public static final org.telegram.ui.Components.kt0 a2;
+    public static final org.telegram.ui.Components.kt0 b2;
+    public float H1;
+    public float I1;
+    public float J1;
+    public float K1;
+    public q1.g L1;
+    public q1.g M1;
+    public q1.g N1;
+    public q1.g O1;
+    public boolean P1;
+    public float Q1;
+    public float R1;
+    public boolean S1;
+    public Bitmap T1;
+    public Canvas U1;
+    public ValueAnimator V1;
+    public ValueAnimator W1;
+    public boolean X1;
 
-    public zq(pr prVar, TLObject tLObject) {
-        this.b = prVar;
-        this.a = tLObject;
+    static {
+        org.telegram.ui.Components.kt0 kt0Var = new org.telegram.ui.Components.kt0(new org.telegram.messenger.go(22), new org.telegram.messenger.go(23));
+        kt0Var.c = 100.0f;
+        Y1 = kt0Var;
+        org.telegram.ui.Components.kt0 kt0Var2 = new org.telegram.ui.Components.kt0(new org.telegram.messenger.go(24), new org.telegram.messenger.go(25));
+        kt0Var2.c = 100.0f;
+        Z1 = kt0Var2;
+        org.telegram.ui.Components.kt0 kt0Var3 = new org.telegram.ui.Components.kt0(new org.telegram.messenger.go(26), new org.telegram.messenger.go(27));
+        kt0Var3.c = 100.0f;
+        a2 = kt0Var3;
+        org.telegram.ui.Components.kt0 kt0Var4 = new org.telegram.ui.Components.kt0(new org.telegram.messenger.go(28), new org.telegram.messenger.go(29));
+        kt0Var4.c = 100.0f;
+        b2 = kt0Var4;
     }
 
-    @Override // org.telegram.ui.fq
-    public final void a(TLRPC.User user) {
-        pr.h0(this.b, user);
-    }
-
-    @Override // org.telegram.ui.fq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-            pr.b0(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+    public static void B(q1.g gVar, float f10) {
+        q1.h hVar = gVar.m;
+        if (hVar == null || f10 != ((float) hVar.i)) {
+            gVar.d();
+            q1.h hVar2 = new q1.h(f10);
+            hVar2.b(400.0f);
+            hVar2.a(1.0f);
+            hVar2.i = f10;
+            gVar.m = hVar2;
+            gVar.h();
         }
+    }
+
+    public final void A(float f10) {
+        B(this.L1, f10 * 100.0f);
+    }
+
+    public final void C(float f10) {
+        B(this.N1, f10 * 100.0f);
+        q1.g gVar = this.O1;
+        gVar.d();
+        if (f10 == 0.0f) {
+            this.K1 = 1.0f;
+            return;
+        }
+        q1.h s6 = org.telegram.ui.Cells.f1.s(1.0f, 500.0f, 0.75f);
+        s6.i = 100.0f;
+        gVar.m = s6;
+        gVar.b = 100.0f;
+        gVar.c = true;
+        gVar.a = 4000.0f;
+        gVar.h();
+    }
+
+    public final void D() {
+        if (getMeasuredHeight() == 0 || getMeasuredWidth() == 0 || getLayout() == null) {
+            return;
+        }
+        Bitmap bitmap = this.T1;
+        if (bitmap == null || bitmap.getHeight() != getMeasuredHeight() || this.T1.getWidth() != getMeasuredWidth()) {
+            Bitmap bitmap2 = this.T1;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
+            }
+            this.T1 = Bitmap.createBitmap(getMeasuredWidth(), getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+            this.U1 = new Canvas(this.T1);
+        }
+        this.T1.eraseColor(0);
+        StaticLayout staticLayout = new StaticLayout(getTransformationMethod().getTransformation(getText(), this), getLayout().getPaint(), (int) Math.ceil(getLayout().getPaint().measureText(r4, 0, r4.length())), Layout.Alignment.ALIGN_NORMAL, getLineSpacingMultiplier(), getLineSpacingExtra(), getIncludeFontPadding());
+        this.U1.save();
+        this.U1.translate((getMeasuredWidth() - staticLayout.getWidth()) / 2.0f, (getMeasuredHeight() - staticLayout.getHeight()) / 2.0f);
+        staticLayout.draw(this.U1);
+        this.U1.restore();
+        this.R1 = 0.0f;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.W1 = ofFloat;
+        ofFloat.addUpdateListener(new b3(this, 7));
+        this.W1.setDuration(220L);
+        this.W1.start();
+    }
+
+    public float getErrorProgress() {
+        return this.I1;
+    }
+
+    public float getFocusedProgress() {
+        return this.H1;
+    }
+
+    public float getSuccessProgress() {
+        return this.J1;
+    }
+
+    public float getSuccessScaleProgress() {
+        return this.K1;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bt, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.L1.d();
+        this.M1.d();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i3, Rect rect) {
+        super.onFocusChanged(z10, i3, rect);
+        if (isFocused()) {
+            return;
+        }
+        m();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ClipDescription primaryClipDescription;
+        int i3;
+        if (motionEvent.getAction() == 0) {
+            this.X1 = true;
+            motionEvent.getX();
+            motionEvent.getY();
+        }
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            xq xqVar = getParent() instanceof xq ? (xq) getParent() : null;
+            if (motionEvent.getAction() == 1 && this.X1) {
+                if (!isFocused() || xqVar == null) {
+                    requestFocus();
+                } else {
+                    ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(ClipboardManager.class);
+                    if (clipboardManager == null || clipboardManager.getPrimaryClipDescription() == null || (primaryClipDescription = clipboardManager.getPrimaryClipDescription()) == null) {
+                        return false;
+                    }
+                    primaryClipDescription.hasMimeType("text/plain");
+                    ClipData.Item itemAt = clipboardManager.getPrimaryClip().getItemAt(0);
+                    try {
+                        i3 = Integer.parseInt((itemAt == null || itemAt.getText() == null) ? "" : itemAt.getText().toString());
+                    } catch (Exception unused) {
+                        i3 = -1;
+                    }
+                    if (i3 > 0) {
+                        startActionMode(new yq(this));
+                    }
+                }
+                setSelection(0);
+                if (this.P1) {
+                    org.telegram.messenger.g0.K3(this);
+                }
+            }
+            this.X1 = false;
+        }
+        return this.X1;
+    }
+
+    @Override // android.view.View
+    public final boolean requestFocus(int i3, Rect rect) {
+        ((ViewGroup) getParent()).invalidate();
+        return super.requestFocus(i3, rect);
+    }
+
+    public void setShowSoftInputOnFocusCompat(boolean z10) {
+        this.P1 = z10;
+        setShowSoftInputOnFocus(z10);
+    }
+
+    public final void z(float f10) {
+        B(this.M1, f10 * 100.0f);
     }
 }

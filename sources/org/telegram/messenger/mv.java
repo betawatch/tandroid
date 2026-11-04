@@ -1,171 +1,69 @@
 package org.telegram.messenger;
 
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_iv;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class mv extends lv {
-    public li.k c0;
-    public org.telegram.ui.Components.dc d0;
-    public boolean e0;
-    public boolean f0;
-    public boolean g0;
-    public boolean h0;
-    public float i0;
-    public int j0;
-    public final Drawable k0;
-    public int l0;
+public final class mv {
+    public long a;
+    public boolean b;
+    public int c;
+    public zi d;
+    public int e;
+    public long f;
+    public long g;
+    public long h;
+    public boolean i;
+    public int j;
+    public int k;
 
-    public mv(wv wvVar, Rect rect, int i10, TL_iv.pageBlockBlockquote pageblockblockquote, SpannableStringBuilder spannableStringBuilder) {
-        super(wvVar, rect, i10, spannableStringBuilder);
-        this.k0 = i0.a.f(w0.b, R.drawable.arrow_more);
-        boolean z10 = pageblockblockquote.collapsed;
-        this.g0 = z10;
-        this.h0 = z10;
+    public static mv a(int i3, TLRPC.Message message) {
+        mv mvVar = new mv();
+        mvVar.a = zi.R1(h10.i(i3).e(), message);
+        mvVar.b = false;
+        mvVar.c = message.id;
+        mvVar.d = new zi(i3, message, null, null, null, null, null, false, false, 0L, false, false, true, 0);
+        return mvVar;
     }
 
-    @Override // org.telegram.messenger.lv, org.telegram.messenger.ru
-    public final int H() {
-        if (!this.g0) {
-            return super.H();
+    public static mv b(int i3, TLRPC.savedDialog saveddialog, ArrayList arrayList) {
+        TLRPC.Message message;
+        mv mvVar = new mv();
+        mvVar.a = m5.o(saveddialog.peer);
+        mvVar.b = saveddialog.pinned;
+        mvVar.c = saveddialog.top_message;
+        mvVar.f = saveddialog.unread_count;
+        mvVar.g = saveddialog.read_inbox_max_id;
+        mvVar.h = saveddialog.read_outbox_max_id;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= arrayList.size()) {
+                message = null;
+                break;
+            }
+            message = (TLRPC.Message) arrayList.get(i10);
+            if (mvVar.c == message.id) {
+                break;
+            }
+            i10++;
         }
-        Rect rect = this.b;
-        return (int) Math.min((this.W.b.getPaint().getTextSize() * 1.4f * 3.0f) + rect.top + this.Z + rect.bottom, super.H());
+        TLRPC.Message message2 = message;
+        if (message2 != null) {
+            mvVar.d = new zi(i3, message2, null, null, null, null, null, false, false, 0L, false, false, true, 0);
+        }
+        return mvVar;
     }
 
-    @Override // org.telegram.messenger.lv, org.telegram.messenger.ru
-    public final void V(Canvas canvas) {
-        org.telegram.ui.Components.dc dcVar = this.d0;
-        float a2 = dcVar != null ? dcVar.a(0.01f) : 1.0f;
-        int i10 = this.c;
-        if (a2 != 1.0f) {
-            canvas.save();
-            canvas.scale(a2, a2, i10 / 2.0f, H() / 2.0f);
-        }
-        boolean z10 = this.i0 > 0.0f;
-        int i11 = (this.j0 - this.b.bottom) - this.a0;
-        canvas.save();
-        canvas.clipRect(0, 0, i10, i11);
-        if (z10) {
-            canvas.saveLayer(0.0f, 0.0f, i10, i11, null);
-        }
-        super.V(canvas);
-        if (z10) {
-            if (this.c0 == null) {
-                this.c0 = new li.k(23);
-            }
-            RectF rectF = i0.P;
-            rectF.set(0.0f, i11 - i0.L(24.0f), i10, i11 + 1);
-            this.c0.o(canvas, rectF, 3, this.i0);
-            canvas.restore();
-        }
-        canvas.restore();
-        wv wvVar = this.a;
-        int i12 = wvVar.y.i();
-        int i13 = this.l0;
-        Drawable drawable = this.k0;
-        if (i12 != i13) {
-            int i14 = wvVar.y.i();
-            this.l0 = i14;
-            drawable.setColorFilter(new PorterDuffColorFilter(i14, PorterDuff.Mode.SRC_IN));
-        }
-        rf.o.e(this.k0, wvVar.C - i0.L(24.0f), i0.L(8.0f) + ((i11 - i0.L(16.0f)) - i0.L(2.0f)), i0.L(16.0f), i0.L(16.0f), 17);
-        canvas.save();
-        canvas.rotate(i0.W1(this.i0, at.K2, 0), drawable.getBounds().exactCenterX(), drawable.getBounds().exactCenterY());
-        drawable.draw(canvas);
-        canvas.restore();
-        if (a2 != 1.0f) {
-            canvas.restore();
-        }
+    public final int c() {
+        TLRPC.Message message;
+        zi ziVar = this.d;
+        return (ziVar == null || (message = ziVar.k) == null) ? this.j : (message.flags & 32768) != 0 ? message.edit_date : message.date;
     }
 
-    @Override // org.telegram.messenger.lv, org.telegram.messenger.ru
-    public final boolean X(MotionEvent motionEvent) {
-        View view;
-        int actionMasked = motionEvent.getActionMasked();
-        if (this.f0) {
-            if (actionMasked == 1 || actionMasked == 3) {
-                this.f0 = false;
-            }
-            return super.X(motionEvent);
-        }
-        wv wvVar = this.a;
-        if (actionMasked == 0) {
-            boolean X = super.X(motionEvent);
-            this.f0 = X;
-            if (!X) {
-                this.e0 = true;
-                if (this.d0 == null && (view = wvVar.Q) != null) {
-                    this.d0 = new org.telegram.ui.Components.dc(view);
-                }
-                org.telegram.ui.Components.dc dcVar = this.d0;
-                if (dcVar != null) {
-                    dcVar.c(true);
-                    return true;
-                }
-            }
-        } else {
-            if (actionMasked != 1) {
-                if (actionMasked == 3) {
-                    this.e0 = false;
-                    org.telegram.ui.Components.dc dcVar2 = this.d0;
-                    if (dcVar2 != null) {
-                        dcVar2.c(false);
-                    }
-                }
-                return this.e0;
-            }
-            if (!this.e0) {
-                return false;
-            }
-            this.e0 = false;
-            org.telegram.ui.Components.dc dcVar3 = this.d0;
-            if (dcVar3 != null) {
-                dcVar3.c(false);
-            }
-            View view2 = wvVar.Q;
-            if (view2 != null) {
-                view2.playSoundEffect(0);
-            }
-            wvVar.X();
-            this.g0 = !this.g0;
-            wvVar.u = true;
-            wvVar.Q();
-            View view3 = wvVar.Q;
-            if (view3 != null) {
-                view3.invalidate();
-            }
-            org.telegram.ui.Cells.q1 q1Var = wvVar.E;
-            org.telegram.ui.Cells.l1 l1Var = wvVar.F;
-            if (q1Var != null && l1Var != null) {
-                l1Var.l1(q1Var, true, true);
-            }
-        }
-        return true;
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final void c0() {
-        super.c0();
-        this.h0 = this.g0;
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final float z() {
-        org.telegram.ui.Components.dc dcVar = this.d0;
-        if (dcVar != null) {
-            return dcVar.a(0.01f);
-        }
-        return 1.0f;
+    public final boolean d() {
+        TLRPC.Message message;
+        zi ziVar = this.d;
+        return (ziVar == null || (message = ziVar.k) == null || !(message.action instanceof TLRPC.TL_messageActionHistoryClear)) ? false : true;
     }
 }

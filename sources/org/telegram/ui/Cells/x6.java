@@ -2,36 +2,62 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.ip;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.fy0;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class x6 extends a51 {
-    public static final /* synthetic */ int b = 0;
+public final class x6 extends View {
+    public int a;
+    public final int b;
+    public boolean c;
+    public boolean d;
 
-    static {
-        a51.h(new x6());
+    public x6(Context context) {
+        this(context, (f1) null);
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
-        Object obj = b51Var.G;
-        if (obj instanceof fy0) {
-            fy0 fy0Var = (fy0) obj;
-            ((z6) view).b(b51Var.l, fy0Var.d, fy0Var.e, z10);
-        } else if (obj instanceof ip) {
-            ((z6) view).a(b51Var.l, ((ip) obj).b, true, z10);
+    private int getBackgroundResId() {
+        boolean z10 = this.c;
+        return (z10 && this.d) ? R.drawable.greydivider : z10 ? R.drawable.greydivider_bottom : this.d ? R.drawable.greydivider_top : R.drawable.transparent;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.a), TLObject.FLAG_30));
+    }
+
+    public void setSize(int i3) {
+        this.a = i3;
+    }
+
+    public x6(Context context, Object obj) {
+        this(context, (f1) null);
+    }
+
+    public x6(Context context, f1 f1Var) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.a = 12;
+        int i3 = this.b;
+        if (i3 == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i3);
         }
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        return new z6(context);
+    public x6(Context context, int i3, int i10) {
+        super(context);
+        this.c = true;
+        this.d = true;
+        this.b = i3;
+        this.a = 12;
+        if (i3 == 0) {
+            setBackground(null);
+        } else {
+            setBackgroundColor(i3);
+        }
     }
 }

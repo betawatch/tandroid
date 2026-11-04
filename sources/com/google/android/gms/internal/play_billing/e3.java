@@ -1,39 +1,39 @@
 package com.google.android.gms.internal.play_billing;
 
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class e3 {
     public static final /* synthetic */ int a = 0;
 
     static {
         if (c3.e && c3.d) {
-            int i10 = g1.a;
+            int i3 = g1.a;
         }
     }
 
-    public static /* bridge */ /* synthetic */ int a(byte[] bArr, int i10, int i11) {
-        int i12 = i11 - i10;
-        byte b10 = bArr[i10 - 1];
-        if (i12 == 0) {
+    public static /* bridge */ /* synthetic */ int a(byte[] bArr, int i3, int i10) {
+        int i11 = i10 - i3;
+        byte b10 = bArr[i3 - 1];
+        if (i11 == 0) {
             if (b10 <= -12) {
                 return b10;
             }
             return -1;
         }
-        if (i12 == 1) {
-            byte b11 = bArr[i10];
+        if (i11 == 1) {
+            byte b11 = bArr[i3];
             if (b10 > -12 || b11 > -65) {
                 return -1;
             }
             return (b11 << 8) ^ b10;
         }
-        if (i12 != 2) {
+        if (i11 != 2) {
             throw new AssertionError();
         }
-        byte b12 = bArr[i10];
-        byte b13 = bArr[i10 + 1];
+        byte b12 = bArr[i3];
+        byte b13 = bArr[i3 + 1];
         if (b10 > -12 || b12 > -65 || b13 > -65) {
             return -1;
         }
@@ -47,107 +47,107 @@ public abstract class e3 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int b(String str, byte[] bArr, int i10, int i11) {
+    public static int b(String str, byte[] bArr, int i3, int i10) {
+        int i11;
         int i12;
         int i13;
-        int i14;
         char charAt;
         int length = str.length();
-        int i15 = 0;
+        int i14 = 0;
         while (true) {
-            i12 = i10 + i11;
-            if (i15 >= length || (i14 = i15 + i10) >= i12 || (charAt = str.charAt(i15)) >= 128) {
+            i11 = i3 + i10;
+            if (i14 >= length || (i13 = i14 + i3) >= i11 || (charAt = str.charAt(i14)) >= 128) {
                 break;
             }
-            bArr[i14] = (byte) charAt;
-            i15++;
+            bArr[i13] = (byte) charAt;
+            i14++;
         }
-        int i16 = i10 + i15;
-        while (i15 < length) {
-            char charAt2 = str.charAt(i15);
-            if (charAt2 < 128 && i16 < i12) {
-                bArr[i16] = (byte) charAt2;
-                i16++;
-            } else if (charAt2 < 2048 && i16 <= i12 - 2) {
-                bArr[i16] = (byte) ((charAt2 >>> 6) | 960);
-                bArr[i16 + 1] = (byte) ((charAt2 & '?') | 128);
-                i16 += 2;
+        int i15 = i3 + i14;
+        while (i14 < length) {
+            char charAt2 = str.charAt(i14);
+            if (charAt2 < 128 && i15 < i11) {
+                bArr[i15] = (byte) charAt2;
+                i15++;
+            } else if (charAt2 < 2048 && i15 <= i11 - 2) {
+                bArr[i15] = (byte) ((charAt2 >>> 6) | 960);
+                bArr[i15 + 1] = (byte) ((charAt2 & '?') | 128);
+                i15 += 2;
             } else {
-                if ((charAt2 >= 55296 && charAt2 <= 57343) || i16 > i12 - 3) {
-                    if (i16 > i12 - 4) {
-                        if (charAt2 >= 55296 && charAt2 <= 57343 && ((i13 = i15 + 1) == str.length() || !Character.isSurrogatePair(charAt2, str.charAt(i13)))) {
-                            throw new d3(i15, length);
+                if ((charAt2 >= 55296 && charAt2 <= 57343) || i15 > i11 - 3) {
+                    if (i15 > i11 - 4) {
+                        if (charAt2 >= 55296 && charAt2 <= 57343 && ((i12 = i14 + 1) == str.length() || !Character.isSurrogatePair(charAt2, str.charAt(i12)))) {
+                            throw new d3(i14, length);
                         }
-                        throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i16);
+                        throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt2 + " at index " + i15);
                     }
-                    int i17 = i15 + 1;
-                    if (i17 != str.length()) {
-                        char charAt3 = str.charAt(i17);
+                    int i16 = i14 + 1;
+                    if (i16 != str.length()) {
+                        char charAt3 = str.charAt(i16);
                         if (Character.isSurrogatePair(charAt2, charAt3)) {
-                            int i18 = i16 + 3;
+                            int i17 = i15 + 3;
                             int codePoint = Character.toCodePoint(charAt2, charAt3);
-                            bArr[i16] = (byte) ((codePoint >>> 18) | at.P3);
-                            bArr[i16 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
-                            bArr[i16 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
-                            i16 += 4;
-                            bArr[i18] = (byte) ((codePoint & 63) | 128);
-                            i15 = i17;
+                            bArr[i15] = (byte) ((codePoint >>> 18) | hs.P3);
+                            bArr[i15 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
+                            bArr[i15 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
+                            i15 += 4;
+                            bArr[i17] = (byte) ((codePoint & 63) | 128);
+                            i14 = i16;
                         } else {
-                            i15 = i17;
+                            i14 = i16;
                         }
                     }
-                    throw new d3(i15 - 1, length);
+                    throw new d3(i14 - 1, length);
                 }
-                bArr[i16] = (byte) ((charAt2 >>> '\f') | 480);
-                bArr[i16 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
-                bArr[i16 + 2] = (byte) ((charAt2 & '?') | 128);
-                i16 += 3;
+                bArr[i15] = (byte) ((charAt2 >>> '\f') | 480);
+                bArr[i15 + 1] = (byte) (((charAt2 >>> 6) & 63) | 128);
+                bArr[i15 + 2] = (byte) ((charAt2 & '?') | 128);
+                i15 += 3;
             }
-            i15++;
+            i14++;
         }
-        return i16;
+        return i15;
     }
 
     public static int c(String str) {
         int length = str.length();
+        int i3 = 0;
         int i10 = 0;
-        int i11 = 0;
-        while (i11 < length && str.charAt(i11) < 128) {
-            i11++;
+        while (i10 < length && str.charAt(i10) < 128) {
+            i10++;
         }
-        int i12 = length;
+        int i11 = length;
         while (true) {
-            if (i11 >= length) {
+            if (i10 >= length) {
                 break;
             }
-            char charAt = str.charAt(i11);
+            char charAt = str.charAt(i10);
             if (charAt < 2048) {
-                i12 += (127 - charAt) >>> 31;
-                i11++;
+                i11 += (127 - charAt) >>> 31;
+                i10++;
             } else {
                 int length2 = str.length();
-                while (i11 < length2) {
-                    char charAt2 = str.charAt(i11);
+                while (i10 < length2) {
+                    char charAt2 = str.charAt(i10);
                     if (charAt2 < 2048) {
-                        i10 += (127 - charAt2) >>> 31;
+                        i3 += (127 - charAt2) >>> 31;
                     } else {
-                        i10 += 2;
+                        i3 += 2;
                         if (charAt2 >= 55296 && charAt2 <= 57343) {
-                            if (Character.codePointAt(str, i11) < 65536) {
-                                throw new d3(i11, length2);
+                            if (Character.codePointAt(str, i10) < 65536) {
+                                throw new d3(i10, length2);
                             }
-                            i11++;
+                            i10++;
                         }
                     }
-                    i11++;
+                    i10++;
                 }
-                i12 += i10;
+                i11 += i3;
             }
         }
-        if (i12 >= length) {
-            return i12;
+        if (i11 >= length) {
+            return i11;
         }
-        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + (i12 + 4294967296L));
+        throw new IllegalArgumentException("UTF-8 length does not fit in int: " + (i11 + 4294967296L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:44:0x007a A[ORIG_RETURN, RETURN] */
@@ -155,70 +155,70 @@ public abstract class e3 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean d(int i10, int i11, byte[] bArr) {
-        while (i10 < i11 && bArr[i10] >= 0) {
-            i10++;
+    public static boolean d(int i3, int i10, byte[] bArr) {
+        while (i3 < i10 && bArr[i3] >= 0) {
+            i3++;
         }
-        if (i10 >= i11) {
+        if (i3 >= i10) {
             return true;
         }
-        while (i10 < i11) {
-            int i12 = i10 + 1;
-            int i13 = bArr[i10];
-            if (i13 >= 0) {
-                i10 = i12;
-            } else if (i13 < -32) {
-                if (i12 >= i11) {
-                    return i13 == 0;
+        while (i3 < i10) {
+            int i11 = i3 + 1;
+            int i12 = bArr[i3];
+            if (i12 >= 0) {
+                i3 = i11;
+            } else if (i12 < -32) {
+                if (i11 >= i10) {
+                    return i12 == 0;
                 }
-                if (i13 < -62) {
+                if (i12 < -62) {
                     return false;
                 }
-                i10 += 2;
-                if (bArr[i12] > 65471) {
+                i3 += 2;
+                if (bArr[i11] > 65471) {
                     return false;
                 }
-            } else if (i13 < -16) {
-                if (i12 >= i11 - 1) {
-                    i13 = a(bArr, i12, i11);
-                    if (i13 == 0) {
+            } else if (i12 < -16) {
+                if (i11 >= i10 - 1) {
+                    i12 = a(bArr, i11, i10);
+                    if (i12 == 0) {
                     }
                 } else {
-                    int i14 = i10 + 2;
-                    char c10 = bArr[i12];
-                    if (c10 > 65471) {
+                    int i13 = i3 + 2;
+                    char c2 = bArr[i11];
+                    if (c2 > 65471) {
                         return false;
                     }
-                    if (i13 == -32 && c10 < 65440) {
+                    if (i12 == -32 && c2 < 65440) {
                         return false;
                     }
-                    if (i13 == -19 && c10 >= 65440) {
+                    if (i12 == -19 && c2 >= 65440) {
                         return false;
                     }
-                    i10 += 3;
-                    if (bArr[i14] > 65471) {
+                    i3 += 3;
+                    if (bArr[i13] > 65471) {
                         return false;
                     }
                 }
-            } else if (i12 >= i11 - 2) {
-                i13 = a(bArr, i12, i11);
-                if (i13 == 0) {
+            } else if (i11 >= i10 - 2) {
+                i12 = a(bArr, i11, i10);
+                if (i12 == 0) {
                 }
             } else {
-                int i15 = i10 + 2;
-                int i16 = bArr[i12];
-                if (i16 > -65) {
+                int i14 = i3 + 2;
+                int i15 = bArr[i11];
+                if (i15 > -65) {
                     return false;
                 }
-                if ((((i16 + at.x1) + (i13 << 28)) >> 30) != 0) {
+                if ((((i15 + hs.x1) + (i12 << 28)) >> 30) != 0) {
                     return false;
                 }
-                int i17 = i10 + 3;
-                if (bArr[i15] > 65471) {
+                int i16 = i3 + 3;
+                if (bArr[i14] > 65471) {
                     return false;
                 }
-                i10 += 4;
-                if (bArr[i17] > 65471) {
+                i3 += 4;
+                if (bArr[i16] > 65471) {
                     return false;
                 }
             }

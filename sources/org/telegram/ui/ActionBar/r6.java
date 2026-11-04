@@ -1,605 +1,886 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Color;
-import android.text.TextUtils;
-import android.util.SparseIntArray;
-import java.io.File;
-import java.util.Locale;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a30;
-import org.telegram.messenger.at;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.RippleDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hs;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.RadioButton;
+import org.telegram.ui.Components.tj0;
+import org.telegram.ui.f30;
+import org.telegram.ui.u20;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class r6 {
-    public int a;
-    public s6 b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public long j;
-    public long k;
-    public long l;
-    public long m;
-    public float p;
-    public boolean q;
-    public TLRPC.TL_theme r;
-    public TLRPC.TL_wallPaper s;
-    public int t;
-    public String u;
-    public String v;
-    public TLRPC.InputFile w;
-    public TLRPC.InputFile x;
-    public m6 y;
-    public boolean z;
-    public int n = 45;
-    public String o = "";
-    public final float[] A = new float[3];
+public abstract class r6 {
+    public static final q6 a = new q6();
+    public static int b = 1;
+    public static long c = -1;
+    public static float d;
 
-    public static int a(SparseIntArray sparseIntArray, int... iArr) {
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        for (int i14 = 0; i14 < iArr.length; i14++) {
-            if (sparseIntArray.indexOfKey(iArr[i14]) >= 0) {
-                try {
-                    int i15 = sparseIntArray.get(iArr[i14]);
-                    i11 += Color.red(i15);
-                    i12 += Color.green(i15);
-                    i13 += Color.blue(i15);
-                    i10++;
-                } catch (Exception unused) {
-                }
-            }
-        }
-        if (i10 == 0) {
-            return 0;
-        }
-        return Color.argb(at.e4, i11 / i10, i12 / i10, i13 / i10);
+    public static void A(EditTextBoldCursor editTextBoldCursor, int i3, e6 e6Var) {
+        m(editTextBoldCursor, 35, i3, e6Var);
     }
 
-    public static int c(SparseIntArray sparseIntArray, int i10) {
-        int i11;
-        int indexOfKey = sparseIntArray.indexOfKey(i10);
-        if (indexOfKey < 0 && (i11 = t6.fm.get(i10, -1)) >= 0) {
-            indexOfKey = sparseIntArray.indexOfKey(i11);
-        }
-        return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : t6.em[i10];
+    public static void B(EditTextBoldCursor editTextBoldCursor, int i3, e6 e6Var) {
+        m(editTextBoldCursor, 34, i3, e6Var);
     }
 
-    public static void h(SparseIntArray sparseIntArray) {
-        for (int i10 = t6.nb; i10 < t6.ub; i10++) {
-            sparseIntArray.delete(i10);
-            sparseIntArray.put(i10, t6.em[i10]);
-        }
-        for (int i11 = t6.vb; i11 < t6.Hc; i11++) {
-            sparseIntArray.delete(i11);
-            sparseIntArray.put(i11, t6.em[i11]);
-        }
-        for (int i12 = t6.Ic; i12 < t6.Qc; i12++) {
-            sparseIntArray.delete(i12);
-            sparseIntArray.put(i12, t6.em[i12]);
-        }
+    public static void C(View view, Drawable drawable, n6 n6Var, e6 e6Var) {
+        view.setBackground(drawable);
+        k(view, drawable, n6Var, null, e6Var);
     }
 
-    public final int b(int i10, int i11) {
-        float[] fArr = this.A;
-        Color.colorToHSV(i11, fArr);
-        float f7 = fArr[0];
-        Color.colorToHSV(i10, fArr);
-        float f10 = fArr[1];
-        if (f10 <= 0.0f) {
-            fArr[0] = f7;
-        }
-        fArr[1] = a30.z(f10, 0.6f, 1.0f, 0.0f);
-        fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.05f));
-        return Color.HSVToColor(30, fArr);
+    public static void D(TextView textView, int i3, e6 e6Var) {
+        o(textView, 3, i3, -1, 0, 0.0f, e6Var);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x053e, code lost:
-    
-        if (r14 < 85.0f) goto L221;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0556  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0559  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d(SparseIntArray sparseIntArray, SparseIntArray sparseIntArray2) {
-        int valueAt;
-        float f7;
-        boolean a2;
-        int i10;
-        char c10;
-        int i11;
-        int i12;
-        int valueAt2;
-        int valueAt3;
-        TLRPC.TL_theme tL_theme;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        float[] P0 = t6.P0(1);
-        float[] P02 = t6.P0(2);
-        Color.colorToHSV(this.b.X, P0);
-        Color.colorToHSV(this.c, P02);
-        boolean q6 = this.b.q();
-        int i20 = 0;
-        if (this.c != this.b.X || this.d != 0) {
-            int i21 = 0;
-            while (true) {
-                int[] iArr = t6.em;
-                if (i21 >= iArr.length) {
+    public static void E(TextView textView, int i3, e6 e6Var) {
+        o(textView, 1, i3, -1, 0, 0.0f, e6Var);
+    }
+
+    public static void F(EditTextBoldCursor editTextBoldCursor, int i3) {
+        E(editTextBoldCursor, i3, null);
+    }
+
+    public static void G(EditTextBoldCursor editTextBoldCursor, int i3, int i10, int i11, e6 e6Var) {
+        editTextBoldCursor.u(k6.w0(i3, e6Var), k6.w0(i10, e6Var), k6.w0(i11, e6Var));
+        U(editTextBoldCursor, 31, i3, e6Var).g = editTextBoldCursor.getLineColor();
+        U(editTextBoldCursor, 32, i10, e6Var).g = editTextBoldCursor.getActiveLineColor();
+        U(editTextBoldCursor, 33, i11, e6Var).g = editTextBoldCursor.getErrorLineColor();
+    }
+
+    public static void H(TextView textView, int i3, e6 e6Var) {
+        o(textView, 2, i3, -1, 0, 0.0f, e6Var);
+    }
+
+    public static void I(RecyclerView recyclerView, int i3, e6 e6Var) {
+        m(recyclerView, 21, i3, e6Var);
+    }
+
+    public static void J(int i3, f30 f30Var) {
+        m(f30Var, 20, i3, null);
+    }
+
+    public static void K(tj0 tj0Var, int i3, e6 e6Var) {
+        m(tj0Var, 20, i3, e6Var);
+    }
+
+    public static n6 L(float f10, int i3) {
+        return new n6(i3, -1, f10, 2);
+    }
+
+    public static q6 M(boolean z10, int i3, HashSet hashSet) {
+        q6 q6Var = a;
+        if (q6Var.e) {
+            q6Var = new q6();
+        }
+        q6Var.e = true;
+        q6Var.b = z10;
+        q6Var.c = i3;
+        q6Var.d = hashSet;
+        q6Var.a.clear();
+        return q6Var;
+    }
+
+    public static n6 N(int i3) {
+        return new n6(i3, -1, 0.0f, 0);
+    }
+
+    public static l6 O(View view, int i3, int i10, int i11, int i12, float f10, e6 e6Var, int i13, PorterDuffColorFilter porterDuffColorFilter) {
+        l6[] l6VarArr = p(view, true).a;
+        l6 l6Var = l6VarArr[i3];
+        if (l6Var == null) {
+            l6Var = new l6();
+            l6VarArr[i3] = l6Var;
+        }
+        l6 l6Var2 = l6Var;
+        l6Var2.c(i10, i11, i12, f10, e6Var);
+        l6Var2.g = i13;
+        l6Var2.i = porterDuffColorFilter;
+        return l6Var2;
+    }
+
+    public static void P(RadioButton radioButton, int i3, int i10, e6 e6Var) {
+        radioButton.b(k6.w0(i3, e6Var), k6.w0(i10, e6Var));
+        m(radioButton, 23, i3, e6Var);
+        m(radioButton, 24, i10, e6Var);
+    }
+
+    public static int Q(int i3, int i10, int i11, float f10, e6 e6Var) {
+        int w02 = k6.w0(i3, e6Var);
+        return i11 != 1 ? i11 != 2 ? i11 != 3 ? i11 != 4 ? i11 != 5 ? w02 : y5.b(w02) : k6.w(w02, k6.w0(i10, e6Var)) : i0.a.f(f10, w02, k6.w0(i10, e6Var)) : k6.r1(f10, w02) : i0.a.o(w02, (int) f10);
+    }
+
+    public static void R(View view, Drawable drawable, n6 n6Var, n6 n6Var2, e6 e6Var) {
+        view.setBackground(drawable);
+        k(view, drawable, n6Var, n6Var2, e6Var);
+    }
+
+    public static void S(View view, org.telegram.ui.Cells.y yVar, n6 n6Var, n6 n6Var2) {
+        R(view, yVar, n6Var, n6Var2, null);
+    }
+
+    public static void T(View view, l6 l6Var, int i3) {
+        int i10 = l6Var.l;
+        switch (i10) {
+            case 1:
+            case 2:
+                if (view instanceof k) {
+                    ((k) view).D(i3, i10 == 2);
                     break;
                 }
-                if (!t6.gm.contains(Integer.valueOf(i21))) {
-                    int indexOfKey = sparseIntArray.indexOfKey(i21);
-                    if (indexOfKey < 0) {
-                        int i22 = t6.fm.get(i21, -1);
-                        if (i22 < 0 || sparseIntArray.indexOfKey(i22) < 0) {
-                            valueAt = iArr[i21];
+                break;
+            case 3:
+            case 4:
+                if (view instanceof k) {
+                    ((k) view).C(i3, i10 == 4);
+                    break;
+                }
+                break;
+            case 5:
+                if (view instanceof k) {
+                    ((k) view).setTitleColor(i3);
+                    break;
+                }
+                break;
+            case 6:
+                if (view instanceof k) {
+                    ((k) view).setSubtitleColor(i3);
+                    break;
+                }
+                break;
+            default:
+                switch (i10) {
+                    case 20:
+                        if (view instanceof tj0) {
+                            ((tj0) view).setSelectorDrawableColor(i3);
+                            break;
                         }
-                    } else {
-                        valueAt = sparseIntArray.valueAt(indexOfKey);
-                    }
-                    int E = t6.E(P0, P02, valueAt, q6, valueAt);
-                    if (E != valueAt) {
-                        sparseIntArray2.put(i21, E);
-                    }
-                }
-                i21++;
-            }
-        }
-        int i23 = this.e;
-        if ((i23 == 0 && this.c == 0) || this.f == 0) {
-            i11 = 1;
-            c10 = 2;
-            f7 = 0.705f;
-            i10 = 0;
-        } else {
-            if (i23 == 0) {
-                i23 = this.c;
-            }
-            int i24 = t6.ob;
-            int i25 = sparseIntArray.get(i24);
-            if (i25 == 0) {
-                i25 = t6.em[i24];
-            }
-            int F0 = org.telegram.messenger.i0.F0(i23, t6.E(P0, P02, i25, q6, i25));
-            int i26 = 1;
-            int F02 = org.telegram.messenger.i0.F0(i23, this.f);
-            char c11 = 2;
-            if (this.g != 0) {
-                f7 = 0.705f;
-                int w02 = org.telegram.messenger.i0.w0(org.telegram.messenger.i0.w0(this.e, this.f), this.g);
-                int i27 = this.h;
-                if (i27 != 0) {
-                    w02 = org.telegram.messenger.i0.w0(w02, i27);
-                }
-                a2 = org.telegram.messenger.i0.B(w02) > 0.705f;
-            } else {
-                f7 = 0.705f;
-                a2 = t6.a(this.e, this.f);
-            }
-            i10 = (!a2 || F0 > 35000 || F02 > 35000) ? 0 : 1;
-            float[] P03 = t6.P0(3);
-            float[] P04 = t6.P0(4);
-            Color.colorToHSV(i25, P03);
-            Color.colorToHSV(i23, P04);
-            float min = Math.min((P03[1] * 1.5f) / P0[1], 1.0f);
-            P03[0] = (P04[0] - P03[0]) + P0[0];
-            P03[1] = (P04[1] * P0[1]) / P03[1];
-            float f10 = ((((P04[2] / P03[2]) + min) - 1.0f) * P0[2]) / min;
-            P03[2] = f10;
-            i11 = i26;
-            c10 = c11;
-            if (f10 >= 0.3f) {
-                i23 = Color.HSVToColor(at.e4, P03);
-                i11 = i26;
-                c10 = c11;
-            }
-        }
-        int i28 = (i23 == 0 || (((i18 = this.b.X) == 0 || i23 == i18) && ((i19 = this.c) == 0 || i19 == i23))) ? 0 : i11;
-        if (i28 == 0 && this.d == 0) {
-            i12 = 0;
-        } else {
-            int i29 = this.d;
-            if (i29 != 0) {
-                Color.colorToHSV(i29, P02);
-            } else {
-                Color.colorToHSV(i23, P02);
-            }
-            for (int i30 = t6.vb; i30 < t6.Hc; i30++) {
-                int indexOfKey2 = sparseIntArray.indexOfKey(i30);
-                if (indexOfKey2 < 0) {
-                    int i31 = t6.fm.get(i30, -1);
-                    if (i31 < 0 || sparseIntArray.get(i31, -1) < 0) {
-                        valueAt3 = t6.em[i30];
-                    }
-                } else {
-                    valueAt3 = sparseIntArray.valueAt(indexOfKey2);
-                }
-                int E2 = t6.E(P0, P02, valueAt3, q6, valueAt3);
-                if (E2 != valueAt3) {
-                    sparseIntArray2.put(i30, E2);
-                }
-            }
-            int[] iArr2 = t6.vl;
-            int length = iArr2.length;
-            int i32 = 0;
-            while (i32 < length) {
-                int i33 = i20;
-                int i34 = iArr2[i32];
-                int indexOfKey3 = sparseIntArray.indexOfKey(i34);
-                int valueAt4 = indexOfKey3 < 0 ? t6.em[i34] : sparseIntArray.valueAt(indexOfKey3);
-                int E3 = t6.E(P0, P02, valueAt4, q6, valueAt4);
-                if (E3 != valueAt4) {
-                    sparseIntArray2.put(i34, E3);
-                }
-                i32++;
-                i20 = i33;
-            }
-            i12 = i20;
-            if (i28 != 0) {
-                Color.colorToHSV(i23, P02);
-                for (int i35 = t6.nb; i35 < t6.ub; i35++) {
-                    int indexOfKey4 = sparseIntArray.indexOfKey(i35);
-                    if (indexOfKey4 < 0) {
-                        int i36 = t6.fm.get(i35, -1);
-                        if (i36 < 0 || sparseIntArray.get(i36, -1) < 0) {
-                            valueAt2 = t6.em[i35];
+                        break;
+                    case 21:
+                        if (view instanceof RecyclerView) {
+                            ((RecyclerView) view).setGlowColor(i3);
+                            break;
                         }
-                    } else {
-                        valueAt2 = sparseIntArray.valueAt(indexOfKey4);
-                    }
-                    int E4 = t6.E(P0, P02, valueAt2, q6, valueAt2);
-                    if (E4 != valueAt2) {
-                        sparseIntArray2.put(i35, E4);
-                    }
+                        break;
+                    case 22:
+                        WeakReference weakReference = l6Var.j;
+                        Drawable drawable = weakReference != null ? (Drawable) weakReference.get() : null;
+                        if (drawable != null && i3 != l6Var.g) {
+                            drawable.setColorFilter(new PorterDuffColorFilter(i3, PorterDuff.Mode.MULTIPLY));
+                            view.invalidate();
+                            break;
+                        }
+                        break;
+                    case 23:
+                        if (view instanceof RadioButton) {
+                            ((RadioButton) view).setBackgroundColor(i3);
+                            break;
+                        }
+                        break;
+                    case 24:
+                        if (view instanceof RadioButton) {
+                            ((RadioButton) view).setCheckedColor(i3);
+                            break;
+                        }
+                        break;
+                    default:
+                        if (view instanceof EditTextBoldCursor) {
+                            EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                            switch (i10) {
+                                case hs.T /* 30 */:
+                                    editTextBoldCursor.setCursorColor(i3);
+                                    break;
+                                case hs.U /* 31 */:
+                                    editTextBoldCursor.setLineColor(i3);
+                                    break;
+                                case 32:
+                                    editTextBoldCursor.setActiveLineColor(i3);
+                                    break;
+                                case 33:
+                                    editTextBoldCursor.setErrorLineColor(i3);
+                                    break;
+                                case 34:
+                                    editTextBoldCursor.setHintColor(i3);
+                                    break;
+                                case 35:
+                                    editTextBoldCursor.setHeaderHintColor(i3);
+                                    break;
+                                case 36:
+                                    editTextBoldCursor.setHandlesColor(i3);
+                                    break;
+                            }
+                        }
+                        break;
                 }
-            }
         }
-        if (i10 == 0 && (i13 = this.f) != 0) {
-            if (this.g != 0) {
-                int w03 = org.telegram.messenger.i0.w0(org.telegram.messenger.i0.w0(this.e, i13), this.g);
-                int i37 = this.h;
-                if (i37 != 0) {
-                    w03 = org.telegram.messenger.i0.w0(w03, i37);
-                }
-                i14 = org.telegram.messenger.i0.B(w03) > f7 ? i11 : i12;
-            } else {
-                i14 = t6.a(this.e, i13);
-            }
-            if (i14 != 0) {
-                i17 = -14606047;
-                i15 = -11184811;
-                i16 = 1291845632;
-            } else {
-                i15 = -1118482;
-                i16 = 1308622847;
-                i17 = -1;
-            }
-            if (this.d == 0) {
-                sparseIntArray2.put(t6.ec, i16);
-                sparseIntArray2.put(t6.fc, i16);
-                sparseIntArray2.put(t6.kc, i16);
-                sparseIntArray2.put(t6.lc, i16);
-                sparseIntArray2.put(t6.mc, i16);
-                sparseIntArray2.put(t6.nc, i17);
-                sparseIntArray2.put(t6.oc, i16);
-                sparseIntArray2.put(t6.pc, i16);
-                sparseIntArray2.put(t6.qc, i17);
-                sparseIntArray2.put(t6.Vc, i17);
-                sparseIntArray2.put(t6.Mb, i17);
-                sparseIntArray2.put(t6.Nb, i17);
-                sparseIntArray2.put(t6.Ob, i17);
-                sparseIntArray2.put(t6.Pb, i17);
-                sparseIntArray2.put(t6.Qb, i17);
-                sparseIntArray2.put(t6.Ub, i17);
-                sparseIntArray2.put(t6.Vb, i17);
-                sparseIntArray2.put(t6.Jb, i17);
-                sparseIntArray2.put(t6.Kb, i17);
-                sparseIntArray2.put(t6.Lb, i17);
-                sparseIntArray2.put(t6.Fb, i17);
-                sparseIntArray2.put(t6.Gb, i17);
-                sparseIntArray2.put(t6.hc, i17);
-                sparseIntArray2.put(t6.tc, i17);
-                sparseIntArray2.put(t6.Wb, i17);
-                sparseIntArray2.put(t6.Zb, i17);
-                sparseIntArray2.put(t6.ac, i17);
-                sparseIntArray2.put(t6.xb, i17);
-                sparseIntArray2.put(t6.yb, i17);
-                sparseIntArray2.put(t6.zb, i17);
-                sparseIntArray2.put(t6.Ab, i17);
-                sparseIntArray2.put(t6.Bb, i17);
-                sparseIntArray2.put(t6.Cb, i17);
-                sparseIntArray2.put(t6.Hb, i17);
-                sparseIntArray2.put(t6.Ib, i17);
-                sparseIntArray2.put(t6.gc, i17);
-                sparseIntArray2.put(t6.bc, i17);
-                sparseIntArray2.put(t6.ic, i15);
-                sparseIntArray2.put(t6.jc, i15);
-                sparseIntArray2.put(t6.Xb, i15);
-                sparseIntArray2.put(t6.Yb, i15);
-                sparseIntArray2.put(t6.uc, i15);
-                sparseIntArray2.put(t6.vc, i15);
-                sparseIntArray2.put(t6.yc, i15);
-                sparseIntArray2.put(t6.zc, i15);
-                sparseIntArray2.put(t6.Bc, i17);
-                sparseIntArray2.put(t6.Cc, i17);
-                sparseIntArray2.put(t6.rc, this.e);
-                sparseIntArray2.put(t6.sc, this.e);
-                sparseIntArray2.put(t6.Db, this.e);
-                sparseIntArray2.put(t6.Eb, this.e);
-            }
-            sparseIntArray2.put(t6.Rb, i17);
-            sparseIntArray2.put(t6.Sb, i17);
-            sparseIntArray2.put(t6.Tb, i17);
-            sparseIntArray2.put(t6.Tc, i17);
-        }
-        if (i10 != 0) {
-            int i38 = t6.Bc;
-            if (org.telegram.messenger.i0.F0(-1, sparseIntArray2.indexOfKey(i38) >= 0 ? sparseIntArray2.get(i38) : i12) < 5000) {
-                i10 = i12;
-            }
-        }
-        int i39 = this.e;
-        if (i39 != 0 && this.f != 0) {
-            sparseIntArray2.put(t6.ob, i39);
-            sparseIntArray2.put(t6.rb, this.f);
-            int i40 = this.g;
-            if (i40 != 0) {
-                sparseIntArray2.put(t6.sb, i40);
-                int i41 = this.h;
-                if (i41 != 0) {
-                    sparseIntArray2.put(t6.tb, i41);
-                }
-            }
-            sparseIntArray2.put(t6.Oc, this.i ? 1 : 0);
-        }
-        long j10 = this.j;
-        int i42 = (int) j10;
-        if (i42 != 0) {
-            sparseIntArray2.put(t6.Be, i42);
-        } else if (j10 != 0) {
-            sparseIntArray2.delete(t6.Be);
-        }
-        long j11 = this.k;
-        int i43 = (int) j11;
-        if (i43 != 0) {
-            sparseIntArray2.put(t6.Ce, i43);
-        } else if (j11 != 0) {
-            sparseIntArray2.delete(t6.Ce);
-        }
-        long j12 = this.l;
-        int i44 = (int) j12;
-        if (i44 != 0) {
-            sparseIntArray2.put(t6.De, i44);
-        } else if (j12 != 0) {
-            sparseIntArray2.delete(t6.De);
-        }
-        long j13 = this.m;
-        int i45 = (int) j13;
-        if (i45 != 0) {
-            sparseIntArray2.put(t6.Ee, i45);
-        } else if (j13 != 0) {
-            sparseIntArray2.delete(t6.Ee);
-        }
-        int i46 = this.n;
-        if (i46 != 45) {
-            sparseIntArray2.put(t6.Fe, i46);
-        }
-        int i47 = t6.ob;
-        int i48 = sparseIntArray2.get(i47);
-        if (i48 == 0) {
-            i48 = t6.y0(sparseIntArray2, i47, null);
-        }
-        int i49 = t6.ra;
-        int i50 = sparseIntArray2.get(i49);
-        if (i50 == 0) {
-            i50 = t6.y0(sparseIntArray2, i49, null);
-        }
-        if (this.c != this.b.X || this.e != 0 || ((tL_theme = this.r) != null && tL_theme.emoticon != null)) {
-            int c12 = c(sparseIntArray2, t6.Ob);
-            sparseIntArray2.put(t6.La, (-16777216) | i48);
-            sparseIntArray2.put(t6.Ma, c(sparseIntArray2, t6.gc));
-            sparseIntArray2.put(t6.Na, c(sparseIntArray2, t6.zb));
-            sparseIntArray2.put(t6.Pa, c12);
-            sparseIntArray2.put(t6.Qa, c(sparseIntArray2, t6.Qb));
-            sparseIntArray2.put(t6.Oa, t6.r1(0.1f, c12));
-            sparseIntArray2.put(t6.Ya, c(sparseIntArray2, t6.tc));
-            sparseIntArray2.put(t6.Za, c(sparseIntArray2, t6.Bc));
-            sparseIntArray2.put(t6.ab, c(sparseIntArray2, t6.Db));
-            sparseIntArray2.put(t6.bb, c(sparseIntArray2, t6.uc));
-            sparseIntArray2.put(t6.cb, c(sparseIntArray2, t6.wc));
-            sparseIntArray2.put(t6.db, c(sparseIntArray2, t6.il));
-        }
-        TLRPC.TL_theme tL_theme2 = this.r;
-        if (tL_theme2 != null && tL_theme2.emoticon != null && !q6) {
-            sparseIntArray2.delete(t6.vd);
-            int a10 = a(sparseIntArray2, t6.Ce, t6.De, t6.Ee);
-            if (a10 == 0) {
-                a10 = a(sparseIntArray2, t6.Be);
-            }
-            if (a10 == 0) {
-                a10 = this.c;
-            }
-            int b10 = b(i48, a10);
-            sparseIntArray2.put(t6.Mc, b10);
-            sparseIntArray2.put(t6.Pc, b10);
-            sparseIntArray2.put(t6.pb, t6.w(i48, b10));
-            int b11 = b(i50, this.c);
-            sparseIntArray2.put(t6.sa, b11);
-            sparseIntArray2.put(t6.Rc, t6.w(i50, b11));
-        }
-        float[] fArr = this.A;
-        if (!q6) {
-            sparseIntArray2.put(t6.ig, i(i50, this.c));
-            sparseIntArray2.put(t6.Jc, i(i48, this.c));
-            int i51 = t6.Kc;
-            Color.colorToHSV(this.c, fArr);
-            float f11 = fArr[i12];
-            Color.colorToHSV(i48, fArr);
-            float f12 = fArr[i11];
-            if (f12 > 0.0f) {
-                float f13 = fArr[i12];
-                if (f13 > 45.0f) {
-                }
-                fArr[i11] = a30.z(f12, 0.6f, 1.0f, 0.0f);
-                float f14 = fArr[c10];
-                fArr[c10] = Math.max(0.0f, Math.min(1.0f, f14 - (f14 <= 0.7f ? 0.25f : 0.125f)));
-                sparseIntArray2.put(i51, t6.w(i48, Color.HSVToColor(at.e4, fArr)));
-            }
-            fArr[i12] = f11;
-            fArr[i11] = a30.z(f12, 0.6f, 1.0f, 0.0f);
-            float f142 = fArr[c10];
-            fArr[c10] = Math.max(0.0f, Math.min(1.0f, f142 - (f142 <= 0.7f ? 0.25f : 0.125f)));
-            sparseIntArray2.put(i51, t6.w(i48, Color.HSVToColor(at.e4, fArr)));
-        }
-        Color.colorToHSV(t6.y0(sparseIntArray2, t6.n6, null), fArr);
-        float f15 = fArr[i12];
-        sparseIntArray2.put(t6.Lc, g(i48, f15, q6));
-        sparseIntArray2.put(t6.kg, g(i50, f15, q6));
-        int i52 = t6.Uc;
-        int i53 = sparseIntArray2.get(i52);
-        if (i53 == 0) {
-            i53 = t6.y0(sparseIntArray2, i52, null);
-        }
-        int i54 = t6.Vc;
-        int i55 = sparseIntArray2.get(i54);
-        if (i55 == 0) {
-            i55 = t6.y0(sparseIntArray2, i54, null);
-        }
-        sparseIntArray2.put(t6.ze, f(i53, i50, q6));
-        sparseIntArray2.put(t6.Ac, f(i55, i48, q6));
-        int i56 = t6.G8;
-        int i57 = sparseIntArray2.get(i56);
-        if (i57 == 0) {
-            i57 = t6.y0(sparseIntArray2, i56, null);
-        }
-        int i58 = i12;
-        sparseIntArray2.put(t6.H8, Color.argb(Color.alpha(i57), Math.max(i58, Color.red(i57) - 10), Math.max(i58, Color.green(i57) - 10), Math.max(i58, Color.blue(i57) - 10)));
-        int i59 = 64;
-        if (q6) {
-            int i60 = t6.rb;
-            if (sparseIntArray2.get(i60) != 0) {
-                Color.colorToHSV(a(sparseIntArray2, i60, t6.sb, t6.tb), fArr);
-                fArr[i11] = Utilities.i(fArr[i11] + 0.1f, 1.0f, 0.0f);
-                fArr[c10] = Utilities.i(fArr[c10] - 0.8f, 1.0f, 0.0f);
-                sparseIntArray2.put(t6.el, Color.HSVToColor(64, fArr));
-                t6.g(sparseIntArray, sparseIntArray2, q6);
-                t6.f(sparseIntArray, sparseIntArray2, q6);
-                return i10 ^ 1;
-            }
-        }
-        int i61 = t6.el;
-        Color.colorToHSV(i48, fArr);
-        if (q6) {
-            fArr[i11] = Utilities.i(fArr[i11] - 0.08f, 1.0f, 0.0f);
-            fArr[c10] = 0.03f;
-        } else {
-            float f16 = fArr[i11];
-            if (f16 > 0.0f) {
-                float f17 = fArr[c10];
-                if (f17 < 1.0f && f17 > 0.0f) {
-                    fArr[i11] = a30.z(f16, 0.28f, 1.0f, 0.0f);
-                    fArr[c10] = a30.z(fArr[c10], -0.1f, 1.0f, 0.0f);
-                    i59 = 32;
-                }
-            }
-            fArr[c10] = a30.z(fArr[c10], -0.2f, 1.0f, 0.0f);
-            i59 = 32;
-        }
-        sparseIntArray2.put(i61, Color.HSVToColor(i59, fArr));
-        t6.g(sparseIntArray, sparseIntArray2, q6);
-        t6.f(sparseIntArray, sparseIntArray2, q6);
-        return i10 ^ 1;
     }
 
-    public final File e() {
-        if (this.a < 100) {
-            if (TextUtils.isEmpty(this.o)) {
-                return null;
-            }
-            File h = org.telegram.messenger.w0.h();
-            Locale locale = Locale.US;
-            return new File(h, this.b.m() + "_" + this.a + "_" + this.o + "_v5.jpg");
-        }
-        if (TextUtils.isEmpty(this.o)) {
-            return null;
-        }
-        File h10 = org.telegram.messenger.w0.h();
-        Locale locale2 = Locale.US;
-        return new File(h10, this.b.m() + "_" + this.a + "_" + this.o + "_v8_debug.jpg");
+    public static l6 U(View view, int i3, int i10, e6 e6Var) {
+        l6 x10 = x(i3, view);
+        x10.c(i10, -1, 0, 0.0f, e6Var);
+        x10.n = null;
+        x10.o = null;
+        x10.m = true;
+        return x10;
     }
 
-    public final int f(int i10, int i11, boolean z10) {
-        int f7 = i0.b.f(0.25f, i10, i11);
-        float[] fArr = this.A;
-        Color.colorToHSV(f7, fArr);
-        fArr[1] = Math.max(0.0f, Math.min(1.0f, fArr[1] - 0.1f));
-        fArr[2] = a30.z(fArr[2], z10 ? 0.1f : 0.0f, 1.0f, 0.0f);
-        return Color.HSVToColor(51, fArr);
+    public static void V(TextView textView, int i3, e6 e6Var) {
+        n(textView, i3, -1, 0, 0.0f, e6Var);
     }
 
-    public final int g(int i10, float f7, boolean z10) {
-        if (z10) {
-            return 520093695;
-        }
-        float[] fArr = this.A;
-        Color.colorToHSV(i10, fArr);
-        if (fArr[1] > 0.0f) {
-            float f10 = fArr[2];
-            if (f10 < 1.0f && f10 > 0.0f) {
-                fArr[0] = w7.u.a(fArr[0] + 0.22f, 0.0f, 1.0f);
-                fArr[1] = w7.u.a(fArr[1] - 0.35f, 0.0f, 1.0f);
-                fArr[2] = w7.u.a(fArr[2] - 0.65f, 0.0f, 1.0f);
-                return Color.HSVToColor(90, fArr);
-            }
-        }
-        fArr[0] = f7;
-        fArr[1] = 0.2f;
-        fArr[2] = w7.u.a(fArr[2] - 0.65f, 0.0f, 1.0f);
-        return Color.HSVToColor(90, fArr);
+    public static void W(TextView textView, n6 n6Var, e6 e6Var) {
+        n(textView, n6Var.a, n6Var.b, n6Var.c, n6Var.d, e6Var);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x001f, code lost:
-    
-        if (r4 < 85.0f) goto L8;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0030  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x002d  */
+    public static void X(k5 k5Var, int i3) {
+        Y(k5Var, i3, null);
+    }
+
+    public static void Y(k5 k5Var, int i3, e6 e6Var) {
+        n(k5Var, i3, -1, 0, 0.0f, e6Var);
+    }
+
+    public static void Z(org.telegram.ui.Components.h6 h6Var, int i3, e6 e6Var) {
+        n(h6Var, i3, -1, 0, 0.0f, e6Var);
+    }
+
+    public static void a(k kVar, int i3, e6 e6Var, boolean z10) {
+        m(kVar, z10 ? 4 : 3, i3, e6Var);
+    }
+
+    public static void a0(View view, Context context, int i3, int i10) {
+        Drawable X0 = k6.X0(context, i3, k6.w0(i10, null));
+        view.setBackground(X0);
+        if (X0 == null) {
+            return;
+        }
+        l6 U = U(view, 22, i10, null);
+        U.j = new WeakReference(X0);
+        U.g = k6.v0(i10);
+    }
+
+    public static void b(k kVar, int i3, e6 e6Var, boolean z10) {
+        m(kVar, z10 ? 2 : 1, i3, e6Var);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0379 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x037e  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0097  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int i(int i10, int i11) {
-        float[] fArr = this.A;
-        Color.colorToHSV(i11, fArr);
-        float f7 = fArr[0];
-        Color.colorToHSV(i10, fArr);
-        float f10 = fArr[1];
-        if (f10 > 0.0f) {
-            float f11 = fArr[0];
-            if (f11 > 45.0f) {
-            }
-            fArr[1] = a30.z(f10, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
-            fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
-            return Color.HSVToColor(80, fArr);
+    public static void b0(View view) {
+        int i3;
+        int h;
+        int b10;
+        boolean z10;
+        int b11;
+        int currentTextColor;
+        int currentHintTextColor;
+        int defaultColor;
+        int color;
+        k kVar;
+        d dVar;
+        m6 p10 = p(view, false);
+        if (p10 == null) {
+            return;
         }
-        fArr[0] = f7;
-        fArr[1] = a30.z(f10, fArr[2] <= 0.85f ? 0.25f : 0.45f, 1.0f, 0.0f);
-        fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
-        return Color.HSVToColor(80, fArr);
+        for (int i10 = 0; i10 < 6; i10++) {
+            l6 l6Var = p10.a[i10];
+            if (l6Var != null && !l6Var.a()) {
+                int b12 = l6Var.b();
+                if (i10 != 0) {
+                    if (i10 == 1) {
+                        TextView textView = (TextView) view;
+                        if (textView.getHintTextColors() != null && !textView.getHintTextColors().isStateful() && ((currentHintTextColor = textView.getCurrentHintTextColor()) == l6Var.g || currentHintTextColor == b12)) {
+                            if (currentHintTextColor != b12) {
+                                textView.setHintTextColor(b12);
+                            }
+                            l6Var.g = b12;
+                        }
+                    } else if (i10 == 2) {
+                        TextView textView2 = (TextView) view;
+                        if (textView2.getLinkTextColors() != null && !textView2.getLinkTextColors().isStateful() && ((defaultColor = textView2.getLinkTextColors().getDefaultColor()) == l6Var.g || defaultColor == b12)) {
+                            if (defaultColor != b12) {
+                                textView2.setLinkTextColor(b12);
+                            }
+                            l6Var.g = b12;
+                        }
+                    } else if (i10 == 3) {
+                        TextView textView3 = (TextView) view;
+                        int highlightColor = textView3.getHighlightColor();
+                        if (highlightColor == l6Var.g || highlightColor == b12) {
+                            if (highlightColor != b12) {
+                                textView3.setHighlightColor(b12);
+                            }
+                            l6Var.g = b12;
+                        }
+                    } else if (i10 != 4) {
+                        if (i10 == 5) {
+                            ImageView imageView = (ImageView) view;
+                            if (imageView.getColorFilter() == l6Var.i) {
+                                if (b12 != l6Var.g) {
+                                    PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(b12, l6Var.h);
+                                    imageView.setColorFilter(porterDuffColorFilter);
+                                    l6Var.i = porterDuffColorFilter;
+                                }
+                            }
+                        }
+                        l6Var.g = b12;
+                    } else {
+                        if (view instanceof k) {
+                            k kVar2 = (k) view;
+                            if (kVar2.M0) {
+                                color = kVar2.getBackgroundColor();
+                                if (color != l6Var.g || color == b12) {
+                                    if (color != b12) {
+                                        view.setBackgroundColor(b12);
+                                    }
+                                    l6Var.g = b12;
+                                }
+                            }
+                        }
+                        if ((view instanceof x) && (kVar = ((x) view).b) != null && kVar.M0 && (dVar = kVar.G) != null && dVar == view) {
+                            color = dVar == view ? kVar.x : 0;
+                        } else {
+                            Drawable background = view.getBackground();
+                            if (background instanceof ColorDrawable) {
+                                color = ((ColorDrawable) background).getColor();
+                            }
+                        }
+                        if (color != l6Var.g) {
+                        }
+                        if (color != b12) {
+                        }
+                        l6Var.g = b12;
+                    }
+                } else if (view instanceof TextView) {
+                    TextView textView4 = (TextView) view;
+                    if (!textView4.getTextColors().isStateful() && ((currentTextColor = textView4.getCurrentTextColor()) == l6Var.g || currentTextColor == b12)) {
+                        if (currentTextColor != b12) {
+                            textView4.setTextColor(b12);
+                        }
+                        l6Var.g = b12;
+                    }
+                } else {
+                    boolean z11 = view instanceof k5;
+                    if (z11 || (view instanceof org.telegram.ui.Components.h6)) {
+                        int textColor = z11 ? ((k5) view).getTextColor() : ((org.telegram.ui.Components.h6) view).getTextColor();
+                        int i11 = textColor & 16777215;
+                        if (i11 == (l6Var.g & 16777215) || i11 == (b12 & 16777215)) {
+                            if (textColor != b12) {
+                                if (z11) {
+                                    ((k5) view).setTextColor(b12);
+                                } else {
+                                    ((org.telegram.ui.Components.h6) view).setTextColor(b12);
+                                }
+                            }
+                            l6Var.g = b12;
+                        }
+                    }
+                }
+            }
+        }
+        if (p10.b != null) {
+            boolean z12 = false;
+            for (int i12 = 0; i12 < p10.b.size(); i12++) {
+                l6 l6Var2 = (l6) p10.b.get(i12);
+                Drawable drawable = (Drawable) l6Var2.j.get();
+                if (drawable == null || l6Var2.a() || (!(l6Var2.k || drawable.getColorFilter() == l6Var2.i) || (b11 = l6Var2.b()) == l6Var2.g)) {
+                    z10 = false;
+                } else {
+                    PorterDuffColorFilter porterDuffColorFilter2 = new PorterDuffColorFilter(b11, l6Var2.h);
+                    drawable.setColorFilter(porterDuffColorFilter2);
+                    l6Var2.i = porterDuffColorFilter2;
+                    l6Var2.g = b11;
+                    z10 = true;
+                }
+                z12 |= z10;
+            }
+            if (z12) {
+                view.invalidate();
+            }
+        }
+        if (p10.d != null && view.getBackground() == p10.d) {
+            l6 l6Var3 = p10.e;
+            if (l6Var3 != null && !l6Var3.a()) {
+                int b13 = l6Var3.b();
+                int u10 = u(p10.d);
+                if (u10 == l6Var3.g || u10 == b13) {
+                    if (u10 != b13) {
+                        Drawable drawable2 = p10.d;
+                        Drawable drawable3 = drawable2 instanceof InsetDrawable ? ((InsetDrawable) drawable2).getDrawable() : drawable2;
+                        if (drawable3 instanceof RippleDrawable) {
+                            RippleDrawable rippleDrawable = (RippleDrawable) drawable3;
+                            drawable3 = (rippleDrawable.getNumberOfLayers() <= 0 || rippleDrawable.getId(0) == 16908334) ? null : rippleDrawable.getDrawable(0);
+                        }
+                        if (drawable3 instanceof ShapeDrawable) {
+                            ((ShapeDrawable) drawable3).getPaint().setColor(b13);
+                            drawable2.invalidateSelf();
+                        } else if (drawable3 instanceof ColorDrawable) {
+                            ((ColorDrawable) drawable3).setColor(b13);
+                        }
+                    }
+                    l6Var3.g = b13;
+                }
+            }
+            l6 l6Var4 = p10.f;
+            if (l6Var4 != null && !l6Var4.a() && (p10.d instanceof RippleDrawable) && (b10 = l6Var4.b()) != l6Var4.g) {
+                ((RippleDrawable) p10.d).setColor(ColorStateList.valueOf(b10));
+                l6Var4.g = b10;
+            }
+        }
+        if (p10.c != null) {
+            for (int i13 = 0; i13 < p10.c.size(); i13++) {
+                l6 l6Var5 = (l6) p10.c.get(i13);
+                if (!l6Var5.a()) {
+                    int b14 = l6Var5.b();
+                    if (l6Var5.m) {
+                        int i14 = l6Var5.l;
+                        switch (i14) {
+                            case 1:
+                                if (view instanceof k) {
+                                    h = ((k) view).s0;
+                                    break;
+                                } else {
+                                    i3 = l6Var5.g;
+                                    h = ~i3;
+                                    break;
+                                }
+                            case 2:
+                                if (view instanceof k) {
+                                    h = ((k) view).t0;
+                                    break;
+                                } else {
+                                    i3 = l6Var5.g;
+                                    h = ~i3;
+                                    break;
+                                }
+                            case 3:
+                                if (view instanceof k) {
+                                    h = ((k) view).q0;
+                                    break;
+                                } else {
+                                    i3 = l6Var5.g;
+                                    h = ~i3;
+                                    break;
+                                }
+                            case 4:
+                                if (view instanceof k) {
+                                    h = ((k) view).r0;
+                                    break;
+                                } else {
+                                    i3 = l6Var5.g;
+                                    h = ~i3;
+                                    break;
+                                }
+                            case 5:
+                                if (view instanceof k) {
+                                    h = ((k) view).getTitleColorToSet();
+                                    break;
+                                } else {
+                                    i3 = l6Var5.g;
+                                    h = ~i3;
+                                    break;
+                                }
+                            case 6:
+                                if (view instanceof k) {
+                                    h = ((k) view).getSubtitleColorInternal();
+                                    break;
+                                } else {
+                                    i3 = l6Var5.g;
+                                    h = ~i3;
+                                    break;
+                                }
+                            default:
+                                switch (i14) {
+                                    case 20:
+                                        if (view instanceof tj0) {
+                                            h = ((tj0) view).getSelectorDrawableColor();
+                                            break;
+                                        } else {
+                                            i3 = l6Var5.g;
+                                            h = ~i3;
+                                            break;
+                                        }
+                                    case 21:
+                                        if (view instanceof RecyclerView) {
+                                            h = ((RecyclerView) view).getGlowColor();
+                                            break;
+                                        } else {
+                                            i3 = l6Var5.g;
+                                            h = ~i3;
+                                            break;
+                                        }
+                                    case 22:
+                                        WeakReference weakReference = l6Var5.j;
+                                        Drawable drawable4 = weakReference != null ? (Drawable) weakReference.get() : null;
+                                        if (drawable4 == null || view.getBackground() != drawable4) {
+                                            i3 = l6Var5.g;
+                                            h = ~i3;
+                                            break;
+                                        } else {
+                                            h = l6Var5.g;
+                                            break;
+                                        }
+                                        break;
+                                    case 23:
+                                        if (view instanceof RadioButton) {
+                                            h = ((RadioButton) view).getColor();
+                                            break;
+                                        } else {
+                                            i3 = l6Var5.g;
+                                            h = ~i3;
+                                            break;
+                                        }
+                                    case 24:
+                                        if (view instanceof RadioButton) {
+                                            h = ((RadioButton) view).getCheckedColor();
+                                            break;
+                                        } else {
+                                            i3 = l6Var5.g;
+                                            h = ~i3;
+                                            break;
+                                        }
+                                    default:
+                                        if (view instanceof EditTextBoldCursor) {
+                                            EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                                            switch (i14) {
+                                                case hs.T /* 30 */:
+                                                    h = editTextBoldCursor.getCursorColor();
+                                                    break;
+                                                case hs.U /* 31 */:
+                                                    h = editTextBoldCursor.getLineColor();
+                                                    break;
+                                                case 32:
+                                                    h = editTextBoldCursor.getActiveLineColor();
+                                                    break;
+                                                case 33:
+                                                    h = editTextBoldCursor.getErrorLineColor();
+                                                    break;
+                                                case 34:
+                                                    h = editTextBoldCursor.getHintColor();
+                                                    break;
+                                                case 35:
+                                                    h = editTextBoldCursor.getHeaderHintColor();
+                                                    break;
+                                                case 36:
+                                                    h = editTextBoldCursor.getHandlesColor();
+                                                    break;
+                                            }
+                                        }
+                                        i3 = l6Var5.g;
+                                        h = ~i3;
+                                        break;
+                                }
+                        }
+                        if (h != l6Var5.g || h == b14) {
+                            if (h != b14) {
+                                if (l6Var5.m) {
+                                    T(view, l6Var5, b14);
+                                } else {
+                                    p6 p6Var = l6Var5.o;
+                                    if (p6Var != null) {
+                                        p6Var.f(b14, view);
+                                    }
+                                }
+                            }
+                            l6Var5.g = b14;
+                        }
+                    } else {
+                        o6 o6Var = l6Var5.n;
+                        if (o6Var != null) {
+                            h = o6Var.h(view);
+                            if (h != l6Var5.g) {
+                            }
+                            if (h != b14) {
+                            }
+                            l6Var5.g = b14;
+                        } else {
+                            i3 = l6Var5.g;
+                            h = ~i3;
+                            if (h != l6Var5.g) {
+                            }
+                            if (h != b14) {
+                            }
+                            l6Var5.g = b14;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public static void c(k kVar, int i3, e6 e6Var) {
+        m(kVar, 6, i3, e6Var);
+    }
+
+    public static void c0(ActionBarLayout actionBarLayout, boolean z10) {
+        b++;
+        q6 M = M(z10, 0, null);
+        try {
+            List j10 = org.telegram.messenger.g0.j();
+            if (j10 == null) {
+                j10 = new ArrayList();
+            }
+            for (int i3 = 0; i3 < j10.size(); i3++) {
+                M.b((View) j10.get(i3));
+            }
+            M.b(actionBarLayout);
+            M.a();
+        } catch (Throwable th2) {
+            M.a();
+            throw th2;
+        }
+    }
+
+    public static void d(k kVar, int i3, e6 e6Var) {
+        m(kVar, 5, i3, e6Var);
+    }
+
+    public static void d0(FrameLayout frameLayout, boolean z10) {
+        q6 M = M(z10, 0, null);
+        try {
+            M.b(frameLayout);
+        } finally {
+            M.a();
+        }
+    }
+
+    public static void e(u20 u20Var, int i3) {
+        m(u20Var, 5, i3, null);
+    }
+
+    public static n6 f(int i3) {
+        return new n6(i3, -1, 0.0f, 5);
+    }
+
+    public static void g(l6 l6Var, HashSet hashSet) {
+        hashSet.add(Integer.valueOf(l6Var.a));
+        int i3 = l6Var.b;
+        if (i3 >= 0) {
+            hashSet.add(Integer.valueOf(i3));
+        }
+    }
+
+    public static n6 h(int i3, int i10) {
+        return new n6(i3, -1, i10, 1);
+    }
+
+    public static void i(int i3, View view, e6 e6Var) {
+        int Q = Q(i3, -1, 0, 0.0f, e6Var);
+        view.setBackgroundColor(Q);
+        O(view, 4, i3, -1, 0, 0.0f, e6Var, Q, null);
+    }
+
+    public static void j(View view, n6 n6Var, e6 e6Var) {
+        int i3 = n6Var.a;
+        int i10 = n6Var.b;
+        int i11 = n6Var.c;
+        float f10 = n6Var.d;
+        int Q = Q(i3, i10, i11, f10, e6Var);
+        view.setBackgroundColor(Q);
+        O(view, 4, i3, i10, i11, f10, e6Var, Q, null);
+    }
+
+    public static void k(View view, Drawable drawable, n6 n6Var, n6 n6Var2, e6 e6Var) {
+        m6 p10 = p(view, true);
+        p10.d = drawable;
+        p10.e = null;
+        p10.f = null;
+        if (drawable == null) {
+            return;
+        }
+        if (n6Var != null) {
+            l6 l6Var = new l6();
+            p10.e = l6Var;
+            l6Var.c(n6Var.a, n6Var.b, n6Var.c, n6Var.d, e6Var);
+            l6Var.g = u(drawable);
+        }
+        if (n6Var2 != null) {
+            l6 l6Var2 = new l6();
+            p10.f = l6Var2;
+            l6Var2.c(n6Var2.a, n6Var2.b, n6Var2.c, n6Var2.d, e6Var);
+            l6Var2.g = l6Var2.b();
+        }
+    }
+
+    public static void l(View view, Drawable drawable, int i3, int i10, int i11, float f10, e6 e6Var, PorterDuff.Mode mode) {
+        int Q = Q(i3, i10, i11, f10, e6Var);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(Q, mode);
+        drawable.setColorFilter(porterDuffColorFilter);
+        if (view == null) {
+            return;
+        }
+        m6 p10 = p(view, true);
+        if (p10.b == null) {
+            p10.b = new ArrayList(2);
+        }
+        l6 l6Var = null;
+        for (int size = p10.b.size() - 1; size >= 0; size--) {
+            l6 l6Var2 = (l6) p10.b.get(size);
+            Drawable drawable2 = (Drawable) l6Var2.j.get();
+            if (drawable2 == drawable) {
+                l6Var = l6Var2;
+            } else if (drawable2 == null || (!l6Var2.k && drawable2.getColorFilter() != l6Var2.i)) {
+                p10.b.remove(size);
+            }
+        }
+        if (l6Var == null) {
+            l6Var = new l6();
+            l6Var.j = new WeakReference(drawable);
+            p10.b.add(l6Var);
+        }
+        l6 l6Var3 = l6Var;
+        l6Var3.c(i3, i10, i11, f10, e6Var);
+        l6Var3.g = Q;
+        l6Var3.i = porterDuffColorFilter;
+        l6Var3.h = mode;
+        l6Var3.k = drawable.getColorFilter() != porterDuffColorFilter;
+    }
+
+    public static void m(View view, int i3, int i10, e6 e6Var) {
+        l6 U = U(view, i3, i10, e6Var);
+        int b10 = U.b();
+        T(view, U, b10);
+        U.g = b10;
+    }
+
+    public static void n(View view, int i3, int i10, int i11, float f10, e6 e6Var) {
+        int Q = Q(i3, i10, i11, f10, e6Var);
+        if (view instanceof TextView) {
+            ((TextView) view).setTextColor(Q);
+        } else if (view instanceof k5) {
+            ((k5) view).setTextColor(Q);
+        } else {
+            ((org.telegram.ui.Components.h6) view).setTextColor(Q);
+        }
+        O(view, 0, i3, i10, i11, f10, e6Var, Q, null);
+    }
+
+    public static void o(TextView textView, int i3, int i10, int i11, int i12, float f10, e6 e6Var) {
+        int Q = Q(i10, i11, i12, f10, e6Var);
+        if (i3 == 1) {
+            textView.setHintTextColor(Q);
+        } else if (i3 == 2) {
+            textView.setLinkTextColor(Q);
+        } else if (i3 == 3) {
+            textView.setHighlightColor(Q);
+        }
+        O(textView, i3, i10, i11, i12, f10, e6Var, Q, null);
+    }
+
+    public static m6 p(View view, boolean z10) {
+        Object tag = view.getTag(R.id.theme_bind);
+        if (tag instanceof m6) {
+            return (m6) tag;
+        }
+        if (!z10) {
+            return null;
+        }
+        m6 m6Var = new m6();
+        view.setTag(R.id.theme_bind, m6Var);
+        return m6Var;
+    }
+
+    public static n6 q(int i3, int i10) {
+        return new n6(i3, i10, 0.0f, 4);
+    }
+
+    public static void r(View view) {
+        if (view != null) {
+            view.setTag(R.id.theme_bind, null);
+        }
+    }
+
+    public static HashSet s() {
+        HashSet hashSet = new HashSet();
+        q6 M = M(true, 1, hashSet);
+        try {
+            List j10 = org.telegram.messenger.g0.j();
+            if (j10 == null) {
+                j10 = new ArrayList();
+            }
+            for (int i3 = 0; i3 < j10.size(); i3++) {
+                M.b((View) j10.get(i3));
+            }
+            return hashSet;
+        } finally {
+            M.a();
+        }
+    }
+
+    public static void t(ImageView imageView, int i3, e6 e6Var, PorterDuff.Mode mode) {
+        int Q = Q(i3, -1, 0, 0.0f, e6Var);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(Q, mode);
+        imageView.setColorFilter(porterDuffColorFilter);
+        O(imageView, 5, i3, -1, 0, 0.0f, e6Var, Q, porterDuffColorFilter).h = mode;
+    }
+
+    public static int u(Drawable drawable) {
+        if (drawable instanceof InsetDrawable) {
+            drawable = ((InsetDrawable) drawable).getDrawable();
+        }
+        if (drawable instanceof RippleDrawable) {
+            RippleDrawable rippleDrawable = (RippleDrawable) drawable;
+            drawable = (rippleDrawable.getNumberOfLayers() <= 0 || rippleDrawable.getId(0) == 16908334) ? null : rippleDrawable.getDrawable(0);
+        }
+        if (drawable instanceof ShapeDrawable) {
+            return ((ShapeDrawable) drawable).getPaint().getColor();
+        }
+        if (drawable instanceof ColorDrawable) {
+            return ((ColorDrawable) drawable).getColor();
+        }
+        return 0;
+    }
+
+    public static void v(EditTextBoldCursor editTextBoldCursor, int i3) {
+        w(editTextBoldCursor, i3, null);
+    }
+
+    public static void w(EditTextBoldCursor editTextBoldCursor, int i3, e6 e6Var) {
+        m(editTextBoldCursor, 30, i3, e6Var);
+    }
+
+    public static l6 x(int i3, View view) {
+        m6 p10 = p(view, true);
+        if (p10.c == null) {
+            p10.c = new ArrayList(2);
+        }
+        for (int i10 = 0; i10 < p10.c.size(); i10++) {
+            if (((l6) p10.c.get(i10)).l == i3) {
+                return (l6) p10.c.get(i10);
+            }
+        }
+        l6 l6Var = new l6();
+        l6Var.l = i3;
+        p10.c.add(l6Var);
+        return l6Var;
+    }
+
+    public static void y(View view, Drawable drawable, int i3, e6 e6Var, PorterDuff.Mode mode) {
+        l(view, drawable, i3, -1, 0, 0.0f, e6Var, mode);
+    }
+
+    public static void z(EditTextBoldCursor editTextBoldCursor, int i3, e6 e6Var) {
+        m(editTextBoldCursor, 36, i3, e6Var);
     }
 }

@@ -1,97 +1,47 @@
 package t9;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
-import b5.g;
-import c5.t;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import m.p3;
-import x9.l;
-import x9.n;
-import x9.p;
-import x9.s;
+import com.google.firebase.components.ComponentRegistrar;
+import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c {
-    public final p a;
+public final /* synthetic */ class c implements ta.b {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public c(p pVar) {
-        this.a = pVar;
+    public /* synthetic */ c(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    public final void a(Throwable th2) {
-        if (th2 == null) {
-            Log.w("FirebaseCrashlytics", "A null value was passed to recordException. Ignoring.", null);
-            return;
-        }
-        n nVar = this.a.f;
-        Thread currentThread = Thread.currentThread();
-        nVar.getClass();
-        long currentTimeMillis = System.currentTimeMillis();
-        xa.n nVar2 = nVar.e;
-        l lVar = new l(nVar, currentTimeMillis, th2, currentThread);
-        nVar2.getClass();
-        nVar2.Y(new t(lVar, 9));
-    }
-
-    public final void b() {
-        p pVar = this.a;
-        Boolean bool = Boolean.TRUE;
-        s sVar = pVar.b;
-        synchronized (sVar) {
-            sVar.f = false;
-            sVar.g = bool;
-            SharedPreferences.Editor edit = sVar.a.edit();
-            edit.putBoolean("firebase_crashlytics_collection_enabled", true);
-            edit.apply();
-            synchronized (sVar.c) {
+    @Override // ta.b
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                String str = (String) this.b;
                 try {
-                    if (sVar.a()) {
-                        if (!sVar.e) {
-                            sVar.d.trySetResult(null);
-                            sVar.e = true;
-                        }
-                    } else if (sVar.e) {
-                        sVar.d = new TaskCompletionSource();
-                        sVar.e = false;
+                    Class<?> cls = Class.forName(str);
+                    if (ComponentRegistrar.class.isAssignableFrom(cls)) {
+                        return (ComponentRegistrar) cls.getDeclaredConstructor(null).newInstance(null);
                     }
-                } finally {
+                    throw new m("Class " + str + " is not an instance of com.google.firebase.components.ComponentRegistrar");
+                } catch (ClassNotFoundException unused) {
+                    Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
+                    return null;
+                } catch (IllegalAccessException e10) {
+                    throw new m(a1.g.q("Could not instantiate ", str, "."), e10);
+                } catch (InstantiationException e11) {
+                    throw new m(a1.g.q("Could not instantiate ", str, "."), e11);
+                } catch (NoSuchMethodException e12) {
+                    throw new m(t4.c.f("Could not instantiate ", str), e12);
+                } catch (InvocationTargetException e13) {
+                    throw new m(t4.c.f("Could not instantiate ", str), e13);
                 }
-            }
-        }
-    }
-
-    public final void c(String str, String str2) {
-        n nVar = this.a.f;
-        nVar.getClass();
-        try {
-            ((ac.a) nVar.d.d).z(str, str2);
-        } catch (IllegalArgumentException e) {
-            Context context = nVar.a;
-            if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
-                throw e;
-            }
-            Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
-        }
-    }
-
-    public final void d(String str) {
-        p3 p3Var = this.a.f.d;
-        p3Var.getClass();
-        String b10 = y9.d.b(1024, str);
-        synchronized (((AtomicMarkableReference) p3Var.h)) {
-            try {
-                String str2 = (String) ((AtomicMarkableReference) p3Var.h).getReference();
-                if (b10 == null ? str2 == null : b10.equals(str2)) {
-                    return;
-                }
-                ((AtomicMarkableReference) p3Var.h).set(b10, true);
-                ((xa.n) p3Var.b).Y(new g(p3Var, 1));
-            } finally {
-            }
+            case 1:
+                return (ComponentRegistrar) this.b;
+            default:
+                return new va.c((n9.h) this.b);
         }
     }
 }

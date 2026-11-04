@@ -1,111 +1,31 @@
 package yd;
 
-import c3.i0;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import td.a0;
-import td.d2;
-import td.e0;
-import td.l0;
-import td.w0;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class h extends l0 implements ed.d, cd.c {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater n = AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "_reusableCancellableContinuation$volatile");
-    private volatile /* synthetic */ Object _reusableCancellableContinuation$volatile;
-    public final a0 d;
-    public final ed.c e;
-    public Object f;
-    public final Object h;
+public final class h extends i {
+    public final Throwable a;
 
-    public h(a0 a0Var, ed.c cVar) {
-        super(-1);
-        this.d = a0Var;
-        this.e = cVar;
-        this.f = a.c;
-        Object fold = cVar.getContext().fold(0, w.c);
-        kotlin.jvm.internal.i.b(fold);
-        this.h = fold;
+    public h(Throwable th2) {
+        this.a = th2;
     }
 
-    @Override // td.l0
-    public final void b(Object obj, CancellationException cancellationException) {
-        if (obj instanceof td.w) {
-            throw null;
+    public final boolean equals(Object obj) {
+        if (obj instanceof h) {
+            return kotlin.jvm.internal.j.a(this.a, ((h) obj).a);
         }
+        return false;
     }
 
-    @Override // ed.d
-    public final ed.d getCallerFrame() {
-        ed.c cVar = this.e;
-        if (i0.t(cVar)) {
-            return cVar;
+    public final int hashCode() {
+        Throwable th2 = this.a;
+        if (th2 != null) {
+            return th2.hashCode();
         }
-        return null;
+        return 0;
     }
 
-    @Override // cd.c
-    public final cd.h getContext() {
-        return this.e.getContext();
-    }
-
-    @Override // td.l0
-    public final Object j() {
-        Object obj = this.f;
-        this.f = a.c;
-        return obj;
-    }
-
-    @Override // cd.c
-    public final void resumeWith(Object obj) {
-        ed.c cVar = this.e;
-        cd.h context = cVar.getContext();
-        Throwable a2 = ad.g.a(obj);
-        Object vVar = a2 == null ? obj : new td.v(a2, false);
-        a0 a0Var = this.d;
-        if (a0Var.d()) {
-            this.f = vVar;
-            this.c = 0;
-            a0Var.c(context, this);
-            return;
-        }
-        w0 a10 = d2.a();
-        if (a10.c >= 4294967296L) {
-            this.f = vVar;
-            this.c = 0;
-            bd.g gVar = a10.e;
-            if (gVar == null) {
-                gVar = new bd.g();
-                a10.e = gVar;
-            }
-            gVar.addLast(this);
-            return;
-        }
-        a10.h(true);
-        try {
-            cd.h context2 = cVar.getContext();
-            Object k10 = a.k(context2, this.h);
-            try {
-                cVar.resumeWith(obj);
-                while (a10.j()) {
-                }
-            } finally {
-                a.f(context2, k10);
-            }
-        } finally {
-            try {
-            } finally {
-            }
-        }
-    }
-
+    @Override // yd.i
     public final String toString() {
-        return "DispatchedContinuation[" + this.d + ", " + e0.t(this.e) + ']';
-    }
-
-    @Override // td.l0
-    public final cd.c c() {
-        return this;
+        return "Closed(" + this.a + ')';
     }
 }

@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class ItemList {
     private final List<q> mItems;
@@ -15,7 +15,7 @@ public final class ItemList {
 
     public ItemList(r rVar) {
         this.mSelectedIndex = rVar.b;
-        this.mItems = androidx.car.app.utils.h.g(rVar.a);
+        this.mItems = androidx.car.app.utils.g.g(rVar.a);
         this.mNoItemsMessage = rVar.e;
         this.mOnSelectedDelegate = rVar.c;
         this.mOnItemVisibilityChangedDelegate = rVar.d;
@@ -90,7 +90,7 @@ public final class ItemList {
         List<q> list = this.mItems;
         sb2.append(list != null ? list.toString() : null);
         sb2.append(", selected: ");
-        return a1.g.p(sb2, this.mSelectedIndex, "]");
+        return a1.g.o(this.mSelectedIndex, "]", sb2);
     }
 
     private ItemList() {

@@ -1,61 +1,58 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gd implements org.telegram.messenger.o20 {
+public final /* synthetic */ class gd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 d;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ gd(ChatActivityEnterView chatActivityEnterView, long j10, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ gd(ChatActivityEnterView chatActivityEnterView, boolean z10, int i3) {
+        this.a = i3;
         this.b = chatActivityEnterView;
-        this.c = j10;
-        this.d = p6Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.o20
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        int i10 = this.a;
-        org.telegram.ui.ActionBar.p6 p6Var = this.d;
-        long j10 = this.c;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        se seVar;
+        int i3 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        boolean z10 = this.c;
+        switch (i3) {
             case 0:
-                Integer num = (Integer) obj2;
-                Integer num2 = (Integer) obj3;
-                Boolean bool = (Boolean) obj4;
-                int i11 = ChatActivityEnterView.s5;
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.O0((TL_iv.RichMessage) obj);
-                if (!chatActivityEnterView.c() || num.intValue() != 0) {
-                    chatActivityEnterView.R0(bool.booleanValue(), num.intValue(), num2.intValue(), 0L, true);
+                if (!z10) {
+                    chatActivityEnterView.u1.setVisibility(8);
                     break;
                 } else {
-                    s4.L(chatActivityEnterView.O2, j10, new ud(chatActivityEnterView, 0), p6Var);
+                    int i10 = ChatActivityEnterView.t5;
+                    chatActivityEnterView.getClass();
+                    break;
+                }
+            case 1:
+                if (!z10) {
+                    chatActivityEnterView.v1.setVisibility(8);
+                    break;
+                } else {
+                    int i11 = ChatActivityEnterView.t5;
+                    chatActivityEnterView.getClass();
                     break;
                 }
             default:
-                Integer num3 = (Integer) obj2;
-                Integer num4 = (Integer) obj3;
-                Boolean bool2 = (Boolean) obj4;
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                chatActivityEnterView2.E0.setText((CharSequence) obj);
-                if (chatActivityEnterView2.Z1 == null) {
-                    if (!chatActivityEnterView2.c() || num3.intValue() != 0) {
-                        chatActivityEnterView2.R0(bool2.booleanValue(), num3.intValue(), num4.intValue(), 0L, true);
-                        break;
-                    } else {
-                        s4.L(chatActivityEnterView2.O2, j10, new vd(chatActivityEnterView2), p6Var);
-                        break;
-                    }
+                yc ycVar = chatActivityEnterView2.G4;
+                chatActivityEnterView2.N0 = System.currentTimeMillis();
+                boolean S0 = chatActivityEnterView2.S0(false, 0, 0, 0L, true);
+                if (!z10 && (seVar = chatActivityEnterView2.M0) != null) {
+                    seVar.g(!S0);
+                    chatActivityEnterView2.M0 = null;
+                    break;
                 } else {
-                    chatActivityEnterView2.Z();
+                    chatActivityEnterView2.F4 = !S0;
+                    org.telegram.messenger.g0.r(ycVar);
+                    org.telegram.messenger.g0.i3(ycVar, 500L);
                     break;
                 }
-                break;
         }
     }
 }

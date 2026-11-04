@@ -1,45 +1,37 @@
 package com.google.android.gms.tasks;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzc implements Runnable {
     final /* synthetic */ Task zza;
     final /* synthetic */ zzd zzb;
 
     public zzc(zzd zzdVar, Task task) {
-        this.zzb = zzdVar;
         this.zza = task;
+        Objects.requireNonNull(zzdVar);
+        this.zzb = zzdVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        zzw zzwVar;
-        zzw zzwVar2;
-        zzw zzwVar3;
-        Continuation continuation;
-        zzw zzwVar4;
-        zzw zzwVar5;
-        if (this.zza.isCanceled()) {
-            zzwVar5 = this.zzb.zzc;
-            zzwVar5.zzc();
+        Task task = this.zza;
+        if (task.isCanceled()) {
+            this.zzb.zzd().zze();
             return;
         }
         try {
-            continuation = this.zzb.zzb;
-            Object then = continuation.then(this.zza);
-            zzwVar4 = this.zzb.zzc;
-            zzwVar4.zzb(then);
-        } catch (RuntimeExecutionException e) {
-            if (e.getCause() instanceof Exception) {
-                zzwVar3 = this.zzb.zzc;
-                zzwVar3.zza((Exception) e.getCause());
-            } else {
-                zzwVar2 = this.zzb.zzc;
-                zzwVar2.zza(e);
+            this.zzb.zzd().zza(this.zzb.zzc().then(task));
+        } catch (RuntimeExecutionException e10) {
+            if (!(e10.getCause() instanceof Exception)) {
+                this.zzb.zzd().zzc(e10);
+                return;
             }
-        } catch (Exception e7) {
-            zzwVar = this.zzb.zzc;
-            zzwVar.zza(e7);
+            zzd zzdVar = this.zzb;
+            zzdVar.zzd().zzc((Exception) e10.getCause());
+        } catch (Exception e11) {
+            this.zzb.zzd().zzc(e11);
         }
     }
 }

@@ -1,39 +1,32 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nv implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zx b;
-
-    public /* synthetic */ nv(zx zxVar, int i10) {
-        this.a = i10;
-        this.b = zxVar;
+public final class nv extends org.telegram.ui.Components.w9 {
+    @Override // org.telegram.ui.Components.tj0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                zx zxVar = this.b;
-                if (zxVar.R3 != null) {
-                    zxVar.getMessagesController().h4(0L, zxVar.R3);
-                    zxVar.R3 = null;
-                    zxVar.X4();
-                    break;
-                }
-                break;
-            case 1:
-                this.b.n4(true);
-                break;
-            case 2:
-                this.b.n4(true);
-                break;
-            default:
-                zx.l0(this.b);
-                break;
-        }
+    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.w9
+    public final int z1() {
+        return org.telegram.messenger.g0.L(48.0f);
+    }
+
+    @Override // org.telegram.ui.Components.w9, org.telegram.ui.Components.tj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
     }
 }

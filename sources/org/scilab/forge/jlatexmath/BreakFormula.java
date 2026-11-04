@@ -5,40 +5,40 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class BreakFormula {
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class Position {
         HorizontalBox hbox;
         int index;
 
-        public Position(int i10, HorizontalBox horizontalBox) {
-            this.index = i10;
+        public Position(int i3, HorizontalBox horizontalBox) {
+            this.index = i3;
             this.hbox = horizontalBox;
         }
     }
 
-    private static float canBreak(Stack<Position> stack, HorizontalBox horizontalBox, float f7) {
+    private static float canBreak(Stack<Position> stack, HorizontalBox horizontalBox, float f10) {
         LinkedList<Box> linkedList = horizontalBox.children;
         float[] fArr = new float[linkedList.size() + 1];
-        int i10 = 0;
+        int i3 = 0;
         fArr[0] = 0.0f;
-        while (i10 < linkedList.size()) {
-            Box box = linkedList.get(i10);
-            int i11 = i10 + 1;
-            float f10 = fArr[i10] + box.width;
-            fArr[i11] = f10;
-            if (f10 > f7) {
-                int breakPosition = getBreakPosition(horizontalBox, i10);
+        while (i3 < linkedList.size()) {
+            Box box = linkedList.get(i3);
+            int i10 = i3 + 1;
+            float f11 = fArr[i3] + box.width;
+            fArr[i10] = f11;
+            if (f11 > f10) {
+                int breakPosition = getBreakPosition(horizontalBox, i3);
                 if (box instanceof HorizontalBox) {
                     Stack stack2 = new Stack();
-                    float canBreak = canBreak(stack2, (HorizontalBox) box, f7 - fArr[i10]);
-                    if (canBreak != box.width && (fArr[i10] + canBreak <= f7 || breakPosition == -1)) {
-                        stack.push(new Position(i10 - 1, horizontalBox));
+                    float canBreak = canBreak(stack2, (HorizontalBox) box, f10 - fArr[i3]);
+                    if (canBreak != box.width && (fArr[i3] + canBreak <= f10 || breakPosition == -1)) {
+                        stack.push(new Position(i3 - 1, horizontalBox));
                         stack.addAll(stack2);
-                        return fArr[i10] + canBreak;
+                        return fArr[i3] + canBreak;
                     }
                 }
                 if (breakPosition != -1) {
@@ -46,42 +46,42 @@ public final class BreakFormula {
                     return fArr[breakPosition];
                 }
             }
-            i10 = i11;
+            i3 = i10;
         }
         return horizontalBox.width;
     }
 
-    private static int getBreakPosition(HorizontalBox horizontalBox, int i10) {
+    private static int getBreakPosition(HorizontalBox horizontalBox, int i3) {
         List<Integer> list = horizontalBox.breakPositions;
         if (list == null) {
             return -1;
         }
-        int i11 = 0;
-        if (list.size() == 1 && horizontalBox.breakPositions.get(0).intValue() <= i10) {
+        int i10 = 0;
+        if (list.size() == 1 && horizontalBox.breakPositions.get(0).intValue() <= i3) {
             return horizontalBox.breakPositions.get(0).intValue();
         }
-        while (i11 < horizontalBox.breakPositions.size()) {
-            if (horizontalBox.breakPositions.get(i11).intValue() > i10) {
-                if (i11 == 0) {
+        while (i10 < horizontalBox.breakPositions.size()) {
+            if (horizontalBox.breakPositions.get(i10).intValue() > i3) {
+                if (i10 == 0) {
                     return -1;
                 }
-                return horizontalBox.breakPositions.get(i11 - 1).intValue();
+                return horizontalBox.breakPositions.get(i10 - 1).intValue();
             }
-            i11++;
+            i10++;
         }
-        return horizontalBox.breakPositions.get(i11 - 1).intValue();
+        return horizontalBox.breakPositions.get(i10 - 1).intValue();
     }
 
-    public static Box split(Box box, float f7, float f10) {
-        return box instanceof HorizontalBox ? split((HorizontalBox) box, f7, f10) : box instanceof VerticalBox ? split((VerticalBox) box, f7, f10) : box;
+    public static Box split(Box box, float f10, float f11) {
+        return box instanceof HorizontalBox ? split((HorizontalBox) box, f10, f11) : box instanceof VerticalBox ? split((VerticalBox) box, f10, f11) : box;
     }
 
-    public static Box split(HorizontalBox horizontalBox, float f7, float f10) {
+    public static Box split(HorizontalBox horizontalBox, float f10, float f11) {
         VerticalBox verticalBox = new VerticalBox();
         Stack stack = new Stack();
         Box box = null;
         HorizontalBox horizontalBox2 = horizontalBox;
-        while (horizontalBox2.width > f7 && canBreak(stack, horizontalBox2, f7) != horizontalBox2.width) {
+        while (horizontalBox2.width > f10 && canBreak(stack, horizontalBox2, f10) != horizontalBox2.width) {
             Position position = (Position) stack.pop();
             HorizontalBox[] split = position.hbox.split(position.index - 1);
             HorizontalBox horizontalBox3 = split[0];
@@ -94,22 +94,22 @@ public final class BreakFormula {
                 horizontalBox3 = splitRemove[0];
                 horizontalBox4 = splitRemove[1];
             }
-            verticalBox.add(horizontalBox3, f10);
+            verticalBox.add(horizontalBox3, f11);
             box = horizontalBox4;
             horizontalBox2 = horizontalBox4;
         }
         if (box == null) {
             return horizontalBox2;
         }
-        verticalBox.add(box, f10);
+        verticalBox.add(box, f11);
         return verticalBox;
     }
 
-    private static Box split(VerticalBox verticalBox, float f7, float f10) {
+    private static Box split(VerticalBox verticalBox, float f10, float f11) {
         VerticalBox verticalBox2 = new VerticalBox();
         Iterator<Box> it = verticalBox.children.iterator();
         while (it.hasNext()) {
-            verticalBox2.add(split(it.next(), f7, f10));
+            verticalBox2.add(split(it.next(), f10, f11));
         }
         return verticalBox2;
     }

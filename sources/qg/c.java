@@ -1,121 +1,109 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.app.Activity;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.a30;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.f8;
-import org.telegram.messenger.i0;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.c2;
+import android.widget.Toast;
+import b8.mf;
+import m2.t;
+import mi.h0;
+import org.telegram.messenger.az;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.camera.q;
+import org.telegram.messenger.k5;
+import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
-import w7.b6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.w3;
+import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.qt0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.j5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class c extends FrameLayout implements k6 {
-    public int a;
-    public final p6 b;
-    public final ImageView c;
-    public final TextView d;
-    public Runnable e;
-    public final c2 f;
-    public final Paint h;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h b;
 
-    public c(Context context, p6 p6Var) {
-        super(context);
-        this.h = new Paint(1);
-        this.b = p6Var;
-        TextView textView = new TextView(context);
-        this.d = textView;
-        a30.n(textView, 1, 20.0f);
-        textView.setGravity(dd.X ? 5 : 3);
-        int i10 = t6.j5;
-        a7.V(textView, i10, p6Var);
-        boolean z10 = dd.X;
-        addView(textView, b6.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        c2 c2Var = new c2(false);
-        this.f = c2Var;
-        imageView.setImageDrawable(c2Var);
-        int w02 = t6.w0(i10, p6Var);
-        this.a = w02;
-        c2Var.a(w02);
-        c2Var.b(t6.w0(i10, p6Var));
-        c2Var.k = 220.0f;
-        addView(imageView, b6.d(24, 24.0f, (dd.X ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        imageView.setOnClickListener(new ag.g(this, 28));
+    public /* synthetic */ c(h hVar, int i3) {
+        this.a = i3;
+        this.b = hVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int w02 = t6.w0(t6.d7, this.b);
-        Paint paint = this.h;
-        paint.setColor(w02);
-        canvas.drawRect(0.0f, getHeight() - i0.f1(), getWidth(), getHeight(), paint);
-    }
-
-    public int getHeaderHeight() {
-        return i0.L(56.0f);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getHeaderHeight(), TLObject.FLAG_30));
-    }
-
-    public void setBackImage(int i10) {
-        this.c.setImageResource(i10);
-    }
-
-    public void setCloseImageVisible(boolean z10) {
-        this.c.setVisibility(z10 ? 0 : 8);
-        boolean z11 = dd.X;
-        this.d.setLayoutParams(b6.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
-    }
-
-    public void setOnCloseClickListener(Runnable runnable) {
-        this.e = runnable;
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        c2 c2Var = this.f;
-        if (c2Var == null) {
-            return;
-        }
-        try {
-            int w02 = t6.w0(t6.j5, this.b);
-            if (w02 != this.a) {
-                this.a = w02;
-                c2Var.a(w02);
-                c2Var.b(w02);
-                ImageView imageView = this.c;
-                if (imageView != null) {
-                    imageView.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        h hVar = this.b;
+        switch (i3) {
+            case 0:
+                d2 Q = LaunchActivity.Q();
+                j5 j5Var = new j5(Q.getParentActivity(), false);
+                if (Q.getFragmentView() instanceof qt0) {
+                    j5Var.j1 = (qt0) Q.getFragmentView();
                 }
-            }
-        } catch (Exception e) {
-            f8.g(e, true);
+                Activity parentActivity = Q.getParentActivity();
+                LinearLayout e10 = k5.e(parentActivity, 1);
+                TextView textView = new TextView(parentActivity);
+                textView.setText("Saturation " + (j5.k1 * 5.0f));
+                int i10 = k6.n5;
+                r6.V(textView, i10, null);
+                q.n(textView, 1, 16.0f, 1, 1);
+                textView.setSingleLine(true);
+                int i11 = 5;
+                textView.setGravity((bd.a0 ? 3 : 5) | 48);
+                e10.addView(textView, mf.d(-2, -1.0f, (bd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                pm0 pm0Var = new pm0(parentActivity);
+                pm0Var.setDelegate(new t(9, j5Var, textView));
+                pm0Var.setReportChanges(true);
+                e10.addView(pm0Var, mf.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView2 = new TextView(parentActivity);
+                textView2.setText("Alpha " + j5.m1);
+                r6.V(textView2, i10, null);
+                q.n(textView2, 1, 16.0f, 1, 1);
+                textView2.setSingleLine(true);
+                textView2.setGravity((bd.a0 ? 3 : 5) | 48);
+                e10.addView(textView2, mf.d(-2, -1.0f, (bd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                pm0 pm0Var2 = new pm0(parentActivity);
+                pm0Var2.setDelegate(new h0(8, j5Var, textView2));
+                pm0Var2.setReportChanges(true);
+                e10.addView(pm0Var2, mf.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView3 = new TextView(parentActivity);
+                textView3.setText("Blur Radius");
+                r6.V(textView3, i10, null);
+                q.n(textView3, 1, 16.0f, 1, 1);
+                textView3.setSingleLine(true);
+                textView3.setGravity((bd.a0 ? 3 : 5) | 48);
+                e10.addView(textView3, mf.d(-2, -1.0f, (bd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                pm0 pm0Var3 = new pm0(parentActivity);
+                pm0Var3.setDelegate(new org.telegram.ui.f(j5Var, i11));
+                pm0Var3.setReportChanges(true);
+                e10.addView(pm0Var3, mf.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                e10.addOnLayoutChangeListener(new w3(pm0Var, pm0Var3, pm0Var2));
+                ScrollView scrollView = new ScrollView(parentActivity);
+                scrollView.addView(e10);
+                j5Var.O = scrollView;
+                j5Var.show();
+                hVar.c(false);
+                break;
+            case 1:
+                hVar.getClass();
+                az.K();
+                Toast.makeText(hVar.getContext(), bd.M0(az.J0 ? 2131751619 : 2131751620, null), 0).show();
+                break;
+            case 2:
+                ProfileActivity.V4((Activity) hVar.getContext(), false);
+                break;
+            default:
+                hVar.n = true;
+                try {
+                    hVar.performHapticFeedback(0);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

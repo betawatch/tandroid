@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import bd.k;
+import ed.i;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -8,9 +8,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzja {
     private final Map zza = new LinkedHashMap();
@@ -18,7 +18,7 @@ public final class zzja {
 
     private final List zzh(List list) {
         List list2 = list;
-        ArrayList arrayList = new ArrayList(k.d(list2));
+        ArrayList arrayList = new ArrayList(i.d(list2, 10));
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             arrayList.add(zza((zzzt) it.next()));
@@ -28,11 +28,11 @@ public final class zzja {
 
     public final Object zza(zzzt zzztVar) {
         int zzS = zzztVar.zzS();
-        int i10 = zzS - 1;
+        int i3 = zzS - 1;
         if (zzS == 0) {
             throw null;
         }
-        switch (i10) {
+        switch (i3) {
             case 0:
                 return this.zza.get(Integer.valueOf(zzztVar.zzi()));
             case 1:
@@ -75,26 +75,26 @@ public final class zzja {
         }
     }
 
-    public final Object zzb(int i10) {
-        return this.zza.remove(Integer.valueOf(i10));
+    public final Object zzb(int i3) {
+        return this.zza.remove(Integer.valueOf(i3));
     }
 
     public final void zzc() {
         this.zza.clear();
     }
 
-    public final void zzd(int i10, Object obj) {
-        zze(at.D2, obj);
-        this.zzb.add(Integer.valueOf(at.D2));
+    public final void zzd(int i3, Object obj) {
+        zze(hs.D2, obj);
+        this.zzb.add(Integer.valueOf(hs.D2));
     }
 
-    public final void zze(int i10, Object obj) {
-        this.zza.put(Integer.valueOf(i10), obj);
+    public final void zze(int i3, Object obj) {
+        this.zza.put(Integer.valueOf(i3), obj);
     }
 
     public final Class[] zzf(List list) {
         List zzh = zzh(list);
-        ArrayList arrayList = new ArrayList(k.d(zzh));
+        ArrayList arrayList = new ArrayList(i.d(zzh, 10));
         Iterator it = zzh.iterator();
         while (it.hasNext()) {
             arrayList.add(zziy.zza(it.next()));

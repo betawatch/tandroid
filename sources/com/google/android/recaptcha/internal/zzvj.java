@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzvj {
     static {
@@ -16,23 +16,23 @@ public final class zzvj {
     }
 
     public static zzrv zza(long j10) {
-        int i10 = (int) (j10 % 1000000000);
+        int i3 = (int) (j10 % 1000000000);
         long j11 = j10 / 1000000000;
-        if (i10 <= -1000000000 || i10 >= 1000000000) {
-            j11 = zzps.zza(j11, i10 / 1000000000);
-            i10 %= 1000000000;
+        if (i3 <= -1000000000 || i3 >= 1000000000) {
+            j11 = zzps.zza(j11, i3 / 1000000000);
+            i3 %= 1000000000;
         }
-        if (j11 > 0 && i10 < 0) {
-            i10 += 1000000000;
+        if (j11 > 0 && i3 < 0) {
+            i3 += 1000000000;
             j11--;
         }
-        if (j11 < 0 && i10 > 0) {
-            i10 -= 1000000000;
+        if (j11 < 0 && i3 > 0) {
+            i3 -= 1000000000;
             j11++;
         }
         zzrt zzi = zzrv.zzi();
         zzi.zzf(j11);
-        zzi.zze(i10);
+        zzi.zze(i3);
         zzrv zzrvVar = (zzrv) zzi.zzk();
         long zzg = zzrvVar.zzg();
         int zzf = zzrvVar.zzf();

@@ -1,9 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
+import b8.kg;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -40,52 +41,52 @@ public enum j {
     public final int a;
 
     static {
-        char c10 = 0;
-        a5.a aVar = new a5.a(c10, 4);
-        aVar.c = new Object[8];
-        aVar.b = 0;
+        char c2 = 0;
+        kg kgVar = new kg(c2, 5);
+        kgVar.c = new Object[8];
+        kgVar.b = 0;
         j[] values = values();
         int length = values.length;
-        for (int i10 = c10; i10 < length; i10++) {
-            j jVar = values[i10];
+        for (int i3 = c2; i3 < length; i3++) {
+            j jVar = values[i3];
             Integer valueOf = Integer.valueOf(jVar.a);
-            int i11 = aVar.b + 1;
-            Object[] objArr = (Object[]) aVar.c;
+            int i10 = kgVar.b + 1;
+            Object[] objArr = (Object[]) kgVar.c;
             int length2 = objArr.length;
-            int i12 = i11 + i11;
-            if (i12 > length2) {
-                if (i12 > length2) {
+            int i11 = i10 + i10;
+            if (i11 > length2) {
+                if (i11 > length2) {
                     length2 = length2 + (length2 >> 1) + 1;
-                    if (length2 < i12) {
-                        int highestOneBit = Integer.highestOneBit(i12 - 1);
+                    if (length2 < i11) {
+                        int highestOneBit = Integer.highestOneBit(i11 - 1);
                         length2 = highestOneBit + highestOneBit;
                     }
                     if (length2 < 0) {
                         length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     }
                 }
-                aVar.c = Arrays.copyOf(objArr, length2);
+                kgVar.c = Arrays.copyOf(objArr, length2);
             }
-            Object[] objArr2 = (Object[]) aVar.c;
-            int i13 = aVar.b;
-            int i14 = i13 + i13;
-            objArr2[i14] = valueOf;
-            objArr2[i14 + 1] = jVar;
-            aVar.b = i13 + 1;
+            Object[] objArr2 = (Object[]) kgVar.c;
+            int i12 = kgVar.b;
+            int i13 = i12 + i12;
+            objArr2[i13] = valueOf;
+            objArr2[i13 + 1] = jVar;
+            kgVar.b = i12 + 1;
         }
-        s sVar = (s) aVar.d;
+        s sVar = (s) kgVar.d;
         if (sVar != null) {
             throw sVar.a();
         }
-        a0 b10 = a0.b(aVar.b, (Object[]) aVar.c, aVar);
-        s sVar2 = (s) aVar.d;
+        a0 c10 = a0.c(kgVar.b, (Object[]) kgVar.c, kgVar);
+        s sVar2 = (s) kgVar.d;
         if (sVar2 != null) {
             throw sVar2.a();
         }
-        c = b10;
+        c = c10;
     }
 
-    j(int i10) {
-        this.a = i10;
+    j(int i3) {
+        this.a = i3;
     }
 }

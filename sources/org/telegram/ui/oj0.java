@@ -1,62 +1,28 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class oj0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
+public final class oj0 extends ClickableSpan {
+    public final /* synthetic */ yj0 a;
 
-    public /* synthetic */ oj0(PasscodeActivity passcodeActivity, int i10) {
-        this.a = i10;
-        this.b = passcodeActivity;
+    public oj0(yj0 yj0Var) {
+        this.a = yj0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10 = this.a;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        yj0 yj0Var = this.a;
+        sf.c.t(yj0Var.getParentActivity(), yj0Var.E.privacy_policy_url);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                jj0 jj0Var = passcodeActivity.S;
-                if (passcodeActivity.R) {
-                    passcodeActivity.n.removeCallbacks(jj0Var);
-                    jj0Var.run();
-                    break;
-                }
-                break;
-            default:
-                PasscodeActivity passcodeActivity2 = this.b;
-                jj0 jj0Var2 = passcodeActivity2.S;
-                if (passcodeActivity2.R) {
-                    passcodeActivity2.n.removeCallbacks(jj0Var2);
-                    jj0Var2.run();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
     }
 }

@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class y implements LayoutInflater.Factory2 {
     public final j0 a;
@@ -25,7 +25,7 @@ public final class y implements LayoutInflater.Factory2 {
     @Override // android.view.LayoutInflater.Factory2
     public final View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
         boolean z10;
-        p0 g10;
+        p0 g7;
         boolean equals = x.class.getName().equals(str);
         j0 j0Var = this.a;
         if (equals) {
@@ -33,7 +33,7 @@ public final class y implements LayoutInflater.Factory2 {
         }
         if ("fragment".equals(str)) {
             String attributeValue = attributeSet.getAttributeValue(null, "class");
-            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, s1.a.a);
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, u1.a.a);
             if (attributeValue == null) {
                 attributeValue = obtainStyledAttributes.getString(0);
             }
@@ -62,49 +62,49 @@ public final class y implements LayoutInflater.Factory2 {
                         c0 H = j0Var.H();
                         context.getClassLoader();
                         C = H.a(attributeValue);
-                        C.D = true;
-                        C.N = resourceId != 0 ? resourceId : id2;
-                        C.O = id2;
-                        C.P = string;
                         C.E = true;
-                        C.J = j0Var;
+                        C.O = resourceId != 0 ? resourceId : id2;
+                        C.P = id2;
+                        C.Q = string;
+                        C.F = true;
+                        C.K = j0Var;
                         u uVar = j0Var.w;
-                        C.K = uVar;
+                        C.L = uVar;
                         v vVar = uVar.b;
-                        C.U = true;
+                        C.V = true;
                         if ((uVar != null ? uVar.a : null) != null) {
-                            C.U = true;
+                            C.V = true;
                         }
-                        g10 = j0Var.a(C);
+                        g7 = j0Var.a(C);
                         if (j0.K(2)) {
                             Log.v("FragmentManager", "Fragment " + C + " has been inflated via the <fragment> tag: id=0x" + Integer.toHexString(resourceId));
                         }
                     } else {
-                        if (C.E) {
+                        if (C.F) {
                             throw new IllegalArgumentException(attributeSet.getPositionDescription() + ": Duplicate id 0x" + Integer.toHexString(resourceId) + ", tag " + string + ", or parent id 0x" + Integer.toHexString(id2) + " with another fragment for " + attributeValue);
                         }
-                        C.E = true;
-                        C.J = j0Var;
+                        C.F = true;
+                        C.K = j0Var;
                         u uVar2 = j0Var.w;
-                        C.K = uVar2;
+                        C.L = uVar2;
                         v vVar2 = uVar2.b;
-                        C.U = true;
+                        C.V = true;
                         if ((uVar2 != null ? uVar2.a : null) != null) {
-                            C.U = true;
+                            C.V = true;
                         }
-                        g10 = j0Var.g(C);
+                        g7 = j0Var.g(C);
                         if (j0.K(2)) {
                             Log.v("FragmentManager", "Retained Fragment " + C + " has been re-attached via the <fragment> tag: id=0x" + Integer.toHexString(resourceId));
                         }
                     }
                     ViewGroup viewGroup = (ViewGroup) view;
-                    t1.b bVar = t1.c.a;
-                    t1.c.b(new t1.a(C, "Attempting to use <fragment> tag to add fragment " + C + " to container " + viewGroup));
-                    t1.c.a(C).getClass();
-                    C.V = viewGroup;
-                    g10.j();
-                    g10.i();
-                    throw new IllegalStateException(a1.g.n("Fragment ", attributeValue, " did not create a view."));
+                    v1.b bVar = v1.c.a;
+                    v1.c.b(new v1.a(C, "Attempting to use <fragment> tag to add fragment " + C + " to container " + viewGroup));
+                    v1.c.a(C).getClass();
+                    C.W = viewGroup;
+                    g7.j();
+                    g7.i();
+                    throw new IllegalStateException(a1.g.q("Fragment ", attributeValue, " did not create a view."));
                 }
             }
         }

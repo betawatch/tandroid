@@ -11,28 +11,28 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class y1 extends HorizontalScrollView implements org.telegram.ui.ActionBar.k6, c3 {
-    public final l60 a;
+public final class y1 extends HorizontalScrollView implements org.telegram.ui.ActionBar.z5, d3 {
+    public final i50 a;
     public final FrameLayout b;
     public final ImageView c;
     public int d;
 
-    public y1(Context context, l60 l60Var) {
+    public y1(Context context, i50 i50Var) {
         super(context);
-        this.a = l60Var;
+        this.a = i50Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        addView(frameLayout, w7.b6.c(-2.0f, -2));
+        addView(frameLayout, b8.mf.c(-2.0f, -2));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, w7.b6.c(-2.0f, -2));
+        frameLayout.addView(imageView, b8.mf.c(-2.0f, -2));
         updateColors();
     }
 
-    @Override // org.telegram.ui.c3
+    @Override // org.telegram.ui.d3
     public int getBoundLeft() {
         if (this.d > getMeasuredWidth()) {
             return 0;
@@ -40,12 +40,12 @@ public final class y1 extends HorizontalScrollView implements org.telegram.ui.Ac
         return (getMeasuredWidth() - this.d) / 2;
     }
 
-    @Override // org.telegram.ui.c3
+    @Override // org.telegram.ui.d3
     public int getBoundRight() {
         return this.d > getMeasuredWidth() ? getMeasuredWidth() : (getMeasuredWidth() + this.d) / 2;
     }
 
-    @Override // org.telegram.ui.c3
+    @Override // org.telegram.ui.d3
     public int getLastLineBoundRight() {
         return getBoundRight();
     }
@@ -55,54 +55,54 @@ public final class y1 extends HorizontalScrollView implements org.telegram.ui.Ac
     }
 
     @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14 = i12 - i10;
-        int i15 = this.d;
-        if (i15 > i14) {
-            super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        int i13 = i11 - i3;
+        int i14 = this.d;
+        if (i14 > i13) {
+            super.onLayout(z10, i3, i10, i11, i12);
         } else {
             FrameLayout frameLayout = this.b;
-            frameLayout.layout((i14 - i15) / 2, 0, (i14 + i15) / 2, frameLayout.getMeasuredHeight());
+            frameLayout.layout((i13 - i14) / 2, 0, (i13 + i14) / 2, frameLayout.getMeasuredHeight());
         }
     }
 
     @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i10);
     }
 
     public void setBlock(TL_iv.pageBlockMath pageblockmath) {
-        bi.u a2;
+        mi.q a10;
         ImageView imageView = this.c;
         imageView.setImageBitmap(null);
-        l60 l60Var = this.a;
-        l60Var.getClass();
-        float f7 = 18;
-        int L = org.telegram.messenger.i0.L(f7);
-        l60Var.getClass();
-        imageView.setPadding(L, 0, org.telegram.messenger.i0.L(f7), 0);
+        i50 i50Var = this.a;
+        i50Var.getClass();
+        float f10 = 18;
+        int L = org.telegram.messenger.g0.L(f10);
+        i50Var.getClass();
+        imageView.setPadding(L, 0, org.telegram.messenger.g0.L(f10), 0);
         imageView.setLayoutParams(new FrameLayout.LayoutParams(0, 0));
-        l60Var.getClass();
-        float f10 = 36;
-        this.d = org.telegram.messenger.i0.L(f10);
-        if (pageblockmath == null || (a2 = bi.u.a(pageblockmath.source, org.telegram.messenger.i0.L(20.0f), false)) == null) {
+        i50Var.getClass();
+        float f11 = 36;
+        this.d = org.telegram.messenger.g0.L(f11);
+        if (pageblockmath == null || (a10 = mi.q.a(pageblockmath.source, org.telegram.messenger.g0.L(20.0f), false)) == null) {
             return;
         }
-        imageView.setImageBitmap(a2.a);
-        int i10 = a2.b;
-        l60Var.getClass();
-        int L2 = org.telegram.messenger.i0.L(f10) + i10;
+        imageView.setImageBitmap(a10.a);
+        int i3 = a10.b;
+        i50Var.getClass();
+        int L2 = org.telegram.messenger.g0.L(f11) + i3;
         this.d = L2;
-        imageView.setLayoutParams(new FrameLayout.LayoutParams(L2, a2.c));
+        imageView.setLayoutParams(new FrameLayout.LayoutParams(L2, a10.c));
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void updateColors() {
-        ((h4) this.a).getClass();
-        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.t6.v0(org.telegram.ui.ActionBar.t6.G6), PorterDuff.Mode.SRC_IN));
+        ((i4) this.a).getClass();
+        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6), PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
+    @Override // org.telegram.ui.ActionBar.z5
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

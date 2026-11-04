@@ -1,73 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class na implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
 
-    public /* synthetic */ na(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class na implements LeadingMarginSpan {
+    public final int a;
+    public final int b;
+
+    public na(int i3, int i10) {
+        this.a = i3;
+        this.b = i10;
     }
 
-    @Override // o1.f
-    public final void a(o1.j jVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                wb wbVar = (wb) this.b;
-                if (wbVar.d == jVar) {
-                    wbVar.d = null;
-                    break;
-                }
-                break;
-            case 1:
-                ja jaVar = (ja) this.b;
-                if (!z10) {
-                    jaVar.run();
-                    break;
-                }
-                break;
-            case 2:
-                kk kkVar = (kk) this.b;
-                kkVar.l0 = null;
-                kkVar.m0 = 1.0f;
-                kkVar.k0();
-                break;
-            case 3:
-                do0 do0Var = (do0) this.b;
-                do0Var.q = false;
-                do0Var.dismiss();
-                break;
-            case 4:
-                eo0 eo0Var = (eo0) this.b;
-                eo0Var.s = false;
-                eo0Var.r = false;
-                if (!z10) {
-                    jVar.d();
-                }
-                if (jVar == eo0Var.f) {
-                    eo0Var.f = null;
-                    break;
-                }
-                break;
-            case 5:
-                pp0 pp0Var = (pp0) this.b;
-                pp0Var.w1.setVisibility(8);
-                pp0Var.r2.setVisibility(8);
-                np0 np0Var = pp0Var.D1;
-                np0Var.f = null;
-                np0Var.f();
-                pp0Var.t2 = null;
-                pp0Var.E2 = false;
-                break;
-            default:
-                pp0 pp0Var2 = ((yo0) this.b).d;
-                pp0Var2.x1.setVisibility(8);
-                pp0Var2.y1.setVisibility(8);
-                pp0Var2.q2.setVisibility(8);
-                pp0Var2.t2 = null;
-                break;
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i3, int i10, int i11, int i12, int i13, CharSequence charSequence, int i14, int i15, boolean z10, Layout layout) {
+        if (((Spanned) charSequence).getSpanStart(this) == i14) {
+            Paint.Style style = paint.getStyle();
+            int color = paint.getColor();
+            paint.setColor(-11491093);
+            paint.setStyle(Paint.Style.FILL);
+            if (layout != null) {
+                i13 -= layout.getLineForOffset(i14) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
+            }
+            canvas.drawCircle((i10 * r7) + i3, (i11 + i13) / 2.0f, this.b, paint);
+            paint.setColor(color);
+            paint.setStyle(style);
         }
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z10) {
+        return (this.b * 2) + this.a;
     }
 }

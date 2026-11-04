@@ -1,36 +1,27 @@
 package x7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class n6 extends o6.a {
-    public static final Parcelable.Creator<n6> CREATOR = new n5(1);
-    public final int a;
-    public final float b;
-    public final int c;
-
-    public n6(int i10, int i11, float f7, int i12) {
-        if (i10 != 1) {
-            throw new IllegalArgumentException("Unknown language.");
+public abstract class n6 {
+    public static yd.c a(int i3, yd.a aVar, int i10) {
+        if ((i10 & 2) != 0) {
+            aVar = yd.a.a;
         }
-        this.a = i11;
-        this.b = f7;
-        this.c = i12;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.h0.q(parcel, 20293);
-        w7.h0.s(parcel, 2, 4);
-        parcel.writeInt(1);
-        w7.h0.s(parcel, 3, 4);
-        parcel.writeInt(this.a);
-        w7.h0.s(parcel, 4, 4);
-        parcel.writeFloat(this.b);
-        w7.h0.s(parcel, 5, 4);
-        parcel.writeInt(this.c);
-        w7.h0.r(parcel, q6);
+        if (i3 == -2) {
+            if (aVar != yd.a.a) {
+                return new yd.m(1, aVar);
+            }
+            yd.g.D.getClass();
+            return new yd.c(yd.f.b);
+        }
+        if (i3 != -1) {
+            return i3 != 0 ? i3 != Integer.MAX_VALUE ? aVar == yd.a.a ? new yd.c(i3) : new yd.m(i3, aVar) : new yd.c(ConnectionsManager.DEFAULT_DATACENTER_ID) : aVar == yd.a.a ? new yd.c(0) : new yd.m(1, aVar);
+        }
+        if (aVar == yd.a.a) {
+            return new yd.m(1, yd.a.b);
+        }
+        throw new IllegalArgumentException("CONFLATED capacity cannot be used with non-default onBufferOverflow");
     }
 }

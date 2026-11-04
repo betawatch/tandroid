@@ -1,66 +1,41 @@
 package rh;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.io.Serializable;
-import org.telegram.messenger.p20;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.hu0;
-import org.telegram.ui.Components.ju0;
-import org.telegram.ui.rc1;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import b8.mf;
+import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements fe.e, hu0, ju0, org.telegram.ui.ActionBar.u1, p20 {
-    public final /* synthetic */ i a;
+public abstract class c extends FrameLayout {
+    public final LinearLayout a;
+    public float b;
+    public final Rect c;
+    public final Rect d;
+    public final Paint e;
 
-    public /* synthetic */ c(i iVar) {
-        this.a = iVar;
+    public c(Context context) {
+        super(context);
+        this.c = new Rect();
+        this.d = new Rect();
+        this.e = new Paint(1);
+        setPadding(g0.L(8.0f), g0.L(8.0f), g0.L(8.0f), g0.L(8.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.a = linearLayout;
+        linearLayout.setOrientation(0);
+        addView(linearLayout, mf.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.hu0
-    public int c() {
-        return this.a.n;
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public /* synthetic */ float f(RecyclerView recyclerView) {
-        return org.telegram.ui.Cells.f1.c(recyclerView);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        i iVar = this.a;
-        iVar.getClass();
-        iVar.presentFragment(new rc1(6, null));
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public RecyclerView j(View view) {
-        i iVar = this.a;
-        if (iVar.a == 1) {
-            return ((h) view).c;
-        }
-        iVar.K.getClass();
-        return ((e8) view).a;
-    }
-
-    @Override // org.telegram.messenger.p20
-    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        i.a0(this.a, (b51) obj);
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public /* synthetic */ void q(RecyclerView recyclerView) {
-        org.telegram.ui.Cells.f1.b(recyclerView);
-    }
-
-    @Override // fe.e
-    public void v(int i10, float f7, float f10, fe.f fVar) {
-        this.a.x0();
-    }
-
-    @Override // fe.e
-    public /* synthetic */ void E(float f7, int i10) {
+    public void setLensVisibility(float f10) {
+        this.b = f10;
+        int L = g0.L(f10 * 7.0f);
+        Rect rect = this.c;
+        Rect rect2 = this.d;
+        rect2.set(rect);
+        int i3 = -L;
+        rect2.inset(i3, i3);
     }
 }

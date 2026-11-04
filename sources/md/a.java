@@ -1,9 +1,14 @@
 package md;
 
-import java.util.Random;
+import java.io.ByteArrayOutputStream;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a extends d {
-    public abstract Random a();
+public final class a extends ByteArrayOutputStream {
+    public final byte[] a() {
+        byte[] buf = ((ByteArrayOutputStream) this).buf;
+        j.d(buf, "buf");
+        return buf;
+    }
 }

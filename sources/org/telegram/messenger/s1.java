@@ -1,139 +1,126 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.util.Pair;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import org.telegram.tgnet.RequestTimeDelegate;
-import org.telegram.tgnet.ResultCallback;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.kn0;
-import org.telegram.ui.rc1;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s1 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, vh.l5, nc, RequestTimeDelegate, kn0, org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class s1 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ s1(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ s1(Object obj, int i3) {
+        this.a = i3;
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.kn0
-    public void c(float f7) {
-        kj kjVar = ((pu) this.b).W;
-        if (kjVar == null) {
-            return;
-        }
-        kjVar.b0 = f7;
-        MediaController.B().i0(kjVar, f7);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        ((org.telegram.ui.un) this.b).presentFragment(new rc1(6, null));
-    }
-
-    @Override // vh.l5
-    public Bitmap i(BitmapFactory.Options options) {
-        ff ffVar = (ff) this.b;
-        String str = ffVar.i;
-        if (str == null) {
-            str = ffVar.I;
-        }
-        return BitmapFactory.decodeFile(str, options);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public void onComplete(Object obj) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
+            case 0:
+                g0.h3(new b4(16, (v1) this.b, tLObject));
+                break;
             case 1:
-                g4 g4Var = (g4) this.b;
-                Pair pair = (Pair) obj;
-                if (pair == null) {
-                    g4Var.getClass();
+                g0.h3(new b4(2, (z5) this.b, tLObject));
+                break;
+            case 2:
+                i7 i7Var = (i7) this.b;
+                if (tL_error != null) {
+                    i7Var.j(0, false);
+                    break;
+                } else if (tLObject instanceof Vector) {
+                    i7Var.E0 = false;
+                    Vector vector = (Vector) tLObject;
+                    if (!vector.objects.isEmpty()) {
+                        if (i7Var.q0 == null) {
+                            i7Var.q0 = new HashMap();
+                        }
+                        for (int i3 = 0; i3 < vector.objects.size(); i3++) {
+                            TLRPC.TL_fileHash tL_fileHash = (TLRPC.TL_fileHash) vector.objects.get(i3);
+                            i7Var.q0.put(Long.valueOf(tL_fileHash.offset), tL_fileHash);
+                        }
+                    }
+                    for (int i10 = 0; i10 < i7Var.I0.size(); i10++) {
+                        h7 h7Var = (h7) i7Var.I0.get(i10);
+                        if (i7Var.M != null || i7Var.a0 == h7Var.e) {
+                            i7Var.I0.remove(i10);
+                            if (!i7Var.m(h7Var, null)) {
+                                TLRPC.TL_upload_file tL_upload_file = h7Var.f;
+                                if (tL_upload_file != null) {
+                                    tL_upload_file.disableFree = false;
+                                    tL_upload_file.freeResources();
+                                    break;
+                                } else {
+                                    TLRPC.TL_upload_webFile tL_upload_webFile = h7Var.g;
+                                    if (tL_upload_webFile != null) {
+                                        tL_upload_webFile.disableFree = false;
+                                        tL_upload_webFile.freeResources();
+                                        break;
+                                    } else {
+                                        TLRPC.TL_upload_cdnFile tL_upload_cdnFile = h7Var.h;
+                                        if (tL_upload_cdnFile != null) {
+                                            tL_upload_cdnFile.disableFree = false;
+                                            tL_upload_cdnFile.freeResources();
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                     break;
                 } else {
-                    g4Var.a.put((Long) pair.first, (Bitmap) pair.second);
+                    i7Var.getClass();
+                    break;
+                }
+                break;
+            case 3:
+                g0.h3(new a((Runnable) this.b, 23));
+                break;
+            case 4:
+                uo uoVar = (uo) this.b;
+                if (uoVar != null) {
+                    TLRPC.ChannelParticipant channelParticipant = tLObject instanceof TLRPC.TL_channels_channelParticipant ? ((TLRPC.TL_channels_channelParticipant) tLObject).participant : null;
+                    uoVar.a((tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true, channelParticipant != null ? channelParticipant.admin_rights : null, channelParticipant != null ? channelParticipant.rank : null);
+                    break;
+                }
+                break;
+            case 5:
+                g0.h3(new yh(27, (ap) this.b, tLObject));
+                break;
+            case 6:
+                bp bpVar = (bp) this.b;
+                ArrayList arrayList = new ArrayList();
+                if (tLObject instanceof TLRPC.TL_savedMusic) {
+                    ArrayList<TLRPC.Document> arrayList2 = ((TLRPC.TL_savedMusic) tLObject).documents;
+                    int size = arrayList2.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        TLRPC.Document document = arrayList2.get(i11);
+                        i11++;
+                        arrayList.add(bpVar.d(document));
+                    }
+                }
+                g0.h3(new dg(bpVar, tLObject, arrayList, 15));
+                break;
+            case 7:
+                c00 c00Var = (c00) this.b;
+                if (tLObject != null) {
+                    c00Var.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    break;
+                } else {
+                    c00Var.getClass();
                     break;
                 }
             default:
-                org.telegram.ui.ActionBar.v3 v3Var = (org.telegram.ui.ActionBar.v3) this.b;
-                Bitmap bitmap = (Bitmap) obj;
-                if (bitmap == null) {
-                    v3Var.a(null);
-                    break;
-                } else {
-                    v3Var.a(new wf.a(bitmap, 0, null));
-                    break;
-                }
+                h10 h10Var = (h10) this.b;
+                h10Var.getClass();
+                g0.h3(new pq(23, h10Var, tLObject));
+                break;
         }
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public /* synthetic */ void onError(Throwable th2) {
-        int i10 = this.a;
-        org.telegram.tgnet.l.a(this, th2);
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        ((qc) this.b).p(exc);
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        ((rc) this.b).a((String) obj);
-    }
-
-    @Override // org.telegram.messenger.nc
-    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        MusicPlayerService musicPlayerService = (MusicPlayerService) this.b;
-        if (!z10) {
-            boolean z13 = MusicPlayerService.w;
-        } else {
-            if (TextUtils.isEmpty(musicPlayerService.r)) {
-                return;
-            }
-            kj kjVar = MediaController.B().u0;
-            if (kjVar != null) {
-                musicPlayerService.a(kjVar, true);
-            }
-            musicPlayerService.r = null;
-        }
-    }
-
-    @Override // org.telegram.tgnet.RequestTimeDelegate
-    public void run(long j10) {
-        i0.g3(new ld((tz) this.b, j10, 1));
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        org.telegram.tgnet.l.b(this, tL_error);
-    }
-
-    @Override // org.telegram.tgnet.WriteToSocketDelegate
-    public void run() {
-        Utilities.d.c(new z8((d9) this.b, 3));
-    }
-
-    @Override // org.telegram.ui.Components.kn0
-    public /* synthetic */ void d(float f7) {
-    }
-
-    @Override // org.telegram.messenger.nc
-    public /* synthetic */ void j(ImageReceiver imageReceiver) {
-    }
-
-    @Override // org.telegram.messenger.nc
-    public /* synthetic */ void s(int i10, Drawable drawable) {
     }
 }

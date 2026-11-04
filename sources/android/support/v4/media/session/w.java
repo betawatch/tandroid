@@ -11,23 +11,23 @@ import android.text.style.LineHeightSpan;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class w {
-    public static void a(g.y yVar, View view) {
+    public static void a(eh.a aVar, View view) {
         if (Build.VERSION.SDK_INT >= 29) {
-            yVar.a(view.getUniqueDrawingId());
+            aVar.a(view.getUniqueDrawingId());
         } else {
-            yVar.b = true;
+            aVar.a = true;
         }
     }
 
-    public static /* synthetic */ RadialGradient b(float f7, float f10, float f11, long[] jArr, float[] fArr) {
-        return new RadialGradient(f7, f10, f11, jArr, fArr, Shader.TileMode.CLAMP);
+    public static /* synthetic */ RadialGradient b(float f10, float f11, float f12, long[] jArr, float[] fArr) {
+        return new RadialGradient(f10, f11, f12, jArr, fArr, Shader.TileMode.CLAMP);
     }
 
     public static /* synthetic */ RenderNode c() {
-        return new RenderNode("debug");
+        return new RenderNode(null);
     }
 
     public static /* synthetic */ RenderNode d(String str) {
@@ -42,8 +42,8 @@ public abstract /* synthetic */ class w {
         return new MediaSession(context, str, bundle);
     }
 
-    public static /* synthetic */ LineHeightSpan.Standard g(int i10) {
-        return new LineHeightSpan.Standard(i10);
+    public static /* synthetic */ LineHeightSpan.Standard g(int i3) {
+        return new LineHeightSpan.Standard(i3);
     }
 
     public static /* synthetic */ WindowInsets.Builder h() {
@@ -58,21 +58,21 @@ public abstract /* synthetic */ class w {
     }
 
     public static /* synthetic */ RenderNode k() {
-        return new RenderNode("glass-fade-overlay-only");
+        return new RenderNode("WebViewSwipeContainer");
     }
 
     public static /* synthetic */ void l() {
     }
 
     public static /* synthetic */ RenderNode m() {
-        return new RenderNode("glass-fade-content");
+        return new RenderNode("debug");
     }
 
     public static /* synthetic */ RenderNode n() {
-        return new RenderNode(null);
+        return new RenderNode("glass-fade-overlay-only");
     }
 
     public static /* synthetic */ RenderNode o() {
-        return new RenderNode("WebViewSwipeContainer");
+        return new RenderNode("glass-fade-content");
     }
 }

@@ -1,20 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i20 extends s4.j {
-    public final /* synthetic */ a50 F;
-
-    public i20(a50 a50Var) {
-        this.F = a50Var;
+public final class i20 extends org.telegram.ui.Components.cb0 {
+    public i20(LaunchActivity launchActivity) {
+        super(launchActivity, null);
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        a50 a50Var = this.F;
-        a50Var.H1.invalidate();
-        a50Var.R3.invalidate();
-        a50Var.b.invalidate();
-        a50.P0(a50Var);
+    @Override // org.telegram.ui.Components.cb0
+    public final CharSequence d(int i3) {
+        return org.telegram.messenger.bd.G(i3, "Minutes", new Object[0]);
     }
 }

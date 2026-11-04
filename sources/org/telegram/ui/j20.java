@@ -1,18 +1,49 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class j20 extends s4.s0 {
-    public final /* synthetic */ a50 a;
+public final class j20 extends TextView {
+    public final RectF a;
+    public final Paint b;
 
-    public j20(a50 a50Var) {
-        this.a = a50Var;
+    public j20(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = new RectF();
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(-16711936);
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        this.a.b.invalidate();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), this.b);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        paint.setColor(-16711936);
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
+        super.onDraw(canvas);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
     }
 }

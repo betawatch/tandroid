@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import bd.i;
-import cd.c;
-import dd.a;
-import ed.j;
+import b8.ib;
+import dd.k;
+import ed.g;
+import fd.c;
+import hd.j;
 import java.util.ArrayList;
-import l9.b;
-import ld.p;
-import td.c0;
+import od.p;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzir extends j implements p {
     final /* synthetic */ String[] zza;
@@ -25,21 +25,21 @@ final class zzir extends j implements p {
         this.zzc = str;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzir(this.zza, this.zzb, this.zzc, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzir) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzir) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
         WebView webView;
-        a aVar = a.a;
-        b.b(obj);
+        gd.a aVar = gd.a.a;
+        ib.b(obj);
         String[] strArr = this.zza;
         ArrayList arrayList = new ArrayList(strArr.length);
         for (String str : strArr) {
@@ -48,7 +48,7 @@ final class zzir extends j implements p {
         zzis zzisVar = this.zzb;
         String str2 = this.zzc;
         webView = zzisVar.zza;
-        webView.evaluateJavascript(str2 + "(" + i.h(arrayList, ",", null, null, null, 62) + ")", null);
-        return ad.j.a;
+        webView.evaluateJavascript(str2 + "(" + g.g(arrayList, ",", null, null, null, 62) + ")", null);
+        return k.a;
     }
 }

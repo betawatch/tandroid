@@ -1,56 +1,120 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dt implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class dt extends xs {
+    public Drawable Z1;
+    public final /* synthetic */ int a2;
+    public final /* synthetic */ jt b2;
 
-    public /* synthetic */ dt(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dt(jt jtVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i3) {
+        super(context, e6Var);
+        this.b2 = jtVar;
+        this.a2 = i3;
+        this.Z1 = null;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        RecyclerView recyclerView;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.d4 d4Var = ((EditTextBoldCursor) this.b).Y0;
-                if (d4Var != null) {
-                    d4Var.c();
-                    break;
-                }
-                break;
-            case 1:
-                ((x60) this.b).invalidate();
-                break;
-            default:
-                lu0 lu0Var = (lu0) this.b;
-                if (lu0Var.a && lu0Var.b > 0) {
-                    lu0Var.f("PRE_DRAW_BEFORE", null, 0, 0, true);
-                }
-                lu0Var.p();
-                if (lu0Var.g0 && (recyclerView = lu0Var.E) != null && !recyclerView.c0()) {
-                    float o10 = lu0Var.o();
-                    if (!Float.isInfinite(o10)) {
-                        lu0Var.g0 = false;
-                        lu0Var.t(lu0Var.E, Math.round(o10 - lu0Var.U));
-                        lu0Var.B();
-                    }
-                }
-                if (lu0Var.a && lu0Var.b > 0) {
-                    lu0Var.f("PRE_DRAW_AFTER", null, 0, 0, true);
-                    lu0Var.b--;
-                    lu0Var.c++;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.xs
+    public final void F(int i3, int i10) {
+        this.b2.q(i3, i10);
+    }
+
+    @Override // org.telegram.ui.Components.bt
+    public final int e() {
+        return this.b2.h();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final int getActionModeStyle() {
+        int i3 = this.a2;
+        if (i3 == 2 || i3 == 3) {
+            return 2;
         }
-        return true;
+        return super.getActionModeStyle();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void o(ActionMode actionMode, Menu menu) {
+        jt jtVar = this.b2;
+        if (jtVar.a()) {
+            org.telegram.ui.wm.A8(menu, null, jtVar.M == 3, true, true, true);
+        } else {
+            jtVar.i(actionMode, menu);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bt, android.widget.TextView
+    public final void onSelectionChanged(int i3, int i10) {
+        super.onSelectionChanged(i3, i10);
+        jt jtVar = this.b2;
+        bk0 bk0Var = jtVar.c;
+        if (bk0Var != null) {
+            boolean z10 = false;
+            boolean z11 = i10 != i3;
+            if (jtVar.a() && z11) {
+                org.telegram.messenger.sr.i();
+                z10 = true;
+            }
+            if (jtVar.n != z10) {
+                jtVar.n = z10;
+                if (z10) {
+                    this.Z1 = bk0Var.d;
+                    bk0Var.a(R.drawable.msg_edit, true);
+                } else {
+                    bk0Var.b(this.Z1, true);
+                    this.Z1 = null;
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        et etVar;
+        jt jtVar = this.b2;
+        if (jtVar.e && motionEvent.getAction() == 0) {
+            jtVar.u();
+            if (!jtVar.y || (etVar = jtVar.d) == null) {
+                jtVar.x(org.telegram.messenger.g0.D ? 0 : 2);
+            } else {
+                etVar.t(false);
+                jtVar.y = false;
+                jtVar.k(true);
+                org.telegram.messenger.g0.K3(this);
+            }
+            jtVar.v();
+        }
+        if (motionEvent.getAction() == 0) {
+            boolean isFocused = isFocused();
+            requestFocus();
+            if (!org.telegram.messenger.g0.K3(this)) {
+                clearFocus();
+                requestFocus();
+            }
+            if (!isFocused) {
+                setSelection(getText().length());
+            }
+        }
+        try {
+            return super.onTouchEvent(motionEvent);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+            return false;
+        }
+    }
+
+    @Override // android.view.View
+    public final void scrollTo(int i3, int i10) {
+        if (this.b2.t(i10)) {
+            super.scrollTo(i3, i10);
+        }
     }
 }

@@ -1,43 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.text.Editable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class zm extends s4.b0 {
-    public final /* synthetic */ ag.d1 r;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zm(ag.d1 d1Var, Context context) {
-        super(context);
-        this.r = d1Var;
-    }
-
-    @Override // s4.b0
-    public final int k(int i10, View view) {
-        int i11;
-        jn jnVar = (jn) this.r.V;
-        if (jnVar.V0) {
-            i10 = -1;
-        }
-        int k10 = super.k(i10, view);
-        if (jnVar.V0) {
-            k10 += org.telegram.messenger.i0.L(160.0f);
-        }
-        if (!jnVar.V0) {
-            k10 = org.telegram.messenger.m5.B(7.0f, jnVar.R0 - org.telegram.messenger.i0.m, k10);
-        }
-        if (jnVar.V0 && k10 == 0 && (i11 = jnVar.W0) >= 0) {
-            jn.N(jnVar, i11);
-            jnVar.W0 = -1;
-        }
-        jnVar.V0 = false;
-        return k10;
-    }
-
-    @Override // s4.b0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
-    }
+public interface zm {
+    void c(TLRPC.MessageMedia messageMedia, Editable editable, th.d dVar, ArrayList arrayList, boolean z10, int i3, long j10);
 }

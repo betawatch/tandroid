@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class l1 {
     public static final int[] a = {R.attr.state_checked};
@@ -18,8 +18,8 @@ public abstract class l1 {
 
     public static void a(Drawable drawable) {
         String name = drawable.getClass().getName();
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 29 || i10 >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
+        int i3 = Build.VERSION.SDK_INT;
+        if (i3 < 29 || i3 >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
             return;
         }
         int[] state = drawable.getState();
@@ -31,17 +31,17 @@ public abstract class l1 {
         drawable.setState(state);
     }
 
-    public static PorterDuff.Mode b(int i10, PorterDuff.Mode mode) {
-        if (i10 == 3) {
+    public static PorterDuff.Mode b(int i3, PorterDuff.Mode mode) {
+        if (i3 == 3) {
             return PorterDuff.Mode.SRC_OVER;
         }
-        if (i10 == 5) {
+        if (i3 == 5) {
             return PorterDuff.Mode.SRC_IN;
         }
-        if (i10 == 9) {
+        if (i3 == 9) {
             return PorterDuff.Mode.SRC_ATOP;
         }
-        switch (i10) {
+        switch (i3) {
             case 14:
                 return PorterDuff.Mode.MULTIPLY;
             case 15:

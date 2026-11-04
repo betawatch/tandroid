@@ -1,43 +1,74 @@
 package x3;
 
-import c3.k0;
-import c3.q;
-import e2.x;
+import e3.a0;
+import e3.c0;
+import g2.n0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public k0 b;
-    public q c;
-    public g d;
-    public long e;
-    public long f;
-    public long g;
-    public int h;
-    public int i;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public final e a = new e();
-    public m5.e j = new m5.e(29, false);
+public final class i implements h {
+    public final long[] a;
+    public final long[] b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public final int f;
 
-    public void a(long j10) {
-        this.g = j10;
+    public i(long[] jArr, long[] jArr2, long j10, long j11, long j12, int i3) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j10;
+        this.d = j11;
+        this.e = j12;
+        this.f = i3;
     }
 
-    public abstract long b(x xVar);
+    @Override // x3.h
+    public final long a() {
+        return this.e;
+    }
 
-    public abstract boolean c(x xVar, long j10, m5.e eVar);
+    @Override // x3.h
+    public final long b(long j10) {
+        return this.a[n0.f(this.b, j10, true)];
+    }
 
-    public void d(boolean z10) {
-        if (z10) {
-            this.j = new m5.e(29, false);
-            this.f = 0L;
-            this.h = 0;
-        } else {
-            this.h = 1;
+    @Override // x3.h
+    public final long c() {
+        return this.d;
+    }
+
+    @Override // e3.b0
+    public final boolean d() {
+        return true;
+    }
+
+    @Override // e3.b0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // e3.b0
+    public final a0 f(long j10) {
+        long[] jArr = this.a;
+        int f10 = n0.f(jArr, j10, true);
+        long j11 = jArr[f10];
+        long[] jArr2 = this.b;
+        c0 c0Var = new c0(j11, jArr2[f10]);
+        if (j11 >= j10 || f10 == jArr.length - 1) {
+            return new a0(c0Var, c0Var);
         }
-        this.e = -1L;
-        this.g = 0L;
+        int i3 = f10 + 1;
+        return new a0(c0Var, new c0(jArr[i3], jArr2[i3]));
+    }
+
+    @Override // x3.h
+    public final int g() {
+        return this.f;
+    }
+
+    @Override // e3.b0
+    public final long h() {
+        return this.c;
     }
 }

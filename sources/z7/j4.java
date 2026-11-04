@@ -1,15 +1,15 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j4 implements ja.d {
+public final class j4 implements ma.d {
     public static final j4 a = new j4();
 
     static {
-        sc.e.v(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, new s(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)), 9)), 10)), 11)), 12)), 13)), 14)));
+        t4.c.o(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, t4.c.n(t4.c.k(b0.class, new y(1)), 2)), 3)), 4)), 5)), 6)));
     }
 
-    @Override // ja.a
+    @Override // ma.a
     public final /* synthetic */ void a(Object obj, Object obj2) {
         if (obj != null) {
             throw new ClassCastException();

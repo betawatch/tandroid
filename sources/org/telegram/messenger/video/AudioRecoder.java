@@ -7,20 +7,20 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
-import org.telegram.messenger.f8;
+import org.telegram.messenger.a8;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;
-    ArrayList<tf.a> audioInputs;
+    ArrayList<eg.a> audioInputs;
     private final MediaCodec encoder;
     private boolean encoderDone;
     private ByteBuffer[] encoderInputBuffers;
     private ByteBuffer[] encoderOutputBuffers;
     public final MediaFormat format;
-    tf.a mainInput;
+    eg.a mainInput;
     private int sampleRate;
     private long totalDurationUs;
     private final int TIMEOUT_USEC = 2500;
@@ -35,14 +35,14 @@ public class AudioRecoder {
     private int channelCount = 2;
     private long encoderInputPresentationTimeUs = 0;
 
-    public AudioRecoder(ArrayList<tf.a> arrayList, long j10) {
+    public AudioRecoder(ArrayList<eg.a> arrayList, long j10) {
         this.sampleRate = 44100;
         this.audioInputs = arrayList;
         this.totalDurationUs = j10;
         this.mainInput = arrayList.get(0);
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (arrayList.get(i10).b() > this.sampleRate) {
-                this.sampleRate = arrayList.get(i10).b();
+        for (int i3 = 0; i3 < arrayList.size(); i3++) {
+            if (arrayList.get(i3).b() > this.sampleRate) {
+                this.sampleRate = arrayList.get(i3).b();
             }
         }
         MediaCodec createEncoderByType = MediaCodec.createEncoderByType("audio/mp4a-latm");
@@ -54,8 +54,8 @@ public class AudioRecoder {
         createEncoderByType.start();
         this.encoderInputBuffers = createEncoderByType.getInputBuffers();
         this.encoderOutputBuffers = createEncoderByType.getOutputBuffers();
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            arrayList.get(i11).e(this.sampleRate, this.channelCount);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            arrayList.get(i10).e(this.sampleRate, this.channelCount);
         }
     }
 
@@ -68,17 +68,17 @@ public class AudioRecoder {
 
     private void mix(ShortBuffer shortBuffer) {
         int remaining = shortBuffer.remaining();
-        for (int i10 = 0; i10 < remaining && isInputAvailable(); i10++) {
+        for (int i3 = 0; i3 < remaining && isInputAvailable(); i3++) {
             boolean z10 = false;
-            short s10 = 0;
-            for (int i11 = 0; i11 < this.audioInputs.size() && isInputAvailable(); i11++) {
-                if (this.audioInputs.get(i11).c()) {
-                    s10 = (short) ((((short) (r6.a() * r6.a)) / this.audioInputs.size()) + s10);
+            short s6 = 0;
+            for (int i10 = 0; i10 < this.audioInputs.size() && isInputAvailable(); i10++) {
+                if (this.audioInputs.get(i10).c()) {
+                    s6 = (short) ((((short) (r6.a() * r6.a)) / this.audioInputs.size()) + s6);
                     z10 = true;
                 }
             }
             if (z10) {
-                shortBuffer.put(s10);
+                shortBuffer.put(s6);
             }
         }
     }
@@ -86,15 +86,15 @@ public class AudioRecoder {
     public void release() {
         try {
             this.encoder.stop();
-            for (int i10 = 0; i10 < this.audioInputs.size(); i10++) {
-                this.audioInputs.get(i10).d();
+            for (int i3 = 0; i3 < this.audioInputs.size(); i3++) {
+                this.audioInputs.get(i3).d();
             }
-        } catch (Exception e) {
-            f8.g(e, true);
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
     }
 
-    public boolean step(MediaCodecVideoConvertor.Muxer muxer, int i10) {
+    public boolean step(MediaCodecVideoConvertor.Muxer muxer, int i3) {
         int dequeueInputBuffer;
         if (!this.encoderInputDone && (dequeueInputBuffer = this.encoder.dequeueInputBuffer(2500L)) >= 0) {
             if (isInputAvailable()) {
@@ -125,7 +125,7 @@ public class AudioRecoder {
                 return this.encoderDone;
             }
             if (bufferInfo.size != 0) {
-                muxer.writeSampleData(i10, byteBuffer, bufferInfo, false);
+                muxer.writeSampleData(i3, byteBuffer, bufferInfo, false);
             }
             if ((this.encoderOutputBufferInfo.flags & 4) != 0) {
                 this.encoderDone = true;

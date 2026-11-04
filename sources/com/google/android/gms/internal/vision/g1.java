@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class g1 implements d2 {
     public static final g1 b = new g1(0);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ g1(int i10) {
-        this.a = i10;
+    public /* synthetic */ g1(int i3) {
+        this.a = i3;
     }
 
     @Override // com.google.android.gms.internal.vision.d2
@@ -30,9 +30,9 @@ public final class g1 implements d2 {
                 }
                 try {
                     return (l2) f1.d(cls.asSubclass(f1.class)).e(3);
-                } catch (Exception e) {
+                } catch (Exception e10) {
                     String name2 = cls.getName();
-                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e);
+                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e10);
                 }
             default:
                 throw new IllegalStateException("This should never be called.");

@@ -1,45 +1,48 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class y1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ a2 c;
-    public final /* synthetic */ z2 d;
+import org.json.JSONObject;
+import org.telegram.tgnet.tl.TL_wallet;
 
-    public /* synthetic */ y1(boolean[] zArr, a2 a2Var, z2 z2Var, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = a2Var;
-        this.d = z2Var;
-    }
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class y1 {
+    public final TL_wallet.tonConnectSession a;
+    public final int b;
+    public final int c;
+    public final String d;
+    public final String e;
+    public final b2 f;
+    public final byte[] g;
+    public final String h;
+    public final String i;
+    public final String j;
+    public final String k;
+    public final int l;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public Runnable r;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        org.telegram.messenger.i0.h3(this, 1000L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        org.telegram.messenger.i0.h3(this, 1000L);
-                        break;
-                    }
-                }
-                break;
+    public y1(TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, JSONObject jSONObject, String str, byte[] bArr) {
+        this.a = tonconnectpending.session;
+        this.b = tonconnectrequest.msg_id;
+        this.c = tonconnectrequest.expires;
+        tonconnectrequest.body.clone();
+        this.i = tonconnectrequest.trace_id;
+        this.d = jSONObject.getString("id");
+        this.e = jSONObject.optString("method");
+        int optInt = jSONObject.optInt("errorCode", -1);
+        this.l = optInt;
+        String str2 = null;
+        this.j = jSONObject.optString("errorMessage", null);
+        this.f = (optInt >= 0 || !jSONObject.has("transaction")) ? null : new b2(jSONObject.getJSONObject("transaction"));
+        if (optInt < 0 && jSONObject.has("data")) {
+            str2 = jSONObject.getJSONObject("data").toString();
         }
+        this.k = str2;
+        this.h = str;
+        this.g = (byte[]) bArr.clone();
     }
 }

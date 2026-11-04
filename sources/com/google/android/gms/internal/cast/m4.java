@@ -1,124 +1,126 @@
 package com.google.android.gms.internal.cast;
 
 import android.text.TextUtils;
+import b8.ke;
+import b8.kg;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m4 implements d6.h {
-    public final /* synthetic */ bh.d a;
+public final class m4 implements f6.h {
+    public final /* synthetic */ ke a;
 
-    public /* synthetic */ m4(bh.d dVar) {
-        this.a = dVar;
+    public /* synthetic */ m4(ke keVar) {
+        this.a = keVar;
     }
 
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void A(d6.f fVar) {
+    @Override // f6.h
+    public void a(f6.f fVar, int i3) {
+        kg kgVar = new kg(9, 4);
+        kgVar.c = Integer.valueOf(i3);
+        ke keVar = this.a;
+        kgVar.d = Boolean.valueOf(((c) keVar.c).d == 2);
+        ke.P(keVar, new t6(kgVar));
+        keVar.R();
     }
 
-    @Override // d6.h
-    public void F(d6.f fVar, String str) {
-        u6 u6Var = new u6(new a5.a(4, 3));
-        bh.d dVar = this.a;
-        bh.d.O(dVar, u6Var);
-        t6 t6Var = (t6) dVar.d;
-        n6.l.g(t6Var);
-        t6Var.a((d6.c) fVar);
-        t6 t6Var2 = (t6) dVar.d;
-        n6.l.g(t6Var2);
-        String str2 = t6Var2.k;
+    @Override // f6.h
+    public void d(f6.f fVar, int i3) {
+        kg kgVar = new kg(6, 4);
+        kgVar.c = Integer.valueOf(i3);
+        t6 t6Var = new t6(kgVar);
+        ke keVar = this.a;
+        ke.P(keVar, t6Var);
+        s6 s6Var = (s6) keVar.e;
+        p6.m.g(s6Var);
+        s6Var.a((f6.c) fVar);
+    }
+
+    @Override // f6.h
+    public void f(f6.f fVar, String str) {
+        t6 t6Var = new t6(new kg(4, 4));
+        ke keVar = this.a;
+        ke.P(keVar, t6Var);
+        s6 s6Var = (s6) keVar.e;
+        p6.m.g(s6Var);
+        s6Var.a((f6.c) fVar);
+        s6 s6Var2 = (s6) keVar.e;
+        p6.m.g(s6Var2);
+        String str2 = s6Var2.k;
         if (str2 == null) {
-            t6Var2.k = str;
+            s6Var2.k = str;
         } else {
             if (TextUtils.equals(str, str2)) {
                 return;
             }
-            t6Var2.b(4);
+            s6Var2.b(4);
         }
     }
 
-    @Override // d6.h
-    public void G(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(6, 3);
-        aVar.c = Integer.valueOf(i10);
-        u6 u6Var = new u6(aVar);
-        bh.d dVar = this.a;
-        bh.d.O(dVar, u6Var);
-        t6 t6Var = (t6) dVar.d;
-        n6.l.g(t6Var);
-        t6Var.a((d6.c) fVar);
+    @Override // f6.h
+    public void g(f6.f fVar) {
+        f6.c cVar = (f6.c) fVar;
+        kg kgVar = new kg(2, 4);
+        ke keVar = this.a;
+        kgVar.d = Boolean.valueOf(((c) keVar.c).d == 2);
+        ke.P(keVar, new t6(kgVar));
+        s6 s6Var = (s6) keVar.e;
+        p6.m.g(s6Var);
+        s6Var.a(cVar);
+        cVar.l = (m4) keVar.f;
     }
 
-    @Override // d6.h
-    public void j(d6.f fVar, String str) {
-        u6 u6Var = new u6(new a5.a(7, 3));
-        bh.d dVar = this.a;
-        bh.d.O(dVar, u6Var);
-        t6 t6Var = (t6) dVar.d;
-        n6.l.g(t6Var);
-        t6Var.a((d6.c) fVar);
-        t6 t6Var2 = (t6) dVar.d;
-        n6.l.g(t6Var2);
-        String str2 = t6Var2.k;
+    @Override // f6.h
+    public /* bridge */ /* synthetic */ void h(f6.f fVar) {
+    }
+
+    @Override // f6.h
+    public void j(f6.f fVar, String str) {
+        t6 t6Var = new t6(new kg(7, 4));
+        ke keVar = this.a;
+        ke.P(keVar, t6Var);
+        s6 s6Var = (s6) keVar.e;
+        p6.m.g(s6Var);
+        s6Var.a((f6.c) fVar);
+        s6 s6Var2 = (s6) keVar.e;
+        p6.m.g(s6Var2);
+        String str2 = s6Var2.k;
         if (str2 == null) {
-            t6Var2.k = str;
+            s6Var2.k = str;
         } else {
             if (TextUtils.equals(str, str2)) {
                 return;
             }
-            t6Var2.b(4);
+            s6Var2.b(4);
         }
     }
 
-    @Override // d6.h
-    public void k(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(5, 3);
-        aVar.c = Integer.valueOf(i10);
-        u6 u6Var = new u6(aVar);
-        bh.d dVar = this.a;
-        bh.d.O(dVar, u6Var);
-        dVar.Q();
+    @Override // f6.h
+    public /* bridge */ /* synthetic */ void l(f6.f fVar, boolean z10) {
+        t6 t6Var = new t6(new kg(4, 4));
+        ke keVar = this.a;
+        ke.P(keVar, t6Var);
+        s6 s6Var = (s6) keVar.e;
+        p6.m.g(s6Var);
+        s6Var.a((f6.c) fVar);
     }
 
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void o(d6.f fVar, boolean z10) {
-        u6 u6Var = new u6(new a5.a(4, 3));
-        bh.d dVar = this.a;
-        bh.d.O(dVar, u6Var);
-        t6 t6Var = (t6) dVar.d;
-        n6.l.g(t6Var);
-        t6Var.a((d6.c) fVar);
+    @Override // f6.h
+    public void m(f6.f fVar, int i3) {
+        kg kgVar = new kg(8, 4);
+        kgVar.c = Integer.valueOf(i3);
+        t6 t6Var = new t6(kgVar);
+        ke keVar = this.a;
+        ke.P(keVar, t6Var);
+        keVar.R();
     }
 
-    @Override // d6.h
-    public void q(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(9, 3);
-        aVar.c = Integer.valueOf(i10);
-        bh.d dVar = this.a;
-        aVar.d = Boolean.valueOf(((c) dVar.b).d == 2);
-        bh.d.O(dVar, new u6(aVar));
-        dVar.Q();
-    }
-
-    @Override // d6.h
-    public void t(d6.f fVar) {
-        d6.c cVar = (d6.c) fVar;
-        a5.a aVar = new a5.a(2, 3);
-        bh.d dVar = this.a;
-        aVar.d = Boolean.valueOf(((c) dVar.b).d == 2);
-        bh.d.O(dVar, new u6(aVar));
-        t6 t6Var = (t6) dVar.d;
-        n6.l.g(t6Var);
-        t6Var.a(cVar);
-        cVar.l = (m4) dVar.e;
-    }
-
-    @Override // d6.h
-    public void u(d6.f fVar, int i10) {
-        a5.a aVar = new a5.a(8, 3);
-        aVar.c = Integer.valueOf(i10);
-        u6 u6Var = new u6(aVar);
-        bh.d dVar = this.a;
-        bh.d.O(dVar, u6Var);
-        dVar.Q();
+    @Override // f6.h
+    public void n(f6.f fVar, int i3) {
+        kg kgVar = new kg(5, 4);
+        kgVar.c = Integer.valueOf(i3);
+        t6 t6Var = new t6(kgVar);
+        ke keVar = this.a;
+        ke.P(keVar, t6Var);
+        keVar.R();
     }
 }

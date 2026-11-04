@@ -1,63 +1,20 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.dq;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class k6 extends dq {
-    public final /* synthetic */ l6 L;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class k6 extends wg.r {
+    public final /* synthetic */ m6 E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(l6 l6Var) {
-        super(R.drawable.wallet_gram_large, 0);
-        this.L = l6Var;
+    public k6(m6 m6Var, Context context, i6 i6Var) {
+        super(context, i6Var, 2);
+        this.E = m6Var;
     }
 
-    @Override // org.telegram.ui.Components.dq, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        l6 l6Var = this.L;
-        FrameLayout.LayoutParams layoutParams = l6Var.P;
-        if (l6Var.i0) {
-            return;
-        }
-        this.x = 1.0f;
-        if (l6Var.a) {
-            float max = Math.max(0.0f, Math.min(1.0f, l6Var.T));
-            if (max == 0.0f) {
-                float intrinsicWidth = this.c.getIntrinsicWidth() * l6Var.b;
-                float intrinsicHeight = this.c.getIntrinsicHeight();
-                float f10 = l6Var.b;
-                float f11 = intrinsicHeight * f10;
-                float f12 = (f10 * f7) + layoutParams.leftMargin;
-                float height = ((l6Var.N.getHeight() / 2.0f) - (f11 / 2.0f)) + layoutParams.topMargin;
-                l6Var.f.set(f12, height, intrinsicWidth + f12, f11 + height);
-            }
-            if (max < 1.0f) {
-                if (l6Var.h0 == null) {
-                    l6Var.h0 = new t6(this.c.getIntrinsicWidth(), this.c.getIntrinsicHeight());
-                    l6Var.m();
-                }
-                Drawable drawable = this.c;
-                l6Var.h0.setBounds(drawable.getBounds());
-                t6 t6Var = l6Var.h0;
-                t6Var.i = l6Var.f0.c;
-                this.c = t6Var;
-                this.d = false;
-                this.x = 1.0f - max;
-                super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
-                this.c = drawable;
-                this.d = true;
-            }
-            this.x = max;
-            if (max == 0.0f) {
-                return;
-            }
-        }
-        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+    @Override // wg.r
+    public final void a() {
+        this.E.s = true;
     }
 }

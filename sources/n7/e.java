@@ -1,36 +1,13 @@
 package n7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.os.Build;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e extends d {
-    public final c7.x a;
+public abstract class e {
+    public static final int a;
 
-    public e(c7.x xVar) {
-        this.a = xVar;
-    }
-
-    @Override // n7.d
-    public final Object a() {
-        return this.a;
-    }
-
-    @Override // n7.d
-    public final boolean b() {
-        return true;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof e) {
-            return this.a.equals(((e) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode() + 1502476572;
-    }
-
-    public final String toString() {
-        return a1.g.n("Optional.of(", this.a.toString(), ")");
+    static {
+        a = Build.VERSION.SDK_INT >= 31 ? 33554432 : 0;
     }
 }

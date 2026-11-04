@@ -1,9 +1,9 @@
 package p0;
 
 import android.text.SpannableStringBuilder;
-import b2.u;
+import ba.i;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String b;
@@ -13,7 +13,7 @@ public final class b {
     public final boolean a;
 
     static {
-        u uVar = f.c;
+        i iVar = f.c;
         b = Character.toString((char) 8206);
         c = Character.toString((char) 8207);
         d = new b(false);
@@ -21,7 +21,7 @@ public final class b {
     }
 
     public b(boolean z10) {
-        u uVar = f.a;
+        i iVar = f.a;
         this.a = z10;
     }
 
@@ -83,14 +83,14 @@ public final class b {
         byte directionality;
         a aVar = new a(charSequence);
         aVar.c = 0;
+        int i3 = 0;
         int i10 = 0;
         int i11 = 0;
-        int i12 = 0;
         while (true) {
-            int i13 = aVar.c;
-            if (i13 < aVar.b && i10 == 0) {
+            int i12 = aVar.c;
+            if (i12 < aVar.b && i3 == 0) {
                 CharSequence charSequence2 = aVar.a;
-                char charAt = charSequence2.charAt(i13);
+                char charAt = charSequence2.charAt(i12);
                 aVar.d = charAt;
                 if (Character.isHighSurrogate(charAt)) {
                     int codePointAt = Character.codePointAt(charSequence2, aVar.c);
@@ -98,34 +98,34 @@ public final class b {
                     directionality = Character.getDirectionality(codePointAt);
                 } else {
                     aVar.c++;
-                    char c10 = aVar.d;
-                    directionality = c10 < 1792 ? a.e[c10] : Character.getDirectionality(c10);
+                    char c2 = aVar.d;
+                    directionality = c2 < 1792 ? a.e[c2] : Character.getDirectionality(c2);
                 }
                 if (directionality != 0) {
                     if (directionality == 1 || directionality == 2) {
-                        if (i12 == 0) {
+                        if (i11 == 0) {
                         }
                     } else if (directionality != 9) {
                         switch (directionality) {
                             case 14:
                             case 15:
-                                i12++;
-                                i11 = -1;
+                                i11++;
+                                i10 = -1;
                                 continue;
                             case 16:
                             case 17:
-                                i12++;
-                                i11 = 1;
+                                i11++;
+                                i10 = 1;
                                 continue;
                             case 18:
-                                i12--;
-                                i11 = 0;
+                                i11--;
+                                i10 = 0;
                                 continue;
                         }
                     }
-                } else if (i12 == 0) {
+                } else if (i11 == 0) {
                 }
-                i10 = i12;
+                i3 = i11;
             }
         }
         return -1;
@@ -141,39 +141,39 @@ public final class b {
     public static int b(CharSequence charSequence) {
         a aVar = new a(charSequence);
         aVar.c = aVar.b;
-        int i10 = 0;
+        int i3 = 0;
         while (true) {
-            int i11 = i10;
+            int i10 = i3;
             while (aVar.c > 0) {
-                byte a2 = aVar.a();
-                if (a2 != 0) {
-                    if (a2 == 1 || a2 == 2) {
-                        if (i10 != 0) {
-                            if (i11 == 0) {
+                byte a10 = aVar.a();
+                if (a10 != 0) {
+                    if (a10 == 1 || a10 == 2) {
+                        if (i3 != 0) {
+                            if (i10 == 0) {
                                 break;
                             }
                         }
-                    } else if (a2 != 9) {
-                        switch (a2) {
+                    } else if (a10 != 9) {
+                        switch (a10) {
                             case 14:
                             case 15:
-                                if (i11 == i10) {
+                                if (i10 == i3) {
                                     return -1;
                                 }
-                                i10--;
+                                i3--;
                                 break;
                             case 16:
                             case 17:
-                                if (i11 == i10) {
+                                if (i10 == i3) {
                                     break;
                                 }
-                                i10--;
+                                i3--;
                                 break;
                             case 18:
-                                i10++;
+                                i3++;
                                 break;
                             default:
-                                if (i11 != 0) {
+                                if (i10 != 0) {
                                     break;
                                 } else {
                                     break;
@@ -184,10 +184,10 @@ public final class b {
                         continue;
                     }
                 } else {
-                    if (i10 == 0) {
+                    if (i3 == 0) {
                         return -1;
                     }
-                    if (i11 == 0) {
+                    if (i10 == 0) {
                         break;
                     }
                 }
@@ -197,18 +197,18 @@ public final class b {
     }
 
     public final SpannableStringBuilder c(CharSequence charSequence) {
-        u uVar = f.c;
+        i iVar = f.c;
         if (charSequence == null) {
             return null;
         }
-        boolean h = uVar.h(charSequence.length(), charSequence);
+        boolean h = iVar.h(charSequence.length(), charSequence);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        boolean h10 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
+        boolean h7 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
         String str = "";
         String str2 = c;
         String str3 = b;
         boolean z10 = this.a;
-        spannableStringBuilder.append((CharSequence) ((z10 || !(h10 || a(charSequence) == 1)) ? (!z10 || (h10 && a(charSequence) != -1)) ? "" : str2 : str3));
+        spannableStringBuilder.append((CharSequence) ((z10 || !(h7 || a(charSequence) == 1)) ? (!z10 || (h7 && a(charSequence) != -1)) ? "" : str2 : str3));
         if (h != z10) {
             spannableStringBuilder.append(h ? (char) 8235 : (char) 8234);
             spannableStringBuilder.append(charSequence);
@@ -216,10 +216,10 @@ public final class b {
         } else {
             spannableStringBuilder.append(charSequence);
         }
-        boolean h11 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
-        if (!z10 && (h11 || b(charSequence) == 1)) {
+        boolean h10 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
+        if (!z10 && (h10 || b(charSequence) == 1)) {
             str = str3;
-        } else if (z10 && (!h11 || b(charSequence) == -1)) {
+        } else if (z10 && (!h10 || b(charSequence) == -1)) {
             str = str2;
         }
         spannableStringBuilder.append((CharSequence) str);

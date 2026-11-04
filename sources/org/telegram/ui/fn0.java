@@ -1,34 +1,34 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.drawable.Drawable;
+import android.text.style.ClickableSpan;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class fn0 extends s4.s0 {
+public final /* synthetic */ class fn0 implements org.telegram.messenger.n10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ln0 b;
+    public final /* synthetic */ PhotoViewer b;
 
-    public fn0(ln0 ln0Var, int i10) {
-        this.b = ln0Var;
-        this.a = i10;
+    public /* synthetic */ fn0(PhotoViewer photoViewer, int i3) {
+        this.a = i3;
+        this.b = photoViewer;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ln0 ln0Var = this.b;
-        rn0 rn0Var = ln0Var.p0;
-        ln0Var.h();
-        if (ln0Var.K != null) {
-            if (ln0Var.J == null || !ln0Var.c()) {
-                return;
-            }
-            ln0Var.J.g(false);
-            return;
+    @Override // org.telegram.messenger.n10
+    public final void a(Object obj, Object obj2) {
+        int i3 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i3) {
+            case 0:
+                Drawable[] drawableArr = PhotoViewer.V8;
+                photoViewer.a2((ClickableSpan) obj, (TextView) obj2);
+                break;
+            default:
+                Drawable[] drawableArr2 = PhotoViewer.V8;
+                photoViewer.getClass();
+                photoViewer.E0(((Boolean) obj2).booleanValue(), false, (((Float) obj).floatValue() * 2.8f) + 0.2f);
+                break;
         }
-        rh.v5 v5Var = this.a == 1 ? rn0Var.c : rn0Var.b;
-        if (v5Var == null || !ln0Var.c()) {
-            return;
-        }
-        v5Var.b();
     }
 }

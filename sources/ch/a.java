@@ -1,61 +1,80 @@
 package ch;
 
-import a3.d;
-import fe.e;
-import fe.f;
-import org.telegram.messenger.i0;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.voip.c2;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a implements e {
-    public final f a;
-    public final f b;
-    public final fe.b c;
-    public final fe.b d;
-    public final c2 e;
-    public final d f;
-    public boolean h;
+public final class a extends Drawable {
+    public final TextPaint a;
+    public final TextPaint b;
+    public final RectF c;
+    public final Drawable d;
+    public float e;
+    public String f;
 
-    public a(c2 c2Var, d dVar) {
-        gr grVar = gr.h;
-        this.a = new f(1, this, grVar, 350L);
-        this.b = new f(2, this, grVar, 350L);
-        this.c = new fe.b(0, this, grVar, 350L, true);
-        this.d = new fe.b(3, this, grVar, 350L, true);
-        this.h = true;
-        this.e = c2Var;
-        this.f = dVar;
+    public a(Context context) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        this.c = new RectF();
+        textPaint.setColor(-1);
+        textPaint.setTypeface(g0.o());
+        textPaint.setTextSize(g0.L(12.0f));
+        textPaint2.setColor(-6915073);
+        this.d = context.getDrawable(R.drawable.mini_boost_badge);
     }
 
-    @Override // fe.e
-    public final void v(int i10, float f7, float f10, f fVar) {
-        c2 c2Var = this.e;
-        if (i10 == 1) {
-            c2Var.setTranslationX(this.a.f);
-        }
-        if (i10 == 2) {
-            c2Var.setTranslationY(this.b.f);
-        }
-        fe.b bVar = this.d;
-        fe.b bVar2 = this.c;
-        if (i10 == 0) {
-            c2Var.setAlpha(i0.T1(0.5f, 1.0f, bVar.e) * bVar2.e);
-            c2Var.setScaleX(i0.T1(0.3f, 1.0f, f7));
-            c2Var.setScaleY(i0.T1(0.3f, 1.0f, f7));
-            c2Var.setVisibility(f7 > 0.0f ? 0 : 8);
-        }
-        if (i10 == 3) {
-            c2Var.setAlpha(i0.T1(0.5f, 1.0f, bVar.e) * bVar2.e);
-        }
-        d dVar = this.f;
-        if (dVar != null) {
-            dVar.run();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        float f10 = bounds.left;
+        float f11 = bounds.top;
+        float f12 = bounds.right;
+        float f13 = bounds.bottom;
+        RectF rectF = this.c;
+        rectF.set(f10, f11, f12, f13);
+        canvas.drawRoundRect(rectF, g0.L(12.0f), g0.L(12.0f), this.b);
+        int L = g0.L(2.0f) + bounds.left;
+        int L2 = g0.L(1.0f) + bounds.top;
+        int L3 = g0.L(2.0f) + bounds.left;
+        Drawable drawable = this.d;
+        drawable.setBounds(L, L2, drawable.getIntrinsicWidth() + L3, drawable.getIntrinsicHeight() + g0.L(1.0f) + getBounds().top);
+        drawable.draw(canvas);
+        String str = this.f;
+        if (str != null) {
+            canvas.drawText(str, g0.L(16.5f) + bounds.left, g0.L(13.0f) + bounds.top, this.a);
         }
     }
 
-    @Override // fe.e
-    public final /* synthetic */ void E(float f7, int i10) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return g0.L(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (g0.L(23.0f) + this.e);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -1;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

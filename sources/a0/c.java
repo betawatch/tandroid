@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class c implements Set {
     public final /* synthetic */ f a;
@@ -36,7 +36,7 @@ public final class c implements Set {
 
     @Override // java.util.Set, java.util.Collection
     public final boolean containsAll(Collection collection) {
-        return this.a.i(collection);
+        return this.a.j(collection);
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -51,7 +51,7 @@ public final class c implements Set {
         Set set = (Set) obj;
         try {
             if (fVar.c == set.size()) {
-                return fVar.i(set);
+                return fVar.j(set);
             }
             return false;
         } catch (ClassCastException | NullPointerException unused) {
@@ -62,12 +62,12 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final int hashCode() {
         f fVar = this.a;
-        int i10 = 0;
-        for (int i11 = fVar.c - 1; i11 >= 0; i11--) {
-            Object e = fVar.e(i11);
-            i10 += e == null ? 0 : e.hashCode();
+        int i3 = 0;
+        for (int i10 = fVar.c - 1; i10 >= 0; i10--) {
+            Object f10 = fVar.f(i10);
+            i3 += f10 == null ? 0 : f10.hashCode();
         }
-        return i10;
+        return i3;
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -83,29 +83,29 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final boolean remove(Object obj) {
         f fVar = this.a;
-        int c10 = fVar.c(obj);
-        if (c10 < 0) {
+        int d = fVar.d(obj);
+        if (d < 0) {
             return false;
         }
-        fVar.f(c10);
+        fVar.g(d);
         return true;
     }
 
     @Override // java.util.Set, java.util.Collection
     public final boolean removeAll(Collection collection) {
-        return this.a.j(collection);
+        return this.a.k(collection);
     }
 
     @Override // java.util.Set, java.util.Collection
     public final boolean retainAll(Collection collection) {
         f fVar = this.a;
-        int i10 = fVar.c;
-        for (int i11 = i10 - 1; i11 >= 0; i11--) {
-            if (!collection.contains(fVar.e(i11))) {
-                fVar.f(i11);
+        int i3 = fVar.c;
+        for (int i10 = i3 - 1; i10 >= 0; i10--) {
+            if (!collection.contains(fVar.f(i10))) {
+                fVar.g(i10);
             }
         }
-        return i10 != fVar.c;
+        return i3 != fVar.c;
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -116,10 +116,10 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final Object[] toArray() {
         f fVar = this.a;
-        int i10 = fVar.c;
-        Object[] objArr = new Object[i10];
-        for (int i11 = 0; i11 < i10; i11++) {
-            objArr[i11] = fVar.e(i11);
+        int i3 = fVar.c;
+        Object[] objArr = new Object[i3];
+        for (int i10 = 0; i10 < i3; i10++) {
+            objArr[i10] = fVar.f(i10);
         }
         return objArr;
     }
@@ -127,15 +127,15 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final Object[] toArray(Object[] objArr) {
         f fVar = this.a;
-        int i10 = fVar.c;
-        if (objArr.length < i10) {
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i10);
+        int i3 = fVar.c;
+        if (objArr.length < i3) {
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i3);
         }
-        for (int i11 = 0; i11 < i10; i11++) {
-            objArr[i11] = fVar.e(i11);
+        for (int i10 = 0; i10 < i3; i10++) {
+            objArr[i10] = fVar.f(i10);
         }
-        if (objArr.length > i10) {
-            objArr[i10] = null;
+        if (objArr.length > i3) {
+            objArr[i3] = null;
         }
         return objArr;
     }

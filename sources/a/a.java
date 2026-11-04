@@ -1,36 +1,25 @@
 package a;
 
-import b5.b;
-import b5.c;
-import b5.e;
-import b5.m;
-import j$.util.DesugarCollections;
-import java.util.HashSet;
+import android.net.Uri;
 import java.util.Iterator;
-import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static boolean a(String str) {
-        b bVar = m.a;
-        Set<e> unmodifiableSet = DesugarCollections.unmodifiableSet(c.c);
-        HashSet hashSet = new HashSet();
-        for (e eVar : unmodifiableSet) {
-            if (((c) eVar).a.equals(str)) {
-                hashSet.add(eVar);
+    public static Uri a(Uri uri) {
+        if (!uri.isHierarchical() || uri.getQueryParameter("CMCD") == null) {
+            return uri;
+        }
+        Uri.Builder buildUpon = uri.buildUpon();
+        buildUpon.clearQuery();
+        for (String str : uri.getQueryParameterNames()) {
+            if (!str.equals("CMCD")) {
+                Iterator<String> it = uri.getQueryParameters(str).iterator();
+                while (it.hasNext()) {
+                    buildUpon.appendQueryParameter(str, it.next());
+                }
             }
         }
-        if (hashSet.isEmpty()) {
-            throw new RuntimeException("Unknown feature ".concat(str));
-        }
-        Iterator it = hashSet.iterator();
-        while (it.hasNext()) {
-            c cVar = (c) ((e) it.next());
-            if (cVar.a() || cVar.b()) {
-                return true;
-            }
-        }
-        return false;
+        return buildUpon.build();
     }
 }

@@ -1,55 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class wq0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class wq0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xq0 b;
+    public final /* synthetic */ fr0 b;
 
-    public wq0(xq0 xq0Var, int i10) {
-        this.b = xq0Var;
-        this.a = i10;
+    public /* synthetic */ wq0(fr0 fr0Var, int i3) {
+        this.a = i3;
+        this.b = fr0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.k8) {
-            PhotoViewer photoViewer = this.b.b;
-            if (photoViewer.r1) {
-                photoViewer.E3();
-            }
-        }
-        if (this.a == 3) {
-            PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.J2(photoViewer2.P4, false, true, true);
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        PhotoViewer photoViewer = this.b.b;
-        photoViewer.P0.setVisibility(0);
-        if (photoViewer.H3()) {
-            photoViewer.n0.setVisibility(0);
-        } else {
-            photoViewer.S0.setVisibility(0);
-        }
-        photoViewer.F.setVisibility(0);
-        if (photoViewer.i2) {
-            vr0 vr0Var = photoViewer.Q1;
-            vr0Var.setVisibility(vr0Var.getTag() != null ? 0 : 4);
-        }
-        if (photoViewer.d2 || photoViewer.e2) {
-            return;
-        }
-        int i10 = photoViewer.c2;
-        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) && !photoViewer.f4) {
-            photoViewer.N0.setVisibility(0);
-            photoViewer.O0.setVisibility(0);
-            photoViewer.v3();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                fr0 fr0Var = this.b;
+                fr0Var.getClass();
+                fr0Var.S.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                fr0 fr0Var2 = this.b;
+                fr0Var2.getClass();
+                fr0Var2.S.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

@@ -1,68 +1,97 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.RectF;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class j81 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final RectF b;
-    public final /* synthetic */ k91 c;
+    public float b;
+    public boolean c;
+    public Object d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j81(k91 k91Var, Context context, int i10) {
+    public /* synthetic */ j81(Context context, int i3) {
         super(context);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = k91Var;
-                super(context);
-                this.b = new RectF();
+        this.a = i3;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                float f10 = ((1.0f - this.b) * 0.2f) + 0.8f;
+                canvas.save();
+                canvas.scale(f10, f10, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                if (isPressed()) {
+                    float f11 = this.b;
+                    if (f11 != 1.0f) {
+                        this.b = Utilities.i(f11 + 0.16f, 1.0f, 0.0f);
+                        invalidate();
+                        break;
+                    }
+                }
                 break;
             default:
-                this.c = k91Var;
-                this.b = new RectF();
+                super.dispatchDraw(canvas);
+                if (this.c) {
+                    float f12 = this.b + 0.013333334f;
+                    this.b = f12;
+                    if (f12 > 1.0f) {
+                        this.c = false;
+                        this.b = 1.0f;
+                    }
+                } else {
+                    float f13 = this.b - 0.013333334f;
+                    this.b = f13;
+                    if (f13 < 0.0f) {
+                        this.c = true;
+                        this.b = 0.0f;
+                    }
+                }
+                ((TextView) this.d).setTranslationX(org.telegram.ui.Components.xq.f.getInterpolation(this.b) * org.telegram.messenger.g0.L(8.0f) * (org.telegram.messenger.bd.a0 ? -1 : 1));
+                invalidate();
                 break;
         }
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    public void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
         switch (this.a) {
             case 0:
-                float measuredWidth = getMeasuredWidth();
-                float measuredHeight = getMeasuredHeight();
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-                k91 k91Var = this.c;
-                j81 j81Var = k91Var.E0;
-                a91 a91Var = k91Var.y0;
-                l81 l81Var = k91Var.a;
-                org.telegram.ui.ActionBar.t6.t(j81Var, a91Var, l81Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, l81Var.d("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.t6.d1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, l81Var.d("paintChatActionBackgroundDarken"));
-                    break;
+                super.setPressed(z10);
+                if (this.c != z10) {
+                    this.c = z10;
+                    invalidate();
+                    if (z10 && (valueAnimator = (ValueAnimator) this.d) != null) {
+                        valueAnimator.removeAllListeners();
+                        ((ValueAnimator) this.d).cancel();
+                    }
+                    if (!z10) {
+                        float f10 = this.b;
+                        if (f10 != 0.0f) {
+                            ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
+                            this.d = ofFloat;
+                            ofFloat.addUpdateListener(new xy0(this, 12));
+                            ((ValueAnimator) this.d).addListener(new i81(this, 0));
+                            org.telegram.messenger.camera.q.i(5.0f, (ValueAnimator) this.d);
+                            ((ValueAnimator) this.d).setDuration(350L);
+                            ((ValueAnimator) this.d).start();
+                            break;
+                        }
+                    }
                 }
                 break;
             default:
-                float measuredWidth2 = getMeasuredWidth();
-                float measuredHeight2 = getMeasuredHeight();
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                k91 k91Var2 = this.c;
-                j81 j81Var2 = k91Var2.F0;
-                a91 a91Var2 = k91Var2.y0;
-                l81 l81Var2 = k91Var2.a;
-                org.telegram.ui.ActionBar.t6.t(j81Var2, a91Var2, l81Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, l81Var2.d("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.t6.d1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, l81Var2.d("paintChatActionBackgroundDarken"));
-                    break;
-                }
+                super.setPressed(z10);
                 break;
         }
     }

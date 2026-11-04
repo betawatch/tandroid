@@ -1,39 +1,62 @@
 package f9;
 
-import v7.t6;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends d {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public c(String str, String str2) {
-        super(new a(str, r3), (Character) '=');
-        char[] charArray = str2.toCharArray();
-        t6.f(charArray.length == 64);
+public class c extends i {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
+
+    public c(i iVar) {
+        iVar.getClass();
+        this.b = iVar;
     }
 
-    @Override // f9.d
-    public final void b(StringBuilder sb2, byte[] bArr, int i10) {
-        int i11 = 0;
-        t6.n(0, i10, bArr.length);
-        for (int i12 = i10; i12 >= 3; i12 -= 3) {
-            int i13 = i11 + 2;
-            int i14 = ((bArr[i11 + 1] & 255) << 8) | ((bArr[i11] & 255) << 16);
-            i11 += 3;
-            int i15 = i14 | (bArr[i13] & 255);
-            a aVar = this.a;
-            char[] cArr = aVar.b;
-            char[] cArr2 = aVar.b;
-            sb2.append(cArr[i15 >>> 18]);
-            sb2.append(cArr2[(i15 >>> 12) & 63]);
-            sb2.append(cArr2[(i15 >>> 6) & 63]);
-            sb2.append(cArr2[i15 & 63]);
+    @Override // f9.l
+    public final boolean apply(Object obj) {
+        switch (this.a) {
         }
-        if (i11 < i10) {
-            a(sb2, bArr, i11, i10 - i11);
+        return c(((Character) obj).charValue());
+    }
+
+    @Override // f9.i
+    public final boolean c(char c2) {
+        switch (this.a) {
+            case 0:
+                return Arrays.binarySearch((char[]) this.b, c2) >= 0;
+            default:
+                return !((i) this.b).c(c2);
         }
+    }
+
+    @Override // f9.i
+    public i d() {
+        switch (this.a) {
+            case 1:
+                return (i) this.b;
+            default:
+                return super.d();
+        }
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 0:
+                StringBuilder sb2 = new StringBuilder("CharMatcher.anyOf(\"");
+                for (char c2 : (char[]) this.b) {
+                    sb2.append(i.a(c2));
+                }
+                sb2.append("\")");
+                return sb2.toString();
+            default:
+                return ((i) this.b) + ".negate()";
+        }
+    }
+
+    public c(String str) {
+        char[] charArray = str.toString().toCharArray();
+        this.b = charArray;
+        Arrays.sort(charArray);
     }
 }

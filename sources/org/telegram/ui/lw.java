@@ -1,39 +1,37 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class lw extends FragmentContextView {
-    public final /* synthetic */ int X0;
-    public final /* synthetic */ zx Y0;
+public final /* synthetic */ class lw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mw b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lw(zx zxVar, Context context, zx zxVar2, int i10) {
-        super(context, zxVar2, true);
-        this.X0 = i10;
-        switch (i10) {
-            case 1:
-                this.Y0 = zxVar;
-                super(context, zxVar2, false);
-                break;
-            default:
-                this.Y0 = zxVar;
-                break;
-        }
+    public /* synthetic */ lw(mw mwVar, int i3) {
+        this.a = i3;
+        this.b = mwVar;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.X0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3;
+        switch (this.a) {
             case 0:
-                zx zxVar = this.Y0;
-                zxVar.J1.i(zxVar.G1, i10 == 0, true);
+                mw mwVar = this.b;
+                uw uwVar = mwVar.o0;
+                Context context = mwVar.getContext();
+                i3 = ((org.telegram.ui.ActionBar.d2) uwVar).currentAccount;
+                uwVar.showDialog(new vg.i0(3, i3, context, uwVar, null));
                 break;
             default:
-                zx zxVar2 = this.Y0;
-                zxVar2.J1.i(zxVar2.I1, i10 == 0, true);
+                uw uwVar2 = this.b.o0;
+                rv rvVar = uwVar2.N0;
+                if (rvVar != null) {
+                    rvVar.dismiss();
+                    uwVar2.N0 = null;
+                    break;
+                }
                 break;
         }
     }

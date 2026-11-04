@@ -1,41 +1,31 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bu implements DialogInterface.OnClickListener {
-    public final /* synthetic */ DataSettingsActivity a;
-    public final /* synthetic */ SharedPreferences b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class bu implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uw b;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ LaunchActivity d;
 
-    public /* synthetic */ bu(DataSettingsActivity dataSettingsActivity, SharedPreferences sharedPreferences, int i10) {
-        this.a = dataSettingsActivity;
-        this.b = sharedPreferences;
-        this.c = i10;
+    public /* synthetic */ bu(uw uwVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity, int i3) {
+        this.a = i3;
+        this.b = uwVar;
+        this.c = tL_attachMenuBot;
+        this.d = launchActivity;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        int i11;
-        DataSettingsActivity dataSettingsActivity = this.a;
-        dataSettingsActivity.getClass();
-        if (i10 != 0) {
-            i11 = 3;
-            if (i10 != 1) {
-                i11 = i10 != 2 ? i10 != 3 ? -1 : 2 : 1;
-            }
-        } else {
-            i11 = 0;
-        }
-        if (i11 != -1) {
-            this.b.edit().putInt("VoipDataSaving", i11).commit();
-            dataSettingsActivity.U = true;
-        }
-        fg.j jVar = dataSettingsActivity.a;
-        if (jVar != null) {
-            jVar.g(this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                uw.v0(this.b, this.c, this.d);
+                break;
+            default:
+                uw.j0(this.b, this.c, this.d);
+                break;
         }
     }
 }

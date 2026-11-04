@@ -1,34 +1,41 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.dd;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.t10;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class g4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class g4 implements org.telegram.ui.ActionBar.p1, s10, t10 {
+    public final /* synthetic */ w5 a;
 
-    public /* synthetic */ g4(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+    public /* synthetic */ g4(w5 w5Var) {
+        this.a = w5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Context context = this.b;
-        switch (i10) {
-            case 0:
-                gf.f.t(context, dd.L0(2131744221, null));
-                break;
-            case 1:
-                gf.f.t(context, dd.L0(2131744221, null));
-                break;
-            default:
-                new c6(context.getApplicationContext(), R.drawable.wallet_card_qr, 46, new org.telegram.ui.Components.voip.n0(21));
-                break;
+    @Override // org.telegram.messenger.t10
+    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(this.a.c0(r31Var, view));
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        w5 w5Var = this.a;
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+            w5Var.getParentActivity().startActivity(intent);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
+    }
+
+    @Override // org.telegram.messenger.s10
+    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.b0((r31) obj, (View) obj2);
     }
 }

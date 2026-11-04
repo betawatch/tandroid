@@ -1,9 +1,24 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class f90 extends TL_iv.RichText {
-    public int a;
+public final class f90 extends p5 {
+    public final /* synthetic */ h90 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f90(h90 h90Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = h90Var;
+    }
+
+    @Override // org.telegram.ui.Components.p5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        int i14 = i13 + i11;
+        int i15 = this.measuredSize;
+        this.a.c.set((int) f10, (i14 - i15) / 2, (int) (f10 + i15), (i14 + i15) / 2);
+    }
 }

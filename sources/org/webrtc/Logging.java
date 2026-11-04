@@ -5,10 +5,10 @@ import java.io.StringWriter;
 import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
@@ -16,7 +16,7 @@ public class Logging {
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -25,7 +25,7 @@ public class Logging {
         LS_NONE
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     @Deprecated
     public enum TraceLevel {
         TRACE_NONE(0),
@@ -34,7 +34,7 @@ public class Logging {
         TRACE_ERROR(4),
         TRACE_CRITICAL(8),
         TRACE_APICALL(16),
-        TRACE_DEFAULT(at.e4),
+        TRACE_DEFAULT(hs.e4),
         TRACE_MODULECALL(32),
         TRACE_MEMORY(256),
         TRACE_TIMER(512),
@@ -46,8 +46,8 @@ public class Logging {
 
         public final int level;
 
-        TraceLevel(int i10) {
-            this.level = i10;
+        TraceLevel(int i3) {
+            this.level = i3;
         }
     }
 
@@ -127,9 +127,9 @@ public class Logging {
 
     private static native void nativeEnableLogTimeStamps();
 
-    private static native void nativeEnableLogToDebugOutput(int i10);
+    private static native void nativeEnableLogToDebugOutput(int i3);
 
-    private static native void nativeLog(int i10, String str, String str2);
+    private static native void nativeLog(int i3, String str, String str2);
 
     public static void v(String str, String str2) {
         log(Severity.LS_VERBOSE, str, str2);

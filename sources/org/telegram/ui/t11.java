@@ -1,20 +1,23 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class t11 extends j21 {
-    public final /* synthetic */ g31 m3;
+public final class t11 implements View.OnClickListener {
+    public final /* synthetic */ b21 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t11(g31 g31Var, Context context) {
-        super(g31Var, context);
-        this.m3 = g31Var;
+    public t11(b21 b21Var) {
+        this.a = b21Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10) {
-        this.m3.h();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        org.telegram.ui.Components.fh0 fh0Var = this.a.l1;
+        if (fh0Var.b() || fh0Var.getAnimatedDrawable() == null) {
+            return;
+        }
+        fh0Var.getAnimatedDrawable().M(40);
+        fh0Var.d();
     }
 }

@@ -1,138 +1,131 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.os.SystemClock;
-import java.io.File;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d70 implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+public final class d70 extends View {
+    public static DecelerateInterpolator w;
+    public static Paint x;
+    public long a;
+    public float b;
+    public float c;
+    public long d;
+    public float e;
+    public float f;
+    public int h;
+    public int n;
+    public final RectF r;
+    public org.telegram.ui.Components.voip.g s;
 
-    public /* synthetic */ d70(org.telegram.ui.ActionBar.x1 x1Var, Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.ui.web.q qVar, org.telegram.tgnet.e eVar) {
-        this.d = x1Var;
-        this.n = context;
-        this.c = i10;
-        this.b = j10;
-        this.e = tL_messages_preparedInlineMessage;
-        this.f = fileArr;
-        this.h = p6Var;
-        this.r = qVar;
-        this.s = eVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Wallet.h0 h0Var;
-        String i10;
-        org.telegram.ui.Wallet.a2 a2Var;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.d;
-                org.telegram.messenger.c cVar = (org.telegram.messenger.c) this.f;
-                i70 i70Var = (i70) this.h;
-                Context context = (Context) this.n;
-                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.r;
-                TLRPC.Peer peer = (TLRPC.Peer) this.s;
-                try {
-                    x1Var.dismiss();
-                } catch (Exception e) {
-                    org.telegram.messenger.f8.g(e, true);
-                }
-                TLObject tLObject = this.e;
-                if (tLObject != null) {
-                    TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject;
-                    if (joinaspeers.peers.size() != 1) {
-                        k70.z1 = joinaspeers.peers;
-                        long j10 = this.b;
-                        k70.B1 = j10;
-                        k70.A1 = SystemClock.elapsedRealtime();
-                        int i11 = cVar.a;
-                        k70.C1 = i11;
-                        org.telegram.messenger.wp.r1(i11).P3(joinaspeers.chats, false);
-                        org.telegram.messenger.wp.r1(cVar.a).V3(joinaspeers.users, false);
-                        k70.L0(context, j10, joinaspeers.peers, k2Var, this.c, peer, i70Var);
-                        break;
-                    } else {
-                        i70Var.a(org.telegram.messenger.wp.r1(cVar.a).i1(org.telegram.messenger.kj.C1(joinaspeers.peers.get(0))), false, false, false);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.d;
-                TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) this.e;
-                TL_wallet.tonConnectRequest tonconnectrequest = (TL_wallet.tonConnectRequest) this.f;
-                org.telegram.ui.Wallet.h0 h0Var2 = (org.telegram.ui.Wallet.h0) this.h;
-                String str = (String) this.n;
-                byte[] bArr = (byte[]) this.r;
-                ih.s sVar = (ih.s) this.s;
-                e2Var.getClass();
-                try {
-                    h0Var = h0Var2;
-                } catch (Exception e7) {
-                    e = e7;
-                    h0Var = h0Var2;
-                }
-                try {
-                    a2Var = new org.telegram.ui.Wallet.a2(tonconnectpending, tonconnectrequest, org.telegram.ui.Wallet.e2.g(h0Var2, tonconnectpending.session, str, bArr, tonconnectrequest.body, e2Var.f.getCurrentTime()), str, bArr);
-                    i10 = null;
-                } catch (Exception e10) {
-                    e = e10;
-                    i10 = org.telegram.ui.Wallet.e2.i("decode request", e);
-                    a2Var = null;
-                    org.telegram.messenger.i0.g3(new org.telegram.messenger.rb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
-                    return;
-                }
-                org.telegram.messenger.i0.g3(new org.telegram.messenger.rb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
-            default:
-                org.telegram.ui.ActionBar.x1 x1Var2 = (org.telegram.ui.ActionBar.x1) this.d;
-                Context context2 = (Context) this.n;
-                TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) this.e;
-                File[] fileArr = (File[]) this.f;
-                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) this.h;
-                org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) this.r;
-                org.telegram.tgnet.e eVar = (org.telegram.tgnet.e) this.s;
-                x1Var2.dismiss();
-                new xh.c1(context2, this.c, this.b, tL_messages_preparedInlineMessage, fileArr[0], null, p6Var, qVar, eVar).show();
-                break;
+    public d70(Context context) {
+        super(context);
+        this.f = 1.0f;
+        this.r = new RectF();
+        if (w == null) {
+            w = new DecelerateInterpolator();
+            Paint paint = new Paint(1);
+            x = paint;
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            x.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         }
     }
 
-    public /* synthetic */ d70(org.telegram.ui.ActionBar.x1 x1Var, TLObject tLObject, org.telegram.messenger.c cVar, i70 i70Var, long j10, Context context, org.telegram.ui.ActionBar.k2 k2Var, int i10, TLRPC.Peer peer) {
-        this.d = x1Var;
-        this.e = tLObject;
-        this.f = cVar;
-        this.h = i70Var;
-        this.b = j10;
-        this.n = context;
-        this.r = k2Var;
-        this.c = i10;
-        this.s = peer;
+    public final void a(boolean z10, float f10) {
+        if (z10) {
+            this.c = this.e;
+        } else {
+            this.e = f10;
+            this.c = f10;
+        }
+        if (f10 != 1.0f) {
+            this.f = 1.0f;
+        }
+        this.b = f10;
+        this.d = 0L;
+        this.a = System.currentTimeMillis();
+        invalidate();
     }
 
-    public /* synthetic */ d70(org.telegram.ui.Wallet.e2 e2Var, TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, org.telegram.ui.Wallet.h0 h0Var, String str, byte[] bArr, ih.s sVar, long j10, int i10) {
-        this.d = e2Var;
-        this.e = tonconnectpending;
-        this.f = tonconnectrequest;
-        this.h = h0Var;
-        this.n = str;
-        this.r = bArr;
-        this.s = sVar;
-        this.b = j10;
-        this.c = i10;
+    public float getCurrentProgress() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i3 = this.h;
+        RectF rectF = this.r;
+        if (i3 != 0 && this.e != 1.0f) {
+            x.setColor(i3);
+            x.setAlpha((int) (this.f * 255.0f));
+            getWidth();
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        }
+        x.setColor(this.n);
+        x.setAlpha((int) (this.f * 255.0f));
+        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
+        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        if (this.f > 0.0f) {
+            if (this.s == null) {
+                org.telegram.ui.Components.voip.g gVar = new org.telegram.ui.Components.voip.g(org.telegram.messenger.hs.q2, 0);
+                this.s = gVar;
+                gVar.k = false;
+                gVar.n = 0.8f;
+                gVar.m = 1.2f;
+            }
+            this.s.f = getMeasuredWidth();
+            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
+            invalidate();
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j10 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        float f10 = this.e;
+        if (f10 != 1.0f) {
+            float f11 = this.b;
+            if (f10 != f11) {
+                float f12 = this.c;
+                float f13 = f11 - f12;
+                if (f13 > 0.0f) {
+                    long j11 = this.d + j10;
+                    this.d = j11;
+                    if (j11 >= 300) {
+                        this.e = f11;
+                        this.c = f11;
+                        this.d = 0L;
+                    } else {
+                        this.e = (w.getInterpolation(j11 / 300.0f) * f13) + f12;
+                    }
+                }
+                invalidate();
+            }
+        }
+        float f14 = this.e;
+        if (f14 < 1.0f || f14 != 1.0f) {
+            return;
+        }
+        float f15 = this.f;
+        if (f15 != 0.0f) {
+            float f16 = f15 - (j10 / 200.0f);
+            this.f = f16;
+            if (f16 <= 0.0f) {
+                this.f = 0.0f;
+            }
+            invalidate();
+        }
+    }
+
+    public void setBackColor(int i3) {
+        this.h = i3;
+    }
+
+    public void setProgressColor(int i3) {
+        this.n = i3;
     }
 }

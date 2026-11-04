@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import b8.ua;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -11,21 +12,20 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.i6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class g4 implements t0 {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(g4.class.getName());
-    public static final i6 f;
+    public static final ua f;
     public static final Object h;
     public volatile Object a;
     public volatile v2 b;
     public volatile f4 c;
 
     static {
-        i6 e4Var;
+        ua e4Var;
         try {
             e4Var = new s3(AtomicReferenceFieldUpdater.newUpdater(f4.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(f4.class, f4.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, f4.class, "c"), AtomicReferenceFieldUpdater.newUpdater(g4.class, v2.class, "b"), AtomicReferenceFieldUpdater.newUpdater(g4.class, Object.class, "a"));
             th = null;
@@ -43,14 +43,14 @@ public class g4 implements t0 {
 
     public static void d(g4 g4Var) {
         f4 f4Var;
-        i6 i6Var;
+        ua uaVar;
         v2 v2Var;
         v2 v2Var2;
         v2 v2Var3;
         do {
             f4Var = g4Var.c;
-            i6Var = f;
-        } while (!i6Var.e(g4Var, f4Var, f4.c));
+            uaVar = f;
+        } while (!uaVar.e(g4Var, f4Var, f4.c));
         while (true) {
             v2Var = null;
             if (f4Var == null) {
@@ -65,7 +65,7 @@ public class g4 implements t0 {
         }
         do {
             v2Var2 = g4Var.b;
-        } while (!i6Var.c(g4Var, v2Var2, v2.d));
+        } while (!uaVar.c(g4Var, v2Var2, v2.d));
         while (true) {
             v2Var3 = v2Var;
             v2Var = v2Var2;
@@ -86,8 +86,8 @@ public class g4 implements t0 {
     public static void f(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (RuntimeException e7) {
-            e.logp(Level.SEVERE, "com.android.billingclient.util.concurrent.AbstractResolvableFuture", "executeListener", c3.i0.n("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+        } catch (RuntimeException e10) {
+            e.logp(Level.SEVERE, "com.android.billingclient.util.concurrent.AbstractResolvableFuture", "executeListener", com.google.android.recaptcha.internal.a.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 
@@ -107,8 +107,16 @@ public class g4 implements t0 {
         return obj;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public String a() {
+        if (this instanceof ScheduledFuture) {
+            return t4.c.e(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+        }
+        return null;
+    }
+
     @Override // com.google.android.gms.internal.play_billing.t0
-    public final void b(Runnable runnable, Executor executor) {
+    public final void c(Runnable runnable, Executor executor) {
         executor.getClass();
         v2 v2Var = this.b;
         v2 v2Var2 = v2.d;
@@ -124,14 +132,6 @@ public class g4 implements t0 {
             } while (v2Var != v2Var2);
         }
         f(runnable, executor);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public String c() {
-        if (this instanceof ScheduledFuture) {
-            return org.telegram.ui.Cells.f1.n(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
-        }
-        return null;
     }
 
     @Override // java.util.concurrent.Future
@@ -166,14 +166,14 @@ public class g4 implements t0 {
             } catch (CancellationException unused2) {
                 sb2.append("CANCELLED");
                 return;
-            } catch (RuntimeException e7) {
+            } catch (RuntimeException e10) {
                 sb2.append("UNKNOWN, cause=[");
-                sb2.append(e7.getClass());
+                sb2.append(e10.getClass());
                 sb2.append(" thrown from get()]");
                 return;
-            } catch (ExecutionException e10) {
+            } catch (ExecutionException e11) {
                 sb2.append("FAILURE, cause=[");
-                sb2.append(e10.getCause());
+                sb2.append(e11.getCause());
                 sb2.append("]");
                 return;
             }
@@ -227,9 +227,9 @@ public class g4 implements t0 {
         if (f4Var != f4Var2) {
             f4 f4Var3 = new f4();
             do {
-                i6 i6Var = f;
-                i6Var.a(f4Var3, f4Var);
-                if (i6Var.e(this, f4Var, f4Var3)) {
+                ua uaVar = f;
+                uaVar.a(f4Var3, f4Var);
+                if (uaVar.e(this, f4Var, f4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -267,9 +267,9 @@ public class g4 implements t0 {
             e(sb2);
         } else {
             try {
-                concat = c();
-            } catch (RuntimeException e7) {
-                concat = "Exception thrown from implementation: ".concat(String.valueOf(e7.getClass()));
+                concat = a();
+            } catch (RuntimeException e10) {
+                concat = "Exception thrown from implementation: ".concat(String.valueOf(e10.getClass()));
             }
             if (concat != null && !concat.isEmpty()) {
                 sb2.append("PENDING, info=[");
@@ -300,9 +300,9 @@ public class g4 implements t0 {
                 if (f4Var != f4Var2) {
                     f4 f4Var3 = new f4();
                     do {
-                        i6 i6Var = f;
-                        i6Var.a(f4Var3, f4Var);
-                        if (i6Var.e(this, f4Var, f4Var3)) {
+                        ua uaVar = f;
+                        uaVar.a(f4Var3, f4Var);
+                        if (uaVar.e(this, f4Var, f4Var3)) {
                             do {
                                 LockSupport.parkNanos(this, nanos);
                                 if (!Thread.interrupted()) {

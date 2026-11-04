@@ -1,34 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b60 extends org.telegram.ui.Cells.b9 {
-    public final /* synthetic */ c60 D;
-    public final ew x;
-    public boolean y;
+public final class b60 extends org.telegram.ui.ActionBar.f1 {
+    public final /* synthetic */ ViewGroup o;
+    public final /* synthetic */ f60 p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b60(c60 c60Var, Context context) {
-        super(context);
-        this.D = c60Var;
-        this.x = new ew(this, 4);
+    public b60(f60 f60Var, View view, ViewGroup viewGroup) {
+        super(view, -2, -2);
+        this.p = f60Var;
+        this.o = viewGroup;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ew ewVar = this.x;
-        org.telegram.messenger.i0.r(ewVar);
-        if (this.y) {
-            org.telegram.messenger.i0.h3(ewVar, 500L);
+    @Override // org.telegram.ui.ActionBar.f1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        ViewGroup viewGroup = this.o;
+        f60 f60Var = this.p;
+        f60.a(f60Var, viewGroup);
+        Runnable runnable = f60Var.p;
+        if (runnable != null) {
+            runnable.run();
+            f60Var.p = null;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.i0.r(this.x);
     }
 }

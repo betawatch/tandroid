@@ -1,132 +1,139 @@
 package b4;
 
-import android.opengl.GLES20;
-import android.text.TextUtils;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.h40;
-import v7.r6;
-import v7.t6;
+import b8.zb;
+import g2.n0;
+import g9.g0;
+import g9.i0;
+import g9.n1;
+import g9.s1;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class b {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class b implements d {
+    public static final g9.n c = new g9.n(new a3.j(9), n1.b);
+    public final i0 a;
+    public final long[] b;
 
-    public /* synthetic */ b(int i10, int i11, int i12, int i13, int i14, int i15) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static b b(String str) {
-        char c10;
-        t6.f(str.startsWith("Format:"));
-        String[] split = TextUtils.split(str.substring(7), ",");
-        int i10 = -1;
-        int i11 = -1;
-        int i12 = -1;
-        int i13 = -1;
-        int i14 = -1;
-        for (int i15 = 0; i15 < split.length; i15++) {
-            String c11 = r6.c(split[i15].trim());
-            c11.getClass();
-            switch (c11.hashCode()) {
-                case 100571:
-                    if (c11.equals("end")) {
-                        c10 = 0;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 3556653:
-                    if (c11.equals("text")) {
-                        c10 = 1;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 102749521:
-                    if (c11.equals("layer")) {
-                        c10 = 2;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 109757538:
-                    if (c11.equals("start")) {
-                        c10 = 3;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 109780401:
-                    if (c11.equals("style")) {
-                        c10 = 4;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                default:
-                    c10 = 65535;
-                    break;
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0111 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b(s1 s1Var) {
+        long j10;
+        int i3 = s1Var.d;
+        long j11 = -9223372036854775807L;
+        int i10 = 0;
+        if (i3 == 1) {
+            g0 listIterator = s1Var.listIterator(0);
+            Object next = listIterator.next();
+            if (listIterator.hasNext()) {
+                StringBuilder sb2 = new StringBuilder("expected one element but was: <");
+                sb2.append(next);
+                while (i10 < 4 && listIterator.hasNext()) {
+                    sb2.append(", ");
+                    sb2.append(listIterator.next());
+                    i10++;
+                }
+                if (listIterator.hasNext()) {
+                    sb2.append(", ...");
+                }
+                sb2.append('>');
+                throw new IllegalArgumentException(sb2.toString());
             }
-            switch (c10) {
-                case 0:
-                    i12 = i15;
-                    break;
-                case 1:
-                    i14 = i15;
-                    break;
-                case 2:
-                    i10 = i15;
-                    break;
-                case 3:
-                    i11 = i15;
-                    break;
-                case 4:
-                    i13 = i15;
-                    break;
+            a aVar = (a) next;
+            long j12 = aVar.b;
+            i0 i0Var = aVar.a;
+            long j13 = aVar.c;
+            long j14 = j12 == -9223372036854775807L ? 0L : j12;
+            if (j13 == -9223372036854775807L) {
+                this.a = i0.u(i0Var);
+                this.b = new long[]{j14};
+                return;
+            } else {
+                g0 g0Var = i0.b;
+                this.a = i0.v(i0Var, s1.e);
+                this.b = new long[]{j14, j13 + j14};
+                return;
             }
         }
-        if (i11 == -1 || i12 == -1 || i14 == -1) {
-            return null;
+        long[] jArr = new long[i3 * 2];
+        this.b = jArr;
+        Arrays.fill(jArr, Long.MAX_VALUE);
+        ArrayList arrayList = new ArrayList();
+        s1 w10 = i0.w(c, s1Var);
+        int i11 = 0;
+        while (i10 < w10.d) {
+            a aVar2 = (a) w10.get(i10);
+            long j15 = aVar2.b;
+            long j16 = aVar2.c;
+            i0 i0Var2 = aVar2.a;
+            j15 = j15 == j11 ? 0L : j15;
+            long j17 = j15 + j16;
+            if (i11 != 0) {
+                int i12 = i11 - 1;
+                long j18 = this.b[i12];
+                if (j18 >= j15) {
+                    if (j18 == j15 && ((i0) arrayList.get(i12)).isEmpty()) {
+                        arrayList.set(i12, i0Var2);
+                        j10 = j11;
+                    } else {
+                        j10 = j11;
+                        g2.a.l("CuesWithTimingSubtitle", "Truncating unsupported overlapping cues.");
+                        this.b[i12] = j15;
+                        arrayList.set(i12, i0Var2);
+                    }
+                    if (j16 == j10) {
+                        this.b[i11] = j17;
+                        arrayList.add(s1.e);
+                        i11++;
+                    }
+                    i10++;
+                    j11 = j10;
+                }
+            }
+            j10 = j11;
+            this.b[i11] = j15;
+            arrayList.add(i0Var2);
+            i11++;
+            if (j16 == j10) {
+            }
+            i10++;
+            j11 = j10;
         }
-        return new b(i10, i11, i12, i13, i14, split.length);
+        this.a = i0.q(arrayList);
     }
 
-    public void a() {
-        GLES20.glDeleteProgram(this.a);
-        GLES20.glDeleteShader(this.b);
-        GLES20.glDeleteShader(this.c);
+    @Override // b4.d
+    public final int d(long j10) {
+        int b10 = n0.b(this.b, j10, false);
+        if (b10 < this.a.size()) {
+            return b10;
+        }
+        return -1;
     }
 
-    public b(int i10) {
-        int a2 = h40.a(35633, R.raw.round_blur_vert);
-        this.b = a2;
-        int a10 = h40.a(35632, i10);
-        this.c = a10;
-        int glCreateProgram = GLES20.glCreateProgram();
-        GLES20.glAttachShader(glCreateProgram, a2);
-        GLES20.glAttachShader(glCreateProgram, a10);
-        GLES20.glLinkProgram(glCreateProgram);
-        int[] iArr = new int[1];
-        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
-        if (iArr[0] == 0) {
-            GLES20.glDeleteProgram(glCreateProgram);
-            glCreateProgram = 0;
+    @Override // b4.d
+    public final long h(int i3) {
+        zb.f(i3 < this.a.size());
+        return this.b[i3];
+    }
+
+    @Override // b4.d
+    public final List p(long j10) {
+        int f10 = n0.f(this.b, j10, false);
+        if (f10 != -1) {
+            return (i0) this.a.get(f10);
         }
-        this.a = glCreateProgram;
-        this.d = GLES20.glGetAttribLocation(glCreateProgram, "aPosition");
-        this.e = GLES20.glGetAttribLocation(glCreateProgram, "aTextureCoord");
-        this.f = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
+        g0 g0Var = i0.b;
+        return s1.e;
+    }
+
+    @Override // b4.d
+    public final int t() {
+        return this.a.size();
     }
 }

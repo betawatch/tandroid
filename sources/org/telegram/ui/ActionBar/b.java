@@ -2,15 +2,15 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+    public final /* synthetic */ k b;
 
-    public /* synthetic */ b(l lVar, int i10) {
-        this.a = i10;
-        this.b = lVar;
+    public /* synthetic */ b(k kVar, int i3) {
+        this.a = i3;
+        this.b = kVar;
     }
 
     @Override // android.view.View.OnClickListener
@@ -18,21 +18,21 @@ public final /* synthetic */ class b implements View.OnClickListener {
         Runnable runnable;
         switch (this.a) {
             case 0:
-                l lVar = this.b;
-                if (!lVar.n0 && (runnable = lVar.j0) != null) {
+                k kVar = this.b;
+                if (!kVar.o0 && (runnable = kVar.k0) != null) {
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                l lVar2 = this.b;
-                if (!lVar2.J && lVar2.n0) {
-                    lVar2.k(true);
+                k kVar2 = this.b;
+                if (!kVar2.K && kVar2.o0) {
+                    kVar2.l(true);
                     break;
                 } else {
-                    k kVar = lVar2.u0;
-                    if (kVar != null) {
-                        kVar.b(-1);
+                    j jVar = kVar2.v0;
+                    if (jVar != null) {
+                        jVar.b(-1);
                         break;
                     }
                 }

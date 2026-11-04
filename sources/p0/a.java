@@ -1,6 +1,6 @@
 package p0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
     public static final byte[] e = new byte[1792];
@@ -10,8 +10,8 @@ public final class a {
     public char d;
 
     static {
-        for (int i10 = 0; i10 < 1792; i10++) {
-            e[i10] = Character.getDirectionality(i10);
+        for (int i3 = 0; i3 < 1792; i3++) {
+            e[i3] = Character.getDirectionality(i3);
         }
     }
 
@@ -21,9 +21,9 @@ public final class a {
     }
 
     public final byte a() {
-        int i10 = this.c - 1;
+        int i3 = this.c - 1;
         CharSequence charSequence = this.a;
-        char charAt = charSequence.charAt(i10);
+        char charAt = charSequence.charAt(i3);
         this.d = charAt;
         if (Character.isLowSurrogate(charAt)) {
             int codePointBefore = Character.codePointBefore(charSequence, this.c);
@@ -31,7 +31,7 @@ public final class a {
             return Character.getDirectionality(codePointBefore);
         }
         this.c--;
-        char c10 = this.d;
-        return c10 < 1792 ? e[c10] : Character.getDirectionality(c10);
+        char c2 = this.d;
+        return c2 < 1792 ? e[c2] : Character.getDirectionality(c2);
     }
 }

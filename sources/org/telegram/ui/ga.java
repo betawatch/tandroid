@@ -1,115 +1,39 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ga extends org.telegram.ui.Components.tk0 {
-    public final /* synthetic */ oa c;
+public final /* synthetic */ class ga implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ha b;
 
-    public ga(oa oaVar) {
-        this.c = oaVar;
+    public /* synthetic */ ga(ha haVar, int i3) {
+        this.a = i3;
+        this.b = haVar;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 4;
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        oa oaVar = this.c;
-        org.telegram.ui.Components.uk0 uk0Var = oaVar.b;
-        ArrayList arrayList = oaVar.w;
-        if (uk0Var != null) {
-            ArrayList arrayList2 = uk0Var.K2;
-            if (arrayList2 != null) {
-                arrayList2.clear();
-            } else {
-                uk0Var.K2 = new ArrayList();
-            }
-            if (arrayList.size() > 0) {
-                oaVar.b.K2.add(Long.valueOf(org.telegram.messenger.i0.w2(3, arrayList.size() + 3)));
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                ha haVar = this.b;
+                haVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                haVar.n = floatValue;
+                haVar.f.setTranslationX(floatValue * org.telegram.messenger.g0.L(16.0f));
+                haVar.d.setAlpha(haVar.n);
+                break;
+            default:
+                ha haVar2 = this.b;
+                haVar2.getClass();
+                haVar2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int i3 = org.telegram.ui.ActionBar.k6.z6;
+                org.telegram.ui.ActionBar.e6 e6Var = haVar2.b;
+                int f10 = i0.a.f(haVar2.F, org.telegram.ui.ActionBar.k6.w0(i3, e6Var), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.n6, e6Var));
+                haVar2.e.b(f10);
+                haVar2.f.setTextColor(f10);
+                break;
         }
-        return (oaVar.w.size() > 0 ? oaVar.w.size() + 2 : 0) + 3;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 == 2) {
-            return 1;
-        }
-        if (i10 == 3) {
-            return 0;
-        }
-        return i10 != b() - 1 ? 4 : 2;
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        oa oaVar = this.c;
-        long j10 = oaVar.y;
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.p4) view).setText(org.telegram.messenger.dd.L0(i10 == 0 ? j10 != 0 ? 2131752985 : 2131745515 : 2131743668, null));
-            return;
-        }
-        if (i11 == 2) {
-            ((org.telegram.ui.Cells.b9) view).setText(org.telegram.messenger.dd.L0(j10 != 0 ? 2131752937 : 2131743667, null));
-            return;
-        }
-        if (i11 == 3) {
-            oaVar.n = true;
-            ia iaVar = (ia) view;
-            oaVar.D = iaVar;
-            iaVar.a.setText(oaVar.r);
-            oaVar.n = false;
-            return;
-        }
-        if (i11 != 4) {
-            return;
-        }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) oaVar.w.get(i10 - 4);
-        la laVar = (la) view;
-        if (tL_username.editable) {
-            oaVar.E = laVar;
-        } else if (oaVar.E == laVar) {
-            oaVar.E = null;
-        }
-        laVar.a(tL_username, i10 < b() - 2, false, oaVar.y);
-    }
-
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        oa oaVar = this.c;
-        if (i10 == 0) {
-            return new org.telegram.ui.Components.dk0(new org.telegram.ui.Cells.p4(oaVar.getParentActivity()));
-        }
-        if (i10 == 1) {
-            na naVar = new na(oaVar, oaVar.getParentActivity());
-            naVar.setTag(-33024);
-            return new org.telegram.ui.Components.dk0(naVar);
-        }
-        if (i10 == 2) {
-            return new org.telegram.ui.Components.dk0(new org.telegram.ui.Cells.b9(oaVar.getParentActivity()));
-        }
-        if (i10 == 3) {
-            return new org.telegram.ui.Components.dk0(new ia(oaVar, oaVar.getParentActivity()));
-        }
-        if (i10 != 4) {
-            return null;
-        }
-        return new org.telegram.ui.Components.dk0(new fa(this, oaVar.getParentActivity(), oaVar.getResourceProvider()));
     }
 }

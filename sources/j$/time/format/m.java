@@ -16,15 +16,15 @@ public final class m implements f {
     @Override // j$.time.format.f
     public final boolean j(r rVar, StringBuilder sb2) {
         String b10;
-        Long a2 = rVar.a(this.a);
-        if (a2 == null) {
+        Long a10 = rVar.a(this.a);
+        if (a10 == null) {
             return false;
         }
         j$.time.chrono.k kVar = (j$.time.chrono.k) rVar.a.m(j$.time.temporal.p.b);
         if (kVar == null || kVar == j$.time.chrono.r.c) {
-            b10 = this.c.b(this.a, a2.longValue(), this.b, rVar.b.b);
+            b10 = this.c.b(this.a, a10.longValue(), this.b, rVar.b.b);
         } else {
-            b10 = this.c.a(kVar, this.a, a2.longValue(), this.b, rVar.b.b);
+            b10 = this.c.a(kVar, this.a, a10.longValue(), this.b, rVar.b.b);
         }
         if (b10 != null) {
             sb2.append(b10);

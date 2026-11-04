@@ -1,43 +1,45 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class f8 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.u10;
+import org.telegram.ui.Components.ac;
+import org.telegram.ui.Components.fc;
 
-    public f8(float f7, float f10, float f11) {
-        this.b = f7;
-        this.a = f7;
-        this.d = f10;
-        this.e = f11;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class f8 implements u10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n8 b;
+
+    public /* synthetic */ f8(n8 n8Var, int i3) {
+        this.a = i3;
+        this.b = n8Var;
     }
 
-    public final void a(float f7) {
-        this.b = f7;
-        this.a = f7;
-        this.c = 0.0f;
-    }
-
-    public final boolean b(float f7) {
-        float sqrt = this.e * 2.0f * ((float) Math.sqrt(this.d));
-        while (f7 > 0.0f) {
-            float min = Math.min(f7, 0.0020833334f);
-            float f10 = this.c;
-            float f11 = -this.d;
-            float f12 = this.a;
-            float f13 = ((((f12 - this.b) * f11) - (sqrt * f10)) * min) + f10;
-            this.c = f13;
-            this.a = (f13 * min) + f12;
-            f7 -= min;
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        int i3 = this.a;
+        n8 n8Var = this.b;
+        switch (i3) {
+            case 0:
+                k0.x(n8Var.currentAccount).z(new s1(3, n8Var, (u10) obj), true, false);
+                break;
+            case 1:
+                String str = (String) obj;
+                if (str == null) {
+                    ac I = fc.a0(n8Var).I(R.raw.contact_check, bd.M0(2131743198, null), bd.M0(2131743196, null));
+                    I.j = 5000;
+                    I.j();
+                    n8Var.a.g3.O(true);
+                    break;
+                } else {
+                    fc.a0(n8Var).e0(str, false);
+                    break;
+                }
+            default:
+                n8.f0(n8Var, (Boolean) obj);
+                break;
         }
-        boolean z10 = Math.abs(this.a - this.b) > 0.002f || Math.abs(this.c) > 0.02f;
-        if (!z10) {
-            a(this.b);
-        }
-        return z10;
     }
 }

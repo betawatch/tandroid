@@ -1,56 +1,32 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.function.ToIntFunction;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oe implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class oe implements ToIntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ oe(un unVar, int i10) {
-        this.a = i10;
-        this.b = unVar;
+    public /* synthetic */ oe(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
+        int i3 = this.a;
+        Object obj2 = this.b;
+        switch (i3) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                un unVar = this.b;
-                unVar.Y8 = floatValue;
-                km kmVar = unVar.l1;
-                if (kmVar != null) {
-                    kmVar.invalidate();
-                    unVar.z0.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                un unVar2 = this.b;
-                unVar2.getClass();
-                unVar2.w3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                unVar2.Kc();
-                break;
-            case 2:
-                un unVar3 = this.b;
-                unVar3.getClass();
-                unVar3.w3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                unVar3.Kc();
-                break;
-            case 3:
-                un unVar4 = this.b;
-                unVar4.getClass();
-                unVar4.Xa = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                unVar4.F9();
-                break;
+                return ((Integer) ((HashMap) obj2).get((View) obj)).intValue();
             default:
-                un unVar5 = this.b;
-                unVar5.getClass();
-                unVar5.Xa = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                unVar5.F9();
-                break;
+                RectF rectF = ProfileActivity.T6;
+                return ((Integer) ((ArrayList) obj2).get(((Integer) obj).intValue())).intValue();
         }
     }
 }

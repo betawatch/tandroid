@@ -1,27 +1,46 @@
 package c3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class h0 extends v {
-    public final /* synthetic */ b0 b;
-    public final /* synthetic */ g0 c;
+import ei.y8;
+import g2.n0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(g0 g0Var, b0 b0Var, b0 b0Var2) {
-        super(b0Var);
-        this.c = g0Var;
-        this.b = b0Var2;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class h0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tf.b b;
+    public final /* synthetic */ k2.d c;
+
+    public /* synthetic */ h0(tf.b bVar, k2.d dVar, int i3) {
+        this.a = i3;
+        this.b = bVar;
+        this.c = dVar;
     }
 
-    @Override // c3.v, c3.b0
-    public final a0 f(long j10) {
-        a0 f7 = this.b.f(j10);
-        c0 c0Var = f7.a;
-        long j11 = c0Var.a;
-        long j12 = c0Var.b;
-        long j13 = this.c.b;
-        c0 c0Var2 = new c0(j11, j12 + j13);
-        c0 c0Var3 = f7.b;
-        return new a0(c0Var2, new c0(c0Var3.a, c0Var3.b + j13));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                tf.b bVar = this.b;
+                k2.d dVar = this.c;
+                i0 i0Var = (i0) bVar.b;
+                String str = n0.a;
+                l2.f fVar = ((k2.c0) i0Var).a.s;
+                l2.a U = fVar.U();
+                fVar.V(U, 1015, new l2.c(U, dVar, 24));
+                break;
+            default:
+                tf.b bVar2 = this.b;
+                k2.d dVar2 = this.c;
+                synchronized (dVar2) {
+                }
+                i0 i0Var2 = (i0) bVar2.b;
+                String str2 = n0.a;
+                k2.i0 i0Var3 = ((k2.c0) i0Var2).a;
+                l2.f fVar2 = i0Var3.s;
+                l2.a S = fVar2.S((w2.g0) fVar2.d.e);
+                fVar2.V(S, 1020, new y8(S, dVar2, 26));
+                i0Var3.S = null;
+                break;
+        }
     }
 }

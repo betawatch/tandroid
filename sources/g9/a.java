@@ -1,15 +1,70 @@
 package g9;
 
-import java.math.BigInteger;
+import b8.zb;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final /* synthetic */ int a = 0;
+public abstract class a extends g2 implements ListIterator {
+    public final int a;
+    public int b;
 
-    static {
-        new BigInteger("16a09e667f3bcc908b2fb1366ea957d3e3adec17512775099da2f590b0667322a", 16);
-        Math.log(10.0d);
-        Math.log(2.0d);
+    public a(int i3, int i10) {
+        zb.m(i10, i3);
+        this.a = i3;
+        this.b = i10;
+    }
+
+    public abstract Object a(int i3);
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.b < this.a;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.b > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        int i3 = this.b;
+        this.b = i3 + 1;
+        return a(i3);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i3 = this.b - 1;
+        this.b = i3;
+        return a(i3);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.b - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

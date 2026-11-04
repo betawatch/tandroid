@@ -34,32 +34,32 @@ public class q2 implements y1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i10) {
-        a(i10);
+    public final /* bridge */ /* synthetic */ e2 a(int i3) {
+        a(i3);
         throw null;
     }
 
     @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i10) {
+    public final d2 a(int i3) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i10) {
-        t3.M(this, (Double[]) objArr, i10);
+    public final /* synthetic */ void f(Object[] objArr, int i3) {
+        t3.M(this, (Double[]) objArr, i3);
     }
 
     @Override // j$.util.stream.d2
-    public final void c(int i10, Object obj) {
-        int i11 = this.b;
-        System.arraycopy(this.a, 0, (double[]) obj, i10, i11);
+    public final void c(int i3, Object obj) {
+        int i10 = this.b;
+        System.arraycopy(this.a, 0, (double[]) obj, i3, i10);
     }
 
     @Override // j$.util.stream.d2
     public final void d(Object obj) {
         DoubleConsumer doubleConsumer = (DoubleConsumer) obj;
-        for (int i10 = 0; i10 < this.b; i10++) {
-            doubleConsumer.accept(this.a[i10]);
+        for (int i3 = 0; i3 < this.b; i3++) {
+            doubleConsumer.accept(this.a[i3]);
         }
     }
 
@@ -78,26 +78,26 @@ public class q2 implements y1 {
 
     @Override // j$.util.stream.e2
     public final Spliterator spliterator() {
-        int i10 = this.b;
+        int i3 = this.b;
         double[] dArr = this.a;
-        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i10);
-        return new j$.util.k1(dArr, 0, i10, 1040);
+        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i3);
+        return new j$.util.k1(dArr, 0, i3, 1040);
     }
 
     @Override // j$.util.stream.d2, j$.util.stream.e2
     public final j$.util.d1 spliterator() {
-        int i10 = this.b;
+        int i3 = this.b;
         double[] dArr = this.a;
-        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i10);
-        return new j$.util.k1(dArr, 0, i10, 1040);
+        Spliterators.a(((double[]) Objects.requireNonNull(dArr)).length, 0, i3);
+        return new j$.util.k1(dArr, 0, i3, 1040);
     }
 
     @Override // j$.util.stream.d2
     public final Object b() {
         double[] dArr = this.a;
         int length = dArr.length;
-        int i10 = this.b;
-        return length == i10 ? dArr : Arrays.copyOf(dArr, i10);
+        int i3 = this.b;
+        return length == i3 ? dArr : Arrays.copyOf(dArr, i3);
     }
 
     @Override // j$.util.stream.e2

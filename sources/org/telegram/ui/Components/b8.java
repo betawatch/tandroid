@@ -1,41 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.PremiumPreviewFragment;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b8 implements Runnable {
+public final /* synthetic */ class b8 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o8 b;
+    public final /* synthetic */ xe0 b;
 
-    public /* synthetic */ b8(o8 o8Var, int i10) {
-        this.a = i10;
-        this.b = o8Var;
+    public /* synthetic */ b8(xe0 xe0Var, int i3) {
+        this.a = i3;
+        this.b = xe0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                o8 o8Var = this.b;
-                if (!o8Var.U) {
-                    if (o8Var.N <= 0.0f) {
-                        o8Var.l0(!o8Var.a.w, true, false);
-                        break;
-                    } else {
-                        if (o8Var.M != null) {
-                            o8Var.E = 1.0f;
-                            o8Var.F = true;
-                        }
-                        org.telegram.messenger.i0.v1(o8Var.fragmentView);
-                        break;
-                    }
-                }
+                this.b.b(true);
                 break;
             default:
-                o8 o8Var2 = this.b;
-                o8Var2.getClass();
-                o8Var2.presentFragment(new PremiumPreviewFragment(0, "avatar"));
+                this.b.b(true);
                 break;
         }
     }

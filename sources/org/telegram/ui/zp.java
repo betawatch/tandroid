@@ -1,31 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ iq b;
-    public final /* synthetic */ long c;
+public final class zp extends u4.k {
+    public final g2.g F = new g2.g((int[]) null);
+    public final /* synthetic */ nq G;
 
-    public /* synthetic */ zp(iq iqVar, long j10, int i10) {
-        this.a = i10;
-        this.b = iqVar;
-        this.c = j10;
+    public zp(nq nqVar) {
+        this.G = nqVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                long j10 = this.c;
-                iq iqVar = this.b;
-                iqVar.n = j10;
-                iqVar.r = true;
-                iqVar.s0();
-                break;
-            default:
-                iq.e0(this.b, this.c);
-                break;
+    @Override // u4.k
+    public final void N() {
+        this.F.e();
+    }
+
+    @Override // u4.k
+    public final void O() {
+        this.G.c.invalidate();
+    }
+
+    @Override // u4.k
+    public final void P(u4.d1 d1Var) {
+        this.G.c.invalidate();
+    }
+
+    @Override // u4.k, u4.m0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            this.F.d();
         }
+        super.m();
     }
 }

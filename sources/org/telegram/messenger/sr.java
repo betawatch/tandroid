@@ -1,366 +1,403 @@
 package org.telegram.messenger;
 
+import android.app.AppOpsManager;
+import android.app.KeyguardManager;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
+import android.os.Process;
+import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.text.TextUtils;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.TLRPC;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.security.KeyPairGenerator;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import javax.crypto.Cipher;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sr implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Cloneable n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+public abstract class sr {
+    public static volatile boolean a = false;
+    public static final StringBuilder b = new StringBuilder();
+    public static final byte[] c = {-1, -40, -1, -32, 0, 16, 74, 70, 73, 70, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, -1, -37, 0, 67, 0, 40, 28, 30, 35, 30, 25, 40, 35, 33, 35, 45, 43, 40, 48, 60, 100, 65, 60, 55, 55, 60, 123, 88, 93, 73, 100, -111, Byte.MIN_VALUE, -103, -106, -113, Byte.MIN_VALUE, -116, -118, -96, -76, -26, -61, -96, -86, -38, -83, -118, -116, -56, -1, -53, -38, -18, -11, -1, -1, -1, -101, -63, -1, -1, -1, -6, -1, -26, -3, -1, -8, -1, -37, 0, 67, 1, 43, 45, 45, 60, 53, 60, 118, 65, 65, 118, -8, -91, -116, -91, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -1, -64, 0, 17, 8, 0, 30, 0, 40, 3, 1, 34, 0, 2, 17, 1, 3, 17, 1, -1, -60, 0, 31, 0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -60, 0, -75, 16, 0, 2, 1, 3, 3, 2, 4, 3, 5, 5, 4, 4, 0, 0, 1, 125, 1, 2, 3, 0, 4, 17, 5, 18, 33, 49, 65, 6, 19, 81, 97, 7, 34, 113, 20, 50, -127, -111, -95, 8, 35, 66, -79, -63, 21, 82, -47, -16, 36, 51, 98, 114, -126, 9, 10, 22, 23, 24, 25, 26, 37, 38, 39, 40, 41, 42, 52, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, -125, -124, -123, -122, -121, -120, -119, -118, -110, -109, -108, -107, -106, -105, -104, -103, -102, -94, -93, -92, -91, -90, -89, -88, -87, -86, -78, -77, -76, -75, -74, -73, -72, -71, -70, -62, -61, -60, -59, -58, -57, -56, -55, -54, -46, -45, -44, -43, -42, -41, -40, -39, -38, -31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -1, -60, 0, 31, 1, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -60, 0, -75, 17, 0, 2, 1, 2, 4, 4, 3, 4, 7, 5, 4, 4, 0, 1, 2, 119, 0, 1, 2, 3, 17, 4, 5, 33, 49, 6, 18, 65, 81, 7, 97, 113, 19, 34, 50, -127, 8, 20, 66, -111, -95, -79, -63, 9, 35, 51, 82, -16, 21, 98, 114, -47, 10, 22, 36, 52, -31, 37, -15, 23, 24, 25, 26, 38, 39, 40, 41, 42, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, -126, -125, -124, -123, -122, -121, -120, -119, -118, -110, -109, -108, -107, -106, -105, -104, -103, -102, -94, -93, -92, -91, -90, -89, -88, -87, -86, -78, -77, -76, -75, -74, -73, -72, -71, -70, -62, -61, -60, -59, -58, -57, -56, -55, -54, -46, -45, -44, -43, -42, -41, -40, -39, -38, -30, -29, -28, -27, -26, -25, -24, -23, -22, -14, -13, -12, -11, -10, -9, -8, -7, -6, -1, -38, 0, 12, 3, 1, 0, 2, 17, 3, 17, 0, 63, 0};
+    public static final byte[] d = {-1, -39};
+    public static KeyStore e;
+    public static KeyPairGenerator f;
+    public static Boolean g;
+    public static Boolean h;
+    public static int i;
+    public static SharedPreferences j;
 
-    public /* synthetic */ sr(is isVar, int i10, ArrayList arrayList, int i11, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
-        this.e = isVar;
-        this.b = i10;
-        this.d = arrayList;
-        this.c = i11;
-        this.n = hVar;
-        this.r = hVar2;
-        this.f = arrayList2;
-        this.h = arrayList3;
-        this.s = countDownLatch;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x02e1  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x02e9  */
-    /* JADX WARN: Type inference failed for: r11v1 */
-    /* JADX WARN: Type inference failed for: r11v10 */
-    /* JADX WARN: Type inference failed for: r11v2, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r12v12, types: [org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.NativeByteBuffer] */
-    /* JADX WARN: Type inference failed for: r13v12, types: [java.lang.Object, org.telegram.tgnet.TLRPC$Message] */
-    /* JADX WARN: Type inference failed for: r1v14 */
-    /* JADX WARN: Type inference failed for: r1v16 */
-    /* JADX WARN: Type inference failed for: r1v17 */
-    /* JADX WARN: Type inference failed for: r1v20, types: [org.telegram.SQLite.SQLiteCursor] */
-    /* JADX WARN: Type inference failed for: r1v7 */
-    /* JADX WARN: Type inference failed for: r1v8, types: [org.telegram.SQLite.SQLiteCursor] */
-    /* JADX WARN: Type inference failed for: r6v1, types: [a0.h] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        CountDownLatch countDownLatch;
-        SQLiteCursor sQLiteCursor;
-        SQLiteCursor sQLiteCursor2;
-        boolean z10;
-        ?? queryFinalized;
-        boolean z11;
-        ArrayList arrayList;
-        switch (this.a) {
-            case 0:
-                is isVar = (is) this.e;
-                int i10 = this.b;
-                ArrayList arrayList2 = this.d;
-                int i11 = this.c;
-                a0.h hVar = (a0.h) this.n;
-                ?? r62 = (a0.h) this.r;
-                ArrayList arrayList3 = (ArrayList) this.f;
-                ArrayList arrayList4 = (ArrayList) this.h;
-                CountDownLatch countDownLatch2 = (CountDownLatch) this.s;
-                try {
-                    ArrayList arrayList5 = new ArrayList();
-                    ArrayList arrayList6 = new ArrayList();
-                    SQLiteDatabase sQLiteDatabase = isVar.b;
-                    Locale locale = Locale.US;
-                    ?? r11 = 0;
-                    SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT did FROM shortcut_widget WHERE id = " + i10 + " ORDER BY ord ASC", new Object[0]);
-                    while (queryFinalized2.next()) {
-                        try {
-                            long longValue = queryFinalized2.longValue(0);
-                            if (longValue != -1) {
-                                arrayList2.add(Long.valueOf(longValue));
-                                if (o5.E(longValue)) {
-                                    arrayList5.add(Long.valueOf(longValue));
-                                } else {
-                                    arrayList6.add(Long.valueOf(-longValue));
-                                }
-                            }
-                        } catch (Exception e) {
-                            e = e;
-                            countDownLatch = countDownLatch2;
-                            sQLiteCursor2 = queryFinalized2;
-                        } catch (Throwable th2) {
-                            th = th2;
-                            countDownLatch = countDownLatch2;
-                            sQLiteCursor2 = queryFinalized2;
-                        }
-                    }
-                    queryFinalized2.dispose();
-                    if (arrayList2.isEmpty() && i11 == 1) {
-                        try {
-                            queryFinalized = isVar.getMessagesStorage().b.queryFinalized("SELECT did FROM chat_hints WHERE type = 0 ORDER BY rating DESC LIMIT 4", new Object[0]);
-                            while (queryFinalized.next()) {
-                                try {
-                                    long longValue2 = queryFinalized.longValue(0);
-                                    arrayList2.add(Long.valueOf(longValue2));
-                                    if (o5.E(longValue2)) {
-                                        arrayList5.add(Long.valueOf(longValue2));
-                                    } else {
-                                        arrayList6.add(Long.valueOf(-longValue2));
-                                    }
-                                } catch (Exception e7) {
-                                    e = e7;
-                                    sQLiteCursor2 = queryFinalized;
-                                    countDownLatch = countDownLatch2;
-                                    z10 = true;
-                                    try {
-                                        isVar.o(e, z10);
-                                        if (sQLiteCursor2 != null) {
-                                        }
-                                        countDownLatch.countDown();
-                                        return;
-                                    } catch (Throwable th3) {
-                                        th = th3;
-                                        if (sQLiteCursor2 != null) {
-                                            sQLiteCursor2.dispose();
-                                        }
-                                        countDownLatch.countDown();
-                                        throw th;
-                                    }
-                                } catch (Throwable th4) {
-                                    th = th4;
-                                    sQLiteCursor2 = queryFinalized;
-                                    countDownLatch = countDownLatch2;
-                                    if (sQLiteCursor2 != null) {
-                                    }
-                                    countDownLatch.countDown();
-                                    throw th;
-                                }
-                            }
-                            queryFinalized.dispose();
-                        } catch (Exception e10) {
-                            e = e10;
-                            countDownLatch = countDownLatch2;
-                            z10 = true;
-                            sQLiteCursor2 = null;
-                            isVar.o(e, z10);
-                            if (sQLiteCursor2 != null) {
-                                sQLiteCursor2.dispose();
-                            }
-                            countDownLatch.countDown();
-                            return;
-                        } catch (Throwable th5) {
-                            th = th5;
-                            countDownLatch = countDownLatch2;
-                            sQLiteCursor2 = null;
-                            if (sQLiteCursor2 != null) {
-                            }
-                            countDownLatch.countDown();
-                            throw th;
-                        }
-                    }
-                    if (arrayList2.isEmpty()) {
-                        queryFinalized = isVar.b.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.folder_id = 0 ORDER BY d.pinned DESC, d.date DESC LIMIT 0,10", new Object[0]);
-                        z11 = true;
-                    } else {
-                        SQLiteDatabase sQLiteDatabase2 = isVar.b;
-                        Locale locale2 = Locale.US;
-                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT d.did, d.last_mid, d.unread_count, d.date, m.data, m.read_state, m.mid, m.send_state, m.date FROM dialogs as d LEFT JOIN messages_v2 as m ON d.last_mid = m.mid AND d.did = m.uid WHERE d.did IN(" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
-                        z11 = false;
-                    }
-                    while (queryFinalized.next()) {
-                        try {
-                            long longValue3 = queryFinalized.longValue(r11);
-                            if (!o5.D(longValue3)) {
-                                if (z11) {
-                                    arrayList2.add(Long.valueOf(longValue3));
-                                }
-                                TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
-                                tL_dialog.id = longValue3;
-                                tL_dialog.top_message = queryFinalized.intValue(1);
-                                tL_dialog.unread_count = queryFinalized.intValue(2);
-                                tL_dialog.last_message_date = queryFinalized.intValue(3);
-                                hVar.k(tL_dialog, tL_dialog.id);
-                                ?? byteBufferValue = queryFinalized.byteBufferValue(4);
-                                if (byteBufferValue != 0) {
-                                    ?? TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r11), r11);
-                                    arrayList = arrayList4;
-                                    countDownLatch = countDownLatch2;
-                                    try {
-                                        TLdeserialize.readAttachPath(byteBufferValue, isVar.getUserConfig().n);
-                                        byteBufferValue.reuse();
-                                        kj.L5(queryFinalized.intValue(5), TLdeserialize);
-                                        TLdeserialize.id = queryFinalized.intValue(6);
-                                        TLdeserialize.send_state = queryFinalized.intValue(7);
-                                        int intValue = queryFinalized.intValue(8);
-                                        if (intValue != 0) {
-                                            tL_dialog.last_message_date = intValue;
-                                        }
-                                        long j10 = tL_dialog.id;
-                                        TLdeserialize.dialog_id = j10;
-                                        r62.k(TLdeserialize, j10);
-                                        is.e(TLdeserialize, arrayList5, arrayList6, null);
-                                        countDownLatch2 = countDownLatch;
-                                        arrayList4 = arrayList;
-                                        r11 = 0;
-                                    } catch (Exception e11) {
-                                        e = e11;
-                                        sQLiteCursor2 = queryFinalized;
-                                        z10 = true;
-                                        isVar.o(e, z10);
-                                        if (sQLiteCursor2 != null) {
-                                        }
-                                        countDownLatch.countDown();
-                                        return;
-                                    } catch (Throwable th6) {
-                                        th = th6;
-                                        sQLiteCursor2 = queryFinalized;
-                                        if (sQLiteCursor2 != null) {
-                                        }
-                                        countDownLatch.countDown();
-                                        throw th;
-                                    }
-                                }
-                            }
-                            arrayList = arrayList4;
-                            countDownLatch = countDownLatch2;
-                            countDownLatch2 = countDownLatch;
-                            arrayList4 = arrayList;
-                            r11 = 0;
-                        } catch (Exception e12) {
-                            e = e12;
-                            countDownLatch = countDownLatch2;
-                        } catch (Throwable th7) {
-                            th = th7;
-                            countDownLatch = countDownLatch2;
-                        }
-                    }
-                    ArrayList arrayList7 = arrayList4;
-                    countDownLatch = countDownLatch2;
-                    sQLiteCursor = null;
-                    queryFinalized.dispose();
-                    if (!z11) {
-                        try {
-                            if (arrayList2.size() > hVar.m()) {
-                                int size = arrayList2.size();
-                                for (int i12 = 0; i12 < size; i12++) {
-                                    Long l4 = (Long) arrayList2.get(i12);
-                                    long longValue4 = l4.longValue();
-                                    if (hVar.f(((Long) arrayList2.get(i12)).longValue()) == null) {
-                                        TLRPC.TL_dialog tL_dialog2 = new TLRPC.TL_dialog();
-                                        tL_dialog2.id = longValue4;
-                                        hVar.k(tL_dialog2, longValue4);
-                                        if (o5.z(longValue4)) {
-                                            long j11 = -longValue4;
-                                            if (arrayList6.contains(Long.valueOf(j11))) {
-                                                arrayList6.add(Long.valueOf(j11));
-                                            }
-                                        } else if (arrayList5.contains(l4)) {
-                                            arrayList5.add(l4);
-                                        }
-                                    }
-                                }
-                            }
-                        } catch (Exception e13) {
-                            e = e13;
-                            sQLiteCursor2 = sQLiteCursor;
-                            z10 = true;
-                            isVar.o(e, z10);
-                            if (sQLiteCursor2 != null) {
-                            }
-                            countDownLatch.countDown();
-                            return;
-                        } catch (Throwable th8) {
-                            th = th8;
-                            sQLiteCursor2 = sQLiteCursor;
-                            if (sQLiteCursor2 != null) {
-                            }
-                            countDownLatch.countDown();
-                            throw th;
-                        }
-                    }
-                    if (!arrayList6.isEmpty()) {
-                        isVar.Q(TextUtils.join(",", arrayList6), arrayList3);
-                    }
-                    if (!arrayList5.isEmpty()) {
-                        isVar.n0(arrayList5, arrayList7, false);
-                    }
-                } catch (Exception e14) {
-                    e = e14;
-                    countDownLatch = countDownLatch2;
-                    sQLiteCursor = null;
-                } catch (Throwable th9) {
-                    th = th9;
-                    countDownLatch = countDownLatch2;
-                    sQLiteCursor = null;
-                }
-                countDownLatch.countDown();
-                return;
-            default:
-                rf.e eVar = (rf.e) this.e;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.f;
-                Bitmap[] bitmapArr = (Bitmap[]) this.h;
-                int i13 = this.b;
-                rf.x[] xVarArr = (rf.x[]) this.n;
-                int i14 = this.c;
-                RandomAccessFile randomAccessFile = (RandomAccessFile) this.r;
-                ArrayList arrayList8 = this.d;
-                CountDownLatch[] countDownLatchArr = (CountDownLatch[]) this.s;
-                if (eVar.o.get() || atomicBoolean.get()) {
-                    return;
-                }
-                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.WEBP;
-                if (Build.VERSION.SDK_INT <= 28) {
-                    compressFormat = Bitmap.CompressFormat.PNG;
-                }
-                bitmapArr[i13].compress(compressFormat, eVar.l, xVarArr[i13]);
-                int i15 = xVarArr[i13].b;
-                try {
-                    synchronized (eVar.h) {
-                        rf.d dVar = new rf.d(i14);
-                        dVar.c = (int) randomAccessFile.length();
-                        arrayList8.add(dVar);
-                        randomAccessFile.write(xVarArr[i13].a, 0, i15);
-                        dVar.b = i15;
-                        xVarArr[i13].b();
-                    }
-                } catch (IOException e15) {
-                    e15.printStackTrace();
-                    try {
-                        randomAccessFile.close();
-                    } catch (Exception unused) {
-                    } catch (Throwable th10) {
-                        atomicBoolean.set(true);
-                        throw th10;
-                    }
-                    atomicBoolean.set(true);
-                }
-                countDownLatchArr[i13].countDown();
-                return;
+    public static boolean a() {
+        Boolean bool = g;
+        if (bool != null) {
+            return bool.booleanValue();
+        }
+        try {
+            Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding").init(2, e.getKey("tmessages_passcode", null));
+            g = Boolean.FALSE;
+            return false;
+        } catch (KeyPermanentlyInvalidatedException unused) {
+            g = Boolean.TRUE;
+            return true;
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            g = Boolean.FALSE;
+            return false;
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void b(boolean z10) {
+        boolean z11;
+        boolean z12;
+        FingerprintManager fingerprintManager;
+        FingerprintManager fingerprintManager2;
+        if (h()) {
+            return;
+        }
+        Typeface typeface = g0.a;
+        if (!((KeyguardManager) t0.b.getSystemService("keyguard")).isKeyguardSecure()) {
+            return;
+        }
+        int i3 = 0;
+        try {
+            fingerprintManager2 = (FingerprintManager) t0.b.getSystemService("fingerprint");
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
+        if (fingerprintManager2 != null) {
+            z11 = fingerprintManager2.isHardwareDetected();
+            if (z11) {
+                return;
+            }
+            try {
+                fingerprintManager = (FingerprintManager) t0.b.getSystemService("fingerprint");
+            } catch (Exception e11) {
+                a8.g(e11, true);
+            }
+            if (fingerprintManager != null) {
+                z12 = fingerprintManager.hasEnrolledFingerprints();
+                if (z12) {
+                    return;
+                }
+                Utilities.e.c(new c9(i3, z10));
+                return;
+            }
+            z12 = false;
+            if (z12) {
+            }
+        }
+        z11 = false;
+        if (z11) {
+        }
+    }
+
+    public static Bitmap c(int i3, int i10) {
+        Bitmap createBitmap = Bitmap.createBitmap(i3, i10, Bitmap.Config.ARGB_8888);
+        createBitmap.eraseColor(0);
+        return createBitmap;
+    }
+
+    public static String d() {
+        String str = "mips";
+        String str2 = "armeabi";
+        try {
+            String str3 = Build.CPU_ABI;
+            if (str3.equalsIgnoreCase("x86_64")) {
+                str = "x86_64";
+            } else if (str3.equalsIgnoreCase("arm64-v8a")) {
+                str = "arm64-v8a";
+            } else if (str3.equalsIgnoreCase("armeabi-v7a")) {
+                str = "armeabi-v7a";
+            } else {
+                if (!str3.equalsIgnoreCase("armeabi")) {
+                    if (str3.equalsIgnoreCase("x86")) {
+                        str = "x86";
+                    } else if (!str3.equalsIgnoreCase("mips")) {
+                        if (r2.a) {
+                            a8.d("Unsupported arch: ".concat(str3));
+                        }
+                    }
+                }
+                str = "armeabi";
+            }
+            str2 = str;
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
+        String property = System.getProperty("os.arch");
+        return (property == null || !property.contains("686")) ? str2 : "x86";
+    }
+
+    public static KeyStore e() {
+        KeyStore keyStore = e;
+        if (keyStore != null) {
+            return keyStore;
+        }
+        try {
+            KeyStore keyStore2 = KeyStore.getInstance("AndroidKeyStore");
+            e = keyStore2;
+            keyStore2.load(null);
+            return e;
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return null;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0082 A[Catch: all -> 0x001f, TryCatch #4 {all -> 0x001f, blocks: (B:11:0x000e, B:13:0x0019, B:18:0x0026, B:35:0x0057, B:37:0x005b, B:38:0x0063, B:20:0x007e, B:22:0x0082, B:23:0x0097, B:43:0x006e), top: B:10:0x000e, outer: #2, inners: #0, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x009e A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static synchronized void f(Context context) {
+        synchronized (sr.class) {
+            if (a) {
+                return;
+            }
+            try {
+                try {
+                    System.loadLibrary("tmessages.49");
+                    a = true;
+                    if (r2.a) {
+                        a8.b("loaded normal lib");
+                    }
+                } catch (Error e10) {
+                    a8.g(e10, true);
+                    StringBuilder sb2 = b;
+                    sb2.append("128: ");
+                    sb2.append(e10);
+                    sb2.append("\n");
+                    String d10 = d();
+                    File file = new File(context.getFilesDir(), "lib");
+                    file.mkdirs();
+                    File file2 = new File(file, "libtmessages.49loc.so");
+                    if (file2.exists()) {
+                        try {
+                            if (r2.a) {
+                                a8.b("Load local lib");
+                            }
+                            System.load(file2.getAbsolutePath());
+                            a = true;
+                            return;
+                        } catch (Error e11) {
+                            StringBuilder sb3 = b;
+                            sb3.append(e11);
+                            sb3.append("\n");
+                            a8.g(e11, true);
+                            file2.delete();
+                            if (r2.a) {
+                                a8.d("Library not found, arch = ".concat(d10));
+                                StringBuilder sb4 = b;
+                                sb4.append("Library not found, arch = ".concat(d10));
+                                sb4.append("\n");
+                            }
+                            if (k(context, file, file2, d10)) {
+                                return;
+                            }
+                            System.loadLibrary("tmessages.49");
+                            a = true;
+                        }
+                    }
+                    if (r2.a) {
+                    }
+                    if (k(context, file, file2, d10)) {
+                    }
+                    try {
+                        System.loadLibrary("tmessages.49");
+                        a = true;
+                    } catch (Error e12) {
+                        a8.g(e12, true);
+                        StringBuilder sb5 = b;
+                        sb5.append("184: ");
+                        sb5.append(e12);
+                        sb5.append("\n");
+                    }
+                }
+            } catch (Throwable th2) {
+                th2.printStackTrace();
+                StringBuilder sb6 = b;
+                sb6.append("176: ");
+                sb6.append(th2);
+                sb6.append("\n");
+                System.loadLibrary("tmessages.49");
+                a = true;
+            }
+        }
+    }
+
+    public static boolean g() {
+        try {
+            AppOpsManager appOpsManager = (AppOpsManager) t0.b.getSystemService("appops");
+            Class cls = Integer.TYPE;
+            return ((Integer) AppOpsManager.class.getMethod("checkOpNoThrow", cls, cls, String.class).invoke(appOpsManager, 10020, Integer.valueOf(Process.myUid()), t0.b.getPackageName())).intValue() == 0;
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return true;
+        }
+    }
+
+    public static boolean h() {
+        try {
+            return e().containsAlias("tmessages_passcode");
+        } catch (KeyStoreException e10) {
+            a8.g(e10, true);
+            return false;
+        }
+    }
+
+    public static boolean i() {
+        return !TextUtils.isEmpty(g0.k1("ro.miui.ui.version.name"));
+    }
+
+    public static boolean j() {
+        int intValue;
+        Boolean bool = h;
+        if (bool != null) {
+            return bool.booleanValue();
+        }
+        try {
+            Field declaredField = Build.VERSION.class.getDeclaredField("SEM_PLATFORM_INT");
+            declaredField.setAccessible(true);
+            intValue = ((Integer) declaredField.get(null)).intValue();
+        } catch (Exception unused) {
+            h = Boolean.FALSE;
+        }
+        if (intValue < 100000) {
+            return false;
+        }
+        i = intValue - 90000;
+        h = Boolean.TRUE;
+        return h.booleanValue();
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ sr(rf.e eVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, rf.x[] xVarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
-        this.e = eVar;
-        this.f = atomicBoolean;
-        this.h = bitmapArr;
-        this.b = i10;
-        this.n = xVarArr;
-        this.c = i11;
-        this.r = randomAccessFile;
-        this.d = arrayList;
-        this.s = countDownLatchArr;
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00d5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00cb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean k(Context context, File file, File file2, String str) {
+        ZipFile zipFile;
+        ZipFile zipFile2;
+        int length;
+        try {
+            File[] listFiles = file.listFiles();
+            length = listFiles.length;
+            for (File file3 : listFiles) {
+                file3.delete();
+            }
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
+        InputStream inputStream = null;
+        try {
+            try {
+                zipFile2 = new ZipFile(context.getApplicationInfo().sourceDir);
+                try {
+                    ZipEntry entry = zipFile2.getEntry("lib/" + str + "/libtmessages.49.so");
+                    if (entry == null) {
+                        throw new Exception("Unable to find file in apk:lib/" + str + "/tmessages.49");
+                    }
+                    InputStream inputStream2 = zipFile2.getInputStream(entry);
+                    FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                    byte[] bArr = new byte[TLObject.FLAG_12];
+                    while (true) {
+                        int read = inputStream2.read(bArr);
+                        if (read <= 0) {
+                            break;
+                        }
+                        Thread.yield();
+                        fileOutputStream.write(bArr, 0, read);
+                    }
+                    fileOutputStream.close();
+                    file2.setReadable(true, false);
+                    file2.setExecutable(true, false);
+                    file2.setWritable(true);
+                    try {
+                        System.load(file2.getAbsolutePath());
+                        a = true;
+                    } catch (Error e11) {
+                        a8.g(e11, true);
+                    }
+                    try {
+                        inputStream2.close();
+                    } catch (Exception e12) {
+                        a8.g(e12, true);
+                    }
+                    try {
+                        zipFile2.close();
+                    } catch (Exception e13) {
+                        a8.g(e13, true);
+                    }
+                    return true;
+                } catch (Exception e14) {
+                    e = e14;
+                    a8.g(e, true);
+                    if (0 != 0) {
+                        try {
+                            inputStream.close();
+                        } catch (Exception e15) {
+                            a8.g(e15, true);
+                        }
+                    }
+                    if (zipFile2 != null) {
+                        try {
+                            zipFile2.close();
+                        } catch (Exception e16) {
+                            a8.g(e16, true);
+                        }
+                    }
+                    return false;
+                }
+            } catch (Throwable th2) {
+                th = th2;
+                zipFile = length;
+                if (0 != 0) {
+                    try {
+                        inputStream.close();
+                    } catch (Exception e17) {
+                        a8.g(e17, true);
+                    }
+                }
+                if (zipFile != null) {
+                    throw th;
+                }
+                try {
+                    zipFile.close();
+                    throw th;
+                } catch (Exception e18) {
+                    a8.g(e18, true);
+                    throw th;
+                }
+            }
+        } catch (Exception e19) {
+            e = e19;
+            zipFile2 = null;
+        } catch (Throwable th3) {
+            th = th3;
+            zipFile = null;
+            if (0 != 0) {
+            }
+            if (zipFile != null) {
+            }
+        }
     }
 }

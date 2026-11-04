@@ -1,60 +1,38 @@
 package m2;
 
-import b2.x;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.RoundingMode;
-import java.util.List;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class p extends n {
-    public final li.k j;
-    public final li.k k;
-    public final long l;
+public final /* synthetic */ class p implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t b;
+    public final /* synthetic */ Exception c;
 
-    public p(j jVar, long j10, long j11, long j12, long j13, long j14, List list, long j15, li.k kVar, li.k kVar2, long j16, long j17) {
-        super(jVar, j10, j11, j12, j14, list, j15, j16, j17);
-        this.j = kVar;
-        this.k = kVar2;
-        this.l = j13;
+    public /* synthetic */ p(t tVar, Exception exc, int i3) {
+        this.a = i3;
+        this.b = tVar;
+        this.c = exc;
     }
 
-    @Override // m2.s
-    public final j a(m mVar) {
-        li.k kVar = this.j;
-        if (kVar == null) {
-            return this.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        Exception exc = this.c;
+        t tVar = this.b;
+        switch (i3) {
+            case 0:
+                u uVar = (u) tVar.c;
+                String str = g2.n0.a;
+                l2.f fVar = ((k2.c0) uVar).a.s;
+                l2.a U = fVar.U();
+                fVar.V(U, 1029, new l2.c(U, exc, 5));
+                break;
+            default:
+                u uVar2 = (u) tVar.c;
+                String str2 = g2.n0.a;
+                l2.f fVar2 = ((k2.c0) uVar2).a.s;
+                l2.a U2 = fVar2.U();
+                fVar2.V(U2, 1014, new l2.c(U2, exc, 27));
+                break;
         }
-        x xVar = mVar.a;
-        return new j(0L, kVar.j(xVar.j, 0L, 0L, xVar.a), -1L);
-    }
-
-    @Override // m2.n
-    public final long d(long j10) {
-        if (this.f != null) {
-            return r0.size();
-        }
-        long j11 = this.l;
-        if (j11 != -1) {
-            return (j11 - this.d) + 1;
-        }
-        if (j10 == -9223372036854775807L) {
-            return -1L;
-        }
-        BigInteger multiply = BigInteger.valueOf(j10).multiply(BigInteger.valueOf(this.b));
-        BigInteger multiply2 = BigInteger.valueOf(this.e).multiply(BigInteger.valueOf(1000000L));
-        RoundingMode roundingMode = RoundingMode.CEILING;
-        int i10 = g9.a.a;
-        return new BigDecimal(multiply).divide(new BigDecimal(multiply2), 0, roundingMode).toBigIntegerExact().longValue();
-    }
-
-    @Override // m2.n
-    public final j h(k kVar, long j10) {
-        long j11 = this.d;
-        List list = this.f;
-        long j12 = list != null ? ((q) list.get((int) (j10 - j11))).a : (j10 - j11) * this.e;
-        x xVar = kVar.a;
-        return new j(0L, this.k.j(xVar.j, j10, j12, xVar.a), -1L);
     }
 }

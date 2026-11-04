@@ -1,282 +1,48 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.at;
-import org.telegram.ui.Components.ci0;
+import java.util.Random;
+import org.telegram.messenger.lc;
+import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class r2 extends View {
-    public ValueAnimator D;
-    public final y0 E;
-    public ValueAnimator F;
-    public float G;
-    public float H;
-    public float I;
-    public ci0 a;
-    public ci0 b;
-    public ci0 c;
-    public final Paint d;
-    public final Paint e;
-    public final Paint f;
-    public final Path h;
-    public final int n;
-    public int r;
-    public int s;
-    public boolean w;
-    public int x;
-    public q2 y;
-
-    public r2(Context context, y0 y0Var) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.d = paint;
-        Paint paint2 = new Paint(1);
-        this.e = paint2;
-        Paint paint3 = new Paint(1);
-        this.f = paint3;
-        this.h = new Path();
-        int L = org.telegram.messenger.i0.L(26.0f);
-        this.n = L;
-        this.r = L;
-        this.s = 0;
-        this.w = false;
-        this.x = 0;
-        this.G = 1.0f;
-        this.E = y0Var;
-        y0Var.a(this);
-        setLayerType(1, null);
-        paint2.setColor(-1);
-        paint.setColor(-16777216);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        paint3.setColor(-16777216);
-        paint3.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_ATOP));
-        paint3.setAlpha(35);
-    }
-
-    private void setPressedBtn(boolean z10) {
-        ValueAnimator valueAnimator = this.F;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+public final class r2 extends q9 {
+    public final void g(float f10, float f11) {
+        if (!lc.e(this.r)) {
+            return;
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z10 ? 0.8f : 1.0f);
-        this.F = ofFloat;
-        ofFloat.addUpdateListener(new o2(this, 0));
-        this.F.setDuration(150L);
-        this.F.start();
-    }
-
-    public final void a(int i10, boolean z10, boolean z11) {
-        ValueAnimator valueAnimator = this.D;
-        if (valueAnimator != null && valueAnimator.isRunning()) {
-            this.D.removeAllUpdateListeners();
-            this.D.cancel();
-            z11 = false;
-        }
-        int i11 = this.n;
-        if (z11) {
-            if (this.c != null) {
-                ValueAnimator valueAnimator2 = this.D;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.removeAllUpdateListeners();
-                    this.D.cancel();
-                }
-                ValueAnimator ofInt = z10 ? ValueAnimator.ofInt(20, 100) : ValueAnimator.ofInt(100, 20);
-                this.D = ofInt;
-                ofInt.addUpdateListener(new o2(this, 1));
-                this.D.setDuration(200L);
-                this.D.start();
-                if (i10 == 2) {
-                    this.c.N(0, false, false);
-                    this.c.start();
-                }
-            } else {
-                ValueAnimator valueAnimator3 = this.D;
-                if (valueAnimator3 != null) {
-                    valueAnimator3.removeAllUpdateListeners();
-                    this.D.cancel();
-                }
-                ValueAnimator ofInt2 = ValueAnimator.ofInt(0, i11);
-                this.D = ofInt2;
-                if (z10) {
-                    this.r = i11;
-                    ofInt2.addUpdateListener(new o2(this, 2));
-                    this.D.addListener(new p2(this, 0));
-                    this.D.setDuration(200L);
-                    this.D.start();
-                    this.b.N(0, false, false);
-                    this.b.start();
-                } else {
-                    this.s = i11;
-                    ofInt2.addUpdateListener(new o2(this, 3));
-                    this.D.setDuration(200L);
-                    this.D.addListener(new p2(this, 1));
-                    this.D.start();
-                }
-            }
-        } else if (z10) {
-            this.s = i11;
-            this.r = 0;
-            this.x = 100;
-            if (i10 == 3 || i10 == 1) {
-                ci0 ci0Var = this.b;
-                ci0Var.N(ci0Var.e[0] - 1, false, false);
-            }
-        } else {
-            this.s = 0;
-            this.r = i11;
-            this.x = 20;
-        }
-        this.w = z10;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        Path path;
-        canvas.save();
-        float f7 = this.G;
-        canvas.scale(f7, f7, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float x10 = ((View) getParent()).getX() + getX();
-        float y3 = ((View) ((View) getParent()).getParent()).getY() + getY();
-        y0 y0Var = this.E;
-        int i11 = y0Var.g;
-        Paint paint = y0Var.j;
-        j2.f fVar = y0Var.a;
-        float f10 = y0Var.g;
-        float f11 = 1.12f * f10;
-        float f12 = (f11 - y0Var.f) / 2.0f;
-        float f13 = (f11 - f10) / 2.0f;
-        float f14 = -x10;
-        float f15 = f14 - f12;
-        float f16 = -y3;
-        fVar.z(f15, f16 - f13, (i11 * 1.12f) / ((Bitmap) fVar.c).getHeight(), y0Var.h);
-        y0Var.c.x(f14, f16, y0Var.f - x10, y0Var.g - y3);
-        ci0 ci0Var = this.c;
-        Paint paint2 = this.e;
-        Paint paint3 = this.d;
-        int i12 = this.n;
-        if (ci0Var != null) {
-            if (this.x > 20) {
-                Paint paint4 = this.f;
-                paint4.setAlpha((int) ((r1 * 35) / 100.0f));
-                paint2.setAlpha((int) ((this.x * at.e4) / 100.0f));
-                canvas.drawCircle(width, height, i12, paint2);
-                this.c.q(canvas, paint3, false, 0L, 0);
-                this.c.q(canvas, paint4, false, 0L, 0);
+        int i3 = 0;
+        while (true) {
+            float f12 = i3;
+            float f13 = this.n;
+            if (f12 >= f13) {
                 return;
             }
-            float f17 = i12;
-            if (!y0Var.i) {
-                paint = (Paint) fVar.a;
-            }
-            canvas.drawCircle(width, height, f17, paint);
-            if (y0Var.e) {
-                canvas.drawCircle(width, height, f17, (Paint) y0Var.c.a);
-            }
-            this.c.draw(canvas);
-            return;
-        }
-        if (this.b == null || this.a == null) {
-            return;
-        }
-        int i13 = this.r;
-        boolean z10 = i13 == i12 && this.s == 0;
-        int i14 = this.s;
-        boolean z11 = i14 == i12 && i13 == 0;
-        Path path2 = this.h;
-        if (i14 != i12 || i13 <= 0 || i13 == i12) {
-            i10 = i12;
-            path = path2;
-        } else {
-            canvas.drawCircle(width, height, i14, paint2);
-            canvas.drawCircle(width, height, this.r, paint3);
-            this.b.setAlpha(at.e4);
-            i10 = i12;
-            this.b.q(canvas, paint3, false, 0L, 0);
-            this.b.setAlpha(35);
-            this.b.draw(canvas);
-            path2.reset();
-            path = path2;
-            path.addCircle(width, height, this.r, Path.Direction.CW);
-            canvas.clipPath(path);
-            canvas.drawCircle(width, height, this.r, paint3);
-        }
-        if (z10 || this.r > 0) {
-            float f18 = this.r;
-            if (!y0Var.i) {
-                paint = (Paint) fVar.a;
-            }
-            canvas.drawCircle(width, height, f18, paint);
-            if (y0Var.e) {
-                canvas.drawCircle(width, height, this.r, (Paint) y0Var.c.a);
-            }
-            this.a.draw(canvas);
-        }
-        if (z11 || (this.s > 0 && this.r == i10)) {
-            path.reset();
-            path.addCircle(width, height, this.s, Path.Direction.CW);
-            canvas.clipPath(path);
-            canvas.drawCircle(width, height, this.s, paint2);
-            this.b.setAlpha(at.e4);
-            this.b.q(canvas, paint3, false, 0L, 0);
-            this.b.setAlpha(35);
-            this.b.draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        q2 q2Var;
-        int action = motionEvent.getAction();
-        if (action == 0) {
-            setPressedBtn(true);
-            this.H = motionEvent.getX();
-            this.I = motionEvent.getY();
-            return true;
-        }
-        boolean z10 = false;
-        if (action == 1) {
-            setPressedBtn(false);
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            float f7 = this.H;
-            float f10 = this.I;
-            float abs = Math.abs(f7 - x10);
-            float abs2 = Math.abs(f10 - y3);
-            if (abs <= org.telegram.messenger.i0.L(48.0f) && abs2 <= org.telegram.messenger.i0.L(48.0f)) {
-                int i10 = this.r;
-                int i11 = this.n;
-                boolean z11 = i10 == i11 && this.s == 0;
-                if (this.s == i11 && i10 == 0) {
-                    z10 = true;
-                }
-                if ((z11 || z10) && (q2Var = this.y) != null) {
-                    q2Var.j(this);
+            float[] fArr = this.i;
+            float f14 = fArr[i3];
+            float[] fArr2 = this.j;
+            float f15 = fArr2[i3];
+            float f16 = (f15 * f10 * 8.2f * 1.0f) + (0.8f * f15) + f14;
+            fArr[i3] = f16;
+            if (f16 >= 1.0f) {
+                fArr[i3] = 0.0f;
+                float[] fArr3 = this.g;
+                this.e[i3] = fArr3[i3];
+                float[] fArr4 = this.h;
+                this.f[i3] = fArr4[i3];
+                if (f11 < 1.0f) {
+                    float f17 = 360.0f / f13;
+                    float f18 = this.b;
+                    float f19 = this.a;
+                    Random random = this.m;
+                    fArr3[i3] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f18 - f19) * f11) + f19;
+                    fArr4[i3] = ((((random.nextInt() * f11) % 100.0f) / 100.0f) * 0.05f * f17) + (f17 * f12);
+                    fArr2[i3] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
+                } else {
+                    c(fArr3, fArr4, i3);
                 }
             }
-        } else if (action == 3) {
-            setPressedBtn(false);
-            return true;
+            i3++;
         }
-        return true;
-    }
-
-    public void setOnBtnClickedListener(q2 q2Var) {
-        this.y = q2Var;
     }
 }

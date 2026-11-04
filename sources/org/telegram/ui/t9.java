@@ -1,15 +1,34 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import com.google.android.gms.common.api.Status;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public interface t9 {
-    void L(String str);
+public final /* synthetic */ class t9 implements com.google.android.gms.common.api.o {
+    public final /* synthetic */ int a;
 
-    String P0();
+    public /* synthetic */ t9(int i3) {
+        this.a = i3;
+    }
 
-    void X0(org.telegram.messenger.js jsVar);
-
-    boolean i1(String str, k9 k9Var);
-
-    void onDismiss();
+    @Override // com.google.android.gms.common.api.o
+    public final void a(Status status) {
+        switch (this.a) {
+            case 0:
+                d1.f.b.decrementAndGet();
+                break;
+            case 1:
+                d1.f.b.decrementAndGet();
+                break;
+            case 2:
+                d1.f.b.decrementAndGet();
+                break;
+            case 3:
+                d1.f.b.decrementAndGet();
+                break;
+            default:
+                d1.f.b.decrementAndGet();
+                break;
+        }
+    }
 }

@@ -1,29 +1,28 @@
 package com.google.android.recaptcha.internal;
 
-import ad.c;
-import ad.h;
-import ib.a;
+import b8.hb;
+import dd.c;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-import kotlin.jvm.internal.i;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzii {
     private final c zza;
 
     public zzii() {
-        int i10 = zzby.zza;
-        this.zza = a.a(zzih.zza);
+        int i3 = zzby.zza;
+        this.zza = hb.b(zzih.zza);
     }
 
     public final HttpURLConnection zza(String str) {
-        if (!((zzig) ((h) this.zza).a()).zzb(str)) {
+        if (!((zzig) this.zza.getValue()).zzb(str)) {
             throw new zzcg(zzce.zzc, zzcd.zzQ, null, null, 12, null);
         }
         URLConnection openConnection = new URL(str).openConnection();
-        i.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
+        j.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
         return (HttpURLConnection) openConnection;
     }
 }

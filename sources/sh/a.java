@@ -1,22 +1,9 @@
 package sh;
 
-import c3.m0;
-import java.io.File;
-import org.telegram.messenger.kj;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a {
-    public final File a;
-    public long b;
-    public long c;
-    public int d;
-    public m0 e;
-    public kj f;
-    public int g;
-    public int h;
+public interface a {
+    void c(int i3);
 
-    public a(File file) {
-        this.a = file;
-    }
+    void d(float f10);
 }

@@ -1,83 +1,67 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import org.telegram.messenger.k20;
-import org.telegram.ui.Components.cc;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import b8.mf;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m8 implements k20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t8 b;
-    public final /* synthetic */ gf.e c;
-    public final /* synthetic */ k0 d;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class m8 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final TextView b;
+    public final TextView c;
+    public final ImageView d;
 
-    public /* synthetic */ m8(t8 t8Var, gf.e eVar, k0 k0Var, int i10) {
-        this.a = i10;
-        this.b = t8Var;
-        this.c = eVar;
-        this.d = k0Var;
+    public m8(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        setOrientation(0);
+        this.a = e6Var;
+        setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
+        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
+        f10.setPadding(0, org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f));
+        addView(f10, mf.q(0, -2, 1.0f, 19, 0, 0, 0, 0));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
+        TextView f11 = org.telegram.messenger.camera.q.f(f10, textView, mf.t(-1, -2, 55, 0, 0, 0, 2), context);
+        this.c = f11;
+        f11.setTextSize(1, 14.0f);
+        f10.addView(f11, mf.t(-1, -2, 55, 0, 0, 0, 0));
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.attach_arrow_right);
+        addView(imageView, mf.t(21, 21, 21, 9, 0, 0, 0));
+        updateColors();
     }
 
-    @Override // org.telegram.messenger.k20
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                h0 h0Var = (h0) obj;
-                String str = (String) obj2;
-                this.c.c(false);
-                t8 t8Var = this.b;
-                if (h0Var != null) {
-                    a9 a9Var = new a9();
-                    a9Var.h = true;
-                    ArrayList arrayList = a9Var.a;
-                    arrayList.clear();
-                    if (!h0Var.d()) {
-                        arrayList.addAll(h0Var.f());
-                    }
-                    a9Var.a0();
-                    a9Var.f = new m2(16, t8Var, this.d);
-                    t8Var.presentFragment(a9Var);
-                    break;
-                } else {
-                    cc a02 = cc.a0(t8Var);
-                    if (str == null) {
-                        str = "NULL_ERROR";
-                    }
-                    a02.e0(str, false);
-                    break;
-                }
-            default:
-                f0 f0Var = (f0) obj;
-                String str2 = (String) obj2;
-                this.c.c(false);
-                t8 t8Var2 = this.b;
-                if (f0Var != null) {
-                    if (!t8Var2.f) {
-                        t8Var2.e.add(f0Var);
-                        a9 a9Var2 = new a9();
-                        h0 h0Var2 = f0Var.b;
-                        ArrayList arrayList2 = a9Var2.a;
-                        arrayList2.clear();
-                        if (!h0Var2.d()) {
-                            arrayList2.addAll(h0Var2.f());
-                        }
-                        a9Var2.a0();
-                        a9Var2.f = new g(t8Var2, this.d, f0Var, 21);
-                        t8Var2.presentFragment(a9Var2);
-                        break;
-                    } else {
-                        f0Var.close();
-                        break;
-                    }
-                } else {
-                    cc a03 = cc.a0(t8Var2);
-                    if (str2 == null) {
-                        str2 = "NULL_ERROR";
-                    }
-                    a03.e0(str2, false);
-                    break;
-                }
-        }
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.z6));
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i3 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.e6 e6Var = this.a;
+        this.b.setTextColor(org.telegram.ui.ActionBar.k6.w0(i3, e6Var));
+        int i10 = org.telegram.ui.ActionBar.k6.z6;
+        this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(i10, e6Var));
+        this.d.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(i10, e6Var), PorterDuff.Mode.SRC_IN));
     }
 }

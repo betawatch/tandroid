@@ -1,15 +1,16 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.c0;
-import td.s;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.g;
+import hd.j;
+import od.p;
+import wd.s;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzlv extends j implements p {
     Object zza;
@@ -27,29 +28,29 @@ final class zzlv extends j implements p {
         this.zzg = zzgrVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzlv(this.zzf, this.zzg, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzlv) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzlv) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x00e6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x00e2, code lost:
     
-        return ad.j.a;
+        return dd.k.a;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x00d0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x00cc, code lost:
     
-        if (((td.t) r10).h(r9) != r0) goto L30;
+        if (((wd.t) r10).i(r9) != r0) goto L30;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x00b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x00b1, code lost:
     
         if (com.google.android.recaptcha.internal.zzhj.zzc(r1, (com.google.android.recaptcha.internal.zzhg) r10, r9) != r0) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x00a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00a5, code lost:
     
         if (r10 != r0) goto L26;
      */
@@ -57,17 +58,17 @@ final class zzlv extends j implements p {
     
         if (r1 != 4) goto L33;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x00d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x00ce, code lost:
     
         r10 = r9.zzf.zzn();
         r1 = com.google.android.recaptcha.internal.zzmc.zzc;
         r9.zze = 5;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x00e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x00dd, code lost:
     
         if (r10.zzc(r1, r9) != r0) goto L33;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -82,10 +83,10 @@ final class zzlv extends j implements p {
         zzmf zzmfVar2;
         zzgr zzgrVar;
         zzxn zzxnVar4;
-        a aVar = a.a;
-        int i10 = this.zze;
-        if (i10 == 0) {
-            b.b(obj);
+        gd.a aVar = gd.a.a;
+        int i3 = this.zze;
+        if (i3 == 0) {
+            ib.b(obj);
             zzlyVar = this.zzf;
             zzxnVar = zzlyVar.zze;
             if (zzxnVar == null) {
@@ -109,29 +110,29 @@ final class zzlv extends j implements p {
             }
             return aVar;
         }
-        if (i10 == 1) {
+        if (i3 == 1) {
             zzdoVar = (zzdo) this.zzd;
             zzxnVar3 = (zzxn) this.zzc;
             zzlyVar = (zzly) this.zzb;
             zzlyVar2 = (zzly) this.zza;
-            b.b(obj);
-        } else if (i10 != 2) {
-            b.b(obj);
-            if (i10 != 3) {
+            ib.b(obj);
+        } else if (i3 != 2) {
+            ib.b(obj);
+            if (i3 != 3) {
             }
             zzly zzlyVar3 = this.zzf;
-            new Integer(zzlyVar3.zzz().hashCode());
+            g.a(zzlyVar3.zzz().hashCode());
             s zzz = zzlyVar3.zzz();
             this.zze = 4;
         } else {
             zzgrVar = (zzgr) this.zza;
-            b.b(obj);
+            ib.b(obj);
             this.zza = null;
             this.zze = 3;
         }
         zzlyVar2.zzb = zzlyVar.zzB(zzxnVar3, zzdoVar, (WebView) obj);
         zzly zzlyVar4 = this.zzf;
-        new Integer(zzlyVar4.zzz().hashCode());
+        g.a(zzlyVar4.zzz().hashCode());
         zzmfVar = zzlyVar4.zzg;
         zzmfVar.zzd();
         zzmfVar2 = zzlyVar4.zzg;

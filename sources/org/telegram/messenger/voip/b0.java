@@ -1,41 +1,28 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ TLRPC.GroupCallParticipant c;
 
-    public /* synthetic */ b0(VoIPService voIPService, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ b0(VoIPService voIPService, TLRPC.GroupCallParticipant groupCallParticipant, int i3) {
+        this.a = i3;
         this.b = voIPService;
-        this.c = i10;
+        this.c = groupCallParticipant;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onSignalBarCountChanged$122(this.c);
-                break;
-            case 1:
-                this.b.lambda$onConnectionStateChanged$119(this.c);
-                break;
-            case 2:
-                this.b.lambda$startConferenceGroupCall$36(this.c);
-                break;
-            case 3:
-                this.b.lambda$startGroupCall$25(this.c);
-                break;
-            case 4:
-                this.b.lambda$createGroupInstance$72(this.c);
-                break;
-            case 5:
-                this.b.lambda$startScreenCapture$57(this.c);
+                this.b.lambda$startConferenceGroupCall$37(this.c);
                 break;
             default:
-                this.b.lambda$updateConnectionState$81(this.c);
+                this.b.lambda$startGroupCall$26(this.c);
                 break;
         }
     }

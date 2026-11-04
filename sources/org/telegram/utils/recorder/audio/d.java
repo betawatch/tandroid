@@ -8,10 +8,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import ki.g;
-import ki.i;
+import vi.f;
+import vi.h;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public final class d {
     public long A;
@@ -20,9 +20,9 @@ public final class d {
     public final File b;
     public final long c;
     public final long d;
-    public final i e;
-    public final ki.b f;
-    public final g g;
+    public final h e;
+    public final vi.b f;
+    public final f g;
     public final HandlerThread h;
     public final Handler i;
     public final HandlerThread j;
@@ -43,14 +43,14 @@ public final class d {
     public final AtomicInteger m = new AtomicInteger();
     public final ByteBuffer s = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
 
-    public d(File file, File file2, long j10, long j11, i iVar, ki.b bVar, g gVar) {
+    public d(File file, File file2, long j10, long j11, h hVar, vi.b bVar, f fVar) {
         this.a = file;
         this.b = file2;
         this.c = j10;
         this.d = j11;
-        this.e = iVar;
+        this.e = hVar;
         this.f = bVar;
-        this.g = gVar;
+        this.g = fVar;
         HandlerThread handlerThread = new HandlerThread("AudioRecorderCapture", -16);
         this.h = handlerThread;
         handlerThread.start();
@@ -65,18 +65,18 @@ public final class d {
         return th2 instanceof Exception ? (Exception) th2 : new RuntimeException(th2);
     }
 
-    public final void b(int i10) {
+    public final void b(int i3) {
         ByteBuffer byteBuffer = this.s;
         byteBuffer.position(0);
-        byteBuffer.limit(i10);
+        byteBuffer.limit(i3);
         if (this.u != null) {
             long nanoTime = System.nanoTime();
-            boolean b10 = this.u.b(i10 / 2, byteBuffer);
+            boolean b10 = this.u.b(i3 / 2, byteBuffer);
             long nanoTime2 = System.nanoTime() - nanoTime;
             this.z++;
             this.A += nanoTime2;
             this.B = Math.max(this.B, nanoTime2);
-            ki.b bVar = this.f;
+            vi.b bVar = this.f;
             if (!b10) {
                 bVar.b("RNNoise processing failed; recording unprocessed PCM");
                 this.u.c();
@@ -85,10 +85,10 @@ public final class d {
                 bVar.b("RNNoise processing: averageMs=" + ((this.A / this.z) / 1000000.0d) + ", maxMs=" + (this.B / 1000000.0d));
             }
             byteBuffer.position(0);
-            byteBuffer.limit(i10);
+            byteBuffer.limit(i3);
         }
         AudioRecorderNative audioRecorderNative = this.t;
-        if (audioRecorderNative == null || audioRecorderNative.g(byteBuffer, i10) == 0) {
+        if (audioRecorderNative == null || audioRecorderNative.g(byteBuffer, i3) == 0) {
             throw new IllegalStateException("Native Opus encoding failed");
         }
     }
@@ -105,7 +105,7 @@ public final class d {
         if (this.o) {
             return;
         }
-        this.i.postAtFrontOfQueue(new ki.a(this, 1));
+        this.i.postAtFrontOfQueue(new vi.a(this, 1));
     }
 
     public final void e(Exception exc) {

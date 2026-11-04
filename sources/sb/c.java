@@ -1,19 +1,29 @@
 package sb;
 
-import x7.ga;
-import x7.ia;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class c {
-    public final d a;
-    public final jb.d b;
-    public final ga c;
+    public final HashMap a = new HashMap();
 
-    public c(d dVar, jb.d dVar2) {
-        ga b10 = ia.b();
-        this.a = dVar;
-        this.b = dVar2;
-        this.c = b10;
+    public c(Set set) {
+        HashMap hashMap = new HashMap();
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            b bVar = (b) it.next();
+            bVar.getClass();
+            if (this.a.containsKey(ub.a.class)) {
+                Integer num = (Integer) hashMap.get(ub.a.class);
+                m.g(num);
+                if (num.intValue() <= 0) {
+                }
+            }
+            this.a.put(ub.a.class, bVar.a);
+            hashMap.put(ub.a.class, 0);
+        }
     }
 }

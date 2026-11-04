@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class q3 extends v1 {
     private static final q3 zzb;
@@ -15,21 +15,21 @@ public final class q3 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+    public final Object d(int i3) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
+        if (i10 == 2) {
             return new s2(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဇ\u0000\u0002ဇ\u0001", new Object[]{"zzd", "zze", "zzf"});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new q3();
         }
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new y0(zzb);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
         throw null;

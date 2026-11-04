@@ -1,47 +1,63 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cd implements View.OnClickListener {
+public final /* synthetic */ class cd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kd b;
+    public final /* synthetic */ xd b;
 
-    public /* synthetic */ cd(kd kdVar, int i10) {
-        this.a = i10;
-        this.b = kdVar;
+    public /* synthetic */ cd(xd xdVar, int i3) {
+        this.a = i3;
+        this.b = xdVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        Object[] objArr = 0;
+        xd xdVar = this.b;
+        switch (i3) {
             case 0:
-                kd.c0(this.b, view);
+                sf.c.t(xdVar.getContext(), org.telegram.messenger.bd.M0(2131748412, null));
                 break;
             case 1:
-                kd kdVar = this.b;
-                kdVar.x.n(kdVar.D != null, new ad(kdVar, 2), new q5(kdVar, 2), 0);
-                kdVar.K.M(0);
-                kdVar.K.P(43);
-                kdVar.n.d();
+                sf.c.t(xdVar.getContext(), org.telegram.messenger.bd.M0(2131748378, null));
                 break;
             case 2:
-                kd kdVar2 = this.b;
-                if (!kdVar2.k0) {
-                    kdVar2.l0();
-                    break;
-                } else if (kdVar2.b0) {
-                    kdVar2.b0 = false;
-                    kdVar2.n0();
-                    break;
+                org.telegram.ui.Components.l41 l41Var = xdVar.Y0;
+                if (l41Var != null) {
+                    boolean z10 = xdVar.f0;
+                    l41Var.g3.O((xdVar.S0 != -1) == xdVar.b1.a());
+                    if (z10 && xdVar.S0 != -1) {
+                        xdVar.a();
+                        break;
+                    }
                 }
                 break;
+            case 3:
+                xdVar.l1 = xdVar.k1;
+                break;
+            case 4:
+                xdVar.K0.setLoading(false);
+                break;
+            case 5:
+                xdVar.Z0.setVisibility(8);
+                break;
+            case 6:
+                xdVar.Z0.setVisibility(8);
+                break;
             default:
-                kd kdVar3 = this.b;
-                if (!kdVar3.b0) {
-                    kdVar3.b0 = true;
-                    kdVar3.n0();
+                int i10 = xdVar.p0;
+                org.telegram.messenger.g0.r(xdVar.t1);
+                if (xdVar.k1 != xdVar.l1) {
+                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
+                    tL_channels_restrictSponsoredMessages.channel = org.telegram.messenger.hp.s1(i10).h1(-xdVar.q0);
+                    tL_channels_restrictSponsoredMessages.restricted = xdVar.k1;
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_channels_restrictSponsoredMessages, new jd(xdVar, objArr == true ? 1 : 0));
                     break;
                 }
                 break;

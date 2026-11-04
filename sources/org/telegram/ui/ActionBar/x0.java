@@ -1,61 +1,33 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class x0 extends y0 {
-    public final w0 g0;
-    public String h0;
+public final class x0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ y0 e;
 
-    public x0(Context context, p6 p6Var) {
-        super(context, p6Var);
-        this.h0 = null;
-        setFocusable(true);
-        setFocusableInTouchMode(true);
-        setImportantForAccessibility(1);
-        w0 w0Var = new w0(this, 0);
-        this.g0 = w0Var;
-        setAccessibilityDelegate(w0Var);
+    public x0(y0 y0Var, boolean z10, int i3, int i10, int i11) {
+        this.e = y0Var;
+        this.a = z10;
+        this.b = i3;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // org.telegram.ui.ActionBar.y0
-    public final int c(float f7) {
-        int i10 = t6.gk;
-        p6 p6Var = this.y;
-        return i0.b.f(w7.u.a((((f7 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), t6.w0(i10, p6Var), t6.w0(t6.hk, p6Var));
-    }
-
-    public final void e(boolean z10, float f7) {
-        d(z10, (f7 - 0.2f) / 2.8f);
-    }
-
-    public float getSpeed() {
-        return (getValue() * 2.8f) + 0.2f;
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.g0.e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return super.performAccessibilityAction(i10, bundle) || this.g0.g(this, i10, bundle);
-    }
-
-    public void setLabel(String str) {
-        this.h0 = str;
-    }
-
-    @Override // org.telegram.ui.ActionBar.y0
-    public void setStops(float[] fArr) {
-        for (int i10 = 0; i10 < fArr.length; i10++) {
-            fArr[i10] = (fArr[i10] - 0.2f) / 2.8f;
-        }
-        super.setStops(fArr);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        float f10 = this.a ? 1.0f : 0.0f;
+        int i3 = this.b;
+        int i10 = this.c;
+        int f11 = i0.a.f(f10, i3, i10);
+        y0 y0Var = this.e;
+        y0Var.setTextColor(f11);
+        y0Var.setIconColor(i0.a.f(f10, this.d, i10));
     }
 }

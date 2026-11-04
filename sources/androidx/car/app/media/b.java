@@ -2,7 +2,7 @@ package androidx.car.app.media;
 
 import androidx.car.app.h;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int AUDIO_CONTENT_BUFFER_SIZE = 512;
@@ -20,20 +20,20 @@ public abstract class b {
         throw null;
     }
 
-    public int read(byte[] bArr, int i10, int i11) {
+    public int read(byte[] bArr, int i3, int i10) {
         synchronized (this.mRecordingStateLock) {
-            int i12 = this.mRecordingState;
-            if (i12 == 0) {
+            int i11 = this.mRecordingState;
+            if (i11 == 0) {
                 throw new IllegalStateException("Called read before calling startRecording or after calling stopRecording");
             }
-            if (i12 != 2) {
-                return readInternal(bArr, i10, i11);
+            if (i11 != 2) {
+                return readInternal(bArr, i3, i10);
             }
             return -1;
         }
     }
 
-    public abstract int readInternal(byte[] bArr, int i10, int i11);
+    public abstract int readInternal(byte[] bArr, int i3, int i10);
 
     public void startRecording() {
         synchronized (this.mRecordingStateLock) {

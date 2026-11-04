@@ -23,6 +23,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+import b8.c1;
+import b8.d1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -30,47 +32,48 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class o0 extends g.t {
-    public static final /* synthetic */ int j0 = 0;
-    public final Context D;
-    public boolean E;
+public final class o0 extends g.u {
+    public static final /* synthetic */ int k0 = 0;
+    public final Context E;
     public boolean F;
-    public long G;
-    public final android.support.v4.media.session.q H;
-    public RecyclerView I;
-    public m0 J;
-    public n0 K;
-    public HashMap L;
-    public p4.w M;
-    public HashMap N;
-    public boolean O;
+    public boolean G;
+    public long H;
+    public final android.support.v4.media.session.q I;
+    public RecyclerView J;
+    public m0 K;
+    public n0 L;
+    public HashMap M;
+    public r4.w N;
+    public HashMap O;
     public boolean P;
     public boolean Q;
-    public ImageButton R;
-    public Button S;
-    public ImageView T;
-    public View U;
-    public ImageView V;
-    public TextView W;
+    public boolean R;
+    public ImageButton S;
+    public Button T;
+    public ImageView U;
+    public View V;
+    public ImageView W;
     public TextView X;
-    public String Y;
-    public hf.b Z;
-    public final q a0;
-    public MediaDescriptionCompat b0;
-    public e0 c0;
-    public Bitmap d0;
-    public Uri e0;
-    public final p4.y f;
-    public boolean f0;
-    public Bitmap g0;
+    public TextView Y;
+    public String Z;
+    public p4.q a0;
+    public final q b0;
+    public MediaDescriptionCompat c0;
+    public e0 d0;
+    public Bitmap e0;
+    public final r4.y f;
+    public Uri f0;
+    public boolean g0;
     public final c h;
-    public int h0;
-    public final boolean i0;
-    public p4.s n;
-    public p4.w r;
+    public Bitmap h0;
+    public int i0;
+    public final boolean j0;
+    public r4.r n;
+    public r4.w r;
     public final ArrayList s;
     public final ArrayList w;
     public final ArrayList x;
@@ -85,29 +88,29 @@ public final class o0 extends g.t {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public o0(Context context) {
-        super(r2, r0 == 0 ? v7.a0.e(r2) : r0);
-        ContextThemeWrapper a2 = v7.a0.a(context, false);
-        int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
-        this.n = p4.s.c;
+        super(r2, r0 == 0 ? d1.e(r2) : r0);
+        ContextThemeWrapper a10 = d1.a(context, false);
+        int g7 = d1.g(a10, R.attr.mediaRouteTheme);
+        this.n = r4.r.c;
         this.s = new ArrayList();
         this.w = new ArrayList();
         this.x = new ArrayList();
         this.y = new ArrayList();
-        int i10 = 3;
-        this.H = new android.support.v4.media.session.q(this, i10);
+        int i3 = 3;
+        this.I = new android.support.v4.media.session.q(this, i3);
         Context context2 = getContext();
-        this.D = context2;
-        this.f = p4.y.d(context2);
-        this.i0 = p4.y.g();
-        this.h = new c(this, i10);
-        this.r = p4.y.f();
-        this.a0 = new q(this, 1);
-        h(p4.y.e());
+        this.E = context2;
+        this.f = r4.y.d(context2);
+        this.j0 = r4.y.g();
+        this.h = new c(this, i3);
+        this.r = r4.y.f();
+        this.b0 = new q(this, 1);
+        h(r4.y.e());
     }
 
     public final void e(List list) {
         for (int size = list.size() - 1; size >= 0; size--) {
-            p4.w wVar = (p4.w) list.get(size);
+            r4.w wVar = (r4.w) list.get(size);
             if (wVar.d() || !wVar.g || !wVar.h(this.n) || this.r == wVar) {
                 list.remove(size);
             }
@@ -115,36 +118,36 @@ public final class o0 extends g.t {
     }
 
     public final void f() {
-        MediaDescriptionCompat mediaDescriptionCompat = this.b0;
+        MediaDescriptionCompat mediaDescriptionCompat = this.c0;
         Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
         Uri uri = mediaDescriptionCompat != null ? mediaDescriptionCompat.f : null;
-        e0 e0Var = this.c0;
-        Bitmap bitmap2 = e0Var == null ? this.d0 : e0Var.a;
-        Uri uri2 = e0Var == null ? this.e0 : e0Var.b;
+        e0 e0Var = this.d0;
+        Bitmap bitmap2 = e0Var == null ? this.e0 : e0Var.a;
+        Uri uri2 = e0Var == null ? this.f0 : e0Var.b;
         if (bitmap2 != bitmap || (bitmap2 == null && !Objects.equals(uri2, uri))) {
-            e0 e0Var2 = this.c0;
+            e0 e0Var2 = this.d0;
             if (e0Var2 != null) {
                 e0Var2.cancel(true);
             }
             e0 e0Var3 = new e0(this);
-            this.c0 = e0Var3;
+            this.d0 = e0Var3;
             e0Var3.execute(new Void[0]);
         }
     }
 
     public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
-        hf.b bVar = this.Z;
-        q qVar = this.a0;
-        if (bVar != null) {
-            bVar.p0(qVar);
-            this.Z = null;
+        p4.q qVar = this.a0;
+        q qVar2 = this.b0;
+        if (qVar != null) {
+            qVar.H(qVar2);
+            this.a0 = null;
         }
-        if (mediaSessionCompat$Token != null && this.F) {
-            hf.b bVar2 = new hf.b(this.D, mediaSessionCompat$Token);
-            this.Z = bVar2;
-            bVar2.i0(qVar);
-            MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
+        if (mediaSessionCompat$Token != null && this.G) {
+            p4.q qVar3 = new p4.q(this.E, mediaSessionCompat$Token);
+            this.a0 = qVar3;
+            qVar3.C(qVar2);
+            MediaMetadata metadata = ((android.support.v4.media.session.h) this.a0.a).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
                 Parcel obtain = Parcel.obtain();
@@ -156,34 +159,34 @@ public final class o0 extends g.t {
             } else {
                 mediaMetadataCompat = null;
             }
-            this.b0 = mediaMetadataCompat != null ? mediaMetadataCompat.a() : null;
+            this.c0 = mediaMetadataCompat != null ? mediaMetadataCompat.a() : null;
             f();
             k();
         }
     }
 
-    public final void i(p4.s sVar) {
-        if (sVar == null) {
+    public final void i(r4.r rVar) {
+        if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.n.equals(sVar)) {
+        if (this.n.equals(rVar)) {
             return;
         }
-        this.n = sVar;
-        if (this.F) {
-            p4.y yVar = this.f;
+        this.n = rVar;
+        if (this.G) {
+            r4.y yVar = this.f;
             c cVar = this.h;
             yVar.h(cVar);
-            yVar.a(sVar, cVar, 1);
+            yVar.a(rVar, cVar, 1);
             l();
         }
     }
 
     public final void j() {
-        Context context = this.D;
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
-        this.d0 = null;
+        Context context = this.E;
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : c1.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         this.e0 = null;
+        this.f0 = null;
         f();
         k();
         n();
@@ -202,23 +205,23 @@ public final class o0 extends g.t {
     public final void k() {
         boolean isEmpty;
         boolean isEmpty2;
-        if ((this.M != null || this.O) ? true : !this.E) {
-            this.Q = true;
+        if ((this.N != null || this.P) ? true : !this.F) {
+            this.R = true;
             return;
         }
-        this.Q = false;
+        this.R = false;
         if (!this.r.g() || this.r.d()) {
             dismiss();
         }
-        if (this.f0) {
-            Bitmap bitmap = this.g0;
-            if (!(bitmap != null && bitmap.isRecycled()) && this.g0 != null) {
+        if (this.g0) {
+            Bitmap bitmap = this.h0;
+            if (!(bitmap != null && bitmap.isRecycled()) && this.h0 != null) {
+                this.W.setVisibility(0);
+                this.W.setImageBitmap(this.h0);
+                this.W.setBackgroundColor(this.i0);
                 this.V.setVisibility(0);
-                this.V.setImageBitmap(this.g0);
-                this.V.setBackgroundColor(this.h0);
-                this.U.setVisibility(0);
-                Bitmap bitmap2 = this.g0;
-                RenderScript create = RenderScript.create(this.D);
+                Bitmap bitmap2 = this.h0;
+                RenderScript create = RenderScript.create(this.E);
                 Allocation createFromBitmap = Allocation.createFromBitmap(create, bitmap2);
                 Allocation createTyped = Allocation.createTyped(create, createFromBitmap.getType());
                 ScriptIntrinsicBlur create2 = ScriptIntrinsicBlur.create(create, Element.U8_4(create));
@@ -231,46 +234,46 @@ public final class o0 extends g.t {
                 createTyped.destroy();
                 create2.destroy();
                 create.destroy();
-                this.T.setImageBitmap(copy);
-                this.f0 = false;
-                this.g0 = null;
-                this.h0 = 0;
-                MediaDescriptionCompat mediaDescriptionCompat = this.b0;
+                this.U.setImageBitmap(copy);
+                this.g0 = false;
+                this.h0 = null;
+                this.i0 = 0;
+                MediaDescriptionCompat mediaDescriptionCompat = this.c0;
                 CharSequence charSequence = mediaDescriptionCompat != null ? null : mediaDescriptionCompat.b;
                 isEmpty = TextUtils.isEmpty(charSequence);
-                MediaDescriptionCompat mediaDescriptionCompat2 = this.b0;
+                MediaDescriptionCompat mediaDescriptionCompat2 = this.c0;
                 CharSequence charSequence2 = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.c : null;
                 isEmpty2 = TextUtils.isEmpty(charSequence2);
                 if (isEmpty) {
-                    this.W.setText(charSequence);
+                    this.X.setText(charSequence);
                 } else {
-                    this.W.setText(this.Y);
+                    this.X.setText(this.Z);
                 }
                 if (!isEmpty2) {
-                    this.X.setVisibility(8);
+                    this.Y.setVisibility(8);
                     return;
                 } else {
-                    this.X.setText(charSequence2);
-                    this.X.setVisibility(0);
+                    this.Y.setText(charSequence2);
+                    this.Y.setVisibility(0);
                     return;
                 }
             }
         }
-        Bitmap bitmap3 = this.g0;
+        Bitmap bitmap3 = this.h0;
         if (bitmap3 != null && bitmap3.isRecycled()) {
-            Log.w("MediaRouteCtrlDialog", "Can't set artwork image with recycled bitmap: " + this.g0);
+            Log.w("MediaRouteCtrlDialog", "Can't set artwork image with recycled bitmap: " + this.h0);
         }
+        this.W.setVisibility(8);
         this.V.setVisibility(8);
-        this.U.setVisibility(8);
-        this.T.setImageBitmap(null);
-        this.f0 = false;
-        this.g0 = null;
-        this.h0 = 0;
-        MediaDescriptionCompat mediaDescriptionCompat3 = this.b0;
+        this.U.setImageBitmap(null);
+        this.g0 = false;
+        this.h0 = null;
+        this.i0 = 0;
+        MediaDescriptionCompat mediaDescriptionCompat3 = this.c0;
         if (mediaDescriptionCompat3 != null) {
         }
         isEmpty = TextUtils.isEmpty(charSequence);
-        MediaDescriptionCompat mediaDescriptionCompat22 = this.b0;
+        MediaDescriptionCompat mediaDescriptionCompat22 = this.c0;
         if (mediaDescriptionCompat22 != null) {
         }
         isEmpty2 = TextUtils.isEmpty(charSequence2);
@@ -288,13 +291,13 @@ public final class o0 extends g.t {
         ArrayList arrayList3 = this.x;
         arrayList3.clear();
         arrayList.addAll(DesugarCollections.unmodifiableList(this.r.v));
-        p4.v vVar = this.r.a;
+        r4.v vVar = this.r.a;
         vVar.getClass();
-        p4.y.b();
-        for (p4.w wVar : DesugarCollections.unmodifiableList(vVar.b)) {
-            k2.m0 b10 = this.r.b(wVar);
+        r4.y.b();
+        for (r4.w wVar : DesugarCollections.unmodifiableList(vVar.b)) {
+            y00 b10 = this.r.b(wVar);
             if (b10 != null) {
-                p4.o oVar = (p4.o) b10.a;
+                r4.o oVar = (r4.o) b10.a;
                 if (oVar != null && oVar.d) {
                     arrayList2.add(wVar);
                 }
@@ -309,35 +312,35 @@ public final class o0 extends g.t {
         Collections.sort(arrayList, eVar);
         Collections.sort(arrayList2, eVar);
         Collections.sort(arrayList3, eVar);
-        this.J.G();
+        this.K.G();
     }
 
     public final void n() {
-        if (this.F) {
-            if (SystemClock.uptimeMillis() - this.G < 300) {
-                android.support.v4.media.session.q qVar = this.H;
+        if (this.G) {
+            if (SystemClock.uptimeMillis() - this.H < 300) {
+                android.support.v4.media.session.q qVar = this.I;
                 qVar.removeMessages(1);
-                qVar.sendEmptyMessageAtTime(1, this.G + 300);
+                qVar.sendEmptyMessageAtTime(1, this.H + 300);
                 return;
             }
-            if ((this.M != null || this.O) ? true : !this.E) {
-                this.P = true;
+            if ((this.N != null || this.P) ? true : !this.F) {
+                this.Q = true;
                 return;
             }
-            this.P = false;
+            this.Q = false;
             if (!this.r.g() || this.r.d()) {
                 dismiss();
             }
-            this.G = SystemClock.uptimeMillis();
-            this.J.F();
+            this.H = SystemClock.uptimeMillis();
+            this.K.F();
         }
     }
 
     public final void o() {
-        if (this.P) {
+        if (this.Q) {
             n();
         }
-        if (this.Q) {
+        if (this.R) {
             k();
         }
     }
@@ -345,55 +348,55 @@ public final class o0 extends g.t {
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.F = true;
+        this.G = true;
         this.f.a(this.n, this.h, 1);
         l();
-        h(p4.y.e());
+        h(r4.y.e());
     }
 
-    @Override // g.t, androidx.activity.n, android.app.Dialog
+    @Override // g.u, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.mr_cast_dialog);
         View decorView = getWindow().getDecorView();
-        Context context = this.D;
-        decorView.setBackgroundColor(context.getColor(v7.a0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        Context context = this.E;
+        decorView.setBackgroundColor(context.getColor(d1.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
-        this.R = imageButton;
+        this.S = imageButton;
         imageButton.setColorFilter(-1);
-        this.R.setOnClickListener(new d0(this, 0));
+        this.S.setOnClickListener(new d0(this, 0));
         Button button = (Button) findViewById(R.id.mr_cast_stop_button);
-        this.S = button;
+        this.T = button;
         button.setTextColor(-1);
-        this.S.setOnClickListener(new d0(this, 1));
-        this.J = new m0(this);
+        this.T.setOnClickListener(new d0(this, 1));
+        this.K = new m0(this);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_cast_list);
-        this.I = recyclerView;
-        recyclerView.setAdapter(this.J);
-        this.I.setLayoutManager(new s4.a0());
-        this.K = new n0(this);
-        this.L = new HashMap();
-        this.N = new HashMap();
-        this.T = (ImageView) findViewById(R.id.mr_cast_meta_background);
-        this.U = findViewById(R.id.mr_cast_meta_black_scrim);
-        this.V = (ImageView) findViewById(R.id.mr_cast_meta_art);
+        this.J = recyclerView;
+        recyclerView.setAdapter(this.K);
+        this.J.setLayoutManager(new u4.b0());
+        this.L = new n0(this);
+        this.M = new HashMap();
+        this.O = new HashMap();
+        this.U = (ImageView) findViewById(R.id.mr_cast_meta_background);
+        this.V = findViewById(R.id.mr_cast_meta_black_scrim);
+        this.W = (ImageView) findViewById(R.id.mr_cast_meta_art);
         TextView textView = (TextView) findViewById(R.id.mr_cast_meta_title);
-        this.W = textView;
+        this.X = textView;
         textView.setTextColor(-1);
         TextView textView2 = (TextView) findViewById(R.id.mr_cast_meta_subtitle);
-        this.X = textView2;
+        this.Y = textView2;
         textView2.setTextColor(-1);
-        this.Y = context.getResources().getString(R.string.mr_cast_dialog_title_view_placeholder);
-        this.E = true;
+        this.Z = context.getResources().getString(R.string.mr_cast_dialog_title_view_placeholder);
+        this.F = true;
         j();
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.F = false;
+        this.G = false;
         this.f.h(this.h);
-        this.H.removeCallbacksAndMessages(null);
+        this.I.removeCallbacksAndMessages(null);
         h(null);
     }
 }

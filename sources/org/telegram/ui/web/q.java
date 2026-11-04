@@ -1,69 +1,43 @@
 package org.telegram.ui.web;
 
+import ei.p7;
 import org.json.JSONObject;
-import org.telegram.messenger.f8;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.u10;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q implements Runnable {
+public final /* synthetic */ class q implements u10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+    public final /* synthetic */ w0 b;
+    public final /* synthetic */ p7 c;
 
-    public /* synthetic */ q(z0 z0Var, int i10) {
-        this.a = i10;
-        this.b = z0Var;
+    public /* synthetic */ q(w0 w0Var, p7 p7Var, int i3) {
+        this.a = i3;
+        this.b = w0Var;
+        this.c = p7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                d0 d0Var = this.b.c;
-                if (d0Var != null) {
-                    d0Var.b();
-                }
-                LaunchActivity.J();
+                this.b.x(this.c, "location_requested", (JSONObject) obj);
                 break;
             case 1:
-                z0 z0Var = this.b;
-                if (z0Var.S) {
-                    z0Var.S = false;
-                    d0 d0Var2 = z0Var.c;
-                    if (d0Var2 != null) {
-                        d0Var2.t(false);
-                    }
-                }
-                z0Var.c();
-                z0Var.N = false;
-                z0Var.P = 0L;
-                z0Var.T = false;
-                v0 v0Var = z0Var.a;
-                if (v0Var != null) {
-                    v0Var.onResume();
-                    z0Var.a.reload();
-                    break;
-                }
+                this.b.x(this.c, "location_requested", (JSONObject) obj);
                 break;
             default:
-                z0 z0Var2 = this.b;
-                x0 x0Var = z0Var2.J0;
-                xh.o0 o0Var = z0Var2.k0;
-                o0Var.getClass();
-                JSONObject jSONObject = new JSONObject();
-                try {
-                    jSONObject.put("available", o0Var.d());
-                    if (o0Var.d()) {
-                        jSONObject.put("access_requested", o0Var.d);
-                        if (o0Var.d) {
-                            jSONObject.put("access_granted", o0Var.e && o0Var.a());
-                        }
-                    }
-                } catch (Exception e) {
-                    f8.g(e, true);
+                w0 w0Var = this.b;
+                w0Var.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                p7 p7Var = this.c;
+                if (!booleanValue) {
+                    w0Var.x(p7Var, "home_screen_failed", w0.A("UNSUPPORTED", "error"));
+                    break;
+                } else {
+                    w0Var.x(p7Var, "home_screen_added", null);
+                    break;
                 }
-                z0Var2.y(x0Var, "location_checked", jSONObject);
-                break;
         }
     }
 }

@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class BigOperatorAtom extends Atom {
     protected Atom base;
@@ -18,8 +18,8 @@ public class BigOperatorAtom extends Atom {
         this.type = 1;
     }
 
-    private static Box changeWidth(Box box, float f7) {
-        return (box == null || Math.abs(f7 - box.getWidth()) <= 1.0E-7f) ? box : new HorizontalBox(box, f7, 2);
+    private static Box changeWidth(Box box, float f10) {
+        return (box == null || Math.abs(f10 - box.getWidth()) <= 1.0E-7f) ? box : new HorizontalBox(box, f10, 2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x0083  */
@@ -45,11 +45,11 @@ public class BigOperatorAtom extends Atom {
         RowAtom rowAtom;
         boolean z10;
         Atom atom;
-        int i10;
+        int i3;
         Box horizontalBox;
-        float f7;
-        Box changeWidth;
         float f10;
+        Box changeWidth;
+        float f11;
         TeXFont teXFont = teXEnvironment.getTeXFont();
         int style = teXEnvironment.getStyle();
         Atom atom2 = this.base;
@@ -60,7 +60,7 @@ public class BigOperatorAtom extends Atom {
                 if (rowAtom.lookAtLastAtom && this.base.type_limits != 2) {
                     this.base = rowAtom.getLastAtom();
                     z10 = this.limitsSet;
-                    if ((!z10 && !this.limits) || ((!z10 && style >= 2) || (i10 = (atom = this.base).type_limits) == 1 || (i10 == 0 && style >= 2))) {
+                    if ((!z10 && !this.limits) || ((!z10 && style >= 2) || (i3 = (atom = this.base).type_limits) == 1 || (i3 == 0 && style >= 2))) {
                         if (rowAtom == null) {
                             return new ScriptsAtom(this.base, this.under, this.over).createBox(teXEnvironment);
                         }
@@ -73,11 +73,11 @@ public class BigOperatorAtom extends Atom {
                     }
                     if ((atom instanceof SymbolAtom) || atom.type != 1) {
                         horizontalBox = new HorizontalBox(atom != null ? new StrutBox(0.0f, 0.0f, 0.0f, 0.0f) : atom.createBox(teXEnvironment));
-                        f7 = 0.0f;
+                        f10 = 0.0f;
                     } else {
-                        Char r52 = teXFont.getChar(((SymbolAtom) atom).getName(), style);
+                        Char r5 = teXFont.getChar(((SymbolAtom) atom).getName(), style);
                         horizontalBox = this.base.createBox(teXEnvironment);
-                        f7 = r52.getItalic();
+                        f10 = r5.getItalic();
                     }
                     Atom atom3 = this.over;
                     Box createBox2 = atom3 == null ? atom3.createBox(teXEnvironment.supStyle()) : null;
@@ -91,26 +91,26 @@ public class BigOperatorAtom extends Atom {
                     float bigOpSpacing5 = teXFont.getBigOpSpacing5(style);
                     if (this.over == null) {
                         verticalBox.add(new StrutBox(0.0f, bigOpSpacing5, 0.0f, 0.0f));
-                        changeWidth.setShift(f7 / 2.0f);
+                        changeWidth.setShift(f10 / 2.0f);
                         verticalBox.add(changeWidth);
-                        f10 = Math.max(teXFont.getBigOpSpacing1(style), teXFont.getBigOpSpacing3(style) - changeWidth.getDepth());
-                        verticalBox.add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
+                        f11 = Math.max(teXFont.getBigOpSpacing1(style), teXFont.getBigOpSpacing3(style) - changeWidth.getDepth());
+                        verticalBox.add(new StrutBox(0.0f, f11, 0.0f, 0.0f));
                         verticalBox.getHeight();
                         verticalBox.getDepth();
                     } else {
-                        f10 = 0.0f;
+                        f11 = 0.0f;
                     }
                     verticalBox.add(changeWidth2);
                     if (this.under != null) {
                         verticalBox.add(new StrutBox(0.0f, Math.max(teXFont.getBigOpSpacing2(style), teXFont.getBigOpSpacing4(style) - changeWidth3.getHeight()), 0.0f, 0.0f));
-                        changeWidth3.setShift((-f7) / 2.0f);
+                        changeWidth3.setShift((-f10) / 2.0f);
                         verticalBox.add(changeWidth3);
                         verticalBox.add(new StrutBox(0.0f, bigOpSpacing5, 0.0f, 0.0f));
                     }
                     float height = changeWidth2.getHeight();
                     float depth = verticalBox.getDepth() + verticalBox.getHeight();
                     if (changeWidth != null) {
-                        height += changeWidth.getDepth() + changeWidth.getHeight() + bigOpSpacing5 + f10;
+                        height += changeWidth.getDepth() + changeWidth.getHeight() + bigOpSpacing5 + f11;
                     }
                     verticalBox.setHeight(height);
                     verticalBox.setDepth(depth - height);
@@ -133,7 +133,7 @@ public class BigOperatorAtom extends Atom {
         if (atom instanceof SymbolAtom) {
         }
         horizontalBox = new HorizontalBox(atom != null ? new StrutBox(0.0f, 0.0f, 0.0f, 0.0f) : atom.createBox(teXEnvironment));
-        f7 = 0.0f;
+        f10 = 0.0f;
         Atom atom32 = this.over;
         if (atom32 == null) {
         }

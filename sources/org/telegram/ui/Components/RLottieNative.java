@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class RLottieNative {
     public final int[] a;
@@ -17,12 +17,12 @@ public final class RLottieNative {
         this.a = iArr;
     }
 
-    public static RLottieNative a(String str, String str2, int[] iArr, int[] iArr2, int i10, HashMap hashMap) {
+    public static RLottieNative a(String str, String str2, int[] iArr, int[] iArr2, int i3, HashMap hashMap) {
         String[] strArr;
         int[] iArr3;
         String str3;
         int[] iArr4;
-        int i11;
+        int i10;
         String str4;
         int[] iArr5 = new int[3];
         Trace.beginSection("RLottieNative#create");
@@ -41,19 +41,19 @@ public final class RLottieNative {
             str4 = str;
             str3 = str2;
             iArr4 = iArr2;
-            i11 = i10;
+            i10 = i3;
         } else {
             int[] iArr6 = new int[strArr.length];
-            for (int i12 = 0; i12 < strArr.length; i12++) {
-                iArr6[i12] = ((Integer) hashMap.get(strArr[i12])).intValue();
+            for (int i11 = 0; i11 < strArr.length; i11++) {
+                iArr6[i11] = ((Integer) hashMap.get(strArr[i11])).intValue();
             }
             iArr3 = iArr6;
             str3 = str2;
             iArr4 = iArr2;
-            i11 = i10;
+            i10 = i3;
             str4 = str;
         }
-        long nCreate = nCreate(str4, str3, iArr5, iArr4, i11, strArr, iArr3);
+        long nCreate = nCreate(str4, str3, iArr5, iArr4, i10, strArr, iArr3);
         Trace.endSection();
         if (nCreate == 0) {
             return null;
@@ -73,8 +73,8 @@ public final class RLottieNative {
                 iArr3 = null;
             } else {
                 iArr3 = new int[strArr.length];
-                for (int i10 = 0; i10 < strArr.length; i10++) {
-                    iArr3[i10] = ((Integer) hashMap.get(strArr[i10])).intValue();
+                for (int i3 = 0; i3 < strArr.length; i3++) {
+                    iArr3[i3] = ((Integer) hashMap.get(strArr[i3])).intValue();
                 }
             }
             Trace.beginSection("RLottieNative#createWithJson");
@@ -95,22 +95,22 @@ public final class RLottieNative {
         return null;
     }
 
-    private static native long nCreate(String str, String str2, int[] iArr, int[] iArr2, int i10, String[] strArr, int[] iArr3);
+    private static native long nCreate(String str, String str2, int[] iArr, int[] iArr2, int i3, String[] strArr, int[] iArr3);
 
     private static native long nCreateWithJson(String str, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
 
     private static native void nDestroy(long j10);
 
-    private static native int nGetFrame(long j10, int i10, Bitmap bitmap, boolean z10);
+    private static native int nGetFrame(long j10, int i3, Bitmap bitmap, boolean z10);
 
-    public final int c(int i10, Bitmap bitmap, boolean z10) {
+    public final int c(int i3, Bitmap bitmap, boolean z10) {
         if (this.c.get()) {
             throw new IllegalStateException("Called method on a recycled RLottie instance");
         }
         long j10 = this.b;
         Trace.beginSection("RLottieNative#getFrame");
         try {
-            return nGetFrame(j10, i10, bitmap, z10);
+            return nGetFrame(j10, i3, bitmap, z10);
         } finally {
             Trace.endSection();
         }

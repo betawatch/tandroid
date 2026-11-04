@@ -1,183 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import java.util.HashSet;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class w21 extends View implements org.telegram.ui.ActionBar.k6 {
-    public int a;
-    public float b;
-    public final Paint c;
-    public final Paint d;
-    public Drawable e;
-    public boolean f;
-    public int h;
-    public final RectF n;
+public final class w21 extends u4.t0 {
+    public final /* synthetic */ int a = 1;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public w21(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        this.f = true;
-        this.h = 0;
-        this.n = new RectF();
-        int x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.P9, false);
-        this.a = x02;
-        paint.setColor(x02);
-        paint2.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
-        paint2.setStyle(Paint.Style.STROKE);
-        paint2.setStrokeCap(Paint.Cap.ROUND);
+    public w21(ci.o4 o4Var, int i3) {
+        this.c = o4Var;
+        this.b = i3;
     }
 
-    @Override // android.view.View
-    public final void drawableHotspotChanged(float f7, float f10) {
-        super.drawableHotspotChanged(f7, f10);
-        Drawable drawable = this.e;
-        if (drawable != null) {
-            drawable.setHotspot(f7, f10);
-        }
-    }
-
-    @Override // android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        Drawable drawable = this.e;
-        if (drawable != null) {
-            drawable.setState(getDrawableState());
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        Drawable drawable = this.e;
-        if (drawable != null) {
-            drawable.jumpToCurrentState();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2 = canvas;
-        if (this.f) {
-            float L = org.telegram.messenger.i0.L(((this.h == 0 ? this.b : 1.0f) * 26.0f) + 6.0f);
-            float width = getWidth();
-            float height = getHeight();
-            RectF rectF = this.n;
-            rectF.set(0.0f, 0.0f, width, height);
-            canvas2.drawRoundRect(rectF, L, L, this.c);
-        }
-        int i10 = this.h;
-        Paint paint = this.d;
-        if (i10 == 0) {
-            float max = (Math.max(0.4f, this.b) - 0.4f) / 0.6f;
-            if (max != 0.0f) {
-                float A = (org.telegram.messenger.a30.A(21.0f, 2, getWidth()) * max) + org.telegram.messenger.i0.L(21.0f);
-                float height2 = getHeight() / 2.0f;
-                canvas.drawLine(org.telegram.messenger.i0.L(21.0f), height2, A, height2, paint);
-                double L2 = org.telegram.messenger.i0.L(9.0f) * max;
-                float cos = (float) (A - (Math.cos(0.7853981633974483d) * L2));
-                float sin = (float) (Math.sin(0.7853981633974483d) * L2);
-                canvas2 = canvas;
-                canvas2.drawLine(A, height2, cos, height2 - sin, paint);
-                canvas2.drawLine(A, height2, cos, height2 + sin, paint);
-            } else {
-                canvas2 = canvas;
-            }
-        } else if (i10 == 1) {
-            float L3 = org.telegram.messenger.i0.L(21.0f);
-            float width2 = getWidth() - org.telegram.messenger.i0.L(21.0f);
-            float height3 = getHeight() / 2.0f;
-            canvas2.save();
-            canvas2.translate((-org.telegram.messenger.i0.L(2.0f)) * this.b, 0.0f);
-            canvas2.rotate(this.b * 90.0f, getWidth() / 2.0f, getHeight() / 2.0f);
-            canvas2.drawLine(L3 + ((width2 - L3) * this.b), height3, width2, height3, paint);
-            int L4 = org.telegram.messenger.i0.L((this.b * (-1.0f)) + 9.0f);
-            int L5 = org.telegram.messenger.i0.L((this.b * 7.0f) + 9.0f);
-            double d = width2;
-            double d10 = L4;
-            double d11 = height3;
-            canvas.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d10)), (float) ((Math.sin(0.7853981633974483d) * d10) + d11), paint);
-            double d12 = L5;
-            canvas2 = canvas;
-            canvas2.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d12)), (float) (d11 - (Math.sin(0.7853981633974483d) * d12)), paint);
-            canvas.restore();
-        }
-        Drawable drawable = this.e;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, getWidth(), getHeight());
-            this.e.setHotspotBounds(0, 0, getWidth(), getHeight());
-            this.e.draw(canvas2);
-        }
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.c.setColor(i10);
-        invalidate();
-    }
-
-    public void setColor(int i10) {
-        this.d.setColor(i10);
-        invalidate();
-    }
-
-    public void setDrawBackground(boolean z10) {
-        this.f = z10;
-    }
-
-    public void setProgress(float f7) {
-        this.b = f7;
-        invalidate();
-    }
-
-    public void setRippleDrawable(Drawable drawable) {
-        this.e = drawable;
-        invalidate();
-    }
-
-    public void setTransformType(int i10) {
-        this.h = i10;
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        Paint paint = this.c;
-        try {
-            if (paint.getColor() == this.a) {
-                this.a = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.P9, false);
-                int color = paint.getColor();
-                int i10 = this.a;
-                if (color != i10) {
-                    paint.setColor(i10);
-                    invalidate();
+    @Override // u4.t0
+    public final void a(RecyclerView recyclerView, int i3) {
+        org.telegram.ui.Wallet.s8 s8Var;
+        switch (this.a) {
+            case 0:
+                if (i3 == 0) {
+                    this.b = 0;
+                    break;
                 }
-            }
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
+                break;
+            default:
+                if (i3 == 1 && (s8Var = ((org.telegram.ui.Wallet.w5) ((ci.o4) this.c).c).j0) != null) {
+                    s8Var.a();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        if (super.verifyDrawable(drawable)) {
-            return true;
+    @Override // u4.t0
+    public final void b(RecyclerView recyclerView, int i3, int i10) {
+        switch (this.a) {
+            case 0:
+                z21 z21Var = (z21) this.c;
+                n31 n31Var = z21Var.l1;
+                this.b += i10;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > org.telegram.messenger.g0.L(96.0f)) {
+                    View findFocus = n31Var.findFocus();
+                    if (findFocus == null) {
+                        findFocus = n31Var;
+                    }
+                    org.telegram.messenger.g0.v1(findFocus);
+                }
+                if (i10 != 0 && n31Var.c()) {
+                    z21Var.m1 = n31Var.getContentTopOffset();
+                    z21Var.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.w5 w5Var = (org.telegram.ui.Wallet.w5) ((ci.o4) this.c).c;
+                if (this.b != 0) {
+                    recyclerView.post(new org.telegram.ui.Wallet.d4(w5Var, 14));
+                    break;
+                } else {
+                    w5Var.E0();
+                    break;
+                }
         }
-        Drawable drawable2 = this.e;
-        return drawable2 != null && drawable == drawable2;
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public w21(z21 z21Var) {
+        this.c = z21Var;
     }
 }

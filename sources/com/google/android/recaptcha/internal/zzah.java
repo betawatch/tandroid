@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import ad.g;
-import cd.c;
-import dd.a;
-import ed.j;
+import b8.ib;
+import dd.g;
+import dd.k;
+import fd.c;
+import hd.j;
 import java.util.Iterator;
 import java.util.List;
-import l9.b;
-import ld.p;
-import td.c0;
+import od.p;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzah extends j implements p {
     Object zza;
@@ -29,19 +29,19 @@ final class zzah extends j implements p {
         this.zzg = zzhkVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzah(this.zze, this.zzf, this.zzg, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzah) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzah) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x00b2  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x00b2 -> B:5:0x0080). Please report as a decompilation issue!!! */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,28 +52,28 @@ final class zzah extends j implements p {
         zzxp zzxpVar;
         Iterator it2;
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i10 = this.zzd;
-        if (i10 == 0) {
-            b.b(obj);
+        gd.a aVar = gd.a.a;
+        int i3 = this.zzd;
+        if (i3 == 0) {
+            ib.b(obj);
             zzxn zzxnVar = this.zze;
             if (!zzxnVar.zzU()) {
-                return new g(b.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new g(ib.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzk = zzxnVar.zzk();
             if (zzk.zzi().zzn()) {
-                return new g(b.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new g(ib.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzaj zzajVar = this.zzf;
             zzajVar.zzb = zzk.zzi();
             list = zzajVar.zza;
             it = list.iterator();
         } else {
-            if (i10 == 1) {
+            if (i3 == 1) {
                 zzhkVar = (zzhk) this.zzc;
                 it2 = (Iterator) this.zzb;
                 zzxpVar = (zzxp) this.zza;
-                b.b(obj);
+                ib.b(obj);
                 this.zza = zzxpVar;
                 this.zzb = it2;
                 this.zzc = null;
@@ -86,10 +86,10 @@ final class zzah extends j implements p {
             }
             it = (Iterator) this.zzb;
             zzk = (zzxp) this.zza;
-            b.b(obj);
+            ib.b(obj);
         }
         if (!it.hasNext()) {
-            return new g(ad.j.a);
+            return new g(k.a);
         }
         zzar zzarVar = (zzar) it.next();
         zzhk zzhkVar2 = this.zzg;

@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.l;
-import td.e0;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.l;
+import wd.b0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzft extends j implements l {
     int zza;
@@ -21,29 +21,29 @@ final class zzft extends j implements l {
         this.zzc = zzgbVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(c cVar) {
         return new zzft(this.zzb, this.zzc, cVar);
     }
 
-    @Override // ld.l
+    @Override // od.l
     public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        return ((zzft) create((c) obj)).invokeSuspend(ad.j.a);
+        return ((zzft) create((c) obj)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i10 = this.zza;
-        b.b(obj);
-        if (i10 == 0) {
+        gd.a aVar = gd.a.a;
+        int i3 = this.zza;
+        ib.b(obj);
+        if (i3 == 0) {
             long j10 = this.zzb;
             zzfs zzfsVar = new zzfs(this.zzc, null);
             this.zza = 1;
-            if (e0.x(j10, zzfsVar, this) == aVar) {
+            if (b0.z(j10, zzfsVar, this) == aVar) {
                 return aVar;
             }
         }
-        return ad.j.a;
+        return k.a;
     }
 }

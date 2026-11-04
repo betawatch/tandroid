@@ -1,35 +1,35 @@
 package ii;
 
-import android.util.SparseArray;
-import bi.t6;
-import j$.util.Comparator$-CC;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class a {
-    public SparseArray a;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class a implements u10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k b;
 
-    public final void a(HashMap hashMap) {
-        if (this.a != null) {
-            for (Map.Entry entry : hashMap.entrySet()) {
-                this.a.put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
-            }
-            return;
-        }
-        this.a = new SparseArray(hashMap.size());
-        ArrayList arrayList = new ArrayList(hashMap.entrySet());
-        Collections.sort(arrayList, Comparator$-CC.comparingInt(new t6(1)));
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            Map.Entry entry2 = (Map.Entry) obj;
-            this.a.append(((String) entry2.getKey()).hashCode(), (String) entry2.getValue());
+    public /* synthetic */ a(k kVar, int i3) {
+        this.a = i3;
+        this.b = kVar;
+    }
+
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new e(0, this.b, (TLRPC.UserFull) obj));
+                break;
+            case 1:
+                k kVar = this.b;
+                kVar.b0.commission_permille = ((Integer) obj).intValue();
+                kVar.L0();
+                break;
+            default:
+                k kVar2 = this.b;
+                kVar2.b0.duration_months = ((Integer) kVar2.d0.get(((Integer) obj).intValue())).intValue();
+                kVar2.L0();
+                break;
         }
     }
 }

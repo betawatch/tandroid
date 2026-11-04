@@ -2,9 +2,10 @@ package m;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import b8.ae;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class g extends v implements i {
     public final /* synthetic */ h d;
@@ -17,7 +18,7 @@ public final class g extends v implements i {
         setFocusable(true);
         setVisibility(0);
         setEnabled(true);
-        w7.t.a(this, getContentDescription());
+        ae.a(this, getContentDescription());
         setOnTouchListener(new l.b(this, this));
     }
 
@@ -42,8 +43,8 @@ public final class g extends v implements i {
     }
 
     @Override // android.widget.ImageView
-    public final boolean setFrame(int i10, int i11, int i12, int i13) {
-        boolean frame = super.setFrame(i10, i11, i12, i13);
+    public final boolean setFrame(int i3, int i10, int i11, int i12) {
+        boolean frame = super.setFrame(i3, i10, i11, i12);
         Drawable drawable = getDrawable();
         Drawable background = getBackground();
         if (drawable != null && background != null) {

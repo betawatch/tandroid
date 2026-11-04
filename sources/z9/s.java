@@ -1,25 +1,103 @@
 package z9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class s implements ja.d {
-    public static final s a = new s();
-    public static final ja.c b = ja.c.c("batteryLevel");
-    public static final ja.c c = ja.c.c("batteryVelocity");
-    public static final ja.c d = ja.c.c("proximityOn");
-    public static final ja.c e = ja.c.c("orientation");
-    public static final ja.c f = ja.c.c("ramUsed");
-    public static final ja.c g = ja.c.c("diskUsed");
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import org.telegram.ui.Cells.f1;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        u0 u0Var = (u0) ((v1) obj);
-        eVar.d(b, u0Var.a);
-        eVar.g(c, u0Var.b);
-        eVar.a(d, u0Var.c);
-        eVar.g(e, u0Var.d);
-        eVar.f(f, u0Var.e);
-        eVar.f(g, u0Var.f);
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class s {
+    public final SharedPreferences a;
+    public final n9.h b;
+    public final Object c;
+    public TaskCompletionSource d;
+    public boolean e;
+    public boolean f;
+    public Boolean g;
+    public final TaskCompletionSource h;
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public s(n9.h hVar) {
+        Boolean bool;
+        Boolean bool2;
+        PackageManager packageManager;
+        ApplicationInfo applicationInfo;
+        Bundle bundle;
+        Object obj = new Object();
+        this.c = obj;
+        this.d = new TaskCompletionSource();
+        this.e = false;
+        this.f = false;
+        this.h = new TaskCompletionSource();
+        hVar.a();
+        Context context = hVar.a;
+        this.b = hVar;
+        SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.crashlytics", 0);
+        this.a = sharedPreferences;
+        if (sharedPreferences.contains("firebase_crashlytics_collection_enabled")) {
+            this.f = false;
+            bool = Boolean.valueOf(sharedPreferences.getBoolean("firebase_crashlytics_collection_enabled", true));
+        } else {
+            bool = null;
+        }
+        if (bool == null) {
+            try {
+                packageManager = context.getPackageManager();
+            } catch (PackageManager.NameNotFoundException e10) {
+                Log.e("FirebaseCrashlytics", "Could not read data collection permission from manifest", e10);
+            }
+            if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_crashlytics_collection_enabled")) {
+                bool2 = Boolean.valueOf(applicationInfo.metaData.getBoolean("firebase_crashlytics_collection_enabled"));
+                if (bool2 != null) {
+                    this.f = false;
+                    bool = null;
+                } else {
+                    this.f = true;
+                    bool = Boolean.valueOf(Boolean.TRUE.equals(bool2));
+                }
+            }
+            bool2 = null;
+            if (bool2 != null) {
+            }
+        }
+        this.g = bool;
+        synchronized (obj) {
+            try {
+                if (a()) {
+                    this.d.trySetResult(null);
+                    this.e = true;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final synchronized boolean a() {
+        boolean z10;
+        Boolean bool = this.g;
+        if (bool != null) {
+            z10 = bool.booleanValue();
+        } else {
+            try {
+                z10 = this.b.h();
+            } catch (IllegalStateException unused) {
+                z10 = false;
+            }
+        }
+        String q10 = f1.q("Crashlytics automatic data collection ", z10 ? "ENABLED" : "DISABLED", " by ", this.g == null ? "global Firebase setting" : this.f ? "firebase_crashlytics_collection_enabled manifest flag" : "API", ".");
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", q10, null);
+        }
+        return z10;
     }
 }

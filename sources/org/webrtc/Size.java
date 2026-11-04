@@ -1,14 +1,14 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class Size {
     public int height;
     public int width;
 
-    public Size(int i10, int i11) {
-        this.width = i10;
-        this.height = i11;
+    public Size(int i3, int i10) {
+        this.width = i3;
+        this.height = i10;
     }
 
     public boolean equals(Object obj) {

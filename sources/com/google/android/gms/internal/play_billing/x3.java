@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class x3 extends v1 {
     private static final x3 zzb;
@@ -53,21 +53,21 @@ public final class x3 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+    public final Object d(int i3) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
+        if (i10 == 2) {
             return new s2(zzb, "\u0004\b\u0001\u0001\u0001\b\b\u0000\u0000\u0000\u0001ဉ\u0000\u0002<\u0000\u0003<\u0000\u0004<\u0000\u0005<\u0000\u0006ဉ\u0001\u0007<\u0000\b<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", g3.class, i3.class, b4.class, n3.class, "zzh", l3.class, a4.class});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new x3();
         }
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new w3(zzb);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
         throw null;

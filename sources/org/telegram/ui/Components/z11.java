@@ -1,55 +1,116 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z11 implements org.telegram.messenger.jp, org.telegram.ui.ActionBar.u1 {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ Object f;
+public final class z11 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final Path a;
+    public final Paint b;
+    public Boolean c;
+    public final /* synthetic */ f21 d;
 
-    public /* synthetic */ z11(p21 p21Var, org.telegram.ui.ActionBar.b1 b1Var, z60 z60Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
-        this.b = p21Var;
-        this.c = b1Var;
-        this.d = z60Var;
-        this.a = j10;
-        this.e = user;
-        this.f = chat;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z11(f21 f21Var, Context context) {
+        super(context);
+        this.d = f21Var;
+        this.a = new Path();
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, f21Var.J0));
+        org.telegram.ui.ActionBar.k6.n(paint);
     }
 
-    @Override // org.telegram.messenger.jp
-    public void a(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        org.telegram.messenger.i0.g3(new org.telegram.messenger.ch((p21) this.b, z10, (org.telegram.ui.ActionBar.b1) this.c, (z60) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        f21 f21Var = this.d;
+        float L0 = f21Var.L0(true);
+        float W1 = org.telegram.messenger.g0.W1(b8.be.a(L0 / org.telegram.messenger.g0.N(24.0f), 0.0f, 1.0f), 0, org.telegram.messenger.g0.L(12.0f));
+        f21Var.u1.setTranslationY(Math.max(org.telegram.messenger.g0.m, L0));
+        boolean z10 = L0 <= ((float) org.telegram.messenger.g0.m) / 2.0f;
+        Boolean bool = this.c;
+        if (bool == null || bool.booleanValue() != z10) {
+            this.c = Boolean.valueOf(z10);
+            org.telegram.messenger.g0.s3(f21Var.getWindow(), org.telegram.messenger.g0.B(z10 ? org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, f21Var.J0) : org.telegram.ui.ActionBar.k6.w(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.s8, f21Var.J0), 855638016)) > 0.721f);
+        }
+        f21Var.F.setTranslationY(Math.max(f21Var.F.getHeight() + org.telegram.messenger.g0.L(56.0f) + org.telegram.messenger.g0.m, L0) + getTranslationY() + ((-r1.getTop()) - f21Var.F.getHeight()));
+        Path path = this.a;
+        path.rewind();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(0.0f, L0, getWidth(), getHeight() + W1);
+        path.addRoundRect(rectF, W1, W1, Path.Direction.CW);
+        canvas.drawPath(path, this.b);
+        super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        rh.e4 e4Var = (rh.e4) this.b;
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.c;
-        TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) this.d;
-        TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails tL_inputInvoiceStarGiftDropOriginalDetails = (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.e;
-        CharSequence charSequence = (CharSequence) this.f;
-        gf.e h = x1Var.h(-1, true, true);
-        h.d();
-        TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-        tL_payments_sendStarsForm.form_id = paymentForm.form_id;
-        tL_payments_sendStarsForm.invoice = tL_inputInvoiceStarGiftDropOriginalDetails;
-        ConnectionsManager.getInstance(e4Var.a).sendRequest(tL_payments_sendStarsForm, new org.telegram.messenger.wm(e4Var, h, x1Var, tL_starGiftUnique, this.a, charSequence, 2));
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        f21 f21Var = this.d;
+        if (f21Var.G1 != null && f21Var.H1 != null) {
+            if (motionEvent.getAction() == 0 || motionEvent.getAction() == 1) {
+                Log.d("TA2", "container dispatch act=" + motionEvent.getAction() + " inSel=" + f21Var.G1.x());
+            }
+            if (f21Var.G1.x() && f21Var.H1.onTouchEvent(motionEvent)) {
+                Log.d("TA2", "overlay consumed (handle)");
+                return true;
+            }
+            boolean b10 = f21Var.H1.b(motionEvent);
+            if (motionEvent.getAction() == 1) {
+                Log.d("TA2", "checkOnTap=" + b10);
+            }
+            if (b10) {
+                motionEvent.setAction(3);
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public /* synthetic */ z11(rh.e4 e4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.PaymentForm paymentForm, TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails tL_inputInvoiceStarGiftDropOriginalDetails, long j10, CharSequence charSequence) {
-        this.b = e4Var;
-        this.c = tL_starGiftUnique;
-        this.d = paymentForm;
-        this.e = tL_inputInvoiceStarGiftDropOriginalDetails;
-        this.a = j10;
-        this.f = charSequence;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        setTag(R.id.bulletin_delegate_tag, new ai.y(10));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        setTag(R.id.bulletin_delegate_tag, null);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        f21 f21Var = this.d;
+        f21Var.F.setTranslationY(Math.max(f21Var.F.getHeight() + org.telegram.messenger.g0.L(56.0f) + org.telegram.messenger.g0.m, f21Var.L0(true)) + ((-r1.getTop()) - f21Var.F.getHeight()) + f10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        try {
+            this.b.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.h5, this.d.J0));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

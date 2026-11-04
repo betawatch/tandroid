@@ -1,30 +1,42 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.view.View;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class t3 {
-    public static final t3 a;
-    public static final t3 b;
-    public static final t3 c;
-    public static final /* synthetic */ t3[] d;
+    public final k4 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e = true;
+    public boolean f;
+    public long g;
 
-    static {
-        t3 t3Var = new t3("NONE", 0);
-        a = t3Var;
-        t3 t3Var2 = new t3("VERTICAL", 1);
-        b = t3Var2;
-        t3 t3Var3 = new t3("FULL", 2);
-        c = t3Var3;
-        d = new t3[]{t3Var, t3Var2, t3Var3};
+    public t3(k4 k4Var) {
+        this.a = k4Var;
     }
 
-    public static t3 valueOf(String str) {
-        return (t3) Enum.valueOf(t3.class, str);
-    }
-
-    public static t3[] values() {
-        return (t3[]) d.clone();
+    public final void a() {
+        if (this.f) {
+            boolean z10 = this.b;
+            k4 k4Var = this.a;
+            if (z10 || this.c || this.d || !this.e) {
+                i4 i4Var = k4Var.b;
+                if (i4Var.f()) {
+                    i4Var.G = true;
+                    i4Var.x.start();
+                    i4Var.D.setEmpty();
+                    return;
+                }
+                return;
+            }
+            View view = k4Var.a;
+            w3 w3Var = k4Var.l;
+            view.removeOnLayoutChangeListener(w3Var);
+            k4Var.a.addOnLayoutChangeListener(w3Var);
+            k4Var.c();
+            this.g = System.currentTimeMillis();
+        }
     }
 }

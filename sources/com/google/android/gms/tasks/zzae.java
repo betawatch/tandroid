@@ -1,6 +1,72 @@
 package com.google.android.gms.tasks;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.util.concurrent.ExecutionException;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-interface zzae<T> extends OnSuccessListener<T>, OnFailureListener, OnCanceledListener {
+final class zzae<T> implements zzab<T> {
+    private final Object zza = new Object();
+    private final int zzb;
+    private final zzw zzc;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private Exception zzg;
+    private boolean zzh;
+
+    public zzae(int i3, zzw zzwVar) {
+        this.zzb = i3;
+        this.zzc = zzwVar;
+    }
+
+    private final void zza() {
+        int i3 = this.zzd + this.zze + this.zzf;
+        int i10 = this.zzb;
+        if (i3 == i10) {
+            if (this.zzg == null) {
+                if (this.zzh) {
+                    this.zzc.zze();
+                    return;
+                } else {
+                    this.zzc.zza(null);
+                    return;
+                }
+            }
+            zzw zzwVar = this.zzc;
+            int i11 = this.zze;
+            int length = String.valueOf(i11).length();
+            StringBuilder sb2 = new StringBuilder(String.valueOf(i10).length() + length + 8 + 24);
+            sb2.append(i11);
+            sb2.append(" out of ");
+            sb2.append(i10);
+            sb2.append(" underlying tasks failed");
+            zzwVar.zzc(new ExecutionException(sb2.toString(), this.zzg));
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnCanceledListener
+    public final void onCanceled() {
+        synchronized (this.zza) {
+            this.zzf++;
+            this.zzh = true;
+            zza();
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        synchronized (this.zza) {
+            this.zze++;
+            this.zzg = exc;
+            zza();
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(T t10) {
+        synchronized (this.zza) {
+            this.zzd++;
+            zza();
+        }
+    }
 }

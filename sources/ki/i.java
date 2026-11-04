@@ -1,27 +1,31 @@
 package ki;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class i {
-    public static final i a;
-    public static final i b;
-    public static final /* synthetic */ i[] c;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.tj0;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class i extends q31 {
+    public static final /* synthetic */ int b = 0;
 
     static {
-        i iVar = new i("DISABLED", 0);
-        a = iVar;
-        i iVar2 = new i("RNNOISE", 1);
-        b = iVar2;
-        c = new i[]{iVar, iVar2};
+        q31.h(new i());
     }
 
-    public static i valueOf(String str) {
-        return (i) Enum.valueOf(i.class, str);
+    @Override // org.telegram.ui.Components.q31
+    public final void b(View view, r31 r31Var, boolean z10, f41 f41Var, l41 l41Var) {
+        long j10 = r31Var.B;
+        ((j) view).a((int) j10, (int) (j10 >>> 32), r31Var.k, r31Var.l, r31Var.n, r31Var.q);
     }
 
-    public static i[] values() {
-        return (i[]) c.clone();
+    @Override // org.telegram.ui.Components.q31
+    public final View d(Context context, tj0 tj0Var, int i3, e6 e6Var) {
+        return new j(context, e6Var, false);
     }
 }

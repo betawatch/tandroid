@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class p1 extends Drawable implements Drawable.Callback {
     public Drawable a;
@@ -18,12 +18,12 @@ public final class p1 extends Drawable implements Drawable.Callback {
         this.a.draw(canvas);
     }
 
-    public final void b(float f7, float f10) {
-        this.a.setHotspot(f7, f10);
+    public final void b(float f10, float f11) {
+        this.a.setHotspot(f10, f11);
     }
 
-    public final void c(int i10, int i11, int i12, int i13) {
-        this.a.setHotspotBounds(i10, i11, i12, i13);
+    public final void c(int i3, int i10, int i11, int i12) {
+        this.a.setHotspotBounds(i3, i10, i11, i12);
     }
 
     public final boolean d(boolean z10, boolean z11) {
@@ -113,8 +113,8 @@ public final class p1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean onLevelChange(int i10) {
-        return this.a.setLevel(i10);
+    public final boolean onLevelChange(int i3) {
+        return this.a.setLevel(i3);
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
@@ -123,8 +123,8 @@ public final class p1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+    public final void setAlpha(int i3) {
+        this.a.setAlpha(i3);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -133,8 +133,8 @@ public final class p1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setChangingConfigurations(int i10) {
-        this.a.setChangingConfigurations(i10);
+    public final void setChangingConfigurations(int i3) {
+        this.a.setChangingConfigurations(i3);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -153,16 +153,16 @@ public final class p1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f7, float f10) {
+    public final void setHotspot(float f10, float f11) {
         if (this.b) {
-            b(f7, f10);
+            b(f10, f11);
         }
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setHotspotBounds(int i10, int i11, int i12, int i13) {
+    public final void setHotspotBounds(int i3, int i10, int i11, int i12) {
         if (this.b) {
-            c(i10, i11, i12, i13);
+            c(i3, i10, i11, i12);
         }
     }
 
@@ -175,8 +175,8 @@ public final class p1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setTint(int i10) {
-        this.a.setTint(i10);
+    public final void setTint(int i3) {
+        this.a.setTint(i3);
     }
 
     @Override // android.graphics.drawable.Drawable

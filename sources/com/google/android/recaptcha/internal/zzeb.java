@@ -1,13 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import kotlin.jvm.internal.i;
-import l9.b;
-import ld.p;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzeb extends j implements p {
     int zza;
@@ -30,16 +29,16 @@ final class zzeb extends j implements p {
         this.zzg = zzhhVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzebVar.zzh = obj;
         return zzebVar;
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzeb) create((zzgr) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzeb) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x00ae, code lost:
@@ -58,17 +57,17 @@ final class zzeb extends j implements p {
     
         if (r15 != r0) goto L28;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzgr zzgrVar;
         zzeq zzeqVar;
-        a aVar = a.a;
-        int i10 = this.zza;
-        if (i10 == 0) {
-            b.b(obj);
+        gd.a aVar = gd.a.a;
+        int i3 = this.zza;
+        if (i3 == 0) {
+            ib.b(obj);
             zzgrVar = (zzgr) this.zzh;
             zzeh zzehVar = this.zzb;
             zzeqVar = zzehVar.zzc;
@@ -83,7 +82,7 @@ final class zzeb extends j implements p {
                     String str2 = this.zzc;
                     zzdq zzdqVar = this.zze;
                     zzfp zzfpVar = new zzfp(str2);
-                    zzdwVar = i.a(zzdqVar, zzdq.zza) ? new zzge(zzfpVar) : new zzgb(zzfpVar, new zzct());
+                    zzdwVar = kotlin.jvm.internal.j.a(zzdqVar, zzdq.zza) ? new zzge(zzfpVar) : new zzgb(zzfpVar, new zzct());
                 }
                 zzdw zzdwVar2 = zzdwVar;
                 String str3 = this.zzc;
@@ -95,23 +94,23 @@ final class zzeb extends j implements p {
             }
             return aVar;
         }
-        if (i10 == 1) {
+        if (i3 == 1) {
             zzgrVar = (zzgr) this.zzh;
-            b.b(obj);
+            ib.b(obj);
             this.zzh = null;
             this.zza = 2;
             obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
         } else {
-            if (i10 == 2) {
-                b.b(obj);
+            if (i3 == 2) {
+                ib.b(obj);
                 return (zzeq) obj;
             }
-            if (i10 != 3) {
-                b.b(obj);
+            if (i3 != 3) {
+                ib.b(obj);
                 return (zzeq) obj;
             }
             zzgrVar = (zzgr) this.zzh;
-            b.b(obj);
+            ib.b(obj);
             this.zzh = null;
             this.zza = 4;
             obj = ((zzhg) obj).zza(zzgrVar.zza(), this);

@@ -1,18 +1,22 @@
 package t8;
 
-import java.util.Arrays;
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public final int a;
-    public final List b;
-    public final List c;
+public final class a extends q6.a {
+    public static final Parcelable.Creator<a> CREATOR = new q8.i(14);
+    public int a;
+    public String[] b;
 
-    public a(int i10, c[] cVarArr, hb.a[] aVarArr) {
-        this.a = i10;
-        this.b = Arrays.asList(cVarArr);
-        this.c = Arrays.asList(aVarArr);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        int i10 = this.a;
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(i10);
+        j8.a.n(parcel, 3, this.b);
+        j8.a.t(parcel, s6);
     }
 }

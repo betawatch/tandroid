@@ -1,65 +1,78 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.CountDownLatch;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g31 b;
+public final class j11 implements TextWatcher {
+    public final pu0 a = new pu0(this, 17);
+    public final /* synthetic */ q11 b;
 
-    public /* synthetic */ j11(g31 g31Var, int i10) {
-        this.a = i10;
-        this.b = g31Var;
+    public j11(q11 q11Var) {
+        this.b = q11Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g31 g31Var = this.b;
-                g31Var.getClass();
-                HashSet hashSet = sg.e0.a;
-                com.google.android.gms.internal.cast.c0 c0Var = org.telegram.messenger.ic.D().p;
-                if (((CountDownLatch) c0Var.c) == null) {
-                    c0Var.c = new CountDownLatch(1);
-                }
-                sg.e0.b = true;
-                sg.e0.e = false;
-                sg.e0.g = false;
-                org.telegram.messenger.i0.h3(new j11(g31Var, 2), 0L);
-                break;
-            case 1:
-                g31 g31Var2 = this.b;
-                ArrayList arrayList = g31Var2.B1;
-                if (arrayList != null) {
-                    arrayList.clear();
-                }
-                ArrayList arrayList2 = g31Var2.C1;
-                if (arrayList2 != null) {
-                    arrayList2.clear();
-                }
-                ArrayList arrayList3 = g31Var2.E1;
-                if (arrayList3 != null) {
-                    arrayList3.clear();
-                }
-                g31Var2.q0.E(true);
-                break;
-            case 2:
-                this.b.V1.start();
-                break;
-            case 3:
-                this.b.B(true, true, true);
-                break;
-            default:
-                g31 g31Var3 = this.b;
-                org.telegram.messenger.at e = org.telegram.messenger.at.e();
-                j11 j11Var = g31Var3.S1;
-                e.e.remove(j11Var);
-                org.telegram.messenger.at.e().d(j11Var);
-                break;
+    public final void a() {
+        boolean z10;
+        boolean z11;
+        TLRPC.TL_channelParticipantsSearch tL_channelParticipantsSearch = new TLRPC.TL_channelParticipantsSearch();
+        q11 q11Var = this.b;
+        String obj = q11Var.V1.getText().toString();
+        tL_channelParticipantsSearch.q = obj;
+        p11 p11Var = q11Var.Z1;
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = p11Var.c;
+        if (channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) {
+            z10 = !TextUtils.equals(channelParticipantsFilter.q, obj);
+            z11 = false;
+        } else {
+            z10 = true;
+            z11 = true;
         }
+        p11Var.c = tL_channelParticipantsSearch;
+        if (z10) {
+            if (z11) {
+                p11Var.r = false;
+                if (p11Var.n >= 0) {
+                    ConnectionsManager.getInstance(p11Var.a).cancelRequest(p11Var.n, true);
+                    p11Var.n = -1;
+                }
+                p11Var.f = false;
+                p11Var.d.clear();
+                p11Var.h = false;
+            } else {
+                p11Var.r = true;
+                p11Var.h = false;
+            }
+            p11Var.b();
+        }
+        org.telegram.ui.Components.f41 f41Var = q11Var.b2;
+        if (f41Var != null) {
+            f41Var.O(true);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length = editable.length();
+        pu0 pu0Var = this.a;
+        if (length <= 0) {
+            org.telegram.messenger.g0.r(pu0Var);
+            a();
+        } else {
+            org.telegram.messenger.g0.r(pu0Var);
+            org.telegram.messenger.g0.i3(pu0Var, 300L);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 }

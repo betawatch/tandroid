@@ -2,57 +2,57 @@ package g;
 
 import android.view.ViewGroup;
 import java.util.WeakHashMap;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 import org.telegram.tgnet.TLObject;
-import r0.h0;
-import r0.k0;
+import r0.i0;
+import r0.l0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r b;
+    public final /* synthetic */ s b;
 
-    public /* synthetic */ h(r rVar, int i10) {
-        this.a = i10;
-        this.b = rVar;
+    public /* synthetic */ h(s sVar, int i3) {
+        this.a = i3;
+        this.b = sVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         ViewGroup viewGroup;
-        int i10 = this.a;
-        r rVar = this.b;
-        switch (i10) {
+        int i3 = this.a;
+        s sVar = this.b;
+        switch (i3) {
             case 0:
-                if ((rVar.i0 & 1) != 0) {
-                    rVar.j(0);
+                if ((sVar.j0 & 1) != 0) {
+                    sVar.k(0);
                 }
-                if ((rVar.i0 & TLObject.FLAG_12) != 0) {
-                    rVar.j(at.t1);
+                if ((sVar.j0 & TLObject.FLAG_12) != 0) {
+                    sVar.k(hs.t1);
                 }
-                rVar.h0 = false;
-                rVar.i0 = 0;
+                sVar.i0 = false;
+                sVar.j0 = 0;
                 break;
             default:
-                rVar.E.showAtLocation(rVar.D, 55, 0, 0);
-                k0 k0Var = rVar.G;
-                if (k0Var != null) {
-                    k0Var.b();
+                sVar.F.showAtLocation(sVar.E, 55, 0, 0);
+                l0 l0Var = sVar.H;
+                if (l0Var != null) {
+                    l0Var.b();
                 }
-                if (rVar.I && (viewGroup = rVar.J) != null) {
-                    WeakHashMap weakHashMap = h0.a;
+                if (sVar.J && (viewGroup = sVar.K) != null) {
+                    WeakHashMap weakHashMap = i0.a;
                     if (viewGroup.isLaidOut()) {
-                        rVar.D.setAlpha(0.0f);
-                        k0 a2 = h0.a(rVar.D);
-                        a2.a(1.0f);
-                        rVar.G = a2;
-                        a2.d(new i(this, 0));
+                        sVar.E.setAlpha(0.0f);
+                        l0 a10 = i0.a(sVar.E);
+                        a10.a(1.0f);
+                        sVar.H = a10;
+                        a10.d(new j(this, 0));
                         break;
                     }
                 }
-                rVar.D.setAlpha(1.0f);
-                rVar.D.setVisibility(0);
+                sVar.E.setAlpha(1.0f);
+                sVar.E.setVisibility(0);
                 break;
         }
     }

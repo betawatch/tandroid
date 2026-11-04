@@ -1,79 +1,98 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.NativeByteBuffer;
+import android.graphics.SurfaceTexture;
+import java.nio.FloatBuffer;
+import java.util.ArrayList;
+import org.telegram.messenger.video.MediaCodecPlayer;
+import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a20 extends TLObject {
-    public final boolean a;
-    public final long b;
-    public final long c;
-    public final int d;
-    public final String e;
-    public final String f;
-    public final /* synthetic */ b20 i;
+    public static final /* synthetic */ int C = 0;
+    public MediaCodecPlayer B;
+    public int a;
+    public boolean b;
+    public boolean c;
+    public String d;
+    public float e = 1.0f;
+    public long f = 0;
+    public boolean i = true;
+    public float j;
+    public float k;
+    public int l;
+    public int m;
+    public long o;
+    public gi.s r;
+    public FloatBuffer s;
+    public FloatBuffer t;
+    public org.telegram.ui.Components.t5 u;
+    public float v;
+    public SurfaceTexture z;
 
-    public a20(b20 b20Var, NativeByteBuffer nativeByteBuffer) {
-        this.i = b20Var;
-        int readInt32 = nativeByteBuffer.readInt32(true);
-        if (readInt32 == 2058772876) {
-            this.b = nativeByteBuffer.readInt64(true);
-            this.d = nativeByteBuffer.readInt32(true);
-            this.e = nativeByteBuffer.readString(true);
-            this.f = nativeByteBuffer.readString(true);
-            return;
+    public static ArrayList a(gi.f7 f7Var) {
+        if (f7Var == null || f7Var.T == null) {
+            return null;
         }
-        if (readInt32 != 2058772877) {
-            TLParseException.doThrowOrLog(nativeByteBuffer, "UnconfirmedAuth", readInt32, true);
-            return;
+        ArrayList arrayList = new ArrayList();
+        for (int i3 = 0; i3 < f7Var.T.size(); i3++) {
+            gi.f7 f7Var2 = (gi.f7) f7Var.T.get(i3);
+            a20 a20Var = new a20();
+            a20Var.e = 1.0f;
+            a20Var.f = 0L;
+            a20Var.i = true;
+            a20Var.b = f7Var2.K;
+            a20Var.c = f7Var2.Y;
+            a20Var.d = f7Var2.L.getAbsolutePath();
+            a20Var.e = f7Var2.P;
+            a20Var.i = f7Var2.U;
+            a20Var.f = f7Var2.X;
+            a20Var.j = f7Var2.V;
+            a20Var.k = f7Var2.W;
+            a20Var.l = f7Var2.k0;
+            a20Var.m = f7Var2.l0;
+            a20Var.o = f7Var2.h0;
+            a20Var.r = (gi.s) f7Var.S.e.get(i3);
+            arrayList.add(a20Var);
         }
-        this.c = nativeByteBuffer.readInt64(true);
-        this.d = nativeByteBuffer.readInt32(true);
-        this.e = nativeByteBuffer.readString(true);
-        this.f = nativeByteBuffer.readString(true);
+        return arrayList;
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        int readInt32 = inputSerializedData.readInt32(z10);
+        this.a = readInt32;
+        this.b = (readInt32 & 1) != 0;
+        this.i = (readInt32 & 2) != 0;
+        this.c = (readInt32 & 4) != 0;
+        this.d = inputSerializedData.readString(z10);
+        this.e = inputSerializedData.readFloat(z10);
+        this.f = inputSerializedData.readInt64(z10);
+        this.j = inputSerializedData.readFloat(z10);
+        this.k = inputSerializedData.readFloat(z10);
+        this.l = inputSerializedData.readInt32(z10);
+        this.m = inputSerializedData.readInt32(z10);
+        this.o = inputSerializedData.readInt64(z10);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        boolean z10 = this.a;
-        String str = this.f;
-        String str2 = this.e;
-        int i10 = this.d;
-        if (z10) {
-            outputSerializedData.writeInt32(2058772877);
-            outputSerializedData.writeInt64(this.c);
-            outputSerializedData.writeInt32(i10);
-            outputSerializedData.writeString(str2);
-            outputSerializedData.writeString(str);
-            return;
-        }
-        outputSerializedData.writeInt32(2058772876);
-        outputSerializedData.writeInt64(this.b);
-        outputSerializedData.writeInt32(i10);
-        outputSerializedData.writeString(str2);
-        outputSerializedData.writeString(str);
-    }
-
-    public a20(b20 b20Var, TL_update.TL_updateNewAuthorization tL_updateNewAuthorization) {
-        this.i = b20Var;
-        this.b = tL_updateNewAuthorization.hash;
-        this.d = tL_updateNewAuthorization.date;
-        this.e = tL_updateNewAuthorization.device;
-        this.f = tL_updateNewAuthorization.location;
-    }
-
-    public a20(b20 b20Var, TL_update.TL_updateNewBotConnection tL_updateNewBotConnection) {
-        this.i = b20Var;
-        this.a = true;
-        long j10 = tL_updateNewBotConnection.bot_id;
-        this.c = j10;
-        this.b = j10;
-        this.d = tL_updateNewBotConnection.date;
-        this.e = tL_updateNewBotConnection.device;
-        this.f = tL_updateNewBotConnection.location;
+        int i3 = this.b ? this.a | 1 : this.a & (-2);
+        this.a = i3;
+        int i10 = this.i ? i3 | 2 : i3 & (-3);
+        this.a = i10;
+        int i11 = this.c ? i10 | 4 : i10 & (-5);
+        this.a = i11;
+        outputSerializedData.writeInt32(i11);
+        outputSerializedData.writeString(this.d);
+        outputSerializedData.writeFloat(this.e);
+        outputSerializedData.writeInt64(this.f);
+        outputSerializedData.writeFloat(this.j);
+        outputSerializedData.writeFloat(this.k);
+        outputSerializedData.writeInt32(this.l);
+        outputSerializedData.writeInt32(this.m);
+        outputSerializedData.writeInt64(this.o);
     }
 }

@@ -1,125 +1,55 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.util.Set;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sd implements Runnable {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a;
     public final /* synthetic */ MediaController b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ pj h;
-    public final /* synthetic */ kj n;
-    public final /* synthetic */ kj r;
-    public final /* synthetic */ TL_stories.StoryItem s;
-    public final /* synthetic */ Object w;
 
-    public /* synthetic */ sd(MediaController mediaController, int i10, int i11, long j10, long j11, pj pjVar, kj kjVar, kj kjVar2, TL_stories.StoryItem storyItem, tw twVar) {
+    public /* synthetic */ sd(MediaController mediaController, int i3, int i10) {
+        this.a = i10;
         this.b = mediaController;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.h = pjVar;
-        this.n = kjVar;
-        this.r = kjVar2;
-        this.s = storyItem;
-        this.w = twVar;
+        this.c = i3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        String absolutePath;
-        int i10 = this.a;
-        Object obj = this.w;
-        switch (i10) {
+        int i3 = this.a;
+        int i10 = this.c;
+        MediaController mediaController = this.b;
+        switch (i3) {
             case 0:
-                qi qiVar = (qi) obj;
-                long j10 = this.e;
-                long j11 = this.f;
-                pj pjVar = this.h;
-                kj kjVar = this.r;
-                TL_stories.StoryItem storyItem = this.s;
-                MediaController.j0(true);
-                MediaController mediaController = this.b;
-                mediaController.A1 = 0;
-                TLRPC.TL_document tL_document = new TLRPC.TL_document();
-                mediaController.e1 = tL_document;
-                mediaController.f1 = this.c;
-                tL_document.dc_id = TLObject.FLAG_31;
-                tL_document.id = qiVar.e;
-                int i11 = this.d;
-                tL_document.user_id = e20.i(i11).e();
-                TLRPC.TL_document tL_document2 = mediaController.e1;
-                tL_document2.mime_type = "audio/ogg";
-                tL_document2.file_reference = new byte[0];
-                uz.y();
-                mediaController.i1 = new oe(qiVar.a);
-                b8.z(4).mkdirs();
-                File file = mediaController.i1;
-                Set set = c1.a;
-                if (file != null && (absolutePath = file.getAbsolutePath()) != null) {
-                    c1.a.add(absolutePath);
-                }
-                try {
-                    mediaController.c1 = true;
-                    mediaController.j1 = qiVar.d;
-                    mediaController.k1 = qiVar.c;
-                    mediaController.u1 = qiVar.b;
-                    mediaController.t1 = qiVar.f;
-                    mediaController.l1 = j10;
-                    mediaController.n1 = j11;
-                    mediaController.o1 = pjVar;
-                    kj kjVar2 = this.n;
-                    mediaController.m1 = kjVar2 == null ? 0L : kj.c2(mediaController.g1, kjVar2.k, false, false);
-                    mediaController.g1 = i11;
-                    mediaController.p1 = kjVar;
-                    mediaController.q1 = kjVar2;
-                    mediaController.r1 = storyItem;
-                    mediaController.s1 = mediaController.s1;
-                    TLRPC.TL_document tL_document3 = mediaController.e1;
-                    File file2 = mediaController.i1;
-                    i0.g3(new dn(mediaController, file2, tL_document3, file2.exists() ? MediaController.getWaveform(file2.getAbsolutePath()) : null, qiVar, 5));
-                    break;
-                } catch (Exception e) {
-                    f8.g(e, true);
-                    mediaController.e1 = null;
-                    c1.b(mediaController.i1);
-                    mediaController.i1.delete();
-                    mediaController.i1 = null;
-                    try {
-                        mediaController.d1.release();
-                        mediaController.d1 = null;
-                    } catch (Exception e7) {
-                        f8.g(e7, true);
-                    }
-                    MediaController.j0(false);
-                    i0.g3(new ed(mediaController, i11, j10, 1));
-                    return;
-                }
+                hs.f(mediaController.i1).k(hs.n2, Integer.valueOf(mediaController.h1), Integer.valueOf(i10 == 2 ? 1 : 0));
+                break;
             default:
-                MediaController.b(this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, (tw) obj);
+                if (i10 == -1) {
+                    if (mediaController.I(mediaController.v0) && !mediaController.H()) {
+                        mediaController.R(mediaController.v0, true);
+                    }
+                    mediaController.V = 0;
+                    mediaController.Y = 0;
+                } else if (i10 == 1) {
+                    mediaController.Y = 2;
+                    if (mediaController.Z) {
+                        mediaController.Z = false;
+                        if (mediaController.I(mediaController.v0) && mediaController.H()) {
+                            mediaController.S(mediaController.v0);
+                        }
+                    }
+                } else if (i10 == -3) {
+                    mediaController.Y = 1;
+                } else if (i10 == -2) {
+                    mediaController.Y = 0;
+                    if (mediaController.I(mediaController.v0) && !mediaController.H()) {
+                        mediaController.R(mediaController.v0, true);
+                        mediaController.Z = true;
+                    }
+                } else {
+                    String[] strArr = MediaController.W1;
+                }
+                mediaController.n0();
                 break;
         }
-    }
-
-    public /* synthetic */ sd(MediaController mediaController, int i10, qi qiVar, int i11, long j10, long j11, pj pjVar, kj kjVar, kj kjVar2, TL_stories.StoryItem storyItem) {
-        this.b = mediaController;
-        this.c = i10;
-        this.w = qiVar;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.h = pjVar;
-        this.n = kjVar;
-        this.r = kjVar2;
-        this.s = storyItem;
     }
 }

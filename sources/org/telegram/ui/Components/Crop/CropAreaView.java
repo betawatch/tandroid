@@ -16,210 +16,209 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import bg.e;
-import eg.a;
-import eg.o;
-import eg.p;
-import eg.q;
-import i0.b;
-import m1.j;
-import org.telegram.messenger.i0;
+import o1.g;
+import org.telegram.messenger.g0;
+import org.telegram.ui.i81;
+import pg.a;
+import pg.k;
+import pg.l;
+import pg.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
-    public RectF D;
-    public int E;
+    public RectF E;
     public int F;
-    public float G;
+    public int G;
     public float H;
-    public boolean I;
+    public float I;
     public boolean J;
-    public float K;
+    public boolean K;
     public float L;
     public float M;
-    public long N;
-    public Paint O;
+    public float N;
+    public long O;
     public Paint P;
     public Paint Q;
     public Paint R;
     public Paint S;
     public Paint T;
-    public AccelerateDecelerateInterpolator U;
-    public float V;
+    public Paint U;
+    public AccelerateDecelerateInterpolator V;
     public float W;
     public int a;
-    public boolean a0;
+    public float a0;
     public float b;
-    public float b0;
+    public boolean b0;
     public float c;
-    public ObjectAnimator c0;
+    public float c0;
     public RectF d;
-    public a d0;
+    public ObjectAnimator d0;
     public RectF e;
-    public boolean e0;
+    public a e0;
     public RectF f;
     public boolean f0;
-    public Bitmap g0;
+    public boolean g0;
     public RectF h;
-    public Paint h0;
-    public String i0;
-    public StaticLayout j0;
-    public AnimatorSet k0;
-    public RectF l0;
-    public TextPaint m0;
+    public Bitmap h0;
+    public Paint i0;
+    public String j0;
+    public StaticLayout k0;
+    public AnimatorSet l0;
+    public RectF m0;
     public RectF n;
-    public float n0;
+    public TextPaint n0;
     public float o0;
     public float p0;
     public float q0;
     public RectF r;
-    public int r0;
+    public float r0;
     public RectF s;
     public int s0;
     public int t0;
+    public int u0;
     public RectF w;
     public float x;
     public RectF y;
 
-    public static void b(RectF rectF, float f7) {
+    public static void b(RectF rectF, float f10) {
         float height = rectF.height();
-        rectF.right = rectF.left + (f7 * height);
+        rectF.right = rectF.left + (f10 * height);
         rectF.bottom = rectF.top + height;
     }
 
-    public static void c(RectF rectF, float f7) {
+    public static void c(RectF rectF, float f10) {
         float width = rectF.width();
         rectF.right = rectF.left + width;
-        rectF.bottom = rectF.top + (width / f7);
+        rectF.bottom = rectF.top + (width / f10);
     }
 
     private float getGridProgress() {
-        return this.b0;
+        return this.c0;
     }
 
-    private void setCropBottom(float f7) {
-        this.y.bottom = f7;
+    private void setCropBottom(float f10) {
+        this.y.bottom = f10;
         invalidate();
     }
 
-    private void setCropLeft(float f7) {
-        this.y.left = f7;
+    private void setCropLeft(float f10) {
+        this.y.left = f10;
         invalidate();
     }
 
-    private void setCropRight(float f7) {
-        this.y.right = f7;
+    private void setCropRight(float f10) {
+        this.y.right = f10;
         invalidate();
     }
 
-    private void setCropTop(float f7) {
-        this.y.top = f7;
+    private void setCropTop(float f10) {
+        this.y.top = f10;
         invalidate();
     }
 
-    private void setGridProgress(float f7) {
-        this.b0 = f7;
+    private void setGridProgress(float f10) {
+        this.c0 = f10;
         invalidate();
     }
 
-    public final void a(RectF rectF, float f7) {
-        float f10;
+    public final void a(RectF rectF, float f10) {
         float f11;
         float f12;
         float f13;
-        float f14 = this.V;
-        float f15 = !this.a0 ? i0.m : 0;
-        float measuredHeight = ((getMeasuredHeight() - this.G) - this.H) - f15;
+        float f14;
+        float f15 = this.W;
+        float f16 = !this.b0 ? g0.m : 0;
+        float measuredHeight = ((getMeasuredHeight() - this.H) - this.I) - f16;
         float measuredWidth = getMeasuredWidth() / measuredHeight;
-        float f16 = f14 * 2.0f;
-        float min = Math.min(getMeasuredWidth(), measuredHeight) - f16;
-        float measuredWidth2 = getMeasuredWidth() - f16;
-        float f17 = measuredHeight - f16;
+        float f17 = f15 * 2.0f;
+        float min = Math.min(getMeasuredWidth(), measuredHeight) - f17;
+        float measuredWidth2 = getMeasuredWidth() - f17;
+        float f18 = measuredHeight - f17;
         float measuredWidth3 = getMeasuredWidth() / 2.0f;
-        float f18 = (measuredHeight / 2.0f) + f15 + this.H;
-        if (Math.abs(1.0f - f7) < 1.0E-4d) {
-            float f19 = min / 2.0f;
-            f13 = measuredWidth3 - f19;
-            f12 = f18 - f19;
-            f10 = measuredWidth3 + f19;
-            f11 = f18 + f19;
+        float f19 = (measuredHeight / 2.0f) + f16 + this.I;
+        if (Math.abs(1.0f - f10) < 1.0E-4d) {
+            float f20 = min / 2.0f;
+            f14 = measuredWidth3 - f20;
+            f13 = f19 - f20;
+            f11 = measuredWidth3 + f20;
+            f12 = f19 + f20;
         } else {
-            if (f7 - measuredWidth <= 1.0E-4d) {
-                float f20 = f17 * f7;
-                if (f20 <= measuredWidth2) {
-                    float f21 = f20 / 2.0f;
-                    f13 = measuredWidth3 - f21;
-                    float f22 = f17 / 2.0f;
-                    float f23 = f18 - f22;
-                    f10 = measuredWidth3 + f21;
-                    f11 = f18 + f22;
-                    f12 = f23;
+            if (f10 - measuredWidth <= 1.0E-4d) {
+                float f21 = f18 * f10;
+                if (f21 <= measuredWidth2) {
+                    float f22 = f21 / 2.0f;
+                    f14 = measuredWidth3 - f22;
+                    float f23 = f18 / 2.0f;
+                    float f24 = f19 - f23;
+                    f11 = measuredWidth3 + f22;
+                    f12 = f19 + f23;
+                    f13 = f24;
                 }
             }
-            float f24 = measuredWidth2 / 2.0f;
-            float f25 = measuredWidth3 - f24;
-            float f26 = (measuredWidth2 / f7) / 2.0f;
-            float f27 = f18 - f26;
-            f10 = measuredWidth3 + f24;
-            f11 = f18 + f26;
-            f12 = f27;
-            f13 = f25;
+            float f25 = measuredWidth2 / 2.0f;
+            float f26 = measuredWidth3 - f25;
+            float f27 = (measuredWidth2 / f10) / 2.0f;
+            float f28 = f19 - f27;
+            f11 = measuredWidth3 + f25;
+            f12 = f19 + f27;
+            f13 = f28;
+            f14 = f26;
         }
-        rectF.set(f13, f12, f10, f11);
+        rectF.set(f14, f13, f11, f12);
     }
 
     public final void d(RectF rectF) {
         rectF.set(this.y);
     }
 
-    public final void e(int i10, int i11, boolean z10, boolean z11) {
-        this.f0 = z11;
-        float f7 = z10 ? i11 / i10 : i10 / i11;
+    public final void e(int i3, int i10, boolean z10, boolean z11) {
+        this.g0 = z11;
+        float f10 = z10 ? i10 / i3 : i3 / i10;
         if (!z11) {
-            f7 = 1.0f;
+            f10 = 1.0f;
             this.x = 1.0f;
         }
-        setActualRect(f7);
+        setActualRect(f10);
     }
 
     public final void f(boolean z10, boolean z11) {
-        this.J = z10;
+        this.K = z10;
         if (!z10) {
-            this.L = 1.0f;
+            this.M = 1.0f;
             return;
         }
-        this.L = z11 ? 0.0f : 1.0f;
-        this.N = SystemClock.elapsedRealtime();
+        this.M = z11 ? 0.0f : 1.0f;
+        this.O = SystemClock.elapsedRealtime();
         invalidate();
     }
 
-    public final void g(int i10, boolean z10) {
-        ObjectAnimator objectAnimator = this.c0;
-        if (objectAnimator != null && (!z10 || this.t0 != i10)) {
+    public final void g(int i3, boolean z10) {
+        ObjectAnimator objectAnimator = this.d0;
+        if (objectAnimator != null && (!z10 || this.u0 != i3)) {
             objectAnimator.cancel();
-            this.c0 = null;
+            this.d0 = null;
         }
-        int i11 = this.t0;
-        if (i11 == i10) {
+        int i10 = this.u0;
+        if (i10 == i3) {
             return;
         }
-        this.s0 = i11;
         this.t0 = i10;
-        float f7 = i10 == 1 ? 0.0f : 1.0f;
+        this.u0 = i3;
+        float f10 = i3 == 1 ? 0.0f : 1.0f;
         if (!z10) {
-            this.b0 = f7;
+            this.c0 = f10;
             invalidate();
             return;
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.b0, f7);
-        this.c0 = ofFloat;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.c0, f10);
+        this.d0 = ofFloat;
         ofFloat.setDuration(200L);
-        this.c0.addListener(new e(this, 3));
-        if (i10 == 1) {
-            this.c0.setStartDelay(200L);
+        this.d0.addListener(new i81(this, 14));
+        if (i3 == 1) {
+            this.d0.setStartDelay(200L);
         }
-        this.c0.start();
+        this.d0.start();
     }
 
     public float getAspectRatio() {
@@ -264,7 +263,7 @@ public class CropAreaView extends ViewGroup {
     }
 
     public Interpolator getInterpolator() {
-        return this.U;
+        return this.V;
     }
 
     public float getLockAspectRatio() {
@@ -273,7 +272,7 @@ public class CropAreaView extends ViewGroup {
 
     public RectF getTargetRectToFill() {
         float aspectRatio = getAspectRatio();
-        RectF rectF = this.l0;
+        RectF rectF = this.m0;
         a(rectF, aspectRatio);
         return rectF;
     }
@@ -288,54 +287,54 @@ public class CropAreaView extends ViewGroup {
     }
 
     public final void i() {
-        if (this.i0 == null) {
-            this.j0 = null;
+        if (this.j0 == null) {
+            this.k0 = null;
             return;
         }
-        if (this.m0 == null) {
+        if (this.n0 == null) {
             TextPaint textPaint = new TextPaint();
-            this.m0 = textPaint;
-            textPaint.setColor(b.o(-1, 120));
-            this.m0.setTextSize(i0.L(13.0f));
-            this.m0.setTextAlign(Paint.Align.CENTER);
+            this.n0 = textPaint;
+            textPaint.setColor(i0.a.o(-1, 120));
+            this.n0.setTextSize(g0.L(13.0f));
+            this.n0.setTextAlign(Paint.Align.CENTER);
         }
-        this.j0 = new StaticLayout(this.i0, this.m0, getMeasuredWidth() - i0.L(120.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.k0 = new StaticLayout(this.j0, this.n0, getMeasuredWidth() - g0.L(120.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
     }
 
     public final void j() {
-        int L = i0.L(16.0f);
+        int L = g0.L(16.0f);
         RectF rectF = this.d;
         RectF rectF2 = this.y;
-        float f7 = rectF2.left;
-        float f10 = L;
-        float f11 = rectF2.top;
-        rectF.set(f7 - f10, f11 - f10, f7 + f10, f11 + f10);
+        float f10 = rectF2.left;
+        float f11 = L;
+        float f12 = rectF2.top;
+        rectF.set(f10 - f11, f12 - f11, f10 + f11, f12 + f11);
         RectF rectF3 = this.e;
-        float f12 = rectF2.right;
-        float f13 = rectF2.top;
-        rectF3.set(f12 - f10, f13 - f10, f12 + f10, f13 + f10);
+        float f13 = rectF2.right;
+        float f14 = rectF2.top;
+        rectF3.set(f13 - f11, f14 - f11, f13 + f11, f14 + f11);
         RectF rectF4 = this.f;
-        float f14 = rectF2.left;
-        float f15 = rectF2.bottom;
-        rectF4.set(f14 - f10, f15 - f10, f14 + f10, f15 + f10);
+        float f15 = rectF2.left;
+        float f16 = rectF2.bottom;
+        rectF4.set(f15 - f11, f16 - f11, f15 + f11, f16 + f11);
         RectF rectF5 = this.h;
-        float f16 = rectF2.right;
-        float f17 = rectF2.bottom;
-        rectF5.set(f16 - f10, f17 - f10, f16 + f10, f17 + f10);
+        float f17 = rectF2.right;
+        float f18 = rectF2.bottom;
+        rectF5.set(f17 - f11, f18 - f11, f17 + f11, f18 + f11);
         RectF rectF6 = this.n;
-        float f18 = rectF2.left + f10;
-        float f19 = rectF2.top;
-        rectF6.set(f18, f19 - f10, rectF2.right - f10, f19 + f10);
+        float f19 = rectF2.left + f11;
+        float f20 = rectF2.top;
+        rectF6.set(f19, f20 - f11, rectF2.right - f11, f20 + f11);
         RectF rectF7 = this.r;
-        float f20 = rectF2.left;
-        rectF7.set(f20 - f10, rectF2.top + f10, f20 + f10, rectF2.bottom - f10);
+        float f21 = rectF2.left;
+        rectF7.set(f21 - f11, rectF2.top + f11, f21 + f11, rectF2.bottom - f11);
         RectF rectF8 = this.w;
-        float f21 = rectF2.right;
-        rectF8.set(f21 - f10, rectF2.top + f10, f21 + f10, rectF2.bottom - f10);
+        float f22 = rectF2.right;
+        rectF8.set(f22 - f11, rectF2.top + f11, f22 + f11, rectF2.bottom - f11);
         RectF rectF9 = this.s;
-        float f22 = rectF2.left + f10;
-        float f23 = rectF2.bottom;
-        rectF9.set(f22, f23 - f10, rectF2.right - f10, f23 + f10);
+        float f23 = rectF2.left + f11;
+        float f24 = rectF2.bottom;
+        rectF9.set(f23, f24 - f11, rectF2.right - f11, f24 + f11);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:71:0x037b  */
@@ -344,229 +343,229 @@ public class CropAreaView extends ViewGroup {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onDraw(Canvas canvas) {
-        float f7;
+        float f10;
+        int i3;
         int i10;
         int i11;
-        int i12;
         Paint paint;
         Paint paint2;
+        int i12;
         int i13;
         int i14;
-        int i15;
         Paint paint3;
-        Paint paint4 = this.T;
-        boolean z10 = this.a0;
-        float f10 = this.V;
-        Paint paint5 = this.S;
-        Paint paint6 = this.Q;
-        Paint paint7 = this.P;
-        Paint paint8 = this.R;
-        Paint paint9 = this.O;
-        if (this.f0) {
-            int L = i0.L(2.0f / this.o0);
-            int L2 = i0.L(16.0f / this.o0);
-            int L3 = i0.L(3.0f / this.o0);
+        Paint paint4 = this.U;
+        boolean z10 = this.b0;
+        float f11 = this.W;
+        Paint paint5 = this.T;
+        Paint paint6 = this.R;
+        Paint paint7 = this.Q;
+        Paint paint8 = this.S;
+        Paint paint9 = this.P;
+        if (this.g0) {
+            int L = g0.L(2.0f / this.p0);
+            int L2 = g0.L(16.0f / this.p0);
+            int L3 = g0.L(3.0f / this.p0);
             RectF rectF = this.y;
-            float f11 = rectF.left;
-            int i16 = ((int) f11) - L;
-            float f12 = rectF.top;
-            int i17 = ((int) f12) - L;
-            int i18 = L * 2;
-            int i19 = ((int) (rectF.right - f11)) + i18;
-            int i20 = i18 + ((int) (rectF.bottom - f12));
+            float f12 = rectF.left;
+            int i15 = ((int) f12) - L;
+            float f13 = rectF.top;
+            int i16 = ((int) f13) - L;
+            int i17 = L * 2;
+            int i18 = ((int) (rectF.right - f12)) + i17;
+            int i19 = i17 + ((int) (rectF.bottom - f13));
             canvas.save();
-            canvas.translate(this.p0, this.q0);
-            float f13 = this.o0;
-            float f14 = (i19 / 2) + i16;
-            float f15 = (i20 / 2) + i17;
-            canvas.scale(f13, f13, f14, f15);
-            canvas.rotate(this.n0, f14, f15);
-            if (this.I) {
-                int i21 = (-getWidth()) * 4;
-                int i22 = (-getHeight()) * 4;
+            canvas.translate(this.q0, this.r0);
+            float f14 = this.p0;
+            float f15 = (i18 / 2) + i15;
+            float f16 = (i19 / 2) + i16;
+            canvas.scale(f14, f14, f15, f16);
+            canvas.rotate(this.o0, f15, f16);
+            if (this.J) {
+                int i20 = (-getWidth()) * 4;
+                int i21 = (-getHeight()) * 4;
                 int width = getWidth() * 4;
                 int height = getHeight() * 4;
-                float f16 = this.K;
-                if (f16 >= 0.0f) {
-                    paint9.setAlpha((int) (f16 * 255.0f));
+                float f17 = this.L;
+                if (f17 >= 0.0f) {
+                    paint9.setAlpha((int) (f17 * 255.0f));
                 } else {
-                    paint9.setAlpha((int) (255.0f - (this.L * 127.0f)));
+                    paint9.setAlpha((int) (255.0f - (this.M * 127.0f)));
                 }
-                float f17 = i21;
-                float f18 = width;
-                i11 = L2;
-                i10 = L;
-                i12 = i16;
-                canvas.drawRect(f17, i22, f18, 0.0f, paint9);
-                canvas.drawRect(f17, 0.0f, 0.0f, getHeight(), paint9);
-                canvas.drawRect(getWidth(), 0.0f, f18, getHeight(), paint9);
-                canvas.drawRect(f17, getHeight(), f18, height, paint9);
-                float f19 = i17 + i10;
-                canvas.drawRect(0.0f, 0.0f, getWidth(), f19, paint9);
-                float f20 = (i17 + i20) - i10;
-                canvas.drawRect(0.0f, f19, i12 + i10, f20, paint9);
-                canvas.drawRect((i12 + i19) - i10, f19, getWidth(), f20, paint9);
-                canvas.drawRect(0.0f, f20, getWidth(), getHeight(), paint9);
+                float f18 = i20;
+                float f19 = width;
+                i10 = L2;
+                i3 = L;
+                i11 = i15;
+                canvas.drawRect(f18, i21, f19, 0.0f, paint9);
+                canvas.drawRect(f18, 0.0f, 0.0f, getHeight(), paint9);
+                canvas.drawRect(getWidth(), 0.0f, f19, getHeight(), paint9);
+                canvas.drawRect(f18, getHeight(), f19, height, paint9);
+                float f20 = i16 + i3;
+                canvas.drawRect(0.0f, 0.0f, getWidth(), f20, paint9);
+                float f21 = (i16 + i19) - i3;
+                canvas.drawRect(0.0f, f20, i11 + i3, f21, paint9);
+                canvas.drawRect((i11 + i18) - i3, f20, getWidth(), f21, paint9);
+                canvas.drawRect(0.0f, f21, getWidth(), getHeight(), paint9);
             } else {
-                i10 = L;
-                i11 = L2;
-                i12 = i16;
+                i3 = L;
+                i10 = L2;
+                i11 = i15;
             }
-            if (!this.J) {
+            if (!this.K) {
                 return;
             }
-            int i23 = L3 - i10;
-            int i24 = L3 * 2;
-            int i25 = i19 - i24;
-            int i26 = i20 - i24;
-            int i27 = this.t0;
-            if (i27 == 1 && this.b0 > 0.0f) {
-                i27 = this.s0;
+            int i22 = L3 - i3;
+            int i23 = L3 * 2;
+            int i24 = i18 - i23;
+            int i25 = i19 - i23;
+            int i26 = this.u0;
+            if (i26 == 1 && this.c0 > 0.0f) {
+                i26 = this.t0;
             }
-            float f21 = this.M;
-            if (f21 >= 0.0f) {
-                paint7.setAlpha((int) (this.b0 * 26.0f * f21));
-                paint6.setAlpha((int) (this.b0 * 178.0f * this.M));
+            float f22 = this.N;
+            if (f22 >= 0.0f) {
+                paint7.setAlpha((int) (this.c0 * 26.0f * f22));
+                paint6.setAlpha((int) (this.c0 * 178.0f * this.N));
+                paint5.setAlpha((int) (this.N * 178.0f));
+                paint8.setAlpha((int) (this.N * 255.0f));
+            } else {
+                paint7.setAlpha((int) (this.c0 * 26.0f * this.M));
+                paint6.setAlpha((int) (this.c0 * 178.0f * this.M));
                 paint5.setAlpha((int) (this.M * 178.0f));
                 paint8.setAlpha((int) (this.M * 255.0f));
-            } else {
-                paint7.setAlpha((int) (this.b0 * 26.0f * this.L));
-                paint6.setAlpha((int) (this.b0 * 178.0f * this.L));
-                paint5.setAlpha((int) (this.L * 178.0f));
-                paint8.setAlpha((int) (this.L * 255.0f));
             }
-            float f22 = i12 + i23;
-            float f23 = i17 + i23;
-            int i28 = i12 + i19;
-            float f24 = i28 - i23;
-            int i29 = i27;
+            float f23 = i11 + i22;
+            float f24 = i16 + i22;
+            int i27 = i11 + i18;
+            float f25 = i27 - i22;
+            int i28 = i26;
             Paint paint10 = paint6;
-            canvas.drawRect(f22, f23, f24, r4 + i10, paint5);
-            int i30 = i20 + i17;
-            float f25 = i30 - i23;
-            canvas.drawRect(f22, f23, r3 + i10, f25, paint5);
-            canvas.drawRect(f22, r12 - i10, f24, f25, paint5);
-            canvas.drawRect(r14 - i10, f23, f24, f25, paint5);
-            int i31 = 0;
+            canvas.drawRect(f23, f24, f25, r4 + i3, paint5);
+            int i29 = i19 + i16;
+            float f26 = i29 - i22;
+            canvas.drawRect(f23, f24, r3 + i3, f26, paint5);
+            canvas.drawRect(f23, r12 - i3, f25, f26, paint5);
+            canvas.drawRect(r14 - i3, f24, f25, f26, paint5);
+            int i30 = 0;
             while (true) {
-                int i32 = 3;
-                if (i31 >= 3) {
+                int i31 = 3;
+                if (i30 >= 3) {
                     break;
                 }
-                int i33 = 2;
-                if (i29 == 2) {
-                    int i34 = 1;
-                    int i35 = 4;
-                    while (i34 < i35) {
-                        if (i31 == i33 && i34 == i32) {
-                            i14 = i33;
-                            i13 = i35;
+                int i32 = 2;
+                if (i28 == 2) {
+                    int i33 = 1;
+                    int i34 = 4;
+                    while (i33 < i34) {
+                        if (i30 == i32 && i33 == i31) {
+                            i13 = i32;
+                            i12 = i34;
                             paint3 = paint7;
-                            i15 = i34;
+                            i14 = i33;
                         } else {
-                            int i36 = i12 + L3;
-                            int i37 = i25 / 3;
-                            float f26 = (i37 * i31) + ((i37 / 3) * i34) + i36;
-                            int i38 = i17 + L3;
-                            int i39 = i35;
-                            float f27 = i38;
-                            float f28 = i38 + i26;
-                            i13 = i39;
-                            i14 = 2;
+                            int i35 = i11 + L3;
+                            int i36 = i24 / 3;
+                            float f27 = (i36 * i30) + ((i36 / 3) * i33) + i35;
+                            int i37 = i16 + L3;
+                            int i38 = i34;
+                            float f28 = i37;
+                            float f29 = i37 + i25;
+                            i12 = i38;
+                            i13 = 2;
                             Paint paint11 = paint7;
-                            i15 = i34;
-                            canvas.drawLine(f26, f27, f26, f28, paint11);
+                            i14 = i33;
+                            canvas.drawLine(f27, f28, f27, f29, paint11);
                             paint3 = paint11;
-                            canvas.drawLine(f26, f27, f26, f28, paint10);
-                            int i40 = i26 / 3;
-                            float f29 = i36;
-                            float f30 = (i40 * i31) + ((i40 / 3) * i15) + i38;
-                            float f31 = i36 + i25;
-                            canvas.drawLine(f29, f30, f31, f30, paint3);
-                            canvas.drawLine(f29, f30, f31, f30, paint10);
+                            canvas.drawLine(f27, f28, f27, f29, paint10);
+                            int i39 = i25 / 3;
+                            float f30 = i35;
+                            float f31 = (i39 * i30) + ((i39 / 3) * i14) + i37;
+                            float f32 = i35 + i24;
+                            canvas.drawLine(f30, f31, f32, f31, paint3);
+                            canvas.drawLine(f30, f31, f32, f31, paint10);
                         }
-                        i34 = i15 + 1;
-                        i35 = i13;
+                        i33 = i14 + 1;
+                        i34 = i12;
                         paint7 = paint3;
-                        i33 = i14;
-                        i32 = 3;
+                        i32 = i13;
+                        i31 = 3;
                     }
                     paint = paint7;
                 } else {
                     paint = paint7;
-                    if (i29 == 3 && i31 > 0) {
-                        int i41 = i12 + L3;
-                        float f32 = ((i25 / 3) * i31) + i41;
-                        int i42 = i17 + L3;
-                        float f33 = i42;
-                        float f34 = i42 + i26;
-                        canvas.drawLine(f32, f33, f32, f34, paint);
-                        canvas.drawLine(f32, f33, f32, f34, paint10);
-                        float f35 = i41;
-                        float f36 = ((i26 / 3) * i31) + i42;
-                        float f37 = i41 + i25;
-                        canvas.drawLine(f35, f36, f37, f36, paint);
+                    if (i28 == 3 && i30 > 0) {
+                        int i40 = i11 + L3;
+                        float f33 = ((i24 / 3) * i30) + i40;
+                        int i41 = i16 + L3;
+                        float f34 = i41;
+                        float f35 = i41 + i25;
+                        canvas.drawLine(f33, f34, f33, f35, paint);
+                        canvas.drawLine(f33, f34, f33, f35, paint10);
+                        float f36 = i40;
+                        float f37 = ((i25 / 3) * i30) + i41;
+                        float f38 = i40 + i24;
+                        canvas.drawLine(f36, f37, f38, f37, paint);
                         paint2 = paint10;
-                        canvas.drawLine(f35, f36, f37, f36, paint2);
-                        i31++;
+                        canvas.drawLine(f36, f37, f38, f37, paint2);
+                        i30++;
                         paint10 = paint2;
                         paint7 = paint;
                     }
                 }
                 paint2 = paint10;
-                i31++;
+                i30++;
                 paint10 = paint2;
                 paint7 = paint;
             }
-            float f38 = i12;
-            float f39 = i17;
-            float f40 = i12 + i11;
-            float f41 = i17 + L3;
-            canvas.drawRect(f38, f39, f40, f41, paint8);
-            float f42 = i12 + L3;
-            float f43 = i17 + i11;
-            canvas.drawRect(f38, f39, f42, f43, paint8);
-            float f44 = i28 - i11;
-            float f45 = i28;
-            canvas.drawRect(f44, f39, f45, f41, paint8);
-            float f46 = i28 - L3;
-            canvas.drawRect(f46, f39, f45, f43, paint8);
-            float f47 = i30 - L3;
-            float f48 = i30;
-            canvas.drawRect(f38, f47, f40, f48, paint8);
-            float f49 = i30 - i11;
-            canvas.drawRect(f38, f49, f42, f48, paint8);
-            canvas.drawRect(f44, f47, f45, f48, paint8);
-            canvas.drawRect(f46, f49, f45, f48, paint8);
+            float f39 = i11;
+            float f40 = i16;
+            float f41 = i11 + i10;
+            float f42 = i16 + L3;
+            canvas.drawRect(f39, f40, f41, f42, paint8);
+            float f43 = i11 + L3;
+            float f44 = i16 + i10;
+            canvas.drawRect(f39, f40, f43, f44, paint8);
+            float f45 = i27 - i10;
+            float f46 = i27;
+            canvas.drawRect(f45, f40, f46, f42, paint8);
+            float f47 = i27 - L3;
+            canvas.drawRect(f47, f40, f46, f44, paint8);
+            float f48 = i29 - L3;
+            float f49 = i29;
+            canvas.drawRect(f39, f48, f41, f49, paint8);
+            float f50 = i29 - i10;
+            canvas.drawRect(f39, f50, f43, f49, paint8);
+            canvas.drawRect(f45, f48, f46, f49, paint8);
+            canvas.drawRect(f47, f50, f46, f49, paint8);
             canvas.restore();
         } else {
-            float f50 = f10 * 2.0f;
-            float measuredWidth = getMeasuredWidth() - f50;
-            float measuredHeight = (((getMeasuredHeight() - this.G) - (!z10 ? i0.m : 0)) - this.H) - f50;
+            float f51 = f11 * 2.0f;
+            float measuredWidth = getMeasuredWidth() - f51;
+            float measuredHeight = (((getMeasuredHeight() - this.H) - (!z10 ? g0.m : 0)) - this.I) - f51;
             this.a = (int) Math.min(measuredWidth, measuredHeight);
-            Bitmap bitmap = this.g0;
+            Bitmap bitmap = this.h0;
             if (bitmap == null || bitmap.getWidth() != this.a) {
-                Bitmap bitmap2 = this.g0;
+                Bitmap bitmap2 = this.h0;
                 boolean z11 = bitmap2 != null;
                 if (bitmap2 != null) {
                     bitmap2.recycle();
-                    this.g0 = null;
+                    this.h0 = null;
                 }
                 try {
-                    int i43 = this.a;
-                    this.g0 = Bitmap.createBitmap(i43, i43, Bitmap.Config.ARGB_8888);
-                    Canvas canvas2 = new Canvas(this.g0);
-                    float f51 = this.a;
-                    f7 = 2.0f;
+                    int i42 = this.a;
+                    this.h0 = Bitmap.createBitmap(i42, i42, Bitmap.Config.ARGB_8888);
+                    Canvas canvas2 = new Canvas(this.h0);
+                    float f52 = this.a;
+                    f10 = 2.0f;
                     try {
-                        canvas2.drawRect(0.0f, 0.0f, f51, f51, paint9);
+                        canvas2.drawRect(0.0f, 0.0f, f52, f52, paint9);
                         try {
-                            int i44 = this.a;
-                            canvas2.drawCircle(i44 / 2, i44 / 2, i44 / 2, this.h0);
+                            int i43 = this.a;
+                            canvas2.drawCircle(i43 / 2, i43 / 2, i43 / 2, this.i0);
                             canvas2.setBitmap(null);
                             if (!z11) {
-                                this.L = 0.0f;
-                                this.N = SystemClock.elapsedRealtime();
+                                this.M = 0.0f;
+                                this.O = SystemClock.elapsedRealtime();
                             }
                         } catch (Throwable unused) {
                         }
@@ -575,43 +574,43 @@ public class CropAreaView extends ViewGroup {
                     }
                 } catch (Throwable unused3) {
                 }
-                if (this.g0 != null) {
-                    paint4.setAlpha((int) (this.L * 255.0f));
-                    paint9.setAlpha((int) (this.L * 127.0f));
-                    float f52 = this.a;
-                    this.b = c3.i0.B(measuredWidth, f52, f7, f10);
-                    float B = c3.i0.B(measuredHeight, f52, f7, f10) + (z10 ? 0 : i0.m);
-                    this.c = B;
-                    float f53 = B + f52;
+                if (this.h0 != null) {
+                    paint4.setAlpha((int) (this.M * 255.0f));
+                    paint9.setAlpha((int) (this.M * 127.0f));
+                    float f53 = this.a;
+                    this.b = com.google.android.recaptcha.internal.a.z(measuredWidth, f53, f10, f11);
+                    float z12 = com.google.android.recaptcha.internal.a.z(measuredHeight, f53, f10, f11) + (z10 ? 0 : g0.m);
+                    this.c = z12;
+                    float f54 = z12 + f53;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), (int) this.c, paint9);
-                    float f54 = (int) f53;
-                    canvas.drawRect(0.0f, (int) this.c, (int) this.b, f54, paint9);
-                    canvas.drawRect((int) (r1 + f52), (int) this.c, getWidth(), f54, paint9);
-                    canvas.drawRect(0.0f, f54, getWidth(), getHeight(), paint9);
-                    canvas.drawBitmap(this.g0, (int) this.b, (int) this.c, paint4);
-                    if (getMeasuredHeight() > getMeasuredWidth() && this.j0 != null) {
+                    float f55 = (int) f54;
+                    canvas.drawRect(0.0f, (int) this.c, (int) this.b, f55, paint9);
+                    canvas.drawRect((int) (r1 + f53), (int) this.c, getWidth(), f55, paint9);
+                    canvas.drawRect(0.0f, f55, getWidth(), getHeight(), paint9);
+                    canvas.drawBitmap(this.h0, (int) this.b, (int) this.c, paint4);
+                    if (getMeasuredHeight() > getMeasuredWidth() && this.k0 != null) {
                         canvas.save();
-                        canvas.translate(getMeasuredWidth() / f7, f53 + i0.L(16.0f));
-                        this.j0.draw(canvas);
+                        canvas.translate(getMeasuredWidth() / f10, f54 + g0.L(16.0f));
+                        this.k0.draw(canvas);
                         canvas.restore();
                     }
                 }
             }
-            f7 = 2.0f;
-            if (this.g0 != null) {
+            f10 = 2.0f;
+            if (this.h0 != null) {
             }
         }
-        if (this.L < 1.0f) {
+        if (this.M < 1.0f) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j10 = elapsedRealtime - this.N;
+            long j10 = elapsedRealtime - this.O;
             if (j10 > 17) {
                 j10 = 17;
             }
-            this.N = elapsedRealtime;
-            float f55 = (j10 / 180.0f) + this.L;
-            this.L = f55;
-            if (f55 > 1.0f) {
-                this.L = 1.0f;
+            this.O = elapsedRealtime;
+            float f56 = (j10 / 180.0f) + this.M;
+            this.M = f56;
+            if (f56 > 1.0f) {
+                this.M = 1.0f;
             }
             invalidate();
         }
@@ -619,53 +618,53 @@ public class CropAreaView extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.e0) {
+        if (this.f0) {
             return false;
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
         i();
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float f7 = this.V;
-        RectF rectF = this.D;
+        float f10 = this.W;
+        RectF rectF = this.E;
         int x10 = (int) (motionEvent.getX() - ((ViewGroup) getParent()).getX());
-        int y3 = (int) (motionEvent.getY() - ((ViewGroup) getParent()).getY());
-        float f10 = !this.a0 ? i0.m : 0;
+        int y9 = (int) (motionEvent.getY() - ((ViewGroup) getParent()).getY());
+        float f11 = !this.b0 ? g0.m : 0;
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked != 0) {
             if (actionMasked == 1 || actionMasked == 3) {
-                this.e0 = false;
+                this.f0 = false;
                 h(false);
-                if (this.r0 != 1) {
-                    this.r0 = 1;
-                    a aVar = this.d0;
+                if (this.s0 != 1) {
+                    this.s0 = 1;
+                    a aVar = this.e0;
                     if (aVar != null) {
-                        q qVar = (q) aVar;
-                        CropAreaView cropAreaView = qVar.a;
+                        m mVar = (m) aVar;
+                        CropAreaView cropAreaView = mVar.a;
                         cropAreaView.g(1, true);
-                        qVar.d(cropAreaView.getTargetRectToFill());
+                        mVar.d(cropAreaView.getTargetRectToFill());
                     }
                 }
                 return false;
             }
-            if (actionMasked == 2 && this.r0 != 1) {
+            if (actionMasked == 2 && this.s0 != 1) {
                 rectF.set(this.y);
-                float f11 = x10 - this.E;
-                float f12 = y3 - this.F;
-                this.E = x10;
-                this.F = y3;
-                boolean z10 = Math.abs(f11) > Math.abs(f12);
-                switch (j.c(this.r0)) {
+                float f12 = x10 - this.F;
+                float f13 = y9 - this.G;
+                this.F = x10;
+                this.G = y9;
+                boolean z10 = Math.abs(f12) > Math.abs(f13);
+                switch (g.c(this.s0)) {
                     case 1:
-                        rectF.left += f11;
-                        rectF.top += f12;
+                        rectF.left += f12;
+                        rectF.top += f13;
                         if (this.x > 0.0f) {
                             float width = rectF.width();
                             float height = rectF.height();
@@ -680,8 +679,8 @@ public class CropAreaView extends ViewGroup {
                         }
                         break;
                     case 2:
-                        rectF.right += f11;
-                        rectF.top += f12;
+                        rectF.right += f12;
+                        rectF.top += f13;
                         if (this.x > 0.0f) {
                             float height2 = rectF.height();
                             if (z10) {
@@ -694,8 +693,8 @@ public class CropAreaView extends ViewGroup {
                         }
                         break;
                     case 3:
-                        rectF.left += f11;
-                        rectF.bottom += f12;
+                        rectF.left += f12;
+                        rectF.bottom += f13;
                         if (this.x > 0.0f) {
                             float width2 = rectF.width();
                             if (z10) {
@@ -708,220 +707,220 @@ public class CropAreaView extends ViewGroup {
                         }
                         break;
                     case 4:
-                        rectF.right += f11;
-                        rectF.bottom += f12;
-                        float f13 = this.x;
-                        if (f13 > 0.0f) {
+                        rectF.right += f12;
+                        rectF.bottom += f13;
+                        float f14 = this.x;
+                        if (f14 > 0.0f) {
                             if (!z10) {
-                                b(rectF, f13);
+                                b(rectF, f14);
                                 break;
                             } else {
-                                c(rectF, f13);
+                                c(rectF, f14);
                                 break;
                             }
                         }
                         break;
                     case 5:
-                        rectF.top += f12;
-                        float f14 = this.x;
-                        if (f14 > 0.0f) {
-                            b(rectF, f14);
+                        rectF.top += f13;
+                        float f15 = this.x;
+                        if (f15 > 0.0f) {
+                            b(rectF, f15);
                             break;
                         }
                         break;
                     case 6:
-                        rectF.left += f11;
-                        float f15 = this.x;
-                        if (f15 > 0.0f) {
-                            c(rectF, f15);
+                        rectF.left += f12;
+                        float f16 = this.x;
+                        if (f16 > 0.0f) {
+                            c(rectF, f16);
                             break;
                         }
                         break;
                     case 7:
-                        rectF.bottom += f12;
-                        float f16 = this.x;
-                        if (f16 > 0.0f) {
-                            b(rectF, f16);
+                        rectF.bottom += f13;
+                        float f17 = this.x;
+                        if (f17 > 0.0f) {
+                            b(rectF, f17);
                             break;
                         }
                         break;
                     case 8:
-                        rectF.right += f11;
-                        float f17 = this.x;
-                        if (f17 > 0.0f) {
-                            c(rectF, f17);
+                        rectF.right += f12;
+                        float f18 = this.x;
+                        if (f18 > 0.0f) {
+                            c(rectF, f18);
                             break;
                         }
                         break;
                 }
-                if (rectF.left < f7) {
-                    float f18 = this.x;
-                    if (f18 > 0.0f) {
-                        rectF.bottom = c3.i0.B(rectF.right, f7, f18, rectF.top);
+                if (rectF.left < f10) {
+                    float f19 = this.x;
+                    if (f19 > 0.0f) {
+                        rectF.bottom = com.google.android.recaptcha.internal.a.z(rectF.right, f10, f19, rectF.top);
                     }
-                    rectF.left = f7;
-                } else if (rectF.right > getWidth() - f7) {
-                    rectF.right = getWidth() - f7;
+                    rectF.left = f10;
+                } else if (rectF.right > getWidth() - f10) {
+                    rectF.right = getWidth() - f10;
                     if (this.x > 0.0f) {
                         rectF.bottom = (rectF.width() / this.x) + rectF.top;
                     }
                 }
-                float f19 = f10 + this.H + f7;
-                float f20 = this.G + f7;
-                if (rectF.top < f19) {
-                    float f21 = this.x;
-                    if (f21 > 0.0f) {
-                        rectF.right = c3.i0.z(rectF.bottom, f19, f21, rectF.left);
+                float f20 = f11 + this.I + f10;
+                float f21 = this.H + f10;
+                if (rectF.top < f20) {
+                    float f22 = this.x;
+                    if (f22 > 0.0f) {
+                        rectF.right = com.google.android.recaptcha.internal.a.y(rectF.bottom, f20, f22, rectF.left);
                     }
-                    rectF.top = f19;
-                } else if (rectF.bottom > getHeight() - f20) {
-                    rectF.bottom = getHeight() - f20;
+                    rectF.top = f20;
+                } else if (rectF.bottom > getHeight() - f21) {
+                    rectF.bottom = getHeight() - f21;
                     if (this.x > 0.0f) {
                         rectF.right = (rectF.height() * this.x) + rectF.left;
                     }
                 }
                 float width3 = rectF.width();
-                float f22 = this.W;
-                if (width3 < f22) {
-                    rectF.right = rectF.left + f22;
+                float f23 = this.a0;
+                if (width3 < f23) {
+                    rectF.right = rectF.left + f23;
                 }
                 float height3 = rectF.height();
-                float f23 = this.W;
-                if (height3 < f23) {
-                    rectF.bottom = rectF.top + f23;
+                float f24 = this.a0;
+                if (height3 < f24) {
+                    rectF.bottom = rectF.top + f24;
                 }
-                float f24 = this.x;
-                if (f24 > 0.0f) {
-                    if (f24 < 1.0f) {
+                float f25 = this.x;
+                if (f25 > 0.0f) {
+                    if (f25 < 1.0f) {
                         float width4 = rectF.width();
-                        float f25 = this.W;
-                        if (width4 <= f25) {
-                            rectF.right = rectF.left + f25;
+                        float f26 = this.a0;
+                        if (width4 <= f26) {
+                            rectF.right = rectF.left + f26;
                             rectF.bottom = (rectF.width() / this.x) + rectF.top;
                         }
                     } else {
                         float height4 = rectF.height();
-                        float f26 = this.W;
-                        if (height4 <= f26) {
-                            rectF.bottom = rectF.top + f26;
+                        float f27 = this.a0;
+                        if (height4 <= f27) {
+                            rectF.bottom = rectF.top + f27;
                             rectF.right = (rectF.height() * this.x) + rectF.left;
                         }
                     }
                 }
                 setActualRect(rectF);
-                a aVar2 = this.d0;
+                a aVar2 = this.e0;
                 if (aVar2 != null) {
-                    q qVar2 = (q) aVar2;
-                    CropAreaView cropAreaView2 = qVar2.a;
+                    m mVar2 = (m) aVar2;
+                    CropAreaView cropAreaView2 = mVar2.a;
                     cropAreaView2.g(3, false);
-                    RectF rectF2 = qVar2.f;
+                    RectF rectF2 = mVar2.f;
                     float centerX = rectF2.centerX() - cropAreaView2.getCropCenterX();
                     float centerY = rectF2.centerY() - cropAreaView2.getCropCenterY();
-                    o oVar = qVar2.L;
-                    if (oVar != null) {
-                        o.f(oVar, centerX, centerY);
+                    k kVar = mVar2.M;
+                    if (kVar != null) {
+                        k.f(kVar, centerX, centerY);
                     }
-                    qVar2.r(false);
+                    mVar2.r(false);
                     rectF2.set(cropAreaView2.y);
-                    qVar2.e(true, false, false, false);
+                    mVar2.e(true, false, false, false);
                     return true;
                 }
             }
             return false;
         }
-        if (!this.f0) {
-            this.r0 = 1;
+        if (!this.g0) {
+            this.s0 = 1;
             return false;
         }
-        float f27 = x10;
-        float f28 = y3;
-        if (this.d.contains(f27, f28)) {
-            this.r0 = 2;
-        } else if (this.e.contains(f27, f28)) {
-            this.r0 = 3;
-        } else if (this.f.contains(f27, f28)) {
-            this.r0 = 4;
-        } else if (this.h.contains(f27, f28)) {
-            this.r0 = 5;
-        } else if (this.r.contains(f27, f28)) {
-            this.r0 = 7;
-        } else if (this.n.contains(f27, f28)) {
-            this.r0 = 6;
-        } else if (this.w.contains(f27, f28)) {
-            this.r0 = 9;
+        float f28 = x10;
+        float f29 = y9;
+        if (this.d.contains(f28, f29)) {
+            this.s0 = 2;
+        } else if (this.e.contains(f28, f29)) {
+            this.s0 = 3;
+        } else if (this.f.contains(f28, f29)) {
+            this.s0 = 4;
+        } else if (this.h.contains(f28, f29)) {
+            this.s0 = 5;
+        } else if (this.r.contains(f28, f29)) {
+            this.s0 = 7;
+        } else if (this.n.contains(f28, f29)) {
+            this.s0 = 6;
+        } else if (this.w.contains(f28, f29)) {
+            this.s0 = 9;
         } else {
-            if (!this.s.contains(f27, f28)) {
-                this.r0 = 1;
+            if (!this.s.contains(f28, f29)) {
+                this.s0 = 1;
                 return false;
             }
-            this.r0 = 8;
+            this.s0 = 8;
         }
-        this.E = x10;
-        this.F = y3;
+        this.F = x10;
+        this.G = y9;
         g(3, false);
-        this.e0 = true;
+        this.f0 = true;
         h(true);
-        a aVar3 = this.d0;
+        a aVar3 = this.e0;
         if (aVar3 != null) {
-            q qVar3 = (q) aVar3;
-            qVar3.a.d(qVar3.f);
-            qVar3.n = 0.0f;
-            p pVar = qVar3.M;
-            if (pVar != null) {
-                pVar.l(false);
+            m mVar3 = (m) aVar3;
+            mVar3.a.d(mVar3.f);
+            mVar3.n = 0.0f;
+            l lVar = mVar3.N;
+            if (lVar != null) {
+                lVar.Q(false);
                 return true;
             }
         }
         return true;
     }
 
-    public void setActualRect(float f7) {
-        a(this.y, f7);
+    public void setActualRect(float f10) {
+        a(this.y, f10);
         j();
         invalidate();
     }
 
-    public void setBottomPadding(float f7) {
-        this.G = f7;
+    public void setBottomPadding(float f10) {
+        this.H = f10;
     }
 
-    public void setDimAlpha(float f7) {
-        this.K = f7;
+    public void setDimAlpha(float f10) {
+        this.L = f10;
     }
 
     public void setDimVisibility(boolean z10) {
-        this.I = z10;
+        this.J = z10;
     }
 
-    public void setFrameAlpha(float f7) {
-        this.M = f7;
+    public void setFrameAlpha(float f10) {
+        this.N = f10;
     }
 
     public void setFreeform(boolean z10) {
-        this.f0 = z10;
+        this.g0 = z10;
     }
 
     public void setIsVideo(boolean z10) {
-        this.W = i0.L(z10 ? 64.0f : 32.0f);
+        this.a0 = g0.L(z10 ? 64.0f : 32.0f);
     }
 
     public void setListener(a aVar) {
-        this.d0 = aVar;
+        this.e0 = aVar;
     }
 
-    public void setLockedAspectRatio(float f7) {
-        this.x = f7;
+    public void setLockedAspectRatio(float f10) {
+        this.x = f10;
     }
 
     public void setSubtitle(String str) {
-        this.i0 = str;
+        this.j0 = str;
         if (getMeasuredWidth() > 0) {
             i();
         }
     }
 
-    public void setTopPadding(float f7) {
-        this.H = f7;
+    public void setTopPadding(float f10) {
+        this.I = f10;
     }
 
     public void setActualRect(RectF rectF) {
@@ -931,6 +930,6 @@ public class CropAreaView extends ViewGroup {
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
     }
 }

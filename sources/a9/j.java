@@ -1,51 +1,39 @@
 package a9;
 
-import com.google.android.gms.internal.play_billing.s1;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j extends k {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ k e;
+public final class j extends q6.a {
+    public static final Parcelable.Creator<j> CREATOR = new c(6);
+    public final int a;
+    public final boolean b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
 
-    public j(k kVar, int i10, int i11) {
-        this.e = kVar;
-        this.c = i10;
-        this.d = i11;
+    public j(int i3, boolean z10, boolean z11, boolean z12, boolean z13) {
+        this.a = i3;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
+        this.e = z13;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        s1.a(i10, this.d);
-        return this.e.get(i10 + this.c);
-    }
-
-    @Override // a9.h
-    public final int m() {
-        return this.e.n() + this.c + this.d;
-    }
-
-    @Override // a9.h
-    public final int n() {
-        return this.e.n() + this.c;
-    }
-
-    @Override // a9.h
-    public final Object[] o() {
-        return this.e.o();
-    }
-
-    @Override // a9.k, java.util.List
-    /* renamed from: p, reason: merged with bridge method [inline-methods] */
-    public final k subList(int i10, int i11) {
-        s1.b(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        j8.a.r(parcel, 3, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        j8.a.r(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        j8.a.r(parcel, 5, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        j8.a.t(parcel, s6);
     }
 }

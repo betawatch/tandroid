@@ -9,72 +9,72 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Vector.TLDeserializer {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ d(int i10) {
-        this.a = i10;
+    public /* synthetic */ d(int i3) {
+        this.a = i3;
     }
 
     @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
         switch (this.a) {
             case 0:
-                return TL_stats.TL_statsGroupTopInviter.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stats.TL_statsGroupTopInviter.TLdeserialize(inputSerializedData, i3, z10);
             case 1:
-                return TL_stats.PublicForward.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stats.PublicForward.TLdeserialize(inputSerializedData, i3, z10);
             case 2:
-                return TL_stories.TL_storyAlbum.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.TL_storyAlbum.TLdeserialize(inputSerializedData, i3, z10);
             case 3:
-                return TL_stories.TL_foundStory.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.TL_foundStory.TLdeserialize(inputSerializedData, i3, z10);
             case 4:
-                return TL_stories.StoryItem.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.StoryItem.TLdeserialize(inputSerializedData, i3, z10);
             case 5:
-                return TL_stories.Boost.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.Boost.TLdeserialize(inputSerializedData, i3, z10);
             case 6:
-                return TL_stories.PrepaidGiveaway.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.PrepaidGiveaway.TLdeserialize(inputSerializedData, i3, z10);
             case 7:
-                return TL_stories.TL_myBoost.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.TL_myBoost.TLdeserialize(inputSerializedData, i3, z10);
             case 8:
-                return TL_stories.PeerStories.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.PeerStories.TLdeserialize(inputSerializedData, i3, z10);
             case 9:
-                return TLRPC.TL_recentStory.TLdeserialize(inputSerializedData, i10, z10);
+                return TLRPC.TL_recentStory.TLdeserialize(inputSerializedData, i3, z10);
             case 10:
-                return TL_stories.StoryViews.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.StoryViews.TLdeserialize(inputSerializedData, i3, z10);
             case 11:
-                return TL_stories.MediaArea.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.MediaArea.TLdeserialize(inputSerializedData, i3, z10);
             case 12:
-                return TL_stories.StoryReaction.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.StoryReaction.TLdeserialize(inputSerializedData, i3, z10);
             case 13:
-                return TL_stories.StoryView.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_stories.StoryView.TLdeserialize(inputSerializedData, i3, z10);
             case 14:
-                return TL_toncenter.onrampProviderInfo.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_toncenter.onrampProviderInfo.TLdeserialize(inputSerializedData, i3, z10);
             case 15:
-                return TL_toncenter.onrampMethodAvailability.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_toncenter.onrampMethodAvailability.TLdeserialize(inputSerializedData, i3, z10);
             case 16:
-                return TLRPC.TL_folderPeer.TLdeserialize(inputSerializedData, i10, z10);
+                return TLRPC.TL_folderPeer.TLdeserialize(inputSerializedData, i3, z10);
             case 17:
-                return TLRPC.PeerLocated.TLdeserialize(inputSerializedData, i10, z10);
+                return TLRPC.PeerLocated.TLdeserialize(inputSerializedData, i3, z10);
             case 18:
-                return TL_wallet.cardSticker.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.cardSticker.TLdeserialize(inputSerializedData, i3, z10);
             case 19:
-                return TL_wallet.currencyRate.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.currencyRate.TLdeserialize(inputSerializedData, i3, z10);
             case 20:
-                return TL_wallet.holderDc.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.holderDc.TLdeserialize(inputSerializedData, i3, z10);
             case 21:
-                return TL_wallet.nftAttribute.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.nftAttribute.TLdeserialize(inputSerializedData, i3, z10);
             case 22:
-                return TL_wallet.nftItem.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.nftItem.TLdeserialize(inputSerializedData, i3, z10);
             case 23:
-                return TL_wallet.tonConnectRequest.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.tonConnectRequest.TLdeserialize(inputSerializedData, i3, z10);
             case 24:
-                return TL_wallet.tonConnectSession.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.tonConnectSession.TLdeserialize(inputSerializedData, i3, z10);
             case 25:
-                return TL_wallet.walletUserAddress.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.walletUserAddress.TLdeserialize(inputSerializedData, i3, z10);
             default:
-                return TL_wallet.walletTransaction.TLdeserialize(inputSerializedData, i10, z10);
+                return TL_wallet.walletTransaction.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 }

@@ -1,90 +1,11 @@
 package q1;
 
-import android.text.InputFilter;
-import android.text.method.PasswordTransformationMethod;
-import android.text.method.TransformationMethod;
-import android.util.SparseArray;
-import android.widget.TextView;
-import w7.r6;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f extends r6 {
-    public final TextView a;
-    public final d b;
-    public boolean c = true;
+public final class f {
+    public float a;
 
-    public f(TextView textView) {
-        this.a = textView;
-        this.b = new d(textView);
-    }
-
-    @Override // w7.r6
-    public final InputFilter[] a(InputFilter[] inputFilterArr) {
-        if (!this.c) {
-            SparseArray sparseArray = new SparseArray(1);
-            for (int i10 = 0; i10 < inputFilterArr.length; i10++) {
-                InputFilter inputFilter = inputFilterArr[i10];
-                if (inputFilter instanceof d) {
-                    sparseArray.put(i10, inputFilter);
-                }
-            }
-            if (sparseArray.size() == 0) {
-                return inputFilterArr;
-            }
-            int length = inputFilterArr.length;
-            InputFilter[] inputFilterArr2 = new InputFilter[inputFilterArr.length - sparseArray.size()];
-            int i11 = 0;
-            for (int i12 = 0; i12 < length; i12++) {
-                if (sparseArray.indexOfKey(i12) < 0) {
-                    inputFilterArr2[i11] = inputFilterArr[i12];
-                    i11++;
-                }
-            }
-            return inputFilterArr2;
-        }
-        int length2 = inputFilterArr.length;
-        int i13 = 0;
-        while (true) {
-            d dVar = this.b;
-            if (i13 >= length2) {
-                InputFilter[] inputFilterArr3 = new InputFilter[inputFilterArr.length + 1];
-                System.arraycopy(inputFilterArr, 0, inputFilterArr3, 0, length2);
-                inputFilterArr3[length2] = dVar;
-                return inputFilterArr3;
-            }
-            if (inputFilterArr[i13] == dVar) {
-                return inputFilterArr;
-            }
-            i13++;
-        }
-    }
-
-    @Override // w7.r6
-    public final void b(boolean z10) {
-        if (z10) {
-            d();
-        }
-    }
-
-    @Override // w7.r6
-    public final void c(boolean z10) {
-        this.c = z10;
-        d();
-        TextView textView = this.a;
-        textView.setFilters(a(textView.getFilters()));
-    }
-
-    public final void d() {
-        TextView textView = this.a;
-        TransformationMethod transformationMethod = textView.getTransformationMethod();
-        if (this.c) {
-            if (!(transformationMethod instanceof j) && !(transformationMethod instanceof PasswordTransformationMethod)) {
-                transformationMethod = new j(transformationMethod);
-            }
-        } else if (transformationMethod instanceof j) {
-            transformationMethod = ((j) transformationMethod).a;
-        }
-        textView.setTransformationMethod(transformationMethod);
+    public f(float f10) {
+        this.a = f10;
     }
 }

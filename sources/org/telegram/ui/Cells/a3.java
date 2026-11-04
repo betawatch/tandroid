@@ -1,44 +1,43 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a3 extends AnimatorListenerAdapter {
+public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b3 b;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ a3(b3 b3Var, int i10) {
-        this.a = i10;
-        this.b = b3Var;
+    public /* synthetic */ a3(FrameLayout frameLayout, Object obj, int i3) {
+        this.a = i3;
+        this.b = frameLayout;
+        this.c = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                b3 b3Var = this.b;
-                Runnable runnable = b3Var.b;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                if (animator == b3Var.e) {
-                    b3Var.e = null;
+                b3 b3Var = (b3) this.b;
+                View.OnClickListener onClickListener = (View.OnClickListener) this.c;
+                if (b3Var.getAlpha() > 0.5f && onClickListener != null) {
+                    onClickListener.onClick(view);
                     break;
                 }
                 break;
             default:
-                b3 b3Var2 = this.b;
-                Runnable runnable2 = b3Var2.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                }
-                if (animator == b3Var2.e) {
-                    b3Var2.e = null;
+                gi.d dVar = (gi.d) this.b;
+                org.telegram.ui.ActionBar.t2 t2Var = (org.telegram.ui.ActionBar.t2) this.c;
+                if (dVar.J <= 0) {
+                    t2Var.dismiss();
+                    break;
+                } else {
+                    org.telegram.messenger.g0.G3(3.0f, dVar, null);
+                    org.telegram.messenger.p2.E.a();
                     break;
                 }
-                break;
         }
     }
 }

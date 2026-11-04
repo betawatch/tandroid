@@ -1,134 +1,122 @@
 package kg;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.m10;
+import j$.util.Objects;
+import java.util.ArrayList;
+import org.telegram.messenger.s3;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.ow;
+import org.telegram.ui.a40;
+import org.telegram.ui.g11;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class g extends g2 {
-    public final /* synthetic */ int r;
+public final class g extends u4.o {
+    public final /* synthetic */ int b;
+    public ArrayList c;
+    public Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(Context context, int i10) {
-        super(context);
-        this.r = i10;
+    public /* synthetic */ g() {
+        this.b = 6;
     }
 
-    @Override // kg.g2
-    public final void a() {
-        switch (this.r) {
+    @Override // u4.o
+    public final boolean a(int i3, int i10) {
+        switch (this.b) {
             case 0:
-                f2 f2Var = this.a;
-                f2Var.q = true;
-                f2Var.K = false;
-                f2Var.H = true;
-                f2Var.J = true;
-                f2Var.k = org.telegram.messenger.i0.L(-14.0f);
-                f2 f2Var2 = this.a;
-                f2Var2.x = 2000L;
-                f2Var2.y = 3000;
-                f2Var2.r = 16;
-                f2Var2.G = false;
-                f2Var2.O = 28;
-                f2Var2.Q = t6.Ak;
-                f2Var2.c();
-                break;
+                return ((k) ((m) this.d).O.get(i3)).a == ((k) this.c.get(i10)).a;
             case 1:
-                super.a();
-                f2 f2Var3 = this.a;
-                f2Var3.q = true;
-                f2Var3.K = false;
-                f2Var3.L = true;
-                f2Var3.H = true;
-                f2Var3.c();
-                break;
+                return true;
             case 2:
-                m10 m10Var = new m10(50);
-                this.a = m10Var;
-                m10Var.O = 100;
-                m10Var.M = false;
-                m10Var.G = false;
-                m10Var.K = true;
-                m10Var.H = true;
-                m10Var.J = false;
-                m10Var.r = 4;
-                m10Var.w = 0.98f;
-                m10Var.v = 0.98f;
-                m10Var.u = 0.98f;
-                m10Var.c();
-                break;
+                return b(i3, i10);
             case 3:
-                f2 f2Var4 = this.a;
-                f2Var4.q = true;
-                f2Var4.K = false;
-                f2Var4.H = true;
-                f2Var4.J = true;
-                f2Var4.k = org.telegram.messenger.i0.L(-14.0f);
-                f2 f2Var5 = this.a;
-                f2Var5.x = 2000L;
-                f2Var5.y = 3000;
-                f2Var5.r = 16;
-                f2Var5.G = false;
-                f2Var5.O = 28;
-                f2Var5.Q = t6.Ak;
-                f2Var5.c();
-                break;
+                return false;
             case 4:
-                super.a();
-                f2 f2Var6 = this.a;
-                f2Var6.q = true;
-                f2Var6.K = false;
-                f2Var6.L = true;
-                f2Var6.H = true;
-                f2Var6.c();
-                break;
-            default:
-                super.a();
-                f2 f2Var7 = this.a;
-                f2Var7.q = true;
-                f2Var7.K = false;
-                f2Var7.L = true;
-                f2Var7.H = true;
-                f2Var7.c();
-                break;
-        }
-    }
-
-    @Override // kg.g2
-    public int getStarsRectWidth() {
-        switch (this.r) {
-            case 2:
-                return getMeasuredWidth();
-            case 3:
-            default:
-                return super.getStarsRectWidth();
-            case 4:
-                return getMeasuredWidth();
+                return true;
             case 5:
-                return getMeasuredWidth();
+                return true;
+            default:
+                sg.a aVar = (sg.a) this.c.get(i3);
+                sg.a aVar2 = (sg.a) ((ArrayList) this.d).get(i10);
+                if (aVar.a != aVar2.a) {
+                    return false;
+                }
+                return aVar.a(aVar2);
         }
     }
 
-    @Override // kg.g2, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.r) {
+    @Override // u4.o
+    public final boolean b(int i3, int i10) {
+        TLRPC.TL_contact tL_contact;
+        TLRPC.TL_contact tL_contact2;
+        TLRPC.RecentMeUrl recentMeUrl;
+        String str;
+        switch (this.b) {
             case 0:
-                super.onMeasure(i10, i11);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.i0.L(52.0f));
-                break;
+                k kVar = (k) ((m) this.d).O.get(i3);
+                k kVar2 = (k) this.c.get(i10);
+                TLRPC.Dialog dialog = kVar.c;
+                int i11 = kVar.a;
+                int i12 = kVar2.a;
+                TLRPC.Dialog dialog2 = kVar2.c;
+                return i11 == i12 && (i11 != 0 ? i11 != 14 ? i11 != 4 ? i11 != 6 ? i11 != 5 ? i11 != 10 : kVar.j == kVar2.j : !((tL_contact = kVar.e) == null || (tL_contact2 = kVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = kVar.d) == null || kVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && kVar.h == kVar2.h && kVar.f == kVar2.f && kVar.g == kVar2.g);
             case 1:
-                super.onMeasure(i10, i11);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.i0.L(52.0f));
-                break;
+                return ((Integer) this.c.get(i3)).equals(((ow) this.d).n.get(i10));
             case 2:
-            default:
-                super.onMeasure(i10, i11);
-                break;
+                return Objects.equals(this.c.get(i3), ((oj0) this.d).n.get(i10));
             case 3:
-                super.onMeasure(i10, i11);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.i0.L(52.0f));
-                break;
+                return ((l01) this.c.get(i3)).a() == ((l01) ((k01) this.d).c.get(i10)).a();
+            case 4:
+                a40 a40Var = (a40) this.d;
+                ArrayList arrayList = this.c;
+                if (i3 >= arrayList.size() || i10 >= a40Var.e.size()) {
+                    return false;
+                }
+                return ((s3) arrayList.get(i3)).equals(a40Var.e.get(i10));
+            case 5:
+                return ((Long) this.c.get(i3)).equals(((g11) this.d).w0.get(i10));
+            default:
+                sg.a aVar = (sg.a) this.c.get(i3);
+                sg.a aVar2 = (sg.a) ((ArrayList) this.d).get(i10);
+                if (aVar.a != aVar2.a) {
+                    return false;
+                }
+                return aVar.equals(aVar2);
         }
+    }
+
+    @Override // u4.o
+    public final int d() {
+        switch (this.b) {
+            case 0:
+                return this.c.size();
+            case 1:
+                return ((ow) this.d).n.size();
+            case 2:
+                return ((oj0) this.d).n.size();
+            case 3:
+                return ((k01) this.d).c.size();
+            case 4:
+                return ((a40) this.d).e.size();
+            case 5:
+                return ((g11) this.d).w0.size();
+            default:
+                return ((ArrayList) this.d).size();
+        }
+    }
+
+    @Override // u4.o
+    public final int e() {
+        switch (this.b) {
+        }
+        return this.c.size();
+    }
+
+    public /* synthetic */ g(Object obj, ArrayList arrayList, int i3) {
+        this.b = i3;
+        this.d = obj;
+        this.c = arrayList;
     }
 }

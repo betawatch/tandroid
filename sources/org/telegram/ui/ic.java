@@ -1,111 +1,110 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ic extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Canvas b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Paint f;
-    public final /* synthetic */ Bitmap h;
-    public final /* synthetic */ Paint n;
-    public final /* synthetic */ float r;
-    public final /* synthetic */ float s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 w;
+public final class ic extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final jl0 a;
+    public final hc b;
+    public final org.telegram.ui.ActionBar.k5 c;
+    public final TextView d;
+    public final TextView e;
+    public final LinearLayout f;
+    public final /* synthetic */ pc h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ic(org.telegram.ui.ActionBar.k2 k2Var, Activity activity, Canvas canvas, float f7, float f10, float f11, Paint paint, Bitmap bitmap, Paint paint2, float f12, float f13, int i10) {
+    public ic(pc pcVar, Activity activity) {
         super(activity);
-        this.a = i10;
-        this.w = k2Var;
-        this.b = canvas;
-        this.c = f7;
-        this.d = f10;
-        this.e = f11;
-        this.f = paint;
-        this.h = bitmap;
-        this.n = paint2;
-        this.r = f12;
-        this.s = f13;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        int i3;
+        org.telegram.ui.ActionBar.e6 e6Var2;
+        this.h = pcVar;
+        Context context = getContext();
+        e6Var = ((org.telegram.ui.ActionBar.d2) pcVar).resourceProvider;
+        jl0 jl0Var = new jl0(context, e6Var);
+        this.a = jl0Var;
+        jl0Var.setProgressToGradient(1.0f);
+        jl0Var.G = true;
+        addView(jl0Var, b8.mf.e(-1, -1, org.telegram.messenger.hs.E1));
+        Context context2 = getContext();
+        i3 = ((org.telegram.ui.ActionBar.d2) pcVar).currentAccount;
+        long j10 = pcVar.a;
+        e6Var2 = ((org.telegram.ui.ActionBar.d2) pcVar).resourceProvider;
+        hc hcVar = new hc(this, context2, i3, j10, e6Var2);
+        this.b = hcVar;
+        boolean z10 = pcVar.d;
+        addView(hcVar, b8.mf.d(-1, z10 ? 230.0f : 190.0f, 80, 0.0f, 0.0f, 0.0f, z10 ? 24.0f : 0.0f));
+        if (pcVar instanceof e40) {
+            org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(getContext());
+            this.c = k5Var;
+            k5Var.setGravity(19);
+            int i10 = org.telegram.ui.ActionBar.k6.A8;
+            k5Var.setTextColor(pcVar.getThemedColor(i10));
+            k5Var.setTypeface(org.telegram.messenger.g0.o());
+            k5Var.l(org.telegram.messenger.bd.M0(2131752551, null), false);
+            k5Var.setAlpha(0.0f);
+            a();
+            addView(k5Var, b8.mf.d(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
+            LinearLayout linearLayout = new LinearLayout(activity);
+            this.f = linearLayout;
+            linearLayout.setOrientation(0);
+            linearLayout.setBackground(org.telegram.ui.ActionBar.k6.i0(org.telegram.ui.ActionBar.k6.r1(0.065f, -16777216), -16777216));
+            linearLayout.setGravity(17);
+            linearLayout.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
+            TextView textView = new TextView(activity);
+            this.d = textView;
+            textView.setTextSize(1, 12.0f);
+            textView.setTextColor(hcVar.h.getTextColor());
+            TextView textView2 = new TextView(activity);
+            this.e = textView2;
+            textView2.setTextSize(1, 12.0f);
+            textView2.setTextColor((pcVar.d && pcVar.s == -1) ? pcVar.getThemedColor(i10) : -1);
+            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = pcVar.c;
+            textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.bd.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
+            textView2.setText(org.telegram.messenger.bd.M0(2131753353, null));
+            linearLayout.addView(textView);
+            linearLayout.addView(textView2, b8.mf.k(3.0f, 0.0f, 0.0f, 0.0f, -2, -2));
+            addView(linearLayout, b8.mf.e(-1, -2, 80));
+        }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                super.onDraw(canvas);
-                zc zcVar = (zc) this.w;
-                boolean z10 = zcVar.J;
-                Paint paint = this.n;
-                float f7 = this.e;
-                float f10 = this.d;
-                float f11 = this.c;
-                if (z10) {
-                    float f12 = zcVar.n0;
-                    if (f12 > 0.0f) {
-                        this.b.drawCircle(f11, f10, f7 * f12, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
-                } else {
-                    canvas.drawCircle(f11, f10, (1.0f - zcVar.n0) * f7, paint);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                zcVar.L.draw(canvas);
-                canvas.restore();
-                break;
-            case 1:
-                super.onDraw(canvas);
-                rn0 rn0Var = (rn0) this.w;
-                boolean z11 = rn0Var.S;
-                Paint paint2 = this.n;
-                float f13 = this.e;
-                float f14 = this.d;
-                float f15 = this.c;
-                if (z11) {
-                    float f16 = rn0Var.Y;
-                    if (f16 > 0.0f) {
-                        this.b.drawCircle(f15, f14, f13 * f16, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
-                } else {
-                    canvas.drawCircle(f15, f14, (1.0f - rn0Var.Y) * f13, paint2);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                rn0Var.K.draw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.onDraw(canvas);
-                k91 k91Var = (k91) this.w;
-                boolean a2 = k91Var.a.a();
-                Paint paint3 = this.n;
-                float f17 = this.e;
-                float f18 = this.d;
-                float f19 = this.c;
-                if (a2) {
-                    float f20 = k91Var.j2;
-                    if (f20 > 0.0f) {
-                        this.b.drawCircle(f19, f18, f17 * f20, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
-                } else {
-                    canvas.drawCircle(f19, f18, (1.0f - k91Var.j2) * f17, paint3);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                k91Var.P1.draw(canvas);
-                canvas.restore();
-                break;
+    public final void a() {
+        float f10;
+        boolean z10 = getResources().getConfiguration().orientation == 2;
+        int i3 = (org.telegram.messenger.g0.Q1() || !z10) ? 20 : 18;
+        org.telegram.ui.ActionBar.k5 k5Var = this.c;
+        k5Var.setTextSize(i3);
+        if (org.telegram.messenger.g0.Q1()) {
+            f10 = -2.0f;
+        } else {
+            f10 = z10 ? 4 : 0;
+        }
+        k5Var.setTranslationY(org.telegram.messenger.g0.L(f10));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.A8));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        org.telegram.ui.ActionBar.k5 k5Var = this.c;
+        if (k5Var != null) {
+            pc pcVar = this.h;
+            int i3 = -1;
+            k5Var.setTextColor((!pcVar.d || pcVar.s == -1) ? pcVar.getThemedColor(org.telegram.ui.ActionBar.k6.A8) : -1);
+            if (pcVar.d && pcVar.s == -1) {
+                i3 = pcVar.getThemedColor(org.telegram.ui.ActionBar.k6.A8);
+            }
+            this.e.setTextColor(i3);
         }
     }
 }

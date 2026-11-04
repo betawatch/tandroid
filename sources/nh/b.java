@@ -1,90 +1,136 @@
 package nh;
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.ActionBar.z2;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.d50;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.Components.wt;
-import org.telegram.ui.Components.xj0;
-import org.telegram.ui.uq;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import lg.n;
+import org.telegram.messenger.camera.q;
+import org.telegram.messenger.g0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.voip.c2;
+import qe.c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public abstract class b extends ViewGroup {
+    public int a;
+    public int b;
+    public final LinkedHashMap c;
 
-    public /* synthetic */ b(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public b(Context context) {
+        super(context);
+        this.c = new LinkedHashMap(16);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    public final void a(c2 c2Var) {
+        addView(c2Var);
+        this.c.put(c2Var, new a(c2Var, new n(this, 16)));
+    }
+
+    public final void b(boolean z10, boolean z11) {
+        int min;
+        int i3;
+        c cVar;
+        int measuredWidth;
         int i10;
-        switch (this.a) {
-            case 0:
-                i iVar = (i) this.c;
-                iVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                iVar.n = floatValue;
-                iVar.setAlpha((int) ((1.0f - floatValue) * this.b));
-                iVar.p = true;
-                iVar.invalidateSelf();
-                break;
-            case 1:
-                z2 z2Var = (z2) this.c;
-                z2Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                z2Var.C0(this.b, intValue, intValue);
-                break;
-            case 2:
-                q1 q1Var = (q1) this.c;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().f1() == this.b) {
-                    q1Var.setSelectedBackgroundProgress(floatValue2);
-                    break;
-                }
-                break;
-            case 3:
-                wt wtVar = (wt) this.c;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wtVar.d.setTranslationY(floatValue3);
-                int i11 = this.b;
-                float f7 = i11;
-                float f10 = 1.0f - (floatValue3 / f7);
-                wtVar.R = f10;
-                if (i11 > 0 && ((i10 = wtVar.L) == 2 || i10 == 3)) {
-                    wtVar.d.setAlpha(f10);
-                }
-                wtVar.c(floatValue3 - f7);
-                break;
-            case 4:
-                ((vy) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 5:
-                d50 d50Var = (d50) this.c;
-                if (this.b == d50Var.s0) {
-                    float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    if (floatValue4 >= 0.5f) {
-                        floatValue4 -= 1.0f;
-                    }
-                    d50Var.x.setRotationY(floatValue4 * 180.0f);
-                    break;
-                }
-                break;
-            default:
-                uq uqVar = (uq) this.c;
-                uqVar.getClass();
-                Float f11 = (Float) valueAnimator.getAnimatedValue();
-                xj0 xj0Var = (xj0) uqVar.d;
-                xj0Var.b.put(this.b, f11);
-                xj0Var.d = true;
-                xj0Var.a.invalidate();
-                break;
+        int measuredWidth2 = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        boolean z12 = measuredWidth2 <= measuredHeight;
+        if (measuredWidth2 <= 0 || measuredHeight <= 0) {
+            return;
         }
+        LinkedHashMap linkedHashMap = this.c;
+        Iterator it = linkedHashMap.values().iterator();
+        int i11 = 0;
+        while (it.hasNext()) {
+            if (((a) it.next()).h) {
+                i11++;
+            }
+        }
+        if (i11 == 0) {
+            i11 = 1;
+        }
+        if (z12) {
+            min = Math.min(g0.L(50.0f) + Math.max((int) (q.A(50.0f, i11, measuredHeight) / (i11 + 0.333f)), 0), measuredHeight / i11);
+            i3 = (measuredHeight - (i11 * min)) / 2;
+        } else {
+            int min2 = Math.min(g0.L(50.0f) + Math.max((int) (q.A(50.0f, i11, measuredWidth2) / (i11 + 0.333f)), 0), measuredWidth2 / i11);
+            min = g0.L(76.0f);
+            i3 = (measuredWidth2 - (i11 * min2)) / 2;
+            measuredWidth2 = min2;
+        }
+        Iterator it2 = linkedHashMap.entrySet().iterator();
+        int i12 = 0;
+        while (it2.hasNext()) {
+            a aVar = (a) ((Map.Entry) it2.next()).getValue();
+            boolean z13 = aVar.h;
+            c2 c2Var = aVar.e;
+            c cVar2 = aVar.b;
+            qe.a aVar2 = aVar.c;
+            c cVar3 = aVar.a;
+            if (z13) {
+                if (z12) {
+                    measuredWidth = ((measuredWidth2 - c2Var.getMeasuredWidth()) / 2) + (getMeasuredWidth() - measuredWidth2);
+                    i10 = (min * i12) + i3;
+                } else {
+                    measuredWidth = ((measuredWidth2 - c2Var.getMeasuredWidth()) / 2) + (measuredWidth2 * i12) + i3;
+                    i10 = getMeasuredHeight() - g0.L(76.0f);
+                }
+                if (z11 || !((z10 || cVar3.h) && aVar2.f)) {
+                    cVar3.c(measuredWidth);
+                } else {
+                    cVar3.a(measuredWidth);
+                }
+                if (z11 || !((z10 || cVar2.h) && aVar2.f)) {
+                    cVar2.c(i10);
+                } else {
+                    cVar2.a(i10);
+                }
+                i12++;
+            }
+            aVar2.a(aVar.h, !z11 && (z10 || ((cVar = aVar2.h) != null && cVar.h)));
+        }
+        invalidate();
+    }
+
+    public final void c(c2 c2Var, boolean z10, boolean z11) {
+        a aVar = (a) this.c.get(c2Var);
+        if (aVar == null || aVar.h == z10) {
+            return;
+        }
+        aVar.h = z10;
+        b(z11, false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        int childCount = getChildCount();
+        for (int i13 = 0; i13 < childCount; i13++) {
+            View childAt = getChildAt(i13);
+            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i3, int i10) {
+        int size = View.MeasureSpec.getSize(i3);
+        int size2 = View.MeasureSpec.getSize(i10);
+        setMeasuredDimension(size, size2);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(g0.L(76.0f), TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(g0.L(76.0f), TLObject.FLAG_30);
+        int childCount = getChildCount();
+        for (int i11 = 0; i11 < childCount; i11++) {
+            getChildAt(i11).measure(makeMeasureSpec, makeMeasureSpec2);
+        }
+        if (this.a == size && this.b == size2) {
+            b(true, false);
+            return;
+        }
+        b(false, true);
+        this.a = size;
+        this.b = size2;
     }
 }

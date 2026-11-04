@@ -1,26 +1,38 @@
 package r3;
 
-import b2.r0;
-import b2.t0;
-import b2.x;
+import a1.g;
+import d2.p0;
+import d2.r0;
+import d2.v;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c implements t0 {
-    public final float a;
-    public final int b;
+public final class c implements r0 {
+    public final byte[] a;
+    public final String b;
+    public final String c;
 
-    public c(float f7, int i10) {
-        this.a = f7;
-        this.b = i10;
+    public c(byte[] bArr, String str, String str2) {
+        this.a = bArr;
+        this.b = str;
+        this.c = str2;
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
+    @Override // d2.r0
+    public final void a(p0 p0Var) {
+        String str = this.b;
+        if (str != null) {
+            p0Var.a = str;
+        }
+    }
+
+    @Override // d2.r0
+    public final /* synthetic */ v b() {
         return null;
     }
 
-    @Override // b2.t0
+    @Override // d2.r0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -29,24 +41,17 @@ public final class c implements t0 {
         if (this == obj) {
             return true;
         }
-        if (obj != null && c.class == obj.getClass()) {
-            c cVar = (c) obj;
-            if (this.a == cVar.a && this.b == cVar.b) {
-                return true;
-            }
+        if (obj == null || c.class != obj.getClass()) {
+            return false;
         }
-        return false;
+        return Arrays.equals(this.a, ((c) obj).a);
     }
 
     public final int hashCode() {
-        return ((Float.valueOf(this.a).hashCode() + 527) * 31) + this.b;
+        return Arrays.hashCode(this.a);
     }
 
     public final String toString() {
-        return "smta: captureFrameRate=" + this.a + ", svcTemporalLayerCount=" + this.b;
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
+        return g.o(this.a.length, "\"", com.google.android.recaptcha.internal.a.n("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
     }
 }

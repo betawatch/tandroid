@@ -14,9 +14,9 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class NotificationImageProvider extends ContentProvider implements vs {
+public class NotificationImageProvider extends ContentProvider implements cs {
     public static String d;
     public static UriMatcher e;
     public final HashSet a = new HashSet();
@@ -28,9 +28,9 @@ public class NotificationImageProvider extends ContentProvider implements vs {
         return 0;
     }
 
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == at.Y1) {
+    @Override // org.telegram.messenger.cs
+    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+        if (i3 == hs.Y1) {
             synchronized (this.b) {
                 try {
                     String str = (String) objArr[0];
@@ -65,8 +65,8 @@ public class NotificationImageProvider extends ContentProvider implements vs {
 
     @Override // android.content.ContentProvider
     public final boolean onCreate() {
-        for (int i10 = 0; i10 < e20.c(); i10++) {
-            at.f(i10).b(this, at.Y1);
+        for (int i3 = 0; i3 < h10.c(); i3++) {
+            hs.f(i3).b(this, hs.Y1);
         }
         return true;
     }
@@ -80,7 +80,7 @@ public class NotificationImageProvider extends ContentProvider implements vs {
             UriMatcher uriMatcher = new UriMatcher(-1);
             e = uriMatcher;
             if (d == null) {
-                w0.d();
+                t0.d();
                 d = "org.telegram.messenger.beta.notification_image_provider";
             }
             uriMatcher.addURI(d, "msg_media_raw/#/*", 1);
@@ -94,26 +94,26 @@ public class NotificationImageProvider extends ContentProvider implements vs {
         String queryParameter = uri.getQueryParameter("final_path");
         String queryParameter2 = uri.getQueryParameter("fallback");
         File file = new File(queryParameter);
-        w0.w();
-        if (i0.I1(Uri.fromFile(file), 0)) {
+        t0.w();
+        if (g0.I1(Uri.fromFile(file), 0)) {
             throw new SecurityException("trying to read internal file");
         }
         if (!file.exists()) {
-            Long l4 = (Long) this.c.get(str2);
-            long longValue = l4 != null ? l4.longValue() : System.currentTimeMillis();
-            if (l4 == null) {
+            Long l10 = (Long) this.c.get(str2);
+            long longValue = l10 != null ? l10.longValue() : System.currentTimeMillis();
+            if (l10 == null) {
                 this.c.put(str2, Long.valueOf(longValue));
             }
             while (!file.exists()) {
                 if (System.currentTimeMillis() - longValue >= 3000) {
-                    if (v2.a) {
-                        f8.l("Waiting for " + str2 + " to download timed out");
+                    if (r2.a) {
+                        a8.l("Waiting for " + str2 + " to download timed out");
                     }
                     if (TextUtils.isEmpty(queryParameter2)) {
                         throw new FileNotFoundException("Download timed out");
                     }
                     File file2 = new File(queryParameter2);
-                    if (i0.I1(Uri.fromFile(file2), 0)) {
+                    if (g0.I1(Uri.fromFile(file2), 0)) {
                         throw new SecurityException("trying to read internal file");
                     }
                     return ParcelFileDescriptor.open(file2, TLObject.FLAG_28);
@@ -126,7 +126,7 @@ public class NotificationImageProvider extends ContentProvider implements vs {
                     }
                 }
             }
-            if (i0.I1(Uri.fromFile(file), 0)) {
+            if (g0.I1(Uri.fromFile(file), 0)) {
                 throw new SecurityException("trying to read internal file");
             }
         }
@@ -140,8 +140,8 @@ public class NotificationImageProvider extends ContentProvider implements vs {
 
     @Override // android.content.ContentProvider
     public final void shutdown() {
-        for (int i10 = 0; i10 < e20.c(); i10++) {
-            at.f(i10).n(this, at.Y1);
+        for (int i3 = 0; i3 < h10.c(); i3++) {
+            hs.f(i3).n(this, hs.Y1);
         }
     }
 

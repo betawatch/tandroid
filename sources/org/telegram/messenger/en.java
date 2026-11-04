@@ -1,52 +1,91 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
+import android.content.Context;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class en implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ f1 d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class en implements RequestDelegate {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ boolean g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ en(wp wpVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.k2 k2Var, TLRPC.TL_channels_editAdmin tL_channels_editAdmin, boolean z10, boolean z11) {
-        this.d = wpVar;
-        this.e = tL_error;
-        this.f = k2Var;
-        this.h = tL_channels_editAdmin;
-        this.b = z10;
-        this.c = z11;
+    public /* synthetic */ en(Context context, int i3, long j10, String str, long j11, int i10, boolean z10) {
+        this.d = i3;
+        this.c = j10;
+        this.f = j11;
+        this.e = i10;
+        this.g = z10;
+        this.b = context;
+        this.h = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Object obj = this.h;
-        Object obj2 = this.f;
-        Object obj3 = this.e;
-        f1 f1Var = this.d;
-        switch (i10) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                org.telegram.ui.Components.s4.e0(((wp) f1Var).currentAccount, (TLRPC.TL_error) obj3, (org.telegram.ui.ActionBar.k2) obj2, (TLRPC.TL_channels_editAdmin) obj, Boolean.valueOf(this.b), Boolean.valueOf(this.c));
+                hp hpVar = (hp) this.b;
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.h;
+                long j10 = this.c;
+                if (j10 != 0) {
+                    hpVar.getMessagesStorage().q1(j10);
+                }
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
+                    int i3 = tL_messages_affectedHistory.offset;
+                    long j11 = this.f;
+                    if (i3 > 0) {
+                        hpVar.Y(j11, 0, this.d, this.e, this.g, inputPeer, 0L);
+                    }
+                    hpVar.M3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
+                    qr messagesStorage = hpVar.getMessagesStorage();
+                    messagesStorage.a.c(new op(messagesStorage, j11, 5));
+                    break;
+                }
                 break;
+            case 1:
+                hp hpVar2 = (hp) this.b;
+                org.telegram.ui.tf tfVar = (org.telegram.ui.tf) this.h;
+                if (tL_error != null) {
+                    g0.h3(new a(tfVar, 25));
+                    break;
+                } else {
+                    TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory2 = (TLRPC.TL_messages_affectedHistory) tLObject;
+                    hpVar2.M3(tL_messages_affectedHistory2.pts, -1, tL_messages_affectedHistory2.pts_count);
+                    hpVar2.getMessagesStorage().a.c(new nn(hpVar2, this.c, this.d, this.e, this.f, tL_messages_affectedHistory2, this.g, tfVar));
+                    break;
+                }
             default:
-                pt.e((pt) f1Var, (ArrayList) obj3, (ArrayList) obj2, this.b, this.c, (CountDownLatch) obj);
+                VoIPGroupNotification.lambda$request$1(this.d, this.c, this.f, this.e, this.g, (Context) this.b, (String) this.h, tLObject, tL_error);
                 break;
         }
     }
 
-    public /* synthetic */ en(pt ptVar, ArrayList arrayList, ArrayList arrayList2, boolean z10, boolean z11, CountDownLatch countDownLatch) {
-        this.d = ptVar;
-        this.e = arrayList;
-        this.f = arrayList2;
-        this.b = z10;
-        this.c = z11;
-        this.h = countDownLatch;
+    public /* synthetic */ en(hp hpVar, long j10, int i3, int i10, long j11, boolean z10, org.telegram.ui.tf tfVar) {
+        this.b = hpVar;
+        this.c = j10;
+        this.d = i3;
+        this.e = i10;
+        this.f = j11;
+        this.g = z10;
+        this.h = tfVar;
+    }
+
+    public /* synthetic */ en(hp hpVar, long j10, long j11, int i3, int i10, boolean z10, TLRPC.InputPeer inputPeer) {
+        this.b = hpVar;
+        this.c = j10;
+        this.f = j11;
+        this.d = i3;
+        this.e = i10;
+        this.g = z10;
+        this.h = inputPeer;
     }
 }

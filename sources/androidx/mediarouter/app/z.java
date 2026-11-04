@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class z implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -24,8 +24,8 @@ public final class z implements View.OnClickListener {
             case 0:
                 a0 a0Var = (a0) this.c;
                 c0 c0Var = a0Var.z.r;
-                p4.w wVar = (p4.w) this.b;
-                c0Var.D = wVar;
+                r4.w wVar = (r4.w) this.b;
+                c0Var.E = wVar;
                 wVar.l();
                 a0Var.w.setVisibility(4);
                 a0Var.x.setVisibility(0);
@@ -34,14 +34,14 @@ public final class z implements View.OnClickListener {
                 try {
                     ((Context) this.b).startActivity((Intent) this.c);
                     break;
-                } catch (ActivityNotFoundException e) {
-                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e);
+                } catch (ActivityNotFoundException e10) {
+                    Log.e("DeferredLifecycleHelper", "Failed to start resolution intent", e10);
                     return;
                 }
         }
     }
 
-    public z(a0 a0Var, p4.w wVar) {
+    public z(a0 a0Var, r4.w wVar) {
         this.c = a0Var;
         this.b = wVar;
     }

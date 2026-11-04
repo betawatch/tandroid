@@ -8,15 +8,15 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
 import com.google.android.gms.tasks.TaskExecutors;
-import jb.g;
-import n6.l;
+import mb.g;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class MlKitInitProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public final void attachInfo(Context context, ProviderInfo providerInfo) {
-        l.i("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.", !providerInfo.authority.equals("com.google.mlkit.common.mlkitinitprovider"));
+        m.i("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.", !providerInfo.authority.equals("com.google.mlkit.common.mlkitinitprovider"));
         super.attachInfo(context, providerInfo);
     }
 

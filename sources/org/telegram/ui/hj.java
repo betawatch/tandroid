@@ -1,36 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.ActionBar.k1 {
-    public final /* synthetic */ un o;
+public final class hj extends FragmentContextView {
+    public final /* synthetic */ int Y0;
+    public final /* synthetic */ wm Z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hj(un unVar, ej ejVar) {
-        super(ejVar, -2, -2);
-        this.o = unVar;
+    public hj(wm wmVar, Context context, wm wmVar2, org.telegram.ui.ActionBar.e6 e6Var, int i3) {
+        super(context, wmVar2, null, true, e6Var);
+        this.Y0 = i3;
+        switch (i3) {
+            case 1:
+                this.Z0 = wmVar;
+                super(context, wmVar2, null, false, e6Var);
+                break;
+            default:
+                this.Z0 = wmVar;
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.k1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        un unVar = this.o;
-        if (unVar.e9 != this) {
-            return;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i3) {
+        switch (this.Y0) {
+            case 0:
+                wm wmVar = this.Z0;
+                wmVar.b1.i(wmVar.p2, i3 == 0, true);
+                break;
+            default:
+                wm wmVar2 = this.Z0;
+                wmVar2.b1.i(wmVar2.n2, i3 == 0, true);
+                break;
         }
-        unVar.e9 = null;
-        unVar.h9 = null;
-        unVar.g9 = null;
-        unVar.B0.R = true;
-        if (unVar.f9) {
-            unVar.s8(false, true, 0.0f);
-        } else {
-            unVar.f9 = true;
-        }
-        mk mkVar = unVar.Z;
-        if (mkVar == null || mkVar.getEditField() == null) {
-            return;
-        }
-        unVar.Z.getEditField().setAllowDrawCursor(true);
     }
 }

@@ -1,79 +1,35 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bm0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ hm0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
+public final class bm0 extends kg.e0 {
+    public final /* synthetic */ org.telegram.ui.uw J0;
+    public final /* synthetic */ Context K0;
+    public final /* synthetic */ org.telegram.ui.cw L0;
 
-    public /* synthetic */ bm0(hm0 hm0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.b = hm0Var;
-        this.c = str;
-        this.d = arrayList;
-        this.e = arrayList2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bm0(org.telegram.ui.cw cwVar, Context context, org.telegram.ui.uw uwVar, int i3, int i10, u4.k kVar, boolean z10, org.telegram.ui.uw uwVar2, Context context2) {
+        super(context, uwVar, i3, i10, kVar, z10);
+        this.L0 = cwVar;
+        this.J0 = uwVar2;
+        this.K0 = context2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        ArrayList arrayList = this.e;
-        ArrayList arrayList2 = this.d;
-        String str = this.c;
-        hm0 hm0Var = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = hm0Var.d;
-                ArrayList arrayList3 = new ArrayList();
-                ArrayList arrayList4 = new ArrayList();
-                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                    String B = org.telegram.messenger.b8.B(((org.telegram.messenger.kj) arrayList2.get(i12)).F0());
-                    if (B != null && B.toLowerCase().contains(str)) {
-                        org.telegram.messenger.kj kjVar = new org.telegram.messenger.kj(i11, ((org.telegram.messenger.kj) arrayList2.get(i12)).k, false, false);
-                        kjVar.x0 = ((org.telegram.messenger.kj) arrayList2.get(i12)).x0;
-                        kjVar.J5(hm0Var.K, true);
-                        arrayList3.add(kjVar);
-                    }
-                }
-                for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                    String B2 = org.telegram.messenger.b8.B(((org.telegram.messenger.kj) arrayList.get(i13)).F0());
-                    if (B2 != null && B2.toLowerCase().contains(str)) {
-                        org.telegram.messenger.kj kjVar2 = new org.telegram.messenger.kj(i11, ((org.telegram.messenger.kj) arrayList.get(i13)).k, false, false);
-                        kjVar2.x0 = ((org.telegram.messenger.kj) arrayList.get(i13)).x0;
-                        kjVar2.J5(hm0Var.K, true);
-                        arrayList4.add(kjVar2);
-                    }
-                }
-                org.telegram.messenger.i0.g3(new bm0(hm0Var, str, arrayList3, arrayList4));
-                break;
-            default:
-                ew0 ew0Var = hm0Var.a;
-                if (str.equals(hm0Var.L)) {
-                    if (hm0Var.r == 0) {
-                        hm0Var.N.b(0);
-                    }
-                    hm0Var.e(arrayList2, arrayList, true);
-                    if (hm0Var.r == 0) {
-                        ew0Var.e(false, true);
-                        p80 p80Var = ew0Var.e;
-                        ew0Var.d.setText(org.telegram.messenger.dd.L0(2131745817, null));
-                        p80Var.setVisibility(0);
-                        p80Var.setText(org.telegram.messenger.dd.L0(2131745824, null));
-                        break;
-                    }
-                }
-                break;
+    @Override // u4.h0
+    public final void f() {
+        ci.j1 j1Var;
+        int i3 = this.C0;
+        super.f();
+        org.telegram.ui.cw cwVar = this.L0;
+        if (!cwVar.L0 && (j1Var = cwVar.b0) != null) {
+            j1Var.v0(0);
+            cwVar.L0 = true;
         }
-    }
-
-    public /* synthetic */ bm0(hm0 hm0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
-        this.b = hm0Var;
-        this.d = arrayList;
-        this.c = str;
-        this.e = arrayList2;
+        if (b() != 0 || i3 == 0 || this.E0 > 0) {
+            return;
+        }
+        cwVar.c0.e(false, false);
     }
 }

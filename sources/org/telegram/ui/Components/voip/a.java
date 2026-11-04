@@ -2,14 +2,14 @@ package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ e b;
 
-    public /* synthetic */ a(e eVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ a(e eVar, int i3) {
+        this.a = i3;
         this.b = eVar;
     }
 
@@ -19,19 +19,19 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 e eVar = this.b;
-                eVar.J = floatValue;
+                eVar.K = floatValue;
                 eVar.invalidate();
-                eVar.O = null;
+                eVar.P = null;
                 break;
             case 1:
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 e eVar2 = this.b;
-                eVar2.K = floatValue2;
+                eVar2.L = floatValue2;
                 eVar2.invalidate();
-                eVar2.P = null;
+                eVar2.Q = null;
                 break;
             default:
-                this.b.W.b(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                this.b.a0.b(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
         }
     }

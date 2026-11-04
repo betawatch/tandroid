@@ -1,50 +1,32 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import b8.ba;
+import java.util.AbstractMap;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class l0 extends g0 {
-    public static final l0 e = new l0(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+    public final /* synthetic */ m0 c;
 
-    public l0(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    public l0(m0 m0Var) {
+        this.c = m0Var;
     }
 
     @Override // java.util.List
-    public final Object get(int i10) {
-        v7.m5.a(i10, this.d);
-        Object obj = this.c[i10];
+    public final /* bridge */ /* synthetic */ Object get(int i3) {
+        m0 m0Var = this.c;
+        ba.a(i3, m0Var.f);
+        Object[] objArr = m0Var.e;
+        int i10 = i3 + i3;
+        Object obj = objArr[i10];
         obj.getClass();
-        return obj;
-    }
-
-    @Override // com.google.android.gms.internal.cast.g0, com.google.android.gms.internal.cast.d0
-    public final int l(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int m() {
-        return this.d;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int n() {
-        return 0;
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final Object[] o() {
-        return this.c;
+        Object obj2 = objArr[i10 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d;
+        return this.c.f;
     }
 }

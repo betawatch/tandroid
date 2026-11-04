@@ -1,39 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class d41 extends ScrollView {
-    public Drawable a;
-    public t5 b;
-    public boolean c;
+public final class d41 extends View {
+    public int a;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float e = this.b.e(false, canScrollVertically(-1) ? 1.0f : 0.0f) * 0.5f;
-        if (e > 0.0f) {
-            if (this.a == null) {
-                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
-            }
-            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
-            this.a.setAlpha((int) (e * 255.0f));
-            this.a.draw(canvas);
-        }
+    @Override // android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
-        super.onNestedScroll(view, i10, i11, i12, i13);
-        boolean canScrollVertically = canScrollVertically(-1);
-        if (this.c != canScrollVertically) {
-            invalidate();
-            this.c = canScrollVertically;
+    public void setHeight(int i3) {
+        if (this.a == i3) {
+            return;
         }
+        this.a = i3;
+        requestLayout();
     }
 }

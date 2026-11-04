@@ -1,23 +1,23 @@
 package com.google.android.gms.internal.play_billing;
 
+import b8.pa;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.b6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
     public static final s0 e = new s0(w0.class, 0);
     public static final boolean f;
-    public static final b6 h;
+    public static final pa h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
         boolean z10;
-        b6 i0Var;
+        pa i0Var;
         Throwable th2;
         Throwable th3;
         try {
@@ -31,15 +31,15 @@ public abstract class l0 extends x0 implements t0 {
         if (property == null || property.contains("Android")) {
             try {
                 i0Var = new j0();
-            } catch (Error | Exception e7) {
+            } catch (Error | Exception e10) {
                 try {
                     i0Var = new h0();
-                } catch (Error | Exception e10) {
-                    th4 = e10;
+                } catch (Error | Exception e11) {
+                    th4 = e11;
                     i0Var = new i0();
                 }
                 th2 = th4;
-                th3 = e7;
+                th3 = e10;
             }
         } else {
             try {
@@ -53,9 +53,9 @@ public abstract class l0 extends x0 implements t0 {
         h = i0Var;
         if (th2 != null) {
             s0 s0Var = e;
-            Logger c10 = s0Var.c();
+            Logger c2 = s0Var.c();
             Level level = Level.SEVERE;
-            c10.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
+            c2.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
             s0Var.c().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th2);
         }
     }

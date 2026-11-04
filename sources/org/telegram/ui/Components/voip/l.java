@@ -1,16 +1,15 @@
 package org.telegram.ui.Components.voip;
 
 import android.widget.TextView;
-import org.telegram.messenger.a30;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ r b;
 
-    public /* synthetic */ l(r rVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ l(r rVar, int i3) {
+        this.a = i3;
         this.b = rVar;
     }
 
@@ -22,13 +21,13 @@ public final /* synthetic */ class l implements Runnable {
                 break;
             default:
                 r rVar = this.b;
-                TextView textView = rVar.O;
+                TextView textView = rVar.P;
                 n nVar = rVar.a;
                 if (!nVar.d.isFirstFrameRendered()) {
                     nVar.animate().cancel();
                     nVar.animate().alpha(0.0f).setDuration(150L).start();
                     textView.animate().cancel();
-                    a30.l(textView.animate(), 1.0f, 150L);
+                    org.telegram.messenger.camera.q.k(textView.animate(), 1.0f, 150L);
                     break;
                 }
                 break;

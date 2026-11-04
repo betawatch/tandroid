@@ -1,39 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gk extends FragmentContextView {
-    public final /* synthetic */ int X0;
-    public final /* synthetic */ un Y0;
+public final /* synthetic */ class gk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hk b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gk(un unVar, Context context, un unVar2, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
-        super(context, unVar2, null, true, p6Var);
-        this.X0 = i10;
-        switch (i10) {
-            case 1:
-                this.Y0 = unVar;
-                super(context, unVar2, null, false, p6Var);
-                break;
-            default:
-                this.Y0 = unVar;
-                break;
-        }
+    public /* synthetic */ gk(hk hkVar, int i3) {
+        this.a = i3;
+        this.b = hkVar;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.X0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                un unVar = this.Y0;
-                unVar.a1.i(unVar.o2, i10 == 0, true);
+                mj mjVar = this.b.I.a0;
+                if (mjVar != null) {
+                    mjVar.G0();
+                    break;
+                }
                 break;
             default:
-                un unVar2 = this.Y0;
-                unVar2.a1.i(unVar2.m2, i10 == 0, true);
+                mj mjVar2 = this.b.I.a0;
+                if (mjVar2 != null) {
+                    mjVar2.U0 = false;
+                    org.telegram.ui.Components.kf kfVar = mjVar2.V0;
+                    if (kfVar != null) {
+                        kfVar.u(false);
+                        break;
+                    }
+                }
                 break;
         }
     }

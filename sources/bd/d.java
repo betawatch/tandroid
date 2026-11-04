@@ -1,33 +1,54 @@
 package bd;
 
-import java.util.RandomAccess;
-import v7.f0;
+import gf.p;
+import gf.s;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends e implements RandomAccess {
-    public final e a;
-    public final int b;
-    public final int c;
+public final class d extends h {
+    public final /* synthetic */ int e;
 
-    public d(e eVar, int i10, int i11) {
-        this.a = eVar;
-        this.b = i10;
-        f0.a(i10, i11, eVar.l());
-        this.c = i11 - i10;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        int i11 = this.c;
-        if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(a1.g.j(i10, i11, "index: ", ", size: "));
+    @Override // bd.h
+    public final p b() {
+        switch (this.e) {
+            case 0:
+                int i3 = this.d + 1;
+                this.d = i3;
+                if (c() != '[') {
+                    return null;
+                }
+                this.d++;
+                s f10 = f("![");
+                j jVar = this.a;
+                df.d dVar = jVar.i;
+                df.d dVar2 = new df.d(f10, i3, dVar, jVar.h, true);
+                if (dVar != null) {
+                    dVar.d = true;
+                }
+                jVar.i = dVar2;
+                return f10;
+            default:
+                int i10 = this.d;
+                this.d = i10 + 1;
+                s f11 = f("[");
+                j jVar2 = this.a;
+                df.d dVar3 = jVar2.i;
+                df.d dVar4 = new df.d(f11, i10, dVar3, jVar2.h, false);
+                if (dVar3 != null) {
+                    dVar3.d = true;
+                }
+                jVar2.i = dVar4;
+                return f11;
         }
-        return this.a.get(this.b + i10);
     }
 
-    @Override // bd.e
-    public final int l() {
-        return this.c;
+    @Override // bd.h
+    public final char d() {
+        switch (this.e) {
+            case 0:
+                return '!';
+            default:
+                return '[';
+        }
     }
 }

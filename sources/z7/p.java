@@ -1,36 +1,6 @@
 package z7;
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class p extends j {
-    public final transient r c;
-    public final transient q d;
-
-    public p(r rVar, q qVar) {
-        this.c = rVar;
-        this.d = qVar;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.c.get(obj) != null;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.d.listIterator(0);
-    }
-
-    @Override // z7.e
-    public final int l(Object[] objArr) {
-        return this.d.l(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        this.c.getClass();
-        return 1;
-    }
+public interface p {
 }

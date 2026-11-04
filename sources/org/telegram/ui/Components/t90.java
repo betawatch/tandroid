@@ -1,43 +1,60 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class t90 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 a;
-    public final /* synthetic */ y90 b;
+public final class t90 extends ni.l {
+    public int W;
+    public Runnable X;
+    public final /* synthetic */ x90 Y;
 
-    public t90(y90 y90Var, org.telegram.ui.ActionBar.k2 k2Var) {
-        this.b = y90Var;
-        this.a = k2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t90(x90 x90Var, ci.j1 j1Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(null, j1Var, e6Var);
+        this.Y = x90Var;
+        this.W = -1;
     }
 
-    public final void a(boolean z10) {
-        y90 y90Var = this.b;
-        if (y90Var.getNeededLayoutManager() != y90Var.getCurrentLayoutManager() && y90Var.a()) {
-            if (y90Var.f.M0 > 0) {
-                y90Var.N = true;
-                y90Var.o(false);
-                return;
-            }
-            y90Var.b.setLayoutManager(y90Var.getNeededLayoutManager());
+    @Override // ni.l, u4.k
+    public final void N() {
+        super.N();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
         }
-        if (z10 && !y90Var.a()) {
-            z10 = false;
+        s90 s90Var = new s90(this, 0);
+        this.X = s90Var;
+        org.telegram.messenger.g0.h3(s90Var);
+        x90 x90Var = this.Y;
+        if (x90Var.W) {
+            x90Var.W = false;
+            org.telegram.messenger.g0.h3(new s90(this, 1));
         }
-        y90Var.o((!z10 || y90Var.f.K() > 0) ? z10 : false);
     }
 
-    public final void b(boolean z10) {
-        this.b.l(z10);
+    @Override // ni.l
+    public final void W() {
+        da0 da0Var = this.Y.d0;
+        org.telegram.messenger.g0.r(da0Var.E);
+        da0Var.E.run();
+        if (this.W == -1) {
+            this.W = org.telegram.messenger.hs.f(da0Var.x).q(null, this.W, false);
+        }
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            this.X = null;
+        }
     }
 
-    public final void c() {
-        y90 y90Var = this.b;
-        ho hoVar = y90Var.J;
-        if (y90Var.b.getLayoutManager() == y90Var.d || !y90Var.I) {
-            return;
+    @Override // ni.l, u4.k, u4.m0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
         }
-        org.telegram.messenger.i0.r(hoVar);
-        org.telegram.messenger.i0.h3(hoVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        s90 s90Var = new s90(this, 2);
+        this.X = s90Var;
+        org.telegram.messenger.g0.h3(s90Var);
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class g3 extends v1 {
     private static final g3 zzb;
@@ -28,21 +28,21 @@ public final class g3 extends v1 {
         if (length != 0) {
             ?? r22 = (v1) g3Var.d(4);
             try {
-                ?? a2 = q2.c.a(r22.getClass());
+                ?? a10 = q2.c.a(r22.getClass());
                 h1 h1Var = new h1();
                 o1Var.getClass();
-                a2.e(r22, bArr, 0, length, h1Var);
-                a2.zzf(r22);
+                a10.e(r22, bArr, 0, length, h1Var);
+                a10.zzf(r22);
                 g3Var = r22;
-            } catch (c2 e) {
-                throw e;
-            } catch (w2 e7) {
-                throw new c2(e7.getMessage());
-            } catch (IOException e10) {
-                if (e10.getCause() instanceof c2) {
-                    throw ((c2) e10.getCause());
+            } catch (c2 e10) {
+                throw e10;
+            } catch (w2 e11) {
+                throw new c2(e11.getMessage());
+            } catch (IOException e12) {
+                if (e12.getCause() instanceof c2) {
+                    throw ((c2) e12.getCause());
                 }
-                throw new c2(e10.getMessage(), e10);
+                throw new c2(e12.getMessage(), e12);
             } catch (IndexOutOfBoundsException unused) {
                 throw new c2("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
             }
@@ -73,8 +73,8 @@ public final class g3 extends v1 {
         g3Var.zze = 6;
     }
 
-    public static /* synthetic */ void t(g3 g3Var, int i10) {
-        g3Var.zzg = i10 - 1;
+    public static /* synthetic */ void t(g3 g3Var, int i3) {
+        g3Var.zzg = i3 - 1;
         g3Var.zzd |= 1;
     }
 
@@ -83,21 +83,21 @@ public final class g3 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+    public final Object d(int i3) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
+        if (i10 == 2) {
             return new s2(zzb, "\u0004\u0006\u0001\u0001\u0001\u0007\u0006\u0000\u0000\u0000\u0001᠌\u0000\u0002ဉ\u0001\u0004<\u0000\u0005᠌\u0002\u0006<\u0000\u0007<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", d1.c, "zzh", r3.class, "zzi", d1.e, d4.class, v3.class});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new g3();
         }
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new f3(zzb);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
         throw null;

@@ -1,21 +1,21 @@
 package org.telegram.utils.recorder.audio;
 
-import a3.l0;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
-import ki.g;
-import ki.j;
-import ki.k;
+import org.telegram.ui.Components.iv0;
+import vi.f;
+import vi.i;
+import vi.j;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ c(int i10, Object obj, Object obj2) {
-        this.a = i10;
+    public /* synthetic */ c(int i3, Object obj, Object obj2) {
+        this.a = i3;
         this.b = obj;
         this.c = obj2;
     }
@@ -49,8 +49,8 @@ public final /* synthetic */ class c implements Runnable {
                             long d = dVar.t.d();
                             dVar.x = elapsedRealtime;
                             if (d >= 0) {
-                                g gVar = dVar.g;
-                                ((k) gVar.c).a((j) gVar.b, d);
+                                f fVar = dVar.g;
+                                ((j) fVar.c).a((i) fVar.b, d);
                             }
                         }
                     }
@@ -67,15 +67,15 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 return;
             default:
-                k kVar = (k) this.b;
-                j jVar = (j) this.c;
+                j jVar = (j) this.b;
+                i iVar = (i) this.c;
                 try {
-                    bArr = AudioRecorderNative.e(jVar.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(iVar.b.getAbsolutePath());
                 } catch (Throwable th3) {
-                    kVar.h.a("waveform extraction failed", th3);
+                    jVar.h.a("waveform extraction failed", th3);
                     bArr = null;
                 }
-                kVar.i.post(new l0(kVar, jVar, bArr, 28));
+                jVar.i.post(new iv0(jVar, iVar, bArr, 20));
                 return;
         }
     }

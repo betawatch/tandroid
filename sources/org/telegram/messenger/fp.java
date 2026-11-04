@@ -1,21 +1,8 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class fp {
-    public final int a;
-    public final int b;
-
-    public fp(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof fp)) {
-            return false;
-        }
-        fp fpVar = (fp) obj;
-        return this.a == fpVar.a && this.b == fpVar.b;
-    }
+public final class fp extends TLRPC.Updates {
 }

@@ -2,7 +2,7 @@ package j$.time;
 
 import j$.time.temporal.ChronoUnit;
 import j$.time.temporal.Temporal;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -60,11 +60,11 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         a = values();
     }
 
-    public static j J(int i10) {
-        if (i10 < 1 || i10 > 12) {
-            throw new b("Invalid value for MonthOfYear: " + i10);
+    public static j J(int i3) {
+        if (i3 < 1 || i3 > 12) {
+            throw new b("Invalid value for MonthOfYear: " + i3);
         }
-        return a[i10 - 1];
+        return a[i3 - 1];
     }
 
     public final int getValue() {
@@ -104,14 +104,14 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
     }
 
     public final int H(boolean z10) {
-        int i10 = i.a[ordinal()];
-        return i10 != 1 ? (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31 : z10 ? 29 : 28;
+        int i3 = i.a[ordinal()];
+        return i3 != 1 ? (i3 == 2 || i3 == 3 || i3 == 4 || i3 == 5) ? 30 : 31 : z10 ? 29 : 28;
     }
 
     public final int I() {
-        int i10 = i.a[ordinal()];
-        if (i10 != 1) {
-            return (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31;
+        int i3 = i.a[ordinal()];
+        if (i3 != 1) {
+            return (i3 == 2 || i3 == 3 || i3 == 4 || i3 == 5) ? 30 : 31;
         }
         return 29;
     }
@@ -123,25 +123,25 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
             case 2:
                 return (z10 ? 1 : 0) + 91;
             case 3:
-                return (z10 ? 1 : 0) + at.i2;
+                return (z10 ? 1 : 0) + hs.i2;
             case 4:
-                return (z10 ? 1 : 0) + at.T3;
+                return (z10 ? 1 : 0) + hs.T3;
             case 5:
-                return (z10 ? 1 : 0) + at.c5;
+                return (z10 ? 1 : 0) + hs.c5;
             case 6:
                 return 1;
             case 7:
                 return (z10 ? 1 : 0) + 60;
             case 8:
-                return (z10 ? 1 : 0) + at.F1;
+                return (z10 ? 1 : 0) + hs.F1;
             case 9:
-                return (z10 ? 1 : 0) + at.M2;
+                return (z10 ? 1 : 0) + hs.M2;
             case 10:
-                return (z10 ? 1 : 0) + at.q3;
+                return (z10 ? 1 : 0) + hs.q3;
             case 11:
-                return (z10 ? 1 : 0) + at.x4;
+                return (z10 ? 1 : 0) + hs.x4;
             default:
-                return (z10 ? 1 : 0) + at.G5;
+                return (z10 ? 1 : 0) + hs.G5;
         }
     }
 

@@ -1,38 +1,34 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z80 implements RequestDelegate {
+public final class z80 extends EditText {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ z80(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
-        this.b = launchActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ z80(Context context, int i3) {
+        super(context);
+        this.a = i3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (i10) {
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
             case 0:
-                Pattern pattern = LaunchActivity.D1;
-                if (tLObject != null) {
-                    org.telegram.messenger.i0.g3(new y60(7, launchActivity, (TL_account.Password) tLObject));
-                    break;
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
                 }
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.D1;
-                org.telegram.messenger.i0.g3(new y60(3, launchActivity, tLObject));
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
                 break;
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

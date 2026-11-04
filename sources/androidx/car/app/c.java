@@ -1,17 +1,17 @@
 package androidx.car.app;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements androidx.car.app.utils.b {
+public final /* synthetic */ class c implements androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ CarAppBinder b;
 
-    public /* synthetic */ c(CarAppBinder carAppBinder, int i10) {
-        this.a = i10;
+    public /* synthetic */ c(CarAppBinder carAppBinder, int i3) {
+        this.a = i3;
         this.b = carAppBinder;
     }
 
-    @Override // androidx.car.app.utils.b
+    @Override // androidx.car.app.utils.a
     public final Object a() {
         Object lambda$onAppPause$3;
         Object lambda$onAppStart$1;

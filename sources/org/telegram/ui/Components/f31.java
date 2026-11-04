@@ -1,23 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class f31 extends n31 {
-    public final /* synthetic */ org.telegram.ui.ng Q1;
+public final class f31 extends g.p {
+    public final /* synthetic */ n31 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f31(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.ng ngVar) {
-        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
-        this.Q1 = ngVar;
+    public f31(n31 n31Var) {
+        this.c = n31Var;
     }
 
-    @Override // org.telegram.ui.Components.n31, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
-    public final void dismiss() {
-        super.dismiss();
-        this.Q1.run();
+    @Override // g.p
+    public final int i(int i3) {
+        n31 n31Var = this.c;
+        u4.h0 adapter = n31Var.n.getAdapter();
+        m31 m31Var = n31Var.s;
+        if (adapter == m31Var) {
+            if ((m31Var.d.get(i3) instanceof Integer) || i3 >= m31Var.x) {
+                return m31Var.w;
+            }
+            return 1;
+        }
+        kg.y1 y1Var = n31Var.w;
+        SparseArray sparseArray = y1Var.s;
+        if (i3 == y1Var.E || !(sparseArray.get(i3) == null || (sparseArray.get(i3) instanceof TLRPC.Document))) {
+            return y1Var.e.a();
+        }
+        return 1;
     }
 }

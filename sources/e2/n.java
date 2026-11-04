@@ -1,62 +1,107 @@
 package e2;
 
-import android.os.Handler;
-import android.os.Message;
-import java.util.Iterator;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n implements Handler.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class n implements m {
+    public j b;
+    public j c;
+    public j d;
+    public j e;
+    public ByteBuffer f;
+    public ByteBuffer g;
+    public boolean h;
 
-    public /* synthetic */ n(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public n() {
+        ByteBuffer byteBuffer = m.a;
+        this.f = byteBuffer;
+        this.g = byteBuffer;
+        j jVar = j.e;
+        this.d = jVar;
+        this.e = jVar;
+        this.b = jVar;
+        this.c = jVar;
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        switch (this.a) {
-            case 0:
-                r rVar = (r) this.b;
-                p pVar = rVar.c;
-                pVar.getClass();
-                Iterator it = rVar.d.iterator();
-                while (it.hasNext()) {
-                    q qVar = (q) it.next();
-                    if (!qVar.d && qVar.c) {
-                        b2.v d = qVar.b.d();
-                        qVar.b = new b2.u();
-                        qVar.c = false;
-                        pVar.c(qVar.a, d);
-                    }
-                    i0 i0Var = rVar.b;
-                    i0Var.getClass();
-                    if (i0Var.a.hasMessages(1)) {
-                        break;
-                    }
-                }
-                break;
-            default:
-                e0 e0Var = (e0) this.b;
-                e0Var.getClass();
-                int i10 = message.what;
-                if (i10 == 1) {
-                    e0Var.g.a();
-                    break;
-                } else if (i10 == 2) {
-                    e0Var.h.a();
-                    break;
-                } else if (i10 == 3) {
-                    e0Var.i.a();
-                    break;
-                } else if (i10 == 4) {
-                    e0Var.j.a();
-                    break;
-                }
-                break;
+    @Override // e2.m
+    public boolean a() {
+        return this.h && this.g == m.a;
+    }
+
+    @Override // e2.m
+    public ByteBuffer b() {
+        ByteBuffer byteBuffer = this.g;
+        this.g = m.a;
+        return byteBuffer;
+    }
+
+    @Override // e2.m
+    public final j d(j jVar) {
+        this.d = jVar;
+        this.e = h(jVar);
+        return isActive() ? this.e : j.e;
+    }
+
+    @Override // e2.m
+    public final void e(k kVar) {
+        this.g = m.a;
+        this.h = false;
+        this.b = this.d;
+        this.c = this.e;
+        i();
+    }
+
+    @Override // e2.m
+    public final void f() {
+        this.h = true;
+        j();
+    }
+
+    public abstract j h(j jVar);
+
+    @Override // e2.m
+    public boolean isActive() {
+        return this.e != j.e;
+    }
+
+    public final ByteBuffer l(int i3) {
+        if (this.f.capacity() < i3) {
+            this.f = ByteBuffer.allocateDirect(i3).order(ByteOrder.nativeOrder());
+        } else {
+            this.f.clear();
         }
-        return true;
+        ByteBuffer byteBuffer = this.f;
+        this.g = byteBuffer;
+        return byteBuffer;
+    }
+
+    @Override // e2.m
+    public final void reset() {
+        ByteBuffer byteBuffer = m.a;
+        this.g = byteBuffer;
+        this.h = false;
+        this.f = byteBuffer;
+        j jVar = j.e;
+        this.d = jVar;
+        this.e = jVar;
+        this.b = jVar;
+        this.c = jVar;
+        k();
+    }
+
+    public void i() {
+    }
+
+    public void j() {
+    }
+
+    public void k() {
+    }
+
+    @Override // e2.m
+    public long g(long j10) {
+        return j10;
     }
 }

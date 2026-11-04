@@ -1,28 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r4 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.x1 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 d;
+import android.view.View;
 
-    public /* synthetic */ z0(r4 r4Var, org.telegram.ui.ActionBar.x1 x1Var, org.telegram.ui.ActionBar.k2 k2Var, int i10) {
-        this.a = i10;
-        this.b = r4Var;
-        this.c = x1Var;
-        this.d = k2Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class z0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Cells.c2 b;
+
+    public /* synthetic */ z0(org.telegram.ui.Cells.c2 c2Var, int i3) {
+        this.a = i3;
+        this.b = c2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.i0.g3(new z0(this.b, this.c, this.d, 1));
+                this.b.c(!r3.b(), true);
                 break;
             default:
-                s4.d0(this.b, this.c, this.d);
+                this.b.c(!r3.b(), true);
                 break;
         }
     }

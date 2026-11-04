@@ -1,85 +1,93 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class an0 extends FrameLayout {
-    public long a;
-    public TL_stars.starGiftAttributeBackdrop b;
-    public TL_stars.starGiftAttributePattern c;
-    public final FrameLayout d;
-    public final ph.z0 e;
-    public final org.telegram.ui.Components.g9 f;
-    public final ph.d1 h;
-    public TLRPC.Document n;
+public final /* synthetic */ class an0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ mq0 c;
 
-    public an0(Context context, org.telegram.ui.ActionBar.p6 p6Var, boolean z10) {
-        super(context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.d = frameLayout;
-        ph.z0 z0Var = new ph.z0(frameLayout, p6Var, false);
-        this.e = z0Var;
-        frameLayout.setBackground(z0Var);
-        addView(frameLayout, w7.b6.e(-1, -1, org.telegram.messenger.at.E1));
-        w7.e6.b(frameLayout, 0.025f, 1.25f);
-        org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9(context);
-        this.f = g9Var;
-        frameLayout.addView(g9Var, w7.b6.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f));
-        if (!z10) {
-            this.h = null;
-            return;
+    public /* synthetic */ an0(PhotoViewer photoViewer, mq0 mq0Var, int i3) {
+        this.a = i3;
+        this.b = photoViewer;
+        this.c = mq0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        ClippingImageView clippingImageView;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b;
+                photoViewer.i0.setImageBitmap(null);
+                mq0 mq0Var = this.c;
+                if (mq0Var != null && !org.telegram.messenger.g0.Q1() && (clippingImageView = mq0Var.m) != null) {
+                    clippingImageView.setImageBitmap(null);
+                }
+                try {
+                    if (photoViewer.h0.getParent() != null) {
+                        ((WindowManager) photoViewer.E.getSystemService("window")).removeView(photoViewer.h0);
+                        photoViewer.Z1();
+                        break;
+                    }
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+                break;
+            case 1:
+                PhotoViewer photoViewer2 = this.b;
+                photoViewer2.q4 = null;
+                int i3 = 0;
+                photoViewer2.f0.setLayerType(0, null);
+                photoViewer2.o4 = 0;
+                photoViewer2.I1();
+                photoViewer2.b2(this.c);
+                MediaController.B().F0();
+                if (photoViewer2.w7 && !photoViewer2.x7 && (arrayList = photoViewer2.h7) != null) {
+                    int size = arrayList.size();
+                    while (i3 < size) {
+                        Object obj = arrayList.get(i3);
+                        i3++;
+                        if (obj instanceof org.telegram.messenger.ye) {
+                            ((org.telegram.messenger.ye) obj).h();
+                        }
+                    }
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer3 = this.b;
+                photoViewer3.q4 = null;
+                gq0 gq0Var = photoViewer3.f0;
+                if (gq0Var != null) {
+                    int i10 = 0;
+                    gq0Var.setLayerType(0, null);
+                    photoViewer3.o4 = 0;
+                    photoViewer3.b2(this.c);
+                    photoViewer3.f0.setScaleX(1.0f);
+                    photoViewer3.f0.setScaleY(1.0f);
+                    MediaController.B().F0();
+                    if (photoViewer3.w7 && !photoViewer3.x7 && (arrayList2 = photoViewer3.h7) != null) {
+                        int size2 = arrayList2.size();
+                        while (i10 < size2) {
+                            Object obj2 = arrayList2.get(i10);
+                            i10++;
+                            if (obj2 instanceof org.telegram.messenger.ye) {
+                                ((org.telegram.messenger.ye) obj2).h();
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
         }
-        ph.d1 d1Var = new ph.d1(context);
-        this.h = d1Var;
-        addView(d1Var, w7.b6.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
-    }
-
-    public final void a(int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        this.a = tL_starGiftUnique.id;
-        boolean z10 = i10 % 3 == 1;
-        setPadding(z10 ? org.telegram.messenger.i0.L(4.0f) : 0, 0, z10 ? org.telegram.messenger.i0.L(4.0f) : 0, 0);
-        c(tL_starGiftUnique.getDocument(), tL_starGiftUnique);
-        this.b = (TL_stars.starGiftAttributeBackdrop) rh.e6.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        this.c = (TL_stars.starGiftAttributePattern) rh.e6.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
-        ph.z0 z0Var = this.e;
-        z0Var.d(stargiftattributebackdrop);
-        z0Var.e(this.c);
-    }
-
-    public final void b(boolean z10, boolean z11) {
-        this.e.f(z10, z11);
-        float f7 = z10 ? 0.9f : 1.0f;
-        org.telegram.ui.Components.g9 g9Var = this.f;
-        if (z11) {
-            g9Var.animate().scaleX(f7).scaleY(f7).start();
-            return;
-        }
-        g9Var.animate().cancel();
-        g9Var.setScaleX(f7);
-        g9Var.setScaleY(f7);
-    }
-
-    public final void c(TLRPC.Document document, TL_stars.StarGift starGift) {
-        org.telegram.ui.Components.g9 g9Var = this.f;
-        if (document == null) {
-            g9Var.b();
-            this.n = null;
-        } else {
-            if (this.n == document) {
-                return;
-            }
-            this.n = document;
-            TLRPC.PhotoSize w9 = org.telegram.messenger.b8.w(document.thumbs, org.telegram.messenger.i0.L(100.0f), false, null, false);
-            g9Var.m(org.telegram.messenger.jc.b(document), "100_100", org.telegram.messenger.jc.c(w9, document), "100_100", org.telegram.messenger.v5.f(document, org.telegram.ui.ActionBar.t6.a7, 0.3f, null), starGift);
-        }
-    }
-
-    public long getGiftId() {
-        return this.a;
     }
 }

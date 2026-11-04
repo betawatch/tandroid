@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class v1 extends e1 {
     private static final Map zzb = new ConcurrentHashMap();
@@ -42,8 +42,8 @@ public abstract class v1 extends e1 {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 v1Var = (v1) map.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
+            } catch (ClassNotFoundException e10) {
+                throw new IllegalStateException("Class initialization cannot fail.", e10);
             }
         }
         if (v1Var != null) {
@@ -60,10 +60,10 @@ public abstract class v1 extends e1 {
     public static Object i(Method method, v1 v1Var, Object... objArr) {
         try {
             return method.invoke(v1Var, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e7) {
-            Throwable cause = e7.getCause();
+        } catch (IllegalAccessException e10) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e10);
+        } catch (InvocationTargetException e11) {
+            Throwable cause = e11.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -86,21 +86,21 @@ public abstract class v1 extends e1 {
             if (d >= 0) {
                 return d;
             }
-            throw new IllegalStateException(i0.a.i(d, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(k2.p1.i(d, "serialized size must be non-negative, was "));
         }
-        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
+        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i3 != Integer.MAX_VALUE) {
+            return i3;
         }
         int d10 = t2Var.d(this);
         if (d10 < 0) {
-            throw new IllegalStateException(i0.a.i(d10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(k2.p1.i(d10, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | d10;
         return d10;
     }
 
-    public abstract Object d(int i10);
+    public abstract Object d(int i3);
 
     public final int e() {
         if (m()) {
@@ -108,15 +108,15 @@ public abstract class v1 extends e1 {
             if (d >= 0) {
                 return d;
             }
-            throw new IllegalStateException(i0.a.i(d, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(k2.p1.i(d, "serialized size must be non-negative, was "));
         }
-        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
+        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i3 != Integer.MAX_VALUE) {
+            return i3;
         }
         int d10 = q2.c.a(getClass()).d(this);
         if (d10 < 0) {
-            throw new IllegalStateException(i0.a.i(d10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(k2.p1.i(d10, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | d10;
         return d10;
@@ -154,13 +154,13 @@ public abstract class v1 extends e1 {
         if (m()) {
             return q2.c.a(getClass()).a(this);
         }
-        int i10 = this.zza;
-        if (i10 != 0) {
-            return i10;
+        int i3 = this.zza;
+        if (i3 != 0) {
+            return i3;
         }
-        int a2 = q2.c.a(getClass()).a(this);
-        this.zza = a2;
-        return a2;
+        int a10 = q2.c.a(getClass()).a(this);
+        this.zza = a10;
+        return a10;
     }
 
     public final void j() {

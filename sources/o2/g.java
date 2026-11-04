@@ -1,39 +1,21 @@
 package o2;
 
-import android.os.SystemClock;
-import java.util.List;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g extends x2.c {
-    public int g;
+public final class g {
+    public final p3.a[] a;
+    public final long[] b;
+    public final String c;
+    public final String d;
 
-    @Override // x2.q
-    public final int c() {
-        return this.g;
+    public g(String str, String str2, long[] jArr, p3.a[] aVarArr) {
+        this.c = str;
+        this.d = str2;
+        this.b = jArr;
+        this.a = aVarArr;
     }
 
-    @Override // x2.q
-    public final void k(long j10, long j11, long j12, List list, v2.m[] mVarArr) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (a(this.g, elapsedRealtime)) {
-            for (int i10 = this.b - 1; i10 >= 0; i10--) {
-                if (!a(i10, elapsedRealtime)) {
-                    this.g = i10;
-                    return;
-                }
-            }
-            throw new IllegalStateException();
-        }
-    }
-
-    @Override // x2.q
-    public final int n() {
-        return 0;
-    }
-
-    @Override // x2.q
-    public final Object q() {
-        return null;
+    public final String a() {
+        return this.c + "/" + this.d;
     }
 }

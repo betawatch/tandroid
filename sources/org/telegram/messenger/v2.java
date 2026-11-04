@@ -1,92 +1,43 @@
 package org.telegram.messenger;
 
-import android.os.Build;
-import j$.util.Objects;
-import java.lang.Thread;
-import java.util.ArrayList;
+import android.util.Pair;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class v2 {
-    public static boolean a = true;
-    public static final boolean b;
-    public static final String c;
-    public static final int d;
-    public static final String e;
-    public static final String f;
-    public static final String g;
-    public static String h;
-    public static final boolean i;
-    public static Boolean j;
+public final /* synthetic */ class v2 implements n10 {
+    public final /* synthetic */ x2 a;
+    public final /* synthetic */ Pair b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ int d;
 
-    static {
-        b = Build.VERSION.SDK_INT <= 29;
-        c = "13.2.0";
-        d = 4;
-        e = "014b35b6184100b085b0d0572f9b5103";
-        f = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
-        g = "https://play.google.com/store/apps/details?id=org.telegram.messenger";
-        h = "760348033671-81kmi3pi84p11ub8hp9a1funsv0rn2p9.apps.googleusercontent.com";
-        i = true;
-        if (w0.b != null) {
-            w0.b.getSharedPreferences("systemConfig", 0);
-            a = true;
-            final Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-            Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.u2
-                @Override // java.lang.Thread.UncaughtExceptionHandler
-                public final void uncaughtException(Thread thread, Throwable th2) {
-                    f8.i(th2, false);
-                    Thread.UncaughtExceptionHandler uncaughtExceptionHandler = defaultUncaughtExceptionHandler;
-                    if (uncaughtExceptionHandler != null) {
-                        uncaughtExceptionHandler.uncaughtException(thread, th2);
-                    }
-                }
-            });
-        }
+    public /* synthetic */ v2(x2 x2Var, Pair pair, Object obj, int i3) {
+        this.a = x2Var;
+        this.b = pair;
+        this.c = obj;
+        this.d = i3;
     }
 
-    public static boolean a() {
-        if (j == null) {
-            j = Boolean.valueOf(w0.b != null && "org.telegram.messenger.beta".equals(w0.b.getPackageName()));
+    @Override // org.telegram.messenger.n10
+    public final void a(Object obj, Object obj2) {
+        Object obj3;
+        Long l10 = (Long) obj;
+        x2 x2Var = this.a;
+        Pair pair = this.b;
+        if (!x2Var.i(pair)) {
+            x2Var.a(pair, obj2);
+            g0.h3(new ci.u8((Object) x2Var, (Object) pair, obj2, true, 8));
+            return;
         }
-        return j.booleanValue();
-    }
-
-    public static boolean b() {
-        c5.m mVar;
-        if (u1.n) {
-            return true;
+        Object obj4 = this.c;
+        if (obj2 == null || !x2Var.b(obj4)) {
+            obj3 = obj2;
+        } else {
+            x2Var.a(pair, obj2);
+            obj3 = obj2;
+            g0.h3(new ci.u8((Object) x2Var, (Object) pair, obj3, false, 8));
         }
-        w0.u();
-        a();
-        w0.r();
-        if (u1.i().k() && (mVar = u1.l) != null) {
-            ArrayList arrayList = mVar.h;
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                ArrayList arrayList2 = ((c5.l) obj).b.a;
-                int size2 = arrayList2.size();
-                int i11 = 0;
-                while (i11 < size2) {
-                    Object obj2 = arrayList2.get(i11);
-                    i11++;
-                    c5.j jVar = (c5.j) obj2;
-                    ArrayList arrayList3 = wp.r1(e20.s0).l7;
-                    int size3 = arrayList3.size();
-                    int i12 = 0;
-                    while (i12 < size3) {
-                        Object obj3 = arrayList3.get(i12);
-                        i12++;
-                        if (Objects.equals(jVar.c, (String) obj3)) {
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
+        long longValue = l10.longValue();
+        int i3 = this.d;
+        x2Var.f(i3, obj4, longValue, new w2(x2Var, pair, obj3, i3, obj4));
     }
 }

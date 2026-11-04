@@ -1,31 +1,27 @@
 package a9;
 
-import android.os.BadParcelableException;
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.wearable.ConnectionConfiguration;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class v {
-    public static final /* synthetic */ int a = 0;
+public final class v extends q6.a {
+    public static final Parcelable.Creator<v> CREATOR = new c(19);
+    public final int a;
+    public final ConnectionConfiguration[] b;
 
-    static {
-        v.class.getClassLoader();
+    public v(int i3, ConnectionConfiguration[] connectionConfigurationArr) {
+        this.a = i3;
+        this.b = connectionConfigurationArr;
     }
 
-    public static Parcelable a(Parcel parcel) {
-        Parcelable.Creator creator = Bundle.CREATOR;
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
-
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(i0.a.i(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.p(parcel, 3, this.b, i3);
+        j8.a.t(parcel, s6);
     }
 }

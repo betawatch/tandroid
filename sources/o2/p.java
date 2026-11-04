@@ -1,79 +1,60 @@
 package o2;
 
-import android.support.v4.media.session.a0;
-import b2.t0;
-import b2.u0;
-import b2.w;
-import b2.x;
-import java.util.Map;
-import u2.c1;
+import d2.v;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.RoundingMode;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class p extends c1 {
-    public final Map J;
-    public b2.t K;
+public final class p extends n {
+    public final k4.j j;
+    public final k4.j k;
+    public final long l;
 
-    public p(a0 a0Var, n2.m mVar, n2.j jVar, Map map) {
-        super(a0Var, mVar, jVar);
-        this.J = map;
+    public p(j jVar, long j10, long j11, long j12, long j13, long j14, List list, long j15, k4.j jVar2, k4.j jVar3, long j16, long j17) {
+        super(jVar, j10, j11, j12, j14, list, j15, j16, j17);
+        this.j = jVar2;
+        this.k = jVar3;
+        this.l = j13;
     }
 
-    @Override // u2.c1
-    public final x r(x xVar) {
-        b2.t tVar;
-        b2.t tVar2 = this.K;
-        if (tVar2 == null) {
-            tVar2 = xVar.w;
+    @Override // o2.s
+    public final j a(m mVar) {
+        k4.j jVar = this.j;
+        if (jVar == null) {
+            return this.a;
         }
-        if (tVar2 != null && (tVar = (b2.t) this.J.get(tVar2.c)) != null) {
-            tVar2 = tVar;
+        v vVar = mVar.a;
+        return new j(0L, jVar.n(vVar.j, 0L, 0L, vVar.a), -1L);
+    }
+
+    @Override // o2.n
+    public final long d(long j10) {
+        if (this.f != null) {
+            return r0.size();
         }
-        u0 u0Var = xVar.l;
-        u0 u0Var2 = null;
-        if (u0Var != null) {
-            t0[] t0VarArr = u0Var.a;
-            int length = t0VarArr.length;
-            int i10 = 0;
-            int i11 = 0;
-            while (true) {
-                if (i11 >= length) {
-                    i11 = -1;
-                    break;
-                }
-                t0 t0Var = t0VarArr[i11];
-                if ((t0Var instanceof q3.n) && "com.apple.streaming.transportStreamTimestamp".equals(((q3.n) t0Var).b)) {
-                    break;
-                }
-                i11++;
-            }
-            if (i11 != -1) {
-                if (length != 1) {
-                    t0[] t0VarArr2 = new t0[length - 1];
-                    while (i10 < length) {
-                        if (i10 != i11) {
-                            t0VarArr2[i10 < i11 ? i10 : i10 - 1] = t0VarArr[i10];
-                        }
-                        i10++;
-                    }
-                    u0Var2 = new u0(t0VarArr2);
-                }
-            }
-            if (tVar2 == xVar.w || u0Var != xVar.l) {
-                w a2 = xVar.a();
-                a2.v = tVar2;
-                a2.k = u0Var;
-                xVar = new x(a2);
-            }
-            return super.r(xVar);
+        long j11 = this.l;
+        if (j11 != -1) {
+            return (j11 - this.d) + 1;
         }
-        u0Var = u0Var2;
-        if (tVar2 == xVar.w) {
+        if (j10 == -9223372036854775807L) {
+            return -1L;
         }
-        w a22 = xVar.a();
-        a22.v = tVar2;
-        a22.k = u0Var;
-        xVar = new x(a22);
-        return super.r(xVar);
+        BigInteger multiply = BigInteger.valueOf(j10).multiply(BigInteger.valueOf(this.b));
+        BigInteger multiply2 = BigInteger.valueOf(this.e).multiply(BigInteger.valueOf(1000000L));
+        RoundingMode roundingMode = RoundingMode.CEILING;
+        int i3 = i9.a.a;
+        return new BigDecimal(multiply).divide(new BigDecimal(multiply2), 0, roundingMode).toBigIntegerExact().longValue();
+    }
+
+    @Override // o2.n
+    public final j h(k kVar, long j10) {
+        long j11 = this.d;
+        List list = this.f;
+        long j12 = list != null ? ((q) list.get((int) (j10 - j11))).a : (j10 - j11) * this.e;
+        v vVar = kVar.a;
+        return new j(0L, this.k.n(vVar.j, j10, j12, vVar.a), -1L);
     }
 }

@@ -20,8 +20,8 @@ public final class z implements LongConsumer, IntConsumer {
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i10) {
-        accept(i10);
+    public final void accept(int i3) {
+        accept(i3);
     }
 
     @Override // java.util.function.LongConsumer

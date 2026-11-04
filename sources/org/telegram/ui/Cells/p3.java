@@ -1,74 +1,33 @@
 package org.telegram.ui.Cells;
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.wp;
+import android.content.Context;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.y41;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.tj0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class p3 {
-    public boolean a;
-    public StaticLayout b;
-    public StaticLayout c;
-    public int d;
-    public int e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
+public final class p3 extends q31 {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void a(q1 q1Var) {
-        TLRPC.Message message;
-        String str;
-        SpannableStringBuilder e = th.w5.e(new Object[0], 2131750875, false);
-        kj messageObject = q1Var.getMessageObject();
-        if (messageObject != null && (message = messageObject.k) != null) {
-            TLRPC.MessageMedia messageMedia = message.media;
-            if (messageMedia instanceof TLRPC.TL_messageMediaStory) {
-                TLRPC.User Z1 = wp.r1(q1Var.Y5).Z1(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
-                String str2 = Z1 == null ? "DELETED" : Z1.first_name;
-                int Q0 = (int) ((org.telegram.messenger.i0.Q1() ? org.telegram.messenger.i0.Q0() : q1Var.getParentWidth()) * 0.4f);
-                String L0 = dd.L0(2131750517, null);
-                TextPaint textPaint = org.telegram.ui.ActionBar.t6.X2;
-                int ceil = (int) Math.ceil(textPaint.measureText(L0 + " "));
-                if (str2 == null) {
-                    str2 = "";
-                }
-                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.t6.Y2, Q0 - ceil, TextUtils.TruncateAt.END);
-                String L02 = dd.L0(2131750513, null);
-                int indexOf = L02.indexOf("%1$s");
-                String format = String.format(L02, str3);
-                if (indexOf >= 0) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new y41(org.telegram.messenger.i0.o()), indexOf, str3.length() + indexOf, 33);
-                    str = spannableStringBuilder;
-                } else {
-                    str = format;
-                }
-                TextPaint textPaint2 = org.telegram.ui.ActionBar.t6.Z2;
-                int L = org.telegram.messenger.i0.L(10.0f) + ((int) (textPaint2.measureText(e, 0, e.length()) + 1.0f));
-                Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                this.b = new StaticLayout(e, textPaint2, L, alignment, 1.0f, 0.0f, false);
-                this.c = new StaticLayout(str, textPaint2, org.telegram.messenger.i0.L(10.0f) + ((int) (textPaint2.measureText((CharSequence) str, 0, str.length()) + 1.0f)), alignment, 1.0f, 0.0f, false);
-                this.e = 0;
-                this.h = org.telegram.messenger.i0.L(4.0f);
-                this.i = org.telegram.messenger.i0.L(12.0f);
-                this.e = (int) sc.e.d(this.h, 2.0f, org.telegram.messenger.i0.L(4.0f) + this.c.getHeight() + org.telegram.messenger.i0.L(2.0f) + this.b.getHeight() + org.telegram.messenger.i0.L(4.0f), this.e);
-                this.d = q1Var.getExtraTextX() + org.telegram.messenger.i0.L(20.0f) + org.telegram.messenger.i0.L(12.0f) + Math.max(this.b.getWidth(), this.c.getWidth());
-                return;
-            }
-        }
-        this.h = org.telegram.messenger.i0.L(4.0f);
-        this.i = org.telegram.messenger.i0.L(12.0f);
-        this.e = 0;
-        this.d = 0;
+    static {
+        q31.h(new p3());
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final void b(View view, r31 r31Var, boolean z10, f41 f41Var, l41 l41Var) {
+        q3 q3Var = (q3) view;
+        q3Var.a((TLRPC.StickerSetCovered) r31Var.G, z10, r31Var.t, false);
+        q3Var.f.a(r31Var.t, false);
+        q3Var.setAddOnClickListener(r31Var.D);
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final View d(Context context, tj0 tj0Var, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new q3(context, e6Var);
     }
 }

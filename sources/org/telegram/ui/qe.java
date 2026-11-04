@@ -1,51 +1,40 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qe implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class qe implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ wm b;
+    public final /* synthetic */ View c;
 
-    public /* synthetic */ qe(un unVar, int i10) {
-        this.a = i10;
-        this.b = unVar;
+    public /* synthetic */ qe(wm wmVar, org.telegram.ui.Cells.t0 t0Var, int i3) {
+        this.a = i3;
+        this.b = wmVar;
+        this.c = t0Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                gk gkVar = this.b.l2;
-                if (gkVar != null) {
-                    gkVar.c(false);
-                    break;
-                }
-                break;
-            case 1:
-                un.w0(this.b);
-                break;
-            case 2:
-                this.b.s8(false, true, 0.0f);
-                break;
-            case 3:
-                this.b.s8(false, true, 0.0f);
-                break;
-            case 4:
-                this.b.s8(false, true, 0.0f);
-                break;
-            case 5:
-                this.b.s8(false, true, 0.0f);
-                break;
-            case 6:
-                this.b.s8(false, true, 0.0f);
-                break;
-            case 7:
-                this.b.s8(false, true, 0.0f);
+                wm wmVar = this.b;
+                wmVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wmVar.U9 = org.telegram.messenger.g0.L(30.0f) * floatValue;
+                wmVar.K9();
+                this.c.setAlpha(floatValue);
                 break;
             default:
-                this.b.cc = null;
+                wm wmVar2 = this.b;
+                wmVar2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wmVar2.U9 = org.telegram.messenger.g0.L(30.0f) * floatValue2;
+                wmVar2.K9();
+                wmVar2.M9();
+                this.c.setAlpha(floatValue2);
                 break;
         }
     }

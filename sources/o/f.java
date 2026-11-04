@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class f implements Iterable {
     public c a;
@@ -61,26 +61,7 @@ public class f implements Iterable {
         return false;
     }
 
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i10 = 0;
-        while (true) {
-            b bVar = (b) it;
-            if (!bVar.hasNext()) {
-                return i10;
-            }
-            i10 += ((Map.Entry) bVar.next()).hashCode();
-        }
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        b bVar = new b(this.a, this.b, 0);
-        this.c.put(bVar, Boolean.FALSE);
-        return bVar;
-    }
-
-    public c l(Object obj) {
+    public c h(Object obj) {
         c cVar = this.a;
         while (cVar != null && !cVar.a.equals(obj)) {
             cVar = cVar.c;
@@ -88,9 +69,21 @@ public class f implements Iterable {
         return cVar;
     }
 
-    public Object m(Object obj) {
-        c l4 = l(obj);
-        if (l4 == null) {
+    public final int hashCode() {
+        Iterator it = iterator();
+        int i3 = 0;
+        while (true) {
+            b bVar = (b) it;
+            if (!bVar.hasNext()) {
+                return i3;
+            }
+            i3 += ((Map.Entry) bVar.next()).hashCode();
+        }
+    }
+
+    public Object i(Object obj) {
+        c h = h(obj);
+        if (h == null) {
             return null;
         }
         this.d--;
@@ -98,24 +91,31 @@ public class f implements Iterable {
         if (!weakHashMap.isEmpty()) {
             Iterator it = weakHashMap.keySet().iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(l4);
+                ((e) it.next()).a(h);
             }
         }
-        c cVar = l4.d;
+        c cVar = h.d;
         if (cVar != null) {
-            cVar.c = l4.c;
+            cVar.c = h.c;
         } else {
-            this.a = l4.c;
+            this.a = h.c;
         }
-        c cVar2 = l4.c;
+        c cVar2 = h.c;
         if (cVar2 != null) {
             cVar2.d = cVar;
         } else {
             this.b = cVar;
         }
-        l4.c = null;
-        l4.d = null;
-        return l4.b;
+        h.c = null;
+        h.d = null;
+        return h.b;
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        b bVar = new b(this.a, this.b, 0);
+        this.c.put(bVar, Boolean.FALSE);
+        return bVar;
     }
 
     public final String toString() {

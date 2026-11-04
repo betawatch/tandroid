@@ -1,1063 +1,1553 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.app.Activity;
 import android.text.TextUtils;
-import android.text.method.LinkMovementMethod;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
-import java.net.URLDecoder;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.security.MessageDigest;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Stack;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.Collections;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLClassStore;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.hv0;
-import org.telegram.ui.Components.iy0;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.q80;
-import org.telegram.ui.Components.t80;
-import org.telegram.ui.wh0;
-import org.telegram.ui.xh0;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class vv implements org.telegram.ui.Cells.u9, iy0 {
-    public static Paint T;
-    public final AtomicReference D;
-    public org.telegram.ui.Components.k5 E;
-    public final k80 F;
-    public k80 G;
-    public t80 H;
-    public ji.a I;
-    public ns J;
-    public boolean K;
-    public nh.i L;
-    public CharacterStyle M;
-    public int N;
-    public int O;
-    public org.telegram.ui.Components.o5 P;
-    public uu Q;
-    public final RectF R;
-    public View S;
-    public final wv a;
-    public final StaticLayout b;
-    public int c;
-    public int d;
-    public int e;
-    public final int f;
-    public final int h;
-    public final int n;
-    public boolean r;
-    public final int s;
-    public boolean w;
-    public final ArrayList x;
-    public final Stack y;
+public final class vv extends c1 {
+    public static volatile vv[] r = new vv[4];
+    public final ArrayList a;
+    public final SparseArray b;
+    public final SparseArray c;
+    public final SparseArray d;
+    public final SparseArray e;
+    public final ArrayList f;
+    public final ArrayList h;
+    public boolean n;
 
-    public vv(wv wvVar, CharSequence charSequence, int i10) {
-        this(wvVar, charSequence, i10, Layout.Alignment.ALIGN_NORMAL);
+    public vv(int i3) {
+        super(i3);
+        this.a = new ArrayList();
+        this.b = new SparseArray();
+        this.c = new SparseArray();
+        this.d = new SparseArray();
+        this.e = new SparseArray();
+        this.f = new ArrayList();
+        this.h = new ArrayList();
+        this.n = false;
     }
 
-    public static a3.l s(Spanned spanned, int i10, int i11, TextPaint textPaint) {
-        uu[] uuVarArr;
-        int i12;
-        a3.l lVar = new a3.l();
-        int i13 = i11 - i10;
-        if (i13 > 0) {
-            org.telegram.ui.Components.o5[] o5VarArr = (org.telegram.ui.Components.o5[]) spanned.getSpans(i10, i11, org.telegram.ui.Components.o5.class);
-            h6[] h6VarArr = (h6[]) spanned.getSpans(i10, i11, h6.class);
-            int[] iArr = (o5VarArr.length == 0 && h6VarArr.length == 0) ? null : new int[i13];
-            int length = o5VarArr.length;
-            int i14 = 0;
-            while (i14 < length) {
-                int i15 = i14;
-                org.telegram.ui.Components.o5 o5Var = o5VarArr[i15];
-                int spanStart = spanned.getSpanStart(o5Var);
-                int min = Math.min(i11, spanned.getSpanEnd(o5Var));
-                if (spanStart < i10 || spanStart >= i11 || min <= spanStart) {
-                    i12 = i15;
-                } else {
-                    int i16 = spanStart - i10;
-                    iArr[i16] = Math.max(iArr[i16], min);
-                    i12 = i15;
-                    lVar.c = Math.max(lVar.c, o5Var.getSize(textPaint, spanned, spanStart, min, null) + 1);
-                }
-                i14 = i12 + 1;
-            }
-            for (h6 h6Var : h6VarArr) {
-                int spanStart2 = spanned.getSpanStart(h6Var);
-                int min2 = Math.min(i11, spanned.getSpanEnd(h6Var));
-                if (spanStart2 >= i10 && spanStart2 < i11 && min2 > spanStart2) {
-                    int i17 = spanStart2 - i10;
-                    iArr[i17] = Math.max(iArr[i17], min2);
-                    lVar.c = Math.max(lVar.c, h6Var.getSize(textPaint, spanned, spanStart2, min2, null));
-                }
-            }
-            uu[] uuVarArr2 = (uu[]) spanned.getSpans(i10, i11, uu.class);
-            if (uuVarArr2.length > 0) {
-                uuVarArr = null;
-                for (uu uuVar : uuVarArr2) {
-                    int spanStart3 = spanned.getSpanStart(uuVar);
-                    if (uuVar.a.a.s > 0 && spanStart3 >= i10 && spanStart3 < i11) {
-                        if (uuVarArr == null) {
-                            uuVarArr = new uu[i13];
-                        }
-                        uuVarArr[spanStart3 - i10] = uuVar;
-                    }
-                }
-            } else {
-                uuVarArr = null;
-            }
-            if (iArr != null || uuVarArr != null) {
-                int i18 = i10;
-                while (i18 < i11) {
-                    int i19 = i18 - i10;
-                    uu uuVar2 = uuVarArr == null ? null : uuVarArr[i19];
-                    if (uuVar2 != null) {
-                        su suVar = uuVar2.a;
-                        vv vvVar = suVar.a;
-                        vv vvVar2 = suVar.a;
-                        if (vvVar.b.getText() instanceof Spanned) {
-                            Spanned spanned2 = (Spanned) vvVar2.b.getText();
-                            a3.l s10 = s(spanned2, 0, spanned2.length(), vvVar2.b.getPaint());
-                            lVar.a += s10.a;
-                            lVar.b += Math.max(1, s10.b);
-                            lVar.c = Math.max(lVar.c, s10.c);
-                            i18 = Math.min(i11, spanned.getSpanEnd(uuVar2));
-                        }
-                    }
-                    int i20 = iArr == null ? 0 : iArr[i19];
-                    if (i20 > i18) {
-                        lVar.a++;
-                        lVar.b++;
-                        i18 = i20;
-                    } else {
-                        int codePointAt = Character.codePointAt(spanned, i18);
-                        if (!Character.isWhitespace(codePointAt)) {
-                            lVar.b++;
-                        }
-                        i18 += Character.charCount(codePointAt);
-                    }
-                }
-            }
-        }
-        return lVar;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final Layout a() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.Components.iy0
-    public final int b() {
-        return this.s;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final /* synthetic */ Rect c() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.iy0
-    public final void d(Canvas canvas, View view) {
-        canvas.save();
-        canvas.translate(-n(), 0.0f);
-        wv wvVar = this.a;
-        boolean E = wvVar.E();
-        TextPaint textPaint = wvVar.w;
-        int w02 = org.telegram.ui.ActionBar.t6.w0(E ? org.telegram.ui.ActionBar.t6.Tc : org.telegram.ui.ActionBar.t6.Sc, wvVar.D);
-        textPaint.setColor(w02);
-        textPaint.linkColor = org.telegram.ui.ActionBar.t6.w0(wvVar.E() ? org.telegram.ui.ActionBar.t6.Vc : org.telegram.ui.ActionBar.t6.Uc, wvVar.D);
-        k80 k80Var = this.F;
-        if (k80Var != null) {
-            if (T == null) {
-                Paint paint = new Paint(1);
-                T = paint;
-                paint.setPathEffect(k80.c());
-            }
-            T.setColor((wvVar.y.i() & 16777215) | 855638016);
-            canvas.drawPath(k80Var, T);
-        }
-        View view2 = view != null ? view : this.S;
-        ji.a aVar = this.I;
-        if (aVar != null && aVar.h(canvas) && view2 != null) {
-            view2.invalidate();
-        }
-        StaticLayout staticLayout = this.b;
-        AtomicReference atomicReference = this.D;
-        ArrayList arrayList = this.x;
-        nh.i.g(view2, false, w02, 0, atomicReference, 0, staticLayout, arrayList, canvas, false);
-        StaticLayout staticLayout2 = this.b;
-        hv0.a(canvas, staticLayout2);
-        if (!wvVar.F()) {
-            org.telegram.ui.Components.o5.drawAnimatedEmojis(canvas, this.b, this.E, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
-        }
-        float f7 = wvVar.V;
-        if (f7 > 0.0f) {
-            kj kjVar = wvVar.b;
-            boolean z10 = wvVar.O || (kjVar != null && wp.r1(wvVar.a).t7.A(kjVar));
-            if (this.H == null) {
-                t80 t80Var = new t80();
-                this.H = t80Var;
-                t80Var.D = true;
-                k80 k80Var2 = new k80(0);
-                this.G = k80Var2;
-                k80Var2.c = true;
-                t80 t80Var2 = this.H;
-                t80Var2.y = k80Var2;
-                t80Var2.k(5.0f);
-                this.H.b = -1L;
-                this.G.reset();
-                this.G.d(staticLayout2, 0, 0.0f);
-                this.G.n = false;
-                staticLayout2.getSelectionPath(0, staticLayout2.getText().length(), this.G);
-                k80 k80Var3 = this.G;
-                k80Var3.n = true;
-                k80Var3.a();
-                this.H.l();
-            }
-            if (z10 && (this.H.d() || this.H.c())) {
-                t80 t80Var3 = this.H;
-                t80Var3.b = -1L;
-                t80Var3.c = -1L;
-            } else if (!z10 && !this.H.d() && !this.H.c()) {
-                this.H.a();
-            }
-            int w03 = org.telegram.ui.ActionBar.t6.w0(wvVar.E() ? org.telegram.ui.ActionBar.t6.Vc : org.telegram.ui.ActionBar.t6.Uc, wvVar.D);
-            this.H.g(org.telegram.ui.ActionBar.t6.r1(0.05f, w03), org.telegram.ui.ActionBar.t6.r1(0.15f, w03), org.telegram.ui.ActionBar.t6.r1(0.1f, w03), org.telegram.ui.ActionBar.t6.r1(0.3f, w03));
-            this.H.setAlpha((int) (f7 * 255.0f));
-            this.H.draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    public final boolean e(uu uuVar, float f7, float f10) {
-        float L = i0.L(8.0f);
-        RectF rectF = uuVar.c;
-        if (f7 < rectF.left - L || f7 >= rectF.right + L || f10 < rectF.top - L || f10 >= rectF.bottom + L) {
-            StaticLayout staticLayout = this.b;
-            uu uuVar2 = null;
-            if (staticLayout.getText() instanceof Spanned) {
-                Spanned spanned = (Spanned) staticLayout.getText();
-                uu[] uuVarArr = (uu[]) spanned.getSpans(0, spanned.length(), uu.class);
-                if (uuVarArr.length == 1) {
-                    int spanStart = spanned.getSpanStart(uuVarArr[0]);
-                    int spanEnd = spanned.getSpanEnd(uuVarArr[0]);
-                    int i10 = 0;
-                    while (true) {
-                        if (i10 >= spanned.length()) {
-                            uuVar2 = uuVarArr[0];
-                            break;
-                        }
-                        if ((i10 < spanStart || i10 >= spanEnd) && !Character.isWhitespace(spanned.charAt(i10))) {
-                            break;
-                        }
-                        i10++;
-                    }
-                }
-            }
-            if (uuVar != uuVar2 || !this.R.contains(f7, f10)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.iy0
-    public final void f(View view) {
-        View view2 = this.S;
-        if (view2 == view && view2 != null) {
-            this.S = null;
-            org.telegram.ui.Components.o5.release((View) null, this.E);
-            this.E = null;
-            ji.a aVar = this.I;
-            if (aVar != null) {
-                aVar.c = null;
-            }
-            uu[] p5 = p();
-            if (p5 != null) {
-                for (uu uuVar : p5) {
-                    View view3 = this.S;
-                    uuVar.h = null;
-                    uuVar.a.a.f(view3);
-                }
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iy0
-    public final void g(int i10) {
-        this.e = i10;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final /* synthetic */ CharSequence getPrefix() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final int getRow() {
-        return this.e;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final CharSequence getText() {
-        if (a() == null) {
-            return null;
-        }
-        return a().getText();
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final int getX() {
-        return this.c;
-    }
-
-    @Override // org.telegram.ui.Cells.u9
-    public final int getY() {
-        return this.d;
-    }
-
-    @Override // org.telegram.ui.Components.iy0
-    public final void h(int i10) {
-        this.d = i10;
-    }
-
-    @Override // org.telegram.ui.Components.iy0
-    public final void i(View view) {
-        View view2 = this.S;
-        if (view == view2) {
-            return;
-        }
-        if (view2 != null) {
-            f(view2);
-        }
-        this.S = view;
-        this.E = org.telegram.ui.Components.o5.update(0, view, this.a.v && !this.w, this.E, this.b);
-        ji.a aVar = this.I;
-        if (aVar != null) {
-            aVar.c = this.S;
-        }
-        uu[] p5 = p();
-        if (p5 != null) {
-            for (uu uuVar : p5) {
-                uuVar.a(this.S);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.iy0
-    public final void j(int i10) {
-        this.c = i10;
-    }
-
-    public final void k() {
-        ns nsVar = this.J;
-        if (nsVar != null) {
-            i0.r(nsVar);
-            this.J = null;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x000d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x010d, code lost:
     
-        r2 = ((android.text.style.URLSpan) r13).getURL();
+        if (r0 > 1024) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x017a  */
-    /* JADX WARN: Removed duplicated region for block: B:39:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x010f, code lost:
+    
+        r4 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0116, code lost:
+    
+        return !r4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0111, code lost:
+    
+        if (r0 > 15) goto L46;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0111  */
+    /* JADX WARN: Type inference failed for: r13v2, types: [java.security.MessageDigest] */
+    /* JADX WARN: Type inference failed for: r6v5, types: [java.nio.Buffer, java.nio.ByteBuffer] */
+    /* JADX WARN: Type inference failed for: r6v6, types: [java.nio.ByteBuffer] */
+    /* JADX WARN: Type inference failed for: r6v8, types: [int] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void l(CharacterStyle characterStyle, boolean z10) {
-        View view;
-        String url;
-        String substring;
-        RecyclerView recyclerView;
-        View view2;
-        Context context;
-        TL_iv.RichText richText;
-        if (characterStyle == null) {
-            return;
-        }
-        wv wvVar = this.a;
-        if (!z10 && (characterStyle instanceof URLSpan) && url != null && url.startsWith("#")) {
-            wvVar.getClass();
-            if (url.startsWith("#")) {
-                try {
-                    substring = URLDecoder.decode(url.substring(1), "UTF-8");
-                } catch (Exception unused) {
-                    substring = url.substring(1);
+    public static boolean h(NativeByteBuffer nativeByteBuffer, byte[] bArr, byte[] bArr2, int i3, boolean z10, boolean z11) {
+        byte[] bArr3;
+        boolean z12 = false;
+        boolean z13 = i3 == 1 ? false : z10;
+        mi.h0 x10 = mi.h0.x(i3, z13, bArr, bArr2);
+        Utilities.c(nativeByteBuffer.buffer, (byte[]) x10.b, (byte[]) x10.c, false, false, 24, nativeByteBuffer.limit() - 24);
+        int readInt32 = nativeByteBuffer.readInt32(false);
+        if (i3 == 2) {
+            int i10 = z13 ? 8 : 0;
+            ByteBuffer byteBuffer = nativeByteBuffer.buffer;
+            if (!Utilities.d(bArr2, Utilities.p(bArr, i10 + 88, byteBuffer, 24, byteBuffer.limit()), 8)) {
+                if (z11) {
+                    Utilities.c(nativeByteBuffer.buffer, (byte[]) x10.b, (byte[]) x10.c, true, false, 24, nativeByteBuffer.limit() - 24);
+                    nativeByteBuffer.position(24);
                 }
-                if (!TextUtils.isEmpty(substring)) {
-                    String lowerCase = substring.toLowerCase();
-                    TL_iv.textAnchor textanchor = (TL_iv.textAnchor) wvVar.k.get(lowerCase);
-                    if (textanchor != null) {
-                        View view3 = wvVar.Q;
-                        if (view3 != null && (context = view3.getContext()) != null && (richText = textanchor.text) != null && !(richText instanceof TL_iv.textEmpty)) {
-                            String str = textanchor.name;
-                            SpannableStringBuilder l4 = wvVar.l(org.telegram.ui.web.y1.d(textanchor.text, "", str == null ? "" : str.toLowerCase()), 0);
-                            org.telegram.ui.ActionBar.z2 k10 = m5.k(1, context, wvVar.D, true);
-                            k10.u0 = false;
-                            k10.v0 = false;
-                            LinearLayout f7 = m5.f(context, 1);
-                            TextView g10 = m5.g(context, 1, 16.0f);
-                            g10.setTypeface(i0.o());
-                            g10.setText(dd.L0(2131749201, null));
-                            g10.setGravity((dd.X ? 5 : 3) | 16);
-                            int i10 = org.telegram.ui.ActionBar.t6.j5;
-                            org.telegram.ui.ActionBar.a7.V(g10, i10, wvVar.D);
-                            g10.setPadding(i0.L(22.0f), 0, i0.L(22.0f), 0);
-                            f7.addView(g10, new LinearLayout.LayoutParams(-1, i0.L(48.0f)));
-                            p80 p80Var = new p80(context, wvVar.D);
-                            p80Var.setTextSize(1, uz.W0);
-                            org.telegram.ui.ActionBar.a7.V(p80Var, i10, wvVar.D);
-                            org.telegram.ui.ActionBar.a7.H(p80Var, org.telegram.ui.ActionBar.t6.k5, wvVar.D);
-                            p80Var.setMovementMethod(LinkMovementMethod.getInstance());
-                            p80Var.setPadding(i0.L(22.0f), 0, i0.L(22.0f), i0.L(16.0f));
-                            p80Var.setText(l4);
-                            f7.addView(p80Var, new LinearLayout.LayoutParams(-1, -2));
-                            FrameLayout frameLayout = new FrameLayout(context);
-                            frameLayout.addView(f7, w7.b6.c(-2.0f, -1));
-                            k10.N = frameLayout;
-                            k10.show();
-                            view2 = this.S;
-                            if (view2 == null) {
-                                view2.playSoundEffect(0);
-                                return;
-                            }
-                            return;
-                        }
-                    } else {
-                        Integer num = (Integer) wvVar.j.get(lowerCase);
-                        if (num != null) {
-                            int intValue = num.intValue();
-                            if (wvVar.E != null && intValue >= 0 && intValue < wvVar.g.size()) {
-                                ViewParent parent = wvVar.E.getParent();
-                                while (true) {
-                                    if (parent == null) {
-                                        recyclerView = null;
-                                        break;
-                                    } else {
-                                        if (parent instanceof RecyclerView) {
-                                            recyclerView = (RecyclerView) parent;
-                                            break;
-                                        }
-                                        parent = parent.getParent();
-                                    }
-                                }
-                                if (recyclerView != null) {
-                                    recyclerView.w0(0, (((wvVar.E.getTop() + wvVar.E.t0) + wvVar.r(intValue, null)) - recyclerView.getPaddingTop()) - i0.L(8.0f), null);
-                                }
-                            }
-                        }
-                        view2 = this.S;
-                        if (view2 == null) {
-                        }
-                    }
+                z12 = true;
+            }
+            if (readInt32 <= 0) {
+                z12 = true;
+            }
+            if (readInt32 > nativeByteBuffer.limit() - 28) {
+                z12 = true;
+            }
+            int limit = (nativeByteBuffer.limit() - 28) - readInt32;
+            if (i3 != 2) {
+                if (limit < 12) {
+                    z12 = true;
                 }
-            }
-        }
-        CharacterStyle e51Var = ((characterStyle instanceof sv) && TLObject.hasFlag(((sv) characterStyle).b, 256)) ? new e51(this.b.getText(), this.N, this.O, wvVar.E() ? (byte) 1 : (byte) 0, null) : characterStyle;
-        org.telegram.ui.Cells.l1 l1Var = wvVar.F;
-        org.telegram.ui.Cells.q1 q1Var = wvVar.E;
-        if (l1Var != null && q1Var != null) {
-            View view4 = this.S;
-            if (view4 != null && !z10) {
-                view4.playSoundEffect(0);
-            }
-            l1Var.L0(q1Var, e51Var, z10);
-            return;
-        }
-        if (z10 || (view = this.S) == null || !(characterStyle instanceof ClickableSpan)) {
-            return;
-        }
-        view.playSoundEffect(0);
-        ((ClickableSpan) characterStyle).onClick(this.S);
-    }
-
-    public final void m(Canvas canvas, int i10, float f7) {
-        canvas.save();
-        canvas.translate(-n(), 0.0f);
-        wv wvVar = this.a;
-        boolean E = wvVar.E();
-        TextPaint textPaint = wvVar.w;
-        final int w02 = org.telegram.ui.ActionBar.t6.w0(E ? org.telegram.ui.ActionBar.t6.Tc : org.telegram.ui.ActionBar.t6.Sc, wvVar.D);
-        textPaint.setColor(w02);
-        textPaint.linkColor = org.telegram.ui.ActionBar.t6.w0(wvVar.E() ? org.telegram.ui.ActionBar.t6.Vc : org.telegram.ui.ActionBar.t6.Uc, wvVar.D);
-        final View view = this.S;
-        xh0.b(canvas, this.b, i10, f7, new wh0() { // from class: org.telegram.messenger.uv
-            @Override // org.telegram.ui.wh0
-            public final void d(Canvas canvas2) {
-                vv vvVar = vv.this;
-                AtomicReference atomicReference = vvVar.D;
-                StaticLayout staticLayout = vvVar.b;
-                ArrayList arrayList = vvVar.x;
-                nh.i.g(view, false, w02, 0, atomicReference, 0, staticLayout, arrayList, canvas2, false);
-                hv0.a(canvas2, vvVar.b);
-                org.telegram.ui.Components.o5.drawAnimatedEmojis(canvas2, vvVar.b, vvVar.E, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
-            }
-        });
-        canvas.restore();
-    }
-
-    public final int n() {
-        if (this.r) {
-            return 0;
-        }
-        return this.f;
-    }
-
-    public final boolean o(CharacterStyle characterStyle, iu iuVar) {
-        StaticLayout staticLayout = this.b;
-        if (!(staticLayout.getText() instanceof Spanned)) {
-            return false;
-        }
-        Spanned spanned = (Spanned) staticLayout.getText();
-        int spanStart = spanned.getSpanStart(characterStyle);
-        int spanEnd = spanned.getSpanEnd(characterStyle);
-        if (spanStart < 0 || spanEnd <= spanStart) {
-            return false;
-        }
-        iuVar.a = staticLayout;
-        iuVar.b = spanStart;
-        iuVar.c = spanEnd;
-        iuVar.d = staticLayout.getWidth();
-        return true;
-    }
-
-    public final uu[] p() {
-        StaticLayout staticLayout = this.b;
-        if (!(staticLayout.getText() instanceof Spanned)) {
-            return null;
-        }
-        Spanned spanned = (Spanned) staticLayout.getText();
-        return (uu[]) spanned.getSpans(0, spanned.length(), uu.class);
-    }
-
-    public final int q() {
-        return Math.max(0, this.n - this.f);
-    }
-
-    public final int r() {
-        return Math.max(0, this.h - this.f);
-    }
-
-    public final boolean t(MotionEvent motionEvent) {
-        boolean z10;
-        boolean z11;
-        sv svVar;
-        sv svVar2;
-        int spanEnd;
-        sv svVar3;
-        int spanStart;
-        int actionMasked = motionEvent.getActionMasked();
-        int n10 = n() + ((int) motionEvent.getX());
-        int y3 = (int) motionEvent.getY();
-        ArrayList arrayList = this.x;
-        wv wvVar = this.a;
-        StaticLayout staticLayout = this.b;
-        boolean z12 = true;
-        int i10 = 0;
-        if (actionMasked == 0) {
-            this.L = null;
-            this.M = null;
-            this.P = null;
-            this.Q = null;
-            int size = arrayList.size();
-            int i11 = 0;
-            while (i11 < size) {
-                Object obj = arrayList.get(i11);
-                i11++;
-                nh.i iVar = (nh.i) obj;
-                if (iVar.getBounds().contains(n10, y3)) {
-                    this.L = iVar;
-                    return true;
-                }
-            }
-            uu[] p5 = p();
-            if (p5 != null) {
-                for (uu uuVar : p5) {
-                    if (e(uuVar, n10, y3)) {
-                        su suVar = uuVar.a;
-                        if (suVar.b) {
-                            return true;
-                        }
-                        this.Q = uuVar;
-                        this.K = false;
-                        suVar.m(true);
-                        View view = this.S;
-                        if (view != null) {
-                            view.invalidate();
-                        }
-                        u();
-                        return true;
-                    }
-                }
-            }
-            if ((staticLayout.getText() instanceof Spannable) && y3 >= 0 && y3 < staticLayout.getHeight()) {
-                int lineForVertical = staticLayout.getLineForVertical(y3);
-                float lineLeft = staticLayout.getLineLeft(lineForVertical);
-                float lineWidth = staticLayout.getLineWidth(lineForVertical) + lineLeft;
-                float f7 = n10;
-                if (f7 >= lineLeft && f7 <= lineWidth) {
-                    int offsetForHorizontal = staticLayout.getOffsetForHorizontal(lineForVertical, f7);
-                    Spannable spannable = (Spannable) staticLayout.getText();
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                    if (clickableSpanArr != null && clickableSpanArr.length > 0) {
-                        ClickableSpan clickableSpan = clickableSpanArr[0];
-                        this.M = clickableSpan;
-                        this.N = spannable.getSpanStart(clickableSpan);
-                        this.O = spannable.getSpanEnd(this.M);
-                        this.K = false;
-                        q80 q80Var = new q80(this.M, wvVar.D, f7, y3, 0);
-                        k80 b10 = q80Var.b();
-                        b10.d(staticLayout, this.N, 0.0f);
-                        staticLayout.getSelectionPath(this.N, this.O, b10);
-                        if (this.I == null) {
-                            this.I = new ji.a(this.S);
-                        }
-                        this.I.b(q80Var, null);
-                        View view2 = this.S;
-                        if (view2 != null) {
-                            view2.invalidate();
-                        }
-                        u();
-                        return true;
-                    }
-                    sv[] svVarArr = (sv[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, sv.class);
-                    if (svVarArr != null) {
-                        int length = svVarArr.length;
-                        int i12 = 0;
-                        while (i12 < length) {
-                            z11 = z12;
-                            svVar = svVarArr[i12];
-                            if (TLObject.hasFlag(svVar.b, 256)) {
-                                break;
-                            }
-                            i12++;
-                            z12 = z11;
-                        }
-                    }
-                    z11 = z12;
-                    svVar = null;
-                    if (svVar != null) {
-                        int spanStart2 = spannable.getSpanStart(svVar);
-                        int spanEnd2 = spannable.getSpanEnd(svVar);
-                        while (spanStart2 > 0) {
-                            int i13 = spanStart2 - 1;
-                            sv[] svVarArr2 = (sv[]) spannable.getSpans(i13, i13, sv.class);
-                            int length2 = svVarArr2.length;
-                            int i14 = i10;
-                            while (true) {
-                                if (i14 >= length2) {
-                                    svVar3 = null;
-                                    break;
-                                }
-                                svVar3 = svVarArr2[i14];
-                                if (TLObject.hasFlag(svVar3.b, 256)) {
-                                    break;
-                                }
-                                i14++;
-                            }
-                            if (svVar3 == null || (spanStart = spannable.getSpanStart(svVar3)) >= spanStart2) {
-                                break;
-                            }
-                            spanStart2 = spanStart;
-                            i10 = 0;
-                        }
-                        while (spanEnd2 < spannable.length()) {
-                            sv[] svVarArr3 = (sv[]) spannable.getSpans(spanEnd2, spanEnd2, sv.class);
-                            int length3 = svVarArr3.length;
-                            int i15 = 0;
-                            while (true) {
-                                if (i15 >= length3) {
-                                    svVar2 = null;
-                                    break;
-                                }
-                                svVar2 = svVarArr3[i15];
-                                if (TLObject.hasFlag(svVar2.b, 256)) {
-                                    break;
-                                }
-                                i15++;
-                            }
-                            if (svVar2 == null || (spanEnd = spannable.getSpanEnd(svVar2)) <= spanEnd2) {
-                                break;
-                            }
-                            spanEnd2 = spanEnd;
-                        }
-                        this.M = svVar;
-                        this.N = spanStart2;
-                        this.O = spanEnd2;
-                        this.K = false;
-                        q80 q80Var2 = new q80(svVar, wvVar.D, f7, y3, 0);
-                        k80 b11 = q80Var2.b();
-                        b11.d(staticLayout, spanStart2, 0.0f);
-                        staticLayout.getSelectionPath(spanStart2, spanEnd2, b11);
-                        if (this.I == null) {
-                            this.I = new ji.a(this.S);
-                        }
-                        this.I.b(q80Var2, null);
-                        View view3 = this.S;
-                        if (view3 != null) {
-                            view3.invalidate();
-                        }
-                        u();
-                        return z11;
-                    }
-                    org.telegram.ui.Components.o5[] o5VarArr = (org.telegram.ui.Components.o5[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, org.telegram.ui.Components.o5.class);
-                    if (o5VarArr != null && o5VarArr.length > 0) {
-                        this.P = o5VarArr[0];
-                        return z11;
-                    }
-                }
-            }
-            return false;
-        }
-        if (actionMasked == 2) {
-            uu uuVar2 = this.Q;
-            if (uuVar2 != null) {
-                if (e(uuVar2, n10, y3)) {
-                    return true;
-                }
-                k();
-                this.Q.a.m(false);
-                this.Q = null;
-                this.K = false;
-                return true;
             }
         } else {
-            if (actionMasked == 1) {
-                if (this.Q != null) {
-                    k();
-                    uu uuVar3 = this.Q;
-                    this.Q = null;
-                    uuVar3.a.m(false);
-                    if (this.K) {
-                        z10 = false;
-                    } else {
-                        View view4 = this.S;
-                        if (view4 != null) {
-                            view4.playSoundEffect(0);
-                        }
-                        org.telegram.ui.Cells.q1 q1Var = wvVar.E;
-                        org.telegram.ui.Cells.l1 l1Var = wvVar.F;
-                        TL_iv.textButton textbutton = uuVar3.b;
-                        if (q1Var != null && l1Var != null) {
-                            l1Var.W0(q1Var, textbutton);
-                        }
-                        z10 = false;
-                    }
-                    this.K = z10;
-                    return true;
-                }
-                if (this.L != null) {
-                    float width = staticLayout.getWidth();
-                    float height = staticLayout.getHeight();
-                    float sqrt = (float) Math.sqrt((height * height) + (width * width));
-                    View view5 = this.S;
-                    this.L.q = new tv(this, view5, wvVar);
-                    int size2 = arrayList.size();
-                    int i16 = 0;
-                    while (i16 < size2) {
-                        Object obj2 = arrayList.get(i16);
-                        i16++;
-                        ((nh.i) obj2).j(n10, y3, sqrt, false);
-                    }
-                    if (view5 != null) {
-                        view5.playSoundEffect(0);
-                    }
-                    this.L = null;
-                    return true;
-                }
-                if (this.M != null) {
-                    k();
-                    if (!this.K) {
-                        l(this.M, false);
-                    }
-                    ji.a aVar = this.I;
-                    if (aVar != null) {
-                        aVar.f(true);
-                    }
-                    this.M = null;
-                    this.K = false;
-                    return true;
-                }
-                org.telegram.ui.Components.o5 o5Var = this.P;
-                if (o5Var == null) {
-                    return false;
-                }
-                this.P = null;
-                org.telegram.ui.Cells.q1 q1Var2 = wvVar.E;
-                org.telegram.ui.Cells.l1 l1Var2 = wvVar.F;
-                if (q1Var2 == null || l1Var2 == null) {
-                    return true;
-                }
-                View view6 = this.S;
-                if (view6 != null) {
-                    view6.playSoundEffect(0);
-                }
-                l1Var2.m0(o5Var);
-                return true;
+            int i11 = readInt32 + 28;
+            if (i11 < nativeByteBuffer.buffer.limit() - 15 || i11 > nativeByteBuffer.buffer.limit()) {
+                i11 = nativeByteBuffer.buffer.limit();
             }
-            if (actionMasked == 3) {
-                this.L = null;
-                this.P = null;
-                if (this.Q != null) {
-                    k();
-                    this.Q.a.m(false);
-                    this.Q = null;
-                    this.K = false;
+            ?? r62 = nativeByteBuffer.buffer;
+            int position = r62.position();
+            int limit2 = r62.limit();
+            try {
+                try {
+                    ?? messageDigest = MessageDigest.getInstance("SHA-1");
+                    r62.position(24);
+                    r62.limit(i11);
+                    messageDigest.update(r62);
+                    bArr3 = messageDigest.digest();
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    r62.limit(limit2);
+                    r62.position(position);
+                    bArr3 = new byte[20];
                 }
-                if (this.M != null) {
-                    k();
-                    ji.a aVar2 = this.I;
-                    if (aVar2 != null) {
-                        aVar2.f(true);
+                r62 = bArr3.length - 16;
+                if (!Utilities.d(bArr2, bArr3, r62)) {
+                    if (z11) {
+                        Utilities.c(nativeByteBuffer.buffer, (byte[]) x10.b, (byte[]) x10.c, true, false, 24, nativeByteBuffer.limit() - 24);
+                        nativeByteBuffer.position(24);
                     }
-                    this.M = null;
-                    this.K = false;
-                    return false;
+                    z12 = true;
                 }
+                if (readInt32 <= 0) {
+                }
+                if (readInt32 > nativeByteBuffer.limit() - 28) {
+                }
+                int limit3 = (nativeByteBuffer.limit() - 28) - readInt32;
+                if (i3 != 2) {
+                }
+            } finally {
+                r62.limit(limit2);
+                r62.position(position);
             }
         }
-        return false;
     }
 
-    public final void u() {
-        k();
-        ns nsVar = new ns(this, 9);
-        this.J = nsVar;
-        i0.h3(nsVar, ViewConfiguration.getLongPressTimeout());
+    public static vv i(int i3) {
+        vv vvVar;
+        vv vvVar2 = r[i3];
+        if (vvVar2 != null) {
+            return vvVar2;
+        }
+        synchronized (vv.class) {
+            try {
+                vvVar = r[i3];
+                if (vvVar == null) {
+                    vv[] vvVarArr = r;
+                    vv vvVar3 = new vv(i3);
+                    vvVarArr[i3] = vvVar3;
+                    vvVar = vvVar3;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return vvVar;
     }
 
-    public vv(wv wvVar, CharSequence charSequence, int i10, Layout.Alignment alignment) {
-        this(wvVar, charSequence, i10, alignment, 1.0f);
+    public final void A(Activity activity, TLRPC.User user) {
+        if (user == null || activity == null) {
+            return;
+        }
+        if (getMessagesController().v2()) {
+            org.telegram.ui.b.b(this.currentAccount);
+            return;
+        }
+        this.n = true;
+        org.telegram.ui.ActionBar.s1 s1Var = new org.telegram.ui.ActionBar.s1(3, activity, null);
+        TLRPC.TL_messages_getDhConfig tL_messages_getDhConfig = new TLRPC.TL_messages_getDhConfig();
+        tL_messages_getDhConfig.random_length = 256;
+        qr messagesStorage = getMessagesStorage();
+        messagesStorage.H();
+        tL_messages_getDhConfig.version = messagesStorage.x;
+        s1Var.setOnCancelListener(new wl(this, getConnectionsManager().sendRequest(tL_messages_getDhConfig, new q6(this, activity, s1Var, user, 4), 2), 2));
+        try {
+            s1Var.show();
+        } catch (Exception unused) {
+        }
     }
 
-    public vv(wv wvVar, CharSequence charSequence, int i10, Layout.Alignment alignment, float f7) {
+    public final void a(TLRPC.EncryptedChat encryptedChat, int i3) {
+        int X0 = g0.X0(encryptedChat.layer);
+        if (i3 <= X0) {
+            return;
+        }
+        if (encryptedChat.key_hash.length == 16) {
+            try {
+                byte[] o10 = Utilities.o(r1.length, encryptedChat.auth_key);
+                byte[] bArr = new byte[36];
+                System.arraycopy(encryptedChat.key_hash, 0, bArr, 0, 16);
+                System.arraycopy(o10, 0, bArr, 16, 20);
+                encryptedChat.key_hash = bArr;
+                getMessagesStorage().V1(encryptedChat);
+            } catch (Throwable th2) {
+                a8.g(th2, true);
+            }
+        }
+        encryptedChat.layer = (i3 << 16) | (encryptedChat.layer & 65535);
+        qr messagesStorage = getMessagesStorage();
+        messagesStorage.a.c(new vp(messagesStorage, encryptedChat, 2));
+        if (X0 < 151) {
+            w(encryptedChat, null);
+        }
+        g0.h3(new ov(this, encryptedChat, 0));
+    }
+
+    public final void b(TLRPC.EncryptedChat encryptedChat, ArrayList arrayList) {
         boolean z10;
+        uv uvVar;
+        TLRPC.TL_decryptedMessageLayer tL_decryptedMessageLayer;
+        int i3;
+        int i10;
+        int i11 = encryptedChat.id;
+        SparseArray sparseArray = this.b;
+        ArrayList arrayList2 = (ArrayList) sparseArray.get(i11);
+        if (arrayList2 == null) {
+            return;
+        }
+        Collections.sort(arrayList2, new tq(8));
+        boolean z11 = false;
+        while (true) {
+            z10 = true;
+            if (arrayList2.size() <= 0 || !((i3 = (tL_decryptedMessageLayer = (uvVar = (uv) arrayList2.get(0)).b).out_seq_no) == (i10 = encryptedChat.seq_in) || i10 == i3 - 2)) {
+                break;
+            }
+            a(encryptedChat, tL_decryptedMessageLayer.layer);
+            TLRPC.TL_decryptedMessageLayer tL_decryptedMessageLayer2 = uvVar.b;
+            encryptedChat.seq_in = tL_decryptedMessageLayer2.out_seq_no;
+            encryptedChat.in_seq_no = tL_decryptedMessageLayer2.in_seq_no;
+            arrayList2.remove(0);
+            if (uvVar.e == 2) {
+                encryptedChat.mtproto_seq = Math.min(encryptedChat.mtproto_seq, encryptedChat.seq_in);
+            }
+            TLRPC.EncryptedChat encryptedChat2 = encryptedChat;
+            TLRPC.Message l10 = l(encryptedChat2, uvVar.c, uvVar.a, uvVar.b.message, uvVar.d);
+            if (l10 != null) {
+                arrayList.add(l10);
+            }
+            z11 = true;
+            encryptedChat = encryptedChat2;
+        }
+        TLRPC.EncryptedChat encryptedChat3 = encryptedChat;
+        if (arrayList2.isEmpty()) {
+            sparseArray.remove(encryptedChat3.id);
+        }
+        if (z11) {
+            qr messagesStorage = getMessagesStorage();
+            messagesStorage.a.c(new qf(messagesStorage, encryptedChat3, z10, 10));
+        }
+    }
+
+    public final TLRPC.TL_messageService c(int i3, int i10, int i11, long j10, TLRPC.EncryptedChat encryptedChat) {
+        TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
+        TLRPC.TL_messageEncryptedAction tL_messageEncryptedAction = new TLRPC.TL_messageEncryptedAction();
+        tL_messageService.action = tL_messageEncryptedAction;
+        tL_messageEncryptedAction.encryptedAction = new TLRPC.TL_decryptedMessageActionDeleteMessages();
+        tL_messageService.action.encryptedAction.random_ids.add(Long.valueOf(j10));
+        tL_messageService.id = i3;
+        tL_messageService.local_id = i3;
+        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+        tL_messageService.from_id = tL_peerUser;
+        tL_peerUser.user_id = getUserConfig().e();
+        tL_messageService.unread = true;
+        tL_messageService.out = true;
+        tL_messageService.flags = 256;
+        tL_messageService.dialog_id = m5.F(encryptedChat.id);
+        tL_messageService.send_state = 1;
+        tL_messageService.seq_in = i11;
+        tL_messageService.seq_out = i10;
+        tL_messageService.peer_id = new TLRPC.TL_peerUser();
+        if (encryptedChat.participant_id == getUserConfig().e()) {
+            tL_messageService.peer_id.user_id = encryptedChat.admin_id;
+        } else {
+            tL_messageService.peer_id.user_id = encryptedChat.participant_id;
+        }
+        tL_messageService.date = 0;
+        tL_messageService.random_id = j10;
+        return tL_messageService;
+    }
+
+    public final TLRPC.TL_messageService d(TLRPC.EncryptedChat encryptedChat, TLRPC.DecryptedMessageAction decryptedMessageAction) {
+        TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
+        TLRPC.TL_messageEncryptedAction tL_messageEncryptedAction = new TLRPC.TL_messageEncryptedAction();
+        tL_messageService.action = tL_messageEncryptedAction;
+        tL_messageEncryptedAction.encryptedAction = decryptedMessageAction;
+        int j10 = getUserConfig().j();
+        tL_messageService.id = j10;
+        tL_messageService.local_id = j10;
+        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+        tL_messageService.from_id = tL_peerUser;
+        tL_peerUser.user_id = getUserConfig().e();
+        tL_messageService.unread = true;
+        tL_messageService.out = true;
+        tL_messageService.flags = 256;
+        tL_messageService.dialog_id = m5.F(encryptedChat.id);
+        tL_messageService.peer_id = new TLRPC.TL_peerUser();
+        tL_messageService.send_state = 1;
+        if (encryptedChat.participant_id == getUserConfig().e()) {
+            tL_messageService.peer_id.user_id = encryptedChat.admin_id;
+        } else {
+            tL_messageService.peer_id.user_id = encryptedChat.participant_id;
+        }
+        if ((decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionScreenshotMessages) || (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionSetMessageTTL)) {
+            tL_messageService.date = getConnectionsManager().getCurrentTime();
+        } else {
+            tL_messageService.date = 0;
+        }
+        getSendMessagesHelper().getClass();
+        tL_messageService.random_id = yy.E();
+        getUserConfig().v(false);
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(tL_messageService);
+        getMessagesStorage().j1(arrayList, false, true, true, 0, false, 0, 0L);
+        return tL_messageService;
+    }
+
+    public final void e(int i3, long j10, boolean z10) {
+        NativeByteBuffer nativeByteBuffer;
+        Exception e10;
+        if (j10 == 0) {
+            try {
+                nativeByteBuffer = new NativeByteBuffer(12);
+            } catch (Exception e11) {
+                nativeByteBuffer = null;
+                e10 = e11;
+            }
+            try {
+                nativeByteBuffer.writeInt32(100);
+                nativeByteBuffer.writeInt32(i3);
+                nativeByteBuffer.writeBool(z10);
+            } catch (Exception e12) {
+                e10 = e12;
+                a8.g(e10, true);
+                j10 = getMessagesStorage().z(nativeByteBuffer);
+                TLRPC.TL_messages_discardEncryption tL_messages_discardEncryption = new TLRPC.TL_messages_discardEncryption();
+                tL_messages_discardEncryption.chat_id = i3;
+                tL_messages_discardEncryption.delete_history = z10;
+                getConnectionsManager().sendRequest(tL_messages_discardEncryption, new p4(this, j10, 3));
+            }
+            j10 = getMessagesStorage().z(nativeByteBuffer);
+        }
+        TLRPC.TL_messages_discardEncryption tL_messages_discardEncryption2 = new TLRPC.TL_messages_discardEncryption();
+        tL_messages_discardEncryption2.chat_id = i3;
+        tL_messages_discardEncryption2.delete_history = z10;
+        getConnectionsManager().sendRequest(tL_messages_discardEncryption2, new p4(this, j10, 3));
+    }
+
+    public final void f(int i3, boolean z10) {
+        e(i3, 0L, z10);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x021f, code lost:
+    
+        if ((((org.telegram.tgnet.TLRPC.TL_decryptedMessageService) r12).action instanceof org.telegram.tgnet.TLRPC.TL_decryptedMessageActionNotifyLayer) != false) goto L102;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final ArrayList g(TLRPC.EncryptedMessage encryptedMessage) {
+        boolean z10;
+        boolean z11;
+        byte[] bArr;
+        int i3;
+        int i10;
         int i11;
-        int L;
+        SparseArray sparseArray = this.c;
+        SparseArray sparseArray2 = this.b;
+        TLRPC.EncryptedChat b12 = getMessagesController().b1(encryptedMessage.chat_id, true);
+        if (b12 == null || (b12 instanceof TLRPC.TL_encryptedChatDiscarded)) {
+            return null;
+        }
+        try {
+            try {
+                if (b12 instanceof TLRPC.TL_encryptedChatWaiting) {
+                    ArrayList arrayList = (ArrayList) sparseArray.get(b12.id);
+                    if (arrayList == null) {
+                        arrayList = new ArrayList();
+                        sparseArray.put(b12.id, arrayList);
+                    }
+                    TL_update.TL_updateNewEncryptedMessage tL_updateNewEncryptedMessage = new TL_update.TL_updateNewEncryptedMessage();
+                    tL_updateNewEncryptedMessage.message = encryptedMessage;
+                    arrayList.add(tL_updateNewEncryptedMessage);
+                    return null;
+                }
+                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(encryptedMessage.bytes.length);
+                nativeByteBuffer.writeBytes(encryptedMessage.bytes);
+                nativeByteBuffer.position(0);
+                long readInt64 = nativeByteBuffer.readInt64(false);
+                if (b12.key_fingerprint == readInt64) {
+                    bArr = b12.auth_key;
+                    z11 = false;
+                } else {
+                    long j10 = b12.future_key_fingerprint;
+                    if (j10 == 0 || j10 != readInt64) {
+                        z11 = false;
+                        bArr = null;
+                    } else {
+                        bArr = b12.future_auth_key;
+                        z11 = true;
+                    }
+                }
+                if (bArr != null) {
+                    byte[] readData = nativeByteBuffer.readData(16, false);
+                    boolean z12 = z11;
+                    boolean z13 = b12.admin_id == getUserConfig().e();
+                    boolean z14 = b12.mtproto_seq == 0;
+                    byte[] bArr2 = bArr;
+                    if (h(nativeByteBuffer, bArr2, readData, 2, z13, z14)) {
+                        i3 = 2;
+                        i10 = 2;
+                    } else {
+                        if (!z14) {
+                            return null;
+                        }
+                        i3 = 2;
+                        try {
+                            if (!h(nativeByteBuffer, bArr2, readData, 1, z13, false)) {
+                                return null;
+                            }
+                            i10 = 1;
+                        } catch (Exception e10) {
+                            e = e10;
+                            z10 = true;
+                            a8.g(e, z10);
+                            return null;
+                        }
+                    }
+                    TLObject TLdeserialize = TLClassStore.Instance().TLdeserialize(nativeByteBuffer, nativeByteBuffer.readInt32(false), false);
+                    nativeByteBuffer.reuse();
+                    if (!z12) {
+                        b12.key_use_count_in = (short) (b12.key_use_count_in + 1);
+                    }
+                    if (TLdeserialize instanceof TLRPC.TL_decryptedMessageLayer) {
+                        TLRPC.TL_decryptedMessageLayer tL_decryptedMessageLayer = (TLRPC.TL_decryptedMessageLayer) TLdeserialize;
+                        if (b12.seq_in == 0 && b12.seq_out == 0) {
+                            if (b12.admin_id == getUserConfig().e()) {
+                                b12.seq_out = 1;
+                                b12.seq_in = -2;
+                            } else {
+                                b12.seq_in = -1;
+                            }
+                        }
+                        if (tL_decryptedMessageLayer.random_bytes.length < 15) {
+                            if (!r2.a) {
+                                return null;
+                            }
+                            a8.d("got random bytes less than needed");
+                            return null;
+                        }
+                        if (r2.a) {
+                            a8.b("current chat in_seq = " + b12.seq_in + " out_seq = " + b12.seq_out);
+                            a8.b("got message with in_seq = " + tL_decryptedMessageLayer.in_seq_no + " out_seq = " + tL_decryptedMessageLayer.out_seq_no);
+                        }
+                        int i12 = tL_decryptedMessageLayer.out_seq_no;
+                        int i13 = b12.seq_in;
+                        if (i12 <= i13) {
+                            return null;
+                        }
+                        if (i10 == 1 && (i11 = b12.mtproto_seq) != 0 && i12 >= i11) {
+                            return null;
+                        }
+                        if (i13 != i12 - i3) {
+                            if (r2.a) {
+                                a8.d("got hole");
+                            }
+                            y(b12, b12.seq_in + i3, tL_decryptedMessageLayer.out_seq_no - i3, null);
+                            ArrayList arrayList2 = (ArrayList) sparseArray2.get(b12.id);
+                            if (arrayList2 == null) {
+                                arrayList2 = new ArrayList();
+                                sparseArray2.put(b12.id, arrayList2);
+                            }
+                            if (arrayList2.size() < 4) {
+                                uv uvVar = new uv();
+                                uvVar.b = tL_decryptedMessageLayer;
+                                uvVar.c = encryptedMessage.file;
+                                uvVar.a = encryptedMessage.date;
+                                uvVar.d = z12;
+                                uvVar.e = i10;
+                                arrayList2.add(uvVar);
+                                return null;
+                            }
+                            sparseArray2.remove(b12.id);
+                            TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded = new TLRPC.TL_encryptedChatDiscarded();
+                            tL_encryptedChatDiscarded.id = b12.id;
+                            tL_encryptedChatDiscarded.user_id = b12.user_id;
+                            tL_encryptedChatDiscarded.auth_key = b12.auth_key;
+                            tL_encryptedChatDiscarded.key_create_date = b12.key_create_date;
+                            tL_encryptedChatDiscarded.key_use_count_in = b12.key_use_count_in;
+                            tL_encryptedChatDiscarded.key_use_count_out = b12.key_use_count_out;
+                            tL_encryptedChatDiscarded.seq_in = b12.seq_in;
+                            tL_encryptedChatDiscarded.seq_out = b12.seq_out;
+                            g0.h3(new qv(this, tL_encryptedChatDiscarded, 1));
+                            f(b12.id, false);
+                            return null;
+                        }
+                        if (i10 == i3) {
+                            b12.mtproto_seq = Math.min(b12.mtproto_seq, i13);
+                        }
+                        a(b12, tL_decryptedMessageLayer.layer);
+                        b12.seq_in = tL_decryptedMessageLayer.out_seq_no;
+                        b12.in_seq_no = tL_decryptedMessageLayer.in_seq_no;
+                        qr messagesStorage = getMessagesStorage();
+                        messagesStorage.a.c(new qf((Object) messagesStorage, (Object) b12, true, 10));
+                        TLdeserialize = tL_decryptedMessageLayer.message;
+                    } else if (TLdeserialize instanceof TLRPC.TL_decryptedMessageService) {
+                    }
+                    TLObject tLObject = TLdeserialize;
+                    ArrayList arrayList3 = new ArrayList();
+                    TLRPC.Message l10 = l(b12, encryptedMessage.file, encryptedMessage.date, tLObject, z12);
+                    if (l10 != null) {
+                        arrayList3.add(l10);
+                    }
+                    b(b12, arrayList3);
+                    return arrayList3;
+                }
+                nativeByteBuffer.reuse();
+                if (r2.a) {
+                    a8.d(String.format("fingerprint mismatch %x", Long.valueOf(readInt64)));
+                    return null;
+                }
+                return null;
+            } catch (Exception e11) {
+                e = e11;
+                z10 = true;
+            }
+        } catch (Exception e12) {
+            e = e12;
+            z10 = true;
+        }
+    }
+
+    public final void j(TLRPC.DecryptedMessage decryptedMessage, TLRPC.Message message, TLRPC.EncryptedChat encryptedChat, TLRPC.InputEncryptedFile inputEncryptedFile, String str, zi ziVar) {
+        if (decryptedMessage == null || encryptedChat.auth_key == null || (encryptedChat instanceof TLRPC.TL_encryptedChatRequested) || (encryptedChat instanceof TLRPC.TL_encryptedChatWaiting)) {
+            return;
+        }
+        getSendMessagesHelper().f0(message, false);
+        Utilities.d.c(new wm(this, encryptedChat, decryptedMessage, message, inputEncryptedFile, ziVar, str, 3));
+    }
+
+    public final void k(TLRPC.TL_messages_sendEncryptedMultiMedia tL_messages_sendEncryptedMultiMedia, ky kyVar) {
+        for (int i3 = 0; i3 < tL_messages_sendEncryptedMultiMedia.files.size(); i3++) {
+            j(tL_messages_sendEncryptedMultiMedia.messages.get(i3), (TLRPC.Message) kyVar.z.get(i3), kyVar.n, tL_messages_sendEncryptedMultiMedia.files.get(i3), (String) kyVar.B.get(i3), (zi) kyVar.x.get(i3));
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:290:0x07dd  */
+    /* JADX WARN: Removed duplicated region for block: B:292:0x07ec  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final TLRPC.Message l(TLRPC.EncryptedChat encryptedChat, TLRPC.EncryptedFile encryptedFile, int i3, TLObject tLObject, boolean z10) {
+        int i10;
+        int i11;
         int i12;
-        SpannableStringBuilder spannableStringBuilder;
-        Class<org.telegram.ui.Components.o5> cls;
-        int i13;
-        this.x = new ArrayList();
-        this.y = new Stack();
-        this.D = new AtomicReference();
-        this.R = new RectF();
-        this.a = wvVar;
-        TextPaint textPaint = wvVar.w;
-        Paint.FontMetricsInt fontMetricsInt = textPaint.getFontMetricsInt();
-        boolean z11 = true;
-        boolean z12 = false;
-        if (charSequence instanceof Spanned) {
-            for (sv svVar : (sv[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), sv.class)) {
-                int i14 = svVar.b & 15;
-                if (i14 >= 1 && i14 <= 6) {
-                    TextPaint textPaint2 = new TextPaint(textPaint);
-                    svVar.a(textPaint2);
-                    fontMetricsInt = textPaint2.getFontMetricsInt();
-                    z10 = true;
-                    break;
-                }
+        byte[] bArr;
+        long g7;
+        byte[] bArr2;
+        byte[] bArr3;
+        byte[] bArr4;
+        TLRPC.PhotoSize tL_photoSizeEmpty;
+        byte[] bArr5;
+        TLRPC.PhotoSize tL_photoSizeEmpty2;
+        byte[] bArr6;
+        if (tLObject != null) {
+            long j10 = encryptedChat.admin_id;
+            if (j10 == getUserConfig().e()) {
+                j10 = encryptedChat.participant_id;
             }
-        }
-        z10 = false;
-        CharSequence n10 = k6.n(charSequence, fontMetricsInt, false, null, 0, z10 ? 0.85f : 1.0f, 0);
-        if (n10 instanceof Spanned) {
-            Spanned spanned = (Spanned) n10;
-            Class<org.telegram.ui.Components.o5> cls2 = org.telegram.ui.Components.o5.class;
-            if (((org.telegram.ui.Components.o5[]) spanned.getSpans(0, spanned.length(), cls2)).length != 0 || ((h6[]) spanned.getSpans(0, spanned.length(), h6.class)).length != 0 || ((uu[]) spanned.getSpans(0, spanned.length(), uu.class)).length != 0) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(n10);
-                for (org.telegram.ui.Components.o5 o5Var : (org.telegram.ui.Components.o5[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), cls2)) {
-                    o5Var.setPreserveFontMetrics(true);
+            if (encryptedChat.exchange_id == 0 && encryptedChat.future_key_fingerprint == 0 && encryptedChat.key_use_count_in >= 120) {
+                o(encryptedChat);
+            }
+            long j11 = encryptedChat.exchange_id;
+            if (j11 == 0 && encryptedChat.future_key_fingerprint != 0 && !z10) {
+                encryptedChat.future_auth_key = new byte[256];
+                encryptedChat.future_key_fingerprint = 0L;
+                getMessagesStorage().V1(encryptedChat);
+            } else if (j11 != 0 && z10) {
+                encryptedChat.key_fingerprint = encryptedChat.future_key_fingerprint;
+                encryptedChat.auth_key = encryptedChat.future_auth_key;
+                encryptedChat.key_create_date = getConnectionsManager().getCurrentTime();
+                encryptedChat.future_auth_key = new byte[256];
+                encryptedChat.future_key_fingerprint = 0L;
+                encryptedChat.key_use_count_in = (short) 0;
+                encryptedChat.key_use_count_out = (short) 0;
+                encryptedChat.exchange_id = 0L;
+                getMessagesStorage().V1(encryptedChat);
+            }
+            if (tLObject instanceof TLRPC.TL_decryptedMessage) {
+                TLRPC.TL_decryptedMessage tL_decryptedMessage = (TLRPC.TL_decryptedMessage) tLObject;
+                TLRPC.TL_message_secret tL_message_secret = new TLRPC.TL_message_secret();
+                tL_message_secret.ttl = tL_decryptedMessage.ttl;
+                tL_message_secret.entities = tL_decryptedMessage.entities;
+                tL_message_secret.message = tL_decryptedMessage.message;
+                tL_message_secret.date = i3;
+                int j12 = getUserConfig().j();
+                tL_message_secret.id = j12;
+                tL_message_secret.local_id = j12;
+                tL_message_secret.silent = tL_decryptedMessage.silent;
+                getUserConfig().v(false);
+                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                tL_message_secret.from_id = tL_peerUser;
+                tL_peerUser.user_id = j10;
+                TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
+                tL_message_secret.peer_id = tL_peerUser2;
+                tL_peerUser2.user_id = getUserConfig().e();
+                tL_message_secret.random_id = tL_decryptedMessage.random_id;
+                tL_message_secret.unread = true;
+                tL_message_secret.flags = 768;
+                String str = tL_decryptedMessage.via_bot_name;
+                if (str != null && str.length() > 0) {
+                    tL_message_secret.via_bot_name = tL_decryptedMessage.via_bot_name;
+                    tL_message_secret.flags |= 2048;
                 }
-                for (h6 h6Var : (h6[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), h6.class)) {
-                    h6Var.e = true;
+                long j13 = tL_decryptedMessage.grouped_id;
+                if (j13 != 0) {
+                    tL_message_secret.grouped_id = j13;
+                    tL_message_secret.flags |= 131072;
                 }
-                for (uu uuVar : (uu[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), uu.class)) {
-                    if (uuVar.a.a.s > 0) {
-                        uuVar.e = true;
+                tL_message_secret.dialog_id = m5.F(encryptedChat.id);
+                if (tL_decryptedMessage.reply_to_random_id != 0) {
+                    TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
+                    tL_message_secret.reply_to = tL_messageReplyHeader;
+                    tL_messageReplyHeader.reply_to_random_id = tL_decryptedMessage.reply_to_random_id;
+                    tL_message_secret.flags |= 8;
+                }
+                TLRPC.DecryptedMessageMedia decryptedMessageMedia = tL_decryptedMessage.media;
+                if (decryptedMessageMedia == null || (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaEmpty)) {
+                    tL_message_secret.media = new TLRPC.TL_messageMediaEmpty();
+                } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaWebPage) {
+                    TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
+                    tL_message_secret.media = tL_messageMediaWebPage;
+                    tL_messageMediaWebPage.webpage = new TLRPC.TL_webPageUrlPending();
+                    tL_message_secret.media.webpage.url = tL_decryptedMessage.media.url;
+                } else {
+                    if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaContact) {
+                        TLRPC.TL_messageMediaContact tL_messageMediaContact = new TLRPC.TL_messageMediaContact();
+                        tL_message_secret.media = tL_messageMediaContact;
+                        TLRPC.DecryptedMessageMedia decryptedMessageMedia2 = tL_decryptedMessage.media;
+                        tL_messageMediaContact.last_name = decryptedMessageMedia2.last_name;
+                        tL_messageMediaContact.first_name = decryptedMessageMedia2.first_name;
+                        tL_messageMediaContact.phone_number = decryptedMessageMedia2.phone_number;
+                        tL_messageMediaContact.user_id = decryptedMessageMedia2.user_id;
+                        tL_messageMediaContact.vcard = "";
+                    } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaGeoPoint) {
+                        TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
+                        tL_message_secret.media = tL_messageMediaGeo;
+                        tL_messageMediaGeo.geo = new TLRPC.TL_geoPoint();
+                        TLRPC.GeoPoint geoPoint = tL_message_secret.media.geo;
+                        TLRPC.DecryptedMessageMedia decryptedMessageMedia3 = tL_decryptedMessage.media;
+                        geoPoint.lat = decryptedMessageMedia3.lat;
+                        geoPoint._long = decryptedMessageMedia3._long;
+                    } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaPhoto) {
+                        byte[] bArr7 = decryptedMessageMedia.key;
+                        if (bArr7 != null && bArr7.length == 32 && (bArr6 = decryptedMessageMedia.iv) != null && bArr6.length == 32) {
+                            TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
+                            tL_message_secret.media = tL_messageMediaPhoto;
+                            tL_messageMediaPhoto.flags |= 3;
+                            if (TextUtils.isEmpty(tL_message_secret.message)) {
+                                String str2 = tL_decryptedMessage.media.caption;
+                                tL_message_secret.message = str2 != null ? str2 : "";
+                            }
+                            tL_message_secret.media.photo = new TLRPC.TL_photo();
+                            TLRPC.Photo photo = tL_message_secret.media.photo;
+                            photo.file_reference = new byte[0];
+                            photo.date = tL_message_secret.date;
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia4 = tL_decryptedMessage.media;
+                            byte[] bArr8 = ((TLRPC.TL_decryptedMessageMediaPhoto) decryptedMessageMedia4).thumb;
+                            if (bArr8 != null && bArr8.length != 0 && bArr8.length <= 6000 && decryptedMessageMedia4.thumb_w <= 100 && decryptedMessageMedia4.thumb_h <= 100) {
+                                TLRPC.TL_photoCachedSize tL_photoCachedSize = new TLRPC.TL_photoCachedSize();
+                                TLRPC.DecryptedMessageMedia decryptedMessageMedia5 = tL_decryptedMessage.media;
+                                tL_photoCachedSize.w = decryptedMessageMedia5.thumb_w;
+                                tL_photoCachedSize.h = decryptedMessageMedia5.thumb_h;
+                                tL_photoCachedSize.bytes = bArr8;
+                                tL_photoCachedSize.type = "s";
+                                tL_photoCachedSize.location = new TLRPC.TL_fileLocationUnavailable();
+                                tL_message_secret.media.photo.sizes.add(tL_photoCachedSize);
+                            }
+                            int i13 = tL_message_secret.ttl;
+                            if (i13 != 0) {
+                                TLRPC.MessageMedia messageMedia = tL_message_secret.media;
+                                messageMedia.ttl_seconds = i13;
+                                messageMedia.flags |= 4;
+                            }
+                            TLRPC.TL_photoSize_layer127 tL_photoSize_layer127 = new TLRPC.TL_photoSize_layer127();
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia6 = tL_decryptedMessage.media;
+                            tL_photoSize_layer127.w = decryptedMessageMedia6.w;
+                            tL_photoSize_layer127.h = decryptedMessageMedia6.h;
+                            tL_photoSize_layer127.type = "x";
+                            tL_photoSize_layer127.size = (int) encryptedFile.size;
+                            TLRPC.TL_fileEncryptedLocation tL_fileEncryptedLocation = new TLRPC.TL_fileEncryptedLocation();
+                            tL_photoSize_layer127.location = tL_fileEncryptedLocation;
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia7 = tL_decryptedMessage.media;
+                            tL_fileEncryptedLocation.key = decryptedMessageMedia7.key;
+                            tL_fileEncryptedLocation.iv = decryptedMessageMedia7.iv;
+                            tL_fileEncryptedLocation.dc_id = encryptedFile.dc_id;
+                            tL_fileEncryptedLocation.volume_id = encryptedFile.id;
+                            tL_fileEncryptedLocation.secret = encryptedFile.access_hash;
+                            tL_fileEncryptedLocation.local_id = encryptedFile.key_fingerprint;
+                            tL_message_secret.media.photo.sizes.add(tL_photoSize_layer127);
+                        }
+                    } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaVideo) {
+                        byte[] bArr9 = decryptedMessageMedia.key;
+                        if (bArr9 != null && bArr9.length == 32 && (bArr5 = decryptedMessageMedia.iv) != null && bArr5.length == 32) {
+                            TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+                            tL_message_secret.media = tL_messageMediaDocument;
+                            tL_messageMediaDocument.flags |= 3;
+                            tL_messageMediaDocument.document = new TLRPC.TL_documentEncrypted();
+                            TLRPC.Document document = tL_message_secret.media.document;
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia8 = tL_decryptedMessage.media;
+                            document.key = decryptedMessageMedia8.key;
+                            document.iv = decryptedMessageMedia8.iv;
+                            document.dc_id = encryptedFile.dc_id;
+                            if (TextUtils.isEmpty(tL_message_secret.message)) {
+                                String str3 = tL_decryptedMessage.media.caption;
+                                tL_message_secret.message = str3 != null ? str3 : "";
+                            }
+                            TLRPC.Document document2 = tL_message_secret.media.document;
+                            document2.date = i3;
+                            document2.size = encryptedFile.size;
+                            document2.id = encryptedFile.id;
+                            document2.access_hash = encryptedFile.access_hash;
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia9 = tL_decryptedMessage.media;
+                            String str4 = decryptedMessageMedia9.mime_type;
+                            document2.mime_type = str4;
+                            if (str4 == null) {
+                                document2.mime_type = "video/mp4";
+                            }
+                            byte[] bArr10 = ((TLRPC.TL_decryptedMessageMediaVideo) decryptedMessageMedia9).thumb;
+                            if (bArr10 == null || bArr10.length == 0 || bArr10.length > 6000 || decryptedMessageMedia9.thumb_w > 100 || decryptedMessageMedia9.thumb_h > 100) {
+                                tL_photoSizeEmpty2 = new TLRPC.TL_photoSizeEmpty();
+                                tL_photoSizeEmpty2.type = "s";
+                            } else {
+                                tL_photoSizeEmpty2 = new TLRPC.TL_photoCachedSize();
+                                tL_photoSizeEmpty2.bytes = bArr10;
+                                TLRPC.DecryptedMessageMedia decryptedMessageMedia10 = tL_decryptedMessage.media;
+                                tL_photoSizeEmpty2.w = decryptedMessageMedia10.thumb_w;
+                                tL_photoSizeEmpty2.h = decryptedMessageMedia10.thumb_h;
+                                tL_photoSizeEmpty2.type = "s";
+                                tL_photoSizeEmpty2.location = new TLRPC.TL_fileLocationUnavailable();
+                            }
+                            tL_message_secret.media.document.thumbs.add(tL_photoSizeEmpty2);
+                            tL_message_secret.media.document.flags |= 1;
+                            TLRPC.TL_documentAttributeVideo_layer159 tL_documentAttributeVideo_layer159 = new TLRPC.TL_documentAttributeVideo_layer159();
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia11 = tL_decryptedMessage.media;
+                            tL_documentAttributeVideo_layer159.w = decryptedMessageMedia11.w;
+                            tL_documentAttributeVideo_layer159.h = decryptedMessageMedia11.h;
+                            tL_documentAttributeVideo_layer159.duration = decryptedMessageMedia11.duration;
+                            tL_documentAttributeVideo_layer159.supports_streaming = false;
+                            tL_message_secret.media.document.attributes.add(tL_documentAttributeVideo_layer159);
+                            int i14 = tL_message_secret.ttl;
+                            if (i14 != 0) {
+                                TLRPC.MessageMedia messageMedia2 = tL_message_secret.media;
+                                messageMedia2.ttl_seconds = i14;
+                                messageMedia2.flags |= 4;
+                            }
+                            if (i14 != 0) {
+                                tL_message_secret.ttl = Math.max(tL_decryptedMessage.media.duration + 1, i14);
+                            }
+                        }
+                    } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaDocument) {
+                        byte[] bArr11 = decryptedMessageMedia.key;
+                        if (bArr11 != null && bArr11.length == 32 && (bArr4 = decryptedMessageMedia.iv) != null && bArr4.length == 32) {
+                            TLRPC.TL_messageMediaDocument tL_messageMediaDocument2 = new TLRPC.TL_messageMediaDocument();
+                            tL_message_secret.media = tL_messageMediaDocument2;
+                            tL_messageMediaDocument2.flags |= 3;
+                            if (TextUtils.isEmpty(tL_message_secret.message)) {
+                                String str5 = tL_decryptedMessage.media.caption;
+                                if (str5 == null) {
+                                    str5 = "";
+                                }
+                                tL_message_secret.message = str5;
+                            }
+                            tL_message_secret.media.document = new TLRPC.TL_documentEncrypted();
+                            TLRPC.Document document3 = tL_message_secret.media.document;
+                            document3.id = encryptedFile.id;
+                            document3.access_hash = encryptedFile.access_hash;
+                            document3.date = i3;
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia12 = tL_decryptedMessage.media;
+                            document3.mime_type = decryptedMessageMedia12.mime_type;
+                            if (decryptedMessageMedia12 instanceof TLRPC.TL_decryptedMessageMediaDocument_layer8) {
+                                TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
+                                tL_documentAttributeFilename.file_name = tL_decryptedMessage.media.file_name;
+                                tL_message_secret.media.document.attributes.add(tL_documentAttributeFilename);
+                            } else {
+                                document3.attributes = decryptedMessageMedia12.attributes;
+                            }
+                            if (tL_message_secret.ttl > 0) {
+                                int size = tL_message_secret.media.document.attributes.size();
+                                for (int i15 = 0; i15 < size; i15++) {
+                                    TLRPC.DocumentAttribute documentAttribute = tL_message_secret.media.document.attributes.get(i15);
+                                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeAudio) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                                        tL_message_secret.ttl = (int) Math.max(documentAttribute.duration + 1.0d, tL_message_secret.ttl);
+                                        break;
+                                    }
+                                }
+                                tL_message_secret.ttl = Math.max(tL_decryptedMessage.media.duration + 1, tL_message_secret.ttl);
+                            }
+                            TLRPC.Document document4 = tL_message_secret.media.document;
+                            long j14 = tL_decryptedMessage.media.size;
+                            document4.size = j14 != 0 ? Math.min(j14, encryptedFile.size) : encryptedFile.size;
+                            TLRPC.Document document5 = tL_message_secret.media.document;
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia13 = tL_decryptedMessage.media;
+                            document5.key = decryptedMessageMedia13.key;
+                            document5.iv = decryptedMessageMedia13.iv;
+                            String str6 = document5.mime_type;
+                            if (str6 == null) {
+                                document5.mime_type = "";
+                            } else if ("application/x-tgsticker".equals(str6) || "application/x-tgsdice".equals(tL_message_secret.media.document.mime_type)) {
+                                tL_message_secret.media.document.mime_type = "application/x-bad_tgsticker";
+                            }
+                            byte[] bArr12 = ((TLRPC.TL_decryptedMessageMediaDocument) tL_decryptedMessage.media).thumb;
+                            if (bArr12 == null || bArr12.length == 0 || bArr12.length > 20000) {
+                                tL_photoSizeEmpty = new TLRPC.TL_photoSizeEmpty();
+                                tL_photoSizeEmpty.type = "s";
+                            } else {
+                                tL_photoSizeEmpty = new TLRPC.TL_photoCachedSize();
+                                tL_photoSizeEmpty.bytes = bArr12;
+                                TLRPC.DecryptedMessageMedia decryptedMessageMedia14 = tL_decryptedMessage.media;
+                                tL_photoSizeEmpty.w = decryptedMessageMedia14.thumb_w;
+                                tL_photoSizeEmpty.h = decryptedMessageMedia14.thumb_h;
+                                tL_photoSizeEmpty.type = "s";
+                                tL_photoSizeEmpty.location = new TLRPC.TL_fileLocationUnavailable();
+                            }
+                            tL_message_secret.media.document.thumbs.add(tL_photoSizeEmpty);
+                            TLRPC.Document document6 = tL_message_secret.media.document;
+                            document6.flags |= 1;
+                            document6.dc_id = encryptedFile.dc_id;
+                            if (zi.S4(tL_message_secret) || zi.k4(tL_message_secret)) {
+                                tL_message_secret.media_unread = true;
+                            }
+                        }
+                    } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaExternalDocument) {
+                        TLRPC.TL_messageMediaDocument tL_messageMediaDocument3 = new TLRPC.TL_messageMediaDocument();
+                        tL_message_secret.media = tL_messageMediaDocument3;
+                        tL_messageMediaDocument3.flags |= 3;
+                        tL_message_secret.message = "";
+                        tL_messageMediaDocument3.document = new TLRPC.TL_document();
+                        TLRPC.Document document7 = tL_message_secret.media.document;
+                        TLRPC.DecryptedMessageMedia decryptedMessageMedia15 = tL_decryptedMessage.media;
+                        document7.id = decryptedMessageMedia15.id;
+                        document7.access_hash = decryptedMessageMedia15.access_hash;
+                        document7.file_reference = new byte[0];
+                        document7.date = decryptedMessageMedia15.date;
+                        document7.attributes = decryptedMessageMedia15.attributes;
+                        document7.mime_type = decryptedMessageMedia15.mime_type;
+                        document7.dc_id = decryptedMessageMedia15.dc_id;
+                        document7.size = decryptedMessageMedia15.size;
+                        document7.thumbs.add(((TLRPC.TL_decryptedMessageMediaExternalDocument) decryptedMessageMedia15).thumb);
+                        TLRPC.Document document8 = tL_message_secret.media.document;
+                        document8.flags |= 1;
+                        if (document8.mime_type == null) {
+                            document8.mime_type = "";
+                        }
+                        if (zi.M2(tL_message_secret)) {
+                            tL_message_secret.stickerVerified = 0;
+                            getMediaDataController().n2(tL_message_secret, true);
+                        }
+                    } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaAudio) {
+                        byte[] bArr13 = decryptedMessageMedia.key;
+                        if (bArr13 != null && bArr13.length == 32 && (bArr3 = decryptedMessageMedia.iv) != null && bArr3.length == 32) {
+                            TLRPC.TL_messageMediaDocument tL_messageMediaDocument4 = new TLRPC.TL_messageMediaDocument();
+                            tL_message_secret.media = tL_messageMediaDocument4;
+                            tL_messageMediaDocument4.flags |= 3;
+                            tL_messageMediaDocument4.document = new TLRPC.TL_documentEncrypted();
+                            TLRPC.Document document9 = tL_message_secret.media.document;
+                            TLRPC.DecryptedMessageMedia decryptedMessageMedia16 = tL_decryptedMessage.media;
+                            document9.key = decryptedMessageMedia16.key;
+                            document9.iv = decryptedMessageMedia16.iv;
+                            document9.id = encryptedFile.id;
+                            document9.access_hash = encryptedFile.access_hash;
+                            document9.date = i3;
+                            document9.size = encryptedFile.size;
+                            document9.dc_id = encryptedFile.dc_id;
+                            document9.mime_type = decryptedMessageMedia16.mime_type;
+                            if (TextUtils.isEmpty(tL_message_secret.message)) {
+                                String str7 = tL_decryptedMessage.media.caption;
+                                tL_message_secret.message = str7 != null ? str7 : "";
+                            }
+                            TLRPC.Document document10 = tL_message_secret.media.document;
+                            if (document10.mime_type == null) {
+                                document10.mime_type = "audio/ogg";
+                            }
+                            TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio = new TLRPC.TL_documentAttributeAudio();
+                            tL_documentAttributeAudio.duration = tL_decryptedMessage.media.duration;
+                            tL_documentAttributeAudio.voice = true;
+                            tL_message_secret.media.document.attributes.add(tL_documentAttributeAudio);
+                            int i16 = tL_message_secret.ttl;
+                            if (i16 != 0) {
+                                tL_message_secret.ttl = Math.max(tL_decryptedMessage.media.duration + 1, i16);
+                            }
+                            if (tL_message_secret.media.document.thumbs.isEmpty()) {
+                                TLRPC.TL_photoSizeEmpty tL_photoSizeEmpty3 = new TLRPC.TL_photoSizeEmpty();
+                                tL_photoSizeEmpty3.type = "s";
+                                tL_message_secret.media.document.thumbs.add(tL_photoSizeEmpty3);
+                            }
+                        }
+                    } else if (decryptedMessageMedia instanceof TLRPC.TL_decryptedMessageMediaVenue) {
+                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
+                        tL_message_secret.media = tL_messageMediaVenue;
+                        tL_messageMediaVenue.geo = new TLRPC.TL_geoPoint();
+                        TLRPC.MessageMedia messageMedia3 = tL_message_secret.media;
+                        TLRPC.GeoPoint geoPoint2 = messageMedia3.geo;
+                        TLRPC.DecryptedMessageMedia decryptedMessageMedia17 = tL_decryptedMessage.media;
+                        geoPoint2.lat = decryptedMessageMedia17.lat;
+                        geoPoint2._long = decryptedMessageMedia17._long;
+                        messageMedia3.title = decryptedMessageMedia17.title;
+                        messageMedia3.address = decryptedMessageMedia17.address;
+                        messageMedia3.provider = decryptedMessageMedia17.provider;
+                        messageMedia3.venue_id = decryptedMessageMedia17.venue_id;
+                        messageMedia3.venue_type = "";
                     }
                 }
-                int i15 = 0;
-                while (true) {
-                    if (i15 >= spannableStringBuilder2.length()) {
-                        spannableStringBuilder = spannableStringBuilder2;
-                        break;
+                int i17 = tL_message_secret.ttl;
+                if (i17 != 0) {
+                    TLRPC.MessageMedia messageMedia4 = tL_message_secret.media;
+                    if (messageMedia4.ttl_seconds == 0) {
+                        messageMedia4.ttl_seconds = i17;
+                        messageMedia4.flags |= 4;
                     }
-                    int indexOf = TextUtils.indexOf((CharSequence) spannableStringBuilder2, '\n', i15);
-                    boolean z13 = indexOf >= 0 ? z11 : z12;
-                    indexOf = z13 ? indexOf : spannableStringBuilder2.length();
-                    a3.l s10 = s(spannableStringBuilder2, i15, indexOf, textPaint);
-                    int i16 = s10.b;
-                    if (i16 <= 0 || s10.a * 100 < i16 * 70 || (i13 = s10.c) <= 0) {
-                        spannableStringBuilder = spannableStringBuilder2;
-                        cls = cls2;
+                }
+                String str8 = tL_message_secret.message;
+                if (str8 != null) {
+                    tL_message_secret.message = str8.replace((char) 8238, ' ');
+                }
+                return tL_message_secret;
+            }
+            if (tLObject instanceof TLRPC.TL_decryptedMessageService) {
+                TLRPC.TL_decryptedMessageService tL_decryptedMessageService = (TLRPC.TL_decryptedMessageService) tLObject;
+                TLRPC.DecryptedMessageAction decryptedMessageAction = tL_decryptedMessageService.action;
+                if ((decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionSetMessageTTL) || (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionScreenshotMessages)) {
+                    TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
+                    if (tL_decryptedMessageService.action instanceof TLRPC.TL_decryptedMessageActionSetMessageTTL) {
+                        TLRPC.TL_messageEncryptedAction tL_messageEncryptedAction = new TLRPC.TL_messageEncryptedAction();
+                        tL_messageService.action = tL_messageEncryptedAction;
+                        TLRPC.DecryptedMessageAction decryptedMessageAction2 = tL_decryptedMessageService.action;
+                        int i18 = decryptedMessageAction2.ttl_seconds;
+                        if (i18 < 0 || i18 > 31536000) {
+                            decryptedMessageAction2.ttl_seconds = 31536000;
+                        }
+                        encryptedChat.ttl = decryptedMessageAction2.ttl_seconds;
+                        tL_messageEncryptedAction.encryptedAction = decryptedMessageAction2;
+                        qr messagesStorage = getMessagesStorage();
+                        messagesStorage.a.c(new vp(messagesStorage, encryptedChat, 0));
                     } else {
-                        org.telegram.ui.Components.o5[] o5VarArr = (org.telegram.ui.Components.o5[]) spannableStringBuilder2.getSpans(i15, indexOf, cls2);
-                        int length = o5VarArr.length;
-                        int i17 = 0;
-                        while (i17 < length) {
-                            org.telegram.ui.Components.o5 o5Var2 = o5VarArr[i17];
-                            Class<org.telegram.ui.Components.o5> cls3 = cls2;
-                            int spanStart = spannableStringBuilder2.getSpanStart(o5Var2);
-                            if (spanStart >= i15 && spanStart < indexOf) {
-                                o5Var2.setMinimumLineHeight(i13);
-                            }
-                            i17++;
-                            cls2 = cls3;
-                        }
-                        cls = cls2;
-                        for (h6 h6Var2 : (h6[]) spannableStringBuilder2.getSpans(i15, indexOf, h6.class)) {
-                            int spanStart2 = spannableStringBuilder2.getSpanStart(h6Var2);
-                            if (spanStart2 >= i15 && spanStart2 < indexOf) {
-                                h6Var2.f = i13;
-                            }
-                        }
-                        uu[] uuVarArr = (uu[]) spannableStringBuilder2.getSpans(i15, indexOf, uu.class);
-                        int length2 = uuVarArr.length;
-                        int i18 = 0;
-                        while (i18 < length2) {
-                            uu uuVar2 = uuVarArr[i18];
-                            int spanStart3 = spannableStringBuilder2.getSpanStart(uuVar2);
-                            SpannableStringBuilder spannableStringBuilder3 = spannableStringBuilder2;
-                            if (uuVar2.a.a.s > 0 && spanStart3 >= i15 && spanStart3 < indexOf) {
-                                uuVar2.f = i13;
-                            }
-                            i18++;
-                            spannableStringBuilder2 = spannableStringBuilder3;
-                        }
-                        spannableStringBuilder = spannableStringBuilder2;
+                        TLRPC.TL_messageEncryptedAction tL_messageEncryptedAction2 = new TLRPC.TL_messageEncryptedAction();
+                        tL_messageService.action = tL_messageEncryptedAction2;
+                        tL_messageEncryptedAction2.encryptedAction = tL_decryptedMessageService.action;
                     }
-                    if (!z13) {
-                        break;
-                    }
-                    i15 = indexOf + 1;
-                    cls2 = cls;
-                    spannableStringBuilder2 = spannableStringBuilder;
-                    z11 = true;
-                    z12 = false;
+                    int j15 = getUserConfig().j();
+                    tL_messageService.id = j15;
+                    tL_messageService.local_id = j15;
+                    getUserConfig().v(false);
+                    tL_messageService.unread = true;
+                    tL_messageService.flags = 256;
+                    tL_messageService.date = i3;
+                    TLRPC.TL_peerUser tL_peerUser3 = new TLRPC.TL_peerUser();
+                    tL_messageService.from_id = tL_peerUser3;
+                    tL_peerUser3.user_id = j10;
+                    TLRPC.TL_peerUser tL_peerUser4 = new TLRPC.TL_peerUser();
+                    tL_messageService.peer_id = tL_peerUser4;
+                    tL_peerUser4.user_id = getUserConfig().e();
+                    tL_messageService.dialog_id = m5.F(encryptedChat.id);
+                    return tL_messageService;
                 }
-                n10 = spannableStringBuilder;
-            }
-        }
-        int d = bi.s6.d(n10);
-        this.s = d;
-        if (d == 0 && (n10 instanceof Spanned)) {
-            Spanned spanned2 = (Spanned) n10;
-            uu[] uuVarArr2 = (uu[]) spanned2.getSpans(0, n10.length(), uu.class);
-            if (uuVarArr2.length > 0) {
-                Arrays.sort(uuVarArr2, new qu(spanned2, 1));
-                SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(n10);
-                int length3 = uuVarArr2.length;
-                int i19 = 0;
-                while (true) {
-                    if (i19 < length3) {
-                        uu uuVar3 = uuVarArr2[i19];
-                        int spanStart4 = spanned2.getSpanStart(uuVar3);
-                        int spanEnd = spanned2.getSpanEnd(uuVar3);
-                        if (spanStart4 < 0 || spanEnd <= spanStart4) {
-                            break;
+                if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionFlushHistory) {
+                    g0.h3(new pv(this, m5.F(encryptedChat.id), 0));
+                    return null;
+                }
+                if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionDeleteMessages) {
+                    if (!decryptedMessageAction.random_ids.isEmpty()) {
+                        this.h.addAll(tL_decryptedMessageService.action.random_ids);
+                        return null;
+                    }
+                } else if (!(decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionReadMessages)) {
+                    if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionNotifyLayer) {
+                        a(encryptedChat, decryptedMessageAction.layer);
+                        return null;
+                    }
+                    if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionRequestKey) {
+                        long j16 = encryptedChat.exchange_id;
+                        if (j16 != 0) {
+                            if (j16 <= decryptedMessageAction.exchange_id) {
+                                p(encryptedChat, null, j16);
+                            } else if (r2.a) {
+                                a8.b("we already have request key with higher exchange_id");
+                                return null;
+                            }
                         }
-                        vv vvVar = uuVar3.a.a;
-                        if (vvVar.s == 0) {
-                            break;
+                        byte[] bArr14 = new byte[256];
+                        Utilities.b.nextBytes(bArr14);
+                        qr messagesStorage2 = getMessagesStorage();
+                        messagesStorage2.H();
+                        BigInteger bigInteger = new BigInteger(1, messagesStorage2.y);
+                        getMessagesStorage().H();
+                        BigInteger modPow = BigInteger.valueOf(r5.E).modPow(new BigInteger(1, bArr14), bigInteger);
+                        BigInteger bigInteger2 = new BigInteger(1, tL_decryptedMessageService.action.g_a);
+                        if (!Utilities.w(bigInteger2, bigInteger)) {
+                            p(encryptedChat, null, tL_decryptedMessageService.action.exchange_id);
+                            return null;
                         }
-                        spannableStringBuilder4.replace(spanStart4, spanEnd, vvVar.b.getText());
-                        i19++;
+                        byte[] byteArray = modPow.toByteArray();
+                        if (byteArray.length > 256) {
+                            byte[] bArr15 = new byte[256];
+                            System.arraycopy(byteArray, 1, bArr15, 0, 256);
+                            byteArray = bArr15;
+                        }
+                        byte[] byteArray2 = bigInteger2.modPow(new BigInteger(1, bArr14), bigInteger).toByteArray();
+                        if (byteArray2.length <= 256) {
+                            if (byteArray2.length < 256) {
+                                bArr2 = new byte[256];
+                                System.arraycopy(byteArray2, 0, bArr2, 256 - byteArray2.length, byteArray2.length);
+                                for (int i19 = 0; i19 < 256 - byteArray2.length; i19++) {
+                                    bArr2[i19] = 0;
+                                }
+                            }
+                            byte[] n4 = Utilities.n(byteArray2);
+                            byte[] bArr16 = new byte[8];
+                            System.arraycopy(n4, n4.length - 8, bArr16, 0, 8);
+                            encryptedChat.exchange_id = tL_decryptedMessageService.action.exchange_id;
+                            encryptedChat.future_auth_key = byteArray2;
+                            encryptedChat.future_key_fingerprint = Utilities.g(bArr16);
+                            encryptedChat.g_a_or_b = byteArray;
+                            getMessagesStorage().V1(encryptedChat);
+                            q(encryptedChat, null);
+                            return null;
+                        }
+                        bArr2 = new byte[256];
+                        System.arraycopy(byteArray2, byteArray2.length - 256, bArr2, 0, 256);
+                        byteArray2 = bArr2;
+                        byte[] n42 = Utilities.n(byteArray2);
+                        byte[] bArr162 = new byte[8];
+                        System.arraycopy(n42, n42.length - 8, bArr162, 0, 8);
+                        encryptedChat.exchange_id = tL_decryptedMessageService.action.exchange_id;
+                        encryptedChat.future_auth_key = byteArray2;
+                        encryptedChat.future_key_fingerprint = Utilities.g(bArr162);
+                        encryptedChat.g_a_or_b = byteArray;
+                        getMessagesStorage().V1(encryptedChat);
+                        q(encryptedChat, null);
+                        return null;
+                    }
+                    if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionAcceptKey) {
+                        if (encryptedChat.exchange_id != decryptedMessageAction.exchange_id) {
+                            encryptedChat.future_auth_key = new byte[256];
+                            encryptedChat.future_key_fingerprint = 0L;
+                            encryptedChat.exchange_id = 0L;
+                            getMessagesStorage().V1(encryptedChat);
+                            p(encryptedChat, null, tL_decryptedMessageService.action.exchange_id);
+                            return null;
+                        }
+                        qr messagesStorage3 = getMessagesStorage();
+                        messagesStorage3.H();
+                        BigInteger bigInteger3 = new BigInteger(1, messagesStorage3.y);
+                        BigInteger bigInteger4 = new BigInteger(1, tL_decryptedMessageService.action.g_b);
+                        if (!Utilities.w(bigInteger4, bigInteger3)) {
+                            encryptedChat.future_auth_key = new byte[256];
+                            encryptedChat.future_key_fingerprint = 0L;
+                            encryptedChat.exchange_id = 0L;
+                            getMessagesStorage().V1(encryptedChat);
+                            p(encryptedChat, null, tL_decryptedMessageService.action.exchange_id);
+                            return null;
+                        }
+                        byte[] byteArray3 = bigInteger4.modPow(new BigInteger(1, encryptedChat.a_or_b), bigInteger3).toByteArray();
+                        if (byteArray3.length <= 256) {
+                            if (byteArray3.length < 256) {
+                                bArr = new byte[256];
+                                System.arraycopy(byteArray3, 0, bArr, 256 - byteArray3.length, byteArray3.length);
+                                for (int i20 = 0; i20 < 256 - byteArray3.length; i20++) {
+                                    bArr[i20] = 0;
+                                }
+                            }
+                            byte[] n10 = Utilities.n(byteArray3);
+                            byte[] bArr17 = new byte[8];
+                            System.arraycopy(n10, n10.length - 8, bArr17, 0, 8);
+                            g7 = Utilities.g(bArr17);
+                            if (tL_decryptedMessageService.action.key_fingerprint != g7) {
+                                encryptedChat.future_auth_key = byteArray3;
+                                encryptedChat.future_key_fingerprint = g7;
+                                getMessagesStorage().V1(encryptedChat);
+                                s(encryptedChat, null);
+                                return null;
+                            }
+                            encryptedChat.future_auth_key = new byte[256];
+                            encryptedChat.future_key_fingerprint = 0L;
+                            encryptedChat.exchange_id = 0L;
+                            getMessagesStorage().V1(encryptedChat);
+                            p(encryptedChat, null, tL_decryptedMessageService.action.exchange_id);
+                            return null;
+                        }
+                        bArr = new byte[256];
+                        System.arraycopy(byteArray3, byteArray3.length - 256, bArr, 0, 256);
+                        byteArray3 = bArr;
+                        byte[] n102 = Utilities.n(byteArray3);
+                        byte[] bArr172 = new byte[8];
+                        System.arraycopy(n102, n102.length - 8, bArr172, 0, 8);
+                        g7 = Utilities.g(bArr172);
+                        if (tL_decryptedMessageService.action.key_fingerprint != g7) {
+                        }
                     } else {
-                        this.s = bi.s6.d(spannableStringBuilder4);
-                        break;
+                        if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionCommitKey) {
+                            if (encryptedChat.exchange_id == decryptedMessageAction.exchange_id) {
+                                long j17 = encryptedChat.future_key_fingerprint;
+                                if (j17 == decryptedMessageAction.key_fingerprint) {
+                                    long j18 = encryptedChat.key_fingerprint;
+                                    byte[] bArr18 = encryptedChat.auth_key;
+                                    encryptedChat.key_fingerprint = j17;
+                                    encryptedChat.auth_key = encryptedChat.future_auth_key;
+                                    encryptedChat.key_create_date = getConnectionsManager().getCurrentTime();
+                                    encryptedChat.future_auth_key = bArr18;
+                                    encryptedChat.future_key_fingerprint = j18;
+                                    encryptedChat.key_use_count_in = (short) 0;
+                                    encryptedChat.key_use_count_out = (short) 0;
+                                    encryptedChat.exchange_id = 0L;
+                                    getMessagesStorage().V1(encryptedChat);
+                                    v(encryptedChat, null);
+                                    return null;
+                                }
+                            }
+                            encryptedChat.future_auth_key = new byte[256];
+                            encryptedChat.future_key_fingerprint = 0L;
+                            encryptedChat.exchange_id = 0L;
+                            getMessagesStorage().V1(encryptedChat);
+                            p(encryptedChat, null, tL_decryptedMessageService.action.exchange_id);
+                            return null;
+                        }
+                        if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionAbortKey) {
+                            if (encryptedChat.exchange_id == decryptedMessageAction.exchange_id) {
+                                encryptedChat.future_auth_key = new byte[256];
+                                encryptedChat.future_key_fingerprint = 0L;
+                                encryptedChat.exchange_id = 0L;
+                                getMessagesStorage().V1(encryptedChat);
+                                return null;
+                            }
+                        } else if (!(decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionNoop) && (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionResend) && (i10 = decryptedMessageAction.end_seq_no) >= (i11 = encryptedChat.in_seq_no) && i10 >= (i12 = decryptedMessageAction.start_seq_no)) {
+                            if (i12 < i11) {
+                                decryptedMessageAction.start_seq_no = i11;
+                            }
+                            long j19 = decryptedMessageAction.start_seq_no;
+                            long j20 = i10;
+                            long j21 = j20 - j19;
+                            if (j19 >= 0 && j20 >= 0 && j20 < 2147483647L && j21 >= 0 && j21 <= 10000) {
+                                getMessagesStorage().a.c(new t8(this, j19, encryptedChat, j20, 7));
+                                return null;
+                            }
+                        }
                     }
+                } else if (!decryptedMessageAction.random_ids.isEmpty()) {
+                    int currentTime = getConnectionsManager().getCurrentTime();
+                    qr messagesStorage4 = getMessagesStorage();
+                    messagesStorage4.a.c(new nq(messagesStorage4, encryptedChat.id, tL_decryptedMessageService.action.random_ids, 1, currentTime, currentTime));
+                    return null;
                 }
+            } else if (r2.a) {
+                a8.d("unknown message " + tLObject);
+                return null;
             }
+        } else if (r2.a) {
+            a8.d("unknown TLObject");
         }
-        if (this.s > 0 && (n10 instanceof Spanned)) {
-            for (sv svVar2 : (sv[]) ((Spanned) n10).getSpans(0, n10.length(), sv.class)) {
-                if ((svVar2.b & 15) == 14) {
-                    svVar2.d = true;
+        return null;
+    }
+
+    public final void m() {
+        ArrayList arrayList = this.h;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        g0.h3(new tv(this, new ArrayList(arrayList), 1));
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        qr messagesStorage = getMessagesStorage();
+        messagesStorage.getClass();
+        if (!arrayList2.isEmpty()) {
+            messagesStorage.a.c(new jp(messagesStorage, arrayList2, 3));
+        }
+        arrayList.clear();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x017e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void n(TL_update.TL_updateEncryption tL_updateEncryption, ConcurrentHashMap concurrentHashMap) {
+        long j10;
+        TLRPC.EncryptedChat encryptedChat;
+        byte[] bArr;
+        byte[] bArr2;
+        byte[] bArr3;
+        TLRPC.EncryptedChat encryptedChat2 = tL_updateEncryption.chat;
+        long F = m5.F(encryptedChat2.id);
+        TLRPC.EncryptedChat b12 = getMessagesController().b1(encryptedChat2.id, false);
+        if ((encryptedChat2 instanceof TLRPC.TL_encryptedChatRequested) && b12 == null) {
+            long j11 = encryptedChat2.participant_id;
+            if (j11 == getUserConfig().e()) {
+                j11 = encryptedChat2.admin_id;
+            }
+            TLRPC.User a22 = getMessagesController().a2(Long.valueOf(j11));
+            if (a22 == null) {
+                a22 = (TLRPC.User) concurrentHashMap.get(Long.valueOf(j11));
+            }
+            encryptedChat2.user_id = j11;
+            TLRPC.TL_dialog tL_dialog = new TLRPC.TL_dialog();
+            tL_dialog.id = F;
+            tL_dialog.folder_id = encryptedChat2.folder_id;
+            tL_dialog.unread_count = 0;
+            tL_dialog.top_message = 0;
+            tL_dialog.last_message_date = tL_updateEncryption.date;
+            getMessagesController().U3(encryptedChat2, false);
+            j10 = F;
+            g0.h3(new a4(this, tL_dialog, F, 7));
+            qr messagesStorage = getMessagesStorage();
+            encryptedChat = encryptedChat2;
+            messagesStorage.a.c(new ul(messagesStorage, encryptedChat, a22, tL_dialog, 20));
+            int i3 = encryptedChat.id;
+            SparseArray sparseArray = this.e;
+            if (sparseArray.get(i3) == null) {
+                sparseArray.put(encryptedChat.id, encryptedChat);
+                TLRPC.TL_messages_getDhConfig tL_messages_getDhConfig = new TLRPC.TL_messages_getDhConfig();
+                tL_messages_getDhConfig.random_length = 256;
+                qr messagesStorage2 = getMessagesStorage();
+                messagesStorage2.H();
+                tL_messages_getDhConfig.version = messagesStorage2.x;
+                getConnectionsManager().sendRequest(tL_messages_getDhConfig, new rv(this, encryptedChat, 0));
+            }
+        } else {
+            j10 = F;
+            encryptedChat = encryptedChat2;
+            if (!(encryptedChat instanceof TLRPC.TL_encryptedChat)) {
+                if (b12 != null) {
+                    encryptedChat.user_id = b12.user_id;
+                    encryptedChat.auth_key = b12.auth_key;
+                    encryptedChat.key_create_date = b12.key_create_date;
+                    encryptedChat.key_use_count_in = b12.key_use_count_in;
+                    encryptedChat.key_use_count_out = b12.key_use_count_out;
+                    encryptedChat.ttl = b12.ttl;
+                    encryptedChat.seq_in = b12.seq_in;
+                    encryptedChat.seq_out = b12.seq_out;
+                    encryptedChat.admin_id = b12.admin_id;
+                    encryptedChat.mtproto_seq = b12.mtproto_seq;
                 }
-            }
-        }
-        if (n10 instanceof Spanned) {
-            sv[] svVarArr = (sv[]) ((Spanned) n10).getSpans(0, n10.length(), sv.class);
-            int length4 = svVarArr.length;
-            for (int i20 = 0; i20 < length4 && (svVarArr[i20].b & 15) == 0; i20++) {
-            }
-        }
-        this.b = kj.g5(n10, wvVar.w, i10, f7, 0.0f, false, alignment);
-        this.f = i10;
-        this.h = 0;
-        for (int i21 = 0; i21 < this.b.getLineCount(); i21++) {
-            this.f = Math.min(this.f, (int) Math.floor(this.b.getLineLeft(i21)));
-            this.h = Math.max(this.h, (int) Math.ceil(this.b.getLineRight(i21)));
-        }
-        this.n = 0;
-        if (this.b.getLineCount() > 0) {
-            StaticLayout staticLayout = this.b;
-            this.n = (int) Math.ceil(staticLayout.getLineRight(staticLayout.getLineCount() - 1));
-        }
-        k80 k80Var = null;
-        nh.i.c(null, this.b, this.y, this.x);
-        if (this.b.getText() instanceof Spanned) {
-            Spanned spanned3 = (Spanned) this.b.getText();
-            for (sv svVar3 : (sv[]) spanned3.getSpans(0, spanned3.length(), sv.class)) {
-                int i22 = svVar3.b;
-                if (TLObject.hasFlag(i22, TLObject.FLAG_13)) {
-                    int spanStart5 = spanned3.getSpanStart(svVar3);
-                    int spanEnd2 = spanned3.getSpanEnd(svVar3);
-                    if (spanStart5 >= 0 && spanEnd2 > spanStart5) {
-                        if (k80Var == null) {
-                            i11 = 0;
-                            k80Var = new k80(0);
-                            k80Var.n = false;
-                        } else {
-                            i11 = 0;
+                g0.h3(new dg(this, b12, encryptedChat, 25));
+            } else if ((b12 instanceof TLRPC.TL_encryptedChatWaiting) && ((bArr = b12.auth_key) == null || bArr.length == 1)) {
+                encryptedChat.a_or_b = b12.a_or_b;
+                encryptedChat.user_id = b12.user_id;
+                qr messagesStorage3 = getMessagesStorage();
+                messagesStorage3.H();
+                BigInteger bigInteger = new BigInteger(1, messagesStorage3.y);
+                BigInteger bigInteger2 = new BigInteger(1, encryptedChat.g_a_or_b);
+                if (Utilities.w(bigInteger2, bigInteger)) {
+                    byte[] byteArray = bigInteger2.modPow(new BigInteger(1, encryptedChat.a_or_b), bigInteger).toByteArray();
+                    if (byteArray.length > 256) {
+                        bArr2 = new byte[256];
+                        System.arraycopy(byteArray, byteArray.length - 256, bArr2, 0, 256);
+                    } else {
+                        if (byteArray.length < 256) {
+                            bArr2 = new byte[256];
+                            System.arraycopy(byteArray, 0, bArr2, 256 - byteArray.length, byteArray.length);
+                            for (int i10 = 0; i10 < 256 - byteArray.length; i10++) {
+                                bArr2[i10] = 0;
+                            }
                         }
-                        k80Var.d(this.b, spanStart5, 0.0f);
-                        if (TLObject.hasFlag(i22, TLObject.FLAG_12)) {
-                            L = -i0.L(6.0f);
+                        byte[] n4 = Utilities.n(byteArray);
+                        bArr3 = new byte[8];
+                        System.arraycopy(n4, n4.length - 8, bArr3, 0, 8);
+                        if (encryptedChat.key_fingerprint != Utilities.g(bArr3)) {
+                            encryptedChat.auth_key = byteArray;
+                            encryptedChat.key_create_date = getConnectionsManager().getCurrentTime();
+                            encryptedChat.seq_in = -2;
+                            encryptedChat.seq_out = 1;
+                            getMessagesStorage().V1(encryptedChat);
+                            getMessagesController().U3(encryptedChat, false);
+                            int i11 = encryptedChat.id;
+                            SparseArray sparseArray2 = this.c;
+                            ArrayList arrayList = (ArrayList) sparseArray2.get(i11);
+                            if (arrayList != null) {
+                                getMessagesController().N3(arrayList, null, null, false, 0);
+                                sparseArray2.remove(encryptedChat.id);
+                            }
+                            g0.h3(new ov(this, encryptedChat, 1));
                         } else {
-                            L = TLObject.hasFlag(i22, 2048) ? i0.L(2.0f) : i11;
+                            TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded = new TLRPC.TL_encryptedChatDiscarded();
+                            tL_encryptedChatDiscarded.id = encryptedChat.id;
+                            tL_encryptedChatDiscarded.user_id = encryptedChat.user_id;
+                            tL_encryptedChatDiscarded.auth_key = encryptedChat.auth_key;
+                            tL_encryptedChatDiscarded.key_create_date = encryptedChat.key_create_date;
+                            tL_encryptedChatDiscarded.key_use_count_in = encryptedChat.key_use_count_in;
+                            tL_encryptedChatDiscarded.key_use_count_out = encryptedChat.key_use_count_out;
+                            tL_encryptedChatDiscarded.seq_in = encryptedChat.seq_in;
+                            tL_encryptedChatDiscarded.seq_out = encryptedChat.seq_out;
+                            tL_encryptedChatDiscarded.admin_id = encryptedChat.admin_id;
+                            tL_encryptedChatDiscarded.mtproto_seq = encryptedChat.mtproto_seq;
+                            getMessagesStorage().V1(tL_encryptedChatDiscarded);
+                            g0.h3(new qv(this, tL_encryptedChatDiscarded, 0));
+                            f(encryptedChat.id, false);
                         }
-                        if (L != 0) {
-                            i12 = L + i0.L(L > 0 ? 5.0f : -2.0f);
-                        } else {
-                            i12 = i11;
-                        }
-                        k80Var.o = i12;
-                        this.b.getSelectionPath(spanStart5, spanEnd2, k80Var);
                     }
+                    byteArray = bArr2;
+                    byte[] n42 = Utilities.n(byteArray);
+                    bArr3 = new byte[8];
+                    System.arraycopy(n42, n42.length - 8, bArr3, 0, 8);
+                    if (encryptedChat.key_fingerprint != Utilities.g(bArr3)) {
+                    }
+                } else {
+                    f(encryptedChat.id, false);
                 }
+            } else if (b12 == null && this.n) {
+                this.f.add(tL_updateEncryption);
             }
-            if (k80Var != null) {
-                k80Var.n = true;
-                this.F = k80Var;
+        }
+        if ((encryptedChat instanceof TLRPC.TL_encryptedChatDiscarded) && encryptedChat.history_deleted) {
+            g0.h3(new pv(this, j10, 3));
+        }
+    }
+
+    public final void o(TLRPC.EncryptedChat encryptedChat) {
+        byte[] bArr = new byte[256];
+        Utilities.b.nextBytes(bArr);
+        getMessagesStorage().H();
+        BigInteger valueOf = BigInteger.valueOf(r2.E);
+        BigInteger bigInteger = new BigInteger(1, bArr);
+        qr messagesStorage = getMessagesStorage();
+        messagesStorage.H();
+        byte[] byteArray = valueOf.modPow(bigInteger, new BigInteger(1, messagesStorage.y)).toByteArray();
+        if (byteArray.length > 256) {
+            byte[] bArr2 = new byte[256];
+            System.arraycopy(byteArray, 1, bArr2, 0, 256);
+            byteArray = bArr2;
+        }
+        getSendMessagesHelper().getClass();
+        encryptedChat.exchange_id = yy.E();
+        encryptedChat.a_or_b = bArr;
+        encryptedChat.g_a = byteArray;
+        getMessagesStorage().V1(encryptedChat);
+        x(encryptedChat, null);
+    }
+
+    public final void p(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message, long j10) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionAbortKey tL_decryptedMessageActionAbortKey = new TLRPC.TL_decryptedMessageActionAbortKey();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionAbortKey;
+                tL_decryptedMessageActionAbortKey.exchange_id = j10;
+                message = d(encryptedChat, tL_decryptedMessageActionAbortKey);
             }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void q(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionAcceptKey tL_decryptedMessageActionAcceptKey = new TLRPC.TL_decryptedMessageActionAcceptKey();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionAcceptKey;
+                tL_decryptedMessageActionAcceptKey.exchange_id = encryptedChat.exchange_id;
+                tL_decryptedMessageActionAcceptKey.key_fingerprint = encryptedChat.future_key_fingerprint;
+                tL_decryptedMessageActionAcceptKey.g_b = encryptedChat.g_a_or_b;
+                message = d(encryptedChat, tL_decryptedMessageActionAcceptKey);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void r(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionFlushHistory tL_decryptedMessageActionFlushHistory = new TLRPC.TL_decryptedMessageActionFlushHistory();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionFlushHistory;
+                message = d(encryptedChat, tL_decryptedMessageActionFlushHistory);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void s(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionCommitKey tL_decryptedMessageActionCommitKey = new TLRPC.TL_decryptedMessageActionCommitKey();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionCommitKey;
+                tL_decryptedMessageActionCommitKey.exchange_id = encryptedChat.exchange_id;
+                tL_decryptedMessageActionCommitKey.key_fingerprint = encryptedChat.future_key_fingerprint;
+                message = d(encryptedChat, tL_decryptedMessageActionCommitKey);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void t(TLRPC.EncryptedChat encryptedChat, ArrayList arrayList, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionDeleteMessages tL_decryptedMessageActionDeleteMessages = new TLRPC.TL_decryptedMessageActionDeleteMessages();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionDeleteMessages;
+                tL_decryptedMessageActionDeleteMessages.random_ids = arrayList;
+                message = d(encryptedChat, tL_decryptedMessageActionDeleteMessages);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void u(TLRPC.EncryptedChat encryptedChat, ArrayList arrayList, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionReadMessages tL_decryptedMessageActionReadMessages = new TLRPC.TL_decryptedMessageActionReadMessages();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionReadMessages;
+                tL_decryptedMessageActionReadMessages.random_ids = arrayList;
+                message = d(encryptedChat, tL_decryptedMessageActionReadMessages);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void v(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionNoop tL_decryptedMessageActionNoop = new TLRPC.TL_decryptedMessageActionNoop();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionNoop;
+                message = d(encryptedChat, tL_decryptedMessageActionNoop);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void w(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            Integer valueOf = Integer.valueOf(encryptedChat.id);
+            ArrayList arrayList = this.a;
+            if (arrayList.contains(valueOf)) {
+                return;
+            }
+            arrayList.add(Integer.valueOf(encryptedChat.id));
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionNotifyLayer tL_decryptedMessageActionNotifyLayer = new TLRPC.TL_decryptedMessageActionNotifyLayer();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionNotifyLayer;
+                tL_decryptedMessageActionNotifyLayer.layer = hs.h2;
+                message = d(encryptedChat, tL_decryptedMessageActionNotifyLayer);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void x(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionRequestKey tL_decryptedMessageActionRequestKey = new TLRPC.TL_decryptedMessageActionRequestKey();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionRequestKey;
+                tL_decryptedMessageActionRequestKey.exchange_id = encryptedChat.exchange_id;
+                tL_decryptedMessageActionRequestKey.g_a = encryptedChat.g_a;
+                message = d(encryptedChat, tL_decryptedMessageActionRequestKey);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+        }
+    }
+
+    public final void y(TLRPC.EncryptedChat encryptedChat, int i3, int i10, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            int i11 = encryptedChat.id;
+            SparseArray sparseArray = this.d;
+            SparseIntArray sparseIntArray = (SparseIntArray) sparseArray.get(i11);
+            if (sparseIntArray == null || sparseIntArray.indexOfKey(i3) < 0) {
+                if (sparseIntArray == null) {
+                    sparseIntArray = new SparseIntArray();
+                    sparseArray.put(encryptedChat.id, sparseIntArray);
+                }
+                sparseIntArray.put(i3, i10);
+                TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+                if (message != null) {
+                    tL_decryptedMessageService.action = message.action.encryptedAction;
+                } else {
+                    TLRPC.TL_decryptedMessageActionResend tL_decryptedMessageActionResend = new TLRPC.TL_decryptedMessageActionResend();
+                    tL_decryptedMessageService.action = tL_decryptedMessageActionResend;
+                    tL_decryptedMessageActionResend.start_seq_no = i3;
+                    tL_decryptedMessageActionResend.end_seq_no = i10;
+                    message = d(encryptedChat, tL_decryptedMessageActionResend);
+                }
+                TLRPC.Message message2 = message;
+                tL_decryptedMessageService.random_id = message2.random_id;
+                j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
+            }
+        }
+    }
+
+    public final void z(TLRPC.EncryptedChat encryptedChat, TLRPC.Message message) {
+        if (encryptedChat instanceof TLRPC.TL_encryptedChat) {
+            TLRPC.TL_decryptedMessageService tL_decryptedMessageService = new TLRPC.TL_decryptedMessageService();
+            if (message != null) {
+                tL_decryptedMessageService.action = message.action.encryptedAction;
+            } else {
+                TLRPC.TL_decryptedMessageActionSetMessageTTL tL_decryptedMessageActionSetMessageTTL = new TLRPC.TL_decryptedMessageActionSetMessageTTL();
+                tL_decryptedMessageService.action = tL_decryptedMessageActionSetMessageTTL;
+                tL_decryptedMessageActionSetMessageTTL.ttl_seconds = encryptedChat.ttl;
+                message = d(encryptedChat, tL_decryptedMessageActionSetMessageTTL);
+                zi ziVar = new zi(this.currentAccount, message, false, false);
+                ziVar.k.send_state = 1;
+                ziVar.V1 = true;
+                getMessagesController().l5(0, message.dialog_id, k5.k(ziVar));
+                getNotificationCenter().k(hs.s, new Object[0]);
+            }
+            TLRPC.Message message2 = message;
+            tL_decryptedMessageService.random_id = message2.random_id;
+            j(tL_decryptedMessageService, message2, encryptedChat, null, null, null);
         }
     }
 }

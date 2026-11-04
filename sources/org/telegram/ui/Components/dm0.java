@@ -1,78 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.text.TextUtils;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class dm0 extends s4.n {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ hm0 k;
+public final class dm0 extends xr {
+    public final /* synthetic */ org.telegram.ui.uw g0;
+    public final /* synthetic */ org.telegram.ui.cw h0;
 
-    public dm0(hm0 hm0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
-        this.k = hm0Var;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-        this.g = arrayList;
-        this.h = i15;
-        this.i = i16;
-        this.j = arrayList2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dm0(org.telegram.ui.cw cwVar, tj0 tj0Var, Context context, int i3, int i10, org.telegram.ui.uw uwVar) {
+        super(tj0Var, context, i3, i10);
+        this.h0 = cwVar;
+        this.g0 = uwVar;
     }
 
-    @Override // s4.n
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // s4.n
-    public final boolean b(int i10, int i11) {
-        org.telegram.messenger.kj kjVar;
-        hm0 hm0Var = this.k;
-        if (i10 >= 0 && i11 >= 0) {
-            if (i10 == this.c && i11 == hm0Var.s) {
-                return true;
-            }
-            if (i10 == this.d && i11 == hm0Var.y) {
-                return true;
-            }
-        }
-        org.telegram.messenger.kj kjVar2 = null;
-        int i12 = this.e;
-        if (i10 < i12 || i10 >= this.f) {
-            int i13 = this.h;
-            kjVar = (i10 < i13 || i10 >= this.i) ? null : (org.telegram.messenger.kj) this.j.get(i10 - i13);
+    @Override // org.telegram.ui.Components.f41
+    public final void O(boolean z10) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        super.O(z10);
+        vl0 vl0Var = this.h0.j0;
+        vl0Var.e(this.Z || this.a0 || (arrayList = this.S) == null || !arrayList.isEmpty() || (arrayList2 = this.T) == null || !arrayList2.isEmpty() || (arrayList3 = this.V) == null || !arrayList3.isEmpty() || (arrayList4 = this.U) == null || !arrayList4.isEmpty(), z10);
+        if (!TextUtils.isEmpty(this.e0)) {
+            vl0Var.d.setText(org.telegram.messenger.bd.M0(2131748175, null));
+            vl0Var.e.setVisibility(8);
         } else {
-            kjVar = (org.telegram.messenger.kj) this.g.get(i10 - i12);
+            vl0Var.d.setText(org.telegram.messenger.bd.M0(2131748239, null));
+            vl0Var.e.setVisibility(0);
+            vl0Var.e.setText(org.telegram.messenger.bd.M0(2131748240, null));
         }
-        int i14 = hm0Var.w;
-        if (i11 < i14 || i11 >= hm0Var.x) {
-            int i15 = hm0Var.D;
-            if (i11 >= i15 && i11 < hm0Var.E) {
-                kjVar2 = (org.telegram.messenger.kj) hm0Var.f.get(i11 - i15);
-            }
-        } else {
-            kjVar2 = (org.telegram.messenger.kj) hm0Var.e.get(i11 - i14);
-        }
-        return (kjVar2 == null || kjVar == null || kjVar2.F0() == null || kjVar.F0() == null || kjVar2.F0().id != kjVar.F0().id) ? false : true;
-    }
-
-    @Override // s4.n
-    public final int d() {
-        return this.k.r;
-    }
-
-    @Override // s4.n
-    public final int e() {
-        return this.b;
     }
 }

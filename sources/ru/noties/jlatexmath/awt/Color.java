@@ -1,8 +1,8 @@
 package ru.noties.jlatexmath.awt;
 
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class Color {
     public static final Color BLACK;
@@ -32,8 +32,8 @@ public class Color {
         RED = color2;
     }
 
-    public Color(int i10) {
-        this.color = i10;
+    public Color(int i3) {
+        this.color = i3;
     }
 
     public static Color decode(String str) {
@@ -41,7 +41,7 @@ public class Color {
     }
 
     public int getAlpha() {
-        return at.e4;
+        return hs.e4;
     }
 
     public int getBlue() {
@@ -60,11 +60,11 @@ public class Color {
         return android.graphics.Color.red(this.color);
     }
 
-    public Color(int i10, int i11, int i12) {
-        this(android.graphics.Color.rgb(i10, i11, i12));
+    public Color(int i3, int i10, int i11) {
+        this(android.graphics.Color.rgb(i3, i10, i11));
     }
 
-    public Color(float f7, float f10, float f11) {
-        this((int) ((f7 * 255.0f) + 0.5f), (int) ((f10 * 255.0f) + 0.5f), (int) ((f11 * 255.0f) + 0.5f));
+    public Color(float f10, float f11, float f12) {
+        this((int) ((f10 * 255.0f) + 0.5f), (int) ((f11 * 255.0f) + 0.5f), (int) ((f12 * 255.0f) + 0.5f));
     }
 }

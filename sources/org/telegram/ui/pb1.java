@@ -1,27 +1,22 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pb1 implements sy0 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ qb1 b;
+public final class pb1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ zb1 a;
 
-    public pb1(qb1 qb1Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = qb1Var;
-        this.a = tL_forumTopic;
+    public pb1(zb1 zb1Var) {
+        this.a = zb1Var;
     }
 
-    @Override // org.telegram.ui.sy0
-    public final void b0() {
-        tb1 tb1Var = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        tb1.Z(tb1Var, tL_forumTopic.id);
-        org.telegram.messenger.i0.h3(new y01(15, this, tL_forumTopic), 300L);
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        org.telegram.messenger.g0.h3(new pu0(this, 23));
     }
 
-    @Override // org.telegram.ui.sy0
-    public final void w(si0 si0Var) {
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i3, int i10, int i11) {
     }
 }

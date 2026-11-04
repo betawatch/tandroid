@@ -1,87 +1,43 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iq0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b1 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b1 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b1 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b1 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b1 f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b1 n;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b1 r;
-    public final /* synthetic */ Object s;
+public final class iq0 extends u4.t0 {
+    public final /* synthetic */ zp0 a;
+    public final /* synthetic */ aq0 b;
+    public final /* synthetic */ ws0 c;
 
-    public /* synthetic */ iq0(org.telegram.ui.ActionBar.b1 b1Var, rh.v5 v5Var, org.telegram.ui.ActionBar.b1 b1Var2, org.telegram.ui.ActionBar.b1 b1Var3, org.telegram.ui.ActionBar.b1 b1Var4, org.telegram.ui.ActionBar.b1 b1Var5, boolean z10, org.telegram.ui.ActionBar.b1 b1Var6, org.telegram.ui.ActionBar.b1 b1Var7) {
-        this.b = b1Var;
-        this.s = v5Var;
-        this.c = b1Var2;
-        this.d = b1Var3;
-        this.e = b1Var4;
-        this.f = b1Var5;
-        this.h = z10;
-        this.n = b1Var6;
-        this.r = b1Var7;
+    public iq0(ws0 ws0Var, zp0 zp0Var, aq0 aq0Var) {
+        this.c = ws0Var;
+        this.a = zp0Var;
+        this.b = aq0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        org.telegram.ui.ActionBar.b1 b1Var = this.r;
-        org.telegram.ui.ActionBar.b1 b1Var2 = this.n;
-        boolean z10 = this.h;
-        org.telegram.ui.ActionBar.b1 b1Var3 = this.f;
-        org.telegram.ui.ActionBar.b1 b1Var4 = this.e;
-        org.telegram.ui.ActionBar.b1 b1Var5 = this.d;
-        org.telegram.ui.ActionBar.b1 b1Var6 = this.c;
-        org.telegram.ui.ActionBar.b1 b1Var7 = this.b;
-        Object obj = this.s;
-        switch (i10) {
-            case 0:
-                rh.v5 v5Var = (rh.v5) obj;
-                if (b1Var7 != null) {
-                    b1Var7.j(org.telegram.messenger.dd.L0(v5Var.e ? 2131750206 : 2131750207, null), v5Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                }
-                b1Var6.setChecked(TLObject.hasFlag(v5Var.g, 1));
-                b1Var5.setChecked(TLObject.hasFlag(v5Var.g, 2));
-                b1Var4.setChecked(TLObject.hasFlag(v5Var.g, 4));
-                b1Var3.setChecked(TLObject.hasFlag(v5Var.g, 8));
-                if (z10) {
-                    b1Var2.setChecked(TLObject.hasFlag(v5Var.g, 256));
-                    b1Var.setChecked(TLObject.hasFlag(v5Var.g, 512));
-                    break;
-                }
-                break;
-            default:
-                rh.v5 v5Var2 = ((ph.s3) obj).c.Q1;
-                b1Var7.j(org.telegram.messenger.dd.L0(v5Var2.e ? 2131750206 : 2131750207, null), v5Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                b1Var6.setChecked(TLObject.hasFlag(v5Var2.g, 1));
-                b1Var5.setChecked(TLObject.hasFlag(v5Var2.g, 2));
-                b1Var4.setChecked(TLObject.hasFlag(v5Var2.g, 4));
-                b1Var3.setChecked(TLObject.hasFlag(v5Var2.g, 8));
-                if (z10) {
-                    b1Var2.setChecked(TLObject.hasFlag(v5Var2.g, 256));
-                    b1Var.setChecked(TLObject.hasFlag(v5Var2.g, 512));
-                    break;
-                }
-                break;
+    @Override // u4.t0
+    public final void a(RecyclerView recyclerView, int i3) {
+        this.c.e1 = i3 != 0;
+    }
+
+    @Override // u4.t0
+    public final void b(RecyclerView recyclerView, int i3, int i10) {
+        int i11;
+        int i12;
+        ws0 ws0Var = this.c;
+        ls0[] ls0VarArr = ws0Var.w1;
+        aq0 aq0Var = this.b;
+        zp0 zp0Var = this.a;
+        ws0Var.O(zp0Var, (tj0) recyclerView, aq0Var);
+        if (i10 != 0 && ((i12 = ws0Var.n0[0].F) == 0 || i12 == 5)) {
+            ls0VarArr[0].a.isEmpty();
         }
-    }
-
-    public /* synthetic */ iq0(ph.s3 s3Var, org.telegram.ui.ActionBar.b1 b1Var, org.telegram.ui.ActionBar.b1 b1Var2, org.telegram.ui.ActionBar.b1 b1Var3, org.telegram.ui.ActionBar.b1 b1Var4, org.telegram.ui.ActionBar.b1 b1Var5, boolean z10, org.telegram.ui.ActionBar.b1 b1Var6, org.telegram.ui.ActionBar.b1 b1Var7) {
-        this.s = s3Var;
-        this.b = b1Var;
-        this.c = b1Var2;
-        this.d = b1Var3;
-        this.e = b1Var4;
-        this.f = b1Var5;
-        this.h = z10;
-        this.n = b1Var6;
-        this.r = b1Var7;
+        if (i10 != 0 && ((i11 = zp0Var.F) == 0 || ws0.z0(i11))) {
+            ws0.s(zp0Var, ls0VarArr, true);
+        }
+        zp0Var.h.L0(true);
+        if (zp0Var.G != null) {
+            zp0Var.invalidate();
+        }
     }
 }

@@ -1,98 +1,303 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.BitmapDrawable;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class v4 {
-    public final org.telegram.messenger.jc a;
-    public final org.telegram.messenger.jc b;
-    public final org.telegram.messenger.jc c;
-    public final String d;
-    public final String e;
-    public final String f;
-    public final BitmapDrawable g;
-    public final Object h;
-    public final b5[] i;
-    public final x4 j;
+public final class v4 extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public boolean c;
+    public Object d;
+    public final Object e;
+    public Object f;
+    public Object h;
 
-    public v4(org.telegram.messenger.jc jcVar, org.telegram.messenger.jc jcVar2, org.telegram.messenger.jc jcVar3, String str, String str2, String str3, BitmapDrawable bitmapDrawable, Object obj, b5[] b5VarArr, x4 x4Var) {
-        this.a = jcVar;
-        this.b = jcVar2;
-        this.c = jcVar3;
-        this.d = str;
-        this.e = str2;
-        this.f = str3;
-        this.g = bitmapDrawable;
-        this.h = obj;
-        this.i = b5VarArr;
-        this.j = x4Var;
+    public v4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.b = org.telegram.messenger.g0.L(64.0f);
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.d = k9Var;
+        k9Var.setAspectFit(true);
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(12.0f));
+        addView(k9Var, b8.mf.c(-1.0f, -1));
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, e6Var);
+        this.e = radialProgress2;
+        radialProgress2.E = 0.0f;
+        radialProgress2.setIcon(10, false, false);
+        radialProgress2.setColors(1107296256, 1107296256, -1, -1);
     }
 
-    public static v4 a(TLRPC.Chat chat, TLRPC.ChatFull chatFull, b5... b5VarArr) {
-        org.telegram.messenger.jc jcVar;
-        String str;
-        TLRPC.ChatPhoto chatPhoto;
-        org.telegram.messenger.jc m10 = org.telegram.messenger.jc.m(org.telegram.messenger.e20.s0, 0, chat);
-        org.telegram.messenger.jc m11 = org.telegram.messenger.jc.m(org.telegram.messenger.e20.s0, 1, chat);
-        String str2 = null;
-        String str3 = (m11 == null || !(m11.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
-        BitmapDrawable bitmapDrawable = (chat == null || (chatPhoto = chat.photo) == null) ? null : chatPhoto.strippedBitmap;
-        TLRPC.Photo photo = chatFull.chat_photo;
-        if (photo == null || photo.video_sizes.isEmpty()) {
-            jcVar = null;
-            str = null;
-        } else {
-            TLRPC.VideoSize x10 = org.telegram.messenger.b8.x(1000, chatFull.chat_photo.video_sizes);
-            jcVar = org.telegram.messenger.jc.j(x10, chatFull.chat_photo);
-            str = org.telegram.messenger.b8.r(null, x10);
+    public void a(int i3) {
+        TextView textView = (TextView) this.d;
+        this.b = i3;
+        ((tg.m) this.e).c = i3;
+        if (i3 == 0) {
+            textView.setText(org.telegram.messenger.bd.M0(2131747672, null).toUpperCase());
+        } else if (i3 == 1) {
+            textView.setText(org.telegram.messenger.bd.M0(2131747674, null).toUpperCase());
+        } else if (i3 == 2) {
+            textView.setText(org.telegram.messenger.bd.M0(2131747675, null).toUpperCase());
         }
-        if (jcVar != null && jcVar.p == 2) {
-            str2 = "g";
-        }
-        return new v4(m10, m11, jcVar, str3, str2, str, bitmapDrawable, chat, b5VarArr, null);
+        b();
     }
 
-    public static v4 b(TLRPC.User user, int i10, b5... b5VarArr) {
-        TLRPC.UserProfilePhoto userProfilePhoto;
-        org.telegram.messenger.jc m10 = org.telegram.messenger.jc.m(org.telegram.messenger.e20.s0, 0, user);
-        org.telegram.messenger.jc m11 = org.telegram.messenger.jc.m(org.telegram.messenger.e20.s0, 1, user);
-        BitmapDrawable bitmapDrawable = null;
-        String str = (m11 == null || !(m11.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
-        if (user != null && (userProfilePhoto = user.photo) != null) {
-            bitmapDrawable = userProfilePhoto.strippedBitmap;
+    public void b() {
+        tg.q qVar = (tg.q) this.h;
+        this.c = true;
+        tg.m mVar = (tg.m) this.e;
+        mVar.d = i0.a.o(mVar.e.n1, org.telegram.messenger.hs.e4);
+        mVar.a();
+        mVar.invalidate();
+        EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.f;
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        int selectionEnd = editTextBoldCursor.getSelectionEnd();
+        int i3 = this.b;
+        if (i3 == 0) {
+            editTextBoldCursor.setText(String.valueOf(Color.red(qVar.n1)));
+        } else if (i3 == 1) {
+            editTextBoldCursor.setText(String.valueOf(Color.green(qVar.n1)));
+        } else if (i3 == 2) {
+            editTextBoldCursor.setText(String.valueOf(Color.blue(qVar.n1)));
         }
-        return new v4(m10, m11, null, str, null, null, bitmapDrawable, user, b5VarArr, new c5(i10, org.telegram.messenger.at.E0, user));
+        editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        this.c = false;
     }
 
-    public static v4 c(TLRPC.User user, TLRPC.UserFull userFull, b5... b5VarArr) {
-        org.telegram.messenger.jc jcVar;
-        String str;
-        TLRPC.UserProfilePhoto userProfilePhoto;
-        TLRPC.Photo photo;
-        org.telegram.messenger.jc m10 = org.telegram.messenger.jc.m(org.telegram.messenger.e20.s0, 0, userFull.user);
-        String str2 = null;
-        if (m10 == null && (photo = userFull.profile_photo) != null) {
-            m10 = org.telegram.messenger.jc.i(org.telegram.messenger.b8.w(photo.sizes, 500, false, null, false), userFull.profile_photo);
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        int i3 = this.a;
+        float f10 = 1.0f;
+        Object obj = this.e;
+        final int i10 = 0;
+        switch (i3) {
+            case 0:
+                RadialProgress2 radialProgress2 = (RadialProgress2) obj;
+                super.dispatchDraw(canvas);
+                if (this.c) {
+                    Drawable t10 = ((org.telegram.ui.Components.k9) this.d).getImageReceiver().t();
+                    final int i11 = 1;
+                    if ((t10 instanceof org.telegram.ui.Components.t5) && ((org.telegram.ui.Components.t5) t10).d[4] > 0) {
+                        ValueAnimator valueAnimator = (ValueAnimator) this.h;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                            if ((radialProgress2.c ? radialProgress2.j : radialProgress2.i).w < 1.0f) {
+                                radialProgress2.p(true, 1.0f);
+                            }
+                            ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ValueAnimator) this.h).getAnimatedValue()).floatValue(), 0.0f);
+                            this.f = ofFloat;
+                            ofFloat.addListener(new ii.v3(this, 17));
+                            ((ValueAnimator) this.f).addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.u4
+                                public final /* synthetic */ v4 b;
+
+                                {
+                                    this.b = this;
+                                }
+
+                                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                    switch (i10) {
+                                        case 0:
+                                            this.b.invalidate();
+                                            break;
+                                        default:
+                                            this.b.invalidate();
+                                            break;
+                                    }
+                                }
+                            });
+                            ((ValueAnimator) this.f).setDuration(250L);
+                            ((ValueAnimator) this.f).start();
+                        } else {
+                            this.c = false;
+                        }
+                    } else if (((ValueAnimator) this.h) == null) {
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+                        this.h = ofFloat2;
+                        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.u4
+                            public final /* synthetic */ v4 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                switch (i11) {
+                                    case 0:
+                                        this.b.invalidate();
+                                        break;
+                                    default:
+                                        this.b.invalidate();
+                                        break;
+                                }
+                            }
+                        });
+                        ((ValueAnimator) this.h).setStartDelay(250L);
+                        ((ValueAnimator) this.h).setDuration(250L);
+                        ((ValueAnimator) this.h).start();
+                    }
+                    ValueAnimator valueAnimator2 = (ValueAnimator) this.f;
+                    if (valueAnimator2 == null) {
+                        ValueAnimator valueAnimator3 = (ValueAnimator) this.h;
+                        if (valueAnimator3 != null) {
+                            radialProgress2.E = ((Float) valueAnimator3.getAnimatedValue()).floatValue();
+                            radialProgress2.draw(canvas);
+                            break;
+                        }
+                    } else {
+                        radialProgress2.E = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                        radialProgress2.draw(canvas);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                Paint paint = (Paint) obj;
+                l71 l71Var = (l71) this.h;
+                l61 l61Var = l71Var.a;
+                if (this.c) {
+                    RectF rectF = org.telegram.messenger.g0.P;
+                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.hs.e4, 31);
+                    org.telegram.ui.ActionBar.k6.t(this, l71Var.z0, l61Var);
+                    Paint d = l61Var.d("paintChatActionBackground");
+                    ColorFilter colorFilter = d.getColorFilter();
+                    d.setColorFilter((ColorMatrixColorFilter) this.f);
+                    b71 b71Var = l71Var.z0;
+                    if (b71Var != null && (b71Var.getBackground() instanceof org.telegram.ui.Components.la0) && l71Var.n1 < 0.0f) {
+                        f10 = 0.33f;
+                    }
+                    int alpha = d.getAlpha();
+                    d.setAlpha((int) (alpha * f10));
+                    canvas.drawRect(rectF, d);
+                    d.setAlpha(alpha);
+                    d.setColorFilter(colorFilter);
+                    if (l71Var.O1) {
+                        float f11 = l71Var.p1;
+                        if (f11 > 0.0f) {
+                            canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * l71Var.q1)));
+                        }
+                    }
+                    canvas.save();
+                    if (((LinearGradient) this.d) == null || this.b != getHeight()) {
+                        int height = getHeight();
+                        this.b = height;
+                        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, height, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                        this.d = linearGradient;
+                        paint.setShader(linearGradient);
+                    }
+                    canvas.drawRect(rectF, paint);
+                    canvas.restore();
+                    canvas.restore();
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        org.telegram.messenger.jc jcVar2 = m10;
-        org.telegram.messenger.jc m11 = org.telegram.messenger.jc.m(org.telegram.messenger.e20.s0, 1, userFull.user);
-        String str3 = (m11 == null || !(m11.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b";
-        BitmapDrawable bitmapDrawable = (user == null || (userProfilePhoto = user.photo) == null) ? null : userProfilePhoto.strippedBitmap;
-        TLRPC.Photo photo2 = userFull.profile_photo;
-        if (photo2 == null || photo2.video_sizes.isEmpty()) {
-            jcVar = null;
-            str = null;
-        } else {
-            TLRPC.VideoSize x10 = org.telegram.messenger.b8.x(1000, userFull.profile_photo.video_sizes);
-            org.telegram.messenger.jc j10 = org.telegram.messenger.jc.j(x10, userFull.profile_photo);
-            str = org.telegram.messenger.b8.r(null, x10);
-            jcVar = j10;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                super.onLayout(z10, i3, i10, i11, i12);
+                int width = getWidth() / 2;
+                int height = getHeight() / 2;
+                RadialProgress2 radialProgress2 = (RadialProgress2) this.e;
+                int i13 = this.b;
+                radialProgress2.r(width - i13, height - i13, width + i13, height + i13);
+                break;
+            default:
+                super.onLayout(z10, i3, i10, i11, i12);
+                break;
         }
-        if (jcVar != null && jcVar.p == 2) {
-            str2 = "g";
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i3, int i10) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i3, i10);
+                for (int i11 = 0; i11 < getChildCount(); i11++) {
+                    View childAt = getChildAt(i11);
+                    if (childAt.getMeasuredWidth() > org.telegram.messenger.g0.L(420.0f)) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(420.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getMeasuredHeight(), TLObject.FLAG_30));
+                    }
+                }
+                break;
+            case 2:
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(52.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i3, i10);
+                break;
         }
-        return new v4(jcVar2, m11, jcVar, str3, str2, str, bitmapDrawable, userFull.user, b5VarArr, null);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v4(tg.q qVar, Context context) {
+        super(context);
+        this.h = qVar;
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextColor(-1711276033);
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        addView(textView, b8.mf.d(-2, -2.0f, 3, 8.0f, 0.0f, 8.0f, 0.0f));
+        View mVar = new tg.m(qVar, context);
+        this.e = mVar;
+        addView(mVar, b8.mf.d(-1, -1.0f, 3, 0.0f, 16.0f, 78.0f, 0.0f));
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.f = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setBackground(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setTextColor(-1);
+        editTextBoldCursor.setGravity(17);
+        editTextBoldCursor.setSingleLine();
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setImeActionLabel(org.telegram.messenger.bd.M0(2131751355, null), 6);
+        editTextBoldCursor.setInputType(2);
+        editTextBoldCursor.setTypeface(org.telegram.messenger.g0.o());
+        editTextBoldCursor.addTextChangedListener(new ai.a0(this));
+        editTextBoldCursor.setOnFocusChangeListener(new ci.m(this, 6));
+        editTextBoldCursor.setOnEditorActionListener(new org.telegram.ui.Components.i2(4));
+        addView(editTextBoldCursor, b8.mf.e(72, 36, 85));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v4(l71 l71Var, Context context, boolean z10) {
+        super(context);
+        this.h = l71Var;
+        this.c = z10;
+        Paint paint = new Paint(3);
+        this.e = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        ColorMatrix colorMatrix = new ColorMatrix();
+        org.telegram.messenger.g0.i(colorMatrix, 0.4f);
+        org.telegram.messenger.g0.n2(colorMatrix, 0.65f);
+        this.f = new ColorMatrixColorFilter(colorMatrix);
     }
 }

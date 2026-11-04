@@ -1,71 +1,40 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class n5 implements fe.i, ie.a {
-    public final View a;
-    public boolean b;
-    public float c = 1.0f;
-    public float d = 1.0f;
-    public float e = 1.0f;
+public final class n5 extends Drawable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public n5(View view) {
-        this.a = view;
+    public n5(int i3, int i10) {
+        this.a = i3;
+        this.b = i10;
     }
 
-    @Override // ie.a
-    public final void a() {
-        View view = this.a;
-        if (o5.h(view)) {
-            return;
-        }
-        if (view instanceof p5) {
-            ((p5) view).X();
-        } else {
-            view.setVisibility(8);
-        }
-        c(1.0f, 1.0f);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        int max = Math.max(bounds.width(), bounds.height()) / 2;
+        int i3 = this.a;
+        int i10 = this.b;
+        canvas.drawCircle((bounds.centerX() - i3) + i10, bounds.centerY(), max + i3 + i10, k6.z);
     }
 
-    @Override // fe.i
-    public final /* synthetic */ int b(boolean z10) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
         return 0;
     }
 
-    public final void c(float f7, float f10) {
-        float f11 = this.c;
-        if (f11 == f7 && this.d == f10) {
-            return;
-        }
-        View view = this.a;
-        if (f11 == 1.0f) {
-            this.e = view.getAlpha();
-        }
-        this.c = f7;
-        this.d = f10;
-        view.setAlpha(this.e * f7);
-        float min = Math.min(org.telegram.messenger.i0.T1(0.6f, 1.0f, f7), f10);
-        view.setScaleX(min);
-        view.setScaleY(min);
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof n5) && ((n5) obj).a == this.a;
-    }
-
-    @Override // fe.i
-    public final int getHeight() {
-        return this.a.getMeasuredHeight();
-    }
-
-    @Override // fe.i
-    public final int getWidth() {
-        return o5.f(this.a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

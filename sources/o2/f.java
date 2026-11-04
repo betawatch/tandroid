@@ -1,29 +1,38 @@
 package o2;
 
-import java.util.List;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f extends v2.b {
-    public final List d;
-    public final long e;
+public final class f {
+    public final String a;
+    public final String b;
+    public final String c;
 
-    public f(long j10, List list) {
-        super(0L, list.size() - 1);
-        this.e = j10;
-        this.d = list;
+    public f(String str, String str2, String str3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 
-    @Override // v2.m
-    public final long C() {
-        a();
-        p2.k kVar = (p2.k) this.d.get((int) this.c);
-        return this.e + kVar.e + kVar.c;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && f.class == obj.getClass()) {
+            f fVar = (f) obj;
+            if (Objects.equals(this.a, fVar.a) && Objects.equals(this.b, fVar.b) && Objects.equals(this.c, fVar.c)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // v2.m
-    public final long k() {
-        a();
-        return this.e + ((p2.k) this.d.get((int) this.c)).e;
+    public final int hashCode() {
+        int hashCode = this.a.hashCode() * 31;
+        String str = this.b;
+        int hashCode2 = (hashCode + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.c;
+        return hashCode2 + (str2 != null ? str2.hashCode() : 0);
     }
 }

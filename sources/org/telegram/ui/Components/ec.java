@@ -1,95 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class ec extends p80 {
-    public final Path L;
-    public final RectF M;
-    public fc N;
-    public fc O;
+public final class ec {
+    public static final ec E;
+    public static final ec F;
+    public static final ec G;
+    public static final ec H;
+    public static final ec I;
+    public static final ec J;
+    public static final /* synthetic */ ec[] K;
+    public static final ec e;
+    public static final ec f;
+    public static final ec h;
+    public static final ec n;
+    public static final ec r;
+    public static final ec s;
+    public static final ec w;
+    public static final ec x;
+    public static final ec y;
+    public final String a;
+    public final int b;
+    public final boolean c;
+    public final dc d;
 
-    public ec(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        this.L = new Path();
-        this.M = new RectF();
+    static {
+        dc dcVar = dc.e;
+        ec ecVar = new ec("PHOTO", 0, "PhotoSavedHint", 2131747272, dcVar);
+        e = ecVar;
+        ec ecVar2 = new ec("PHOTOS", 1, "PhotosSavedHint", dcVar);
+        f = ecVar2;
+        ec ecVar3 = new ec("VIDEO", 2, "VideoSavedHint", 2131743595, dcVar);
+        h = ecVar3;
+        ec ecVar4 = new ec("VIDEOS", 3, "VideosSavedHint", dcVar);
+        n = ecVar4;
+        ec ecVar5 = new ec("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748842, dcVar);
+        r = ecVar5;
+        ec ecVar6 = new ec("LIVEPHOTOS", 5, "LivePhotosSavedHint", dcVar);
+        s = ecVar6;
+        ec ecVar7 = new ec("MEDIA", 6, "MediaSavedHint", dcVar);
+        w = ecVar7;
+        dc dcVar2 = dc.d;
+        ec ecVar8 = new ec("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747271, dcVar2);
+        x = ecVar8;
+        ec ecVar9 = new ec("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743594, dcVar2);
+        y = ecVar9;
+        ec ecVar10 = new ec("GIF", 9, "GifSavedHint", 2131750478, dc.h);
+        E = ecVar10;
+        ec ecVar11 = new ec("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750477, dcVar2);
+        F = ecVar11;
+        dc dcVar3 = dc.f;
+        ec ecVar12 = new ec("AUDIO", 11, "AudioSavedHint", 2131753908, dcVar3);
+        G = ecVar12;
+        ec ecVar13 = new ec("AUDIOS", 12, "AudiosSavedHint", dcVar3);
+        H = ecVar13;
+        ec ecVar14 = new ec("UNKNOWN", 13, "FileSavedHintLinked", 2131750829, dcVar2);
+        I = ecVar14;
+        ec ecVar15 = new ec("UNKNOWNS", 14, "FilesSavedHintLinked", dcVar2);
+        J = ecVar15;
+        K = new ec[]{ecVar, ecVar2, ecVar3, ecVar4, ecVar5, ecVar6, ecVar7, ecVar8, ecVar9, ecVar10, ecVar11, ecVar12, ecVar13, ecVar14, ecVar15};
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.O == null || getMeasuredWidth() <= 0) {
-            return;
-        }
-        SpannableString spannableString = new SpannableString(" btn");
-        spannableString.setSpan(this.O, 1, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.O.a()) - org.telegram.messenger.i0.L(4.0f), TextUtils.TruncateAt.END));
-        spannableStringBuilder.append((CharSequence) spannableString);
-        setText(spannableStringBuilder);
-        this.O = null;
+    public ec(String str, int i3, String str2, int i10, dc dcVar) {
+        this.a = str2;
+        this.b = i10;
+        this.d = dcVar;
+        this.c = false;
     }
 
-    @Override // org.telegram.ui.Components.p80, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Layout layout;
-        fc fcVar;
-        Runnable runnable;
-        fc fcVar2;
-        int action = motionEvent.getAction();
-        float x10 = motionEvent.getX() - getPaddingLeft();
-        int y3 = ((int) motionEvent.getY()) - getPaddingTop();
-        if ((getText() instanceof Spanned) && (layout = getLayout()) != null && y3 >= 0 && y3 < layout.getHeight()) {
-            int lineForVertical = layout.getLineForVertical(y3);
-            Spanned spanned = (Spanned) getText();
-            fc[] fcVarArr = (fc[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), fc.class);
-            for (int i10 = 0; i10 < fcVarArr.length; i10++) {
-                fcVar = fcVarArr[i10];
-                int spanStart = spanned.getSpanStart(fcVar);
-                int spanEnd = spanned.getSpanEnd(fcVar);
-                Path path = this.L;
-                layout.getSelectionPath(spanStart, spanEnd, path);
-                RectF rectF = this.M;
-                path.computeBounds(rectF, true);
-                if (rectF.contains(x10, y3)) {
-                    break;
-                }
-            }
-        }
-        fcVar = null;
-        if (action == 0) {
-            this.N = fcVar;
-            if (fcVar != null) {
-                fcVar.c(this, true);
-                return true;
-            }
-        } else if (action == 1 || action == 3) {
-            fc fcVar3 = this.N;
-            if (fcVar3 != null) {
-                fcVar3.c(this, false);
-                if (action == 1 && (runnable = this.N.d) != null) {
-                    runnable.run();
-                }
-            }
-            this.N = null;
-        } else if (action == 2 && (fcVar2 = this.N) != null && fcVar2 != fcVar) {
-            fcVar2.c(this, false);
-            this.N = null;
-        }
-        return this.N != null || super.onTouchEvent(motionEvent);
+    public static ec valueOf(String str) {
+        return (ec) Enum.valueOf(ec.class, str);
     }
 
-    public ec(Context context) {
-        super(context, null);
-        this.L = new Path();
-        this.M = new RectF();
+    public static ec[] values() {
+        return (ec[]) K.clone();
+    }
+
+    public ec(String str, int i3, String str2, dc dcVar) {
+        this.a = str2;
+        this.d = dcVar;
+        this.b = 0;
+        this.c = true;
     }
 }

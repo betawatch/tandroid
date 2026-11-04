@@ -1,45 +1,32 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.voip.VideoCapturerDevice;
+import java.io.File;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ l(int i10) {
-        this.a = i10;
+    public /* synthetic */ l(Object obj, Object obj2, Object obj3, int i3) {
+        this.a = i3;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                VideoCapturerDevice.1.lambda$onStop$0();
-                break;
-            case 1:
-                VideoCapturerDevice.2.lambda$onFirstFrameAvailable$0();
-                break;
-            case 2:
-                VoIPPreNotificationService.lambda$dismiss$5();
-                break;
-            case 3:
-                VoIPService.lambda$acceptIncomingCall$100();
-                break;
-            case 4:
-                VoIPService.lambda$configureDeviceForCall$110();
-                break;
-            case 5:
-                VoIPService.lambda$startConferenceGroupCall$35();
-                break;
-            case 6:
-                VoIPService.lambda$startOutgoingCall$6();
-                break;
-            case 7:
-                VoIPService.lambda$startGroupCall$24();
+                ((VoIPDebugToSend) this.b).lambda$done$1((File) this.c, (TL_phone.saveCallDebug) this.d);
                 break;
             default:
-                VoIPService.lambda$onDestroy$97();
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$53((TLRPC.TL_error) this.c, (String) this.d);
                 break;
         }
     }

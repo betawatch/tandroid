@@ -1,38 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jc1 implements org.telegram.ui.ActionBar.u1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rc1 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 
-    public /* synthetic */ jc1(rc1 rc1Var, int i10) {
-        this.a = i10;
-        this.b = rc1Var;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class jc1 extends View {
+    public int a;
+    public final /* synthetic */ WallpapersListActivity b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jc1(WallpapersListActivity wallpapersListActivity, Context context) {
+        super(context);
+        this.b = wallpapersListActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                rc1 rc1Var = this.b;
-                rc1Var.G0();
-                rc1Var.finishFragment();
-                break;
-            case 2:
-                rc1 rc1Var2 = this.b;
-                rc1Var2.R = "";
-                rc1Var2.J0(false);
-                break;
-            case 3:
-                rc1.f0(this.b);
-                break;
-            default:
-                rc1.c0(this.b);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        WallpapersListActivity wallpapersListActivity = this.b;
+        wallpapersListActivity.s.setColor(this.a);
+        canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.s);
+        if (this.a == org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)) {
+            canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.w);
         }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i3, int i10) {
+        setMeasuredDimension(org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(62.0f));
     }
 }

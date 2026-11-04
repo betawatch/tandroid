@@ -1,48 +1,36 @@
 package f2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import android.os.Bundle;
+import android.text.Spanned;
+import g2.n0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends f {
-    public final long c;
-    public final ArrayList d;
-    public final ArrayList e;
+public abstract class d {
+    public static final String a;
+    public static final String b;
+    public static final String c;
+    public static final String d;
+    public static final String e;
 
-    public d(int i10, long j10) {
-        super(i10, 0);
-        this.c = j10;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
+    static {
+        String str = n0.a;
+        a = Integer.toString(0, 36);
+        b = Integer.toString(1, 36);
+        c = Integer.toString(2, 36);
+        d = Integer.toString(3, 36);
+        e = Integer.toString(4, 36);
     }
 
-    public final d d(int i10) {
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            d dVar = (d) arrayList.get(i11);
-            if (dVar.b == i10) {
-                return dVar;
-            }
+    public static Bundle a(Spanned spanned, Object obj, int i3, Bundle bundle) {
+        Bundle bundle2 = new Bundle();
+        bundle2.putInt(a, spanned.getSpanStart(obj));
+        bundle2.putInt(b, spanned.getSpanEnd(obj));
+        bundle2.putInt(c, spanned.getSpanFlags(obj));
+        bundle2.putInt(d, i3);
+        if (bundle != null) {
+            bundle2.putBundle(e, bundle);
         }
-        return null;
-    }
-
-    public final e e(int i10) {
-        ArrayList arrayList = this.d;
-        int size = arrayList.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            e eVar = (e) arrayList.get(i11);
-            if (eVar.b == i10) {
-                return eVar;
-            }
-        }
-        return null;
-    }
-
-    @Override // f2.f
-    public final String toString() {
-        return f.a(this.b) + " leaves: " + Arrays.toString(this.d.toArray()) + " containers: " + Arrays.toString(this.e.toArray());
+        return bundle2;
     }
 }

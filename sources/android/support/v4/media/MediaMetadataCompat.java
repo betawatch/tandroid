@@ -11,7 +11,7 @@ import android.support.v4.media.session.a0;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class MediaMetadataCompat implements Parcelable {
     public static final Parcelable.Creator<MediaMetadataCompat> CREATOR;
@@ -60,13 +60,13 @@ public final class MediaMetadataCompat implements Parcelable {
         e = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER"};
         f = new String[]{"android.media.metadata.DISPLAY_ICON", "android.media.metadata.ART", "android.media.metadata.ALBUM_ART"};
         h = new String[]{"android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART_URI"};
-        CREATOR = new w.a(6);
+        CREATOR = new w.a(4);
     }
 
     public MediaMetadataCompat(Bundle bundle) {
         Bundle bundle2 = new Bundle(bundle);
         this.a = bundle2;
-        a0.k(bundle2);
+        a0.f(bundle2);
     }
 
     public final MediaDescriptionCompat a() {
@@ -84,58 +84,58 @@ public final class MediaMetadataCompat implements Parcelable {
         CharSequence[] charSequenceArr = new CharSequence[3];
         CharSequence charSequence3 = bundle.getCharSequence("android.media.metadata.DISPLAY_TITLE");
         if (TextUtils.isEmpty(charSequence3)) {
+            int i3 = 0;
             int i10 = 0;
-            int i11 = 0;
-            while (i10 < 3) {
+            while (i3 < 3) {
                 String[] strArr = e;
-                if (i11 >= strArr.length) {
+                if (i10 >= strArr.length) {
                     break;
                 }
-                int i12 = i11 + 1;
-                CharSequence charSequence4 = bundle.getCharSequence(strArr[i11]);
+                int i11 = i10 + 1;
+                CharSequence charSequence4 = bundle.getCharSequence(strArr[i10]);
                 if (!TextUtils.isEmpty(charSequence4)) {
-                    charSequenceArr[i10] = charSequence4;
-                    i10++;
+                    charSequenceArr[i3] = charSequence4;
+                    i3++;
                 }
-                i11 = i12;
+                i10 = i11;
             }
         } else {
             charSequenceArr[0] = charSequence3;
             charSequenceArr[1] = bundle.getCharSequence("android.media.metadata.DISPLAY_SUBTITLE");
             charSequenceArr[2] = bundle.getCharSequence("android.media.metadata.DISPLAY_DESCRIPTION");
         }
-        int i13 = 0;
+        int i12 = 0;
         while (true) {
             String[] strArr2 = f;
-            if (i13 >= strArr2.length) {
+            if (i12 >= strArr2.length) {
                 bitmap = null;
                 break;
             }
             try {
-                bitmap = (Bitmap) bundle.getParcelable(strArr2[i13]);
-            } catch (Exception e7) {
-                Log.w("MediaMetadata", "Failed to retrieve a key as Bitmap.", e7);
+                bitmap = (Bitmap) bundle.getParcelable(strArr2[i12]);
+            } catch (Exception e10) {
+                Log.w("MediaMetadata", "Failed to retrieve a key as Bitmap.", e10);
                 bitmap = null;
             }
             if (bitmap != null) {
                 break;
             }
-            i13++;
+            i12++;
         }
-        int i14 = 0;
+        int i13 = 0;
         while (true) {
             String[] strArr3 = h;
-            if (i14 >= strArr3.length) {
+            if (i13 >= strArr3.length) {
                 uri = null;
                 break;
             }
-            CharSequence charSequence5 = bundle.getCharSequence(strArr3[i14]);
+            CharSequence charSequence5 = bundle.getCharSequence(strArr3[i13]);
             String charSequence6 = charSequence5 != null ? charSequence5.toString() : null;
             if (!TextUtils.isEmpty(charSequence6)) {
                 uri = Uri.parse(charSequence6);
                 break;
             }
-            i14++;
+            i13++;
         }
         CharSequence charSequence7 = bundle.getCharSequence("android.media.metadata.MEDIA_URI");
         String charSequence8 = charSequence7 != null ? charSequence7.toString() : null;
@@ -166,7 +166,7 @@ public final class MediaMetadataCompat implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i3) {
         parcel.writeBundle(this.a);
     }
 

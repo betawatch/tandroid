@@ -1,26 +1,101 @@
 package u0;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.view.View;
-import p7.n;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.text.Editable;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class i extends View.BaseSavedState {
-    public static final Parcelable.Creator<i> CREATOR = new n(20);
-    public int a;
+public final class i implements ActionMode.Callback {
+    public final ActionMode.Callback a;
+    public final TextView b;
+    public Class c;
+    public Method d;
+    public boolean e;
+    public boolean f = false;
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("HorizontalScrollView.SavedState{");
-        sb2.append(Integer.toHexString(System.identityHashCode(this)));
-        sb2.append(" scrollPosition=");
-        return a1.g.p(sb2, this.a, "}");
+    public i(ActionMode.Callback callback, TextView textView) {
+        this.a = callback;
+        this.b = textView;
     }
 
-    @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        super.writeToParcel(parcel, i10);
-        parcel.writeInt(this.a);
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        return this.a.onActionItemClicked(actionMode, menuItem);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        return this.a.onCreateActionMode(actionMode, menu);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        this.a.onDestroyActionMode(actionMode);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        TextView textView = this.b;
+        Context context = textView.getContext();
+        PackageManager packageManager = context.getPackageManager();
+        boolean z10 = this.f;
+        Class<?> cls = Integer.TYPE;
+        if (!z10) {
+            this.f = true;
+            try {
+                Class<?> cls2 = Class.forName("com.android.internal.view.menu.MenuBuilder");
+                this.c = cls2;
+                this.d = cls2.getDeclaredMethod("removeItemAt", cls);
+                this.e = true;
+            } catch (ClassNotFoundException | NoSuchMethodException unused) {
+                this.c = null;
+                this.d = null;
+                this.e = false;
+            }
+        }
+        try {
+            Method declaredMethod = (this.e && this.c.isInstance(menu)) ? this.d : menu.getClass().getDeclaredMethod("removeItemAt", cls);
+            for (int size = menu.size() - 1; size >= 0; size--) {
+                MenuItem item = menu.getItem(size);
+                if (item.getIntent() != null && "android.intent.action.PROCESS_TEXT".equals(item.getIntent().getAction())) {
+                    declaredMethod.invoke(menu, Integer.valueOf(size));
+                }
+            }
+            ArrayList arrayList = new ArrayList();
+            if (context instanceof Activity) {
+                for (ResolveInfo resolveInfo : packageManager.queryIntentActivities(new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain"), 0)) {
+                    if (!context.getPackageName().equals(resolveInfo.activityInfo.packageName)) {
+                        ActivityInfo activityInfo = resolveInfo.activityInfo;
+                        if (activityInfo.exported) {
+                            String str = activityInfo.permission;
+                            if (str != null && context.checkSelfPermission(str) != 0) {
+                            }
+                        }
+                    }
+                    arrayList.add(resolveInfo);
+                }
+            }
+            for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i3);
+                MenuItem add = menu.add(0, 0, i3 + 100, resolveInfo2.loadLabel(packageManager));
+                Intent putExtra = new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain").putExtra("android.intent.extra.PROCESS_TEXT_READONLY", !((textView instanceof Editable) && textView.onCheckIsTextEditor() && textView.isEnabled()));
+                ActivityInfo activityInfo2 = resolveInfo2.activityInfo;
+                add.setIntent(putExtra.setClassName(activityInfo2.packageName, activityInfo2.name)).setShowAsAction(1);
+            }
+        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException unused2) {
+        }
+        return this.a.onPrepareActionMode(actionMode, menu);
     }
 }

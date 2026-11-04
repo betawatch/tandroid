@@ -128,9 +128,9 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
         if (j$.time.c.b(localDate)) {
             return K(localDate, this.b);
         }
-        k a2 = this.a.a();
+        k a10 = this.a.a();
         localDate.getClass();
-        return G(a2, (f) j$.com.android.tools.r8.a.a(localDate, this));
+        return G(a10, (f) j$.com.android.tools.r8.a.a(localDate, this));
     }
 
     @Override // j$.time.temporal.Temporal
@@ -203,38 +203,38 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
         ChronoUnit chronoUnit = (ChronoUnit) qVar;
         ChronoUnit chronoUnit2 = ChronoUnit.DAYS;
         if (chronoUnit.compareTo(chronoUnit2) >= 0) {
-            b f7 = B.f();
+            b f10 = B.f();
             if (B.b().compareTo(this.b) < 0) {
-                f7 = f7.w(1L, chronoUnit2);
+                f10 = f10.w(1L, chronoUnit2);
             }
-            return this.a.g(f7, qVar);
+            return this.a.g(f10, qVar);
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
-        long y3 = B.y(aVar) - this.a.y(aVar);
+        long y9 = B.y(aVar) - this.a.y(aVar);
         switch (e.a[chronoUnit.ordinal()]) {
             case 1:
-                y3 = j$.com.android.tools.r8.a.S(y3, 86400000000000L);
+                y9 = j$.com.android.tools.r8.a.S(y9, 86400000000000L);
                 break;
             case 2:
-                y3 = j$.com.android.tools.r8.a.S(y3, 86400000000L);
+                y9 = j$.com.android.tools.r8.a.S(y9, 86400000000L);
                 break;
             case 3:
-                y3 = j$.com.android.tools.r8.a.S(y3, 86400000L);
+                y9 = j$.com.android.tools.r8.a.S(y9, 86400000L);
                 break;
             case 4:
-                y3 = j$.com.android.tools.r8.a.S(y3, 86400);
+                y9 = j$.com.android.tools.r8.a.S(y9, 86400);
                 break;
             case 5:
-                y3 = j$.com.android.tools.r8.a.S(y3, 1440);
+                y9 = j$.com.android.tools.r8.a.S(y9, 1440);
                 break;
             case 6:
-                y3 = j$.com.android.tools.r8.a.S(y3, 24);
+                y9 = j$.com.android.tools.r8.a.S(y9, 24);
                 break;
             case 7:
-                y3 = j$.com.android.tools.r8.a.S(y3, 2);
+                y9 = j$.com.android.tools.r8.a.S(y9, 2);
                 break;
         }
-        return j$.com.android.tools.r8.a.N(y3, this.b.g(B.b(), qVar));
+        return j$.com.android.tools.r8.a.N(y9, this.b.g(B.b(), qVar));
     }
 
     @Override // j$.time.temporal.m

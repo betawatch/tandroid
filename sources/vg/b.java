@@ -1,74 +1,40 @@
 package vg;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import org.telegram.ui.ActionBar.t6;
-import w7.k8;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.h10;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b extends k8 {
-    public final Paint a = new Paint(1);
-    public final Paint b;
-    public final /* synthetic */ f c;
+public final class b extends a {
+    public c d;
 
-    public b(f fVar) {
-        this.c = fVar;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(0);
+    @Override // vg.a
+    public final u4.h0 a() {
+        c cVar = new c(h10.t0, this.a);
+        this.d = cVar;
+        cVar.r = this;
+        return cVar;
     }
 
-    @Override // w7.k8
-    public final void b(Canvas canvas, hi.a aVar) {
-        f fVar = this.c;
-        e eVar = fVar.P;
-        int i10 = fVar.c;
-        if (i10 == 0) {
-            return;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
+        c cVar = this.d;
+        Context context = getContext();
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        ArrayList arrayList = cVar.f;
+        e eVar = new e(context, cVar.c);
+        int i11 = 0;
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            eVar.a((d) arrayList.get(i12));
+            eVar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_31));
+            ((d) arrayList.get(i12)).e = i11;
+            i11 += eVar.getMeasuredHeight();
         }
-        int r12 = t6.r1(i10 / 255.0f, fVar.y);
-        if (Color.alpha(fVar.x) > 0 && i10 == 255) {
-            float f7 = fVar.U;
-            if (f7 > 0.0f) {
-                float f10 = fVar.S;
-                float f11 = fVar.T;
-                int r13 = t6.r1(f7, fVar.x);
-                Paint paint = this.b;
-                paint.setShadowLayer(f10, 0.0f, f11, r13);
-                eVar.c(canvas, paint, fVar.R);
-            }
-        }
-        Rect rect = eVar.m;
-        float f12 = rect.left;
-        float f13 = fVar.d;
-        float f14 = f12 + f13;
-        float f15 = rect.top;
-        float f16 = fVar.e;
-        float f17 = f15 + f16;
-        float f18 = rect.right;
-        float f19 = f18 + f13;
-        float f20 = rect.bottom;
-        float f21 = f20 + f16;
-        boolean z10 = i10 != 255;
-        if (z10) {
-            canvas.saveLayerAlpha(f12, f15, f18, f20, i10);
-        }
-        canvas.save();
-        canvas.clipPath(eVar.k);
-        canvas.translate(rect.left, rect.top);
-        canvas.translate(-f14, -f17);
-        aVar.e(canvas, f14, f17, f19, f21);
-        canvas.restore();
-        if (Color.alpha(r12) > 0) {
-            Paint paint2 = this.a;
-            paint2.setColor(r12);
-            eVar.b(canvas, paint2);
-        }
-        if (z10) {
-            canvas.restore();
-        }
+        cVar.n = i11;
     }
 }

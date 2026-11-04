@@ -1,54 +1,27 @@
 package f2;
 
-import b2.r0;
-import b2.t0;
-import b2.x;
-import v7.t6;
+import g2.n0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g implements t0 {
-    public final float a;
-    public final float b;
+public final class g {
+    public static final String d;
+    public static final String e;
+    public static final String f;
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public g(float f7, float f10) {
-        t6.e("Invalid latitude or longitude", f7 >= -90.0f && f7 <= 90.0f && f10 >= -180.0f && f10 <= 180.0f);
-        this.a = f7;
-        this.b = f10;
+    static {
+        String str = n0.a;
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
-        return null;
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && g.class == obj.getClass()) {
-            g gVar = (g) obj;
-            if (this.a == gVar.a && this.b == gVar.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Float.valueOf(this.b).hashCode() + ((Float.valueOf(this.a).hashCode() + 527) * 31);
-    }
-
-    public final String toString() {
-        return "xyz: latitude=" + this.a + ", longitude=" + this.b;
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
+    public g(int i3, int i10, int i11) {
+        this.a = i3;
+        this.b = i10;
+        this.c = i11;
     }
 }

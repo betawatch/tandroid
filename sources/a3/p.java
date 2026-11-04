@@ -1,80 +1,24 @@
 package a3;
 
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import android.os.Build;
-import android.view.Surface;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class p extends Surface {
-    public static int d;
-    public static boolean e;
-    public final boolean a;
-    public final o b;
-    public boolean c;
-
-    public p(o oVar, SurfaceTexture surfaceTexture, boolean z10) {
-        super(surfaceTexture);
-        this.b = oVar;
-        this.a = z10;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0047 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0039 A[Catch: m -> 0x0045, TRY_LEAVE, TryCatch #0 {m -> 0x0045, blocks: (B:3:0x0001, B:7:0x0039, B:16:0x000d, B:18:0x0017, B:22:0x0024, B:25:0x0031), top: B:2:0x0001 }] */
+public final class p extends IOException {
+    /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int a(Context context) {
-        boolean d10;
-        try {
-            int i10 = Build.VERSION.SDK_INT;
-            if (i10 >= 24 && ((i10 >= 26 || (!"samsung".equals(Build.MANUFACTURER) && !"XT1650".equals(Build.MODEL))) && (i10 >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")))) {
-                d10 = e2.e.d("EGL_EXT_protected_content");
-                if (d10) {
-                    return 0;
-                }
-                return e2.e.d("EGL_KHR_surfaceless_context") ? 1 : 2;
-            }
-            d10 = false;
-            if (d10) {
-            }
-        } catch (e2.m e7) {
-            e2.a.c("PlaceholderSurface", "Failed to determine secure mode due to GL error: " + e7.getMessage());
-            return 0;
+    public p(Throwable th2) {
+        super(r0.toString(), th2);
+        String str;
+        StringBuilder sb2 = new StringBuilder("Unexpected ");
+        sb2.append(th2.getClass().getSimpleName());
+        if (th2.getMessage() != null) {
+            str = ": " + th2.getMessage();
+        } else {
+            str = "";
         }
-    }
-
-    public static synchronized boolean b(Context context) {
-        boolean z10;
-        synchronized (p.class) {
-            try {
-                if (!e) {
-                    d = a(context);
-                    e = true;
-                }
-                z10 = d != 0;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return z10;
-    }
-
-    @Override // android.view.Surface
-    public final void release() {
-        super.release();
-        synchronized (this.b) {
-            try {
-                if (!this.c) {
-                    o oVar = this.b;
-                    oVar.b.getClass();
-                    oVar.b.sendEmptyMessage(2);
-                    this.c = true;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+        sb2.append(str);
     }
 }

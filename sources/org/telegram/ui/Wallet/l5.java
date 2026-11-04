@@ -2,35 +2,39 @@ package org.telegram.ui.Wallet;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class l5 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b6 b;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class l5 extends FrameLayout {
+    public View a;
+    public float b;
+    public int c;
+    public final j5 d;
+    public final /* synthetic */ w5 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l5(b6 b6Var, Context context, int i10) {
+    public l5(w5 w5Var, Context context) {
         super(context);
-        this.a = i10;
-        this.b = b6Var;
+        this.e = w5Var;
+        this.d = new j5(1, this);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                int size = View.MeasureSpec.getSize(i10);
-                b6 b6Var = this.b;
-                b6Var.Z.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, size - org.telegram.messenger.i0.L(24.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(size, org.telegram.messenger.i0.L(36.0f) + b6Var.Z.getMeasuredHeight());
-                break;
-            default:
-                b6 b6Var2 = this.b;
-                b6Var2.e.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), b6Var2.e.getMeasuredHeight());
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.d);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        getViewTreeObserver().removeOnPreDrawListener(this.d);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
+        this.e.T0();
     }
 }

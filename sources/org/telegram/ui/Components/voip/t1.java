@@ -12,11 +12,11 @@ import android.view.ViewConfiguration;
 import android.view.ViewParent;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.zd1;
+import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class t1 extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -32,7 +32,7 @@ public final class t1 extends FrameLayout {
         super(context);
         this.f = u1Var;
         this.a = ViewConfiguration.get(context).getScaledTouchSlop();
-        setOutlineProvider(new bi.d2(18));
+        setOutlineProvider(new cg.p0(21));
         setClipToOutline(true);
     }
 
@@ -41,9 +41,9 @@ public final class t1 extends FrameLayout {
         u1 u1Var = this.f;
         u1Var.r.setPivotX(u1Var.s.getMeasuredWidth());
         u1Var.r.setPivotY(u1Var.s.getMeasuredHeight());
-        u1Var.r.setTranslationX((1.0f / getScaleX()) * (-org.telegram.messenger.i0.L(4.0f)) * u1Var.w);
-        u1Var.r.setTranslationY((1.0f / getScaleY()) * (-org.telegram.messenger.i0.L(4.0f)) * u1Var.w);
-        u1Var.r.setRoundCorners((1.0f / getScaleY()) * org.telegram.messenger.i0.L(8.0f) * u1Var.w);
+        u1Var.r.setTranslationX((1.0f / getScaleX()) * (-org.telegram.messenger.g0.L(4.0f)) * u1Var.w);
+        u1Var.r.setTranslationY((1.0f / getScaleY()) * (-org.telegram.messenger.g0.L(4.0f)) * u1Var.w);
+        u1Var.r.setRoundCorners((1.0f / getScaleY()) * org.telegram.messenger.g0.L(8.0f) * u1Var.w);
         u1Var.r.setScaleX(((1.0f - u1Var.w) * 0.6f) + 0.4f);
         u1Var.r.setScaleY(((1.0f - u1Var.w) * 0.6f) + 0.4f);
         u1Var.r.setAlpha(Math.min(1.0f, 1.0f - u1Var.w));
@@ -51,12 +51,12 @@ public final class t1 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.b = org.telegram.messenger.i0.L(16.0f);
-        this.c = org.telegram.messenger.i0.L(16.0f);
-        this.d = org.telegram.messenger.i0.L(60.0f);
-        this.e = org.telegram.messenger.i0.L(16.0f);
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
+        this.b = org.telegram.messenger.g0.L(16.0f);
+        this.c = org.telegram.messenger.g0.L(16.0f);
+        this.d = org.telegram.messenger.g0.L(60.0f);
+        this.e = org.telegram.messenger.g0.L(16.0f);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x002b, code lost:
@@ -69,10 +69,10 @@ public final class t1 extends FrameLayout {
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         u1 u1Var = this.f;
-        if (u1.U || u1.V == null) {
+        if (u1.V || u1.W == null) {
             return false;
         }
-        org.telegram.messenger.i0.r(u1Var.N);
+        org.telegram.messenger.g0.r(u1Var.O);
         float rawX = motionEvent.getRawX();
         float rawY = motionEvent.getRawY();
         ViewParent parent = getParent();
@@ -81,101 +81,101 @@ public final class t1 extends FrameLayout {
             if (action != 1) {
                 if (action == 2) {
                     u1 u1Var2 = this.f;
-                    float f7 = rawX - u1Var2.I;
-                    float f10 = rawY - u1Var2.J;
-                    if (!u1Var2.K) {
-                        float f11 = (f10 * f10) + (f7 * f7);
-                        float f12 = this.a;
-                        if (f11 > f12 * f12) {
+                    float f10 = rawX - u1Var2.J;
+                    float f11 = rawY - u1Var2.K;
+                    if (!u1Var2.L) {
+                        float f12 = (f11 * f11) + (f10 * f10);
+                        float f13 = this.a;
+                        if (f12 > f13 * f13) {
                             if (parent != null) {
                                 parent.requestDisallowInterceptTouchEvent(true);
                             }
                             u1 u1Var3 = this.f;
-                            u1Var3.K = true;
-                            u1Var3.I = rawX;
-                            u1Var3.J = rawY;
-                            f7 = 0.0f;
+                            u1Var3.L = true;
+                            u1Var3.J = rawX;
+                            u1Var3.K = rawY;
                             f10 = 0.0f;
+                            f11 = 0.0f;
                         }
                     }
                     u1 u1Var4 = this.f;
-                    if (u1Var4.K) {
+                    if (u1Var4.L) {
                         WindowManager.LayoutParams layoutParams = u1Var4.d;
-                        layoutParams.x = (int) (layoutParams.x + f7);
-                        layoutParams.y = (int) (layoutParams.y + f10);
-                        u1Var4.I = rawX;
-                        u1Var4.J = rawY;
-                        org.telegram.messenger.i0.S3(u1Var4.c, u1Var4.a, layoutParams);
+                        layoutParams.x = (int) (layoutParams.x + f10);
+                        layoutParams.y = (int) (layoutParams.y + f11);
+                        u1Var4.J = rawX;
+                        u1Var4.K = rawY;
+                        org.telegram.messenger.g0.T3(u1Var4.c, u1Var4.a, layoutParams);
                         return true;
                     }
                 }
             }
-            AnimatorSet animatorSet = this.f.O;
+            AnimatorSet animatorSet = this.f.P;
             if (animatorSet != null) {
                 animatorSet.cancel();
             }
-            if (motionEvent.getAction() == 1 && !this.f.K && System.currentTimeMillis() - this.f.L < 150) {
+            if (motionEvent.getAction() == 1 && !this.f.L && System.currentTimeMillis() - this.f.M < 150) {
                 Context context = getContext();
                 boolean z10 = context instanceof LaunchActivity;
-                if (z10 && !org.telegram.messenger.w0.x) {
-                    zd1.v((Activity) context, this.f.M);
+                if (z10 && !org.telegram.messenger.t0.x) {
+                    zb1.v((Activity) context, this.f.N);
                 } else if (z10) {
                     Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
                     intent.setAction("voip");
                     context.startActivity(intent);
                 }
-                this.f.K = false;
+                this.f.L = false;
                 return false;
             }
             if (parent != null) {
                 parent.requestDisallowInterceptTouchEvent(false);
-                Point point = org.telegram.messenger.i0.q;
-                int i10 = point.x;
-                int i11 = point.y + u1.X;
-                float f13 = this.d;
-                float f14 = this.e;
+                Point point = org.telegram.messenger.g0.q;
+                int i3 = point.x;
+                int i10 = point.y + u1.Y;
+                float f14 = this.d;
+                float f15 = this.e;
                 u1 u1Var5 = this.f;
                 float left = u1Var5.b.getLeft() + u1Var5.d.x;
                 float measuredWidth = this.f.b.getMeasuredWidth() + left;
                 u1 u1Var6 = this.f;
                 float top = u1Var6.b.getTop() + u1Var6.d.y;
                 float measuredHeight = this.f.b.getMeasuredHeight() + top;
-                this.f.O = new AnimatorSet();
-                float f15 = this.b;
-                if (left < f15) {
+                this.f.P = new AnimatorSet();
+                float f16 = this.b;
+                if (left < f16) {
                     u1 u1Var7 = this.f;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(u1Var7.d.x, f15 - u1Var7.b.getLeft());
-                    ofFloat.addUpdateListener(this.f.P);
-                    this.f.O.playTogether(ofFloat);
-                } else if (measuredWidth > i10 - this.c) {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(u1Var7.d.x, f16 - u1Var7.b.getLeft());
+                    ofFloat.addUpdateListener(this.f.Q);
+                    this.f.P.playTogether(ofFloat);
+                } else if (measuredWidth > i3 - this.c) {
                     u1 u1Var8 = this.f;
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(u1Var8.d.x, (i10 - u1Var8.b.getRight()) - this.c);
-                    ofFloat2.addUpdateListener(this.f.P);
-                    this.f.O.playTogether(ofFloat2);
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(u1Var8.d.x, (i3 - u1Var8.b.getRight()) - this.c);
+                    ofFloat2.addUpdateListener(this.f.Q);
+                    this.f.P.playTogether(ofFloat2);
                 }
-                if (top < f13) {
+                if (top < f14) {
                     u1 u1Var9 = this.f;
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(u1Var9.d.y, f13 - u1Var9.b.getTop());
-                    ofFloat3.addUpdateListener(this.f.Q);
-                    this.f.O.playTogether(ofFloat3);
-                } else if (measuredHeight > i11 - f14) {
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(u1Var9.d.y, f14 - u1Var9.b.getTop());
+                    ofFloat3.addUpdateListener(this.f.R);
+                    this.f.P.playTogether(ofFloat3);
+                } else if (measuredHeight > i10 - f15) {
                     u1 u1Var10 = this.f;
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(u1Var10.d.y, (i11 - u1Var10.b.getMeasuredHeight()) - f14);
-                    ofFloat4.addUpdateListener(this.f.Q);
-                    this.f.O.playTogether(ofFloat4);
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(u1Var10.d.y, (i10 - u1Var10.b.getMeasuredHeight()) - f15);
+                    ofFloat4.addUpdateListener(this.f.R);
+                    this.f.P.playTogether(ofFloat4);
                 }
-                this.f.O.setDuration(150L).setInterpolator(gr.f);
-                this.f.O.start();
+                this.f.P.setDuration(150L).setInterpolator(xq.f);
+                this.f.P.start();
             }
-            this.f.K = false;
-            u1.V.getClass();
+            this.f.L = false;
+            u1.W.getClass();
             return true;
         }
         u1 u1Var11 = this.f;
-        u1Var11.I = rawX;
-        u1Var11.J = rawY;
-        u1Var11.L = System.currentTimeMillis();
-        AnimatorSet animatorSet2 = this.f.O;
+        u1Var11.J = rawX;
+        u1Var11.K = rawY;
+        u1Var11.M = System.currentTimeMillis();
+        AnimatorSet animatorSet2 = this.f.P;
         if (animatorSet2 != null) {
             animatorSet2.cancel();
         }

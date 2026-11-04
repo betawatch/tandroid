@@ -1,59 +1,70 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.Rect;
+import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.p71;
+import java.nio.charset.StandardCharsets;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class a5 extends p71 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 c;
-    public final /* synthetic */ Rect d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ a3[] f;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class a5 extends EditTextBoldCursor {
+    public int H1;
+    public final org.telegram.ui.Components.x4 I1;
+    public final org.telegram.ui.Components.g6 J1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 K1;
 
-    public a5(ArrayList arrayList, Context context, org.telegram.ui.ActionBar.p6 p6Var, Rect rect, int i10, a3[] a3VarArr) {
-        this.a = arrayList;
-        this.b = context;
-        this.c = p6Var;
-        this.d = rect;
-        this.e = i10;
-        this.f = a3VarArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a5(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.K1 = e6Var;
+        this.H1 = 960;
+        this.I1 = new org.telegram.ui.Components.x4(this);
+        org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(false, true, true);
+        this.J1 = g6Var;
+        g6Var.n(0.2f, 160L, xq.h);
+        g6Var.w(org.telegram.messenger.g0.L(15.33f));
+        g6Var.b = 5;
+        g6Var.setCallback(this);
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public final void b(View view, int i10, int i11) {
-        FrameLayout frameLayout = (FrameLayout) view;
-        frameLayout.removeAllViews();
-        frameLayout.addView(b6.t0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i10), null, null, null, null, this.c, this.f, true), w7.b6.c(-2.0f, -1));
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a10 = this.I1.a(org.telegram.ui.ActionBar.k6.w0(this.H1 <= 0 ? org.telegram.ui.ActionBar.k6.p7 : org.telegram.ui.ActionBar.k6.P5, this.K1), false);
+        org.telegram.ui.Components.g6 g6Var = this.J1;
+        g6Var.u(a10);
+        int L = org.telegram.messenger.g0.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
+        int height = getHeight() + getScrollY();
+        g6Var.setBounds(L - org.telegram.messenger.g0.L(48.0f), height - Math.min(org.telegram.messenger.g0.L(44.0f), getHeight()), L, height);
+        g6Var.draw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public final View d(int i10) {
-        FrameLayout frameLayout = new FrameLayout(this.b);
-        int L = org.telegram.messenger.i0.L(20.0f);
-        int i11 = org.telegram.ui.ActionBar.t6.d6;
-        org.telegram.ui.ActionBar.p6 p6Var = this.c;
-        ShapeDrawable e02 = org.telegram.ui.ActionBar.t6.e0(L, 0, org.telegram.ui.ActionBar.t6.w0(i11, p6Var));
-        Rect rect = this.d;
-        InsetDrawable insetDrawable = new InsetDrawable((Drawable) e02, rect.left, 0, rect.right, 0);
-        org.telegram.ui.ActionBar.w6 N = org.telegram.ui.ActionBar.a7.N(i11);
-        frameLayout.setBackground(insetDrawable);
-        org.telegram.ui.ActionBar.a7.k(frameLayout, insetDrawable, N, null, p6Var);
-        return frameLayout;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bt, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(getPaddingLeft() + getScrollX(), getScrollY(), (getWidth() + getScrollX()) - getPaddingRight(), getHeight() + getScrollY());
+        super.onDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public final int e() {
-        return this.a.size();
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bt, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+        super.onTextChanged(charSequence, i3, i10, i11);
+        org.telegram.ui.Components.g6 g6Var = this.J1;
+        if (g6Var == null) {
+            return;
+        }
+        this.H1 = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
+        g6Var.a();
+        int i12 = this.H1;
+        g6Var.t(i12 <= 100 ? Integer.toString(i12) : "", isAttachedToWindow(), true);
+        invalidate();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.J1 || super.verifyDrawable(drawable);
     }
 }

@@ -1,13 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import kotlin.jvm.internal.i;
-import l9.b;
-import ld.p;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzgd extends j implements p {
     Object zza;
@@ -24,23 +23,23 @@ final class zzgd extends j implements p {
         this.zze = j10;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         zzgd zzgdVar = new zzgd(this.zzd, this.zze, cVar);
         zzgdVar.zzf = obj;
         return zzgdVar;
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgd) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzgd) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x00b5, code lost:
     
         if (r14 == r0) goto L39;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -59,20 +58,20 @@ final class zzgd extends j implements p {
         zzhk zzhkVar3;
         zzfp zzfpVar2;
         zzds zzdsVar2;
-        a aVar = a.a;
-        int i10 = this.zzc;
-        ad.j jVar = ad.j.a;
+        gd.a aVar = gd.a.a;
+        int i3 = this.zzc;
+        k kVar = k.a;
         try {
-            if (i10 == 0) {
-                b.b(obj);
+            if (i3 == 0) {
+                ib.b(obj);
                 zzhkVar = (zzhk) this.zzf;
                 zzge zzgeVar = this.zzd;
                 zzdvVar = zzgeVar.zzb;
                 zzdsVar = zzdv.zzb;
-                if (!i.a(zzdvVar, zzdsVar)) {
+                if (!kotlin.jvm.internal.j.a(zzdvVar, zzdsVar)) {
                     zzdvVar2 = zzgeVar.zzb;
                     zzdrVar2 = zzdv.zzd;
-                    if (!i.a(zzdvVar2, zzdrVar2)) {
+                    if (!kotlin.jvm.internal.j.a(zzdvVar2, zzdrVar2)) {
                         zzdtVar = zzdv.zzc;
                         zzgeVar.zzb = zzdtVar;
                         double d11 = this.zze;
@@ -91,24 +90,24 @@ final class zzgd extends j implements p {
                         return aVar;
                     }
                 }
-                return jVar;
+                return kVar;
             }
-            if (i10 == 1) {
+            if (i3 == 1) {
                 d = this.zzb;
                 zzhkVar = (zzhk) this.zza;
                 zzhkVar2 = (zzhk) this.zzf;
-                b.b(obj);
+                ib.b(obj);
             } else {
-                if (i10 != 2) {
-                    if (i10 != 3) {
-                        b.b(obj);
+                if (i3 != 2) {
+                    if (i3 != 3) {
+                        ib.b(obj);
                         zzge zzgeVar2 = this.zzd;
                         zzdsVar2 = zzdv.zzb;
                         zzgeVar2.zzb = zzdsVar2;
-                        return jVar;
+                        return kVar;
                     }
                     zzhkVar3 = (zzhk) this.zzf;
-                    b.b(obj);
+                    ib.b(obj);
                     this.zzf = null;
                     this.zzc = 4;
                     if (((zzhg) obj).zza(zzhkVar3, this) == aVar) {
@@ -117,11 +116,11 @@ final class zzgd extends j implements p {
                     zzge zzgeVar22 = this.zzd;
                     zzdsVar2 = zzdv.zzb;
                     zzgeVar22.zzb = zzdsVar2;
-                    return jVar;
+                    return kVar;
                 }
                 d10 = this.zzb;
                 zzhkVar3 = (zzhk) this.zzf;
-                b.b(obj);
+                ib.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzge zzgeVar3 = this.zzd;
                 zzgeVar3.zzc = zzxnVar;
@@ -147,11 +146,11 @@ final class zzgd extends j implements p {
                 obj = zzfpVar2.zzn(zzxnVar2, (long) d10, this);
             }
             return aVar;
-        } catch (zzcg e) {
+        } catch (zzcg e10) {
             zzge zzgeVar4 = this.zzd;
             zzdrVar = zzdv.zzd;
             zzgeVar4.zzb = zzdrVar;
-            throw e;
+            throw e10;
         }
     }
 }

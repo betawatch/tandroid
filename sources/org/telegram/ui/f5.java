@@ -1,118 +1,27 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class f5 extends androidx.fragment.app.v {
-    public int O = -1;
-
-    public final boolean u(int i10, String[] strArr, int[] iArr) {
-        if (iArr == null) {
-            iArr = new int[0];
-        }
-        if (strArr == null) {
-            strArr = new String[0];
-        }
-        boolean z10 = iArr.length > 0 && iArr[0] == 0;
-        if (i10 == 104) {
-            if (!z10) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.dd.L0(2131743311, null));
-                return true;
-            }
-            a50 a50Var = a50.u5;
-            if (a50Var != null) {
-                a50Var.o1.callOnClick();
-                return true;
-            }
-        } else {
-            if (i10 == 4 || i10 == 151) {
-                if (z10) {
-                    org.telegram.messenger.ic.D().i(null);
-                    return true;
-                }
-                w(R.raw.permission_request_folder, i10 == 151 ? org.telegram.messenger.dd.L0(2131747317, null) : org.telegram.messenger.dd.L0(2131747315, null));
-                return true;
-            }
-            if (i10 == 5) {
-                if (z10) {
-                    org.telegram.messenger.i5.r(this.O).l();
-                    return true;
-                }
-                w(R.raw.permission_request_contacts, org.telegram.messenger.dd.L0(2131747322, null));
-                return false;
-            }
-            if (i10 == 3 || i10 == 150) {
-                int min = Math.min(strArr.length, iArr.length);
-                boolean z11 = true;
-                boolean z12 = true;
-                for (int i11 = 0; i11 < min; i11++) {
-                    if ("android.permission.RECORD_AUDIO".equals(strArr[i11])) {
-                        z11 = iArr[i11] == 0;
-                    } else if ("android.permission.CAMERA".equals(strArr[i11])) {
-                        z12 = iArr[i11] == 0;
-                    }
-                }
-                if (i10 == 150 && (!z11 || !z12)) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.dd.L0(2131747325, null));
-                    return true;
-                }
-                if (!z11) {
-                    w(R.raw.permission_request_microphone, org.telegram.messenger.dd.L0(2131747327, null));
-                    return true;
-                }
-                if (!z12) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.dd.L0(2131747324, null));
-                    return true;
-                }
-                if (org.telegram.messenger.uz.y0) {
-                    CameraController.getInstance().initCamera(null);
-                }
-                return false;
-            }
-            if (i10 != 18 && i10 != 19 && i10 != 20 && i10 != 22) {
-                int i12 = org.telegram.messenger.at.w4;
-                int i13 = org.telegram.messenger.at.v4;
-                if (i10 == 2) {
-                    org.telegram.messenger.at e = org.telegram.messenger.at.e();
-                    if (z10) {
-                        i12 = i13;
-                    }
-                    e.k(i12, new Object[0]);
-                    return true;
-                }
-                if (i10 == 211) {
-                    org.telegram.messenger.at e7 = org.telegram.messenger.at.e();
-                    if (z10) {
-                        i12 = i13;
-                    }
-                    e7.k(i12, 1);
-                    return true;
-                }
-            } else if (!z10) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.dd.L0(2131747324, null));
-            }
-        }
-        return true;
+public final class f5 extends a5 {
+    @Override // org.telegram.ui.a5
+    public final void a() {
+        org.telegram.messenger.hp.s1(org.telegram.messenger.h10.t0).g3((TLRPC.User) this.c, false, this.d);
     }
 
-    public final org.telegram.ui.ActionBar.x1 v(int i10, String str) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        int i11 = org.telegram.ui.ActionBar.t6.L5;
-        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.t6.x0(null, i11, false), null);
-        alertDialog$Builder.n(i11, null);
-        SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(str);
-        org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-        x1Var.T = W2;
-        alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131747316, null), new y0(this, 4));
-        alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131751772, null), null);
-        return x1Var;
-    }
-
-    public final void w(int i10, String str) {
-        v(i10, str).show();
+    @Override // org.telegram.ui.a5
+    public final void b(Object... objArr) {
+        if (((Long) objArr[0]).longValue() == ((TLRPC.User) this.c).id) {
+            TLRPC.UserFull userFull = (TLRPC.UserFull) objArr[1];
+            boolean z10 = this.g;
+            if (z10) {
+                if (z10) {
+                    this.g = false;
+                    this.b.n(this.a, this.e);
+                }
+                this.f.accept(userFull);
+            }
+        }
     }
 }

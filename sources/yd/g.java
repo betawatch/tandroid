@@ -1,22 +1,7 @@
 package yd;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g extends RuntimeException {
-    public final transient cd.h a;
-
-    public g(cd.h hVar) {
-        this.a = hVar;
-    }
-
-    @Override // java.lang.Throwable
-    public final Throwable fillInStackTrace() {
-        setStackTrace(new StackTraceElement[0]);
-        return this;
-    }
-
-    @Override // java.lang.Throwable
-    public final String getLocalizedMessage() {
-        return this.a.toString();
-    }
+public interface g extends r, q {
+    public static final f D = f.a;
 }

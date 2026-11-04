@@ -1,77 +1,73 @@
 package x3;
 
-import b2.v0;
-import b2.w;
-import c3.u;
-import e2.x;
-import java.util.Arrays;
-import u2.z0;
+import android.util.Pair;
+import e3.a0;
+import e3.c0;
+import g2.n0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends i {
-    public u n;
-    public z0 o;
+public final class c implements h {
+    public final long[] a;
+    public final long[] b;
+    public final long c;
 
-    @Override // x3.i
-    public final long b(x xVar) {
-        byte[] bArr = xVar.a;
-        if (bArr[0] != -1) {
-            return -1L;
-        }
-        int i10 = (bArr[2] & 255) >> 4;
-        if (i10 == 6 || i10 == 7) {
-            xVar.O(4);
-            xVar.I();
-        }
-        int s10 = c3.b.s(i10, xVar);
-        xVar.N(0);
-        return s10;
+    public c(long j10, long[] jArr, long[] jArr2) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j10 == -9223372036854775807L ? n0.S(jArr2[jArr2.length - 1]) : j10;
     }
 
-    @Override // x3.i
-    public final boolean c(x xVar, long j10, m5.e eVar) {
-        byte[] bArr = xVar.a;
-        u uVar = this.n;
-        if (uVar == null) {
-            u uVar2 = new u(bArr, 17);
-            this.n = uVar2;
-            w a2 = uVar2.c(Arrays.copyOfRange(bArr, 9, xVar.c), null).a();
-            a2.q = v0.n("audio/ogg");
-            eVar.b = new b2.x(a2);
-            return true;
+    public static Pair i(long j10, long[] jArr, long[] jArr2) {
+        int f10 = n0.f(jArr, j10, true);
+        long j11 = jArr[f10];
+        long j12 = jArr2[f10];
+        int i3 = f10 + 1;
+        if (i3 == jArr.length) {
+            return Pair.create(Long.valueOf(j11), Long.valueOf(j12));
         }
-        byte b10 = bArr[0];
-        if ((b10 & Byte.MAX_VALUE) != 3) {
-            if (b10 != -1) {
-                return true;
-            }
-            z0 z0Var = this.o;
-            if (z0Var != null) {
-                z0Var.a = j10;
-                eVar.c = z0Var;
-            }
-            ((b2.x) eVar.b).getClass();
-            return false;
-        }
-        hf.b t10 = c3.b.t(xVar);
-        u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, t10, uVar.l);
-        this.n = uVar3;
-        z0 z0Var2 = new z0();
-        z0Var2.c = uVar3;
-        z0Var2.d = t10;
-        z0Var2.a = -1L;
-        z0Var2.b = -1L;
-        this.o = z0Var2;
+        return Pair.create(Long.valueOf(j10), Long.valueOf(((long) ((jArr[i3] == j11 ? 0.0d : (j10 - j11) / (r6 - j11)) * (jArr2[i3] - j12))) + j12));
+    }
+
+    @Override // x3.h
+    public final long a() {
+        return -1L;
+    }
+
+    @Override // x3.h
+    public final long b(long j10) {
+        return n0.S(((Long) i(j10, this.a, this.b).second).longValue());
+    }
+
+    @Override // x3.h
+    public final long c() {
+        return 0L;
+    }
+
+    @Override // e3.b0
+    public final boolean d() {
         return true;
     }
 
-    @Override // x3.i
-    public final void d(boolean z10) {
-        super.d(z10);
-        if (z10) {
-            this.n = null;
-            this.o = null;
-        }
+    @Override // e3.b0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // e3.b0
+    public final a0 f(long j10) {
+        Pair i3 = i(n0.h0(n0.j(j10, 0L, this.c)), this.b, this.a);
+        c0 c0Var = new c0(n0.S(((Long) i3.first).longValue()), ((Long) i3.second).longValue());
+        return new a0(c0Var, c0Var);
+    }
+
+    @Override // x3.h
+    public final int g() {
+        return -2147483647;
+    }
+
+    @Override // e3.b0
+    public final long h() {
+        return this.c;
     }
 }

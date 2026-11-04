@@ -1,70 +1,25 @@
 package p6;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import com.google.android.gms.common.api.k;
-import com.google.android.gms.common.api.l;
-import m.p3;
-import n6.g;
-import n6.p;
-import org.telegram.messenger.at;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends g {
-    public final p U;
+public final class c implements b {
+    public final /* synthetic */ q8.a a;
 
-    public c(Context context, Looper looper, p3 p3Var, p pVar, k kVar, l lVar) {
-        super(context, looper, at.t4, p3Var, kVar, lVar, 0);
-        this.U = pVar;
+    public c(q8.a aVar) {
+        this.a = aVar;
     }
 
-    @Override // n6.g, com.google.android.gms.common.api.c
-    public final int m() {
-        return 203400000;
-    }
-
-    @Override // n6.g
-    public final IInterface r(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+    @Override // p6.b
+    public final void a(m6.a aVar) {
+        boolean c2 = aVar.c();
+        q8.a aVar2 = this.a;
+        if (c2) {
+            aVar2.l(null, aVar2.E);
+            return;
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.service.IClientTelemetryService");
-        return queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(iBinder, "com.google.android.gms.common.internal.service.IClientTelemetryService", 6);
-    }
-
-    @Override // n6.g
-    public final k6.c[] s() {
-        return k7.b.b;
-    }
-
-    @Override // n6.g
-    public final Bundle u() {
-        p pVar = this.U;
-        pVar.getClass();
-        Bundle bundle = new Bundle();
-        String str = pVar.a;
-        if (str != null) {
-            bundle.putString("api", str);
+        n nVar = aVar2.u;
+        if (nVar != null) {
+            ((com.google.android.gms.common.api.l) nVar.a).onConnectionFailed(aVar);
         }
-        return bundle;
-    }
-
-    @Override // n6.g
-    public final String w() {
-        return "com.google.android.gms.common.internal.service.IClientTelemetryService";
-    }
-
-    @Override // n6.g
-    public final String x() {
-        return "com.google.android.gms.common.telemetry.service.START";
-    }
-
-    @Override // n6.g
-    public final boolean z() {
-        return true;
     }
 }

@@ -1,40 +1,30 @@
 package mg;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.s61;
-import org.telegram.ui.t5;
-import rh.e4;
+import android.animation.ValueAnimator;
+import gi.j3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ TLRPC.Chat b;
+public final class h {
+    public final int a;
+    public int b;
+    public float c;
+    public float d;
+    public ValueAnimator e;
+    public float f = 0.0f;
+    public final /* synthetic */ j g;
 
-    public /* synthetic */ h(TLRPC.Chat chat) {
-        this.b = chat;
+    public h(j jVar, int i3) {
+        this.g = jVar;
+        this.a = i3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Chat chat = this.b;
-                if (chat != null) {
-                    org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
-                    i2Var.a = true;
-                    LaunchActivity.Q().showAsSheet(new t5(-chat.id), i2Var);
-                    break;
-                }
-                break;
-            default:
-                e4.c2(s61.g0(this.b, true));
-                break;
-        }
-    }
-
-    public /* synthetic */ h(e4 e4Var, TLRPC.Chat chat) {
-        this.b = chat;
+    public final void a() {
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.e = ofFloat;
+        ofFloat.setDuration(600L);
+        this.e.setInterpolator(g.D1);
+        this.e.addUpdateListener(new j3(this, 8));
+        this.e.start();
     }
 }

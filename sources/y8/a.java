@@ -1,109 +1,20 @@
 package y8;
 
 import android.os.Parcel;
-import org.telegram.messenger.at;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a extends b8.b implements d0 {
-    public a() {
-        super("com.google.android.gms.wearable.internal.IWearableCallbacks", 4);
-    }
+public final class a extends q6.a {
+    public static final Parcelable.Creator<a> CREATOR = new w8.b(23);
+    public String a;
+    public String b;
 
-    @Override // y8.d0
-    public void E() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // b8.b
-    public final boolean K0(int i10, Parcel parcel, Parcel parcel2) {
-        switch (i10) {
-            case 2:
-                throw sc.e.j(parcel);
-            case 3:
-                throw sc.e.j(parcel);
-            case 4:
-                throw sc.e.j(parcel);
-            case 5:
-                throw sc.e.j(parcel);
-            case 6:
-                throw sc.e.j(parcel);
-            case 7:
-                r0 r0Var = (r0) f8.a.a(parcel, r0.CREATOR);
-                f8.a.b(parcel);
-                s0(r0Var);
-                break;
-            case 8:
-                throw sc.e.j(parcel);
-            case 9:
-                throw sc.e.j(parcel);
-            case 10:
-                throw sc.e.j(parcel);
-            case 11:
-                f8.a.b(parcel);
-                E();
-                break;
-            case 12:
-                throw sc.e.j(parcel);
-            case 13:
-                throw sc.e.j(parcel);
-            case 14:
-                throw sc.e.j(parcel);
-            case 15:
-                throw sc.e.j(parcel);
-            case 16:
-                throw sc.e.j(parcel);
-            case 17:
-                throw sc.e.j(parcel);
-            case 18:
-                throw sc.e.j(parcel);
-            case 19:
-                throw sc.e.j(parcel);
-            case 20:
-                throw sc.e.j(parcel);
-            case 21:
-            case 24:
-            case 25:
-            case at.U /* 31 */:
-            case 32:
-            case 33:
-            default:
-                return false;
-            case 22:
-                throw sc.e.j(parcel);
-            case 23:
-                throw sc.e.j(parcel);
-            case 26:
-                throw sc.e.j(parcel);
-            case 27:
-                throw sc.e.j(parcel);
-            case 28:
-                throw sc.e.j(parcel);
-            case 29:
-                throw sc.e.j(parcel);
-            case at.T /* 30 */:
-                throw sc.e.j(parcel);
-            case 34:
-                throw sc.e.j(parcel);
-            case 35:
-                throw sc.e.j(parcel);
-            case 36:
-                throw sc.e.j(parcel);
-            case 37:
-                throw sc.e.j(parcel);
-            case 38:
-                throw sc.e.j(parcel);
-            case 39:
-                throw sc.e.j(parcel);
-            case 40:
-                throw sc.e.j(parcel);
-        }
-        parcel2.writeNoException();
-        return true;
-    }
-
-    @Override // y8.d0
-    public void s0(r0 r0Var) {
-        throw new UnsupportedOperationException();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.m(parcel, 2, this.a);
+        j8.a.m(parcel, 3, this.b);
+        j8.a.t(parcel, s6);
     }
 }

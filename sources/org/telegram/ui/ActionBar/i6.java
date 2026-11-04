@@ -1,43 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i6 extends Drawable {
-    public static Paint c;
-    public Paint a;
-    public float b;
+public final /* synthetic */ class i6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j6 b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int L;
-        Rect bounds = getBounds();
-        float f7 = this.b;
-        if (Math.abs(f7 - (-1.0f)) < 0.01f) {
-            L = Math.max(bounds.width(), bounds.height()) / 2;
-        } else if (Math.abs(f7 - (-2.0f)) < 0.01f) {
-            L = (int) Math.ceil(Math.sqrt(((bounds.top - bounds.centerY()) * (bounds.top - bounds.centerY())) + ((bounds.left - bounds.centerX()) * (bounds.left - bounds.centerX()))));
-        } else {
-            L = org.telegram.messenger.i0.L(f7);
+    public /* synthetic */ i6(j6 j6Var, int i3) {
+        this.a = i3;
+        this.b = j6Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        j6 j6Var = this.b;
+        switch (i3) {
+            case 0:
+                j6Var.s();
+                break;
+            default:
+                hs.e().k(hs.t4, j6Var, Boolean.TRUE, null, -1);
+                break;
         }
-        canvas.drawCircle(bounds.centerX(), bounds.centerY(), L, this.a);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

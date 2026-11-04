@@ -1,14 +1,14 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wg implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ bi b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ wg(bi biVar, boolean z10, int i10) {
-        this.a = i10;
+    public /* synthetic */ wg(bi biVar, boolean z10, int i3) {
+        this.a = i3;
         this.b = biVar;
         this.c = z10;
     }
@@ -20,7 +20,7 @@ public final /* synthetic */ class wg implements Runnable {
                 boolean z10 = this.c;
                 bi biVar = this.b;
                 if (!z10) {
-                    biVar.W2.setVisibility(8);
+                    biVar.X2.setVisibility(8);
                     break;
                 } else {
                     biVar.getClass();
@@ -30,7 +30,7 @@ public final /* synthetic */ class wg implements Runnable {
                 boolean z11 = this.c;
                 bi biVar2 = this.b;
                 if (!z11) {
-                    biVar2.s1.setVisibility(8);
+                    biVar2.t1.setVisibility(8);
                     break;
                 } else {
                     biVar2.getClass();
@@ -40,7 +40,7 @@ public final /* synthetic */ class wg implements Runnable {
                 boolean z12 = this.c;
                 bi biVar3 = this.b;
                 if (!z12) {
-                    biVar3.u1.setVisibility(8);
+                    biVar3.v1.setVisibility(8);
                     break;
                 } else {
                     biVar3.getClass();
@@ -53,7 +53,7 @@ public final /* synthetic */ class wg implements Runnable {
                     biVar4.getClass();
                     break;
                 } else {
-                    biVar4.r3.setVisibility(4);
+                    biVar4.s3.setVisibility(4);
                     break;
                 }
         }

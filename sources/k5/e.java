@@ -1,27 +1,7 @@
 package k5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e implements ja.d {
-    public static final e a = new e();
-    public static final ja.c b = ja.c.c("eventTimeMs");
-    public static final ja.c c = ja.c.c("eventCode");
-    public static final ja.c d = ja.c.c("eventUptimeMs");
-    public static final ja.c e = ja.c.c("sourceExtension");
-    public static final ja.c f = ja.c.c("sourceExtensionJsonProto3");
-    public static final ja.c g = ja.c.c("timezoneOffsetSeconds");
-    public static final ja.c h = ja.c.c("networkConnectionInfo");
-
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        k kVar = (k) ((r) obj);
-        eVar.f(b, kVar.a);
-        eVar.d(c, kVar.b);
-        eVar.f(d, kVar.c);
-        eVar.d(e, kVar.d);
-        eVar.d(f, kVar.e);
-        eVar.f(g, kVar.f);
-        eVar.d(h, kVar.g);
-    }
+public interface e {
+    Object apply(Object obj);
 }

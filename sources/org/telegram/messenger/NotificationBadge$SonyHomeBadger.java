@@ -6,39 +6,39 @@ import android.net.Uri;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class NotificationBadge$SonyHomeBadger implements ms {
-    public static os b;
+public class NotificationBadge$SonyHomeBadger implements ur {
+    public static vr b;
     public final Uri a = Uri.parse("content://com.sonymobile.home.resourceprovider/badge");
 
-    @Override // org.telegram.messenger.ms
-    public final void a(int i10) {
-        if (w0.b.getPackageManager().resolveContentProvider("com.sonymobile.home.resourceprovider", 0) == null) {
+    @Override // org.telegram.messenger.ur
+    public final void a(int i3) {
+        if (t0.b.getPackageManager().resolveContentProvider("com.sonymobile.home.resourceprovider", 0) == null) {
             Intent intent = new Intent("com.sonyericsson.home.action.UPDATE_BADGE");
-            intent.putExtra("com.sonyericsson.home.intent.extra.badge.PACKAGE_NAME", ps.d.getPackageName());
-            intent.putExtra("com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME", ps.d.getClassName());
-            intent.putExtra("com.sonyericsson.home.intent.extra.badge.MESSAGE", String.valueOf(i10));
-            intent.putExtra("com.sonyericsson.home.intent.extra.badge.SHOW_MESSAGE", i10 > 0);
-            i0.g3(new t(intent, 5));
+            intent.putExtra("com.sonyericsson.home.intent.extra.badge.PACKAGE_NAME", wr.d.getPackageName());
+            intent.putExtra("com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME", wr.d.getClassName());
+            intent.putExtra("com.sonyericsson.home.intent.extra.badge.MESSAGE", String.valueOf(i3));
+            intent.putExtra("com.sonyericsson.home.intent.extra.badge.SHOW_MESSAGE", i3 > 0);
+            g0.h3(new s(intent, 5));
             return;
         }
-        if (i10 < 0) {
+        if (i3 < 0) {
             return;
         }
         if (b == null) {
-            b = new os(w0.b.getApplicationContext().getContentResolver());
+            b = new vr(t0.b.getApplicationContext().getContentResolver());
         }
-        String packageName = ps.d.getPackageName();
-        String className = ps.d.getClassName();
+        String packageName = wr.d.getPackageName();
+        String className = wr.d.getClassName();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("badge_count", Integer.valueOf(i10));
+        contentValues.put("badge_count", Integer.valueOf(i3));
         contentValues.put("package_name", packageName);
         contentValues.put("activity_name", className);
         b.startInsert(0, null, this.a, contentValues);
     }
 
-    @Override // org.telegram.messenger.ms
+    @Override // org.telegram.messenger.ur
     public final List b() {
         return Arrays.asList("com.sonyericsson.home", "com.sonymobile.home");
     }

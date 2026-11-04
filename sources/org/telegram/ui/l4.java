@@ -1,93 +1,141 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.beta.R;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.view.TextureView;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l4 implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public class l4 extends FrameLayout {
+    public final k4 a;
+    public float b;
+    public int c;
+    public boolean d;
+    public int e;
+    public final Matrix f;
 
-    public /* synthetic */ l4(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public l4(Context context) {
+        super(context);
+        this.f = new Matrix();
+        this.c = 0;
+        this.a = new k4(this, 0);
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        int i11 = 0;
-        int i12 = 1;
-        switch (this.a) {
-            case 0:
-                l01 l01Var = (l01) this.b;
-                l01Var.getClass();
-                mi.e.c.b(i10 == 0 ? ki.i.a : ki.i.b);
-                ((fg.j) l01Var.c).g(2);
-                break;
-            case 1:
-                zx zxVar = (zx) this.b;
-                if (i10 != 0) {
-                    if (i10 == 1 && zxVar.e0 != null) {
-                        while (true) {
-                            yx[] yxVarArr = zxVar.e0;
-                            if (i11 >= yxVarArr.length) {
-                                break;
-                            } else {
-                                yx yxVar = yxVarArr[i11];
-                                if (yxVar.s == 0 && yxVar.getVisibility() == 0) {
-                                    org.telegram.ui.Cells.v2 c42 = zx.c4(zxVar.e0[i11]);
-                                    vx vxVar = zxVar.e0[i11].a;
-                                    int i13 = vx.B3;
-                                    vxVar.C1(true, c42);
-                                }
-                                i11++;
-                            }
-                        }
-                    }
-                } else {
-                    org.telegram.messenger.is messagesStorage = zxVar.getMessagesStorage();
-                    messagesStorage.a.c(new org.telegram.messenger.zp(messagesStorage, i12, 3));
-                    break;
-                }
-                break;
-            case 2:
-                ff0 ff0Var = (ff0) this.b;
-                if (i10 != 0) {
-                    ProfileActivity.V4(ff0Var.a0.getParentActivity(), false);
-                    break;
-                } else {
-                    org.telegram.messenger.v2.a = !org.telegram.messenger.v2.a;
-                    org.telegram.messenger.w0.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", org.telegram.messenger.v2.a).commit();
-                    org.telegram.ui.Components.cc.a0(ff0Var.a0).Q(R.raw.chats_infotip, 36, org.telegram.messenger.v2.a ? "Logs enabled." : "Logs disabled.").j();
-                    if (org.telegram.messenger.v2.a) {
-                        i0.a.q(org.telegram.messenger.w0.s, new StringBuilder("app start time = "));
-                        try {
-                            org.telegram.messenger.f8.b("buildVersion = " + org.telegram.messenger.w0.b.getPackageManager().getPackageInfo(org.telegram.messenger.w0.b.getPackageName(), 0).versionCode);
-                            break;
-                        } catch (Exception e) {
-                            org.telegram.messenger.f8.g(e, true);
-                            return;
-                        }
-                    }
-                }
-                break;
-            default:
-                jl0 jl0Var = (jl0) this.b;
-                if (i10 != 0) {
-                    if (i10 != 1) {
-                        jl0Var.getClass();
-                        break;
-                    } else {
-                        jl0Var.x = "female";
-                        jl0Var.Y[4].setText(org.telegram.messenger.dd.L0(2131747585, null));
-                        break;
-                    }
-                } else {
-                    jl0Var.x = "male";
-                    jl0Var.Y[4].setText(org.telegram.messenger.dd.L0(2131747524, null));
-                    break;
-                }
+    public final void a(float f10, int i3) {
+        if (this.b != f10) {
+            this.b = f10;
+            this.e = i3;
+            requestLayout();
         }
+    }
+
+    public float getAspectRatio() {
+        return this.b;
+    }
+
+    public int getResizeMode() {
+        return this.c;
+    }
+
+    public int getVideoRotation() {
+        return this.e;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i3, int i10) {
+        float f10;
+        float f11;
+        super.onMeasure(i3, i10);
+        if (this.b <= 0.0f) {
+            return;
+        }
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        float f12 = measuredWidth;
+        float f13 = measuredHeight;
+        float f14 = (this.b / (f12 / f13)) - 1.0f;
+        float abs = Math.abs(f14);
+        k4 k4Var = this.a;
+        if (abs <= 0.01f) {
+            if (k4Var.b) {
+                return;
+            }
+            k4Var.b = true;
+            ((l4) k4Var.c).post(k4Var);
+            return;
+        }
+        int i11 = this.c;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                if (i11 == 2) {
+                    f10 = this.b;
+                } else if (i11 != 3) {
+                    if (i11 == 4) {
+                        if (f14 > 0.0f) {
+                            f10 = this.b;
+                        } else {
+                            f11 = this.b;
+                        }
+                    }
+                } else if (f14 <= 0.0f) {
+                    f11 = this.b;
+                } else {
+                    f10 = this.b;
+                }
+                measuredWidth = (int) (f13 * f10);
+            } else {
+                f11 = this.b;
+            }
+            measuredHeight = (int) (f12 / f11);
+        } else if (f14 > 0.0f) {
+            f11 = this.b;
+            measuredHeight = (int) (f12 / f11);
+        } else {
+            f10 = this.b;
+            measuredWidth = (int) (f13 * f10);
+        }
+        if (!k4Var.b) {
+            k4Var.b = true;
+            ((l4) k4Var.c).post(k4Var);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_30));
+        int childCount = getChildCount();
+        for (int i12 = 0; i12 < childCount; i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt instanceof TextureView) {
+                Matrix matrix = this.f;
+                matrix.reset();
+                float width = getWidth() / 2;
+                float height = getHeight() / 2;
+                matrix.postRotate(this.e, width, height);
+                int i13 = this.e;
+                if (i13 == 90 || i13 == 270) {
+                    float height2 = getHeight() / getWidth();
+                    matrix.postScale(1.0f / height2, height2, width, height);
+                }
+                ((TextureView) childAt).setTransform(matrix);
+                return;
+            }
+        }
+    }
+
+    public void setDrawingReady(boolean z10) {
+        if (this.d == z10) {
+            return;
+        }
+        this.d = z10;
+    }
+
+    public void setResizeMode(int i3) {
+        if (this.c != i3) {
+            this.c = i3;
+            requestLayout();
+        }
+    }
+
+    public void setAspectRatioListener(j4 j4Var) {
     }
 }

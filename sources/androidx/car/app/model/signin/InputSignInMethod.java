@@ -7,7 +7,7 @@ import j$.util.Objects;
 import u.a;
 import u.c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class InputSignInMethod implements c {
     public static final int INPUT_TYPE_DEFAULT = 1;
@@ -77,7 +77,7 @@ public final class InputSignInMethod implements c {
         StringBuilder sb2 = new StringBuilder("[inputType:");
         sb2.append(this.mInputType);
         sb2.append(", keyboardType: ");
-        return g.p(sb2, this.mKeyboardType, "]");
+        return g.o(this.mKeyboardType, "]", sb2);
     }
 
     private InputSignInMethod() {

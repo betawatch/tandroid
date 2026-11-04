@@ -2,17 +2,17 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.internal.zzsh;
 import com.google.android.recaptcha.internal.zzsn;
-import i0.a;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
+import k2.p1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpw<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
@@ -35,10 +35,10 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
     public static Object zzE(Method method, Object obj, Object... objArr) {
         try {
             return method.invoke(obj, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e7) {
-            Throwable cause = e7.getCause();
+        } catch (IllegalAccessException e10) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e10);
+        } catch (InvocationTargetException e11) {
+            Throwable cause = e11.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -70,28 +70,28 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static zzsn zzi(zzsn zzsnVar, byte[] bArr, int i10, int i11, zzry zzryVar) {
-        if (i11 == 0) {
+    public static zzsn zzi(zzsn zzsnVar, byte[] bArr, int i3, int i10, zzry zzryVar) {
+        if (i10 == 0) {
             return zzsnVar;
         }
         zzsn zzv = zzsnVar.zzv();
         try {
             zzug zzb2 = zzuc.zza().zzb(zzv.getClass());
-            zzb2.zzi(zzv, bArr, 0, i11, new zzqb(zzryVar));
+            zzb2.zzi(zzv, bArr, 0, i10, new zzqb(zzryVar));
             zzb2.zzf(zzv);
             return zzv;
-        } catch (zzsx e) {
-            if (e.zzb()) {
-                throw new zzsx(e);
+        } catch (zzsx e10) {
+            if (e10.zzb()) {
+                throw new zzsx(e10);
             }
-            throw e;
-        } catch (zzuu e7) {
-            throw e7.zza();
-        } catch (IOException e10) {
-            if (e10.getCause() instanceof zzsx) {
-                throw ((zzsx) e10.getCause());
+            throw e10;
+        } catch (zzuu e11) {
+            throw e11.zza();
+        } catch (IOException e12) {
+            if (e12.getCause() instanceof zzsx) {
+                throw ((zzsx) e12.getCause());
             }
-            throw new zzsx(e10);
+            throw new zzsx(e12);
         } catch (IndexOutOfBoundsException unused) {
             throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
         }
@@ -113,8 +113,8 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         return zzl;
     }
 
-    public static zzsm zzs(zzts zztsVar, Object obj, zzts zztsVar2, zzsq zzsqVar, int i10, zzvg zzvgVar, Class cls) {
-        return new zzsm(zztsVar, "", null, new zzsl(null, i10, zzvgVar, false, false), cls);
+    public static zzsm zzs(zzts zztsVar, Object obj, zzts zztsVar2, zzsq zzsqVar, int i3, zzvg zzvgVar, Class cls) {
+        return new zzsm(zztsVar, "", null, new zzsl(null, i3, zzvgVar, false, false), cls);
     }
 
     public static zzsn zzu(Class cls) {
@@ -124,8 +124,8 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 zzsnVar = (zzsn) map.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
+            } catch (ClassNotFoundException e10) {
+                throw new IllegalStateException("Class initialization cannot fail.", e10);
             }
         }
         if (zzsnVar != null) {
@@ -148,8 +148,8 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         } else {
             zzqoVar = new zzqo(inputStream, TLObject.FLAG_12, null);
         }
-        int i10 = zzry.zzb;
-        int i11 = zzuc.zza;
+        int i3 = zzry.zzb;
+        int i10 = zzuc.zza;
         zzry zzryVar = zzry.zza;
         zzsn zzv = zzsnVar.zzv();
         try {
@@ -158,29 +158,29 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             zzb2.zzf(zzv);
             zzg(zzv);
             return zzv;
-        } catch (zzsx e) {
-            if (e.zzb()) {
-                throw new zzsx(e);
+        } catch (zzsx e10) {
+            if (e10.zzb()) {
+                throw new zzsx(e10);
             }
-            throw e;
-        } catch (zzuu e7) {
-            throw e7.zza();
-        } catch (IOException e10) {
-            if (e10.getCause() instanceof zzsx) {
-                throw ((zzsx) e10.getCause());
+            throw e10;
+        } catch (zzuu e11) {
+            throw e11.zza();
+        } catch (IOException e12) {
+            if (e12.getCause() instanceof zzsx) {
+                throw ((zzsx) e12.getCause());
             }
-            throw new zzsx(e10);
-        } catch (RuntimeException e11) {
-            if (e11.getCause() instanceof zzsx) {
-                throw ((zzsx) e11.getCause());
+            throw new zzsx(e12);
+        } catch (RuntimeException e13) {
+            if (e13.getCause() instanceof zzsx) {
+                throw ((zzsx) e13.getCause());
             }
-            throw e11;
+            throw e13;
         }
     }
 
     public static zzsn zzx(zzsn zzsnVar, byte[] bArr) {
-        int i10 = zzry.zzb;
-        int i11 = zzuc.zza;
+        int i3 = zzry.zzb;
+        int i10 = zzuc.zza;
         zzsn zzi = zzi(zzsnVar, bArr, 0, bArr.length, zzry.zza);
         zzg(zzi);
         return zzi;
@@ -209,9 +209,9 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         if (zzL()) {
             return zzn();
         }
-        int i10 = this.zza;
-        if (i10 != 0) {
-            return i10;
+        int i3 = this.zza;
+        if (i3 != 0) {
+            return i3;
         }
         int zzn = zzn();
         this.zza = zzn;
@@ -236,7 +236,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         this.zzd &= ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
-    public final void zzJ(int i10) {
+    public final void zzJ(int i3) {
         this.zzd = (this.zzd & TLObject.FLAG_31) | ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
@@ -251,15 +251,15 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zza >= 0) {
                 return zza;
             }
-            throw new IllegalStateException(a.i(zza, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(p1.i(zza, "serialized size must be non-negative, was "));
         }
-        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
+        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i3 != Integer.MAX_VALUE) {
+            return i3;
         }
         int zza2 = zzugVar.zza(this);
         if (zza2 < 0) {
-            throw new IllegalStateException(a.i(zza2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(p1.i(zza2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zza2;
         return zza2;
@@ -282,7 +282,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
         zzuc.zza().zzb(getClass()).zzj(this, zzqw.zza(zzqvVar));
     }
 
-    public abstract Object zzh(int i10, Object obj, Object obj2);
+    public abstract Object zzh(int i3, Object obj, Object obj2);
 
     @Override // com.google.android.recaptcha.internal.zztt
     public final /* synthetic */ zzts zzm() {
@@ -300,15 +300,15 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             if (zzf >= 0) {
                 return zzf;
             }
-            throw new IllegalStateException(a.i(zzf, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(p1.i(zzf, "serialized size must be non-negative, was "));
         }
-        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i10 != Integer.MAX_VALUE) {
-            return i10;
+        int i3 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i3 != Integer.MAX_VALUE) {
+            return i3;
         }
         int zzf2 = zzf(null);
         if (zzf2 < 0) {
-            throw new IllegalStateException(a.i(zzf2, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(p1.i(zzf2, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | zzf2;
         return zzf2;

@@ -10,10 +10,10 @@ import android.graphics.RadialGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class e0 extends Drawable {
     public final Drawable a;
@@ -29,43 +29,43 @@ public final class e0 extends Drawable {
         Paint paint2 = new Paint(1);
         this.c = paint2;
         this.d = new Paint();
-        this.e = at.e4;
-        Drawable f7 = i0.a.f(context, R.drawable.msg_folders_bots);
-        this.a = f7;
-        f7.setColorFilter(new PorterDuffColorFilter(-13628751, PorterDuff.Mode.SRC_IN));
+        this.e = hs.e4;
+        Drawable g7 = k2.p1.g(context, R.drawable.msg_folders_bots);
+        this.a = g7;
+        g7.setColorFilter(new PorterDuffColorFilter(-13628751, PorterDuff.Mode.SRC_IN));
         paint.setShader(new RadialGradient(400.0f, 213.0f, 500.0f, -4811527, -9674273, Shader.TileMode.CLAMP));
         paint2.setColor(-1);
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    public final void a(Canvas canvas, float f7, float f10, float f11, float f12) {
+    public final void a(Canvas canvas, float f10, float f11, float f12, float f13) {
         Drawable drawable = this.a;
         int intrinsicWidth = drawable.getIntrinsicWidth();
         int intrinsicHeight = drawable.getIntrinsicHeight();
         if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
             return;
         }
-        drawable.setAlpha(Math.round(this.e * f12));
+        drawable.setAlpha(Math.round(this.e * f13));
         drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         canvas.save();
-        canvas.translate(f7, f10);
-        canvas.scale(f11 / intrinsicWidth, f11 / intrinsicHeight);
+        canvas.translate(f10, f11);
+        canvas.scale(f12 / intrinsicWidth, f12 / intrinsicHeight);
         canvas.translate((-intrinsicWidth) / 2.0f, (-intrinsicHeight) / 2.0f);
         drawable.draw(canvas);
         canvas.restore();
     }
 
-    public final void b(Canvas canvas, Rect rect, float f7, float f10, float f11, float f12, float f13, float f14) {
-        float f15 = rect.left;
-        float f16 = rect.top;
-        canvas.drawLine((f11 * f7) + f15, (f12 * f10) + f16, (f13 * f7) + f15, (f14 * f10) + f16, this.c);
+    public final void b(Canvas canvas, Rect rect, float f10, float f11, float f12, float f13, float f14, float f15) {
+        float f16 = rect.left;
+        float f17 = rect.top;
+        canvas.drawLine((f12 * f10) + f16, (f13 * f11) + f17, (f14 * f10) + f16, (f15 * f11) + f17, this.c);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Canvas canvas2;
-        int i10;
+        int i3;
         Rect bounds = getBounds();
         if (bounds.isEmpty() || this.e == 0) {
             return;
@@ -74,26 +74,26 @@ public final class e0 extends Drawable {
         if (colorFilter != null) {
             Paint paint = this.d;
             paint.setColorFilter(colorFilter);
-            i10 = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
+            i3 = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
             canvas2 = canvas;
         } else {
             canvas2 = canvas;
-            i10 = -1;
+            i3 = -1;
         }
         float width = bounds.width() / 800.0f;
         float height = bounds.height() / 427.0f;
-        int i11 = this.e;
+        int i10 = this.e;
         Paint paint2 = this.b;
-        paint2.setAlpha(i11);
+        paint2.setAlpha(i10);
         canvas2.save();
         canvas2.translate(bounds.left, bounds.top);
         canvas2.scale(width, height);
         Canvas canvas3 = canvas2;
         canvas3.drawRect(0.0f, 0.0f, 800.0f, 427.0f, paint2);
         canvas3.restore();
-        int i12 = this.e;
+        int i11 = this.e;
         Paint paint3 = this.c;
-        paint3.setAlpha(i12);
+        paint3.setAlpha(i11);
         paint3.setStrokeWidth(Math.min(width, height) * 16.4f);
         b(canvas3, bounds, width, height, 449.809f, 246.04f, 483.703f, 212.418f);
         b(canvas3, bounds, width, height, 483.703f, 212.418f, 451.291f, 179.901f);
@@ -122,19 +122,19 @@ public final class e0 extends Drawable {
         a(canvas3, 678.299f, 408.888f, 42.0f, 0.075f);
         a(canvas3, 655.947f, 316.916f, 42.0f, 0.15f);
         canvas3.restore();
-        if (i10 >= 0) {
-            canvas3.restoreToCount(i10);
+        if (i3 >= 0) {
+            canvas3.restoreToCount(i3);
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicHeight() {
-        return org.telegram.messenger.i0.L(427.0f);
+        return org.telegram.messenger.g0.L(427.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getIntrinsicWidth() {
-        return org.telegram.messenger.i0.L(800.0f);
+        return org.telegram.messenger.g0.L(800.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -143,8 +143,8 @@ public final class e0 extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        int max = Math.max(0, Math.min(at.e4, i10));
+    public final void setAlpha(int i3) {
+        int max = Math.max(0, Math.min(hs.e4, i3));
         if (this.e != max) {
             this.e = max;
             invalidateSelf();

@@ -1,22 +1,15 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class u31 implements View.OnLongClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ a41 b;
-
-    public u31(a41 a41Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = a41Var;
-        this.a = tL_authorization;
-    }
-
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        a41.I0(this.b, this.a.country);
-        return true;
+public final class u31 extends org.telegram.ui.Cells.v7 {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (getTranslationY() != 0.0f) {
+            canvas.drawColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
+        }
+        super.onDraw(canvas);
     }
 }

@@ -4,70 +4,70 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import org.telegram.messenger.e20;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.lp;
-import org.telegram.messenger.mp;
-import org.telegram.messenger.wp;
-import org.telegram.ui.Components.gr;
+import org.telegram.messenger.h10;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.wo;
+import org.telegram.messenger.xo;
+import org.telegram.messenger.zi;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class y9 extends q1 {
-    public final GestureDetector hd;
-    public final org.telegram.ui.Components.w4 id;
-    public final org.telegram.ui.Components.w4 jd;
-    public final /* synthetic */ int kd;
-    public final /* synthetic */ z9 ld;
+    public final GestureDetector kd;
+    public final org.telegram.ui.Components.x4 ld;
+    public final org.telegram.ui.Components.x4 md;
+    public final /* synthetic */ int nd;
+    public final /* synthetic */ z9 od;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y9(z9 z9Var, Context context, int i10, org.telegram.ui.ActionBar.p6 p6Var, Context context2, int i11) {
-        super(context, i10, false, null, p6Var);
-        this.ld = z9Var;
-        this.kd = i11;
-        this.hd = new GestureDetector(context2, new lg.f(2, this));
-        gr grVar = gr.g;
-        this.id = new org.telegram.ui.Components.w4(this, 180L, grVar, 0);
-        this.jd = new org.telegram.ui.Components.w4(this, 180L, grVar, 0);
+    public y9(z9 z9Var, Context context, int i3, org.telegram.ui.ActionBar.e6 e6Var, Context context2, int i10) {
+        super(context, i3, false, null, e6Var);
+        this.od = z9Var;
+        this.nd = i10;
+        this.kd = new GestureDetector(context2, new x9(0, this));
+        xq xqVar = xq.g;
+        this.ld = new org.telegram.ui.Components.x4(this, 180L, xqVar, 0);
+        this.md = new org.telegram.ui.Components.x4(this, 180L, xqVar, 0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int w02;
         int w03;
-        kj messageObject = getMessageObject();
-        org.telegram.ui.Components.w4 w4Var = this.jd;
-        org.telegram.ui.Components.w4 w4Var2 = this.id;
-        org.telegram.ui.Components.r8 r8Var = this.z7;
+        zi messageObject = getMessageObject();
+        org.telegram.ui.Components.x4 x4Var = this.md;
+        org.telegram.ui.Components.x4 x4Var2 = this.ld;
+        org.telegram.ui.Components.u8 u8Var = this.A7;
         if (messageObject == null || getMessageObject().c1 < 0) {
-            w4Var2.a(r8Var.b(), false);
-            w4Var.a(r8Var.c(), false);
+            x4Var2.a(u8Var.b(), false);
+            x4Var.a(u8Var.c(), false);
         } else {
-            int i10 = getMessageObject().c1;
-            if (i10 >= 14) {
-                mp mpVar = wp.r1(e20.s0).r4;
-                lp d = mpVar != null ? mpVar.d(i10) : null;
+            int i3 = getMessageObject().c1;
+            if (i3 >= 14) {
+                xo xoVar = hp.s1(h10.t0).q4;
+                wo d = xoVar != null ? xoVar.d(i3) : null;
                 if (d != null) {
-                    int f7 = d.f();
-                    w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.p8[org.telegram.ui.Components.r8.f(f7)], this.Ob);
-                    w03 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.q8[org.telegram.ui.Components.r8.f(f7)], this.Ob);
+                    int f10 = d.f();
+                    w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[org.telegram.ui.Components.u8.f(f10)], this.Pb);
+                    w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[org.telegram.ui.Components.u8.f(f10)], this.Pb);
                 } else {
-                    long j10 = i10;
-                    w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.p8[org.telegram.ui.Components.r8.e(j10)], this.Ob);
-                    w03 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.q8[org.telegram.ui.Components.r8.e(j10)], this.Ob);
+                    long j10 = i3;
+                    w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[org.telegram.ui.Components.u8.e(j10)], this.Pb);
+                    w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[org.telegram.ui.Components.u8.e(j10)], this.Pb);
                 }
             } else {
-                long j11 = i10;
-                w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.p8[org.telegram.ui.Components.r8.e(j11)], this.Ob);
-                w03 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.q8[org.telegram.ui.Components.r8.e(j11)], this.Ob);
+                long j11 = i3;
+                w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.p8[org.telegram.ui.Components.u8.e(j11)], this.Pb);
+                w03 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.q8[org.telegram.ui.Components.u8.e(j11)], this.Pb);
             }
-            r8Var.i(w4Var2.a(w02, false), w4Var.a(w03, false));
+            u8Var.i(x4Var2.a(w02, false), x4Var.a(w03, false));
         }
-        if (getAvatarImage() != null && getAvatarImage().N0 != 0.0f) {
-            getAvatarImage().y0(getAvatarImage().K0, (getMeasuredHeight() - getAvatarImage().N0) - org.telegram.messenger.i0.L(4.0f), getAvatarImage().M0, getAvatarImage().N0);
-            getAvatarImage().J0((int) (getAvatarImage().N0 / 2.0f));
+        if (getAvatarImage() != null && getAvatarImage().O0 != 0.0f) {
+            getAvatarImage().y0(getAvatarImage().L0, (getMeasuredHeight() - getAvatarImage().O0) - org.telegram.messenger.g0.L(4.0f), getAvatarImage().N0, getAvatarImage().O0);
+            getAvatarImage().J0((int) (getAvatarImage().O0 / 2.0f));
             getAvatarImage().h(canvas, null);
-        } else if (this.kd == 2) {
+        } else if (this.nd == 2) {
             invalidate();
         }
         super.dispatchDraw(canvas);
@@ -75,10 +75,10 @@ public final class y9 extends q1 {
 
     @Override // org.telegram.ui.Cells.q1, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.ld.a()) {
+        if (this.od.a()) {
             return super.onTouchEvent(motionEvent);
         }
-        this.hd.onTouchEvent(motionEvent);
+        this.kd.onTouchEvent(motionEvent);
         return true;
     }
 }

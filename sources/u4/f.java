@@ -1,15 +1,87 @@
 package u4;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class f {
-    public final String a;
-    public final String b;
-    public final g0.c c;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-    public f(g0.c cVar, String str, String str2) {
-        this.c = cVar;
-        this.a = str;
-        this.b = str2;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ k c;
+
+    public /* synthetic */ f(k kVar, ArrayList arrayList, int i3) {
+        this.a = i3;
+        this.c = kVar;
+        this.b = arrayList;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = this.b;
+                int size = arrayList.size();
+                int i3 = 0;
+                while (true) {
+                    k kVar = this.c;
+                    if (i3 >= size) {
+                        arrayList.clear();
+                        kVar.u.remove(arrayList);
+                        break;
+                    } else {
+                        Object obj = arrayList.get(i3);
+                        i3++;
+                        j jVar = (j) obj;
+                        kVar.C(jVar.a, jVar);
+                        kVar.w.add(jVar);
+                    }
+                }
+            case 1:
+                ArrayList arrayList2 = this.b;
+                int size2 = arrayList2.size();
+                int i10 = 0;
+                while (true) {
+                    k kVar2 = this.c;
+                    if (i10 >= size2) {
+                        arrayList2.clear();
+                        kVar2.v.remove(arrayList2);
+                        break;
+                    } else {
+                        Object obj2 = arrayList2.get(i10);
+                        i10++;
+                        i iVar = (i) obj2;
+                        kVar2.B(iVar);
+                        kVar2.x.add(iVar);
+                    }
+                }
+            default:
+                ArrayList arrayList3 = this.b;
+                int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                for (int size3 = arrayList3.size() - 1; size3 >= 0; size3--) {
+                    i11 = Math.min(i11, ((d1) arrayList3.get(size3)).b());
+                }
+                int size4 = arrayList3.size();
+                while (true) {
+                    size4--;
+                    k kVar3 = this.c;
+                    if (size4 < 0) {
+                        arrayList3.clear();
+                        kVar3.t.remove(arrayList3);
+                        break;
+                    } else {
+                        d1 d1Var = (d1) arrayList3.get(size4);
+                        long b10 = (d1Var.b() - i11) * kVar3.D;
+                        View view = d1Var.a;
+                        ViewPropertyAnimator animate = view.animate();
+                        kVar3.y.add(d1Var);
+                        animate.alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(kVar3.h()).setStartDelay(b10).setInterpolator(kVar3.h);
+                        animate.setUpdateListener(new d(kVar3, d1Var, 1));
+                        animate.setListener(new g(kVar3, d1Var, view, animate)).start();
+                    }
+                }
+        }
     }
 }

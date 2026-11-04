@@ -48,8 +48,8 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         Objects.requireNonNull(lVar, "temporal");
         try {
             return I(lVar.y(j$.time.temporal.a.INSTANT_SECONDS), lVar.j(j$.time.temporal.a.NANO_OF_SECOND));
-        } catch (b e) {
-            throw new b("Unable to obtain Instant from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e);
+        } catch (b e10) {
+            throw new b("Unable to obtain Instant from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e10);
         }
     }
 
@@ -59,19 +59,19 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         return ZonedDateTime.q(this.a, this.b, zoneId);
     }
 
-    public static Instant G(long j10, int i10) {
-        if ((i10 | j10) == 0) {
+    public static Instant G(long j10, int i3) {
+        if ((i3 | j10) == 0) {
             return c;
         }
         if (j10 < -31557014167219200L || j10 > 31556889864403199L) {
             throw new b("Instant exceeds minimum or maximum instant");
         }
-        return new Instant(j10, i10);
+        return new Instant(j10, i3);
     }
 
-    public Instant(long j10, int i10) {
+    public Instant(long j10, int i3) {
         this.a = j10;
-        this.b = i10;
+        this.b = i3;
     }
 
     @Override // j$.time.temporal.l
@@ -89,17 +89,17 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         if (!(oVar instanceof j$.time.temporal.a)) {
             return j$.time.temporal.p.d(this, oVar).a(oVar.m(this), oVar);
         }
-        int i10 = d.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i10 == 1) {
+        int i3 = d.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i3 == 1) {
             return this.b;
         }
-        if (i10 == 2) {
+        if (i3 == 2) {
             return this.b / 1000;
         }
-        if (i10 == 3) {
+        if (i3 == 3) {
             return this.b / 1000000;
         }
-        if (i10 == 4) {
+        if (i3 == 4) {
             j$.time.temporal.a aVar = j$.time.temporal.a.INSTANT_SECONDS;
             aVar.b.a(this.a, aVar);
         }
@@ -108,25 +108,25 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i10;
+        int i3;
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i11 = d.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i11 == 1) {
-            i10 = this.b;
-        } else if (i11 == 2) {
-            i10 = this.b / 1000;
+        int i10 = d.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 == 1) {
+            i3 = this.b;
+        } else if (i10 == 2) {
+            i3 = this.b / 1000;
         } else {
-            if (i11 != 3) {
-                if (i11 == 4) {
+            if (i10 != 3) {
+                if (i10 == 4) {
                     return this.a;
                 }
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i10 = this.b / 1000000;
+            i3 = this.b / 1000000;
         }
-        return i10;
+        return i3;
     }
 
     @Override // j$.time.temporal.Temporal
@@ -142,20 +142,20 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
         aVar.w(j10);
-        int i10 = d.a[aVar.ordinal()];
-        if (i10 != 1) {
-            if (i10 == 2) {
-                int i11 = ((int) j10) * 1000;
+        int i3 = d.a[aVar.ordinal()];
+        if (i3 != 1) {
+            if (i3 == 2) {
+                int i10 = ((int) j10) * 1000;
+                if (i10 != this.b) {
+                    return G(this.a, i10);
+                }
+            } else if (i3 == 3) {
+                int i11 = ((int) j10) * 1000000;
                 if (i11 != this.b) {
                     return G(this.a, i11);
                 }
-            } else if (i10 == 3) {
-                int i12 = ((int) j10) * 1000000;
-                if (i12 != this.b) {
-                    return G(this.a, i12);
-                }
             } else {
-                if (i10 != 4) {
+                if (i3 != 4) {
                     throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
                 }
                 if (j10 != this.a) {

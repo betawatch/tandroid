@@ -1,153 +1,194 @@
 package org.telegram.ui;
 
+import android.text.Editable;
 import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ik0 implements t9, org.telegram.ui.Components.ai {
-    public final /* synthetic */ jl0 a;
+public final class ik0 implements TextWatcher {
+    public boolean a;
+    public String b;
+    public boolean c;
+    public int d;
+    public int e;
+    public boolean f;
+    public final char[] h = {',', '.', 1643, 12289, 11841, 65040, 65041, 65104, 65105, 65292, 65380, 699};
+    public final /* synthetic */ dl0 n;
 
-    public /* synthetic */ ik0(jl0 jl0Var) {
-        this.a = jl0Var;
+    public ik0(dl0 dl0Var) {
+        this.n = dl0Var;
     }
 
-    @Override // org.telegram.ui.Components.ai
-    public void C(org.telegram.ui.Components.mg mgVar) {
-        mgVar.run();
+    public final int a(String str) {
+        int i3 = 0;
+        while (true) {
+            char[] cArr = this.h;
+            if (i3 >= cArr.length) {
+                return -1;
+            }
+            int indexOf = str.indexOf(cArr[i3]);
+            if (indexOf >= 0) {
+                return indexOf;
+            }
+            i3++;
+        }
     }
 
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ boolean D() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public void H0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        org.telegram.ui.Components.bi biVar;
-        jl0 jl0Var = this.a;
-        if (jl0Var.getParentActivity() == null || (biVar = jl0Var.R0) == null) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i3;
+        dl0 dl0Var = this.n;
+        if (dl0Var.n0) {
             return;
         }
-        if (i10 != 8 && i10 != 7) {
-            biVar.M(i10);
-            jl0Var.J1(i10);
-            return;
+        Long l10 = dl0Var.I0;
+        long longValue = l10 != null ? l10.longValue() : 0L;
+        String str = this.b;
+        if (str == null) {
+            str = org.telegram.messenger.bd.n(editable.toString());
         }
-        if (i10 != 8) {
-            biVar.a(true);
+        int a10 = a(str);
+        boolean z10 = a10 >= 0;
+        String str2 = dl0Var.D0.invoice.currency;
+        str2.getClass();
+        i3 = 10;
+        switch (str2) {
+            case "BHD":
+            case "IQD":
+            case "JOD":
+            case "KWD":
+            case "LYD":
+            case "OMR":
+            case "TND":
+                i3 = 1000;
+                break;
+            case "BIF":
+            case "BYR":
+            case "CLP":
+            case "CVE":
+            case "DJF":
+            case "GNF":
+            case "ISK":
+            case "JPY":
+            case "KMF":
+            case "KRW":
+            case "MGA":
+            case "PYG":
+            case "RWF":
+            case "UGX":
+            case "UYI":
+            case "VND":
+            case "VUV":
+            case "XAF":
+            case "XOF":
+            case "XPF":
+                i3 = 1;
+                break;
+            case "CLF":
+                i3 = 10000;
+                break;
+            case "MRO":
+                break;
+            default:
+                i3 = 100;
+                break;
         }
-        HashMap<Object, Object> selectedPhotos = jl0Var.R0.a2.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = jl0Var.R0.a2.getSelectedPhotosOrder();
-        if (selectedPhotos.isEmpty()) {
-            return;
+        String substring = a10 >= 0 ? str.substring(0, a10) : str;
+        String str3 = "";
+        String substring2 = a10 >= 0 ? str.substring(a10 + 1) : "";
+        long longValue2 = Utilities.A(mf.b.d(substring, false)).longValue() * i3;
+        long longValue3 = Utilities.A(mf.b.d(substring2, false)).longValue();
+        String p10 = a1.g.p(longValue3, "");
+        String str4 = "" + (i3 - 1);
+        if (a10 > 0 && p10.length() > str4.length()) {
+            longValue3 = Utilities.A(this.e - a10 < p10.length() ? p10.substring(0, str4.length()) : p10.substring(p10.length() - str4.length())).longValue();
         }
-        ArrayList arrayList = new ArrayList();
-        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
-            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) selectedPhotos.get(selectedPhotosOrder.get(i13));
-            org.telegram.messenger.qz qzVar = new org.telegram.messenger.qz();
-            String str = ffVar.h;
-            if (str != null) {
-                qzVar.c = str;
+        Long valueOf = Long.valueOf(longValue2 + longValue3);
+        dl0Var.I0 = valueOf;
+        if (dl0Var.D0.invoice.max_tip_amount != 0) {
+            long longValue4 = valueOf.longValue();
+            long j10 = dl0Var.D0.invoice.max_tip_amount;
+            if (longValue4 > j10) {
+                dl0Var.I0 = Long.valueOf(j10);
+            }
+        }
+        int selectionStart = dl0Var.f[0].getSelectionStart();
+        dl0Var.n0 = true;
+        if (dl0Var.I0.longValue() == 0) {
+            dl0Var.f[0].setText("");
+        } else {
+            EditTextBoldCursor editTextBoldCursor = dl0Var.f[0];
+            str3 = org.telegram.messenger.bd.E0().q(dl0Var.I0.longValue(), false, z10, true, dl0Var.D0.invoice.currency);
+            editTextBoldCursor.setText(str3);
+        }
+        if (longValue < dl0Var.I0.longValue() && longValue != 0 && this.a && selectionStart >= 0) {
+            EditTextBoldCursor editTextBoldCursor2 = dl0Var.f[0];
+            editTextBoldCursor2.setSelection(Math.min(selectionStart, editTextBoldCursor2.length()));
+        } else if (this.c && this.d != dl0Var.f[0].length()) {
+            EditTextBoldCursor editTextBoldCursor3 = dl0Var.f[0];
+            editTextBoldCursor3.setSelection(Math.max(0, Math.min(selectionStart, editTextBoldCursor3.length())));
+        } else if (this.f || !z10 || a10 < 0) {
+            EditTextBoldCursor editTextBoldCursor4 = dl0Var.f[0];
+            editTextBoldCursor4.setSelection(editTextBoldCursor4.length());
+        } else {
+            int a11 = a(str3);
+            if (a11 > 0) {
+                dl0Var.f[0].setSelection(a11 + 1);
             } else {
-                qzVar.c = ffVar.I;
+                EditTextBoldCursor editTextBoldCursor5 = dl0Var.f[0];
+                editTextBoldCursor5.setSelection(editTextBoldCursor5.length());
             }
-            arrayList.add(qzVar);
-            ffVar.e();
         }
-        jl0Var.K1(arrayList);
+        this.f = z10;
+        dl0Var.R0();
+        this.b = null;
+        dl0Var.n0 = false;
     }
 
-    @Override // org.telegram.ui.t9
-    public /* synthetic */ String P0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.t9
-    public void X0(org.telegram.messenger.js jsVar) {
-        boolean isEmpty = TextUtils.isEmpty(jsVar.b);
-        jl0 jl0Var = this.a;
-        if (!isEmpty) {
-            jl0Var.Y[0].setText(jsVar.b);
-        }
-        if (!TextUtils.isEmpty(jsVar.d)) {
-            jl0Var.Y[1].setText(jsVar.d);
-        }
-        if (!TextUtils.isEmpty(jsVar.c)) {
-            jl0Var.Y[2].setText(jsVar.c);
-        }
-        int i10 = jsVar.n;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                jl0Var.x = "male";
-                jl0Var.Y[4].setText(org.telegram.messenger.dd.L0(2131747524, null));
-            } else if (i10 == 2) {
-                jl0Var.x = "female";
-                jl0Var.Y[4].setText(org.telegram.messenger.dd.L0(2131747585, null));
-            }
-        }
-        if (!TextUtils.isEmpty(jsVar.m)) {
-            String str = jsVar.m;
-            jl0Var.s = str;
-            String str2 = (String) jl0Var.Y0.get(str);
-            if (str2 != null) {
-                jl0Var.Y[5].setText(str2);
-            }
-        }
-        if (!TextUtils.isEmpty(jsVar.l)) {
-            String str3 = jsVar.l;
-            jl0Var.w = str3;
-            String str4 = (String) jl0Var.Y0.get(str3);
-            if (str4 != null) {
-                jl0Var.Y[6].setText(str4);
-            }
-        }
-        int i11 = jsVar.k;
-        if (i11 <= 0 || jsVar.j <= 0 || jsVar.i <= 0) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+        if (this.n.n0) {
             return;
         }
-        jl0Var.Y[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i11), Integer.valueOf(jsVar.j), Integer.valueOf(jsVar.i)));
+        this.a = !TextUtils.isEmpty(charSequence);
+        this.b = null;
+        this.d = charSequence == null ? 0 : charSequence.length();
+        this.e = i3;
+        boolean z10 = i10 == 1 && i11 == 0;
+        this.c = z10;
+        if (!z10) {
+            return;
+        }
+        String n4 = org.telegram.messenger.bd.n(charSequence);
+        char charAt = n4.charAt(i3);
+        int a10 = a(n4);
+        String substring = a10 >= 0 ? n4.substring(a10 + 1) : "";
+        long longValue = Utilities.A(mf.b.d(substring, false)).longValue();
+        if ((charAt >= '0' && charAt <= '9') || (substring.length() != 0 && longValue == 0)) {
+            if (a10 <= 0 || i3 <= a10 || longValue != 0) {
+                return;
+            }
+            this.b = n4.substring(0, a10 - 1);
+            return;
+        }
+        while (true) {
+            int i12 = i3 - 1;
+            if (i12 < 0) {
+                return;
+            }
+            char charAt2 = n4.charAt(i12);
+            if (charAt2 >= '0' && charAt2 <= '9') {
+                this.b = n4.substring(0, i12) + n4.substring(i3);
+                return;
+            }
+            i3 = i12;
+        }
     }
 
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ boolean a1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.t9
-    public /* synthetic */ boolean i1(String str, k9 k9Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public void j0() {
-        org.telegram.messenger.i0.v1(this.a.fragmentView.findFocus());
-    }
-
-    @Override // org.telegram.ui.t9
-    public /* synthetic */ void L(String str) {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void n0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void v0(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void N() {
-    }
-
-    @Override // org.telegram.ui.t9
-    public /* synthetic */ void onDismiss() {
-    }
-
-    @Override // org.telegram.ui.Components.ai
-    public /* synthetic */ void b1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 }

@@ -1,21 +1,27 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class ma {
-    public final Long a;
-    public final Long b;
-    public final Long c;
-    public final Long d;
-    public final Long e;
-    public final Long f;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    public /* synthetic */ ma(x7.z6 z6Var) {
-        this.a = z6Var.a;
-        this.b = z6Var.b;
-        this.c = z6Var.c;
-        this.d = z6Var.d;
-        this.e = z6Var.e;
-        this.f = z6Var.f;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class ma extends q6.a {
+    public static final Parcelable.Creator<ma> CREATOR = new n5(3);
+    public final float a;
+    public final int b;
+
+    public ma(float f10, int i3) {
+        this.a = f10;
+        this.b = i3;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 1, 4);
+        parcel.writeFloat(this.a);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        j8.a.t(parcel, s6);
     }
 }

@@ -1,64 +1,50 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.widget.TextView;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class w00 extends r7 {
-    public final /* synthetic */ int D;
-    public final /* synthetic */ Context E;
-    public final /* synthetic */ FragmentContextView F;
+public final class w00 {
+    public static final int w = ViewConfiguration.getTapTimeout();
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final x00 f;
+    public final x00 g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public MotionEvent m;
+    public MotionEvent n;
+    public boolean o;
+    public float p;
+    public float q;
+    public float r;
+    public float s;
+    public boolean t;
+    public VelocityTracker v;
+    public long u = ViewConfiguration.getLongPressTimeout();
+    public final android.support.v4.media.session.q e = new android.support.v4.media.session.q(this, 7);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w00(FragmentContextView fragmentContextView, Context context, Context context2, int i10) {
-        super(context);
-        this.D = i10;
-        this.F = fragmentContextView;
-        this.E = context2;
-    }
-
-    @Override // org.telegram.ui.Components.r7
-    public final TextView a() {
-        switch (this.D) {
-            case 0:
-                TextView textView = new TextView(this.E);
-                textView.setMaxLines(1);
-                textView.setLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setTextSize(1, 15.0f);
-                textView.setGravity(19);
-                FragmentContextView fragmentContextView = this.F;
-                int i10 = fragmentContextView.U;
-                if (i10 == 0 || i10 == 2) {
-                    textView.setGravity(19);
-                    textView.setTypeface(Typeface.DEFAULT);
-                    textView.setTextSize(1, 15.0f);
-                } else if (i10 == 4) {
-                    textView.setGravity(51);
-                    org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.t7, fragmentContextView.q0);
-                    textView.setTypeface(org.telegram.messenger.i0.o());
-                    textView.setTextSize(1, 15.0f);
-                } else if (i10 == 1 || i10 == 3) {
-                    textView.setGravity(19);
-                    org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.A7, fragmentContextView.q0);
-                    textView.setTypeface(org.telegram.messenger.i0.o());
-                    textView.setTextSize(1, 14.0f);
-                }
-                return textView;
-            default:
-                TextView textView2 = new TextView(this.E);
-                textView2.setMaxLines(1);
-                textView2.setLines(1);
-                textView2.setSingleLine(true);
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
-                textView2.setGravity(3);
-                textView2.setTextSize(1, 13.0f);
-                org.telegram.ui.ActionBar.a7.V(textView2, org.telegram.ui.ActionBar.t6.x7, this.F.q0);
-                return textView2;
+    public w00(Context context, x00 x00Var) {
+        this.f = x00Var;
+        this.g = x00Var;
+        if (context == null) {
+            throw new IllegalArgumentException("Context must not be null");
         }
+        this.t = true;
+        ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
+        int scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
+        int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
+        this.c = viewConfiguration.getScaledMinimumFlingVelocity();
+        this.d = viewConfiguration.getScaledMaximumFlingVelocity();
+        this.a = scaledTouchSlop * scaledTouchSlop;
+        this.b = scaledDoubleTapSlop * scaledDoubleTapSlop;
     }
 }

@@ -1,97 +1,66 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class tk extends w7.x5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class tk extends eq0 {
+    public final /* synthetic */ org.telegram.messenger.zi a;
+    public final /* synthetic */ org.telegram.messenger.ye b;
+    public final /* synthetic */ wm c;
 
-    public /* synthetic */ tk(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public tk(wm wmVar, org.telegram.messenger.zi ziVar, org.telegram.messenger.ye yeVar) {
+        this.c = wmVar;
+        this.a = ziVar;
+        this.b = yeVar;
     }
 
-    @Override // w7.x5
-    public final void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                un unVar = (un) this.b;
-                unVar.G9 = !z10;
-                if (z10) {
-                    if (unVar.r9 != null) {
-                        un.d2(unVar, 0.0f);
-                        unVar.r9 = null;
-                    }
-                    unVar.s9 = false;
-                    unVar.y9 = false;
-                    ql qlVar = unVar.A9;
-                    if (qlVar != null) {
-                        org.telegram.messenger.i0.r(qlVar.H);
-                        qlVar.a();
-                    }
-                }
-                unVar.Uc();
-                break;
-            case 1:
-                org.telegram.ui.Components.ua0 ua0Var = (org.telegram.ui.Components.ua0) this.b;
-                org.telegram.ui.Components.oa0 oa0Var = ua0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = ua0Var.s;
-                org.telegram.ui.Components.ab0 ab0Var = ua0Var.c0;
-                if (ab0Var.s) {
-                    if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
-                        break;
-                    } else if (z10) {
-                        if (oa0Var.v - oa0Var.u <= org.telegram.messenger.wp.r1(ab0Var.x).p4) {
-                            org.telegram.ui.Cells.r9 r9Var = oa0Var.W;
-                            org.telegram.messenger.kj c10 = ua0Var.c(r9Var != null ? ((org.telegram.ui.Cells.q1) r9Var).getMessageObject() : null);
-                            org.telegram.messenger.oj ojVar = ab0Var.d;
-                            if (ojVar.d == null) {
-                                int i10 = oa0Var.u;
-                                ojVar.e = i10;
-                                int i11 = oa0Var.v;
-                                ojVar.f = i11;
-                                ojVar.d = kn.b(i10, i11, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(ua0Var.I);
-                                break;
-                            }
-                        } else {
-                            ua0Var.g();
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                th.z2 z2Var = (th.z2) this.b;
-                th.v2 v2Var = z2Var.z1;
-                boolean x10 = z2Var.t0.W.x();
-                th.o7 o7Var = ((th.f7) v2Var).d;
-                o7Var.j1 = x10;
-                o7Var.d0();
-                break;
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final mq0 E(org.telegram.messenger.zi ziVar, TLRPC.FileLocation fileLocation, int i3, boolean z10, boolean z11) {
+        return wm.O1(this.c, this.a, null, i3, z10, true);
+    }
+
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final boolean P() {
+        wm wmVar = this.c;
+        if (wmVar.a0 == null || !wmVar.T9()) {
+            return false;
         }
+        wmVar.a0.L();
+        return true;
     }
 
-    @Override // w7.x5
-    public void b() {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        switch (this.a) {
-            case 0:
-                un unVar = (un) this.b;
-                lVar = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
-                if (lVar != null) {
-                    lVar2 = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
-                    if (lVar2.u()) {
-                        unVar.L7(false);
-                    }
-                }
-                unVar.c8();
-                unVar.M3.j(58, 0L, null);
-                break;
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final org.telegram.messenger.zi V() {
+        org.telegram.messenger.zi ziVar = this.c.G5;
+        org.telegram.messenger.zi ziVar2 = this.a;
+        if (ziVar == ziVar2) {
+            return ziVar2;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final void e(CharSequence charSequence) {
+        this.c.a0.e1(charSequence, false);
+    }
+
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final void o(int i3, org.telegram.messenger.b20 b20Var, boolean z10, int i10, int i11, boolean z11) {
+        wm wmVar = this.c;
+        if (wmVar.G5 != this.a) {
+            return;
+        }
+        org.telegram.messenger.ye yeVar = this.b;
+        if (yeVar.w || yeVar.v || yeVar.u || b20Var != null) {
+            wmVar.u(yeVar, b20Var, z10, i10, 0, z11, 0L);
+        } else {
+            wmVar.a0.a0();
         }
     }
 }

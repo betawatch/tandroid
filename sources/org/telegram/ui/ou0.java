@@ -1,101 +1,46 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ou0 extends s4.n {
-    public int b;
-    public final SparseIntArray c = new SparseIntArray();
-    public final SparseIntArray d = new SparseIntArray();
-    public final /* synthetic */ PrivacyControlActivity e;
+public final class ou0 implements fp {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ ip b;
+    public final /* synthetic */ ProfileActivity c;
 
-    public ou0(PrivacyControlActivity privacyControlActivity) {
-        this.e = privacyControlActivity;
+    public ou0(ProfileActivity profileActivity, TLRPC.Chat chat, ip ipVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = ipVar;
     }
 
-    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
-        if (i11 >= 0) {
-            sparseIntArray.put(i11, i10);
+    @Override // org.telegram.ui.fp
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.fp
+    public final void b(int i3, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User a22 = profileActivity.getMessagesController().a2(Long.valueOf(profileActivity.e1));
+        if (a22 == null || (chat = this.a) == null || profileActivity.e1 == 0) {
+            return;
         }
-    }
-
-    @Override // s4.n
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // s4.n
-    public final boolean b(int i10, int i11) {
-        int i12 = this.c.get(i10, -1);
-        return i12 == this.d.get(i11, -1) && i12 >= 0;
-    }
-
-    @Override // s4.n
-    public final int d() {
-        return this.e.q0;
-    }
-
-    @Override // s4.n
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f(SparseIntArray sparseIntArray) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        sparseIntArray.clear();
-        PrivacyControlActivity privacyControlActivity = this.e;
-        g(1, privacyControlActivity.L, sparseIntArray);
-        g(2, privacyControlActivity.M, sparseIntArray);
-        i10 = privacyControlActivity.everybodyRow;
-        g(3, i10, sparseIntArray);
-        g(4, privacyControlActivity.N, sparseIntArray);
-        i11 = privacyControlActivity.nobodyRow;
-        g(5, i11, sparseIntArray);
-        g(6, privacyControlActivity.f0, sparseIntArray);
-        g(7, privacyControlActivity.O, sparseIntArray);
-        g(8, privacyControlActivity.Q, sparseIntArray);
-        g(9, privacyControlActivity.R, sparseIntArray);
-        g(10, privacyControlActivity.S, sparseIntArray);
-        g(11, privacyControlActivity.T, sparseIntArray);
-        g(12, privacyControlActivity.U, sparseIntArray);
-        g(13, privacyControlActivity.V, sparseIntArray);
-        g(14, privacyControlActivity.W, sparseIntArray);
-        g(15, privacyControlActivity.X, sparseIntArray);
-        i12 = privacyControlActivity.photoForRestRow;
-        g(16, i12, sparseIntArray);
-        i13 = privacyControlActivity.currentPhotoForRestRow;
-        g(17, i13, sparseIntArray);
-        g(18, privacyControlActivity.Y, sparseIntArray);
-        g(19, privacyControlActivity.Z, sparseIntArray);
-        g(20, privacyControlActivity.a0, sparseIntArray);
-        g(21, privacyControlActivity.b0, sparseIntArray);
-        i14 = privacyControlActivity.readRow;
-        g(22, i14, sparseIntArray);
-        g(23, privacyControlActivity.c0, sparseIntArray);
-        g(24, privacyControlActivity.d0, sparseIntArray);
-        g(25, privacyControlActivity.e0, sparseIntArray);
-        g(26, privacyControlActivity.g0, sparseIntArray);
-        i15 = privacyControlActivity.priceRow;
-        g(27, i15, sparseIntArray);
-        g(28, privacyControlActivity.i0, sparseIntArray);
-        i16 = privacyControlActivity.showGiftIconRow;
-        g(29, i16, sparseIntArray);
-        g(30, privacyControlActivity.j0, sparseIntArray);
-        i17 = privacyControlActivity.giftTypesHeaderRow;
-        g(31, i17, sparseIntArray);
-        g(32, privacyControlActivity.l0, sparseIntArray);
-        g(33, privacyControlActivity.k0, sparseIntArray);
-        g(34, privacyControlActivity.m0, sparseIntArray);
-        g(35, privacyControlActivity.n0, sparseIntArray);
-        g(36, privacyControlActivity.o0, sparseIntArray);
-        g(37, privacyControlActivity.p0, sparseIntArray);
+        ip ipVar = this.b;
+        if (!ipVar.R || ipVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.d2 d2Var : ipVar.getParentLayout().getFragmentStack()) {
+            if (d2Var instanceof kb) {
+                kb kbVar = (kb) d2Var;
+                kbVar.a1();
+                org.telegram.messenger.g0.h3(new hc0(kbVar, a22, chat, 29));
+                return;
+            }
+        }
     }
 }

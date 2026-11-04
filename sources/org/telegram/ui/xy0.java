@@ -1,142 +1,155 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.animation.ValueAnimator;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.beta.R;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class xy0 extends org.telegram.ui.Components.p71 {
-    public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.ar0 b;
+public final /* synthetic */ class xy0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public xy0(org.telegram.ui.Components.ar0 ar0Var) {
-        this.b = ar0Var;
+    public /* synthetic */ xy0(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.p71
-    public final void a(ArrayList arrayList) {
-        org.telegram.ui.Components.ar0 ar0Var = this.b;
-        vv0 vv0Var = ar0Var.w;
-        org.telegram.ui.Components.w71 w71Var = ar0Var.b;
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            Integer num = (Integer) obj;
-            int intValue = num.intValue();
-            if (intValue != -1 && intValue != -2 && intValue != 0) {
-                arrayList2.add(num);
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                SecretMediaViewer secretMediaViewer = ((yy0) this.b).d;
+                secretMediaViewer.Z.l0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                secretMediaViewer.Z.invalidate();
+                break;
+            case 1:
+                SecretMediaViewer secretMediaViewer2 = ((yy0) this.b).d;
+                secretMediaViewer2.Z.l0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                secretMediaViewer2.Z.invalidate();
+                break;
+            case 2:
+                ((SecretMediaViewer) ((org.telegram.ui.Components.rk0) this.b).b).Z.scrollTo(0, ((Integer) valueAnimator.getAnimatedValue()).intValue());
+                break;
+            case 3:
+                iz0 iz0Var = (iz0) this.b;
+                iz0Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (iz0Var.T) {
+                    iz0Var.O.invalidate();
+                    break;
+                }
+                break;
+            case 4:
+                ((xz0) this.b).e.V0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 5:
+                yz0 yz0Var = (yz0) this.b;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                yz0Var.r = floatValue;
+                View view = yz0Var.e;
+                if (view != null) {
+                    view.setAlpha(floatValue);
+                    break;
+                } else {
+                    gi.q3 q3Var = yz0Var.d;
+                    if (q3Var != null) {
+                        q3Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                c11 c11Var = (c11) this.b;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11Var.M = floatValue2;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = c11Var.w;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(floatValue2);
+                s51 s51Var = actionBarPopupWindow$ActionBarPopupWindowLayout.M;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.xq.g.getInterpolation(c11Var.M));
+                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
+                for (int i3 = 0; i3 < itemsCount; i3++) {
+                    float s6 = org.telegram.messenger.g0.s(c11Var.M, i3, itemsCount, 4.0f);
+                    s51Var.getChildAt(i3).setTranslationY((1.0f - s6) * org.telegram.messenger.g0.L(-12.0f));
+                    s51Var.getChildAt(i3).setAlpha(s6);
+                }
+                break;
+            case 7:
+                c31 c31Var = (c31) this.b;
+                c31Var.getClass();
+                c31Var.l0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 8:
+                b41 b41Var = (b41) this.b;
+                b41Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b41Var.e.setAlpha(1.0f - floatValue3);
+                mg.g gVar = b41Var.b;
+                gVar.A0.f = floatValue3;
+                b41Var.c.invalidate();
+                gVar.invalidate();
+                break;
+            case 9:
+                l71 l71Var = (l71) this.b;
+                l71Var.getClass();
+                l71Var.q1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l71Var.z0.invalidate();
+                l71Var.E0.invalidate();
+                l71Var.T1.setAlpha(l71Var.q1);
+                l71Var.S1.invalidate();
+                l71Var.a1();
+                break;
+            case 10:
+                l71 l71Var2 = ((a71) this.b).a;
+                l71Var2.q1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l71Var2.z0.invalidate();
+                l71Var2.E0.invalidate();
+                l71Var2.T1.setAlpha(l71Var2.q1);
+                l71Var2.S1.invalidate();
+                l71Var2.a1();
+                break;
+            case 11:
+                d81 d81Var = (d81) this.b;
+                d81Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int childCount = d81Var.a.getChildCount();
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    int R = RecyclerView.R(d81Var.a.getChildAt(i10));
+                    int i11 = d81Var.d.e;
+                    if (R < i11 || i11 <= 0) {
+                        d81Var.a.getChildAt(i10).setAlpha(1.0f);
+                    } else {
+                        d81Var.a.getChildAt(i10).setAlpha(d81Var.F);
+                    }
+                }
+                break;
+            case 12:
+                j81 j81Var = (j81) this.b;
+                j81Var.getClass();
+                j81Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j81Var.invalidate();
+                break;
+            case 13:
+                m91 m91Var = (m91) this.b;
+                m91Var.getClass();
+                m91Var.W0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 14:
+                j91 j91Var = (j91) this.b;
+                j91Var.getClass();
+                j91Var.k5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j91Var.n0();
+                break;
+            case 15:
+                k91 k91Var = (k91) this.b;
+                k91Var.getClass();
+                k91Var.setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                zb1 zb1Var = (zb1) this.b;
+                zb1Var.getClass();
+                zb1Var.z0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zb1Var.F();
+                break;
         }
-        int f7 = f(w71Var.getCurrentPosition());
-        th.t4 t4Var = ar0Var.c;
-        t4Var.getClass();
-        HashMap hashMap = new HashMap();
-        ArrayList arrayList3 = t4Var.h;
-        int size2 = arrayList3.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            Object obj2 = arrayList3.get(i12);
-            i12++;
-            th.y4 y4Var = (th.y4) obj2;
-            hashMap.put(Integer.valueOf(y4Var.a), y4Var);
-        }
-        ArrayList arrayList4 = new ArrayList();
-        int size3 = arrayList2.size();
-        while (i10 < size3) {
-            Object obj3 = arrayList2.get(i10);
-            i10++;
-            Integer num2 = (Integer) obj3;
-            num2.getClass();
-            th.y4 y4Var2 = (th.y4) hashMap.get(num2);
-            if (y4Var2 != null) {
-                arrayList4.add(y4Var2);
-            }
-        }
-        arrayList3.clear();
-        arrayList3.addAll(arrayList4);
-        if (f7 >= 0) {
-            int i13 = i(f7);
-            w71Var.e(0.0f, i13, i13);
-        }
-        org.telegram.messenger.i0.r(vv0Var);
-        org.telegram.messenger.i0.h3(vv0Var, 1000L);
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final boolean c(int i10) {
-        if (i10 == 0) {
-            return false;
-        }
-        return (this.a && i10 == e() - 1) ? false : true;
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final View d(int i10) {
-        if (i10 == -1) {
-            return null;
-        }
-        return new View(this.b.getContext());
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final int e() {
-        return this.b.c.h.size() + 1 + (this.a ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final int f(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        if (this.a && i10 == e() - 1) {
-            return -1;
-        }
-        return ((th.y4) this.b.c.h.get(i10 - 1)).a;
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final CharSequence g(int i10) {
-        if (i10 == 0) {
-            return org.telegram.messenger.dd.L0(2131744804, null);
-        }
-        if (!this.a || i10 != e() - 1) {
-            return ((th.y4) this.b.c.h.get(i10 - 1)).b;
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.dd.L0(2131744825, null));
-        org.telegram.ui.Components.dq dqVar = new org.telegram.ui.Components.dq(R.drawable.poll_add_plus, 0);
-        dqVar.G = 0.8f;
-        spannableStringBuilder.setSpan(dqVar, 0, 1, 33);
-        return spannableStringBuilder;
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final int h(int i10) {
-        if (this.a && i10 == e() - 1) {
-            return -1;
-        }
-        return i10;
-    }
-
-    public final int i(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        int c10 = this.b.c.c(i10);
-        if (c10 == -1) {
-            return -1;
-        }
-        return c10 + 1;
-    }
-
-    @Override // org.telegram.ui.Components.p71
-    public final void b(View view, int i10, int i11) {
     }
 }

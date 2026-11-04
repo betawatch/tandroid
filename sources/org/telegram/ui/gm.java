@@ -1,11 +1,12 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public interface gm {
-    void T0(int i10);
-
-    void X(boolean z10, boolean z11);
-
-    void v0(String str);
+public final class gm extends org.telegram.messenger.zi {
+    @Override // org.telegram.messenger.zi
+    public final boolean s(TLRPC.Chat chat, boolean z10) {
+        return false;
+    }
 }

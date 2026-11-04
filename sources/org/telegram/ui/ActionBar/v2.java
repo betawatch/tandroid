@@ -1,53 +1,56 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.messenger.at;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class v2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w2 b;
+public final class v2 extends View implements z5 {
+    public final /* synthetic */ x2 a;
 
-    public /* synthetic */ v2(w2 w2Var, int i10) {
-        this.a = i10;
-        this.b = w2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v2(x2 x2Var, Context context) {
+        super(context);
+        this.a = x2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        w2 w2Var = this.b;
-        switch (i10) {
-            case 0:
-                AnimatorSet animatorSet = w2Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    w2Var.h = null;
-                }
-                at.e().k(99, 512);
-                break;
-            case 1:
-                w2Var.D = 0.0f;
-                z2 z2Var = w2Var.G;
-                z2Var.b.setTranslationX(0.0f);
-                z2Var.c.invalidate();
-                break;
-            case 2:
-                z2 z2Var2 = w2Var.G;
-                z2Var2.N0 = true;
-                z2Var2.b.setTranslationX(w2Var.getMeasuredWidth());
-                z2Var2.dismiss();
-                z2Var2.c.invalidate();
-                break;
-            default:
-                w2Var.G.b.setTranslationY(0.0f);
-                w2Var.G.h0();
-                z2 z2Var3 = w2Var.G;
-                z2Var3.q0(z2Var3.b.getTranslationY());
-                w2Var.invalidate();
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a.d);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i3, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i3), org.telegram.messenger.g0.n);
+        setTranslationY(org.telegram.messenger.g0.n);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        x2 x2Var = this.a;
+        Paint paint = x2Var.d;
+        try {
+            g3 g3Var = x2Var.a;
+            if (g3Var == null) {
+                return;
+            }
+            int e10 = g3Var.e(k6.x0(null, k6.a7, false));
+            if (paint.getColor() != e10) {
+                paint.setColor(e10);
+                invalidate();
+                org.telegram.messenger.g0.u3(x2Var, e10, true, null);
+                org.telegram.messenger.g0.n3(x2Var, org.telegram.messenger.g0.B(e10) >= 0.721f);
+            }
+        } catch (Exception e11) {
+            a8.g(e11, true);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

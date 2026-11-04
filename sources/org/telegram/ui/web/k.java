@@ -1,25 +1,14 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+public final class k {
+    public final String a;
+    public long b;
+    public double c;
 
-    public /* synthetic */ k(m mVar, int i10) {
-        this.a = i10;
-        this.b = mVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.l0();
-                break;
-            default:
-                this.b.l0();
-                break;
-        }
+    public k(String str, long j10) {
+        this.a = str;
+        this.b = j10;
     }
 }

@@ -1,38 +1,16 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fv0 implements org.telegram.messenger.as, ms {
-    public final /* synthetic */ ProfileActivity a;
-    public final /* synthetic */ TLRPC.User b;
-
-    public /* synthetic */ fv0(ProfileActivity profileActivity, TLRPC.User user) {
-        this.a = profileActivity;
-        this.b = user;
-    }
-
-    @Override // org.telegram.ui.ms
-    public void a() {
-        ProfileActivity.b0(this.a, this.b);
-    }
-
-    @Override // org.telegram.messenger.as
-    public void i(boolean z10) {
-        RectF rectF = ProfileActivity.S6;
-        ProfileActivity profileActivity = this.a;
-        if (profileActivity.getParentLayout() != null) {
-            List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.k2) sc.e.g(2, fragmentStack)) instanceof un) {
-                ((ActionBarLayout) profileActivity.getParentLayout()).a0(fragmentStack.size() - 2);
-            }
-        }
-        profileActivity.M1 = true;
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().k(org.telegram.messenger.at.K2, Long.valueOf(profileActivity.h1), this.b, profileActivity.D2, Boolean.valueOf(z10));
+public final class fv0 extends cz {
+    @Override // org.telegram.ui.cz, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        canvas.save();
+        canvas.translate(org.telegram.messenger.g0.L(2.0f), 0.0f);
+        super.draw(canvas, charSequence, i3, i10, f10, i11, i12, i13, paint);
+        canvas.restore();
     }
 }

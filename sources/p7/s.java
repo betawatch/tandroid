@@ -1,0 +1,345 @@
+package p7;
+
+import j$.util.Map;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.NavigableMap;
+import java.util.NavigableSet;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import k2.p1;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class s extends o implements NavigableMap, Map {
+    public static final s f;
+    public final transient a0 c;
+    public final transient n d;
+    public final transient s e;
+
+    static {
+        a0 s6 = t.s(w.b);
+        j jVar = n.b;
+        f = new s(s6, y.e, null);
+    }
+
+    public s(a0 a0Var, n nVar, s sVar) {
+        this.c = a0Var;
+        this.d = nVar;
+        this.e = sVar;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static s c(TreeMap treeMap) {
+        w wVar = w.b;
+        Comparator comparator = treeMap.comparator();
+        int i3 = 1;
+        boolean equals = comparator == null ? true : wVar.equals(comparator);
+        Set entrySet = treeMap.entrySet();
+        if (entrySet == null) {
+            Iterator it = entrySet.iterator();
+            ArrayList arrayList = new ArrayList();
+            it.getClass();
+            while (it.hasNext()) {
+                arrayList.add(it.next());
+            }
+            entrySet = arrayList;
+        }
+        Map.Entry[] entryArr = (Map.Entry[]) entrySet.toArray(o.b);
+        int length = entryArr.length;
+        if (length == 0) {
+            return d(wVar);
+        }
+        int i10 = 0;
+        if (length == 1) {
+            Map.Entry entry = entryArr[0];
+            Objects.requireNonNull(entry);
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            Object[] objArr = {key};
+            for (int i11 = 0; i11 < 1; i11++) {
+                if (objArr[i11] == null) {
+                    throw new NullPointerException(p1.i(i11, "at index "));
+                }
+            }
+            a0 a0Var = new a0(n.o(1, objArr), wVar);
+            Object[] objArr2 = {value};
+            while (i10 < 1) {
+                if (objArr2[i10] == null) {
+                    throw new NullPointerException(p1.i(i10, "at index "));
+                }
+                i10++;
+            }
+            return new s(a0Var, n.o(1, objArr2), null);
+        }
+        Object[] objArr3 = new Object[length];
+        Object[] objArr4 = new Object[length];
+        if (equals) {
+            while (i10 < length) {
+                Map.Entry entry2 = entryArr[i10];
+                Objects.requireNonNull(entry2);
+                Object key2 = entry2.getKey();
+                Object value2 = entry2.getValue();
+                a.f(key2, value2);
+                objArr3[i10] = key2;
+                objArr4[i10] = value2;
+                i10++;
+            }
+        } else {
+            Arrays.sort(entryArr, 0, length, new b5.b(6));
+            Map.Entry entry3 = entryArr[0];
+            Objects.requireNonNull(entry3);
+            Object key3 = entry3.getKey();
+            objArr3[0] = key3;
+            Object value3 = entry3.getValue();
+            objArr4[0] = value3;
+            a.f(objArr3[0], value3);
+            while (i3 < length) {
+                Map.Entry entry4 = entryArr[i3 - 1];
+                Objects.requireNonNull(entry4);
+                Map.Entry entry5 = entryArr[i3];
+                Objects.requireNonNull(entry5);
+                Object key4 = entry5.getKey();
+                Object value4 = entry5.getValue();
+                a.f(key4, value4);
+                objArr3[i3] = key4;
+                objArr4[i3] = value4;
+                if (wVar.compare(key3, key4) == 0) {
+                    throw new IllegalArgumentException(com.google.android.recaptcha.internal.a.k("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
+                }
+                i3++;
+                key3 = key4;
+            }
+        }
+        return new s(new a0(n.o(length, objArr3), wVar), n.o(length, objArr4), null);
+    }
+
+    public static s d(Comparator comparator) {
+        if (w.b.equals(comparator)) {
+            return f;
+        }
+        a0 s6 = t.s(comparator);
+        j jVar = n.b;
+        return new s(s6, y.e, null);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry ceilingEntry(Object obj) {
+        return tailMap(obj, true).firstEntry();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object ceilingKey(Object obj) {
+        Map.Entry ceilingEntry = ceilingEntry(obj);
+        if (ceilingEntry == null) {
+            return null;
+        }
+        return ceilingEntry.getKey();
+    }
+
+    @Override // java.util.SortedMap
+    public final Comparator comparator() {
+        return this.c.d;
+    }
+
+    @Override // java.util.NavigableMap
+    public final /* synthetic */ NavigableSet descendingKeySet() {
+        return this.c.descendingSet();
+    }
+
+    @Override // java.util.NavigableMap
+    public final /* bridge */ /* synthetic */ NavigableMap descendingMap() {
+        s sVar = this.e;
+        if (sVar != null) {
+            return sVar;
+        }
+        boolean isEmpty = isEmpty();
+        a0 a0Var = this.c;
+        if (!isEmpty) {
+            return new s((a0) a0Var.descendingSet(), this.d.m(), this);
+        }
+        Comparator comparator = a0Var.d;
+        return d((comparator instanceof x ? (x) comparator : new h(comparator)).a());
+    }
+
+    @Override // java.util.NavigableMap
+    /* renamed from: e, reason: merged with bridge method [inline-methods] */
+    public final s headMap(Object obj, boolean z10) {
+        obj.getClass();
+        return h(0, this.c.t(obj, z10));
+    }
+
+    @Override // java.util.NavigableMap
+    /* renamed from: f, reason: merged with bridge method [inline-methods] */
+    public final s subMap(Object obj, boolean z10, Object obj2, boolean z11) {
+        obj.getClass();
+        obj2.getClass();
+        if (this.c.d.compare(obj, obj2) <= 0) {
+            return headMap(obj2, z11).tailMap(obj, z10);
+        }
+        throw new IllegalArgumentException(a.c("expected fromKey <= toKey but %s > %s", obj, obj2));
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry firstEntry() {
+        if (isEmpty()) {
+            return null;
+        }
+        return (Map.Entry) entrySet().o().get(0);
+    }
+
+    @Override // java.util.SortedMap
+    public final Object firstKey() {
+        return this.c.first();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry floorEntry(Object obj) {
+        return headMap(obj, true).lastEntry();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object floorKey(Object obj) {
+        Map.Entry floorEntry = floorEntry(obj);
+        if (floorEntry == null) {
+            return null;
+        }
+        return floorEntry.getKey();
+    }
+
+    @Override // java.util.NavigableMap
+    /* renamed from: g, reason: merged with bridge method [inline-methods] */
+    public final s tailMap(Object obj, boolean z10) {
+        obj.getClass();
+        return h(this.c.u(obj, z10), this.d.size());
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x000f, code lost:
+    
+        if (r4 < 0) goto L4;
+     */
+    @Override // p7.o, java.util.Map
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object get(Object obj) {
+        int binarySearch;
+        a0 a0Var = this.c;
+        if (obj != null) {
+            try {
+                binarySearch = Collections.binarySearch(a0Var.f, obj, a0Var.d);
+            } catch (ClassCastException unused) {
+            }
+        }
+        binarySearch = -1;
+        if (binarySearch == -1) {
+            return null;
+        }
+        return this.d.get(binarySearch);
+    }
+
+    public final s h(int i3, int i10) {
+        n nVar = this.d;
+        if (i3 == 0) {
+            if (i10 == nVar.size()) {
+                return this;
+            }
+            i3 = 0;
+        }
+        a0 a0Var = this.c;
+        return i3 == i10 ? d(a0Var.d) : new s(a0Var.v(i3, i10), nVar.subList(i3, i10), null);
+    }
+
+    @Override // java.util.NavigableMap, java.util.SortedMap
+    public final /* synthetic */ SortedMap headMap(Object obj) {
+        return headMap(obj, false);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry higherEntry(Object obj) {
+        return tailMap(obj, false).firstEntry();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object higherKey(Object obj) {
+        Map.Entry higherEntry = higherEntry(obj);
+        if (higherEntry == null) {
+            return null;
+        }
+        return higherEntry.getKey();
+    }
+
+    @Override // java.util.Map, java.util.SortedMap
+    public final /* synthetic */ Set keySet() {
+        return this.c;
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry lastEntry() {
+        if (isEmpty()) {
+            return null;
+        }
+        return (Map.Entry) entrySet().o().get(this.d.size() - 1);
+    }
+
+    @Override // java.util.SortedMap
+    public final Object lastKey() {
+        return this.c.last();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry lowerEntry(Object obj) {
+        return headMap(obj, false).lastEntry();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object lowerKey(Object obj) {
+        Map.Entry lowerEntry = lowerEntry(obj);
+        if (lowerEntry == null) {
+            return null;
+        }
+        return lowerEntry.getKey();
+    }
+
+    @Override // java.util.NavigableMap
+    public final /* synthetic */ NavigableSet navigableKeySet() {
+        return this.c;
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry pollFirstEntry() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry pollLastEntry() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Map
+    public final int size() {
+        return this.d.size();
+    }
+
+    @Override // java.util.NavigableMap, java.util.SortedMap
+    public final /* bridge */ /* synthetic */ SortedMap subMap(Object obj, Object obj2) {
+        return subMap(obj, true, obj2, false);
+    }
+
+    @Override // java.util.NavigableMap, java.util.SortedMap
+    public final /* synthetic */ SortedMap tailMap(Object obj) {
+        return tailMap(obj, true);
+    }
+
+    @Override // java.util.Map, java.util.SortedMap
+    public final /* synthetic */ Collection values() {
+        return this.d;
+    }
+}

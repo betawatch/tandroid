@@ -1,25 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class xw extends w7.d6 {
-    public final /* synthetic */ vy a;
+public final class xw {
+    public final TLRPC.StickerSetCovered a;
+    public final TLRPC.TL_messages_stickerSet b;
+    public final TLRPC.StickerSet c;
+    public final ArrayList d;
+    public final TLRPC.Document e;
 
-    public xw(vy vyVar) {
-        this.a = vyVar;
+    public xw(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
+        TLRPC.Document document = null;
+        this.a = null;
+        this.b = tL_messages_stickerSet;
+        this.c = tL_messages_stickerSet.set;
+        this.d = arrayList;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            document = (TLRPC.Document) arrayList.get(0);
+        }
+        this.e = document;
     }
 
-    @Override // w7.d6
-    public final void a() {
-        vy vyVar = this.a;
-        vyVar.f0 = false;
-        vyVar.P.B1();
-    }
-
-    @Override // w7.d6
-    public final void b() {
-        vy vyVar = this.a;
-        vyVar.P.B1();
-        vyVar.f0 = true;
+    public xw(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
+        this.a = stickerSetCovered;
+        this.b = null;
+        this.c = stickerSetCovered.set;
+        this.d = arrayList;
+        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
     }
 }

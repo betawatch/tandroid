@@ -1,26 +1,26 @@
 package wd;
 
-import org.telegram.tgnet.TLObject;
+import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class h extends ed.c {
-    public i a;
-    public Object b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ i d;
-    public int e;
+public final class h extends a {
+    public final Thread d;
+    public final t0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(i iVar, ed.c cVar) {
-        super(cVar);
-        this.d = iVar;
+    public h(fd.h hVar, Thread thread, t0 t0Var) {
+        super(hVar, true);
+        this.d = thread;
+        this.e = t0Var;
     }
 
-    @Override // ed.a
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.b(null, this);
+    @Override // wd.n1
+    public final void g(Object obj) {
+        Thread currentThread = Thread.currentThread();
+        Thread thread = this.d;
+        if (kotlin.jvm.internal.j.a(currentThread, thread)) {
+            return;
+        }
+        LockSupport.unpark(thread);
     }
 }

@@ -4,22 +4,22 @@ import java.util.AbstractSet;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzoo extends AbstractSet {
     final int zza = -1;
     final /* synthetic */ zzop zzb;
 
-    public zzoo(zzop zzopVar, int i10) {
+    public zzoo(zzop zzopVar, int i3) {
         this.zzb = zzopVar;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
         Object[] objArr;
-        int i10 = this.zza;
+        int i3 = this.zza;
         objArr = this.zzb.zzb;
-        return Arrays.binarySearch(objArr, zzb(), zza(), obj, i10 == -1 ? zzop.zza : zzor.zza) >= 0;
+        return Arrays.binarySearch(objArr, zzb(), zza(), obj, i3 == -1 ? zzop.zza : zzor.zza) >= 0;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
@@ -34,9 +34,9 @@ final class zzoo extends AbstractSet {
 
     public final int zza() {
         int[] iArr;
-        int i10 = this.zza;
+        int i3 = this.zza;
         iArr = this.zzb.zzc;
-        return iArr[i10 + 1];
+        return iArr[i3 + 1];
     }
 
     public final int zzb() {

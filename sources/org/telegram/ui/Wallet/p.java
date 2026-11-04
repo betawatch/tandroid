@@ -1,24 +1,24 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.r20;
+import org.telegram.messenger.u10;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class p implements r20 {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class p implements u10 {
     public final /* synthetic */ int a = 3;
     public final /* synthetic */ Object b;
     public final /* synthetic */ k0 c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ p(r20 r20Var, k0 k0Var, p0 p0Var, t8 t8Var) {
-        this.d = t8Var;
-        this.b = r20Var;
-        this.e = p0Var;
+    public /* synthetic */ p(u10 u10Var, k0 k0Var, o0 o0Var, n8 n8Var) {
+        this.d = n8Var;
+        this.b = u10Var;
+        this.e = o0Var;
         this.c = k0Var;
     }
 
-    @Override // org.telegram.messenger.r20
+    @Override // org.telegram.messenger.u10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -35,42 +35,42 @@ public final /* synthetic */ class p implements r20 {
                 runnable.run();
                 break;
             case 1:
-                k8.Z((k8) this.d, (String) this.b, this.c, (org.telegram.ui.ActionBar.k2) this.e, (String) obj);
+                e8.Z((e8) this.d, (String) this.b, this.c, (org.telegram.ui.ActionBar.d2) this.e, (String) obj);
                 break;
             case 2:
-                t8 t8Var = (t8) this.d;
+                n8 n8Var = (n8) this.d;
                 String str2 = (String) this.b;
-                p0 p0Var = (p0) this.e;
+                o0 o0Var = (o0) this.e;
                 k0 k0Var2 = this.c;
-                k0Var2.u(str2, new p((r20) obj, k0Var2, p0Var, t8Var));
+                k0Var2.u(str2, new p((u10) obj, k0Var2, o0Var, n8Var));
                 break;
             default:
-                t8 t8Var2 = (t8) this.d;
-                r20 r20Var = (r20) this.b;
-                p0 p0Var2 = (p0) this.e;
+                n8 n8Var2 = (n8) this.d;
+                u10 u10Var = (u10) this.b;
+                o0 o0Var2 = (o0) this.e;
                 b0 b0Var2 = (b0) obj;
                 if (b0Var2 != null) {
                     byte[] bArr = b0Var2.c;
                     boolean z10 = false;
                     if (bArr == null) {
-                        byte[][] m10 = p0Var2.m();
+                        byte[][] m10 = o0Var2.m();
                         if (m10.length <= 0) {
-                            r20Var.a("STORAGE_NO_PUBLIC_KEY");
+                            u10Var.a("STORAGE_NO_PUBLIC_KEY");
                             break;
                         } else {
                             bArr = m10[0];
                         }
                     }
-                    if (!p0Var2.f(bArr)) {
-                        r20Var.a("STORAGE_OLD_PUBLIC_KEY");
+                    if (!o0Var2.f(bArr)) {
+                        u10Var.a("STORAGE_OLD_PUBLIC_KEY");
                         break;
                     } else {
-                        m mVar = new m(r20Var, this.c, p0Var2, t8Var2);
-                        p0.h.execute(new org.telegram.ui.Components.k2(p0Var2, p0Var2.l(), bArr == null ? "" : p0.o(bArr), z10, mVar));
+                        m mVar = new m(u10Var, this.c, o0Var2, n8Var2);
+                        o0.h.execute(new org.telegram.ui.Components.h2(o0Var2, o0Var2.l(), bArr == null ? "" : o0.o(bArr), z10, mVar));
                         break;
                     }
                 } else {
-                    r20Var.a("ADDRESS_NO_INFO");
+                    u10Var.a("ADDRESS_NO_INFO");
                     break;
                 }
         }
@@ -83,17 +83,17 @@ public final /* synthetic */ class p implements r20 {
         this.e = runnable;
     }
 
-    public /* synthetic */ p(k8 k8Var, String str, k0 k0Var, org.telegram.ui.ActionBar.k2 k2Var) {
-        this.d = k8Var;
+    public /* synthetic */ p(e8 e8Var, String str, k0 k0Var, org.telegram.ui.ActionBar.d2 d2Var) {
+        this.d = e8Var;
         this.b = str;
         this.c = k0Var;
-        this.e = k2Var;
+        this.e = d2Var;
     }
 
-    public /* synthetic */ p(t8 t8Var, k0 k0Var, String str, p0 p0Var) {
-        this.d = t8Var;
+    public /* synthetic */ p(n8 n8Var, k0 k0Var, String str, o0 o0Var) {
+        this.d = n8Var;
         this.c = k0Var;
         this.b = str;
-        this.e = p0Var;
+        this.e = o0Var;
     }
 }

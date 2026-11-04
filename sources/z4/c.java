@@ -1,11 +1,51 @@
 package z4;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c {
-    public Object a;
-    public int b;
-    public boolean c;
-    public float d;
-    public float e;
+public final class c extends Drawable.ConstantState {
+    public final Drawable.ConstantState a;
+
+    public c(Drawable.ConstantState constantState) {
+        this.a = constantState;
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final boolean canApplyTheme() {
+        return this.a.canApplyTheme();
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final int getChangingConfigurations() {
+        return this.a.getChangingConfigurations();
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final Drawable newDrawable() {
+        d dVar = new d(null);
+        Drawable newDrawable = this.a.newDrawable();
+        dVar.b = newDrawable;
+        newDrawable.setCallback(dVar.e);
+        return dVar;
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final Drawable newDrawable(Resources resources) {
+        d dVar = new d(null);
+        Drawable newDrawable = this.a.newDrawable(resources);
+        dVar.b = newDrawable;
+        newDrawable.setCallback(dVar.e);
+        return dVar;
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final Drawable newDrawable(Resources resources, Resources.Theme theme) {
+        d dVar = new d(null);
+        Drawable newDrawable = this.a.newDrawable(resources, theme);
+        dVar.b = newDrawable;
+        newDrawable.setCallback(dVar.e);
+        return dVar;
+    }
 }

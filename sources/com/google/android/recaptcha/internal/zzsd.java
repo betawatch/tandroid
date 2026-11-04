@@ -1,11 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import c3.i0;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzsd {
     private static final zzsd zzb = new zzsd(true);
@@ -31,56 +30,56 @@ final class zzsd {
             zzA2 += zzA2;
         }
         zzvh zzvhVar = zzvh.zza;
-        int i10 = 4;
+        int i3 = 4;
         switch (zzd2.ordinal()) {
             case 0:
                 ((Double) obj).getClass();
-                i10 = 8;
-                return zzA2 + i10;
+                i3 = 8;
+                return zzA2 + i3;
             case 1:
                 ((Float) obj).getClass();
-                return zzA2 + i10;
+                return zzA2 + i3;
             case 2:
-                i10 = zzqv.zzB(((Long) obj).longValue());
-                return zzA2 + i10;
+                i3 = zzqv.zzB(((Long) obj).longValue());
+                return zzA2 + i3;
             case 3:
-                i10 = zzqv.zzB(((Long) obj).longValue());
-                return zzA2 + i10;
+                i3 = zzqv.zzB(((Long) obj).longValue());
+                return zzA2 + i3;
             case 4:
-                i10 = zzqv.zzB(((Integer) obj).intValue());
-                return zzA2 + i10;
+                i3 = zzqv.zzB(((Integer) obj).intValue());
+                return zzA2 + i3;
             case 5:
                 ((Long) obj).getClass();
-                i10 = 8;
-                return zzA2 + i10;
+                i3 = 8;
+                return zzA2 + i3;
             case 6:
                 ((Integer) obj).getClass();
-                return zzA2 + i10;
+                return zzA2 + i3;
             case 7:
                 ((Boolean) obj).getClass();
-                i10 = 1;
-                return zzA2 + i10;
+                i3 = 1;
+                return zzA2 + i3;
             case 8:
                 if (!(obj instanceof zzqm)) {
-                    i10 = zzqv.zzz((String) obj);
-                    return zzA2 + i10;
+                    i3 = zzqv.zzz((String) obj);
+                    return zzA2 + i3;
                 }
                 zzd = ((zzqm) obj).zzd();
                 zzA = zzqv.zzA(zzd);
-                i10 = zzA + zzd;
-                return zzA2 + i10;
+                i3 = zzA + zzd;
+                return zzA2 + i3;
             case 9:
-                i10 = ((zzts) obj).zzo();
-                return zzA2 + i10;
+                i3 = ((zzts) obj).zzo();
+                return zzA2 + i3;
             case 10:
                 if (!(obj instanceof zztc)) {
-                    i10 = zzqv.zzx((zzts) obj);
-                    return zzA2 + i10;
+                    i3 = zzqv.zzx((zzts) obj);
+                    return zzA2 + i3;
                 }
                 zzd = ((zztc) obj).zza();
                 zzA = zzqv.zzA(zzd);
-                i10 = zzA + zzd;
-                return zzA2 + i10;
+                i3 = zzA + zzd;
+                return zzA2 + i3;
             case 11:
                 if (obj instanceof zzqm) {
                     zzd = ((zzqm) obj).zzd();
@@ -89,29 +88,29 @@ final class zzsd {
                     zzd = ((byte[]) obj).length;
                     zzA = zzqv.zzA(zzd);
                 }
-                i10 = zzA + zzd;
-                return zzA2 + i10;
+                i3 = zzA + zzd;
+                return zzA2 + i3;
             case 12:
-                i10 = zzqv.zzA(((Integer) obj).intValue());
-                return zzA2 + i10;
+                i3 = zzqv.zzA(((Integer) obj).intValue());
+                return zzA2 + i3;
             case 13:
-                i10 = obj instanceof zzsp ? zzqv.zzB(((zzsp) obj).zza()) : zzqv.zzB(((Integer) obj).intValue());
-                return zzA2 + i10;
+                i3 = obj instanceof zzsp ? zzqv.zzB(((zzsp) obj).zza()) : zzqv.zzB(((Integer) obj).intValue());
+                return zzA2 + i3;
             case 14:
                 ((Integer) obj).getClass();
-                return zzA2 + i10;
+                return zzA2 + i3;
             case 15:
                 ((Long) obj).getClass();
-                i10 = 8;
-                return zzA2 + i10;
+                i3 = 8;
+                return zzA2 + i3;
             case 16:
                 int intValue = ((Integer) obj).intValue();
-                i10 = zzqv.zzA((intValue >> 31) ^ (intValue + intValue));
-                return zzA2 + i10;
+                i3 = zzqv.zzA((intValue >> 31) ^ (intValue + intValue));
+                return zzA2 + i3;
             case 17:
                 long longValue = ((Long) obj).longValue();
-                i10 = zzqv.zzB((longValue >> 63) ^ (longValue + longValue));
-                return zzA2 + i10;
+                i3 = zzqv.zzB((longValue >> 63) ^ (longValue + longValue));
+                return zzA2 + i3;
             default:
                 throw new RuntimeException("There is no way to get here, but the compiler thinks otherwise.");
         }
@@ -178,7 +177,7 @@ final class zzsd {
     }
 
     private static final int zzo(Map.Entry entry) {
-        int i10;
+        int i3;
         int zzA;
         int zzx;
         zzsc zzscVar = (zzsc) entry.getKey();
@@ -191,19 +190,19 @@ final class zzsd {
         if (value instanceof zztc) {
             int zza = ((zzsc) entry.getKey()).zza();
             int zzA2 = zzqv.zzA(8);
-            i10 = zzA2 + zzA2;
+            i3 = zzA2 + zzA2;
             zzA = zzqv.zzA(zza) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zza2 = ((zztc) value).zza();
-            zzx = i0.A(zza2, zza2, zzA3);
+            zzx = a.d(zza2, zza2, zzA3);
         } else {
             int zza3 = ((zzsc) entry.getKey()).zza();
             int zzA4 = zzqv.zzA(8);
-            i10 = zzA4 + zzA4;
+            i3 = zzA4 + zzA4;
             zzA = zzqv.zzA(zza3) + zzqv.zzA(16);
             zzx = zzqv.zzx((zzts) value) + zzqv.zzA(24);
         }
-        return i10 + zzA + zzx;
+        return i3 + zzA + zzx;
     }
 
     public final boolean equals(Object obj) {
@@ -223,15 +222,15 @@ final class zzsd {
     public final int zzb() {
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        int i10 = 0;
-        for (int i11 = 0; i11 < zzc; i11++) {
-            i10 += zzo(zzuoVar.zzg(i11));
+        int i3 = 0;
+        for (int i10 = 0; i10 < zzc; i10++) {
+            i3 += zzo(zzuoVar.zzg(i10));
         }
         Iterator it = zzuoVar.zzd().iterator();
         while (it.hasNext()) {
-            i10 += zzo((Map.Entry) it.next());
+            i3 += zzo((Map.Entry) it.next());
         }
-        return i10;
+        return i3;
     }
 
     /* renamed from: zzc, reason: merged with bridge method [inline-methods] */
@@ -239,8 +238,8 @@ final class zzsd {
         zzsd zzsdVar = new zzsd();
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        for (int i10 = 0; i10 < zzc; i10++) {
-            Map.Entry zzg = zzuoVar.zzg(i10);
+        for (int i3 = 0; i3 < zzc; i3++) {
+            Map.Entry zzg = zzuoVar.zzg(i3);
             zzsdVar.zzi((zzsc) ((zzuk) zzg).zza(), zzg.getValue());
         }
         for (Map.Entry entry : zzuoVar.zzd()) {
@@ -269,8 +268,8 @@ final class zzsd {
         }
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        for (int i10 = 0; i10 < zzc; i10++) {
-            Object value = zzuoVar.zzg(i10).getValue();
+        for (int i3 = 0; i3 < zzc; i3++) {
+            Object value = zzuoVar.zzg(i3).getValue();
             if (value instanceof zzsn) {
                 ((zzsn) value).zzG();
             }
@@ -289,8 +288,8 @@ final class zzsd {
     public final void zzh(zzsd zzsdVar) {
         zzuo zzuoVar = zzsdVar.zza;
         int zzc = zzuoVar.zzc();
-        for (int i10 = 0; i10 < zzc; i10++) {
-            zzm(zzuoVar.zzg(i10));
+        for (int i3 = 0; i3 < zzc; i3++) {
+            zzm(zzuoVar.zzg(i3));
         }
         Iterator it = zzuoVar.zzd().iterator();
         while (it.hasNext()) {
@@ -383,8 +382,8 @@ final class zzsd {
     public final boolean zzk() {
         zzuo zzuoVar = this.zza;
         int zzc = zzuoVar.zzc();
-        for (int i10 = 0; i10 < zzc; i10++) {
-            if (!zzn(zzuoVar.zzg(i10))) {
+        for (int i3 = 0; i3 < zzc; i3++) {
+            if (!zzn(zzuoVar.zzg(i3))) {
                 return false;
             }
         }

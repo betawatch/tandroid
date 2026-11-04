@@ -1,118 +1,92 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.RectF;
+import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class jr extends s4.n {
-    public int b;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public final /* synthetic */ pr n;
-    public final SparseIntArray c = new SparseIntArray();
-    public final SparseIntArray d = new SparseIntArray();
-    public final ArrayList k = new ArrayList();
-    public final ArrayList l = new ArrayList();
-    public final ArrayList m = new ArrayList();
+public final class jr extends org.telegram.ui.Cells.l8 {
+    public final /* synthetic */ int a0 = 1;
+    public final /* synthetic */ Object b0;
 
-    public jr(pr prVar) {
-        this.n = prVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jr(lr lrVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.b0 = lrVar;
     }
 
-    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
-        if (i11 >= 0) {
-            sparseIntArray.put(i11, i10);
+    @Override // org.telegram.ui.Cells.l8
+    public int e(int i3) {
+        switch (this.a0) {
+            case 2:
+                ProfileActivity profileActivity = ((bw0) this.b0).e;
+                RectF rectF = ProfileActivity.T6;
+                profileActivity.getClass();
+                break;
+        }
+        return i3;
+    }
+
+    @Override // org.telegram.ui.Cells.l8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        switch (this.a0) {
+            case 0:
+                super.onLayout(z10, i3, i10, i11, i12);
+                int L = org.telegram.messenger.g0.L(21.0f);
+                int measuredHeight = getMeasuredHeight();
+                lr lrVar = (lr) this.b0;
+                int measuredHeight2 = (measuredHeight - lrVar.V.getMeasuredHeight()) / 2;
+                org.telegram.ui.Components.k9 k9Var = lrVar.V;
+                k9Var.layout(L, measuredHeight2, k9Var.getMeasuredWidth() + L, lrVar.V.getMeasuredHeight() + measuredHeight2);
+                break;
+            case 1:
+                super.onLayout(z10, i3, i10, i11, i12);
+                int L2 = org.telegram.messenger.g0.L(21.0f);
+                int measuredHeight3 = getMeasuredHeight();
+                at0 at0Var = (at0) this.b0;
+                int measuredHeight4 = (measuredHeight3 - at0Var.d.x0.getMeasuredHeight()) / 2;
+                org.telegram.ui.Components.k9 k9Var2 = at0Var.d.x0;
+                k9Var2.layout(L2, measuredHeight4, k9Var2.getMeasuredWidth() + L2, at0Var.d.x0.getMeasuredHeight() + measuredHeight4);
+                break;
+            default:
+                super.onLayout(z10, i3, i10, i11, i12);
+                break;
         }
     }
 
-    @Override // s4.n
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11) && this.n.C0 != i11;
-    }
-
-    @Override // s4.n
-    public final boolean b(int i10, int i11) {
-        int i12 = this.i;
-        pr prVar = this.n;
-        if (i10 >= i12 && i10 < this.j && i11 >= prVar.W0 && i11 < prVar.X0) {
-            return ((TLObject) this.l.get(i10 - i12)).equals(prVar.F.get(i11 - prVar.W0));
+    @Override // org.telegram.ui.Cells.l8, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i3, int i10) {
+        switch (this.a0) {
+            case 0:
+                super.onMeasure(i3, i10);
+                lr lrVar = (lr) this.b0;
+                lrVar.V.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+                lrVar.V.setRoundRadius(org.telegram.messenger.g0.L(30.0f));
+                break;
+            case 1:
+                super.onMeasure(i3, i10);
+                at0 at0Var = (at0) this.b0;
+                at0Var.d.x0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+                at0Var.d.x0.setRoundRadius(org.telegram.messenger.g0.L(30.0f));
+                break;
+            default:
+                super.onMeasure(i3, i10);
+                break;
         }
-        int i13 = this.g;
-        if (i10 >= i13 && i10 < this.h && i11 >= prVar.T0 && i11 < prVar.U0) {
-            return ((TLObject) this.m.get(i10 - i13)).equals(prVar.G.get(i11 - prVar.T0));
-        }
-        int i14 = this.e;
-        return (i10 < i14 || i10 >= this.f || i11 < prVar.D0 || i11 >= prVar.E0) ? this.c.get(i10) == this.d.get(i11) : ((TLObject) this.k.get(i10 - i14)).equals(prVar.E.get(i11 - prVar.D0));
     }
 
-    @Override // s4.n
-    public final int d() {
-        return this.n.c1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jr(at0 at0Var, Activity activity) {
+        super(activity);
+        this.b0 = at0Var;
     }
 
-    @Override // s4.n
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f(SparseIntArray sparseIntArray) {
-        sparseIntArray.clear();
-        pr prVar = this.n;
-        g(1, prVar.u0, sparseIntArray);
-        g(2, prVar.y0, sparseIntArray);
-        g(3, prVar.z0, sparseIntArray);
-        g(4, prVar.B0, sparseIntArray);
-        g(5, prVar.C0, sparseIntArray);
-        g(6, prVar.F0, sparseIntArray);
-        g(7, prVar.G0, sparseIntArray);
-        g(8, prVar.r0, sparseIntArray);
-        g(9, prVar.s0, sparseIntArray);
-        g(10, prVar.t0, sparseIntArray);
-        g(11, prVar.a1, sparseIntArray);
-        g(12, prVar.b1, sparseIntArray);
-        g(13, prVar.R, sparseIntArray);
-        g(14, prVar.S, sparseIntArray);
-        g(15, prVar.T, sparseIntArray);
-        g(16, prVar.d0, sparseIntArray);
-        g(17, prVar.c0, sparseIntArray);
-        g(18, prVar.e0, sparseIntArray);
-        g(19, prVar.g0, sparseIntArray);
-        g(20, prVar.l0, sparseIntArray);
-        g(21, prVar.h0, sparseIntArray);
-        g(22, prVar.i0, sparseIntArray);
-        int i10 = 23;
-        g(23, prVar.j0, sparseIntArray);
-        if (prVar.x) {
-            i10 = 24;
-            g(24, prVar.k0, sparseIntArray);
-        }
-        g(i10 + 1, prVar.f0, sparseIntArray);
-        g(i10 + 2, prVar.A0, sparseIntArray);
-        g(i10 + 3, prVar.S0, sparseIntArray);
-        g(i10 + 4, prVar.V0, sparseIntArray);
-        g(i10 + 5, prVar.Y0, sparseIntArray);
-        g(i10 + 6, prVar.M0, sparseIntArray);
-        g(i10 + 7, prVar.N0, sparseIntArray);
-        g(i10 + 8, prVar.O0, sparseIntArray);
-        g(i10 + 9, prVar.P0, sparseIntArray);
-        g(i10 + 10, prVar.R0, sparseIntArray);
-        g(i10 + 11, prVar.Q0, sparseIntArray);
-        g(i10 + 12, prVar.Z0, sparseIntArray);
-        g(i10 + 13, prVar.e1, sparseIntArray);
-        g(i10 + 14, prVar.f1, sparseIntArray);
-        g(i10 + 15, prVar.g1, sparseIntArray);
-        g(i10 + 16, prVar.h1, sparseIntArray);
-        g(i10 + 17, prVar.i1, sparseIntArray);
-        g(i10 + 18, prVar.m0, sparseIntArray);
-        g(i10 + 19, prVar.n0, sparseIntArray);
-        g(i10 + 20, prVar.o0, sparseIntArray);
-        g(i10 + 21, prVar.p0, sparseIntArray);
-        g(i10 + 22, prVar.q0, sparseIntArray);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jr(bw0 bw0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(18, context, e6Var, false, false);
+        this.b0 = bw0Var;
     }
 }

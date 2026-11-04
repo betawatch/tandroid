@@ -1,27 +1,47 @@
 package f9;
 
-import java.io.OutputStream;
-import v7.t6;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e extends OutputStream {
+public final class e extends d {
+    public final /* synthetic */ int a;
+    public final char b;
+
+    public /* synthetic */ e(char c2, int i3) {
+        this.a = i3;
+        this.b = c2;
+    }
+
+    @Override // f9.i
+    public final boolean c(char c2) {
+        switch (this.a) {
+            case 0:
+                if (c2 == this.b) {
+                }
+                break;
+            default:
+                if (c2 != this.b) {
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override // f9.d, f9.i
+    public final i d() {
+        switch (this.a) {
+            case 0:
+                return new e(this.b, 1);
+            default:
+                return new e(this.b, 0);
+        }
+    }
+
     public final String toString() {
-        return "ByteStreams.nullOutputStream()";
-    }
-
-    @Override // java.io.OutputStream
-    public final void write(int i10) {
-    }
-
-    @Override // java.io.OutputStream
-    public final void write(byte[] bArr) {
-        bArr.getClass();
-    }
-
-    @Override // java.io.OutputStream
-    public final void write(byte[] bArr, int i10, int i11) {
-        bArr.getClass();
-        t6.n(i10, i11 + i10, bArr.length);
+        switch (this.a) {
+            case 0:
+                return "CharMatcher.is('" + i.a(this.b) + "')";
+            default:
+                return "CharMatcher.isNot('" + i.a(this.b) + "')";
+        }
     }
 }

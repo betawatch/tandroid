@@ -30,10 +30,10 @@ public final class f6 extends x5 {
         } else {
             ArrayList arrayList2 = this.d;
             int size2 = arrayList2.size();
-            int i10 = 0;
-            while (i10 < size2) {
-                Object obj = arrayList2.get(i10);
-                i10++;
+            int i3 = 0;
+            while (i3 < size2) {
+                Object obj = arrayList2.get(i3);
+                i3++;
                 if (j5Var.q()) {
                     break;
                 } else {

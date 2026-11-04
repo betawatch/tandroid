@@ -1,13 +1,12 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yl extends org.telegram.ui.Cells.s0 {
-    @Override // org.telegram.ui.Cells.s0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setVisibleToUser(true);
+public final class yl extends org.telegram.messenger.zi {
+    @Override // org.telegram.messenger.zi
+    public final boolean s(TLRPC.Chat chat, boolean z10) {
+        return false;
     }
 }

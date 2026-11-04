@@ -1,45 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.RuntimeShader;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class na0 extends org.telegram.ui.ActionBar.b1 {
-    public final /* synthetic */ int V;
+public final class na0 {
+    public final RuntimeShader a;
+    public final float[] b = {1.0f, 1.0f, 0.0f, 0.0f};
+    public final float[] c = {1.0f, 1.0f, 0.0f, 0.0f};
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ na0(int i10, int i11, Context context, org.telegram.ui.ActionBar.p6 p6Var, boolean z10, boolean z11) {
-        super(i10, context, p6Var, z10, z11);
-        this.V = i11;
+    public na0(int i3) {
+        ma0.c();
+        this.a = ma0.b(org.telegram.messenger.g0.y2(null, i3));
     }
 
-    @Override // org.telegram.ui.ActionBar.b1
-    public final void l() {
-        switch (this.V) {
-            case 0:
-                setBackground(null);
-                break;
-            default:
-                setBackground(null);
-                break;
+    public final void a(float[] fArr) {
+        float[] fArr2 = this.b;
+        if (Arrays.equals(fArr, fArr2)) {
+            return;
         }
+        System.arraycopy(fArr, 0, fArr2, 0, 4);
+        this.a.setFloatUniform("transformGradient", fArr2);
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.V) {
-            case 0:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-            default:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
+    public final void b(float[] fArr) {
+        float[] fArr2 = this.c;
+        if (Arrays.equals(fArr, fArr2)) {
+            return;
         }
-        return super.onTouchEvent(motionEvent);
+        System.arraycopy(fArr, 0, fArr2, 0, 4);
+        this.a.setFloatUniform("transformPattern", fArr2);
     }
 }

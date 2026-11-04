@@ -1,57 +1,54 @@
 package t7;
 
-import com.google.android.gms.internal.cast.i0;
-import java.util.Iterator;
-import java.util.Map;
+import android.os.Parcel;
+import com.google.android.gms.location.LocationResult;
+import org.telegram.ui.Components.nh;
+import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class i extends f {
-    public final transient i0 c;
-    public final transient Object[] d;
-    public final transient int e;
+public final class i extends com.google.android.gms.internal.cast.o implements i8.j {
+    public static final /* synthetic */ int c = 0;
+    public final androidx.activity.n b;
 
-    public i(i0 i0Var, Object[] objArr, int i10) {
-        this.c = i0Var;
-        this.d = objArr;
-        this.e = i10;
+    public i(androidx.activity.n nVar) {
+        super("com.google.android.gms.location.ILocationCallback", 9);
+        this.b = nVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
+    @Override // com.google.android.gms.internal.cast.o
+    public final boolean L0(Parcel parcel, int i3) {
+        androidx.activity.n nVar = this.b;
+        if (i3 == 1) {
+            LocationResult locationResult = (LocationResult) d.a(parcel, LocationResult.CREATOR);
+            d.b(parcel);
+            nVar.g().a(new y00(locationResult));
+            return true;
+        }
+        if (i3 != 2) {
+            if (i3 != 3) {
+                return false;
+            }
+            M0();
+            return true;
+        }
+        d.b(parcel);
+        nVar.g().a(new a());
+        return true;
+    }
+
+    public final void M0() {
+        this.b.g().a(new nh(this, 19));
+    }
+
+    public final void N0(com.google.android.gms.common.api.internal.o oVar) {
+        androidx.activity.n nVar = this.b;
+        synchronized (nVar) {
+            com.google.android.gms.common.api.internal.o oVar2 = (com.google.android.gms.common.api.internal.o) nVar.c;
+            if (oVar2 != oVar) {
+                oVar2.b = null;
+                nVar.c = oVar;
             }
         }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        d dVar = this.b;
-        if (dVar == null) {
-            dVar = new h(this);
-            this.b = dVar;
-        }
-        return dVar.listIterator(0);
-    }
-
-    @Override // t7.a
-    public final int l(Object[] objArr) {
-        d dVar = this.b;
-        if (dVar == null) {
-            dVar = new h(this);
-            this.b = dVar;
-        }
-        return dVar.l(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
     }
 }

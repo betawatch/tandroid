@@ -1,118 +1,107 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Calendar;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ht0 extends tk0 {
-    public final Context c;
-    public final int d;
-    public final org.telegram.ui.ActionBar.p6 e;
-    public final ft0 f;
-    public final ArrayList h = new ArrayList(10);
-    public final ArrayList n = new ArrayList();
-    public ss0 r;
-    public final /* synthetic */ au0 s;
+public final class ht0 extends View {
+    public final ImageReceiver a;
+    public final u8 b;
+    public final Paint c;
+    public float d;
+    public boolean e;
+    public ValueAnimator f;
 
-    public ht0(au0 au0Var, Context context, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        this.s = au0Var;
-        this.c = context;
-        this.d = i10;
-        this.e = p6Var;
-        this.f = new ft0(this, i10, p6Var);
-        E();
+    public ht0(Context context) {
+        super(context);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.a = imageReceiver;
+        this.b = new u8((org.telegram.ui.ActionBar.e6) null);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        imageReceiver.J0(org.telegram.messenger.g0.L(28.0f));
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    public final void E() {
-        ArrayList arrayList = this.n;
-        arrayList.clear();
-        ArrayList c10 = this.s.v1[8].c();
-        int i10 = 0;
-        for (int i11 = 0; i11 < c10.size(); i11++) {
-            org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) c10.get(i11);
-            if (kjVar.X != i10) {
-                int i12 = kjVar.k.date;
-                TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                long j10 = i12;
-                tL_message.message = org.telegram.messenger.dd.u(j10, false);
-                tL_message.id = 0;
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(j10 * 1000);
-                calendar.set(11, 0);
-                calendar.set(12, 0);
-                calendar.set(13, 0);
-                calendar.set(14, 0);
-                tL_message.date = (int) (calendar.getTimeInMillis() / 1000);
-                org.telegram.messenger.kj kjVar2 = new org.telegram.messenger.kj(this.d, tL_message, false, false);
-                kjVar2.D = 10;
-                kjVar2.U = 1;
-                kjVar2.j0 = true;
-                arrayList.add(kjVar2);
-                i10 = kjVar.X;
-            }
-            arrayList.add(kjVar);
+    public final void a(boolean z10, boolean z11) {
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        return this.n.size();
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        if (i10 < 0) {
-            return 0;
+        if (!z11) {
+            this.d = z10 ? 1.0f : 0.0f;
+            invalidate();
+            return;
         }
-        ArrayList arrayList = this.n;
-        if (i10 >= arrayList.size()) {
-            return 0;
-        }
-        return ((org.telegram.messenger.kj) arrayList.get(i10)).U;
+        ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
+        duration.setInterpolator(xq.f);
+        duration.addUpdateListener(new y50(this, 21));
+        duration.addListener(new a60(this, 22));
+        duration.start();
+        this.f = duration;
     }
 
-    @Override // s4.g0
-    public final void f() {
-        E();
-        super.f();
+    @Override // android.view.View
+    public final boolean isSelected() {
+        return this.d == 1.0f;
     }
 
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        if (i10 >= 0) {
-            ArrayList arrayList = this.n;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) arrayList.get(i10);
-            int i11 = c1Var.f;
-            View view = c1Var.a;
-            if (i11 == 0) {
-                ((org.telegram.ui.Cells.q1) view).s3(kjVar, null, false, false, false, false);
-            } else {
-                ((org.telegram.ui.Cells.s0) view).setMessageObject(kjVar);
-            }
-        }
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.P();
     }
 
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        if (i10 != 0) {
-            return new dk0(new org.telegram.ui.Cells.s0(this.c, this.e, false));
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.R();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        float f10 = (this.d * 0.1f) + 0.9f;
+        canvas.scale(f10, f10);
+        int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.m5, false);
+        Paint paint = this.c;
+        paint.setColor(x02);
+        paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));
+        float strokeWidth = paint.getStrokeWidth();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth);
+        canvas.drawArc(rectF, -90.0f, this.d * 360.0f, false, paint);
+        canvas.restore();
+        if (this.e) {
+            return;
         }
-        org.telegram.ui.ActionBar.p6 p6Var = this.e;
-        gt0 gt0Var = new gt0(this.c, this.d, false, null, p6Var);
-        gt0Var.setDelegate(this.f);
-        return new dk0(gt0Var);
+        float strokeWidth2 = paint.getStrokeWidth() * 2.5f * this.d;
+        float f11 = 2.0f * strokeWidth2;
+        float width = getWidth() - f11;
+        float height = getHeight() - f11;
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.y0(strokeWidth2, strokeWidth2, width, height);
+        imageReceiver.h(canvas, null);
+    }
+
+    public void setAvatar(TLObject tLObject) {
+        u8 u8Var = this.b;
+        u8Var.l(tLObject);
+        this.a.i0(tLObject, u8Var, null);
+    }
+
+    public void setHideAvatar(boolean z10) {
+        this.e = z10;
+        invalidate();
     }
 }

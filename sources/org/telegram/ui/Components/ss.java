@@ -1,72 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ss implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ts b;
+public final class ss extends ShapeDrawable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ ss(ts tsVar, int i10) {
-        this.a = i10;
-        this.b = tsVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ss(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
+        this.b = editTextBoldCursor;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        Bitmap bitmap;
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                ts tsVar = this.b;
-                try {
-                    i10 = tsVar.x + 0;
-                    bitmap = tsVar.b;
-                } catch (Exception e) {
-                    org.telegram.messenger.f8.g(e, true);
-                    tsVar.E = true;
-                }
-                if (bitmap != null) {
-                    if (bitmap.getWidth() == tsVar.y) {
-                        if (tsVar.b.getHeight() != i10) {
-                        }
-                        tsVar.b.eraseColor(0);
-                        tsVar.c.save();
-                        tsVar.c.translate(0.0f, 0);
-                        tsVar.c(tsVar.c);
-                        tsVar.c.restore();
-                        tsVar.b.prepareToDraw();
-                        org.telegram.messenger.i0.g3(tsVar.H);
-                        break;
-                    }
-                }
-                Bitmap bitmap2 = tsVar.b;
-                if (bitmap2 != null) {
-                    bitmap2.recycle();
-                }
-                tsVar.b = Bitmap.createBitmap(tsVar.y, i10, Bitmap.Config.ARGB_8888);
-                tsVar.c = new Canvas(tsVar.b);
-                tsVar.b.eraseColor(0);
-                tsVar.c.save();
-                tsVar.c.translate(0.0f, 0);
-                tsVar.c(tsVar.c);
-                tsVar.c.restore();
-                tsVar.b.prepareToDraw();
-                org.telegram.messenger.i0.g3(tsVar.H);
-            default:
-                ts tsVar2 = this.b;
-                tsVar2.f = false;
-                tsVar2.g();
-                if (!tsVar2.a) {
-                    tsVar2.j();
-                    break;
-                } else if (tsVar2.w == tsVar2.J) {
-                    tsVar2.G = true;
-                    break;
-                }
+                super.draw(canvas);
+                this.b.H0 = true;
                 break;
+            default:
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                if (!editTextBoldCursor.e1) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.H0 = true;
+                    break;
+                }
         }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(this.b.j0 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return org.telegram.messenger.g0.L(this.b.F0);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public ss(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

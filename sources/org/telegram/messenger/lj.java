@@ -2,32 +2,28 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class lj extends kj {
-    public final /* synthetic */ int p3;
-    public final /* synthetic */ oj q3;
+public final /* synthetic */ class lj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hp b;
+    public final /* synthetic */ TLRPC.User c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lj(oj ojVar, int i10, TLRPC.TL_message tL_message, int i11) {
-        super(i10, tL_message, true, false);
-        this.q3 = ojVar;
-        this.p3 = i11;
+    public /* synthetic */ lj(hp hpVar, TLRPC.User user, int i3) {
+        this.a = i3;
+        this.b = hpVar;
+        this.c = user;
     }
 
-    @Override // org.telegram.messenger.kj
-    public final void n0(TLRPC.User user) {
-        super.n0(user);
-        if (this.p3 == 2) {
-            this.q3.b(this);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.r1.remove(Long.valueOf(this.c.id));
+                break;
+            default:
+                this.b.getContactsController().a(this.c);
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.kj
-    public final boolean n5() {
-        if (this.q3.k) {
-            return false;
-        }
-        return super.n5();
     }
 }

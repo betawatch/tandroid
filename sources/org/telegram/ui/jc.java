@@ -1,58 +1,34 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class jc implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class jc implements org.telegram.messenger.u10 {
     public final /* synthetic */ int a;
-    public boolean b = false;
-    public final /* synthetic */ org.telegram.messenger.vs c;
+    public final /* synthetic */ nc b;
 
-    public /* synthetic */ jc(org.telegram.messenger.vs vsVar, int i10) {
-        this.a = i10;
-        this.c = vsVar;
+    public /* synthetic */ jc(nc ncVar, int i3) {
+        this.a = i3;
+        this.b = ncVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        View view = (View) obj;
         switch (this.a) {
             case 0:
-                zc zcVar = (zc) this.c;
-                zcVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                zcVar.m0.invalidate();
-                if (!this.b && zcVar.n0 > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            case 1:
-                rn0 rn0Var = (rn0) this.c;
-                rn0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rn0Var.X.invalidate();
-                if (!this.b && rn0Var.Y > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            case 2:
-                k91 k91Var = (k91) this.c;
-                k91Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k91Var.i2.invalidate();
-                if (!this.b && k91Var.j2 > 0.5f) {
-                    this.b = true;
+                nc ncVar = this.b;
+                ncVar.getClass();
+                if (view instanceof org.telegram.ui.Components.yz0) {
+                    view.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i5, ncVar.b));
                     break;
                 }
                 break;
             default:
-                vh.o8 o8Var = (vh.o8) this.c;
-                o8Var.D2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vh.y7 y7Var = o8Var.C2;
-                if (y7Var != null) {
-                    y7Var.invalidate();
-                }
-                if (!this.b && o8Var.D2 > 0.5f) {
-                    this.b = true;
+                if (view instanceof org.telegram.ui.Components.yz0) {
+                    org.telegram.ui.Components.yz0 yz0Var = (org.telegram.ui.Components.yz0) view;
+                    yz0Var.setFallbackWallpaper(yz0Var.H.a.b ? null : this.b.w);
                     break;
                 }
                 break;

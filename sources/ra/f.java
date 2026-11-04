@@ -1,34 +1,6 @@
 package ra;
 
-import com.google.android.gms.tasks.TaskCompletionSource;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f implements i {
-    public final j a;
-    public final TaskCompletionSource b;
-
-    public f(j jVar, TaskCompletionSource taskCompletionSource) {
-        this.a = jVar;
-        this.b = taskCompletionSource;
-    }
-
-    @Override // ra.i
-    public final boolean a(Exception exc) {
-        this.b.trySetException(exc);
-        return true;
-    }
-
-    @Override // ra.i
-    public final boolean b(sa.a aVar) {
-        if (aVar.b != 4 || this.a.a(aVar)) {
-            return false;
-        }
-        String str = aVar.c;
-        if (str == null) {
-            throw new NullPointerException("Null token");
-        }
-        this.b.setResult(new a(aVar.e, str, aVar.f));
-        return true;
-    }
+public interface f {
 }

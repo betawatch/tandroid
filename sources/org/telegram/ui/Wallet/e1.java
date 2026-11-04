@@ -1,187 +1,46 @@
 package org.telegram.ui.Wallet;
 
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.json.JSONArray;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.k20;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.d01;
-import org.telegram.ui.ma0;
+import org.telegram.messenger.u10;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class e1 implements k20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class e1 implements u10 {
+    public final /* synthetic */ y1 a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ gi.d c;
+    public final /* synthetic */ gi.d d;
+    public final /* synthetic */ c2 e;
+    public final /* synthetic */ x2 f;
+    public final /* synthetic */ boolean[] g;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 h;
 
-    public /* synthetic */ e1(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.d = obj2;
-        this.c = obj3;
-        this.e = obj4;
-        this.f = obj5;
-        this.g = obj6;
+    public /* synthetic */ e1(y1 y1Var, boolean[] zArr, gi.d dVar, gi.d dVar2, c2 c2Var, x2 x2Var, boolean[] zArr2, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = y1Var;
+        this.b = zArr;
+        this.c = dVar;
+        this.d = dVar2;
+        this.e = c2Var;
+        this.f = x2Var;
+        this.g = zArr2;
+        this.h = e6Var;
     }
 
-    @Override // org.telegram.messenger.k20
-    public final void a(Object obj, Object obj2) {
-        TL_wallet.tonConnectSession tonconnectsession;
-        switch (this.a) {
-            case 0:
-                int i10 = 0;
-                e2 e2Var = (e2) this.b;
-                ma0 ma0Var = (ma0) this.d;
-                String str = (String) this.c;
-                String str2 = (String) this.e;
-                String str3 = (String) this.f;
-                String str4 = (String) this.g;
-                TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                e2Var.getClass();
-                if (tL_error != null || tonconnectsession2 == null) {
-                    ma0Var.a(null, e2.z(tL_error, "createSession"));
-                    break;
-                } else {
-                    ArrayList arrayList = e2Var.d;
-                    int size = arrayList.size();
-                    while (i10 < size) {
-                        Object obj3 = arrayList.get(i10);
-                        i10++;
-                        TL_wallet.tonConnectSession tonconnectsession3 = (TL_wallet.tonConnectSession) obj3;
-                        if (tonconnectsession3.id == tonconnectsession2.id && (tonconnectsession3.manifest != null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing)) {
-                            tonconnectsession = tonconnectsession3;
-                            e2Var.p(tonconnectsession);
-                            ma0Var.a(new z1(tonconnectsession, str, str2, str3, str4), null);
-                            break;
-                        }
-                    }
-                    tonconnectsession = tonconnectsession2;
-                    e2Var.p(tonconnectsession);
-                    ma0Var.a(new z1(tonconnectsession, str, str2, str3, str4), null);
-                }
-                break;
-            case 1:
-                e2 e2Var2 = (e2) this.b;
-                d01 d01Var = (d01) this.d;
-                TL_wallet.tonConnectSession tonconnectsession4 = (TL_wallet.tonConnectSession) this.e;
-                String str5 = (String) this.c;
-                byte[] bArr = (byte[]) this.f;
-                z1 z1Var = (z1) this.g;
-                h0 h0Var = (h0) obj;
-                String str6 = (String) obj2;
-                e2Var2.getClass();
-                if (str6 == null && h0Var != null) {
-                    h0 b10 = h0Var.b();
-                    Utilities.e.c(new mg.c0(e2Var2, b10, tonconnectsession4, str5, bArr, z1Var, new d01(10, b10, d01Var), 9));
-                    break;
-                } else {
-                    if (str6 == null) {
-                        str6 = "Recovery phrase is unavailable";
-                    }
-                    d01Var.a(str6);
-                    break;
-                }
-            case 2:
-                e2 e2Var3 = (e2) this.b;
-                d01 d01Var2 = (d01) this.d;
-                h0 h0Var2 = (h0) this.e;
-                TL_wallet.tonConnectSession tonconnectsession5 = (TL_wallet.tonConnectSession) this.f;
-                String str7 = (String) this.c;
-                byte[] bArr2 = (byte[]) this.g;
-                TL_wallet.tonConnectNextEventId tonconnectnexteventid = (TL_wallet.tonConnectNextEventId) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                e2Var3.getClass();
-                if (tL_error2 == null && tonconnectnexteventid != null) {
-                    Utilities.e.c(new mg.c0(e2Var3, h0Var2, tonconnectsession5, str7, bArr2, tonconnectnexteventid, d01Var2, 10));
-                    break;
-                } else {
-                    d01Var2.a(e2.z(tL_error2, "getNextEventId"));
-                    break;
-                }
-            case 3:
-                e2 e2Var4 = (e2) this.b;
-                ih.s sVar = (ih.s) this.d;
-                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) this.e;
-                String str8 = (String) this.c;
-                byte[] bArr3 = (byte[]) this.f;
-                JSONArray jSONArray = (JSONArray) this.g;
-                TL_wallet.tonConnectSession tonconnectsession6 = (TL_wallet.tonConnectSession) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                k0 k0Var = e2Var4.b;
-                if (tL_error3 == null && tonconnectsession6 != null) {
-                    if (tonconnectsession6.id != tL_urlAuthResultRequest.tc_session_id || !tL_urlAuthResultRequest.tc_client_id.equals(tonconnectsession6.dapp_client_id) || tonconnectsession6.closed || tonconnectsession6.closing || tonconnectsession6.nonce == null || !TextUtils.equals(str8, k0Var.t()) || !Arrays.equals(bArr3, k0Var.y())) {
-                        sVar.a(null, "Wallet or TON Connect session changed. Open the request again.");
-                        break;
-                    } else {
-                        k0Var.z(new d1(e2Var4, sVar, tonconnectsession6, str8, bArr3, jSONArray, tL_urlAuthResultRequest), true, false);
-                        break;
-                    }
-                } else {
-                    sVar.a(null, e2.z(tL_error3, "createSession"));
-                    break;
-                }
-            default:
-                u2 u2Var = (u2) this.b;
-                int[] iArr = (int[]) this.d;
-                k0 k0Var2 = (k0) this.c;
-                TextView textView = (TextView) this.e;
-                d2 d2Var = (d2) this.f;
-                k7 k7Var = (k7) this.g;
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                String str9 = (String) obj2;
-                if (!u2Var.e && !u2Var.d) {
-                    if (wallettransaction != null && wallettransaction.traceSucceeded && !wallettransaction.traceIncomplete) {
-                        iArr[0] = 1;
-                        SpannableStringBuilder n10 = k0.n(wallettransaction.fee, true);
-                        CharSequence m10 = k0Var2.m(wallettransaction.fee, true);
-                        textView.setText(TextUtils.isEmpty(m10) ? dd.V(null, null, 2131743146, n10) : dd.V(null, null, 2131743145, n10, m10));
-                    } else if (k0Var2.v() < d2Var.c) {
-                        iArr[0] = 2;
-                        textView.setText(dd.L0(2131743092, null));
-                    } else {
-                        iArr[0] = 3;
-                        textView.setText(dd.L0(2131743012, null));
-                        if (str9 != null) {
-                            e2.m("widget preview", str9);
-                        }
-                    }
-                    k7Var.run();
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        Boolean bool = (Boolean) obj;
+        y1 y1Var = this.a;
+        if (y1Var.m || y1Var.n) {
+            return;
         }
-    }
-
-    public /* synthetic */ e1(e2 e2Var, Object obj, TLObject tLObject, String str, byte[] bArr, Object obj2, int i10) {
-        this.a = i10;
-        this.b = e2Var;
-        this.d = obj;
-        this.e = tLObject;
-        this.c = str;
-        this.f = bArr;
-        this.g = obj2;
-    }
-
-    public /* synthetic */ e1(e2 e2Var, d01 d01Var, h0 h0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr) {
-        this.a = 2;
-        this.b = e2Var;
-        this.d = d01Var;
-        this.e = h0Var;
-        this.f = tonconnectsession;
-        this.c = str;
-        this.g = bArr;
+        boolean booleanValue = bool.booleanValue();
+        boolean[] zArr = this.b;
+        if (booleanValue || zArr[0]) {
+            gi.d dVar = this.c;
+            dVar.setEnabled(false);
+            gi.d dVar2 = this.d;
+            dVar2.setEnabled(false);
+            (bool.booleanValue() ? dVar2 : dVar).setLoading(true);
+            this.e.f(y1Var, bool.booleanValue(), new k1(dVar, dVar2, this.f, this.g, this.h, y1Var, zArr));
+        }
     }
 }

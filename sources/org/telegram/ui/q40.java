@@ -1,17 +1,13 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class q40 extends org.telegram.ui.Cells.b4 {
-    @Override // org.telegram.ui.Cells.b4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (org.telegram.messenger.i0.Q1()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.i0.L(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
-        } else {
-            super.onMeasure(i10, i11);
-        }
+public final class q40 extends TLRPC.TL_contact {
+    public final String a;
+
+    public q40(String str) {
+        this.a = str;
     }
 }

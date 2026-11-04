@@ -1,89 +1,70 @@
 package u6;
 
-import android.app.Application;
-import android.os.Build;
-import android.os.Process;
-import android.os.StrictMode;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import n6.l;
-import w7.a0;
+import android.os.Parcel;
+import b8.y9;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.internal.cast.o;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static String a;
-    public static int b;
-    public static Boolean c;
+public final class d extends o implements b {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    public static String a() {
-        BufferedReader bufferedReader;
-        if (a == null) {
-            if (Build.VERSION.SDK_INT >= 28) {
-                a = Application.getProcessName();
-            } else {
-                int i10 = b;
-                if (i10 == 0) {
-                    i10 = Process.myPid();
-                    b = i10;
-                }
-                String str = null;
-                str = null;
-                str = null;
-                BufferedReader bufferedReader2 = null;
-                if (i10 > 0) {
-                    try {
-                        String str2 = "/proc/" + i10 + "/cmdline";
-                        StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
-                        try {
-                            bufferedReader = new BufferedReader(new FileReader(str2));
-                            try {
-                                String readLine = bufferedReader.readLine();
-                                l.g(readLine);
-                                str = readLine.trim();
-                            } catch (IOException unused) {
-                            } catch (Throwable th2) {
-                                th = th2;
-                                bufferedReader2 = bufferedReader;
-                                b.a(bufferedReader2);
-                                throw th;
-                            }
-                        } finally {
-                            StrictMode.setThreadPolicy(allowThreadDiskReads);
-                        }
-                    } catch (IOException unused2) {
-                        bufferedReader = null;
-                    } catch (Throwable th3) {
-                        th = th3;
-                    }
-                    b.a(bufferedReader);
-                }
-                a = str;
-            }
-        }
-        return a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(e eVar, TaskCompletionSource taskCompletionSource, int i3) {
+        super("com.google.android.gms.common.moduleinstall.internal.IModuleInstallCallbacks", 6);
+        this.b = i3;
+        this.c = taskCompletionSource;
     }
 
-    public static boolean b() {
-        Boolean bool = c;
-        if (bool == null) {
-            if (Build.VERSION.SDK_INT >= 28) {
-                bool = Boolean.valueOf(Process.isIsolated());
-            } else {
-                try {
-                    Object invoke = Process.class.getDeclaredMethod("isIsolated", null).invoke(null, null);
-                    Object[] objArr = new Object[0];
-                    if (invoke == null) {
-                        throw new ad.d(a0.a(objArr));
-                    }
-                    bool = (Boolean) invoke;
-                } catch (ReflectiveOperationException unused) {
-                    bool = Boolean.FALSE;
-                }
-            }
-            c = bool;
+    @Override // com.google.android.gms.internal.cast.o
+    public final boolean I0(int i3, Parcel parcel, Parcel parcel2) {
+        if (i3 == 1) {
+            Status status = (Status) m7.a.a(parcel, Status.CREATOR);
+            t6.a aVar = (t6.a) m7.a.a(parcel, t6.a.CREATOR);
+            m7.a.d(parcel);
+            w0(status, aVar);
+            return true;
         }
-        return bool.booleanValue();
+        if (i3 == 2) {
+            Status status2 = (Status) m7.a.a(parcel, Status.CREATOR);
+            t6.c cVar = (t6.c) m7.a.a(parcel, t6.c.CREATOR);
+            m7.a.d(parcel);
+            l0(status2, cVar);
+            return true;
+        }
+        if (i3 == 3) {
+            m7.a.d(parcel);
+            throw new UnsupportedOperationException();
+        }
+        if (i3 != 4) {
+            return false;
+        }
+        m7.a.d(parcel);
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // u6.b
+    public void l0(Status status, t6.c cVar) {
+        switch (this.b) {
+            case 1:
+                y9.b(status, cVar, this.c);
+                return;
+            default:
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // u6.b
+    public void w0(Status status, t6.a aVar) {
+        switch (this.b) {
+            case 0:
+                y9.b(status, aVar, this.c);
+                return;
+            default:
+                throw new UnsupportedOperationException();
+        }
     }
 }

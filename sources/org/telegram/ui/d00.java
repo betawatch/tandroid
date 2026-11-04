@@ -1,21 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class d00 extends b00 {
-    public final /* synthetic */ e00 E;
+public final class d00 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public TextView a;
+    public TextView b;
+    public org.telegram.ui.Components.dg0 c;
+    public boolean d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d00(e00 e00Var, Context context, org.telegram.ui.ActionBar.k2 k2Var, int i10, int i11) {
-        super(context, k2Var, i10, i11);
-        this.E = e00Var;
+    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
+        return this.e;
     }
 
-    @Override // org.telegram.ui.b00
-    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
-        this.E.e.r0(tL_exportedChatlistInvite);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setText(this.c.getText());
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i3), org.telegram.messenger.g0.L(64.0f));
+        measureChildWithMargins(this.c, i3, 0, i10, 0);
+        TextView textView = this.a;
+        org.telegram.ui.Components.dg0 dg0Var = this.c;
+        measureChildWithMargins(textView, i3, dg0Var.getMeasuredWidth(), i10, 0);
+        measureChildWithMargins(this.b, i3, dg0Var.getMeasuredWidth(), i10, 0);
+    }
+
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        try {
+            this.c.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Bi, false));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

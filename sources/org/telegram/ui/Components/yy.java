@@ -1,178 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class yy extends s4.r {
-    public final boolean Q;
-    public final SparseIntArray R;
-    public final SparseIntArray S;
-    public int T;
-    public int U;
-    public int V;
-    public int W;
+public final class yy {
+    public int a;
+    public CharSequence b;
+    public int c;
+    public int d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final /* synthetic */ bz h;
 
-    public yy(int i10, boolean z10) {
-        super(i10);
-        this.R = new SparseIntArray();
-        this.S = new SparseIntArray();
-        this.Q = z10;
+    public yy(bz bzVar, int i3, Spannable spannable, boolean z10) {
+        this.h = bzVar;
+        this.a = i3;
+        this.b = spannable;
+        this.g = z10;
     }
 
-    public static qu0 C1(qu0 qu0Var) {
-        if (qu0Var == null) {
-            return null;
-        }
-        if (qu0Var.a == 0.0f) {
-            qu0Var.a = 100.0f;
-        }
-        if (qu0Var.b == 0.0f) {
-            qu0Var.b = 100.0f;
-        }
-        float f7 = qu0Var.a;
-        float f10 = qu0Var.b;
-        float f11 = f7 / f10;
-        if (f11 <= 4.0f && f11 >= 0.2f) {
-            return qu0Var;
-        }
-        float max = Math.max(f7, f10);
-        qu0Var.a = max;
-        qu0Var.b = max;
-        return qu0Var;
-    }
-
-    public final void B1() {
+    public final int a(boolean z10) {
+        int i3;
         int i10;
-        int min;
-        boolean z10;
-        float f7;
-        SparseIntArray sparseIntArray = this.R;
-        if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
-            return;
-        }
-        int i11 = this.m;
-        this.W = i11;
-        float f10 = i11;
-        if (f10 == 0.0f) {
-            f10 = 100.0f;
-        }
-        sparseIntArray.clear();
-        SparseIntArray sparseIntArray2 = this.S;
-        sparseIntArray2.clear();
-        boolean z11 = false;
-        this.V = 0;
-        this.U = 0;
-        int A = A();
-        this.T = A;
-        if (A == 0) {
-            return;
-        }
-        int L = org.telegram.messenger.i0.L(100.0f);
-        int i12 = this.J;
-        boolean z12 = this.Q;
-        int i13 = A + (z12 ? 1 : 0);
-        int i14 = 0;
-        int i15 = 0;
-        int i16 = i12;
-        while (i14 < i13) {
-            qu0 C1 = i14 < A ? C1(D1(i14)) : null;
-            if (C1 == null) {
-                z10 = i15 != 0 ? true : z11;
-                i10 = L;
-                min = i12;
-            } else {
-                i10 = L;
-                min = Math.min(i12, (int) Math.floor((((C1.a / C1.b) * L) / f10) * i12));
-                boolean z13 = i16 < min || (min > 33 && i16 < min + (-15));
-                if (C1.c) {
-                    sparseIntArray.put(i14, i16);
-                    this.V++;
-                    f7 = f10;
-                    i16 = i12;
-                    i15 = 0;
-                    i14++;
-                    L = i10;
-                    f10 = f7;
-                    z11 = false;
-                } else {
-                    z10 = z13;
-                }
+        CharSequence charSequence = this.b;
+        bz bzVar = this.h;
+        int ceil = (int) Math.ceil(gi.l3.h(charSequence, bzVar.b));
+        this.c = ceil;
+        int i11 = 0;
+        if (z10) {
+            i3 = ((org.telegram.ui.kw) bzVar.K).a(this.a);
+            if (i3 < 0) {
+                i3 = 0;
             }
             if (z10) {
-                if (i16 == 0 || i15 == 0) {
-                    f7 = f10;
-                } else {
-                    int i17 = i16 / i15;
-                    int i18 = i14 - i15;
-                    f7 = f10;
-                    int i19 = i18;
-                    while (true) {
-                        int i20 = i18 + i15;
-                        if (i19 >= i20) {
-                            break;
-                        }
-                        if (i19 == i20 - 1) {
-                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i16);
-                        } else {
-                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i17);
-                        }
-                        i16 -= i17;
-                        i19++;
-                    }
-                    sparseIntArray2.put(i14 - 1, this.V);
-                }
-                if (i14 == A) {
-                    break;
-                }
-                this.V++;
-                i16 = i12;
-                i15 = 0;
-            } else {
-                f7 = f10;
-                if (i16 < min) {
-                    min = i16;
-                }
+                this.d = i3;
             }
-            if (this.V == 0) {
-                this.U = Math.max(this.U, i14);
-            }
-            if (i14 == A - 1 && !z12) {
-                sparseIntArray2.put(i14, this.V);
-            }
-            i15++;
-            i16 -= min;
-            sparseIntArray.put(i14, min);
-            i14++;
-            L = i10;
-            f10 = f7;
-            z11 = false;
+        } else {
+            i3 = this.d;
         }
-        this.V++;
+        if (i3 > 0) {
+            i10 = org.telegram.messenger.g0.L(-2.0f) + org.telegram.messenger.g0.L(10.0f) + Math.max(org.telegram.messenger.g0.L(7.333f), (int) Math.ceil(bzVar.c.measureText(String.format("%d", Integer.valueOf(i3)))));
+        } else {
+            if (!this.e && bzVar.n) {
+                i11 = org.telegram.messenger.g0.L(12.333f);
+            }
+            i10 = i11;
+        }
+        return Math.max(org.telegram.messenger.g0.L(16.0f), ceil + i10);
     }
 
-    public qu0 D1(int i10) {
-        return new qu0(100.0f, 100.0f);
-    }
-
-    public final boolean E1(int i10) {
-        B1();
-        return this.S.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
-    }
-
-    @Override // s4.r, s4.n0
-    public final int I(hf.e eVar, s4.z0 z0Var) {
-        return z0Var.b();
-    }
-
-    @Override // s4.r, s4.n0
-    public final int u(hf.e eVar, s4.z0 z0Var) {
-        return 1;
-    }
-
-    @Override // s4.r, s4.a0, s4.n0
-    public boolean y0() {
-        return false;
+    public final void b(String str) {
+        TextPaint textPaint = this.h.b;
+        if (TextUtils.equals(this.b, str)) {
+            return;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+        this.b = spannableStringBuilder;
+        CharSequence m10 = org.telegram.messenger.i6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), false, null, 0);
+        this.b = m10;
+        this.b = org.telegram.messenger.zi.C5(m10, null, textPaint.getFontMetricsInt(), false);
+        this.g = false;
     }
 }

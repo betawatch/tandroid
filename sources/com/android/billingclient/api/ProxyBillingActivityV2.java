@@ -1,42 +1,42 @@
 package com.android.billingclient.api;
 
-import a6.i;
 import android.app.PendingIntent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import androidx.activity.m;
+import androidx.activity.l;
 import androidx.activity.result.c;
 import androidx.activity.result.g;
 import androidx.fragment.app.e0;
+import c6.i;
 import com.google.android.gms.internal.play_billing.u;
-import k6.h;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class ProxyBillingActivityV2 extends m {
-    public c J;
+public class ProxyBillingActivityV2 extends l {
     public c K;
     public c L;
-    public ResultReceiver M;
+    public c M;
     public ResultReceiver N;
     public ResultReceiver O;
+    public ResultReceiver P;
 
-    @Override // androidx.activity.m, e0.f, android.app.Activity
+    @Override // androidx.activity.l, e0.e, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.J = r(new h(this, 14), new e0(3));
-        this.K = r(new za.c(this, 12), new e0(3));
-        this.L = r(new i(this, 14), new e0(3));
+        this.K = r(new bb.c(this, 20), new e0(3));
+        this.L = r(new i(this, 20), new e0(3));
+        this.M = r(new android.support.v4.media.c(this, 19), new e0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
-                this.M = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
+                this.N = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
             }
             if (bundle.containsKey("external_payment_dialog_result_receiver")) {
-                this.N = (ResultReceiver) bundle.getParcelable("external_payment_dialog_result_receiver");
+                this.O = (ResultReceiver) bundle.getParcelable("external_payment_dialog_result_receiver");
             }
             if (bundle.containsKey("external_offer_flow_result_receiver")) {
-                this.O = (ResultReceiver) bundle.getParcelable("external_offer_flow_result_receiver");
+                this.P = (ResultReceiver) bundle.getParcelable("external_offer_flow_result_receiver");
                 return;
             }
             return;
@@ -44,47 +44,47 @@ public class ProxyBillingActivityV2 extends m {
         u.g("ProxyBillingActivityV2", "Launching Play Store billing dialog");
         if (getIntent().hasExtra("ALTERNATIVE_BILLING_ONLY_DIALOG_INTENT")) {
             PendingIntent pendingIntent = (PendingIntent) getIntent().getParcelableExtra("ALTERNATIVE_BILLING_ONLY_DIALOG_INTENT");
-            this.M = (ResultReceiver) getIntent().getParcelableExtra("alternative_billing_only_dialog_result_receiver");
-            c cVar = this.J;
-            kotlin.jvm.internal.i.e(pendingIntent, "pendingIntent");
+            this.N = (ResultReceiver) getIntent().getParcelableExtra("alternative_billing_only_dialog_result_receiver");
+            c cVar = this.K;
+            j.e(pendingIntent, "pendingIntent");
             IntentSender intentSender = pendingIntent.getIntentSender();
-            kotlin.jvm.internal.i.d(intentSender, "pendingIntent.intentSender");
+            j.d(intentSender, "pendingIntent.intentSender");
             cVar.a(new g(intentSender, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_payment_dialog_pending_intent")) {
             PendingIntent pendingIntent2 = (PendingIntent) getIntent().getParcelableExtra("external_payment_dialog_pending_intent");
-            this.N = (ResultReceiver) getIntent().getParcelableExtra("external_payment_dialog_result_receiver");
-            c cVar2 = this.K;
-            kotlin.jvm.internal.i.e(pendingIntent2, "pendingIntent");
+            this.O = (ResultReceiver) getIntent().getParcelableExtra("external_payment_dialog_result_receiver");
+            c cVar2 = this.L;
+            j.e(pendingIntent2, "pendingIntent");
             IntentSender intentSender2 = pendingIntent2.getIntentSender();
-            kotlin.jvm.internal.i.d(intentSender2, "pendingIntent.intentSender");
+            j.d(intentSender2, "pendingIntent.intentSender");
             cVar2.a(new g(intentSender2, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_offer_flow_pending_intent")) {
             PendingIntent pendingIntent3 = (PendingIntent) getIntent().getParcelableExtra("external_offer_flow_pending_intent");
-            this.O = (ResultReceiver) getIntent().getParcelableExtra("external_offer_flow_result_receiver");
-            c cVar3 = this.L;
-            kotlin.jvm.internal.i.e(pendingIntent3, "pendingIntent");
+            this.P = (ResultReceiver) getIntent().getParcelableExtra("external_offer_flow_result_receiver");
+            c cVar3 = this.M;
+            j.e(pendingIntent3, "pendingIntent");
             IntentSender intentSender3 = pendingIntent3.getIntentSender();
-            kotlin.jvm.internal.i.d(intentSender3, "pendingIntent.intentSender");
+            j.d(intentSender3, "pendingIntent.intentSender");
             cVar3.a(new g(intentSender3, null, 0, 0));
         }
     }
 
-    @Override // androidx.activity.m, e0.f, android.app.Activity
+    @Override // androidx.activity.l, e0.e, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        ResultReceiver resultReceiver = this.M;
+        ResultReceiver resultReceiver = this.N;
         if (resultReceiver != null) {
             bundle.putParcelable("alternative_billing_only_dialog_result_receiver", resultReceiver);
         }
-        ResultReceiver resultReceiver2 = this.N;
+        ResultReceiver resultReceiver2 = this.O;
         if (resultReceiver2 != null) {
             bundle.putParcelable("external_payment_dialog_result_receiver", resultReceiver2);
         }
-        ResultReceiver resultReceiver3 = this.O;
+        ResultReceiver resultReceiver3 = this.P;
         if (resultReceiver3 != null) {
             bundle.putParcelable("external_offer_flow_result_receiver", resultReceiver3);
         }

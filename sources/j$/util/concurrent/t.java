@@ -28,8 +28,8 @@ public final /* synthetic */ class t implements BiConsumer, BiFunction, Consumer
     public final Object b;
     public final Object c;
 
-    public /* synthetic */ t(int i10, Object obj, Object obj2) {
-        this.a = i10;
+    public /* synthetic */ t(int i3, Object obj, Object obj2) {
+        this.a = i3;
         this.b = obj;
         this.c = obj2;
     }

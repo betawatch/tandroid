@@ -1,142 +1,36 @@
 package u2;
 
-import android.os.Looper;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
-import v7.t6;
+import b8.te;
+import d2.v;
+import s3.h;
+import u3.c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public final ArrayList a = new ArrayList(1);
-    public final HashSet b = new HashSet(1);
-    public final a5.a c = new a5.a(new CopyOnWriteArrayList(), 0, (Object) null, 22);
-    public final n2.j d = new n2.j(new CopyOnWriteArrayList(), 0, null);
-    public Looper e;
-    public b2.o1 f;
-    public j2.l g;
+public final class a {
+    public static final a a = new a();
 
-    public boolean a(b2.p0 p0Var) {
-        return false;
-    }
-
-    public final a5.a b(g0 g0Var) {
-        return new a5.a((CopyOnWriteArrayList) this.c.d, 0, g0Var, 22);
-    }
-
-    public abstract e0 c(g0 g0Var, android.support.v4.media.session.a0 a0Var, long j10);
-
-    public final void d(h0 h0Var) {
-        HashSet hashSet = this.b;
-        boolean isEmpty = hashSet.isEmpty();
-        hashSet.remove(h0Var);
-        if (isEmpty || !hashSet.isEmpty()) {
-            return;
-        }
-        e();
-    }
-
-    public final void f(h0 h0Var) {
-        this.e.getClass();
-        HashSet hashSet = this.b;
-        boolean isEmpty = hashSet.isEmpty();
-        hashSet.add(h0Var);
-        if (isEmpty) {
-            g();
-        }
-    }
-
-    public b2.o1 h() {
-        return null;
-    }
-
-    public abstract b2.p0 i();
-
-    public boolean j() {
-        return true;
-    }
-
-    public abstract void k();
-
-    public final void l(h0 h0Var, g2.d0 d0Var, j2.l lVar) {
-        Looper myLooper = Looper.myLooper();
-        Looper looper = this.e;
-        t6.f(looper == null || looper == myLooper);
-        this.g = lVar;
-        b2.o1 o1Var = this.f;
-        this.a.add(h0Var);
-        if (this.e == null) {
-            this.e = myLooper;
-            this.b.add(h0Var);
-            m(d0Var);
-        } else if (o1Var != null) {
-            f(h0Var);
-            h0Var.a(this, o1Var);
-        }
-    }
-
-    public abstract void m(g2.d0 d0Var);
-
-    public final void n(b2.o1 o1Var) {
-        this.f = o1Var;
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((h0) obj).a(this, o1Var);
-        }
-    }
-
-    public abstract void o(e0 e0Var);
-
-    public final void p(h0 h0Var) {
-        ArrayList arrayList = this.a;
-        arrayList.remove(h0Var);
-        if (!arrayList.isEmpty()) {
-            d(h0Var);
-            return;
-        }
-        this.e = null;
-        this.f = null;
-        this.g = null;
-        this.b.clear();
-        q();
-    }
-
-    public abstract void q();
-
-    public final void r(n2.k kVar) {
-        CopyOnWriteArrayList copyOnWriteArrayList = this.d.c;
-        Iterator it = copyOnWriteArrayList.iterator();
-        while (it.hasNext()) {
-            n2.i iVar = (n2.i) it.next();
-            if (iVar.b == kVar) {
-                copyOnWriteArrayList.remove(iVar);
+    public final te a(v vVar) {
+        String str = vVar.s;
+        if (str != null) {
+            switch (str) {
+                case "application/vnd.dvb.ait":
+                    return new o3.b(0);
+                case "application/x-icy":
+                    return new r3.a();
+                case "application/id3":
+                    return new h(null);
+                case "application/x-emsg":
+                    return new o3.b(1);
+                case "application/x-scte35":
+                    return new c();
             }
         }
+        throw new IllegalArgumentException(t4.c.f("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
-    public final void s(k0 k0Var) {
-        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.c.d;
-        Iterator it = copyOnWriteArrayList.iterator();
-        while (it.hasNext()) {
-            j0 j0Var = (j0) it.next();
-            if (j0Var.b == k0Var) {
-                copyOnWriteArrayList.remove(j0Var);
-            }
-        }
-    }
-
-    public void e() {
-    }
-
-    public void g() {
-    }
-
-    public void t(b2.p0 p0Var) {
+    public final boolean b(v vVar) {
+        String str = vVar.s;
+        return "application/id3".equals(str) || "application/x-emsg".equals(str) || "application/x-scte35".equals(str) || "application/x-icy".equals(str) || "application/vnd.dvb.ait".equals(str);
     }
 }

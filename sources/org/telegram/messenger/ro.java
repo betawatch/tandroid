@@ -1,151 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import android.util.Base64;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ro implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ z2 c;
+public final class ro {
+    public final long a;
+    public final long b;
+    public final byte[] c;
 
-    public /* synthetic */ ro(int i10, z2 z2Var, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = z2Var;
+    public ro(long j10, String str, long j11) {
+        this.a = j10;
+        this.b = j11;
+        this.c = Base64.decode(str, 8);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:36:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x00dd  */
-    /* JADX WARN: Type inference failed for: r0v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v7, types: [int] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLiteCursor sQLiteCursor;
-        TLRPC.help_AppConfig help_appconfig;
-        NativeByteBuffer byteBufferValue;
-        SQLiteCursor sQLiteCursor2;
-        TLRPC.messages_AvailableEffects messages_availableeffects;
-        NativeByteBuffer byteBufferValue2;
-        switch (this.a) {
-            case 0:
-                ?? r02 = this.b;
-                z2 z2Var = this.c;
-                SQLiteCursor sQLiteCursor3 = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = is.a0(r02).b;
-                        if (sQLiteDatabase != null) {
-                            sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM app_config", new Object[0]);
-                            try {
-                                if (!sQLiteCursor.next() || (byteBufferValue = sQLiteCursor.byteBufferValue(0)) == null) {
-                                    help_appconfig = null;
-                                } else {
-                                    help_appconfig = TLRPC.help_AppConfig.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), true);
-                                    byteBufferValue.reuse();
-                                }
-                                if (help_appconfig instanceof TLRPC.TL_help_appConfig) {
-                                    z2Var.a(Long.valueOf(r6.hash), (TLRPC.TL_help_appConfig) help_appconfig);
-                                } else {
-                                    z2Var.a(0L, null);
-                                }
-                                sQLiteCursor3 = sQLiteCursor;
-                            } catch (Exception e) {
-                                e = e;
-                                f8.g(e, true);
-                                z2Var.a(0L, null);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                    return;
-                                }
-                                return;
-                            }
-                        }
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        sQLiteCursor3 = r02;
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                        }
-                        throw th;
-                    }
-                } catch (Exception e7) {
-                    e = e7;
-                    sQLiteCursor = null;
-                } catch (Throwable th3) {
-                    th = th3;
-                    if (sQLiteCursor3 != null) {
-                    }
-                    throw th;
-                }
-                break;
-            default:
-                ?? r03 = this.b;
-                z2 z2Var2 = this.c;
-                SQLiteCursor sQLiteCursor4 = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase2 = is.a0(r03).b;
-                        if (sQLiteDatabase2 != null) {
-                            sQLiteCursor2 = sQLiteDatabase2.queryFinalized("SELECT data FROM effects", new Object[0]);
-                            try {
-                                if (!sQLiteCursor2.next() || (byteBufferValue2 = sQLiteCursor2.byteBufferValue(0)) == null) {
-                                    messages_availableeffects = null;
-                                } else {
-                                    messages_availableeffects = TLRPC.messages_AvailableEffects.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), true);
-                                    byteBufferValue2.reuse();
-                                }
-                                if (messages_availableeffects instanceof TLRPC.TL_messages_availableEffects) {
-                                    z2Var2.a(Long.valueOf(r6.hash), (TLRPC.TL_messages_availableEffects) messages_availableeffects);
-                                } else {
-                                    z2Var2.a(0L, null);
-                                }
-                                sQLiteCursor4 = sQLiteCursor2;
-                            } catch (Exception e10) {
-                                e = e10;
-                                f8.g(e, true);
-                                z2Var2.a(0L, null);
-                                if (sQLiteCursor2 != null) {
-                                    sQLiteCursor2.dispose();
-                                    return;
-                                }
-                                return;
-                            }
-                        }
-                        if (sQLiteCursor4 != null) {
-                            sQLiteCursor4.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLiteCursor4 = r03;
-                        if (sQLiteCursor4 != null) {
-                            sQLiteCursor4.dispose();
-                        }
-                        throw th;
-                    }
-                } catch (Exception e11) {
-                    e = e11;
-                    sQLiteCursor2 = null;
-                } catch (Throwable th5) {
-                    th = th5;
-                    if (sQLiteCursor4 != null) {
-                    }
-                    throw th;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof ro)) {
+            return false;
         }
+        ro roVar = (ro) obj;
+        return this.a == roVar.a && this.b == roVar.b && Arrays.equals(this.c, roVar.c);
+    }
+
+    public ro(long j10, long j11, byte[] bArr) {
+        this.a = j10;
+        this.b = j11;
+        this.c = bArr;
     }
 }

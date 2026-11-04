@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class CarColor {
     public static final int TYPE_BLUE = 6;
@@ -30,16 +30,16 @@ public final class CarColor {
         this.mColorDark = 0;
     }
 
-    private static CarColor create(int i10) {
-        return new CarColor(i10, 0, 0);
+    private static CarColor create(int i3) {
+        return new CarColor(i3, 0, 0);
     }
 
-    public static CarColor createCustom(int i10, int i11) {
-        return new CarColor(0, i10, i11);
+    public static CarColor createCustom(int i3, int i10) {
+        return new CarColor(0, i3, i10);
     }
 
-    private static String typeToString(int i10) {
-        switch (i10) {
+    private static String typeToString(int i3) {
+        switch (i3) {
             case 0:
                 return "CUSTOM";
             case 1:
@@ -94,12 +94,12 @@ public final class CarColor {
         sb2.append(", color: ");
         sb2.append(this.mColor);
         sb2.append(", dark: ");
-        return a1.g.p(sb2, this.mColorDark, "]");
+        return a1.g.o(this.mColorDark, "]", sb2);
     }
 
-    private CarColor(int i10, int i11, int i12) {
-        this.mType = i10;
-        this.mColor = i11;
-        this.mColorDark = i12;
+    private CarColor(int i3, int i10, int i11) {
+        this.mType = i3;
+        this.mColor = i10;
+        this.mColorDark = i11;
     }
 }

@@ -8,18 +8,18 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class WearAuthListenerService extends Service implements x8.a {
+public class WearAuthListenerService extends Service implements z8.a {
     public static final /* synthetic */ int r = 0;
     public ComponentName a;
-    public x8.f b;
-    public x8.d c;
+    public z8.f b;
+    public z8.d c;
     public Intent d;
     public Looper e;
     public boolean h;
     public final Object f = new Object();
-    public final y8.d n = new y8.d(new jb.b(this, 26));
+    public final a9.d n = new a9.d(new kb.a(this, 29));
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:10:0x004b, code lost:
@@ -93,11 +93,11 @@ public class WearAuthListenerService extends Service implements x8.a {
             handlerThread.start();
             this.e = handlerThread.getLooper();
         }
-        this.b = new x8.f(this, this.e);
+        this.b = new z8.f(this, this.e);
         Intent intent = new Intent("com.google.android.gms.wearable.BIND_LISTENER");
         this.d = intent;
         intent.setComponent(this.a);
-        this.c = new x8.d(this);
+        this.c = new z8.d(this);
     }
 
     @Override // android.app.Service
@@ -107,7 +107,7 @@ public class WearAuthListenerService extends Service implements x8.a {
         }
         synchronized (this.f) {
             this.h = true;
-            x8.f fVar = this.b;
+            z8.f fVar = this.b;
             if (fVar == null) {
                 throw new IllegalStateException("onDestroy: mServiceHandler not set, did you override onCreate() but forget to call super.onCreate()? component=".concat(String.valueOf(this.a)));
             }
@@ -117,19 +117,19 @@ public class WearAuthListenerService extends Service implements x8.a {
         super.onDestroy();
     }
 
-    @Override // x8.a
-    public final void a(y8.f fVar) {
+    @Override // z8.a
+    public final void a(a9.f fVar) {
     }
 
-    @Override // x8.a
-    public final void b(y8.f fVar) {
+    @Override // z8.a
+    public final void b(a9.f fVar) {
     }
 
-    @Override // x8.a
-    public final void c(y8.f fVar) {
+    @Override // z8.a
+    public final void c(a9.f fVar) {
     }
 
-    @Override // x8.a
-    public final void d(y8.f fVar) {
+    @Override // z8.a
+    public final void d(a9.f fVar) {
     }
 }

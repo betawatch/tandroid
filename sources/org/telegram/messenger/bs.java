@@ -1,20 +1,13 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class bs {
     public final int a;
-    public final int b;
-    public final int c;
+    public final Object[] b;
 
-    public bs(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
-    }
-
-    public bs(int i10, int i11, int i12) {
-        this.c = i10;
-        this.a = i11;
-        this.b = i12;
+    public bs(int i3, Object[] objArr) {
+        this.a = i3;
+        this.b = objArr;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class r1 extends n0 implements t1, RandomAccess {
     public final ArrayList b;
@@ -16,19 +16,19 @@ public final class r1 extends n0 implements t1, RandomAccess {
         new r1(10).a = false;
     }
 
-    public r1(int i10) {
-        this(new ArrayList(i10));
+    public r1(int i3) {
+        this(new ArrayList(i3));
     }
 
     @Override // com.google.android.gms.internal.vision.t1
-    public final Object a(int i10) {
-        return this.b.get(i10);
+    public final Object a(int i3) {
+        return this.b.get(i3);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ void add(int i10, Object obj) {
-        l();
-        this.b.add(i10, (String) obj);
+    public final /* synthetic */ void add(int i3, Object obj) {
+        h();
+        this.b.add(i3, (String) obj);
         ((AbstractList) this).modCount++;
     }
 
@@ -39,15 +39,22 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final void clear() {
-        l();
+        h();
         this.b.clear();
         ((AbstractList) this).modCount++;
     }
 
+    @Override // com.google.android.gms.internal.vision.t1
+    public final void f(q0 q0Var) {
+        h();
+        this.b.add(q0Var);
+        ((AbstractList) this).modCount++;
+    }
+
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
+    public final Object get(int i3) {
         ArrayList arrayList = this.b;
-        Object obj = arrayList.get(i10);
+        Object obj = arrayList.get(i3);
         if (obj instanceof String) {
             return (String) obj;
         }
@@ -55,30 +62,23 @@ public final class r1 extends n0 implements t1, RandomAccess {
             byte[] bArr = (byte[]) obj;
             String str = new String(bArr, j1.a);
             if (a3.a.s(0, bArr.length, bArr)) {
-                arrayList.set(i10, str);
+                arrayList.set(i3, str);
             }
             return str;
         }
         q0 q0Var = (q0) obj;
-        String str2 = q0Var.m() == 0 ? "" : new String(q0Var.b, q0Var.q(), q0Var.m(), j1.a);
-        int q6 = q0Var.q();
-        if (a3.a.s(q6, q0Var.m() + q6, q0Var.b)) {
-            arrayList.set(i10, str2);
+        String str2 = q0Var.i() == 0 ? "" : new String(q0Var.b, q0Var.m(), q0Var.i(), j1.a);
+        int m10 = q0Var.m();
+        if (a3.a.s(m10, q0Var.i() + m10, q0Var.b)) {
+            arrayList.set(i3, str2);
         }
         return str2;
     }
 
-    @Override // com.google.android.gms.internal.vision.t1
-    public final void k(q0 q0Var) {
-        l();
-        this.b.add(q0Var);
-        ((AbstractList) this).modCount++;
-    }
-
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        l();
-        Object remove = this.b.remove(i10);
+    public final Object remove(int i3) {
+        h();
+        Object remove = this.b.remove(i3);
         ((AbstractList) this).modCount++;
         if (remove instanceof String) {
             return (String) remove;
@@ -87,13 +87,13 @@ public final class r1 extends n0 implements t1, RandomAccess {
             return new String((byte[]) remove, j1.a);
         }
         q0 q0Var = (q0) remove;
-        return q0Var.m() == 0 ? "" : new String(q0Var.b, q0Var.q(), q0Var.m(), j1.a);
+        return q0Var.i() == 0 ? "" : new String(q0Var.b, q0Var.m(), q0Var.i(), j1.a);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        l();
-        Object obj2 = this.b.set(i10, (String) obj);
+    public final Object set(int i3, Object obj) {
+        h();
+        Object obj2 = this.b.set(i3, (String) obj);
         if (obj2 instanceof String) {
             return (String) obj2;
         }
@@ -101,7 +101,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
             return new String((byte[]) obj2, j1.a);
         }
         q0 q0Var = (q0) obj2;
-        return q0Var.m() == 0 ? "" : new String(q0Var.b, q0Var.q(), q0Var.m(), j1.a);
+        return q0Var.i() == 0 ? "" : new String(q0Var.b, q0Var.m(), q0Var.i(), j1.a);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -110,12 +110,12 @@ public final class r1 extends n0 implements t1, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.vision.o1
-    public final o1 zza(int i10) {
+    public final o1 zza(int i3) {
         ArrayList arrayList = this.b;
-        if (i10 < arrayList.size()) {
+        if (i3 < arrayList.size()) {
             throw new IllegalArgumentException();
         }
-        ArrayList arrayList2 = new ArrayList(i10);
+        ArrayList arrayList2 = new ArrayList(i3);
         arrayList2.addAll(arrayList);
         return new r1(arrayList2);
     }
@@ -135,12 +135,12 @@ public final class r1 extends n0 implements t1, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i10, Collection collection) {
-        l();
+    public final boolean addAll(int i3, Collection collection) {
+        h();
         if (collection instanceof t1) {
             collection = ((t1) collection).zzd();
         }
-        boolean addAll = this.b.addAll(i10, collection);
+        boolean addAll = this.b.addAll(i3, collection);
         ((AbstractList) this).modCount++;
         return addAll;
     }

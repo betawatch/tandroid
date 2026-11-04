@@ -1,66 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class wu0 extends vu0 {
-    public Activity f0;
-    public final Rect g0;
-    public int h0;
-    public boolean i0;
-
-    public wu0(Context context, Activity activity) {
-        super(context, null);
-        this.g0 = new Rect();
-        setActivity(activity);
-    }
-
-    @Override // org.telegram.ui.Components.vu0
-    public int Q() {
-        View rootView = getRootView();
-        Rect rect = this.g0;
-        getWindowVisibleDisplayFrame(rect);
-        if (this.i0) {
-            return ((rootView.getHeight() - (rect.top != 0 ? org.telegram.messenger.i0.m : 0)) - org.telegram.messenger.i0.q1(rootView)) - (rect.bottom - rect.top);
-        }
-        int height = (this.f0.getWindow().getDecorView().getHeight() - org.telegram.messenger.i0.q1(rootView)) - rootView.getBottom();
-        if (height <= Math.max(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.m)) {
-            return 0;
-        }
-        return height;
-    }
-
-    @Override // org.telegram.ui.Components.vu0
-    public void R() {
-        if (this.n == null && this.r.isEmpty()) {
-            return;
-        }
-        this.h0 = Q();
-        Point point = org.telegram.messenger.i0.q;
-        post(new k2.v(23, this, point.x > point.y));
-    }
-
-    @Override // org.telegram.ui.Components.vu0
-    public int getKeyboardHeight() {
-        return this.h0;
-    }
-
-    @Override // org.telegram.ui.Components.vu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        R();
-    }
-
-    public void setActivity(Activity activity) {
-        this.f0 = activity;
-    }
-
-    public void setWithoutWindow(boolean z10) {
-        this.i0 = z10;
+public final class wu0 extends org.telegram.messenger.x2 {
+    @Override // org.telegram.messenger.x2
+    public final void f(int i3, Object obj, long j10, org.telegram.messenger.w2 w2Var) {
+        TLRPC.TL_messages_searchCustomEmoji tL_messages_searchCustomEmoji = new TLRPC.TL_messages_searchCustomEmoji();
+        tL_messages_searchCustomEmoji.emoticon = (String) obj;
+        tL_messages_searchCustomEmoji.hash = j10;
+        ConnectionsManager.getInstance(i3).sendRequest(tL_messages_searchCustomEmoji, new uu0(w2Var, 1));
     }
 }

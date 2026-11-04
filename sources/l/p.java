@@ -1,28 +1,25 @@
 package l;
 
-import android.view.CollapsibleActionView;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class p extends FrameLayout implements k.b {
-    public final CollapsibleActionView a;
+public final class p implements MenuItem.OnActionExpandListener {
+    public final MenuItem.OnActionExpandListener a;
+    public final /* synthetic */ r b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public p(View view) {
-        super(view.getContext());
-        this.a = (CollapsibleActionView) view;
-        addView(view);
+    public p(r rVar, MenuItem.OnActionExpandListener onActionExpandListener) {
+        this.b = rVar;
+        this.a = onActionExpandListener;
     }
 
-    @Override // k.b
-    public final void onActionViewCollapsed() {
-        this.a.onActionViewCollapsed();
+    @Override // android.view.MenuItem.OnActionExpandListener
+    public final boolean onMenuItemActionCollapse(MenuItem menuItem) {
+        return this.a.onMenuItemActionCollapse(this.b.f(menuItem));
     }
 
-    @Override // k.b
-    public final void onActionViewExpanded() {
-        this.a.onActionViewExpanded();
+    @Override // android.view.MenuItem.OnActionExpandListener
+    public final boolean onMenuItemActionExpand(MenuItem menuItem) {
+        return this.a.onMenuItemActionExpand(this.b.f(menuItem));
     }
 }

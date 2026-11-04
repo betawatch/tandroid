@@ -1,43 +1,50 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class r extends com.google.android.gms.internal.cast.i0 {
-    public final transient Object[] e;
+public final class r extends n {
+    public static final r e = new r(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public r(Object[] objArr) {
-        super(6);
-        this.e = objArr;
+    public r(int i3, Object[] objArr) {
+        this.c = objArr;
+        this.d = i3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:5:0x001b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x001c A[RETURN] */
-    @Override // com.google.android.gms.internal.cast.i0, java.util.Map
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object get(Object obj) {
-        Object obj2;
-        if (obj != null) {
-            Object[] objArr = this.e;
-            Object obj3 = objArr[0];
-            obj3.getClass();
-            if (obj3.equals(obj)) {
-                obj2 = objArr[1];
-                obj2.getClass();
-                if (obj2 != null) {
-                    return null;
-                }
-                return obj2;
-            }
-        }
-        obj2 = null;
-        if (obj2 != null) {
-        }
+    @Override // java.util.List
+    public final Object get(int i3) {
+        x7.x6.a(i3, this.d);
+        Object obj = this.c[i3];
+        obj.getClass();
+        return obj;
     }
 
-    @Override // java.util.Map
+    @Override // z7.n, z7.j
+    public final int h(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i3 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i3);
+        return i3;
+    }
+
+    @Override // z7.j
+    public final int i() {
+        return this.d;
+    }
+
+    @Override // z7.j
+    public final int j() {
+        return 0;
+    }
+
+    @Override // z7.j
+    public final Object[] k() {
+        return this.c;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return 1;
+        return this.d;
     }
 }

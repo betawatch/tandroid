@@ -2,20 +2,21 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 import j$.util.DesugarCollections;
+import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends p4.t {
+public final class c extends r4.s {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g.t b;
+    public final /* synthetic */ g.u b;
 
-    public /* synthetic */ c(g.t tVar, int i10) {
-        this.a = i10;
-        this.b = tVar;
+    public /* synthetic */ c(g.u uVar, int i3) {
+        this.a = i3;
+        this.b = uVar;
     }
 
-    @Override // p4.t
-    public void d(p4.w wVar) {
+    @Override // r4.s
+    public void d(r4.w wVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
@@ -29,10 +30,10 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public final void e(p4.w wVar) {
-        k2.m0 b10;
-        p4.o oVar;
+    @Override // r4.s
+    public final void e(r4.w wVar) {
+        y00 b10;
+        r4.o oVar;
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
@@ -45,12 +46,12 @@ public final class c extends p4.t {
                 break;
             default:
                 o0 o0Var = (o0) this.b;
-                if (wVar == o0Var.r && p4.w.a() != null) {
-                    p4.v vVar = wVar.a;
+                if (wVar == o0Var.r && r4.w.a() != null) {
+                    r4.v vVar = wVar.a;
                     vVar.getClass();
-                    p4.y.b();
-                    for (p4.w wVar2 : DesugarCollections.unmodifiableList(vVar.b)) {
-                        if (!DesugarCollections.unmodifiableList(o0Var.r.v).contains(wVar2) && (b10 = o0Var.r.b(wVar2)) != null && (oVar = (p4.o) b10.a) != null && oVar.d && !o0Var.w.contains(wVar2)) {
+                    r4.y.b();
+                    for (r4.w wVar2 : DesugarCollections.unmodifiableList(vVar.b)) {
+                        if (!DesugarCollections.unmodifiableList(o0Var.r.v).contains(wVar2) && (b10 = o0Var.r.b(wVar2)) != null && (oVar = (r4.o) b10.a) != null && oVar.d && !o0Var.w.contains(wVar2)) {
                             o0Var.o();
                             o0Var.l();
                             break;
@@ -62,8 +63,8 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public void f(p4.w wVar) {
+    @Override // r4.s
+    public void f(r4.w wVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).f();
@@ -77,8 +78,8 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public void g(p4.w wVar) {
+    @Override // r4.s
+    public void g(r4.w wVar) {
         switch (this.a) {
             case 0:
                 ((g) this.b).dismiss();
@@ -95,7 +96,7 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
+    @Override // r4.s
     public void i() {
         switch (this.a) {
             case 1:
@@ -107,29 +108,29 @@ public final class c extends p4.t {
         }
     }
 
-    @Override // p4.t
-    public void k(p4.w wVar) {
+    @Override // r4.s
+    public void k(r4.w wVar) {
         f0 f0Var;
-        int i10 = this.a;
-        g.t tVar = this.b;
-        switch (i10) {
+        int i3 = this.a;
+        g.u uVar = this.b;
+        switch (i3) {
             case 1:
-                t tVar2 = (t) tVar;
-                SeekBar seekBar = (SeekBar) tVar2.h0.get(wVar);
-                int i11 = wVar.p;
-                int i12 = t.F0;
-                if (seekBar != null && tVar2.c0 != wVar) {
-                    seekBar.setProgress(i11);
+                t tVar = (t) uVar;
+                SeekBar seekBar = (SeekBar) tVar.i0.get(wVar);
+                int i10 = wVar.p;
+                int i11 = t.G0;
+                if (seekBar != null && tVar.d0 != wVar) {
+                    seekBar.setProgress(i10);
                     break;
                 }
                 break;
             case 3:
-                int i13 = o0.j0;
-                o0 o0Var = (o0) tVar;
-                if (o0Var.M != wVar && (f0Var = (f0) o0Var.L.get(wVar.c)) != null) {
-                    int i14 = f0Var.v.p;
-                    f0Var.u(i14 == 0);
-                    f0Var.x.setProgress(i14);
+                int i12 = o0.k0;
+                o0 o0Var = (o0) uVar;
+                if (o0Var.N != wVar && (f0Var = (f0) o0Var.M.get(wVar.c)) != null) {
+                    int i13 = f0Var.v.p;
+                    f0Var.u(i13 == 0);
+                    f0Var.x.setProgress(i13);
                     break;
                 }
                 break;

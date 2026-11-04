@@ -111,12 +111,12 @@ public final class s extends b implements Collection {
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
-                l a2 = pVar.a();
-                if (a2 == null) {
+                l a10 = pVar.a();
+                if (a10 == null) {
                     break;
                 }
-                Object obj = a2.b;
-                Object obj2 = a2.c;
+                Object obj = a10.b;
+                Object obj2 = a10.c;
                 if (predicate.test(obj2) && concurrentHashMap.g(obj, null, obj2) != null) {
                     z10 = true;
                 }
@@ -143,11 +143,11 @@ public final class s extends b implements Collection {
         }
         p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
         while (true) {
-            l a2 = pVar.a();
-            if (a2 == null) {
+            l a10 = pVar.a();
+            if (a10 == null) {
                 return;
             } else {
-                consumer.x(a2.c);
+                consumer.x(a10.c);
             }
         }
     }

@@ -1,76 +1,123 @@
 package b5;
 
-import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import java.util.concurrent.atomic.AtomicReference;
-import m.p3;
-import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLObject;
+import u4.e1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g extends r0.b {
+    public final /* synthetic */ int d = 0;
+    public final Object e;
 
-    public /* synthetic */ g(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public g(e1 e1Var) {
+        this.e = e1Var;
     }
 
-    private final Object a() {
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
+    
+        if (r3.b() > 1) goto L12;
+     */
+    @Override // r0.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void b(View view, AccessibilityEvent accessibilityEvent) {
         boolean z10;
-        String str;
-        p3 p3Var = (p3) this.b;
-        synchronized (((AtomicMarkableReference) p3Var.h)) {
-            try {
-                z10 = false;
-                if (((AtomicMarkableReference) p3Var.h).isMarked()) {
-                    str = (String) ((AtomicMarkableReference) p3Var.h).getReference();
-                    ((AtomicMarkableReference) p3Var.h).set(str, false);
+        a aVar;
+        switch (this.d) {
+            case 0:
+                l lVar = (l) this.e;
+                super.b(view, accessibilityEvent);
+                accessibilityEvent.setClassName(l.class.getName());
+                a aVar2 = lVar.e;
+                if (aVar2 != null) {
                     z10 = true;
-                } else {
-                    str = null;
+                    break;
                 }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+                z10 = false;
+                accessibilityEvent.setScrollable(z10);
+                if (accessibilityEvent.getEventType() == 4096 && (aVar = lVar.e) != null) {
+                    accessibilityEvent.setItemCount(aVar.b());
+                    accessibilityEvent.setFromIndex(lVar.f);
+                    accessibilityEvent.setToIndex(lVar.f);
+                    break;
+                }
+                break;
+            default:
+                super.b(view, accessibilityEvent);
+                break;
         }
-        if (z10) {
-            ((y9.f) p3Var.a).i((String) p3Var.c, str);
-        }
-        return null;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        Map map;
-        switch (this.a) {
+    @Override // r0.b
+    public final void c(View view, s0.d dVar) {
+        switch (this.d) {
             case 0:
-                return new h((JsReplyProxyBoundaryInterface) this.b);
-            case 1:
-                return a();
+                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+                this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                dVar.i(l.class.getName());
+                l lVar = (l) this.e;
+                a aVar = lVar.e;
+                accessibilityNodeInfo.setScrollable(aVar != null && aVar.b() > 1);
+                if (lVar.canScrollHorizontally(1)) {
+                    dVar.a(TLObject.FLAG_12);
+                }
+                if (lVar.canScrollHorizontally(-1)) {
+                    dVar.a(TLObject.FLAG_13);
+                    break;
+                }
+                break;
             default:
-                ac.a aVar = (ac.a) this.b;
-                ((AtomicReference) aVar.c).set(null);
-                synchronized (aVar) {
-                    try {
-                        if (((AtomicMarkableReference) aVar.b).isMarked()) {
-                            map = ((y9.d) ((AtomicMarkableReference) aVar.b).getReference()).a();
-                            AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) aVar.b;
-                            atomicMarkableReference.set((y9.d) atomicMarkableReference.getReference(), false);
-                        } else {
-                            map = null;
-                        }
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
+                this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+                e1 e1Var = (e1) this.e;
+                boolean e10 = e1Var.e();
+                RecyclerView recyclerView = e1Var.d;
+                if (!e10 && recyclerView.getLayoutManager() != null) {
+                    recyclerView.getLayoutManager().T(view, dVar);
+                    break;
                 }
-                if (map != null) {
-                    p3 p3Var = (p3) aVar.d;
-                    ((y9.f) p3Var.a).g((String) p3Var.c, map, aVar.a);
-                }
-                return null;
+                break;
         }
+    }
+
+    @Override // r0.b
+    public final boolean d(View view, int i3, Bundle bundle) {
+        switch (this.d) {
+            case 0:
+                l lVar = (l) this.e;
+                if (super.d(view, i3, bundle)) {
+                    return true;
+                }
+                if (i3 != 4096) {
+                    if (i3 == 8192 && lVar.canScrollHorizontally(-1)) {
+                        lVar.setCurrentItem(lVar.f - 1);
+                        return true;
+                    }
+                } else if (lVar.canScrollHorizontally(1)) {
+                    lVar.setCurrentItem(lVar.f + 1);
+                    return true;
+                }
+                return false;
+            default:
+                e1 e1Var = (e1) this.e;
+                if (super.d(view, i3, bundle)) {
+                    return true;
+                }
+                boolean e10 = e1Var.e();
+                RecyclerView recyclerView = e1Var.d;
+                if (!e10 && recyclerView.getLayoutManager() != null) {
+                    tf.e eVar = recyclerView.getLayoutManager().b.b;
+                }
+                return false;
+        }
+    }
+
+    public g(l lVar) {
+        this.e = lVar;
     }
 }

@@ -1,29 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.util.Pair;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class fy0 extends ArrayList {
-    public final Class a;
-    public final Class b;
+public final class fy0 {
+    public final long a;
+    public final TLRPC.InputFile b;
+    public final TLRPC.InputEncryptedFile c;
+    public final byte[] d;
+    public final byte[] e;
 
-    public fy0(Class cls, Class cls2) {
-        this.a = cls;
-        this.b = cls2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final li.k l() {
-        int size = size();
-        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
-        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = ((Pair) get(i10)).first;
-            objArr2[i10] = ((Pair) get(i10)).second;
-        }
-        return new li.k(objArr, objArr2);
+    public fy0(long j10, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
+        this.a = j10;
+        this.b = inputFile;
+        this.c = inputEncryptedFile;
+        this.d = bArr;
+        this.e = bArr2;
     }
 }

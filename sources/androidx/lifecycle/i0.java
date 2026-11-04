@@ -9,14 +9,13 @@ import android.util.SizeF;
 import android.util.SparseArray;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final Class[] f = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
@@ -24,7 +23,7 @@ public final class i0 {
     public final LinkedHashMap b;
     public final LinkedHashMap c;
     public final LinkedHashMap d;
-    public final t4.d e;
+    public final v4.d e;
 
     public i0(HashMap hashMap) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -37,24 +36,13 @@ public final class i0 {
     }
 
     public static Bundle a(i0 i0Var) {
-        Map map;
         LinkedHashMap linkedHashMap = i0Var.a;
         LinkedHashMap linkedHashMap2 = i0Var.b;
-        kotlin.jvm.internal.i.e(linkedHashMap2, "<this>");
+        kotlin.jvm.internal.j.e(linkedHashMap2, "<this>");
         int size = linkedHashMap2.size();
-        if (size == 0) {
-            map = bd.r.a;
-        } else if (size != 1) {
-            map = new LinkedHashMap(linkedHashMap2);
-        } else {
-            kotlin.jvm.internal.i.e(linkedHashMap2, "<this>");
-            Map.Entry entry = (Map.Entry) linkedHashMap2.entrySet().iterator().next();
-            map = Collections.singletonMap(entry.getKey(), entry.getValue());
-            kotlin.jvm.internal.i.d(map, "with(...)");
-        }
-        Iterator it = map.entrySet().iterator();
+        Iterator it = (size != 0 ? size != 1 ? new LinkedHashMap(linkedHashMap2) : ed.s.g(linkedHashMap2) : ed.p.a).entrySet().iterator();
         while (true) {
-            int i10 = 0;
+            int i3 = 0;
             if (!it.hasNext()) {
                 Set<String> keySet = linkedHashMap.keySet();
                 ArrayList arrayList = new ArrayList(keySet.size());
@@ -63,10 +51,10 @@ public final class i0 {
                     arrayList.add(str);
                     arrayList2.add(linkedHashMap.get(str));
                 }
-                ad.e[] eVarArr = {new ad.e("keys", arrayList), new ad.e("values", arrayList2)};
+                dd.e[] eVarArr = {new dd.e("keys", arrayList), new dd.e("values", arrayList2)};
                 Bundle bundle = new Bundle(2);
-                while (i10 < 2) {
-                    ad.e eVar = eVarArr[i10];
+                while (i3 < 2) {
+                    dd.e eVar = eVarArr[i3];
                     String str2 = (String) eVar.a;
                     Object obj = eVar.b;
                     if (obj == null) {
@@ -111,7 +99,7 @@ public final class i0 {
                         bundle.putShortArray(str2, (short[]) obj);
                     } else if (obj instanceof Object[]) {
                         Class<?> componentType = obj.getClass().getComponentType();
-                        kotlin.jvm.internal.i.b(componentType);
+                        kotlin.jvm.internal.j.b(componentType);
                         if (Parcelable.class.isAssignableFrom(componentType)) {
                             bundle.putParcelableArray(str2, (Parcelable[]) obj);
                         } else if (String.class.isAssignableFrom(componentType)) {
@@ -136,34 +124,38 @@ public final class i0 {
                         }
                         bundle.putSizeF(str2, (SizeF) obj);
                     }
-                    i10++;
+                    i3++;
                 }
                 return bundle;
             }
-            Map.Entry entry2 = (Map.Entry) it.next();
-            String key = (String) entry2.getKey();
-            Bundle c10 = ((t4.d) entry2.getValue()).c();
-            kotlin.jvm.internal.i.e(key, "key");
-            if (c10 != null) {
-                while (i10 < 29) {
-                    Class cls = f[i10];
-                    kotlin.jvm.internal.i.b(cls);
-                    if (!cls.isInstance(c10)) {
-                        i10++;
+            Map.Entry entry = (Map.Entry) it.next();
+            String key = (String) entry.getKey();
+            Object c2 = ((v4.d) entry.getValue()).c();
+            kotlin.jvm.internal.j.e(key, "key");
+            if (c2 != null) {
+                while (i3 < 29) {
+                    Class cls = f[i3];
+                    kotlin.jvm.internal.j.b(cls);
+                    if (!cls.isInstance(c2)) {
+                        i3++;
                     }
                 }
-                throw new IllegalArgumentException("Can't put value with type " + c10.getClass() + " into saved state");
+                throw new IllegalArgumentException("Can't put value with type " + c2.getClass() + " into saved state");
             }
             Object obj2 = i0Var.c.get(key);
             z zVar = obj2 instanceof z ? (z) obj2 : null;
             if (zVar != null) {
-                zVar.j(c10);
+                zVar.j(c2);
             } else {
-                linkedHashMap.put(key, c10);
+                linkedHashMap.put(key, c2);
             }
-            wd.k kVar = (wd.k) i0Var.d.get(key);
-            if (kVar != null) {
-                ((wd.m) kVar).d(c10);
+            zd.s sVar = (zd.s) i0Var.d.get(key);
+            if (sVar != null) {
+                zd.u uVar = (zd.u) sVar;
+                if (c2 == null) {
+                    c2 = ae.i.a;
+                }
+                uVar.c(null, c2);
             }
         }
     }

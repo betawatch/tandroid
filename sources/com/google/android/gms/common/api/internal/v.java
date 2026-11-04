@@ -1,210 +1,81 @@
 package com.google.android.gms.common.api.internal;
 
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
-import m4.t1;
-import org.telegram.messenger.uz;
-import org.telegram.ui.Components.f71;
-import org.telegram.ui.Components.g71;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.kg0;
-import org.telegram.ui.lr0;
+import android.os.Bundle;
+import android.os.DeadObjectException;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
+import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class v implements f71 {
-    public int a;
-    public boolean b;
-    public Object c;
-    public Object d;
+public final class v implements e0 {
+    public final g0 a;
 
-    public v(PhotoViewer photoViewer) {
-        this.d = photoViewer;
+    public v(g0 g0Var) {
+        this.a = g0Var;
     }
 
-    public f1 a() {
-        n6.l.a("execute parameter required", ((s) this.c) != null);
-        return new f1(this, (k6.c[]) this.d, this.b, this.a);
+    @Override // com.google.android.gms.common.api.internal.e0
+    public final boolean B() {
+        g0 g0Var = this.a;
+        g0Var.o.getClass();
+        g0Var.h();
+        return true;
     }
 
-    public m4.o1 b(Object obj) {
-        m4.o1 o1Var;
-        synchronized (this.c) {
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.google.android.gms.common.api.internal.e0
+    public final d b(d dVar) {
+        g0 g0Var = this.a;
+        try {
+            d0 d0Var = g0Var.o;
+            z0 z0Var = d0Var.N;
+            ((Set) z0Var.a).add(dVar);
+            dVar.g.set((y0) z0Var.b);
+            com.google.android.gms.common.api.d dVar2 = dVar.o;
+            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) d0Var.F.get(dVar2);
+            p6.m.h(cVar, "Appropriate Api was not requested.");
+            if (!((p6.d) cVar).r() && g0Var.i.containsKey(dVar2)) {
+                dVar.o(new Status(17, null, null, null));
+                return dVar;
+            }
             try {
-                int e = e();
-                o1Var = new m4.o1(e, obj);
-                if (this.b) {
-                    o1Var.p();
-                } else {
-                    ((a0.f) this.d).put(Integer.valueOf(e), o1Var);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+                dVar.n(cVar);
+            } catch (DeadObjectException e10) {
+                dVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
+                throw e10;
+            } catch (RemoteException e11) {
+                dVar.o(new Status(8, e11.getLocalizedMessage(), null, null));
             }
-        }
-        return o1Var;
-    }
-
-    public void c(int i10) {
-        PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = g71.f0;
-        if (i10 == 2) {
-            Drawable[] drawableArr = PhotoViewer.U8;
-            photoViewer.v0();
-            boolean z10 = true;
-            if (photoViewer.c2 == 1) {
-                photoViewer.t0();
-                photoViewer.V7 = -1L;
-            }
-            lr0 lr0Var = photoViewer.f0;
-            if (lr0Var == null || !lr0Var.y) {
-                v61 v61Var = photoViewer.F2;
-                if (v61Var == null || !v61Var.d0()) {
-                    z10 = false;
-                }
-            } else {
-                z10 = lr0Var.G;
-            }
-            this.b = z10;
-            if (z10) {
-                photoViewer.H2 = false;
-                photoViewer.k2();
-                photoViewer.e0.invalidate();
-            }
+            return dVar;
+        } catch (DeadObjectException unused) {
+            u uVar = new u(this, this);
+            c0 c0Var = g0Var.e;
+            c0Var.sendMessage(c0Var.obtainMessage(1, uVar));
+            return dVar;
         }
     }
 
-    public void d(int i10) {
-        PhotoViewer photoViewer = (PhotoViewer) this.d;
-        kg0 kg0Var = (kg0) this.c;
-        if (kg0Var != null) {
-            org.telegram.messenger.i0.r(kg0Var);
-            ((kg0) this.c).run();
-        }
-        Drawable[] drawableArr = PhotoViewer.U8;
-        photoViewer.v0();
-        int i11 = photoViewer.c2;
-        if (i11 == 1 && photoViewer.z2 != null) {
-            Object obj = g71.f0;
-            if (i10 == 2) {
-                photoViewer.t0();
-                photoViewer.V7 = photoViewer.v8;
-                if (photoViewer.W7 == this.a) {
-                    PhotoViewer.W(photoViewer);
-                    return;
-                }
-                return;
-            }
-        }
-        if (i11 == 1 || this.b) {
-            photoViewer.H2 = false;
-            photoViewer.m2();
-        }
+    @Override // com.google.android.gms.common.api.internal.e0
+    public final void x(int i3) {
+        g0 g0Var = this.a;
+        g0Var.h();
+        g0Var.p.d(i3);
     }
 
-    public int e() {
-        int i10;
-        synchronized (this.c) {
-            i10 = this.a;
-            this.a = i10 + 1;
-        }
-        return i10;
+    @Override // com.google.android.gms.common.api.internal.e0
+    public final void L() {
     }
 
-    public void f(float f7) {
-        PhotoViewer photoViewer = (PhotoViewer) this.d;
-        v61 v61Var = photoViewer.F2;
-        if (v61Var == null) {
-            return;
-        }
-        if (v61Var.d0()) {
-            photoViewer.H2 = false;
-            photoViewer.F2.g0();
-            photoViewer.e0.invalidate();
-        }
-        j(2);
-        h(f7);
-        photoViewer.q3.h(false, 1.0f);
-        photoViewer.S7.setProgress(f7);
-        photoViewer.E3();
+    @Override // com.google.android.gms.common.api.internal.e0
+    public final void a() {
     }
 
-    public void g() {
-        ArrayList arrayList;
-        synchronized (this.c) {
-            this.b = true;
-            arrayList = new ArrayList(((a0.f) this.d).values());
-            ((a0.f) this.d).clear();
-        }
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((m4.o1) obj).p();
-        }
+    @Override // com.google.android.gms.common.api.internal.e0
+    public final void l(Bundle bundle) {
     }
 
-    public void h(float f7) {
-        PhotoViewer photoViewer = (PhotoViewer) this.d;
-        this.a = (int) (photoViewer.i8 * f7);
-        if (uz.o() != 2) {
-            if (((kg0) this.c) == null) {
-                kg0 kg0Var = new kg0(this, 18);
-                this.c = kg0Var;
-                org.telegram.messenger.i0.h3(kg0Var, 100L);
-                return;
-            }
-            return;
-        }
-        photoViewer.w2(this.a);
-        if (photoViewer.c2 == 1) {
-            long j10 = this.a;
-            photoViewer.X7 = j10;
-            if (photoViewer.W7 != j10) {
-                photoViewer.W7 = -1L;
-            }
-        }
-        this.c = null;
-    }
-
-    public void i(int i10, t1 t1Var) {
-        synchronized (this.c) {
-            try {
-                m4.o1 o1Var = (m4.o1) ((a0.f) this.d).remove(Integer.valueOf(i10));
-                if (o1Var != null) {
-                    if (o1Var.r.getClass() == t1.class) {
-                        o1Var.m(t1Var);
-                    } else {
-                        e2.a.l("SequencedFutureManager", "Type mismatch, expected " + o1Var.r.getClass() + ", but was " + t1.class);
-                    }
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    public void j(int i10) {
-        PhotoViewer photoViewer = (PhotoViewer) this.d;
-        if (photoViewer.c2 != 1) {
-            return;
-        }
-        if (i10 == 0) {
-            float progress = photoViewer.S7.getProgress();
-            photoViewer.w8 = progress;
-            photoViewer.v8 = (long) (photoViewer.i8 * 1000.0f * progress);
-        } else if (photoViewer.C1 != null) {
-            if (photoViewer.S7.getLeftProgress() > photoViewer.w8 || photoViewer.S7.getRightProgress() < photoViewer.w8) {
-                photoViewer.C1.setVideoThumbVisible(false);
-                if (i10 == 1) {
-                    photoViewer.v8 = (long) (photoViewer.S7.getLeftProgress() * photoViewer.i8 * 1000.0f);
-                } else {
-                    photoViewer.v8 = (long) (photoViewer.S7.getRightProgress() * photoViewer.i8 * 1000.0f);
-                }
-                photoViewer.V7 = -1L;
-            }
-        }
+    @Override // com.google.android.gms.common.api.internal.e0
+    public final void D(m6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 }

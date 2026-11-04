@@ -1,72 +1,68 @@
 package c3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
+import android.view.Surface;
+import d2.a2;
+import g2.n0;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class k implements b0 {
-    public final long a;
-    public final long b;
-    public final int c;
-    public final long d;
-    public final int e;
-    public final long f;
-    public final boolean g;
-    public final boolean h;
+public final class k implements Handler.Callback {
+    public final Handler a;
+    public final /* synthetic */ l b;
 
-    public k(long j10, long j11, int i10, int i11, boolean z10, boolean z11) {
-        this.a = j10;
-        this.b = j11;
-        this.c = i11 == -1 ? 1 : i11;
-        this.e = i10;
-        this.g = z10;
-        this.h = z11;
-        if (j10 == -1) {
-            this.d = -1L;
-            this.f = -9223372036854775807L;
-        } else {
-            long j12 = j10 - j11;
-            this.d = j12;
-            this.f = (Math.max(0L, j12) * 8000000) / i10;
-        }
+    public k(l lVar, t2.l lVar2) {
+        this.b = lVar;
+        Handler q10 = n0.q(this);
+        this.a = q10;
+        lVar2.h(this, q10);
     }
 
-    @Override // c3.b0
-    public final boolean d() {
-        return this.d != -1 || this.g;
-    }
-
-    @Override // c3.b0
-    public final boolean e() {
-        return this.h;
-    }
-
-    @Override // c3.b0
-    public final a0 f(long j10) {
-        long j11 = this.d;
-        long j12 = this.b;
-        if (j11 == -1 && !this.g) {
-            c0 c0Var = new c0(0L, j12);
-            return new a0(c0Var, c0Var);
+    public final void a(long j10) {
+        Surface surface;
+        l lVar = this.b;
+        tf.b bVar = lVar.c1;
+        if (this != lVar.N1 || lVar.e0 == null) {
+            return;
         }
-        int i10 = this.e;
-        long j13 = this.c;
-        long j14 = (((i10 * j10) / 8000000) / j13) * j13;
-        if (j11 != -1) {
-            j14 = Math.min(j14, j11 - j13);
+        if (j10 == Long.MAX_VALUE) {
+            lVar.N0 = true;
+            return;
         }
-        long max = Math.max(j14, 0L) + j12;
-        long max2 = (Math.max(0L, max - j12) * 8000000) / i10;
-        c0 c0Var2 = new c0(max2, max);
-        if (j11 != -1 && max2 < j10) {
-            long j15 = max + j13;
-            if (j15 < this.a) {
-                return new a0(c0Var2, new c0((Math.max(0L, j15 - j12) * 8000000) / i10, j15));
+        try {
+            lVar.C0(j10);
+            a2 a2Var = lVar.I1;
+            if (!a2Var.equals(a2.d) && !a2Var.equals(lVar.J1)) {
+                lVar.J1 = a2Var;
+                bVar.E(a2Var);
             }
+            lVar.P0.e++;
+            y yVar = lVar.f1;
+            boolean z10 = yVar.e != 3;
+            yVar.e = 3;
+            yVar.l.getClass();
+            yVar.g = n0.S(SystemClock.elapsedRealtime());
+            if (z10 && (surface = lVar.s1) != null) {
+                bVar.y(surface);
+                lVar.v1 = true;
+            }
+            lVar.h0(j10);
+        } catch (k2.l e10) {
+            lVar.O0 = e10;
         }
-        return new a0(c0Var2, c0Var2);
     }
 
-    @Override // c3.b0
-    public final long h() {
-        return this.f;
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        if (message.what != 0) {
+            return false;
+        }
+        int i3 = message.arg1;
+        int i10 = message.arg2;
+        String str = n0.a;
+        a(((i3 & 4294967295L) << 32) | (4294967295L & i10));
+        return true;
     }
 }

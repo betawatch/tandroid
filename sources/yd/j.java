@@ -1,16 +1,31 @@
 package yd;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j extends kotlin.jvm.internal.m implements ld.a {
-    @Override // kotlin.jvm.internal.b
-    public final pd.b computeReflected() {
-        kotlin.jvm.internal.q.a.getClass();
-        return this;
+public final class j {
+    public static final i b = new i();
+    public final Object a;
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof j) {
+            return kotlin.jvm.internal.j.a(this.a, ((j) obj).a);
+        }
+        return false;
     }
 
-    @Override // ld.a
-    public final Object invoke() {
-        return this.receiver.getClass().getSimpleName();
+    public final int hashCode() {
+        Object obj = this.a;
+        if (obj == null) {
+            return 0;
+        }
+        return obj.hashCode();
+    }
+
+    public final String toString() {
+        Object obj = this.a;
+        if (obj instanceof h) {
+            return ((h) obj).toString();
+        }
+        return "Value(" + obj + ')';
     }
 }

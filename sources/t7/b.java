@@ -1,77 +1,14 @@
 package t7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
-import w7.t7;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b extends a9.o implements ListIterator {
-    public final int b;
-    public int c;
-    public final d d;
+public final /* synthetic */ class b implements Executor {
+    public static final /* synthetic */ b a = new b();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, int i10) {
-        super(4);
-        int size = dVar.size();
-        t7.b(i10, size);
-        this.b = size;
-        this.c = i10;
-        this.d = dVar;
-    }
-
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        runnable.run();
     }
 }

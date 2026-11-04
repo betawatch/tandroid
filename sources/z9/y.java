@@ -1,21 +1,47 @@
 package z9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class y implements ja.d {
-    public static final y a = new y();
-    public static final ja.c b = ja.c.c("platform");
-    public static final ja.c c = ja.c.c("version");
-    public static final ja.c d = ja.c.c("buildVersion");
-    public static final ja.c e = ja.c.c("jailbroken");
+import android.os.Looper;
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicLong;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        z0 z0Var = (z0) ((b2) obj);
-        eVar.g(b, z0Var.a);
-        eVar.d(c, z0Var.b);
-        eVar.d(d, z0Var.c);
-        eVar.a(e, z0Var.d);
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public abstract class y {
+    public static final ExecutorService a;
+
+    static {
+        ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new n.b(new AtomicLong(1L)), new ThreadPoolExecutor.DiscardPolicy()));
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+        Runtime.getRuntime().addShutdownHook(new Thread(new t(unconfigurableExecutorService), "Crashlytics Shutdown Hook for awaitEvenIfOnMainThread task continuation executor"));
+        a = unconfigurableExecutorService;
+    }
+
+    public static void a(Task task) {
+        CountDownLatch countDownLatch = new CountDownLatch(1);
+        task.continueWith(a, new xg.c(countDownLatch, 6));
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            countDownLatch.await(3000L, TimeUnit.MILLISECONDS);
+        } else {
+            countDownLatch.await(4000L, TimeUnit.MILLISECONDS);
+        }
+        if (task.isSuccessful()) {
+            task.getResult();
+        } else {
+            if (task.isCanceled()) {
+                throw new CancellationException("Task is already canceled");
+            }
+            if (!task.isComplete()) {
+                throw new TimeoutException();
+            }
+            throw new IllegalStateException(task.getException());
+        }
     }
 }

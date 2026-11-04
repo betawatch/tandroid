@@ -1,83 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c10 {
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public RadialGradient g;
-    public final int i;
-    public int j;
-    public int k;
-    public int l;
-    public float a = -1.0f;
-    public float b = -1.0f;
-    public final Matrix h = new Matrix();
-    public final int m = org.telegram.ui.ActionBar.t6.Lh;
-    public final int n = org.telegram.ui.ActionBar.t6.Mh;
-    public final int o = org.telegram.ui.ActionBar.t6.Nh;
-    public final int p = org.telegram.ui.ActionBar.t6.Oh;
-    public final int q = org.telegram.ui.ActionBar.t6.Wh;
-    public final int r = org.telegram.ui.ActionBar.t6.Xh;
-    public final int s = org.telegram.ui.ActionBar.t6.Yh;
+public final class c10 extends u4.o {
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ e10 d;
 
-    public c10(int i10) {
-        this.i = i10;
-        a();
+    public c10(e10 e10Var, ArrayList arrayList, ArrayList arrayList2) {
+        this.d = e10Var;
+        this.b = arrayList;
+        this.c = arrayList2;
     }
 
-    public final void a() {
-        int i10 = this.i;
-        if (i10 == 0) {
-            int x02 = org.telegram.ui.ActionBar.t6.x0(null, this.m, false);
-            this.j = x02;
-            int x03 = org.telegram.ui.ActionBar.t6.x0(null, this.n, false);
-            this.k = x03;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x02, x03}, (float[]) null, Shader.TileMode.CLAMP);
-            return;
-        }
-        if (i10 == 1) {
-            int x04 = org.telegram.ui.ActionBar.t6.x0(null, this.o, false);
-            this.j = x04;
-            int x05 = org.telegram.ui.ActionBar.t6.x0(null, this.p, false);
-            this.k = x05;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x04, x05}, (float[]) null, Shader.TileMode.CLAMP);
-            return;
-        }
-        if (i10 == 3) {
-            int x06 = org.telegram.ui.ActionBar.t6.x0(null, this.q, false);
-            this.j = x06;
-            int x07 = org.telegram.ui.ActionBar.t6.x0(null, this.s, false);
-            this.l = x07;
-            int x08 = org.telegram.ui.ActionBar.t6.x0(null, this.r, false);
-            this.k = x08;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x06, x07, x08}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-        }
+    @Override // u4.o
+    public final boolean a(int i3, int i10) {
+        return true;
     }
 
-    public final void b(Paint paint) {
-        int i10 = this.i;
-        if (i10 != 0 && i10 != 1 && i10 != 3) {
-            paint.setShader(null);
-            paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Ph, false));
-        } else {
-            if (org.telegram.messenger.tc.e(512)) {
-                paint.setShader(this.g);
-                return;
-            }
-            paint.setShader(null);
-            if (i10 == 3) {
-                paint.setColor(i0.b.f(0.5f, i0.b.f(0.5f, this.j, this.k), this.l));
-            } else {
-                paint.setColor(i0.b.f(0.5f, this.j, this.k));
-            }
+    @Override // u4.o
+    public final boolean b(int i3, int i10) {
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        e10 e10Var = this.d;
+        if (i3 < size && i10 < e10Var.e.size()) {
+            return ((org.telegram.messenger.s3) arrayList.get(i3)).equals(e10Var.e.get(i10));
         }
+        int size2 = i3 - arrayList.size();
+        int size3 = i10 - e10Var.e.size();
+        ArrayList arrayList2 = this.c;
+        if (size3 < 0 || size3 >= e10Var.f.size() || size2 < 0 || size2 >= arrayList2.size()) {
+            return org.telegram.messenger.zi.C1((i3 < arrayList.size() ? ((org.telegram.messenger.s3) arrayList.get(i3)).a : (TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.zi.C1((i10 < e10Var.e.size() ? ((org.telegram.messenger.s3) e10Var.e.get(i10)).a : (TLRPC.GroupCallParticipant) e10Var.f.get(size3)).peer);
+        }
+        return org.telegram.messenger.zi.C1(((TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.zi.C1(((TLRPC.GroupCallParticipant) e10Var.f.get(size3)).peer);
+    }
+
+    @Override // u4.o
+    public final int d() {
+        e10 e10Var = this.d;
+        return e10Var.f.size() + e10Var.e.size();
+    }
+
+    @Override // u4.o
+    public final int e() {
+        return this.c.size() + this.b.size();
     }
 }

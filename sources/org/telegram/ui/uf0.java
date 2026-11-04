@@ -1,44 +1,49 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf0 implements org.telegram.ui.Components.jk0, org.telegram.ui.ActionBar.u1 {
-    public final /* synthetic */ ig0 a;
+public final class uf0 extends org.telegram.ui.Cells.q1 {
+    public int kd;
+    public int ld;
+    public int md;
+    public final /* synthetic */ vf0 nd;
 
-    public /* synthetic */ uf0(ig0 ig0Var) {
-        this.a = ig0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uf0(vf0 vf0Var, Context context, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i3, true, null, e6Var);
+        this.nd = vf0Var;
+        this.kd = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.ld = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.md = -1;
     }
 
-    @Override // org.telegram.ui.Components.jk0
-    public boolean f(int i10, View view) {
-        ig0 ig0Var = this.a;
-        if ((i10 < ig0Var.D || i10 >= ig0Var.E) && (i10 < ig0Var.H || i10 >= ig0Var.I)) {
-            return false;
-        }
-        ((fg0) view).y.callOnClick();
-        try {
-            view.performHapticFeedback(0, 2);
-            return true;
-        } catch (Exception unused) {
-            return true;
-        }
+    @Override // org.telegram.ui.Cells.q1
+    public final yh.e U2() {
+        return yh.e.d(1, this, this.nd.F);
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        TLRPC.TL_messages_deleteRevokedExportedChatInvites tL_messages_deleteRevokedExportedChatInvites = new TLRPC.TL_messages_deleteRevokedExportedChatInvites();
-        ig0 ig0Var = this.a;
-        tL_messages_deleteRevokedExportedChatInvites.peer = ig0Var.getMessagesController().i1(-ig0Var.n);
-        long j10 = ig0Var.f;
-        if (j10 == ig0Var.getUserConfig().e()) {
-            tL_messages_deleteRevokedExportedChatInvites.admin_id = ig0Var.getMessagesController().p1(ig0Var.getUserConfig().f());
-        } else {
-            tL_messages_deleteRevokedExportedChatInvites.admin_id = ig0Var.getMessagesController().n1(j10);
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
+        if (!this.hb.x0 || i10 == 0 || this.kd == Integer.MAX_VALUE || i12 == 0 || this.ld == Integer.MAX_VALUE) {
+            return;
         }
-        ig0Var.c0 = true;
-        ig0Var.getConnectionsManager().sendRequest(tL_messages_deleteRevokedExportedChatInvites, new rf0(ig0Var, 1));
+        if (this.md == (getMessageObject() == null ? 0 : getMessageObject().f1())) {
+            if (!this.nd.w0) {
+                setTranslationY(-(i10 - this.kd));
+                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.xq.h).start();
+            }
+            this.kd = getTop();
+            this.ld = getBottom();
+            this.md = getMessageObject() != null ? getMessageObject().f1() : 0;
+        }
     }
 }

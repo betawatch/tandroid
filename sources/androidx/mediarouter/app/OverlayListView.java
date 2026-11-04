@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -42,23 +42,23 @@ public final class OverlayListView extends ListView {
                     float max = p0Var.j ? Math.max(0.0f, Math.min(1.0f, (drawingTime - p0Var.i) / p0Var.e)) : 0.0f;
                     Interpolator interpolator = p0Var.d;
                     float interpolation = interpolator == null ? max : interpolator.getInterpolation(max);
-                    int i10 = (int) (p0Var.g * interpolation);
+                    int i3 = (int) (p0Var.g * interpolation);
                     Rect rect2 = p0Var.f;
-                    rect.top = rect2.top + i10;
-                    rect.bottom = rect2.bottom + i10;
-                    float z11 = c3.i0.z(p0Var.h, 1.0f, interpolation, 1.0f);
-                    p0Var.b = z11;
+                    rect.top = rect2.top + i3;
+                    rect.bottom = rect2.bottom + i3;
+                    float y9 = com.google.android.recaptcha.internal.a.y(p0Var.h, 1.0f, interpolation, 1.0f);
+                    p0Var.b = y9;
                     if (bitmapDrawable2 != null) {
-                        bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
+                        bitmapDrawable2.setAlpha((int) (y9 * 255.0f));
                         bitmapDrawable2.setBounds(rect);
                     }
                     if (p0Var.j && max >= 1.0f) {
                         p0Var.k = true;
-                        n4.q qVar = p0Var.l;
-                        if (qVar != null) {
-                            t tVar = (t) qVar.b;
-                            tVar.Z.remove((p4.w) qVar.a);
-                            tVar.V.notifyDataSetChanged();
+                        tf.b bVar = p0Var.l;
+                        if (bVar != null) {
+                            t tVar = (t) bVar.b;
+                            tVar.a0.remove((r4.w) bVar.a);
+                            tVar.W.notifyDataSetChanged();
                         }
                     }
                     z10 = !p0Var.k;
@@ -75,8 +75,8 @@ public final class OverlayListView extends ListView {
         this.a = new ArrayList();
     }
 
-    public OverlayListView(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
+    public OverlayListView(Context context, AttributeSet attributeSet, int i3) {
+        super(context, attributeSet, i3);
         this.a = new ArrayList();
     }
 }

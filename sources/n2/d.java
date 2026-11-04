@@ -1,25 +1,34 @@
 package n2;
 
-import android.os.Handler;
-import e2.l0;
+import a3.r;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d implements l {
-    public final j a;
-    public g b;
-    public boolean c;
-    public final /* synthetic */ e d;
+public final class d implements r {
+    public final /* synthetic */ h a;
 
-    public d(e eVar, j jVar) {
-        this.d = eVar;
-        this.a = jVar;
+    @Override // a3.r
+    public void a() {
+        h hVar = this.a;
+        hVar.A.a();
+        IOException iOException = hVar.C;
+        if (iOException != null) {
+            throw iOException;
+        }
     }
 
-    @Override // n2.l
-    public final void release() {
-        Handler handler = this.d.J;
-        handler.getClass();
-        l0.W(handler, new lg.s(this, 10));
+    public void b() {
+        long j10;
+        h hVar = this.a;
+        synchronized (b3.b.b) {
+            try {
+                j10 = b3.b.c ? b3.b.d : -9223372036854775807L;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        hVar.K = j10;
+        hVar.z(true);
     }
 }

@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.Map;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class RtpCapabilities {
     public List<CodecCapability> codecs;
     public List<HeaderExtensionCapability> headerExtensions;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class CodecCapability {
         public Integer clockRate;
         public MediaStreamTrack.MediaType kind;
@@ -47,8 +47,8 @@ public class RtpCapabilities {
             return this.preferredPayloadType;
         }
 
-        public CodecCapability(int i10, String str, MediaStreamTrack.MediaType mediaType, Integer num, Integer num2, String str2, Map<String, String> map) {
-            this.preferredPayloadType = i10;
+        public CodecCapability(int i3, String str, MediaStreamTrack.MediaType mediaType, Integer num, Integer num2, String str2, Map<String, String> map) {
+            this.preferredPayloadType = i3;
             this.name = str;
             this.kind = mediaType;
             this.clockRate = num;
@@ -58,15 +58,15 @@ public class RtpCapabilities {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class HeaderExtensionCapability {
         private final boolean preferredEncrypted;
         private final int preferredId;
         private final String uri;
 
-        public HeaderExtensionCapability(String str, int i10, boolean z10) {
+        public HeaderExtensionCapability(String str, int i3, boolean z10) {
             this.uri = str;
-            this.preferredId = i10;
+            this.preferredId = i3;
             this.preferredEncrypted = z10;
         }
 

@@ -1,25 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class la implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bb b;
+public final class la {
+    public boolean a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public org.telegram.ui.ActionBar.e6 g;
 
-    public /* synthetic */ la(bb bbVar, int i10) {
-        this.a = i10;
-        this.b = bbVar;
+    public la(la laVar) {
+        this.a = laVar.a;
+        this.b = laVar.b;
+        this.c = laVar.c;
+        this.d = laVar.d;
+        this.e = laVar.e;
+        this.f = laVar.f;
+        this.g = laVar.g;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.onExitTransitionStart();
-                break;
-            default:
-                this.b.onEnterTransitionStart();
-                break;
-        }
+    public la() {
+        this.b = 1;
+        this.f = 1;
     }
 }

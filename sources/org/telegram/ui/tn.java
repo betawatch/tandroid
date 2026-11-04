@@ -1,32 +1,34 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.NumberTextView;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class tn extends org.telegram.ui.ActionBar.u5 {
-    public boolean M0;
-    public final /* synthetic */ un N0;
+public final class tn extends org.telegram.ui.Components.km0 {
+    public final /* synthetic */ bo O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tn(un unVar, Activity activity) {
-        super(activity);
-        this.N0 = unVar;
-        this.M0 = true;
+    public tn(bo boVar, Context context, org.telegram.ui.Components.jm0 jm0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, jm0Var, e6Var, false);
+        this.O = boVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.u5
-    public final void d(int i10) {
-        super.d(i10);
-        if (this.M0 && getVisibility() == 0) {
-            int L = org.telegram.messenger.i0.L(4.0f) + getTextWidth();
-            un unVar = this.N0;
-            unVar.U2 = L;
-            NumberTextView numberTextView = unVar.T2;
-            if (numberTextView != null) {
-                numberTextView.setTranslationX(L);
-            }
-        }
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.O.M && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.ScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.O.M && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        rect.bottom = org.telegram.messenger.g0.L(60.0f) + rect.bottom;
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

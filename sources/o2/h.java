@@ -1,17 +1,21 @@
 package o2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class h {
-    public final p2.k a;
+    public final String a;
     public final long b;
-    public final int c;
-    public final boolean d;
+    public final List c;
+    public final List d;
 
-    public h(p2.k kVar, long j10, int i10) {
-        this.a = kVar;
+    public h(String str, long j10, ArrayList arrayList, List list) {
+        this.a = str;
         this.b = j10;
-        this.c = i10;
-        this.d = (kVar instanceof p2.h) && ((p2.h) kVar).y;
+        this.c = DesugarCollections.unmodifiableList(arrayList);
+        this.d = DesugarCollections.unmodifiableList(list);
     }
 }

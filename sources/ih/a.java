@@ -1,44 +1,42 @@
 package ih;
 
-import android.text.TextUtils;
-import org.telegram.messenger.b8;
-import org.telegram.messenger.kj;
-import org.telegram.tgnet.TLRPC;
+import b8.cd;
+import hh.d;
+import org.telegram.messenger.h10;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.lc;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a {
-    public final int a;
-    public final TLRPC.Document b;
-    public final String c;
-    public final kj d;
-    public final String e;
-    public boolean f;
-    public boolean g;
+public final /* synthetic */ class a implements d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e6 b;
 
-    public a(int i10, kj kjVar, TLRPC.Document document, String str) {
-        this.a = i10;
-        this.d = kjVar;
-        this.b = document;
-        this.c = str;
-        this.e = TextUtils.isEmpty(str) ? b8.r(null, document) : str;
-        a();
+    public /* synthetic */ a(int i3, e6 e6Var) {
+        this.a = i3;
+        this.b = e6Var;
     }
 
-    public final void a() {
-        boolean z10 = false;
-        String str = this.c;
-        boolean x10 = str != null ? sc.e.x(str) : false;
-        int i10 = this.a;
-        if (!x10) {
-            b8.G(i10);
-            x10 = b8.I(this.b).exists();
+    @Override // hh.d
+    public final int j(e6 e6Var, boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (cd.c(h10.t0, this.b)) {
+                    return k6.r1(lc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.Ge, e6Var));
+                }
+                return i0.a.o(k6.w0(k6.Ge, e6Var), hs.e4);
+            case 1:
+                if (cd.c(h10.t0, this.b)) {
+                    return k6.r1(lc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.Qe, e6Var));
+                }
+                return i0.a.o(k6.w0(z10 ? k6.s8 : k6.Qe, e6Var), hs.e4);
+            default:
+                if (cd.c(h10.t0, this.b)) {
+                    return k6.r1(lc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.Qe, e6Var));
+                }
+                return i0.a.o(k6.w0(z10 ? k6.s8 : k6.Qe, e6Var), hs.e4);
         }
-        this.f = x10;
-        String str2 = this.e;
-        if (!TextUtils.isEmpty(str2) && b8.G(i10).T(str2)) {
-            z10 = true;
-        }
-        this.g = z10;
     }
 }

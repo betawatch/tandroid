@@ -1,53 +1,46 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class v3 {
-    public final HashSet a = new HashSet();
-    public final HashMap b = new HashMap();
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class v3 implements q1.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b4 b;
 
-    public static String c(int i10, String str) {
-        if (str.length() <= (i10 * 2) + 1) {
-            return str;
-        }
-        return str.substring(0, i10) + "…" + str.substring(str.length() - i10);
+    public /* synthetic */ v3(b4 b4Var, int i3) {
+        this.a = i3;
+        this.b = b4Var;
     }
 
-    public final String a(String str) {
-        if (str == null) {
-            return null;
-        }
-        String str2 = (String) this.b.get(str);
-        return str2 == null ? str : str2;
-    }
-
-    public final void b(int i10, ArrayList arrayList) {
-        HashMap hashMap = new HashMap();
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            String str = (String) obj;
-            String c10 = c(i10, str);
-            ArrayList arrayList2 = (ArrayList) hashMap.get(c10);
-            if (arrayList2 == null) {
-                arrayList2 = new ArrayList();
-                hashMap.put(c10, arrayList2);
-            }
-            arrayList2.add(str);
-        }
-        for (ArrayList arrayList3 : hashMap.values()) {
-            if (arrayList3.size() == 1) {
-                String str2 = (String) arrayList3.get(0);
-                this.b.put(str2, c(i10, str2));
-            } else {
-                b(i10 + 1, arrayList3);
-            }
+    @Override // q1.d
+    public final void a(q1.g gVar, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                b4 b4Var = this.b;
+                b4Var.C = f10;
+                b4Var.a.invalidate();
+                break;
+            case 1:
+                b4 b4Var2 = this.b;
+                b4Var2.c0 = f10;
+                org.telegram.ui.Cells.t0 t0Var = b4Var2.a;
+                t0Var.invalidate();
+                if (t0Var.getParent() instanceof View) {
+                    ((View) t0Var.getParent()).invalidate();
+                    break;
+                }
+                break;
+            default:
+                b4 b4Var3 = this.b;
+                b4Var3.a0 = f10;
+                org.telegram.ui.Cells.t0 t0Var2 = b4Var3.a;
+                t0Var2.invalidate();
+                if (t0Var2.getParent() instanceof View) {
+                    ((View) t0Var2.getParent()).invalidate();
+                    break;
+                }
+                break;
         }
     }
 }

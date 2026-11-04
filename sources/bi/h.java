@@ -1,72 +1,44 @@
 package bi;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import android.view.ViewGroup;
+import b8.of;
+import gi.m1;
+import org.telegram.ui.g11;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class h extends of {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t b;
-    public final /* synthetic */ a c;
+    public final /* synthetic */ ViewGroup b;
 
-    public /* synthetic */ h(t tVar, a aVar, int i10) {
-        this.a = i10;
-        this.b = tVar;
-        this.c = aVar;
+    public /* synthetic */ h(ViewGroup viewGroup, int i3) {
+        this.a = i3;
+        this.b = viewGroup;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        a aVar = this.c;
-        t tVar = this.b;
-        switch (i10) {
+    @Override // b8.of
+    public final void a() {
+        switch (this.a) {
             case 0:
-                d4 d4Var = tVar.r;
-                View C1 = d4Var.C1(aVar);
-                if (!(C1 instanceof y4)) {
-                    d4Var.f3.O(false);
-                    break;
-                } else {
-                    ((y4) C1).g(aVar, d4Var.getMapDelegate());
-                    break;
-                }
+                ((h0) this.b).w = false;
+                break;
             case 1:
-                tVar.r.Z4(aVar, 0);
-                break;
-            case 2:
-                tVar.r.Z4(aVar, 1);
-                break;
-            case 3:
-                tVar.r.Z4(aVar, 2);
-                break;
-            case 4:
-                tVar.r.Z4(aVar, 3);
-                break;
-            case 5:
-                tVar.r.Y4(aVar, new TL_iv.pageBlockParagraph());
-                break;
-            case 6:
-                d4 d4Var2 = tVar.r;
-                ArrayList arrayList = d4.z4;
-                TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
-                pageblockblockquote.caption = new TL_iv.textEmpty();
-                d4Var2.X4(this.c, pageblockblockquote, 0, 0, false, false);
-                break;
-            case 7:
-                d4 d4Var3 = tVar.r;
-                ArrayList arrayList2 = d4.z4;
-                TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
-                pageblockpullquote.caption = new TL_iv.textEmpty();
-                d4Var3.X4(this.c, pageblockpullquote, 0, 0, false, false);
-                break;
-            case 8:
-                tVar.r.Y4(aVar, new TL_iv.pageBlockPreformatted());
+                ((m1) this.b).j3 = false;
                 break;
             default:
-                tVar.r.Y4(aVar, new TL_iv.pageBlockFooter());
+                ((g11) this.b).y1 = false;
+                break;
+        }
+    }
+
+    @Override // b8.of
+    public void b() {
+        switch (this.a) {
+            case 1:
+                ((m1) this.b).j3 = true;
+                break;
+            case 2:
+                ((g11) this.b).y1 = true;
                 break;
         }
     }

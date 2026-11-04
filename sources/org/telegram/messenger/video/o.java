@@ -1,22 +1,22 @@
 package org.telegram.messenger.video;
 
-import ag.a3;
 import android.graphics.RectF;
+import ci.l2;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import org.telegram.messenger.f8;
-import org.telegram.messenger.i0;
-import org.telegram.ui.Components.jx0;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.g0;
+import org.telegram.ui.Components.dw0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.h0;
+import org.telegram.ui.Wallet.n0;
 import org.telegram.ui.Wallet.o0;
-import org.telegram.ui.Wallet.p0;
-import org.telegram.ui.o6;
-import org.telegram.ui.y6;
+import org.telegram.ui.p6;
+import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -25,8 +25,8 @@ public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ o(Object obj, long j10, boolean z10, Object obj2, int i10) {
-        this.a = i10;
+    public /* synthetic */ o(Object obj, long j10, boolean z10, Object obj2, int i3) {
+        this.a = i3;
         this.d = obj;
         this.c = j10;
         this.b = z10;
@@ -46,77 +46,77 @@ public final /* synthetic */ class o implements Runnable {
                 ((VideoPlayerHolderBase) this.d).lambda$seekTo$12(this.c, this.b, (Runnable) this.e);
                 return;
             case 1:
-                y6.Z((y6) this.d, this.b, this.c, (o6) this.e);
+                z6.Z((z6) this.d, this.b, this.c, (p6) this.e);
                 return;
             case 2:
                 ProfileActivity profileActivity = (ProfileActivity) this.d;
                 long j10 = this.c;
                 ArrayList arrayList = (ArrayList) this.e;
                 boolean z10 = this.b;
-                RectF rectF = ProfileActivity.S6;
-                profileActivity.getMessagesController().O1().r0(j10, arrayList, z10, null);
+                RectF rectF = ProfileActivity.T6;
+                profileActivity.getMessagesController().P1().r0(j10, arrayList, z10, null);
                 return;
             default:
-                p0 p0Var = (p0) this.d;
+                o0 o0Var = (o0) this.d;
                 long j11 = this.c;
                 boolean z11 = this.b;
                 org.telegram.ui.Wallet.k kVar = (org.telegram.ui.Wallet.k) this.e;
-                p0Var.getClass();
+                o0Var.getClass();
                 ArrayList arrayList2 = new ArrayList();
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
                 try {
                     try {
-                    } catch (Exception e) {
-                        f8.g(e, true);
-                        message = e instanceof o0 ? e.getMessage() : "STORAGE_BROKEN";
+                    } catch (Exception e10) {
+                        a8.g(e10, true);
+                        message = e10 instanceof n0 ? e10.getMessage() : "STORAGE_BROKEN";
                         Iterator it2 = linkedHashMap.values().iterator();
                         while (it2.hasNext()) {
                             ((h0) it2.next()).close();
                         }
                     }
                     try {
-                        synchronized (p0.f) {
+                        synchronized (o0.f) {
                             try {
-                                p0Var.c(j11);
-                                jx0 r10 = p0Var.r();
-                                if (r10.c == z11) {
-                                    if (((LinkedHashMap) r10.e).isEmpty()) {
+                                o0Var.c(j11);
+                                dw0 r5 = o0Var.r();
+                                if (r5.c == z11) {
+                                    if (((LinkedHashMap) r5.e).isEmpty()) {
                                     }
                                     it = linkedHashMap.values().iterator();
                                     while (it.hasNext()) {
                                         ((h0) it.next()).close();
                                     }
                                     message = null;
-                                    p0Var.e(arrayList2);
-                                    i0.g3(new a3(p0Var, kVar, j11, message, 13));
+                                    o0Var.e(arrayList2);
+                                    g0.h3(new l2(o0Var, kVar, j11, message));
                                     return;
                                 }
-                                if (z11 && !p0.i(p0Var.a)) {
-                                    throw new o0("AUTH_UNAVAILABLE");
+                                if (z11 && !o0.i(o0Var.a)) {
+                                    throw new n0("AUTH_UNAVAILABLE");
                                 }
-                                if (!((LinkedHashMap) r10.e).isEmpty()) {
-                                    p0Var.b(j11, false);
-                                    for (String str : ((LinkedHashMap) r10.e).keySet()) {
-                                        linkedHashMap.put(str, p0Var.h(r10, str, j11));
+                                if (!((LinkedHashMap) r5.e).isEmpty()) {
+                                    o0Var.b(j11, false);
+                                    for (String str : ((LinkedHashMap) r5.e).keySet()) {
+                                        linkedHashMap.put(str, o0Var.h(r5, str, j11));
                                     }
                                 }
-                                r10.c = z11;
-                                ((LinkedHashMap) r10.e).clear();
+                                r5.c = z11;
+                                ((LinkedHashMap) r5.e).clear();
                                 for (Map.Entry entry : linkedHashMap.entrySet()) {
-                                    ((LinkedHashMap) r10.e).put((String) entry.getKey(), p0Var.j(r10, (String) entry.getKey(), (h0) entry.getValue(), arrayList2, j11));
+                                    ((LinkedHashMap) r5.e).put((String) entry.getKey(), o0Var.j(r5, (String) entry.getKey(), (h0) entry.getValue(), arrayList2, j11));
                                 }
-                                r10.d = false;
-                                synchronized (p0.f) {
-                                    p0Var.c(j11);
-                                    p0Var.v(r10, linkedHashMap);
-                                    p0Var.d(r10);
+                                r5.d = false;
+                                synchronized (o0.f) {
+                                    o0Var.c(j11);
+                                    o0Var.v(r5, linkedHashMap);
+                                    o0Var.d(r5);
                                 }
                                 it = linkedHashMap.values().iterator();
                                 while (it.hasNext()) {
                                 }
                                 message = null;
-                                p0Var.e(arrayList2);
-                                i0.g3(new a3(p0Var, kVar, j11, message, 13));
+                                o0Var.e(arrayList2);
+                                g0.h3(new l2(o0Var, kVar, j11, message));
                                 return;
                             } catch (Throwable th2) {
                                 th = th2;
@@ -131,19 +131,19 @@ public final /* synthetic */ class o implements Runnable {
                     while (it3.hasNext()) {
                         ((h0) it3.next()).close();
                     }
-                    p0Var.e(arrayList2);
+                    o0Var.e(arrayList2);
                     throw th4;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ o(y6 y6Var, boolean z10, long j10, o6 o6Var) {
+    public /* synthetic */ o(z6 z6Var, boolean z10, long j10, p6 p6Var) {
         this.a = 1;
-        this.d = y6Var;
+        this.d = z6Var;
         this.b = z10;
         this.c = j10;
-        this.e = o6Var;
+        this.e = p6Var;
     }
 
     public /* synthetic */ o(ProfileActivity profileActivity, long j10, ArrayList arrayList, boolean z10) {

@@ -1,115 +1,444 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.os.Handler;
-import android.os.Looper;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import android.view.View;
-import android.view.WindowManager;
-import java.util.Iterator;
-import java.util.WeakHashMap;
-import org.telegram.messenger.at;
-import org.telegram.ui.Components.w40;
+import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.PathInterpolator;
+import b8.mf;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.bi;
+import org.telegram.ui.ma1;
+import org.telegram.ui.wm;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class m6 implements SensorEventListener {
-    public static m6 G;
-    public float D;
-    public float E;
-    public final SensorManager a;
-    public final Sensor b;
-    public final WindowManager c;
-    public boolean r;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class m6 {
+    public final ViewGroup a;
+    public final View b;
+    public final bi c;
+    public final u6 d;
+    public final wm e;
+    public final TL_wallet.walletTransaction f;
+    public final Runnable g;
+    public final j6 h;
+    public final u6 i;
+    public final o9 j = new o9();
+    public final PathInterpolator k = new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
+    public final float l;
+    public final AnimatorSet m;
+    public final RectF n;
+    public final RectF o;
+    public org.telegram.ui.Cells.t0 p;
+    public final k6 q;
+    public float r;
     public boolean s;
-    public float w;
-    public float x;
-    public final Handler d = new Handler(Looper.getMainLooper());
-    public final WeakHashMap e = new WeakHashMap();
-    public final float[] f = new float[9];
-    public final float[] h = new float[9];
-    public final float[] n = new float[3];
-    public int y = -1;
-    public final w40 F = new w40(this, 1);
+    public boolean t;
+    public boolean u;
+    public boolean v;
+    public final long w;
+    public final i6 x;
 
-    public m6(Context context) {
-        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
-        this.a = sensorManager;
-        this.c = (WindowManager) context.getSystemService("window");
-        Sensor defaultSensor = sensorManager == null ? null : sensorManager.getDefaultSensor(15);
-        if (defaultSensor == null && sensorManager != null) {
-            defaultSensor = sensorManager.getDefaultSensor(11);
-        }
-        this.b = defaultSensor;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v3, types: [java.lang.Runnable, org.telegram.ui.Wallet.i6] */
+    /* JADX WARN: Type inference failed for: r7v0, types: [org.telegram.ui.Wallet.i6] */
+    public m6(ViewGroup viewGroup, View view, u6 u6Var, wm wmVar, TL_wallet.walletTransaction wallettransaction, Runnable runnable, bi biVar) {
+        AnimatorSet animatorSet = new AnimatorSet();
+        this.m = animatorSet;
+        this.o = new RectF();
+        this.w = SystemClock.uptimeMillis();
+        final int i3 = 0;
+        ?? r12 = new Runnable(this) { // from class: org.telegram.ui.Wallet.i6
+            public final /* synthetic */ m6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i3) {
+                    case 0:
+                        m6 m6Var = this.b;
+                        u6 u6Var2 = m6Var.d;
+                        float f10 = m6Var.l;
+                        ViewGroup viewGroup2 = m6Var.a;
+                        k6 k6Var = m6Var.q;
+                        AnimatorSet animatorSet2 = m6Var.m;
+                        u6 u6Var3 = m6Var.i;
+                        RectF rectF = m6Var.o;
+                        RectF rectF2 = m6Var.n;
+                        if (!m6Var.v && !m6Var.u) {
+                            m6Var.e();
+                            m6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
+                            org.telegram.ui.Cells.t0 I8 = m6Var.e.I8(m6Var.f);
+                            if (I8 != null && I8.getWidth() > 0) {
+                                org.telegram.ui.Cells.t0 t0Var = m6Var.p;
+                                if (t0Var != I8) {
+                                    if (t0Var != null) {
+                                        t0Var.J0.i(false);
+                                    }
+                                    m6Var.p = I8;
+                                }
+                                a4 a4Var = m6Var.p.J0.m;
+                                if (m6Var.t && k6Var.n && a4Var != null && a4Var.n && a4Var.getWidth() > 0 && !m6Var.p.isLayoutRequested()) {
+                                    rectF.set(m6Var.c(a4Var));
+                                    if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f10 > 0.01f) {
+                                        m6Var.u = true;
+                                        m6Var.p.J0.i(true);
+                                        u6Var3.f(u6Var2);
+                                        u6Var3.setAlpha(f10);
+                                        u6Var2.setAlpha(0.0f);
+                                        m6Var.j.b(rectF2.centerX(), rectF2.centerY());
+                                        animatorSet2.start();
+                                        break;
+                                    } else {
+                                        rectF.setEmpty();
+                                    }
+                                }
+                            }
+                            if (SystemClock.uptimeMillis() - m6Var.w <= 700 && !m6Var.s && viewGroup2.isAttachedToWindow()) {
+                                m6Var.h.postOnAnimation(m6Var.x);
+                                break;
+                            } else {
+                                m6Var.u = true;
+                                u6Var3.setAlpha(0.0f);
+                                k6Var.setAlpha(0.0f);
+                                animatorSet2.setDuration(180L);
+                                animatorSet2.start();
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.t = true;
+                        break;
+                }
+            }
+        };
+        this.x = r12;
+        this.c = biVar;
+        this.a = viewGroup;
+        this.b = view;
+        this.d = u6Var;
+        this.l = u6Var.getAlpha();
+        this.e = wmVar;
+        this.f = wallettransaction;
+        this.g = runnable;
+        RectF a10 = aa.a(u6Var, viewGroup);
+        this.n = a10;
+        e();
+        j6 j6Var = new j6(this, viewGroup.getContext());
+        this.h = j6Var;
+        j6Var.setClipChildren(false);
+        j6Var.setClipToPadding(false);
+        final int i10 = 1;
+        j6Var.setClickable(true);
+        u6 u6Var2 = new u6(60, viewGroup.getContext(), true);
+        this.i = u6Var2;
+        u6Var2.setContinuousRotation(540.0f);
+        u6Var2.f(u6Var);
+        u6Var2.setAlpha(0.0f);
+        j6Var.addView(u6Var2, mf.e(60, 60, 51));
+        k6 k6Var = new k6(this, viewGroup.getContext(), new Runnable(this) { // from class: org.telegram.ui.Wallet.i6
+            public final /* synthetic */ m6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        m6 m6Var = this.b;
+                        u6 u6Var22 = m6Var.d;
+                        float f10 = m6Var.l;
+                        ViewGroup viewGroup2 = m6Var.a;
+                        k6 k6Var2 = m6Var.q;
+                        AnimatorSet animatorSet2 = m6Var.m;
+                        u6 u6Var3 = m6Var.i;
+                        RectF rectF = m6Var.o;
+                        RectF rectF2 = m6Var.n;
+                        if (!m6Var.v && !m6Var.u) {
+                            m6Var.e();
+                            m6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
+                            org.telegram.ui.Cells.t0 I8 = m6Var.e.I8(m6Var.f);
+                            if (I8 != null && I8.getWidth() > 0) {
+                                org.telegram.ui.Cells.t0 t0Var = m6Var.p;
+                                if (t0Var != I8) {
+                                    if (t0Var != null) {
+                                        t0Var.J0.i(false);
+                                    }
+                                    m6Var.p = I8;
+                                }
+                                a4 a4Var = m6Var.p.J0.m;
+                                if (m6Var.t && k6Var2.n && a4Var != null && a4Var.n && a4Var.getWidth() > 0 && !m6Var.p.isLayoutRequested()) {
+                                    rectF.set(m6Var.c(a4Var));
+                                    if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f10 > 0.01f) {
+                                        m6Var.u = true;
+                                        m6Var.p.J0.i(true);
+                                        u6Var3.f(u6Var22);
+                                        u6Var3.setAlpha(f10);
+                                        u6Var22.setAlpha(0.0f);
+                                        m6Var.j.b(rectF2.centerX(), rectF2.centerY());
+                                        animatorSet2.start();
+                                        break;
+                                    } else {
+                                        rectF.setEmpty();
+                                    }
+                                }
+                            }
+                            if (SystemClock.uptimeMillis() - m6Var.w <= 700 && !m6Var.s && viewGroup2.isAttachedToWindow()) {
+                                m6Var.h.postOnAnimation(m6Var.x);
+                                break;
+                            } else {
+                                m6Var.u = true;
+                                u6Var3.setAlpha(0.0f);
+                                k6Var2.setAlpha(0.0f);
+                                animatorSet2.setDuration(180L);
+                                animatorSet2.start();
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.t = true;
+                        break;
+                }
+            }
+        });
+        this.q = k6Var;
+        k6Var.setAlpha(0.001f);
+        k6Var.setPaused(false);
+        j6Var.addView(k6Var, mf.e(60, 60, 51));
+        viewGroup.addView(j6Var, new ViewGroup.LayoutParams(-1, -1));
+        b(a10.centerX(), a10.centerY(), a10.width());
+        final int i11 = 2;
+        u6Var2.l(new Runnable(this) { // from class: org.telegram.ui.Wallet.i6
+            public final /* synthetic */ m6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        m6 m6Var = this.b;
+                        u6 u6Var22 = m6Var.d;
+                        float f10 = m6Var.l;
+                        ViewGroup viewGroup2 = m6Var.a;
+                        k6 k6Var2 = m6Var.q;
+                        AnimatorSet animatorSet2 = m6Var.m;
+                        u6 u6Var3 = m6Var.i;
+                        RectF rectF = m6Var.o;
+                        RectF rectF2 = m6Var.n;
+                        if (!m6Var.v && !m6Var.u) {
+                            m6Var.e();
+                            m6Var.b(rectF2.centerX(), rectF2.centerY(), rectF2.width());
+                            org.telegram.ui.Cells.t0 I8 = m6Var.e.I8(m6Var.f);
+                            if (I8 != null && I8.getWidth() > 0) {
+                                org.telegram.ui.Cells.t0 t0Var = m6Var.p;
+                                if (t0Var != I8) {
+                                    if (t0Var != null) {
+                                        t0Var.J0.i(false);
+                                    }
+                                    m6Var.p = I8;
+                                }
+                                a4 a4Var = m6Var.p.J0.m;
+                                if (m6Var.t && k6Var2.n && a4Var != null && a4Var.n && a4Var.getWidth() > 0 && !m6Var.p.isLayoutRequested()) {
+                                    rectF.set(m6Var.c(a4Var));
+                                    if (rectF.centerY() > 0.0f && rectF.centerY() < viewGroup2.getHeight() && f10 > 0.01f) {
+                                        m6Var.u = true;
+                                        m6Var.p.J0.i(true);
+                                        u6Var3.f(u6Var22);
+                                        u6Var3.setAlpha(f10);
+                                        u6Var22.setAlpha(0.0f);
+                                        m6Var.j.b(rectF2.centerX(), rectF2.centerY());
+                                        animatorSet2.start();
+                                        break;
+                                    } else {
+                                        rectF.setEmpty();
+                                    }
+                                }
+                            }
+                            if (SystemClock.uptimeMillis() - m6Var.w <= 700 && !m6Var.s && viewGroup2.isAttachedToWindow()) {
+                                m6Var.h.postOnAnimation(m6Var.x);
+                                break;
+                            } else {
+                                m6Var.u = true;
+                                u6Var3.setAlpha(0.0f);
+                                k6Var2.setAlpha(0.0f);
+                                animatorSet2.setDuration(180L);
+                                animatorSet2.start();
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.t = true;
+                        break;
+                }
+            }
+        });
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.setDuration(600L);
+        ofFloat.setInterpolator(new LinearInterpolator());
+        ofFloat.addUpdateListener(new p3(this, 3));
+        animatorSet.playTogether(ofFloat);
+        animatorSet.addListener(new l6(this, biVar, u6Var));
+        j6Var.post(r12);
     }
 
-    public final void a() {
-        if (this.r) {
-            this.a.unregisterListener(this);
+    public final void a(boolean z10) {
+        if (this.v) {
+            return;
         }
-        this.s = false;
-        this.r = false;
-        this.d.removeCallbacks(this.F);
-        this.E = 0.0f;
-        this.D = 0.0f;
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        int i10;
-        float[] fArr = sensorEvent.values;
-        float[] fArr2 = this.f;
-        SensorManager.getRotationMatrixFromVector(fArr2, fArr);
-        int rotation = this.c.getDefaultDisplay().getRotation();
-        if (this.y != rotation) {
-            this.s = false;
-            this.y = rotation;
-        }
-        int i11 = this.y;
-        int i12 = at.N1;
-        if (i11 == 1) {
-            i10 = 129;
-            i12 = 2;
-        } else {
-            i10 = at.O1;
-            if (i11 != 2) {
-                if (i11 == 3) {
-                    i12 = 130;
-                    i10 = 1;
-                } else {
-                    i10 = 2;
-                    i12 = 1;
+        this.v = true;
+        i6 i6Var = this.x;
+        j6 j6Var = this.h;
+        j6Var.removeCallbacks(i6Var);
+        u6 u6Var = this.i;
+        u6Var.l(null);
+        org.telegram.ui.Cells.t0 t0Var = this.p;
+        if (t0Var != null) {
+            t0Var.J0.i(false);
+            if (z10 && this.r >= 1.0f) {
+                RectF rectF = this.o;
+                if (!rectF.isEmpty() && this.p.isAttachedToWindow() && k0.I(this.p.getMessageObject(), this.f)) {
+                    float centerY = (((rectF.centerY() - (Math.min(this.n.centerY(), rectF.centerY()) - org.telegram.messenger.g0.L(150.0f))) * 2.0f) / 0.6f) / org.telegram.messenger.g0.p;
+                    b4 b4Var = this.p.J0;
+                    b4Var.l();
+                    q1.g gVar = new q1.g(new q1.f(0.0f));
+                    b4Var.b0 = gVar;
+                    q1.h hVar = new q1.h(0.0f);
+                    hVar.a(0.65f);
+                    hVar.b(200.0f);
+                    gVar.m = hVar;
+                    b4Var.b0.f(0.001f);
+                    b4Var.b0.a = Math.max(20.0f, Math.min(36.0f, centerY * 0.04f));
+                    b4Var.b0.b(new v3(b4Var, 1));
+                    b4Var.b0.h();
                 }
             }
         }
-        float[] fArr3 = this.h;
-        SensorManager.remapCoordinateSystem(fArr2, i12, i10, fArr3);
-        float[] fArr4 = this.n;
-        SensorManager.getOrientation(fArr3, fArr4);
-        if (Float.isNaN(fArr4[1]) || Float.isNaN(fArr4[2])) {
-            return;
+        k6 k6Var = this.q;
+        k6Var.setPaused(true);
+        j6Var.removeView(k6Var);
+        u6Var.setPaused(true);
+        j6Var.removeView(u6Var);
+        j6Var.setClickable(false);
+        this.d.setAlpha(this.l);
+        bi biVar = this.c;
+        if (biVar == null) {
+            this.b.setTranslationY(0.0f);
+        } else {
+            biVar.x1(1.0f);
         }
-        if (!this.s) {
-            this.w = fArr4[1];
-            this.x = fArr4[2];
-            this.s = true;
+        ViewGroup viewGroup = this.a;
+        if (biVar != null && z10 && this.j.d()) {
+            wm wmVar = this.e;
+            if (wmVar.getParentLayout() != null) {
+                ViewGroup view = wmVar.getParentLayout().getView();
+                if (view.isAttachedToWindow()) {
+                    viewGroup.getLocationOnScreen(new int[2]);
+                    view.getLocationOnScreen(new int[2]);
+                    viewGroup.removeView(j6Var);
+                    j6Var.setTranslationX(r4[0] - r1[0]);
+                    j6Var.setTranslationY(r4[1] - r1[1]);
+                    view.addView(j6Var, new ViewGroup.LayoutParams(-1, -1));
+                    viewGroup = view;
+                }
+            }
         }
-        float max = Math.max(-1.0f, Math.min(1.0f, ((float) Math.IEEEremainder(fArr4[2] - this.x, 6.283185307179586d)) / 0.45f));
-        float max2 = Math.max(-1.0f, Math.min(1.0f, ((float) Math.IEEEremainder(fArr4[1] - this.w, 6.283185307179586d)) / 0.45f));
-        float f7 = this.D;
-        this.D = c3.i0.z(max, f7, 0.12f, f7);
-        float f10 = this.E;
-        this.E = c3.i0.z(max2, f10, 0.12f, f10);
-        Iterator it = this.e.keySet().iterator();
-        while (it.hasNext()) {
-            ((View) it.next()).invalidate();
-        }
+        this.g.run();
+        org.telegram.messenger.g0.i3(new ma1(22, this, viewGroup), 650L);
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+    public final void b(float f10, float f11, float f12) {
+        float L = org.telegram.messenger.g0.L(60.0f);
+        j6 j6Var = this.h;
+        float f13 = L / 2.0f;
+        u6 u6Var = this.i;
+        u6Var.setTranslationX((f10 - j6Var.getLeft()) - f13);
+        u6Var.setTranslationY((f11 - j6Var.getTop()) - f13);
+        float f14 = f12 / L;
+        u6Var.setScaleX(f14);
+        u6Var.setScaleY(f14);
+        float translationX = u6Var.getTranslationX();
+        k6 k6Var = this.q;
+        k6Var.setTranslationX(translationX);
+        k6Var.setTranslationY(u6Var.getTranslationY());
+        k6Var.setScaleX(f14);
+        k6Var.setScaleY(f14);
+    }
+
+    public final RectF c(a4 a4Var) {
+        bi biVar = this.c;
+        ViewGroup viewGroup = this.a;
+        if (biVar == null) {
+            return aa.a(a4Var, viewGroup);
+        }
+        ViewGroup viewGroup2 = (ViewGroup) a4Var.getRootView();
+        RectF a10 = aa.a(a4Var, viewGroup2);
+        int[] iArr = new int[2];
+        viewGroup2.getLocationOnScreen(iArr);
+        a10.offset(iArr[0], iArr[1]);
+        viewGroup.getLocationOnScreen(iArr);
+        a10.offset(-iArr[0], -iArr[1]);
+        return a10;
+    }
+
+    public final void d() {
+        k6 k6Var = this.q;
+        if (k6Var == null) {
+            return;
+        }
+        u6 u6Var = this.i;
+        float flightYaw = u6Var.getFlightYaw();
+        float flightPitch = u6Var.getFlightPitch();
+        if (this.p != null) {
+            float max = Math.max(0.0f, Math.min(1.0f, (this.r - 0.55f) / 0.45f));
+            float B = com.google.android.recaptcha.internal.a.B(max, 2.0f, 3.0f, max * max);
+            flightYaw += ((float) Math.IEEEremainder(this.p.J0.g() - flightYaw, 6.283185307179586d)) * B;
+            flightPitch += ((this.p.J0.k.F * 0.14f) - flightPitch) * B;
+        }
+        k6Var.r = flightYaw;
+        k6Var.s = flightPitch;
+        k6Var.w = true;
+        k6Var.x = true;
+    }
+
+    public final void e() {
+        u6 u6Var = this.d;
+        if (u6Var.isAttachedToWindow()) {
+            View rootView = u6Var.getRootView();
+            ViewGroup viewGroup = this.a;
+            if (rootView != viewGroup.getRootView()) {
+                return;
+            }
+            bi biVar = this.c;
+            RectF rectF = this.n;
+            if (biVar == null) {
+                aa.f(u6Var, this.b, viewGroup, rectF);
+            } else {
+                rectF.set(aa.a(u6Var, viewGroup));
+                rectF.offset(0.0f, biVar.g4 - biVar.q2);
+            }
+        }
     }
 }

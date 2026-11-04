@@ -1,102 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.List;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yn0 extends tk0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 c;
-    public final /* synthetic */ List d;
-    public final /* synthetic */ org.telegram.messenger.wp e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ TLRPC.Peer h;
+public final class yn0 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final Rect b;
+    public final /* synthetic */ oo0 c;
 
-    public yn0(org.telegram.ui.ActionBar.p6 p6Var, List list, org.telegram.messenger.wp wpVar, int i10, TLRPC.Peer peer) {
-        this.c = p6Var;
-        this.d = list;
-        this.e = wpVar;
-        this.f = i10;
-        this.h = peer;
+    public yn0(oo0 oo0Var, int i3) {
+        this.a = i3;
+        switch (i3) {
+            case 1:
+                this.c = oo0Var;
+                this.b = new Rect();
+                break;
+            default:
+                this.c = oo0Var;
+                this.b = new Rect();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        return this.d.size();
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        co0 co0Var = (co0) c1Var.a;
-        TLRPC.TL_sendAsPeer tL_sendAsPeer = (TLRPC.TL_sendAsPeer) this.d.get(i10);
-        TLRPC.Peer peer = tL_sendAsPeer.peer;
-        long j10 = peer.channel_id;
-        long j11 = j10 != 0 ? -j10 : 0L;
-        if (j11 == 0) {
-            long j12 = peer.user_id;
-            if (j12 != 0) {
-                j11 = j12;
-            }
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        oo0 oo0Var;
+        org.telegram.ui.ActionBar.f1 f1Var;
+        oo0 oo0Var2;
+        org.telegram.ui.ActionBar.f1 f1Var2;
+        switch (this.a) {
+            case 0:
+                if (motionEvent.getActionMasked() == 0 && (f1Var = (oo0Var = this.c).C2) != null && f1Var.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        oo0Var.C2.d(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (motionEvent.getActionMasked() == 0 && (f1Var2 = (oo0Var2 = this.c).C2) != null && f1Var2.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        oo0Var2.C2.d(true);
+                        break;
+                    }
+                }
+                break;
         }
-        TLRPC.Peer peer2 = this.h;
-        org.telegram.messenger.wp wpVar = this.e;
-        boolean z10 = true;
-        if (j11 >= 0) {
-            TLRPC.User Z1 = wpVar.Z1(Long.valueOf(j11));
-            if (Z1 != null) {
-                co0Var.b.setText(org.telegram.messenger.i20.p(Z1));
-                co0Var.c.setText(org.telegram.messenger.dd.L0(2131743375, null));
-                co0Var.a.setAvatar(Z1);
-            }
-            mu0 mu0Var = co0Var.a;
-            if (peer2 == null ? i10 != 0 : peer2.user_id != peer.user_id) {
-                z10 = false;
-            }
-            mu0Var.a(z10, false);
-            return;
-        }
-        TLRPC.Chat L0 = wpVar.L0(Long.valueOf(-j11));
-        if (L0 != null) {
-            if (tL_sendAsPeer.premium_required) {
-                StringBuilder sb2 = new StringBuilder();
-                String str = L0.title;
-                TextView textView = co0Var.b;
-                sb2.append((Object) TextUtils.ellipsize(str, textView.getPaint(), this.f - org.telegram.messenger.i0.L(100.0f), TextUtils.TruncateAt.END));
-                sb2.append(" d");
-                SpannableString spannableString = new SpannableString(sb2.toString());
-                dq dqVar = new dq(R.drawable.msg_mini_premiumlock, 0);
-                dqVar.n = 1;
-                dqVar.c(org.telegram.messenger.i0.L(14.0f));
-                dqVar.a(org.telegram.ui.ActionBar.t6.C6);
-                spannableString.setSpan(dqVar, spannableString.length() - 1, spannableString.length(), 33);
-                textView.setEllipsize(null);
-                textView.setText(spannableString);
-            } else {
-                co0Var.b.setEllipsize(TextUtils.TruncateAt.END);
-                co0Var.b.setText(L0.title);
-            }
-            co0Var.c.setText(org.telegram.messenger.dd.G(L0.participants_count, (!org.telegram.messenger.w3.T(L0) || L0.megagroup) ? "Members" : "Subscribers", new Object[0]));
-            co0Var.a.setAvatar(L0);
-        }
-        mu0 mu0Var2 = co0Var.a;
-        if (peer2 == null ? i10 != 0 : peer2.channel_id != peer.channel_id) {
-            z10 = false;
-        }
-        mu0Var2.a(z10, false);
-    }
-
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        return new dk0(new co0(viewGroup.getContext(), this.c));
+        return false;
     }
 }

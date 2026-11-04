@@ -1,54 +1,30 @@
 package r7;
 
 import android.os.Parcel;
-import com.google.android.gms.location.LocationResult;
-import r2.y;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.q;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class i extends b8.b implements g8.k {
-    public static final /* synthetic */ int c = 0;
-    public final androidx.activity.o b;
+public final class i extends q6.a implements q {
+    public static final Parcelable.Creator<i> CREATOR = new q8.i(5);
+    public Status a;
+    public ArrayList b;
+    public String[] c;
 
-    public i(androidx.activity.o oVar) {
-        super("com.google.android.gms.location.ILocationCallback", 9);
-        this.b = oVar;
+    @Override // com.google.android.gms.common.api.q
+    public final Status a() {
+        return this.a;
     }
 
-    @Override // b8.b
-    public final boolean L0(Parcel parcel, int i10) {
-        androidx.activity.o oVar = this.b;
-        if (i10 == 1) {
-            LocationResult locationResult = (LocationResult) d.a(parcel, LocationResult.CREATOR);
-            d.b(parcel);
-            oVar.h().a(new n2.u(locationResult, 20));
-            return true;
-        }
-        if (i10 != 2) {
-            if (i10 != 3) {
-                return false;
-            }
-            M0();
-            return true;
-        }
-        d.b(parcel);
-        oVar.h().a(new a());
-        return true;
-    }
-
-    public final void M0() {
-        this.b.h().a(new y(this, 1));
-    }
-
-    public final void N0(com.google.android.gms.common.api.internal.p pVar) {
-        androidx.activity.o oVar = this.b;
-        synchronized (oVar) {
-            com.google.android.gms.common.api.internal.p pVar2 = (com.google.android.gms.common.api.internal.p) oVar.c;
-            if (pVar2 != pVar) {
-                pVar2.b = null;
-                pVar2.c = null;
-                oVar.c = pVar;
-            }
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.l(parcel, 1, this.a, i3);
+        j8.a.q(parcel, 2, this.b);
+        j8.a.n(parcel, 3, this.c);
+        j8.a.t(parcel, s6);
     }
 }

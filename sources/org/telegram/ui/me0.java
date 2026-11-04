@@ -1,44 +1,32 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ re0 b;
+    public final /* synthetic */ xe0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ me0(re0 re0Var, int i10) {
-        this.a = i10;
-        this.b = re0Var;
+    public /* synthetic */ me0(xe0 xe0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i3) {
+        this.a = i3;
+        this.b = xe0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10;
-        int i11 = this.a;
-        re0 re0Var = this.b;
-        switch (i11) {
+        switch (this.a) {
             case 0:
-                re0Var.o();
-                break;
-            case 1:
-                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
-                gf0 gf0Var = re0Var.w;
-                i10 = ((org.telegram.ui.ActionBar.k2) gf0Var).currentAccount;
-                premiumPreviewFragment.setCurrentAccount(i10);
-                gf0Var.presentFragment(premiumPreviewFragment);
-                break;
-            case 2:
-                gf0 gf0Var2 = re0Var.w;
-                gf0Var2.D1(0, true, null, true);
-                gf0Var2.u1(org.telegram.messenger.dd.L0(2131746088, null), org.telegram.messenger.dd.L0(2131752021, null));
-                break;
-            case 3:
-                gf0 gf0Var3 = re0Var.w;
-                gf0Var3.D1(0, true, null, true);
-                gf0Var3.u1(org.telegram.messenger.dd.L0(2131746088, null), org.telegram.messenger.dd.L0(2131752021, null));
+                xe0 xe0Var = this.b;
+                xe0Var.getNotificationCenter().d(new me0(xe0Var, this.c, this.d, 1));
                 break;
             default:
-                re0Var.b.setLoading(false);
+                xe0.a0(this.b, this.c, this.d);
                 break;
         }
     }

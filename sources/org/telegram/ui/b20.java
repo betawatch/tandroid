@@ -1,38 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b20 implements org.telegram.messenger.k20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a50 b;
+public final class b20 implements oh.a {
+    public final /* synthetic */ x30 a;
 
-    public /* synthetic */ b20(a50 a50Var, int i10) {
-        this.a = i10;
-        this.b = a50Var;
+    public b20(x30 x30Var) {
+        this.a = x30Var;
     }
 
-    @Override // org.telegram.messenger.k20
-    public final void a(Object obj, Object obj2) {
-        TLRPC.Updates updates = (TLRPC.Updates) obj;
-        switch (this.a) {
-            case 0:
-                a50 a50Var = this.b;
-                if (updates != null) {
-                    org.telegram.messenger.wp.r1(a50Var.k1.a).L3(updates, false);
-                }
-                org.telegram.messenger.i0.g3(new s10(a50Var, 10));
-                break;
-            default:
-                a50 a50Var2 = this.b;
-                if (updates == null) {
-                    a50Var2.getClass();
-                    break;
-                } else {
-                    org.telegram.messenger.wp.r1(a50Var2.k1.a).L3(updates, false);
-                    break;
-                }
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.d2 Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
         }
+        boolean z10 = Q instanceof ProfileActivity;
+        x30 x30Var = this.a;
+        if (z10 && ((ProfileActivity) Q).a() == groupCallMessage.fromId) {
+            x30Var.dismiss();
+            return;
+        }
+        int R0 = x30Var.R0();
+        Bundle bundle = new Bundle();
+        long j10 = groupCallMessage.fromId;
+        if (j10 > 0) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
+        }
+        boolean z11 = true;
+        if (groupCallMessage.fromId == org.telegram.messenger.h10.i(x30Var.l1.a).e()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (R0 > 0 && R0 != Integer.MAX_VALUE) {
+            z11 = false;
+        }
+        Q.presentFragment(profileActivity, false, z11);
+        x30Var.dismiss();
     }
 }

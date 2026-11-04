@@ -1,80 +1,17 @@
 package kg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.rt0;
-import org.telegram.ui.xt0;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class u1 extends rt0 {
-    public final /* synthetic */ int r = 0;
-    public final /* synthetic */ tk0 s;
+public interface u1 {
+    a0.h C0();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(f fVar, Context context, p6 p6Var) {
-        super(context, p6Var);
-        this.s = fVar;
-    }
+    boolean J1(int i3);
 
-    @Override // org.telegram.ui.rt0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        p6 p6Var;
-        boolean q6;
-        p6 p6Var2;
-        switch (this.r) {
-            case 0:
-                RectF rectF = org.telegram.messenger.i0.P;
-                ImageView imageView = this.c;
-                rectF.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
-                f fVar = (f) this.s;
-                ((v1) fVar.d).h2.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, ((v1) fVar.d).W1);
-                canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), ((v1) fVar.d).h2.f);
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                float L = org.telegram.messenger.i0.L(10.0f);
-                RectF rectF2 = org.telegram.messenger.i0.P;
-                ImageView imageView2 = this.c;
-                rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
-                PremiumPreviewFragment premiumPreviewFragment = ((xt0) this.s).c;
-                premiumPreviewFragment.S.reset();
-                premiumPreviewFragment.S.postScale(1.0f, premiumPreviewFragment.N / 100.0f, 0.0f, 0.0f);
-                premiumPreviewFragment.S.postTranslate(0.0f, -this.f.e);
-                premiumPreviewFragment.R.setLocalMatrix(premiumPreviewFragment.S);
-                canvas.drawRoundRect(rectF2, L, L, premiumPreviewFragment.T);
-                p6Var = ((org.telegram.ui.ActionBar.k2) premiumPreviewFragment).resourceProvider;
-                if (p6Var != null) {
-                    p6Var2 = ((org.telegram.ui.ActionBar.k2) premiumPreviewFragment).resourceProvider;
-                    q6 = p6Var2.a();
-                } else {
-                    q6 = t6.I.q();
-                }
-                if (q6) {
-                    float L2 = org.telegram.messenger.i0.L(1.0f);
-                    premiumPreviewFragment.Q.setStrokeWidth(L2);
-                    canvas.save();
-                    canvas.translate(rectF2.left, rectF2.top);
-                    rectF2.offset(-rectF2.left, -rectF2.top);
-                    float f7 = L2 / 2.0f;
-                    rectF2.inset(f7, f7);
-                    canvas.drawRoundRect(rectF2, L, L, premiumPreviewFragment.Q);
-                    canvas.restore();
-                }
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
+    void b2(ArrayList arrayList);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(xt0 xt0Var, Context context) {
-        super(context, null);
-        this.s = xt0Var;
-    }
+    a0.h k1();
+
+    void r(int i3);
 }

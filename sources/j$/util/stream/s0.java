@@ -13,9 +13,9 @@ public final class s0 extends d5 {
     public final /* synthetic */ a c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s0(a aVar, j5 j5Var, int i10) {
+    public /* synthetic */ s0(a aVar, j5 j5Var, int i3) {
         super(j5Var);
-        this.b = i10;
+        this.b = i3;
         this.c = aVar;
     }
 
@@ -32,32 +32,32 @@ public final class s0 extends d5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
+    public final void accept(int i3) {
         switch (this.b) {
             case 0:
-                this.a.accept((j5) ((IntFunction) ((q) this.c).t).apply(i10));
+                this.a.accept((j5) ((IntFunction) ((q) this.c).t).apply(i3));
                 return;
             case 1:
-                ((IntConsumer) ((t0) this.c).t).accept(i10);
-                this.a.accept(i10);
+                ((IntConsumer) ((t0) this.c).t).accept(i3);
+                this.a.accept(i3);
                 return;
             case 2:
-                this.a.accept(((IntUnaryOperator) ((t0) this.c).t).applyAsInt(i10));
+                this.a.accept(((IntUnaryOperator) ((t0) this.c).t).applyAsInt(i3));
                 return;
             case 3:
                 ((t) this.c).getClass();
                 IntToLongFunction intToLongFunction = null;
-                intToLongFunction.applyAsLong(i10);
+                intToLongFunction.applyAsLong(i3);
                 throw null;
             case 4:
                 ((r) this.c).getClass();
                 IntToDoubleFunction intToDoubleFunction = null;
-                intToDoubleFunction.applyAsDouble(i10);
+                intToDoubleFunction.applyAsDouble(i3);
                 throw null;
             default:
                 ((s) this.c).getClass();
                 IntPredicate intPredicate = null;
-                intPredicate.test(i10);
+                intPredicate.test(i3);
                 throw null;
         }
     }

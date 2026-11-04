@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import ad.c;
-import ad.h;
-import ad.j;
 import android.app.Application;
 import android.webkit.WebView;
-import bd.i;
-import ib.a;
+import b8.hb;
+import dd.c;
+import dd.k;
+import ed.g;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import td.e0;
-import td.e2;
-import td.s;
-import td.t;
+import kotlin.jvm.internal.j;
+import wd.b0;
+import wd.s;
+import wd.t;
+import wd.x1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzly extends zzg {
     public s zza;
@@ -34,49 +34,49 @@ public final class zzly extends zzg {
     private final zzld zzh = new zzld(this);
 
     public zzly() {
-        int i10 = zzby.zza;
-        this.zzi = a.a(zzlm.zza);
-        this.zzj = a.a(zzln.zza);
-        this.zzk = a.a(zzlo.zza);
-        this.zzl = a.a(zzlp.zza);
-        this.zzm = a.a(zzlq.zza);
-        this.zzn = a.a(zzlr.zza);
-        this.zzo = a.a(zzls.zza);
+        int i3 = zzby.zza;
+        this.zzi = hb.b(zzlm.zza);
+        this.zzj = hb.b(zzln.zza);
+        this.zzk = hb.b(zzlo.zza);
+        this.zzl = hb.b(zzlp.zza);
+        this.zzm = hb.b(zzlq.zza);
+        this.zzn = hb.b(zzlr.zza);
+        this.zzo = hb.b(zzls.zza);
     }
 
     private final Application zzC() {
-        return (Application) ((h) this.zzm).a();
+        return (Application) this.zzm.getValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final zzcr zzD() {
-        return (zzcr) ((h) this.zzn).a();
+        return (zzcr) this.zzn.getValue();
     }
 
     public static final /* synthetic */ zzcy zzm(zzly zzlyVar) {
-        return (zzcy) ((h) zzlyVar.zzj).a();
+        return (zzcy) zzlyVar.zzj.getValue();
     }
 
     public static final /* synthetic */ zzgs zzo(zzly zzlyVar) {
-        return (zzgs) ((h) zzlyVar.zzo).a();
+        return (zzgs) zzlyVar.zzo.getValue();
     }
 
     public static final /* synthetic */ zzib zzp(zzly zzlyVar) {
-        return (zzib) ((h) zzlyVar.zzl).a();
+        return (zzib) zzlyVar.zzl.getValue();
     }
 
     public static final /* synthetic */ zzig zzq(zzly zzlyVar) {
-        return (zzig) ((h) zzlyVar.zzk).a();
+        return (zzig) zzlyVar.zzk.getValue();
     }
 
-    public static final /* synthetic */ Object zzu(zzly zzlyVar, cd.c cVar) {
+    public static final /* synthetic */ Object zzu(zzly zzlyVar, fd.c cVar) {
         return new zzhg(new zzlu(zzlyVar, null));
     }
 
     public final zzip zzB(zzxn zzxnVar, zzdo zzdoVar, WebView webView) {
         zzis zzisVar = new zzis(webView, zzD().zzb());
         zzku zzkuVar = new zzku();
-        zzkuVar.zzb(i.n(zzxnVar.zzQ()));
+        zzkuVar.zzb(g.m(zzxnVar.zzQ()));
         zzjb zzjbVar = new zzjb(zzisVar, zzdoVar, new zzct());
         zzkv zzkvVar = new zzkv(zzkuVar, new zzks());
         zzjbVar.zze(3, zzC());
@@ -90,41 +90,41 @@ public final class zzly extends zzg {
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zza(String str, cd.c cVar) {
+    public final Object zza(String str, fd.c cVar) {
         zzxw zzf = zzxx.zzf();
         zzf.zze(str);
         return zzf.zzk();
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzb(String str, cd.c cVar) {
+    public final Object zzb(String str, fd.c cVar) {
         return new zzhg(new zzlk(this, str, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzc(zzcg zzcgVar, cd.c cVar) {
-        kotlin.jvm.internal.i.a(zzcgVar.zza(), zzcd.zzb);
-        return j.a;
+    public final Object zzc(zzcg zzcgVar, fd.c cVar) {
+        j.a(zzcgVar.zza(), zzcd.zzb);
+        return k.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzd(zzxn zzxnVar, cd.c cVar) {
+    public final Object zzd(zzxn zzxnVar, fd.c cVar) {
         return new zzhg(new zzll(zzxnVar, this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zze(String str, long j10, Exception exc, cd.c cVar) {
+    public final Object zze(String str, long j10, Exception exc, fd.c cVar) {
         exc.getMessage();
         s sVar = (s) this.zzd.remove(str);
         if (sVar != null) {
-            ((t) sVar).L(exc);
+            ((t) sVar).Q(exc);
         }
-        return j.a;
+        return k.a;
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
-    public final Object zzf(Exception exc, cd.c cVar) {
-        return ((exc instanceof e2) && this.zzh.zza() == null) ? new zzcg(zzce.zzc, zzcd.zzH, null, null, 12, null) : zzh.zza(exc, new zzcg(zzce.zzb, zzcd.zzV, exc.getMessage(), null, 8, null));
+    public final Object zzf(Exception exc, fd.c cVar) {
+        return ((exc instanceof x1) && this.zzh.zza() == null) ? new zzcg(zzce.zzc, zzcd.zzH, null, null, 12, null) : zzh.zza(exc, new zzcg(zzce.zzb, zzcd.zzV, exc.getMessage(), null, 8, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzg
@@ -145,13 +145,13 @@ public final class zzly extends zzg {
         return this.zzh;
     }
 
-    public final Object zzv(cd.c cVar) {
-        return e0.w(zzD().zzb().c(), new zzma((zzmb) ((h) this.zzi).a(), zzC(), null), cVar);
+    public final Object zzv(fd.c cVar) {
+        return b0.y(zzD().zzb().c(), new zzma((zzmb) this.zzi.getValue(), zzC(), null), cVar);
     }
 
-    public final Object zzw(cd.c cVar) {
-        Object w9 = e0.w(zzD().zzb().c(), new zzlf(this, null), cVar);
-        return w9 == dd.a.a ? w9 : j.a;
+    public final Object zzw(fd.c cVar) {
+        Object y9 = b0.y(zzD().zzb().c(), new zzlf(this, null), cVar);
+        return y9 == gd.a.a ? y9 : k.a;
     }
 
     public final s zzz() {

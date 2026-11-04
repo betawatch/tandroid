@@ -1,24 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pu0 extends o1.h {
-    public final nu0 a;
-    public final ou0 b;
-    public float c = 1.0f;
+public final /* synthetic */ class pu0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ su0 b;
 
-    public pu0(nu0 nu0Var, ou0 ou0Var) {
-        this.a = nu0Var;
-        this.b = ou0Var;
+    public /* synthetic */ pu0(su0 su0Var, int i3) {
+        this.a = i3;
+        this.b = su0Var;
     }
 
-    @Override // o1.h
-    public final float a(Object obj) {
-        return this.a.get(obj) * this.c;
-    }
-
-    @Override // o1.h
-    public final void b(Object obj, float f7) {
-        this.b.b(obj, f7 / this.c);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                su0 su0Var = this.b;
+                su0Var.getClass();
+                su0Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                su0Var.invalidate();
+                break;
+            case 1:
+                su0 su0Var2 = this.b;
+                su0Var2.getClass();
+                su0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                su0 su0Var3 = this.b;
+                su0Var3.getClass();
+                su0Var3.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                su0Var3.invalidate();
+                break;
+        }
     }
 }

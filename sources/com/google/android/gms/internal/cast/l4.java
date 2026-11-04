@@ -1,25 +1,26 @@
 package com.google.android.gms.internal.cast;
 
+import b8.da;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l4 extends v7.o5 implements ScheduledFuture, j9.y, Future {
-    public final e4 b;
+public final class l4 extends da implements ScheduledFuture, l9.y, Future {
+    public final d4 b;
     public final ScheduledFuture c;
 
-    public l4(e4 e4Var, ScheduledFuture scheduledFuture) {
-        this.b = e4Var;
+    public l4(d4 d4Var, ScheduledFuture scheduledFuture) {
+        this.b = d4Var;
         this.c = scheduledFuture;
     }
 
-    @Override // j9.y
-    public final void a(Runnable runnable, Executor executor) {
-        this.b.a(runnable, executor);
+    @Override // l9.y
+    public final void b(Runnable runnable, Executor executor) {
+        this.b.b(runnable, executor);
     }
 
     @Override // java.util.concurrent.Future
@@ -48,7 +49,7 @@ public final class l4 extends v7.o5 implements ScheduledFuture, j9.y, Future {
 
     @Override // java.util.concurrent.Future
     public final boolean isCancelled() {
-        return this.b.a instanceof w3;
+        return this.b.a instanceof v3;
     }
 
     @Override // java.util.concurrent.Future

@@ -1,103 +1,51 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class xw extends g31 {
-    public final /* synthetic */ x21[] e2;
-    public final /* synthetic */ zx f2;
+public final /* synthetic */ class xw implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xw(zx zxVar, zx zxVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.p6 p6Var, x21[] x21VarArr) {
-        super(zxVar2, activity, true, num, 0, p6Var);
-        this.f2 = zxVar;
-        this.e2 = x21VarArr;
+    public /* synthetic */ xw(Object obj, int i3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i3;
     }
 
-    @Override // org.telegram.ui.g31
-    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i10;
-        if (tL_starGiftUnique == null) {
-            return true;
-        }
-        i10 = ((org.telegram.ui.ActionBar.k2) this.f2).currentAccount;
-        return rh.e6.y(i10, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.wp.d1().getInt("statusgiftpage", 0) >= 2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.g31
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        TLRPC.TL_emojiStatus tL_emojiStatus;
-        TLRPC.EmojiStatus emojiStatus;
-        int i10;
-        int i11;
-        int i12;
-        org.telegram.ui.ActionBar.p6 p6Var;
-        x21[] x21VarArr = this.e2;
-        zx zxVar = this.f2;
-        if (l4 == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            if (tL_starGiftUnique != null) {
-                i10 = ((org.telegram.ui.ActionBar.k2) zxVar).currentAccount;
-                TL_stars.SavedStarGift n10 = rh.e6.y(i10, false).n(tL_starGiftUnique.id);
-                if (n10 != null && org.telegram.messenger.wp.d1().getInt("statusgiftpage", 0) < 2) {
-                    org.telegram.messenger.wp.d1().edit().putInt("statusgiftpage", org.telegram.messenger.wp.d1().getInt("statusgiftpage", 0) + 1).apply();
-                    Context context = getContext();
-                    i11 = ((org.telegram.ui.ActionBar.k2) zxVar).currentAccount;
-                    i12 = ((org.telegram.ui.ActionBar.k2) zxVar).currentAccount;
-                    long e = org.telegram.messenger.e20.i(i12).e();
-                    p6Var = ((org.telegram.ui.ActionBar.k2) zxVar).resourceProvider;
-                    rh.e4 e4Var = new rh.e4(context, i11, e, p6Var, null);
-                    e4Var.j2(n10, null);
-                    e4Var.n2();
-                    e4Var.show();
-                    x21 x21Var = x21VarArr[0];
-                    if (x21Var != null) {
-                        zxVar.M0 = null;
-                        x21Var.dismiss();
-                        return;
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i3) {
+        switch (this.a) {
+            case 0:
+                cx cxVar = (cx) ((mi.h0) this.c).c;
+                if (i3 == 0) {
+                    cxVar.e.remove(this.b - cxVar.n);
+                    cxVar.e0();
+                    bx bxVar = cxVar.f;
+                    if (bxVar != null) {
+                        bxVar.a();
+                        break;
                     }
-                    return;
                 }
-                TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
-                tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
-                tL_emojiStatus = tL_inputEmojiStatusCollectible;
-                if (num != null) {
-                    tL_inputEmojiStatusCollectible.flags |= 1;
-                    tL_inputEmojiStatusCollectible.until = num.intValue();
-                    tL_emojiStatus = tL_inputEmojiStatusCollectible;
+                break;
+            case 1:
+                NotificationsSettingsActivity.c0((NotificationsSettingsActivity) this.c, this.b, i3);
+                break;
+            default:
+                ThemeActivity themeActivity = (ThemeActivity) this.c;
+                themeActivity.getClass();
+                SharedPreferences.Editor edit = org.telegram.messenger.hp.e1().edit();
+                edit.putInt("sortContactsBy", i3);
+                edit.commit();
+                v51 v51Var = themeActivity.a;
+                if (v51Var != null) {
+                    v51Var.g(this.b);
+                    break;
                 }
-            } else {
-                TLRPC.TL_emojiStatus tL_emojiStatus2 = new TLRPC.TL_emojiStatus();
-                tL_emojiStatus2.document_id = l4.longValue();
-                tL_emojiStatus = tL_emojiStatus2;
-                if (num != null) {
-                    tL_emojiStatus2.flags |= 1;
-                    tL_emojiStatus2.until = num.intValue();
-                    tL_emojiStatus = tL_emojiStatus2;
-                }
-            }
-            emojiStatus = tL_emojiStatus;
-        }
-        zxVar.getMessagesController().e5(emojiStatus, tL_starGiftUnique);
-        if (l4 != null) {
-            org.telegram.ui.Cells.n nVar = zxVar.E3;
-            sg.o0 o0Var = new sg.o0();
-            long longValue = l4.longValue();
-            o0Var.g = longValue;
-            o0Var.h = longValue;
-            nVar.a(o0Var);
-        }
-        x21 x21Var2 = x21VarArr[0];
-        if (x21Var2 != null) {
-            zxVar.M0 = null;
-            x21Var2.dismiss();
+                break;
         }
     }
 }

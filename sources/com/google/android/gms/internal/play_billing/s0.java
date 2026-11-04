@@ -1,40 +1,41 @@
 package com.google.android.gms.internal.play_billing;
 
+import gi.w5;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class s0 {
     public final Object a;
-    public final Object b;
-    public volatile Object c;
+    public volatile Object b;
+    public final Object c;
 
-    public s0(Class cls, int i10) {
-        switch (i10) {
-            case 2:
-                this.a = new Object();
-                this.b = cls.getName();
+    public s0(Class cls, int i3) {
+        switch (i3) {
+            case 1:
+                this.c = new Object();
+                this.a = cls.getName();
                 break;
             default:
-                this.a = new n();
-                this.b = cls.getName();
+                this.c = new n();
+                this.a = cls.getName();
                 break;
         }
     }
 
     public Logger a() {
-        Logger logger = (Logger) this.c;
+        Logger logger = (Logger) this.b;
         if (logger != null) {
             return logger;
         }
-        synchronized (this.a) {
+        synchronized (this.c) {
             try {
-                Logger logger2 = (Logger) this.c;
+                Logger logger2 = (Logger) this.b;
                 if (logger2 != null) {
                     return logger2;
                 }
-                Logger logger3 = Logger.getLogger((String) this.b);
-                this.c = logger3;
+                Logger logger3 = Logger.getLogger((String) this.a);
+                this.b = logger3;
                 return logger3;
             } catch (Throwable th2) {
                 throw th2;
@@ -44,28 +45,28 @@ public final class s0 {
 
     public synchronized int[] b() {
         try {
-            if (((int[]) this.c) == null) {
-                this.c = ((di.t) this.b).b(this);
+            if (((int[]) this.b) == null) {
+                this.b = ((oi.r) this.a).b(this);
             }
         } catch (Throwable th2) {
             throw th2;
         }
-        return (int[]) this.c;
+        return (int[]) this.b;
     }
 
     public Logger c() {
-        Logger logger = (Logger) this.c;
+        Logger logger = (Logger) this.b;
         if (logger != null) {
             return logger;
         }
-        synchronized (((n) this.a)) {
+        synchronized (((n) this.c)) {
             try {
-                Logger logger2 = (Logger) this.c;
+                Logger logger2 = (Logger) this.b;
                 if (logger2 != null) {
                     return logger2;
                 }
-                Logger logger3 = Logger.getLogger((String) this.b);
-                this.c = logger3;
+                Logger logger3 = Logger.getLogger((String) this.a);
+                this.b = logger3;
                 return logger3;
             } catch (Throwable th2) {
                 throw th2;
@@ -73,8 +74,14 @@ public final class s0 {
         }
     }
 
-    public s0(int[] iArr, di.t tVar) {
-        this.a = iArr;
-        this.b = tVar;
+    public s0(String name, w5 w5Var, od.l lVar, wd.z zVar) {
+        kotlin.jvm.internal.j.e(name, "name");
+        this.a = name;
+        this.c = new Object();
+    }
+
+    public s0(int[] iArr, oi.r rVar) {
+        this.c = iArr;
+        this.a = rVar;
     }
 }

@@ -1,54 +1,43 @@
 package org.telegram.messenger;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wp b;
-    public final /* synthetic */ rf.q c;
-    public final /* synthetic */ ConcurrentHashMap d;
-    public final /* synthetic */ ConcurrentHashMap e;
+    public final /* synthetic */ hp b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
 
-    public /* synthetic */ mk(wp wpVar, rf.q qVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i10) {
-        this.a = i10;
-        this.b = wpVar;
-        this.c = qVar;
-        this.d = concurrentHashMap;
-        this.e = concurrentHashMap2;
+    public /* synthetic */ mk(int i3, long j10, long j11, hp hpVar) {
+        this.a = 1;
+        this.b = hpVar;
+        this.c = j10;
+        this.d = j11;
+        this.e = i3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                wp wpVar = this.b;
-                int i10 = wpVar.currentAccount;
-                rf.q qVar = this.c;
-                qVar.b(i10, this.d, this.e, 0);
-                i0.g3(new tl(wpVar, qVar, 0));
+                this.b.z(this.c, this.e, this.d);
                 break;
             case 1:
-                wp wpVar2 = this.b;
-                int i11 = wpVar2.currentAccount;
-                rf.q qVar2 = this.c;
-                qVar2.b(i11, this.d, this.e, 0);
-                i0.g3(new tl(wpVar2, qVar2, 2));
+                long j10 = this.d;
+                this.b.p0(this.c, this.e, j10);
                 break;
             default:
-                wp wpVar3 = this.b;
-                is messagesStorage = wpVar3.getMessagesStorage();
-                rf.q qVar3 = this.c;
-                ArrayList arrayList = qVar3.a;
-                mk mkVar = new mk(wpVar3, qVar3, this.d, this.e, 1);
-                messagesStorage.getClass();
-                if (arrayList != null && !arrayList.isEmpty()) {
-                    messagesStorage.I(new ng(messagesStorage, arrayList, mkVar, 3));
-                    break;
-                }
+                this.b.z(this.c, this.e, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ mk(hp hpVar, int i3, long j10, long j11, int i10) {
+        this.a = i10;
+        this.b = hpVar;
+        this.e = i3;
+        this.c = j10;
+        this.d = j11;
     }
 }

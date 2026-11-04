@@ -1,14 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.io.File;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class ey0 {
-    public final ky0 a;
-    public final my0 b;
-    public boolean c = true;
+    public final File a;
+    public long b;
+    public long c;
+    public boolean d;
+    public boolean e;
+    public TLRPC.InputFile f;
+    public TLRPC.InputEncryptedFile g;
+    public byte[] h;
+    public byte[] i;
 
-    public ey0(ky0 ky0Var, my0 my0Var) {
-        this.a = ky0Var;
-        this.b = my0Var;
+    public ey0(File file) {
+        this.a = file;
     }
 }

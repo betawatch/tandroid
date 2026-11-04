@@ -1,21 +1,20 @@
 package androidx.car.app.hardware.common;
 
-import ag.v0;
 import android.os.IBinder;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
-import androidx.car.app.utils.h;
+import androidx.car.app.utils.g;
+import ci.l3;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.v1;
-import org.telegram.utils.twidget.t;
+import org.telegram.ui.hc1;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -25,10 +24,10 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final int mResultType;
     private final T mUnsupportedValue;
 
-    public CarResultStub(int i10, b bVar, boolean z10, T t10, a aVar) {
+    public CarResultStub(int i3, b bVar, boolean z10, T t10, a aVar) {
         Objects.requireNonNull(aVar);
         this.mHostDispatcher = aVar;
-        this.mResultType = i10;
+        this.mResultType = i3;
         this.mBundle = bVar;
         this.mIsSingleShot = z10;
         Objects.requireNonNull(t10);
@@ -54,7 +53,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new v1(24, entry, convertAndRecast));
+            entry.getValue().execute(new hc1(20, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
@@ -68,8 +67,8 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     }
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
-    public void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder) {
-        h.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new v0(this, z10, bVar, 10));
+    public void onCarHardwareResult(int i3, boolean z10, b bVar, IBinder iBinder) {
+        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new l3(this, z10, bVar, 11));
     }
 
     public boolean removeListener(c cVar) {
@@ -82,11 +81,8 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         if (this.mIsSingleShot) {
             return true;
         }
-        a aVar = this.mHostDispatcher;
-        int i10 = this.mResultType;
-        b bVar = this.mBundle;
-        aVar.getClass();
-        h.d("unsubscribeCarHardwareResult", new t(aVar, i10, bVar));
+        this.mHostDispatcher.getClass();
+        g.d("unsubscribeCarHardwareResult", new org.telegram.utils.twidget.a());
         return true;
     }
 }

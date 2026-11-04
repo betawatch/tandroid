@@ -1,42 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class q01 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ThemeEditorView.EditorAlert b;
+public final /* synthetic */ class q01 implements org.telegram.messenger.s10, org.telegram.messenger.t10, qe.b {
+    public final /* synthetic */ g11 a;
 
-    public q01(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
-        this.b = editorAlert;
-        this.a = z10;
+    public /* synthetic */ q01(g11 g11Var) {
+        this.a = g11Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.b.t1;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
-        }
-        animatorSetArr[0] = null;
+    @Override // qe.b
+    public void Y(int i3, float f10, float f11, qe.c cVar) {
+        this.a.h();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.b;
-        AnimatorSet[] animatorSetArr = editorAlert.t1;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
+    @Override // org.telegram.messenger.t10
+    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+        g11 g11Var = this.a;
+        boolean z10 = false;
+        if (!g11Var.K.k3 && !g11Var.y.k3) {
+            Object obj = r31Var.G;
+            if (obj instanceof TLRPC.TL_forumTopic) {
+                z10 = g11Var.o((TLRPC.TL_forumTopic) obj, view, false);
+            }
         }
-        if (!this.a) {
-            editorAlert.s1[0].setVisibility(4);
-        }
-        animatorSetArr[0] = null;
+        return Boolean.valueOf(z10);
+    }
+
+    @Override // org.telegram.messenger.s10
+    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        g11.a(this.a, (r31) obj);
+    }
+
+    @Override // qe.b
+    public /* synthetic */ void F(float f10, int i3) {
     }
 }

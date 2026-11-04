@@ -2,81 +2,81 @@ package com.google.android.recaptcha.internal;
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzpr {
-    public static int zza(int i10, int i11, RoundingMode roundingMode) {
+    public static int zza(int i3, int i10, RoundingMode roundingMode) {
         roundingMode.getClass();
-        if (i11 == 0) {
+        if (i10 == 0) {
             throw new ArithmeticException("/ by zero");
         }
-        int i12 = i10 / i11;
-        int i13 = i10 - (i11 * i12);
-        if (i13 == 0) {
-            return i12;
+        int i11 = i3 / i10;
+        int i12 = i3 - (i10 * i11);
+        if (i12 == 0) {
+            return i11;
         }
-        int i14 = ((i10 ^ i11) >> 31) | 1;
+        int i13 = ((i3 ^ i10) >> 31) | 1;
         switch (zzpq.zza[roundingMode.ordinal()]) {
             case 1:
                 zzpt.zzb(false);
-                return i12;
+                return i11;
             case 2:
-                return i12;
+                return i11;
             case 3:
-                if (i14 >= 0) {
-                    return i12;
+                if (i13 >= 0) {
+                    return i11;
                 }
                 break;
             case 4:
                 break;
             case 5:
-                if (i14 <= 0) {
-                    return i12;
+                if (i13 <= 0) {
+                    return i11;
                 }
                 break;
             case 6:
             case 7:
             case 8:
-                int abs = Math.abs(i13);
-                int abs2 = abs - (Math.abs(i11) - abs);
+                int abs = Math.abs(i12);
+                int abs2 = abs - (Math.abs(i10) - abs);
                 if (abs2 == 0) {
                     if (roundingMode != RoundingMode.HALF_UP) {
-                        if ((i12 & 1 & (roundingMode != RoundingMode.HALF_EVEN ? 0 : 1)) == 0) {
-                            return i12;
+                        if ((i11 & 1 & (roundingMode != RoundingMode.HALF_EVEN ? 0 : 1)) == 0) {
+                            return i11;
                         }
                     }
                 } else if (abs2 <= 0) {
-                    return i12;
+                    return i11;
                 }
                 break;
             default:
                 throw new AssertionError();
         }
-        return i12 + i14;
+        return i11 + i13;
     }
 
-    public static int zzb(int i10, RoundingMode roundingMode) {
-        if (i10 <= 0) {
+    public static int zzb(int i3, RoundingMode roundingMode) {
+        if (i3 <= 0) {
             throw new IllegalArgumentException("x (0) must be > 0");
         }
         switch (zzpq.zza[roundingMode.ordinal()]) {
             case 1:
-                zzpt.zzb(((i10 + (-1)) & i10) == 0);
+                zzpt.zzb(((i3 + (-1)) & i3) == 0);
                 break;
             case 2:
             case 3:
                 break;
             case 4:
             case 5:
-                return 32 - Integer.numberOfLeadingZeros(i10 - 1);
+                return 32 - Integer.numberOfLeadingZeros(i3 - 1);
             case 6:
             case 7:
             case 8:
-                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i10);
-                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i10) >>> 31);
+                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i3);
+                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i3) >>> 31);
             default:
                 throw new AssertionError();
         }
-        return 31 - Integer.numberOfLeadingZeros(i10);
+        return 31 - Integer.numberOfLeadingZeros(i3);
     }
 }

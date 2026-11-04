@@ -1,135 +1,55 @@
 package xh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.a30;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.ActionBar.w6;
-import w7.b6;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import org.telegram.messenger.hs;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class f extends FrameLayout {
-    public final p6 a;
-    public final ImageView b;
-    public final FrameLayout.LayoutParams c;
-    public final FrameLayout.LayoutParams d;
-    public final TextView e;
-    public final TextView f;
-    public final TextView h;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public abstract class f {
+    public static final DecelerateInterpolator a = new DecelerateInterpolator();
+    public static final LinearInterpolator b;
+    public static final e c;
+    public static final e d;
+    public static final e e;
+    public static final e f;
+    public static final e g;
+    public static final e h;
+    public static final e i;
+    public static final e j;
+    public static final e k;
+    public static final e l;
+    public static final e m;
+    public static final e n;
+    public static final e o;
+    public static final e p;
+    public static final e q;
+    public static final e r;
+    public static final e s;
+    public static final e t;
 
-    public f(Context context, p6 p6Var) {
-        super(context);
-        this.a = p6Var;
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        FrameLayout.LayoutParams d = b6.d(28, 28.0f, 51, 17.0f, 14.33f, 0.0f, 0.0f);
-        this.c = d;
-        addView(imageView, d);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        FrameLayout.LayoutParams d10 = b6.d(-1, -2.0f, 55, 62.0f, 10.0f, 40.0f, 8.66f);
-        this.d = d10;
-        addView(linearLayout, d10);
-        TextView textView = new TextView(context);
-        this.e = textView;
-        a30.n(textView, 1, 15.0f);
-        a7.V(textView, t6.G6, p6Var);
-        TextView f7 = a30.f(linearLayout, textView, b6.t(-1, -2, 55, 0, 0, 0, 0), context);
-        this.f = f7;
-        f7.setTextSize(1, 14.0f);
-        a7.V(f7, t6.z6, p6Var);
-        linearLayout.addView(f7, b6.t(-1, -2, 55, 0, 3, 0, 0));
-        ImageView imageView2 = new ImageView(context);
-        a7.t(imageView2, t6.M6, p6Var, mode);
-        imageView2.setImageResource(R.drawable.msg_arrowright);
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, b6.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.h = textView2;
-        textView2.setTextColor(-1);
-        int L = org.telegram.messenger.i0.L(4.0f);
-        int i10 = t6.ik;
-        ShapeDrawable d02 = t6.d0(L, t6.w0(i10, p6Var));
-        w6 N = a7.N(i10);
-        textView2.setBackground(d02);
-        a7.k(textView2, d02, N, null, p6Var);
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTypeface(org.telegram.messenger.i0.o());
-        textView2.setPadding(org.telegram.messenger.i0.L(5.0f), 0, org.telegram.messenger.i0.L(4.0f), 0);
-        textView2.setGravity(17);
-        textView2.setVisibility(8);
-        addView(textView2, b6.d(-2, 18.0f, 21, 0.0f, 0.0f, 35.33f, 0.0f));
-    }
-
-    public final void a(int i10, int i11, CharSequence charSequence, CharSequence charSequence2) {
-        ImageView imageView = this.b;
-        imageView.setImageResource(i11);
-        ShapeDrawable d02 = t6.d0(org.telegram.messenger.i0.L(9.0f), i10);
-        int i12 = t6.ik;
-        p6 p6Var = this.a;
-        if (i10 == t6.w0(i12, p6Var)) {
-            a7.C(imageView, d02, a7.N(i12), p6Var);
-        } else {
-            imageView.setBackground(d02);
-        }
-        TextView textView = this.e;
-        textView.setText(charSequence);
-        boolean isEmpty = TextUtils.isEmpty(charSequence2);
-        TextView textView2 = this.f;
-        FrameLayout.LayoutParams layoutParams = this.d;
-        FrameLayout.LayoutParams layoutParams2 = this.c;
-        if (isEmpty) {
-            layoutParams2.topMargin = org.telegram.messenger.i0.L(10.0f);
-            layoutParams2.bottomMargin = org.telegram.messenger.i0.L(10.0f);
-            textView.setTypeface(null);
-            textView.setTextSize(1, 16.0f);
-            layoutParams.topMargin = 0;
-            layoutParams.bottomMargin = 0;
-            layoutParams.gravity = 23;
-            textView2.setVisibility(8);
-            return;
-        }
-        layoutParams2.topMargin = org.telegram.messenger.i0.L(14.33f);
-        layoutParams2.bottomMargin = org.telegram.messenger.i0.L(10.0f);
-        textView.setTypeface(org.telegram.messenger.i0.o());
-        textView.setTextSize(1, 15.0f);
-        layoutParams.topMargin = org.telegram.messenger.i0.L(10.0f);
-        layoutParams.bottomMargin = org.telegram.messenger.i0.L(8.66f);
-        layoutParams.gravity = 55;
-        textView2.setText(charSequence2);
-        textView2.setVisibility(0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    public void setPercent(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        TextView textView = this.h;
-        if (isEmpty) {
-            textView.setVisibility(8);
-        } else {
-            textView.setVisibility(0);
-            textView.setText(charSequence);
-        }
+    static {
+        LinearInterpolator linearInterpolator = new LinearInterpolator();
+        b = linearInterpolator;
+        c = h.i(new DecelerateInterpolator(), 0, hs.P3, hs.P3, false);
+        d = h.i(linearInterpolator, 0, hs.P3, hs.P3, false);
+        e = h.i(new DecelerateInterpolator(), hs.x3, hs.P3, hs.P3, false);
+        f = h.i(new xq(0.7f, -0.6f, 0.4f, 1.0f), 0, hs.e3, 560, false);
+        g = h.i(new xq(0.7f, -0.6f, 0.4f, 1.0f), hs.e3, 400, 560, true);
+        h = h.i(new DecelerateInterpolator(), 0, hs.g2, 560, false);
+        i = h.i(new DecelerateInterpolator(), hs.n3, 425, 560, false);
+        xq xqVar = xq.h;
+        j = h.i(xqVar, 0, hs.r5, 560, false);
+        k = h.i(xqVar, 40, hs.r5, 560, false);
+        l = h.i(new DecelerateInterpolator(), 0, hs.Z3, 560, false);
+        m = h.i(xqVar, 0, 460, 560, false);
+        n = h.i(xqVar, 0, hs.w5, 560, false);
+        o = h.i(new DecelerateInterpolator(), hs.g2, hs.Z3, 560, false);
+        p = h.i(new DecelerateInterpolator(), hs.e3, 480, 560, false);
+        q = h.i(xqVar, 60, hs.r5, 560, false);
+        r = h.i(xqVar, 90, 380, 560, false);
+        s = h.i(xqVar, hs.v1, 440, 560, false);
+        t = h.i(new DecelerateInterpolator(), hs.e3, 460, 560, false);
     }
 }

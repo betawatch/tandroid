@@ -1,16 +1,9 @@
 package k2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class u0 {
-    public final b2.z0 a;
-    public final long b;
-    public final long c;
-    public long d;
-
-    public u0(b2.z0 z0Var, long j10, long j11) {
-        this.a = z0Var;
-        this.b = j10;
-        this.c = j11;
-    }
+    public long a = -9223372036854775807L;
+    public float b = -3.4028235E38f;
+    public long c = -9223372036854775807L;
 }

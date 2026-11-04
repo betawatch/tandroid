@@ -1,38 +1,28 @@
 package gd;
 
-import java.lang.reflect.Method;
-import kotlin.jvm.internal.i;
+import b8.zc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final Method a;
+public final class a {
+    public static final a a;
+    public static final /* synthetic */ a[] b;
 
     static {
-        Method method;
-        Method[] methods = Throwable.class.getMethods();
-        i.b(methods);
-        int length = methods.length;
-        int i10 = 0;
-        while (true) {
-            method = null;
-            if (i10 >= length) {
-                break;
-            }
-            Method method2 = methods[i10];
-            if (i.a(method2.getName(), "addSuppressed")) {
-                Class<?>[] parameterTypes = method2.getParameterTypes();
-                i.d(parameterTypes, "getParameterTypes(...)");
-                if (i.a(parameterTypes.length == 1 ? parameterTypes[0] : null, Throwable.class)) {
-                    method = method2;
-                    break;
-                }
-            }
-            i10++;
-        }
-        a = method;
-        int length2 = methods.length;
-        for (int i11 = 0; i11 < length2 && !i.a(methods[i11].getName(), "getSuppressed"); i11++) {
-        }
+        a aVar = new a("COROUTINE_SUSPENDED", 0);
+        a = aVar;
+        a[] aVarArr = {aVar, new a("UNDECIDED", 1), new a("RESUMED", 2)};
+        b = aVarArr;
+        zc.a(aVarArr);
+    }
+
+    public static a valueOf(String str) {
+        return (a) Enum.valueOf(a.class, str);
+    }
+
+    public static a[] values() {
+        return (a[]) b.clone();
     }
 }

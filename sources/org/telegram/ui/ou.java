@@ -1,32 +1,43 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ou implements RequestDelegate {
+public final /* synthetic */ class ou implements org.telegram.messenger.u10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ru b;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ ou(ru ruVar, int i10) {
-        this.a = i10;
-        this.b = ruVar;
+    public /* synthetic */ ou(Activity activity, int i3) {
+        this.a = i3;
+        this.b = activity;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                ru ruVar = this.b;
-                ruVar.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new ou(ruVar, 1));
+                if (bool.booleanValue()) {
+                    if (!b8.nf.a()) {
+                        b8.nf.f();
+                        break;
+                    } else {
+                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
                 break;
             default:
-                this.b.getMessagesController().P2(true);
+                if (bool.booleanValue()) {
+                    if (!b8.nf.a()) {
+                        b8.nf.f();
+                        break;
+                    } else {
+                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
                 break;
         }
     }

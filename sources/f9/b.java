@@ -1,32 +1,43 @@
 package f9;
 
-import v7.t6;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b extends d {
-    public final char[] e;
+public final class b extends g {
+    public static final b c = new b("CharMatcher.any()", 0);
+    public static final b d = new b("CharMatcher.ascii()", 1);
+    public static final b e = new b("CharMatcher.javaIsoControl()", 2);
+    public static final b f = new b("CharMatcher.none()", 3);
+    public final /* synthetic */ int b;
 
-    public b(a aVar) {
-        super(aVar, (Character) null);
-        this.e = new char[512];
-        char[] cArr = aVar.b;
-        t6.f(cArr.length == 16);
-        for (int i10 = 0; i10 < 256; i10++) {
-            char[] cArr2 = this.e;
-            cArr2[i10] = cArr[i10 >>> 4];
-            cArr2[i10 | 256] = cArr[i10 & 15];
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(String str, int i3) {
+        super(str);
+        this.b = i3;
+    }
+
+    @Override // f9.i
+    public final boolean c(char c2) {
+        switch (this.b) {
+            case 0:
+                return true;
+            case 1:
+                return c2 <= 127;
+            case 2:
+                return c2 <= 31 || (c2 >= 127 && c2 <= 159);
+            default:
+                return false;
         }
     }
 
-    @Override // f9.d
-    public final void b(StringBuilder sb2, byte[] bArr, int i10) {
-        t6.n(0, i10, bArr.length);
-        for (int i11 = 0; i11 < i10; i11++) {
-            int i12 = bArr[i11] & 255;
-            char[] cArr = this.e;
-            sb2.append(cArr[i12]);
-            sb2.append(cArr[i12 | 256]);
+    @Override // f9.d, f9.i
+    public i d() {
+        switch (this.b) {
+            case 0:
+                return f;
+            case 3:
+                return c;
+            default:
+                return super.d();
         }
     }
 }

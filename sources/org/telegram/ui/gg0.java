@@ -2,37 +2,33 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gg0 implements org.telegram.ui.Components.i80 {
-    public final /* synthetic */ org.telegram.ui.Components.j80 a;
-    public final /* synthetic */ hg0 b;
+public final class gg0 extends bh.d {
+    public final /* synthetic */ int n;
 
-    public gg0(hg0 hg0Var, org.telegram.ui.Components.j80 j80Var) {
-        this.b = hg0Var;
-        this.a = j80Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ gg0(int i3, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.n = i3;
     }
 
-    @Override // org.telegram.ui.Components.i80
-    public final void d() {
-        ig0.b0(this.b.d);
-    }
-
-    @Override // org.telegram.ui.Components.i80
-    public final void g() {
-        hg0 hg0Var = this.b;
-        ig0 ig0Var = hg0Var.d;
-        Context context = this.a.getContext();
-        ig0 ig0Var2 = hg0Var.d;
-        ig0Var.l0 = new org.telegram.ui.Components.c60(context, ig0Var2.e, ig0Var2.d, ig0Var2.k0, ig0Var2, ig0Var2.n, true, ig0Var2.h);
-        hg0Var.d.l0.show();
-    }
-
-    @Override // org.telegram.ui.Components.i80
-    public final /* synthetic */ void b() {
-    }
-
-    @Override // org.telegram.ui.Components.i80
-    public final /* synthetic */ void n() {
+    @Override // bh.d
+    public final int getHeaderHeight() {
+        switch (this.n) {
+            case 0:
+                if (getResources().getConfiguration().orientation != 2) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (getResources().getConfiguration().orientation != 2) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return org.telegram.messenger.g0.L(54.0f);
     }
 }

@@ -1,43 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.text.TextPaint;
-import android.text.style.LineHeightSpan;
-import android.text.style.MetricAffectingSpan;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class wh0 extends MetricAffectingSpan implements LineHeightSpan {
-    public xh0 a;
+public final /* synthetic */ class wh0 implements org.telegram.messenger.u10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ li0 b;
 
-    @Override // android.text.style.LineHeightSpan
-    public final void chooseHeight(CharSequence charSequence, int i10, int i11, int i12, int i13, Paint.FontMetricsInt fontMetricsInt) {
-        xh0 xh0Var = this.a;
-        if (xh0Var.b) {
-            int i14 = xh0Var.f ? 7 : 2;
-            if (i10 <= xh0Var.c) {
-                fontMetricsInt.ascent -= org.telegram.messenger.i0.L((xh0Var.n ? 2 : 0) + i14);
-                fontMetricsInt.top -= org.telegram.messenger.i0.L((this.a.n ? 2 : 0) + i14);
-            }
-            if (i11 >= this.a.d) {
-                float f7 = i14;
-                fontMetricsInt.descent = org.telegram.messenger.i0.L(f7) + fontMetricsInt.descent;
-                fontMetricsInt.bottom = org.telegram.messenger.i0.L(f7) + fontMetricsInt.bottom;
-            }
-        }
+    public /* synthetic */ wh0(li0 li0Var, int i3) {
+        this.a = i3;
+        this.b = li0Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        if (textPaint == null) {
-            return;
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        View view = (View) obj;
+        switch (this.a) {
+            case 0:
+                li0 li0Var = this.b;
+                ArrayList arrayList = li0Var.d;
+                li0Var.b.getClass();
+                int R = RecyclerView.R(view);
+                if (R >= 0 && R < arrayList.size() && (view instanceof ji0)) {
+                    ((ji0) view).f(((ci0) arrayList.get(R)).c, true);
+                    break;
+                }
+                break;
+            default:
+                if (view instanceof ji0) {
+                    ji0 ji0Var = (ji0) view;
+                    ii0 ii0Var = ji0Var.b;
+                    ji0Var.O = false;
+                    ii0Var.setAlpha(1.0f);
+                    if (!this.b.O0) {
+                        ji0Var.d();
+                        break;
+                    } else {
+                        ii0Var.setScaleX(ji0Var.J * (ji0Var.x ? 0.76f : 1.0f));
+                        ii0Var.setScaleY(ji0Var.J * (ji0Var.x ? 0.76f : 1.0f));
+                        break;
+                    }
+                }
+                break;
         }
-        textPaint.setTextSize(org.telegram.messenger.i0.L(this.a.a ? 16.0f : org.telegram.messenger.uz.W0 - 2));
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(org.telegram.messenger.i0.L(this.a.a ? 16.0f : org.telegram.messenger.uz.W0 - 2));
-        textPaint.setTextScaleX(this.a.a ? 1.1f : 1.0f);
     }
 }

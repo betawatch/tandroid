@@ -1,74 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class l11 extends View {
-    public final m11 a;
-    public org.telegram.messenger.r20 b;
-    public final org.telegram.ui.ActionBar.p6 c;
-    public int d;
+public final class l11 extends Drawable {
+    public final ch0 a;
+    public int b;
+    public final TextPaint c;
 
-    public l11(int i10, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        this.c = p6Var;
-        m11 m11Var = new m11(i10, this, p6Var, false);
-        this.a = m11Var;
-        m11Var.s = new vo0(this, 21);
+    public l11(TextPaint textPaint) {
+        ah.a aVar = new ah.a(this, 9);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        ch0 ch0Var = new ch0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = ch0Var;
+        ch0Var.setCallback(aVar);
+        ch0Var.K(1);
+        ch0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        ch0Var.J(true);
+        ch0Var.start();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.p6 p6Var = this.c;
-        if (p6Var != null) {
-            p6Var.b(0.0f, 0.0f, getMeasuredWidth(), this.d);
-        } else {
-            org.telegram.ui.ActionBar.t6.r(0.0f, 0.0f, getMeasuredWidth(), this.d);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int color = this.c.getColor();
+        int i3 = this.b;
+        ch0 ch0Var = this.a;
+        if (color != i3) {
+            ch0Var.a0 = true;
+            ch0Var.Q(color, "Comp 1");
+            ch0Var.o();
+            ch0Var.J(true);
+            ch0Var.V(0L);
+            this.b = color;
         }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
+        ch0Var.draw(canvas);
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(33.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(org.telegram.messenger.kj kjVar) {
-        m11 m11Var = this.a;
-        m11Var.e(kjVar);
-        if (isAttachedToWindow()) {
-            m11Var.a();
-        }
-    }
-
-    public void setBackgroundHeight(int i10) {
-        this.d = i10;
-    }
-
-    public void setOnTopicClickListener(org.telegram.messenger.r20 r20Var) {
-        this.b = r20Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

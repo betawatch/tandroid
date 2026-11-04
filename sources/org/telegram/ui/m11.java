@@ -1,46 +1,18 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m11 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g31 b;
-    public final /* synthetic */ boolean c;
+public final class m11 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ q11 a;
 
-    public /* synthetic */ m11(g31 g31Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = g31Var;
-        this.c = z10;
+    public m11(q11 q11Var) {
+        this.a = q11Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                g31 g31Var = this.b;
-                e21 e21Var = g31Var.h0;
-                t11 t11Var = g31Var.i0;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue = 1.0f - floatValue;
-                }
-                float f7 = 1.0f - floatValue;
-                e21Var.setAlpha(f7);
-                e21Var.setTranslationY(org.telegram.messenger.i0.L(8.0f) * floatValue);
-                t11Var.setAlpha(floatValue);
-                t11Var.setTranslationY(org.telegram.messenger.i0.L(8.0f) * f7);
-                g31Var.j0.setAlpha(t11Var.getAlpha() * floatValue);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue2 = 1.0f - floatValue2;
-                }
-                g31 g31Var2 = this.b;
-                g31Var2.j0.setAlpha(g31Var2.i0.getAlpha() * floatValue2);
-                break;
-        }
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i3, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        q11.d1(this.a);
     }
 }

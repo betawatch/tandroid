@@ -2,13 +2,13 @@ package org.telegram.utils.twidget;
 
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxNative {
     private WidgetSandboxNative() {
     }
 
-    public static native void answerRequest(long j10, long j11, int i10, byte[] bArr);
+    public static native void answerRequest(long j10, long j11, int i3, byte[] bArr);
 
     public static native void arbiterCancel(long j10);
 
@@ -16,7 +16,7 @@ final class WidgetSandboxNative {
 
     public static native void arbiterDestroy(long j10);
 
-    public static native int arbiterDown(long j10, double d, double d10, double d11, boolean z10, boolean z11, boolean z12, boolean z13, int i10);
+    public static native int arbiterDown(long j10, double d, double d10, double d11, boolean z10, boolean z11, boolean z12, boolean z13, int i3);
 
     public static native double arbiterHoldDeadline(long j10);
 
@@ -30,15 +30,15 @@ final class WidgetSandboxNative {
 
     public static native void conformance(boolean z10);
 
-    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f7, float f10, int i10, byte[] bArr4, byte[] bArr5, byte[] bArr6, byte[] bArr7, boolean z10, WidgetSandboxBackend widgetSandboxBackend);
+    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f10, float f11, int i3, byte[] bArr4, byte[] bArr5, byte[] bArr6, byte[] bArr7, boolean z10, WidgetSandboxBackend widgetSandboxBackend);
 
     public static native void data(long j10, byte[] bArr);
 
     public static native void destroy(long j10);
 
-    public static native void filterPixels(Bitmap bitmap, byte[] bArr, float f7);
+    public static native void filterPixels(Bitmap bitmap, byte[] bArr, float f10);
 
-    public static native void hover(long j10, int i10, float f7, float f10, int i11);
+    public static native void hover(long j10, int i3, float f10, float f11, int i10);
 
     public static native void limits(byte[] bArr);
 
@@ -48,11 +48,11 @@ final class WidgetSandboxNative {
 
     public static native void theme(long j10, byte[] bArr);
 
-    public static native void tick(long j10, float f7, boolean z10, boolean z11, boolean z12);
+    public static native void tick(long j10, float f10, boolean z10, boolean z11, boolean z12);
 
-    public static native void touch(long j10, int i10, float f7, float f10, int i11, boolean z10, boolean z11, int i12, int i13);
+    public static native void touch(long j10, int i3, float f10, float f11, int i10, boolean z10, boolean z11, int i11, int i12);
 
     public static native void visible(long j10, boolean z10);
 
-    public static native void width(long j10, float f7);
+    public static native void width(long j10, float f10);
 }

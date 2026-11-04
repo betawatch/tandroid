@@ -1,93 +1,27 @@
 package p4;
 
-import android.net.Uri;
-import android.os.Bundle;
+import android.media.session.MediaSessionManager;
 import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m {
-    public final Bundle a;
-
-    public m(Bundle bundle) {
-        this.a = bundle;
+public class m extends l {
+    @Override // p4.l
+    public final r c() {
+        MediaSessionManager.RemoteUserInfo currentControllerInfo = this.a.getCurrentControllerInfo();
+        r rVar = new r();
+        String packageName = currentControllerInfo.getPackageName();
+        if (packageName == null) {
+            throw new NullPointerException("package shouldn't be null");
+        }
+        if (TextUtils.isEmpty(packageName)) {
+            throw new IllegalArgumentException("packageName should be nonempty");
+        }
+        rVar.a = new s(currentControllerInfo.getPackageName(), currentControllerInfo.getPid(), currentControllerInfo.getUid());
+        return rVar;
     }
 
-    public final HashSet a() {
-        Bundle bundle = this.a;
-        return !bundle.containsKey("allowedPackages") ? new HashSet() : new HashSet(bundle.getStringArrayList("allowedPackages"));
-    }
-
-    public final ArrayList b() {
-        Bundle bundle = this.a;
-        return !bundle.containsKey("controlFilters") ? new ArrayList() : new ArrayList(bundle.getParcelableArrayList("controlFilters"));
-    }
-
-    public final ArrayList c() {
-        Bundle bundle = this.a;
-        return !bundle.containsKey("groupMemberIds") ? new ArrayList() : new ArrayList(bundle.getStringArrayList("groupMemberIds"));
-    }
-
-    public final String d() {
-        return this.a.getString("id");
-    }
-
-    public final boolean e() {
-        return (TextUtils.isEmpty(d()) || TextUtils.isEmpty(this.a.getString("name")) || b().contains(null)) ? false : true;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("MediaRouteDescriptor{ id=");
-        sb2.append(d());
-        sb2.append(", groupMemberIds=");
-        sb2.append(c());
-        sb2.append(", name=");
-        Bundle bundle = this.a;
-        sb2.append(bundle.getString("name"));
-        sb2.append(", description=");
-        sb2.append(bundle.getString("status"));
-        sb2.append(", iconUri=");
-        String string = bundle.getString("iconUri");
-        sb2.append(string == null ? null : Uri.parse(string));
-        sb2.append(", isEnabled=");
-        sb2.append(bundle.getBoolean("enabled", true));
-        sb2.append(", isSystemRoute=");
-        sb2.append(bundle.getBoolean("isSystemRoute", false));
-        sb2.append(", connectionState=");
-        sb2.append(bundle.getInt("connectionState", 0));
-        sb2.append(", controlFilters=");
-        sb2.append(Arrays.toString(b().toArray()));
-        sb2.append(", playbackType=");
-        sb2.append(bundle.getInt("playbackType", 1));
-        sb2.append(", playbackStream=");
-        sb2.append(bundle.getInt("playbackStream", -1));
-        sb2.append(", deviceType=");
-        sb2.append(bundle.getInt("deviceType"));
-        sb2.append(", volume=");
-        sb2.append(bundle.getInt("volume"));
-        sb2.append(", volumeMax=");
-        sb2.append(bundle.getInt("volumeMax"));
-        sb2.append(", volumeHandling=");
-        sb2.append(bundle.getInt("volumeHandling", 0));
-        sb2.append(", presentationDisplayId=");
-        sb2.append(bundle.getInt("presentationDisplayId", -1));
-        sb2.append(", extras=");
-        sb2.append(bundle.getBundle("extras"));
-        sb2.append(", isValid=");
-        sb2.append(e());
-        sb2.append(", minClientVersion=");
-        sb2.append(bundle.getInt("minClientVersion", 1));
-        sb2.append(", maxClientVersion=");
-        sb2.append(bundle.getInt("maxClientVersion", ConnectionsManager.DEFAULT_DATACENTER_ID));
-        sb2.append(", isVisibilityPublic=");
-        sb2.append(bundle.getBoolean("isVisibilityPublic", true));
-        sb2.append(", allowedPackages=");
-        sb2.append(Arrays.toString(a().toArray()));
-        sb2.append(" }");
-        return sb2.toString();
+    @Override // p4.l
+    public final void d(r rVar) {
     }
 }

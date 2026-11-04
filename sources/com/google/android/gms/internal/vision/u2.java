@@ -2,15 +2,15 @@ package com.google.android.gms.internal.vision;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class u2 extends w2 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u2(Unsafe unsafe, int i10) {
+    public /* synthetic */ u2(Unsafe unsafe, int i3) {
         super(unsafe);
-        this.b = i10;
+        this.b = i3;
     }
 
     @Override // com.google.android.gms.internal.vision.w2
@@ -67,13 +67,13 @@ public final class u2 extends w2 {
     }
 
     @Override // com.google.android.gms.internal.vision.w2
-    public final void e(Object obj, long j10, float f7) {
+    public final void e(Object obj, long j10, float f10) {
         switch (this.b) {
             case 0:
-                b(j10, obj, Float.floatToIntBits(f7));
+                b(j10, obj, Float.floatToIntBits(f10));
                 break;
             default:
-                b(j10, obj, Float.floatToIntBits(f7));
+                b(j10, obj, Float.floatToIntBits(f10));
                 break;
         }
     }

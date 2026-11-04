@@ -1,57 +1,49 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
+import android.widget.TextView;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pa1 implements org.telegram.ui.ActionBar.u1, org.telegram.ui.ActionBar.x6, org.telegram.ui.ActionBar.y6 {
-    public final /* synthetic */ int a;
+public final class pa1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ra1 a;
 
-    public /* synthetic */ pa1(int i10) {
-        this.a = i10;
+    public pa1(ra1 ra1Var) {
+        this.a = ra1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.y6
-    public void d(int i10, View view) {
-        org.telegram.ui.Wallet.w3 w3Var = (org.telegram.ui.Wallet.w3) view;
-        ShapeDrawable shapeDrawable = w3Var.e0;
-        if (shapeDrawable != null) {
-            shapeDrawable.getPaint().setColor(i10);
-            w3Var.e0.invalidateSelf();
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i3) {
+        org.telegram.ui.ActionBar.q4 q4Var;
+        ra1 ra1Var = this.a;
+        if (i3 == -1) {
+            if (ra1Var.H >= 0) {
+                q4Var = ((org.telegram.ui.ActionBar.d2) ra1Var).parentLayout;
+                if (q4Var.getFragmentStack().size() == 1) {
+                    ra1Var.N0();
+                    return;
+                }
+            }
+            ra1Var.finishFragment();
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.x6
-    public int f(View view) {
-        ShapeDrawable shapeDrawable = ((org.telegram.ui.Wallet.w3) view).e0;
-        if (shapeDrawable != null) {
-            return shapeDrawable.getPaint().getColor();
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        switch (this.a) {
-            case 0:
-                x1Var.dismiss();
-                break;
-            case 1:
-            case 2:
-            case 3:
-            default:
-                x1Var.dismiss();
-                break;
-            case 4:
-                x1Var.dismiss();
-                break;
-            case 5:
-                x1Var.dismiss();
-                break;
-            case 6:
-                x1Var.dismiss();
-                break;
+        if (i3 == 1) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ra1Var.getParentActivity());
+            TL_account.Password password = ra1Var.V;
+            String M0 = (password == null || !password.has_password) ? org.telegram.messenger.bd.M0(2131752578, null) : org.telegram.messenger.bd.M0(2131752586, null);
+            String M02 = org.telegram.messenger.bd.M0(2131752585, null);
+            String M03 = org.telegram.messenger.bd.M0(2131754950, null);
+            org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
+            s1Var.U = M0;
+            s1Var.S = M02;
+            alertDialog$Builder.k(M03, new ci0(this, 23));
+            alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131752589, null), null);
+            ra1Var.showDialog(s1Var);
+            TextView textView = (TextView) s1Var.d(-1);
+            if (textView != null) {
+                org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
+            }
         }
     }
 }

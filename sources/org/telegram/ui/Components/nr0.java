@@ -1,60 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class nr0 extends zz {
-    public final /* synthetic */ br0 U;
-    public final /* synthetic */ au0 V;
+public final /* synthetic */ class nr0 implements kg.u1, org.telegram.ui.Cells.z4 {
+    public final /* synthetic */ pr0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nr0(au0 au0Var, Context context, br0 br0Var) {
-        super(context, null);
-        this.V = au0Var;
-        this.U = br0Var;
+    public /* synthetic */ nr0(pr0 pr0Var) {
+        this.a = pr0Var;
     }
 
-    @Override // org.telegram.ui.Components.zz
-    public final int getColumnsCount() {
-        return this.V.o1[au0.y0(this.U.E) ? 1 : 0];
+    @Override // kg.u1
+    public /* synthetic */ a0.h C0() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.zz
-    public final int getViewType() {
-        setIsSingleCell(false);
-        int i10 = this.U.E;
-        if (i10 == 0 || i10 == 5) {
-            return 2;
+    @Override // kg.u1
+    public /* synthetic */ boolean J1(int i3) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.z4
+    public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
+        int intValue = ((Integer) a5Var.getTag()).intValue();
+        pr0 pr0Var = this.a;
+        TLObject E = pr0Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
-        if (i10 == 1) {
-            return 3;
+        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+        tL_chatChannelParticipant.user_id = org.telegram.messenger.zi.C1(channelParticipant.peer);
+        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+        tL_chatChannelParticipant.date = channelParticipant.date;
+        return pr0Var.s.G1.h(tL_chatChannelParticipant, true, !z10, a5Var);
+    }
+
+    @Override // kg.u1
+    public /* synthetic */ a0.h k1() {
+        return null;
+    }
+
+    @Override // kg.u1
+    public void r(int i3) {
+        pr0 pr0Var = this.a;
+        pr0Var.f();
+        if (i3 != 1) {
+            return;
         }
-        if (i10 != 2 && i10 != 4) {
-            if (i10 == 3) {
-                return 5;
+        int i10 = pr0Var.r - 1;
+        pr0Var.r = i10;
+        if (i10 != 0) {
+            return;
+        }
+        int i11 = 0;
+        while (true) {
+            ws0 ws0Var = pr0Var.s;
+            rr0[] rr0VarArr = ws0Var.n0;
+            if (i11 >= rr0VarArr.length) {
+                return;
             }
-            if (i10 != 7) {
-                if (i10 == 6) {
-                    if (this.V.K0.getTabsCount() == 1) {
-                        setIsSingleCell(true);
-                        return 1;
-                    }
-                } else if (au0.y0(i10)) {
-                    return 27;
+            rr0 rr0Var = rr0VarArr[i11];
+            if (rr0Var.F == 7) {
+                if (pr0Var.h == 0) {
+                    rr0Var.w.e(false, true);
+                } else {
+                    ws0Var.D(rr0Var.h, 0, null);
                 }
-                return 1;
             }
+            i11++;
         }
-        return 6;
     }
 
-    @Override // org.telegram.ui.Components.zz, android.view.View
-    public final void onDraw(Canvas canvas) {
-        au0 au0Var = this.V;
-        au0Var.V0.setColor(au0Var.r0(org.telegram.ui.ActionBar.t6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), au0Var.V0);
-        super.onDraw(canvas);
+    @Override // kg.u1
+    public /* synthetic */ void b2(ArrayList arrayList) {
     }
 }

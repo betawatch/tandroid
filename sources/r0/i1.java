@@ -2,36 +2,34 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class i1 {
-    public static int a(int i10) {
+    public static int a(int i3) {
         int statusBars;
-        int i11 = 0;
-        for (int i12 = 1; i12 <= 512; i12 <<= 1) {
-            if ((i10 & i12) != 0) {
-                if (i12 == 1) {
+        int i10 = 0;
+        for (int i11 = 1; i11 <= 512; i11 <<= 1) {
+            if ((i3 & i11) != 0) {
+                if (i11 == 1) {
                     statusBars = WindowInsets.Type.statusBars();
-                } else if (i12 == 2) {
+                } else if (i11 == 2) {
                     statusBars = WindowInsets.Type.navigationBars();
-                } else if (i12 == 4) {
+                } else if (i11 == 4) {
                     statusBars = WindowInsets.Type.captionBar();
-                } else if (i12 == 8) {
+                } else if (i11 == 8) {
                     statusBars = WindowInsets.Type.ime();
-                } else if (i12 == 16) {
+                } else if (i11 == 16) {
                     statusBars = WindowInsets.Type.systemGestures();
-                } else if (i12 == 32) {
+                } else if (i11 == 32) {
                     statusBars = WindowInsets.Type.mandatorySystemGestures();
-                } else if (i12 == 64) {
+                } else if (i11 == 64) {
                     statusBars = WindowInsets.Type.tappableElement();
-                } else if (i12 == 128) {
+                } else if (i11 == 128) {
                     statusBars = WindowInsets.Type.displayCutout();
-                } else if (i12 == 512) {
-                    statusBars = WindowInsets.Type.systemOverlays();
                 }
-                i11 |= statusBars;
+                i10 |= statusBars;
             }
         }
-        return i11;
+        return i10;
     }
 }

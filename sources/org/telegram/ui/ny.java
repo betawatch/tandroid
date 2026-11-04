@@ -1,27 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ny extends org.telegram.ui.Components.a51 {
-    public static final /* synthetic */ int b = 0;
+public final class ny extends ImageSpan {
+    public int a;
 
-    static {
-        org.telegram.ui.Components.a51.h(new ny());
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, org.telegram.ui.Components.b51 b51Var, boolean z10, org.telegram.ui.Components.q51 q51Var, org.telegram.ui.Components.v51 v51Var) {
-        oy oyVar = (oy) view;
-        oyVar.n = (org.telegram.messenger.r20) b51Var.G;
-        oyVar.r = b51Var;
-        oyVar.b(b51Var.z, false);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, org.telegram.ui.Components.uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        return new oy(context, p6Var);
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        if (paint.getColor() != this.a && getDrawable() != null) {
+            Drawable drawable = getDrawable();
+            int color = paint.getColor();
+            this.a = color;
+            drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
+        }
+        super.draw(canvas, charSequence, i3, i10, f10, i11, i12, i13, paint);
     }
 }

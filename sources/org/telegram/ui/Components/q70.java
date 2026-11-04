@@ -1,62 +1,102 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q70 implements org.telegram.messenger.k20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z2 c;
-    public final /* synthetic */ Object d;
+public final class q70 extends org.telegram.ui.ActionBar.k5 {
+    public final org.telegram.ui.ActionBar.e6 N0;
+    public final m2.p0 O0;
+    public t70 P0;
 
-    public /* synthetic */ q70(ha haVar, Object obj, long j10, int i10) {
-        this.a = i10;
-        this.c = haVar;
-        this.d = obj;
-        this.b = j10;
+    public q70(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.O0 = new m2.p0(this);
+        this.N0 = e6Var;
     }
 
-    @Override // org.telegram.messenger.k20
-    public final void a(Object obj, Object obj2) {
-        TLRPC.Updates updates;
-        switch (this.a) {
-            case 0:
-                u70 u70Var = (u70) this.c;
-                TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) this.d;
-                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    org.telegram.messenger.wp.r1(u70Var.a).L3(updates2, false);
-                    updates = updates2;
-                } else {
-                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        org.telegram.messenger.i0.g3(new n70(u70Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, this.b, 1));
-                    }
-                    updates = null;
-                }
-                org.telegram.messenger.i0.g3(new org.telegram.ui.fp((Object) u70Var, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 14));
-                break;
-            case 1:
-                ph.q3 q3Var = (ph.q3) this.c;
-                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
-                rh.e3 e3Var = (rh.e3) obj;
-                gf.e eVar = (gf.e) obj2;
-                eVar.d();
-                rh.e6.x(q3Var.a, e3Var.a).h(e3Var.b, tL_starGiftUnique, this.b, null, true, new org.telegram.tgnet.e(q3Var, eVar, tL_starGiftUnique, 6));
-                break;
-            default:
-                rh.t7.d1((rh.t7) this.c, (b51) this.d, this.b, (Boolean) obj, (String) obj2);
-                break;
+    @Override // org.telegram.ui.ActionBar.k5, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getLayoutX(), getLayoutY());
+        if (this.O0.h(canvas)) {
+            invalidate();
         }
+        canvas.restore();
     }
 
-    public /* synthetic */ q70(u70 u70Var, long j10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        this.a = 0;
-        this.c = u70Var;
-        this.b = j10;
-        this.d = tL_messages_importChatInvite;
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
+    @Override // org.telegram.ui.ActionBar.k5, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ClickableSpan clickableSpan;
+        CharacterStyle characterStyle;
+        m2.p0 p0Var = this.O0;
+        if (p0Var != null) {
+            Layout layout = getLayout();
+            int x10 = (int) motionEvent.getX();
+            int y9 = (int) motionEvent.getY();
+            Layout layout2 = getLayout();
+            if (layout2 != null) {
+                int layoutX = (int) (x10 - getLayoutX());
+                int layoutY = (int) (y9 - getLayoutY());
+                int lineForVertical = layout2.getLineForVertical(layoutY);
+                float f10 = layoutX;
+                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f10);
+                float lineLeft = layout2.getLineLeft(lineForVertical);
+                if (lineLeft <= f10 && layout2.getLineWidth(lineForVertical) + lineLeft >= f10 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+                    if (clickableSpanArr.length != 0 && !org.telegram.messenger.g0.C1()) {
+                        clickableSpan = clickableSpanArr[0];
+                        if (clickableSpan == null && motionEvent.getAction() == 0) {
+                            t70 t70Var = new t70(clickableSpan, this.N0, motionEvent.getX(), motionEvent.getY(), 0);
+                            this.P0 = t70Var;
+                            p0Var.b(t70Var, null);
+                            SpannableString spannableString = new SpannableString(layout.getText());
+                            int spanStart = spannableString.getSpanStart(this.P0.i);
+                            int spanEnd = spannableString.getSpanEnd(this.P0.i);
+                            n70 b10 = this.P0.b();
+                            b10.d(layout, spanStart, 0.0f);
+                            layout.getSelectionPath(spanStart, spanEnd, b10);
+                            return true;
+                        }
+                        if (motionEvent.getAction() == 1) {
+                            p0Var.f(true);
+                            t70 t70Var2 = this.P0;
+                            if (t70Var2 != null && (characterStyle = t70Var2.i) == clickableSpan) {
+                                if (characterStyle instanceof ClickableSpan) {
+                                    ((ClickableSpan) characterStyle).onClick(this);
+                                }
+                                this.P0 = null;
+                                return true;
+                            }
+                            this.P0 = null;
+                        }
+                        if (motionEvent.getAction() == 3) {
+                            p0Var.f(true);
+                            this.P0 = null;
+                        }
+                    }
+                }
+            }
+            clickableSpan = null;
+            if (clickableSpan == null) {
+            }
+            if (motionEvent.getAction() == 1) {
+            }
+            if (motionEvent.getAction() == 3) {
+            }
+        }
+        return this.P0 != null || super.onTouchEvent(motionEvent);
     }
 }

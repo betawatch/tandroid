@@ -1,82 +1,81 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class jk0 extends xr0 {
-    public final /* synthetic */ jl0 a;
+public final class jk0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ int[] d;
 
-    public jk0(jl0 jl0Var) {
-        this.a = jl0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jk0(Context context, int i3, int[] iArr, int[] iArr2) {
+        super(context);
+        this.b = i3;
+        this.c = iArr;
+        this.d = iArr2;
     }
 
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final void B(int i10) {
-        jl0 jl0Var = this.a;
-        int i11 = jl0Var.S0;
-        org.telegram.messenger.qw qwVar = i11 == 1 ? jl0Var.j1 : i11 == 4 ? (org.telegram.messenger.qw) jl0Var.k1.get(i10) : i11 == 2 ? jl0Var.l1 : i11 == 3 ? jl0Var.m1 : (org.telegram.messenger.qw) jl0Var.i1.get(i10);
-        hl0 hl0Var = (hl0) jl0Var.n1.remove(qwVar);
-        if (hl0Var == null) {
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        int size = View.MeasureSpec.getSize(i3);
+        this.a = true;
+        int L = org.telegram.messenger.g0.L(9.0f);
+        int i11 = this.b;
+        int i12 = (i11 - 1) * L;
+        int[] iArr = this.c;
+        float f10 = 1.0f;
+        if ((iArr[0] * i11) + i12 <= size) {
+            setWeightSum(1.0f);
+            int childCount = getChildCount();
+            for (int i13 = 0; i13 < childCount; i13++) {
+                getChildAt(i13).getLayoutParams().width = 0;
+                ((LinearLayout.LayoutParams) getChildAt(i13).getLayoutParams()).weight = 1.0f / childCount;
+            }
+        } else if (this.d[0] + i12 <= size) {
+            setWeightSum(1.0f);
+            int i14 = size - i12;
+            int childCount2 = getChildCount();
+            for (int i15 = 0; i15 < childCount2; i15++) {
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i15).getLayoutParams();
+                layoutParams.width = 0;
+                float intValue = ((Integer) r10.getTag(R.id.width_tag)).intValue() / i14;
+                layoutParams.weight = intValue;
+                f10 -= intValue;
+            }
+            float f11 = f10 / (i11 - 1);
+            if (f11 > 0.0f) {
+                int childCount3 = getChildCount();
+                for (int i16 = 0; i16 < childCount3; i16++) {
+                    View childAt = getChildAt(i16);
+                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
+                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
+                        layoutParams2.weight += f11;
+                    }
+                }
+            }
+        } else {
+            setWeightSum(0.0f);
+            int childCount4 = getChildCount();
+            for (int i17 = 0; i17 < childCount4; i17++) {
+                getChildAt(i17).getLayoutParams().width = -2;
+                ((LinearLayout.LayoutParams) getChildAt(i17).getLayoutParams()).weight = 0.0f;
+            }
+        }
+        this.a = false;
+        super.onMeasure(i3, i10);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
             return;
         }
-        String r12 = jl0.r1(qwVar);
-        int i12 = jl0Var.S0;
-        String str = null;
-        if (i12 == 1) {
-            jl0Var.j1 = null;
-            str = sc.e.h("selfie", r12);
-        } else if (i12 == 4) {
-            str = sc.e.h("translation", r12);
-        } else if (i12 == 2) {
-            jl0Var.l1 = null;
-            str = sc.e.h("front", r12);
-        } else if (i12 == 3) {
-            jl0Var.m1 = null;
-            str = sc.e.h("reverse", r12);
-        } else if (i12 == 0) {
-            str = sc.e.h("files", r12);
-        }
-        if (str != null) {
-            HashMap hashMap = jl0Var.x1;
-            if (hashMap != null) {
-                hashMap.remove(str);
-            }
-            HashMap hashMap2 = jl0Var.y1;
-            if (hashMap2 != null) {
-                hashMap2.remove(str);
-            }
-        }
-        jl0Var.X1(jl0Var.S0);
-        jl0Var.i0.removeView(hl0Var);
-    }
-
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final fs0 E(org.telegram.messenger.kj kjVar, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        if (i10 < 0) {
-            return null;
-        }
-        jl0 jl0Var = this.a;
-        if (i10 >= jl0Var.i0.getChildCount()) {
-            return null;
-        }
-        hl0 hl0Var = (hl0) jl0Var.i0.getChildAt(i10);
-        int[] iArr = new int[2];
-        hl0Var.c.getLocationInWindow(iArr);
-        fs0 fs0Var = new fs0();
-        fs0Var.b = iArr[0];
-        fs0Var.c = iArr[1];
-        fs0Var.d = jl0Var.i0;
-        ImageReceiver imageReceiver = hl0Var.c.getImageReceiver();
-        fs0Var.a = imageReceiver;
-        fs0Var.e = imageReceiver.p();
-        return fs0Var;
-    }
-
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final String b0() {
-        return this.a.S0 == 1 ? org.telegram.messenger.dd.a0("PassportDeleteSelfieAlert", null, 2131747597, new Object[0]) : org.telegram.messenger.dd.a0("PassportDeleteScanAlert", null, 2131747599, new Object[0]);
+        super.requestLayout();
     }
 }

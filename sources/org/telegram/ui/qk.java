@@ -1,21 +1,18 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qk extends bh.h {
-    public final /* synthetic */ un L;
+public final class qk extends eq0 {
+    public final /* synthetic */ wm a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk(un unVar, Context context, org.telegram.ui.ActionBar.p6 p6Var, jj jjVar, tg.b bVar) {
-        super(context, p6Var, bVar, jjVar);
-        this.L = unVar;
+    public qk(wm wmVar) {
+        this.a = wmVar;
     }
 
-    @Override // bh.h, android.view.View
-    public final void setVisibility(int i10) {
-        super.setVisibility(i10);
-        this.L.Yc.h(3, i10 == 0, getMeasuredWidth() > 0);
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final mq0 E(org.telegram.messenger.zi ziVar, TLRPC.FileLocation fileLocation, int i3, boolean z10, boolean z11) {
+        return wm.O1(this.a, ziVar, fileLocation, i3, z10, false);
     }
 }

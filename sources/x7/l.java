@@ -1,31 +1,39 @@
 package x7;
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l extends d implements Serializable {
-    public final Object b;
-    public final e9.m c;
-
-    public l(Object obj, e9.m mVar) {
-        super(0, false);
-        this.b = obj;
-        this.c = mVar;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.c;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
+public abstract class l {
+    public static int a(int i3) {
+        if (i3 == 1) {
+            return 0;
+        }
+        if (i3 == 2) {
+            return 1;
+        }
+        if (i3 == 4) {
+            return 2;
+        }
+        if (i3 == 8) {
+            return 3;
+        }
+        if (i3 == 16) {
+            return 4;
+        }
+        if (i3 == 32) {
+            return 5;
+        }
+        if (i3 == 64) {
+            return 6;
+        }
+        if (i3 == 128) {
+            return 7;
+        }
+        if (i3 == 256) {
+            return 8;
+        }
+        if (i3 == 512) {
+            return 9;
+        }
+        throw new IllegalArgumentException(k2.p1.i(i3, "type needs to be >= FIRST and <= LAST, type="));
     }
 }

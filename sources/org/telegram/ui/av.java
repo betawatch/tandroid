@@ -1,288 +1,366 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
+import android.graphics.Point;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class av extends FrameLayout {
-    public int a;
-    public boolean b;
-    public boolean c;
-    public int d;
-    public int e;
-    public VelocityTracker f;
-    public boolean h;
-    public final /* synthetic */ cv n;
+public final class av implements x40, org.telegram.ui.Components.uf, org.telegram.ui.Components.r4, org.telegram.ui.Components.em0, org.telegram.ui.Components.ij0, gi.ma, org.telegram.ui.Components.m00 {
+    public final /* synthetic */ uw a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public av(cv cvVar, Context context) {
-        super(context);
-        this.n = cvVar;
+    public /* synthetic */ av(uw uwVar) {
+        this.a = uwVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0060  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a() {
-        AnimatorSet animatorSet;
-        cv cvVar = this.n;
-        bv[] bvVarArr = cvVar.f;
-        if (!cvVar.n) {
-            return false;
+    @Override // org.telegram.ui.Components.uf
+    public void G(CharSequence charSequence, boolean z10, int i3, int i10, long j10) {
+        uw uwVar = this.a;
+        if (uwVar.D2 == null || uwVar.J2.isEmpty()) {
+            return;
         }
-        if (!cvVar.s) {
-            if (Math.abs(bvVarArr[1].getTranslationX()) < 1.0f) {
-                bvVarArr[0].setTranslationX(r2.getMeasuredWidth() * (cvVar.r ? -1 : 1));
-                bvVarArr[1].setTranslationX(0.0f);
-                animatorSet = cvVar.h;
-                if (animatorSet != null) {
+        ArrayList arrayList = new ArrayList();
+        for (int i11 = 0; i11 < uwVar.J2.size(); i11++) {
+            arrayList.add(org.telegram.messenger.pr.a(((Long) uwVar.J2.get(i11)).longValue(), 0L));
+        }
+        uw uwVar2 = this.a;
+        uwVar2.D2.y(uwVar2, arrayList, charSequence, false, z10, i3, i10, null);
+    }
+
+    @Override // org.telegram.ui.Components.r4
+    public void L(int i3, int i10, boolean z10) {
+        uw uwVar = this.a;
+        ArrayList arrayList = uwVar.J2;
+        uwVar.L2 = i3;
+        uwVar.M2 = i10;
+        uwVar.N2 = false;
+        if (uwVar.D2 == null || arrayList.isEmpty()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            arrayList2.add(org.telegram.messenger.pr.a(((Long) arrayList.get(i11)).longValue(), 0L));
+        }
+        uwVar.D2.y(uwVar, arrayList2, uwVar.C1.getFieldText(), false, z10, i3, i10, null);
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ TLRPC.TL_channels_sendAsPeers M() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ int O0() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ TL_stories.StoryItem R0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ boolean T0(long j10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public boolean V0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.em0
+    public void Y(org.telegram.ui.Cells.t2 t2Var) {
+        this.a.T4(t2Var);
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void Y0(CharSequence charSequence, boolean z10, boolean z11) {
+        uw uwVar = this.a;
+        org.telegram.messenger.g0.i3(new wu(uwVar, 12), 100L);
+        org.telegram.ui.Components.ro0 ro0Var = uwVar.H2;
+        if (ro0Var != null) {
+            if (z10) {
+                if (ro0Var.h) {
+                    ro0Var.e(charSequence, true);
                 }
-                cvVar.n = false;
+            } else {
+                org.telegram.ui.Components.p11 p11Var = uwVar.I2;
+                if (p11Var != null) {
+                    org.telegram.messenger.g0.r(p11Var);
+                }
+                org.telegram.ui.Components.p11 p11Var2 = new org.telegram.ui.Components.p11(20, this, charSequence);
+                uwVar.I2 = p11Var2;
+                org.telegram.messenger.g0.i3(p11Var2, 1000L);
             }
-            return cvVar.n;
         }
-        if (Math.abs(bvVarArr[0].getTranslationX()) < 1.0f) {
-            bvVarArr[0].setTranslationX(0.0f);
-            bvVarArr[1].setTranslationX(bvVarArr[0].getMeasuredWidth() * (cvVar.r ? 1 : -1));
-            animatorSet = cvVar.h;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-                cvVar.h = null;
-            }
-            cvVar.n = false;
-        }
-        return cvVar.n;
     }
 
-    public final boolean b(MotionEvent motionEvent, boolean z10) {
-        org.telegram.ui.ActionBar.l lVar;
-        cv cvVar = this.n;
-        bv[] bvVarArr = cvVar.f;
-        ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = cvVar.e;
-        int i10 = scrollSlidingTextTabStrip.O.get(scrollSlidingTextTabStrip.n + (z10 ? 1 : -1), -1);
-        if (i10 < 0) {
-            return false;
+    @Override // gi.ma
+    public void a(long j10, ci.e3 e3Var) {
+        uw uwVar = this.a;
+        if (uwVar.F0 == null) {
+            e3Var.run();
+            return;
         }
-        getParent().requestDisallowInterceptTouchEvent(true);
-        this.c = false;
-        this.b = true;
-        this.d = (int) motionEvent.getX();
-        lVar = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-        lVar.setEnabled(false);
-        cvVar.e.setEnabled(false);
-        bv bvVar = bvVarArr[1];
-        bvVar.f = i10;
-        bvVar.setVisibility(0);
-        cvVar.r = z10;
-        cvVar.r0(true);
+        uwVar.J4(false, true);
+        uwVar.R = true;
+        uwVar.fragmentView.invalidate();
+        if (j10 == 0 || j10 == uwVar.getUserConfig().e()) {
+            uwVar.F0.T.h1(0, 0);
+        } else {
+            uwVar.F0.k(j10);
+        }
+        uwVar.f0[0].a.getViewTreeObserver().addOnPreDrawListener(new hw(0, this, e3Var));
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ boolean a1() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ij0
+    public boolean b(float f10, float f11, int i3, View view) {
+        boolean z10 = view instanceof org.telegram.ui.Cells.f6;
+        uw uwVar = this.a;
         if (z10) {
-            bvVarArr[1].setTranslationX(bvVarArr[0].getMeasuredWidth());
-            return true;
+            org.telegram.ui.Cells.f6 f6Var = (org.telegram.ui.Cells.f6) view;
+            if (f6Var.o0) {
+                uwVar.Z4(f6Var.getDialogId(), view);
+                return true;
+            }
         }
-        bvVarArr[1].setTranslationX(-bvVarArr[0].getMeasuredWidth());
+        cw cwVar = uwVar.D0;
+        ci.j1 j1Var = cwVar.b0;
+        return uwVar.A4(view, i3, f10, cwVar.e0);
+    }
+
+    @Override // gi.ma
+    public gi.qa c(long j10) {
+        mv mvVar = this.a.F0;
+        return gi.qa.c(mvVar != null ? mvVar.e(j10) : null);
+    }
+
+    @Override // org.telegram.ui.x40
+    public void d(y40 y40Var, long j10) {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(org.telegram.messenger.pr.a(-j10, 0L));
+        uw uwVar = this.a;
+        nw nwVar = uwVar.D2;
+        if (uwVar.C2) {
+            uwVar.removeSelfFromStack();
+        }
+        nwVar.y(uwVar, arrayList, null, true, uwVar.K2, uwVar.L2, uwVar.M2, null);
+    }
+
+    @Override // org.telegram.ui.Components.em0
+    public void finish() {
+        Point point = org.telegram.messenger.g0.q;
+        if (point.x > point.y) {
+            this.a.finishPreviewFragment();
+        }
+    }
+
+    public void g(kg.l0 l0Var) {
+        uw uwVar = this.a;
+        if (uwVar.r3) {
+            cw cwVar = uwVar.D0;
+            if (cwVar != null) {
+                cwVar.D0.remove(l0Var);
+                cw cwVar2 = uwVar.D0;
+                String obj = uwVar.k0.getSearchField().getText().toString();
+                View currentView = cwVar2.getCurrentView();
+                boolean z10 = TextUtils.isEmpty(cwVar2.N0) ? true : !cwVar2.h0;
+                cwVar2.N0 = obj;
+                cwVar2.P(currentView, cwVar2.getCurrentPosition(), obj, z10);
+            }
+            uwVar.j5(true, null, null, false, true);
+            uwVar.Z.a.l(uwVar.Y.r);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ij0
+    public void h() {
+        Point point = org.telegram.messenger.g0.q;
+        if (point.x > point.y) {
+            this.a.finishPreviewFragment();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ mm i0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ boolean k() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ boolean k1() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.em0
+    public void m(float f10) {
+        Point point = org.telegram.messenger.g0.q;
+        if (point.x > point.y) {
+            this.a.movePreviewFragment(f10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ int o() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.ij0
+    public void r(float f10) {
+        Point point = org.telegram.messenger.g0.q;
+        if (point.x > point.y) {
+            this.a.movePreviewFragment(f10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ TLRPC.Peer t() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ boolean u0() {
         return true;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.z4 z4Var;
-        org.telegram.ui.ActionBar.z4 z4Var2;
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        super.dispatchDraw(canvas);
-        cv cvVar = this.n;
-        z4Var = ((org.telegram.ui.ActionBar.k2) cvVar).parentLayout;
-        if (z4Var != null) {
-            z4Var2 = ((org.telegram.ui.ActionBar.k2) cvVar).parentLayout;
-            lVar = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-            int measuredHeight = lVar.getMeasuredHeight();
-            lVar2 = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-            ((ActionBarLayout) z4Var2).q(canvas, measuredHeight + ((int) lVar2.getTranslationY()));
-        }
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void A(boolean z10) {
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        cv cvVar = this.n;
-        Paint paint = cvVar.d;
-        paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.d6, false));
-        lVar = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-        float measuredHeight = lVar.getMeasuredHeight();
-        lVar2 = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-        canvas.drawRect(0.0f, lVar2.getTranslationY() + measuredHeight, getMeasuredWidth(), getMeasuredHeight(), paint);
+    @Override // org.telegram.ui.Components.uf
+    public void M0(int i3) {
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return a() || this.n.e.H || onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.uf
+    public void T1(int i3) {
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        org.telegram.ui.ActionBar.l lVar3;
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        cv cvVar = this.n;
-        bv[] bvVarArr = cvVar.f;
-        lVar = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-        measureChildWithMargins(lVar, i10, 0, i11, 0);
-        lVar2 = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-        int measuredHeight = lVar2.getMeasuredHeight();
-        this.h = true;
-        for (int i12 = 0; i12 < bvVarArr.length; i12++) {
-            bv bvVar = bvVarArr[i12];
-            if (bvVar != null) {
-                org.telegram.ui.Components.uk0 uk0Var = bvVar.d;
-                if (uk0Var != null) {
-                    uk0Var.setPadding(0, measuredHeight, 0, 0);
-                }
-                ag.b1 b1Var = bvVarArr[i12].e;
-                if (b1Var != null) {
-                    b1Var.setPadding(0, measuredHeight, 0, 0);
-                }
-            }
-        }
-        this.h = false;
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt != null && childAt.getVisibility() != 8) {
-                lVar3 = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-                if (childAt != lVar3) {
-                    measureChildWithMargins(childAt, i10, 0, i11, 0);
-                }
-            }
-        }
+    @Override // org.telegram.ui.Components.uf
+    public void c0(boolean z10) {
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.z4 z4Var;
-        float f7;
-        float f10;
-        org.telegram.ui.ActionBar.l lVar;
-        float measuredWidth;
-        boolean z10;
-        cv cvVar = this.n;
-        bv[] bvVarArr = cvVar.f;
-        z4Var = ((org.telegram.ui.ActionBar.k2) cvVar).parentLayout;
-        if (((ActionBarLayout) z4Var).i() || a()) {
-            return false;
-        }
-        if (motionEvent != null) {
-            if (this.f == null) {
-                this.f = VelocityTracker.obtain();
-            }
-            this.f.addMovement(motionEvent);
-        }
-        if (motionEvent != null && motionEvent.getAction() == 0 && !this.b && !this.c) {
-            this.a = motionEvent.getPointerId(0);
-            this.c = true;
-            this.d = (int) motionEvent.getX();
-            this.e = (int) motionEvent.getY();
-            this.f.clear();
-        } else if (motionEvent != null && motionEvent.getAction() == 2 && motionEvent.getPointerId(0) == this.a) {
-            int x10 = (int) (motionEvent.getX() - this.d);
-            int abs = Math.abs(((int) motionEvent.getY()) - this.e);
-            if (this.b && (((z10 = cvVar.r) && x10 > 0) || (!z10 && x10 < 0))) {
-                if (!b(motionEvent, x10 < 0)) {
-                    this.c = true;
-                    this.b = false;
-                    bvVarArr[0].setTranslationX(0.0f);
-                    bvVarArr[1].setTranslationX(cvVar.r ? bvVarArr[0].getMeasuredWidth() : -bvVarArr[0].getMeasuredWidth());
-                    cvVar.e.i(0.0f, bvVarArr[1].f);
-                }
-            }
-            if (!this.c || this.b) {
-                if (this.b) {
-                    bvVarArr[0].setTranslationX(x10);
-                    if (cvVar.r) {
-                        bvVarArr[1].setTranslationX(bvVarArr[0].getMeasuredWidth() + x10);
-                    } else {
-                        bvVarArr[1].setTranslationX(x10 - bvVarArr[0].getMeasuredWidth());
-                    }
-                    cvVar.e.i(Math.abs(x10) / bvVarArr[0].getMeasuredWidth(), bvVarArr[1].f);
-                }
-            } else if (Math.abs(x10) >= org.telegram.messenger.i0.a1(true, 0.3f) && Math.abs(x10) > abs) {
-                b(motionEvent, x10 < 0);
-            }
-        } else if (motionEvent == null || (motionEvent.getPointerId(0) == this.a && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1 || motionEvent.getAction() == 6))) {
-            this.f.computeCurrentVelocity(1000, cvVar.w);
-            if (motionEvent == null || motionEvent.getAction() == 3) {
-                f7 = 0.0f;
-                f10 = 0.0f;
-            } else {
-                f7 = this.f.getXVelocity();
-                f10 = this.f.getYVelocity();
-                if (!this.b && Math.abs(f7) >= 3000.0f && Math.abs(f7) > Math.abs(f10)) {
-                    b(motionEvent, f7 < 0.0f);
-                }
-            }
-            if (this.b) {
-                float x11 = bvVarArr[0].getX();
-                cvVar.h = new AnimatorSet();
-                boolean z11 = Math.abs(x11) < ((float) bvVarArr[0].getMeasuredWidth()) / 3.0f && (Math.abs(f7) < 3500.0f || Math.abs(f7) < Math.abs(f10));
-                cvVar.s = z11;
-                Property property = View.TRANSLATION_X;
-                if (z11) {
-                    measuredWidth = Math.abs(x11);
-                    if (cvVar.r) {
-                        cvVar.h.playTogether(ObjectAnimator.ofFloat(bvVarArr[0], (Property<bv, Float>) property, 0.0f), ObjectAnimator.ofFloat(bvVarArr[1], (Property<bv, Float>) property, r1.getMeasuredWidth()));
-                    } else {
-                        cvVar.h.playTogether(ObjectAnimator.ofFloat(bvVarArr[0], (Property<bv, Float>) property, 0.0f), ObjectAnimator.ofFloat(bvVarArr[1], (Property<bv, Float>) property, -r1.getMeasuredWidth()));
-                    }
-                } else {
-                    measuredWidth = bvVarArr[0].getMeasuredWidth() - Math.abs(x11);
-                    if (cvVar.r) {
-                        cvVar.h.playTogether(ObjectAnimator.ofFloat(bvVarArr[0], (Property<bv, Float>) property, -r9.getMeasuredWidth()), ObjectAnimator.ofFloat(bvVarArr[1], (Property<bv, Float>) property, 0.0f));
-                    } else {
-                        cvVar.h.playTogether(ObjectAnimator.ofFloat(bvVarArr[0], (Property<bv, Float>) property, r9.getMeasuredWidth()), ObjectAnimator.ofFloat(bvVarArr[1], (Property<bv, Float>) property, 0.0f));
-                    }
-                }
-                cvVar.h.setInterpolator(cv.y);
-                int measuredWidth2 = getMeasuredWidth();
-                float f11 = measuredWidth2 / 2;
-                float I = (org.telegram.messenger.i0.I(Math.min(1.0f, (measuredWidth * 1.0f) / measuredWidth2)) * f11) + f11;
-                cvVar.h.setDuration(Math.max(org.telegram.messenger.at.g2, Math.min(Math.abs(f7) > 0.0f ? Math.round(Math.abs(I / r4) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
-                cvVar.h.addListener(new org.telegram.ui.Components.voip.i2(this, 4));
-                cvVar.h.start();
-                cvVar.n = true;
-                this.b = false;
-            } else {
-                this.c = false;
-                lVar = ((org.telegram.ui.ActionBar.k2) cvVar).actionBar;
-                lVar.setEnabled(true);
-                cvVar.e.setEnabled(true);
-            }
-            VelocityTracker velocityTracker = this.f;
-            if (velocityTracker != null) {
-                velocityTracker.recycle();
-                this.f = null;
-            }
-        }
-        return this.b;
+    @Override // org.telegram.ui.Components.uf
+    public void c2(boolean z10) {
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.h) {
-            return;
-        }
-        super.requestLayout();
+    @Override // org.telegram.ui.Components.uf
+    public void j1(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void x(float f10) {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void E() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void F() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void F0() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void I0() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void O1() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void Z0() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void a0() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void b1() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void b2() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void e() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void e1() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void f() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void g0() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void g1() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void g2() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void m1() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void n2() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void q0() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void r2() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void s1() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void u() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public /* synthetic */ void w0() {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void O(float f10, int i3) {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void h1(View view, CharSequence charSequence, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.uf
+    public void d2(int i3, int i10, int i11, long j10, long j11, boolean z10) {
     }
 }

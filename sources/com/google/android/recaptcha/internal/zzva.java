@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzva extends zzvb {
     public zzva(Unsafe unsafe) {
@@ -43,8 +43,8 @@ final class zzva extends zzvb {
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb
-    public final void zzf(Object obj, long j10, float f7) {
-        this.zza.putInt(obj, j10, Float.floatToIntBits(f7));
+    public final void zzf(Object obj, long j10, float f10) {
+        this.zza.putInt(obj, j10, Float.floatToIntBits(f10));
     }
 
     @Override // com.google.android.recaptcha.internal.zzvb

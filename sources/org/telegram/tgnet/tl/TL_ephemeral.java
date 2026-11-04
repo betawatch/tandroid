@@ -1,7 +1,7 @@
 package org.telegram.tgnet.tl;
 
 import java.util.ArrayList;
-import org.telegram.messenger.e9;
+import org.telegram.messenger.go;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
@@ -10,11 +10,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class TL_ephemeral {
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static abstract class EphemeralMessage extends TLObject {
         public int anchor_msg_id;
         public long chat_instance;
@@ -37,25 +37,25 @@ public class TL_ephemeral {
         public long via_bot_id;
         public boolean welcome;
 
-        public static EphemeralMessage TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (EphemeralMessage) TLObject.TLdeserialize(EphemeralMessage.class, fromConstructor(i10), inputSerializedData, i10, z10);
+        public static EphemeralMessage TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (EphemeralMessage) TLObject.TLdeserialize(EphemeralMessage.class, fromConstructor(i3), inputSerializedData, i3, z10);
         }
 
-        private static EphemeralMessage fromConstructor(int i10) {
-            if (i10 == -1896618863) {
+        private static EphemeralMessage fromConstructor(int i3) {
+            if (i3 == -1896618863) {
                 return new TL_ephemeralMessage_layer229_old();
             }
-            if (i10 == -641278950) {
+            if (i3 == -641278950) {
                 return new TL_ephemeralMessage_layer228();
             }
-            if (i10 != -584597783) {
+            if (i3 != -584597783) {
                 return null;
             }
             return new TL_ephemeralMessage();
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_deleteAllWelcomeMessages extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1934595873;
         public TLRPC.InputPeer peer;
@@ -67,12 +67,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_deleteMessage extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1829312617;
         public int flags;
@@ -94,12 +94,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_deleteWelcomeMessage extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -394090015;
         public int id;
@@ -113,12 +113,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_editMessage extends TLRPC.TL_messages_editMessage {
         public static final int constructor = -811830693;
         public int flags;
@@ -169,7 +169,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_ephemeralMessage extends EphemeralMessage {
         public static final int constructor = -584597783;
 
@@ -193,7 +193,7 @@ public class TL_ephemeral {
             this.date = inputSerializedData.readInt32(z10);
             this.message = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new e9(18), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new go(1), z10);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
@@ -274,7 +274,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_ephemeralMessage_layer228 extends TL_ephemeralMessage {
         public static final int constructor = -641278950;
 
@@ -293,7 +293,7 @@ public class TL_ephemeral {
             this.date = inputSerializedData.readInt32(z10);
             this.message = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new e9(18), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new go(1), z10);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
@@ -344,7 +344,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_ephemeralMessage_layer229_old extends TL_ephemeralMessage {
         public static final int constructor = -1896618863;
 
@@ -365,7 +365,7 @@ public class TL_ephemeral {
             this.date = inputSerializedData.readInt32(z10);
             this.message = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.entities = Vector.deserialize(inputSerializedData, new e9(18), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new go(1), z10);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.media = TLRPC.MessageMedia.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
@@ -428,7 +428,7 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_getCallbackAnswer extends TLMethod<TLRPC.TL_messages_botCallbackAnswer> {
         public static final int constructor = 1067738312;
         public byte[] data;
@@ -450,12 +450,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.TL_messages_botCallbackAnswer deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.TL_messages_botCallbackAnswer.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.TL_messages_botCallbackAnswer deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.TL_messages_botCallbackAnswer.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_getWelcomeMessages extends TLMethod<WelcomeMessages> {
         public static final int constructor = -610614899;
         public long hash;
@@ -469,12 +469,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public WelcomeMessages deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return WelcomeMessages.TLdeserialize(inputSerializedData, i10, z10);
+        public WelcomeMessages deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return WelcomeMessages.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_reportMessage extends TLMethod<TLRPC.ReportResult> {
         public static final int constructor = -2029718849;
         public int id;
@@ -492,12 +492,12 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.ReportResult deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.ReportResult.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.ReportResult deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.ReportResult.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_sendMessage extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1165140171;
         public boolean anchor;
@@ -564,19 +564,19 @@ public class TL_ephemeral {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_welcomeMessages extends WelcomeMessages {
         public static final int constructor = 273664114;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.hash = inputSerializedData.readInt64(z10);
-            this.messages = Vector.deserialize(inputSerializedData, new e9(19), z10);
+            this.messages = Vector.deserialize(inputSerializedData, new go(2), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -587,27 +587,27 @@ public class TL_ephemeral {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static abstract class WelcomeMessages extends TLObject {
         public long hash;
         public ArrayList<EphemeralMessage> messages = new ArrayList<>();
 
-        public static WelcomeMessages TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (WelcomeMessages) TLObject.TLdeserialize(WelcomeMessages.class, fromConstructor(i10), inputSerializedData, i10, z10);
+        public static WelcomeMessages TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (WelcomeMessages) TLObject.TLdeserialize(WelcomeMessages.class, fromConstructor(i3), inputSerializedData, i3, z10);
         }
 
-        private static WelcomeMessages fromConstructor(int i10) {
-            if (i10 == 273664114) {
+        private static WelcomeMessages fromConstructor(int i3) {
+            if (i3 == 273664114) {
                 return new TL_welcomeMessages();
             }
-            if (i10 != 1509940017) {
+            if (i3 != 1509940017) {
                 return null;
             }
             return new TL_welcomeMessagesNotModified();
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_welcomeMessagesNotModified extends WelcomeMessages {
         public static final int constructor = 1509940017;
 

@@ -5,38 +5,53 @@ import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Parcel;
 import android.os.ResultReceiver;
-import bd.t;
+import b8.f1;
+import ed.q;
+import ed.s;
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.concurrent.Executor;
-import kotlin.jvm.internal.i;
-import ld.l;
-import ld.p;
-import v7.c0;
+import k2.p1;
+import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.r;
+import od.l;
+import od.p;
+import v0.h;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
-    public static final LinkedHashSet b;
+    public static final Set b;
     public static final int c;
     public static final /* synthetic */ int d = 0;
 
     static {
+        Set set;
         Integer[] numArr = {7, 20};
-        LinkedHashSet linkedHashSet = new LinkedHashSet(t.a(2));
-        for (int i10 = 0; i10 < 2; i10++) {
-            linkedHashSet.add(numArr[i10]);
+        int length = numArr.length;
+        if (length == 0) {
+            set = q.a;
+        } else if (length != 1) {
+            set = new LinkedHashSet(s.b(numArr.length));
+            for (Integer num : numArr) {
+                set.add(num);
+            }
+        } else {
+            set = Collections.singleton(numArr[0]);
+            j.d(set, "singleton(...)");
         }
-        b = linkedHashSet;
+        b = set;
         c = 1;
     }
 
     public static void a(ResultReceiver resultReceiver, Intent intent, String str) {
-        i.e(resultReceiver, "resultReceiver");
+        j.e(resultReceiver, "resultReceiver");
         intent.putExtra("TYPE", str);
         intent.putExtra("ACTIVITY_REQUEST_CODE", c);
         Parcel obtain = Parcel.obtain();
-        i.d(obtain, "obtain(...)");
+        j.d(obtain, "obtain(...)");
         resultReceiver.writeToParcel(obtain, 0);
         obtain.setDataPosition(0);
         ResultReceiver resultReceiver2 = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(obtain);
@@ -45,26 +60,26 @@ public abstract class d {
         intent.setFlags(65536);
     }
 
-    public static boolean b(Bundle bundle, p pVar, Executor executor, v0.h callback, CancellationSignal cancellationSignal) {
-        i.e(executor, "executor");
-        i.e(callback, "callback");
+    public static boolean b(Bundle bundle, p pVar, Executor executor, h callback, CancellationSignal cancellationSignal) {
+        j.e(executor, "executor");
+        j.e(callback, "callback");
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        c0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        f1.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 
-    public static final boolean c(int i10, p pVar, l lVar, CancellationSignal cancellationSignal) {
-        if (i10 == -1) {
+    public static final boolean c(int i3, p pVar, l lVar, CancellationSignal cancellationSignal) {
+        if (i3 == -1) {
             return false;
         }
-        kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-        pVar2.a = new w0.c(2, i0.a.j(i10, "activity with result code: ", " indicating not RESULT_OK"));
-        if (i10 == 0) {
-            pVar2.a = new w0.b("activity is cancelled by the user.");
+        r rVar = new r();
+        rVar.a = new w0.c(2, p1.j(i3, "activity with result code: ", " indicating not RESULT_OK"));
+        if (i3 == 0) {
+            rVar.a = new w0.b("activity is cancelled by the user.");
         }
-        pVar.invoke(cancellationSignal, new c(lVar, pVar2, 0));
+        pVar.invoke(cancellationSignal, new c(lVar, rVar, 0));
         return true;
     }
 }

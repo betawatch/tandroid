@@ -4,70 +4,64 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class z0 extends b implements RandomAccess {
-    public static final z0 d;
+    public static final z0 d = new z0(new Object[0], 0, false);
     public Object[] b;
     public int c;
 
-    static {
-        z0 z0Var = new z0(0, new Object[0]);
-        d = z0Var;
-        z0Var.a = false;
-    }
-
-    public z0(int i10, Object[] objArr) {
+    public z0(Object[] objArr, int i3, boolean z10) {
+        this.a = z10;
         this.b = objArr;
-        this.c = i10;
+        this.c = i3;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
-        l();
-        int i10 = this.c;
+        h();
+        int i3 = this.c;
         Object[] objArr = this.b;
-        if (i10 == objArr.length) {
-            this.b = Arrays.copyOf(objArr, ((i10 * 3) / 2) + 1);
+        if (i3 == objArr.length) {
+            this.b = Arrays.copyOf(objArr, ((i3 * 3) / 2) + 1);
         }
         Object[] objArr2 = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        objArr2[i11] = obj;
+        int i10 = this.c;
+        this.c = i10 + 1;
+        objArr2[i10] = obj;
         ((AbstractList) this).modCount++;
         return true;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.y
-    public final y b(int i10) {
-        if (i10 < this.c) {
-            throw new IllegalArgumentException();
-        }
-        return new z0(this.c, Arrays.copyOf(this.b, i10));
-    }
-
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        m(i10);
-        return this.b[i10];
+    public final Object get(int i3) {
+        i(i3);
+        return this.b[i3];
     }
 
-    public final void m(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            StringBuilder l4 = i0.a.l(i10, "Index:", ", Size:");
-            l4.append(this.c);
-            throw new IndexOutOfBoundsException(l4.toString());
+    public final void i(int i3) {
+        if (i3 < 0 || i3 >= this.c) {
+            StringBuilder m10 = k2.p1.m(i3, "Index:", ", Size:");
+            m10.append(this.c);
+            throw new IndexOutOfBoundsException(m10.toString());
         }
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        l();
-        m(i10);
+    public final z0 j(int i3) {
+        if (i3 >= this.c) {
+            return new z0(Arrays.copyOf(this.b, i3), this.c, true);
+        }
+        throw new IllegalArgumentException();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.List
+    public final Object remove(int i3) {
+        h();
+        i(i3);
         Object[] objArr = this.b;
-        Object obj = objArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(objArr, i10 + 1, objArr, i10, (r2 - i10) - 1);
+        Object obj = objArr[i3];
+        if (i3 < this.c - 1) {
+            System.arraycopy(objArr, i3 + 1, objArr, i3, (r2 - i3) - 1);
         }
         this.c--;
         ((AbstractList) this).modCount++;
@@ -75,12 +69,12 @@ public final class z0 extends b implements RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        l();
-        m(i10);
+    public final Object set(int i3, Object obj) {
+        h();
+        i(i3);
         Object[] objArr = this.b;
-        Object obj2 = objArr[i10];
-        objArr[i10] = obj;
+        Object obj2 = objArr[i3];
+        objArr[i3] = obj;
         ((AbstractList) this).modCount++;
         return obj2;
     }
@@ -91,26 +85,26 @@ public final class z0 extends b implements RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        l();
-        if (i10 >= 0 && i10 <= (i11 = this.c)) {
+    public final void add(int i3, Object obj) {
+        int i10;
+        h();
+        if (i3 >= 0 && i3 <= (i10 = this.c)) {
             Object[] objArr = this.b;
-            if (i11 < objArr.length) {
-                System.arraycopy(objArr, i10, objArr, i10 + 1, i11 - i10);
+            if (i10 < objArr.length) {
+                System.arraycopy(objArr, i3, objArr, i3 + 1, i10 - i3);
             } else {
-                Object[] objArr2 = new Object[((i11 * 3) / 2) + 1];
-                System.arraycopy(objArr, 0, objArr2, 0, i10);
-                System.arraycopy(this.b, i10, objArr2, i10 + 1, this.c - i10);
+                Object[] objArr2 = new Object[((i10 * 3) / 2) + 1];
+                System.arraycopy(objArr, 0, objArr2, 0, i3);
+                System.arraycopy(this.b, i3, objArr2, i3 + 1, this.c - i3);
                 this.b = objArr2;
             }
-            this.b[i10] = obj;
+            this.b[i3] = obj;
             this.c++;
             ((AbstractList) this).modCount++;
             return;
         }
-        StringBuilder l4 = i0.a.l(i10, "Index:", ", Size:");
-        l4.append(this.c);
-        throw new IndexOutOfBoundsException(l4.toString());
+        StringBuilder m10 = k2.p1.m(i3, "Index:", ", Size:");
+        m10.append(this.c);
+        throw new IndexOutOfBoundsException(m10.toString());
     }
 }

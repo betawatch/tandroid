@@ -5,25 +5,26 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.media.MediaMuxer;
 import android.os.Build;
-import c3.i0;
+import gi.e7;
+import gi.t;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import m4.n0;
+import o4.m0;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a20;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.az;
+import org.telegram.messenger.b20;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.f8;
-import org.telegram.messenger.gf;
-import org.telegram.messenger.lf;
-import org.telegram.messenger.uz;
-import org.telegram.messenger.w20;
-import org.telegram.messenger.x20;
-import org.telegram.messenger.y20;
+import org.telegram.messenger.df;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.re;
+import org.telegram.messenger.z10;
 import org.telegram.messenger.ze;
 import org.telegram.tgnet.ConnectionsManager;
-import vh.m5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MAX_DECODER_INPUTS_PER_LOOP = 8;
@@ -35,20 +36,20 @@ public class MediaCodecVideoConvertor {
     private static final int PROCESSOR_TYPE_QCOM = 1;
     private static final int PROCESSOR_TYPE_SEC = 4;
     private static final int PROCESSOR_TYPE_TI = 5;
-    private lf callback;
+    private df callback;
     private long endPresentationTime;
     private MediaExtractor extractor;
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -56,23 +57,23 @@ public class MediaCodecVideoConvertor {
         int bitrate;
         String blurPath;
         File cacheFile;
-        lf callback;
-        vh.r collage;
-        ArrayList<x20> collageParts;
-        ze cropState;
+        df callback;
+        t collage;
+        ArrayList<a20> collageParts;
+        re cropState;
         long duration;
         long endTime;
         int framerate;
         Integer gradientBottomColor;
         Integer gradientTopColor;
-        m5 hdrInfo;
+        e7 hdrInfo;
         boolean isDark;
         boolean isPhoto;
         boolean isRound;
         boolean isSecret;
         boolean isSticker;
         boolean isStory;
-        ArrayList<w20> mediaEntities;
+        ArrayList<z10> mediaEntities;
         String messagePath;
         String messageVideoMaskPath;
         boolean muted;
@@ -84,7 +85,7 @@ public class MediaCodecVideoConvertor {
         int resultHeight;
         int resultWidth;
         int rotationValue;
-        gf savedFilterState;
+        ze savedFilterState;
         public ArrayList<MixedSoundInfo> soundInfos = new ArrayList<>();
         long startTime;
         long videoOffset;
@@ -95,53 +96,53 @@ public class MediaCodecVideoConvertor {
         private ConvertVideoParams() {
         }
 
-        public static ConvertVideoParams of(String str, File file, long j10, int i10, boolean z10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, long j11, long j12, long j13, boolean z11, long j14, lf lfVar, y20 y20Var) {
+        public static ConvertVideoParams of(String str, File file, long j10, int i3, boolean z10, int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j11, long j12, long j13, boolean z11, long j14, df dfVar, b20 b20Var) {
             ConvertVideoParams convertVideoParams = new ConvertVideoParams();
             convertVideoParams.videoPath = str;
             convertVideoParams.videoOffset = j10;
             convertVideoParams.cacheFile = file;
-            convertVideoParams.rotationValue = i10;
+            convertVideoParams.rotationValue = i3;
             convertVideoParams.isSecret = z10;
-            convertVideoParams.originalWidth = i11;
-            convertVideoParams.originalHeight = i12;
-            convertVideoParams.resultWidth = i13;
-            convertVideoParams.resultHeight = i14;
-            convertVideoParams.framerate = i15;
-            convertVideoParams.bitrate = i16;
-            convertVideoParams.originalBitrate = i17;
+            convertVideoParams.originalWidth = i10;
+            convertVideoParams.originalHeight = i11;
+            convertVideoParams.resultWidth = i12;
+            convertVideoParams.resultHeight = i13;
+            convertVideoParams.framerate = i14;
+            convertVideoParams.bitrate = i15;
+            convertVideoParams.originalBitrate = i16;
             convertVideoParams.startTime = j11;
             convertVideoParams.endTime = j12;
             convertVideoParams.avatarStartTime = j13;
             convertVideoParams.needCompress = z11;
             convertVideoParams.duration = j14;
-            convertVideoParams.savedFilterState = y20Var.A;
-            convertVideoParams.paintPath = y20Var.B;
-            convertVideoParams.blurPath = y20Var.C;
-            convertVideoParams.mediaEntities = y20Var.G;
-            convertVideoParams.isPhoto = y20Var.I;
-            convertVideoParams.cropState = y20Var.H;
-            convertVideoParams.isRound = y20Var.s;
-            convertVideoParams.callback = lfVar;
-            convertVideoParams.gradientTopColor = y20Var.Q;
-            convertVideoParams.gradientBottomColor = y20Var.R;
-            convertVideoParams.muted = y20Var.t;
-            convertVideoParams.volume = y20Var.u;
-            convertVideoParams.isStory = y20Var.J;
-            convertVideoParams.hdrInfo = y20Var.K;
-            convertVideoParams.isDark = y20Var.T;
-            convertVideoParams.wallpaperPeerId = y20Var.U;
-            convertVideoParams.account = y20Var.S;
-            convertVideoParams.messagePath = y20Var.D;
-            convertVideoParams.messageVideoMaskPath = y20Var.E;
-            convertVideoParams.backgroundPath = y20Var.F;
-            convertVideoParams.isSticker = y20Var.N;
-            convertVideoParams.collage = y20Var.L;
-            convertVideoParams.collageParts = y20Var.M;
+            convertVideoParams.savedFilterState = b20Var.A;
+            convertVideoParams.paintPath = b20Var.B;
+            convertVideoParams.blurPath = b20Var.C;
+            convertVideoParams.mediaEntities = b20Var.G;
+            convertVideoParams.isPhoto = b20Var.I;
+            convertVideoParams.cropState = b20Var.H;
+            convertVideoParams.isRound = b20Var.s;
+            convertVideoParams.callback = dfVar;
+            convertVideoParams.gradientTopColor = b20Var.Q;
+            convertVideoParams.gradientBottomColor = b20Var.R;
+            convertVideoParams.muted = b20Var.t;
+            convertVideoParams.volume = b20Var.u;
+            convertVideoParams.isStory = b20Var.J;
+            convertVideoParams.hdrInfo = b20Var.K;
+            convertVideoParams.isDark = b20Var.T;
+            convertVideoParams.wallpaperPeerId = b20Var.U;
+            convertVideoParams.account = b20Var.S;
+            convertVideoParams.messagePath = b20Var.D;
+            convertVideoParams.messageVideoMaskPath = b20Var.E;
+            convertVideoParams.backgroundPath = b20Var.F;
+            convertVideoParams.isSticker = b20Var.N;
+            convertVideoParams.collage = b20Var.L;
+            convertVideoParams.collageParts = b20Var.M;
             return convertVideoParams;
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public class DecoderFeeder extends Thread {
         private ByteBuffer audioBuffer;
         private final int audioIndex;
@@ -157,27 +158,27 @@ public class MediaCodecVideoConvertor {
         volatile boolean stopFeeding;
         private final int videoIndex;
 
-        public DecoderFeeder(MediaExtractor mediaExtractor, MediaCodec mediaCodec, int i10, int i11, Muxer muxer, int i12, long j10, long j11, float f7, ByteBuffer byteBuffer, int i13) {
+        public DecoderFeeder(MediaExtractor mediaExtractor, MediaCodec mediaCodec, int i3, int i10, Muxer muxer, int i11, long j10, long j11, float f10, ByteBuffer byteBuffer, int i12) {
             super("DecoderFeeder");
             this.extractor = mediaExtractor;
             this.decoder = mediaCodec;
-            this.videoIndex = i10;
-            this.audioIndex = i11;
+            this.videoIndex = i3;
+            this.audioIndex = i10;
             this.muxer = muxer;
-            this.audioTrackIndex = i12;
+            this.audioTrackIndex = i11;
             this.startTime = j10;
             this.endTime = j11;
-            this.durationS = f7;
+            this.durationS = f10;
             this.audioBuffer = byteBuffer;
-            this.maxBufferSize = i13;
+            this.maxBufferSize = i12;
         }
 
         public void finish() {
             this.stopFeeding = true;
             try {
                 join();
-            } catch (InterruptedException e) {
-                f8.g(e, true);
+            } catch (InterruptedException e10) {
+                a8.g(e10, true);
             }
         }
 
@@ -187,7 +188,7 @@ public class MediaCodecVideoConvertor {
             long j10 = 0;
             while (!this.stopFeeding) {
                 try {
-                    if (MediaCodecVideoConvertor.this.callback != null && ((y20) ((n0) MediaCodecVideoConvertor.this.callback).a).W) {
+                    if (MediaCodecVideoConvertor.this.callback != null && ((b20) ((m0) MediaCodecVideoConvertor.this.callback).a).W) {
                         return;
                     }
                     int sampleTrackIndex = this.extractor.getSampleTrackIndex();
@@ -204,8 +205,8 @@ public class MediaCodecVideoConvertor {
                             }
                         }
                     } else {
-                        int i10 = this.audioIndex;
-                        if (i10 == -1 || sampleTrackIndex != i10) {
+                        int i3 = this.audioIndex;
+                        if (i3 == -1 || sampleTrackIndex != i3) {
                             if (sampleTrackIndex == -1) {
                                 while (!this.stopFeeding) {
                                     int dequeueInputBuffer2 = this.decoder.dequeueInputBuffer(2500L);
@@ -221,9 +222,9 @@ public class MediaCodecVideoConvertor {
                         if (Build.VERSION.SDK_INT >= 28) {
                             long sampleSize = this.extractor.getSampleSize();
                             if (sampleSize > this.maxBufferSize) {
-                                int i11 = (int) (sampleSize + 1024);
-                                this.maxBufferSize = i11;
-                                this.audioBuffer = ByteBuffer.allocateDirect(i11);
+                                int i10 = (int) (sampleSize + 1024);
+                                this.maxBufferSize = i10;
+                                this.audioBuffer = ByteBuffer.allocateDirect(i10);
                             }
                         }
                         int readSampleData2 = this.extractor.readSampleData(this.audioBuffer, 0);
@@ -246,7 +247,7 @@ public class MediaCodecVideoConvertor {
                                             if (j12 > j10) {
                                                 j10 = j12;
                                             }
-                                            ((n0) MediaCodecVideoConvertor.this.callback).k(writeSampleData, (j10 / 1000.0f) / this.durationS);
+                                            ((m0) MediaCodecVideoConvertor.this.callback).k(writeSampleData, (j10 / 1000.0f) / this.durationS);
                                         }
                                     } finally {
                                     }
@@ -264,7 +265,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -277,14 +278,14 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    private static void applyAudioInputs(ArrayList<MixedSoundInfo> arrayList, ArrayList<tf.a> arrayList2) {
+    private static void applyAudioInputs(ArrayList<MixedSoundInfo> arrayList, ArrayList<eg.a> arrayList2) {
         if (arrayList == null) {
             return;
         }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            MixedSoundInfo mixedSoundInfo = arrayList.get(i10);
+        for (int i3 = 0; i3 < arrayList.size(); i3++) {
+            MixedSoundInfo mixedSoundInfo = arrayList.get(i3);
             try {
-                tf.c cVar = new tf.c(mixedSoundInfo.audioFile);
+                eg.c cVar = new eg.c(mixedSoundInfo.audioFile);
                 AudioDecoder audioDecoder = cVar.b;
                 cVar.a = Math.max(0.0f, Math.min(mixedSoundInfo.volume, 1.0f));
                 long j10 = mixedSoundInfo.startTime;
@@ -305,15 +306,15 @@ public class MediaCodecVideoConvertor {
                     audioDecoder.setEndTimeUs(j11 + j12);
                 }
                 arrayList2.add(cVar);
-            } catch (Exception e) {
-                f8.g(e, true);
+            } catch (Exception e10) {
+                a8.g(e10, true);
             }
         }
     }
 
     private void checkConversionCanceled() {
-        lf lfVar = this.callback;
-        if (lfVar != null && ((y20) ((n0) lfVar).a).W) {
+        df dfVar = this.callback;
+        if (dfVar != null && ((b20) ((m0) dfVar).a).W) {
             throw new ConversionCanceledException();
         }
     }
@@ -343,8 +344,8 @@ public class MediaCodecVideoConvertor {
             }
             createEncoderByType = MediaCodec.createEncoderByType(this.outputMimeType);
         } else {
-            String l4 = uz.l();
-            createEncoderByType = l4 != null ? MediaCodec.createByCodecName(l4) : null;
+            String l10 = az.l();
+            createEncoderByType = l10 != null ? MediaCodec.createByCodecName(l10) : null;
         }
         if (createEncoderByType != null || !this.outputMimeType.equals("video/hevc")) {
             return createEncoderByType;
@@ -353,54 +354,54 @@ public class MediaCodecVideoConvertor {
         return MediaCodec.createEncoderByType("video/avc");
     }
 
-    private static String createFragmentShader(int i10, int i11, int i12, int i13, boolean z10, int i14, boolean z11) {
-        float f7 = i10;
-        float f10 = f7 / (z11 ? i13 : i12);
-        float f11 = i11;
-        float f12 = f11 / (z11 ? i12 : i13);
-        int i15 = 1;
-        int max = Math.max(1, Math.round(f10));
-        int max2 = Math.max(1, Math.round(f12));
-        if (uz.o() <= 1) {
+    private static String createFragmentShader(int i3, int i10, int i11, int i12, boolean z10, int i13, boolean z11) {
+        float f10 = i3;
+        float f11 = f10 / (z11 ? i12 : i11);
+        float f12 = i10;
+        float f13 = f12 / (z11 ? i11 : i12);
+        int i14 = 1;
+        int max = Math.max(1, Math.round(f11));
+        int max2 = Math.max(1, Math.round(f13));
+        if (az.o() <= 1) {
             max2 = 1;
         } else {
-            i15 = max;
+            i14 = max;
         }
-        int min = Math.min(i14, i15);
-        int min2 = Math.min(i14, max2);
-        float f13 = f10 / min;
-        float f14 = f12 / min2;
-        float f15 = (-(min - 1)) / 2.0f;
-        float f16 = (-(min2 - 1)) / 2.0f;
+        int min = Math.min(i13, i14);
+        int min2 = Math.min(i13, max2);
+        float f14 = f11 / min;
+        float f15 = f13 / min2;
+        float f16 = (-(min - 1)) / 2.0f;
+        float f17 = (-(min2 - 1)) / 2.0f;
         if ((min & 1) == 0) {
-            f15 += 0.01f;
-        }
-        if ((min2 & 1) == 0) {
             f16 += 0.01f;
         }
-        StringBuilder m10 = i0.a.m("source size ", i10, "x", i11, "    dest size ");
-        i0.a.t(m10, i12, "x", i13, "   rotated ");
+        if ((min2 & 1) == 0) {
+            f17 += 0.01f;
+        }
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("source size ", i3, "x", i10, "    dest size ");
+        com.google.android.recaptcha.internal.a.r(m10, i11, "x", i12, "   rotated ");
         m10.append(z11);
         m10.append("   ratio ");
-        m10.append(f10);
+        m10.append(f11);
         m10.append("x");
-        m10.append(f12);
+        m10.append(f13);
         m10.append("   samples ");
         m10.append(min);
         m10.append("x");
         m10.append(min2);
         m10.append("   kernel scale ");
-        m10.append(f13);
-        m10.append("x");
         m10.append(f14);
-        f8.b(m10.toString());
-        String glslFloat = glslFloat(f15);
-        String glslFloat2 = glslFloat(f16);
-        String glslFloat3 = glslFloat(f13);
-        String glslFloat4 = glslFloat(f14);
+        m10.append("x");
+        m10.append(f15);
+        a8.b(m10.toString());
+        String glslFloat = glslFloat(f16);
+        String glslFloat2 = glslFloat(f17);
+        String glslFloat3 = glslFloat(f14);
+        String glslFloat4 = glslFloat(f15);
         String glslFloat5 = glslFloat(min * min2);
-        String glslFloat6 = glslFloat(1.0f / f7);
-        String glslFloat7 = glslFloat(1.0f / f11);
+        String glslFloat6 = glslFloat(1.0f / f10);
+        String glslFloat7 = glslFloat(1.0f / f12);
         String str = z10 ? "#extension GL_OES_EGL_image_external : require\nuniform samplerExternalOES sTexture;\n" : "uniform sampler2D sTexture;\n";
         StringBuilder sb2 = new StringBuilder();
         sb2.append(str);
@@ -408,8 +409,8 @@ public class MediaCodecVideoConvertor {
         sb2.append(glslFloat);
         sb2.append(";\nconst float offsetY = ");
         sb2.append(glslFloat2);
-        i0.r(sb2, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
-        i0.r(sb2, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
+        com.google.android.recaptcha.internal.a.s(sb2, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
+        com.google.android.recaptcha.internal.a.s(sb2, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
         sb2.append(";\nconst float pixelSizeY = ");
         sb2.append(glslFloat7);
         sb2.append(";\nvoid main() {\n    vec3 accumulation = vec3(0.0);\n    for (int i = 0; i < ");
@@ -421,16 +422,16 @@ public class MediaCodecVideoConvertor {
     }
 
     public static void cutOfNalData(String str, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        int i10 = str.equals("video/hevc") ? 3 : 1;
+        int i3 = str.equals("video/hevc") ? 3 : 1;
         if (bufferInfo.size > 100) {
             byteBuffer.position(bufferInfo.offset);
             byte[] bArr = new byte[100];
             byteBuffer.get(bArr);
-            int i11 = 0;
-            for (int i12 = 0; i12 < 96; i12++) {
-                if (bArr[i12] == 0 && bArr[i12 + 1] == 0 && bArr[i12 + 2] == 0 && bArr[i12 + 3] == 1 && (i11 = i11 + 1) > i10) {
-                    bufferInfo.offset += i12;
-                    bufferInfo.size -= i12;
+            int i10 = 0;
+            for (int i11 = 0; i11 < 96; i11++) {
+                if (bArr[i11] == 0 && bArr[i11 + 1] == 0 && bArr[i11 + 2] == 0 && bArr[i11 + 3] == 1 && (i10 = i10 + 1) > i3) {
+                    bufferInfo.offset += i11;
+                    bufferInfo.size -= i11;
                     return;
                 }
             }
@@ -454,21 +455,21 @@ public class MediaCodecVideoConvertor {
                 String str = (String) arrayList.remove(0);
                 mediaFormat.setString("mime", str);
                 return MediaCodec.createDecoderByType(str);
-            } catch (Exception e) {
+            } catch (Exception e10) {
                 if (exc == null) {
-                    exc = e;
+                    exc = e10;
                 }
             }
         }
         throw new RuntimeException(exc);
     }
 
-    private static String glslFloat(float f7) {
-        boolean z10 = f7 < 0.0f;
+    private static String glslFloat(float f10) {
+        boolean z10 = f10 < 0.0f;
         if (z10) {
-            f7 = -f7;
+            f10 = -f10;
         }
-        long round = Math.round(f7 * 1000000.0f);
+        long round = Math.round(f10 * 1000000.0f);
         long j10 = round / 1000000;
         long j11 = round % 1000000;
         StringBuilder sb2 = new StringBuilder();
@@ -485,64 +486,64 @@ public class MediaCodecVideoConvertor {
         return sb2.toString();
     }
 
-    private static String hdrFragmentShader(int i10, int i11, int i12, int i13, boolean z10, m5 m5Var, int i14, boolean z11) {
+    private static String hdrFragmentShader(int i3, int i10, int i11, int i12, boolean z10, e7 e7Var, int i13, boolean z11) {
         if (!z10) {
-            return createFragmentShader(i10, i11, i12, i13, false, i14, z11);
+            return createFragmentShader(i3, i10, i11, i12, false, i13, z11);
         }
-        float f7 = i10;
-        float f10 = f7 / (z11 ? i13 : i12);
-        float f11 = i11;
-        float f12 = f11 / (z11 ? i12 : i13);
-        int max = Math.max(1, Math.round(f10));
-        int max2 = Math.max(1, Math.round(f12));
-        if (uz.o() <= 1) {
+        float f10 = i3;
+        float f11 = f10 / (z11 ? i12 : i11);
+        float f12 = i10;
+        float f13 = f12 / (z11 ? i11 : i12);
+        int max = Math.max(1, Math.round(f11));
+        int max2 = Math.max(1, Math.round(f13));
+        if (az.o() <= 1) {
             max = 1;
             max2 = 1;
         }
-        int min = Math.min(i14, max);
-        int min2 = Math.min(i14, max2);
-        float f13 = f10 / min;
-        float f14 = f12 / min2;
-        float f15 = (-(min - 1)) / 2.0f;
-        float f16 = (-(min2 - 1)) / 2.0f;
+        int min = Math.min(i13, max);
+        int min2 = Math.min(i13, max2);
+        float f14 = f11 / min;
+        float f15 = f13 / min2;
+        float f16 = (-(min - 1)) / 2.0f;
+        float f17 = (-(min2 - 1)) / 2.0f;
         if ((min & 1) == 0) {
-            f15 += 0.01f;
-        }
-        if ((min2 & 1) == 0) {
             f16 += 0.01f;
         }
-        StringBuilder m10 = i0.a.m("HDR source size ", i10, "x", i11, "    dest size ");
-        i0.a.t(m10, i12, "x", i13, "   rotated ");
+        if ((min2 & 1) == 0) {
+            f17 += 0.01f;
+        }
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("HDR source size ", i3, "x", i10, "    dest size ");
+        com.google.android.recaptcha.internal.a.r(m10, i11, "x", i12, "   rotated ");
         m10.append(z11);
         m10.append("   ratio ");
-        m10.append(f10);
+        m10.append(f11);
         m10.append("x");
-        m10.append(f12);
+        m10.append(f13);
         m10.append("   samples ");
         m10.append(min);
         m10.append("x");
         m10.append(min2);
         m10.append("   kernel scale ");
-        m10.append(f13);
-        m10.append("x");
         m10.append(f14);
-        f8.b(m10.toString());
-        String glslFloat = glslFloat(f15);
-        String glslFloat2 = glslFloat(f16);
-        String glslFloat3 = glslFloat(f13);
-        String glslFloat4 = glslFloat(f14);
+        m10.append("x");
+        m10.append(f15);
+        a8.b(m10.toString());
+        String glslFloat = glslFloat(f16);
+        String glslFloat2 = glslFloat(f17);
+        String glslFloat3 = glslFloat(f14);
+        String glslFloat4 = glslFloat(f15);
         String glslFloat5 = glslFloat(min * min2);
-        String glslFloat6 = glslFloat(1.0f / f7);
-        String glslFloat7 = glslFloat(1.0f / f11);
-        String y22 = m5Var.a() == 1 ? org.telegram.messenger.i0.y2(null, R.raw.hdr2sdr_hlg) : org.telegram.messenger.i0.y2(null, R.raw.hdr2sdr_pq);
+        String glslFloat6 = glslFloat(1.0f / f10);
+        String glslFloat7 = glslFloat(1.0f / f12);
+        String y22 = e7Var.a() == 1 ? g0.y2(null, R.raw.hdr2sdr_hlg) : g0.y2(null, R.raw.hdr2sdr_pq);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(y22);
         sb2.append("\nvarying vec2 vTextureCoord;\nconst float offsetX = ");
         sb2.append(glslFloat);
         sb2.append(";\nconst float offsetY = ");
         sb2.append(glslFloat2);
-        i0.r(sb2, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
-        i0.r(sb2, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
+        com.google.android.recaptcha.internal.a.s(sb2, ";\nconst float kernelScaleX = ", glslFloat3, ";\nconst float kernelScaleY = ", glslFloat4);
+        com.google.android.recaptcha.internal.a.s(sb2, ";\nconst float weightsum = ", glslFloat5, ";\nconst float pixelSizeX = ", glslFloat6);
         sb2.append(";\nconst float pixelSizeY = ");
         sb2.append(glslFloat7);
         sb2.append(";\nvoid main() {\n    vec3 accumulation = vec3(0.0);\n    for (int i = 0; i < ");
@@ -580,57 +581,57 @@ public class MediaCodecVideoConvertor {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private long readAndWriteTracks(MediaExtractor mediaExtractor, Muxer muxer, MediaCodec.BufferInfo bufferInfo, long j10, long j11, long j12, File file, boolean z10) {
-        float f7;
+        float f10;
+        int i3;
         int i10;
         int i11;
         int i12;
         int i13;
         int i14;
         int i15;
-        int i16;
         boolean z11;
         byte[] array;
+        int i16;
         int i17;
         int i18;
-        int i19;
-        int i20 = 0;
-        int w9 = MediaController.w(mediaExtractor, false);
-        int w10 = z10 ? MediaController.w(mediaExtractor, true) : -1;
-        float f10 = j12 / 1000.0f;
-        if (w9 >= 0) {
-            mediaExtractor.selectTrack(w9);
-            MediaFormat trackFormat = mediaExtractor.getTrackFormat(w9);
-            i10 = muxer.addTrack(trackFormat, false);
+        int i19 = 0;
+        int w10 = MediaController.w(mediaExtractor, false);
+        int w11 = z10 ? MediaController.w(mediaExtractor, true) : -1;
+        float f11 = j12 / 1000.0f;
+        if (w10 >= 0) {
+            mediaExtractor.selectTrack(w10);
+            MediaFormat trackFormat = mediaExtractor.getTrackFormat(w10);
+            i3 = muxer.addTrack(trackFormat, false);
             try {
-                i19 = trackFormat.getInteger("max-input-size");
-            } catch (Exception e) {
-                f8.g(e, true);
-                i19 = 0;
+                i18 = trackFormat.getInteger("max-input-size");
+            } catch (Exception e10) {
+                a8.g(e10, true);
+                i18 = 0;
             }
             if (j10 > 0) {
                 mediaExtractor.seekTo(j10, 0);
             } else {
                 mediaExtractor.seekTo(0L, 0);
             }
-            f7 = 1000.0f;
-            i11 = i19;
+            f10 = 1000.0f;
+            i10 = i18;
         } else {
-            f7 = 1000.0f;
-            i10 = -1;
-            i11 = 0;
+            f10 = 1000.0f;
+            i3 = -1;
+            i10 = 0;
         }
-        if (w10 >= 0) {
-            mediaExtractor.selectTrack(w10);
-            MediaFormat trackFormat2 = mediaExtractor.getTrackFormat(w10);
+        if (w11 >= 0) {
+            mediaExtractor.selectTrack(w11);
+            MediaFormat trackFormat2 = mediaExtractor.getTrackFormat(w11);
             if (trackFormat2.getString("mime").equals("audio/unknown")) {
-                i12 = -1;
-                w10 = -1;
+                i11 = -1;
+                w11 = -1;
             } else {
-                i12 = muxer.addTrack(trackFormat2, true);
+                i11 = muxer.addTrack(trackFormat2, true);
                 try {
-                    i11 = Math.max(trackFormat2.getInteger("max-input-size"), i11);
-                } catch (Exception e7) {
-                    f8.g(e7, true);
+                    i10 = Math.max(trackFormat2.getInteger("max-input-size"), i10);
+                } catch (Exception e11) {
+                    a8.g(e11, true);
                 }
                 if (j10 > 0) {
                     mediaExtractor.seekTo(j10, 0);
@@ -639,14 +640,14 @@ public class MediaCodecVideoConvertor {
                 }
             }
         } else {
-            i12 = -1;
+            i11 = -1;
         }
-        if (i11 <= 0) {
-            i11 = 65536;
+        if (i10 <= 0) {
+            i10 = 65536;
         }
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(i11);
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(i10);
         long j13 = -1;
-        if (w10 < 0 && w9 < 0) {
+        if (w11 < 0 && w10 < 0) {
             return -1L;
         }
         checkConversionCanceled();
@@ -658,62 +659,62 @@ public class MediaCodecVideoConvertor {
             long j16 = j13;
             if (Build.VERSION.SDK_INT >= 28) {
                 long sampleSize = mediaExtractor.getSampleSize();
-                i13 = w10;
-                if (sampleSize > i11) {
-                    int i21 = (int) (sampleSize + 1024);
-                    i11 = i21;
-                    allocateDirect = ByteBuffer.allocateDirect(i21);
+                i12 = w11;
+                if (sampleSize > i10) {
+                    int i20 = (int) (sampleSize + 1024);
+                    i10 = i20;
+                    allocateDirect = ByteBuffer.allocateDirect(i20);
                 }
             } else {
-                i13 = w10;
+                i12 = w11;
             }
-            bufferInfo.size = mediaExtractor.readSampleData(allocateDirect, i20);
+            bufferInfo.size = mediaExtractor.readSampleData(allocateDirect, i19);
             int sampleTrackIndex = mediaExtractor.getSampleTrackIndex();
-            if (sampleTrackIndex == w9) {
-                w10 = i13;
-                i14 = i10;
+            if (sampleTrackIndex == w10) {
+                w11 = i12;
+                i13 = i3;
             } else {
-                w10 = i13;
-                i14 = sampleTrackIndex == w10 ? i12 : -1;
+                w11 = i12;
+                i13 = sampleTrackIndex == w11 ? i11 : -1;
             }
-            if (i14 != -1) {
-                if (sampleTrackIndex != w10 && (array = allocateDirect.array()) != null) {
+            if (i13 != -1) {
+                if (sampleTrackIndex != w11 && (array = allocateDirect.array()) != null) {
                     int arrayOffset = allocateDirect.arrayOffset();
                     int limit = allocateDirect.limit() + arrayOffset;
-                    int i22 = arrayOffset;
-                    int i23 = -1;
+                    int i21 = arrayOffset;
+                    int i22 = -1;
                     while (true) {
-                        int i24 = limit - 4;
-                        if (i22 > i24) {
+                        int i23 = limit - 4;
+                        if (i21 > i23) {
                             break;
                         }
-                        if (array[i22] == 0 && array[i22 + 1] == 0 && array[i22 + 2] == 0) {
-                            i17 = i12;
-                            i18 = i11;
+                        if (array[i21] == 0 && array[i21 + 1] == 0 && array[i21 + 2] == 0) {
+                            i16 = i11;
+                            i17 = i10;
                         } else {
-                            i17 = i12;
-                            i18 = i11;
+                            i16 = i11;
+                            i17 = i10;
                         }
-                        if (i22 != i24) {
-                            i22++;
-                            i12 = i17;
-                            i11 = i18;
+                        if (i21 != i23) {
+                            i21++;
+                            i11 = i16;
+                            i10 = i17;
                         }
-                        if (i23 != -1) {
-                            int i25 = (i22 - i23) - (i22 != i24 ? 4 : 0);
-                            array[i23] = (byte) (i25 >> 24);
-                            array[i23 + 1] = (byte) (i25 >> 16);
-                            array[i23 + 2] = (byte) (i25 >> 8);
-                            array[i23 + 3] = (byte) i25;
+                        if (i22 != -1) {
+                            int i24 = (i21 - i22) - (i21 != i23 ? 4 : 0);
+                            array[i22] = (byte) (i24 >> 24);
+                            array[i22 + 1] = (byte) (i24 >> 16);
+                            array[i22 + 2] = (byte) (i24 >> 8);
+                            array[i22 + 3] = (byte) i24;
                         }
-                        i23 = i22;
-                        i22++;
-                        i12 = i17;
-                        i11 = i18;
+                        i22 = i21;
+                        i21++;
+                        i11 = i16;
+                        i10 = i17;
                     }
                 }
-                i15 = i12;
-                i16 = i11;
+                i14 = i11;
+                i15 = i10;
                 if (bufferInfo.size >= 0) {
                     bufferInfo.presentationTimeUs = mediaExtractor.getSampleTime();
                     z11 = false;
@@ -722,21 +723,21 @@ public class MediaCodecVideoConvertor {
                     z11 = true;
                 }
                 if (bufferInfo.size > 0 && !z11) {
-                    if (sampleTrackIndex == w9 && j10 > 0 && j14 == j16) {
+                    if (sampleTrackIndex == w10 && j10 > 0 && j14 == j16) {
                         j14 = bufferInfo.presentationTimeUs;
                     }
                     if (j11 < 0 || bufferInfo.presentationTimeUs < j11) {
                         bufferInfo.offset = 0;
                         bufferInfo.flags = mediaExtractor.getSampleFlags();
-                        long writeSampleData = muxer.writeSampleData(i14, allocateDirect, bufferInfo, false);
+                        long writeSampleData = muxer.writeSampleData(i13, allocateDirect, bufferInfo, false);
                         if (writeSampleData != 0) {
-                            lf lfVar = this.callback;
-                            if (lfVar != null) {
+                            df dfVar = this.callback;
+                            if (dfVar != null) {
                                 long j17 = bufferInfo.presentationTimeUs - j14;
                                 if (j17 <= j15) {
                                     j17 = j15;
                                 }
-                                ((n0) lfVar).k(writeSampleData, (j17 / f7) / f10);
+                                ((m0) dfVar).k(writeSampleData, (j17 / f10) / f11);
                                 j15 = j17;
                             }
                             if (!z11) {
@@ -752,8 +753,8 @@ public class MediaCodecVideoConvertor {
                 if (!z11) {
                 }
             } else {
-                i15 = i12;
-                i16 = i11;
+                i14 = i11;
+                i15 = i10;
                 if (sampleTrackIndex == -1) {
                     z11 = true;
                 } else {
@@ -764,40 +765,40 @@ public class MediaCodecVideoConvertor {
             if (z11) {
                 z12 = true;
             }
-            i12 = i15;
+            i11 = i14;
             j13 = j16;
-            i11 = i16;
-            i20 = 0;
-        }
-        if (w9 >= 0) {
-            mediaExtractor.unselectTrack(w9);
+            i10 = i15;
+            i19 = 0;
         }
         if (w10 >= 0) {
             mediaExtractor.unselectTrack(w10);
+        }
+        if (w11 >= 0) {
+            mediaExtractor.unselectTrack(w11);
         }
         return j14;
     }
 
     private static void setDecoderOperatingRate(MediaFormat mediaFormat) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 25) {
+        int i3 = Build.VERSION.SDK_INT;
+        if (i3 < 25) {
             return;
         }
-        if (i10 >= 31 && isSocModel("s5e8835", "SA8155P")) {
+        if (i3 >= 31 && isSocModel("s5e8835", "SA8155P")) {
             mediaFormat.setInteger("priority", 1);
         }
         mediaFormat.setInteger("operating-rate", 10000);
     }
 
     private static void setEncoderOperatingRate(MediaFormat mediaFormat) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 25) {
+        int i3 = Build.VERSION.SDK_INT;
+        if (i3 < 25) {
             return;
         }
         mediaFormat.setInteger("priority", 1);
-        if (i10 == 26) {
+        if (i3 == 26) {
             mediaFormat.setInteger("operating-rate", 30);
-        } else if (i10 < 31 || i10 > 34 || !isSocModel("SM8550", "SM7450", "SM6450", "SC9863A", "T612", "T606", "T603")) {
+        } else if (i3 < 31 || i3 > 34 || !isSocModel("SM8550", "SM7450", "SM6450", "SC9863A", "T612", "T606", "T603")) {
             mediaFormat.setInteger("operating-rate", ConnectionsManager.DEFAULT_DATACENTER_ID);
         } else {
             mediaFormat.setInteger("operating-rate", 1000);
@@ -816,7 +817,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;
@@ -853,13 +854,13 @@ public class MediaCodecVideoConvertor {
             }
         }
 
-        public long getLastFrameTimestamp(int i10, MediaCodec.BufferInfo bufferInfo) {
+        public long getLastFrameTimestamp(int i3, MediaCodec.BufferInfo bufferInfo) {
             if (this.mediaMuxer != null) {
                 return bufferInfo.presentationTimeUs;
             }
             MP4Builder mP4Builder = this.mp4Builder;
             if (mP4Builder != null) {
-                return mP4Builder.getLastFrameTimestamp(i10);
+                return mP4Builder.getLastFrameTimestamp(i3);
             }
             return 0L;
         }
@@ -871,7 +872,7 @@ public class MediaCodecVideoConvertor {
             }
         }
 
-        public synchronized long writeSampleData(int i10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z10) {
+        public synchronized long writeSampleData(int i3, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z10) {
             try {
                 MediaMuxer mediaMuxer = this.mediaMuxer;
                 if (mediaMuxer != null) {
@@ -879,14 +880,14 @@ public class MediaCodecVideoConvertor {
                         mediaMuxer.start();
                         this.started = true;
                     }
-                    this.mediaMuxer.writeSampleData(i10, byteBuffer, bufferInfo);
+                    this.mediaMuxer.writeSampleData(i3, byteBuffer, bufferInfo);
                     return 0L;
                 }
                 MP4Builder mP4Builder = this.mp4Builder;
                 if (mP4Builder == null) {
                     return 0L;
                 }
-                return mP4Builder.writeSampleData(i10, byteBuffer, bufferInfo, z10);
+                return mP4Builder.writeSampleData(i3, byteBuffer, bufferInfo, z10);
             } catch (Throwable th2) {
                 throw th2;
             }

@@ -1,30 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.at;
-import org.telegram.messenger.e20;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class m4 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q4 b;
+public final class m4 {
+    public static final m4 a;
+    public static final m4 b;
+    public static final /* synthetic */ m4[] c;
 
-    public /* synthetic */ m4(q4 q4Var, int i10) {
-        this.a = i10;
-        this.b = q4Var;
+    static {
+        m4 m4Var = new m4("BACK", 0);
+        a = m4Var;
+        m4 m4Var2 = new m4("MENU", 1);
+        b = m4Var2;
+        c = new m4[]{m4Var, m4Var2};
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                at.f(e20.s0).d(new lg.s(this, 26));
-                break;
-            default:
-                at.f(e20.s0).d(new lg.s(this, 27));
-                break;
-        }
+    public static m4 valueOf(String str) {
+        return (m4) Enum.valueOf(m4.class, str);
+    }
+
+    public static m4[] values() {
+        return (m4[]) c.clone();
     }
 }

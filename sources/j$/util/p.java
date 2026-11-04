@@ -26,22 +26,22 @@ public class p extends n implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final Object get(int i10) {
-        return this.b.get(i10);
+    public final Object get(int i3) {
+        return this.b.get(i3);
     }
 
     @Override // java.util.List
-    public final Object set(int i10, Object obj) {
+    public final Object set(int i3, Object obj) {
         throw new UnsupportedOperationException();
     }
 
     @Override // java.util.List
-    public final void add(int i10, Object obj) {
+    public final void add(int i3, Object obj) {
         throw new UnsupportedOperationException();
     }
 
     @Override // java.util.List
-    public final Object remove(int i10) {
+    public final Object remove(int i3) {
         throw new UnsupportedOperationException();
     }
 
@@ -56,7 +56,7 @@ public class p extends n implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final boolean addAll(int i10, java.util.Collection collection) {
+    public final boolean addAll(int i3, java.util.Collection collection) {
         throw new UnsupportedOperationException();
     }
 
@@ -76,13 +76,13 @@ public class p extends n implements java.util.List, List {
     }
 
     @Override // java.util.List
-    public final ListIterator listIterator(int i10) {
-        return new o(this, i10);
+    public final ListIterator listIterator(int i3) {
+        return new o(this, i3);
     }
 
     @Override // java.util.List
-    public java.util.List subList(int i10, int i11) {
-        return new p(this.b.subList(i10, i11));
+    public java.util.List subList(int i3, int i10) {
+        return new p(this.b.subList(i3, i10));
     }
 
     private Object readResolve() {

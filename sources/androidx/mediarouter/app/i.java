@@ -7,38 +7,38 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.WeakHashMap;
 import m.j2;
-import org.telegram.ui.Components.jc0;
+import org.telegram.ui.Components.lb0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ i(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ i(Object obj, int i3) {
+        this.a = i3;
         this.b = obj;
     }
 
     @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
     public final void onGlobalLayout() {
-        int i10 = this.a;
-        int i11 = 0;
+        int i3 = this.a;
+        int i10 = 0;
         Object obj = this.b;
-        switch (i10) {
+        switch (i3) {
             case 0:
                 t tVar = (t) obj;
-                tVar.U.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                HashSet hashSet = tVar.X;
+                tVar.V.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                HashSet hashSet = tVar.Y;
                 if (hashSet != null && hashSet.size() != 0) {
-                    j jVar = new j(tVar, i11);
-                    int firstVisiblePosition = tVar.U.getFirstVisiblePosition();
+                    j jVar = new j(tVar, i10);
+                    int firstVisiblePosition = tVar.V.getFirstVisiblePosition();
                     boolean z10 = false;
-                    while (i11 < tVar.U.getChildCount()) {
-                        View childAt = tVar.U.getChildAt(i11);
-                        if (tVar.X.contains((p4.w) tVar.V.getItem(firstVisiblePosition + i11))) {
+                    while (i10 < tVar.V.getChildCount()) {
+                        View childAt = tVar.V.getChildAt(i10);
+                        if (tVar.Y.contains((r4.w) tVar.W.getItem(firstVisiblePosition + i10))) {
                             AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
-                            alphaAnimation.setDuration(tVar.y0);
+                            alphaAnimation.setDuration(tVar.z0);
                             alphaAnimation.setFillEnabled(true);
                             alphaAnimation.setFillAfter(true);
                             if (!z10) {
@@ -48,7 +48,7 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
                             childAt.clearAnimation();
                             childAt.startAnimation(alphaAnimation);
                         }
-                        i11++;
+                        i10++;
                     }
                     break;
                 } else {
@@ -56,34 +56,34 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
                     break;
                 }
             case 1:
-                l.f fVar = (l.f) obj;
-                ArrayList arrayList = fVar.n;
-                if (fVar.a() && arrayList.size() > 0 && !((l.e) arrayList.get(0)).a.N) {
-                    View view = fVar.E;
+                l.e eVar = (l.e) obj;
+                ArrayList arrayList = eVar.n;
+                if (eVar.a() && arrayList.size() > 0 && !((l.d) arrayList.get(0)).a.O) {
+                    View view = eVar.F;
                     if (view != null && view.isShown()) {
                         int size = arrayList.size();
-                        while (i11 < size) {
-                            Object obj2 = arrayList.get(i11);
-                            i11++;
-                            ((l.e) obj2).a.h();
+                        while (i10 < size) {
+                            Object obj2 = arrayList.get(i10);
+                            i10++;
+                            ((l.d) obj2).a.g();
                         }
                         break;
                     } else {
-                        fVar.dismiss();
+                        eVar.dismiss();
                         break;
                     }
                 }
                 break;
             case 2:
-                l.d0 d0Var = (l.d0) obj;
-                j2 j2Var = d0Var.n;
-                if (d0Var.a() && !j2Var.N) {
-                    View view2 = d0Var.y;
+                l.c0 c0Var = (l.c0) obj;
+                j2 j2Var = c0Var.n;
+                if (c0Var.a() && !j2Var.O) {
+                    View view2 = c0Var.y;
                     if (view2 != null && view2.isShown()) {
-                        j2Var.h();
+                        j2Var.g();
                         break;
                     } else {
-                        d0Var.dismiss();
+                        c0Var.dismiss();
                         break;
                     }
                 }
@@ -101,23 +101,23 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
                 break;
             case 4:
                 m.m0 m0Var = (m.m0) obj;
-                m.p0 p0Var2 = m0Var.W;
+                m.p0 p0Var2 = m0Var.X;
                 m0Var.getClass();
-                WeakHashMap weakHashMap = r0.h0.a;
-                if (!p0Var2.isAttachedToWindow() || !p0Var2.getGlobalVisibleRect(m0Var.U)) {
+                WeakHashMap weakHashMap = r0.i0.a;
+                if (!p0Var2.isAttachedToWindow() || !p0Var2.getGlobalVisibleRect(m0Var.V)) {
                     m0Var.dismiss();
                     break;
                 } else {
                     m0Var.r();
-                    m0Var.h();
+                    m0Var.g();
                     break;
                 }
                 break;
             default:
-                jc0 jc0Var = (jc0) obj;
-                jc0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                jc0Var.h = jc0Var.e.getCurrentItem();
-                jc0.a(jc0Var, jc0Var.h, 0);
+                lb0 lb0Var = (lb0) obj;
+                lb0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                lb0Var.h = lb0Var.e.getCurrentItem();
+                lb0.a(lb0Var, lb0Var.h, 0);
                 break;
         }
     }

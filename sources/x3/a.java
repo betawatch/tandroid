@@ -1,42 +1,43 @@
 package x3;
 
-import c3.a0;
-import c3.b0;
-import c3.c0;
-import e2.l0;
-import java.math.BigInteger;
+import e3.k;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements b0 {
-    public final /* synthetic */ b a;
+public final class a extends k implements h {
+    public final long i;
+    public final int j;
+    public final int k;
+    public final boolean l;
+    public final long m;
 
-    public a(b bVar) {
-        this.a = bVar;
+    public a(long j10, long j11, int i3, int i10, boolean z10, boolean z11) {
+        super(j10, j11, i3, i10, z10, z11);
+        long j12 = j10;
+        this.i = j11;
+        this.j = i3;
+        this.k = i10;
+        this.l = z10;
+        this.m = j12 == -1 ? -1L : j12;
     }
 
-    @Override // c3.b0
-    public final boolean d() {
-        return true;
+    @Override // x3.h
+    public final long a() {
+        return this.m;
     }
 
-    @Override // c3.b0
-    public final /* synthetic */ boolean e() {
-        return false;
+    @Override // x3.h
+    public final long b(long j10) {
+        return (Math.max(0L, j10 - this.b) * 8000000) / this.e;
     }
 
-    @Override // c3.b0
-    public final a0 f(long j10) {
-        b bVar = this.a;
-        long j11 = bVar.b;
-        BigInteger valueOf = BigInteger.valueOf((bVar.d.i * j10) / 1000000);
-        long j12 = bVar.c;
-        c0 c0Var = new c0(j10, l0.j((valueOf.multiply(BigInteger.valueOf(j12 - j11)).divide(BigInteger.valueOf(bVar.f)).longValue() + j11) - 30000, bVar.b, j12 - 1));
-        return new a0(c0Var, c0Var);
+    @Override // x3.h
+    public final long c() {
+        return this.i;
     }
 
-    @Override // c3.b0
-    public final long h() {
-        return (this.a.f * 1000000) / r0.d.i;
+    @Override // x3.h
+    public final int g() {
+        return this.j;
     }
 }

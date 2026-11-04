@@ -1,143 +1,68 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.os.Bundle;
-import android.util.SparseArray;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class lm extends org.telegram.ui.Cells.l9 {
-    public un w0;
+public final class lm extends TextView implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.Cells.y a;
+    public int b;
+    public boolean c;
+    public final /* synthetic */ wm d;
 
-    @Override // org.telegram.ui.Cells.w9
-    public final void I(int i10, int i11, org.telegram.messenger.kj kjVar) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        org.telegram.messenger.fj P8;
-        un unVar = this.w0;
-        if (unVar != null) {
-            int min = Math.min(i11, unVar.getMessagesController().p4 + i10);
-            if (kjVar.d1() != 0 && (P8 = this.w0.P8(kjVar.d1())) != null && !P8.i) {
-                kjVar = P8.h;
-            }
-            if (kjVar == null) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lm(wm wmVar, Activity activity) {
+        super(activity);
+        this.d = wmVar;
+        setSingleLine(true);
+        setLines(1);
+        setMaxLines(1);
+        setEllipsize(TextUtils.TruncateAt.END);
+        org.telegram.ui.ActionBar.r6.V(this, org.telegram.ui.ActionBar.k6.Gi, wmVar.getResourceProvider());
+        int themedColor = wmVar.getThemedColor(org.telegram.ui.ActionBar.k6.Ci);
+        this.b = themedColor;
+        org.telegram.ui.Cells.y e10 = org.telegram.ui.ActionBar.y5.e(themedColor, 16.0f);
+        this.a = e10;
+        setBackground(e10);
+        setTextSize(1, 14.0f);
+        setTypeface(org.telegram.messenger.g0.o());
+        setGravity(17);
+        setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i3), (int) (org.telegram.messenger.g0.q.x * 0.45f)), TLObject.FLAG_31), i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        try {
+            int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.k6.Ci);
+            if (themedColor == this.b && this.c == org.telegram.ui.ActionBar.k6.I.q()) {
                 return;
             }
-            kn b10 = kn.b(i10, min, kjVar);
-            if (b10.i == null) {
-                return;
+            Drawable background = getBackground();
+            org.telegram.ui.Cells.y yVar = this.a;
+            if (background == yVar) {
+                this.c = org.telegram.ui.ActionBar.k6.I.q();
+                org.telegram.ui.ActionBar.k6.H1(yVar, themedColor, false);
+                org.telegram.ui.ActionBar.k6.H1(yVar, org.telegram.ui.ActionBar.y5.b(themedColor), true);
+                this.b = themedColor;
+                invalidate();
             }
-            mk mkVar = this.w0.Z;
-            if (mkVar != null && mkVar.getVisibility() == 0) {
-                lVar = ((org.telegram.ui.ActionBar.k2) this.w0).actionBar;
-                if (lVar != null) {
-                    lVar2 = ((org.telegram.ui.ActionBar.k2) this.w0).actionBar;
-                    if (lVar2.u()) {
-                        this.w0.L7(false);
-                    }
-                }
-                this.w0.ac(kjVar, b10);
-                mk mkVar2 = this.w0.Z;
-                if (mkVar2 != null) {
-                    mkVar2.F0();
-                    return;
-                }
-                return;
-            }
-            un unVar2 = this.w0;
-            unVar2.B5 = b10;
-            unVar2.D5 = kjVar;
-            unVar2.v5 = new org.telegram.messenger.oj(unVar2.h != null, unVar2.P9(), org.telegram.messenger.w3.p0(this.w0.e));
-            un unVar3 = this.w0;
-            unVar3.v5.f(unVar3.D5, unVar3.P8(kjVar.d1()), this.w0.a(), this.w0.B5);
-            Bundle j10 = org.telegram.ui.Cells.f1.j(3, "onlySelect", "dialogsType", true);
-            j10.putBoolean("quote", true);
-            j10.putInt("messagesCount", 1);
-            j10.putBoolean("canSelectTopics", true);
-            zx zxVar = new zx(j10);
-            un unVar4 = this.w0;
-            zxVar.C2 = unVar4;
-            unVar4.presentFragment(zxVar);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean b() {
-        un unVar;
-        un unVar2 = this.w0;
-        if ((unVar2 != null && unVar2.a() == 489000) || (unVar = this.w0) == null) {
-            return true;
-        }
-        if (!org.telegram.messenger.o5.C(unVar.a()) && this.w0.P9()) {
-            return false;
-        }
-        org.telegram.ui.Cells.r9 r9Var = this.W;
-        return r9Var == null || ((org.telegram.ui.Cells.q1) r9Var).getMessageObject() == null || ((org.telegram.ui.Cells.q1) this.W).getMessageObject().k == null || !((org.telegram.ui.Cells.q1) this.W).getMessageObject().k.noforwards;
-    }
-
-    public final void d0(un unVar) {
-        int i10 = 0;
-        while (true) {
-            SparseArray sparseArray = this.p0;
-            if (i10 >= sparseArray.size()) {
-                sparseArray.clear();
-                f(false);
-                this.C = null;
-                this.w0 = unVar;
-                return;
-            }
-            ((Animator) sparseArray.get(sparseArray.keyAt(i10))).cancel();
-            i10++;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean e() {
-        org.telegram.ui.Cells.r9 r9Var;
-        un unVar;
-        org.telegram.ui.Cells.r9 r9Var2;
-        TLRPC.Chat chat;
-        un unVar2 = this.w0;
-        if (unVar2 == null || unVar2.a() != 489000) {
-            un unVar3 = this.w0;
-            boolean z10 = (unVar3 != null && unVar3.P9()) || !((r9Var = this.W) == null || ((org.telegram.ui.Cells.q1) r9Var).getMessageObject() == null || ((org.telegram.ui.Cells.q1) this.W).getMessageObject().k == null || !((org.telegram.ui.Cells.q1) this.W).getMessageObject().k.noforwards);
-            if (!this.s0 && (unVar = this.w0) != null && unVar.h == null && (((r9Var2 = this.W) == null || (((org.telegram.ui.Cells.q1) r9Var2).getMessageObject() != null && ((org.telegram.ui.Cells.q1) this.W).getMessageObject().D != 23 && !((org.telegram.ui.Cells.q1) this.W).getMessageObject().T4() && !((org.telegram.ui.Cells.q1) this.W).getMessageObject().z3() && ((((org.telegram.ui.Cells.q1) this.W).getMessageObject().w2 == null || org.telegram.messenger.aw.c(((org.telegram.ui.Cells.q1) this.W).getMessageObject())) && !this.w0.q9.q0))) && !this.w0.getMessagesController().t7.B(this.w0.j6) && !org.telegram.messenger.i20.A(this.w0.j6) && (!z10 || (chat = this.w0.e) == null || org.telegram.messenger.w3.B(chat)))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final int o() {
-        un unVar = this.w0;
-        if (unVar == null) {
-            return 0;
-        }
-        return unVar.Ua;
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final int p() {
-        un unVar = this.w0;
-        if (unVar == null) {
-            return 0;
-        }
-        return (int) unVar.L9;
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final org.telegram.ui.ActionBar.p6 q() {
-        un unVar = this.w0;
-        if (unVar != null) {
-            return unVar.xa;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final int t(int i10) {
-        return org.telegram.ui.ActionBar.t6.w0(i10, this.w0.xa);
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

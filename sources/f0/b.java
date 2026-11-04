@@ -1,12 +1,18 @@
 package f0;
 
 import android.content.Context;
-import java.util.concurrent.Executor;
+import android.content.Intent;
+import android.content.IntentFilter;
+import com.google.android.gms.common.api.internal.o0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class b {
-    public static Executor a(Context context) {
-        return context.getMainExecutor();
+    public static Intent a(Context context, o0 o0Var, IntentFilter intentFilter) {
+        return context.registerReceiver(o0Var, intentFilter, null, null, 0);
+    }
+
+    public static Intent b(Context context, o0 o0Var, IntentFilter intentFilter) {
+        return context.registerReceiver(o0Var, intentFilter, null, null, 2);
     }
 }

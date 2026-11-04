@@ -1,27 +1,27 @@
 package com.google.android.gms.tasks;
 
 import android.app.Activity;
+import com.google.android.gms.common.api.internal.k;
 import com.google.android.gms.common.api.internal.l;
-import com.google.android.gms.common.api.internal.m;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-final class zzv extends l {
+final class zzv extends k {
     private final List zza;
 
-    private zzv(m mVar) {
-        super(mVar);
+    private zzv(l lVar) {
+        super(lVar);
         this.zza = new ArrayList();
         this.mLifecycleFragment.a("TaskOnStopCallback", this);
     }
 
     public static zzv zza(Activity activity) {
         zzv zzvVar;
-        m fragment = l.getFragment(activity);
+        l fragment = k.getFragment(activity);
         synchronized (fragment) {
             try {
                 zzvVar = (zzv) fragment.b(zzv.class, "TaskOnStopCallback");
@@ -35,18 +35,19 @@ final class zzv extends l {
         return zzvVar;
     }
 
-    @Override // com.google.android.gms.common.api.internal.l
+    @Override // com.google.android.gms.common.api.internal.k
     public final void onStop() {
-        synchronized (this.zza) {
+        List list = this.zza;
+        synchronized (list) {
             try {
-                Iterator it = this.zza.iterator();
+                Iterator it = list.iterator();
                 while (it.hasNext()) {
                     zzq zzqVar = (zzq) ((WeakReference) it.next()).get();
                     if (zzqVar != null) {
-                        zzqVar.zzc();
+                        zzqVar.zzb();
                     }
                 }
-                this.zza.clear();
+                list.clear();
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -54,8 +55,9 @@ final class zzv extends l {
     }
 
     public final void zzb(zzq zzqVar) {
-        synchronized (this.zza) {
-            this.zza.add(new WeakReference(zzqVar));
+        List list = this.zza;
+        synchronized (list) {
+            list.add(new WeakReference(zzqVar));
         }
     }
 }

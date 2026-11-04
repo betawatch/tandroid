@@ -1,57 +1,163 @@
 package og;
 
 import android.content.Context;
-import org.telegram.messenger.k6;
-import org.telegram.ui.ActionBar.u5;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import b8.mf;
+import gi.m3;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import k2.p1;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c extends u5 {
-    public final /* synthetic */ int M0;
+public class c extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final TextView c;
+    public final TextView d;
+    public boolean e;
+    public boolean f;
+    public final Drawable h;
+    public final int n;
+    public final e6 r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c(Context context, int i10) {
+    public c(Context context, e6 e6Var) {
         super(context);
-        this.M0 = i10;
+        this.e = true;
+        new SimpleDateFormat("d MMM yyyy");
+        this.r = e6Var;
+        TextPaint textPaint = new TextPaint();
+        textPaint.setTextSize(14.0f);
+        textPaint.setTypeface(g0.o());
+        int measureText = (int) textPaint.measureText("00 MMM 0000 - 00 MMM 000");
+        this.n = measureText;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        p1.t(textView, 1, 15.0f);
+        addView(textView, mf.d(-2, -2.0f, 8388627, 16.0f, 0.0f, measureText, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 15.0f);
+        textView2.setTypeface(Typeface.DEFAULT_BOLD);
+        textView2.setGravity(8388627);
+        addView(textView2, mf.d(-2, -2.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        TextView textView3 = new TextView(context);
+        this.b = textView3;
+        textView3.setTextSize(1, 13.0f);
+        textView3.setTypeface(g0.o());
+        textView3.setGravity(8388629);
+        addView(textView3, mf.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
+        TextView textView4 = new TextView(context);
+        this.c = textView4;
+        textView4.setTextSize(1, 13.0f);
+        textView4.setTypeface(g0.o());
+        textView4.setGravity(8388629);
+        addView(textView4, mf.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
+        textView4.setVisibility(8);
+        textView2.setVisibility(8);
+        textView2.setText(bd.M0(2131742797, null));
+        Drawable drawable = getContext().getDrawable(R.drawable.msg_zoomout_stats);
+        this.h = drawable;
+        textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
+        textView2.setCompoundDrawablePadding(g0.L(4.0f));
+        textView2.setPadding(g0.L(8.0f), g0.L(4.0f), g0.L(8.0f), g0.L(4.0f));
+        textView2.setBackground(k6.J0(g0.L(3.0f), k6.w0(k6.Fi, e6Var)));
+        textView4.addOnLayoutChangeListener(new m3(this, 1));
+        a();
     }
 
-    @Override // org.telegram.ui.ActionBar.u5
-    public boolean k(CharSequence charSequence) {
-        switch (this.M0) {
-            case 0:
-                return l(k6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
-            case 1:
-            default:
-                return super.k(charSequence);
-            case 2:
-                return l(k6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
-            case 3:
-                return l(k6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
-        }
+    public final void a() {
+        int i3 = k6.j5;
+        TextView textView = this.a;
+        e6 e6Var = this.r;
+        r6.V(textView, i3, e6Var);
+        r6.V(this.b, i3, e6Var);
+        r6.V(this.c, i3, e6Var);
+        int i10 = k6.Tj;
+        r6.V(this.d, i10, e6Var);
+        r6.y(this, this.h, i10, e6Var, PorterDuff.Mode.SRC_IN);
     }
 
-    @Override // org.telegram.ui.ActionBar.u5
-    public boolean l(CharSequence charSequence, boolean z10) {
-        switch (this.M0) {
-            case 1:
-                return super.l(k6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), z10);
-            case 4:
-                return super.l(k6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
-            default:
-                return super.l(charSequence, z10);
+    public final void b(long j10, long j11) {
+        String format;
+        boolean z10 = this.e;
+        TextView textView = this.b;
+        if (!z10) {
+            textView.setVisibility(8);
+            this.c.setVisibility(8);
+            return;
         }
+        if (this.f) {
+            j11 += 604800000;
+        }
+        if (j11 - j10 >= 86400000) {
+            format = bd.E0().C0().format(new Date(j10)) + " — " + bd.E0().C0().format(new Date(j11));
+        } else {
+            format = bd.E0().C0().format(new Date(j10));
+        }
+        textView.setText(format);
+        textView.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.ActionBar.u5, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.M0) {
-            case 5:
-                super.onMeasure(i10, i11);
-                setPivotY(getMeasuredHeight() / 2.0f);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+    public final void c(boolean z10) {
+        this.e = z10;
+        TextView textView = this.a;
+        if (z10) {
+            textView.setLayoutParams(mf.d(-2, -2.0f, 8388627, 16.0f, 0.0f, this.n, 0.0f));
+            return;
         }
+        this.c.setVisibility(8);
+        this.b.setVisibility(8);
+        textView.setLayoutParams(mf.d(-2, -2.0f, 8388627, 16.0f, 0.0f, 16.0f, 0.0f));
+        textView.requestLayout();
+    }
+
+    public final void d(long j10, boolean z10) {
+        b(j10, j10);
+        TextView textView = this.d;
+        textView.setVisibility(0);
+        TextView textView2 = this.a;
+        if (!z10) {
+            textView.setAlpha(1.0f);
+            textView.setTranslationX(0.0f);
+            textView.setTranslationY(0.0f);
+            textView.setScaleX(1.0f);
+            textView.setScaleY(1.0f);
+            textView2.setAlpha(0.0f);
+            return;
+        }
+        textView.setAlpha(0.0f);
+        textView.setScaleX(0.3f);
+        textView.setScaleY(0.3f);
+        textView.setPivotX(0.0f);
+        textView.setPivotY(g0.L(40.0f));
+        textView.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(200L).start();
+        textView2.setAlpha(1.0f);
+        textView2.setTranslationX(0.0f);
+        textView2.setTranslationY(0.0f);
+        textView2.setScaleX(1.0f);
+        textView2.setScaleY(1.0f);
+        textView2.setPivotX(0.0f);
+        textView2.setPivotY(0.0f);
+        textView2.animate().alpha(0.0f).scaleY(0.3f).scaleX(0.3f).setDuration(200L).start();
+    }
+
+    public void setTitle(String str) {
+        this.a.setText(str);
+    }
+
+    public void setUseWeekInterval(boolean z10) {
+        this.f = z10;
     }
 }

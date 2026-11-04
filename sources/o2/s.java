@@ -1,64 +1,19 @@
 package o2;
 
-import android.text.TextUtils;
-import b2.r0;
-import b2.t0;
-import b2.x;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class s implements t0 {
-    public final String a;
-    public final String b;
-    public final List c;
+public abstract class s {
+    public final j a;
+    public final long b;
+    public final long c;
 
-    public s(String str, String str2, List list) {
-        this.a = str;
-        this.b = str2;
-        this.c = DesugarCollections.unmodifiableList(new ArrayList(list));
+    public s(j jVar, long j10, long j11) {
+        this.a = jVar;
+        this.b = j10;
+        this.c = j11;
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
-        return null;
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && s.class == obj.getClass()) {
-            s sVar = (s) obj;
-            if (TextUtils.equals(this.a, sVar.a) && TextUtils.equals(this.b, sVar.b) && this.c.equals(sVar.c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = (str != null ? str.hashCode() : 0) * 31;
-        String str2 = this.b;
-        return this.c.hashCode() + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("HlsTrackMetadataEntry");
-        String str = this.a;
-        sb2.append(str != null ? a1.g.r(a1.g.u(" [", str, ", "), this.b, "]") : "");
-        return sb2.toString();
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
+    public j a(m mVar) {
+        return this.a;
     }
 }

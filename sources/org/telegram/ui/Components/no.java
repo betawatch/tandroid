@@ -1,88 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.WallpapersListActivity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class no implements View.OnClickListener {
+public final /* synthetic */ class no implements k71 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dp b;
+    public final /* synthetic */ oo b;
 
-    public /* synthetic */ no(dp dpVar, int i10) {
-        this.a = i10;
-        this.b = dpVar;
+    public /* synthetic */ no(oo ooVar, int i3) {
+        this.a = i3;
+        this.b = ooVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        int i11 = 0;
-        dp dpVar = this.b;
-        switch (i10) {
+    @Override // org.telegram.ui.k71
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
             case 0:
-                bi biVar = dpVar.O1;
-                if (biVar.s2 != biVar.a2) {
-                    dpVar.Q1.setText(org.telegram.messenger.dd.L0(2131745554, null));
-                    bi biVar2 = dpVar.O1;
-                    biVar2.E1(biVar2.a2);
-                    break;
-                } else {
-                    dpVar.Q1.setText(org.telegram.messenger.dd.L0(2131752138, null));
-                    bi biVar3 = dpVar.O1;
-                    if (biVar3.i2 == null) {
-                        Context context = biVar3.getContext();
-                        org.telegram.ui.ActionBar.p6 p6Var = biVar3.I0;
-                        qi qiVar = new qi(context, p6Var, biVar3);
-                        qiVar.r = org.telegram.messenger.i0.L(80.0f);
-                        qiVar.x = 3;
-                        ag.b1 b1Var = new ag.b1(qiVar, context, p6Var, 9);
-                        qiVar.n = b1Var;
-                        fa faVar = new fa(qiVar, context);
-                        qiVar.w = faVar;
-                        b1Var.setAdapter(faVar);
-                        b1Var.setClipToPadding(false);
-                        b1Var.setItemAnimator(null);
-                        b1Var.setLayoutAnimation(null);
-                        b1Var.setVerticalScrollBarEnabled(false);
-                        org.telegram.ui.ActionBar.a7.m(b1Var, 21, org.telegram.ui.ActionBar.t6.A5, p6Var);
-                        qiVar.addView(b1Var, w7.b6.c(-1.0f, -1));
-                        b1Var.setOnScrollListener(new ag.u(qiVar, 14));
-                        oi oiVar = new oi(qiVar, qiVar.r, i11);
-                        qiVar.s = oiVar;
-                        oiVar.O = new jg.h1(qiVar, 2);
-                        b1Var.setLayoutManager(oiVar);
-                        biVar3.i2 = qiVar;
-                        qiVar.setDelegate(new ma(biVar3, 1));
-                    }
-                    biVar3.E1(biVar3.i2);
-                    qi qiVar2 = dpVar.O1.i2;
-                    boolean z10 = dpVar.D1;
-                    fa faVar2 = qiVar2.w;
-                    ((ArrayList) faVar2.e).clear();
-                    WallpapersListActivity.E0((ArrayList) faVar2.e, z10);
-                    faVar2.f();
-                    break;
-                }
-            case 1:
-                if (!dpVar.P0()) {
-                    dpVar.dismiss();
-                    break;
-                } else {
-                    dpVar.T0(true);
-                    dpVar.Z0(true);
-                    break;
-                }
-            case 2:
-                if (dpVar.J1 == null) {
-                    dpVar.V0(!dpVar.D1);
-                    break;
-                }
+                vo voVar = this.b.a;
+                voVar.P1.K();
+                voVar.dismiss();
                 break;
             default:
-                dpVar.K0(false);
+                vo voVar2 = this.b.a;
+                voVar2.P1.K();
+                voVar2.dismiss();
                 break;
         }
     }

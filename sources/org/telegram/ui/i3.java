@@ -4,34 +4,34 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i3 extends xh.i3 {
-    public boolean c0;
-    public final /* synthetic */ l3 d0;
+public final class i3 extends ii.c4 {
+    public boolean d0;
+    public final /* synthetic */ l3 e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i3(l3 l3Var, Context context) {
         super(context);
-        this.d0 = l3Var;
+        this.e0 = l3Var;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.c0 = true;
-        setOffsetY(View.MeasureSpec.getSize(i11) * 0.4f);
-        this.c0 = false;
-        int size = View.MeasureSpec.getSize(i11);
-        u3 u3Var = this.d0.L.K;
+    public final void onMeasure(int i3, int i10) {
+        this.d0 = true;
+        setOffsetY(View.MeasureSpec.getSize(i10) * 0.4f);
+        this.d0 = false;
+        int size = View.MeasureSpec.getSize(i10);
+        u3 u3Var = this.e0.M.L;
         if (u3Var != null) {
             u3Var.getClass();
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((size - org.telegram.messenger.i0.L(56.0f)) - org.telegram.messenger.i0.m, TLObject.FLAG_30));
+        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec((size - org.telegram.messenger.g0.L(56.0f)) - org.telegram.messenger.g0.m, TLObject.FLAG_30));
     }
 
     @Override // android.view.View, android.view.ViewParent
     public final void requestLayout() {
-        if (this.c0) {
+        if (this.d0) {
             return;
         }
         super.requestLayout();

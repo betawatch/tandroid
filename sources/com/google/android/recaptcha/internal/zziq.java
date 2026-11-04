@@ -1,13 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import b8.tb;
+import ed.g;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import kotlin.jvm.internal.i;
-import rd.j;
+import kotlin.jvm.internal.j;
+import ud.d;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zziq {
     private Set zza;
@@ -17,21 +19,21 @@ public final class zziq {
 
     private static final boolean zzc(String str, Set set) {
         List list;
-        i.e(str, "<this>");
+        j.e(str, "<this>");
         String valueOf = String.valueOf(new char[]{'.'}[0]);
-        int d = j.d(0, str, valueOf, false);
-        if (d != -1) {
+        int g7 = d.g(0, str, valueOf, false);
+        if (g7 != -1) {
             ArrayList arrayList = new ArrayList(10);
-            int i10 = 0;
+            int i3 = 0;
             do {
-                arrayList.add(str.subSequence(i10, d).toString());
-                i10 = valueOf.length() + d;
-                d = j.d(i10, str, valueOf, false);
-            } while (d != -1);
-            arrayList.add(str.subSequence(i10, str.length()).toString());
+                arrayList.add(str.subSequence(i3, g7).toString());
+                i3 = valueOf.length() + g7;
+                g7 = d.g(i3, str, valueOf, false);
+            } while (g7 != -1);
+            arrayList.add(str.subSequence(i3, str.length()).toString());
             list = arrayList;
         } else {
-            list = bd.j.b(str.toString());
+            list = tb.a(str.toString());
         }
         Iterator it = list.iterator();
         String str2 = "";
@@ -46,8 +48,8 @@ public final class zziq {
     }
 
     public final void zza(zzxg zzxgVar) {
-        this.zza = bd.i.p(zzxgVar.zzf().zzi());
-        this.zzb = bd.i.p(zzxgVar.zzg().zzi());
+        this.zza = g.o(zzxgVar.zzf().zzi());
+        this.zzb = g.o(zzxgVar.zzg().zzi());
     }
 
     public final boolean zzb(String str) {
@@ -63,7 +65,7 @@ public final class zziq {
             return true;
         }
         Set set2 = this.zzb;
-        i.c(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
+        j.c(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
         if (zzc(str, set2)) {
             return false;
         }

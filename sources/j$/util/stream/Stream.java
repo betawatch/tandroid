@@ -523,7 +523,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     Optional findAny();
 
-    Optional findFirst();
+    Optional<T> findFirst();
 
     void forEach(Consumer<? super T> consumer);
 

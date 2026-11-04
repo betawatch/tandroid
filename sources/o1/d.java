@@ -1,52 +1,8 @@
 package o1;
 
-import java.util.ArrayList;
-import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
+import androidx.datastore.preferences.protobuf.x;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends h {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ d(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // o1.h
-    public final float a(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((i) this.b).a;
-            default:
-                Integer num = (Integer) obj;
-                int intValue = num.intValue();
-                ArrayList arrayList = ((AnimatedPhoneNumberEditText) this.b).Q1;
-                if (intValue < arrayList.size()) {
-                    return ((Float) arrayList.get(num.intValue())).floatValue() * 100.0f;
-                }
-                return 0.0f;
-        }
-    }
-
-    @Override // o1.h
-    public final void b(Object obj, float f7) {
-        switch (this.a) {
-            case 0:
-                ((i) this.b).a = f7;
-                break;
-            default:
-                Integer num = (Integer) obj;
-                int intValue = num.intValue();
-                AnimatedPhoneNumberEditText animatedPhoneNumberEditText = (AnimatedPhoneNumberEditText) this.b;
-                ArrayList arrayList = animatedPhoneNumberEditText.Q1;
-                if (intValue < arrayList.size()) {
-                    arrayList.set(num.intValue(), Float.valueOf(f7 / 100.0f));
-                    animatedPhoneNumberEditText.invalidate();
-                    break;
-                }
-                break;
-        }
-    }
+public final class d extends x {
 }

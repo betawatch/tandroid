@@ -1,65 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class t91 extends org.telegram.ui.Cells.q1 {
-    public final Path hd;
-    public final Paint id;
-    public final /* synthetic */ int jd;
-    public final /* synthetic */ int kd;
-    public final /* synthetic */ int ld;
-    public final /* synthetic */ v91 md;
+public final /* synthetic */ class t91 implements org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TwoStepVerificationActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t91(v91 v91Var, Context context, int i10, org.telegram.ui.ActionBar.p6 p6Var, int i11, int i12, int i13) {
-        super(context, i10, false, null, p6Var);
-        this.md = v91Var;
-        this.jd = i11;
-        this.kd = i12;
-        this.ld = i13;
-        this.hd = new Path();
-        this.id = new Paint(1);
+    public /* synthetic */ t91(TwoStepVerificationActivity twoStepVerificationActivity, int i3) {
+        this.a = i3;
+        this.b = twoStepVerificationActivity;
     }
 
-    @Override // org.telegram.ui.Cells.q1
-    public final void h1(Canvas canvas) {
-        this.Q4 = 0;
-        this.R4 = this.O4.size() - 1;
-        super.h1(canvas);
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int Z1 = Z1(this.jd);
-        float S1 = S1(Z1);
-        float R1 = R1(Z1);
-        RectF rectF = org.telegram.messenger.i0.P;
-        rectF.set(getPollButtonsLeft(), S1, getPollButtonsRight(), R1);
-        Path path = this.hd;
-        path.rewind();
-        path.addRoundRect(rectF, org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), Path.Direction.CW);
-        Paint paint = this.id;
-        paint.setColor(0);
-        paint.setShadowLayer(org.telegram.messenger.i0.L(2.0f), 0.0f, org.telegram.messenger.i0.L(0.66f), org.telegram.ui.ActionBar.t6.r1(this.md.y * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), paint);
-        canvas.clipPath(path);
-        b1(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(this.kd, this.ld);
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void setPressed(boolean z10) {
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
+                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
+                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new u91(twoStepVerificationActivity, 2));
+                break;
+            case 2:
+                this.b.p0();
+                break;
+            case 3:
+                this.b.z0();
+                break;
+            default:
+                this.b.z0();
+                break;
+        }
     }
 }

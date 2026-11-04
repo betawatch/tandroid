@@ -1,35 +1,41 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class to extends b3 {
-    public final /* synthetic */ wp e;
+public final class to {
+    public final String a;
+    public final String[] b;
+    public final String c;
+    public int d;
 
-    public to(wp wpVar) {
-        this.e = wpVar;
+    public to(String str, String[] strArr, String str2) {
+        this.a = str;
+        this.b = strArr;
+        this.c = str2;
     }
 
-    @Override // org.telegram.messenger.b3
-    public final void e(int i10, Object obj, k20 k20Var) {
-        this.e.getMessagesStorage().a.c(new ro(i10, (z2) k20Var, 0));
-    }
-
-    @Override // org.telegram.messenger.b3
-    public final void f(int i10, Object obj, long j10, a3 a3Var) {
-        TLRPC.TL_help_getAppConfig tL_help_getAppConfig = new TLRPC.TL_help_getAppConfig();
-        tL_help_getAppConfig.hash = (int) j10;
-        this.e.getConnectionsManager().sendRequest(tL_help_getAppConfig, new so(a3Var, 0));
-    }
-
-    @Override // org.telegram.messenger.b3
-    public final void g(int i10, Object obj, Object obj2) {
-        is.a0(i10).a.c(new a1(i10, (TLRPC.TL_help_appConfig) obj2, 5));
-    }
-
-    @Override // org.telegram.messenger.b3
-    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
+    public final boolean equals(Object obj) {
+        if (obj instanceof to) {
+            return this.a.equals(((to) obj).a);
+        }
         return false;
+    }
+
+    public final String toString() {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(this.d);
+        serializedData.writeInt32(0);
+        serializedData.writeString(this.a);
+        String[] strArr = this.b;
+        serializedData.writeInt32(strArr != null ? strArr.length : 0);
+        if (strArr != null) {
+            for (String str : strArr) {
+                serializedData.writeString(str);
+            }
+        }
+        serializedData.writeString(this.c);
+        return Utilities.f(serializedData.toByteArray());
     }
 }

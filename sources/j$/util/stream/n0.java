@@ -23,8 +23,8 @@ public final class n0 extends p0 implements i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l4) {
-        t3.H(this, l4);
+    public final /* synthetic */ void x(Long l10) {
+        t3.H(this, l10);
     }
 
     @Override // j$.util.stream.b8

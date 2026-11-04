@@ -1,41 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vh implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ un c;
-    public final /* synthetic */ boolean d;
+public final class vh extends org.telegram.ui.Components.on {
+    public final /* synthetic */ wm N;
 
-    public /* synthetic */ vh(int i10, un unVar, boolean z10) {
-        this.b = i10;
-        this.c = unVar;
-        this.d = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vh(wm wmVar, Activity activity, int i3, TLRPC.Document document, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity, i3, document, e6Var);
+        this.N = wmVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean z10 = this.d;
-                this.c.Xc(this.b, z10);
-                break;
-            default:
-                int i10 = this.b;
-                un unVar = this.c;
-                if (i10 != 2) {
-                    unVar.pa();
-                    unVar.wc();
-                }
-                yh.e0.f(org.telegram.ui.Components.cc.a0(unVar), i10, this.d);
-                break;
-        }
-    }
-
-    public /* synthetic */ vh(un unVar, boolean z10, int i10) {
-        this.c = unVar;
-        this.d = z10;
-        this.b = i10;
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
+        float y9 = getY();
+        wm wmVar = this.N;
+        float y10 = wmVar.g1.getY() + y9;
+        this.K = wmVar.m1.getBackgroundSizeY();
+        this.J = y10;
     }
 }

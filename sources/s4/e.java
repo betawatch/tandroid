@@ -1,87 +1,68 @@
 package s4;
 
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ j c;
+public final class e {
+    public static final e d;
+    public static final e e;
+    public static final e f;
+    public static final e g;
+    public static final e h;
+    public static final e i;
+    public final float[] a = {0.0f, 0.5f, 1.0f};
+    public final float[] b = {0.0f, 0.5f, 1.0f};
+    public final float[] c = {0.24f, 0.52f, 0.24f};
 
-    public /* synthetic */ e(j jVar, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.c = jVar;
-        this.b = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (true) {
-                    j jVar = this.c;
-                    if (i10 >= size) {
-                        arrayList.clear();
-                        jVar.u.remove(arrayList);
-                        break;
-                    } else {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        i iVar = (i) obj;
-                        jVar.C(iVar.a, iVar);
-                        jVar.w.add(iVar);
-                    }
-                }
-            case 1:
-                ArrayList arrayList2 = this.b;
-                int size2 = arrayList2.size();
-                int i11 = 0;
-                while (true) {
-                    j jVar2 = this.c;
-                    if (i11 >= size2) {
-                        arrayList2.clear();
-                        jVar2.v.remove(arrayList2);
-                        break;
-                    } else {
-                        Object obj2 = arrayList2.get(i11);
-                        i11++;
-                        h hVar = (h) obj2;
-                        jVar2.B(hVar);
-                        jVar2.x.add(hVar);
-                    }
-                }
-            default:
-                ArrayList arrayList3 = this.b;
-                int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                for (int size3 = arrayList3.size() - 1; size3 >= 0; size3--) {
-                    i12 = Math.min(i12, ((c1) arrayList3.get(size3)).b());
-                }
-                int size4 = arrayList3.size();
-                while (true) {
-                    size4--;
-                    j jVar3 = this.c;
-                    if (size4 < 0) {
-                        arrayList3.clear();
-                        jVar3.t.remove(arrayList3);
-                        break;
-                    } else {
-                        c1 c1Var = (c1) arrayList3.get(size4);
-                        long b10 = (c1Var.b() - i12) * jVar3.D;
-                        View view = c1Var.a;
-                        ViewPropertyAnimator animate = view.animate();
-                        jVar3.y.add(c1Var);
-                        animate.alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(jVar3.h()).setStartDelay(b10).setInterpolator(jVar3.h);
-                        animate.setUpdateListener(new c(jVar3, c1Var, 1));
-                        animate.setListener(new f(jVar3, c1Var, view, animate)).start();
-                    }
-                }
-        }
+    static {
+        e eVar = new e();
+        d = eVar;
+        float[] fArr = eVar.b;
+        fArr[0] = 0.55f;
+        fArr[1] = 0.74f;
+        float[] fArr2 = eVar.a;
+        fArr2[0] = 0.35f;
+        fArr2[1] = 1.0f;
+        e eVar2 = new e();
+        e = eVar2;
+        float[] fArr3 = eVar2.b;
+        fArr3[0] = 0.3f;
+        fArr3[1] = 0.5f;
+        fArr3[2] = 0.7f;
+        float[] fArr4 = eVar2.a;
+        fArr4[0] = 0.35f;
+        fArr4[1] = 1.0f;
+        e eVar3 = new e();
+        f = eVar3;
+        float[] fArr5 = eVar3.b;
+        fArr5[1] = 0.26f;
+        fArr5[2] = 0.45f;
+        float[] fArr6 = eVar3.a;
+        fArr6[0] = 0.35f;
+        fArr6[1] = 1.0f;
+        e eVar4 = new e();
+        g = eVar4;
+        float[] fArr7 = eVar4.b;
+        fArr7[0] = 0.55f;
+        fArr7[1] = 0.74f;
+        float[] fArr8 = eVar4.a;
+        fArr8[1] = 0.3f;
+        fArr8[2] = 0.4f;
+        e eVar5 = new e();
+        h = eVar5;
+        float[] fArr9 = eVar5.b;
+        fArr9[0] = 0.3f;
+        fArr9[1] = 0.5f;
+        fArr9[2] = 0.7f;
+        float[] fArr10 = eVar5.a;
+        fArr10[1] = 0.3f;
+        fArr10[2] = 0.4f;
+        e eVar6 = new e();
+        i = eVar6;
+        float[] fArr11 = eVar6.b;
+        fArr11[1] = 0.26f;
+        fArr11[2] = 0.45f;
+        float[] fArr12 = eVar6.a;
+        fArr12[1] = 0.3f;
+        fArr12[2] = 0.4f;
     }
 }

@@ -1,40 +1,59 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class y30 extends org.telegram.ui.xr0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ b40 b;
+public abstract class y30 extends m40 {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ k40 c;
 
-    public y30(b40 b40Var, ArrayList arrayList) {
-        this.b = b40Var;
-        this.a = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y30(k40 k40Var, Context context) {
+        super(context);
+        this.c = k40Var;
+        k40Var.setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final org.telegram.ui.fs0 E(org.telegram.messenger.kj kjVar, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        a40 a40Var = this.b.b;
-        if (a40Var == null) {
-            return null;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float f10 = this.b;
+        if (f10 != 1.0f) {
+            float f11 = f10 + 0.064f;
+            this.b = f11;
+            if (f11 > 1.0f) {
+                this.b = 1.0f;
+            }
+            invalidate();
         }
-        return a40Var.getCloseIntoObject();
+        if (this.a != null) {
+            canvas.save();
+            float f12 = this.a.N0;
+            int i3 = this.c.X0;
+            if (f12 != i3) {
+                float f13 = i3 / f12;
+                canvas.scale(f13, f13);
+            }
+            ImageReceiver imageReceiver = this.a;
+            canvas.translate(-imageReceiver.L0, -imageReceiver.M0);
+            float alpha = this.a.getAlpha();
+            this.a.setAlpha(this.b);
+            this.a.h(canvas, null);
+            this.a.setAlpha(alpha);
+            canvas.restore();
+        }
     }
 
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final void o(int i10, org.telegram.messenger.y20 y20Var, boolean z10, int i11, int i12, boolean z11) {
-        this.b.s((org.telegram.messenger.ff) this.a.get(0));
-    }
-
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final boolean z() {
-        return false;
+    @Override // org.telegram.ui.Components.m40
+    public void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
+        }
+        this.a = imageReceiver;
+        invalidate();
     }
 }

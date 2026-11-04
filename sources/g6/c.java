@@ -1,38 +1,197 @@
 package g6;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-import w7.h0;
+import android.os.Looper;
+import android.util.SparseIntArray;
+import com.google.android.gms.cast.MediaInfo;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.internal.cast.z;
+import f6.d0;
+import j$.util.DesugarCollections;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends o6.a {
-    public static final Parcelable.Creator<c> CREATOR = new e6.p(10);
-    public final String a;
+public final class c {
+    public long b;
+    public final h c;
+    public ArrayList d;
+    public final SparseIntArray e;
+    public final r f;
+    public final ArrayList g;
+    public final ArrayDeque h;
+    public final z i;
+    public final q j;
+    public BasePendingResult k;
+    public BasePendingResult l;
+    public final Set m = DesugarCollections.synchronizedSet(new HashSet());
+    public final i6.b a = new i6.b("MediaQueue", null);
 
-    public c(String str) {
-        this.a = str;
+    public c(h hVar) {
+        this.c = hVar;
+        Math.max(20, 1);
+        this.d = new ArrayList();
+        this.e = new SparseIntArray();
+        this.g = new ArrayList();
+        this.h = new ArrayDeque(20);
+        this.i = new z(Looper.getMainLooper(), 0);
+        this.j = new q(this, 0);
+        hVar.p(new d0(this, 1));
+        this.f = new r(this);
+        this.b = e();
+        d();
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public static void a(c cVar) {
+        synchronized (cVar.m) {
+            try {
+                Iterator it = cVar.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        if (obj instanceof c) {
-            return a.d(this.a, ((c) obj).a);
+    }
+
+    public static /* bridge */ /* synthetic */ void b(c cVar) {
+        SparseIntArray sparseIntArray = cVar.e;
+        sparseIntArray.clear();
+        for (int i3 = 0; i3 < cVar.d.size(); i3++) {
+            sparseIntArray.put(((Integer) cVar.d.get(i3)).intValue(), i3);
         }
-        return false;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
+    public final void c() {
+        h();
+        this.d.clear();
+        this.e.clear();
+        this.f.evictAll();
+        this.g.clear();
+        this.i.removeCallbacks(this.j);
+        this.h.clear();
+        BasePendingResult basePendingResult = this.l;
+        if (basePendingResult != null) {
+            basePendingResult.c();
+            this.l = null;
+        }
+        BasePendingResult basePendingResult2 = this.k;
+        if (basePendingResult2 != null) {
+            basePendingResult2.c();
+            this.k = null;
+        }
+        g();
+        f();
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.l(parcel, 2, this.a);
-        h0.r(parcel, q6);
+    public final void d() {
+        BasePendingResult basePendingResult;
+        BasePendingResult basePendingResult2;
+        p6.m.d("Must be called from the main thread.");
+        if (this.b != 0 && (basePendingResult = this.l) == null) {
+            if (basePendingResult != null) {
+                basePendingResult.c();
+                this.l = null;
+            }
+            BasePendingResult basePendingResult3 = this.k;
+            if (basePendingResult3 != null) {
+                basePendingResult3.c();
+                this.k = null;
+            }
+            h hVar = this.c;
+            hVar.getClass();
+            p6.m.d("Must be called from the main thread.");
+            if (hVar.w()) {
+                i iVar = new i(hVar);
+                h.x(iVar);
+                basePendingResult2 = iVar;
+            } else {
+                basePendingResult2 = h.t();
+            }
+            this.l = basePendingResult2;
+            basePendingResult2.i(new p(this, 0));
+        }
+    }
+
+    public final long e() {
+        e6.q e10 = this.c.e();
+        if (e10 == null) {
+            return 0L;
+        }
+        MediaInfo mediaInfo = e10.a;
+        int i3 = mediaInfo == null ? -1 : mediaInfo.b;
+        int i10 = e10.e;
+        int i11 = e10.f;
+        int i12 = e10.x;
+        if (i10 == 1) {
+            if (i11 != 1) {
+                if (i11 != 2) {
+                    if (i11 != 3) {
+                        return 0L;
+                    }
+                } else if (i3 != 2) {
+                    return 0L;
+                }
+            }
+            if (i12 == 0) {
+                return 0L;
+            }
+        }
+        return e10.b;
+    }
+
+    public final void f() {
+        synchronized (this.m) {
+            try {
+                Iterator it = this.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void g() {
+        synchronized (this.m) {
+            try {
+                Iterator it = this.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void h() {
+        synchronized (this.m) {
+            try {
+                Iterator it = this.m.iterator();
+                if (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    throw null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 }

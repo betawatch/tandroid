@@ -4,7 +4,7 @@ import j$.util.Objects;
 import org.telegram.ui.Cells.f1;
 import r.b;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class CarZone {
     public static final int CAR_ZONE_COLUMN_ALL = 16;
@@ -52,24 +52,24 @@ public final class CarZone {
     }
 
     public String toString() {
-        int i10 = this.mRow;
+        int i3 = this.mRow;
         String str = "UNKNOWN";
-        String str2 = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
-        int i11 = this.mColumn;
-        if (i11 == 16) {
+        String str2 = i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? "UNKNOWN" : "CAR_ZONE_ROW_EXCLUDE_FIRST" : "CAR_ZONE_ROW_THIRD" : "CAR_ZONE_ROW_SECOND" : "CAR_ZONE_ROW_FIRST" : "CAR_ZONE_ROW_ALL";
+        int i10 = this.mColumn;
+        if (i10 == 16) {
             str = "CAR_ZONE_COLUMN_ALL";
-        } else if (i11 == 32) {
+        } else if (i10 == 32) {
             str = "CAR_ZONE_COLUMN_LEFT";
-        } else if (i11 == 48) {
+        } else if (i10 == 48) {
             str = "CAR_ZONE_COLUMN_CENTER";
-        } else if (i11 == 64) {
+        } else if (i10 == 64) {
             str = "CAR_ZONE_COLUMN_RIGHT";
-        } else if (i11 == 80) {
+        } else if (i10 == 80) {
             str = "CAR_ZONE_COLUMN_DRIVER";
-        } else if (i11 == 96) {
+        } else if (i10 == 96) {
             str = "CAR_ZONE_COLUMN_PASSENGER";
         }
-        return f1.o("[CarZone row value: ", str2, ", column value: ", str, "]");
+        return f1.q("[CarZone row value: ", str2, ", column value: ", str, "]");
     }
 
     private CarZone() {

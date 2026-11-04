@@ -1,240 +1,102 @@
 package d2;
 
-import android.content.pm.ShortcutManager;
-import android.graphics.Typeface;
-import android.window.OnBackInvokedDispatcher;
-import b2.c1;
-import b2.d1;
-import b2.v;
-import com.google.firebase.datatransport.TransportRegistrar;
-import d9.k;
-import e2.g0;
-import e2.o;
-import e2.p;
-import e9.d2;
-import e9.r1;
-import e9.t1;
-import e9.u0;
-import e9.u1;
-import e9.v0;
-import e9.y0;
-import i2.l;
-import ig.f0;
-import j$.util.Objects;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.nio.charset.Charset;
-import java.util.Collection;
-import java.util.Iterator;
-import org.telegram.messenger.i0;
-import org.telegram.messenger.w0;
-import org.telegram.tgnet.TLObject;
-import org.telegram.utils.code.highlight.PrismaHighlighter;
-import v7.t6;
-import z9.e2;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements k, i5.e, r9.d, g2.g, o, p, f0 {
-    public final /* synthetic */ int a;
+public final class c {
+    public static final c c = new c(new a[0]);
+    public static final a d;
+    public static final String e;
+    public final int a;
+    public final a[] b;
 
-    public /* synthetic */ c(int i10) {
-        this.a = i10;
+    static {
+        a aVar = new a(-1, -1, new int[0], new n0[0], new long[0], new String[0], new b[0]);
+        int[] iArr = aVar.e;
+        int length = iArr.length;
+        int max = Math.max(0, length);
+        int[] copyOf = Arrays.copyOf(iArr, max);
+        Arrays.fill(copyOf, length, max, 0);
+        long[] jArr = aVar.f;
+        int length2 = jArr.length;
+        int max2 = Math.max(0, length2);
+        long[] copyOf2 = Arrays.copyOf(jArr, max2);
+        Arrays.fill(copyOf2, length2, max2, -9223372036854775807L);
+        n0[] n0VarArr = (n0[]) Arrays.copyOf(aVar.d, 0);
+        String[] strArr = (String[]) Arrays.copyOf(aVar.g, 0);
+        b[] bVarArr = aVar.h;
+        d = new a(0, aVar.b, copyOf, n0VarArr, copyOf2, strArr, (b[]) Arrays.copyOf(bVarArr, Math.max(0, bVarArr.length)));
+        String str = g2.n0.a;
+        e = Integer.toString(1, 36);
+        Integer.toString(2, 36);
+        Integer.toString(3, 36);
+        Integer.toString(4, 36);
     }
 
-    public static di.c a() {
-        InputStream open = w0.b.getAssets().open("grammars.dat");
-        try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            try {
-                byte[] bArr = new byte[TLObject.FLAG_13];
-                while (true) {
-                    int read = open.read(bArr);
-                    if (read == -1) {
-                        byte[] byteArray = byteArrayOutputStream.toByteArray();
-                        byteArrayOutputStream.close();
-                        open.close();
-                        return new di.c(new PrismaHighlighter(byteArray));
-                    }
-                    byteArrayOutputStream.write(bArr, 0, read);
-                }
-            } finally {
-            }
-        } catch (Throwable th2) {
-            if (open != null) {
-                try {
-                    open.close();
-                } catch (Throwable th3) {
-                    th2.addSuppressed(th3);
-                }
-            }
-            throw th2;
+    public c(a[] aVarArr) {
+        this.a = aVarArr.length;
+        this.b = aVarArr;
+    }
+
+    public final a a(int i3) {
+        return i3 < 0 ? d : this.b[i3];
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || c.class != obj.getClass()) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return this.a == cVar.a && Arrays.equals(this.b, cVar.b);
     }
 
-    public static /* bridge */ /* synthetic */ ShortcutManager e(Object obj) {
-        return (ShortcutManager) obj;
+    public final int hashCode() {
+        return Arrays.hashCode(this.b) + (((((this.a * 961) + ((int) 0)) * 31) + ((int) (-9223372036854775807L))) * 961);
     }
 
-    public static /* bridge */ /* synthetic */ OnBackInvokedDispatcher f(Object obj) {
-        return (OnBackInvokedDispatcher) obj;
-    }
-
-    public static /* bridge */ /* synthetic */ Class g() {
-        return ShortcutManager.class;
-    }
-
-    @Override // r9.d
-    public Object K(bh.d dVar) {
-        i5.f lambda$getComponents$0;
-        lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(dVar);
-        return lambda$getComponents$0;
-    }
-
-    @Override // d9.k
-    public Object apply(Object obj) {
-        boolean z10 = true;
-        switch (this.a) {
-            case 0:
-                return Integer.valueOf(((b) obj).r);
-            case 1:
-                da.a.b.getClass();
-                return aa.b.a.v((e2) obj).getBytes(Charset.forName("UTF-8"));
-            case 9:
-                String str = (String) obj;
-                d9.a aVar = h9.a.g;
-                aVar.getClass();
-                int length = str.length() - 1;
-                while (true) {
-                    if (length >= 0) {
-                        if (aVar.c(str.charAt(length))) {
-                            length--;
-                        } else {
-                            z10 = false;
-                        }
-                    }
-                }
-                if (z10 && !str.isEmpty()) {
-                    return str;
-                }
-                StringBuilder sb2 = new StringBuilder(str.length() + 16);
-                sb2.append('\"');
-                while (r1 < str.length()) {
-                    char charAt = str.charAt(r1);
-                    if (charAt == '\r' || charAt == '\\' || charAt == '\"') {
-                        sb2.append('\\');
-                    }
-                    sb2.append(charAt);
-                    r1++;
-                }
-                sb2.append('\"');
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("AdPlaybackState(adsId=null, adResumePositionUs=0, adGroups=[");
+        int i3 = 0;
+        while (true) {
+            a[] aVarArr = this.b;
+            if (i3 >= aVarArr.length) {
+                sb2.append("])");
                 return sb2.toString();
-            case 10:
-                Collection collection = (Collection) obj;
-                int i10 = e9.w0.d;
-                if (collection instanceof e9.w0) {
-                    return (e9.w0) collection;
-                }
-                boolean z11 = collection instanceof r1;
-                int size = z11 ? ((v0) ((d2) ((r1) collection)).s()).size() : 11;
-                u0 u0Var = new u0();
-                u0Var.b = false;
-                u1 u1Var = new u1();
-                u1Var.d(size);
-                u0Var.a = u1Var;
-                if (z11) {
-                    r1 r1Var = (r1) collection;
-                    u1 u1Var2 = r1Var instanceof d2 ? ((d2) r1Var).e : null;
-                    if (u1Var2 != null) {
-                        u1Var.a(Math.max(u1Var.c, u1Var2.c));
-                        r1 = u1Var2.c == 0 ? -1 : 0;
-                        while (r1 >= 0) {
-                            t6.j(r1, u1Var2.c);
-                            Object obj2 = u1Var2.a[r1];
-                            t6.j(r1, u1Var2.c);
-                            u0Var.c(u1Var2.b[r1], obj2);
-                            r1++;
-                            if (r1 >= u1Var2.c) {
-                                r1 = -1;
-                            }
-                        }
-                    } else {
-                        e9.w0 w0Var = (e9.w0) r1Var;
-                        y0 t10 = w0Var.t();
-                        u1 u1Var3 = u0Var.a;
-                        u1Var3.a(Math.max(u1Var3.c, t10.size()));
-                        for (t1 t1Var : w0Var.t()) {
-                            u0Var.c(t1Var.a(), t1Var.a);
-                        }
-                    }
+            }
+            sb2.append("adGroup(timeUs=0, ads=[");
+            aVarArr[i3].getClass();
+            for (int i10 = 0; i10 < aVarArr[i3].e.length; i10++) {
+                sb2.append("ad(state=");
+                int i11 = aVarArr[i3].e[i10];
+                if (i11 == 0) {
+                    sb2.append('_');
+                } else if (i11 == 1) {
+                    sb2.append('R');
+                } else if (i11 == 2) {
+                    sb2.append('S');
+                } else if (i11 == 3) {
+                    sb2.append('P');
+                } else if (i11 != 4) {
+                    sb2.append('?');
                 } else {
-                    Iterator it = collection.iterator();
-                    while (it.hasNext()) {
-                        u0Var.a(it.next());
-                    }
+                    sb2.append('!');
                 }
-                Objects.requireNonNull(u0Var.a);
-                if (u0Var.a.c == 0) {
-                    return d2.n;
+                sb2.append(", durationUs=");
+                sb2.append(aVarArr[i3].f[i10]);
+                sb2.append(')');
+                if (i10 < aVarArr[i3].e.length - 1) {
+                    sb2.append(", ");
                 }
-                u0Var.b = true;
-                return new d2(u0Var.a);
-            default:
-                return new j2.g((g0) obj);
+            }
+            sb2.append("])");
+            if (i3 < aVarArr.length - 1) {
+                sb2.append(", ");
+            }
+            i3++;
         }
-    }
-
-    @Override // ig.f0
-    public Typeface b() {
-        switch (this.a) {
-            case 22:
-                return i0.o1("fonts/rmedium.ttf");
-            case 23:
-                return i0.o1("fonts/rmediumitalic.ttf");
-            case 24:
-                return Typeface.create("serif", 1);
-            case 25:
-                return i0.o1("fonts/rcondensedbold.ttf");
-            case 26:
-                return i0.o1("fonts/rmono.ttf");
-            default:
-                return i0.o1("fonts/mw_bold.ttf");
-        }
-    }
-
-    @Override // e2.p
-    public void c(Object obj, v vVar) {
-        ((d1) obj).D(new c1(vVar));
-    }
-
-    @Override // g2.g
-    public g2.h createDataSource() {
-        return new g2.b(w0.b);
-    }
-
-    @Override // e2.o
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 19:
-                ((d1) obj).H(new l(2, new ad.d("Player release timed out."), 1003));
-                break;
-            case 21:
-                ((d1) obj).onRenderedFirstFrame();
-                break;
-            case 28:
-                ((j2.b) obj).getClass();
-                break;
-            default:
-                ((j2.b) obj).getClass();
-                break;
-        }
-    }
-
-    public /* synthetic */ c(i2.i0 i0Var) {
-        this.a = 20;
-    }
-
-    public /* synthetic */ c(j2.a aVar, Object obj, int i10) {
-        this.a = i10;
     }
 }

@@ -1,10 +1,10 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class m3 extends ac0 {
-    @Override // org.telegram.ui.Components.ac0
-    public final CharSequence d(int i10) {
-        return org.telegram.messenger.dd.G(i10, "Hours", new Object[0]);
+public final class m3 extends cb0 {
+    @Override // org.telegram.ui.Components.cb0
+    public final CharSequence d(int i3) {
+        return org.telegram.messenger.bd.G(i3, "Hours", new Object[0]);
     }
 }

@@ -1,89 +1,29 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class uj0 extends tk0 {
-    public boolean c;
-    public boolean d;
-    public ArrayList e;
-    public ArrayList f;
+public final class uj0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public boolean f;
 
-    public final void E() {
-        this.c = false;
-        if (!this.d && this.e.isEmpty() && this.f.isEmpty()) {
-            return;
-        }
-        ((org.telegram.ui.fm) this).O(false);
+    public final void a(float f10, float f11, float f12, float f13) {
+        this.a = f10;
+        this.d = f12;
+        this.b = f10 - Math.max(0.0f, Math.min(f11, Math.max(0.0f, f12 - f13)));
+        this.c = Math.max(f10, f12);
+        this.f = this.b <= f13 + 0.5f;
+        this.e = 0.0f;
     }
 
-    @Override // s4.g0
-    public void f() {
-        if (this.c) {
-            this.d = true;
-        } else {
-            super.f();
+    public final float b() {
+        if (this.f) {
+            return this.c;
         }
-    }
-
-    @Override // s4.g0
-    public void g(int i10) {
-        if (this.c) {
-            return;
-        }
-        super.g(i10);
-    }
-
-    @Override // s4.g0
-    public void i(int i10) {
-        ArrayList arrayList = this.e;
-        if (!this.c) {
-            super.i(i10);
-        } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(1);
-        }
-    }
-
-    @Override // s4.g0
-    public void k(int i10, int i11) {
-        if (this.c) {
-            return;
-        }
-        super.k(i10, i11);
-    }
-
-    @Override // s4.g0
-    public void o(int i10, int i11) {
-        ArrayList arrayList = this.e;
-        if (!this.c) {
-            super.o(i10, i11);
-        } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(Integer.valueOf(i11));
-        }
-    }
-
-    @Override // s4.g0
-    public void p(int i10, int i11) {
-        ArrayList arrayList = this.f;
-        if (!this.c) {
-            super.p(i10, i11);
-        } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(Integer.valueOf(i11));
-        }
-    }
-
-    @Override // s4.g0
-    public void s(int i10) {
-        ArrayList arrayList = this.f;
-        if (!this.c) {
-            super.s(i10);
-        } else {
-            arrayList.add(Integer.valueOf(i10));
-            arrayList.add(1);
-        }
+        float f10 = this.b;
+        return ((this.c - f10) * this.e) + f10;
     }
 }

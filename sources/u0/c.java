@@ -1,11 +1,34 @@
 package u0;
 
+import android.content.Context;
+import android.util.AttributeSet;
 import android.widget.EdgeEffect;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class c {
-    public static void a(EdgeEffect edgeEffect, float f7, float f10) {
-        edgeEffect.onPull(f7, f10);
+    public static EdgeEffect a(Context context, AttributeSet attributeSet) {
+        try {
+            return new EdgeEffect(context, attributeSet);
+        } catch (Throwable unused) {
+            return new EdgeEffect(context);
+        }
+    }
+
+    public static float b(EdgeEffect edgeEffect) {
+        try {
+            return edgeEffect.getDistance();
+        } catch (Throwable unused) {
+            return 0.0f;
+        }
+    }
+
+    public static float c(EdgeEffect edgeEffect, float f10, float f11) {
+        try {
+            return edgeEffect.onPullDistance(f10, f11);
+        } catch (Throwable unused) {
+            edgeEffect.onPull(f10, f11);
+            return 0.0f;
+        }
     }
 }

@@ -1,75 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import java.util.Collections;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ap0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ap0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ pp0 c;
+    public final /* synthetic */ ws0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ ap0(pp0 pp0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = pp0Var;
-        this.b = z10;
+    public /* synthetic */ ap0(ws0 ws0Var, TLRPC.TL_error tL_error, int i3, int i10, TLObject tLObject, int i11) {
+        this.a = i11;
+        this.b = ws0Var;
+        this.c = tL_error;
+        this.d = i3;
+        this.e = i10;
+        this.f = tLObject;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AnimatorSet[] animatorSetArr = this.c.L1;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[0] = null;
-                    break;
-                }
+                ws0 ws0Var = this.b;
+                org.telegram.messenger.hs.f(ws0Var.y1.getCurrentAccount()).d(new ap0(ws0Var, this.c, this.d, this.e, this.f, 1));
                 break;
             default:
-                pp0 pp0Var = this.c;
-                if (animator.equals(pp0Var.v1)) {
-                    pp0Var.v1 = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                pp0 pp0Var = this.c;
-                AnimatorSet[] animatorSetArr = pp0Var.L1;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        pp0Var.K1[0].setVisibility(4);
-                    }
-                    animatorSetArr[0] = null;
-                    break;
-                }
-                break;
-            default:
-                pp0 pp0Var2 = this.c;
-                FrameLayout frameLayout = pp0Var2.n1;
-                if (animator.equals(pp0Var2.v1)) {
-                    if (!this.b) {
-                        pp0Var2.j1.setVisibility(4);
-                        FrameLayout frameLayout2 = pp0Var2.U1;
-                        if (frameLayout2 != null && frameLayout == null) {
-                            frameLayout2.setVisibility(4);
+                ws0 ws0Var2 = this.b;
+                ls0[] ls0VarArr = ws0Var2.w1;
+                if (this.c == null) {
+                    int i3 = this.e;
+                    ls0 ls0Var = ls0VarArr[i3];
+                    if (this.d == ls0Var.p) {
+                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
+                        ls0Var.e.clear();
+                        int size = tL_messages_searchResultsPositions.positions.size();
+                        int i10 = 0;
+                        for (int i11 = 0; i11 < size; i11++) {
+                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i11);
+                            int i12 = tL_searchResultPosition.date;
+                            if (i12 != 0) {
+                                wr0 wr0Var = new wr0();
+                                wr0Var.c = i12;
+                                wr0Var.d = tL_searchResultPosition.msg_id;
+                                wr0Var.b = tL_searchResultPosition.offset;
+                                wr0Var.a = org.telegram.messenger.bd.e0(i12, true);
+                                ls0VarArr[i3].e.add(wr0Var);
+                            }
                         }
-                        pp0Var2.m1.setVisibility(4);
-                    } else if (frameLayout != null) {
-                        frameLayout.setVisibility(4);
+                        Collections.sort(ls0VarArr[i3].e, new d80(7));
+                        ls0 ls0Var2 = ls0VarArr[i3];
+                        ls0Var2.f[0] = tL_messages_searchResultsPositions.count;
+                        ls0Var2.h = true;
+                        if (!ls0Var2.e.isEmpty()) {
+                            while (true) {
+                                rr0[] rr0VarArr = ws0Var2.n0;
+                                if (i10 < rr0VarArr.length) {
+                                    rr0 rr0Var = rr0VarArr[i10];
+                                    if (rr0Var.F == i3) {
+                                        rr0Var.b = true;
+                                        ws0Var2.D1(rr0Var, true);
+                                    }
+                                    i10++;
+                                }
+                            }
+                        }
+                        ws0Var2.K.f();
+                        break;
                     }
-                    pp0Var2.v1 = null;
-                    break;
                 }
                 break;
         }

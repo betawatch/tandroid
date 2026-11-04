@@ -1,34 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class iw0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ FrameLayout c;
+public final class iw0 {
+    public final int a;
+    public final org.telegram.ui.Cells.t0 b;
+    public final org.telegram.ui.ActionBar.e6 c;
+    public final ch0 d;
+    public TL_account.TL_birthday e;
+    public ly0 f;
+    public ly0[] g;
+    public ly0[] h;
+    public boolean i;
+    public ly0 j;
+    public final RectF k = new RectF();
+    public final Paint l = new Paint(1);
+    public final gc m;
 
-    public /* synthetic */ iw0(FrameLayout frameLayout, View view, int i10) {
-        this.a = i10;
-        this.c = frameLayout;
-        this.b = view;
+    public iw0(int i3, org.telegram.ui.Cells.t0 t0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = i3;
+        this.b = t0Var;
+        this.c = e6Var;
+        ch0 ch0Var = new ch0(R.raw.cake, org.telegram.messenger.g0.L(66.0f), org.telegram.messenger.g0.L(66.0f), true, null);
+        this.d = ch0Var;
+        ch0Var.H(false);
+        this.m = new gc(t0Var);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                kw0 kw0Var = (kw0) this.c;
-                kw0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kw0Var.invalidate();
-                ((vl0) this.b).invalidate();
-                break;
-            default:
-                ((x71) this.c).F(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    public final void a(Canvas canvas) {
+        int L = org.telegram.messenger.g0.L(66.0f);
+        org.telegram.ui.Cells.t0 t0Var = this.b;
+        int width = (t0Var.getWidth() - L) / 2;
+        int L2 = org.telegram.messenger.g0.L(13.0f) + L;
+        ch0 ch0Var = this.d;
+        ch0Var.setBounds(width, org.telegram.messenger.g0.L(13.0f), width + L, L2);
+        ch0Var.draw(canvas);
+        this.f.c((t0Var.getWidth() - this.f.k()) / 2.0f, org.telegram.messenger.g0.L(19.0f) + L, 1.0f, -1, canvas);
+        int i3 = (int) (this.f.i() + org.telegram.messenger.g0.L(19.0f) + L + org.telegram.messenger.g0.L(17.0f));
+        int i10 = 0;
+        for (int i11 = 0; i11 < this.g.length; i11++) {
+            i10 = (int) (Math.max(this.g[i11].k(), this.h[i11].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f) + i10);
         }
+        int width2 = (t0Var.getWidth() - i10) / 2;
+        int i12 = 0;
+        while (i12 < this.g.length) {
+            float max = Math.max(this.g[i12].k(), this.h[i12].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f);
+            float f10 = width2;
+            float f11 = (max / 2.0f) + f10;
+            int i13 = (int) (f10 + max);
+            ly0 ly0Var = this.g[i12];
+            ly0Var.c(f11 - (ly0Var.k() / 2.0f), i3, 0.75f, -1, canvas);
+            ly0 ly0Var2 = this.h[i12];
+            ly0Var2.c(f11 - (ly0Var2.k() / 2.0f), org.telegram.messenger.g0.L(16.0f) + i3, 1.0f, -1, canvas);
+            i12++;
+            width2 = i13;
+        }
+        if (this.i) {
+            int L3 = org.telegram.messenger.g0.L(38.0f) + i3;
+            canvas.save();
+            float k10 = this.j.k() + org.telegram.messenger.g0.L(26.0f);
+            float L4 = org.telegram.messenger.g0.L(30.0f);
+            float f12 = L3;
+            RectF rectF = this.k;
+            rectF.set((t0Var.getWidth() - k10) / 2.0f, f12, (t0Var.getWidth() + k10) / 2.0f, f12 + L4);
+            float a10 = this.m.a(0.1f);
+            canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
+            float f13 = L4 / 2.0f;
+            canvas.drawRoundRect(rectF, f13, f13, this.l);
+            this.j.c(rectF.left + org.telegram.messenger.g0.L(13.0f), rectF.centerY(), 1.0f, -1, canvas);
+            canvas.restore();
+        }
+    }
+
+    public final void b() {
+        ((org.telegram.ui.ActionBar.t2) t4.l(this.b.getContext(), org.telegram.messenger.bd.M0(2131751673, null), org.telegram.messenger.bd.M0(2131751672, null), this.e, new p2(this, 11), null, true, false, this.c).b).show();
     }
 }

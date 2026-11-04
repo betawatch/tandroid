@@ -1,66 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pc0 extends v7.l {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class pc0 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ vc0 G1;
 
-    public /* synthetic */ pc0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pc0(vc0 vc0Var, Activity activity) {
+        super(activity, null);
+        this.G1 = vc0Var;
     }
 
-    @Override // v7.l
-    public final void a(int i10, CharSequence charSequence) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.f8.b("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-                ((zc0) this.b).o(true);
-                break;
-            default:
-                org.telegram.messenger.f8.b("BotBiometry onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-                xh.n nVar = (xh.n) this.b;
-                rh.s6 s6Var = nVar.j;
-                if (s6Var != null) {
-                    nVar.j = null;
-                    s6Var.a(Boolean.FALSE, null);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // v7.l
-    public final void b() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.f8.b("PasscodeView onAuthenticationFailed");
-                ((zc0) this.b).o(true);
-                break;
-            default:
-                org.telegram.messenger.f8.b("BotBiometry onAuthenticationFailed");
-                break;
-        }
-    }
-
-    @Override // v7.l
-    public final void c(androidx.biometric.t tVar) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.f8.b("PasscodeView onAuthenticationSucceeded");
-                ((zc0) this.b).n(true);
-                break;
-            default:
-                org.telegram.messenger.f8.b("BotBiometry onAuthenticationSucceeded");
-                xh.n nVar = (xh.n) this.b;
-                rh.s6 s6Var = nVar.j;
-                if (s6Var != null) {
-                    nVar.j = null;
-                    s6Var.a(Boolean.TRUE, tVar);
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        super.setAlpha(f10);
+        this.G1.b.invalidate();
     }
 }

@@ -1,44 +1,34 @@
 package f2;
 
-import b2.r0;
-import b2.t0;
-import b2.x;
+import d2.t1;
+import g2.n0;
+import g9.g0;
+import g9.i0;
+import g9.n;
+import g9.n1;
+import g9.s1;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c implements t0 {
-    public final int a;
+public final class c {
+    public static final n c = new n(new t1(21), n1.b);
+    public static final c d;
+    public static final String e;
+    public static final String f;
+    public final s1 a;
+    public final long b;
 
-    public c(int i10) {
-        this.a = i10;
+    static {
+        g0 g0Var = i0.b;
+        d = new c(0L, s1.e);
+        String str = n0.a;
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
-        return null;
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof c) && this.a == ((c) obj).a;
-    }
-
-    public final int hashCode() {
-        return this.a;
-    }
-
-    public final String toString() {
-        return "Mp4AlternateGroup: " + this.a;
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
+    public c(long j10, List list) {
+        this.a = i0.w(c, list);
+        this.b = j10;
     }
 }

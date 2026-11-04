@@ -1,15 +1,106 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class g2 {
-    public final long a;
-    public final long b;
-    public final kj c;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-    public g2(long j10, long j11, kj kjVar) {
-        this.a = j10;
-        this.b = j11;
-        this.c = kjVar;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class g2 extends Drawable {
+    public final long a;
+    public final Drawable b;
+    public final Paint c;
+    public final Path d;
+    public boolean e;
+    public final org.telegram.ui.Components.u5 f;
+
+    public g2(Context context) {
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Path path = new Path();
+        this.d = path;
+        this.e = false;
+        this.f = new org.telegram.ui.Components.u5(new a(this, 3), 420L, org.telegram.ui.Components.xq.h, 0);
+        this.a = System.currentTimeMillis();
+        this.b = k2.p1.g(context, R.drawable.ic_ab_other);
+        paint.setPathEffect(new CornerPathEffect(g0.L(1.0f)));
+        path.rewind();
+        path.moveTo(-g0.N(1.33f), g0.N(0.16f));
+        path.lineTo(-g0.N(1.33f), -g0.N(3.5f));
+        path.lineTo(g0.N(1.33f), -g0.N(3.5f));
+        path.lineTo(g0.N(1.33f), g0.N(0.16f));
+        path.lineTo(g0.N(3.5f), g0.N(0.16f));
+        path.lineTo(0.0f, g0.N(3.5f));
+        path.lineTo(-g0.N(3.5f), g0.N(0.16f));
+        path.close();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        Drawable drawable = this.b;
+        drawable.setBounds(bounds);
+        drawable.draw(canvas);
+        float d = this.f.d(this.e);
+        if (d > 0.0f) {
+            canvas.save();
+            canvas.translate(getBounds().centerX(), getBounds().centerY());
+            canvas.translate(-g0.N(8.166f), g0.N(5.0f));
+            float f10 = (d * 0.5f) + 0.5f;
+            canvas.scale(f10, f10);
+            int r12 = org.telegram.ui.ActionBar.k6.r1(0.4f, -1);
+            Paint paint = this.c;
+            paint.setColor(r12);
+            Path path = this.d;
+            canvas.drawPath(path, paint);
+            float currentTimeMillis = ((System.currentTimeMillis() - this.a) % 450) / 450.0f;
+            float f11 = 0.5f + currentTimeMillis;
+            canvas.save();
+            canvas.clipRect(-g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), currentTimeMillis), g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), f11));
+            paint.setColor(org.telegram.ui.ActionBar.k6.r1(1.0f, -1));
+            canvas.drawPath(path, paint);
+            canvas.restore();
+            if (f11 > 1.0f) {
+                canvas.save();
+                canvas.clipRect(-g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), 0.0f), g0.L(5.0f), g0.T1(-g0.N(3.5f), g0.N(3.5f), f11 - 1.0f));
+                paint.setColor(org.telegram.ui.ActionBar.k6.r1(1.0f, -1));
+                canvas.drawPath(path, paint);
+                canvas.restore();
+            }
+            canvas.restore();
+            invalidateSelf();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.b.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.b.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        this.b.setAlpha(i3);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.b.setColorFilter(colorFilter);
     }
 }

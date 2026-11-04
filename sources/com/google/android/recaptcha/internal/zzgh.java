@@ -1,32 +1,31 @@
 package com.google.android.recaptcha.internal;
 
-import ad.c;
-import ad.h;
 import android.app.Application;
-import ib.a;
+import b8.hb;
+import dd.c;
 import java.util.Locale;
 import java.util.MissingResourceException;
-import kotlin.jvm.internal.i;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzgh {
     private zzvu zza;
     private final c zzb;
 
     public zzgh() {
-        int i10 = zzby.zza;
-        this.zzb = a.a(zzgg.zza);
+        int i3 = zzby.zza;
+        this.zzb = hb.b(zzgg.zza);
     }
 
     private final Application zzb() {
-        return (Application) ((h) this.zzb).a();
+        return (Application) this.zzb.getValue();
     }
 
     private static final String zzc() {
         try {
             String iSO3Country = Locale.getDefault().getISO3Country();
-            i.b(iSO3Country);
+            j.b(iSO3Country);
             return iSO3Country;
         } catch (MissingResourceException unused) {
             return "";
@@ -36,7 +35,7 @@ public final class zzgh {
     private static final String zzd() {
         try {
             String iSO3Language = Locale.getDefault().getISO3Language();
-            i.b(iSO3Language);
+            j.b(iSO3Language);
             return iSO3Language;
         } catch (MissingResourceException unused) {
             return "";
@@ -55,8 +54,8 @@ public final class zzgh {
             r10 = this;
             int r0 = com.google.android.recaptcha.internal.zzby.zza
             com.google.android.recaptcha.internal.zzgf r0 = com.google.android.recaptcha.internal.zzgf.zza
-            ad.h r0 = ib.a.a(r0)
-            java.lang.Object r0 = r0.a()
+            dd.i r0 = b8.hb.b(r0)
+            java.lang.Object r0 = r0.getValue()
             com.google.android.recaptcha.internal.zzch r0 = (com.google.android.recaptcha.internal.zzch) r0
             android.app.Application r0 = r10.zzb()
             java.util.Set r0 = com.google.android.recaptcha.internal.zzch.zza(r0)

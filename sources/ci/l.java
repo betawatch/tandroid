@@ -1,89 +1,64 @@
 package ci;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import java.util.ArrayList;
-import org.telegram.ui.Cells.q1;
-import s4.c1;
+import org.telegram.messenger.hp;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.r60;
+import org.telegram.ui.Components.x60;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.m90;
+import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class l extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s4.h b;
-    public final /* synthetic */ ViewPropertyAnimator c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ o e;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ l(o oVar, s4.h hVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i10) {
-        this.a = i10;
-        this.e = oVar;
-        this.b = hVar;
-        this.c = viewPropertyAnimator;
-        this.d = view;
+    public /* synthetic */ l(v vVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, long j10) {
+        this.d = vVar;
+        this.e = twoStepVerificationActivity;
+        this.c = z10;
+        this.b = j10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.c.setListener(null);
-                View view = this.d;
-                view.setAlpha(1.0f);
-                view.setScaleX(1.0f);
-                view.setScaleX(1.0f);
-                if (view instanceof q1) {
-                    ((q1) view).setAnimationOffsetX(0.0f);
-                } else {
-                    view.setTranslationX(0.0f);
+                org.telegram.messenger.g0.h3(new n((v) this.d, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.c, this.b));
+                break;
+            case 1:
+                x60 x60Var = (x60) this.d;
+                TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) this.e;
+                if (tLObject instanceof TLRPC.TL_chatInviteJoinResultOk) {
+                    hp.s1(x60Var.a).O3(((TLRPC.TL_chatInviteJoinResultOk) tLObject).updates, false);
+                } else if (tLObject instanceof TLRPC.TL_chatInviteJoinResultWebView) {
+                    org.telegram.messenger.g0.h3(new r60(x60Var, (TLRPC.TL_chatInviteJoinResultWebView) tLObject, this.b, 0));
                 }
-                view.setTranslationY(0.0f);
-                o oVar = this.e;
-                ArrayList arrayList = oVar.B;
-                s4.h hVar = this.b;
-                if (arrayList.remove(hVar.a)) {
-                    oVar.d(hVar.a);
-                    oVar.G();
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new rn(x60Var, tL_error, this.c, tL_messages_importChatInvite, 5));
                 break;
             default:
-                this.c.setListener(null);
-                View view2 = this.d;
-                view2.setAlpha(1.0f);
-                view2.setScaleX(1.0f);
-                view2.setScaleX(1.0f);
-                if (view2 instanceof q1) {
-                    ((q1) view2).setAnimationOffsetX(0.0f);
-                } else {
-                    view2.setTranslationX(0.0f);
-                }
-                view2.setTranslationY(0.0f);
-                o oVar2 = this.e;
-                ArrayList arrayList2 = oVar2.B;
-                s4.h hVar2 = this.b;
-                if (arrayList2.remove(hVar2.b)) {
-                    oVar2.d(hVar2.b);
-                    oVar2.G();
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new n((m90) this.d, tLObject, this.b, (String) this.e, this.c, tL_error));
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                c1 c1Var = this.b.a;
-                this.e.getClass();
-                break;
-            default:
-                c1 c1Var2 = this.b.b;
-                this.e.getClass();
-                break;
-        }
+    public /* synthetic */ l(x60 x60Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.d = x60Var;
+        this.b = j10;
+        this.c = z10;
+        this.e = tL_messages_importChatInvite;
+    }
+
+    public /* synthetic */ l(m90 m90Var, long j10, String str, boolean z10) {
+        this.d = m90Var;
+        this.b = j10;
+        this.e = str;
+        this.c = z10;
     }
 }

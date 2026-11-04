@@ -1,124 +1,91 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.util.Base64;
+import org.json.JSONObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.qd0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class et implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pt b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+public final class et implements v0.h {
+    public final /* synthetic */ qd0 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ et(pt ptVar, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = ptVar;
-        this.c = j10;
-        this.d = i10;
+    public et(qd0 qd0Var, Context context, int i3) {
+        this.a = qd0Var;
+        this.b = context;
+        this.c = i3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x011c  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z10;
-        int i10;
-        boolean z11;
-        switch (this.a) {
-            case 0:
-                pt ptVar = this.b;
-                a0.h hVar = ptVar.c;
-                ArrayList arrayList = ptVar.a;
-                a0.h hVar2 = ptVar.E;
-                long j10 = this.c;
-                ot otVar = (ot) hVar2.f(j10);
-                int i11 = this.d;
-                if (otVar != null) {
-                    HashMap hashMap = otVar.c;
-                    hashMap.remove(Integer.valueOf(i11));
-                    if (hashMap.isEmpty()) {
-                        hVar2.l(j10);
-                        ptVar.D.remove(otVar);
-                        is messagesStorage = ptVar.getMessagesStorage();
-                        messagesStorage.a.c(new dq(messagesStorage, j10, 4));
-                        z10 = true;
-                        i10 = 0;
-                        while (i10 < arrayList.size()) {
-                            kj kjVar = (kj) arrayList.get(i10);
-                            if (kjVar != null && kjVar.N && kjVar.f1() == i11) {
-                                arrayList.remove(i10);
-                                i10--;
-                                SparseArray sparseArray = (SparseArray) hVar.f(kj.B0(kjVar.k));
-                                if (sparseArray != null) {
-                                    sparseArray.remove(kjVar.f1());
-                                }
-                                if (sparseArray != null && sparseArray.size() <= 0) {
-                                    hVar.l(kj.B0(kjVar.k));
-                                }
-                                z10 = true;
-                            }
-                            i10++;
-                        }
-                        if (!z10) {
-                            ptVar.Z(false);
-                            break;
-                        }
-                    } else {
-                        is messagesStorage2 = ptVar.getMessagesStorage();
-                        messagesStorage2.a.c(new ir(4, messagesStorage2, otVar));
-                    }
+    @Override // v0.h
+    public final void a(Object obj) {
+        w0.i iVar = (w0.i) obj;
+        boolean z10 = iVar instanceof w0.k;
+        qd0 qd0Var = this.a;
+        if (z10) {
+            qd0Var.a(0L, null, "EMPTY");
+            return;
+        }
+        if (iVar instanceof w0.g) {
+            qd0Var.a(0L, null, "CANCELLED");
+        } else if (iVar instanceof w0.j) {
+            qd0Var.a(0L, null, "CANCELLED");
+        } else if (iVar != null) {
+            qd0Var.a(0L, null, iVar.getMessage());
+        }
+    }
+
+    @Override // v0.h
+    public final void onResult(Object obj) {
+        final qd0 qd0Var = this.a;
+        ci.u0 u0Var = ((v0.n) obj).a;
+        TL_account.finishPasskeyLogin finishpasskeylogin = new TL_account.finishPasskeyLogin();
+        finishpasskeylogin.credential = new TL_account.inputPasskeyCredentialPublicKey();
+        try {
+            JSONObject jSONObject = new JSONObject(((Bundle) u0Var.a).getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON"));
+            finishpasskeylogin.credential.id = jSONObject.getString("id");
+            finishpasskeylogin.credential.raw_id = jSONObject.getString("rawId");
+            JSONObject jSONObject2 = jSONObject.getJSONObject("response");
+            TL_account.inputPasskeyResponseLogin inputpasskeyresponselogin = new TL_account.inputPasskeyResponseLogin();
+            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+            inputpasskeyresponselogin.client_data = tL_dataJSON;
+            tL_dataJSON.data = new String(Base64.decode(jSONObject2.getString("clientDataJSON"), 8));
+            inputpasskeyresponselogin.authenticator_data = Base64.decode(jSONObject2.getString("authenticatorData"), 8);
+            inputpasskeyresponselogin.signature = Base64.decode(jSONObject2.getString("signature"), 8);
+            String str = new String(Base64.decode(jSONObject2.getString("userHandle"), 8));
+            inputpasskeyresponselogin.user_handle = str;
+            int parseInt = Integer.parseInt(str.split(":")[0]);
+            final long parseLong = Long.parseLong(inputpasskeyresponselogin.user_handle.split(":")[1]);
+            finishpasskeylogin.credential.response = inputpasskeyresponselogin;
+            org.telegram.ui.ActionBar.s1 s1Var = new org.telegram.ui.ActionBar.s1(3, this.b, null);
+            s1Var.r(500L);
+            int i3 = this.c;
+            if (parseInt != ConnectionsManager.getInstance(i3).getCurrentDatacenterId()) {
+                int currentDatacenterId = ConnectionsManager.getInstance(i3).getCurrentDatacenterId();
+                long currentAuthKeyId = ConnectionsManager.getInstance(i3).getCurrentAuthKeyId();
+                ConnectionsManager.getInstance(i3).setDefaultDatacenterId(parseInt);
+                finishpasskeylogin.flags = 1 | finishpasskeylogin.flags;
+                finishpasskeylogin.from_dc_id = currentDatacenterId;
+                finishpasskeylogin.from_auth_key_id = currentAuthKeyId;
+            }
+            final int sendRequestTyped = ConnectionsManager.getInstance(i3).sendRequestTyped(finishpasskeylogin, new c3.b(1), new k9(s1Var, qd0Var, parseLong, 3), parseInt, 72);
+            final int i10 = this.c;
+            s1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.dt
+                @Override // android.content.DialogInterface.OnCancelListener
+                public final void onCancel(DialogInterface dialogInterface) {
+                    ConnectionsManager.getInstance(i10).cancelRequest(sendRequestTyped, true);
+                    qd0Var.a(Long.valueOf(parseLong), null, "CANCELLED");
                 }
-                z10 = false;
-                i10 = 0;
-                while (i10 < arrayList.size()) {
-                }
-                if (!z10) {
-                }
-                break;
-            default:
-                pt ptVar2 = this.b;
-                a0.h hVar3 = ptVar2.c;
-                ArrayList arrayList2 = ptVar2.a;
-                a0.h hVar4 = ptVar2.E;
-                long j11 = this.c;
-                ot otVar2 = (ot) hVar4.f(j11);
-                if (otVar2 != null) {
-                    hVar4.l(j11);
-                    ptVar2.D.remove(otVar2);
-                    is messagesStorage3 = ptVar2.getMessagesStorage();
-                    messagesStorage3.a.c(new dq(messagesStorage3, j11, 4));
-                    z11 = true;
-                } else {
-                    z11 = false;
-                }
-                int i12 = 0;
-                while (i12 < arrayList2.size()) {
-                    kj kjVar2 = (kj) arrayList2.get(i12);
-                    if (kjVar2 != null && kjVar2.N && kjVar2.f1() <= this.d) {
-                        arrayList2.remove(i12);
-                        i12--;
-                        SparseArray sparseArray2 = (SparseArray) hVar3.f(kj.B0(kjVar2.k));
-                        if (sparseArray2 != null) {
-                            sparseArray2.remove(kjVar2.f1());
-                        }
-                        if (sparseArray2 != null && sparseArray2.size() <= 0) {
-                            hVar3.l(kj.B0(kjVar2.k));
-                        }
-                        z11 = true;
-                    }
-                    i12++;
-                }
-                if (z11) {
-                    ptVar2.Z(false);
-                    ptVar2.d0();
-                    break;
-                }
-                break;
+            });
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            qd0Var.a(0L, null, e10.getMessage());
         }
     }
 }

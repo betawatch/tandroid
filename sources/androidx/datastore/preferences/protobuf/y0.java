@@ -2,57 +2,76 @@ package androidx.datastore.preferences.protobuf;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class y0 {
     public static final y0 c = new y0();
     public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final k0 a = new k0();
+    public final l0 a = new l0();
 
     public final b1 a(Class cls) {
-        b1 w9;
+        b1 w10;
         Class cls2;
-        z.a(cls, "messageType");
+        c0.a(cls, "messageType");
         ConcurrentHashMap concurrentHashMap = this.b;
         b1 b1Var = (b1) concurrentHashMap.get(cls);
         if (b1Var != null) {
             return b1Var;
         }
-        k0 k0Var = this.a;
-        k0Var.getClass();
+        l0 l0Var = this.a;
+        l0Var.getClass();
         Class cls3 = c1.a;
-        if (!w.class.isAssignableFrom(cls) && (cls2 = c1.a) != null && !cls2.isAssignableFrom(cls)) {
+        if (!z.class.isAssignableFrom(cls) && (cls2 = c1.a) != null && !cls2.isAssignableFrom(cls)) {
             throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
         }
-        a1 a2 = ((j0) k0Var.a).a(cls);
-        int i10 = a2.d;
-        a aVar = a2.a;
-        if ((i10 & 2) == 2) {
-            if (w.class.isAssignableFrom(cls)) {
-                w9 = new t0(c1.d, o.a, aVar);
+        a1 a10 = ((k0) l0Var.a).a(cls);
+        int i3 = a10.d;
+        a aVar = a10.a;
+        if ((i3 & 2) == 2) {
+            if (z.class.isAssignableFrom(cls)) {
+                w10 = new u0(c1.c, r.a, aVar);
             } else {
-                j1 j1Var = c1.b;
-                n nVar = o.b;
-                if (nVar == null) {
+                i1 i1Var = c1.b;
+                q qVar = r.b;
+                if (qVar == null) {
                     throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
                 }
-                w9 = new t0(j1Var, nVar, aVar);
+                w10 = new u0(i1Var, qVar, aVar);
             }
-        } else if (w.class.isAssignableFrom(cls)) {
-            w9 = (a2.d & 1) == 1 ? s0.w(a2, v0.b, h0.b, c1.d, o.a, p0.b) : s0.w(a2, v0.b, h0.b, c1.d, null, p0.b);
-        } else if ((a2.d & 1) == 1) {
-            u0 u0Var = v0.a;
-            f0 f0Var = h0.a;
-            j1 j1Var2 = c1.b;
-            n nVar2 = o.b;
-            if (nVar2 == null) {
+        } else if (z.class.isAssignableFrom(cls)) {
+            q qVar2 = null;
+            v0 v0Var = w0.b;
+            h0 h0Var = i0.b;
+            i1 i1Var2 = c1.c;
+            if (o1.g.c(a10.a()) != 1) {
+                qVar2 = r.a;
+            }
+            q qVar3 = qVar2;
+            p0 p0Var = q0.b;
+            if (!(a10 instanceof a1)) {
+                int[] iArr = t0.n;
+                a10.getClass();
+                throw new ClassCastException();
+            }
+            w10 = t0.w(a10, v0Var, h0Var, i1Var2, qVar3, p0Var);
+        } else {
+            q qVar4 = null;
+            v0 v0Var2 = w0.a;
+            h0 h0Var2 = i0.a;
+            i1 i1Var3 = c1.b;
+            if (o1.g.c(a10.a()) != 1 && (qVar4 = r.b) == null) {
                 throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
             }
-            w9 = s0.w(a2, u0Var, f0Var, j1Var2, nVar2, p0.a);
-        } else {
-            w9 = s0.w(a2, v0.a, h0.a, c1.c, null, p0.a);
+            q qVar5 = qVar4;
+            p0 p0Var2 = q0.a;
+            if (!(a10 instanceof a1)) {
+                int[] iArr2 = t0.n;
+                a10.getClass();
+                throw new ClassCastException();
+            }
+            w10 = t0.w(a10, v0Var2, h0Var2, i1Var3, qVar5, p0Var2);
         }
-        b1 b1Var2 = (b1) concurrentHashMap.putIfAbsent(cls, w9);
-        return b1Var2 != null ? b1Var2 : w9;
+        b1 b1Var2 = (b1) concurrentHashMap.putIfAbsent(cls, w10);
+        return b1Var2 != null ? b1Var2 : w10;
     }
 }

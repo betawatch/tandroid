@@ -1,45 +1,101 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wf b;
-    public final /* synthetic */ vh.p2 c;
+public interface uf {
+    void A(boolean z10);
 
-    public /* synthetic */ uf(wf wfVar, vh.p2 p2Var, int i10) {
-        this.a = i10;
-        this.b = wfVar;
-        this.c = p2Var;
-    }
+    void E();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wf wfVar = this.b;
-                vh.p2 p2Var = this.c;
-                wfVar.removeView(p2Var);
-                if (wfVar.b == p2Var) {
-                    wfVar.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.removeView(this.c);
-                break;
-            case 2:
-                this.b.removeView(this.c);
-                break;
-            default:
-                wf wfVar2 = this.b;
-                vh.p2 p2Var2 = this.c;
-                wfVar2.removeView(p2Var2);
-                if (wfVar2.a == p2Var2) {
-                    wfVar2.a = null;
-                    break;
-                }
-                break;
-        }
-    }
+    void F();
+
+    void F0();
+
+    void G(CharSequence charSequence, boolean z10, int i3, int i10, long j10);
+
+    void I0();
+
+    TLRPC.TL_channels_sendAsPeers M();
+
+    void M0(int i3);
+
+    void O(float f10, int i3);
+
+    int O0();
+
+    void O1();
+
+    TL_stories.StoryItem R0();
+
+    boolean T0(long j10);
+
+    void T1(int i3);
+
+    boolean V0();
+
+    void Y0(CharSequence charSequence, boolean z10, boolean z11);
+
+    void Z0();
+
+    void a0();
+
+    boolean a1();
+
+    void b1();
+
+    void b2();
+
+    void c0(boolean z10);
+
+    void c2(boolean z10);
+
+    void d2(int i3, int i10, int i11, long j10, long j11, boolean z10);
+
+    void e();
+
+    void e1();
+
+    void f();
+
+    void g0();
+
+    void g1();
+
+    void g2();
+
+    void h1(View view, CharSequence charSequence, boolean z10);
+
+    org.telegram.ui.mm i0();
+
+    void j1(CharSequence charSequence);
+
+    boolean k();
+
+    boolean k1();
+
+    void m1();
+
+    void n2();
+
+    int o();
+
+    void q0();
+
+    void r2();
+
+    void s1();
+
+    TLRPC.Peer t();
+
+    void u();
+
+    boolean u0();
+
+    void w0();
+
+    void x(float f10);
 }

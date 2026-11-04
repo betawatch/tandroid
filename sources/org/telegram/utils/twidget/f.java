@@ -3,14 +3,14 @@ package org.telegram.utils.twidget;
 import android.graphics.Canvas;
 import android.graphics.Picture;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public final class f extends g {
     public final Picture e;
     public boolean f;
 
-    public f(int i10, int i11, int i12, int i13) {
-        super(i10, i11, i12, i13);
+    public f(int i3, int i10, int i11, int i12) {
+        super(i3, i10, i11, i12);
         this.e = new Picture();
     }
 
@@ -33,22 +33,22 @@ public final class f extends g {
     }
 
     @Override // org.telegram.utils.twidget.g
-    public final void d(Canvas canvas, float f7) {
+    public final void d(Canvas canvas, float f10) {
         Canvas canvas2;
         int save;
-        if (this.f || f7 <= 0.0f) {
+        if (this.f || f10 <= 0.0f) {
             return;
         }
-        int i10 = this.b;
-        int i11 = this.a;
-        if (f7 < 1.0f) {
+        int i3 = this.b;
+        int i10 = this.a;
+        if (f10 < 1.0f) {
             canvas2 = canvas;
-            save = canvas2.saveLayerAlpha(i11, i10, this.c, this.d, Math.round(f7 * 255.0f));
+            save = canvas2.saveLayerAlpha(i10, i3, this.c, this.d, Math.round(f10 * 255.0f));
         } else {
             canvas2 = canvas;
             save = canvas2.save();
         }
-        canvas2.translate(i11, i10);
+        canvas2.translate(i10, i3);
         canvas2.drawPicture(this.e);
         canvas2.restoreToCount(save);
     }

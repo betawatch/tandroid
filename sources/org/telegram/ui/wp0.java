@@ -1,15 +1,13 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class wp0 extends xr0 {
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final boolean Q() {
-        return true;
-    }
+import android.view.animation.DecelerateInterpolator;
 
-    @Override // org.telegram.ui.xr0, org.telegram.ui.ds0
-    public final boolean z() {
-        return false;
-    }
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class wp0 {
+    public static final wp0 e = new wp0();
+    public DecelerateInterpolator b;
+    public int a = org.telegram.messenger.hs.e3;
+    public boolean c = true;
+    public boolean d = true;
 }

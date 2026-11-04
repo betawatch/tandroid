@@ -1,39 +1,17 @@
 package yd;
 
-import td.e0;
-import v7.w6;
+import wd.c2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class s extends td.a implements ed.d {
-    public final cd.c d;
+public final class s {
+    public final c2 a;
 
-    public s(cd.c cVar, cd.h hVar) {
-        super(hVar, true);
-        this.d = cVar;
+    public s(c2 c2Var) {
+        this.a = c2Var;
     }
 
-    @Override // td.u1
-    public void b(Object obj) {
-        a.g(e0.r(obj), w6.b(this.d));
-    }
-
-    @Override // td.u1
-    public void g(Object obj) {
-        this.d.resumeWith(e0.r(obj));
-    }
-
-    @Override // ed.d
-    public final ed.d getCallerFrame() {
-        cd.c cVar = this.d;
-        if (cVar instanceof ed.d) {
-            return (ed.d) cVar;
-        }
-        return null;
-    }
-
-    @Override // td.u1
-    public final boolean z() {
-        return true;
+    public final String toString() {
+        return "WaiterEB(" + this.a + ')';
     }
 }

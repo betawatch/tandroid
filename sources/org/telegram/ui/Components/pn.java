@@ -1,46 +1,47 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pn implements a8 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.k1[] a;
-    public final /* synthetic */ sn b;
+public final /* synthetic */ class pn implements org.telegram.messenger.u10 {
+    public final /* synthetic */ f60 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
 
-    public pn(sn snVar, org.telegram.ui.ActionBar.k1[] k1VarArr) {
-        this.b = snVar;
-        this.a = k1VarArr;
+    public /* synthetic */ pn(f60 f60Var, int i3, long j10, long j11, org.telegram.ui.wm wmVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = f60Var;
+        this.b = i3;
+        this.c = j10;
+        this.d = j11;
+        this.e = wmVar;
+        this.f = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.a8
-    public final void Y0(int i10, int i11) {
-        org.telegram.ui.un unVar = this.b.G;
-        if (unVar == null) {
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        Integer num = (Integer) obj;
+        this.a.u();
+        int intValue = num.intValue();
+        int i3 = this.b;
+        long j10 = this.c;
+        long j11 = this.d;
+        org.telegram.ui.ActionBar.d2 d2Var = this.e;
+        org.telegram.ui.ActionBar.e6 e6Var = this.f;
+        if (intValue != 0) {
+            org.telegram.messenger.us.t(i3).H(j10, num.intValue(), j11);
+            if (fc.a(d2Var)) {
+                fc.z(d2Var, 5, num.intValue(), e6Var).j();
+                return;
+            }
             return;
         }
-        unVar.getMessagesController().F4(i10, unVar.a());
-        TLRPC.ChatFull chatFull = unVar.p8;
-        TLRPC.UserFull userFull = unVar.q8;
-        if (userFull == null && chatFull == null) {
-            return;
+        if (org.telegram.messenger.hp.s1(i3).r2(j10, j11, null)) {
+            org.telegram.messenger.us.t(i3).G(j10, j11, false);
         }
-        unVar.c8();
-        UndoView undoView = unVar.M3;
-        if (undoView != null) {
-            undoView.k(unVar.a(), i11, unVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
+        if (fc.a(d2Var)) {
+            fc.z(d2Var, 4, num.intValue(), e6Var).j();
         }
-    }
-
-    @Override // org.telegram.ui.Components.a8
-    public final void dismiss() {
-        org.telegram.ui.ActionBar.k1 k1Var = this.a[0];
-        if (k1Var != null) {
-            k1Var.dismiss();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.a8
-    public final /* synthetic */ void t1() {
     }
 }

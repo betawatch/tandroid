@@ -1,66 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class wk extends org.telegram.ui.Components.sm0 {
-    public final /* synthetic */ un I;
+public final class wk extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ wm d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wk(un unVar, Context context, un unVar2, int i10, long j10, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, unVar2, i10, j10, p6Var);
-        this.I = unVar;
+    public wk(wm wmVar, boolean z10, boolean z11, boolean z12) {
+        this.d = wmVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = z12;
     }
 
-    @Override // org.telegram.ui.Components.sm0
-    public final void b(boolean z10) {
-        un unVar = this.I;
-        unVar.F7();
-        unVar.D7();
-        dl dlVar = unVar.xb;
-        if (dlVar != null) {
-            dlVar.setTranslationY(unVar.P9 + getCurrentHeight());
-        }
-        if (z10) {
-            unVar.W9 = true;
-            unVar.Ic();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.sm0
-    public final boolean f(sg.o0 o0Var) {
-        int i10;
-        un unVar = this.I;
-        unVar.E3 = o0Var;
-        unVar.F3 = o0Var != null;
-        if (o0Var == null) {
-            org.telegram.messenger.vi mediaDataController = unVar.getMediaDataController();
-            mediaDataController.Y0.clear();
-            mediaDataController.Z0.clear();
-            mediaDataController.a1.clear();
-            unVar.Hb(false);
-            unVar.ed(0, 0, -1);
-        }
-        unVar.hd();
-        unVar.Uc();
-        unVar.H3 = unVar.j0.getSearchField().getText().toString();
-        org.telegram.messenger.vi mediaDataController2 = unVar.getMediaDataController();
-        String str = unVar.H3;
-        long j10 = unVar.j6;
-        long j11 = unVar.b7;
-        i10 = ((org.telegram.ui.ActionBar.k2) unVar).classGuid;
-        mediaDataController2.X1(str, j10, j11, i10, 0, unVar.r4, false, unVar.C3, unVar.D3, (TextUtils.isEmpty(unVar.H3) && unVar.E3 == null) ? false : true, unVar.E3);
-        org.telegram.messenger.i0.v1(unVar.j0.getSearchField());
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.sm0
-    public final void h(boolean z10) {
-        super.h(z10);
-        un unVar = this.I;
-        org.telegram.ui.ActionBar.t0 t0Var = unVar.j0;
-        g(t0Var != null && t0Var.v() && a() && unVar.I3 == null);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        wm wmVar = this.d;
+        wmVar.b3 = null;
+        wmVar.Y2.setVisibility(this.a ? 0 : 4);
+        wmVar.a3.setVisibility(this.b ? 0 : 4);
+        wmVar.Z2.setVisibility(this.c ? 0 : 4);
     }
 }

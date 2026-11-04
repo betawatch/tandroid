@@ -9,41 +9,16 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class s1 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = e6.e.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(i0.a.i(i11, "negative size: "));
-                }
-                a2 = e6.e.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
-            }
-            throw new IndexOutOfBoundsException(a2);
+    public static void a(Object obj, String str) {
+        if (obj == null) {
+            throw new NullPointerException(str);
         }
     }
 
-    public static void b(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : e6.e.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
-    }
-
-    public static String c(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return e6.e.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
-        }
-        if (i11 >= 0) {
-            return e6.e.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(i0.a.i(i11, "negative size: "));
-    }
-
-    public static o1 d() {
+    public static o1 b() {
         String str;
         ClassLoader classLoader = s1.class.getClassLoader();
         if (o1.class.equals(o1.class)) {
@@ -57,17 +32,17 @@ public abstract class s1 {
         try {
             try {
                 try {
-                    a1.g.y(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
+                    a1.g.z(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                     throw null;
-                } catch (IllegalAccessException e) {
-                    throw new IllegalStateException(e);
-                } catch (InvocationTargetException e7) {
-                    throw new IllegalStateException(e7);
+                } catch (IllegalAccessException e10) {
+                    throw new IllegalStateException(e10);
+                } catch (InvocationTargetException e11) {
+                    throw new IllegalStateException(e11);
                 }
-            } catch (InstantiationException e10) {
-                throw new IllegalStateException(e10);
-            } catch (NoSuchMethodException e11) {
-                throw new IllegalStateException(e11);
+            } catch (InstantiationException e12) {
+                throw new IllegalStateException(e12);
+            } catch (NoSuchMethodException e13) {
+                throw new IllegalStateException(e13);
             }
         } catch (ClassNotFoundException unused) {
             try {
@@ -79,8 +54,8 @@ public abstract class s1 {
                             throw null;
                         }
                         throw new ClassCastException();
-                    } catch (ServiceConfigurationError e12) {
-                        Logger.getLogger(m1.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(o1.class.getSimpleName()), (Throwable) e12);
+                    } catch (ServiceConfigurationError e14) {
+                        Logger.getLogger(m1.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(o1.class.getSimpleName()), (Throwable) e14);
                     }
                 }
                 if (arrayList.size() == 1) {
@@ -91,12 +66,12 @@ public abstract class s1 {
                 }
                 try {
                     return (o1) o1.class.getMethod("combine", Collection.class).invoke(null, arrayList);
-                } catch (IllegalAccessException e13) {
-                    throw new IllegalStateException(e13);
-                } catch (NoSuchMethodException e14) {
-                    throw new IllegalStateException(e14);
-                } catch (InvocationTargetException e15) {
+                } catch (IllegalAccessException e15) {
                     throw new IllegalStateException(e15);
+                } catch (NoSuchMethodException e16) {
+                    throw new IllegalStateException(e16);
+                } catch (InvocationTargetException e17) {
+                    throw new IllegalStateException(e17);
                 }
             } catch (Throwable th2) {
                 throw new ServiceConfigurationError(th2.getMessage(), th2);

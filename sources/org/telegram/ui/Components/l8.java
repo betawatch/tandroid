@@ -2,93 +2,51 @@ package org.telegram.ui.Components;
 
 import android.app.Activity;
 import android.view.View;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class l8 extends uk0 {
-    public final ArrayList e3;
-    public final int f3;
-    public int g3;
-    public final org.telegram.ui.x7 h3;
-    public k8 i3;
-    public final /* synthetic */ o8 j3;
+public final class l8 extends org.telegram.ui.g11 {
+    public boolean f2;
+    public final /* synthetic */ r8 g2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l8(o8 o8Var, Activity activity) {
-        super(activity, null);
-        this.j3 = o8Var;
-        this.e3 = new ArrayList();
-        this.f3 = org.telegram.messenger.at.e3;
-        this.g3 = -1;
-        s4.a0 a0Var = new s4.a0();
-        a0Var.j1(0);
-        setLayoutManager(a0Var);
-        for (int i10 = 0; i10 < 7; i10++) {
-            k8 k8Var = new k8();
-            int i11 = this.f3;
-            this.f3 = i11 + 1;
-            k8Var.a = i11;
-            int[] iArr = o8.c0[i10];
-            k8Var.c = iArr[0];
-            k8Var.d = iArr[1];
-            k8Var.e = iArr[2];
-            k8Var.f = iArr[3];
-            this.e3.add(k8Var);
-        }
-        for (int i12 = 0; i12 < 30; i12++) {
-            k8 k8Var2 = new k8();
-            int i13 = this.f3;
-            this.f3 = i13 + 1;
-            k8Var2.a = i13;
-            int[] iArr2 = o8.d0[i12];
-            k8Var2.c = iArr2[0];
-            k8Var2.d = iArr2[1];
-            k8Var2.e = 0;
-            k8Var2.f = 0;
-            k8Var2.b = true;
-            this.e3.add(k8Var2);
-        }
-        setPadding(org.telegram.messenger.i0.L(4.0f), 0, org.telegram.messenger.i0.L(4.0f), 0);
-        setClipToPadding(false);
-        this.f1 = true;
-        int i14 = 2;
-        setOnItemClickListener(new k(this, i14));
-        org.telegram.ui.x7 x7Var = new org.telegram.ui.x7(this, i14);
-        this.h3 = x7Var;
-        setAdapter(x7Var);
-        setOverScrollMode(1);
+    public l8(r8 r8Var, r8 r8Var2, Activity activity, int i3) {
+        super(r8Var2, activity, false, null, 4, true, null, 16, i3);
+        this.g2 = r8Var;
+        this.f2 = true;
     }
 
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10) / this.h3.b();
-        o8 o8Var = this.j3;
-        o8Var.P = size;
-        if (size < org.telegram.messenger.i0.L(39.0f)) {
-            o8Var.P = org.telegram.messenger.i0.L(39.0f);
-        } else if (o8Var.P > org.telegram.messenger.i0.L(150.0f)) {
-            o8Var.P = org.telegram.messenger.i0.L(48.0f);
+    @Override // org.telegram.ui.g11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
+        if (this.f2) {
+            this.f2 = false;
+            this.g2.b.s(null);
         }
-        super.onMeasure(i10, i11);
     }
 
-    public final void z1(k8 k8Var) {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.e3;
-            if (i10 >= arrayList.size()) {
-                this.i3 = k8Var;
-                this.g3 = 1;
-                break;
-            } else {
-                if (((k8) arrayList.get(i10)).equals(k8Var)) {
-                    this.g3 = ((k8) arrayList.get(i10)).a;
-                    break;
-                }
-                i10++;
-            }
+    @Override // org.telegram.ui.g11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i3;
+        TLRPC.TL_emojiList tL_emojiList;
+        boolean z10;
+        int i10;
+        boolean z11 = this.S;
+        r8 r8Var = this.g2;
+        if (z11) {
+            i10 = ((org.telegram.ui.ActionBar.d2) r8Var).currentAccount;
+            tL_emojiList = org.telegram.messenger.li.b0(i10).K1;
+        } else {
+            i3 = ((org.telegram.ui.ActionBar.d2) r8Var).currentAccount;
+            tL_emojiList = org.telegram.messenger.li.b0(i3).L1;
         }
-        this.h3.f();
+        if (tL_emojiList != null) {
+            z10 = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l10 != null ? l10.longValue() : 0L));
+        } else {
+            z10 = false;
+        }
+        r8Var.m0(z10, l10 != null ? l10.longValue() : 0L, document);
     }
 }

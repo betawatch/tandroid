@@ -11,15 +11,16 @@ import android.os.Bundle;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
-import kotlin.jvm.internal.i;
+import kotlin.jvm.internal.j;
 import v0.c;
 import v0.n;
 import w0.d;
-import w7.f8;
-import w7.g8;
-import w7.l9;
+import w0.i;
+import x7.g5;
+import x7.h5;
+import x7.q6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static d a(Intent intent) {
@@ -28,8 +29,8 @@ public abstract class a {
             return null;
         }
         String type = createCredentialException.getType();
-        i.d(type, "getType(...)");
-        return l9.a(createCredentialException.getMessage(), type);
+        j.d(type, "getType(...)");
+        return q6.a(createCredentialException.getMessage(), type);
     }
 
     public static c b(String str, Intent intent) {
@@ -38,42 +39,42 @@ public abstract class a {
             return null;
         }
         Bundle data = createCredentialResponse.getData();
-        i.d(data, "getData(...)");
-        return f8.a(str, data);
+        j.d(data, "getData(...)");
+        return g5.a(str, data);
     }
 
-    public static w0.i c(Intent intent) {
-        i.e(intent, "intent");
+    public static i c(Intent intent) {
+        j.e(intent, "intent");
         GetCredentialException getCredentialException = (GetCredentialException) intent.getSerializableExtra("android.service.credentials.extra.GET_CREDENTIAL_EXCEPTION", GetCredentialException.class);
         if (getCredentialException == null) {
             return null;
         }
         String type = getCredentialException.getType();
-        i.d(type, "getType(...)");
-        return l9.b(getCredentialException.getMessage(), type);
+        j.d(type, "getType(...)");
+        return q6.b(getCredentialException.getMessage(), type);
     }
 
     public static n d(Intent intent) {
-        i.e(intent, "intent");
+        j.e(intent, "intent");
         GetCredentialResponse getCredentialResponse = (GetCredentialResponse) intent.getParcelableExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE", GetCredentialResponse.class);
         if (getCredentialResponse == null) {
             return null;
         }
         Credential credential = getCredentialResponse.getCredential();
-        i.d(credential, "getCredential(...)");
+        j.d(credential, "getCredential(...)");
         String type = credential.getType();
-        i.d(type, "getType(...)");
+        j.d(type, "getType(...)");
         Bundle data = credential.getData();
-        i.d(data, "getData(...)");
-        return new n(g8.a(type, data));
+        j.d(data, "getData(...)");
+        return new n(h5.a(type, data));
     }
 
     public static AccessibilityNodeInfo.AccessibilityAction e() {
         return AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_IN_DIRECTION;
     }
 
-    public static float f(VelocityTracker velocityTracker, int i10) {
-        return velocityTracker.getAxisVelocity(i10);
+    public static float f(VelocityTracker velocityTracker, int i3) {
+        return velocityTracker.getAxisVelocity(i3);
     }
 
     public static void g(AccessibilityNodeInfo accessibilityNodeInfo, Rect rect) {
@@ -84,12 +85,12 @@ public abstract class a {
         return accessibilityNodeInfo.getContainerTitle();
     }
 
-    public static int i(ViewConfiguration viewConfiguration, int i10, int i11, int i12) {
-        return viewConfiguration.getScaledMaximumFlingVelocity(i10, i11, i12);
+    public static int i(ViewConfiguration viewConfiguration, int i3, int i10, int i11) {
+        return viewConfiguration.getScaledMaximumFlingVelocity(i3, i10, i11);
     }
 
-    public static int j(ViewConfiguration viewConfiguration, int i10, int i11, int i12) {
-        return viewConfiguration.getScaledMinimumFlingVelocity(i10, i11, i12);
+    public static int j(ViewConfiguration viewConfiguration, int i3, int i10, int i11) {
+        return viewConfiguration.getScaledMinimumFlingVelocity(i3, i10, i11);
     }
 
     public static boolean k(AccessibilityNodeInfo accessibilityNodeInfo) {

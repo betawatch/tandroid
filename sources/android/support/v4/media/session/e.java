@@ -13,7 +13,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class e extends MediaController.Callback {
     public final WeakReference a;
@@ -37,7 +37,7 @@ public final class e extends MediaController.Callback {
 
     @Override // android.media.session.MediaController.Callback
     public final void onExtrasChanged(Bundle bundle) {
-        a0.k(bundle);
+        a0.f(bundle);
     }
 
     @Override // android.media.session.MediaController.Callback
@@ -101,6 +101,6 @@ public final class e extends MediaController.Callback {
 
     @Override // android.media.session.MediaController.Callback
     public final void onSessionEvent(String str, Bundle bundle) {
-        a0.k(bundle);
+        a0.f(bundle);
     }
 }

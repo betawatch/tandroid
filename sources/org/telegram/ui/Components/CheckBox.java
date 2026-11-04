@@ -13,17 +13,17 @@ import android.text.TextPaint;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class CheckBox extends View {
-    public static Paint H;
     public static Paint I;
     public static Paint J;
     public static Paint K;
-    public int D;
+    public static Paint L;
     public int E;
     public int F;
-    public String G;
+    public int G;
+    public String H;
     public final Drawable a;
     public final TextPaint b;
     public Bitmap c;
@@ -38,37 +38,37 @@ public class CheckBox extends View {
     public boolean x;
     public boolean y;
 
-    public CheckBox(Context context, int i10) {
+    public CheckBox(Context context, int i3) {
         super(context);
         this.w = true;
-        this.D = 22;
-        if (H == null) {
-            H = new Paint(1);
+        this.E = 22;
+        if (I == null) {
+            I = new Paint(1);
             Paint paint = new Paint(1);
-            I = paint;
+            J = paint;
             paint.setColor(0);
-            Paint paint2 = I;
+            Paint paint2 = J;
             PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
             paint2.setXfermode(new PorterDuffXfermode(mode));
             Paint paint3 = new Paint(1);
-            J = paint3;
+            K = paint3;
             paint3.setColor(0);
-            Paint paint4 = J;
+            Paint paint4 = K;
             Paint.Style style = Paint.Style.STROKE;
             paint4.setStyle(style);
-            J.setXfermode(new PorterDuffXfermode(mode));
+            K.setXfermode(new PorterDuffXfermode(mode));
             Paint paint5 = new Paint(1);
-            K = paint5;
+            L = paint5;
             paint5.setColor(-1);
-            K.setStyle(style);
+            L.setStyle(style);
         }
-        J.setStrokeWidth(org.telegram.messenger.i0.L(28.0f));
-        K.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
+        K.setStrokeWidth(org.telegram.messenger.g0.L(28.0f));
+        L.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         TextPaint textPaint = new TextPaint(1);
         this.b = textPaint;
-        textPaint.setTextSize(org.telegram.messenger.i0.L(18.0f));
-        textPaint.setTypeface(org.telegram.messenger.i0.o());
-        this.a = context.getResources().getDrawable(i10).mutate();
+        textPaint.setTextSize(org.telegram.messenger.g0.L(18.0f));
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        this.a = context.getResources().getDrawable(i3).mutate();
     }
 
     public final void a(boolean z10) {
@@ -92,15 +92,15 @@ public class CheckBox extends View {
         this.w = z10;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addListener(new w5(this, 18));
+        ofFloat.addListener(new x5(this, 18));
         this.s.setDuration(300L);
         this.s.start();
     }
 
-    public final void c(int i10, int i11) {
-        this.F = i10;
-        this.a.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
-        this.b.setColor(i11);
+    public final void c(int i3, int i10) {
+        this.G = i3;
+        this.a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+        this.b.setColor(i10);
         invalidate();
     }
 
@@ -129,66 +129,66 @@ public class CheckBox extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onDraw(Canvas canvas) {
-        float L;
+        float L2;
         if (getVisibility() != 0 || this.c == null || this.d == null) {
             return;
         }
         if (this.h || this.r != 0.0f) {
-            J.setStrokeWidth(org.telegram.messenger.i0.L(this.D + 6));
+            K.setStrokeWidth(org.telegram.messenger.g0.L(this.E + 6));
             this.c.eraseColor(0);
             float measuredWidth = getMeasuredWidth() / 2;
-            float f7 = this.r;
-            float f10 = f7 >= 0.5f ? 1.0f : f7 / 0.5f;
-            float f11 = f7 < 0.5f ? 0.0f : (f7 - 0.5f) / 0.5f;
+            float f10 = this.r;
+            float f11 = f10 >= 0.5f ? 1.0f : f10 / 0.5f;
+            float f12 = f10 < 0.5f ? 0.0f : (f10 - 0.5f) / 0.5f;
             if (!this.w) {
-                f7 = 1.0f - f7;
+                f10 = 1.0f - f10;
             }
-            if (f7 >= 0.2f) {
-                if (f7 < 0.4f) {
-                    L = org.telegram.messenger.i0.L(2.0f) - (((f7 - 0.2f) * org.telegram.messenger.i0.L(2.0f)) / 0.2f);
+            if (f10 >= 0.2f) {
+                if (f10 < 0.4f) {
+                    L2 = org.telegram.messenger.g0.L(2.0f) - (((f10 - 0.2f) * org.telegram.messenger.g0.L(2.0f)) / 0.2f);
                 }
                 if (this.h) {
-                    H.setColor(1140850688);
-                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - org.telegram.messenger.i0.L(1.0f), H);
-                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - org.telegram.messenger.i0.L(1.0f), K);
+                    I.setColor(1140850688);
+                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - org.telegram.messenger.g0.L(1.0f), I);
+                    canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth - org.telegram.messenger.g0.L(1.0f), L);
                 }
-                H.setColor(this.F);
+                I.setColor(this.G);
                 if (this.n) {
-                    measuredWidth -= org.telegram.messenger.i0.L(2.0f);
+                    measuredWidth -= org.telegram.messenger.g0.L(2.0f);
                 }
-                this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth, H);
-                this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * measuredWidth, I);
+                this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth, I);
+                this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f11) * measuredWidth, J);
                 canvas.drawBitmap(this.c, 0.0f, 0.0f, (Paint) null);
                 this.d.eraseColor(0);
-                if (this.G == null) {
-                    this.f.drawText(this.G, (getMeasuredWidth() - ((int) Math.ceil(r2.measureText(r0)))) / 2, org.telegram.messenger.i0.L(this.D == 40 ? 28.0f : 21.0f), this.b);
+                if (this.H == null) {
+                    this.f.drawText(this.H, (getMeasuredWidth() - ((int) Math.ceil(r2.measureText(r0)))) / 2, org.telegram.messenger.g0.L(this.E == 40 ? 28.0f : 21.0f), this.b);
                 } else {
                     Drawable drawable = this.a;
                     int intrinsicWidth = drawable.getIntrinsicWidth();
                     int intrinsicHeight = drawable.getIntrinsicHeight();
                     int measuredWidth2 = (getMeasuredWidth() - intrinsicWidth) / 2;
                     int measuredHeight = (getMeasuredHeight() - intrinsicHeight) / 2;
-                    int i10 = this.E;
-                    drawable.setBounds(measuredWidth2, measuredHeight + i10, intrinsicWidth + measuredWidth2, measuredHeight + intrinsicHeight + i10);
+                    int i3 = this.F;
+                    drawable.setBounds(measuredWidth2, measuredHeight + i3, intrinsicWidth + measuredWidth2, measuredHeight + intrinsicHeight + i3);
                     drawable.draw(this.f);
                 }
-                this.f.drawCircle((getMeasuredWidth() / 2) - org.telegram.messenger.i0.L(2.5f), org.telegram.messenger.i0.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f11) * ((org.telegram.messenger.i0.L(6.0f) + getMeasuredWidth()) / 2), J);
+                this.f.drawCircle((getMeasuredWidth() / 2) - org.telegram.messenger.g0.L(2.5f), org.telegram.messenger.g0.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f12) * ((org.telegram.messenger.g0.L(6.0f) + getMeasuredWidth()) / 2), K);
                 canvas.drawBitmap(this.d, 0.0f, 0.0f, (Paint) null);
             }
-            L = (org.telegram.messenger.i0.L(2.0f) * f7) / 0.2f;
-            measuredWidth -= L;
+            L2 = (org.telegram.messenger.g0.L(2.0f) * f10) / 0.2f;
+            measuredWidth -= L2;
             if (this.h) {
             }
-            H.setColor(this.F);
+            I.setColor(this.G);
             if (this.n) {
             }
-            this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth, H);
-            this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * measuredWidth, I);
+            this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth, I);
+            this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f11) * measuredWidth, J);
             canvas.drawBitmap(this.c, 0.0f, 0.0f, (Paint) null);
             this.d.eraseColor(0);
-            if (this.G == null) {
+            if (this.H == null) {
             }
-            this.f.drawCircle((getMeasuredWidth() / 2) - org.telegram.messenger.i0.L(2.5f), org.telegram.messenger.i0.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f11) * ((org.telegram.messenger.i0.L(6.0f) + getMeasuredWidth()) / 2), J);
+            this.f.drawCircle((getMeasuredWidth() / 2) - org.telegram.messenger.g0.L(2.5f), org.telegram.messenger.g0.L(4.0f) + (getMeasuredHeight() / 2), (1.0f - f12) * ((org.telegram.messenger.g0.L(6.0f) + getMeasuredWidth()) / 2), K);
             canvas.drawBitmap(this.d, 0.0f, 0.0f, (Paint) null);
         }
     }
@@ -202,24 +202,24 @@ public class CheckBox extends View {
     }
 
     @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.F = i10;
+    public void setBackgroundColor(int i3) {
+        this.G = i3;
         invalidate();
     }
 
-    public void setCheckColor(int i10) {
-        this.a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-        this.b.setColor(i10);
+    public void setCheckColor(int i3) {
+        this.a.setColorFilter(new PorterDuffColorFilter(i3, PorterDuff.Mode.MULTIPLY));
+        this.b.setColor(i3);
         invalidate();
     }
 
-    public void setCheckOffset(int i10) {
-        this.E = i10;
+    public void setCheckOffset(int i3) {
+        this.F = i3;
     }
 
     public void setDrawBackground(boolean z10) {
@@ -230,45 +230,45 @@ public class CheckBox extends View {
         this.n = z10;
     }
 
-    public void setNum(int i10) {
-        if (i10 >= 0) {
-            this.G = "" + (i10 + 1);
+    public void setNum(int i3) {
+        if (i3 >= 0) {
+            this.H = "" + (i3 + 1);
         } else if (this.s == null) {
-            this.G = null;
+            this.H = null;
         }
         invalidate();
     }
 
-    public void setProgress(float f7) {
-        if (this.r == f7) {
+    public void setProgress(float f10) {
+        if (this.r == f10) {
             return;
         }
-        this.r = f7;
+        this.r = f10;
         invalidate();
     }
 
-    public void setSize(int i10) {
-        this.D = i10;
-        if (i10 == 40) {
-            this.b.setTextSize(org.telegram.messenger.i0.L(24.0f));
+    public void setSize(int i3) {
+        this.E = i3;
+        if (i3 == 40) {
+            this.b.setTextSize(org.telegram.messenger.g0.L(24.0f));
         }
     }
 
-    public void setStrokeWidth(int i10) {
-        K.setStrokeWidth(i10);
+    public void setStrokeWidth(int i3) {
+        L.setStrokeWidth(i3);
     }
 
     @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        if (i10 == 0 && this.c == null) {
+    public void setVisibility(int i3) {
+        super.setVisibility(i3);
+        if (i3 == 0 && this.c == null) {
             try {
-                int L = org.telegram.messenger.i0.L(this.D);
-                int L2 = org.telegram.messenger.i0.L(this.D);
+                int L2 = org.telegram.messenger.g0.L(this.E);
+                int L3 = org.telegram.messenger.g0.L(this.E);
                 Bitmap.Config config = Bitmap.Config.ARGB_4444;
-                this.c = Bitmap.createBitmap(L, L2, config);
+                this.c = Bitmap.createBitmap(L2, L3, config);
                 this.e = new Canvas(this.c);
-                this.d = Bitmap.createBitmap(org.telegram.messenger.i0.L(this.D), org.telegram.messenger.i0.L(this.D), config);
+                this.d = Bitmap.createBitmap(org.telegram.messenger.g0.L(this.E), org.telegram.messenger.g0.L(this.E), config);
                 this.f = new Canvas(this.d);
             } catch (Throwable unused) {
             }

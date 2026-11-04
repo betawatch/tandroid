@@ -1,17 +1,18 @@
 package org.scilab.forge.jlatexmath;
 
 import a1.g;
+import com.google.android.recaptcha.internal.a;
 import java.lang.Character;
 import java.util.Map;
 import java.util.StringTokenizer;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 import org.telegram.tgnet.TLObject;
 import ru.noties.jlatexmath.awt.Color;
-import sc.e;
+import t4.c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -127,7 +128,7 @@ public class PredefMacros {
     }
 
     public static final Atom Braket_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, g.n("\\left\\langle ", strArr[1].replaceAll("\\|", "\\\\middle\\\\vert "), "\\right\\rangle")).root;
+        return new TeXFormula(teXParser, g.q("\\left\\langle ", strArr[1].replaceAll("\\|", "\\\\middle\\\\vert "), "\\right\\rangle")).root;
     }
 
     public static final Atom DeclareMathSizes_macro(TeXParser teXParser, String[] strArr) {
@@ -149,7 +150,7 @@ public class PredefMacros {
         TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
         teXFormula.add(new GeoGebraLogoAtom());
         teXFormula.add("\\mathsf{Gebra}");
-        return new ColorAtom(teXFormula.root, (Color) null, new Color(at.n1, at.n1, at.n1));
+        return new ColorAtom(teXFormula.root, (Color) null, new Color(hs.n1, hs.n1, hs.n1));
     }
 
     public static final Atom Hstrok_macro(TeXParser teXParser, String[] strArr) {
@@ -175,7 +176,7 @@ public class PredefMacros {
     }
 
     public static final Atom Set_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, g.n("\\left\\{", strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert "), "\\right\\}")).root;
+        return new TeXFormula(teXParser, g.q("\\left\\{", strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert "), "\\right\\}")).root;
     }
 
     public static final Atom TStroke_macro(TeXParser teXParser, String[] strArr) {
@@ -258,13 +259,13 @@ public class PredefMacros {
             str = "mathring";
         } else if (charAt != '~') {
             switch (charAt) {
-                case at.B1 /* 116 */:
+                case hs.B1 /* 116 */:
                     str = "tie";
                     break;
-                case at.C1 /* 117 */:
+                case hs.C1 /* 117 */:
                     str = "breve";
                     break;
-                case at.D1 /* 118 */:
+                case hs.D1 /* 118 */:
                     str = "check";
                     break;
                 default:
@@ -386,8 +387,8 @@ public class PredefMacros {
     public static final Atom bgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
             return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, ColorAtom.getColor(strArr[1]), (Color) null);
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e10) {
+            throw new ParseException(e10.toString());
         }
     }
 
@@ -470,14 +471,14 @@ public class PredefMacros {
 
     public static final Atom cfrac_macro(TeXParser teXParser, String[] strArr) {
         Atom atom;
-        int i10 = "r".equals(strArr[3]) ? 1 : "l".equals(strArr[3]) ? 0 : 2;
+        int i3 = "r".equals(strArr[3]) ? 1 : "l".equals(strArr[3]) ? 0 : 2;
         TeXFormula teXFormula = new TeXFormula(teXParser, strArr[1], false);
         TeXFormula teXFormula2 = new TeXFormula(teXParser, strArr[2], false);
         Atom atom2 = teXFormula.root;
         if (atom2 == null || (atom = teXFormula2.root) == null) {
             throw new ParseException("Both numerator and denominator of a fraction can't be empty!");
         }
-        FractionAtom fractionAtom = new FractionAtom(atom2, atom, true, i10, 2);
+        FractionAtom fractionAtom = new FractionAtom(atom2, atom, true, i3, 2);
         RowAtom rowAtom = new RowAtom();
         rowAtom.add(new StyleAtom(0, fractionAtom));
         return rowAtom;
@@ -485,18 +486,18 @@ public class PredefMacros {
 
     public static final Atom char_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
-        int i10 = 16;
+        int i3 = 16;
         if (str.startsWith("0x") || str.startsWith("0X")) {
             str = str.substring(2);
         } else if (str.startsWith("x") || str.startsWith("X")) {
             str = str.substring(1);
         } else if (str.startsWith("0")) {
             str = str.substring(1);
-            i10 = 8;
+            i3 = 8;
         } else {
-            i10 = 10;
+            i3 = 10;
         }
-        return teXParser.convertCharacter((char) Integer.parseInt(str, i10), true);
+        return teXParser.convertCharacter((char) Integer.parseInt(str, i3), true);
     }
 
     public static final Atom choose_brackets(String str, String str2, TeXParser teXParser, String[] strArr) {
@@ -639,11 +640,11 @@ public class PredefMacros {
                 throw new ParseException("The color definition must have four components !");
             }
             float[] fArr = new float[4];
-            for (int i10 = 0; i10 < 4; i10++) {
-                fArr[i10] = Float.parseFloat(stringTokenizer2.nextToken().trim());
+            for (int i3 = 0; i3 < 4; i3++) {
+                fArr[i3] = Float.parseFloat(stringTokenizer2.nextToken().trim());
             }
-            float f7 = 1.0f - fArr[3];
-            color = new Color((1.0f - fArr[0]) * f7, (1.0f - fArr[1]) * f7, (1.0f - fArr[2]) * f7);
+            float f10 = 1.0f - fArr[3];
+            color = new Color((1.0f - fArr[0]) * f10, (1.0f - fArr[1]) * f10, (1.0f - fArr[2]) * f10);
         }
         ColorAtom.Colors.put(strArr[1], color);
         return null;
@@ -707,21 +708,21 @@ public class PredefMacros {
         if (parseInt <= 5) {
             return new FcscoreAtom(parseInt);
         }
-        int i10 = parseInt / 5;
-        int i11 = parseInt % 5;
+        int i3 = parseInt / 5;
+        int i10 = parseInt % 5;
         RowAtom rowAtom = new RowAtom();
-        for (int i12 = 0; i12 < i10; i12++) {
+        for (int i11 = 0; i11 < i3; i11++) {
             rowAtom.add(new FcscoreAtom(5));
         }
-        rowAtom.add(new FcscoreAtom(i11));
+        rowAtom.add(new FcscoreAtom(i10));
         return rowAtom;
     }
 
     public static final Atom fgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
             return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e10) {
+            throw new ParseException(e10.toString());
         }
     }
 
@@ -747,11 +748,11 @@ public class PredefMacros {
         ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
         new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
         arrayOfAtoms.checkDimensions();
-        int i10 = arrayOfAtoms.col;
-        if (i10 > 1) {
+        int i3 = arrayOfAtoms.col;
+        if (i3 > 1) {
             throw new ParseException("Character '&' is only available in array mode !");
         }
-        if (i10 == 0) {
+        if (i3 == 0) {
             return null;
         }
         return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 1);
@@ -761,11 +762,11 @@ public class PredefMacros {
         ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
         new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
         arrayOfAtoms.checkDimensions();
-        int i10 = arrayOfAtoms.col;
-        if (i10 > 1) {
+        int i3 = arrayOfAtoms.col;
+        if (i3 > 1) {
             throw new ParseException("Character '&' is only available in array mode !");
         }
-        if (i10 == 0) {
+        if (i3 == 0) {
             return null;
         }
         return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 2);
@@ -811,17 +812,17 @@ public class PredefMacros {
     }
 
     public static final Atom hdotsfor_macro(TeXParser teXParser, String[] strArr) {
-        int i10 = 1;
+        int i3 = 1;
         int parseInt = Integer.parseInt(strArr[1]);
         if (parseInt >= 1) {
-            i10 = TLObject.FLAG_12;
+            i3 = TLObject.FLAG_12;
             if (parseInt <= 4096) {
-                i10 = parseInt;
+                i3 = parseInt;
             }
         }
         String str = strArr[2];
-        teXParser.addAtom(new HdotsforAtom(i10, str != null ? Float.parseFloat(str) : 1.0f));
-        ((ArrayOfAtoms) teXParser.formula).addCol(i10);
+        teXParser.addAtom(new HdotsforAtom(i3, str != null ? Float.parseFloat(str) : 1.0f));
+        ((ArrayOfAtoms) teXParser.formula).addCol(i3);
         return null;
     }
 
@@ -847,19 +848,19 @@ public class PredefMacros {
     }
 
     public static final Atom hvspace_macro(TeXParser teXParser, String[] strArr) {
-        int i10 = 0;
-        while (i10 < strArr[1].length() && !Character.isLetter(strArr[1].charAt(i10))) {
-            i10++;
+        int i3 = 0;
+        while (i3 < strArr[1].length() && !Character.isLetter(strArr[1].charAt(i3))) {
+            i3++;
         }
         try {
-            float parseFloat = Float.parseFloat(strArr[1].substring(0, i10));
-            int unit = i10 != strArr[1].length() ? SpaceAtom.getUnit(strArr[1].substring(i10).toLowerCase()) : 3;
+            float parseFloat = Float.parseFloat(strArr[1].substring(0, i3));
+            int unit = i3 != strArr[1].length() ? SpaceAtom.getUnit(strArr[1].substring(i3).toLowerCase()) : 3;
             if (unit != -1) {
                 return strArr[0].charAt(0) == 'h' ? new SpaceAtom(unit, parseFloat, 0.0f, 0.0f) : new SpaceAtom(unit, 0.0f, parseFloat, 0.0f);
             }
-            throw new ParseException("Unknown unit \"" + strArr[1].substring(i10) + "\" !");
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+            throw new ParseException("Unknown unit \"" + strArr[1].substring(i3) + "\" !");
+        } catch (NumberFormatException e10) {
+            throw new ParseException(e10.toString());
         }
     }
 
@@ -995,21 +996,21 @@ public class PredefMacros {
                 return new TeXFormula(teXParser, stringBuffer.toString()).root;
             }
             if (indexOf < str.length() - 1) {
-                int i10 = indexOf;
+                int i3 = indexOf;
                 do {
-                    i10++;
-                    if (i10 >= str.length()) {
+                    i3++;
+                    if (i3 >= str.length()) {
                         break;
                     }
-                } while (Character.isLetter(str.charAt(i10)));
-                String str2 = map.get(str.substring(indexOf + 1, i10));
+                } while (Character.isLetter(str.charAt(i3)));
+                String str2 = map.get(str.substring(indexOf + 1, i3));
                 if (str2 != null) {
                     stringBuffer.append(str.substring(0, indexOf));
                     stringBuffer.append(str2);
                 } else {
-                    stringBuffer.append(str.substring(0, i10));
+                    stringBuffer.append(str.substring(0, i3));
                 }
-                str = str.substring(i10);
+                str = str.substring(i3);
             } else {
                 stringBuffer.append(str);
                 str = "";
@@ -1204,46 +1205,46 @@ public class PredefMacros {
         ArrayOfAtoms arrayOfAtoms = new ArrayOfAtoms();
         new TeXParser(teXParser.getIsPartial(), strArr[1], arrayOfAtoms, false).parse();
         arrayOfAtoms.checkDimensions();
-        int i10 = arrayOfAtoms.col;
-        if (i10 > 1) {
+        int i3 = arrayOfAtoms.col;
+        if (i3 > 1) {
             throw new ParseException("Character '&' is only available in array mode !");
         }
-        if (i10 == 0) {
+        if (i3 == 0) {
             return null;
         }
         return new MultlineAtom(teXParser.getIsPartial(), arrayOfAtoms, 0);
     }
 
     public static final Atom muskip_macros(TeXParser teXParser, String[] strArr) {
-        int i10 = 0;
-        int i11 = 1;
+        int i3 = 0;
+        int i10 = 1;
         if (!strArr[0].equals(",")) {
             if (!strArr[0].equals(":")) {
                 if (!strArr[0].equals(";")) {
                     if (!strArr[0].equals("thinspace")) {
                         if (!strArr[0].equals("medspace")) {
                             if (!strArr[0].equals("thickspace")) {
-                                i11 = -1;
+                                i10 = -1;
                                 if (!strArr[0].equals("!") && !strArr[0].equals("negthinspace")) {
                                     if (strArr[0].equals("negmedspace")) {
-                                        i10 = -2;
+                                        i3 = -2;
                                     } else if (strArr[0].equals("negthickspace")) {
-                                        i10 = -3;
+                                        i3 = -3;
                                     }
-                                    return new SpaceAtom(i10);
+                                    return new SpaceAtom(i3);
                                 }
                             }
                         }
                     }
                 }
-                i10 = 3;
-                return new SpaceAtom(i10);
+                i3 = 3;
+                return new SpaceAtom(i3);
             }
-            i10 = 2;
-            return new SpaceAtom(i10);
+            i3 = 2;
+            return new SpaceAtom(i3);
         }
-        i10 = i11;
-        return new SpaceAtom(i10);
+        i3 = i10;
+        return new SpaceAtom(i3);
     }
 
     public static final Atom nbsp_macro(TeXParser teXParser, String[] strArr) {
@@ -1253,7 +1254,7 @@ public class PredefMacros {
     public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(e.h("Invalid name for the command :", str));
+            throw new ParseException(c.f("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
@@ -1412,7 +1413,7 @@ public class PredefMacros {
     public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(e.h("Invalid name for the command :", str));
+            throw new ParseException(c.f("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());
@@ -1454,12 +1455,12 @@ public class PredefMacros {
             parseInt = 4000000;
         }
         String str = "";
-        for (int i10 = 0; i10 < 13; i10++) {
-            while (parseInt >= iArr[i10]) {
-                StringBuilder t10 = g.t(str);
-                t10.append(strArr2[i10]);
-                str = t10.toString();
-                parseInt -= iArr[i10];
+        for (int i3 = 0; i3 < 13; i3++) {
+            while (parseInt >= iArr[i3]) {
+                StringBuilder l10 = a.l(str);
+                l10.append(strArr2[i3]);
+                str = l10.toString();
+                parseInt -= iArr[i3];
             }
         }
         if (strArr[0].charAt(0) == 'r') {
@@ -1515,9 +1516,9 @@ public class PredefMacros {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final Atom sfrac_macro(TeXParser teXParser, String[] strArr) {
-        float f7;
         float f10;
         float f11;
+        float f12;
         double d;
         double d10;
         SymbolAtom symbolAtom;
@@ -1528,29 +1529,29 @@ public class PredefMacros {
         }
         SymbolAtom symbolAtom2 = SymbolAtom.get("slash");
         if (teXParser.isMathMode()) {
-            f7 = 0.45f;
-            f10 = -0.13f;
-            f11 = -0.065f;
+            f10 = 0.45f;
+            f11 = -0.13f;
+            f12 = -0.065f;
             d = 0.75d;
             d10 = 0.75d;
             symbolAtom = symbolAtom2;
         } else {
             VRowAtom vRowAtom = new VRowAtom(new ScaleAtom(SymbolAtom.get("textfractionsolidus"), 1.25d, 0.65d));
             vRowAtom.setRaise(1, 0.4f);
-            f10 = -0.24f;
-            f7 = 0.75f;
+            f11 = -0.24f;
+            f10 = 0.75f;
             d = 0.6d;
             d10 = 0.5d;
-            f11 = -0.24f;
+            f12 = -0.24f;
             symbolAtom = vRowAtom;
         }
-        float f12 = f7;
+        float f13 = f10;
         VRowAtom vRowAtom2 = new VRowAtom(new ScaleAtom(teXFormula.root, d, d10));
-        vRowAtom2.setRaise(1, f12);
+        vRowAtom2.setRaise(1, f13);
         RowAtom rowAtom = new RowAtom(vRowAtom2);
-        rowAtom.add(new SpaceAtom(0, f10, 0.0f, 0.0f));
-        rowAtom.add(symbolAtom);
         rowAtom.add(new SpaceAtom(0, f11, 0.0f, 0.0f));
+        rowAtom.add(symbolAtom);
+        rowAtom.add(new SpaceAtom(0, f12, 0.0f, 0.0f));
         rowAtom.add(new ScaleAtom(teXFormula2.root, d, d10));
         return rowAtom;
     }
@@ -1597,32 +1598,32 @@ public class PredefMacros {
     }
 
     public static final Atom size_macros(TeXParser teXParser, String[] strArr) {
-        float f7;
+        float f10;
         if ("tiny".equals(strArr[0])) {
-            f7 = 0.5f;
+            f10 = 0.5f;
         } else if ("scriptsize".equals(strArr[0])) {
-            f7 = 0.7f;
+            f10 = 0.7f;
         } else if ("footnotesize".equals(strArr[0])) {
-            f7 = 0.8f;
+            f10 = 0.8f;
         } else if ("small".equals(strArr[0])) {
-            f7 = 0.9f;
+            f10 = 0.9f;
         } else {
             if (!"normalsize".equals(strArr[0])) {
                 if ("large".equals(strArr[0])) {
-                    f7 = 1.2f;
+                    f10 = 1.2f;
                 } else if ("Large".equals(strArr[0])) {
-                    f7 = 1.4f;
+                    f10 = 1.4f;
                 } else if ("LARGE".equals(strArr[0])) {
-                    f7 = 1.8f;
+                    f10 = 1.8f;
                 } else if ("huge".equals(strArr[0])) {
-                    f7 = 2.0f;
+                    f10 = 2.0f;
                 } else if ("Huge".equals(strArr[0])) {
-                    f7 = 2.5f;
+                    f10 = 2.5f;
                 }
             }
-            f7 = 1.0f;
+            f10 = 1.0f;
         }
-        return new MonoScaleAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root, f7);
+        return new MonoScaleAtom(new TeXFormula(teXParser, teXParser.getOverArgument(), null, false, teXParser.isIgnoreWhiteSpace()).root, f10);
     }
 
     public static final Atom smallfrowneq_macro(TeXParser teXParser, String[] strArr) {

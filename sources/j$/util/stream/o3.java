@@ -24,12 +24,12 @@ public final class o3 extends p3 {
     @Override // java.util.function.Consumer
     /* renamed from: accept */
     public final void x(Object obj) {
-        int i10 = this.f;
-        if (i10 >= this.g) {
+        int i3 = this.f;
+        if (i3 >= this.g) {
             throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
         Object[] objArr = this.h;
-        this.f = i10 + 1;
-        objArr[i10] = obj;
+        this.f = i3 + 1;
+        objArr[i3] = obj;
     }
 }

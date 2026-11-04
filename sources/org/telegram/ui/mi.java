@@ -1,24 +1,43 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class mi extends org.telegram.ui.Components.cv {
-    public final /* synthetic */ un N1;
+public final /* synthetic */ class mi implements org.telegram.messenger.kr {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mi(un unVar, org.telegram.ui.ActionBar.k2 k2Var, Activity activity, org.telegram.ui.ActionBar.p6 p6Var, ArrayList arrayList) {
-        super(k2Var, activity, p6Var, arrayList);
-        this.N1 = unVar;
+    public /* synthetic */ mi(int i3, Object obj, boolean z10) {
+        this.a = i3;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.cv, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
-    public final void dismiss() {
-        super.dismiss();
-        un unVar = this.N1;
-        unVar.getClass();
-        unVar.s8(false, true, 0.0f);
+    @Override // org.telegram.messenger.kr
+    public final void a(int i3) {
+        switch (this.a) {
+            case 0:
+                wm wmVar = ((oi) this.c).b;
+                if (i3 > 0 && wmVar.getParentActivity() != null) {
+                    org.telegram.ui.Components.fc.a0(wmVar).m(this.b ? org.telegram.ui.Components.ec.H : org.telegram.ui.Components.ec.J, i3, 0, 0, wmVar.ya).j();
+                    break;
+                }
+                break;
+            default:
+                ni niVar = (ni) this.c;
+                wm wmVar2 = niVar.b.b;
+                if (i3 < 50) {
+                    wmVar2.Qa(wmVar2.s4, true);
+                    break;
+                } else {
+                    TLRPC.Chat chat = wmVar2.e;
+                    TLRPC.User user = wmVar2.f;
+                    boolean z10 = this.b;
+                    org.telegram.ui.Components.t4.r(wmVar2, true, chat, user, false, false, false, z10, new x0(niVar, z10));
+                    break;
+                }
+        }
     }
 }

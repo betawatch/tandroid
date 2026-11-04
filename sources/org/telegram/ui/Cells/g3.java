@@ -1,43 +1,63 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.xs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class g3 extends View {
-    public boolean a;
-    public final Paint b;
-    public final org.telegram.ui.ActionBar.p6 c;
+public final class g3 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xs b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ h3 d;
 
-    public g3(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        this.b = new Paint();
-        this.c = p6Var;
-        setPadding(0, org.telegram.messenger.i0.L(8.0f), 0, org.telegram.messenger.i0.L(8.0f));
+    public g3(h3 h3Var, int i3, xs xsVar, boolean z10) {
+        this.d = h3Var;
+        this.a = i3;
+        this.b = xsVar;
+        this.c = z10;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        boolean z10 = this.a;
-        org.telegram.ui.ActionBar.p6 p6Var = this.c;
-        Paint paint = this.b;
-        if (z10) {
-            paint.setColor(i0.b.f(0.2f, -16777216, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.ih, p6Var)));
-        } else {
-            paint.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d7, p6Var));
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        h3 h3Var = this.d;
+        boolean z10 = h3Var.a;
+        int i3 = this.a;
+        if (!z10) {
+            if (i3 > 0 && editable != null && editable.length() > i3) {
+                h3Var.a = true;
+                CharSequence subSequence = editable.subSequence(0, i3);
+                xs xsVar = this.b;
+                xsVar.setText(subSequence);
+                xsVar.setSelection(xsVar.length());
+                h3Var.a = false;
+            }
+            h3Var.b(editable);
         }
-        canvas.drawLine(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop(), paint);
+        if (this.c) {
+            while (true) {
+                int indexOf = editable.toString().indexOf("\n");
+                if (indexOf < 0) {
+                    break;
+                } else {
+                    editable.delete(indexOf, indexOf + 1);
+                }
+            }
+        }
+        org.telegram.ui.Components.g6 g6Var = h3Var.y;
+        if (g6Var == null || i3 <= 0) {
+            return;
+        }
+        g6Var.a();
+        h3Var.c();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), getPaddingBottom() + getPaddingTop() + 1);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 
-    public void setForceDarkTheme(boolean z10) {
-        this.a = z10;
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 }

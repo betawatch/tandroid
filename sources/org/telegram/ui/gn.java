@@ -1,59 +1,85 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gn extends w7.d6 {
-    public org.telegram.messenger.kj a;
-    public int b = 0;
-    public boolean c = true;
-    public int d = 0;
-    public int e;
-    public boolean f;
-    public int g;
-    public final /* synthetic */ un h;
+public final /* synthetic */ class gn implements org.telegram.ui.ActionBar.p1, org.telegram.messenger.lr, ia0, org.telegram.messenger.ir {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ln b;
 
-    public gn(un unVar) {
-        this.h = unVar;
+    public /* synthetic */ gn(ln lnVar, int i3) {
+        this.a = i3;
+        this.b = lnVar;
     }
 
-    @Override // w7.d6
-    public final void a() {
-        org.telegram.messenger.kj kjVar = this.a;
-        un unVar = this.h;
-        if (kjVar != null) {
-            unVar.C0.T();
-            int indexOf = unVar.K6.indexOf(this.a) + unVar.C0.J;
-            if (indexOf >= 0) {
-                unVar.B0.i1(indexOf, (int) ((this.e + this.g) - unVar.L9), this.f);
-            }
+    @Override // org.telegram.ui.ia0
+    public void d(TLRPC.MessageMedia messageMedia, int i3, boolean z10, int i10, long j10) {
+        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+        tL_channelLocation.address = messageMedia.address;
+        tL_channelLocation.geo_point = messageMedia.geo;
+        ln lnVar = this.b;
+        TLRPC.ChatFull chatFull = lnVar.y0;
+        chatFull.location = tL_channelLocation;
+        chatFull.flags |= 32768;
+        lnVar.u0(false, true);
+        lnVar.getMessagesController().V2(0, lnVar.w0, true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
+            case 0:
+                this.b.o0();
+                break;
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+                this.b.o0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.ir
+    public void o(boolean z10) {
+        boolean Q1 = org.telegram.messenger.g0.Q1();
+        int i3 = org.telegram.messenger.hs.t;
+        ln lnVar = this.b;
+        if (Q1) {
+            lnVar.getNotificationCenter().k(i3, Long.valueOf(-lnVar.w0));
         } else {
-            unVar.C0.T();
-            unVar.B0.i1(this.b, this.d, this.c);
+            lnVar.getNotificationCenter().k(i3, new Object[0]);
         }
-        this.a = null;
-        unVar.A3 = true;
-        unVar.xd(false);
-        org.telegram.messenger.i0.g3(new rh(this, 10));
+        lnVar.finishFragment();
+        lnVar.getNotificationCenter().k(org.telegram.messenger.hs.K2, Long.valueOf(-lnVar.x0.id), null, lnVar.x0, Boolean.valueOf(z10));
     }
 
-    @Override // w7.d6
-    public final void c() {
-        un unVar = this.h;
-        unVar.ba = unVar.getNotificationCenter().q(un.hd, unVar.ba, true);
-        uk ukVar = unVar.Pa;
-        if (ukVar.n) {
-            ukVar.d();
-        }
-    }
-
-    @Override // w7.d6
-    public final void d(View view) {
-        if (view instanceof org.telegram.ui.Cells.q1) {
-            org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-            q1Var.setDelegate(null);
-            q1Var.setResourcesProvider(null);
+    @Override // org.telegram.messenger.lr
+    public void run(long j10) {
+        switch (this.a) {
+            case 4:
+                this.b.y0(Long.valueOf(j10));
+                break;
+            default:
+                ln lnVar = this.b;
+                if (j10 != 0) {
+                    lnVar.w0 = j10;
+                    lnVar.x0 = lnVar.getMessagesController().M0(Long.valueOf(j10));
+                    lnVar.O0 = false;
+                    TLRPC.ChatFull chatFull = lnVar.y0;
+                    if (chatFull != null) {
+                        chatFull.hidden_prehistory = true;
+                    }
+                    lnVar.o0();
+                    break;
+                } else {
+                    lnVar.O0 = false;
+                    break;
+                }
         }
     }
 }

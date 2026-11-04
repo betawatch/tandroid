@@ -1,29 +1,30 @@
 package fe;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class j {
-    public final g a;
-    public final n b = new n(0.0f);
-    public final n c = new n(0.0f);
-    public final n d = new n(0.0f);
-    public final n e = new n(0.0f);
-    public final n f = new n(0.0f);
-    public final n g = new n(0.0f);
+import be.r;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
-    public j(k kVar, g gVar) {
-        this.a = gVar;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class j extends r {
+    public final /* synthetic */ AtomicReferenceArray e;
+
+    public j(long j10, j jVar, int i3) {
+        super(j10, jVar, i3);
+        this.e = new AtomicReferenceArray(i.f);
     }
 
-    public static void a(j jVar, int i10, boolean z10) {
-        n nVar = jVar.c;
-        n nVar2 = jVar.b;
-        if (z10) {
-            nVar2.c = i10;
-            nVar.c = i10 > 0 ? 1.0f : 0.0f;
-        } else {
-            nVar2.d(i10);
-            nVar.d(i10 > 0 ? 1.0f : 0.0f);
-        }
+    @Override // be.r
+    public final int g() {
+        return i.f;
+    }
+
+    @Override // be.r
+    public final void h(int i3, fd.h hVar) {
+        this.e.set(i3, i.e);
+        i();
+    }
+
+    public final String toString() {
+        return "SemaphoreSegment[id=" + this.c + ", hashCode=" + hashCode() + ']';
     }
 }

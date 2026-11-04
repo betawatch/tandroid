@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzoe extends zzns {
     public static final /* synthetic */ int zza = 0;
@@ -21,18 +21,18 @@ public final class zzoe extends zzns {
         zzd = new zzob(null);
     }
 
-    public /* synthetic */ zzoe(String str, String str2, boolean z10, int i10, Level level, Set set, zznl zznlVar, zzod zzodVar) {
+    public /* synthetic */ zzoe(String str, String str2, boolean z10, int i3, Level level, Set set, zznl zznlVar, zzod zzodVar) {
         super(str2);
         if (str2.length() > 23) {
-            int i11 = -1;
+            int i10 = -1;
             for (int length = str2.length() - 1; length >= 0; length--) {
                 char charAt = str2.charAt(length);
                 if (charAt == '.' || charAt == '$') {
-                    i11 = length;
+                    i10 = length;
                     break;
                 }
             }
-            str2 = str2.substring(i11 + 1);
+            str2 = str2.substring(i10 + 1);
         }
         String concat = "".concat(String.valueOf(str2));
         concat.substring(0, Math.min(concat.length(), 23));

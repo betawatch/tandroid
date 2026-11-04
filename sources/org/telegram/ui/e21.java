@@ -1,73 +1,166 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class e21 extends j21 {
-    public final /* synthetic */ int m3;
-    public final /* synthetic */ g31 n3;
+public final /* synthetic */ class e21 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e21(g31 g31Var, Context context, int i10) {
-        super(g31Var, context);
-        this.n3 = g31Var;
-        this.m3 = i10;
+    public /* synthetic */ e21(SessionsActivity sessionsActivity, int i3) {
+        this.a = i3;
+        this.b = sessionsActivity;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10) {
-        if (i10 == 0) {
-            g31 g31Var = this.n3;
-            g31Var.x1 = false;
-            if (g31Var.a == -1 || g31Var.f0.getVisibility() != 0 || g31Var.f0.getTranslationY() <= (-org.telegram.messenger.i0.L(51.0f))) {
-                return;
-            }
-            g31.a(g31Var, g31Var.f0.getTranslationY() > ((float) (-org.telegram.messenger.i0.L(16.0f))) ? 0 : 1, 0);
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10) {
-        int i11;
-        g31 g31Var = this.n3;
-        g31Var.h();
-        if (!g31Var.x1) {
-            int I0 = g31Var.r0.I0();
-            ArrayList arrayList = g31Var.D0;
-            SparseIntArray sparseIntArray = g31Var.w0;
-            if (I0 != -1) {
-                if (I0 > ((arrayList.size() <= 40 || g31Var.C0) ? arrayList.size() + (g31Var.N0 ? 1 : 0) : 40) && I0 > g31Var.I0.size()) {
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 >= sparseIntArray.size()) {
-                            break;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new pu0(this.b, 18));
+                break;
+            case 1:
+                final int i3 = 1;
+                final SessionsActivity sessionsActivity = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.g21
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i10 = i3;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        SessionsActivity sessionsActivity2 = sessionsActivity;
+                        switch (i10) {
+                            case 0:
+                                if (sessionsActivity2.getParentActivity() != null) {
+                                    if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                        org.telegram.messenger.k5.o(null, 2131754285, org.telegram.ui.Components.fc.a0(sessionsActivity2), R.raw.contact_check, 36);
+                                    } else {
+                                        org.telegram.messenger.k5.o(null, 2131743889, org.telegram.ui.Components.fc.a0(sessionsActivity2), R.raw.error, 36);
+                                    }
+                                    sessionsActivity2.p0(false);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    org.telegram.messenger.k5.o(null, 2131754290, org.telegram.ui.Components.fc.a0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.p0(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (sessionsActivity2.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    org.telegram.messenger.k5.o(null, 2131754290, org.telegram.ui.Components.fc.a0(sessionsActivity2), R.raw.contact_check, 36);
+                                    sessionsActivity2.p0(false);
+                                    break;
+                                }
+                                break;
                         }
-                        int keyAt = sparseIntArray.keyAt(i12);
-                        int valueAt = sparseIntArray.valueAt(i12);
-                        org.telegram.ui.Components.ix ixVar = valueAt >= 0 ? (org.telegram.ui.Components.ix) g31Var.M0.get(valueAt) : null;
-                        if (ixVar != null) {
-                            boolean z10 = ixVar.h;
-                            int size = ixVar.c.size();
-                            if (!z10) {
-                                size = Math.min(24, size);
-                            }
-                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.mv mvVar = g31Var.d0;
-                                mvVar.j(((mvVar.E == null || !mvVar.b0) ? 0 : 1) + (mvVar.D != null ? 1 : 0) + valueAt, true);
-                            }
-                        }
-                        i12++;
                     }
-                } else {
-                    g31Var.d0.j(0, true);
+                });
+                for (int i10 = 0; i10 < 4; i10++) {
+                    org.telegram.messenger.h10 i11 = org.telegram.messenger.h10.i(i10);
+                    if (i11.p()) {
+                        i11.d = false;
+                        i11.v(false);
+                        org.telegram.messenger.hp.s1(i10).Z3(org.telegram.messenger.az.f, org.telegram.messenger.az.g);
+                        ConnectionsManager.getInstance(i10).setUserId(i11.e());
+                    }
                 }
-            }
+                break;
+            case 2:
+                final int i12 = 2;
+                final SessionsActivity sessionsActivity2 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.g21
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i102 = i12;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        SessionsActivity sessionsActivity22 = sessionsActivity2;
+                        switch (i102) {
+                            case 0:
+                                if (sessionsActivity22.getParentActivity() != null) {
+                                    if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                        org.telegram.messenger.k5.o(null, 2131754285, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.contact_check, 36);
+                                    } else {
+                                        org.telegram.messenger.k5.o(null, 2131743889, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.error, 36);
+                                    }
+                                    sessionsActivity22.p0(false);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (sessionsActivity22.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    org.telegram.messenger.k5.o(null, 2131754290, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.contact_check, 36);
+                                    sessionsActivity22.p0(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (sessionsActivity22.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    org.telegram.messenger.k5.o(null, 2131754290, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.contact_check, 36);
+                                    sessionsActivity22.p0(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                for (int i13 = 0; i13 < 4; i13++) {
+                    org.telegram.messenger.h10 i14 = org.telegram.messenger.h10.i(i13);
+                    if (i14.p()) {
+                        i14.d = false;
+                        i14.v(false);
+                        org.telegram.messenger.hp.s1(i13).Z3(org.telegram.messenger.az.f, org.telegram.messenger.az.g);
+                        ConnectionsManager.getInstance(i13).setUserId(i14.e());
+                    }
+                }
+                break;
+            default:
+                final int i15 = 0;
+                final SessionsActivity sessionsActivity3 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.g21
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i102 = i15;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        SessionsActivity sessionsActivity22 = sessionsActivity3;
+                        switch (i102) {
+                            case 0:
+                                if (sessionsActivity22.getParentActivity() != null) {
+                                    if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                        org.telegram.messenger.k5.o(null, 2131754285, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.contact_check, 36);
+                                    } else {
+                                        org.telegram.messenger.k5.o(null, 2131743889, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.error, 36);
+                                    }
+                                    sessionsActivity22.p0(false);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                if (sessionsActivity22.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    org.telegram.messenger.k5.o(null, 2131754290, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.contact_check, 36);
+                                    sessionsActivity22.p0(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                if (sessionsActivity22.getParentActivity() != null && tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                                    org.telegram.messenger.k5.o(null, 2131754290, org.telegram.ui.Components.fc.a0(sessionsActivity22), R.raw.contact_check, 36);
+                                    sessionsActivity22.p0(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        g31Var.C();
-        org.telegram.messenger.i0.Y3(g31Var.e0, g31Var.h0.computeVerticalScrollOffset() != 0 || (i11 = this.m3) == 0 || i11 == 12 || i11 == 10 || i11 == 1 || i11 == 11 || i11 == 6, 1.0f, true, true);
-        g31Var.m();
     }
 }

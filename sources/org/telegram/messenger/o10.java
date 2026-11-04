@@ -1,16 +1,7 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class o10 {
-    public pr a;
-    public String e;
-    public int g;
-    public final ArrayList b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public int f = 80;
-    public int h = -1;
+public interface o10 {
+    Object d(Number number, Object obj);
 }

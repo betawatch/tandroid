@@ -2,45 +2,29 @@ package org.telegram.ui.Wallet;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import j$.util.Objects;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class j6 extends org.telegram.ui.Components.f6 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ l6 w;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class j6 extends FrameLayout {
+    public final /* synthetic */ m6 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j6(l6 l6Var, Context context, int i10) {
-        super(context, false, true, true, true, true);
-        this.s = i10;
-        this.w = l6Var;
+    public j6(m6 m6Var, Context context) {
+        super(context);
+        this.a = m6Var;
     }
 
-    @Override // org.telegram.ui.Components.f6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                float c10 = getDrawable().c();
-                l6 l6Var = this.w;
-                float b10 = l6Var.b();
-                float min = (((c10 > 0.0f ? Math.min(1.0f, l6Var.U / c10) : 1.0f) - b10) * l6Var.T) + b10;
-                l6Var.b = min;
-                int save = canvas.save();
-                canvas.scale(min, min, 0.0f, getHeight() / 2.0f);
-                float e = (1.0f - l6Var.T) * l6Var.f0.e(false, l6Var.d0);
-                org.telegram.ui.Components.e6 drawable = getDrawable();
-                Objects.requireNonNull(drawable);
-                l6Var.c(e, new e3(drawable, 4), new m2(9, this, canvas));
-                canvas.restoreToCount(save);
-                break;
-            default:
-                l6 l6Var2 = this.w;
-                float e7 = (1.0f - l6Var2.T) * l6Var2.f0.e(false, l6Var2.d0);
-                org.telegram.ui.Components.e6 drawable2 = getDrawable();
-                Objects.requireNonNull(drawable2);
-                l6Var2.c(e7, new e3(drawable2, 4), new m2(10, this, canvas));
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(-getLeft(), -getTop());
+        m6 m6Var = this.a;
+        m6Var.j.c(canvas);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        if (m6Var.j.d()) {
+            postInvalidateOnAnimation();
         }
     }
 }

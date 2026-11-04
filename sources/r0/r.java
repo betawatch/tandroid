@@ -3,7 +3,7 @@ package r0;
 import android.os.Build;
 import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class r {
     public final q a;
@@ -12,7 +12,7 @@ public final class r {
         if (Build.VERSION.SDK_INT >= 35) {
             this.a = new p(nestedScrollView);
         } else {
-            this.a = new jb.b(18);
+            this.a = new mb.b(22);
         }
     }
 }

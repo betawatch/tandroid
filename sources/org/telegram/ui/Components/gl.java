@@ -1,64 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import java.io.File;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gl implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+public final class gl implements at0 {
+    public File a;
+    public boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout e;
 
-    public /* synthetic */ gl(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = z10;
+    public gl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.j2 j2Var) {
+        this.e = chatAttachAlertPhotoLayout;
+        this.c = e6Var;
+        this.d = j2Var;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        int i10 = this.a;
-        boolean z10 = false;
-        boolean z11 = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj2;
-                View view = (View) obj;
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.v5) {
-                    org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) view;
-                    org.telegram.messenger.ff photoEntry = v5Var.getPhotoEntry();
-                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z11) {
-                        z10 = true;
-                    }
-                    v5Var.setHasSpoiler(z10);
-                    break;
-                }
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) obj2;
-                View view2 = (View) obj;
-                boolean z13 = ChatAttachAlertPhotoLayout.q1;
-                if (view2 instanceof org.telegram.ui.Cells.v5) {
-                    org.telegram.ui.Cells.v5 v5Var2 = (org.telegram.ui.Cells.v5) view2;
-                    org.telegram.messenger.ff photoEntry2 = v5Var2.getPhotoEntry();
-                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z11) {
-                        z10 = true;
-                    }
-                    v5Var2.setHighQuality(z10);
-                    break;
-                }
-                break;
-            default:
-                Float f7 = (Float) obj;
-                ua uaVar = ((pa) obj2).b.p;
-                if (uaVar != null && !z11) {
-                    uaVar.c(r0.e.getHeight() - f7.floatValue());
-                    break;
-                }
-                break;
+    public final void a() {
+        pl plVar;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e;
+        bi biVar = chatAttachAlertPhotoLayout.b;
+        ShutterButton shutterButton = chatAttachAlertPhotoLayout.l0;
+        if (chatAttachAlertPhotoLayout.t0 || (plVar = chatAttachAlertPhotoLayout.Q) == null || plVar.getCameraSession() == null) {
+            return;
+        }
+        if (shutterButton.getState() == bt0.b) {
+            chatAttachAlertPhotoLayout.o0();
+            CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.Q.getCameraSession(), false);
+            shutterButton.a(bt0.a);
+        } else {
+            if (!chatAttachAlertPhotoLayout.y0) {
+                org.telegram.messenger.k5.p(null, 2131749550, new fc(chatAttachAlertPhotoLayout.Q, this.c), null);
+                return;
+            }
+            org.telegram.ui.ActionBar.d2 d2Var = biVar.X1;
+            File q02 = org.telegram.messenger.g0.q0(null, (d2Var instanceof org.telegram.ui.wm) && ((org.telegram.ui.wm) d2Var).z());
+            boolean isSameTakePictureOrientation = chatAttachAlertPhotoLayout.Q.getCameraSession().isSameTakePictureOrientation();
+            chatAttachAlertPhotoLayout.Q.getCameraSession().setFlipFront((biVar.X1 instanceof org.telegram.ui.wm) || biVar.L2 == 2);
+            chatAttachAlertPhotoLayout.t0 = CameraController.getInstance().takePicture(q02, false, chatAttachAlertPhotoLayout.Q.getCameraSessionObject(), new gi.nb(this, q02, isSameTakePictureOrientation));
+            chatAttachAlertPhotoLayout.Q.startTakePictureAnimation(true);
         }
     }
 }

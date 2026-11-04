@@ -1,33 +1,31 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class o3 extends FrameLayout {
-    public int a;
+public final class o3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ q3 a;
 
-    public o3(Context context) {
-        this(context, 8);
+    public o3(q3 q3Var) {
+        this.a = q3Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
-    }
-
-    public void setHeight(int i10) {
-        if (this.a != i10) {
-            this.a = i10;
-            requestLayout();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        q3 q3Var = this.a;
+        if (q3Var.x) {
+            q3Var.f.setVisibility(4);
+            q3Var.h.setVisibility(4);
+            q3Var.n.setVisibility(0);
+        } else {
+            if (q3Var.w) {
+                q3Var.f.setVisibility(4);
+            } else {
+                q3Var.h.setVisibility(4);
+            }
+            q3Var.n.setVisibility(8);
         }
-    }
-
-    public o3(Context context, int i10) {
-        super(context);
-        this.a = i10;
     }
 }

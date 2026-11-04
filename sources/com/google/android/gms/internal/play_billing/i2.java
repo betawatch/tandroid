@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class i2 implements l2 {
     public static final t1 b = new t1(4);
@@ -12,25 +12,25 @@ public final class i2 implements l2 {
         this.a = l2VarArr;
     }
 
-    public void a(int i10, Object obj, t2 t2Var) {
+    public void a(int i3, Object obj, t2 t2Var) {
         m1 m1Var = (m1) this.a;
-        m1Var.m(i10, 3);
+        m1Var.m(i3, 3);
         t2Var.c((e1) obj, m1Var.a);
-        m1Var.m(i10, 4);
+        m1Var.m(i3, 4);
     }
 
-    public void b(int i10, Object obj, t2 t2Var) {
+    public void b(int i3, Object obj, t2 t2Var) {
         e1 e1Var = (e1) obj;
         m1 m1Var = (m1) this.a;
-        m1Var.o((i10 << 3) | 2);
+        m1Var.o((i3 << 3) | 2);
         m1Var.o(e1Var.b(t2Var));
         t2Var.c(e1Var, m1Var.a);
     }
 
     @Override // com.google.android.gms.internal.play_billing.l2
     public s2 zzb(Class cls) {
-        for (int i10 = 0; i10 < 2; i10++) {
-            l2 l2Var = ((l2[]) this.a)[i10];
+        for (int i3 = 0; i3 < 2; i3++) {
+            l2 l2Var = ((l2[]) this.a)[i3];
             if (l2Var.zzc(cls)) {
                 return l2Var.zzb(cls);
             }
@@ -40,8 +40,8 @@ public final class i2 implements l2 {
 
     @Override // com.google.android.gms.internal.play_billing.l2
     public boolean zzc(Class cls) {
-        for (int i10 = 0; i10 < 2; i10++) {
-            if (((l2[]) this.a)[i10].zzc(cls)) {
+        for (int i3 = 0; i3 < 2; i3++) {
+            if (((l2[]) this.a)[i3].zzc(cls)) {
                 return true;
             }
         }

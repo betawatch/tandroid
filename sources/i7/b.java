@@ -1,43 +1,17 @@
 package i7;
 
-import android.content.Context;
-import android.content.Intent;
+import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.j;
-import w7.i0;
+import f6.c0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b extends j {
-    public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("Auth.Api.Identity.SignIn.API", new a8.d(6), new com.google.android.gms.common.api.d());
-    public final String k;
+public final class b extends q6.a {
+    public static final Parcelable.Creator<b> CREATOR = new c0(16);
 
-    public b(Context context, x5.h hVar) {
-        super(context, l, hVar, com.google.android.gms.common.api.i.c);
-        this.k = e.a();
-    }
-
-    public final x5.g f(Intent intent) {
-        Status status = Status.h;
-        if (intent == null) {
-            throw new com.google.android.gms.common.api.f(status);
-        }
-        Parcelable.Creator<Status> creator = Status.CREATOR;
-        byte[] byteArrayExtra = intent.getByteArrayExtra("status");
-        Status status2 = (Status) (byteArrayExtra == null ? null : i0.a(byteArrayExtra, creator));
-        if (status2 == null) {
-            throw new com.google.android.gms.common.api.f(Status.r);
-        }
-        if (!status2.b()) {
-            throw new com.google.android.gms.common.api.f(status2);
-        }
-        Parcelable.Creator<x5.g> creator2 = x5.g.CREATOR;
-        byte[] byteArrayExtra2 = intent.getByteArrayExtra("sign_in_credential");
-        x5.g gVar = (x5.g) (byteArrayExtra2 != null ? i0.a(byteArrayExtra2, creator2) : null);
-        if (gVar != null) {
-            return gVar;
-        }
-        throw new com.google.android.gms.common.api.f(status);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i3) {
+        kotlin.jvm.internal.j.e(dest, "dest");
+        j8.a.t(dest, j8.a.s(dest, 20293));
     }
 }

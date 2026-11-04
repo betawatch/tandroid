@@ -3,30 +3,30 @@ package m;
 import android.graphics.drawable.Drawable;
 import android.widget.ListAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public interface o0 {
     boolean a();
 
     int b();
 
-    void c(int i10);
+    void c(int i3);
 
     void dismiss();
 
     CharSequence e();
 
-    Drawable g();
+    Drawable h();
 
     void i(CharSequence charSequence);
 
     void j(Drawable drawable);
 
-    void k(int i10);
+    void k(int i3);
 
-    void l(int i10);
+    void l(int i3);
 
-    void m(int i10, int i11);
+    void m(int i3, int i10);
 
     int n();
 

@@ -1,68 +1,87 @@
 package kg;
 
-import ag.g3;
-import java.util.ArrayList;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.w3;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.l10;
+import org.telegram.messenger.li;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Cells.l2;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.sj0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+public class z extends sj0 {
+    public final Context c;
+    public final int d;
+    public final boolean e;
+    public final boolean f;
+    public final e6 h;
 
-    public /* synthetic */ z(q0 q0Var, int i10) {
-        this.a = i10;
-        this.b = q0Var;
+    public z(int i3, Context context, e6 e6Var, boolean z10, boolean z11) {
+        this.e = z10;
+        this.c = context;
+        this.d = i3;
+        this.f = z11;
+        this.h = e6Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        q0 q0Var = this.b;
-        switch (i10) {
-            case 0:
-                org.telegram.messenger.i0.g3(new k2.u(4, q0Var, tLObject));
-                break;
-            case 1:
-                if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
-                    q0Var.getClass();
-                    break;
+    @Override // org.telegram.ui.Components.sj0
+    public final boolean D(u4.d1 d1Var) {
+        return true;
+    }
+
+    @Override // u4.h0
+    public final int b() {
+        return li.b0(this.d).j1.size();
+    }
+
+    @Override // u4.h0
+    public void t(u4.d1 d1Var, int i3) {
+        TLRPC.Chat chat;
+        o4 o4Var = (o4) d1Var.a;
+        int i10 = this.d;
+        TLRPC.TL_topPeer tL_topPeer = (TLRPC.TL_topPeer) li.b0(i10).j1.get(i3);
+        new TLRPC.TL_dialog();
+        TLRPC.Peer peer = tL_topPeer.peer;
+        long j10 = peer.user_id;
+        TLRPC.User user = null;
+        if (j10 != 0) {
+            user = hp.s1(i10).a2(Long.valueOf(tL_topPeer.peer.user_id));
+            chat = null;
+        } else {
+            long j11 = peer.channel_id;
+            if (j11 != 0) {
+                j10 = -j11;
+                chat = hp.s1(i10).M0(Long.valueOf(tL_topPeer.peer.channel_id));
+            } else {
+                long j12 = peer.chat_id;
+                if (j12 != 0) {
+                    j10 = -j12;
+                    chat = hp.s1(i10).M0(Long.valueOf(tL_topPeer.peer.chat_id));
                 } else {
-                    org.telegram.messenger.i0.g3(q0Var.z2);
-                    break;
+                    j10 = 0;
+                    chat = null;
                 }
-            default:
-                if (tL_error == null) {
-                    TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats = (TLRPC.TL_messages_inactiveChats) tLObject;
-                    ArrayList arrayList = new ArrayList();
-                    int min = Math.min(tL_messages_inactiveChats.chats.size(), tL_messages_inactiveChats.dates.size());
-                    int i11 = 0;
-                    while (true) {
-                        q0 q0Var2 = this.b;
-                        if (i11 >= min) {
-                            org.telegram.messenger.i0.g3(new g3(q0Var2, arrayList, min, tL_messages_inactiveChats, 3));
-                            break;
-                        } else {
-                            TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i11);
-                            int currentTime = (ConnectionsManager.getInstance(q0Var2.a).getCurrentTime() - tL_messages_inactiveChats.dates.get(i11).intValue()) / 86400;
-                            String G = currentTime < 30 ? dd.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? dd.G(currentTime / 30, "Months", new Object[0]) : dd.G(currentTime / 365, "Years", new Object[0]);
-                            if (w3.n0(chat)) {
-                                arrayList.add(dd.a0("InactiveChatSignature", null, 2131749220, dd.G(chat.participants_count, "Members", new Object[0]), G));
-                            } else if (w3.T(chat)) {
-                                arrayList.add(dd.a0("InactiveChannelSignature", null, 2131749221, G));
-                            } else {
-                                arrayList.add(dd.a0("InactiveChatSignature", null, 2131749220, dd.G(chat.participants_count, "Members", new Object[0]), G));
-                            }
-                            i11++;
-                        }
-                    }
-                }
-                break;
+            }
         }
+        o4Var.setTag(Long.valueOf(j10));
+        o4Var.a(j10, true, user != null ? l10.j(user, true) : chat != null ? chat.monoforum ? rg.c.i(i10, chat, false) : chat.title : "");
+    }
+
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
+        boolean z10 = this.e;
+        o4 o4Var = new o4(this.c, this.h, z10);
+        if (this.f && !o4Var.y) {
+            o4Var.y = true;
+            hs.f(o4Var.h).h(o4Var, hs.i3, new l2(o4Var, 1));
+        }
+        o4Var.setLayoutParams(new u4.p0(org.telegram.messenger.g0.L(80.0f), org.telegram.messenger.g0.L(86.0f)));
+        return new bj0(o4Var);
     }
 }

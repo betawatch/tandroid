@@ -1,19 +1,16 @@
 package wd;
 
-import kotlin.jvm.internal.p;
-import org.telegram.tgnet.TLObject;
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e extends ed.c {
-    public p a;
-    public /* synthetic */ Object b;
-    public int c;
+public final class e {
+    public static final /* synthetic */ AtomicIntegerFieldUpdater b = AtomicIntegerFieldUpdater.newUpdater(e.class, "notCompletedCount$volatile");
+    public final e0[] a;
+    private volatile /* synthetic */ int notCompletedCount$volatile;
 
-    @Override // ed.a
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.c |= TLObject.FLAG_31;
-        return n.a(null, null, this);
+    public e(e0[] e0VarArr) {
+        this.a = e0VarArr;
+        this.notCompletedCount$volatile = e0VarArr.length;
     }
 }

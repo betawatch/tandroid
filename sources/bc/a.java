@@ -1,14 +1,78 @@
 package bc;
 
-import vb.j;
+import org.telegram.messenger.hs;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends j {
-    public final float c;
+public final class a {
+    public static final a h;
+    public final int[] a;
+    public final int[] b;
+    public final b c;
+    public final b d;
+    public final int e;
+    public final int f;
+    public final int g;
 
-    public a(float f7, float f10, float f11) {
-        super(f7, f10);
-        this.c = f11;
+    static {
+        new a(4201, TLObject.FLAG_12, 1);
+        new a(1033, 1024, 1);
+        new a(67, 64, 1);
+        new a(19, 16, 1);
+        h = new a(hs.I4, 256, 0);
+        new a(hs.Y4, 256, 1);
+    }
+
+    public a(int i3, int i10, int i11) {
+        this.f = i3;
+        this.e = i10;
+        this.g = i11;
+        this.a = new int[i10];
+        this.b = new int[i10];
+        int i12 = 1;
+        for (int i13 = 0; i13 < i10; i13++) {
+            this.a[i13] = i12;
+            i12 *= 2;
+            if (i12 >= i10) {
+                i12 = (i12 ^ i3) & (i10 - 1);
+            }
+        }
+        for (int i14 = 0; i14 < i10 - 1; i14++) {
+            this.b[this.a[i14]] = i14;
+        }
+        this.c = new b(this, new int[]{0});
+        this.d = new b(this, new int[]{1});
+    }
+
+    public final b a(int i3, int i10) {
+        if (i3 < 0) {
+            throw new IllegalArgumentException();
+        }
+        if (i10 == 0) {
+            return this.c;
+        }
+        int[] iArr = new int[i3 + 1];
+        iArr[0] = i10;
+        return new b(this, iArr);
+    }
+
+    public final int b(int i3) {
+        if (i3 == 0) {
+            throw new ArithmeticException();
+        }
+        return this.a[(this.e - this.b[i3]) - 1];
+    }
+
+    public final int c(int i3, int i10) {
+        if (i3 == 0 || i10 == 0) {
+            return 0;
+        }
+        int[] iArr = this.b;
+        return this.a[(iArr[i3] + iArr[i10]) % (this.e - 1)];
+    }
+
+    public final String toString() {
+        return "GF(0x" + Integer.toHexString(this.f) + ',' + this.e + ')';
     }
 }

@@ -1,45 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i0 extends org.telegram.ui.ActionBar.d5 {
+public final class i0 extends org.telegram.ui.ActionBar.u4 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ i0(Object obj, int i10) {
-        this.r = i10;
+    public /* synthetic */ i0(Object obj, int i3) {
+        this.r = i3;
         this.s = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.d5, org.telegram.ui.ActionBar.t2
-    public void w() {
+    @Override // org.telegram.ui.ActionBar.u4, org.telegram.ui.ActionBar.n2
+    public void v() {
         switch (this.r) {
             case 1:
-                ((org.telegram.ui.Components.pp0) this.s).Q1 = true;
+                ((org.telegram.ui.Components.oo0) this.s).R1 = true;
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d5, org.telegram.ui.ActionBar.t2
-    public boolean y() {
+    @Override // org.telegram.ui.ActionBar.u4, org.telegram.ui.ActionBar.n2
+    public boolean x() {
         boolean z10;
         switch (this.r) {
             case 0:
-                h4 h4Var = (h4) this.s;
-                org.telegram.ui.Cells.k9 k9Var = h4Var.Q0;
-                if (k9Var == null || !k9Var.x()) {
+                i4 i4Var = (i4) this.s;
+                org.telegram.ui.Cells.h9 h9Var = i4Var.R0;
+                if (h9Var == null || !h9Var.x()) {
                     return true;
                 }
-                h4Var.Q0.f(false);
+                i4Var.R0.f(false);
                 return false;
             case 1:
             default:
-                return super.y();
+                return super.x();
             case 2:
-                z10 = ((org.telegram.ui.Wallet.a2) this.s).m;
+                z10 = ((org.telegram.ui.Wallet.y1) this.s).m;
                 break;
             case 3:
-                z10 = ((org.telegram.ui.Wallet.u2) this.s).d;
+                z10 = ((org.telegram.ui.Wallet.s2) this.s).d;
                 break;
         }
         return !z10;

@@ -1,42 +1,26 @@
 package a9;
 
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a0 extends s implements b0 {
-    @Override // a9.s
-    public final boolean a(int i10, Parcel parcel, Parcel parcel2, int i11) {
-        if (i10 == 2) {
-            Parcelable.Creator creator = Bundle.CREATOR;
-            Bundle bundle = (Bundle) v.a(parcel);
-            v.b(parcel);
-            e(bundle);
-            return true;
-        }
-        if (i10 == 3) {
-            Parcelable.Creator creator2 = Bundle.CREATOR;
-            Bundle bundle2 = (Bundle) v.a(parcel);
-            v.b(parcel);
-            c(bundle2);
-            return true;
-        }
-        if (i10 == 4) {
-            Parcelable.Creator creator3 = Bundle.CREATOR;
-            Bundle bundle3 = (Bundle) v.a(parcel);
-            v.b(parcel);
-            d(bundle3);
-            return true;
-        }
-        if (i10 != 5) {
-            return false;
-        }
-        Parcelable.Creator creator4 = Bundle.CREATOR;
-        Bundle bundle4 = (Bundle) v.a(parcel);
-        v.b(parcel);
-        b(bundle4);
-        return true;
+public final class a0 extends q6.a {
+    public static final Parcelable.Creator<a0> CREATOR = new c(24);
+    public final int a;
+    public final l0 b;
+
+    public a0(int i3, l0 l0Var) {
+        this.a = i3;
+        this.b = l0Var;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.l(parcel, 3, this.b, i3);
+        j8.a.t(parcel, s6);
     }
 }

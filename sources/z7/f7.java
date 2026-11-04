@@ -1,19 +1,21 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import b8.ke;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f7 implements ja.d {
-    public static final f7 a = new f7();
+public final class f7 {
+    public final Long a;
+    public final m7 b;
+    public final Boolean c;
+    public final Boolean d;
+    public final Boolean e;
 
-    static {
-        sc.e.v(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, new s(1)), 2)));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public /* synthetic */ f7(ke keVar) {
+        this.a = (Long) keVar.b;
+        this.b = (m7) keVar.c;
+        this.c = (Boolean) keVar.d;
+        this.d = (Boolean) keVar.e;
+        this.e = (Boolean) keVar.f;
     }
 }

@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class RaiseAtom extends Atom {
     private Atom base;
@@ -11,36 +11,36 @@ public class RaiseAtom extends Atom {
     private float r;
     private int runit;
 
-    public RaiseAtom(Atom atom, int i10, float f7, int i11, float f10, int i12, float f11) {
+    public RaiseAtom(Atom atom, int i3, float f10, int i10, float f11, int i11, float f12) {
         this.base = atom;
-        this.runit = i10;
-        this.r = f7;
-        this.hunit = i11;
-        this.h = f10;
-        this.dunit = i12;
-        this.d = f11;
+        this.runit = i3;
+        this.r = f10;
+        this.hunit = i10;
+        this.h = f11;
+        this.dunit = i11;
+        this.d = f12;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         Box createBox = this.base.createBox(teXEnvironment);
-        int i10 = this.runit;
-        if (i10 == -1) {
+        int i3 = this.runit;
+        if (i3 == -1) {
             createBox.setShift(0.0f);
         } else {
-            createBox.setShift(SpaceAtom.getFactor(i10, teXEnvironment) * (-this.r));
+            createBox.setShift(SpaceAtom.getFactor(i3, teXEnvironment) * (-this.r));
         }
         if (this.hunit == -1) {
             return createBox;
         }
         HorizontalBox horizontalBox = new HorizontalBox(createBox);
         horizontalBox.setHeight(SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h);
-        int i11 = this.dunit;
-        if (i11 == -1) {
+        int i10 = this.dunit;
+        if (i10 == -1) {
             horizontalBox.setDepth(0.0f);
             return horizontalBox;
         }
-        horizontalBox.setDepth(SpaceAtom.getFactor(i11, teXEnvironment) * this.d);
+        horizontalBox.setDepth(SpaceAtom.getFactor(i10, teXEnvironment) * this.d);
         return horizontalBox;
     }
 

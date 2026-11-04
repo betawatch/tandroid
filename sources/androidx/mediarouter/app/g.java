@@ -16,27 +16,30 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import b8.b1;
+import b8.c1;
+import b8.d1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g extends g.t {
-    public TextView D;
-    public LinearLayout E;
-    public Button F;
-    public ProgressBar G;
-    public ListView H;
-    public d I;
-    public final f J;
-    public boolean K;
-    public long L;
-    public final android.support.v4.media.session.q M;
-    public final p4.y f;
+public final class g extends g.u {
+    public TextView E;
+    public LinearLayout F;
+    public Button G;
+    public ProgressBar H;
+    public ListView I;
+    public d J;
+    public final f K;
+    public boolean L;
+    public long M;
+    public final android.support.v4.media.session.q N;
+    public final r4.y f;
     public final c h;
-    public p4.s n;
+    public r4.r n;
     public ArrayList r;
     public TextView s;
     public TextView w;
@@ -48,32 +51,32 @@ public final class g extends g.t {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public g(Context context) {
-        super(r3, r1 == 0 ? v7.a0.e(r3) : r1);
-        int i10 = 0;
-        ContextThemeWrapper a2 = v7.a0.a(context, false);
-        int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
-        this.n = p4.s.c;
-        this.M = new android.support.v4.media.session.q(this, 1);
-        this.f = p4.y.d(getContext());
-        this.h = new c(this, i10);
-        this.J = new f(this, i10);
+        super(r3, r1 == 0 ? d1.e(r3) : r1);
+        int i3 = 0;
+        ContextThemeWrapper a10 = d1.a(context, false);
+        int g7 = d1.g(a10, R.attr.mediaRouteTheme);
+        this.n = r4.r.c;
+        this.N = new android.support.v4.media.session.q(this, 1);
+        this.f = r4.y.d(getContext());
+        this.h = new c(this, i3);
+        this.K = new f(this, i3);
     }
 
-    @Override // g.t, android.app.Dialog, android.content.DialogInterface
+    @Override // g.u, android.app.Dialog, android.content.DialogInterface
     public final void dismiss() {
         try {
-            getContext().unregisterReceiver(this.J);
+            getContext().unregisterReceiver(this.K);
         } catch (IllegalArgumentException unused) {
         }
         super.dismiss();
     }
 
     public final void e(List list) {
-        this.L = SystemClock.uptimeMillis();
+        this.M = SystemClock.uptimeMillis();
         this.r.clear();
         this.r.addAll(list);
-        this.I.notifyDataSetChanged();
-        android.support.v4.media.session.q qVar = this.M;
+        this.J.notifyDataSetChanged();
+        android.support.v4.media.session.q qVar = this.N;
         qVar.removeMessages(3);
         qVar.removeMessages(2);
         if (!list.isEmpty()) {
@@ -85,205 +88,205 @@ public final class g extends g.t {
     }
 
     public final void f() {
-        if (this.K) {
+        if (this.L) {
             this.f.getClass();
-            p4.y.b();
-            ArrayList arrayList = new ArrayList(p4.y.c().j);
+            r4.y.b();
+            ArrayList arrayList = new ArrayList(r4.y.c().j);
             int size = arrayList.size();
             while (true) {
-                int i10 = size - 1;
+                int i3 = size - 1;
                 if (size <= 0) {
                     break;
                 }
-                p4.w wVar = (p4.w) arrayList.get(i10);
+                r4.w wVar = (r4.w) arrayList.get(i3);
                 if (wVar.d() || !wVar.g || !wVar.h(this.n)) {
-                    arrayList.remove(i10);
+                    arrayList.remove(i3);
                 }
-                size = i10;
+                size = i3;
             }
             Collections.sort(arrayList, e.b);
-            if (SystemClock.uptimeMillis() - this.L >= 300) {
+            if (SystemClock.uptimeMillis() - this.M >= 300) {
                 e(arrayList);
                 return;
             }
-            android.support.v4.media.session.q qVar = this.M;
+            android.support.v4.media.session.q qVar = this.N;
             qVar.removeMessages(1);
-            qVar.sendMessageAtTime(qVar.obtainMessage(1, arrayList), this.L + 300);
+            qVar.sendMessageAtTime(qVar.obtainMessage(1, arrayList), this.M + 300);
         }
     }
 
-    public final void h(p4.s sVar) {
-        if (sVar == null) {
+    public final void h(r4.r rVar) {
+        if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
-        if (this.n.equals(sVar)) {
+        if (this.n.equals(rVar)) {
             return;
         }
-        this.n = sVar;
-        if (this.K) {
-            p4.y yVar = this.f;
+        this.n = rVar;
+        if (this.L) {
+            r4.y yVar = this.f;
             c cVar = this.h;
             yVar.h(cVar);
-            yVar.a(sVar, cVar, 1);
+            yVar.a(rVar, cVar, 1);
         }
         f();
     }
 
-    public final void i(int i10) {
-        if (i10 == 0) {
+    public final void i(int i3) {
+        if (i3 == 0) {
             setTitle(R.string.mr_chooser_title);
-            this.H.setVisibility(8);
+            this.I.setVisibility(8);
             this.w.setVisibility(0);
-            this.G.setVisibility(0);
-            this.E.setVisibility(8);
-            this.F.setVisibility(8);
-            this.D.setVisibility(8);
-            this.x.setVisibility(8);
-            return;
-        }
-        if (i10 == 1) {
-            setTitle(R.string.mr_chooser_title);
             this.H.setVisibility(0);
-            this.w.setVisibility(8);
+            this.F.setVisibility(8);
             this.G.setVisibility(8);
             this.E.setVisibility(8);
-            this.F.setVisibility(8);
-            this.D.setVisibility(8);
             this.x.setVisibility(8);
             return;
         }
-        if (i10 == 2) {
+        if (i3 == 1) {
             setTitle(R.string.mr_chooser_title);
-            this.H.setVisibility(8);
+            this.I.setVisibility(0);
             this.w.setVisibility(8);
-            this.G.setVisibility(0);
-            this.E.setVisibility(8);
+            this.H.setVisibility(8);
             this.F.setVisibility(8);
-            this.D.setVisibility(4);
+            this.G.setVisibility(8);
+            this.E.setVisibility(8);
+            this.x.setVisibility(8);
+            return;
+        }
+        if (i3 == 2) {
+            setTitle(R.string.mr_chooser_title);
+            this.I.setVisibility(8);
+            this.w.setVisibility(8);
+            this.H.setVisibility(0);
+            this.F.setVisibility(8);
+            this.G.setVisibility(8);
+            this.E.setVisibility(4);
             this.x.setVisibility(0);
             return;
         }
-        if (i10 != 3) {
+        if (i3 != 3) {
             return;
         }
         setTitle(R.string.mr_chooser_zero_routes_found_title);
-        this.H.setVisibility(8);
+        this.I.setVisibility(8);
         this.w.setVisibility(8);
-        this.G.setVisibility(8);
-        this.E.setVisibility(0);
+        this.H.setVisibility(8);
         this.F.setVisibility(0);
-        this.D.setVisibility(0);
+        this.G.setVisibility(0);
+        this.E.setVisibility(0);
         this.x.setVisibility(0);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.K = true;
+        this.L = true;
         this.f.a(this.n, this.h, 1);
         f();
-        android.support.v4.media.session.q qVar = this.M;
+        android.support.v4.media.session.q qVar = this.N;
         qVar.removeMessages(2);
         qVar.removeMessages(3);
         qVar.removeMessages(1);
         qVar.sendMessageDelayed(qVar.obtainMessage(2), 5000L);
     }
 
-    @Override // g.t, androidx.activity.n, android.app.Dialog
+    @Override // g.u, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         String string;
         boolean z10;
         super.onCreate(bundle);
         setContentView(R.layout.mr_chooser_dialog);
         this.r = new ArrayList();
-        this.I = new d(getContext(), this.r);
+        this.J = new d(getContext(), this.r);
         this.s = (TextView) findViewById(R.id.mr_chooser_title);
         this.w = (TextView) findViewById(R.id.mr_chooser_searching);
         this.x = (RelativeLayout) findViewById(R.id.mr_chooser_wifi_warning_container);
         this.y = (TextView) findViewById(R.id.mr_chooser_wifi_warning_description);
-        this.D = (TextView) findViewById(R.id.mr_chooser_wifi_learn_more);
-        this.E = (LinearLayout) findViewById(R.id.mr_chooser_ok_button_container);
-        this.F = (Button) findViewById(R.id.mr_chooser_ok_button);
-        this.G = (ProgressBar) findViewById(R.id.mr_chooser_search_progress_bar);
+        this.E = (TextView) findViewById(R.id.mr_chooser_wifi_learn_more);
+        this.F = (LinearLayout) findViewById(R.id.mr_chooser_ok_button_container);
+        this.G = (Button) findViewById(R.id.mr_chooser_ok_button);
+        this.H = (ProgressBar) findViewById(R.id.mr_chooser_search_progress_bar);
         Context context = getContext();
         boolean z11 = false;
-        if (v7.y.a == null) {
-            if (!v7.y.c(context)) {
+        if (b1.a == null) {
+            if (!b1.c(context)) {
                 PackageManager packageManager = context.getPackageManager();
-                if (v7.y.e == null) {
-                    v7.y.e = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
+                if (b1.e == null) {
+                    b1.e = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
                 }
-                if (!v7.y.e.booleanValue() && !v7.y.a(context) && !v7.y.d(context)) {
+                if (!b1.e.booleanValue() && !b1.a(context) && !b1.d(context)) {
                     z10 = true;
-                    v7.y.a = Boolean.valueOf(z10);
+                    b1.a = Boolean.valueOf(z10);
                 }
             }
             z10 = false;
-            v7.y.a = Boolean.valueOf(z10);
+            b1.a = Boolean.valueOf(z10);
         }
-        if (!v7.y.a.booleanValue()) {
-            if (v7.y.c == null) {
+        if (!b1.a.booleanValue()) {
+            if (b1.c == null) {
                 SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
                 if (Build.VERSION.SDK_INT >= 30 && sensorManager != null && sensorManager.getDefaultSensor(36) != null) {
                     z11 = true;
                 }
-                v7.y.c = Boolean.valueOf(z11);
+                b1.c = Boolean.valueOf(z11);
             }
-            if (!v7.y.c.booleanValue()) {
-                if (v7.y.c(context) || v7.y.b(context.getResources())) {
+            if (!b1.c.booleanValue()) {
+                if (b1.c(context) || b1.b(context.getResources())) {
                     string = context.getString(R.string.mr_chooser_wifi_warning_description_tablet);
-                } else if (v7.y.d(context)) {
+                } else if (b1.d(context)) {
                     string = context.getString(R.string.mr_chooser_wifi_warning_description_tv);
                 } else {
                     PackageManager packageManager2 = context.getPackageManager();
-                    if (v7.y.e == null) {
-                        v7.y.e = Boolean.valueOf(packageManager2.hasSystemFeature("android.hardware.type.watch"));
+                    if (b1.e == null) {
+                        b1.e = Boolean.valueOf(packageManager2.hasSystemFeature("android.hardware.type.watch"));
                     }
-                    string = v7.y.e.booleanValue() ? context.getString(R.string.mr_chooser_wifi_warning_description_watch) : v7.y.a(context) ? context.getString(R.string.mr_chooser_wifi_warning_description_car) : context.getString(R.string.mr_chooser_wifi_warning_description_unknown);
+                    string = b1.e.booleanValue() ? context.getString(R.string.mr_chooser_wifi_warning_description_watch) : b1.a(context) ? context.getString(R.string.mr_chooser_wifi_warning_description_car) : context.getString(R.string.mr_chooser_wifi_warning_description_unknown);
                 }
                 this.y.setText(string);
-                this.D.setMovementMethod(LinkMovementMethod.getInstance());
-                this.F.setOnClickListener(new ag.g(this, 3));
+                this.E.setMovementMethod(LinkMovementMethod.getInstance());
+                this.G.setOnClickListener(new ai.b(this, 3));
                 ListView listView = (ListView) findViewById(R.id.mr_chooser_list);
-                this.H = listView;
-                listView.setAdapter((ListAdapter) this.I);
-                this.H.setOnItemClickListener(this.I);
-                this.H.setEmptyView(findViewById(android.R.id.empty));
-                getWindow().setLayout(v7.z.a(getContext()), -2);
-                getContext().registerReceiver(this.J, new IntentFilter("android.intent.action.SCREEN_OFF"));
+                this.I = listView;
+                listView.setAdapter((ListAdapter) this.J);
+                this.I.setOnItemClickListener(this.J);
+                this.I.setEmptyView(findViewById(android.R.id.empty));
+                getWindow().setLayout(c1.a(getContext()), -2);
+                getContext().registerReceiver(this.K, new IntentFilter("android.intent.action.SCREEN_OFF"));
             }
         }
         string = context.getString(R.string.mr_chooser_wifi_warning_description_phone);
         this.y.setText(string);
-        this.D.setMovementMethod(LinkMovementMethod.getInstance());
-        this.F.setOnClickListener(new ag.g(this, 3));
+        this.E.setMovementMethod(LinkMovementMethod.getInstance());
+        this.G.setOnClickListener(new ai.b(this, 3));
         ListView listView2 = (ListView) findViewById(R.id.mr_chooser_list);
-        this.H = listView2;
-        listView2.setAdapter((ListAdapter) this.I);
-        this.H.setOnItemClickListener(this.I);
-        this.H.setEmptyView(findViewById(android.R.id.empty));
-        getWindow().setLayout(v7.z.a(getContext()), -2);
-        getContext().registerReceiver(this.J, new IntentFilter("android.intent.action.SCREEN_OFF"));
+        this.I = listView2;
+        listView2.setAdapter((ListAdapter) this.J);
+        this.I.setOnItemClickListener(this.J);
+        this.I.setEmptyView(findViewById(android.R.id.empty));
+        getWindow().setLayout(c1.a(getContext()), -2);
+        getContext().registerReceiver(this.K, new IntentFilter("android.intent.action.SCREEN_OFF"));
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
-        this.K = false;
+        this.L = false;
         this.f.h(this.h);
-        android.support.v4.media.session.q qVar = this.M;
+        android.support.v4.media.session.q qVar = this.N;
         qVar.removeMessages(1);
         qVar.removeMessages(2);
         qVar.removeMessages(3);
         super.onDetachedFromWindow();
     }
 
-    @Override // g.t, android.app.Dialog
+    @Override // g.u, android.app.Dialog
     public final void setTitle(CharSequence charSequence) {
         this.s.setText(charSequence);
     }
 
-    @Override // g.t, android.app.Dialog
-    public final void setTitle(int i10) {
-        this.s.setText(i10);
+    @Override // g.u, android.app.Dialog
+    public final void setTitle(int i3) {
+        this.s.setText(i3);
     }
 }

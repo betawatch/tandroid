@@ -1,40 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j90 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n90 b;
+public final class j90 extends n61 {
+    public final /* synthetic */ da0 W;
 
-    public /* synthetic */ j90(n90 n90Var, int i10) {
-        this.a = i10;
-        this.b = n90Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j90(da0 da0Var, Context context, z90 z90Var) {
+        super(context, z90Var);
+        this.W = da0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        n90 n90Var = this.b;
-        switch (i10) {
-            case 0:
-                n90Var.b0();
+    @Override // org.telegram.ui.Components.n61, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int i3 = 0;
+        while (true) {
+            View[] viewArr = this.W.f.e;
+            if (i3 >= viewArr.length) {
+                z10 = false;
                 break;
-            default:
-                Activity parentActivity = n90Var.getParentActivity();
-                Activity parentActivity2 = n90Var.getParentActivity();
-                org.telegram.messenger.s5 s5Var = ig.k1.m;
-                boolean z10 = parentActivity2.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false);
-                SharedPreferences.Editor edit = parentActivity.getSharedPreferences("shapedetector_conf", 0).edit();
-                if (z10) {
-                    edit.clear();
-                } else {
-                    edit.putBoolean("learning", true);
+            }
+            View view = viewArr[i3];
+            if (view != null) {
+                x90 x90Var = (x90) view;
+                if (x90Var.a == 0) {
+                    z10 = x90Var.e.i;
+                    break;
                 }
-                edit.apply();
-                break;
+            }
+            i3++;
+        }
+        if (z10) {
+            return false;
+        }
+        return A(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final void s() {
+        View view = this.e[0];
+        if (view instanceof x90) {
+            ((x90) view).e.V();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final void u(boolean z10) {
+        da0 da0Var = this.W;
+        da0Var.e.setSelectedTab(da0Var.f.getPositionAnimated());
+        View[] viewArr = this.e;
+        View view = viewArr[0];
+        if (view instanceof x90) {
+            ((x90) view).e.G();
+        }
+        View view2 = viewArr[1];
+        if (view2 instanceof x90) {
+            ((x90) view2).e.G();
         }
     }
 }

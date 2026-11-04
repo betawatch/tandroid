@@ -1,69 +1,52 @@
 package c3;
 
-import java.io.Serializable;
-import org.telegram.messenger.at;
+import android.util.Range;
+import b8.zb;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class z {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public Serializable g;
+    public long a;
+    public long b;
+    public double c;
+    public Range d;
 
-    public boolean a(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        if ((i10 & (-2097152)) != -2097152 || (i11 = (i10 >>> 19) & 3) == 1 || (i12 = (i10 >>> 17) & 3) == 0 || (i13 = (i10 >>> 12) & 15) == 0 || i13 == 15 || (i14 = (i10 >>> 10) & 3) == 3) {
-            return false;
-        }
-        this.a = i11;
-        this.g = b.s[3 - i12];
-        int i15 = b.t[i14];
-        this.c = i15;
-        if (i11 == 2) {
-            this.c = i15 / 2;
-        } else if (i11 == 0) {
-            this.c = i15 / 4;
-        }
-        int i16 = (i10 >>> 9) & 1;
-        int i17 = 1152;
-        if (i12 != 1) {
-            if (i12 != 2) {
-                if (i12 != 3) {
-                    throw new IllegalArgumentException();
-                }
-                i17 = 384;
-            }
-        } else if (i11 != 3) {
-            i17 = 576;
-        }
-        this.f = i17;
-        if (i12 == 3) {
-            int i18 = i11 == 3 ? b.u[i13 - 1] : b.v[i13 - 1];
-            this.e = i18;
-            this.b = (((i18 * 12) / this.c) + i16) * 4;
-        } else {
-            int i19 = at.a2;
-            if (i11 == 3) {
-                int i20 = i12 == 2 ? b.w[i13 - 1] : b.x[i13 - 1];
-                this.e = i20;
-                this.b = ((i20 * at.a2) / this.c) + i16;
-            } else {
-                int i21 = b.y[i13 - 1];
-                this.e = i21;
-                if (i12 == 1) {
-                    i19 = 72;
-                }
-                this.b = ((i19 * i21) / this.c) + i16;
+    public z() {
+        Range range = new Range(Double.valueOf(0.0d), Double.valueOf(1.0d / 1.0f));
+        this.d = range;
+        this.c = ((Double) range.getUpper()).doubleValue();
+        this.a = -9223372036854775807L;
+        this.b = -9223372036854775807L;
+    }
+
+    public final void a(long j10, long j11) {
+        double doubleValue;
+        zb.f(j10 != -9223372036854775807L);
+        zb.f(j11 != -9223372036854775807L);
+        long j12 = this.a;
+        if (j12 != -9223372036854775807L) {
+            if (this.b != -9223372036854775807L && j10 != j12) {
+                doubleValue = (j11 - r4) / (j10 - j12);
+                this.c = (((Double) this.d.clamp(Double.valueOf(doubleValue))).doubleValue() * 0.20000000298023224d) + (this.c * 0.800000011920929d);
+                this.a = j10;
+                this.b = j11;
             }
         }
-        this.d = ((i10 >> 6) & 3) == 3 ? 1 : 2;
-        return true;
+        doubleValue = ((Double) this.d.getUpper()).doubleValue();
+        this.c = (((Double) this.d.clamp(Double.valueOf(doubleValue))).doubleValue() * 0.20000000298023224d) + (this.c * 0.800000011920929d);
+        this.a = j10;
+        this.b = j11;
+    }
+
+    public final void b() {
+        this.c = ((Double) this.d.getUpper()).doubleValue();
+        this.a = -9223372036854775807L;
+        this.b = -9223372036854775807L;
+    }
+
+    public final void c(float f10) {
+        zb.f(f10 > 0.0f);
+        this.d = new Range(Double.valueOf(0.0d), Double.valueOf(1.0d / f10));
+        b();
     }
 }

@@ -1,46 +1,187 @@
 package g9;
 
-import java.math.RoundingMode;
+import b8.mb;
+import j$.util.DesugarCollections;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.NavigableMap;
+import java.util.NavigableSet;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.SortedSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class e {
-    public static final /* synthetic */ int[] a;
+public final class e extends h implements NavigableMap {
+    public final /* synthetic */ k1 n;
 
-    static {
-        int[] iArr = new int[RoundingMode.values().length];
-        a = iArr;
-        try {
-            iArr[RoundingMode.UNNECESSARY.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e(k1 k1Var, NavigableMap navigableMap) {
+        super(k1Var, navigableMap);
+        this.n = k1Var;
+    }
+
+    @Override // g9.h
+    public final SortedSet c() {
+        return new f(this.n, e());
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry ceilingEntry(Object obj) {
+        Map.Entry ceilingEntry = e().ceilingEntry(obj);
+        if (ceilingEntry == null) {
+            return null;
         }
-        try {
-            a[RoundingMode.DOWN.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
+        return b(ceilingEntry);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object ceilingKey(Object obj) {
+        return e().ceilingKey(obj);
+    }
+
+    @Override // g9.h
+    /* renamed from: d */
+    public final SortedSet keySet() {
+        return (NavigableSet) super.keySet();
+    }
+
+    @Override // java.util.NavigableMap
+    public final NavigableSet descendingKeySet() {
+        return (NavigableSet) super.keySet();
+    }
+
+    @Override // java.util.NavigableMap
+    public final NavigableMap descendingMap() {
+        return new e(this.n, e().descendingMap());
+    }
+
+    public final e0 f(Iterator it) {
+        if (!it.hasNext()) {
+            return null;
         }
-        try {
-            a[RoundingMode.FLOOR.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+        Map.Entry entry = (Map.Entry) it.next();
+        Collection h = this.n.h();
+        h.addAll((Collection) entry.getValue());
+        it.remove();
+        return new e0(entry.getKey(), DesugarCollections.unmodifiableList((List) h));
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry firstEntry() {
+        Map.Entry firstEntry = e().firstEntry();
+        if (firstEntry == null) {
+            return null;
         }
-        try {
-            a[RoundingMode.UP.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
+        return b(firstEntry);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry floorEntry(Object obj) {
+        Map.Entry floorEntry = e().floorEntry(obj);
+        if (floorEntry == null) {
+            return null;
         }
-        try {
-            a[RoundingMode.CEILING.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
+        return b(floorEntry);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object floorKey(Object obj) {
+        return e().floorKey(obj);
+    }
+
+    @Override // g9.h
+    /* renamed from: g, reason: merged with bridge method [inline-methods] */
+    public final NavigableMap e() {
+        return (NavigableMap) ((SortedMap) this.b);
+    }
+
+    @Override // g9.h, java.util.SortedMap, java.util.NavigableMap
+    public final SortedMap headMap(Object obj) {
+        return headMap(obj, false);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry higherEntry(Object obj) {
+        Map.Entry higherEntry = e().higherEntry(obj);
+        if (higherEntry == null) {
+            return null;
         }
-        try {
-            a[RoundingMode.HALF_DOWN.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
+        return b(higherEntry);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object higherKey(Object obj) {
+        return e().higherKey(obj);
+    }
+
+    @Override // g9.h, b8.mb, java.util.AbstractMap, java.util.Map
+    public final Set keySet() {
+        return (NavigableSet) super.keySet();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry lastEntry() {
+        Map.Entry lastEntry = e().lastEntry();
+        if (lastEntry == null) {
+            return null;
         }
-        try {
-            a[RoundingMode.HALF_UP.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
+        return b(lastEntry);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry lowerEntry(Object obj) {
+        Map.Entry lowerEntry = e().lowerEntry(obj);
+        if (lowerEntry == null) {
+            return null;
         }
-        try {
-            a[RoundingMode.HALF_EVEN.ordinal()] = 8;
-        } catch (NoSuchFieldError unused8) {
-        }
+        return b(lowerEntry);
+    }
+
+    @Override // java.util.NavigableMap
+    public final Object lowerKey(Object obj) {
+        return e().lowerKey(obj);
+    }
+
+    @Override // java.util.NavigableMap
+    public final NavigableSet navigableKeySet() {
+        return (NavigableSet) super.keySet();
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry pollFirstEntry() {
+        return f(((c) entrySet()).iterator());
+    }
+
+    @Override // java.util.NavigableMap
+    public final Map.Entry pollLastEntry() {
+        return f(((c) ((mb) descendingMap()).entrySet()).iterator());
+    }
+
+    @Override // g9.h, java.util.SortedMap, java.util.NavigableMap
+    public final SortedMap subMap(Object obj, Object obj2) {
+        return subMap(obj, true, obj2, false);
+    }
+
+    @Override // g9.h, java.util.SortedMap, java.util.NavigableMap
+    public final SortedMap tailMap(Object obj) {
+        return tailMap(obj, true);
+    }
+
+    @Override // java.util.NavigableMap
+    public final NavigableMap headMap(Object obj, boolean z10) {
+        return new e(this.n, e().headMap(obj, z10));
+    }
+
+    @Override // java.util.NavigableMap
+    public final NavigableMap subMap(Object obj, boolean z10, Object obj2, boolean z11) {
+        return new e(this.n, e().subMap(obj, z10, obj2, z11));
+    }
+
+    @Override // java.util.NavigableMap
+    public final NavigableMap tailMap(Object obj, boolean z10) {
+        return new e(this.n, e().tailMap(obj, z10));
     }
 }

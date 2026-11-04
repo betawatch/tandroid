@@ -1,38 +1,276 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.LaunchActivity;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.ContextThemeWrapper;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.BubbleActivity;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ad0 extends zc0 {
-    public final /* synthetic */ bd0 j0;
+public final class ad0 extends FrameLayout {
+    public final org.telegram.ui.ActionBar.e6 E;
+    public final xc0 F;
+    public final xc0 G;
+    public zc0 a;
+    public final pg.m b;
+    public final pg.e c;
+    public final boolean d;
+    public final ImageReceiver e;
+    public boolean f;
+    public boolean h;
+    public float n;
+    public float r;
+    public AnimatorSet s;
+    public AnimatorSet w;
+    public float x;
+    public final Paint y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ad0(bd0 bd0Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.j0 = bd0Var;
+    public ad0(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(contextThemeWrapper);
+        this.h = true;
+        this.r = 1.0f;
+        this.x = 0.0f;
+        this.y = new Paint(1);
+        this.F = new xc0(this, 0);
+        this.G = new xc0(this, 1);
+        this.E = e6Var;
+        this.d = contextThemeWrapper instanceof BubbleActivity;
+        pg.m mVar = new pg.m(contextThemeWrapper);
+        this.b = mVar;
+        mVar.setListener(new i9(this, 4));
+        mVar.setBottomPadding(org.telegram.messenger.g0.L(64.0f));
+        addView(mVar);
+        this.e = new ImageReceiver(this);
+        pg.e eVar = new pg.e(contextThemeWrapper);
+        this.c = eVar;
+        eVar.setListener(new gi.h0(2, this));
+        addView(eVar, b8.mf.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.zc0
-    public final void h(float f7) {
-        LaunchActivity launchActivity = LaunchActivity.I1;
-        if (launchActivity == null) {
-            return;
-        }
-        org.telegram.ui.ActionBar.s3 s3Var = launchActivity.z0;
-        s3Var.setScaleX(org.telegram.messenger.i0.T1(1.0f, 1.25f, f7));
-        s3Var.setScaleY(org.telegram.messenger.i0.T1(1.0f, 1.25f, f7));
+    public final void a() {
+        pg.m mVar = this.b;
+        mVar.b.setVisibility(4);
+        CropAreaView cropAreaView = mVar.a;
+        cropAreaView.setDimVisibility(false);
+        cropAreaView.f(false, false);
+        cropAreaView.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.zc0
-    public final void j() {
-        super/*android.app.Dialog*/.dismiss();
-        LaunchActivity launchActivity = LaunchActivity.I1;
-        if (launchActivity == null) {
+    public final void b(Bitmap bitmap, int i3, boolean z10, boolean z11, pg.f fVar, b51 b51Var, org.telegram.messenger.re reVar) {
+        org.telegram.messenger.re reVar2;
+        requestLayout();
+        this.f = false;
+        this.e.w0(null);
+        pg.m mVar = this.b;
+        ImageView imageView = mVar.b;
+        mVar.y = z10;
+        mVar.d = b51Var;
+        mVar.e = fVar;
+        mVar.L = i3;
+        mVar.x = bitmap;
+        CropAreaView cropAreaView = mVar.a;
+        cropAreaView.setIsVideo(b51Var != null);
+        if (bitmap == null && b51Var == null) {
+            mVar.M = null;
+            imageView.setImageDrawable(null);
+            reVar2 = reVar;
+        } else {
+            int currentWidth = mVar.getCurrentWidth();
+            int currentHeight = mVar.getCurrentHeight();
+            pg.k kVar = mVar.M;
+            if (kVar == null || !z11) {
+                mVar.M = new pg.k(mVar, currentWidth, currentHeight);
+                reVar2 = reVar;
+                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new pg.i(mVar, reVar2, currentHeight, currentWidth, 1));
+            } else {
+                float f10 = currentWidth;
+                kVar.e *= kVar.a / f10;
+                kVar.a = f10;
+                kVar.b = currentHeight;
+                kVar.h();
+                Matrix matrix = kVar.k;
+                pg.m mVar2 = kVar.l;
+                matrix.getValues(mVar2.I);
+                matrix.reset();
+                float f11 = kVar.e;
+                matrix.postScale(f11, f11);
+                float[] fArr = mVar2.I;
+                matrix.postTranslate(fArr[2], fArr[5]);
+                mVar2.r(false);
+                reVar2 = reVar;
+            }
+            imageView.setImageBitmap(b51Var == null ? mVar.x : null);
+        }
+        pg.e eVar = this.c;
+        eVar.setFreeform(z10);
+        eVar.b(0.0f);
+        eVar.setMirrored(false);
+        eVar.setRotated(false);
+        if (reVar2 != null) {
+            eVar.b(reVar2.d);
+            eVar.setRotated(reVar2.k != 0);
+            eVar.setMirrored(reVar2.l);
+        } else {
+            eVar.setRotated(false);
+            eVar.setMirrored(false);
+        }
+        eVar.setVisibility(z10 ? 0 : 4);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        pg.m mVar;
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        if (this.f && view == (mVar = this.b)) {
+            RectF actualRect = mVar.getActualRect();
+            int L = org.telegram.messenger.g0.L(32.0f);
+            org.telegram.ui.io0 io0Var = (org.telegram.ui.io0) this.a;
+            io0Var.getClass();
+            int L2 = org.telegram.messenger.g0.L(2.0f) + (((int) (((r1.T7.getMeasuredWidth() - org.telegram.messenger.g0.L(32.0f)) * io0Var.a.x8) + org.telegram.messenger.g0.L(16.0f))) - (L / 2));
+            int measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(156.0f);
+            float f10 = actualRect.left;
+            float f11 = this.r;
+            float f12 = ((L2 - f10) * f11) + f10;
+            float f13 = actualRect.top;
+            float y9 = com.google.android.recaptcha.internal.a.y(measuredHeight, f13, f11, f13);
+            float width = ((L - actualRect.width()) * this.r) + actualRect.width();
+            ImageReceiver imageReceiver = this.e;
+            imageReceiver.J0((int) (width / 2.0f));
+            imageReceiver.y0(f12, y9, width, width);
+            imageReceiver.setAlpha(this.n);
+            imageReceiver.h(canvas, null);
+            float f14 = this.x;
+            Paint paint = this.y;
+            if (f14 > 0.0f) {
+                paint.setColor(-1);
+                paint.setAlpha((int) (this.x * 255.0f));
+                canvas.drawCircle(actualRect.centerX(), actualRect.centerY(), actualRect.width() / 2.0f, paint);
+            }
+            paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.ng, this.E));
+            paint.setAlpha(Math.min(org.telegram.messenger.hs.e4, (int) (this.r * 255.0f * this.n)));
+            canvas.drawCircle(L2 + r1, org.telegram.messenger.g0.L(8.0f) + measuredHeight + L, org.telegram.messenger.g0.L(3.0f), paint);
+        }
+        return drawChild;
+    }
+
+    public float getRectSizeX() {
+        return this.b.getCropWidth();
+    }
+
+    public float getRectSizeY() {
+        return this.b.getCropHeight();
+    }
+
+    public float getRectX() {
+        return this.b.getCropLeft() - org.telegram.messenger.g0.L(14.0f);
+    }
+
+    public float getRectY() {
+        return (this.b.getCropTop() - org.telegram.messenger.g0.L(14.0f)) - (!this.d ? org.telegram.messenger.g0.m : 0);
+    }
+
+    public Bitmap getVideoThumb() {
+        if (this.f && this.h) {
+            return this.e.n();
+        }
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.b.invalidate();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.h && this.f) {
+            if (this.e.O(motionEvent.getX(), motionEvent.getY())) {
+                if (motionEvent.getAction() == 1) {
+                    ((org.telegram.ui.io0) this.a).b();
+                }
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        pg.k kVar;
+        super.onLayout(z10, i3, i10, i11, i12);
+        pg.m mVar = this.b;
+        CropAreaView cropAreaView = mVar.a;
+        float cropWidth = cropAreaView.getCropWidth();
+        if (cropWidth == 0.0f || (kVar = mVar.M) == null) {
             return;
         }
-        org.telegram.ui.ActionBar.s3 s3Var = launchActivity.z0;
-        s3Var.setScaleX(1.0f);
-        s3Var.setScaleY(1.0f);
+        cropAreaView.a(mVar.h, kVar.a / kVar.b);
+        cropAreaView.setActualRect(cropAreaView.getAspectRatio());
+        cropAreaView.d(mVar.f);
+        pg.k.g(mVar.M, cropAreaView.getCropWidth() / cropWidth, 0.0f, 0.0f);
+        mVar.r(false);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.h && this.f) {
+            if (this.e.O(motionEvent.getX(), motionEvent.getY())) {
+                if (motionEvent.getAction() == 1) {
+                    ((org.telegram.ui.io0) this.a).b();
+                }
+                return true;
+            }
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    public void setAspectRatio(float f10) {
+        this.b.setAspectRatio(f10);
+    }
+
+    public void setDelegate(zc0 zc0Var) {
+        this.a = zc0Var;
+    }
+
+    public void setFreeform(boolean z10) {
+        this.b.setFreeform(z10);
+    }
+
+    public void setSubtitle(String str) {
+        this.b.setSubtitle(str);
+    }
+
+    public void setVideoThumbFlashAlpha(float f10) {
+        this.x = f10;
+        invalidate();
+    }
+
+    public void setVideoThumbVisible(boolean z10) {
+        if (this.h == z10) {
+            return;
+        }
+        this.h = z10;
+        AnimatorSet animatorSet = this.w;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.w = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.G, z10 ? 1.0f : 0.0f));
+        this.w.setDuration(180L);
+        this.w.addListener(new yc0(this, 1));
+        this.w.start();
     }
 }

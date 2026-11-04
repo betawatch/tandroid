@@ -1,53 +1,41 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
-import android.util.Log;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.x30;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class s3 implements Runnable {
-    public final /* synthetic */ u3 a;
+public final class s3 {
+    public TLRPC.GroupCallParticipant a;
+    public boolean b;
+    public float c;
 
-    public s3(u3 u3Var) {
-        this.a = u3Var;
+    public s3(TLRPC.GroupCallParticipant groupCallParticipant, boolean z10) {
+        this.a = groupCallParticipant;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        u3 u3Var = this.a;
-        a0.h hVar = u3Var.P;
-        long uptimeMillis = SystemClock.uptimeMillis();
-        int i11 = 0;
-        boolean z10 = false;
-        while (i11 < hVar.m()) {
-            long j10 = hVar.j(i11);
-            if (uptimeMillis - ((TLRPC.GroupCallParticipant) hVar.f(j10)).lastSpeakTime >= 500) {
-                hVar.l(j10);
-                if (j10 > 0) {
-                    TLRPC.User Z1 = wp.r1(u3Var.C.a).Z1(Long.valueOf(j10));
-                    StringBuilder s10 = a1.g.s(j10, "remove from speaking ", " ");
-                    s10.append(Z1 != null ? Z1.first_name : null);
-                    Log.d("GroupCall", s10.toString());
-                    i10 = i11;
-                } else {
-                    i10 = i11;
-                    TLRPC.Chat L0 = wp.r1(u3Var.C.a).L0(Long.valueOf(-j10));
-                    StringBuilder s11 = a1.g.s(j10, "remove from speaking ", " ");
-                    s11.append(L0 != null ? L0.title : null);
-                    Log.d("GroupCall", s11.toString());
-                }
-                i11 = i10 - 1;
-                z10 = true;
+    public final void a(int i3, int i10, r3 r3Var) {
+        float f10 = i3 / i10;
+        if (this.c != f10) {
+            this.c = f10;
+            if (x30.x5 || r3Var.f.size() % 2 != 1) {
+                return;
             }
-            i11++;
+            r3Var.B();
         }
-        if (hVar.m() > 0) {
-            i0.h3(u3Var.Q, 550L);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (z10) {
-            at.f(u3Var.C.a).k(at.y2, Long.valueOf(u3Var.c), Long.valueOf(u3Var.b.id), Boolean.FALSE);
+        if (obj != null && s3.class == obj.getClass()) {
+            s3 s3Var = (s3) obj;
+            if (this.b == s3Var.b && zi.C1(this.a.peer) == zi.C1(s3Var.a.peer)) {
+                return true;
+            }
         }
+        return false;
     }
 }

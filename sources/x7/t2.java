@@ -1,19 +1,18 @@
 package x7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class t2 implements ja.d {
+public final class t2 implements ma.d {
     public static final t2 a = new t2();
+    public static final ma.c b = new ma.c("identifyLanguageConfidenceThreshold", k2.p1.o(t4.c.i(h.class, new e(1))));
+    public static final ma.c c = new ma.c("identifyAllLanguagesConfidenceThreshold", k2.p1.o(t4.c.i(h.class, new e(2))));
+    public static final ma.c d = new ma.c("confidenceThreshold", k2.p1.o(t4.c.i(h.class, new e(3))));
 
-    static {
-        sc.e.v(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, new z(1)), 2)), 3)));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // ma.a
+    public final void a(Object obj, Object obj2) {
+        ma.e eVar = (ma.e) obj2;
+        eVar.a(b, null);
+        eVar.a(c, null);
+        eVar.a(d, ((g6) obj).a);
     }
 }

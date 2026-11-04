@@ -1,80 +1,73 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jj implements org.telegram.messenger.r20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class jj extends tj0 {
+    public final /* synthetic */ int f3;
+    public final Paint g3;
+    public final /* synthetic */ uj h3;
 
-    public /* synthetic */ jj(int i10, int i11, Object obj, Object obj2, boolean z10) {
-        this.a = i11;
-        this.d = obj;
-        this.e = obj2;
-        this.b = z10;
-        this.c = i10;
-    }
-
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
-        org.telegram.messenger.c accountInstance;
-        switch (this.a) {
-            case 0:
-                ((xj) this.d).Q.p((ArrayList) this.e, this.b, this.c, ((Long) obj).longValue());
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jj(uj ujVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i3) {
+        super(context, e6Var);
+        this.f3 = i3;
+        switch (i3) {
             case 1:
-                th.w1 w1Var = (th.w1) this.d;
-                TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) this.e;
-                Long l4 = (Long) obj;
-                th.z2 z2Var = w1Var.a;
-                TLRPC.User user = z2Var.M2.getAdapter().w0;
-                long j10 = user != null ? user.id : 0L;
-                HashMap hashMap = new HashMap();
-                hashMap.put("id", botInlineResult.id);
-                hashMap.put("query_id", "" + botInlineResult.query_id);
-                hashMap.put("bot", "" + j10);
-                TLRPC.User user2 = z2Var.M2.getAdapter().w0;
-                hashMap.put("bot_name", user2 != null ? user2.username : "");
-                org.telegram.ui.ActionBar.k2 k2Var = z2Var.s0.f;
-                accountInstance = z2Var.getAccountInstance();
-                long j11 = j10;
-                org.telegram.messenger.rz.S(this.c, z2Var.k1, 0L, l4.longValue(), hashMap, accountInstance, null, null, null, botInlineResult, z2Var.x1.a, k2Var, null, this.b);
-                z2Var.K1.setFieldText("");
-                z2Var.i0(l4.longValue() <= 0);
-                org.telegram.messenger.vi.b0(z2Var.l2).v0(j11, false);
+                this.h3 = ujVar;
+                super(context, e6Var);
+                this.g3 = new Paint();
                 break;
             default:
-                th.r4 r4Var = (th.r4) this.d;
-                List list = (List) this.e;
-                th.u4 u4Var = r4Var.q;
-                TLObject e22 = org.telegram.messenger.wp.r1(r4Var.c).e2(r4Var.D);
-                r4Var.G = false;
-                if (e22 == null) {
-                    r4Var.J = 0;
-                    r4Var.H = "";
-                    org.telegram.messenger.i0.r(u4Var);
-                    org.telegram.messenger.i0.g3(u4Var);
-                    break;
-                } else {
-                    r4Var.q(this.c, list, this.b);
-                    break;
-                }
+                this.h3 = ujVar;
+                this.g3 = new Paint();
+                break;
         }
     }
 
-    public /* synthetic */ jj(th.r4 r4Var, boolean z10, int i10, List list) {
-        this.a = 2;
-        this.d = r4Var;
-        this.b = z10;
-        this.c = i10;
-        this.e = list;
+    @Override // org.telegram.ui.Components.tj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.f3) {
+            case 0:
+                if (this.h3.n == 2 && getChildCount() > 0) {
+                    float f10 = 2.14748365E9f;
+                    for (int i3 = 0; i3 < getChildCount(); i3++) {
+                        if (getChildAt(i3).getY() < f10) {
+                            f10 = getChildAt(i3).getY();
+                        }
+                    }
+                    this.g3.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                if (this.h3.n == 1 && getChildCount() > 0) {
+                    float f11 = 2.14748365E9f;
+                    for (int i10 = 0; i10 < getChildCount(); i10++) {
+                        if (getChildAt(i10).getY() < f11) {
+                            f11 = getChildAt(i10).getY();
+                        }
+                    }
+                    this.g3.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 0:
+                if (this.h3.n == 0) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -1,28 +1,15 @@
 package androidx.biometric;
 
-import android.security.keystore.KeyGenParameterSpec;
-import javax.crypto.KeyGenerator;
+import android.os.CancellationSignal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static KeyGenParameterSpec a(KeyGenParameterSpec.Builder builder) {
-        return builder.build();
+    public static void a(CancellationSignal cancellationSignal) {
+        cancellationSignal.cancel();
     }
 
-    public static KeyGenParameterSpec.Builder b(String str, int i10) {
-        return new KeyGenParameterSpec.Builder(str, i10);
-    }
-
-    public static void c(KeyGenerator keyGenerator, KeyGenParameterSpec keyGenParameterSpec) {
-        keyGenerator.init(keyGenParameterSpec);
-    }
-
-    public static void d(KeyGenParameterSpec.Builder builder) {
-        builder.setBlockModes("CBC");
-    }
-
-    public static void e(KeyGenParameterSpec.Builder builder) {
-        builder.setEncryptionPaddings("PKCS7Padding");
+    public static CancellationSignal b() {
+        return new CancellationSignal();
     }
 }

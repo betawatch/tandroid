@@ -3,23 +3,22 @@ package com.google.android.gms.maps.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import g8.g;
+import i7.p;
 import java.util.Arrays;
-import m4.c;
-import n6.l;
-import o6.a;
-import w7.h0;
+import m2.t;
+import p6.m;
+import q6.a;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<LatLngBounds> CREATOR = new g(11);
+    public static final Parcelable.Creator<LatLngBounds> CREATOR = new p(18);
     public final LatLng a;
     public final LatLng b;
 
     public LatLngBounds(LatLng latLng, LatLng latLng2) {
-        l.h(latLng, "southwest must not be null.");
-        l.h(latLng2, "northeast must not be null.");
+        m.h(latLng, "southwest must not be null.");
+        m.h(latLng2, "northeast must not be null.");
         double d = latLng2.a;
         double d10 = latLng.a;
         if (d >= d10) {
@@ -46,17 +45,17 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        c cVar = new c(this);
-        cVar.u(this.a, "southwest");
-        cVar.u(this.b, "northeast");
-        return cVar.toString();
+        t tVar = new t(this);
+        tVar.A(this.a, "southwest");
+        tVar.A(this.b, "northeast");
+        return tVar.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.k(parcel, 2, this.a, i10);
-        h0.k(parcel, 3, this.b, i10);
-        h0.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.l(parcel, 2, this.a, i3);
+        j8.a.l(parcel, 3, this.b, i3);
+        j8.a.t(parcel, s6);
     }
 }

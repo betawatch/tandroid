@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class p3 extends v1 {
     private static final p3 zzb;
@@ -22,19 +22,19 @@ public final class p3 extends v1 {
         v1.k(p3.class, p3Var);
     }
 
-    public static /* synthetic */ void n(p3 p3Var, int i10) {
+    public static /* synthetic */ void n(p3 p3Var, int i3) {
         p3Var.zzd |= 128;
-        p3Var.zzl = i10;
+        p3Var.zzl = i3;
     }
 
-    public static /* synthetic */ void o(p3 p3Var, int i10) {
+    public static /* synthetic */ void o(p3 p3Var, int i3) {
         p3Var.zzd |= 256;
-        p3Var.zzm = i10;
+        p3Var.zzm = i3;
     }
 
-    public static /* synthetic */ void p(p3 p3Var, int i10) {
+    public static /* synthetic */ void p(p3 p3Var, int i3) {
         p3Var.zzd |= 8;
-        p3Var.zzh = i10;
+        p3Var.zzh = i3;
     }
 
     public static /* synthetic */ void q(p3 p3Var, long j10) {
@@ -78,21 +78,21 @@ public final class p3 extends v1 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+    public final Object d(int i3) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
+        if (i10 == 2) {
             return new s2(zzb, "\u0004\n\u0000\u0001\u0001\n\n\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0002\u0003င\u0003\u0004ဂ\u0004\u0005ဈ\u0001\u0006ဂ\u0005\u0007ဇ\u0006\bင\u0007\tင\b\nဂ\t", new Object[]{"zzd", "zze", "zzg", "zzh", "zzi", "zzf", "zzj", "zzk", "zzl", "zzm", "zzn"});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new p3();
         }
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new o3(zzb);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
         throw null;

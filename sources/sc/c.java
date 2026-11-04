@@ -1,36 +1,90 @@
 package sc;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
+import java.util.HashSet;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c implements Iterable {
-    public final HashMap a = new HashMap();
-    public final ArrayList b = new ArrayList();
+public final class c extends SSLSocketFactory {
+    public final SSLSocketFactory a = HttpsURLConnection.getDefaultSSLSocketFactory();
+    public final boolean b;
+    public final boolean c;
 
-    public c(HashMap hashMap) {
-        String str = (String) hashMap.get("cookie");
-        if (str != null) {
-            for (String str2 : str.split(";")) {
-                String[] split = str2.trim().split("=");
-                if (split.length == 2) {
-                    this.a.put(split[0], split[1]);
-                }
+    public c() {
+        String[] strArr;
+        try {
+            strArr = SSLContext.getDefault().getSupportedSSLParameters().getProtocols();
+        } catch (NoSuchAlgorithmException unused) {
+            strArr = new String[0];
+        }
+        boolean z10 = false;
+        boolean z11 = false;
+        for (String str : strArr) {
+            if (str.equals("TLSv1.1")) {
+                z10 = true;
+            } else if (str.equals("TLSv1.2")) {
+                z11 = true;
             }
         }
+        this.b = z10;
+        this.c = z11;
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.keySet().iterator();
-    }
-
-    public final void l() {
-        Iterator it = this.b.iterator();
-        if (it.hasNext()) {
-            throw a1.g.h(it);
+    public final Socket a(Socket socket) {
+        if (!(socket instanceof SSLSocket)) {
+            return socket;
         }
+        SSLSocket sSLSocket = (SSLSocket) socket;
+        HashSet hashSet = new HashSet(Arrays.asList(sSLSocket.getEnabledProtocols()));
+        if (this.b) {
+            hashSet.add("TLSv1.1");
+        }
+        if (this.c) {
+            hashSet.add("TLSv1.2");
+        }
+        sSLSocket.setEnabledProtocols((String[]) hashSet.toArray(new String[0]));
+        return sSLSocket;
+    }
+
+    @Override // javax.net.ssl.SSLSocketFactory
+    public final Socket createSocket(Socket socket, String str, int i3, boolean z10) {
+        return a(this.a.createSocket(socket, str, i3, z10));
+    }
+
+    @Override // javax.net.ssl.SSLSocketFactory
+    public final String[] getDefaultCipherSuites() {
+        return this.a.getDefaultCipherSuites();
+    }
+
+    @Override // javax.net.ssl.SSLSocketFactory
+    public final String[] getSupportedCipherSuites() {
+        return this.a.getSupportedCipherSuites();
+    }
+
+    @Override // javax.net.SocketFactory
+    public final Socket createSocket(String str, int i3) {
+        return a(this.a.createSocket(str, i3));
+    }
+
+    @Override // javax.net.SocketFactory
+    public final Socket createSocket(String str, int i3, InetAddress inetAddress, int i10) {
+        return a(this.a.createSocket(str, i3, inetAddress, i10));
+    }
+
+    @Override // javax.net.SocketFactory
+    public final Socket createSocket(InetAddress inetAddress, int i3) {
+        return a(this.a.createSocket(inetAddress, i3));
+    }
+
+    @Override // javax.net.SocketFactory
+    public final Socket createSocket(InetAddress inetAddress, int i3, InetAddress inetAddress2, int i10) {
+        return a(this.a.createSocket(inetAddress, i3, inetAddress2, i10));
     }
 }

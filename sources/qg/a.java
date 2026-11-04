@@ -1,25 +1,30 @@
 package qg;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.i0;
+import org.telegram.ui.Components.j6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a extends ReplacementSpan {
-    public final int a;
+public final class a {
+    public final CharSequence a;
+    public final int b = 2;
+    public final Runnable c;
+    public final float d;
+    public final float e;
+    public final j6 f;
 
-    public a(int i10) {
-        this.a = i10;
+    public a(String str, Runnable runnable) {
+        this.a = str;
+        this.c = runnable;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return i0.L(this.a);
+    public a(String str) {
+        this.a = str;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    public a(String str, float f10, float f11, j6 j6Var) {
+        this.a = str;
+        this.d = f10;
+        this.e = f11;
+        this.f = j6Var;
     }
 }

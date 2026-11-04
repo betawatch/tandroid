@@ -1,16 +1,28 @@
 package com.google.android.gms.common.api.internal;
 
-import android.app.Activity;
-import android.content.Intent;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface m {
-    void a(String str, l lVar);
+public final class m {
+    public final Object a;
+    public final String b;
 
-    l b(Class cls, String str);
+    public m(Object obj, String str) {
+        this.a = obj;
+        this.b = str;
+    }
 
-    Activity e();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof m)) {
+            return false;
+        }
+        m mVar = (m) obj;
+        return this.a == mVar.a && this.b.equals(mVar.b);
+    }
 
-    void startActivityForResult(Intent intent, int i10);
+    public final int hashCode() {
+        return this.b.hashCode() + (System.identityHashCode(this.a) * 31);
+    }
 }

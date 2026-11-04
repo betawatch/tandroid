@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.c0;
-import td.s;
-import td.t;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
+import wd.s;
+import wd.t;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzfz extends j implements p {
     int zza;
@@ -27,41 +27,41 @@ final class zzfz extends j implements p {
         this.zze = j10;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzfz(this.zzb, this.zzc, this.zzd, this.zze, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfz) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzfz) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
         zzcg zzcgVar;
         zzfz zzfzVar;
         zzdr zzdrVar;
-        zzcg e;
+        zzcg e10;
         zzcx zzcxVar;
         zzfw zzfwVar;
         zzfy zzfyVar;
-        a aVar = a.a;
+        gd.a aVar = gd.a.a;
         if (this.zza != 0) {
             try {
-                b.b(obj);
+                ib.b(obj);
                 zzfzVar = this;
-            } catch (zzcg e7) {
-                zzcgVar = e7;
+            } catch (zzcg e11) {
+                zzcgVar = e11;
                 zzfzVar = this;
                 zzgb zzgbVar = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar.zzf = zzdrVar;
-                ((t) zzfzVar.zzc).L(zzcgVar);
-                return ad.j.a;
+                ((t) zzfzVar.zzc).Q(zzcgVar);
+                return k.a;
             }
         } else {
-            b.b(obj);
+            ib.b(obj);
             try {
                 zzcxVar = zzcx.zza;
                 zzgb zzgbVar2 = this.zzb;
@@ -69,32 +69,32 @@ final class zzfz extends j implements p {
                 zzfyVar = new zzfy(this.zzd, zzgbVar2, this.zze, this.zzc, null);
                 this.zza = 1;
                 zzfzVar = this;
-            } catch (zzcg e10) {
-                e = e10;
+            } catch (zzcg e12) {
+                e10 = e12;
                 zzfzVar = this;
-                zzcgVar = e;
+                zzcgVar = e10;
                 zzgb zzgbVar3 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar3.zzf = zzdrVar;
-                ((t) zzfzVar.zzc).L(zzcgVar);
-                return ad.j.a;
+                ((t) zzfzVar.zzc).Q(zzcgVar);
+                return k.a;
             }
             try {
                 obj = zzcxVar.zzb(zzfwVar, 100L, 1000L, 2.0d, zzfyVar, zzfzVar);
                 if (obj == aVar) {
                     return aVar;
                 }
-            } catch (zzcg e11) {
-                e = e11;
-                zzcgVar = e;
+            } catch (zzcg e13) {
+                e10 = e13;
+                zzcgVar = e10;
                 zzgb zzgbVar32 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar32.zzf = zzdrVar;
-                ((t) zzfzVar.zzc).L(zzcgVar);
-                return ad.j.a;
+                ((t) zzfzVar.zzc).Q(zzcgVar);
+                return k.a;
             }
         }
         ((Boolean) obj).getClass();
-        return ad.j.a;
+        return k.a;
     }
 }

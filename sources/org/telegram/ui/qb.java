@@ -1,77 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.view.View;
+import j$.util.Objects;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class qb extends org.telegram.ui.Components.vu0 {
-    public final /* synthetic */ sb f0;
+public final class qb extends sg.a {
+    public final String c;
+    public final TL_stories.Boost d;
+    public TL_stories.PrepaidGiveaway e;
+    public boolean f;
+    public final int g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qb(sb sbVar, Context context) {
-        super(context, null);
-        this.f0 = sbVar;
+    public qb(int i3, String str) {
+        super(i3, false);
+        this.c = str;
     }
 
-    public final void X(Canvas canvas, RectF rectF) {
-        boolean z10;
-        long uptimeMillis = SystemClock.uptimeMillis();
-        sb sbVar = this.f0;
-        if (sbVar.w.Y0()) {
-            canvas.save();
-            canvas.clipRect(rectF);
-            drawChild(canvas, sbVar.w, uptimeMillis);
-            canvas.restore();
-            return;
+    public final boolean equals(Object obj) {
+        TL_stories.PrepaidGiveaway prepaidGiveaway;
+        boolean z10 = this.f;
+        if (this == obj) {
+            return true;
         }
-        canvas.save();
-        canvas.clipRect(rectF);
-        canvas.translate(0.0f, sbVar.w.getY());
-        sbVar.w.getClass();
-        for (int i10 = 0; i10 < sbVar.w.getChildCount(); i10++) {
-            View childAt = sbVar.w.getChildAt(i10);
-            RectF rectF2 = sbVar.P0;
-            if (rectF == null || sbVar.w == null || childAt == null) {
-                z10 = false;
-            } else {
-                rectF2.set(childAt.getX(), sbVar.w.getY() + childAt.getY(), childAt.getX() + childAt.getWidth(), sbVar.w.getY() + childAt.getY() + childAt.getHeight());
-                z10 = !rectF2.intersect(rectF);
-            }
-            if (!z10) {
-                if (childAt instanceof org.telegram.ui.Cells.q1) {
-                    canvas.save();
-                    canvas.translate(childAt.getX(), childAt.getY());
-                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) childAt;
-                    if (q1Var.J0()) {
-                        canvas.save();
-                        canvas.translate(0.0f, q1Var.V);
-                        q1Var.K0(canvas, true, false);
-                        canvas.restore();
-                    }
-                    canvas.restore();
-                    sbVar.w.drawChild(canvas, childAt, uptimeMillis);
-                    if (q1Var.h2()) {
-                        canvas.save();
-                        canvas.translate(q1Var.getX(), q1Var.getY());
-                        q1Var.g1(canvas);
-                        canvas.restore();
-                    }
-                } else if (childAt instanceof org.telegram.ui.Cells.s0) {
-                    sbVar.w.drawChild(canvas, childAt, uptimeMillis);
-                    canvas.save();
-                    canvas.translate(childAt.getX(), childAt.getY());
-                    ((org.telegram.ui.Cells.s0) childAt).I(canvas);
-                    canvas.restore();
-                } else {
-                    sbVar.w.drawChild(canvas, childAt, uptimeMillis);
-                }
-            }
+        if (obj == null || qb.class != obj.getClass()) {
+            return false;
         }
-        sbVar.w.getClass();
-        canvas.restore();
+        qb qbVar = (qb) obj;
+        TL_stories.Boost boost = qbVar.d;
+        boolean z11 = qbVar.f;
+        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
+        if (prepaidGiveaway2 != null && (prepaidGiveaway = qbVar.e) != null) {
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
+        }
+        TL_stories.Boost boost2 = this.d;
+        if (boost2 == null || boost == null) {
+            return true;
+        }
+        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == qbVar.g;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    }
+
+    public qb(TL_stories.Boost boost, boolean z10, int i3) {
+        super(5, true);
+        this.d = boost;
+        this.f = z10;
+        this.g = i3;
     }
 }

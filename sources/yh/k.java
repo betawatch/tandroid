@@ -1,49 +1,35 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.messenger.i0;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.g9;
-import w7.b6;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class k implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l b;
+    public final /* synthetic */ int c;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class k extends FrameLayout implements k6 {
-    public final g9 a;
-
-    public k(Context context) {
-        super(context);
-        g9 g9Var = new g9(context);
-        this.a = g9Var;
-        g9Var.setRoundRadius(i0.L(20.0f));
-        addView(g9Var, b6.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
+    public /* synthetic */ k(l lVar, int i3, int i10) {
+        this.a = i10;
+        this.b = lVar;
+        this.c = i3;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Drawable drawable = t6.S0;
-        g9 g9Var = this.a;
-        rf.o.a(canvas, drawable, (g9Var.getWidth() / 2.0f) + g9Var.getLeft(), (g9Var.getHeight() / 2.0f) + g9Var.getTop(), g9Var.getHeight());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(i0.L(136.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                l lVar = this.b;
+                lVar.post(new k(lVar, this.c, 1));
+                break;
+            default:
+                int i3 = this.c;
+                l lVar2 = this.b;
+                if (i3 == lVar2.h) {
+                    lVar2.f = false;
+                    lVar2.d = true;
+                    lVar2.b();
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,112 +1,40 @@
 package org.telegram.messenger;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Process;
-import android.os.SystemClock;
+import android.util.SparseIntArray;
 import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class r5 extends Thread {
-    public volatile Handler a;
-    public final Object b = new Object();
-    public ArrayList c = new ArrayList();
-    public final CountDownLatch d = new CountDownLatch(1);
-    public final int e = -1000;
+public final class r5 {
+    public static ArrayList j;
+    public static r5 k;
+    public static final ArrayList l = new ArrayList();
+    public static final androidx.emoji2.text.o m = new androidx.emoji2.text.o(5);
+    public ArrayList a;
+    public SparseIntArray b;
+    public ArrayList c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public boolean h;
+    public mi.b0 i;
 
-    public r5(String str) {
-        setName(str);
-        start();
-    }
-
-    public final void a(Runnable runnable) {
-        Handler handler = this.a;
-        if (handler != null) {
-            handler.removeCallbacks(runnable);
+    public static void a(Runnable runnable) {
+        if (Thread.currentThread() != t0.d.getLooper().getThread()) {
+            boolean z10 = r2.a;
+            a8.g(new RuntimeException("wrong thread"), true);
             return;
         }
-        synchronized (this.b) {
-            try {
-                ArrayList arrayList = this.c;
-                if (arrayList == null) {
-                    this.a.removeCallbacks(runnable);
-                    return;
-                }
-                for (int size = arrayList.size() - 1; size >= 0; size--) {
-                    if (((q5) this.c.get(size)).b == runnable) {
-                        this.c.remove(size);
-                    }
-                }
-            } catch (Throwable th2) {
-                throw th2;
+        if (j == null) {
+            ArrayList arrayList = l;
+            if (arrayList.isEmpty()) {
+                j = new ArrayList(100);
+            } else {
+                j = (ArrayList) org.telegram.ui.Cells.f1.o(1, arrayList);
             }
+            g0.h3(m);
         }
-    }
-
-    public final Handler b() {
-        try {
-            this.d.await();
-        } catch (Exception e) {
-            f8.g(e, false);
-        }
-        return this.a;
-    }
-
-    public final void c(Runnable runnable) {
-        SystemClock.elapsedRealtime();
-        d(runnable, 0L);
-    }
-
-    public final boolean d(Runnable runnable, long j10) {
-        Handler handler = this.a;
-        if (handler != null) {
-            return j10 <= 0 ? handler.post(runnable) : handler.postDelayed(runnable, j10);
-        }
-        long max = Math.max(0L, j10) + SystemClock.uptimeMillis();
-        synchronized (this.b) {
-            try {
-                ArrayList arrayList = this.c;
-                if (arrayList == null) {
-                    return this.a.postAtTime(runnable, max);
-                }
-                arrayList.add(new q5(0, max, runnable));
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        Looper.prepare();
-        Handler handler = new Handler(Looper.myLooper(), new p5(this, 1));
-        synchronized (this.b) {
-            for (int i10 = 0; i10 < this.c.size(); i10++) {
-                try {
-                    q5 q5Var = (q5) this.c.get(i10);
-                    int i11 = q5Var.a;
-                    if (i11 == 0) {
-                        handler.postAtTime(q5Var.b, q5Var.c);
-                    } else if (i11 == 1) {
-                        handler.postAtFrontOfQueue(q5Var.b);
-                    } else {
-                        handler.sendMessageAtTime(null, q5Var.c);
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-            this.c = null;
-            this.a = handler;
-        }
-        this.d.countDown();
-        int i12 = this.e;
-        if (i12 != -1000) {
-            Process.setThreadPriority(i12);
-        }
-        Looper.loop();
+        j.add(runnable);
     }
 }

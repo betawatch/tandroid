@@ -1,68 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.app.Dialog;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ne implements View.OnTouchListener {
-    public final /* synthetic */ int a = 0;
-    public final Rect b = new Rect();
-    public final /* synthetic */ org.telegram.messenger.vs c;
+public final class ne implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Dialog b;
+    public final /* synthetic */ ChatActivityEnterView c;
 
-    public ne(org.telegram.ui.wn0 wn0Var) {
-        this.c = wn0Var;
+    public /* synthetic */ ne(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i3) {
+        this.a = i3;
+        this.c = chatActivityEnterView;
+        this.b = dialog;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        oe oeVar;
-        org.telegram.ui.ActionBar.k1 k1Var;
-        org.telegram.ui.ActionBar.k1 k1Var2;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                if (motionEvent.getActionMasked() == 0 && (oeVar = chatActivityEnterView.N0) != null && oeVar.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        chatActivityEnterView.N0.dismiss();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                org.telegram.ui.wn0 wn0Var = (org.telegram.ui.wn0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (k1Var = wn0Var.I) != null && k1Var.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        wn0Var.I.d(true);
-                        break;
-                    }
-                }
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                chatActivityEnterView.q0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView.q0.postDelayed(new vf(this.b, 19), 100L);
                 break;
             default:
-                org.telegram.ui.jo0 jo0Var = (org.telegram.ui.jo0) this.c;
-                if (motionEvent.getActionMasked() == 0 && (k1Var2 = jo0Var.m0) != null && k1Var2.isShowing()) {
-                    Rect rect3 = this.b;
-                    view.getHitRect(rect3);
-                    if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        jo0Var.m0.d(true);
-                        break;
-                    }
-                }
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                chatActivityEnterView2.q0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView2.q0.postDelayed(new vf(this.b, 19), 100L);
                 break;
         }
-        return false;
-    }
-
-    public ne(org.telegram.ui.jo0 jo0Var) {
-        this.c = jo0Var;
-    }
-
-    public ne(ChatActivityEnterView chatActivityEnterView) {
-        this.c = chatActivityEnterView;
+        return true;
     }
 }

@@ -1,77 +1,115 @@
 package ki;
 
-import android.os.Handler;
-import java.io.File;
-import java.util.HashMap;
-import org.telegram.messenger.ne;
-import org.telegram.messenger.x0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import b8.mf;
+import cg.r;
+import java.util.HashSet;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.m5;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.u8;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k b;
-    public final /* synthetic */ j c;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class c extends FrameLayout implements z5 {
+    public final e6 a;
+    public final k9 b;
+    public final TextView c;
+    public final TextView d;
+    public final ImageView e;
 
-    public /* synthetic */ c(k kVar, j jVar, int i10) {
-        this.a = 4;
-        this.b = kVar;
-        this.c = jVar;
+    public c(Context context, e6 e6Var) {
+        super(context);
+        this.a = e6Var;
+        k9 k9Var = new k9(context);
+        this.b = k9Var;
+        k9Var.setRoundRadius(g0.L(9.0f));
+        addView(k9Var, mf.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(16);
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTypeface(g0.o());
+        textView.setTextSize(1, 16.0f);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        linearLayout.addView(textView, mf.o(-1, -2));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setSingleLine(true);
+        textView2.setEllipsize(truncateAt);
+        linearLayout.addView(textView2, mf.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, mf.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
+        ImageView imageView = new ImageView(context);
+        this.e = imageView;
+        imageView.setImageResource(R.drawable.msg_inputarrow);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, mf.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        updateColors();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        File file;
-        switch (this.a) {
-            case 0:
-                k kVar = this.b;
-                j jVar = this.c;
-                kVar.g.V(jVar.a, jVar.b);
-                return;
-            case 1:
-                k kVar2 = this.b;
-                j jVar2 = this.c;
-                m4.c cVar = kVar2.g;
-                long j10 = jVar2.a;
-                cVar.getClass();
-                return;
-            case 2:
-                k kVar3 = this.b;
-                j jVar3 = this.c;
-                kVar3.g.V(jVar3.a, jVar3.b);
-                return;
-            case 3:
-                k kVar4 = this.b;
-                j jVar4 = this.c;
-                m4.c cVar2 = kVar4.g;
-                long j11 = jVar4.a;
-                cVar2.getClass();
-                return;
-            default:
-                k kVar5 = this.b;
-                j jVar5 = this.c;
-                m4.c cVar3 = kVar5.g;
-                long j12 = jVar5.a;
-                synchronized (((e0.h) cVar3.c).f) {
-                    file = (File) ((HashMap) ((e0.h) cVar3.c).g).remove(Long.valueOf(j12));
-                }
-                if (file != null) {
-                    ((Handler) ((e0.h) cVar3.c).d).post(new x0(cVar3, j12, (ne) cVar3.b, file, 0));
-                    return;
-                }
-                return;
+    public final void a(int i3, TLRPC.Chat chat) {
+        if (chat == null) {
+            return;
         }
+        TLRPC.ChatFull N0 = hp.s1(i3).N0(chat.id);
+        setTitle(m5.u(chat));
+        setSubtitle(bd.G(N0 != null ? N0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
+        this.b.e(chat, new u8(chat));
     }
 
-    public /* synthetic */ c(k kVar, j jVar, long j10, long j11, int i10) {
-        this.a = i10;
-        this.b = kVar;
-        this.c = jVar;
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(k6.z6));
+        hashSet.add(Integer.valueOf(k6.G6));
     }
 
-    public /* synthetic */ c(k kVar, j jVar, Exception exc) {
-        this.a = 3;
-        this.b = kVar;
-        this.c = jVar;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Drawable drawable = k6.S0;
+        k9 k9Var = this.b;
+        r.a(canvas, drawable, (k9Var.getWidth() / 2.0f) + k9Var.getLeft(), (k9Var.getHeight() / 2.0f) + k9Var.getTop(), k9Var.getHeight());
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(g0.L(60.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i3 = k6.z6;
+        e6 e6Var = this.a;
+        this.e.setColorFilter(k6.w0(i3, e6Var));
+        this.c.setTextColor(k6.w0(k6.G6, e6Var));
+        this.d.setTextColor(k6.w0(i3, e6Var));
     }
 }

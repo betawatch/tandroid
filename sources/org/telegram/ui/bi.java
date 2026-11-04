@@ -1,100 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class bi extends AnimatorListenerAdapter {
+public final class bi implements org.telegram.messenger.cs {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ bi.q0 b;
+    public final /* synthetic */ wm c;
+    public final /* synthetic */ wm d;
 
-    public /* synthetic */ bi(un unVar, int i10) {
-        this.a = i10;
-        this.b = unVar;
+    public bi(wm wmVar, int i3, bi.q0 q0Var, wm wmVar2) {
+        this.d = wmVar;
+        this.a = i3;
+        this.b = q0Var;
+        this.c = wmVar2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        vj vjVar;
-        switch (this.a) {
-            case 0:
-                un unVar = this.b;
-                unVar.Xa = 0.0f;
-                unVar.F9();
-                break;
-            case 1:
-                un unVar2 = this.b;
-                org.telegram.ui.Components.j50 j50Var = unVar2.p3;
-                if (j50Var != null) {
-                    j50Var.setIsMessageTransition(false);
-                    unVar2.p3.c(true);
-                    unVar2.p3.setVisibility(4);
-                    break;
-                }
-                break;
-            case 2:
-                float L = org.telegram.messenger.i0.L(30.0f);
-                un unVar3 = this.b;
-                unVar3.T9 = L;
-                unVar3.F9();
-                break;
-            case 3:
-                un unVar4 = this.b;
-                if (unVar4.fragmentView != null && (vjVar = unVar4.z0) != null) {
-                    vjVar.invalidate();
-                    unVar4.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                this.b.Q.setVisibility(4);
-                break;
-            case 5:
-                org.telegram.messenger.i0.h3(new rh(this, 5), 2000L);
-                break;
-            case 6:
-                un unVar5 = this.b;
-                if (animator.equals(unVar5.u3)) {
-                    unVar5.u3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                un unVar6 = this.b;
-                if (animator.equals(unVar6.u3)) {
-                    unVar6.u3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                un unVar7 = this.b;
-                if (animator.equals(unVar7.v3)) {
-                    unVar7.w3 = 1.0f;
-                    unVar7.Kc();
-                    unVar7.v3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                un unVar8 = this.b;
-                if (animator.equals(unVar8.v3)) {
-                    unVar8.w3 = 0.0f;
-                    unVar8.Kc();
-                    unVar8.v3 = null;
-                    break;
-                }
-                break;
-            case 10:
-                this.b.f5 = null;
-                break;
-            default:
-                un unVar9 = this.b;
-                unVar9.Xa = 1.0f;
-                unVar9.Z.setVisibility(4);
-                unVar9.c1.setVisibility(4);
-                unVar9.F9();
-                break;
+    @Override // org.telegram.messenger.cs
+    public final void didReceivedNotification(int i3, int i10, Object... objArr) {
+        int i11;
+        int i12 = org.telegram.messenger.hs.D;
+        if (i3 == i12 && ((Integer) objArr[10]).intValue() == this.a) {
+            this.b.run();
+            org.telegram.messenger.g0.i3(new k2.a0(this.c, i3, i10, objArr, 10), 50L);
+            i11 = ((org.telegram.ui.ActionBar.d2) this.d).currentAccount;
+            org.telegram.messenger.hs.f(i11).n(this, i12);
         }
     }
 }

@@ -1,17 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
+import b8.ib;
 import com.google.android.play.core.integrity.StandardIntegrityException;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.c0;
-import td.e0;
-import td.s;
-import td.t;
+import dd.k;
+import fd.c;
+import hd.j;
+import kotlin.jvm.internal.r;
+import od.p;
+import wd.b0;
+import wd.s;
+import wd.t;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzbe extends j implements p {
     Object zza;
@@ -24,14 +25,14 @@ final class zzbe extends j implements p {
         this.zzc = zzboVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzbe(this.zzc, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbe) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzbe) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -39,41 +40,41 @@ final class zzbe extends j implements p {
     /* JADX WARN: Type inference failed for: r1v12 */
     /* JADX WARN: Type inference failed for: r1v13 */
     /* JADX WARN: Type inference failed for: r1v9 */
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
         zzcd zzcdVar;
-        a aVar = a.a;
-        kotlin.jvm.internal.p pVar = this.zzb;
+        gd.a aVar = gd.a.a;
+        r rVar = this.zzb;
         try {
-            if (pVar != 0) {
-                kotlin.jvm.internal.p pVar2 = (kotlin.jvm.internal.p) this.zza;
-                b.b(obj);
-                pVar = pVar2;
+            if (rVar != 0) {
+                r rVar2 = (r) this.zza;
+                ib.b(obj);
+                rVar = rVar2;
             } else {
-                b.b(obj);
-                kotlin.jvm.internal.p pVar3 = new kotlin.jvm.internal.p();
-                zzbd zzbdVar = new zzbd(this.zzc, pVar3, null);
-                this.zza = pVar3;
+                ib.b(obj);
+                r rVar3 = new r();
+                zzbd zzbdVar = new zzbd(this.zzc, rVar3, null);
+                this.zza = rVar3;
                 this.zzb = 1;
-                pVar = pVar3;
-                if (e0.x(60000L, zzbdVar, this) == aVar) {
+                rVar = rVar3;
+                if (b0.z(60000L, zzbdVar, this) == aVar) {
                     return aVar;
                 }
             }
-            return ad.j.a;
-        } catch (Exception e) {
+            return k.a;
+        } catch (Exception e10) {
             zzbo zzboVar = this.zzc;
             s zzf = zzboVar.zzf();
-            Throwable th2 = (Throwable) pVar.a;
+            Throwable th2 = (Throwable) rVar.a;
             if (th2 == null) {
-                th2 = e;
+                th2 = e10;
             }
-            ((t) zzf).L(th2);
+            ((t) zzf).Q(th2);
             zzboVar.zzc = zzbp.zza;
             zzce zzceVar = zzce.zzb;
-            Throwable th3 = (Throwable) pVar.a;
+            Throwable th3 = (Throwable) rVar.a;
             if (th3 == null) {
-                th3 = e;
+                th3 = e10;
             }
             if (th3 instanceof StandardIntegrityException) {
                 int errorCode = ((StandardIntegrityException) th3).getErrorCode();
@@ -133,7 +134,7 @@ final class zzbe extends j implements p {
             } else {
                 zzcdVar = zzcd.zza;
             }
-            throw new zzcg(zzceVar, zzcdVar, e.getMessage(), null, 8, null);
+            throw new zzcg(zzceVar, zzcdVar, e10.getMessage(), null, 8, null);
         }
     }
 }

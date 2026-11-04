@@ -1,49 +1,45 @@
 package ja;
 
-import java.lang.annotation.Annotation;
-import java.util.Collections;
-import java.util.Map;
-import n4.q;
+import b8.ib;
+import dd.k;
+import hd.j;
+import od.p;
+import p1.e;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c {
-    public final String a;
-    public final Map b;
+public final class c extends j implements p {
+    public /* synthetic */ Object a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ Long c;
 
-    public c(String str, Map map) {
-        this.a = str;
-        this.b = map;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(e eVar, Long l10, fd.c cVar) {
+        super(2, cVar);
+        this.b = eVar;
+        this.c = l10;
     }
 
-    public static q a(String str) {
-        return new q(str);
+    @Override // hd.a
+    public final fd.c create(Object obj, fd.c cVar) {
+        c cVar2 = new c(this.b, this.c, cVar);
+        cVar2.a = obj;
+        return cVar2;
     }
 
-    public static c c(String str) {
-        return new c(str, Collections.EMPTY_MAP);
+    @Override // od.p
+    public final Object invoke(Object obj, Object obj2) {
+        c cVar = (c) create((p1.b) obj, (fd.c) obj2);
+        k kVar = k.a;
+        cVar.invokeSuspend(kVar);
+        return kVar;
     }
 
-    public final Annotation b(Class cls) {
-        return (Annotation) this.b.get(cls);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        c cVar = (c) obj;
-        return this.a.equals(cVar.a) && this.b.equals(cVar.b);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
-
-    public final String toString() {
-        return "FieldDescriptor{name=" + this.a + ", properties=" + this.b.values() + "}";
+    @Override // hd.a
+    public final Object invokeSuspend(Object obj) {
+        gd.a aVar = gd.a.a;
+        ib.b(obj);
+        ((p1.b) this.a).d(this.b, this.c);
+        return k.a;
     }
 }

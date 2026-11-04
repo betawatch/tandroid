@@ -1,414 +1,394 @@
 package ae;
 
-import java.io.Closeable;
-import java.lang.Thread;
-import java.util.ArrayList;
-import java.util.concurrent.Executor;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicLongFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceArray;
-import java.util.concurrent.locks.LockSupport;
-import org.telegram.messenger.at;
-import org.telegram.ui.Cells.f1;
-import td.e0;
-import yd.r;
+import androidx.lifecycle.k0;
+import b8.ib;
+import d2.y;
+import gi.v5;
+import gi.w5;
+import java.io.File;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+import l1.b0;
+import l1.f1;
+import l1.g1;
+import l1.l0;
+import l1.n0;
+import l1.u0;
+import l1.v0;
+import l1.w0;
+import l1.x0;
+import wd.a0;
+import wd.t;
+import wd.z;
+import x7.n6;
+import x7.o6;
+import zd.u;
+import zd.v;
+import zd.x;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c implements Executor, Closeable {
-    public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
-    public static final /* synthetic */ AtomicLongFieldUpdater r = AtomicLongFieldUpdater.newUpdater(c.class, "controlState$volatile");
-    public static final /* synthetic */ AtomicIntegerFieldUpdater s = AtomicIntegerFieldUpdater.newUpdater(c.class, "_isTerminated$volatile");
-    public static final ea.a w = new ea.a("NOT_IN_STACK");
-    private volatile /* synthetic */ int _isTerminated$volatile;
-    public final int a;
-    public final int b;
-    public final long c;
-    private volatile /* synthetic */ long controlState$volatile;
-    public final String d;
-    public final f e;
-    public final f f;
-    public final r h;
-    private volatile /* synthetic */ long parkedWorkersStack$volatile;
+public final class c extends hd.j implements od.p {
+    public final /* synthetic */ int a;
+    public int b;
+    public /* synthetic */ Object c;
+    public Object d;
+    public final /* synthetic */ Object e;
 
-    public c(int i10, long j10, String str, int i11) {
-        this.a = i10;
-        this.b = i11;
-        this.c = j10;
-        this.d = str;
-        if (i10 < 1) {
-            throw new IllegalArgumentException(i0.a.j(i10, "Core pool size ", " should be at least 1").toString());
-        }
-        if (i11 < i10) {
-            throw new IllegalArgumentException(a1.g.j(i11, i10, "Max pool size ", " should be greater than or equals to core pool size ").toString());
-        }
-        if (i11 > 2097150) {
-            throw new IllegalArgumentException(i0.a.j(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
-        }
-        if (j10 <= 0) {
-            throw new IllegalArgumentException(f1.n(j10, "Idle worker keep alive time ", " must be positive").toString());
-        }
-        this.e = new f();
-        this.f = new f();
-        this.h = new r((i10 + 1) * 2);
-        this.controlState$volatile = i10 << 42;
-        this._isTerminated$volatile = 0;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(ja.d dVar, p1.e eVar, Long l10, fd.c cVar) {
+        super(2, cVar);
+        this.a = 2;
+        this.c = dVar;
+        this.d = eVar;
+        this.e = l10;
     }
 
-    public final int a() {
-        synchronized (this.h) {
-            try {
-                if (s.get(this) != 0) {
-                    return -1;
-                }
-                AtomicLongFieldUpdater atomicLongFieldUpdater = r;
-                long j10 = atomicLongFieldUpdater.get(this);
-                int i10 = (int) (j10 & 2097151);
-                int i11 = i10 - ((int) ((j10 & 4398044413952L) >> 21));
-                if (i11 < 0) {
-                    i11 = 0;
-                }
-                if (i11 >= this.a) {
-                    return 0;
-                }
-                if (i10 >= this.b) {
-                    return 0;
-                }
-                int i12 = ((int) (atomicLongFieldUpdater.get(this) & 2097151)) + 1;
-                if (i12 <= 0 || this.h.b(i12) != null) {
-                    throw new IllegalArgumentException("Failed requirement.");
-                }
-                a aVar = new a(this, i12);
-                this.h.c(i12, aVar);
-                if (i12 != ((int) (2097151 & atomicLongFieldUpdater.incrementAndGet(this)))) {
-                    throw new IllegalArgumentException("Failed requirement.");
-                }
-                int i13 = i11 + 1;
-                aVar.start();
-                return i13;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    /* JADX WARN: Type inference failed for: r2v7, types: [hd.j, od.p] */
+    @Override // hd.a
+    public final fd.c create(Object obj, fd.c cVar) {
+        switch (this.a) {
+            case 0:
+                c cVar2 = new c((zd.c) this.d, (e) this.e, cVar);
+                cVar2.c = obj;
+                return cVar2;
+            case 1:
+                return new c((ja.d) this.d, (p1.e) this.e, this.c, cVar);
+            case 2:
+                return new c((ja.d) this.c, (p1.e) this.d, (Long) this.e, cVar);
+            case 3:
+                c cVar3 = new c((b0) this.e, cVar, 3);
+                cVar3.c = obj;
+                return cVar3;
+            case 4:
+                c cVar4 = new c((b0) this.d, (od.p) this.e, cVar);
+                cVar4.c = obj;
+                return cVar4;
+            default:
+                c cVar5 = new c((File) this.e, cVar, 5);
+                cVar5.c = obj;
+                return cVar5;
         }
     }
 
-    public final void b(Runnable runnable, j jVar) {
-        i kVar;
-        b bVar;
-        l.f.getClass();
-        long nanoTime = System.nanoTime();
-        if (runnable instanceof i) {
-            kVar = (i) runnable;
-            kVar.a = nanoTime;
-            kVar.b = jVar;
-        } else {
-            kVar = new k(runnable, nanoTime, jVar);
-        }
-        boolean z10 = kVar.b.a == 1;
-        AtomicLongFieldUpdater atomicLongFieldUpdater = r;
-        long addAndGet = z10 ? atomicLongFieldUpdater.addAndGet(this, 2097152L) : 0L;
-        Thread currentThread = Thread.currentThread();
-        a aVar = currentThread instanceof a ? (a) currentThread : null;
-        if (aVar == null || !kotlin.jvm.internal.i.a(aVar.n, this)) {
-            aVar = null;
-        }
-        if (aVar != null && (bVar = aVar.c) != b.e && (kVar.b.a != 0 || bVar != b.b)) {
-            aVar.h = true;
-            n nVar = aVar.a;
-            nVar.getClass();
-            kVar = (i) n.b.getAndSet(nVar, kVar);
-            if (kVar == null) {
-                kVar = null;
-            } else {
-                AtomicReferenceArray atomicReferenceArray = nVar.a;
-                AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = n.c;
-                if (atomicIntegerFieldUpdater.get(nVar) - n.d.get(nVar) != 127) {
-                    if (kVar.b.a == 1) {
-                        n.e.incrementAndGet(nVar);
-                    }
-                    int i10 = atomicIntegerFieldUpdater.get(nVar) & at.L1;
-                    while (atomicReferenceArray.get(i10) != null) {
-                        Thread.yield();
-                    }
-                    atomicReferenceArray.lazySet(i10, kVar);
-                    atomicIntegerFieldUpdater.incrementAndGet(nVar);
-                    kVar = null;
-                }
-            }
-        }
-        if (kVar != null) {
-            if (!(kVar.b.a == 1 ? this.f.a(kVar) : this.e.a(kVar))) {
-                throw new RejectedExecutionException(a1.g.r(new StringBuilder(), this.d, " was terminated"));
-            }
-        }
-        if (z10) {
-            if (e() || d(addAndGet)) {
-                return;
-            }
-            e();
-            return;
-        }
-        if (e() || d(atomicLongFieldUpdater.get(this))) {
-            return;
-        }
-        e();
-    }
-
-    public final void c(a aVar, int i10, int i11) {
-        while (true) {
-            long j10 = n.get(this);
-            int i12 = (int) (2097151 & j10);
-            long j11 = (2097152 + j10) & (-2097152);
-            if (i12 == i10) {
-                if (i11 == 0) {
-                    Object c10 = aVar.c();
-                    while (true) {
-                        if (c10 == w) {
-                            i12 = -1;
-                            break;
-                        }
-                        if (c10 == null) {
-                            i12 = 0;
-                            break;
-                        }
-                        a aVar2 = (a) c10;
-                        int b10 = aVar2.b();
-                        if (b10 != 0) {
-                            i12 = b10;
-                            break;
-                        }
-                        c10 = aVar2.c();
-                    }
-                } else {
-                    i12 = i11;
-                }
-            }
-            if (i12 >= 0) {
-                if (n.compareAndSet(this, j10, i12 | j11)) {
-                    return;
-                }
-            }
+    @Override // od.p
+    public final Object invoke(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                return ((c) create((z) obj, (fd.c) obj2)).invokeSuspend(dd.k.a);
+            case 1:
+                return ((c) create((z) obj, (fd.c) obj2)).invokeSuspend(dd.k.a);
+            case 2:
+                return ((c) create((z) obj, (fd.c) obj2)).invokeSuspend(dd.k.a);
+            case 3:
+                return ((c) create((zd.c) obj, (fd.c) obj2)).invokeSuspend(dd.k.a);
+            case 4:
+                return ((c) create((z) obj, (fd.c) obj2)).invokeSuspend(dd.k.a);
+            default:
+                return ((c) create((yd.p) obj, (fd.c) obj2)).invokeSuspend(dd.k.a);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x019c, code lost:
     
-        if (r1 == null) goto L39;
+        if (r9.b(r10, r12) == r6) goto L90;
      */
-    @Override // java.io.Closeable, java.lang.AutoCloseable
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01fb  */
+    /* JADX WARN: Type inference failed for: r7v14, types: [hd.j, od.p] */
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void close() {
-        int i10;
-        i iVar;
-        if (s.compareAndSet(this, 0, 1)) {
-            Thread currentThread = Thread.currentThread();
-            a aVar = currentThread instanceof a ? (a) currentThread : null;
-            if (aVar == null || !kotlin.jvm.internal.i.a(aVar.n, this)) {
-                aVar = null;
-            }
-            synchronized (this.h) {
-                i10 = (int) (r.get(this) & 2097151);
-            }
-            if (1 <= i10) {
-                int i11 = 1;
-                while (true) {
-                    Object b10 = this.h.b(i11);
-                    kotlin.jvm.internal.i.b(b10);
-                    a aVar2 = (a) b10;
-                    if (aVar2 != aVar) {
-                        while (aVar2.getState() != Thread.State.TERMINATED) {
-                            LockSupport.unpark(aVar2);
-                            aVar2.join(10000L);
-                        }
-                        n nVar = aVar2.a;
-                        f fVar = this.f;
-                        nVar.getClass();
-                        i iVar2 = (i) n.b.getAndSet(nVar, null);
-                        if (iVar2 != null) {
-                            fVar.a(iVar2);
-                        }
-                        while (true) {
-                            i a2 = nVar.a();
-                            if (a2 == null) {
-                                break;
-                            } else {
-                                fVar.a(a2);
-                            }
-                        }
+    public final Object invokeSuspend(Object obj) {
+        zd.c cVar;
+        Object obj2;
+        yd.p pVar;
+        u0 u0Var;
+        int i3 = 0;
+        int i10 = 2;
+        fd.c cVar2 = null;
+        int i11 = 1;
+        switch (this.a) {
+            case 0:
+                dd.k kVar = dd.k.a;
+                gd.a aVar = gd.a.a;
+                int i12 = this.b;
+                if (i12 != 0) {
+                    if (i12 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    if (i11 == i10) {
-                        break;
-                    } else {
-                        i11++;
-                    }
+                    ib.b(obj);
+                    return kVar;
                 }
-            }
-            this.f.b();
-            this.e.b();
-            while (true) {
-                if (aVar != null) {
-                    iVar = aVar.a(true);
+                ib.b(obj);
+                z zVar = (z) this.c;
+                zd.c cVar3 = (zd.c) this.d;
+                e eVar = (e) this.e;
+                fd.h hVar = eVar.a;
+                int i13 = eVar.b;
+                if (i13 == -3) {
+                    i13 = -2;
                 }
-                iVar = (i) this.e.d();
-                if (iVar == null && (iVar = (i) this.f.d()) == null) {
-                    break;
+                yd.a aVar2 = eVar.c;
+                a0 a0Var = a0.b;
+                od.p dVar = new d(eVar, cVar2, i3);
+                yd.o oVar = new yd.o(wd.b0.r(zVar, hVar), n6.a(i13, aVar2, 4));
+                oVar.S(a0Var, oVar, dVar);
+                this.b = 1;
+                Object c2 = v.c(cVar3, oVar, true, this);
+                if (c2 != aVar) {
+                    c2 = kVar;
                 }
-                try {
-                    iVar.run();
-                } catch (Throwable th2) {
-                    Thread currentThread2 = Thread.currentThread();
-                    currentThread2.getUncaughtExceptionHandler().uncaughtException(currentThread2, th2);
-                }
-            }
-            if (aVar != null) {
-                aVar.i(b.e);
-            }
-            n.set(this, 0L);
-            r.set(this, 0L);
-        }
-    }
-
-    public final boolean d(long j10) {
-        int i10 = ((int) (2097151 & j10)) - ((int) ((j10 & 4398044413952L) >> 21));
-        if (i10 < 0) {
-            i10 = 0;
-        }
-        int i11 = this.a;
-        if (i10 < i11) {
-            int a2 = a();
-            if (a2 == 1 && i11 > 1) {
-                a();
-            }
-            if (a2 > 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final boolean e() {
-        ea.a aVar;
-        int i10;
-        while (true) {
-            long j10 = n.get(this);
-            a aVar2 = (a) this.h.b((int) (2097151 & j10));
-            if (aVar2 == null) {
-                aVar2 = null;
-            } else {
-                long j11 = (2097152 + j10) & (-2097152);
-                Object c10 = aVar2.c();
-                while (true) {
-                    aVar = w;
-                    if (c10 == aVar) {
-                        i10 = -1;
-                        break;
-                    }
-                    if (c10 == null) {
-                        i10 = 0;
-                        break;
-                    }
-                    a aVar3 = (a) c10;
-                    i10 = aVar3.b();
-                    if (i10 != 0) {
-                        break;
-                    }
-                    c10 = aVar3.c();
-                }
-                if (i10 >= 0) {
-                    if (n.compareAndSet(this, j10, i10 | j11)) {
-                        aVar2.h(aVar);
-                    } else {
-                        continue;
+                return c2 == aVar ? aVar : kVar;
+            case 1:
+                gd.a aVar3 = gd.a.a;
+                int i14 = this.b;
+                if (i14 == 0) {
+                    ib.b(obj);
+                    zd.b data = ((ja.d) this.d).c.a.getData();
+                    this.b = 1;
+                    obj = v.e(data, this);
+                    if (obj == aVar3) {
+                        return aVar3;
                     }
                 } else {
-                    continue;
-                }
-            }
-            if (aVar2 == null) {
-                return false;
-            }
-            if (a.r.compareAndSet(aVar2, -1, 0)) {
-                LockSupport.unpark(aVar2);
-                return true;
-            }
-        }
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        b(runnable, l.g);
-    }
-
-    public final String toString() {
-        ArrayList arrayList = new ArrayList();
-        r rVar = this.h;
-        int a2 = rVar.a();
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        int i14 = 0;
-        for (int i15 = 1; i15 < a2; i15++) {
-            a aVar = (a) rVar.b(i15);
-            if (aVar != null) {
-                n nVar = aVar.a;
-                nVar.getClass();
-                int i16 = n.b.get(nVar) != null ? (n.c.get(nVar) - n.d.get(nVar)) + 1 : n.c.get(nVar) - n.d.get(nVar);
-                int ordinal = aVar.c.ordinal();
-                if (ordinal == 0) {
-                    i10++;
-                    StringBuilder sb2 = new StringBuilder();
-                    sb2.append(i16);
-                    sb2.append('c');
-                    arrayList.add(sb2.toString());
-                } else if (ordinal == 1) {
-                    i11++;
-                    StringBuilder sb3 = new StringBuilder();
-                    sb3.append(i16);
-                    sb3.append('b');
-                    arrayList.add(sb3.toString());
-                } else if (ordinal == 2) {
-                    i12++;
-                } else if (ordinal == 3) {
-                    i13++;
-                    if (i16 > 0) {
-                        StringBuilder sb4 = new StringBuilder();
-                        sb4.append(i16);
-                        sb4.append('d');
-                        arrayList.add(sb4.toString());
+                    if (i14 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                } else if (ordinal == 4) {
-                    i14++;
+                    ib.b(obj);
                 }
-            }
+                p1.b bVar = (p1.b) obj;
+                if (bVar != null) {
+                    p1.e key = (p1.e) this.e;
+                    kotlin.jvm.internal.j.e(key, "key");
+                    Object obj3 = bVar.a.get(key);
+                    if (obj3 instanceof byte[]) {
+                        byte[] bArr = (byte[]) obj3;
+                        obj3 = Arrays.copyOf(bArr, bArr.length);
+                        kotlin.jvm.internal.j.d(obj3, "copyOf(this, size)");
+                    }
+                    Object obj4 = obj3;
+                    if (obj4 != null) {
+                        return obj4;
+                    }
+                }
+                return this.c;
+            case 2:
+                gd.a aVar4 = gd.a.a;
+                int i15 = this.b;
+                if (i15 != 0) {
+                    if (i15 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ib.b(obj);
+                    return obj;
+                }
+                ib.b(obj);
+                p1.d dVar2 = ((ja.d) this.c).c;
+                ja.c cVar4 = new ja.c((p1.e) this.d, (Long) this.e, null);
+                this.b = 1;
+                Object a10 = dVar2.a(new p1.c(cVar4, null, 1), this);
+                return a10 == aVar4 ? aVar4 : a10;
+            case 3:
+                dd.k kVar2 = dd.k.a;
+                b0 b0Var = (b0) this.e;
+                gd.a aVar5 = gd.a.a;
+                int i16 = this.b;
+                if (i16 == 0) {
+                    ib.b(obj);
+                    zd.c cVar5 = (zd.c) this.c;
+                    this.c = cVar5;
+                    this.b = 1;
+                    Object y9 = wd.b0.y(b0Var.c.c(), new l1.m(b0Var, cVar2, i10), this);
+                    if (y9 != aVar5) {
+                        cVar = cVar5;
+                        obj = y9;
+                    }
+                    return aVar5;
+                }
+                if (i16 != 1) {
+                    if (i16 != 2) {
+                        if (i16 != 3) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        ib.b(obj);
+                        return kVar2;
+                    }
+                    obj2 = (l1.c) this.d;
+                    cVar = (zd.c) this.c;
+                    ib.b(obj);
+                    zd.g gVar = new zd.g(new v5(new w9.b(7, new ua.b(12, new w9.b(6, new l1.m(b0Var, cVar2, i3), (u) b0Var.h.b), new gb.c(2, null, 1)), new ja.b(obj2, cVar2, i11)), 9), new l1.n(b0Var, (fd.c) null));
+                    this.c = null;
+                    this.d = null;
+                    this.b = 3;
+                    if (!(cVar instanceof x)) {
+                        throw ((x) cVar).a;
+                    }
+                    Object U = gVar.U(cVar, this);
+                    if (U != aVar5) {
+                        U = kVar2;
+                    }
+                    if (U != aVar5) {
+                        return kVar2;
+                    }
+                    return aVar5;
+                }
+                zd.c cVar6 = (zd.c) this.c;
+                ib.b(obj);
+                cVar = cVar6;
+                obj2 = (f1) obj;
+                if (obj2 instanceof l1.c) {
+                    l1.c cVar7 = (l1.c) obj2;
+                    Object obj5 = cVar7.b;
+                    this.c = cVar;
+                    this.d = cVar7;
+                    this.b = 2;
+                    break;
+                } else {
+                    if (obj2 instanceof g1) {
+                        throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
+                    }
+                    if (obj2 instanceof x0) {
+                        throw ((x0) obj2).b;
+                    }
+                    if (obj2 instanceof l0) {
+                        return kVar2;
+                    }
+                }
+                zd.g gVar2 = new zd.g(new v5(new w9.b(7, new ua.b(12, new w9.b(6, new l1.m(b0Var, cVar2, i3), (u) b0Var.h.b), new gb.c(2, null, 1)), new ja.b(obj2, cVar2, i11)), 9), new l1.n(b0Var, (fd.c) null));
+                this.c = null;
+                this.d = null;
+                this.b = 3;
+                if (!(cVar instanceof x)) {
+                }
+            case 4:
+                b0 b0Var2 = (b0) this.d;
+                gd.a aVar6 = gd.a.a;
+                int i17 = this.b;
+                if (i17 != 0) {
+                    if (i17 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ib.b(obj);
+                    return obj;
+                }
+                ib.b(obj);
+                z zVar2 = (z) this.c;
+                t a11 = wd.b0.a();
+                n0 n0Var = new n0((hd.j) this.e, a11, b0Var2.h.j2(), zVar2.c());
+                ui.f fVar = b0Var2.l;
+                Object b10 = ((yd.c) fVar.d).b(n0Var);
+                if (b10 instanceof yd.h) {
+                    Throwable th2 = ((yd.h) b10).a;
+                    if (th2 == null) {
+                        throw new y("Channel was closed normally");
+                    }
+                    throw th2;
+                }
+                if (b10 instanceof yd.i) {
+                    throw new IllegalStateException("Check failed.");
+                }
+                if (((AtomicInteger) ((w5) fVar.e).b).getAndIncrement() == 0) {
+                    wd.b0.q((z) fVar.b, new d(fVar, cVar2, 10));
+                }
+                this.b = 1;
+                Object i18 = a11.i(this);
+                return i18 == aVar6 ? aVar6 : i18;
+            default:
+                gd.a aVar7 = gd.a.a;
+                int i19 = this.b;
+                if (i19 == 0) {
+                    ib.b(obj);
+                    yd.p pVar2 = (yd.p) this.c;
+                    File file = (File) this.e;
+                    v0 v0Var = new v0(file, pVar2, i3);
+                    Object obj6 = w0.b;
+                    File parentFile = file.getParentFile();
+                    kotlin.jvm.internal.j.b(parentFile);
+                    String key2 = parentFile.getCanonicalFile().getPath();
+                    synchronized (w0.b) {
+                        try {
+                            LinkedHashMap linkedHashMap = w0.c;
+                            kotlin.jvm.internal.j.d(key2, "key");
+                            Object obj7 = linkedHashMap.get(key2);
+                            if (obj7 == null) {
+                                obj7 = new w0(key2);
+                                linkedHashMap.put(key2, obj7);
+                            }
+                            w0 w0Var = (w0) obj7;
+                            w0Var.a.add(v0Var);
+                            if (w0Var.a.size() == 1) {
+                                w0Var.startWatching();
+                            }
+                        } catch (Throwable th3) {
+                            throw th3;
+                        }
+                    }
+                    u0 u0Var2 = new u0(i3, key2, v0Var);
+                    dd.k kVar3 = dd.k.a;
+                    this.c = pVar2;
+                    this.d = u0Var2;
+                    this.b = 1;
+                    if (((yd.o) pVar2).d.a(this, kVar3) == aVar7) {
+                        return aVar7;
+                    }
+                    pVar = pVar2;
+                    u0Var = u0Var2;
+                } else {
+                    if (i19 != 1) {
+                        if (i19 != 2) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        ib.b(obj);
+                        return dd.k.a;
+                    }
+                    u0Var = (u0) this.d;
+                    pVar = (yd.p) this.c;
+                    ib.b(obj);
+                }
+                k0 k0Var = new k0(u0Var, i10);
+                this.c = null;
+                this.d = null;
+                this.b = 2;
+                if (o6.a(pVar, k0Var, this) == aVar7) {
+                    return aVar7;
+                }
+                return dd.k.a;
         }
-        long j10 = r.get(this);
-        StringBuilder sb5 = new StringBuilder();
-        sb5.append(this.d);
-        sb5.append('@');
-        sb5.append(e0.k(this));
-        sb5.append("[Pool Size {core = ");
-        int i17 = this.a;
-        sb5.append(i17);
-        sb5.append(", max = ");
-        i0.a.t(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
-        i0.a.t(sb5, i11, ", parked = ", i12, ", dormant = ");
-        i0.a.t(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
-        sb5.append(arrayList);
-        sb5.append(", global CPU queue size = ");
-        sb5.append(this.e.c());
-        sb5.append(", global blocking queue size = ");
-        sb5.append(this.f.c());
-        sb5.append(", Control State {created workers= ");
-        sb5.append((int) (2097151 & j10));
-        sb5.append(", blocking tasks = ");
-        sb5.append((int) ((4398044413952L & j10) >> 21));
-        sb5.append(", CPUs acquired = ");
-        sb5.append(i17 - ((int) ((j10 & 9223367638808264704L) >> 42)));
-        sb5.append("}]");
-        return sb5.toString();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(ja.d dVar, p1.e eVar, Object obj, fd.c cVar) {
+        super(2, cVar);
+        this.a = 1;
+        this.d = dVar;
+        this.e = eVar;
+        this.c = obj;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ c(Object obj, fd.c cVar, int i3) {
+        super(2, cVar);
+        this.a = i3;
+        this.e = obj;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public c(b0 b0Var, od.p pVar, fd.c cVar) {
+        super(2, cVar);
+        this.a = 4;
+        this.d = b0Var;
+        this.e = (hd.j) pVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(zd.c cVar, e eVar, fd.c cVar2) {
+        super(2, cVar2);
+        this.a = 0;
+        this.d = cVar;
+        this.e = eVar;
     }
 }

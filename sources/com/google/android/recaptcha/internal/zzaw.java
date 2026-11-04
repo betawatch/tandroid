@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.c0;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzaw extends j implements p {
     Object zza;
@@ -22,21 +22,21 @@ final class zzaw extends j implements p {
         this.zzd = zzbaVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzaw(this.zzc, this.zzd, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaw) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzaw) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0035, code lost:
     
         if (r6 != r0) goto L15;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -44,11 +44,11 @@ final class zzaw extends j implements p {
         zzhk zzhkVar;
         zzbo zzboVar;
         String str;
-        a aVar = a.a;
-        int i10 = this.zzb;
+        gd.a aVar = gd.a.a;
+        int i3 = this.zzb;
         try {
-            if (i10 == 0) {
-                b.b(obj);
+            if (i3 == 0) {
+                ib.b(obj);
                 zzhkVar = this.zzc;
                 zzba zzbaVar = this.zzd;
                 zzboVar = zzbaVar.zza;
@@ -57,8 +57,8 @@ final class zzaw extends j implements p {
                 this.zzb = 1;
                 obj = new zzhg(new zzbb(zzboVar, str, null));
             } else {
-                if (i10 != 1) {
-                    b.b(obj);
+                if (i3 != 1) {
+                    ib.b(obj);
                     zzba zzbaVar2 = this.zzd;
                     zzyu zzf = zzyx.zzf();
                     zzyv zzf2 = zzyw.zzf();
@@ -67,7 +67,7 @@ final class zzaw extends j implements p {
                     return zzas.zzb(zzbaVar2, (zzyx) zzf.zzk());
                 }
                 zzhkVar = (zzhk) this.zza;
-                b.b(obj);
+                ib.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
@@ -81,8 +81,8 @@ final class zzaw extends j implements p {
             zzf22.zzw((String) obj);
             zzf3.zzf((zzyw) zzf22.zzk());
             return zzas.zzb(zzbaVar22, (zzyx) zzf3.zzk());
-        } catch (Exception e) {
-            throw new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), e);
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e10.getMessage(), e10);
         }
     }
 }

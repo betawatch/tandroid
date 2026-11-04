@@ -1,95 +1,123 @@
 package c3;
 
-import b2.v0;
-import e9.n0;
-import e9.x1;
-import java.util.List;
-import v7.t6;
+import android.content.Context;
+import android.os.Build;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d0 implements o {
-    public final int a;
-    public final int b;
-    public final String c;
-    public int d;
-    public int e;
-    public q f;
-    public k0 g;
+public final class d0 {
+    public final g a;
+    public final Context b;
+    public a0 c;
+    public boolean d;
+    public Surface e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public int j;
+    public long k;
+    public long l;
+    public long m;
+    public long n;
+    public long o;
+    public long p;
+    public long q;
+    public long r;
+    public long s;
 
-    public d0(int i10, int i11, String str) {
-        this.a = i10;
-        this.b = i11;
-        this.c = str;
+    public d0(Context context) {
+        this.b = context;
+        g gVar = new g();
+        gVar.a = new f();
+        gVar.b = new f();
+        gVar.d = -9223372036854775807L;
+        this.a = gVar;
+        this.f = -1.0f;
+        this.i = 1.0f;
+        this.j = 0;
     }
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
-        int i10 = this.b;
-        int i11 = this.a;
-        t6.p((i11 == -1 || i10 == -1) ? false : true);
-        e2.x xVar = new e2.x(i10);
-        ((l) pVar).j(xVar.a, 0, i10, false);
-        return xVar.H() == i11;
-    }
-
-    @Override // c3.o
-    public final void c(q qVar) {
-        this.f = qVar;
-        k0 I1 = qVar.I1(1024, 4);
-        this.g = I1;
-        b2.w wVar = new b2.w();
-        String str = this.c;
-        wVar.q = v0.n(str);
-        wVar.r = v0.n(str);
-        i0.a.r(wVar, I1);
-        this.f.Q0();
-        this.f.G1(new e0());
-        this.e = 1;
-    }
-
-    @Override // c3.o
-    public final void d(long j10, long j11) {
-        if (j10 == 0 || this.e == 1) {
-            this.e = 1;
-            this.d = 0;
+    public final void a() {
+        Surface surface;
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE || this.h == 0.0f || !surface.isValid()) {
+            return;
         }
+        this.h = 0.0f;
+        g0.f.v(this.e, 0.0f);
     }
 
-    @Override // c3.o
-    public final List e() {
-        e9.l0 l0Var = n0.b;
-        return x1.e;
+    public final void b() {
+        this.m = 0L;
+        this.q = -1L;
+        this.n = -1L;
+        this.k = 0L;
+        this.l = 0L;
     }
 
-    @Override // c3.o
-    public final int f(p pVar, s sVar) {
-        int i10 = this.e;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                return -1;
+    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c() {
+        float f10;
+        float f11;
+        if (Build.VERSION.SDK_INT < 30 || this.e == null) {
+            return;
+        }
+        g gVar = this.a;
+        if (!gVar.a.a()) {
+            f10 = this.f;
+        } else if (gVar.a.a()) {
+            f10 = (float) (1.0E9d / (gVar.a.e != 0 ? r2.f / r4 : 0L));
+        } else {
+            f10 = -1.0f;
+        }
+        float f12 = this.g;
+        if (f10 == f12) {
+            return;
+        }
+        if (f10 != -1.0f && f12 != -1.0f) {
+            if (gVar.a.a()) {
+                if ((gVar.a.a() ? gVar.a.f : -9223372036854775807L) >= 5000000000L) {
+                    f11 = 0.1f;
+                    if (Math.abs(f10 - this.g) < f11) {
+                        return;
+                    }
+                }
             }
-            throw new IllegalStateException();
+            f11 = 1.0f;
+            if (Math.abs(f10 - this.g) < f11) {
+            }
+        } else if (f10 == -1.0f && gVar.e < 30) {
+            return;
         }
-        k0 k0Var = this.g;
-        k0Var.getClass();
-        int a2 = k0Var.a(pVar, 1024, true);
-        if (a2 != -1) {
-            this.d += a2;
-            return 0;
-        }
-        this.e = 2;
-        this.g.c(0L, 1, this.d, 0, null);
-        this.d = 0;
-        return 0;
+        this.g = f10;
+        d(false);
     }
 
-    @Override // c3.o
-    public final o b() {
-        return this;
-    }
-
-    @Override // c3.o
-    public final void release() {
+    public final void d(boolean z10) {
+        Surface surface;
+        float f10;
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE || !surface.isValid()) {
+            return;
+        }
+        if (this.d) {
+            float f11 = this.g;
+            if (f11 != -1.0f) {
+                f10 = f11 * this.i;
+                if (z10 && this.h == f10) {
+                    return;
+                }
+                this.h = f10;
+                g0.f.v(this.e, f10);
+            }
+        }
+        f10 = 0.0f;
+        if (z10) {
+        }
+        this.h = f10;
+        g0.f.v(this.e, f10);
     }
 }

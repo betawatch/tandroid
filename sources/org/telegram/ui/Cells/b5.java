@@ -1,124 +1,112 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
+import android.animation.ObjectAnimator;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.a30;
-import org.telegram.messenger.dd;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.bd;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class b5 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.u5 a;
-    public final org.telegram.ui.ActionBar.u5 b;
-    public final ImageView c;
-    public boolean d;
-    public int e;
+public abstract class b5 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public h0 c;
+    public long d;
 
-    public b5(Context context) {
-        super(context);
-        this.e = 0;
-        org.telegram.ui.ActionBar.u5 u5Var = new org.telegram.ui.ActionBar.u5(context);
-        this.a = u5Var;
-        org.telegram.ui.ActionBar.a7.Y(u5Var, org.telegram.ui.ActionBar.t6.G6, null);
-        u5Var.setTextSize(16);
-        u5Var.setGravity(dd.X ? 5 : 3);
-        addView(u5Var);
-        org.telegram.ui.ActionBar.u5 u5Var2 = new org.telegram.ui.ActionBar.u5(context);
-        this.b = u5Var2;
-        org.telegram.ui.ActionBar.a7.Y(u5Var2, org.telegram.ui.ActionBar.t6.I6, null);
-        u5Var2.setTextSize(16);
-        u5Var2.setGravity(dd.X ? 3 : 5);
-        addView(u5Var2);
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        org.telegram.ui.ActionBar.a7.t(imageView, org.telegram.ui.ActionBar.t6.m6, null, PorterDuff.Mode.MULTIPLY);
-        addView(imageView);
+    public final void a(ArrayList arrayList, boolean z10) {
+        TextView textView = this.b;
+        h0 h0Var = this.c;
+        TextView textView2 = this.a;
+        super.setEnabled(z10);
+        if (arrayList != null) {
+            arrayList.add(ObjectAnimator.ofFloat(textView2, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(h0Var, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(textView, "alpha", z10 ? 1.0f : 0.5f));
+        } else {
+            textView2.setAlpha(z10 ? 1.0f : 0.5f);
+            h0Var.setAlpha(z10 ? 1.0f : 0.5f);
+            textView.setAlpha(z10 ? 1.0f : 0.5f);
+        }
     }
 
-    public final void a(int i10, int i11) {
-        org.telegram.ui.ActionBar.u5 u5Var = this.a;
-        org.telegram.ui.ActionBar.a7.Y(u5Var, i11, null);
-        u5Var.setTag(Integer.valueOf(i11));
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        ImageView imageView = this.c;
-        org.telegram.ui.ActionBar.a7.t(imageView, i10, null, mode);
-        imageView.setTag(Integer.valueOf(i10));
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return true;
     }
 
-    public final void b(int i10, int i11, String str, boolean z10) {
-        this.a.l(str, false);
-        this.b.setVisibility(4);
-        int L = org.telegram.messenger.i0.L(i11);
-        ImageView imageView = this.c;
-        imageView.setPadding(0, L, 0, 0);
-        imageView.setImageResource(i10);
-        this.d = z10;
-        setWillNotDraw(!z10);
-    }
-
-    public int getFullHeight() {
-        return org.telegram.messenger.i0.L(56.0f);
-    }
-
-    public org.telegram.ui.ActionBar.u5 getTextView() {
-        return this.a;
-    }
-
-    public org.telegram.ui.ActionBar.u5 getValueTextView() {
-        return this.b;
+    public long getSize() {
+        return this.d;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            int i10 = this.e;
-            if (i10 != 0) {
-                org.telegram.ui.ActionBar.t6.l0.setColor(org.telegram.ui.ActionBar.t6.x0(null, i10, false));
-            }
-            canvas.drawLine(org.telegram.messenger.i0.L(71.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, this.e != 0 ? org.telegram.ui.ActionBar.t6.l0 : org.telegram.ui.ActionBar.t6.k0);
-        }
+        canvas.drawLine(bd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (bd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14 = i13 - i11;
-        int i15 = i12 - i10;
-        org.telegram.ui.ActionBar.u5 u5Var = this.b;
-        int textHeight = (i14 - u5Var.getTextHeight()) / 2;
-        int L = dd.X ? org.telegram.messenger.i0.L(24.0f) : 0;
-        u5Var.layout(L, textHeight, u5Var.getMeasuredWidth() + L, u5Var.getMeasuredHeight() + textHeight);
-        org.telegram.ui.ActionBar.u5 u5Var2 = this.a;
-        int textHeight2 = (i14 - u5Var2.getTextHeight()) / 2;
-        int L2 = !dd.X ? org.telegram.messenger.i0.L(71.0f) : org.telegram.messenger.i0.L(24.0f);
-        u5Var2.layout(L2, textHeight2, u5Var2.getMeasuredWidth() + L2, u5Var2.getMeasuredHeight() + textHeight2);
-        int L3 = org.telegram.messenger.i0.L(9.0f);
-        boolean z11 = dd.X;
-        ImageView imageView = this.c;
-        int L4 = !z11 ? org.telegram.messenger.i0.L(21.0f) : (i15 - imageView.getMeasuredWidth()) - org.telegram.messenger.i0.L(21.0f);
-        imageView.layout(L4, L3, imageView.getMeasuredWidth() + L4, imageView.getMeasuredHeight() + L3);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onInterceptTouchEvent(motionEvent);
+        }
+        return true;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int L = org.telegram.messenger.i0.L(48.0f);
-        this.b.measure(a30.c(24.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(20.0f), TLObject.FLAG_30));
-        this.a.measure(a30.c(95.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(20.0f), TLObject.FLAG_30));
-        this.c.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31));
-        setMeasuredDimension(size, getFullHeight() + (this.d ? 1 : 0));
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
+        setMeasuredDimension(View.MeasureSpec.getSize(i3), org.telegram.messenger.g0.L(80.0f));
+        int measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(42.0f);
+        TextView textView = this.b;
+        textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(k2.p1.d(8.0f, measuredWidth - textView.getMeasuredWidth(), org.telegram.messenger.g0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
+        this.c.measure(org.telegram.messenger.camera.q.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
     }
 
-    public void setDividerColor(int i10) {
-        this.e = i10;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return true;
     }
 
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    public void setSize(long j10) {
+        float max;
+        float f10;
+        float f11;
+        this.d = j10;
+        this.b.setText(bd.a0("AutodownloadSizeLimitUpTo", null, 2131753772, org.telegram.messenger.g0.i0(j10, false, false)));
+        long j11 = j10 - 512000;
+        if (j11 < 536576) {
+            f11 = Math.max(0.0f, j11 / 536576.0f) * 0.25f;
+        } else {
+            long j12 = j10 - 1048576;
+            if (j12 < 9437184) {
+                f11 = (Math.max(0.0f, j12 / 9437184.0f) * 0.25f) + 0.25f;
+            } else {
+                long j13 = j10 - 10485760;
+                if (j13 < 94371840) {
+                    max = Math.max(0.0f, j13 / 9.437184E7f) * 0.25f;
+                    f10 = 0.5f;
+                } else {
+                    max = Math.max(0.0f, (j10 - 104857600) / 1.9922944E9f) * 0.25f;
+                    f10 = 0.75f;
+                }
+                f11 = max + f10;
+            }
+        }
+        this.c.setProgress(Math.min(1.0f, f11));
+    }
+
+    public void setText(String str) {
+        this.a.setText(str);
     }
 }

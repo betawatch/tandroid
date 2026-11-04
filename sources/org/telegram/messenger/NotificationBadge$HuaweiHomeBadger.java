@@ -4,19 +4,19 @@ import android.os.Bundle;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class NotificationBadge$HuaweiHomeBadger implements ms {
-    @Override // org.telegram.messenger.ms
-    public final void a(int i10) {
+public class NotificationBadge$HuaweiHomeBadger implements ur {
+    @Override // org.telegram.messenger.ur
+    public final void a(int i3) {
         Bundle bundle = new Bundle();
-        bundle.putString("package", w0.b.getPackageName());
-        bundle.putString("class", ps.d.getClassName());
-        bundle.putInt("badgenumber", i10);
-        i0.g3(new ns(bundle, 0));
+        bundle.putString("package", t0.b.getPackageName());
+        bundle.putString("class", wr.d.getClassName());
+        bundle.putInt("badgenumber", i3);
+        g0.h3(new a(bundle, 29));
     }
 
-    @Override // org.telegram.messenger.ms
+    @Override // org.telegram.messenger.ur
     public final List b() {
         return Arrays.asList("com.huawei.android.launcher");
     }

@@ -1,27 +1,6 @@
 package pb;
 
-import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.mlkit.vision.common.internal.MobileVisionBase;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements OnFailureListener, r9.d {
-    public static final a a = new a();
-    public static final /* synthetic */ a b = new a();
-    public static final /* synthetic */ a c = new a();
-
-    @Override // r9.d
-    public Object K(bh.d dVar) {
-        return new c(dVar.J(b.class));
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        c5.a aVar = MobileVisionBase.e;
-        if (Log.isLoggable(aVar.b, 6)) {
-            String str = aVar.c;
-            Log.e("MobileVisionBase", str != null ? str.concat("Error preloading model resource") : "Error preloading model resource", exc);
-        }
-    }
+public final class a {
 }

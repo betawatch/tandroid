@@ -1,47 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Paint;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qe extends xh.s {
-    public boolean s;
-    public final /* synthetic */ ChatActivityEnterView w;
+public final class qe implements View.OnTouchListener {
+    public final /* synthetic */ int a = 0;
+    public final Rect b = new Rect();
+    public final /* synthetic */ org.telegram.messenger.cs c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qe(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.w = chatActivityEnterView;
-        this.a = null;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.f = true;
-        this.b = new ac.g();
-        org.telegram.ui.mb0 mb0Var = new org.telegram.ui.mb0(this, context, 7);
-        this.c = mb0Var;
-        mb0Var.setOverScrollMode(2);
-        mb0Var.setClipToPadding(false);
-        mb0Var.setClipToOutline(true);
-        mb0Var.j(new cu0(this, 28));
-        addView(mb0Var);
-        paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.wj, false));
-        vg.f fVar = this.r;
-        if (fVar != null) {
-            fVar.updateColors();
-        }
-        invalidate();
-        setClipChildren(false);
-        this.s = false;
+    public qe(org.telegram.ui.hm0 hm0Var) {
+        this.c = hm0Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.s) {
-            return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        re reVar;
+        org.telegram.ui.ActionBar.f1 f1Var;
+        org.telegram.ui.ActionBar.f1 f1Var2;
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                if (motionEvent.getActionMasked() == 0 && (reVar = chatActivityEnterView.O0) != null && reVar.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        chatActivityEnterView.O0.dismiss();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                org.telegram.ui.hm0 hm0Var = (org.telegram.ui.hm0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (f1Var = hm0Var.J) != null && f1Var.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        hm0Var.J.d(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                org.telegram.ui.sm0 sm0Var = (org.telegram.ui.sm0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (f1Var2 = sm0Var.n0) != null && f1Var2.isShowing()) {
+                    Rect rect3 = this.b;
+                    view.getHitRect(rect3);
+                    if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        sm0Var.n0.d(true);
+                        break;
+                    }
+                }
+                break;
         }
-        this.s = true;
-        this.w.B1();
+        return false;
+    }
+
+    public qe(org.telegram.ui.sm0 sm0Var) {
+        this.c = sm0Var;
+    }
+
+    public qe(ChatActivityEnterView chatActivityEnterView) {
+        this.c = chatActivityEnterView;
     }
 }

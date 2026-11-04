@@ -1,30 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.TextView;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class r20 extends TextView {
-    public final RectF a;
-    public final /* synthetic */ a50 b;
+public final class r20 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x30 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r20(a50 a50Var, Context context) {
-        super(context);
-        this.b = a50Var;
-        this.a = new RectF();
+    public /* synthetic */ r20(x30 x30Var, int i3) {
+        this.a = i3;
+        this.b = x30Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f), this.b.X2);
-        super.onDraw(canvas);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                x30 x30Var = this.b;
+                x30Var.I1.getViewTreeObserver().removeOnPreDrawListener(this);
+                x30Var.S3.j(null);
+                org.telegram.messenger.g0.b4(x30Var.e4);
+                x30Var.b.requestLayout();
+                break;
+            default:
+                x30 x30Var2 = this.b;
+                x30Var2.I1.getViewTreeObserver().removeOnPreDrawListener(this);
+                x30Var2.S3.j(null);
+                org.telegram.messenger.g0.b4(x30Var2.e4);
+                x30Var2.b.requestLayout();
+                break;
+        }
+        return false;
     }
 }

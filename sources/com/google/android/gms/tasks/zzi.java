@@ -1,29 +1,26 @@
 package com.google.android.gms.tasks;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzi implements Runnable {
     final /* synthetic */ Task zza;
     final /* synthetic */ zzj zzb;
 
     public zzi(zzj zzjVar, Task task) {
-        this.zzb = zzjVar;
         this.zza = task;
+        Objects.requireNonNull(zzjVar);
+        this.zzb = zzjVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Object obj;
-        OnCompleteListener onCompleteListener;
-        OnCompleteListener onCompleteListener2;
-        obj = this.zzb.zzb;
-        synchronized (obj) {
+        zzj zzjVar = this.zzb;
+        synchronized (zzjVar.zzc()) {
             try {
-                zzj zzjVar = this.zzb;
-                onCompleteListener = zzjVar.zzc;
-                if (onCompleteListener != null) {
-                    onCompleteListener2 = zzjVar.zzc;
-                    onCompleteListener2.onComplete(this.zza);
+                if (zzjVar.zzd() != null) {
+                    zzjVar.zzd().onComplete(this.zza);
                 }
             } catch (Throwable th2) {
                 throw th2;

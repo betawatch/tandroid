@@ -3,47 +3,42 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class o30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q30 b;
+    public final /* synthetic */ k40 b;
 
-    public /* synthetic */ o30(q30 q30Var, int i10) {
-        this.a = i10;
-        this.b = q30Var;
+    public /* synthetic */ o30(k40 k40Var, int i3) {
+        this.a = i3;
+        this.b = k40Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                q30 q30Var = this.b;
-                q30Var.f = null;
-                if (!q30Var.H) {
-                    ho hoVar = new ho(this, 22);
-                    q30Var.h = hoVar;
-                    org.telegram.messenger.i0.h3(hoVar, q30Var.n == 0 ? 10000L : 2000L);
+                k40 k40Var = this.b;
+                if (animator.equals(k40Var.L)) {
+                    k40Var.L = null;
                     break;
                 }
                 break;
             case 1:
-                q30 q30Var2 = this.b;
-                q30Var2.f = null;
-                if (!q30Var2.H) {
-                    ho hoVar2 = new ho(this, 23);
-                    q30Var2.h = hoVar2;
-                    org.telegram.messenger.i0.h3(hoVar2, q30Var2.E);
+                k40 k40Var2 = this.b;
+                if (k40Var2.l1 != null) {
+                    k40Var2.l1 = null;
                     break;
                 }
                 break;
             default:
-                q30 q30Var3 = this.b;
-                q30Var3.setVisibility(4);
-                q30Var3.getClass();
-                q30Var3.e = null;
-                q30Var3.d = null;
-                q30Var3.f = null;
+                k40 k40Var3 = this.b;
+                if (animator.equals(k40Var3.e0)) {
+                    k40Var3.c(true);
+                    k40Var3.g1 = false;
+                    k40Var3.setVisibility(4);
+                    break;
+                }
                 break;
         }
     }

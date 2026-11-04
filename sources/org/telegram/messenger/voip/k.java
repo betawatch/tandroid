@@ -1,24 +1,52 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.content.Context;
+import java.io.File;
+import org.telegram.messenger.voip.VoIPDebugToSend;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ VideoCapturerDevice b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ k(VideoCapturerDevice videoCapturerDevice, int i10) {
-        this.a = i10;
-        this.b = videoCapturerDevice;
+    public /* synthetic */ k(Object obj, Object obj2, Object obj3, Object obj4, int i3) {
+        this.a = i3;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onDestroy$8();
+                ((VoIPDebugToSend) this.b).lambda$done$2((VoIPDebugToSend.Data) this.c, (File) this.d, (TL_phone.saveCallDebug) this.e);
+                break;
+            case 1:
+                ((NativeInstance) this.b).lambda$onAudioLevelsUpdated$1((int[]) this.c, (float[]) this.d, (boolean[]) this.e);
+                break;
+            case 2:
+                VoIPPreNotificationService.lambda$acknowledge$2((TLObject) this.b, (TLRPC.TL_error) this.c, (Context) this.d, (Runnable) this.e);
+                break;
+            case 3:
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$31((TLObject) this.c, (org.telegram.messenger.c) this.d, (TLRPC.TL_error) this.e);
+                break;
+            case 4:
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$44((TLObject) this.c, (TL_phone.PhoneCall) this.d, (TL_phone.exportGroupCallInvite) this.e);
+                break;
+            case 5:
+                ((VoIPService) this.b).lambda$startOutgoingCall$9((TLRPC.TL_error) this.c, (TLObject) this.d, (byte[]) this.e);
                 break;
             default:
-                this.b.lambda$onDestroy$9();
+                ((VoIPService) this.b).lambda$startGroupCheckShortpoll$63((TLRPC.TL_error) this.c, (TLObject) this.d, (TL_phone.checkGroupCall) this.e);
                 break;
         }
     }

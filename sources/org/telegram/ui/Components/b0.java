@@ -1,196 +1,153 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.PopupWindow;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b0 implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class b0 extends LinearLayout {
+    public final /* synthetic */ int a = 0;
+    public final RectF b;
+    public final RectF c;
+    public final RectF d;
+    public final Paint e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
+    public final /* synthetic */ FrameLayout h;
 
-    public /* synthetic */ b0(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b0(d0 d0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.h = d0Var;
+        this.f = e6Var;
+        this.b = new RectF();
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = new Paint(1);
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        int i10 = this.a;
-        final int i11 = 0;
-        final int i12 = 1;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
             case 0:
-                e0 e0Var = (e0) obj;
-                i iVar = ((f0) obj2).n;
-                if (iVar != null) {
-                    break;
+                u5 u5Var = ((d0) this.h).h;
+                float e10 = u5Var == null ? 0.0f : u5Var.e(false, r0.f);
+                double d = e10;
+                int floor = (int) Math.floor(d);
+                int ceil = (int) Math.ceil(d);
+                float f10 = e10 - floor;
+                RectF rectF = this.b;
+                if (floor >= 0 && floor < getChildCount()) {
+                    View childAt = getChildAt(floor);
+                    rectF.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
                 }
-                break;
-            case 1:
-                w7 w7Var = (w7) obj2;
-                float f7 = MediaController.B().q0;
-                org.telegram.ui.ActionBar.x0 x0Var = w7Var.N1;
-                x0Var.e(false, f7);
-                org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.G8, x0Var, (org.telegram.ui.ActionBar.p6) obj);
-                w7Var.a1(false);
-                org.telegram.ui.ActionBar.t0 t0Var = w7Var.L1;
-                t0Var.setDimMenu(0.15f);
-                t0Var.U(x0Var, null);
-                org.telegram.messenger.wp.e1().edit().putInt("speedhint", -15).apply();
-                break;
-            case 2:
-                z60 z60Var = (z60) obj2;
-                ((org.telegram.ui.Components.voip.u) obj).run();
-                if (z60Var.J) {
-                    z60Var.u();
-                    break;
+                RectF rectF2 = this.c;
+                if (ceil >= 0 && ceil < getChildCount()) {
+                    View childAt2 = getChildAt(ceil);
+                    rectF2.set(childAt2.getLeft(), childAt2.getTop(), childAt2.getRight(), childAt2.getBottom());
                 }
-                break;
-            case 3:
-                PhotoViewer photoViewer = (PhotoViewer) obj2;
-                th.b bVar = (th.b) obj;
-                org.telegram.messenger.kj kjVar = photoViewer.T4;
-                if (kjVar != null) {
-                    if (org.telegram.messenger.i0.g(kjVar.R0)) {
-                        new cc(ra.a(photoViewer.E), bVar).k(false).j();
+                RectF rectF3 = this.d;
+                org.telegram.messenger.g0.Z1(rectF, rectF2, f10, rectF3);
+                int r12 = org.telegram.ui.ActionBar.k6.r1(0.1f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, this.f));
+                Paint paint = this.e;
+                paint.setColor(r12);
+                canvas.drawRoundRect(rectF3, org.telegram.messenger.g0.L(r0.d), org.telegram.messenger.g0.L(r0.d), paint);
+                for (int i3 = 0; i3 < getChildCount(); i3++) {
+                    View childAt3 = getChildAt(i3);
+                    if (childAt3 instanceof c0) {
+                        ((c0) childAt3).a(false, Math.max(0.0f, 1.0f - Math.abs(i3 - e10)));
                     }
-                    break;
                 }
-                break;
-            case 4:
-                final ProfileActivity profileActivity = (ProfileActivity) obj2;
-                ImageView imageView = (ImageView) obj;
-                RectF rectF = ProfileActivity.S6;
-                org.telegram.ui.ActionBar.k1 b10 = y8.b(profileActivity, imageView, profileActivity.a(), profileActivity.f1, profileActivity.z0);
-                if (b10 != null) {
-                    b10.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ev0
-                        @Override // android.widget.PopupWindow.OnDismissListener
-                        public final void onDismiss() {
-                            int i13 = i12;
-                            ProfileActivity profileActivity2 = profileActivity;
-                            switch (i13) {
-                                case 0:
-                                    RectF rectF2 = ProfileActivity.S6;
-                                    profileActivity2.X3(0.0f);
-                                    break;
-                                default:
-                                    RectF rectF3 = ProfileActivity.S6;
-                                    profileActivity2.X3(0.0f);
-                                    break;
-                            }
-                        }
-                    });
-                    profileActivity.w0 = imageView;
-                    profileActivity.X3(0.3f);
-                    UndoView undoView = profileActivity.L;
-                    if (undoView != null) {
-                        undoView.d(1, true);
-                    }
-                    break;
-                }
-                break;
-            case 5:
-                final ProfileActivity profileActivity2 = (ProfileActivity) obj2;
-                View view2 = (View) obj;
-                RectF rectF2 = ProfileActivity.S6;
-                org.telegram.ui.ActionBar.k1 b11 = y8.b(profileActivity2, view2, profileActivity2.a(), profileActivity2.f1, profileActivity2.z0);
-                if (b11 != null) {
-                    b11.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.ev0
-                        @Override // android.widget.PopupWindow.OnDismissListener
-                        public final void onDismiss() {
-                            int i13 = i11;
-                            ProfileActivity profileActivity22 = profileActivity2;
-                            switch (i13) {
-                                case 0:
-                                    RectF rectF22 = ProfileActivity.S6;
-                                    profileActivity22.X3(0.0f);
-                                    break;
-                                default:
-                                    RectF rectF3 = ProfileActivity.S6;
-                                    profileActivity22.X3(0.0f);
-                                    break;
-                            }
-                        }
-                    });
-                    profileActivity2.w0 = view2;
-                    profileActivity2.X3(0.3f);
-                    UndoView undoView2 = profileActivity2.L;
-                    if (undoView2 != null) {
-                        undoView2.d(1, true);
-                    }
-                    break;
-                }
-                break;
-            case 6:
-                org.telegram.ui.b61 b61Var = (org.telegram.ui.b61) obj2;
-                dg.g gVar = (dg.g) obj;
-                org.telegram.ui.c61 c61Var = b61Var.d;
-                yz yzVar = b61Var.a;
-                if (yzVar.c) {
-                    c61Var.f();
-                    ArrayList arrayList = c61Var.n;
-                    bg.i iVar2 = c61Var.c;
-                    int size = arrayList.size();
-                    for (int i13 = 0; i13 < size; i13++) {
-                        ((org.telegram.ui.b61) arrayList.get(i13)).a.setChecked(false);
-                        ((org.telegram.ui.b61) arrayList.get(i13)).b.n = false;
-                        if (c61Var.r.c > 0 && i13 < iVar2.d.size()) {
-                            ((dg.g) iVar2.d.get(i13)).n = false;
-                        }
-                    }
-                    yzVar.setChecked(true);
-                    gVar.n = true;
-                    c61Var.b.z();
-                    if (c61Var.r.c > 0) {
-                        ((dg.g) iVar2.d.get(b61Var.c)).n = true;
-                        iVar2.z();
-                    }
-                    break;
-                }
+                super.dispatchDraw(canvas);
                 break;
             default:
-                th.z2 z2Var = (th.z2) obj2;
-                th.o7 o7Var = (th.o7) obj;
-                th.i1 i1Var = z2Var.i3;
-                if (i1Var != null) {
-                    org.telegram.messenger.i0.r(i1Var);
-                    z2Var.i3 = null;
+                org.telegram.ui.Wallet.r5 r5Var = (org.telegram.ui.Wallet.r5) this.h;
+                float e11 = r5Var.f.e(false, r5Var.d);
+                double d10 = e11;
+                int floor2 = (int) Math.floor(d10);
+                TextView[] textViewArr = r5Var.c;
+                int j10 = Utilities.j(floor2, textViewArr.length, 0);
+                int j11 = Utilities.j((int) Math.ceil(d10), textViewArr.length, 0);
+                RectF rectF4 = this.b;
+                if (j10 >= 0 && j10 < textViewArr.length) {
+                    TextView textView = textViewArr[j10];
+                    rectF4.set(textView.getX(), textView.getY(), textView.getX() + textView.getWidth(), textView.getY() + textView.getHeight());
                 }
-                org.telegram.messenger.uz.H(true);
-                vh.p2 p2Var = z2Var.q0;
-                if (p2Var != null) {
-                    p2Var.e(true);
+                RectF rectF5 = this.c;
+                if (j11 >= 0 && j11 < textViewArr.length) {
+                    TextView textView2 = textViewArr[j11];
+                    rectF5.set(textView2.getX(), textView2.getY(), textView2.getX() + textView2.getWidth(), textView2.getY() + textView2.getHeight());
                 }
-                nj0 nj0Var = z2Var.a3;
-                if (nj0Var == null) {
-                    nj0 nj0Var2 = new nj0(2, z2Var.l2, z2Var.getContext(), LaunchActivity.Q(), new org.telegram.ui.web.a0(5, z2Var.k0));
-                    z2Var.a3 = nj0Var2;
-                    nj0Var2.setPadding(0, 0, 0, org.telegram.messenger.i0.L(22.0f));
-                    z2Var.addView(z2Var.a3, z2Var.getChildCount() - 1, w7.b6.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
-                    z2Var.a3.setVisibility(8);
-                    z2Var.a3.setDelegate(new th.f2(z2Var));
-                    z2Var.a3.p(null, null, true);
-                } else {
-                    z2Var.bringChildToFront(nj0Var);
-                    z2Var.a3.n();
-                }
-                z2Var.a3.setFragment(LaunchActivity.Q());
-                o7Var.s.dispatchTouchEvent(org.telegram.messenger.i0.R());
-                z2Var.Z0(true);
+                RectF rectF6 = this.d;
+                org.telegram.messenger.g0.Z1(rectF4, rectF5, e11 - j10, rectF6);
+                int r13 = org.telegram.ui.ActionBar.k6.r1(0.1f, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Ci, this.f));
+                Paint paint2 = this.e;
+                paint2.setColor(r13);
+                canvas.drawRoundRect(rectF6, org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), paint2);
+                super.dispatchDraw(canvas);
                 break;
         }
-        return true;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onMeasure(int i3, int i10) {
+        switch (this.a) {
+            case 0:
+                boolean z10 = getOrientation() == 0;
+                int size = z10 ? View.MeasureSpec.getSize(i3) : View.MeasureSpec.getSize(i10);
+                int i11 = 0;
+                int i12 = 0;
+                for (int i13 = 0; i13 < getChildCount(); i13++) {
+                    View childAt = getChildAt(i13);
+                    childAt.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+                    childAt.measure(z10 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i3, !z10 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i10);
+                    int measuredWidth = z10 ? childAt.getMeasuredWidth() : childAt.getMeasuredHeight();
+                    i12 = Math.max(i12, measuredWidth);
+                    i11 += measuredWidth;
+                }
+                boolean z11 = i11 <= size && ((float) i12) < ((float) size) / ((float) getChildCount());
+                for (int i14 = 0; i14 < getChildCount(); i14++) {
+                    View childAt2 = getChildAt(i14);
+                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt2.getLayoutParams();
+                    childAt2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
+                    if (z11) {
+                        if (z10) {
+                            layoutParams.width = 0;
+                        } else {
+                            layoutParams.height = 0;
+                        }
+                        layoutParams.weight = 1.0f;
+                    } else {
+                        if (z10) {
+                            layoutParams.width = -2;
+                        } else {
+                            layoutParams.height = -2;
+                        }
+                        layoutParams.weight = 0.0f;
+                    }
+                }
+                super.onMeasure(i3, i10);
+                break;
+            default:
+                super.onMeasure(i3, i10);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b0(org.telegram.ui.Wallet.r5 r5Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.h = r5Var;
+        this.f = e6Var;
+        this.b = new RectF();
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = new Paint(1);
     }
 }

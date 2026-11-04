@@ -1,44 +1,51 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class n2 extends d5 {
-    private static final g5 zzb = new d1();
-    private static final n2 zzd;
+public final class n2 extends c5 {
+    private static final n2 zzb;
+    private int zzd;
     private int zze;
-    private boolean zzg;
-    private boolean zzh;
-    private t3 zzi;
-    private boolean zzj;
-    private long zzl;
-    private long zzm;
-    private String zzf = "";
-    private f5 zzk = e5.d;
+    private int zzf;
+    private e5 zzg;
+    private e5 zzh;
+    private h5 zzi;
+    private h5 zzj;
+    private int zzk;
 
     static {
         n2 n2Var = new n2();
-        zzd = n2Var;
-        d5.e(n2.class, n2Var);
+        zzb = n2Var;
+        c5.e(n2.class, n2Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.d5
-    public final Object h(int i10, d5 d5Var) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+    public n2() {
+        d5 d5Var = d5.d;
+        this.zzg = d5Var;
+        this.zzh = d5Var;
+        c6 c6Var = c6.d;
+        this.zzi = c6Var;
+        this.zzj = c6Var;
+    }
+
+    @Override // com.google.android.gms.internal.cast.c5
+    public final Object h(int i3, c5 c5Var) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
-            return new e6(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဇ\u0001\u0003ဉ\u0003\u0004ဇ\u0004\u0005ࠬ\u0006ဇ\u0002\u0007ဂ\u0005\bဂ\u0006", new Object[]{"zze", "zzf", "zzg", "zzi", "zzj", "zzk", y0.A, "zzh", "zzl", "zzm"});
+        if (i10 == 2) {
+            return new d6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001င\u0000\u0002᠌\u0001\u0003\u0016\u0004\u0016\u0005\u001a\u0006\u001a\u0007᠌\u0002", new Object[]{"zzd", "zze", "zzf", y.T, "zzg", "zzh", "zzi", "zzj", "zzk", y.P});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new n2();
         }
-        if (i11 == 4) {
-            return new u0(zzd);
+        if (i10 == 4) {
+            return new t0(zzb);
         }
-        if (i11 != 5) {
+        if (i10 != 5) {
             return null;
         }
-        return zzd;
+        return zzb;
     }
 }

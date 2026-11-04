@@ -1,52 +1,36 @@
 package bd;
 
-import java.util.concurrent.Executor;
+import gf.p;
+import gf.s;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements ld.l {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class a extends h {
+    public static final Pattern e = Pattern.compile("^<([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>");
+    public static final Pattern f = Pattern.compile("^<[a-zA-Z][a-zA-Z0-9.+-]{1,31}:[^<>\u0000- ]*>");
 
-    public /* synthetic */ a(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // bd.h
+    public final p b() {
+        String a10 = a(e);
+        if (a10 != null) {
+            String j10 = com.google.android.recaptcha.internal.a.j(a10, 1, 1);
+            gf.k kVar = new gf.k(1, t4.c.f("mailto:", j10), null);
+            kVar.b(new s(j10));
+            return kVar;
+        }
+        String a11 = a(f);
+        if (a11 == null) {
+            return null;
+        }
+        String j11 = com.google.android.recaptcha.internal.a.j(a11, 1, 1);
+        gf.k kVar2 = new gf.k(1, j11, null);
+        kVar2.b(new s(j11));
+        return kVar2;
     }
 
-    @Override // ld.l
-    public final Object invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                return obj == ((e) this.b) ? "(this Collection)" : String.valueOf(obj);
-            case 1:
-                c1.d dVar = (c1.d) this.b;
-                w0.i e = (w0.i) obj;
-                kotlin.jvm.internal.i.e(e, "e");
-                dVar.f().execute(new c1.a(dVar, e, 2));
-                break;
-            case 2:
-                d1.f fVar = (d1.f) this.b;
-                w0.d e7 = (w0.d) obj;
-                kotlin.jvm.internal.i.e(e7, "e");
-                Executor executor = fVar.g;
-                if (executor == null) {
-                    kotlin.jvm.internal.i.h("executor");
-                    throw null;
-                }
-                executor.execute(new d1.a(fVar, e7, 0));
-                break;
-            default:
-                e1.d dVar2 = (e1.d) this.b;
-                w0.d e10 = (w0.d) obj;
-                kotlin.jvm.internal.i.e(e10, "e");
-                Executor executor2 = dVar2.g;
-                if (executor2 == null) {
-                    kotlin.jvm.internal.i.h("executor");
-                    throw null;
-                }
-                executor2.execute(new e1.c(dVar2, e10, 0));
-                break;
-        }
-        return ad.j.a;
+    @Override // bd.h
+    public final char d() {
+        return '<';
     }
 }

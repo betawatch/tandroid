@@ -1,79 +1,200 @@
 package i4;
 
-import e2.x;
-import java.util.regex.Pattern;
+import a1.g;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.text.style.TypefaceSpan;
+import android.text.style.UnderlineSpan;
+import b4.d;
+import b4.l;
+import b4.m;
+import b8.zb;
+import f2.b;
+import g2.k;
+import g2.n0;
+import g2.y;
+import g9.g0;
+import g9.i0;
+import g9.s1;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
+import k2.p1;
+import org.telegram.messenger.hs;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final Pattern c = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
-    public static final Pattern d = Pattern.compile("^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$");
-    public final x a = new x();
-    public final StringBuilder b = new StringBuilder();
+public final class a implements m {
+    public final y a = new y();
+    public final boolean b;
+    public final int c;
+    public final int d;
+    public final String e;
+    public final float f;
+    public final int h;
 
-    public static String a(x xVar, StringBuilder sb2) {
-        boolean z10 = false;
-        sb2.setLength(0);
-        int i10 = xVar.b;
-        int i11 = xVar.c;
-        while (i10 < i11 && !z10) {
-            char c10 = (char) xVar.a[i10];
-            if ((c10 < 'A' || c10 > 'Z') && ((c10 < 'a' || c10 > 'z') && !((c10 >= '0' && c10 <= '9') || c10 == '#' || c10 == '-' || c10 == '.' || c10 == '_'))) {
-                z10 = true;
-            } else {
-                i10++;
-                sb2.append(c10);
-            }
-        }
-        xVar.O(i10 - xVar.b);
-        return sb2.toString();
-    }
-
-    public static String b(x xVar, StringBuilder sb2) {
-        c(xVar);
-        if (xVar.a() == 0) {
-            return null;
-        }
-        String a2 = a(xVar, sb2);
-        if (!a2.isEmpty()) {
-            return a2;
-        }
-        return "" + ((char) xVar.A());
-    }
-
-    public static void c(x xVar) {
-        while (true) {
-            for (boolean z10 = true; xVar.a() > 0 && z10; z10 = false) {
-                int i10 = xVar.b;
-                byte[] bArr = xVar.a;
-                byte b10 = bArr[i10];
-                char c10 = (char) b10;
-                if (c10 == '\t' || c10 == '\n' || c10 == '\f' || c10 == '\r' || c10 == ' ') {
-                    xVar.O(1);
-                } else {
-                    int i11 = xVar.c;
-                    int i12 = i10 + 2;
-                    if (i12 <= i11) {
-                        int i13 = i10 + 1;
-                        if (b10 == 47 && bArr[i13] == 42) {
-                            while (true) {
-                                int i14 = i12 + 1;
-                                if (i14 >= i11) {
-                                    break;
-                                }
-                                if (((char) bArr[i12]) == '*' && ((char) bArr[i14]) == '/') {
-                                    i12 += 2;
-                                    i11 = i12;
-                                } else {
-                                    i12 = i14;
-                                }
-                            }
-                            xVar.O(i11 - xVar.b);
-                        }
-                    }
-                }
-            }
+    public a(List list) {
+        if (list.size() != 1 || (((byte[]) list.get(0)).length != 48 && ((byte[]) list.get(0)).length != 53)) {
+            this.c = 0;
+            this.d = -1;
+            this.e = "sans-serif";
+            this.b = false;
+            this.f = 0.85f;
+            this.h = -1;
             return;
         }
+        byte[] bArr = (byte[]) list.get(0);
+        this.c = bArr[24];
+        this.d = ((bArr[26] & 255) << 24) | ((bArr[27] & 255) << 16) | ((bArr[28] & 255) << 8) | (bArr[29] & 255);
+        this.e = "Serif".equals(new String(bArr, 43, bArr.length - 43, StandardCharsets.UTF_8)) ? "serif" : "sans-serif";
+        int i3 = bArr[25] * 20;
+        this.h = i3;
+        boolean z10 = (bArr[0] & 32) != 0;
+        this.b = z10;
+        if (z10) {
+            this.f = n0.h(((bArr[11] & 255) | ((bArr[10] & 255) << 8)) / i3, 0.0f, 0.95f);
+        } else {
+            this.f = 0.85f;
+        }
+    }
+
+    public static void a(SpannableStringBuilder spannableStringBuilder, int i3, int i10, int i11, int i12, int i13) {
+        if (i3 != i10) {
+            spannableStringBuilder.setSpan(new ForegroundColorSpan((i3 >>> 8) | ((i3 & hs.e4) << 24)), i11, i12, i13 | 33);
+        }
+    }
+
+    public static void b(SpannableStringBuilder spannableStringBuilder, int i3, int i10, int i11, int i12, int i13) {
+        if (i3 != i10) {
+            int i14 = i13 | 33;
+            boolean z10 = (i3 & 1) != 0;
+            boolean z11 = (i3 & 2) != 0;
+            if (z10) {
+                if (z11) {
+                    spannableStringBuilder.setSpan(new StyleSpan(3), i11, i12, i14);
+                } else {
+                    spannableStringBuilder.setSpan(new StyleSpan(1), i11, i12, i14);
+                }
+            } else if (z11) {
+                spannableStringBuilder.setSpan(new StyleSpan(2), i11, i12, i14);
+            }
+            boolean z12 = (i3 & 4) != 0;
+            if (z12) {
+                spannableStringBuilder.setSpan(new UnderlineSpan(), i11, i12, i14);
+            }
+            if (z12 || z10 || z11) {
+                return;
+            }
+            spannableStringBuilder.setSpan(new StyleSpan(0), i11, i12, i14);
+        }
+    }
+
+    @Override // b4.m
+    public final /* synthetic */ d B(int i3, int i10, byte[] bArr) {
+        return g.a(this, bArr, i10);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // b4.m
+    public final void F(byte[] bArr, int i3, int i10, l lVar, k kVar) {
+        String y9;
+        int i11;
+        int i12;
+        y yVar = this.a;
+        yVar.L(i3 + i10, bArr);
+        yVar.N(i3);
+        int i13 = 1;
+        int i14 = 0;
+        int i15 = 2;
+        zb.f(yVar.a() >= 2);
+        int H = yVar.H();
+        if (H == 0) {
+            y9 = "";
+        } else {
+            int i16 = yVar.b;
+            Charset J = yVar.J();
+            int i17 = H - (yVar.b - i16);
+            if (J == null) {
+                J = StandardCharsets.UTF_8;
+            }
+            y9 = yVar.y(i17, J);
+        }
+        if (y9.isEmpty()) {
+            g0 g0Var = i0.b;
+            kVar.accept(new b4.a(-9223372036854775807L, -9223372036854775807L, s1.e));
+            return;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(y9);
+        b(spannableStringBuilder, this.c, 0, 0, spannableStringBuilder.length(), 16711680);
+        a(spannableStringBuilder, this.d, -1, 0, spannableStringBuilder.length(), 16711680);
+        int length = spannableStringBuilder.length();
+        String str = this.e;
+        if (str != "sans-serif") {
+            spannableStringBuilder.setSpan(new TypefaceSpan(str), 0, length, 16711713);
+        }
+        float f10 = this.f;
+        while (yVar.a() >= 8) {
+            int i18 = yVar.b;
+            int m10 = yVar.m();
+            int m11 = yVar.m();
+            if (m11 == 1937013100) {
+                zb.f(yVar.a() >= i15 ? i13 : i14);
+                int H2 = yVar.H();
+                int i19 = i14;
+                while (i19 < H2) {
+                    zb.f(yVar.a() >= 12 ? i13 : i14);
+                    int H3 = yVar.H();
+                    int H4 = yVar.H();
+                    yVar.O(i15);
+                    int i20 = i19;
+                    int A = yVar.A();
+                    yVar.O(i13);
+                    int m12 = yVar.m();
+                    if (H4 > spannableStringBuilder.length()) {
+                        StringBuilder m13 = p1.m(H4, "Truncating styl end (", ") to cueText.length() (");
+                        m13.append(spannableStringBuilder.length());
+                        m13.append(").");
+                        g2.a.l("Tx3gParser", m13.toString());
+                        H4 = spannableStringBuilder.length();
+                    }
+                    if (H3 >= H4) {
+                        g2.a.l("Tx3gParser", "Ignoring styl with start (" + H3 + ") >= end (" + H4 + ").");
+                        i12 = i20;
+                    } else {
+                        i12 = i20;
+                        int i21 = H4;
+                        b(spannableStringBuilder, A, this.c, H3, i21, 0);
+                        a(spannableStringBuilder, m12, this.d, H3, i21, 0);
+                    }
+                    i19 = i12 + 1;
+                    i13 = 1;
+                    i14 = 0;
+                    i15 = 2;
+                }
+                i11 = i15;
+            } else if (m11 == 1952608120 && this.b) {
+                i11 = 2;
+                zb.f(yVar.a() >= 2);
+                f10 = n0.h(yVar.H() / this.h, 0.0f, 0.95f);
+            } else {
+                i11 = 2;
+            }
+            yVar.N(i18 + m10);
+            i15 = i11;
+            i13 = 1;
+            i14 = 0;
+        }
+        kVar.accept(new b4.a(-9223372036854775807L, -9223372036854775807L, i0.u(new b(spannableStringBuilder, null, null, null, f10, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
+    }
+
+    @Override // b4.m
+    public final int Y() {
+        return 2;
+    }
+
+    @Override // b4.m
+    public final /* synthetic */ void reset() {
     }
 }

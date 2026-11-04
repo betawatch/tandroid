@@ -1,31 +1,107 @@
 package d2;
 
-import android.graphics.Bitmap;
-import android.text.Layout;
-import org.telegram.tgnet.TLObject;
+import android.net.Uri;
+import b8.zb;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
-    public CharSequence a = null;
-    public Bitmap b = null;
-    public Layout.Alignment c = null;
-    public Layout.Alignment d = null;
-    public float e = -3.4028235E38f;
-    public int f = TLObject.FLAG_31;
-    public int g = TLObject.FLAG_31;
-    public float h = -3.4028235E38f;
-    public int i = TLObject.FLAG_31;
-    public int j = TLObject.FLAG_31;
-    public float k = -3.4028235E38f;
-    public float l = -3.4028235E38f;
-    public final float m = -3.4028235E38f;
-    public final boolean n = false;
-    public final int o = -16777216;
-    public int p = TLObject.FLAG_31;
-    public float q;
+    public static final String i;
+    public static final String j;
+    public static final String k;
+    public static final String l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
+    public static final String q;
+    public static final String r;
+    public static final String s;
+    public static final String t;
+    public final int a;
+    public final int b;
+    public final Uri[] c;
+    public final n0[] d;
+    public final int[] e;
+    public final long[] f;
+    public final String[] g;
+    public final b[] h;
 
-    public final b a() {
-        return new b(this.a, this.c, this.d, this.b, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, 0);
+    static {
+        String str = g2.n0.a;
+        i = Integer.toString(0, 36);
+        j = Integer.toString(1, 36);
+        k = Integer.toString(2, 36);
+        l = Integer.toString(3, 36);
+        m = Integer.toString(4, 36);
+        n = Integer.toString(5, 36);
+        o = Integer.toString(6, 36);
+        p = Integer.toString(7, 36);
+        q = Integer.toString(8, 36);
+        r = Integer.toString(9, 36);
+        s = Integer.toString(10, 36);
+        t = Integer.toString(11, 36);
+    }
+
+    public a(int i3, int i10, int[] iArr, n0[] n0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
+        Uri uri;
+        int i11 = 0;
+        zb.f(iArr.length == n0VarArr.length);
+        zb.f(iArr.length == bVarArr.length);
+        this.a = i3;
+        this.b = i10;
+        this.e = iArr;
+        this.d = n0VarArr;
+        this.f = jArr;
+        this.c = new Uri[n0VarArr.length];
+        while (true) {
+            Uri[] uriArr = this.c;
+            if (i11 >= uriArr.length) {
+                this.g = strArr;
+                this.h = bVarArr;
+                return;
+            }
+            n0 n0Var = n0VarArr[i11];
+            if (n0Var == null) {
+                uri = null;
+            } else {
+                i0 i0Var = n0Var.b;
+                i0Var.getClass();
+                uri = i0Var.a;
+            }
+            uriArr[i11] = uri;
+            i11++;
+        }
+    }
+
+    public final int a(int i3) {
+        int i10;
+        int i11 = i3 + 1;
+        while (true) {
+            int[] iArr = this.e;
+            if (i11 >= iArr.length || (i10 = iArr[i11]) == 0 || i10 == 1) {
+                break;
+            }
+            i11++;
+        }
+        return i11;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || a.class != obj.getClass()) {
+            return false;
+        }
+        a aVar = (a) obj;
+        return this.a == aVar.a && this.b == aVar.b && Arrays.equals(this.d, aVar.d) && Arrays.equals(this.e, aVar.e) && Arrays.equals(this.f, aVar.f) && Arrays.equals(this.g, aVar.g) && Arrays.equals(this.h, aVar.h);
+    }
+
+    public final int hashCode() {
+        int i3 = ((this.a * 31) + this.b) * 31;
+        int i10 = (int) 0;
+        return (Arrays.hashCode(this.h) + ((((((Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + ((i3 + i10) * 31)) * 31)) * 31)) * 31) + i10) * 961) + Arrays.hashCode(this.g)) * 31)) * 31;
     }
 }

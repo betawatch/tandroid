@@ -1,88 +1,41 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rq implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class rq {
+    public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
+    public final LinearLayout b;
+    public final gn0 c;
 
-    public /* synthetic */ rq(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        TLRPC.UserStatus userStatus;
-        TLRPC.UserStatus userStatus2;
-        TLRPC.UserStatus userStatus3;
-        TLRPC.UserStatus userStatus4;
-        switch (this.a) {
-            case 0:
-                pr prVar = (pr) this.c;
-                prVar.getClass();
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
-                TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
-                long C1 = org.telegram.messenger.kj.C1(channelParticipant.peer);
-                long C12 = org.telegram.messenger.kj.C1(channelParticipant2.peer);
-                int i11 = this.b;
-                int i12 = -100;
-                if (C1 > 0) {
-                    TLRPC.User Z1 = prVar.getMessagesController().Z1(Long.valueOf(org.telegram.messenger.kj.C1(channelParticipant.peer)));
-                    i10 = (Z1 == null || (userStatus2 = Z1.status) == null) ? 0 : Z1.self ? i11 + 50000 : userStatus2.expires;
-                } else {
-                    i10 = -100;
-                }
-                if (C12 > 0) {
-                    TLRPC.User Z12 = prVar.getMessagesController().Z1(Long.valueOf(org.telegram.messenger.kj.C1(channelParticipant2.peer)));
-                    i12 = (Z12 == null || (userStatus = Z12.status) == null) ? 0 : Z12.self ? i11 + 50000 : userStatus.expires;
-                }
-                if (i10 <= 0 || i12 <= 0) {
-                    if (i10 >= 0 || i12 >= 0) {
-                        if ((i10 >= 0 || i12 <= 0) && (i10 != 0 || i12 == 0)) {
-                            if ((i12 >= 0 || i10 <= 0) && (i12 != 0 || i10 == 0)) {
-                            }
-                        }
-                    } else if (i10 <= i12) {
-                        if (i10 < i12) {
-                        }
-                    }
-                } else if (i10 <= i12) {
-                    if (i10 < i12) {
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.Components.z20 z20Var = (org.telegram.ui.Components.z20) this.c;
-                z20Var.getClass();
-                TLRPC.User Z13 = org.telegram.messenger.wp.r1(z20Var.a).Z1(Long.valueOf(org.telegram.messenger.kj.C1(((TLRPC.ChannelParticipant) ((TLObject) obj)).peer)));
-                TLRPC.User Z14 = org.telegram.messenger.wp.r1(z20Var.a).Z1(Long.valueOf(org.telegram.messenger.kj.C1(((TLRPC.ChannelParticipant) ((TLObject) obj2)).peer)));
-                int i13 = this.b;
-                int i14 = (Z13 == null || (userStatus4 = Z13.status) == null) ? 0 : Z13.self ? i13 + 50000 : userStatus4.expires;
-                int i15 = (Z14 == null || (userStatus3 = Z14.status) == null) ? 0 : Z14.self ? i13 + 50000 : userStatus3.expires;
-                if (i14 <= 0 || i15 <= 0) {
-                    if (i14 >= 0 || i15 >= 0) {
-                        if ((i14 >= 0 || i15 <= 0) && (i14 != 0 || i15 == 0)) {
-                            if ((i15 >= 0 || i14 <= 0) && (i15 != 0 || i14 == 0)) {
-                            }
-                        }
-                    } else if (i14 <= i15) {
-                        if (i14 < i15) {
-                        }
-                    }
-                } else if (i14 <= i15) {
-                    if (i14 < i15) {
-                    }
-                }
-                break;
+    public rq(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.xe0 xe0Var, gn0 gn0Var) {
+        this.c = gn0Var;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
+        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
+        org.telegram.ui.ActionBar.y0 c2 = org.telegram.ui.ActionBar.q0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, org.telegram.messenger.bd.M0(2131753756, null), false, null);
+        c2.setOnClickListener(new qq(xe0Var, 0));
+        c2.d(-328966, -328966);
+        c2.setSelectorColor(268435455);
+        View d2Var = new ai.d2(contextThemeWrapper, 12);
+        d2Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
+        d2Var.setBackgroundColor(-15198184);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(d2Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) d2Var.getLayoutParams();
+        if (org.telegram.messenger.bd.a0) {
+            layoutParams.gravity = 5;
         }
-        return 0;
+        layoutParams.width = -1;
+        layoutParams.height = org.telegram.messenger.g0.L(8.0f);
+        d2Var.setLayoutParams(layoutParams);
+        LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
+        this.b = linearLayout;
+        linearLayout.setOrientation(1);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(linearLayout);
     }
 }

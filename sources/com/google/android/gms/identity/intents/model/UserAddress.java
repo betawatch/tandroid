@@ -3,16 +3,15 @@ package com.google.android.gms.identity.intents.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import e6.p;
-import o6.a;
-import w7.h0;
+import f6.c0;
+import q6.a;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class UserAddress extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<UserAddress> CREATOR = new p(7);
-    public String D;
+    public static final Parcelable.Creator<UserAddress> CREATOR = new c0(11);
     public String E;
+    public String F;
     public String a;
     public String b;
     public String c;
@@ -28,25 +27,25 @@ public final class UserAddress extends a implements ReflectedParcelable {
     public boolean y;
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.l(parcel, 2, this.a);
-        h0.l(parcel, 3, this.b);
-        h0.l(parcel, 4, this.c);
-        h0.l(parcel, 5, this.d);
-        h0.l(parcel, 6, this.e);
-        h0.l(parcel, 7, this.f);
-        h0.l(parcel, 8, this.h);
-        h0.l(parcel, 9, this.n);
-        h0.l(parcel, 10, this.r);
-        h0.l(parcel, 11, this.s);
-        h0.l(parcel, 12, this.w);
-        h0.l(parcel, 13, this.x);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.m(parcel, 2, this.a);
+        j8.a.m(parcel, 3, this.b);
+        j8.a.m(parcel, 4, this.c);
+        j8.a.m(parcel, 5, this.d);
+        j8.a.m(parcel, 6, this.e);
+        j8.a.m(parcel, 7, this.f);
+        j8.a.m(parcel, 8, this.h);
+        j8.a.m(parcel, 9, this.n);
+        j8.a.m(parcel, 10, this.r);
+        j8.a.m(parcel, 11, this.s);
+        j8.a.m(parcel, 12, this.w);
+        j8.a.m(parcel, 13, this.x);
         boolean z10 = this.y;
-        h0.s(parcel, 14, 4);
+        j8.a.r(parcel, 14, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        h0.l(parcel, 15, this.D);
-        h0.l(parcel, 16, this.E);
-        h0.r(parcel, q6);
+        j8.a.m(parcel, 15, this.E);
+        j8.a.m(parcel, 16, this.F);
+        j8.a.t(parcel, s6);
     }
 }

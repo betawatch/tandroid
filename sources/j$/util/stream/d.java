@@ -73,20 +73,20 @@ public abstract class d extends CountedCompleter {
         boolean z10 = false;
         d dVar = this;
         while (estimateSize > j10 && (trySplit = spliterator.trySplit()) != null) {
-            d c10 = dVar.c(trySplit);
-            dVar.d = c10;
-            d c11 = dVar.c(spliterator);
-            dVar.e = c11;
+            d c2 = dVar.c(trySplit);
+            dVar.d = c2;
+            d c10 = dVar.c(spliterator);
+            dVar.e = c10;
             dVar.setPendingCount(1);
             if (z10) {
                 spliterator = trySplit;
-                dVar = c10;
-                c10 = c11;
+                dVar = c2;
+                c2 = c10;
             } else {
-                dVar = c11;
+                dVar = c10;
             }
             z10 = !z10;
-            c10.fork();
+            c2.fork();
             estimateSize = spliterator.estimateSize();
         }
         dVar.d(dVar.a());

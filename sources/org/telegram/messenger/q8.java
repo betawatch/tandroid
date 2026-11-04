@@ -1,36 +1,13 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_ephemeral;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w8 b;
-    public final /* synthetic */ TL_ephemeral.TL_sendMessage c;
-    public final /* synthetic */ Object[] d;
+public final class q8 {
+    public final String a;
+    public final String b;
 
-    public /* synthetic */ q8(w8 w8Var, TL_ephemeral.TL_sendMessage tL_sendMessage, Object[] objArr, int i10) {
-        this.a = i10;
-        this.b = w8Var;
-        this.c = tL_sendMessage;
-        this.d = objArr;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                rz sendMessagesHelper = this.b.getSendMessagesHelper();
-                Object[] objArr = this.d;
-                sendMessagesHelper.P(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (dz) objArr[4], ((Boolean) objArr[5]).booleanValue());
-                break;
-            default:
-                rz sendMessagesHelper2 = this.b.getSendMessagesHelper();
-                Object[] objArr2 = this.d;
-                sendMessagesHelper2.P(this.c, (ArrayList) objArr2[1], (ArrayList) objArr2[2], null, (dz) objArr2[4], ((Boolean) objArr2[5]).booleanValue());
-                break;
-        }
+    public q8(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 }

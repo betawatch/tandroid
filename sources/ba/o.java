@@ -1,0 +1,82 @@
+package ba;
+
+import android.util.Log;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class o implements d {
+    public static final Charset c = Charset.forName("UTF-8");
+    public final File a;
+    public m b;
+
+    public o(File file) {
+        this.a = file;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0085 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:5:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x007d  */
+    @Override // ba.d
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String D() {
+        n nVar;
+        byte[] bArr;
+        File file = this.a;
+        if (file.exists()) {
+            if (this.b == null) {
+                try {
+                    this.b = new m(file);
+                } catch (IOException e10) {
+                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e10);
+                }
+            }
+            m mVar = this.b;
+            if (mVar != null) {
+                int[] iArr = {0};
+                int i3 = 16;
+                if (mVar.c != 0) {
+                    j jVar = mVar.e;
+                    int i10 = jVar.a;
+                    int i11 = jVar.b;
+                    int i12 = mVar.d.a;
+                    i3 = i10 >= i12 ? 16 + (i10 - i12) + 4 + i11 : (((i10 + 4) + i11) + mVar.b) - i12;
+                }
+                byte[] bArr2 = new byte[i3];
+                try {
+                    mVar.a(new f(bArr2, iArr));
+                } catch (IOException e11) {
+                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e11);
+                }
+                nVar = new n(bArr2, iArr[0]);
+                if (nVar != null) {
+                    bArr = null;
+                } else {
+                    int i13 = nVar.a;
+                    bArr = new byte[i13];
+                    System.arraycopy(nVar.b, 0, bArr, 0, i13);
+                }
+                if (bArr == null) {
+                    return new String(bArr, c);
+                }
+                return null;
+            }
+        }
+        nVar = null;
+        if (nVar != null) {
+        }
+        if (bArr == null) {
+        }
+    }
+
+    @Override // ba.d
+    public final void b() {
+        z9.g.b(this.b, "There was a problem closing the Crashlytics log file.");
+        this.b = null;
+    }
+}

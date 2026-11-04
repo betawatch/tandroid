@@ -1,65 +1,14 @@
 package oh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.i0;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.u8;
+import u4.d1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b extends u8 {
-    public final /* synthetic */ int e;
+public final class b extends d1 {
+    public final c v;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(int i10, Context context, boolean z10) {
-        super(context, z10);
-        this.e = i10;
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.e) {
-            case 1:
-                if (!th.p.c) {
-                    super.invalidate();
-                    break;
-                } else {
-                    th.p.b.add(this);
-                    break;
-                }
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.u8, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.e) {
-            case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(i0.L(this.a.n == 0 ? 0 : i0.a.e(r4, 1, 20, 24)), TLObject.FLAG_30), i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate(int i10, int i11, int i12, int i13) {
-        switch (this.e) {
-            case 1:
-                if (th.p.c) {
-                    th.p.b.add(this);
-                    break;
-                } else {
-                    super.invalidate(i10, i11, i12, i13);
-                    break;
-                }
-            default:
-                super.invalidate(i10, i11, i12, i13);
-                break;
-        }
+    public b(c cVar) {
+        super(cVar);
+        this.v = cVar;
     }
 }

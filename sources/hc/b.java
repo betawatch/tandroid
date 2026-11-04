@@ -1,6 +1,41 @@
 package hc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.nio.ByteBuffer;
+import org.telegram.ui.Components.i9;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class b {
+public final class b extends a {
+    public static final /* synthetic */ i9 n;
+    public static final /* synthetic */ i9 r;
+
+    static {
+        we.a aVar = new we.a(b.class, "ESDescriptorBox.java");
+        aVar.e(aVar.d("getEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor"));
+        aVar.e(aVar.d("setEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor", "esDescriptor", "void"));
+        n = aVar.e(aVar.d("equals", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "java.lang.Object", "o", "boolean"));
+        r = aVar.e(aVar.d("hashCode", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "int"));
+    }
+
+    public final boolean equals(Object obj) {
+        com.google.android.recaptcha.internal.a.t(we.a.c(n, this, this, obj));
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || b.class != obj.getClass()) {
+            return false;
+        }
+        ByteBuffer byteBuffer = this.e;
+        ByteBuffer byteBuffer2 = ((b) obj).e;
+        return byteBuffer != null ? byteBuffer.equals(byteBuffer2) : byteBuffer2 == null;
+    }
+
+    public final int hashCode() {
+        com.google.android.recaptcha.internal.a.t(we.a.b(r, this, this));
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer != null) {
+            return byteBuffer.hashCode();
+        }
+        return 0;
+    }
 }

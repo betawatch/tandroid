@@ -1,78 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a70 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
+public final /* synthetic */ class a70 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b70 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ a70(Context context, so0 so0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, cc ccVar, org.telegram.messenger.video.d dVar, int i10) {
-        this.b = context;
-        this.e = so0Var;
-        this.c = j10;
-        this.f = bArr;
-        this.g = aVar;
-        this.h = ccVar;
-        this.i = dVar;
-        this.d = i10;
+    public /* synthetic */ a70(b70 b70Var, boolean z10, boolean z11, int i3) {
+        this.a = i3;
+        this.b = b70Var;
+        this.c = z10;
+        this.d = z11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.i0.g3(new d70((org.telegram.ui.ActionBar.x1) this.e, tLObject, (org.telegram.messenger.c) this.f, (i70) this.g, this.c, this.b, (org.telegram.ui.ActionBar.k2) this.h, this.d, (TLRPC.Peer) this.i));
+                org.telegram.messenger.g0.h3(new a70(this.b, this.c, this.d, 1));
                 break;
             default:
-                so0 so0Var = (so0) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
-                cc ccVar = (cc) this.h;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
-                Context context = this.b;
-                if (tLObject == null) {
-                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        org.telegram.messenger.i0.h3(new org.telegram.ui.tz0(aVar, ccVar, context, so0Var, 1), 200L);
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
-                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
-                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            org.telegram.messenger.i0.h3(new ki0(aVar, ccVar, this.d, 28), 200L);
-                            break;
-                        }
-                    } else {
-                        org.telegram.messenger.i0.h3(new org.telegram.ui.tz0(aVar, ccVar, context, so0Var, 0), 200L);
-                        break;
-                    }
-                } else {
-                    org.telegram.messenger.i0.g3(new org.telegram.messenger.f10(tLObject, context, so0Var, this.c, bArr, aVar, ccVar, dVar, 2));
-                    break;
-                }
+                b70 b70Var = this.b;
+                b70Var.setJoinRequest(this.c);
+                b70Var.setJoinToSend(this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ a70(org.telegram.ui.ActionBar.x1 x1Var, org.telegram.messenger.c cVar, i70 i70Var, long j10, Context context, org.telegram.ui.ActionBar.k2 k2Var, int i10, TLRPC.Peer peer) {
-        this.e = x1Var;
-        this.f = cVar;
-        this.g = i70Var;
-        this.c = j10;
-        this.b = context;
-        this.h = k2Var;
-        this.d = i10;
-        this.i = peer;
     }
 }

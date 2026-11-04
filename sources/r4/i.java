@@ -1,113 +1,60 @@
 package r4;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import c0.m;
-import java.io.File;
-import java.io.IOException;
+import android.media.MediaRouter2$RouteCallback;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final m a = new m();
-    public static final Object b = new Object();
-    public static kb.a c = null;
+public final class i extends MediaRouter2$RouteCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k b;
 
-    public static long a(Context context) {
-        PackageManager packageManager = context.getApplicationContext().getPackageManager();
-        return Build.VERSION.SDK_INT >= 33 ? g.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
+    public /* synthetic */ i(k kVar, int i3) {
+        this.a = i3;
+        this.b = kVar;
     }
 
-    public static kb.a b() {
-        kb.a aVar = new kb.a(19);
-        c = aVar;
-        a.k(aVar);
-        return c;
+    public void onRoutesAdded(List list) {
+        switch (this.a) {
+            case 0:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesAdded(list);
+                break;
+        }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(21:14|(1:80)(1:18)|19|(1:79)(1:23)|24|25|26|(2:64|65)(1:28)|29|(9:36|(1:40)|(1:47)|48|(2:56|57)|52|53|54|55)|(1:63)|(1:40)|(3:42|45|47)|48|(1:50)|56|57|52|53|54|55) */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x009e, code lost:
-    
-        r6 = 1;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void c(Context context, boolean z10) {
-        h a2;
-        h hVar;
-        int i10;
-        if (z10 || c == null) {
-            synchronized (b) {
-                if (!z10) {
-                    try {
-                        if (c != null) {
-                            return;
-                        }
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
-                }
-                int i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 28 && i11 != 30) {
-                    File file = new File(new File("/data/misc/profiles/ref/", context.getPackageName()), "primary.prof");
-                    long length = file.length();
-                    int i12 = 0;
-                    boolean z11 = file.exists() && length > 0;
-                    File file2 = new File(new File("/data/misc/profiles/cur/0/", context.getPackageName()), "primary.prof");
-                    long length2 = file2.length();
-                    boolean z12 = file2.exists() && length2 > 0;
-                    try {
-                        long a10 = a(context);
-                        File file3 = new File(context.getFilesDir(), "profileInstalled");
-                        if (file3.exists()) {
-                            try {
-                                a2 = h.a(file3);
-                            } catch (IOException unused) {
-                                b();
-                                return;
-                            }
-                        } else {
-                            a2 = null;
-                        }
-                        if (a2 != null && a2.c == a10 && (i10 = a2.b) != 2) {
-                            i12 = i10;
-                            if (z10 && z12 && i12 != 1) {
-                                i12 = 2;
-                            }
-                            if (a2 != null && a2.b == 2 && i12 == 1 && length < a2.d) {
-                                i12 = 3;
-                            }
-                            hVar = new h(a10, length2, 1, i12);
-                            if (a2 != null || !a2.equals(hVar)) {
-                                hVar.b(file3);
-                            }
-                            b();
-                            return;
-                        }
-                        if (z12) {
-                            i12 = 2;
-                        }
-                        if (z10) {
-                            i12 = 2;
-                        }
-                        if (a2 != null) {
-                            i12 = 3;
-                        }
-                        hVar = new h(a10, length2, 1, i12);
-                        if (a2 != null) {
-                        }
-                        hVar.b(file3);
-                        b();
-                        return;
-                    } catch (PackageManager.NameNotFoundException unused2) {
-                        b();
-                        return;
-                    }
-                }
-                b();
-            }
+    public void onRoutesChanged(List list) {
+        switch (this.a) {
+            case 0:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesChanged(list);
+                break;
+        }
+    }
+
+    public void onRoutesRemoved(List list) {
+        switch (this.a) {
+            case 0:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesRemoved(list);
+                break;
+        }
+    }
+
+    public void onRoutesUpdated(List list) {
+        switch (this.a) {
+            case 1:
+                this.b.q();
+                break;
+            default:
+                super.onRoutesUpdated(list);
+                break;
         }
     }
 }

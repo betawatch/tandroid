@@ -1,26 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class z00 extends q30 {
-    public final /* synthetic */ FragmentContextView I;
+public final class z00 extends FrameLayout {
+    public View a;
+    public TextView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z00(FragmentContextView fragmentContextView, Context context) {
-        super(6, context, null, true);
-        this.I = fragmentContextView;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.view.View
-    public final void setVisibility(int i10) {
-        super.setVisibility(i10);
-        if (i10 != 0) {
-            try {
-                this.I.C0.removeView(this);
-            } catch (Exception unused) {
-            }
-        }
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

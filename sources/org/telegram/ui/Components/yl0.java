@@ -1,15 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public interface yl0 {
-    void D();
+public final class yl0 extends u4.k {
+    public final /* synthetic */ org.telegram.ui.cw F;
 
-    void E0(float f7);
+    public yl0(org.telegram.ui.cw cwVar) {
+        this.F = cwVar;
+    }
 
-    boolean G1(int i10, View view);
-
-    void d(int i10, boolean z10);
+    @Override // u4.k
+    public final void P(u4.d1 d1Var) {
+        this.F.invalidate();
+    }
 }

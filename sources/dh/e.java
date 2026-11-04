@@ -1,57 +1,47 @@
 package dh;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.tgnet.TLRPC;
-import s4.c1;
-import s4.g0;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+import org.telegram.messenger.u10;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class e extends g0 implements GroupCallMessagesController.CallMessageListener {
-    public List c;
-    public boolean d;
-    public int e;
-    public TLRPC.InputGroupCall f;
+public final class e extends ImageView {
+    public long a;
+    public final /* synthetic */ f b;
 
-    @Override // s4.g0
-    public final int b() {
-        List list = this.c;
-        if (list != null) {
-            return list.size();
-        }
-        return 0;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e(f fVar, Context context) {
+        super(context);
+        this.b = fVar;
+        this.a = 0L;
     }
 
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onNewGroupCallMessage(long j10, GroupCallMessage groupCallMessage) {
-        if (this.c == null) {
-            this.c = new ArrayList();
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        u10 u10Var;
+        int action = motionEvent.getAction();
+        f fVar = this.b;
+        if (action == 0) {
+            if (System.currentTimeMillis() < this.a + 350) {
+                return false;
+            }
+            this.a = System.currentTimeMillis();
+            fVar.b = true;
+            fVar.c = false;
+            org.telegram.messenger.g0.i3(new cg.l0(fVar, 350, 2), 350);
+        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+            fVar.b = false;
+            if (!fVar.c && (u10Var = fVar.d) != null) {
+                u10Var.a(Boolean.FALSE);
+                try {
+                    fVar.a.performHapticFeedback(3);
+                } catch (Exception unused) {
+                }
+            }
         }
-        this.c.add(0, groupCallMessage);
-        i(0);
-    }
-
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onPopGroupCallMessage() {
-        List list = this.c;
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        int size = this.c.size() - 1;
-        this.c.remove(size);
-        s(size);
-    }
-
-    @Override // s4.g0
-    public final void t(c1 c1Var, int i10) {
-        c cVar = (c) c1Var;
-        List list = this.c;
-        if (list == null || list.size() <= i10) {
-            return;
-        }
-        ((d) cVar.a).set((GroupCallMessage) this.c.get(i10));
+        super.onTouchEvent(motionEvent);
+        return true;
     }
 }

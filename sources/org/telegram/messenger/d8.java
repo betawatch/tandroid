@@ -1,65 +1,282 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ d8(int i10, Throwable th2) {
-        this.a = i10;
-        this.b = th2;
+    public /* synthetic */ d8(f8 f8Var, long j10, int i3, int i10, String str, int i11) {
+        this.f = f8Var;
+        this.c = j10;
+        this.b = i3;
+        this.d = i10;
+        this.h = str;
+        this.e = i11;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:40:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01cd  */
+    /* JADX WARN: Removed duplicated region for block: B:87:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x01d7  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x01dc  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        int i10 = this.a;
-        int i11 = 0;
-        Throwable th2 = this.b;
-        switch (i10) {
+        SQLitePreparedStatement sQLitePreparedStatement;
+        SQLitePreparedStatement sQLitePreparedStatement2;
+        SQLitePreparedStatement executeFast;
+        SQLitePreparedStatement sQLitePreparedStatement3;
+        SQLiteCursor sQLiteCursor;
+        SQLitePreparedStatement executeFast2;
+        long j10;
+        SQLiteCursor queryFinalized;
+        TLRPC.MessageReplies messageReplies;
+        NativeByteBuffer byteBufferValue;
+        int i3 = this.a;
+        int i10 = this.e;
+        Serializable serializable = this.h;
+        int i11 = this.d;
+        long j11 = this.c;
+        int i12 = this.b;
+        Object obj = this.f;
+        switch (i3) {
             case 0:
-                try {
-                    f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " E/tmessages: " + th2 + "\n");
-                    StackTraceElement[] stackTrace = th2.getStackTrace();
-                    for (int i12 = 0; i12 < stackTrace.length; i12++) {
-                        f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace[i12] + "\n");
-                    }
-                    Throwable cause = th2.getCause();
-                    if (cause != null) {
-                        f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause + "\n");
-                        StackTraceElement[] stackTrace2 = cause.getStackTrace();
-                        while (i11 < stackTrace2.length) {
-                            f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace2[i11] + "\n");
-                            i11++;
-                        }
-                    }
-                    f8.j().a.flush();
-                    break;
-                } catch (Exception e) {
-                    e.printStackTrace();
+                f8 f8Var = (f8) obj;
+                String str = (String) serializable;
+                ConcurrentHashMap concurrentHashMap = f8Var.f;
+                boolean z10 = r2.a;
+                a8.b("put file path id=" + j11 + " dc=" + i12 + " type=" + i11 + " path=" + str);
+                f8Var.c();
+                SQLiteDatabase sQLiteDatabase = f8Var.c;
+                if (sQLiteDatabase == null) {
+                    return;
                 }
+                try {
+                    if (str != null) {
+                        sQLitePreparedStatement = sQLiteDatabase.executeFast("DELETE FROM paths WHERE path = ?");
+                        try {
+                            sQLitePreparedStatement.bindString(1, str);
+                            sQLitePreparedStatement.step();
+                            executeFast = f8Var.c.executeFast("REPLACE INTO paths VALUES(?, ?, ?, ?, ?)");
+                        } catch (SQLiteException e10) {
+                            e = e10;
+                            sQLitePreparedStatement2 = null;
+                            try {
+                                a8.g(e, true);
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                                if (sQLitePreparedStatement2 == null) {
+                                    return;
+                                }
+                                sQLitePreparedStatement2.dispose();
+                                return;
+                            } catch (Throwable th2) {
+                                th = th2;
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                }
+                                if (sQLitePreparedStatement2 != null) {
+                                    sQLitePreparedStatement2.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (Throwable th3) {
+                            th = th3;
+                            sQLitePreparedStatement2 = null;
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            if (sQLitePreparedStatement2 != null) {
+                            }
+                            throw th;
+                        }
+                        try {
+                            executeFast.requery();
+                            executeFast.bindLong(1, j11);
+                            executeFast.bindInteger(2, i12);
+                            executeFast.bindInteger(3, i11);
+                            executeFast.bindString(4, str);
+                            executeFast.bindInteger(5, i10);
+                            executeFast.step();
+                            executeFast.dispose();
+                            concurrentHashMap.put(j11 + "_" + i12 + "_" + i11, str);
+                            sQLitePreparedStatement2 = executeFast;
+                        } catch (SQLiteException e11) {
+                            e = e11;
+                            sQLitePreparedStatement2 = executeFast;
+                            a8.g(e, true);
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            if (sQLitePreparedStatement2 == null) {
+                            }
+                            sQLitePreparedStatement2.dispose();
+                            return;
+                        } catch (Throwable th4) {
+                            th = th4;
+                            sQLitePreparedStatement2 = executeFast;
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            if (sQLitePreparedStatement2 != null) {
+                            }
+                            throw th;
+                        }
+                    } else {
+                        sQLiteDatabase.executeFast("DELETE FROM paths WHERE document_id = " + j11 + " AND dc_id = " + i12 + " AND type = " + i11).stepThis().dispose();
+                        concurrentHashMap.put(j11 + "_" + i12 + "_" + i11, "~null~");
+                        sQLitePreparedStatement = null;
+                        sQLitePreparedStatement2 = null;
+                    }
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    if (sQLitePreparedStatement2 == null) {
+                        return;
+                    }
+                } catch (SQLiteException e12) {
+                    e = e12;
+                    sQLitePreparedStatement = null;
+                } catch (Throwable th5) {
+                    th = th5;
+                    sQLitePreparedStatement = null;
+                }
+                sQLitePreparedStatement2.dispose();
+                return;
             default:
+                qr qrVar = (qr) obj;
+                ArrayList<TLRPC.Peer> arrayList = (ArrayList) serializable;
+                qrVar.getClass();
                 try {
-                    f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: " + th2 + "\n");
-                    StackTraceElement[] stackTrace3 = th2.getStackTrace();
-                    for (int i13 = 0; i13 < stackTrace3.length; i13++) {
-                        f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " FATAL/tmessages: \tat " + stackTrace3[i13] + "\n");
-                    }
-                    Throwable cause2 = th2.getCause();
-                    if (cause2 != null) {
-                        f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " E/tmessages: Caused by " + cause2 + "\n");
-                        StackTraceElement[] stackTrace4 = cause2.getStackTrace();
-                        while (i11 < stackTrace4.length) {
-                            f8.j().a.write(f8.j().b.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTrace4[i11] + "\n");
-                            i11++;
-                        }
-                    }
-                    f8.j().a.flush();
-                } catch (Exception e7) {
-                    e7.printStackTrace();
+                    executeFast2 = qrVar.b.executeFast("UPDATE messages_v2 SET replies_data = ? WHERE mid = ? AND uid = ?");
+                } catch (Exception e13) {
+                    e = e13;
+                    sQLitePreparedStatement3 = null;
+                } catch (Throwable th6) {
+                    th = th6;
+                    sQLitePreparedStatement3 = null;
                 }
-                boolean z10 = v2.a;
+                try {
+                    SQLiteDatabase sQLiteDatabase2 = qrVar.b;
+                    Locale locale = Locale.ENGLISH;
+                    j10 = -j11;
+                    queryFinalized = sQLiteDatabase2.queryFinalized("SELECT replies_data FROM messages_v2 WHERE mid = " + i12 + " AND uid = " + j10, new Object[0]);
+                } catch (Exception e14) {
+                    e = e14;
+                    sQLitePreparedStatement3 = executeFast2;
+                    sQLiteCursor = null;
+                    try {
+                        qrVar.o(e, true);
+                        if (sQLitePreparedStatement3 != null) {
+                            sQLitePreparedStatement3.dispose();
+                        }
+                        if (sQLiteCursor == null) {
+                            sQLiteCursor.dispose();
+                            return;
+                        }
+                        return;
+                    } catch (Throwable th7) {
+                        th = th7;
+                        if (sQLitePreparedStatement3 != null) {
+                            sQLitePreparedStatement3.dispose();
+                        }
+                        if (sQLiteCursor != null) {
+                            sQLiteCursor.dispose();
+                        }
+                        throw th;
+                    }
+                } catch (Throwable th8) {
+                    th = th8;
+                    sQLitePreparedStatement3 = executeFast2;
+                    sQLiteCursor = null;
+                    if (sQLitePreparedStatement3 != null) {
+                    }
+                    if (sQLiteCursor != null) {
+                    }
+                    throw th;
+                }
+                try {
+                    if (!queryFinalized.next() || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
+                        messageReplies = null;
+                    } else {
+                        messageReplies = TLRPC.MessageReplies.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                        byteBufferValue.reuse();
+                    }
+                    queryFinalized.dispose();
+                    if (messageReplies != null) {
+                        int i13 = messageReplies.replies + i11;
+                        messageReplies.replies = i13;
+                        if (i13 < 0) {
+                            messageReplies.replies = 0;
+                        }
+                        if (arrayList != null) {
+                            messageReplies.recent_repliers = arrayList;
+                            messageReplies.flags |= 2;
+                        }
+                        if (i10 != 0) {
+                            messageReplies.max_id = i10;
+                        }
+                        executeFast2.requery();
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(messageReplies.getObjectSize());
+                        messageReplies.serializeToStream(nativeByteBuffer);
+                        executeFast2.bindByteBuffer(1, nativeByteBuffer);
+                        executeFast2.bindInteger(2, i12);
+                        executeFast2.bindLong(3, j10);
+                        executeFast2.step();
+                        nativeByteBuffer.reuse();
+                    }
+                    executeFast2.dispose();
+                    return;
+                } catch (Exception e15) {
+                    e = e15;
+                    sQLiteCursor = queryFinalized;
+                    sQLitePreparedStatement3 = executeFast2;
+                    qrVar.o(e, true);
+                    if (sQLitePreparedStatement3 != null) {
+                    }
+                    if (sQLiteCursor == null) {
+                    }
+                } catch (Throwable th9) {
+                    th = th9;
+                    sQLiteCursor = queryFinalized;
+                    sQLitePreparedStatement3 = executeFast2;
+                    if (sQLitePreparedStatement3 != null) {
+                    }
+                    if (sQLiteCursor != null) {
+                    }
+                    throw th;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ d8(qr qrVar, int i3, long j10, int i10, ArrayList arrayList, int i11) {
+        this.f = qrVar;
+        this.b = i3;
+        this.c = j10;
+        this.d = i10;
+        this.h = arrayList;
+        this.e = i11;
     }
 }

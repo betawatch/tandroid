@@ -1,44 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class z61 extends org.telegram.ui.Components.a51 {
-    public static final /* synthetic */ int c = 0;
-    public m.p3 b;
+public final class z61 extends eq0 {
+    public final /* synthetic */ org.telegram.messenger.ye a;
+    public final /* synthetic */ a71 b;
 
-    static {
-        org.telegram.ui.Components.a51.h(new z61());
+    public z61(a71 a71Var, org.telegram.messenger.ye yeVar) {
+        this.b = a71Var;
+        this.a = yeVar;
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final void a(org.telegram.ui.Components.uk0 uk0Var, View view, org.telegram.ui.Components.b51 b51Var) {
-        ((org.telegram.ui.Cells.s7) view).l(b51Var != null && b51Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, org.telegram.ui.Components.b51 b51Var, boolean z10, org.telegram.ui.Components.q51 q51Var, org.telegram.ui.Components.v51 v51Var) {
-        org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) view;
-        s7Var.k((org.telegram.messenger.kj) b51Var.G, b51Var.v, false);
-        s7Var.i(b51Var.e, false);
-        s7Var.l(b51Var.h, false);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, org.telegram.ui.Components.uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        if (this.b == null) {
-            this.b = new m.p3(context, p6Var);
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final void o(int i3, org.telegram.messenger.b20 b20Var, boolean z10, int i10, int i11, boolean z11) {
+        l71 l71Var = this.b.a;
+        org.telegram.messenger.ye yeVar = this.a;
+        if (yeVar.h != null) {
+            File file = new File(org.telegram.messenger.w7.z(4), Utilities.b.nextInt() + ".jpg");
+            Point c12 = org.telegram.messenger.g0.c1();
+            Bitmap K = org.telegram.messenger.zb.K(yeVar.h, null, (float) c12.x, (float) c12.y, true);
+            try {
+                K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
+            } catch (FileNotFoundException e10) {
+                e10.printStackTrace();
+            }
+            File file2 = new File(yeVar.h);
+            l71Var.D1 = new lc1(file2, file2, "");
+            l71Var.E1 = K;
+            l71Var.d2 = 0;
+            l71Var.z0.requestLayout();
+            l71Var.g1(false);
+            l71Var.y1 = null;
+            l71Var.n1();
         }
-        org.telegram.ui.Cells.s7 s7Var = new org.telegram.ui.Cells.s7(context, this.b, i10);
-        s7Var.w0 = true;
-        s7Var.d0 = true;
-        return s7Var;
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final boolean e(org.telegram.ui.Components.b51 b51Var, org.telegram.ui.Components.b51 b51Var2) {
-        return b51Var.q == b51Var2.q && b51Var.e == b51Var2.e && b51Var.B == b51Var2.B;
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final boolean z() {
+        return false;
     }
 }

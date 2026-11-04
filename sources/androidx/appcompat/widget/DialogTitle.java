@@ -7,17 +7,17 @@ import android.text.Layout;
 import android.util.AttributeSet;
 import m.z0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class DialogTitle extends z0 {
-    public DialogTitle(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
+    public DialogTitle(Context context, AttributeSet attributeSet, int i3) {
+        super(context, attributeSet, i3);
     }
 
     @Override // m.z0, android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i3, int i10) {
         int lineCount;
-        super.onMeasure(i10, i11);
+        super.onMeasure(i3, i10);
         Layout layout = getLayout();
         if (layout == null || (lineCount = layout.getLineCount()) <= 0 || layout.getEllipsisCount(lineCount - 1) <= 0) {
             return;
@@ -30,7 +30,7 @@ public class DialogTitle extends z0 {
             setTextSize(0, dimensionPixelSize);
         }
         obtainStyledAttributes.recycle();
-        super.onMeasure(i10, i11);
+        super.onMeasure(i3, i10);
     }
 
     public DialogTitle(Context context, AttributeSet attributeSet) {

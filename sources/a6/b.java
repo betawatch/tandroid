@@ -1,174 +1,138 @@
 package a6;
 
-import android.accounts.Account;
+import a9.y0;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.net.Uri;
-import android.text.TextUtils;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import android.os.Bundle;
+import android.os.Looper;
+import c8.f;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Scope;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.locks.ReentrantLock;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import com.google.android.gms.internal.clearcut.y1;
+import e6.e;
+import i6.s;
+import i6.v;
+import i6.w;
+import k7.g;
+import kotlin.jvm.internal.j;
+import m.o3;
+import org.telegram.messenger.hs;
+import p6.m;
+import p6.q;
+import p7.m1;
+import x8.o;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b {
-    public static final ReentrantLock c = new ReentrantLock();
-    public static b d;
-    public final ReentrantLock a = new ReentrantLock();
-    public final SharedPreferences b;
+    public final /* synthetic */ int a;
 
-    public b(Context context) {
-        this.b = context.getSharedPreferences("com.google.android.gms.signin", 0);
+    public /* synthetic */ b(int i3) {
+        this.a = i3;
     }
 
-    public static b a(Context context) {
-        n6.l.g(context);
-        ReentrantLock reentrantLock = c;
-        reentrantLock.lock();
-        try {
-            if (d == null) {
-                d = new b(context.getApplicationContext());
-            }
-            b bVar = d;
-            reentrantLock.unlock();
-            return bVar;
-        } catch (Throwable th2) {
-            reentrantLock.unlock();
-            throw th2;
-        }
-    }
-
-    public static final String f(String str, String str2) {
-        return a1.g.C(str, ":", str2);
-    }
-
-    public final GoogleSignInAccount b() {
-        String d10;
-        String d11 = d("defaultGoogleSignInAccount");
-        if (!TextUtils.isEmpty(d11) && (d10 = d(f("googleSignInAccount", d11))) != null) {
-            try {
-                return GoogleSignInAccount.b(d10);
-            } catch (JSONException unused) {
-            }
-        }
-        return null;
-    }
-
-    public final void c(GoogleSignInAccount googleSignInAccount, GoogleSignInOptions googleSignInOptions) {
-        n6.l.g(googleSignInAccount);
-        n6.l.g(googleSignInOptions);
-        String str = googleSignInAccount.r;
-        e("defaultGoogleSignInAccount", str);
-        String f7 = f("googleSignInAccount", str);
-        JSONObject jSONObject = new JSONObject();
-        try {
-            String str2 = googleSignInAccount.b;
-            if (str2 != null) {
-                jSONObject.put("id", str2);
-            }
-            String str3 = googleSignInAccount.c;
-            if (str3 != null) {
-                jSONObject.put("tokenId", str3);
-            }
-            String str4 = googleSignInAccount.d;
-            if (str4 != null) {
-                jSONObject.put("email", str4);
-            }
-            String str5 = googleSignInAccount.e;
-            if (str5 != null) {
-                jSONObject.put("displayName", str5);
-            }
-            String str6 = googleSignInAccount.w;
-            if (str6 != null) {
-                jSONObject.put("givenName", str6);
-            }
-            String str7 = googleSignInAccount.x;
-            if (str7 != null) {
-                jSONObject.put("familyName", str7);
-            }
-            Uri uri = googleSignInAccount.f;
-            if (uri != null) {
-                jSONObject.put("photoUrl", uri.toString());
-            }
-            String str8 = googleSignInAccount.h;
-            if (str8 != null) {
-                jSONObject.put("serverAuthCode", str8);
-            }
-            jSONObject.put("expirationTime", googleSignInAccount.n);
-            jSONObject.put("obfuscatedIdentifier", str);
-            JSONArray jSONArray = new JSONArray();
-            List list = googleSignInAccount.s;
-            Scope[] scopeArr = (Scope[]) list.toArray(new Scope[list.size()]);
-            Arrays.sort(scopeArr, z5.c.b);
-            int i10 = 0;
-            for (Scope scope : scopeArr) {
-                jSONArray.put(scope.b);
-            }
-            jSONObject.put("grantedScopes", jSONArray);
-            jSONObject.remove("serverAuthCode");
-            e(f7, jSONObject.toString());
-            String f10 = f("googleSignInOptions", str);
-            String str9 = googleSignInOptions.n;
-            String str10 = googleSignInOptions.h;
-            ArrayList arrayList = googleSignInOptions.b;
-            JSONObject jSONObject2 = new JSONObject();
-            try {
-                JSONArray jSONArray2 = new JSONArray();
-                Collections.sort(arrayList, GoogleSignInOptions.F);
-                int size = arrayList.size();
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    jSONArray2.put(((Scope) obj).b);
+    public c a(Context context, Looper looper, o3 commonSettings, Object obj, k kVar, l lVar) {
+        switch (this.a) {
+            case 2:
+                e eVar = (e) obj;
+                m.h(eVar, "Setting the API options is required.");
+                return new w(context, looper, commonSettings, eVar.a, 0, eVar.c, eVar.d, kVar, lVar);
+            case 3:
+                e eVar2 = (e) obj;
+                m.h(eVar2, "Setting the API options is required.");
+                return new v(context, looper, commonSettings, eVar2.a, 0, eVar2.b, eVar2.c, kVar, lVar);
+            case 4:
+                return new s(context, looper, hs.r2, commonSettings, kVar, lVar, 0);
+            case 5:
+            case 7:
+            case 8:
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+            default:
+                switch (this.a) {
+                    case 0:
+                        return new l7.e(context, looper, hs.K1, commonSettings, kVar, lVar, 0);
+                    case 1:
+                        com.google.android.gms.common.api.a apiOptions = (com.google.android.gms.common.api.a) obj;
+                        j.e(context, "context");
+                        j.e(looper, "looper");
+                        j.e(commonSettings, "commonSettings");
+                        j.e(apiOptions, "apiOptions");
+                        return new f(context, looper, 380, commonSettings, kVar, lVar, 0);
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 10:
+                    case 11:
+                    case 12:
+                    default:
+                        throw new UnsupportedOperationException("buildClient must be implemented");
+                    case 5:
+                        com.google.android.gms.common.api.a apiOptions2 = (com.google.android.gms.common.api.a) obj;
+                        j.e(context, "context");
+                        j.e(looper, "looper");
+                        j.e(commonSettings, "commonSettings");
+                        j.e(apiOptions2, "apiOptions");
+                        return new j7.e(context, looper, 352, commonSettings, kVar, lVar, 0);
+                    case 7:
+                        return new k7.c(context, looper, kVar, lVar, commonSettings);
+                    case 8:
+                        return new n7.b(context, looper, 457, commonSettings, kVar, lVar, 0);
+                    case 13:
+                        return new r6.a(context, looper, 449, commonSettings, kVar, lVar, 0);
+                    case 14:
+                        return new r6.e(context, looper, commonSettings, (q) obj, kVar, lVar);
+                    case 15:
+                        return new r7.b(context, looper, 19, commonSettings, kVar, lVar, 0);
+                    case 16:
+                        return new t7.k(context, looper, kVar, lVar, commonSettings);
+                    case 17:
+                        return new u6.f(context, looper, hs.f5, commonSettings, kVar, lVar, 0);
                 }
-                jSONObject2.put("scopes", jSONArray2);
-                Account account = googleSignInOptions.c;
-                if (account != null) {
-                    jSONObject2.put("accountName", account.name);
+            case 6:
+                return new y1(context, looper, 40, commonSettings, kVar, lVar, 0);
+            case 9:
+                return new d8.a(context, looper, kVar, lVar, commonSettings);
+            case 10:
+                return new m1(context, looper, hs.e2, commonSettings, kVar, lVar, 0);
+            case 11:
+                commonSettings.getClass();
+                Integer num = (Integer) commonSettings.g;
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("com.google.android.gms.signin.internal.clientRequestedAccount", null);
+                if (num != null) {
+                    bundle.putInt("com.google.android.gms.common.internal.ClientSettings.sessionId", num.intValue());
                 }
-                jSONObject2.put("idTokenRequested", googleSignInOptions.d);
-                jSONObject2.put("forceCodeForRefreshToken", googleSignInOptions.f);
-                jSONObject2.put("serverAuthRequested", googleSignInOptions.e);
-                if (!TextUtils.isEmpty(str10)) {
-                    jSONObject2.put("serverClientId", str10);
+                bundle.putBoolean("com.google.android.gms.signin.internal.offlineAccessRequested", false);
+                bundle.putBoolean("com.google.android.gms.signin.internal.idTokenRequested", false);
+                bundle.putString("com.google.android.gms.signin.internal.serverClientId", null);
+                bundle.putBoolean("com.google.android.gms.signin.internal.usePromptModeForAuthCode", true);
+                bundle.putBoolean("com.google.android.gms.signin.internal.forceCodeForRefreshToken", false);
+                bundle.putString("com.google.android.gms.signin.internal.hostedDomain", null);
+                bundle.putString("com.google.android.gms.signin.internal.logSessionId", null);
+                bundle.putBoolean("com.google.android.gms.signin.internal.waitForAccessTokenRefresh", false);
+                return new q8.a(context, looper, commonSettings, bundle, kVar, lVar);
+            case 12:
+                obj.getClass();
+                throw new ClassCastException();
+            case 18:
+                o oVar = (o) obj;
+                if (oVar == null) {
+                    oVar = new o(new a7.l());
                 }
-                if (!TextUtils.isEmpty(str9)) {
-                    jSONObject2.put("hostedDomain", str9);
-                }
-                e(f10, jSONObject2.toString());
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (JSONException e7) {
-            throw new RuntimeException(e7);
-        }
-    }
-
-    public final String d(String str) {
-        ReentrantLock reentrantLock = this.a;
-        reentrantLock.lock();
-        try {
-            return this.b.getString(str, null);
-        } finally {
-            reentrantLock.unlock();
-        }
-    }
-
-    public final void e(String str, String str2) {
-        ReentrantLock reentrantLock = this.a;
-        reentrantLock.lock();
-        try {
-            this.b.edit().putString(str, str2).apply();
-        } finally {
-            reentrantLock.unlock();
+                return new g8.b(context, looper, commonSettings, kVar, lVar, oVar.a);
+            case 19:
+                return new g(context, looper, commonSettings, (y5.b) obj, kVar, lVar);
+            case 20:
+                return new c6.e(context, looper, commonSettings, (GoogleSignInOptions) obj, kVar, lVar);
+            case 21:
+                return new y0(context, looper, kVar, lVar, commonSettings);
         }
     }
 }

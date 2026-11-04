@@ -1,51 +1,30 @@
 package t7;
 
-import w7.t7;
+import android.os.Looper;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.tasks.Task;
+import mi.h0;
+import org.telegram.messenger.t9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends d {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ d e;
+public final class c extends com.google.android.gms.common.api.j {
+    public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("LocationServices.API", new a6.b(16), new com.google.android.gms.common.api.d());
 
-    public c(d dVar, int i10, int i11) {
-        this.e = dVar;
-        this.c = i10;
-        this.d = i11;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        t7.a(i10, this.d);
-        return this.e.get(i10 + this.c);
-    }
-
-    @Override // t7.a
-    public final int m() {
-        return this.e.n() + this.c + this.d;
-    }
-
-    @Override // t7.a
-    public final int n() {
-        return this.e.n() + this.c;
-    }
-
-    @Override // t7.a
-    public final Object[] o() {
-        return this.e.o();
-    }
-
-    @Override // t7.d, java.util.List
-    /* renamed from: p, reason: merged with bridge method [inline-methods] */
-    public final d subList(int i10, int i11) {
-        t7.c(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public Task f(LocationRequest locationRequest, t9 t9Var, Looper looper) {
+        if (looper == null) {
+            looper = Looper.myLooper();
+            p6.m.h(looper, "invalid null looper");
+        }
+        com.google.android.gms.common.api.internal.o x10 = c6.i.x(looper, t9Var, t9.class.getSimpleName());
+        androidx.activity.n nVar = new androidx.activity.n(this, x10);
+        h0 h0Var = new h0(nVar, locationRequest, false, 22);
+        ci.a aVar = new ci.a();
+        aVar.a = true;
+        aVar.c = h0Var;
+        aVar.d = nVar;
+        aVar.e = x10;
+        aVar.b = 2436;
+        return b(aVar.a());
     }
 }

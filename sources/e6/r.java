@@ -1,78 +1,48 @@
 package e6;
 
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import java.net.Socket;
-import java.util.ArrayDeque;
-import java.util.TimerTask;
-import org.telegram.messenger.i0;
-import org.telegram.ui.Components.ho;
-import org.telegram.ui.kd0;
-import org.telegram.ui.kg0;
-import org.telegram.ui.yy;
-import vh.d0;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class r extends TimerTask {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class r extends q6.a {
+    public static final Parcelable.Creator<r> CREATOR = new v(18);
+    public final k a;
+    public String b;
+    public final JSONObject c;
 
-    public /* synthetic */ r(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public r(k kVar, JSONObject jSONObject) {
+        this.a = kVar;
+        this.c = jSONObject;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        BasePendingResult basePendingResult;
-        switch (this.a) {
-            case 0:
-                c cVar = (c) this.b;
-                ArrayDeque arrayDeque = cVar.h;
-                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
-                    h hVar = cVar.c;
-                    int[] e = g6.a.e(arrayDeque);
-                    hVar.getClass();
-                    n6.l.d("Must be called from the main thread.");
-                    if (hVar.w()) {
-                        j jVar = new j(hVar, e);
-                        h.x(jVar);
-                        basePendingResult = jVar;
-                    } else {
-                        basePendingResult = h.t();
-                    }
-                    cVar.k = basePendingResult;
-                    basePendingResult.i(new q(cVar, 1));
-                    arrayDeque.clear();
-                    break;
-                }
-                break;
-            case 1:
-                try {
-                    Socket socket = ((lc.q) this.b).a.a.g;
-                    if (socket != null) {
-                        socket.close();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
-            case 2:
-                i0.g3(new ho(this, 25));
-                break;
-            case 3:
-                if (((kd0) this.b).N != null) {
-                    i0.g3(new yy(this, 25));
-                    break;
-                }
-                break;
-            case 4:
-                i0.g3(new kg0(this, 8));
-                break;
-            default:
-                i0.g3(new d0(this, 6));
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof r)) {
+            return false;
+        }
+        r rVar = (r) obj;
+        if (w6.c.a(this.c, rVar.c)) {
+            return p6.m.k(this.a, rVar.a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, String.valueOf(this.c)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        JSONObject jSONObject = this.c;
+        this.b = jSONObject == null ? null : jSONObject.toString();
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.l(parcel, 2, this.a, i3);
+        j8.a.m(parcel, 3, this.b);
+        j8.a.t(parcel, s6);
     }
 }

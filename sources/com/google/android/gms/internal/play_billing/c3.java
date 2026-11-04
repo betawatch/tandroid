@@ -7,10 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class c3 {
     public static final Unsafe a;
@@ -35,20 +35,20 @@ public abstract class c3 {
         boolean z10;
         Field b10;
         b3 b3Var2;
-        Unsafe i10 = i();
-        a = i10;
-        int i11 = g1.a;
+        Unsafe i3 = i();
+        a = i3;
+        int i10 = g1.a;
         b = Memory.class;
         Class<?> cls = Long.TYPE;
         boolean o10 = o(cls);
         Class<?> cls2 = Integer.TYPE;
         boolean o11 = o(cls2);
         b3 b3Var3 = null;
-        if (i10 != null) {
+        if (i3 != null) {
             if (o10) {
-                b3Var3 = new a3(i10);
+                b3Var3 = new a3(i3);
             } else if (o11) {
-                b3Var3 = new z2(i10);
+                b3Var3 = new z2(i3);
             }
         }
         c = b3Var3;
@@ -188,7 +188,7 @@ public abstract class c3 {
     public static Field b() {
         Field field;
         Field field2;
-        int i10 = g1.a;
+        int i3 = g1.a;
         try {
             field = Buffer.class.getDeclaredField("effectiveDirectAddress");
         } catch (Throwable unused) {
@@ -211,16 +211,16 @@ public abstract class c3 {
     public static void c(Object obj, long j10, byte b10) {
         Unsafe unsafe = c.a;
         long j11 = (-4) & j10;
-        int i10 = unsafe.getInt(obj, j11);
-        int i11 = ((~((int) j10)) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(at.e4 << i11))));
+        int i3 = unsafe.getInt(obj, j11);
+        int i10 = ((~((int) j10)) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (i3 & (~(hs.e4 << i10))));
     }
 
     public static void d(Object obj, long j10, byte b10) {
         Unsafe unsafe = c.a;
         long j11 = (-4) & j10;
-        int i10 = (((int) j10) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(at.e4 << i10))));
+        int i3 = (((int) j10) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i3) | (unsafe.getInt(obj, j11) & (~(hs.e4 << i3))));
     }
 
     public static int e(Object obj, long j10) {
@@ -234,8 +234,8 @@ public abstract class c3 {
     public static Object g(Class cls) {
         try {
             return a.allocateInstance(cls);
-        } catch (InstantiationException e7) {
-            throw new IllegalStateException(e7);
+        } catch (InstantiationException e10) {
+            throw new IllegalStateException(e10);
         }
     }
 
@@ -251,8 +251,8 @@ public abstract class c3 {
         }
     }
 
-    public static void j(Object obj, long j10, int i10) {
-        c.a.putInt(obj, j10, i10);
+    public static void j(Object obj, long j10, int i3) {
+        c.a.putInt(obj, j10, i3);
     }
 
     public static void k(Object obj, long j10, long j11) {
@@ -264,16 +264,16 @@ public abstract class c3 {
     }
 
     public static /* bridge */ /* synthetic */ boolean m(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & at.e4)) != 0;
+        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & hs.e4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean n(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & at.e4)) != 0;
+        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & hs.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static boolean o(Class cls) {
-        int i10 = g1.a;
+        int i3 = g1.a;
         try {
             Class cls2 = b;
             Class cls3 = Boolean.TYPE;

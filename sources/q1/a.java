@@ -1,18 +1,16 @@
 package q1;
 
-import android.text.Editable;
-import androidx.emoji2.text.u;
+import a0.l;
+import java.util.ArrayList;
+import org.telegram.ui.Components.nh;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends Editable.Factory {
-    public static final Object a = new Object();
-    public static volatile a b;
-    public static Class c;
-
-    @Override // android.text.Editable.Factory
-    public final Editable newEditable(CharSequence charSequence) {
-        Class cls = c;
-        return cls != null ? new u(cls, charSequence) : super.newEditable(charSequence);
-    }
+public final class a {
+    public static final ThreadLocal f = new ThreadLocal();
+    public p7.d d;
+    public final l a = new l(0);
+    public final ArrayList b = new ArrayList();
+    public final nh c = new nh(this, 11);
+    public boolean e = false;
 }

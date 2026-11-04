@@ -1,36 +1,32 @@
 package k2;
 
-import android.os.SystemClock;
-import java.io.Serializable;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class v0 {
-    public long a = -9223372036854775807L;
-    public long b = -9223372036854775807L;
-    public Serializable c;
+    public final long a;
+    public final float b;
+    public final long c;
 
-    public void a(Exception exc) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (((Exception) this.c) == null) {
-            this.c = exc;
+    public v0(u0 u0Var) {
+        this.a = u0Var.a;
+        this.b = u0Var.b;
+        this.c = u0Var.c;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (this.a == -9223372036854775807L && w0.c0.get() <= 0) {
-            this.a = 200 + elapsedRealtime;
+        if (!(obj instanceof v0)) {
+            return false;
         }
-        long j10 = this.a;
-        if (j10 == -9223372036854775807L || elapsedRealtime < j10) {
-            this.b = elapsedRealtime + 50;
-            return;
-        }
-        Exception exc2 = (Exception) this.c;
-        if (exc2 != exc) {
-            exc2.addSuppressed(exc);
-        }
-        Exception exc3 = (Exception) this.c;
-        this.c = null;
-        this.a = -9223372036854775807L;
-        this.b = -9223372036854775807L;
-        throw exc3;
+        v0 v0Var = (v0) obj;
+        return this.a == v0Var.a && this.b == v0Var.b && this.c == v0Var.c;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Float.valueOf(this.b), Long.valueOf(this.c));
     }
 }

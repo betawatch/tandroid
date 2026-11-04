@@ -13,9 +13,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.Gravity;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a extends Drawable {
     public final Bitmap a;
@@ -24,7 +24,7 @@ public final class a extends Drawable {
     public float g;
     public final int k;
     public final int l;
-    public final int c = at.E1;
+    public final int c = hs.E1;
     public final Paint d = new Paint(3);
     public final Matrix f = new Matrix();
     public final Rect h = new Rect();
@@ -32,7 +32,7 @@ public final class a extends Drawable {
     public boolean j = true;
 
     public a(Resources resources, Bitmap bitmap) {
-        this.b = at.q2;
+        this.b = hs.q2;
         if (resources != null) {
             this.b = resources.getDisplayMetrics().densityDpi;
         }
@@ -42,9 +42,9 @@ public final class a extends Drawable {
             this.k = -1;
             this.e = null;
         } else {
-            int i10 = this.b;
-            this.k = bitmap.getScaledWidth(i10);
-            this.l = bitmap.getScaledHeight(i10);
+            int i3 = this.b;
+            this.k = bitmap.getScaledWidth(i3);
+            this.l = bitmap.getScaledHeight(i3);
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             this.e = new BitmapShader(bitmap, tileMode, tileMode);
         }
@@ -58,10 +58,10 @@ public final class a extends Drawable {
             rectF.set(rect);
             BitmapShader bitmapShader = this.e;
             if (bitmapShader != null) {
-                float f7 = rectF.left;
-                float f10 = rectF.top;
+                float f10 = rectF.left;
+                float f11 = rectF.top;
                 Matrix matrix = this.f;
-                matrix.setTranslate(f7, f10);
+                matrix.setTranslate(f10, f11);
                 float width = rectF.width();
                 Bitmap bitmap = this.a;
                 matrix.preScale(width / bitmap.getWidth(), rectF.height() / bitmap.getHeight());
@@ -85,8 +85,8 @@ public final class a extends Drawable {
             return;
         }
         RectF rectF = this.i;
-        float f7 = this.g;
-        canvas.drawRoundRect(rectF, f7, f7, paint);
+        float f10 = this.g;
+        canvas.drawRoundRect(rectF, f10, f10, paint);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -128,10 +128,10 @@ public final class a extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void setAlpha(int i3) {
         Paint paint = this.d;
-        if (i10 != paint.getAlpha()) {
-            paint.setAlpha(i10);
+        if (i3 != paint.getAlpha()) {
+            paint.setAlpha(i3);
             invalidateSelf();
         }
     }

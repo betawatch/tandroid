@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class DtmfSender {
     private long nativeDtmfSender;
@@ -19,7 +19,7 @@ public class DtmfSender {
 
     private static native int nativeDuration(long j10);
 
-    private static native boolean nativeInsertDtmf(long j10, String str, int i10, int i11);
+    private static native boolean nativeInsertDtmf(long j10, String str, int i3, int i10);
 
     private static native int nativeInterToneGap(long j10);
 
@@ -41,9 +41,9 @@ public class DtmfSender {
         return nativeDuration(this.nativeDtmfSender);
     }
 
-    public boolean insertDtmf(String str, int i10, int i11) {
+    public boolean insertDtmf(String str, int i3, int i10) {
         checkDtmfSenderExists();
-        return nativeInsertDtmf(this.nativeDtmfSender, str, i10, i11);
+        return nativeInsertDtmf(this.nativeDtmfSender, str, i3, i10);
     }
 
     public int interToneGap() {

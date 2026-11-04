@@ -1,129 +1,44 @@
 package s3;
 
-import a4.g;
-import b2.t0;
-import b2.u0;
-import e2.k0;
-import e2.x;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import m2.t;
-import t7.u;
-import w7.l;
+import j$.util.Objects;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends l {
-    public final x a = new x();
-    public final g b = new g();
-    public k0 c;
+public final class c extends i {
+    public final String b;
+    public final int c;
+    public final int d;
+    public final long e;
+    public final long f;
+    public final i[] g;
 
-    @Override // w7.l
-    public final u0 b(l3.a aVar, ByteBuffer byteBuffer) {
-        t0 eVar;
-        long j10;
-        k0 k0Var = this.c;
-        if (k0Var == null || aVar.r != k0Var.e()) {
-            k0 k0Var2 = new k0(aVar.e);
-            this.c = k0Var2;
-            k0Var2.a(aVar.e - aVar.r);
+    public c(String str, int i3, int i10, long j10, long j11, i[] iVarArr) {
+        super("CHAP");
+        this.b = str;
+        this.c = i3;
+        this.d = i10;
+        this.e = j10;
+        this.f = j11;
+        this.g = iVarArr;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        byte[] array = byteBuffer.array();
-        int limit = byteBuffer.limit();
-        x xVar = this.a;
-        xVar.L(limit, array);
-        g gVar = this.b;
-        gVar.b0(limit, array);
-        gVar.f0(39);
-        long i10 = (gVar.i(1) << 32) | gVar.i(32);
-        gVar.f0(20);
-        int i11 = gVar.i(12);
-        int i12 = gVar.i(8);
-        xVar.O(14);
-        if (i12 == 0) {
-            eVar = new e();
-        } else if (i12 == 255) {
-            long C = xVar.C();
-            int i13 = i11 - 4;
-            xVar.k(0, i13, new byte[i13]);
-            eVar = new a(C, 0, i10);
-        } else if (i12 == 4) {
-            int A = xVar.A();
-            ArrayList arrayList = new ArrayList(A);
-            for (int i14 = 0; i14 < A; i14++) {
-                xVar.C();
-                boolean z10 = (xVar.A() & 128) != 0;
-                ArrayList arrayList2 = new ArrayList();
-                if (!z10) {
-                    int A2 = xVar.A();
-                    boolean z11 = (A2 & 64) != 0;
-                    boolean z12 = (A2 & 32) != 0;
-                    if (z11) {
-                        xVar.C();
-                    }
-                    if (!z11) {
-                        int A3 = xVar.A();
-                        ArrayList arrayList3 = new ArrayList(A3);
-                        for (int i15 = 0; i15 < A3; i15++) {
-                            xVar.A();
-                            xVar.C();
-                            arrayList3.add(new hb.a(20));
-                        }
-                        arrayList2 = arrayList3;
-                    }
-                    if (z12) {
-                        xVar.A();
-                        xVar.C();
-                    }
-                    xVar.H();
-                    xVar.A();
-                    xVar.A();
-                }
-                arrayList.add(new t(arrayList2));
+        if (obj != null && c.class == obj.getClass()) {
+            c cVar = (c) obj;
+            if (this.c == cVar.c && this.d == cVar.d && this.e == cVar.e && this.f == cVar.f && Objects.equals(this.b, cVar.b) && Arrays.equals(this.g, cVar.g)) {
+                return true;
             }
-            eVar = new f(arrayList);
-        } else if (i12 == 5) {
-            k0 k0Var3 = this.c;
-            xVar.C();
-            boolean z13 = (xVar.A() & 128) != 0;
-            List list = Collections.EMPTY_LIST;
-            if (z13) {
-                j10 = -9223372036854775807L;
-            } else {
-                int A4 = xVar.A();
-                boolean z14 = (A4 & 64) != 0;
-                boolean z15 = (A4 & 32) != 0;
-                boolean z16 = (A4 & 16) != 0;
-                long d = (!z14 || z16) ? -9223372036854775807L : a.d(i10, xVar);
-                if (!z14) {
-                    int A5 = xVar.A();
-                    ArrayList arrayList4 = new ArrayList(A5);
-                    for (int i16 = 0; i16 < A5; i16++) {
-                        xVar.A();
-                        k0Var3.b(!z16 ? a.d(i10, xVar) : -9223372036854775807L);
-                        arrayList4.add(new u(19));
-                    }
-                    list = arrayList4;
-                }
-                if (z15) {
-                    xVar.A();
-                    xVar.C();
-                }
-                xVar.H();
-                xVar.A();
-                xVar.A();
-                j10 = d;
-            }
-            eVar = new d(j10, k0Var3.b(j10), list);
-        } else if (i12 != 6) {
-            eVar = null;
-        } else {
-            k0 k0Var4 = this.c;
-            long d10 = a.d(i10, xVar);
-            eVar = new a(d10, 1, k0Var4.b(d10));
         }
-        return eVar == null ? new u0(new t0[0]) : new u0(eVar);
+        return false;
+    }
+
+    public final int hashCode() {
+        int i3 = (((((((527 + this.c) * 31) + this.d) * 31) + ((int) this.e)) * 31) + ((int) this.f)) * 31;
+        String str = this.b;
+        return i3 + (str != null ? str.hashCode() : 0);
     }
 }

@@ -1,130 +1,22 @@
 package r7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.Process;
-import java.util.Arrays;
-import java.util.List;
-import w7.a7;
-import w7.h0;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j extends o6.a {
-    public static final Parcelable.Creator<j> CREATOR = new m(1);
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public final String f;
-    public final j h;
-    public final r n;
+public abstract class j {
+    public static final String[] a = {"text1", "text2", "icon", "intent_action", "intent_data", "intent_data_id", "intent_extra_data", "suggest_large_icon", "intent_activity", "thing_proto"};
+    public static final HashMap b = new HashMap(10);
 
     static {
-        Process.myUid();
-        Process.myPid();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public j(int i10, int i11, String str, String str2, String str3, int i12, List list, j jVar) {
-        s sVar;
-        s sVar2;
-        r rVar;
-        this.a = i10;
-        this.b = i11;
-        this.c = str;
-        this.d = str2;
-        this.f = str3;
-        this.e = i12;
-        p pVar = r.b;
-        if (list instanceof o) {
-            rVar = (r) ((o) list);
-            if (rVar.o()) {
-                Object[] array = rVar.toArray(o.a);
-                int length = array.length;
-                if (length == 0) {
-                    sVar2 = s.e;
-                    rVar = sVar2;
-                } else {
-                    sVar = new s(length, array);
-                    rVar = sVar;
-                }
+        int i3 = 0;
+        while (true) {
+            String[] strArr = a;
+            if (i3 >= 10) {
+                return;
             }
-        } else {
-            Object[] array2 = list.toArray();
-            int length2 = array2.length;
-            for (int i13 = 0; i13 < length2; i13++) {
-                if (array2[i13] == null) {
-                    throw new NullPointerException(i0.a.i(i13, "at index "));
-                }
-            }
-            if (length2 == 0) {
-                sVar2 = s.e;
-                rVar = sVar2;
-            } else {
-                sVar = new s(length2, array2);
-                rVar = sVar;
-            }
+            b.put(strArr[i3], Integer.valueOf(i3));
+            i3++;
         }
-        this.n = rVar;
-        this.h = jVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof j)) {
-            return false;
-        }
-        j jVar = (j) obj;
-        return this.a == jVar.a && this.b == jVar.b && this.e == jVar.e && this.c.equals(jVar.c) && a7.a(this.d, jVar.d) && a7.a(this.f, jVar.f) && a7.a(this.h, jVar.h) && this.n.equals(jVar.n);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), this.c, this.d, this.f});
-    }
-
-    public final String toString() {
-        String str = this.c;
-        int length = str.length() + 18;
-        String str2 = this.d;
-        if (str2 != null) {
-            length += str2.length();
-        }
-        StringBuilder sb2 = new StringBuilder(length);
-        sb2.append(this.a);
-        sb2.append("/");
-        sb2.append(str);
-        if (str2 != null) {
-            sb2.append("[");
-            if (str2.startsWith(str)) {
-                sb2.append((CharSequence) str2, str.length(), str2.length());
-            } else {
-                sb2.append(str2);
-            }
-            sb2.append("]");
-        }
-        String str3 = this.f;
-        if (str3 != null) {
-            sb2.append("/");
-            sb2.append(Integer.toHexString(str3.hashCode()));
-        }
-        return sb2.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        h0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        h0.l(parcel, 3, this.c);
-        h0.l(parcel, 4, this.d);
-        h0.s(parcel, 5, 4);
-        parcel.writeInt(this.e);
-        h0.l(parcel, 6, this.f);
-        h0.k(parcel, 7, this.h, i10);
-        h0.p(parcel, 8, this.n);
-        h0.r(parcel, q6);
     }
 }

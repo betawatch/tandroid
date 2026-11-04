@@ -1,28 +1,31 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class s0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ VoIPService b;
+import org.telegram.messenger.voip.VoIPService;
 
-    public /* synthetic */ s0(VoIPService voIPService, int i10) {
-        this.a = i10;
-        this.b = voIPService;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public abstract /* synthetic */ class s0 {
+    public static void a(VoIPService.StateListener stateListener) {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.destroyConverting();
-                break;
-            case 1:
-                this.b.lambda$updateConnectionState$82();
-                break;
-            default:
-                this.b.lambda$onConnectionStateChanged$118();
-                break;
-        }
+    public static void b(VoIPService.StateListener stateListener) {
+    }
+
+    public static void c(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void e(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void f(VoIPService.StateListener stateListener, int i3) {
+    }
+
+    public static void g(VoIPService.StateListener stateListener, int i3) {
+    }
+
+    public static void h(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void d(VoIPService.StateListener stateListener, int i3, int i10) {
     }
 }

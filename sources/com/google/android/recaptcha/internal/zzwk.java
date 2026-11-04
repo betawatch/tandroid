@@ -1,27 +1,27 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzwk extends zzsh implements zztt {
     private zzwk() {
         throw null;
     }
 
-    public final zzwk zzA(int i10) {
+    public final zzwk zzA(int i3) {
         zzn();
-        ((zzwn) this.zza).zzh = zzwl.zza(i10);
+        ((zzwn) this.zza).zzh = zzwl.zza(i3);
         return this;
     }
 
-    public final zzwk zzB(int i10) {
+    public final zzwk zzB(int i3) {
         zzn();
-        ((zzwn) this.zza).zzi = i10 - 2;
+        ((zzwn) this.zza).zzi = i3 - 2;
         return this;
     }
 
-    public final zzwk zzC(int i10) {
+    public final zzwk zzC(int i3) {
         zzn();
-        ((zzwn) this.zza).zzp = i10 - 2;
+        ((zzwn) this.zza).zzp = i3 - 2;
         return this;
     }
 
@@ -38,7 +38,7 @@ public final class zzwk extends zzsh implements zztt {
         return ((zzwn) this.zza).zzg();
     }
 
-    public final zzwk zzq(int i10) {
+    public final zzwk zzq(int i3) {
         zzn();
         zzwn.zzP((zzwn) this.zza, 0);
         return this;
@@ -75,9 +75,9 @@ public final class zzwk extends zzsh implements zztt {
         return this;
     }
 
-    public final zzwk zzw(int i10) {
+    public final zzwk zzw(int i3) {
         zzn();
-        zzwn.zzV((zzwn) this.zza, i10);
+        zzwn.zzV((zzwn) this.zza, i3);
         return this;
     }
 

@@ -1,13 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import ad.j;
-import cd.c;
-import dd.a;
-import l9.b;
-import ld.p;
+import b8.ib;
+import dd.k;
+import fd.c;
+import od.p;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzhj {
     public static final Object zza(zzhh zzhhVar, p pVar, c cVar) {
@@ -22,51 +21,51 @@ public final class zzhj {
     */
     public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, c cVar) {
         zzhi zzhiVar;
-        int i10;
+        int i3;
         if (cVar instanceof zzhi) {
             zzhiVar = (zzhi) cVar;
-            int i11 = zzhiVar.zzb;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                zzhiVar.zzb = i11 - TLObject.FLAG_31;
+            int i10 = zzhiVar.zzb;
+            if ((i10 & TLObject.FLAG_31) != 0) {
+                zzhiVar.zzb = i10 - TLObject.FLAG_31;
                 Object obj = zzhiVar.zza;
-                Object obj2 = a.a;
-                i10 = zzhiVar.zzb;
-                j jVar = j.a;
-                if (i10 != 0) {
-                    b.b(obj);
+                Object obj2 = gd.a.a;
+                i3 = zzhiVar.zzb;
+                k kVar = k.a;
+                if (i3 != 0) {
+                    ib.b(obj);
                     zzhiVar.zzb = 1;
                     if (zzhfVar.zza(zzhkVar, zzhiVar) == obj2) {
                         return obj2;
                     }
                 } else {
-                    if (i10 != 1) {
+                    if (i3 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b.b(obj);
+                    ib.b(obj);
                 }
-                return jVar;
+                return kVar;
             }
         }
         zzhiVar = new zzhi(cVar);
         Object obj3 = zzhiVar.zza;
-        Object obj22 = a.a;
-        i10 = zzhiVar.zzb;
-        j jVar2 = j.a;
-        if (i10 != 0) {
+        Object obj22 = gd.a.a;
+        i3 = zzhiVar.zzb;
+        k kVar2 = k.a;
+        if (i3 != 0) {
         }
-        return jVar2;
+        return kVar2;
     }
 
     public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, c cVar) {
         Object zza = zzhgVar.zza(zzgrVar.zza(), cVar);
-        return zza == a.a ? zza : j.a;
+        return zza == gd.a.a ? zza : k.a;
     }
 
-    public static final Object zzd(int i10, int i11, p pVar, c cVar) {
-        return new zzhf(i10, pVar, new Integer(i11));
+    public static final Object zzd(int i3, int i10, p pVar, c cVar) {
+        return new zzhf(i3, pVar, new Integer(i10));
     }
 
-    public static final Object zze(zzhk zzhkVar, int i10, p pVar, c cVar) {
-        return new zzhf(i10, pVar, null).zza(zzhkVar, cVar);
+    public static final Object zze(zzhk zzhkVar, int i3, p pVar, c cVar) {
+        return new zzhf(i3, pVar, null).zza(zzhkVar, cVar);
     }
 }

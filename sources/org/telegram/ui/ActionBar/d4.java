@@ -1,287 +1,250 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.ActionMode;
-import android.view.Display;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.transition.TransitionManager;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.view.WindowManager;
-import android.widget.PopupMenu;
-import java.util.Arrays;
+import android.widget.TextView;
+import b8.mf;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.ok;
+import org.telegram.messenger.zi;
+import org.telegram.ui.Components.a8;
+import org.telegram.ui.Components.ee0;
+import org.telegram.ui.Components.iv0;
+import org.telegram.ui.Components.nh;
+import org.telegram.ui.Components.xs;
+import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class d4 extends ActionMode {
-    public final Context a;
-    public final ActionMode.Callback2 b;
-    public final Menu c;
-    public final Rect d;
-    public final Rect e;
-    public final Rect f;
-    public final int[] g;
-    public final int[] h;
-    public final int[] i;
-    public final Rect j;
-    public final Rect k;
-    public final Rect l;
-    public final View m;
-    public final Point n;
-    public final int o;
-    public final b4 p = new b4(this, 0);
-    public final b4 q = new b4(this, 1);
-    public final s4 r;
-    public final c4 s;
+public final /* synthetic */ class d4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public d4(Context context, ActionMode.Callback2 callback2, View view, s4 s4Var) {
-        this.a = context;
-        this.b = callback2;
-        PopupMenu popupMenu = new PopupMenu(context, null);
-        Menu menu = popupMenu.getMenu();
-        this.c = menu;
-        setType(1);
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.z3
-            @Override // android.widget.PopupMenu.OnMenuItemClickListener
-            public final boolean onMenuItemClick(MenuItem menuItem) {
-                d4 d4Var = d4.this;
-                return d4Var.b.onActionItemClicked(d4Var, menuItem);
-            }
-        });
-        this.d = new Rect();
-        this.e = new Rect();
-        this.f = new Rect();
-        int[] iArr = new int[2];
-        this.g = iArr;
-        this.h = new int[2];
-        this.i = new int[2];
-        this.j = new Rect();
-        this.k = new Rect();
-        this.l = new Rect();
-        this.m = view;
-        view.getLocationOnScreen(iArr);
-        this.o = org.telegram.messenger.i0.L(20.0f);
-        this.n = new Point();
-        s4Var.e = menu;
-        s4Var.g = new MenuItem.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.a4
-            @Override // android.view.MenuItem.OnMenuItemClickListener
-            public final boolean onMenuItemClick(MenuItem menuItem) {
-                d4 d4Var = d4.this;
-                return d4Var.b.onActionItemClicked(d4Var, menuItem);
-            }
-        };
-        this.r = s4Var;
-        c4 c4Var = new c4(s4Var);
-        this.s = c4Var;
-        c4Var.b = false;
-        c4Var.c = false;
-        c4Var.d = false;
-        c4Var.e = true;
-        c4Var.f = true;
+    public /* synthetic */ d4(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    public static boolean a(Rect rect, Rect rect2) {
-        return rect.left <= rect2.right && rect2.left <= rect.right && rect.top <= rect2.bottom && rect2.top <= rect.bottom;
-    }
-
-    public final void b() {
-        Rect rect = this.d;
-        Rect rect2 = this.e;
-        rect2.set(rect);
-        View view = this.m;
-        ViewParent parent = view.getParent();
-        if (parent instanceof ViewGroup) {
-            parent.getChildVisibleRect(view, rect2, null);
-            int[] iArr = this.i;
-            rect2.offset(iArr[0], iArr[1]);
-        } else {
-            int[] iArr2 = this.g;
-            rect2.offset(iArr2[0], iArr2[1]);
-        }
-        Display defaultDisplay = ((WindowManager) this.a.getSystemService(WindowManager.class)).getDefaultDisplay();
-        Point point = this.n;
-        defaultDisplay.getRealSize(point);
-        int i10 = point.x;
-        int i11 = point.y;
-        Rect rect3 = this.l;
-        rect3.set(0, 0, i10, i11);
-        boolean a2 = a(rect2, rect3);
-        Rect rect4 = this.f;
-        if (a2) {
-            Rect rect5 = this.j;
-            if (a(rect2, rect5)) {
-                this.s.d = false;
-                rect2.set(Math.max(rect2.left, rect5.left), Math.max(rect2.top, rect5.top), Math.min(rect2.right, rect5.right), Math.min(rect2.bottom, rect5.bottom + this.o));
-                if (!rect2.equals(rect4)) {
-                    Runnable runnable = this.p;
-                    view.removeCallbacks(runnable);
-                    c4 c4Var = this.s;
-                    c4Var.getClass();
-                    if (System.currentTimeMillis() - c4Var.g > 500) {
-                        c4Var.c = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                i4 i4Var = ((e4) this.b).b;
+                i4Var.c.dismiss();
+                i4Var.f.removeAllViews();
+                break;
+            case 1:
+                ((e4) this.b).b.c.dismiss();
+                break;
+            case 2:
+                i5 i5Var = (i5) this.b;
+                if (!i5Var.y && i5Var.N) {
+                    i5Var.c();
+                    break;
+                }
+                break;
+            case 3:
+                Drawable drawable = (Drawable) this.b;
+                k6.d = null;
+                k6.P();
+                if (!k6.b) {
+                    k6.j(drawable);
+                    k6.h(drawable);
+                }
+                hs.e().k(hs.z4, new Object[0]);
+                break;
+            case 4:
+                ((CountDownLatch) this.b).countDown();
+                break;
+            case 5:
+                org.telegram.messenger.camera.q.j(1, (d2) this.b);
+                break;
+            case 6:
+                a8 a8Var = (a8) k6.e5.remove((zi) this.b);
+                if (a8Var != null) {
+                    a8Var.i = null;
+                    break;
+                }
+                break;
+            case 7:
+                org.telegram.ui.Components.voip.x xVar = (org.telegram.ui.Components.voip.x) this.b;
+                xVar.Q0 = null;
+                xVar.setVisibleParticipant(true);
+                break;
+            case 8:
+                org.telegram.ui.Components.voip.s0 s0Var = (org.telegram.ui.Components.voip.s0) this.b;
+                s0Var.L = false;
+                s0Var.j(false);
+                s0Var.X = false;
+                break;
+            case 9:
+                org.telegram.ui.Components.voip.s0 s0Var2 = (org.telegram.ui.Components.voip.s0) ((ee0) this.b).b;
+                s0Var2.e.invalidate();
+                if (!s0Var2.e.isInLayout()) {
+                    s0Var2.e.requestLayout();
+                    s0Var2.d.requestLayout();
+                    s0Var2.f.requestLayout();
+                    break;
+                }
+                break;
+            case 10:
+                ((org.telegram.ui.Components.voip.q0) this.b).a.a(false);
+                break;
+            case 11:
+                org.telegram.ui.Components.voip.p1 p1Var = (org.telegram.ui.Components.voip.p1) this.b;
+                p1Var.e = false;
+                HashMap hashMap = p1Var.a;
+                ArrayList arrayList = p1Var.c;
+                ArrayList arrayList2 = p1Var.b;
+                if (!arrayList2.isEmpty() || !arrayList.isEmpty()) {
+                    if (p1Var.getParent() != null) {
+                        TransitionManager.beginDelayedTransition(p1Var, p1Var.d);
                     }
-                    view.postDelayed(runnable, 50L);
-                    this.r.c.set(rect2);
-                    s4 s4Var = this.r;
-                    if (s4Var.b.f()) {
-                        s4Var.c();
+                    int i3 = 0;
+                    while (i3 < arrayList2.size()) {
+                        org.telegram.ui.Components.voip.o1 o1Var = (org.telegram.ui.Components.voip.o1) arrayList2.get(i3);
+                        int i10 = 0;
+                        while (true) {
+                            if (i10 >= arrayList.size()) {
+                                break;
+                            }
+                            if (o1Var.a.equals(((org.telegram.ui.Components.voip.o1) arrayList.get(i10)).a)) {
+                                arrayList2.remove(i3);
+                                arrayList.remove(i10);
+                                i3--;
+                            } else {
+                                i10++;
+                            }
+                        }
+                        i3++;
+                    }
+                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                        p1Var.addView((View) arrayList2.get(i11), mf.t(-2, -2, 1, 4, 0, 0, 4));
+                    }
+                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                        p1Var.removeView((View) arrayList.get(i12));
+                    }
+                    hashMap.clear();
+                    for (int i13 = 0; i13 < p1Var.getChildCount(); i13++) {
+                        org.telegram.ui.Components.voip.o1 o1Var2 = (org.telegram.ui.Components.voip.o1) p1Var.getChildAt(i13);
+                        hashMap.put(o1Var2.a, o1Var2);
+                    }
+                    arrayList2.clear();
+                    arrayList.clear();
+                    p1Var.e = true;
+                    org.telegram.messenger.g0.i3(new d4(p1Var, 11), 700L);
+                    Runnable runnable = p1Var.h;
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
                     }
                 }
-                this.s.a();
-                rect4.set(rect2);
-            }
+                break;
+            case 12:
+                TextView[] textViewArr = ((org.telegram.ui.Components.voip.w1) this.b).a;
+                TextView textView = textViewArr[0];
+                textViewArr[0] = textViewArr[1];
+                textViewArr[1] = textView;
+                break;
+            case 13:
+                TextView[] textViewArr2 = ((org.telegram.ui.Components.voip.w1) ((kg.g0) this.b).e).a;
+                TextView textView2 = textViewArr2[0];
+                textViewArr2[0] = textViewArr2[1];
+                textViewArr2[1] = textView2;
+                break;
+            case 14:
+                org.telegram.ui.Components.voip.a2 a2Var = (org.telegram.ui.Components.voip.a2) this.b;
+                if (a2Var.getVisibility() == 0) {
+                    a2Var.a();
+                    break;
+                }
+                break;
+            case 15:
+                org.telegram.ui.Components.voip.e2 e2Var = (org.telegram.ui.Components.voip.e2) this.b;
+                e2Var.e = Bitmap.createBitmap(e2Var.getMeasuredWidth(), e2Var.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                new Canvas(e2Var.e).drawText(e2Var.d, e2Var.getMeasuredWidth() / 2, (int) ((e2Var.getMeasuredHeight() / 2) - ((e2Var.a.ascent() + e2Var.a.descent()) / 2.0f)), e2Var.a);
+                e2Var.postInvalidate();
+                break;
+            case 16:
+                ((org.telegram.ui.web.l) this.b).x.g3.O(true);
+                break;
+            case 17:
+                org.telegram.ui.web.j jVar = ((org.telegram.ui.web.n) ((gi.s2) this.b).c).f;
+                if (jVar != null) {
+                    jVar.d();
+                    break;
+                }
+                break;
+            case 18:
+                ((xs) this.b).requestFocus();
+                break;
+            case 19:
+                sf.c.t(((org.telegram.ui.web.p0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                break;
+            case 20:
+                gi.s2 s2Var = (gi.s2) this.b;
+                Utilities.g.c(new iv0(s2Var, new ArrayList(((org.telegram.ui.web.y0) s2Var.c).f), ((org.telegram.ui.web.y0) s2Var.c).r, 12));
+                break;
+            case 21:
+                ((HttpGetFileTask) this.b).lambda$doInBackground$1();
+                break;
+            case 22:
+                ((org.telegram.ui.Wallet.v5) this.b).invalidateSelf();
+                break;
+            case 23:
+                org.telegram.ui.web.m1 m1Var = (org.telegram.ui.web.m1) this.b;
+                File databasePath = org.telegram.messenger.t0.b.getDatabasePath("webview.db");
+                long length = (databasePath == null || !databasePath.exists()) ? 0L : databasePath.length();
+                File databasePath2 = org.telegram.messenger.t0.b.getDatabasePath("webviewCache.db");
+                if (databasePath2 != null && databasePath2.exists()) {
+                    length += databasePath2.length();
+                }
+                File file = new File(org.telegram.messenger.t0.b.getApplicationInfo().dataDir, "app_webview");
+                if (file.exists()) {
+                    length += org.telegram.ui.web.m1.e0(file, Boolean.FALSE);
+                }
+                File file2 = new File(org.telegram.messenger.t0.b.getApplicationInfo().dataDir, "cache/WebView");
+                if (file2.exists()) {
+                    length += org.telegram.ui.web.m1.e0(file2, null);
+                }
+                File file3 = new File(org.telegram.messenger.t0.b.getApplicationInfo().dataDir, "app_webview");
+                org.telegram.messenger.g0.h3(new ok(m1Var, length, file3.exists() ? org.telegram.ui.web.m1.e0(file3, Boolean.TRUE) : 0L, 2));
+                break;
+            case 24:
+                ((boolean[]) this.b)[0] = true;
+                break;
+            case 25:
+                p2.d dVar = (p2.d) this.b;
+                if (!dVar.c) {
+                    p2.g gVar = dVar.b;
+                    if (gVar != null) {
+                        gVar.b(dVar.a);
+                    }
+                    dVar.d.y.remove(dVar);
+                    dVar.c = true;
+                    break;
+                }
+                break;
+            case 26:
+                ((p2.b) this.b).b(null);
+                break;
+            case 27:
+                ((nh) this.b).B();
+                break;
+            case 28:
+                ((r4.e) this.b).k();
+                break;
+            default:
+                ((r4.g) this.b).n = -1;
+                break;
         }
-        this.s.d = true;
-        rect2.setEmpty();
-        this.s.a();
-        rect4.set(rect2);
-    }
-
-    public final void c() {
-        View view = this.m;
-        int[] iArr = this.g;
-        view.getLocationOnScreen(iArr);
-        View rootView = view.getRootView();
-        int[] iArr2 = this.i;
-        rootView.getLocationOnScreen(iArr2);
-        Rect rect = this.j;
-        view.getGlobalVisibleRect(rect);
-        rect.offset(iArr2[0], iArr2[1]);
-        int[] iArr3 = this.h;
-        boolean equals = Arrays.equals(iArr, iArr3);
-        Rect rect2 = this.k;
-        if (equals && rect.equals(rect2)) {
-            return;
-        }
-        b();
-        iArr3[0] = iArr[0];
-        iArr3[1] = iArr[1];
-        rect2.set(rect);
-    }
-
-    @Override // android.view.ActionMode
-    public final void finish() {
-        s4 s4Var = this.r;
-        s4Var.a.removeOnLayoutChangeListener(s4Var.l);
-        q4 q4Var = s4Var.b;
-        if (!q4Var.F) {
-            q4Var.G = false;
-            q4Var.F = true;
-            q4Var.x.cancel();
-            q4Var.w.start();
-            q4Var.D.setEmpty();
-        }
-        c4 c4Var = this.s;
-        c4Var.f = false;
-        s4 s4Var2 = c4Var.a;
-        s4Var2.a.removeOnLayoutChangeListener(s4Var2.l);
-        q4 q4Var2 = s4Var2.b;
-        if (!q4Var2.F) {
-            q4Var2.G = false;
-            q4Var2.F = true;
-            q4Var2.x.cancel();
-            q4Var2.w.start();
-            q4Var2.D.setEmpty();
-        }
-        b4 b4Var = this.p;
-        View view = this.m;
-        view.removeCallbacks(b4Var);
-        view.removeCallbacks(this.q);
-        this.b.onDestroyActionMode(this);
-    }
-
-    @Override // android.view.ActionMode
-    public final View getCustomView() {
-        return null;
-    }
-
-    @Override // android.view.ActionMode
-    public final Menu getMenu() {
-        return this.c;
-    }
-
-    @Override // android.view.ActionMode
-    public final MenuInflater getMenuInflater() {
-        return new MenuInflater(this.a);
-    }
-
-    @Override // android.view.ActionMode
-    public final CharSequence getSubtitle() {
-        return null;
-    }
-
-    @Override // android.view.ActionMode
-    public final CharSequence getTitle() {
-        return null;
-    }
-
-    @Override // android.view.ActionMode
-    public final void hide(long j10) {
-        if (j10 == -1) {
-            j10 = ViewConfiguration.getDefaultActionModeHideDuration();
-        }
-        long min = Math.min(3000L, j10);
-        View view = this.m;
-        b4 b4Var = this.q;
-        view.removeCallbacks(b4Var);
-        if (min <= 0) {
-            b4Var.run();
-            return;
-        }
-        c4 c4Var = this.s;
-        c4Var.b = true;
-        c4Var.a();
-        view.postDelayed(b4Var, min);
-    }
-
-    @Override // android.view.ActionMode
-    public final void invalidate() {
-        this.b.onPrepareActionMode(this, this.c);
-        invalidateContentRect();
-    }
-
-    @Override // android.view.ActionMode
-    public final void invalidateContentRect() {
-        ActionMode.Callback2 callback2 = this.b;
-        View view = this.m;
-        Rect rect = this.d;
-        callback2.onGetContentRect(this, view, rect);
-        if (rect.left == 0 && rect.right == 0) {
-            rect.left = 1;
-            rect.right = 1;
-        }
-        b();
-    }
-
-    @Override // android.view.ActionMode
-    public final void onWindowFocusChanged(boolean z10) {
-        c4 c4Var = this.s;
-        c4Var.e = z10;
-        c4Var.a();
-    }
-
-    @Override // android.view.ActionMode
-    public final void setSubtitle(int i10) {
-    }
-
-    @Override // android.view.ActionMode
-    public final void setTitle(int i10) {
-    }
-
-    @Override // android.view.ActionMode
-    public final void setSubtitle(CharSequence charSequence) {
-    }
-
-    @Override // android.view.ActionMode
-    public final void setTitle(CharSequence charSequence) {
-    }
-
-    @Override // android.view.ActionMode
-    public final void setCustomView(View view) {
     }
 }

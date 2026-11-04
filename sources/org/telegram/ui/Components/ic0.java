@@ -1,38 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ic0 extends TextView {
-    public final /* synthetic */ jc0 a;
+public final /* synthetic */ class ic0 implements org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Activity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ic0(jc0 jc0Var, Context context, int i10) {
-        super(context);
-        this.a = jc0Var;
+    public /* synthetic */ ic0(Activity activity, int i3) {
+        this.a = i3;
+        this.b = activity;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        jc0 jc0Var = this.a;
-        if (jc0Var.e.getAdapter() instanceof ox) {
-            ((ox) jc0Var.e.getAdapter()).getClass();
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
+            case 0:
+                Activity activity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    activity.startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            default:
+                Activity activity2 = this.b;
+                try {
+                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    activity2.startActivity(intent2);
+                    break;
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                }
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void setSelected(boolean z10) {
-        super.setSelected(z10);
-        Drawable background = getBackground();
-        jc0 jc0Var = this.a;
-        if (background != null) {
-            org.telegram.ui.ActionBar.t6.H1(background, jc0Var.c(z10 ? 0.1f : 0.05f), true);
-        }
-        setTextColor(jc0Var.c(z10 ? 0.8f : 0.6f));
     }
 }

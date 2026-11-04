@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzos {
     private static final String[] zza = {"com.google.common.flogger.util.StackWalkerStackGetter", "com.google.common.flogger.util.JavaLangAccessStackGetter"};
@@ -10,27 +10,27 @@ public final class zzos {
     /* JADX WARN: Type inference failed for: r1v8, types: [com.google.android.recaptcha.internal.zzow] */
     static {
         zzox zzoxVar;
-        int i10 = 0;
+        int i3 = 0;
         while (true) {
-            if (i10 >= 2) {
+            if (i3 >= 2) {
                 zzoxVar = new zzox();
                 break;
             }
             zzoxVar = null;
             try {
-                zzoxVar = (zzow) Class.forName(zza[i10]).asSubclass(zzow.class).getDeclaredConstructor(null).newInstance(null);
+                zzoxVar = (zzow) Class.forName(zza[i3]).asSubclass(zzow.class).getDeclaredConstructor(null).newInstance(null);
             } catch (Throwable unused) {
             }
             if (zzoxVar != null) {
                 break;
             } else {
-                i10++;
+                i3++;
             }
         }
         zzb = zzoxVar;
     }
 
-    public static StackTraceElement zza(Class cls, int i10) {
+    public static StackTraceElement zza(Class cls, int i3) {
         zzot.zza(cls, "target");
         return zzb.zza(cls, 2);
     }

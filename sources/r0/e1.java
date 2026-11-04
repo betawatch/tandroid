@@ -1,39 +1,51 @@
 package r0;
 
-import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class e1 extends d1 {
-    public static final j1 r;
+    public i0.b o;
+    public i0.b p;
+    public i0.b q;
 
-    static {
-        WindowInsets windowInsets;
-        windowInsets = WindowInsets.CONSUMED;
-        r = j1.h(null, windowInsets);
+    public e1(k1 k1Var, WindowInsets windowInsets) {
+        super(k1Var, windowInsets);
+        this.o = null;
+        this.p = null;
+        this.q = null;
     }
 
-    public e1(j1 j1Var, WindowInsets windowInsets) {
-        super(j1Var, windowInsets);
+    @Override // r0.h1
+    public i0.b h() {
+        if (this.p == null) {
+            this.p = i0.b.c(this.c.getMandatorySystemGestureInsets());
+        }
+        return this.p;
     }
 
-    @Override // r0.a1, r0.g1
-    public i0.c f(int i10) {
-        return i0.c.c(this.c.getInsets(h1.a(i10)));
+    @Override // r0.h1
+    public i0.b j() {
+        if (this.o == null) {
+            this.o = i0.b.c(this.c.getSystemGestureInsets());
+        }
+        return this.o;
     }
 
-    @Override // r0.a1, r0.g1
-    public i0.c g(int i10) {
-        return i0.c.c(this.c.getInsetsIgnoringVisibility(h1.a(i10)));
+    @Override // r0.h1
+    public i0.b l() {
+        if (this.q == null) {
+            this.q = i0.b.c(this.c.getTappableElementInsets());
+        }
+        return this.q;
     }
 
-    @Override // r0.a1, r0.g1
-    public boolean p(int i10) {
-        return this.c.isVisible(h1.a(i10));
+    @Override // r0.b1, r0.h1
+    public k1 m(int i3, int i10, int i11, int i12) {
+        return k1.h(null, this.c.inset(i3, i10, i11, i12));
     }
 
-    @Override // r0.a1, r0.g1
-    public final void d(View view) {
+    @Override // r0.c1, r0.h1
+    public void s(i0.b bVar) {
     }
 }

@@ -1,29 +1,23 @@
 package ad;
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f implements Serializable {
-    public final Throwable a;
+public final class f extends l {
+    public final StringBuilder c;
 
-    public f(Throwable exception) {
-        kotlin.jvm.internal.i.e(exception, "exception");
-        this.a = exception;
+    public f() {
+        super(4, 0);
+        this.c = new StringBuilder();
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof f) {
-            return kotlin.jvm.internal.i.a(this.a, ((f) obj).a);
-        }
-        return false;
+    @Override // ad.l
+    public final l b() {
+        l.c(this.c);
+        return this;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
+    @Override // ad.l
     public final String toString() {
-        return "Failure(" + this.a + ')';
+        return "<!--" + this.c.toString() + "-->";
     }
 }

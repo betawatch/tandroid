@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 class Histogram {
     private final long handle;
@@ -9,21 +9,21 @@ class Histogram {
         this.handle = j10;
     }
 
-    public static Histogram createCounts(String str, int i10, int i11, int i12) {
-        return new Histogram(nativeCreateCounts(str, i10, i11, i12));
+    public static Histogram createCounts(String str, int i3, int i10, int i11) {
+        return new Histogram(nativeCreateCounts(str, i3, i10, i11));
     }
 
-    public static Histogram createEnumeration(String str, int i10) {
-        return new Histogram(nativeCreateEnumeration(str, i10));
+    public static Histogram createEnumeration(String str, int i3) {
+        return new Histogram(nativeCreateEnumeration(str, i3));
     }
 
-    private static native void nativeAddSample(long j10, int i10);
+    private static native void nativeAddSample(long j10, int i3);
 
-    private static native long nativeCreateCounts(String str, int i10, int i11, int i12);
+    private static native long nativeCreateCounts(String str, int i3, int i10, int i11);
 
-    private static native long nativeCreateEnumeration(String str, int i10);
+    private static native long nativeCreateEnumeration(String str, int i3);
 
-    public void addSample(int i10) {
-        nativeAddSample(this.handle, i10);
+    public void addSample(int i3) {
+        nativeAddSample(this.handle, i3);
     }
 }

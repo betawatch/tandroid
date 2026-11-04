@@ -1,178 +1,65 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class fk0 extends FrameLayout {
+public final /* synthetic */ class fk0 implements OnCompleteListener, org.telegram.ui.ActionBar.p1, ns {
     public final /* synthetic */ int a;
-    public Object b;
-    public float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+    public final /* synthetic */ dl0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fk0(Context context, EditTextBoldCursor editTextBoldCursor, int i10) {
-        super(context);
-        this.a = i10;
-        this.d = editTextBoldCursor;
+    public /* synthetic */ fk0(dl0 dl0Var, int i3) {
+        this.a = i3;
+        this.b = dl0Var;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    @Override // org.telegram.ui.ns
+    public void c(ks ksVar) {
         switch (this.a) {
-            case 0:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(org.telegram.messenger.i0.L(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + org.telegram.messenger.i0.L(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
-                break;
-            case 1:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(org.telegram.messenger.i0.L(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + org.telegram.messenger.i0.L(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
-                break;
             case 2:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(org.telegram.messenger.i0.L(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + org.telegram.messenger.i0.L(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
+                dl0 dl0Var = this.b;
+                dl0Var.B0 = ksVar;
+                dl0Var.f[4].setText(ksVar.a);
                 break;
             default:
-                super.onDraw(canvas);
+                dl0 dl0Var2 = this.b;
+                dl0Var2.B0 = ksVar;
+                dl0Var2.f[4].setText(ksVar.a);
+                dl0Var2.C0 = ksVar.d;
                 break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
         switch (this.a) {
-            case 0:
-                int size = View.MeasureSpec.getSize(i10) - org.telegram.messenger.i0.L(34.0f);
-                StaticLayout p5 = ((EditTextBoldCursor) this.d).p(size);
-                this.b = p5;
-                if (p5 != null) {
-                    int lineCount = p5.getLineCount();
-                    int i12 = 0;
-                    if (lineCount > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.i0.L(64.0f), TLObject.FLAG_30);
-                    }
-                    if (org.telegram.messenger.dd.X) {
-                        float f7 = 0.0f;
-                        while (true) {
-                            if (i12 < lineCount) {
-                                if (((StaticLayout) this.b).getLineLeft(i12) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f7 = Math.max(f7, ((StaticLayout) this.b).getLineWidth(i12));
-                                    if (i12 == lineCount - 1) {
-                                        this.c = size - f7;
-                                    }
-                                    i12++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
-                break;
             case 1:
-                int size2 = View.MeasureSpec.getSize(i10) - org.telegram.messenger.i0.L(34.0f);
-                StaticLayout p9 = ((EditTextBoldCursor) this.d).p(size2);
-                this.b = p9;
-                if (p9 != null) {
-                    int lineCount2 = p9.getLineCount();
-                    int i13 = 0;
-                    if (lineCount2 > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.i0.L(64.0f), TLObject.FLAG_30);
-                    }
-                    if (org.telegram.messenger.dd.X) {
-                        float f10 = 0.0f;
-                        while (true) {
-                            if (i13 < lineCount2) {
-                                if (((StaticLayout) this.b).getLineLeft(i13) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f10 = Math.max(f10, ((StaticLayout) this.b).getLineWidth(i13));
-                                    if (i13 == lineCount2 - 1) {
-                                        this.c = size2 - f10;
-                                    }
-                                    i13++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
+                dl0 dl0Var = this.b;
+                dl0Var.O0(dl0Var.S0[0]);
                 break;
             case 2:
-                int size3 = View.MeasureSpec.getSize(i10) - org.telegram.messenger.i0.L(34.0f);
-                StaticLayout p10 = ((EditTextBoldCursor) this.d).p(size3);
-                this.b = p10;
-                if (p10 != null) {
-                    int lineCount3 = p10.getLineCount();
-                    int i14 = 0;
-                    if (lineCount3 > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + org.telegram.messenger.i0.L(64.0f), TLObject.FLAG_30);
-                    }
-                    if (org.telegram.messenger.dd.X) {
-                        float f11 = 0.0f;
-                        while (true) {
-                            if (i14 < lineCount3) {
-                                if (((StaticLayout) this.b).getLineLeft(i14) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f11 = Math.max(f11, ((StaticLayout) this.b).getLineWidth(i14));
-                                    if (i14 == lineCount3 - 1) {
-                                        this.c = size3 - f11;
-                                    }
-                                    i14++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
-                break;
             default:
-                super.onMeasure(i10, i11);
-                org.telegram.ui.Components.fi0 fi0Var = ((org.telegram.ui.Components.oh0) this.d).n1;
-                float measuredHeight = (r0.m1 / 768.0f) * ((ag.r) this.b).getMeasuredHeight();
-                if (this.c != measuredHeight) {
-                    this.c = measuredHeight;
-                    ViewGroup.LayoutParams layoutParams = fi0Var.getLayoutParams();
-                    int i15 = (int) measuredHeight;
-                    fi0Var.getLayoutParams().width = i15;
-                    layoutParams.height = i15;
-                    super.onMeasure(i10, i11);
-                    break;
-                }
+                dl0 dl0Var2 = this.b;
+                dl0Var2.J0(true);
+                dl0Var2.F0();
+                break;
+            case 3:
+                this.b.G0(true);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fk0(org.telegram.ui.Components.oh0 oh0Var, Context context, ag.r rVar) {
-        super(context);
-        this.a = 3;
-        this.d = oh0Var;
-        this.b = rVar;
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        if (!task.isSuccessful()) {
+            org.telegram.messenger.a8.e("isReadyToPay failed", task.getException());
+            return;
+        }
+        FrameLayout frameLayout = this.b.P;
+        if (frameLayout != null) {
+            frameLayout.setVisibility(0);
+        }
     }
 }

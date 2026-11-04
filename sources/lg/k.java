@@ -1,95 +1,126 @@
 package lg;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.messenger.at;
-import org.telegram.messenger.i0;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.nk0;
-import org.telegram.ui.Components.uk0;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import android.widget.ToggleButton;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.jt;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k implements Runnable {
+public final class k extends ImageView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ k(Object obj, float f7, float f10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f7;
-        this.c = f10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k(Context context, int i3) {
+        super(context);
+        this.a = i3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        int i10 = this.a;
-        float f7 = this.c;
-        float f10 = this.b;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                l lVar = (l) obj;
-                q qVar = lVar.b;
-                ValueAnimator valueAnimator = qVar.c0;
-                i iVar = qVar.h0;
-                i iVar2 = qVar.g0;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    qVar.c0.cancel();
-                    qVar.c0 = null;
-                }
-                AnimatorSet animatorSet = qVar.d0;
-                if (animatorSet != null) {
-                    animatorSet.removeAllListeners();
-                    qVar.d0.cancel();
-                    qVar.d0 = null;
-                }
-                if (Math.abs(qVar.b.d) <= 10.0f) {
-                    i0.r(qVar.e0);
-                    qVar.d0 = new AnimatorSet();
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(qVar.b.d, f10);
-                    ofFloat.addUpdateListener(iVar2);
-                    long j10 = at.x3;
-                    ofFloat.setDuration(j10);
-                    gr grVar = gr.h;
-                    ofFloat.setInterpolator(grVar);
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, 0.0f);
-                    ofFloat2.addUpdateListener(iVar2);
-                    ofFloat2.setStartDelay(j10);
-                    ofFloat2.setDuration(600L);
-                    OvershootInterpolator overshootInterpolator = i0.H;
-                    ofFloat2.setInterpolator(overshootInterpolator);
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(qVar.b.i, f7);
-                    ofFloat3.addUpdateListener(iVar);
-                    ofFloat3.setDuration(j10);
-                    ofFloat3.setInterpolator(grVar);
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f7, 0.0f);
-                    ofFloat4.addUpdateListener(iVar);
-                    ofFloat4.setStartDelay(j10);
-                    ofFloat4.setDuration(600L);
-                    ofFloat4.setInterpolator(overshootInterpolator);
-                    qVar.d0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    qVar.d0.addListener(new bg.e(lVar, 11));
-                    qVar.d0.start();
-                    break;
-                } else {
-                    qVar.l();
-                    break;
-                }
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                super.dispatchDraw(canvas);
+                break;
             default:
-                uk0 uk0Var = (uk0) ((nk0) obj).b;
-                if (uk0Var.c1 != null && (view = uk0Var.L1) != null) {
-                    uk0Var.j1(view, f10, f7, true);
-                    uk0Var.c1 = null;
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                if (getAlpha() < 0.5f) {
+                    return false;
+                }
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 5:
+                super.onDraw(canvas);
+                invalidate();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 6:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName(ToggleButton.class.getName());
+                accessibilityNodeInfo.setCheckable(true);
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    accessibilityNodeInfo.setChecked(sharedInstance.isSpeakerphoneOn());
                     break;
                 }
                 break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
         }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void onMeasure(int i3, int i10) {
+        float f10;
+        float f11;
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i3, i10);
+                Matrix imageMatrix = getImageMatrix();
+                int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
+                int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
+                int intrinsicWidth = getDrawable().getIntrinsicWidth();
+                int intrinsicHeight = getDrawable().getIntrinsicHeight();
+                if (intrinsicWidth * measuredHeight > intrinsicHeight * measuredWidth) {
+                    f10 = measuredHeight;
+                    f11 = intrinsicHeight;
+                } else {
+                    f10 = measuredWidth;
+                    f11 = intrinsicWidth;
+                }
+                float f12 = f10 / f11;
+                imageMatrix.setScale(f12, f12);
+                setImageMatrix(imageMatrix);
+                break;
+            case 1:
+            case 2:
+            default:
+                super.onMeasure(i3, i10);
+                break;
+            case 3:
+                int size = View.MeasureSpec.getSize(i3);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+                break;
+            case 4:
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k(jt jtVar, Context context) {
+        super(context);
+        this.a = 2;
     }
 }

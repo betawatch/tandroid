@@ -1,13 +1,13 @@
 package androidx.media3.decoder;
 
-import b2.x;
-import h2.i;
-import h2.j;
+import d2.v;
+import j2.i;
+import j2.j;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class VideoDecoderOutputBuffer extends j {
     public static final int COLORSPACE_BT2020 = 3;
@@ -17,7 +17,7 @@ public class VideoDecoderOutputBuffer extends j {
     public int colorspace;
     public ByteBuffer data;
     public long decoderPrivate;
-    public x format;
+    public v format;
     public int height;
     public int mode;
     private final i owner;
@@ -32,16 +32,16 @@ public class VideoDecoderOutputBuffer extends j {
         this.owner = iVar;
     }
 
-    private static boolean isSafeToMultiply(int i10, int i11) {
-        if (i10 < 0 || i11 < 0) {
+    private static boolean isSafeToMultiply(int i3, int i10) {
+        if (i3 < 0 || i10 < 0) {
             return false;
         }
-        return i11 <= 0 || i10 < ConnectionsManager.DEFAULT_DATACENTER_ID / i11;
+        return i10 <= 0 || i3 < ConnectionsManager.DEFAULT_DATACENTER_ID / i10;
     }
 
-    public void init(long j10, int i10, ByteBuffer byteBuffer) {
+    public void init(long j10, int i3, ByteBuffer byteBuffer) {
         this.timeUs = j10;
-        this.mode = i10;
+        this.mode = i3;
         if (byteBuffer == null || !byteBuffer.hasRemaining()) {
             this.supplementalData = null;
             return;
@@ -59,7 +59,7 @@ public class VideoDecoderOutputBuffer extends j {
         byteBuffer.position(0);
     }
 
-    public boolean initForOffsetFrames(int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    public boolean initForOffsetFrames(int i3, int i10, int i11, int i12, int i13, int i14, int i15) {
         if (this.yuvPlanes == null) {
             this.yuvPlanes = new ByteBuffer[3];
         }
@@ -67,58 +67,58 @@ public class VideoDecoderOutputBuffer extends j {
         if (byteBuffer == null) {
             return false;
         }
-        this.width = i11;
-        this.height = i12;
-        this.colorspace = i15;
+        this.width = i10;
+        this.height = i11;
+        this.colorspace = i14;
         ByteBuffer[] byteBufferArr = this.yuvPlanes;
-        int i17 = i13 * i12;
-        int i18 = (i12 >> 1) * i14;
-        int i19 = i13 * i16;
-        byteBuffer.position(i10);
+        int i16 = i12 * i11;
+        int i17 = (i11 >> 1) * i13;
+        int i18 = i12 * i15;
+        byteBuffer.position(i3);
         ByteBuffer slice = byteBuffer.slice();
         byteBufferArr[0] = slice;
-        slice.limit(i17);
-        byteBuffer.position(i19 + i10);
+        slice.limit(i16);
+        byteBuffer.position(i18 + i3);
         ByteBuffer slice2 = byteBuffer.slice();
         byteBufferArr[1] = slice2;
-        slice2.limit(i18);
-        byteBuffer.position(i19 + ((i16 >> 1) * i14) + i10);
+        slice2.limit(i17);
+        byteBuffer.position(i18 + ((i15 >> 1) * i13) + i3);
         ByteBuffer slice3 = byteBuffer.slice();
         byteBufferArr[2] = slice3;
-        slice3.limit(i18);
+        slice3.limit(i17);
         if (this.yuvStrides == null) {
             this.yuvStrides = new int[3];
         }
         int[] iArr = this.yuvStrides;
-        iArr[0] = i13;
-        iArr[1] = i14;
-        iArr[2] = i14;
+        iArr[0] = i12;
+        iArr[1] = i13;
+        iArr[2] = i13;
         return true;
     }
 
-    public void initForPrivateFrame(int i10, int i11) {
-        this.width = i10;
-        this.height = i11;
+    public void initForPrivateFrame(int i3, int i10) {
+        this.width = i3;
+        this.height = i10;
     }
 
-    public boolean initForYuvFrame(int i10, int i11, int i12, int i13, int i14) {
-        this.width = i10;
-        this.height = i11;
-        this.colorspace = i14;
-        this.yStride = i12;
-        this.uvStride = i13;
-        int i15 = (int) ((i11 + 1) / 2);
-        if (isSafeToMultiply(i12, i11) && isSafeToMultiply(i13, i15)) {
-            int i16 = i11 * i12;
-            int i17 = i15 * i13;
-            int i18 = (i17 * 2) + i16;
-            if (isSafeToMultiply(i17, 2) && i18 >= i16) {
+    public boolean initForYuvFrame(int i3, int i10, int i11, int i12, int i13) {
+        this.width = i3;
+        this.height = i10;
+        this.colorspace = i13;
+        this.yStride = i11;
+        this.uvStride = i12;
+        int i14 = (int) ((i10 + 1) / 2);
+        if (isSafeToMultiply(i11, i10) && isSafeToMultiply(i12, i14)) {
+            int i15 = i10 * i11;
+            int i16 = i14 * i12;
+            int i17 = (i16 * 2) + i15;
+            if (isSafeToMultiply(i16, 2) && i17 >= i15) {
                 ByteBuffer byteBuffer = this.data;
-                if (byteBuffer == null || byteBuffer.capacity() < i18) {
-                    this.data = ByteBuffer.allocateDirect(i18);
+                if (byteBuffer == null || byteBuffer.capacity() < i17) {
+                    this.data = ByteBuffer.allocateDirect(i17);
                 } else {
                     this.data.position(0);
-                    this.data.limit(i18);
+                    this.data.limit(i17);
                 }
                 if (this.yuvPlanes == null) {
                     this.yuvPlanes = new ByteBuffer[3];
@@ -127,30 +127,30 @@ public class VideoDecoderOutputBuffer extends j {
                 ByteBuffer[] byteBufferArr = this.yuvPlanes;
                 ByteBuffer slice = byteBuffer2.slice();
                 byteBufferArr[0] = slice;
-                slice.limit(i16);
-                byteBuffer2.position(i16);
+                slice.limit(i15);
+                byteBuffer2.position(i15);
                 ByteBuffer slice2 = byteBuffer2.slice();
                 byteBufferArr[1] = slice2;
-                slice2.limit(i17);
-                byteBuffer2.position(i16 + i17);
+                slice2.limit(i16);
+                byteBuffer2.position(i15 + i16);
                 ByteBuffer slice3 = byteBuffer2.slice();
                 byteBufferArr[2] = slice3;
-                slice3.limit(i17);
+                slice3.limit(i16);
                 if (this.yuvStrides == null) {
                     this.yuvStrides = new int[3];
                 }
                 int[] iArr = this.yuvStrides;
-                iArr[0] = i12;
-                iArr[1] = i13;
-                iArr[2] = i13;
+                iArr[0] = i11;
+                iArr[1] = i12;
+                iArr[2] = i12;
                 return true;
             }
         }
         return false;
     }
 
-    @Override // h2.j
+    @Override // j2.j
     public void release() {
-        this.owner.b(this);
+        this.owner.a(this);
     }
 }

@@ -1,41 +1,48 @@
 package l8;
 
 import android.os.Parcel;
-import android.os.Parcelable;
-import g8.g;
-import java.util.Arrays;
-import n6.l;
-import w7.h0;
+import android.os.RemoteException;
+import androidx.car.app.j;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends o6.a {
-    public static final Parcelable.Creator<a> CREATOR = new g(20);
-    public String a;
-    public String b;
+public final class a {
+    public final u7.h a;
+
+    public a(u7.h hVar) {
+        m.g(hVar);
+        this.a = hVar;
+    }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (!(obj instanceof a)) {
+            return false;
         }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            if (l.k(this.a, aVar.a) && l.k(this.b, aVar.b)) {
-                return true;
-            }
+        try {
+            u7.h hVar = this.a;
+            u7.h hVar2 = ((a) obj).a;
+            u7.f fVar = (u7.f) hVar;
+            Parcel P0 = fVar.P0();
+            u7.b.c(P0, hVar2);
+            Parcel O0 = fVar.O0(P0, 17);
+            boolean z10 = O0.readInt() != 0;
+            O0.recycle();
+            return z10;
+        } catch (RemoteException e10) {
+            throw new j(e10);
         }
-        return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.l(parcel, 1, this.a);
-        h0.l(parcel, 2, this.b);
-        h0.r(parcel, q6);
+        try {
+            u7.f fVar = (u7.f) this.a;
+            Parcel O0 = fVar.O0(fVar.P0(), 18);
+            int readInt = O0.readInt();
+            O0.recycle();
+            return readInt;
+        } catch (RemoteException e10) {
+            throw new j(e10);
+        }
     }
 }

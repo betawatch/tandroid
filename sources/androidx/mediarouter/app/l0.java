@@ -12,10 +12,12 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import b8.d1;
+import b8.oc;
 import org.telegram.messenger.beta.R;
-import v7.r7;
+import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class l0 extends f0 {
     public final ImageView A;
@@ -46,14 +48,14 @@ public final class l0 extends f0 {
         this.D = (RelativeLayout) view.findViewById(R.id.mr_cast_volume_layout);
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
         this.E = checkBox;
-        Context context = o0Var.D;
-        Drawable b10 = r7.b(context, R.drawable.mr_cast_checkbox);
-        if (v7.a0.h(context)) {
+        Context context = o0Var.E;
+        Drawable b10 = oc.b(context, R.drawable.mr_cast_checkbox);
+        if (d1.h(context)) {
             b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
         checkBox.setButtonDrawable(b10);
-        v7.a0.i(context, progressBar);
-        this.F = v7.a0.c(context);
+        d1.i(context, progressBar);
+        this.F = d1.c(context);
         Resources resources = context.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         TypedValue typedValue = new TypedValue();
@@ -61,15 +63,15 @@ public final class l0 extends f0 {
         this.G = (int) typedValue.getDimension(displayMetrics);
     }
 
-    public final boolean v(p4.w wVar) {
+    public final boolean v(r4.w wVar) {
         if (wVar.g()) {
             return true;
         }
-        k2.m0 b10 = this.I.x.r.b(wVar);
+        y00 b10 = this.I.x.r.b(wVar);
         if (b10 == null) {
             return false;
         }
-        p4.o oVar = (p4.o) b10.a;
+        r4.o oVar = (r4.o) b10.a;
         return (oVar != null ? oVar.b : 1) == 3;
     }
 

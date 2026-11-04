@@ -1,53 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.os.Build;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class jg0 implements hi.a, fi.a {
-    public final tg.b a;
+public final class jg0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kg0 b;
 
-    public jg0(tg.b bVar) {
-        this.a = bVar;
+    public /* synthetic */ jg0(kg0 kg0Var, int i3) {
+        this.a = i3;
+        this.b = kg0Var;
     }
 
-    @Override // fi.a
-    public final int a() {
-        return ((fi.a) b()).a();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                kg0 kg0Var = this.b;
+                AnimatorSet animatorSet = kg0Var.s;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    kg0Var.s = null;
+                    kg0Var.getClass();
+                    break;
+                }
+                break;
+            case 2:
+                kg0 kg0Var2 = this.b;
+                AnimatorSet animatorSet2 = kg0Var2.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    kg0Var2.s = null;
+                    kg0Var2.getClass();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
     }
 
-    public final hi.a b() {
-        ei.s f7 = ei.r.f();
-        boolean z10 = f7.a;
-        tg.b bVar = this.a;
-        return !z10 ? bVar.c : (!f7.b || Build.VERSION.SDK_INT < 33) ? bVar.b : bVar.a;
-    }
-
-    @Override // fi.a
-    public final void d(float f7, float f10, int i10, Canvas canvas, RectF rectF) {
-        ((fi.a) b()).d(f7, f10, i10, canvas, rectF);
-    }
-
-    @Override // hi.a
-    public final void e(Canvas canvas, float f7, float f10, float f11, float f12) {
-        b().e(canvas, f7, f10, f11, f12);
-    }
-
-    @Override // fi.a
-    public final int f() {
-        return ((fi.a) b()).f();
-    }
-
-    @Override // fi.a
-    public final int g() {
-        return ((fi.a) b()).g();
-    }
-
-    @Override // fi.a
-    public final boolean h() {
-        hi.a b10 = b();
-        return (b10 instanceof fi.a) && ((fi.a) b10).h();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i3 = this.a;
+        kg0 kg0Var = this.b;
+        switch (i3) {
+            case 0:
+                AnimatorSet animatorSet = kg0Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    kg0Var.h = null;
+                }
+                org.telegram.messenger.hs.e().k(99, 512);
+                break;
+            case 1:
+                AnimatorSet animatorSet2 = kg0Var.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    kg0Var.s = null;
+                    if (kg0Var.x) {
+                        kg0Var.setLayerType(0, null);
+                    }
+                }
+                org.telegram.messenger.hs.e().k(99, 512);
+                break;
+            default:
+                AnimatorSet animatorSet3 = kg0Var.s;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    kg0Var.s = null;
+                    org.telegram.messenger.g0.h3(new jb0(this, 11));
+                }
+                org.telegram.messenger.hs.e().k(99, 512);
+                break;
+        }
     }
 }

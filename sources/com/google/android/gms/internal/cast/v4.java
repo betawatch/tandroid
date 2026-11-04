@@ -1,19 +1,20 @@
 package com.google.android.gms.internal.cast;
 
+import b8.ka;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class v4 implements Iterable, Serializable {
-    public static final v4 c = new v4(j5.b);
+    public static final v4 c = new v4(i5.b);
     public int a = 0;
     public final byte[] b;
 
     static {
-        int i10 = t4.a;
+        int i3 = t4.a;
     }
 
     public v4(byte[] bArr) {
@@ -21,9 +22,9 @@ public class v4 implements Iterable, Serializable {
         this.b = bArr;
     }
 
-    public static void o(int i10) {
-        if (((i10 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(i0.a.i(i10, "End index: 47 >= "));
+    public static void k(int i3) {
+        if (((i3 - 47) | 47) < 0) {
+            throw new IndexOutOfBoundsException(k2.p1.i(i3, "End index: 47 >= "));
         }
     }
 
@@ -31,31 +32,31 @@ public class v4 implements Iterable, Serializable {
         if (obj == this) {
             return true;
         }
-        if ((obj instanceof v4) && n() == ((v4) obj).n()) {
-            if (n() == 0) {
+        if ((obj instanceof v4) && j() == ((v4) obj).j()) {
+            if (j() == 0) {
                 return true;
             }
             if (!(obj instanceof v4)) {
                 return obj.equals(this);
             }
             v4 v4Var = (v4) obj;
-            int i10 = this.a;
-            int i11 = v4Var.a;
-            if (i10 == 0 || i11 == 0 || i10 == i11) {
-                int n10 = n();
-                if (n10 > v4Var.n()) {
-                    throw new IllegalArgumentException("Length too large: " + n10 + n());
+            int i3 = this.a;
+            int i10 = v4Var.a;
+            if (i3 == 0 || i10 == 0 || i3 == i10) {
+                int j10 = j();
+                if (j10 > v4Var.j()) {
+                    throw new IllegalArgumentException("Length too large: " + j10 + j());
                 }
-                if (n10 > v4Var.n()) {
-                    throw new IllegalArgumentException(a1.g.j(n10, v4Var.n(), "Ran off end of other: 0, ", ", "));
+                if (j10 > v4Var.j()) {
+                    throw new IllegalArgumentException(a1.g.n(j10, v4Var.j(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = v4Var.b;
+                int i11 = 0;
                 int i12 = 0;
-                int i13 = 0;
-                while (i12 < n10) {
-                    if (this.b[i12] == bArr[i13]) {
+                while (i11 < j10) {
+                    if (this.b[i11] == bArr[i12]) {
+                        i11++;
                         i12++;
-                        i13++;
                     }
                 }
                 return true;
@@ -64,22 +65,30 @@ public class v4 implements Iterable, Serializable {
         return false;
     }
 
+    public byte h(int i3) {
+        return this.b[i3];
+    }
+
     public final int hashCode() {
-        int i10 = this.a;
-        if (i10 != 0) {
-            return i10;
+        int i3 = this.a;
+        if (i3 != 0) {
+            return i3;
         }
-        int n10 = n();
-        Charset charset = j5.a;
-        int i11 = n10;
-        for (int i12 = 0; i12 < n10; i12++) {
-            i11 = (i11 * 31) + this.b[i12];
+        int j10 = j();
+        Charset charset = i5.a;
+        int i10 = j10;
+        for (int i11 = 0; i11 < j10; i11++) {
+            i10 = (i10 * 31) + this.b[i11];
         }
-        if (i11 == 0) {
-            i11 = 1;
+        if (i10 == 0) {
+            i10 = 1;
         }
-        this.a = i11;
-        return i11;
+        this.a = i10;
+        return i10;
+    }
+
+    public byte i(int i3) {
+        return this.b[i3];
     }
 
     @Override // java.lang.Iterable
@@ -87,15 +96,7 @@ public class v4 implements Iterable, Serializable {
         return new androidx.datastore.preferences.protobuf.e(this);
     }
 
-    public byte l(int i10) {
-        return this.b[i10];
-    }
-
-    public byte m(int i10) {
-        return this.b[i10];
-    }
-
-    public int n() {
+    public int j() {
         return this.b.length;
     }
 
@@ -103,18 +104,18 @@ public class v4 implements Iterable, Serializable {
         String concat;
         Locale locale = Locale.ROOT;
         String hexString = Integer.toHexString(System.identityHashCode(this));
-        int n10 = n();
-        if (n() <= 50) {
-            concat = v7.v5.a(this);
+        int j10 = j();
+        if (j() <= 50) {
+            concat = ka.a(this);
         } else {
-            o(n());
-            concat = v7.v5.a(new u4(this.b)).concat("...");
+            k(j());
+            concat = ka.a(new u4(this.b)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
-        sb2.append(n10);
+        sb2.append(j10);
         sb2.append(" contents=\"");
-        return a1.g.r(sb2, concat, "\">");
+        return a1.g.s(sb2, concat, "\">");
     }
 }

@@ -1,144 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import org.telegram.messenger.ImageReceiver;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class kj0 extends g9 {
-    public final /* synthetic */ int G;
-    public final /* synthetic */ lj0 H;
+public final class kj0 implements Runnable {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ lj0 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kj0(lj0 lj0Var, Context context, int i10) {
-        super(context);
-        this.G = i10;
-        this.H = lj0Var;
+    public kj0(lj0 lj0Var, View view, int i3, float f10, float f11) {
+        this.e = lj0Var;
+        this.a = view;
+        this.b = i3;
+        this.c = f10;
+        this.d = f11;
     }
 
-    @Override // org.telegram.ui.Components.g9
-    public ImageReceiver c() {
-        switch (this.G) {
-            case 0:
-                return new jj0(0, this);
-            case 1:
-                return new jj0(1, this);
-            default:
-                return super.c();
+    @Override // java.lang.Runnable
+    public final void run() {
+        mj0 mj0Var = this.e.b;
+        tj0 tj0Var = (tj0) mj0Var.b;
+        if (this == tj0Var.R1) {
+            tj0Var.R1 = null;
         }
-    }
-
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.G) {
-            case 0:
-                lj0 lj0Var = this.H;
-                kj0 kj0Var = lj0Var.b;
-                super.dispatchDraw(canvas);
-                if (this.a.B() != null && !lj0Var.E) {
-                    this.a.B().start();
+        View view = this.a;
+        if (view != null) {
+            tj0Var.j1(view, 0.0f, 0.0f, false);
+            if (((tj0) mj0Var.b).Q1) {
+                return;
+            }
+            try {
+                view.playSoundEffect(0);
+            } catch (Exception unused) {
+            }
+            view.sendAccessibilityEvent(1);
+            int i3 = this.b;
+            if (i3 != -1) {
+                tj0 tj0Var2 = (tj0) mj0Var.b;
+                fj0 fj0Var = tj0Var2.U0;
+                if (fj0Var != null) {
+                    fj0Var.f(i3, view);
+                    return;
                 }
-                if (lj0Var.s && !lj0Var.w && this.a.B() != null && this.a.B().A() && kj0Var.a.B() != null && kj0Var.a.B().u()) {
-                    lj0Var.w = true;
-                    kj0Var.a.B().N(0, false, true);
-                    kj0Var.setVisibility(0);
-                    Runnable runnable = lj0Var.P.P0;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                    org.telegram.messenger.i0.g3(new eb0(this, 17));
+                gj0 gj0Var = tj0Var2.V0;
+                if (gj0Var != null) {
+                    gj0Var.b(this.c - view.getX(), this.d - view.getY(), i3, view);
                 }
-                invalidate();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate(Rect rect) {
-        switch (this.G) {
-            case 0:
-                lj0 lj0Var = this.H;
-                if (!sg.e0.c(this, lj0Var.P)) {
-                    super.invalidate(rect);
-                    lj0Var.P.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate(rect);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.g9, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.G) {
-            case 1:
-                this.H.b();
-                super.onDraw(canvas);
-                break;
-            case 2:
-                f5 f5Var = this.e;
-                ImageReceiver imageReceiver = f5Var != null ? f5Var.k : this.a;
-                if (imageReceiver != null && imageReceiver.B() != null) {
-                    imageReceiver.B().start();
-                }
-                super.onDraw(canvas);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate(int i10, int i11, int i12, int i13) {
-        switch (this.G) {
-            case 0:
-                if (!sg.e0.c(this)) {
-                    super.invalidate(i10, i11, i12, i13);
-                    break;
-                }
-                break;
-            case 1:
-                if (!sg.e0.c(this)) {
-                    super.invalidate(i10, i11, i12, i13);
-                    break;
-                }
-                break;
-            default:
-                super.invalidate(i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        int i10 = this.G;
-        lj0 lj0Var = this.H;
-        switch (i10) {
-            case 0:
-                if (!sg.e0.c(this, lj0Var.P)) {
-                    super.invalidate();
-                    lj0Var.P.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                if (!sg.e0.c(this)) {
-                    super.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                lj0Var.P.invalidate();
-                break;
+            }
         }
     }
 }

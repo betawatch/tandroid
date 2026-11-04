@@ -1,51 +1,43 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.RadialProgressView;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ef0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
-    public final /* synthetic */ ve0 c;
+    public final /* synthetic */ vf0 b;
 
-    public /* synthetic */ ef0(int i10, e eVar, ve0 ve0Var) {
-        this.a = i10;
-        this.b = eVar;
-        this.c = ve0Var;
+    public /* synthetic */ ef0(vf0 vf0Var, int i3) {
+        this.a = i3;
+        this.b = vf0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        ve0 ve0Var = this.c;
-        e eVar = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                int i11 = ve0.F;
-                ve0Var.a();
-                org.telegram.messenger.i0.h3(new ef0(1, eVar, ve0Var), 150L);
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            case 1:
+                vf0 vf0Var = this.b;
+                vf0Var.getClass();
+                yh.e.f(false);
+                yh.e eVar = vf0Var.i0;
+                if (eVar != null) {
+                    eVar.b(vf0Var.F);
+                }
+                org.telegram.messenger.g0.h3(new ef0(vf0Var, 0));
+                break;
+            case 2:
+                yh.e.f(false);
+                vf0 vf0Var2 = this.b;
+                yh.e eVar2 = vf0Var2.i0;
+                if (eVar2 != null) {
+                    eVar2.b(vf0Var2.F);
+                }
+                org.telegram.messenger.g0.h3(new ef0(vf0Var2, 3));
                 break;
             default:
-                ff0 ff0Var = (ff0) eVar.b;
-                ff0Var.h(null);
-                RadialProgressView radialProgressView = ff0Var.a0.N.d;
-                RadialProgressView radialProgressView2 = ve0Var.h.d;
-                radialProgressView.getClass();
-                radialProgressView.a = radialProgressView2.a;
-                radialProgressView.b = radialProgressView2.b;
-                radialProgressView.H = radialProgressView2.H;
-                radialProgressView.I = radialProgressView2.I;
-                radialProgressView.J = radialProgressView2.J;
-                radialProgressView.c = radialProgressView2.c;
-                radialProgressView.n = radialProgressView2.n;
-                radialProgressView.e = radialProgressView2.e;
-                radialProgressView.D = radialProgressView2.D;
-                radialProgressView.F = radialProgressView2.F;
-                radialProgressView.G = radialProgressView2.G;
-                radialProgressView.d = radialProgressView2.d;
-                radialProgressView.E = radialProgressView2.E;
-                radialProgressView.b(85L);
+                super/*android.app.Dialog*/.dismiss();
                 break;
         }
     }

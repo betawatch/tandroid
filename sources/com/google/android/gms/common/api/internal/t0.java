@@ -1,32 +1,11 @@
 package com.google.android.gms.common.api.internal;
 
-import java.util.Set;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class t0 implements n6.b {
-    public final com.google.android.gms.common.api.c a;
-    public final b b;
-    public n6.h c = null;
-    public Set d = null;
-    public boolean e = false;
-    public final /* synthetic */ h f;
+public abstract class t0 extends d1 {
+    public abstract m6.c[] f(j0 j0Var);
 
-    public t0(h hVar, com.google.android.gms.common.api.c cVar, b bVar) {
-        this.f = hVar;
-        this.a = cVar;
-        this.b = bVar;
-    }
+    public abstract boolean g(j0 j0Var);
 
-    @Override // n6.b
-    public final void a(k6.a aVar) {
-        this.f.y.post(new s0(this, aVar, 0));
-    }
-
-    public final void b(k6.a aVar) {
-        q0 q0Var = (q0) this.f.s.get(this.b);
-        if (q0Var != null) {
-            q0Var.n(aVar);
-        }
-    }
+    public abstract int h(j0 j0Var);
 }

@@ -1,34 +1,15 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.v51;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import org.telegram.ui.Components.e5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class z0 extends a51 {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        a51.h(new z0());
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
-        ((a1) view).c = (a) b51Var.G;
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        return new a1(context, p6Var);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean f() {
-        return false;
-    }
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class z0 {
+    public e5 a;
+    public long b;
+    public Bitmap c;
+    public Paint d;
+    public int e;
 }

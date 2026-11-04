@@ -1,31 +1,14 @@
 package ge;
 
-import android.view.View;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface a {
-    void G0();
+public final class a implements Executor {
+    public static final a a = new a();
 
-    boolean I1();
-
-    void N(float f7, float f10);
-
-    boolean V0(float f7, float f10);
-
-    boolean d1(View view, float f7, float f10);
-
-    long getLongPressDuration();
-
-    boolean j0();
-
-    void m(View view, float f7, float f10);
-
-    void o1(View view, float f7, float f10);
-
-    void r(float f7, float f10);
-
-    void t0();
-
-    void u(View view, float f7, float f10);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        runnable.run();
+    }
 }

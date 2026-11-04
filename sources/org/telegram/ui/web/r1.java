@@ -1,92 +1,45 @@
 package org.telegram.ui.web;
 
-import android.webkit.ValueCallback;
-import android.webkit.WebView;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.f8;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r1 implements ValueCallback {
+public final /* synthetic */ class r1 implements u10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ WebView c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ s1 b;
 
-    public /* synthetic */ r1(ji.k kVar, a3.l0 l0Var, WebView webView, b5.h hVar) {
-        this.a = 2;
-        this.b = kVar;
-        this.d = l0Var;
-        this.c = webView;
-        this.e = hVar;
+    public /* synthetic */ r1(s1 s1Var, int i3) {
+        this.a = i3;
+        this.b = s1Var;
     }
 
-    @Override // android.webkit.ValueCallback
-    public final void onReceiveValue(Object obj) {
-        int i10 = 1;
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        u1 u1Var = (u1) obj;
         switch (this.a) {
             case 0:
-                y1 y1Var = (y1) this.b;
-                WebView webView = this.c;
-                File file = (File) this.d;
-                webView.saveWebArchive(file.getAbsolutePath(), false, new r1(y1Var, webView, file, (q1) this.e, 1));
-                return;
-            case 1:
-                y1 y1Var2 = (y1) this.b;
-                WebView webView2 = this.c;
-                File file2 = (File) this.d;
-                q1 q1Var = (q1) this.e;
-                webView2.evaluateJavascript(org.telegram.messenger.i0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "false"), new e0(i10));
-                try {
-                    xa.n nVar = new xa.n(file2);
-                    y1Var2.b = nVar;
-                    if (!((ArrayList) nVar.b).isEmpty()) {
-                        q1Var.a(((e1) ((ArrayList) y1Var2.b.b).get(0)).a());
-                        return;
-                    }
-                } catch (Exception e) {
-                    f8.g(e, true);
+                s1 s1Var = this.b;
+                s1Var.l = null;
+                s1Var.i = true;
+                TLRPC.TL_webPage tL_webPage = s1Var.j;
+                if (tL_webPage != null) {
+                    u1.o(tL_webPage);
                 }
-                q1Var.a(null);
-                return;
+                s1Var.j = u1Var.c;
+                s1Var.c();
+                break;
             default:
-                ji.k kVar = (ji.k) this.b;
-                a3.l0 l0Var = (a3.l0) this.d;
-                WebView webView3 = this.c;
-                b5.h hVar = (b5.h) this.e;
-                String str = (String) obj;
-                org.telegram.messenger.i0.r(l0Var);
-                synchronized (kVar.a) {
-                    if (!kVar.u && kVar.o == webView3 && kVar.p == hVar && !kVar.r) {
-                        if (!"true".equals(str)) {
-                            f8.d("WEB proxy: Base64 bridge installation failed; transport stopped");
-                            kVar.q();
-                            return;
-                        } else {
-                            if (!kVar.j(webView3)) {
-                                kVar.h();
-                                return;
-                            }
-                            kVar.s = false;
-                            kVar.r = true;
-                            f8.b("WEB proxy: Base64 bridge ready");
-                            kVar.n(16, 0, new byte[]{1});
-                            return;
-                        }
-                    }
-                    return;
+                s1 s1Var2 = this.b;
+                s1Var2.l = null;
+                s1Var2.i = true;
+                TLRPC.TL_webPage tL_webPage2 = s1Var2.j;
+                if (tL_webPage2 != null) {
+                    u1.o(tL_webPage2);
                 }
+                s1Var2.j = u1Var.c;
+                s1Var2.c();
+                break;
         }
-    }
-
-    public /* synthetic */ r1(y1 y1Var, WebView webView, File file, q1 q1Var, int i10) {
-        this.a = i10;
-        this.b = y1Var;
-        this.c = webView;
-        this.d = file;
-        this.e = q1Var;
     }
 }

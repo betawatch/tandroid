@@ -1,73 +1,45 @@
 package vg;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import w7.o7;
-import w7.u;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import b8.mf;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class e {
-    public int d;
-    public boolean e;
-    public int f;
-    public float i;
-    public float j;
-    public final Rect a = new Rect();
-    public final float[] b = new float[8];
-    public final float[] c = new float[8];
-    public float g = 0.75f;
-    public final float h = 1.5f;
-    public final Path k = new Path();
-    public boolean l = true;
-    public final Rect m = new Rect();
+public final class e extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+    public final LimitPreviewView c;
 
-    public final void a() {
-        this.l = o7.a(this.b);
-        Rect rect = this.a;
-        Rect rect2 = this.m;
-        rect2.set(rect);
-        int i10 = this.d;
-        rect2.inset(i10, i10);
-        Path path = this.k;
-        path.rewind();
-        path.addRoundRect(rect2.left, rect2.top, rect2.right, rect2.bottom, this.b, Path.Direction.CW);
-        path.close();
+    public e(Context context, e6 e6Var) {
+        super(context);
+        setOrientation(1);
+        setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        k2.p1.t(textView, 1, 15.0f);
+        r6.V(textView, k6.G6, e6Var);
+        addView(textView, mf.q(-1, -2, 0.0f, 0, 16, 0, 16, 0));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        r6.V(textView2, k6.y6, e6Var);
+        textView2.setTextSize(1, 14.0f);
+        addView(textView2, mf.q(-1, -2, 0.0f, 0, 16, 1, 16, 0));
+        LimitPreviewView limitPreviewView = new LimitPreviewView(0, 10, 20, context, e6Var);
+        this.c = limitPreviewView;
+        addView(limitPreviewView, mf.q(-1, -2, 0.0f, 0, 0, 8, 0, 21));
     }
 
-    public final void b(Canvas canvas, Paint paint) {
-        if (!this.l) {
-            canvas.drawPath(this.k, paint);
-            return;
-        }
-        Rect rect = this.m;
-        float f7 = rect.left;
-        float f10 = rect.top;
-        float f11 = rect.right;
-        float f12 = rect.bottom;
-        float f13 = this.b[0];
-        canvas.drawRoundRect(f7, f10, f11, f12, f13, f13, paint);
-    }
-
-    public final void c(Canvas canvas, Paint paint, boolean z10) {
-        if (!z10) {
-            b(canvas, paint);
-            return;
-        }
-        Rect rect = this.m;
-        float f7 = rect.top;
-        float[] fArr = this.b;
-        float a2 = u.a((fArr[0] * 2.0f) + f7, f7, rect.bottom);
-        canvas.save();
-        Rect rect2 = this.a;
-        canvas.clipRect(rect2.left, rect2.top, rect2.right, a2);
-        float f10 = rect.left;
-        float f11 = rect.top;
-        float f12 = rect.right;
-        float f13 = fArr[0];
-        canvas.drawRoundRect(f10, f11, f12, a2, f13, f13, paint);
-        canvas.restore();
+    public final void a(d dVar) {
+        this.a.setText(dVar.a);
+        this.b.setText(dVar.b);
+        LimitPreviewView limitPreviewView = this.c;
+        limitPreviewView.w.setText(String.format("%d", Integer.valueOf(dVar.d)));
+        limitPreviewView.x.setText(String.format("%d", Integer.valueOf(dVar.c)));
     }
 }

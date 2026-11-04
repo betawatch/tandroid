@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class DateTimeWithZone {
     private static final long MAX_ZONE_OFFSET_SECONDS = TimeUnit.HOURS.toSeconds(1) * 18;
@@ -20,18 +20,18 @@ public final class DateTimeWithZone {
         this.mZoneShortName = null;
     }
 
-    public static DateTimeWithZone create(long j10, int i10, String str) {
+    public static DateTimeWithZone create(long j10, int i3, String str) {
         if (j10 < 0) {
             throw new IllegalArgumentException("Time since epoch must be greater than or equal to zero");
         }
-        if (Math.abs(i10) > MAX_ZONE_OFFSET_SECONDS) {
+        if (Math.abs(i3) > MAX_ZONE_OFFSET_SECONDS) {
             throw new IllegalArgumentException("Zone offset not in valid range: -18:00 to +18:00");
         }
         Objects.requireNonNull(str);
         if (str.isEmpty()) {
             throw new IllegalArgumentException("The time zone short name can not be null or empty");
         }
-        return new DateTimeWithZone(j10, i10, str);
+        return new DateTimeWithZone(j10, i3, str);
     }
 
     public boolean equals(Object obj) {
@@ -69,12 +69,12 @@ public final class DateTimeWithZone {
         sb2.append(")  zone offset (s): ");
         sb2.append(this.mZoneOffsetSeconds);
         sb2.append(", zone: ");
-        return a1.g.r(sb2, this.mZoneShortName, "]");
+        return a1.g.s(sb2, this.mZoneShortName, "]");
     }
 
-    private DateTimeWithZone(long j10, int i10, String str) {
+    private DateTimeWithZone(long j10, int i3, String str) {
         this.mTimeSinceEpochMillis = j10;
-        this.mZoneOffsetSeconds = i10;
+        this.mZoneOffsetSeconds = i3;
         this.mZoneShortName = str;
     }
 

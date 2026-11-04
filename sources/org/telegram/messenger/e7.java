@@ -1,34 +1,48 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m7 b;
-    public final /* synthetic */ l7 c;
+    public final /* synthetic */ i7 b;
+    public final /* synthetic */ j7 c;
 
-    public /* synthetic */ e7(m7 m7Var, l7 l7Var, int i10) {
-        this.a = i10;
-        this.b = m7Var;
-        this.c = l7Var;
+    public /* synthetic */ e7(i7 i7Var, j7 j7Var, int i3) {
+        this.a = i3;
+        this.b = i7Var;
+        this.c = j7Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                m7 m7Var = this.b;
-                m7Var.getClass();
-                l7 l7Var = this.c;
-                l7Var.l = null;
-                m7Var.H0.remove(l7Var);
-                l7Var.k = true;
+                i7 i7Var = this.b;
+                j7 j7Var = this.c;
+                if (i7Var.m != null) {
+                    a8.d("FileLoadOperation " + i7Var.r + " removing stream listener " + j7Var);
+                    i7Var.m.remove(j7Var);
+                    break;
+                }
                 break;
             default:
-                m7 m7Var2 = this.b;
-                l7 l7Var2 = this.c;
-                m7Var2.m(l7Var2, null);
-                l7Var2.f.freeResources();
+                i7 i7Var2 = this.b;
+                j7 j7Var2 = this.c;
+                if (i7Var2.m == null) {
+                    i7Var2.m = new ArrayList();
+                }
+                if (j7Var2 != null && !i7Var2.m.contains(j7Var2)) {
+                    i7Var2.m.add(j7Var2);
+                }
+                if (!i7Var2.m.isEmpty()) {
+                    Utilities.d.a(i7Var2.f1);
+                }
+                if (j7Var2 != null && i7Var2.Y != 1 && i7Var2.Y != 0) {
+                    j7Var2.a();
+                    break;
+                }
                 break;
         }
     }

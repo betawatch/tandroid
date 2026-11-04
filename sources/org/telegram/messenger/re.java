@@ -1,15 +1,148 @@
 package org.telegram.messenger;
 
-import java.io.File;
+import android.graphics.Matrix;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class re extends File {
-    @Override // java.io.File
-    public final boolean delete() {
-        if (v2.a) {
-            f8.d("delete voice file");
+public final class re extends TLObject {
+    public Matrix B;
+    public boolean C;
+    public float a;
+    public float b;
+    public float d;
+    public int i;
+    public int j;
+    public int k;
+    public boolean l;
+    public float m;
+    public float o;
+    public Matrix r;
+    public int s;
+    public int t;
+    public boolean u;
+    public float v;
+    public int z;
+    public float c = 1.0f;
+    public float e = 1.0f;
+    public float f = 1.0f;
+
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
+    public final re clone() {
+        re reVar = new re();
+        reVar.a = this.a;
+        reVar.b = this.b;
+        reVar.c = this.c;
+        reVar.d = this.d;
+        reVar.e = this.e;
+        reVar.f = this.f;
+        reVar.i = this.i;
+        reVar.j = this.j;
+        reVar.k = this.k;
+        reVar.l = this.l;
+        reVar.m = this.m;
+        reVar.o = this.o;
+        reVar.r = this.r;
+        reVar.s = this.s;
+        reVar.t = this.t;
+        reVar.u = this.u;
+        reVar.v = this.v;
+        reVar.z = this.z;
+        reVar.C = this.C;
+        reVar.B = this.B;
+        return reVar;
+    }
+
+    public final boolean b() {
+        Matrix matrix = this.r;
+        if (matrix != null && !matrix.isIdentity()) {
+            return false;
         }
-        return super.delete();
+        Matrix matrix2 = this.B;
+        return (matrix2 == null || matrix2.isIdentity()) && this.e == 1.0f && this.f == 1.0f && this.c == 1.0f && this.d == 0.0f && this.i == 0 && this.j == 0 && this.k == 0 && !this.l && this.m == 0.0f && this.o == 0.0f && this.s == 0 && this.t == 0 && !this.u && this.v == 0.0f;
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.a = inputSerializedData.readFloat(z10);
+        this.b = inputSerializedData.readFloat(z10);
+        this.c = inputSerializedData.readFloat(z10);
+        this.d = inputSerializedData.readFloat(z10);
+        this.e = inputSerializedData.readFloat(z10);
+        this.f = inputSerializedData.readFloat(z10);
+        this.i = inputSerializedData.readInt32(z10);
+        this.j = inputSerializedData.readInt32(z10);
+        this.k = inputSerializedData.readInt32(z10);
+        this.l = inputSerializedData.readBool(z10);
+        this.m = inputSerializedData.readFloat(z10);
+        this.o = inputSerializedData.readFloat(z10);
+        float[] fArr = new float[9];
+        for (int i3 = 0; i3 < 9; i3++) {
+            fArr[i3] = inputSerializedData.readFloat(z10);
+        }
+        Matrix matrix = new Matrix();
+        this.r = matrix;
+        matrix.setValues(fArr);
+        this.s = inputSerializedData.readInt32(z10);
+        this.t = inputSerializedData.readInt32(z10);
+        this.u = inputSerializedData.readBool(z10);
+        this.v = inputSerializedData.readFloat(z10);
+        if (inputSerializedData.readInt32(z10) == 178403937) {
+            for (int i10 = 0; i10 < 9; i10++) {
+                fArr[i10] = inputSerializedData.readFloat(z10);
+            }
+            Matrix matrix2 = new Matrix();
+            this.B = matrix2;
+            matrix2.setValues(fArr);
+        }
+        this.C = inputSerializedData.readBool(z10);
+        this.z = inputSerializedData.readInt32(z10);
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(1151577037);
+        outputSerializedData.writeFloat(this.a);
+        outputSerializedData.writeFloat(this.b);
+        outputSerializedData.writeFloat(this.c);
+        outputSerializedData.writeFloat(this.d);
+        outputSerializedData.writeFloat(this.e);
+        outputSerializedData.writeFloat(this.f);
+        outputSerializedData.writeInt32(this.i);
+        outputSerializedData.writeInt32(this.j);
+        outputSerializedData.writeInt32(this.k);
+        outputSerializedData.writeBool(this.l);
+        outputSerializedData.writeFloat(this.m);
+        outputSerializedData.writeFloat(this.o);
+        float[] fArr = new float[9];
+        Matrix matrix = this.r;
+        if (matrix != null) {
+            matrix.getValues(fArr);
+        } else {
+            for (int i3 = 0; i3 < 9; i3++) {
+                fArr[i3] = 0.0f;
+            }
+        }
+        for (int i10 = 0; i10 < 9; i10++) {
+            outputSerializedData.writeFloat(fArr[i10]);
+        }
+        outputSerializedData.writeInt32(this.s);
+        outputSerializedData.writeInt32(this.t);
+        outputSerializedData.writeBool(this.u);
+        outputSerializedData.writeFloat(this.v);
+        if (this.B == null) {
+            outputSerializedData.writeInt32(TLRPC.TL_null.constructor);
+        } else {
+            outputSerializedData.writeInt32(178403937);
+            this.B.getValues(fArr);
+            for (int i11 = 0; i11 < 9; i11++) {
+                outputSerializedData.writeFloat(fArr[i11]);
+            }
+        }
+        outputSerializedData.writeBool(this.C);
+        outputSerializedData.writeInt32(this.z);
     }
 }

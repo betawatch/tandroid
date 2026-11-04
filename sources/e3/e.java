@@ -1,70 +1,42 @@
 package e3;
 
-import c3.a0;
-import c3.c0;
-import c3.k0;
-import e2.l0;
-import java.math.RoundingMode;
-import v7.t6;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e {
-    public final d a;
-    public final k0 b;
-    public final int c;
-    public final int d;
+public final class e implements b0 {
+    public final g a;
+    public final long b;
+    public final long c;
+    public final long d;
     public final long e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public long l;
-    public long[] m;
-    public int[] n;
+    public final long f;
 
-    public e(int i10, d dVar, k0 k0Var) {
-        int i11 = dVar.d;
-        this.a = dVar;
-        int a2 = dVar.a();
-        boolean z10 = true;
-        if (a2 != 1 && a2 != 2) {
-            z10 = false;
-        }
-        t6.f(z10);
-        int i12 = (((i10 % 10) + 48) << 8) | ((i10 / 10) + 48);
-        this.c = (a2 == 2 ? 1667497984 : 1651965952) | i12;
-        long j10 = dVar.b * 1000000;
-        long j11 = dVar.c;
-        String str = l0.a;
-        this.e = l0.a0(i11, j10, j11, RoundingMode.DOWN);
-        this.b = k0Var;
-        this.d = a2 == 2 ? i12 | 1650720768 : -1;
-        this.l = -1L;
-        this.m = new long[512];
-        this.n = new int[512];
-        this.f = i11;
+    public e(g gVar, long j10, long j11, long j12, long j13, long j14) {
+        this.a = gVar;
+        this.b = j10;
+        this.c = j11;
+        this.d = j12;
+        this.e = j13;
+        this.f = j14;
     }
 
-    public final c0 a(int i10) {
-        return new c0(((this.e * 1) / this.f) * this.n[i10], this.m[i10]);
+    @Override // e3.b0
+    public final boolean d() {
+        return true;
     }
 
-    public final a0 b(long j10) {
-        if (this.k == 0) {
-            c0 c0Var = new c0(0L, this.l);
-            return new a0(c0Var, c0Var);
-        }
-        int i10 = (int) (j10 / ((this.e * 1) / this.f));
-        int e = l0.e(this.n, i10, true, true);
-        if (this.n[e] == i10) {
-            c0 a2 = a(e);
-            return new a0(a2, a2);
-        }
-        c0 a10 = a(e);
-        int i11 = e + 1;
-        return i11 < this.m.length ? new a0(a10, a(i11)) : new a0(a10, a10);
+    @Override // e3.b0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // e3.b0
+    public final a0 f(long j10) {
+        c0 c0Var = new c0(j10, f.a(this.a.k(j10), 0L, this.c, this.d, this.e, this.f));
+        return new a0(c0Var, c0Var);
+    }
+
+    @Override // e3.b0
+    public final long h() {
+        return this.b;
     }
 }

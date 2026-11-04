@@ -1,44 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gn extends org.telegram.ui.Cells.e6 {
-    public final /* synthetic */ fg.j F;
+public final class gn implements d8 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.f1[] a;
+    public final /* synthetic */ jn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gn(fg.j jVar, Context context, int i10) {
-        super(context, i10, null, null);
-        this.F = jVar;
+    public gn(jn jnVar, org.telegram.ui.ActionBar.f1[] f1VarArr) {
+        this.b = jnVar;
+        this.a = f1VarArr;
     }
 
-    @Override // org.telegram.ui.Cells.e6
-    public final void g(ih.b bVar, ActionMode actionMode) {
-        if (bVar.isFocused() && bVar.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            org.telegram.ui.un.x8(menu, ((org.telegram.ui.un) ((jn) this.F.e).b.W1).h, false, true, true, true);
+    @Override // org.telegram.ui.Components.d8
+    public final void W0(int i3, int i10) {
+        org.telegram.ui.wm wmVar = this.b.H;
+        if (wmVar == null) {
+            return;
+        }
+        wmVar.getMessagesController().I4(i3, wmVar.a());
+        TLRPC.ChatFull chatFull = wmVar.q8;
+        TLRPC.UserFull userFull = wmVar.r8;
+        if (userFull == null && chatFull == null) {
+            return;
+        }
+        wmVar.f8();
+        UndoView undoView = wmVar.N3;
+        if (undoView != null) {
+            undoView.k(wmVar.a(), i10, wmVar.j(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
         }
     }
 
-    @Override // org.telegram.ui.Cells.e6
-    public final void i(boolean z10) {
-        jn.P((jn) this.F.e, this, z10);
+    @Override // org.telegram.ui.Components.d8
+    public final void dismiss() {
+        org.telegram.ui.ActionBar.f1 f1Var = this.a[0];
+        if (f1Var != null) {
+            f1Var.dismiss();
+        }
     }
 
-    @Override // org.telegram.ui.Cells.e6
-    public final void j(org.telegram.ui.Cells.e6 e6Var) {
-        jn.Q((jn) this.F.e, e6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.e6
-    public final void k(ih.b bVar) {
-        ((jn) this.F.e).b.g1(bVar, true);
+    @Override // org.telegram.ui.Components.d8
+    public final /* synthetic */ void g1() {
     }
 }

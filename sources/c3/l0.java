@@ -1,60 +1,56 @@
 package c3;
 
-import v7.t6;
+import android.view.Surface;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l0 {
-    public final byte[] a = new byte[10];
-    public boolean b;
-    public int c;
-    public long d;
-    public int e;
-    public int f;
-    public int g;
+public interface l0 {
+    boolean a();
 
-    public final void a(k0 k0Var, j0 j0Var) {
-        if (this.c > 0) {
-            k0Var.c(this.d, this.e, this.f, this.g, j0Var);
-            this.c = 0;
-        }
-    }
+    void b(float f10);
 
-    public final void b(k0 k0Var, long j10, int i10, int i11, int i12, j0 j0Var) {
-        t6.o("TrueHD chunk samples must be contiguous in the sample queue.", this.g <= i11 + i12);
-        if (this.b) {
-            int i13 = this.c;
-            int i14 = i13 + 1;
-            this.c = i14;
-            if (i13 == 0) {
-                this.d = j10;
-                this.e = i10;
-                this.f = 0;
-            }
-            this.f += i11;
-            this.g = i12;
-            if (i14 >= 16) {
-                a(k0Var, j0Var);
-            }
-        }
-    }
+    Surface c();
 
-    public final void c(p pVar) {
-        if (this.b) {
-            return;
-        }
-        byte[] bArr = this.a;
-        pVar.b(0, 10, bArr);
-        pVar.m();
-        if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
-            byte b10 = bArr[7];
-            if ((b10 & 254) == 186) {
-                r1 = 40 << ((bArr[((b10 & 255) == 187 ? 1 : 0) != 0 ? '\t' : '\b'] >> 4) & 7);
-            }
-        }
-        if (r1 == 0) {
-            return;
-        }
-        this.b = true;
-    }
+    void d();
+
+    boolean e(d2.v vVar);
+
+    void f(d2.v vVar, long j10, int i3, List list);
+
+    void g();
+
+    void h(long j10);
+
+    void i();
+
+    void j(int i3);
+
+    void k();
+
+    void l(boolean z10);
+
+    void m(List list);
+
+    void n(long j10, long j11);
+
+    void o(Surface surface, g2.z zVar);
+
+    void p(w wVar);
+
+    void q(boolean z10);
+
+    boolean r(boolean z10);
+
+    void release();
+
+    void s();
+
+    boolean t(long j10, i iVar);
+
+    boolean u();
+
+    void v();
+
+    void w(c6.i iVar);
 }

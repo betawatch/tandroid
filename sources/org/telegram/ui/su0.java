@@ -1,112 +1,66 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class su0 extends FrameLayout {
-    public org.telegram.ui.Components.e9 a;
-    public org.telegram.ui.Cells.q1 b;
-    public Drawable c;
-    public Drawable d;
-    public org.telegram.ui.Components.q30 e;
-    public org.telegram.messenger.kj f;
+public final class su0 extends org.telegram.ui.Components.w4 {
+    public final /* synthetic */ ProfileActivity V0;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.e.e(this.b, null, 0, 0, false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public su0(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.V0 = profileActivity;
     }
 
     @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.b.invalidate();
+    public final void setAlpha(float f10) {
+        super.setAlpha(f10);
+        RectF rectF = ProfileActivity.T6;
+        this.V0.Q3();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.ui.Components.e9 e9Var = this.a;
-        if (e9Var != null) {
-            e9Var.dispose();
-            this.a = null;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Drawable drawable = this.d;
-        Drawable t02 = org.telegram.ui.ActionBar.t6.t0();
-        if (t02 != null && this.c != t02) {
-            org.telegram.ui.Components.e9 e9Var = this.a;
-            if (e9Var != null) {
-                e9Var.dispose();
-                this.a = null;
-            }
-            this.c = t02;
-        }
-        Drawable drawable2 = this.c;
-        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.jb0)) {
-            drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            Drawable drawable3 = this.c;
-            if (drawable3 instanceof org.telegram.ui.Components.f9) {
-                this.a = ((org.telegram.ui.Components.f9) drawable3).c(canvas, this);
-            } else {
-                drawable3.draw(canvas);
-            }
-        } else if (drawable2 instanceof BitmapDrawable) {
-            if (((BitmapDrawable) drawable2).getTileModeX() == Shader.TileMode.REPEAT) {
-                canvas.save();
-                float f7 = 2.0f / org.telegram.messenger.i0.p;
-                canvas.scale(f7, f7);
-                this.c.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
-            } else {
-                int measuredHeight = getMeasuredHeight();
-                float max = Math.max(getMeasuredWidth() / this.c.getIntrinsicWidth(), measuredHeight / this.c.getIntrinsicHeight());
-                int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
-                int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
-                int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-                int i10 = (measuredHeight - ceil2) / 2;
-                canvas.save();
-                canvas.clipRect(0, 0, ceil, getMeasuredHeight());
-                this.c.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
-            }
-            this.c.draw(canvas);
-            canvas.restore();
-        } else {
-            super.onDraw(canvas);
-        }
-        if ((getParent() instanceof org.telegram.ui.Components.uk0) && ((org.telegram.ui.Components.uk0) getParent()).b1()) {
+    @Override // org.telegram.ui.ActionBar.k5
+    public final void setTextColor(int i3) {
+        int r12;
+        ProfileActivity profileActivity = this.V0;
+        profileActivity.F5 = i3;
+        int f10 = i0.a.f(profileActivity.B5, i3, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, profileActivity.A0));
+        super.setTextColor(f10);
+        mw0 mw0Var = profileActivity.z6;
+        if (mw0Var == null || mw0Var.c == (r12 = org.telegram.ui.ActionBar.k6.r1(1.4f, org.telegram.ui.ActionBar.k6.b(-0.02f, 0.15f, f10)))) {
             return;
         }
-        drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-        drawable.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
+        mw0Var.c = r12;
+        mw0Var.invalidateSelf();
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+    public final void setTranslationX(float f10) {
+        super.setTranslationX(f10);
+        RectF rectF = ProfileActivity.T6;
+        ProfileActivity profileActivity = this.V0;
+        profileActivity.p4();
+        profileActivity.getClass();
+        org.telegram.ui.Components.ku0 ku0Var = profileActivity.T;
+        if (ku0Var != null) {
+            ku0Var.setTranslationX(f10 - profileActivity.p4());
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z10) {
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        RectF rectF = ProfileActivity.T6;
+        ProfileActivity profileActivity = this.V0;
+        if (profileActivity.T != null) {
+            org.telegram.messenger.g0.L(3.0f);
+            profileActivity.T.getVisibilityFactor();
+        }
+        org.telegram.ui.Components.ku0 ku0Var = profileActivity.T;
+        if (ku0Var != null) {
+            ku0Var.setTranslationY(f10 - org.telegram.messenger.g0.L(5.0f));
+        }
     }
 }

@@ -1,28 +1,19 @@
 package x7;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j1 extends a9.a implements l3 {
-    public final m0 X0(x6.b bVar, n6 n6Var) {
-        m0 m0Var;
-        Parcel P0 = P0();
-        int i10 = y.a;
-        P0.writeStrongBinder(bVar);
-        P0.writeInt(1);
-        n6Var.writeToParcel(P0, 0);
-        Parcel R0 = R0(P0, 1);
-        IBinder readStrongBinder = R0.readStrongBinder();
-        if (readStrongBinder == null) {
-            m0Var = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.label.internal.client.INativeImageLabeler");
-            m0Var = queryLocalInterface instanceof m0 ? (m0) queryLocalInterface : new m0(readStrongBinder, "com.google.android.gms.vision.label.internal.client.INativeImageLabeler", 10);
+public final class j1 implements ma.d {
+    public static final j1 a = new j1();
+
+    static {
+        t4.c.o(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, t4.c.l(t4.c.i(h.class, new e(1)), 2)), 3)), 4)));
+    }
+
+    @Override // ma.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        R0.recycle();
-        return m0Var;
+        throw null;
     }
 }

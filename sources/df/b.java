@@ -1,91 +1,34 @@
 package df;
 
-import a1.g;
-import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.IOException;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b extends c {
-    public final /* synthetic */ int g;
+public final class b extends jf.a {
+    public final gf.b a = new gf.b();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(ff.a aVar, c cVar, String str, int i10) {
-        super(aVar, cVar, str);
-        this.g = i10;
+    public static boolean i(g gVar, int i3) {
+        CharSequence charSequence = gVar.a;
+        return gVar.g < 4 && i3 < charSequence.length() && charSequence.charAt(i3) == '>';
     }
 
-    public static void h(StringBuffer stringBuffer, c cVar) {
-        c cVar2 = (c) cVar.c;
-        if (cVar2 != null) {
-            h(stringBuffer, cVar2);
-            stringBuffer.append("/");
+    @Override // jf.a
+    public final gf.a e() {
+        return this.a;
+    }
+
+    @Override // jf.a
+    public final a h(g gVar) {
+        char charAt;
+        int i3 = gVar.e;
+        if (!i(gVar, i3)) {
+            return null;
         }
-        stringBuffer.append((String) cVar.d);
-    }
-
-    public long i() {
-        return ((ff.b) ((ff.a) this.b)).e();
-    }
-
-    public boolean j() {
-        b bVar = (b) this.f;
-        return (bVar != null ? bVar.i() : 0L) < i();
-    }
-
-    public b k(String str) {
-        while (i() > 0) {
-            b c10 = c();
-            if (((String) c10.d).matches(str)) {
-                return c10;
-            }
+        int i10 = gVar.c + gVar.g;
+        int i11 = i10 + 1;
+        CharSequence charSequence = gVar.a;
+        int i12 = i3 + 1;
+        if (i12 < charSequence.length() && ((charAt = charSequence.charAt(i12)) == '\t' || charAt == ' ')) {
+            i11 = i10 + 2;
         }
-        throw new IOException("atom type mismatch, not found: ".concat(str));
-    }
-
-    public short l() {
-        return ((DataInputStream) this.e).readShort();
-    }
-
-    public String m() {
-        byte[] bArr = new byte[(int) i()];
-        ((DataInputStream) this.e).readFully(bArr);
-        String str = new String(bArr, "UTF-8");
-        int indexOf = str.indexOf(0);
-        return indexOf < 0 ? str : str.substring(0, indexOf);
-    }
-
-    public void n(int i10) {
-        int i11 = 0;
-        while (i11 < i10) {
-            int skipBytes = ((DataInputStream) this.e).skipBytes(i10 - i11);
-            if (skipBytes <= 0) {
-                throw new EOFException();
-            }
-            i11 += skipBytes;
-        }
-    }
-
-    @Override // df.c
-    public final String toString() {
-        switch (this.g) {
-            case 0:
-                StringBuffer stringBuffer = new StringBuffer();
-                h(stringBuffer, this);
-                stringBuffer.append("[off=");
-                long j10 = ((ff.a) ((c) this.c).b).b;
-                ff.a aVar = (ff.a) this.b;
-                stringBuffer.append(j10 - aVar.b);
-                stringBuffer.append(",pos=");
-                stringBuffer.append(aVar.b);
-                stringBuffer.append(",len=");
-                ff.b bVar = (ff.b) aVar;
-                stringBuffer.append(bVar.e() + bVar.b);
-                stringBuffer.append("]");
-                return stringBuffer.toString();
-            default:
-                return g.q(new StringBuilder("mp4[pos="), ((ff.a) this.b).b, "]");
-        }
+        return new a(-1, i11, false);
     }
 }

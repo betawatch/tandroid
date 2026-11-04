@@ -1,22 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class js {
-    public int a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public String l;
-    public String m;
-    public int n;
-    public boolean o;
-    public String p;
+public final /* synthetic */ class js implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ us b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+
+    public /* synthetic */ js(us usVar, long j10, long j11, int i3) {
+        this.a = i3;
+        this.b = usVar;
+        this.c = j10;
+        this.d = j11;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                us usVar = this.b;
+                usVar.G = this.c;
+                usVar.H = this.d;
+                break;
+            default:
+                this.b.o(this.c, this.d);
+                break;
+        }
+    }
 }

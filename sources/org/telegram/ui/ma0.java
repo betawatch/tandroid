@@ -1,52 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ma0 implements org.telegram.messenger.k20 {
+public final /* synthetic */ class ma0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ta0 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ xd0 b;
 
-    public /* synthetic */ ma0(ta0 ta0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ta0Var;
-        this.c = str;
+    public /* synthetic */ ma0(xd0 xd0Var, int i3) {
+        this.a = i3;
+        this.b = xd0Var;
     }
 
-    @Override // org.telegram.messenger.k20
-    public final void a(Object obj, Object obj2) {
-        int i10 = this.a;
-        String str = this.c;
-        ta0 ta0Var = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        xd0 xd0Var = this.b;
+        switch (i3) {
             case 0:
-                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
-                ta0Var.c();
-                if (passkeys != null) {
-                    ta0Var.u(new PasskeysActivity(passkeys.passkeys), false);
-                    if ("create".equalsIgnoreCase(str)) {
-                        ta0Var.x("addPasskeyRow");
-                        break;
-                    }
-                }
+                xd0Var.d0 = false;
+                break;
+            case 1:
+                xd0Var.x0 = false;
+                xd0Var.G1(true, true);
                 break;
             default:
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj;
-                String str2 = (String) obj2;
-                ta0Var.c();
-                if (z1Var != null) {
-                    org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
-                    if (T != null && T.getContext() != null) {
-                        org.telegram.ui.Wallet.e2.D(T.getContext(), ta0Var.b, z1Var, null, T.getResourceProvider(), null, new pa0(ta0Var, str, 1));
-                        break;
-                    }
-                } else {
-                    if (str2 == null) {
-                        str2 = org.telegram.messenger.dd.L0(2131743017, null);
-                    }
-                    org.telegram.ui.Components.cc.b0(str2);
+                if (xd0Var.getParentActivity() != null && !xd0Var.getParentActivity().isFinishing() && xd0Var.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xd0Var.getParentActivity());
+                    String M0 = org.telegram.messenger.bd.M0(2131746081, null);
+                    org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
+                    s1Var.S = M0;
+                    s1Var.U = org.telegram.messenger.bd.M0(2131745959, null);
+                    alertDialog$Builder.k(org.telegram.messenger.bd.M0(2131747839, null), new pa0(xd0Var, 1));
+                    alertDialog$Builder.p();
                     break;
                 }
                 break;

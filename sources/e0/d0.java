@@ -1,11 +1,37 @@
 package e0;
 
-import android.app.Notification;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class d0 {
-    public static Notification.Action.Builder a(Notification.Action.Builder builder, boolean z10) {
-        return builder.setAuthenticationRequired(z10);
+public final class d0 {
+    public ArrayList a = new ArrayList();
+    public int b = 1;
+    public ArrayList c = new ArrayList();
+    public int d = 8388613;
+    public int e = -1;
+    public int f = 80;
+    public String g;
+    public String h;
+
+    public final void a(h hVar) {
+        this.a.add(hVar);
+    }
+
+    public final void b(String str) {
+        this.h = str;
+    }
+
+    public final Object clone() {
+        d0 d0Var = new d0();
+        d0Var.a = new ArrayList(this.a);
+        d0Var.b = this.b;
+        d0Var.c = new ArrayList(this.c);
+        d0Var.d = this.d;
+        d0Var.e = this.e;
+        d0Var.f = this.f;
+        d0Var.g = this.g;
+        d0Var.h = this.h;
+        return d0Var;
     }
 }

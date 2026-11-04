@@ -1,105 +1,147 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
+import android.accounts.Account;
+import android.accounts.AccountManager;
+import android.provider.ContactsContract;
+import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x4 implements Comparator {
+public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
+    public final /* synthetic */ g5 b;
 
-    public /* synthetic */ x4(Collator collator, int i10) {
-        this.a = i10;
-        this.b = collator;
+    public /* synthetic */ x4(g5 g5Var, int i3) {
+        this.a = i3;
+        this.b = g5Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        String str;
+    private final void a() {
+        g5 g5Var = this.b;
+        if (g5Var.f0.isEmpty() && !g5Var.h) {
+            g5Var.A(0L, true);
+            return;
+        }
+        synchronized (g5Var.c) {
+            g5Var.b = false;
+        }
+    }
+
+    private final void b() {
+        g5 g5Var = this.b;
+        synchronized (g5Var.c) {
+            g5Var.b = false;
+        }
+        g5Var.getNotificationCenter().k(hs.O, new Object[0]);
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                String str2 = (String) obj;
-                String str3 = (String) obj2;
-                char charAt = str2.charAt(0);
-                char charAt2 = str3.charAt(0);
-                if (charAt == '#') {
-                    return 1;
+                g5 g5Var = this.b;
+                AccountManager accountManager = AccountManager.get(t0.b);
+                try {
+                    Account[] accountsByType = accountManager.getAccountsByType("org.telegram.messenger");
+                    for (int i3 = 0; i3 < accountsByType.length; i3++) {
+                        Account account = accountsByType[i3];
+                        int i10 = 0;
+                        while (true) {
+                            if (i10 < 4) {
+                                TLRPC.User f10 = h10.i(i10).f();
+                                if (f10 != null) {
+                                    if (account.name.equals("" + f10.id)) {
+                                        if (i10 == g5Var.currentAccount) {
+                                            g5Var.a = account;
+                                        }
+                                    }
+                                }
+                                i10++;
+                            } else {
+                                try {
+                                    accountManager.removeAccount(accountsByType[i3], null, null);
+                                } catch (Exception unused) {
+                                }
+                            }
+                        }
+                    }
+                } catch (Throwable unused2) {
                 }
-                if (charAt2 == '#') {
-                    return -1;
+                if (g5Var.getUserConfig().p()) {
+                    synchronized (g5Var.c) {
+                        try {
+                            if (!g5Var.b) {
+                                g5Var.b = true;
+                                Utilities.d.c(new x4(g5Var, 2));
+                            }
+                        } finally {
+                        }
+                    }
+                    if (g5Var.a == null) {
+                        try {
+                            Account account2 = new Account("" + g5Var.getUserConfig().e(), "org.telegram.messenger");
+                            g5Var.a = account2;
+                            accountManager.addAccountExplicitly(account2, "", null);
+                            return;
+                        } catch (Exception unused3) {
+                            return;
+                        }
+                    }
+                    return;
                 }
-                return this.b.compare(str2, str3);
+                return;
             case 1:
-                f5 f5Var = (f5) obj;
-                f5 f5Var2 = (f5) obj2;
-                String str4 = f5Var.i;
-                if (str4.length() == 0) {
-                    str4 = f5Var.j;
+                g5 g5Var2 = this.b;
+                if (r2.a) {
+                    a8.b("force import contacts");
                 }
-                String str5 = f5Var2.i;
-                if (str5.length() == 0) {
-                    str5 = f5Var2.j;
-                }
-                return this.b.compare(str4, str5);
+                g5Var2.F(new HashMap(), true, true, true, true, false, false);
+                return;
             case 2:
-                String str6 = "";
-                if (obj instanceof TLRPC.User) {
-                    TLRPC.User user = (TLRPC.User) obj;
-                    str = i5.m(0, user.first_name, user.last_name);
-                } else if (obj instanceof f5) {
-                    f5 f5Var3 = (f5) obj;
-                    TLRPC.User user2 = f5Var3.m;
-                    str = user2 != null ? i5.m(0, user2.first_name, user2.last_name) : i5.m(0, f5Var3.i, f5Var3.j);
-                } else {
-                    str = "";
-                }
-                if (obj2 instanceof TLRPC.User) {
-                    TLRPC.User user3 = (TLRPC.User) obj2;
-                    str6 = i5.m(0, user3.first_name, user3.last_name);
-                } else if (obj2 instanceof f5) {
-                    f5 f5Var4 = (f5) obj2;
-                    TLRPC.User user4 = f5Var4.m;
-                    str6 = user4 != null ? i5.m(0, user4.first_name, user4.last_name) : i5.m(0, f5Var4.i, f5Var4.j);
-                }
-                return this.b.compare(str, str6);
+                a();
+                return;
             case 3:
-                String str7 = (String) obj;
-                String str8 = (String) obj2;
-                char charAt3 = str7.charAt(0);
-                char charAt4 = str8.charAt(0);
-                if (charAt3 == '#') {
-                    return 1;
-                }
-                if (charAt4 == '#') {
-                    return -1;
-                }
-                return this.b.compare(str7, str8);
+                this.b.A(0L, false);
+                return;
             case 4:
-                String str9 = (String) obj;
-                String str10 = (String) obj2;
-                char charAt5 = str9.charAt(0);
-                char charAt6 = str10.charAt(0);
-                if (charAt5 == '#') {
-                    return 1;
+                g5 g5Var3 = this.b;
+                if (g5Var3.e()) {
+                    if (r2.a) {
+                        a8.b("detected contacts change");
+                    }
+                    g5Var3.F(g5.q(g5Var3.Z), true, false, true, false, true, false);
+                    return;
                 }
-                if (charAt6 == '#') {
-                    return -1;
-                }
-                return this.b.compare(str9, str10);
+                return;
+            case 5:
+                g5 g5Var4 = this.b;
+                g5Var4.s = false;
+                g5Var4.n0 = 0;
+                return;
+            case 6:
+                b();
+                return;
+            case 7:
+                qr messagesStorage = this.b.getMessagesStorage();
+                messagesStorage.a.c(new vq(messagesStorage, true, 0));
+                return;
+            case 8:
+                g5 g5Var5 = this.b;
+                g5Var5.n = true;
+                g5Var5.getNotificationCenter().k(25, new Object[0]);
+                return;
             default:
-                String str11 = (String) obj;
-                String str12 = (String) obj2;
-                char charAt7 = str11.charAt(0);
-                char charAt8 = str12.charAt(0);
-                if (charAt7 == '#') {
-                    return 1;
+                g5 g5Var6 = this.b;
+                try {
+                    if (g5.w()) {
+                        t0.b.getContentResolver().registerContentObserver(ContactsContract.Contacts.CONTENT_URI, true, new e5(g5Var6));
+                        return;
+                    }
+                    return;
+                } catch (Throwable unused4) {
+                    return;
                 }
-                if (charAt8 == '#') {
-                    return -1;
-                }
-                return this.b.compare(str11, str12);
         }
     }
 }

@@ -1,65 +1,53 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ba0 implements org.telegram.ui.Components.q4, org.telegram.ui.ActionBar.u1, org.telegram.ui.Components.yu0 {
+public final class ba0 extends u4.t0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ la0 b;
 
-    public /* synthetic */ ba0(la0 la0Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ ba0(la0 la0Var, int i3) {
+        this.a = i3;
         this.b = la0Var;
     }
 
-    @Override // org.telegram.ui.Components.q4
-    public void K(int i10, int i11, boolean z10) {
-        this.b.a0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        la0 la0Var = this.b;
-        la0Var.S.a(la0Var.e);
-        la0Var.finishFragment();
-    }
-
-    @Override // org.telegram.ui.Components.yu0
-    public void m(int i10) {
+    @Override // u4.t0
+    public final void a(RecyclerView recyclerView, int i3) {
         switch (this.a) {
-            case 2:
-                la0 la0Var = this.b;
-                if (i10 >= la0Var.O.size()) {
-                    la0Var.x.setText("");
-                    break;
-                } else {
-                    la0Var.x.setText(org.telegram.messenger.dd.s(la0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
-                    break;
+            case 0:
+                if (i3 == 1) {
+                    la0 la0Var = this.b;
+                    if (la0Var.u0 && la0Var.v0) {
+                        org.telegram.messenger.g0.v1(la0Var.getParentActivity().getCurrentFocus());
+                        break;
+                    }
                 }
+                break;
             default:
+                boolean z10 = i3 != 0;
                 la0 la0Var2 = this.b;
-                la0Var2.F.clearFocus();
-                la0Var2.N = true;
-                ArrayList arrayList = la0Var2.Q;
-                if (i10 < arrayList.size()) {
-                    la0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
-                } else {
-                    la0Var2.F.setText("");
+                la0Var2.N = z10;
+                if (!z10 && la0Var2.I != null) {
+                    la0Var2.I = null;
+                    break;
                 }
-                la0Var2.N = false;
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.yu0
-    public /* synthetic */ void r() {
-        int i10 = this.a;
-    }
-
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
+    @Override // u4.t0
+    public void b(RecyclerView recyclerView, int i3, int i10) {
+        switch (this.a) {
+            case 1:
+                la0 la0Var = this.b;
+                la0Var.K0(false);
+                if (la0Var.I != null) {
+                    la0Var.K += i10;
+                    break;
+                }
+                break;
+        }
     }
 }

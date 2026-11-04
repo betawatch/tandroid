@@ -1,108 +1,162 @@
 package li;
 
-import android.os.Handler;
+import ai.h;
+import ai.j6;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import b8.mf;
+import ci.v6;
+import gi.d;
+import gi.q4;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.l10;
+import org.telegram.messenger.m5;
+import org.telegram.messenger.t3;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Cells.f6;
+import org.telegram.ui.Cells.g6;
+import org.telegram.ui.Components.f41;
+import org.telegram.ui.Components.ma;
+import org.telegram.ui.Components.sj0;
+import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.tj0;
+import u4.p0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class a implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class a extends ma {
+    public f41 Q1;
+    public boolean R1;
+    public final FrameLayout S1;
+    public final boolean T1;
+    public final boolean U1;
+    public int V1;
 
-    public /* synthetic */ a(l lVar, int i10) {
-        this.a = i10;
-        this.b = lVar;
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x00db  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public a(Context context, TLRPC.Chat chat, long j10, u10 u10Var) {
+        super(context, (e6) null, false);
+        f6 f6Var;
+        int i3;
+        int i10;
+        f6 f6Var2;
+        TLRPC.User a22 = hp.s1(this.a).a2(Long.valueOf(j10));
+        TLRPC.Chat M0 = hp.s1(this.a).M0(Long.valueOf(-j10));
+        this.U1 = l10.t(a22);
+        this.T1 = t3.V(M0);
+        this.D1 = false;
+        this.C1 = g0.L(12.0f);
+        this.m1.setTitle(O0());
+        w0(k6.a7);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.S1 = frameLayout;
+        frameLayout.setPadding(0, g0.L(3.0f), 0, g0.L(3.0f));
+        frameLayout.setLayoutParams(new p0(-1, -2));
+        f6 f6Var3 = new f6(context, null);
+        if (M0 != null) {
+            f6Var = f6Var3;
+            i3 = -1;
+            f6Var.x(M0, null, M0.title, bd.H(' ', "Members", M0.participants_count), false, false);
+        } else {
+            f6Var = f6Var3;
+            i3 = -1;
+            if (a22 != null) {
+                i10 = -1;
+                f6Var2 = f6Var;
+                f6Var2.x(a22, null, m5.m(a22), bd.M0(2131753156, null), false, false);
+                frameLayout.addView(f6Var2, mf.c(-2.0f, i10));
+                tj0 tj0Var = this.l1;
+                int i11 = this.u0;
+                tj0Var.setPadding(i11, 0, i11, g0.L(64.0f) + g0.n);
+                this.l1.r1();
+                this.l1.setClipToPadding(false);
+                int i12 = 18;
+                this.l1.setOnItemClickListener(new j6(this, i12));
+                d dVar = new d(context, this.J0, true);
+                if (chat == null) {
+                    dVar.setText(bd.M0(t3.w(27, chat) ? 2131751974 : 2131751971, null));
+                } else {
+                    dVar.setText(bd.M0(2131751939, null));
+                }
+                dVar.f();
+                dVar.setOnClickListener(new h(this, u10Var, chat, i12));
+                this.b.addView(dVar, mf.f(48.0f, -1, 80, g0.L(12.0f) + this.u0, 0, g0.L(12.0f) + this.u0, g0.L(12.0f) + g0.n));
+                this.Q1.O(false);
+            }
+        }
+        i10 = i3;
+        f6Var2 = f6Var;
+        frameLayout.addView(f6Var2, mf.c(-2.0f, i10));
+        tj0 tj0Var2 = this.l1;
+        int i112 = this.u0;
+        tj0Var2.setPadding(i112, 0, i112, g0.L(64.0f) + g0.n);
+        this.l1.r1();
+        this.l1.setClipToPadding(false);
+        int i122 = 18;
+        this.l1.setOnItemClickListener(new j6(this, i122));
+        d dVar2 = new d(context, this.J0, true);
+        if (chat == null) {
+        }
+        dVar2.f();
+        dVar2.setOnClickListener(new h(this, u10Var, chat, i122));
+        this.b.addView(dVar2, mf.f(48.0f, -1, 80, g0.L(12.0f) + this.u0, 0, g0.L(12.0f) + this.u0, g0.L(12.0f) + g0.n));
+        this.Q1.O(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        o oVar;
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                this.b.u();
-                return;
-            case 1:
-                this.b.d0();
-                return;
-            case 2:
-                l lVar = this.b;
-                Handler handler = lVar.n;
-                if (handler != null) {
-                    handler.post(new a(lVar, 3));
-                    return;
-                }
-                return;
-            case 3:
-                l lVar2 = this.b;
-                if (!lVar2.V || lVar2.A == null || (oVar = lVar2.x) == null) {
-                    return;
-                }
-                synchronized (oVar) {
-                    z10 = oVar.E;
-                }
-                if (z10) {
-                    return;
-                }
-                try {
-                    o oVar2 = lVar2.x;
-                    lVar2.y = oVar2;
-                    Handler handler2 = lVar2.n;
-                    if (handler2 != null) {
-                        handler2.removeCallbacks(lVar2.n1);
-                        handler2.postDelayed(lVar2.n1, 3000L);
-                    }
-                    oVar2.t(new d(lVar2, oVar2, 0), new d(lVar2, oVar2, 1));
-                    lVar2.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + l.z(lVar2.F0));
-                    return;
-                } catch (RuntimeException e) {
-                    lVar2.k();
-                    lVar2.N(e);
-                    return;
-                }
-            case 4:
-                l lVar3 = this.b;
-                o oVar3 = lVar3.y;
-                if (!lVar3.V || lVar3.b0 || oVar3 == null || lVar3.x != oVar3) {
-                    return;
-                }
-                lVar3.y = null;
-                lVar3.N(new IllegalStateException("Timed out waiting for synchronized audio and video start"));
-                return;
-            case 5:
-                this.b.g();
-                return;
-            case 6:
-                l lVar4 = this.b;
-                lVar4.V = false;
-                lVar4.k();
-                o oVar4 = lVar4.x;
-                if (oVar4 != null) {
-                    long p5 = oVar4.p();
-                    v vVar = lVar4.w;
-                    if (vVar != null && p5 != Long.MAX_VALUE) {
-                        vVar.q = Math.max(0L, p5) * 1000;
-                        Handler handler3 = vVar.u;
-                        if (handler3 != null) {
-                            handler3.removeCallbacks(vVar.x0);
-                        }
-                    }
-                }
-                lVar4.p();
-                o oVar5 = lVar4.x;
-                if (oVar5 != null) {
-                    oVar5.u();
-                    lVar4.x = null;
-                }
-                lVar4.b0 = false;
-                x0 x0Var = (x0) lVar4.k.b;
-                x0Var.i.post(new l0(x0Var, 3));
-                return;
-            case 7:
-                this.b.I();
-                return;
-            default:
-                this.b.d0();
-                return;
+    @Override // org.telegram.ui.Components.ma
+    public final sj0 L0(tj0 tj0Var) {
+        f41 f41Var = new f41(this.l1, getContext(), this.a, 0, false, new q4(this, 24), this.J0);
+        this.Q1 = f41Var;
+        f41Var.r = false;
+        return f41Var;
+    }
+
+    @Override // org.telegram.ui.Components.ma
+    public final CharSequence O0() {
+        return bd.M0(this.U1 ? 2131751982 : 2131751977, null);
+    }
+
+    public final void d1(u10 u10Var, boolean z10, boolean z11) {
+        if (z11 && !z10 && !this.U1) {
+            t4.O(getContext(), this.J0, bd.M0(2131751970, null), bd.M0(this.T1 ? 2131751973 : 2131751972, null), bd.M0(2131754486, null), new v6(this, u10Var, z10, 6)).show();
+        } else {
+            u10Var.a(Boolean.valueOf(z10));
+            dismiss();
+        }
+    }
+
+    public final void e1(boolean z10) {
+        boolean z11;
+        if (this.R1 == z10) {
+            return;
+        }
+        this.R1 = z10;
+        int i3 = this.V1 + 1;
+        tj0 tj0Var = this.l1;
+        View T0 = tj0Var.T0(i3);
+        if (T0 instanceof g6) {
+            ((g6) T0).a(!z10);
+            z11 = false;
+        } else {
+            z11 = true;
+        }
+        View T02 = tj0Var.T0(this.V1 + 2);
+        if (T02 instanceof g6) {
+            ((g6) T02).a(z10);
+        } else {
+            z11 = true;
+        }
+        if (z11) {
+            this.Q1.O(true);
         }
     }
 }

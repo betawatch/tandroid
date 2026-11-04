@@ -1,52 +1,29 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.view.View;
+import android.widget.ViewSwitcher;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class kb0 extends s4.s0 {
+public final class kb0 extends ViewSwitcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xb0 b;
 
-    public /* synthetic */ kb0(xb0 xb0Var, int i10) {
-        this.a = i10;
-        this.b = xb0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ kb0(Context context, int i3) {
+        super(context);
+        this.a = i3;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
         switch (this.a) {
             case 0:
-                if (i10 == 1) {
-                    xb0 xb0Var = this.b;
-                    if (xb0Var.z0 && xb0Var.A0) {
-                        org.telegram.messenger.i0.v1(xb0Var.getParentActivity().getCurrentFocus());
-                        break;
-                    }
-                }
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
                 break;
             default:
-                boolean z10 = i10 != 0;
-                xb0 xb0Var2 = this.b;
-                xb0Var2.O = z10;
-                if (!z10 && xb0Var2.J != null) {
-                    xb0Var2.J = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // s4.s0
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                xb0 xb0Var = this.b;
-                xb0Var.P0(false);
-                if (xb0Var.J != null) {
-                    xb0Var.L += i11;
-                    break;
-                }
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31));
                 break;
         }
     }

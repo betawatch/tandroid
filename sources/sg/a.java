@@ -1,31 +1,17 @@
 package sg;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b b;
-    public final /* synthetic */ d0 c;
+public abstract class a {
+    public int a;
+    public boolean b;
 
-    public /* synthetic */ a(b bVar, d0 d0Var, int i10) {
-        this.a = i10;
-        this.b = bVar;
-        this.c = d0Var;
+    public a(int i3, boolean z10) {
+        this.a = i3;
+        this.b = z10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.f = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                this.c.invalidate();
-                break;
-            default:
-                this.b.f = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                this.c.invalidate();
-                break;
-        }
+    public boolean a(a aVar) {
+        return false;
     }
 }

@@ -1,60 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b50 extends g50 {
-    public ImageReceiver a;
-    public float b;
-    public final /* synthetic */ d50 c;
+public final class b50 implements org.telegram.ui.d90 {
+    public final /* synthetic */ c50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b50(d50 d50Var, Context context) {
-        super(context);
-        this.c = d50Var;
-        setWillNotDraw(false);
+    public b50(c50 c50Var) {
+        this.a = c50Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        d50 d50Var = this.c;
-        FrameLayout frameLayout = d50Var.x;
-        kl0 kl0Var = d50Var.w;
-        nh.f fVar = d50Var.y;
-        super.dispatchDraw(canvas);
-        if (this.a == null) {
-            return;
+    @Override // org.telegram.ui.d90
+    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
+        int i3;
+        org.telegram.ui.za zaVar = this.a.a.c.b2;
+        if (zaVar != null) {
+            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
+            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
+            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
+            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
+            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
+            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
+            org.telegram.ui.kb kbVar = zaVar.a;
+            tL_channelAdminLogEvent.user_id = org.telegram.messenger.h10.i(kbVar.getAccountInstance().a).n;
+            i3 = ((org.telegram.ui.ActionBar.d2) kbVar).currentAccount;
+            if (new org.telegram.messenger.zi(i3, tL_channelAdminLogEvent, kbVar.o0, kbVar.n0, kbVar.f, kbVar.U, true).U < 0) {
+                return;
+            }
+            kbVar.W0();
+            kbVar.F.f();
+            org.telegram.ui.kb.P0(kbVar);
         }
-        float f7 = this.b;
-        if (f7 < 1.0f) {
-            this.b = Math.min(1.0f, f7 + 0.064f);
-            invalidate();
-        }
-        canvas.save();
-        canvas.translate(fVar.getLeft() + frameLayout.getLeft() + kl0Var.getLeft(), fVar.getTop() + frameLayout.getTop() + kl0Var.getTop());
-        if (this.a.M0 != fVar.getWidth()) {
-            float width = fVar.getWidth() / this.a.M0;
-            canvas.scale(width, width);
-        }
-        ImageReceiver imageReceiver = this.a;
-        canvas.translate(-imageReceiver.K0, -imageReceiver.L0);
-        float alpha = this.a.getAlpha();
-        this.a.setAlpha(this.b);
-        this.a.h(canvas, null);
-        this.a.setAlpha(alpha);
-        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.g50
-    public final void setImageReceiver(ImageReceiver imageReceiver) {
-        if (this.a == null) {
-            this.b = 0.0f;
-        }
-        this.a = imageReceiver;
-        invalidate();
+    @Override // org.telegram.ui.d90
+    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    }
+
+    @Override // org.telegram.ui.d90
+    public final void c(TLObject tLObject) {
     }
 }

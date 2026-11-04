@@ -15,7 +15,7 @@ public final class l0 implements p0 {
     }
 
     @Override // com.google.android.gms.internal.clearcut.p0
-    public final y0 zzb(Class cls) {
+    public final x0 zzb(Class cls) {
         for (p0 p0Var : this.a) {
             if (p0Var.zza(cls)) {
                 return p0Var.zzb(cls);

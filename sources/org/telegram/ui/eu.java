@@ -1,54 +1,29 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class eu extends hg.b {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final CharSequence f;
-    public final CharSequence g;
-    public final int h;
+public final /* synthetic */ class eu implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uw b;
+    public final /* synthetic */ float c;
 
-    public eu(int i10, String str) {
-        super(i10, false);
-        this.f = str;
+    public /* synthetic */ eu(uw uwVar, float f10, int i3) {
+        this.a = i3;
+        this.b = uwVar;
+        this.c = f10;
     }
 
-    public static eu b(CharSequence charSequence, String str) {
-        return new eu(-1, 0, 0, 0, charSequence, str);
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof eu)) {
-            return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                uw.a0(this.b, this.c, valueAnimator);
+                break;
+            default:
+                uw.G0(this.b, this.c, valueAnimator);
+                break;
         }
-        eu euVar = (eu) obj;
-        CharSequence charSequence = euVar.f;
-        int i10 = euVar.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        CharSequence charSequence2 = this.f;
-        if (i11 == 1 || i11 == 4 || i11 == 3 || i11 == 5) {
-            return TextUtils.equals(charSequence2, charSequence);
-        }
-        if (i11 == 2) {
-            return euVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && euVar.d == this.d && euVar.e == this.e && euVar.c == this.c;
-        }
-        return true;
-    }
-
-    public eu(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2) {
-        super(2, false);
-        this.h = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = charSequence;
-        this.g = charSequence2;
     }
 }

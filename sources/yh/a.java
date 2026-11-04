@@ -1,75 +1,83 @@
 package yh;
 
+import android.animation.ValueAnimator;
+import android.graphics.Path;
+import android.text.Layout;
+import android.view.View;
+import b8.be;
 import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.i0;
-import org.telegram.messenger.k20;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.cc;
+import java.util.List;
+import java.util.Stack;
+import org.telegram.messenger.g0;
+import org.telegram.ui.Components.ks;
+import org.telegram.ui.Components.tg0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class a implements k20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class a extends Path {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ Layout b;
+    public final /* synthetic */ Stack c;
+    public final /* synthetic */ List d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ ArrayList g;
 
-    public /* synthetic */ a(e eVar, int i10) {
-        this.a = i10;
-        this.b = eVar;
+    public a(View view, Layout layout, Stack stack, List list, int i3, int i10, ArrayList arrayList) {
+        this.a = view;
+        this.b = layout;
+        this.c = stack;
+        this.d = list;
+        this.e = i3;
+        this.f = i10;
+        this.g = arrayList;
     }
 
-    @Override // org.telegram.messenger.k20
-    public final void a(Object obj, Object obj2) {
-        String L0;
-        int i10 = this.a;
-        e eVar = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                arrayList.add(b51.l(0, eVar.h));
-                b51 c10 = b51.c(1, R.drawable.msg_groups_create, dd.L0(2131751939, null));
-                c10.q = true;
-                arrayList.add(c10);
-                arrayList.add(b51.E(2, i0.L(14.0f)));
-                ArrayList arrayList2 = eVar.n;
-                if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    arrayList.add(b51.t(3, dd.L0(2131751969, null)));
-                    ArrayList arrayList3 = eVar.n;
-                    int size = arrayList3.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj3 = arrayList3.get(i11);
-                        i11++;
-                        TLRPC.Chat chat = (TLRPC.Chat) obj3;
-                        TLRPC.ChatFull M0 = eVar.getMessagesController().M0(chat.id);
-                        b51 w9 = b51.w(chat);
-                        long j10 = chat.id;
-                        w9.d = (int) (j10 ^ (j10 >>> 32));
-                        if (M0 != null) {
-                            ArrayList<TL_communities.CommunityPeer> arrayList4 = M0.linked_peers;
-                            L0 = dd.G(arrayList4 != null ? arrayList4.size() : 0, "Chats", new Object[0]);
-                        } else {
-                            L0 = dd.L0(2131748789, null);
-                        }
-                        w9.m = L0;
-                        arrayList.add(w9);
-                    }
+    @Override // android.graphics.Path
+    public final void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
+        Stack stack = this.c;
+        int i3 = 0;
+        f fVar = (stack == null || stack.isEmpty()) ? new f() : (f) stack.remove(0);
+        fVar.y = false;
+        ArrayList arrayList = this.g;
+        if (arrayList != null) {
+            float f14 = (f11 + f13) / 2.0f;
+            while (true) {
+                if (i3 >= arrayList.size()) {
                     break;
                 }
-                break;
-            default:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (tL_error == null) {
-                    e0.d(eVar, eVar.b, 0);
-                    break;
-                } else {
-                    eVar.getClass();
-                    cc.a0(eVar).f0(tL_error, false);
+                tg0 tg0Var = (tg0) arrayList.get(i3);
+                if (f14 >= tg0Var.b && f14 <= tg0Var.c) {
+                    fVar.y = true;
                     break;
                 }
+                i3++;
+            }
         }
+        fVar.n = -1.0f;
+        ValueAnimator valueAnimator = fVar.r;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        fVar.p = true;
+        int max = (int) Math.max(f10, this.e);
+        int i10 = (int) f11;
+        int i11 = this.f;
+        fVar.setBounds(max, i10, (int) Math.min(f12, i11 <= 0 ? 2.14748365E9f : i11), (int) f13);
+        fVar.h(this.b.getPaint().getColor());
+        fVar.t = ks.c;
+        int width = fVar.getBounds().width() / g0.L(6.0f);
+        int i12 = f.B;
+        int b10 = be.b(width * i12, i12, f.A);
+        Stack stack2 = fVar.c;
+        fVar.d = b10;
+        while (fVar.h.size() + stack2.size() < b10) {
+            stack2.push(new b());
+        }
+        View view = this.a;
+        if (view != null) {
+            fVar.i = view;
+        }
+        this.d.add(fVar);
     }
 }

@@ -11,24 +11,22 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.beta.R;
-import w7.r6;
-import w7.y7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m extends Button implements u0.l {
-    public final e2.c a;
+public final class m extends Button implements u0.k {
+    public final g2.d a;
     public final w0 b;
     public t c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public m(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, R.attr.buttonStyle);
-        b3.a(context);
-        a3.a(this, getContext());
-        e2.c cVar = new e2.c(this);
-        this.a = cVar;
-        cVar.k(attributeSet, R.attr.buttonStyle);
+        a3.a(context);
+        z2.a(this, getContext());
+        g2.d dVar = new g2.d(this);
+        this.a = dVar;
+        dVar.x(attributeSet, R.attr.buttonStyle);
         w0 w0Var = new w0(this);
         this.b = w0Var;
         w0Var.f(attributeSet, R.attr.buttonStyle);
@@ -46,9 +44,9 @@ public final class m extends Button implements u0.l {
     @Override // android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.b();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.b();
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
@@ -58,7 +56,7 @@ public final class m extends Button implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeMaxTextSize() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeMaxTextSize();
         }
         w0 w0Var = this.b;
@@ -70,7 +68,7 @@ public final class m extends Button implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeMinTextSize() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeMinTextSize();
         }
         w0 w0Var = this.b;
@@ -82,7 +80,7 @@ public final class m extends Button implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeStepGranularity() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeStepGranularity();
         }
         w0 w0Var = this.b;
@@ -94,7 +92,7 @@ public final class m extends Button implements u0.l {
 
     @Override // android.widget.TextView
     public int[] getAutoSizeTextAvailableSizes() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeTextAvailableSizes();
         }
         w0 w0Var = this.b;
@@ -103,7 +101,7 @@ public final class m extends Button implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeTextType() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeTextType() == 1 ? 1 : 0;
         }
         w0 w0Var = this.b;
@@ -115,21 +113,21 @@ public final class m extends Button implements u0.l {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return y7.d(super.getCustomSelectionActionModeCallback());
+        return x7.g0.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            return cVar.i();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            return dVar.v();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            return cVar.j();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            return dVar.w();
         }
         return null;
     }
@@ -155,22 +153,22 @@ public final class m extends Button implements u0.l {
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
         w0 w0Var = this.b;
-        if (w0Var == null || s3.b) {
+        if (w0Var == null || r3.b) {
             return;
         }
         w0Var.i.a();
     }
 
     @Override // android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+        super.onTextChanged(charSequence, i3, i10, i11);
         w0 w0Var = this.b;
         if (w0Var != null) {
             g1 g1Var = w0Var.i;
-            if (s3.b || !g1Var.f()) {
+            if (r3.b || !g1Var.f()) {
                 return;
             }
             g1Var.a();
@@ -184,62 +182,62 @@ public final class m extends Button implements u0.l {
     }
 
     @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithConfiguration(int i10, int i11, int i12, int i13) {
-        if (s3.b) {
-            super.setAutoSizeTextTypeUniformWithConfiguration(i10, i11, i12, i13);
+    public final void setAutoSizeTextTypeUniformWithConfiguration(int i3, int i10, int i11, int i12) {
+        if (r3.b) {
+            super.setAutoSizeTextTypeUniformWithConfiguration(i3, i10, i11, i12);
             return;
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.i(i10, i11, i12, i13);
+            w0Var.i(i3, i10, i11, i12);
         }
     }
 
     @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i10) {
-        if (s3.b) {
-            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i10);
+    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i3) {
+        if (r3.b) {
+            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i3);
             return;
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.j(iArr, i10);
+            w0Var.j(iArr, i3);
         }
     }
 
     @Override // android.widget.TextView
-    public void setAutoSizeTextTypeWithDefaults(int i10) {
-        if (s3.b) {
-            super.setAutoSizeTextTypeWithDefaults(i10);
+    public void setAutoSizeTextTypeWithDefaults(int i3) {
+        if (r3.b) {
+            super.setAutoSizeTextTypeWithDefaults(i3);
             return;
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.k(i10);
+            w0Var.k(i3);
         }
     }
 
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.l();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.y();
         }
     }
 
     @Override // android.view.View
-    public void setBackgroundResource(int i10) {
-        super.setBackgroundResource(i10);
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.m(i10);
+    public void setBackgroundResource(int i3) {
+        super.setBackgroundResource(i3);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.z(i3);
         }
     }
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(y7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(x7.g0.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -248,7 +246,7 @@ public final class m extends Button implements u0.l {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((r6) getEmojiTextViewHelper().b.a).a(inputFilterArr));
+        super.setFilters(((x7.p) getEmojiTextViewHelper().b.a).a(inputFilterArr));
     }
 
     public void setSupportAllCaps(boolean z10) {
@@ -259,27 +257,27 @@ public final class m extends Button implements u0.l {
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.q(colorStateList);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.D(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.r(mode);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.E(mode);
         }
     }
 
-    @Override // u0.l
+    @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
         w0 w0Var = this.b;
         w0Var.l(colorStateList);
         w0Var.b();
     }
 
-    @Override // u0.l
+    @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
         w0 w0Var = this.b;
         w0Var.m(mode);
@@ -287,19 +285,19 @@ public final class m extends Button implements u0.l {
     }
 
     @Override // android.widget.TextView
-    public final void setTextAppearance(Context context, int i10) {
-        super.setTextAppearance(context, i10);
+    public final void setTextAppearance(Context context, int i3) {
+        super.setTextAppearance(context, i3);
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.g(context, i10);
+            w0Var.g(context, i3);
         }
     }
 
     @Override // android.widget.TextView
-    public final void setTextSize(int i10, float f7) {
-        boolean z10 = s3.b;
+    public final void setTextSize(int i3, float f10) {
+        boolean z10 = r3.b;
         if (z10) {
-            super.setTextSize(i10, f7);
+            super.setTextSize(i3, f10);
             return;
         }
         w0 w0Var = this.b;
@@ -308,7 +306,7 @@ public final class m extends Button implements u0.l {
             if (z10 || g1Var.f()) {
                 return;
             }
-            g1Var.g(f7, i10);
+            g1Var.g(f10, i3);
         }
     }
 }

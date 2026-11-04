@@ -1,10 +1,5 @@
 package com.google.android.play.core.integrity;
 
-import a9.c0;
-import a9.d0;
-import a9.e0;
-import a9.j0;
-import a9.n0;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -14,82 +9,87 @@ import android.os.IInterface;
 import android.os.Parcelable;
 import android.util.Base64;
 import android.util.Log;
+import b8.t9;
+import c9.a0;
+import c9.b0;
+import c9.g0;
+import c9.k0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class aj {
-    final a9.e a;
-    private final j0 b;
+    final c9.c a;
+    private final g0 b;
     private final String c;
     private final Context d;
     private final at e;
     private final k f;
 
-    public aj(Context context, j0 j0Var, at atVar, k kVar) {
-        j0 j0Var2;
+    public aj(Context context, g0 g0Var, at atVar, k kVar) {
+        g0 g0Var2;
         this.c = context.getPackageName();
-        this.b = j0Var;
+        this.b = g0Var;
         this.e = atVar;
         this.f = kVar;
         this.d = context;
-        j0 j0Var3 = a9.g.a;
+        g0 g0Var3 = c9.e.a;
         try {
             if (context.getPackageManager().getApplicationInfo("com.android.vending", 0).enabled) {
                 try {
-                    if (a9.g.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
-                        this.a = new a9.e(context, j0Var, "IntegrityService", ak.a, new n0() { // from class: com.google.android.play.core.integrity.ae
-                            @Override // a9.n0
+                    if (c9.e.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
+                        this.a = new c9.c(context, g0Var, "IntegrityService", ak.a, new k0() { // from class: com.google.android.play.core.integrity.ae
+                            @Override // c9.k0
                             public final Object a(IBinder iBinder) {
-                                int i10 = d0.i;
+                                int i3 = a0.i;
                                 if (iBinder == null) {
                                     return null;
                                 }
                                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.play.core.integrity.protocol.IIntegrityService");
-                                return queryLocalInterface instanceof e0 ? (e0) queryLocalInterface : new c0(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 0);
+                                return queryLocalInterface instanceof b0 ? (b0) queryLocalInterface : new c9.z(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 1);
                             }
                         });
                         return;
                     }
                 } catch (PackageManager.NameNotFoundException unused) {
-                    j0Var2 = j0Var;
-                    j0Var3.c("Play Store package is not found.", new Object[0]);
+                    g0Var2 = g0Var;
+                    g0Var3.c("Play Store package is not found.", new Object[0]);
                 }
             } else {
-                j0Var3.c("Play Store package is disabled.", new Object[0]);
+                g0Var3.c("Play Store package is disabled.", new Object[0]);
             }
-            j0Var2 = j0Var;
+            g0Var2 = g0Var;
         } catch (PackageManager.NameNotFoundException unused2) {
-            j0Var2 = j0Var;
-            j0Var3.c("Play Store package is not found.", new Object[0]);
+            g0Var2 = g0Var;
+            g0Var3.c("Play Store package is not found.", new Object[0]);
         }
         Object[] objArr = new Object[0];
-        j0Var2.getClass();
+        g0Var2.getClass();
         if (Log.isLoggable("PlayCore", 6)) {
-            Log.e("PlayCore", j0.d(j0Var2.a, "Phonesky is not installed.", objArr));
+            Log.e("PlayCore", g0.d(g0Var2.a, "Phonesky is not installed.", objArr));
         }
         this.a = null;
     }
 
-    public static Bundle a(aj ajVar, byte[] bArr, Long l4, Parcelable parcelable) {
+    public static Bundle a(aj ajVar, byte[] bArr, Long l10, Parcelable parcelable) {
         Bundle bundle = new Bundle();
         bundle.putString("package.name", ajVar.c);
         bundle.putByteArray("nonce", bArr);
         bundle.putInt("playcore.integrity.version.major", 1);
         bundle.putInt("playcore.integrity.version.minor", 4);
         bundle.putInt("playcore.integrity.version.patch", 0);
-        if (l4 != null) {
-            bundle.putLong("cloud.prj", l4.longValue());
+        if (l10 != null) {
+            bundle.putLong("cloud.prj", l10.longValue());
         }
         if (parcelable != null) {
             bundle.putParcelable("network", parcelable);
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new a9.w(3, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(h8.a.a(arrayList)));
+        arrayList.add(new c9.t(3, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(t9.a(arrayList)));
         return bundle;
     }
 
@@ -97,10 +97,10 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        int i10 = bundle.getInt("dialog.intent.type");
-        this.b.b("requestAndShowDialog(%s, %s)", this.c, Integer.valueOf(i10));
+        int i3 = bundle.getInt("dialog.intent.type");
+        this.b.b("requestAndShowDialog(%s, %s)", this.c, Integer.valueOf(i3));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.c(new ag(this, taskCompletionSource, bundle, activity, taskCompletionSource, i10), taskCompletionSource);
+        this.a.c(new ag(this, taskCompletionSource, bundle, activity, taskCompletionSource, i3), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 
@@ -108,7 +108,7 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        if (a9.g.a(this.d) < 82380000) {
+        if (c9.e.a(this.d) < 82380000) {
             return Tasks.forException(new IntegrityServiceException(-14, null));
         }
         try {
@@ -120,8 +120,8 @@ final class aj {
             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
             this.a.c(new af(this, taskCompletionSource, decode, cloudProjectNumber, null, taskCompletionSource, integrityTokenRequest), taskCompletionSource);
             return taskCompletionSource.getTask();
-        } catch (IllegalArgumentException e) {
-            return Tasks.forException(new IntegrityServiceException(-13, e));
+        } catch (IllegalArgumentException e10) {
+            return Tasks.forException(new IntegrityServiceException(-13, e10));
         }
     }
 }

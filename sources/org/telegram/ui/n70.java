@@ -1,117 +1,57 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.regex.Pattern;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.SharedPreferences;
+import android.os.StatFs;
+import java.io.File;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n70 implements Runnable {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ TLRPC.TL_error f;
-    public final /* synthetic */ y60 h;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ n70(LaunchActivity launchActivity, TLObject tLObject, int i10, String str, TLRPC.TL_error tL_error, y60 y60Var) {
+    public /* synthetic */ n70(LaunchActivity launchActivity, int i3, int i10) {
+        this.a = i10;
         this.b = launchActivity;
-        this.c = tLObject;
-        this.d = i10;
-        this.e = str;
-        this.f = tL_error;
-        this.h = y60Var;
+        this.c = i3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.cc a02;
-        int i10;
-        int i11;
-        int i12 = this.a;
-        y60 y60Var = this.h;
-        TLRPC.TL_error tL_error = this.f;
-        String str = this.e;
-        TLObject tLObject = this.c;
-        switch (i12) {
+        File z10;
+        int i3 = this.a;
+        int i10 = this.c;
+        LaunchActivity launchActivity = this.b;
+        switch (i3) {
             case 0:
-                Pattern pattern = LaunchActivity.D1;
-                if (tL_error != null) {
-                    org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
-                    if (T != null) {
-                        if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
-                            a02 = org.telegram.ui.Components.cc.a0(T);
-                            i10 = R.raw.fire_on;
-                            i11 = 2131743905;
-                        } else {
-                            a02 = org.telegram.ui.Components.cc.a0(T);
-                            i10 = R.raw.error;
-                            i11 = 2131743906;
-                        }
-                        org.telegram.messenger.m5.n(null, i11, a02, i10, 36);
-                    }
-                } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
-                    TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
-                    LaunchActivity launchActivity = this.b;
-                    org.telegram.messenger.wp.r1(launchActivity.O).V3(tL_payments_uniqueStarGift.users, false);
-                    org.telegram.messenger.wp.r1(launchActivity.O).P3(tL_payments_uniqueStarGift.chats, false);
-                    org.telegram.ui.ActionBar.k2 T2 = LaunchActivity.T();
-                    TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
-                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                        rh.e4 e4Var = new rh.e4(launchActivity, this.d, 0L, null, null);
-                        e4Var.h2(str, (TL_stars.TL_starGiftUnique) starGift, null);
-                        if (T2 == null) {
-                            e4Var.show();
-                        } else if (T2.getLastStoryViewer() == null || !T2.getLastStoryViewer().K0) {
-                            T2.showDialog(e4Var);
-                        } else {
-                            T2.getLastStoryViewer().t(e4Var);
-                        }
-                    }
-                }
-                try {
-                    y60Var.run();
-                    break;
-                } catch (Exception e) {
-                    org.telegram.messenger.f8.g(e, true);
-                    return;
-                }
+                String str = LaunchActivity.E1;
+                ConnectionsManager.getInstance(launchActivity.P).cancelRequest(i10, true);
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.D1;
-                boolean z10 = tLObject instanceof TLRPC.User;
-                LaunchActivity launchActivity2 = this.b;
-                if (z10) {
-                    TLRPC.User user = (TLRPC.User) tLObject;
-                    org.telegram.messenger.wp.r1(this.d).U3(user, false, false);
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", user.id);
-                    launchActivity2.t0(new un(bundle));
-                } else {
-                    StringBuilder u10 = a1.g.u("cant import contact token. token=", str, " err=");
-                    u10.append(tL_error == null ? null : tL_error.text);
-                    org.telegram.messenger.f8.d(u10.toString());
-                    org.telegram.messenger.m5.o(null, 2131748150, org.telegram.ui.Components.cc.a0((org.telegram.ui.ActionBar.k2) i0.a.g(1, launchActivity2.d0)), null);
+                String str2 = LaunchActivity.E1;
+                if (org.telegram.messenger.h10.i(launchActivity.P).p()) {
+                    try {
+                        SharedPreferences e12 = org.telegram.messenger.hp.e1();
+                        int i11 = 2;
+                        if ((((i10 == 2 || i10 == 1) && Math.abs(launchActivity.z1 - System.currentTimeMillis()) > 240000) || Math.abs(e12.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z10 = org.telegram.messenger.w7.z(4)) != null) {
+                            StatFs statFs = new StatFs(z10.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (i10 > 0 || availableBlocksLong < 52428800) {
+                                if (i10 > 0) {
+                                    launchActivity.z1 = System.currentTimeMillis();
+                                }
+                                e12.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                                org.telegram.messenger.g0.h3(new m60(launchActivity, i11));
+                                break;
+                            }
+                        }
+                    } catch (Throwable unused) {
+                        return;
+                    }
                 }
-                try {
-                    y60Var.run();
-                    break;
-                } catch (Exception e7) {
-                    org.telegram.messenger.f8.g(e7, true);
-                }
+                break;
         }
-    }
-
-    public /* synthetic */ n70(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, String str, y60 y60Var) {
-        this.b = launchActivity;
-        this.f = tL_error;
-        this.c = tLObject;
-        this.d = i10;
-        this.e = str;
-        this.h = y60Var;
     }
 }

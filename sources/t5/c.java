@@ -1,6 +1,30 @@
 package t5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface c {
+public final class c {
+    public static final c a;
+    public static final c b;
+    public static final c c;
+    public static final /* synthetic */ c[] d;
+
+    static {
+        c cVar = new c("NETWORK_UNMETERED", 0);
+        a = cVar;
+        c cVar2 = new c("DEVICE_IDLE", 1);
+        b = cVar2;
+        c cVar3 = new c("DEVICE_CHARGING", 2);
+        c = cVar3;
+        d = new c[]{cVar, cVar2, cVar3};
+    }
+
+    public static c valueOf(String str) {
+        return (c) Enum.valueOf(c.class, str);
+    }
+
+    public static c[] values() {
+        return (c[]) d.clone();
+    }
 }

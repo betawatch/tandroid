@@ -1,145 +1,210 @@
 package org.telegram.messenger;
 
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.Shader;
+import android.text.Layout;
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.ReplacementSpan;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ng0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class uu extends ReplacementSpan {
-    public final su a;
-    public final TL_iv.textButton b;
-    public final RectF c = new RectF();
-    public float d;
-    public boolean e;
-    public int f;
-    public View h;
+public final class uu extends xt {
+    public final bv X;
+    public final bv[] Y;
+    public int Z;
+    public LinearGradient a0;
+    public final Matrix b0;
+    public final Paint c0;
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x004d  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public uu(wv wvVar, int i10, TL_iv.textButton textbutton, Boolean bool) {
-        boolean z10;
-        boolean z11;
-        this.b = textbutton;
-        TL_iv.RichText richText = textbutton.text;
-        if (richText instanceof TL_iv.textConcat) {
-            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
-            if (!textconcat.texts.isEmpty()) {
-                boolean z12 = textconcat.texts.get(0) instanceof TL_iv.textCustomEmoji;
-                z11 = i0.a.g(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
-                z10 = z12;
-                TL_keyboard.RichButtonStyle richButtonStyle = textbutton.style;
-                boolean z13 = richButtonStyle == null && richButtonStyle.link;
-                SpannableStringBuilder l4 = wvVar.l(textbutton.text, !z13 ? wv.R(512, 0) : wv.R(16, 13));
-                TL_keyboard.InlineButtonType inlineButtonType = textbutton.type;
-                su suVar = new su(wvVar, i10, l4, null, inlineButtonType, textbutton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z10, z11, z13, true, bool, new ns(this, 7));
-                this.a = suVar;
-                suVar.e = suVar.h();
-            }
-        }
-        z10 = false;
-        z11 = false;
-        TL_keyboard.RichButtonStyle richButtonStyle2 = textbutton.style;
-        if (richButtonStyle2 == null) {
-        }
-        SpannableStringBuilder l42 = wvVar.l(textbutton.text, !z13 ? wv.R(512, 0) : wv.R(16, 13));
-        TL_keyboard.InlineButtonType inlineButtonType2 = textbutton.type;
-        su suVar2 = new su(wvVar, i10, l42, null, inlineButtonType2, textbutton.style, inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeDisabled, z10, z11, z13, true, bool, new ns(this, 7));
-        this.a = suVar2;
-        suVar2.e = suVar2.h();
+    public uu(cv cvVar, Rect rect, int i3, SpannableStringBuilder spannableStringBuilder) {
+        super(cvVar, rect, i3);
+        this.b0 = new Matrix();
+        this.c0 = new Paint(1);
+        bv bvVar = new bv(cvVar, spannableStringBuilder, this.c);
+        this.X = bvVar;
+        this.Y = new bv[]{bvVar};
     }
 
-    public final void a(View view) {
-        this.h = view;
-        this.a.a.i(view);
+    @Override // org.telegram.messenger.xt
+    public final int I() {
+        Rect rect = this.b;
+        return this.X.b.getHeight() + rect.top + rect.bottom;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float f10;
-        su suVar = this.a;
-        int i15 = suVar.a.s;
-        int i16 = (i15 <= 0 || this.f <= 0) ? 0 : 1;
-        if (i16 == 0 && i15 > 0 && (charSequence instanceof Spanned)) {
-            sv[] svVarArr = (sv[]) ((Spanned) charSequence).getSpans(i10, i11, sv.class);
-            int length = svVarArr.length;
-            int i17 = 0;
-            while (true) {
-                if (i17 >= length) {
-                    break;
-                }
-                if ((svVarArr[i17].b & 15) == 14) {
-                    i16 = 1;
-                    break;
-                }
-                i17++;
-            }
+    @Override // org.telegram.messenger.xt
+    public final int J() {
+        Rect rect = this.b;
+        return this.X.q() + rect.left + rect.right;
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final int K() {
+        Rect rect = this.b;
+        return this.X.r() + rect.left + rect.right;
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final org.telegram.ui.Cells.s9[] L() {
+        return this.Y;
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final void T() {
+        this.X.i(this.W);
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final void V() {
+        this.X.f(this.W);
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final void W(Canvas canvas) {
+        cv cvVar = this.a;
+        canvas.saveLayerAlpha(0.0f, 0.0f, cvVar.C, I(), hs.e4, 31);
+        int i02 = i0();
+        bv bvVar = this.X;
+        if (i02 != 0) {
+            bvVar.c = (this.b.left + i02) - bvVar.f;
+            canvas.save();
+            canvas.translate(i02, 0.0f);
         }
-        if (i16 != 0) {
-            f10 = (i12 + i14) / 2.0f;
-        } else {
-            Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
-            f10 = ((fontMetricsInt.ascent + fontMetricsInt.descent) / 2.0f) + i13;
+        bvVar.d(canvas, bvVar.T);
+        if (cvVar.F()) {
+            canvas.save();
+            canvas.translate(-bvVar.f, 0.0f);
+            org.telegram.ui.Components.p5.drawAnimatedEmojis(canvas, bvVar.b, bvVar.F, 0.0f, bvVar.x, 0.0f, 0.0f, 0.0f, 1.0f);
+            canvas.restore();
+        }
+        if (i02 != 0) {
+            canvas.restore();
+        }
+        j0();
+        Matrix matrix = this.b0;
+        matrix.reset();
+        matrix.postTranslate(((System.currentTimeMillis() % 2000) / 2000.0f) * this.c, 0.0f);
+        this.a0.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, cvVar.C, I(), this.c0);
+        canvas.restore();
+        View view = this.W;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final void X(Canvas canvas, int i3, float f10) {
+        cv cvVar = this.a;
+        int i10 = cvVar.C;
+        TextPaint textPaint = cvVar.w;
+        canvas.saveLayerAlpha(0.0f, 0.0f, i10, I(), hs.e4, 31);
+        int i02 = i0();
+        bv bvVar = this.X;
+        if (i02 != 0) {
+            bvVar.c = (this.b.left + i02) - bvVar.f;
         }
         canvas.save();
-        int round = Math.round(f7 + (suVar.s ? 0 : i0.L(1.0f)));
-        int ceil = (int) Math.ceil((f10 - (suVar.c() / 2.0f)) + (i16 ^ 1));
-        float f11 = round;
-        float f12 = ceil;
-        this.c.set(f11, f12, round + suVar.e, suVar.c() + ceil);
-        canvas.translate(f11, f12);
-        suVar.a(canvas);
+        canvas.translate(i02 - bvVar.f, 0.0f);
+        int color = textPaint.getColor();
+        textPaint.setColor(-1);
+        textPaint.linkColor = org.telegram.ui.ActionBar.k6.w0(cvVar.E() ? org.telegram.ui.ActionBar.k6.Vc : org.telegram.ui.ActionBar.k6.Uc, cvVar.D);
+        ng0.b(canvas, bvVar.b, i3, f10, new o(5, this, this.W));
         canvas.restore();
+        textPaint.setColor(color);
+        j0();
+        Matrix matrix = this.b0;
+        matrix.reset();
+        matrix.postTranslate(((System.currentTimeMillis() % 2000) / 2000.0f) * this.c, 0.0f);
+        this.a0.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, cvVar.C, I(), this.c0);
+        canvas.restore();
+        View view = this.W;
+        if (view != null) {
+            view.invalidate();
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        boolean z10 = this.e && fontMetricsInt != null;
-        int i12 = z10 ? fontMetricsInt.top : 0;
-        int i13 = z10 ? fontMetricsInt.ascent : 0;
-        int i14 = z10 ? fontMetricsInt.descent : 0;
-        int i15 = z10 ? fontMetricsInt.bottom : 0;
-        int i16 = z10 ? fontMetricsInt.leading : 0;
-        int L = i0.L(8.0f);
-        int L2 = i0.L(10.0f);
-        su suVar = this.a;
-        if (fontMetricsInt != null && suVar.s) {
-            float f7 = this.d;
-            int i17 = (int) (((-L2) - L) * f7);
-            fontMetricsInt.top = i17;
-            int i18 = (int) ((L2 - L) * f7);
-            fontMetricsInt.bottom = i18;
-            fontMetricsInt.ascent = i17;
-            fontMetricsInt.descent = i18;
-            fontMetricsInt.leading = 0;
+    @Override // org.telegram.messenger.xt
+    public final boolean Y(MotionEvent motionEvent) {
+        int i02 = i0();
+        bv bvVar = this.X;
+        if (i02 == 0) {
+            return bvVar.t(motionEvent);
         }
-        if (z10) {
-            fontMetricsInt.top = i12;
-            fontMetricsInt.ascent = i13;
-            fontMetricsInt.descent = i14;
-            fontMetricsInt.bottom = i15;
-            fontMetricsInt.leading = i16;
-            int i19 = this.f;
-            int i20 = i14 - i13;
-            if (i19 > i20) {
-                int i21 = i19 - i20;
-                int i22 = (i21 + 1) / 2;
-                int i23 = i13 - i22;
-                fontMetricsInt.ascent = i23;
-                fontMetricsInt.descent = i14 + (i21 - i22);
-                fontMetricsInt.top = Math.min(i12, i23);
-                fontMetricsInt.bottom = Math.max(fontMetricsInt.bottom, fontMetricsInt.descent);
-            }
+        motionEvent.offsetLocation(-i02, 0.0f);
+        boolean t10 = bvVar.t(motionEvent);
+        motionEvent.offsetLocation(i02, 0.0f);
+        return t10;
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final void Z(int i3, int i10, int i11) {
+        super.Z(i3, i10, i11);
+        int i02 = i0();
+        if (i02 != 0) {
+            int i12 = i3 + i02;
+            bv bvVar = this.X;
+            bvVar.c = i12 - bvVar.f;
         }
-        return suVar.e + (suVar.s ? 0 : i0.L(1.0f) * 2);
+    }
+
+    @Override // org.telegram.messenger.xt, org.telegram.ui.lg0
+    public final Layout a() {
+        return this.X.b;
+    }
+
+    public final int i0() {
+        cv cvVar = this.a;
+        if (!cvVar.I()) {
+            return 0;
+        }
+        int L = (cvVar.C + cvVar.T) - g0.L(14.0f);
+        Rect rect = this.b;
+        return ((L - rect.right) - rect.left) - this.X.r();
+    }
+
+    public final void j0() {
+        cv cvVar = this.a;
+        int w02 = org.telegram.ui.ActionBar.k6.w0(cvVar.E() ? org.telegram.ui.ActionBar.k6.Tc : org.telegram.ui.ActionBar.k6.Sc, cvVar.D);
+        if (this.a0 == null || this.Z != w02) {
+            this.Z = w02;
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{org.telegram.ui.ActionBar.k6.r1(0.7f, w02), org.telegram.ui.ActionBar.k6.r1(0.25f, w02), org.telegram.ui.ActionBar.k6.r1(0.7f, w02)}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.REPEAT);
+            this.a0 = linearGradient;
+            Paint paint = this.c0;
+            paint.setShader(linearGradient);
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        }
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final void k(SpannableStringBuilder spannableStringBuilder) {
+        xt.l(spannableStringBuilder, this.X, this.Y);
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final boolean s(Canvas canvas, ColorFilter colorFilter) {
+        return false;
+    }
+
+    @Override // org.telegram.messenger.xt
+    public final boolean u(CharacterStyle characterStyle, int i3, ot otVar) {
+        if (!this.X.o(characterStyle, otVar)) {
+            return false;
+        }
+        Rect rect = this.b;
+        otVar.e = (i0() + rect.left) - r0.f;
+        otVar.f = i3 + rect.top;
+        return true;
     }
 }

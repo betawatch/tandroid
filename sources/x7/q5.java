@@ -1,19 +1,32 @@
 package x7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import b8.cg;
+import b8.hg;
+import b8.ie;
+import b8.kg;
+import b8.lb;
+import b8.nb;
+import b8.ob;
+import b8.og;
+import com.google.mlkit.vision.segmentation.subject.internal.zzd;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class q5 implements ja.d {
-    public static final q5 a = new q5();
-
-    static {
-        sc.e.v(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, new z(1)), 2)), 3)), 4)), 5)), 6)), 7)), 8)), 9)), 10)), 11)), 12)));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+public abstract class q5 {
+    public static zzd a(wb.d dVar) {
+        xb.b bVar = (xb.b) mb.g.c().a(xb.b.class);
+        xb.d dVar2 = (xb.d) bVar.a.R0(dVar);
+        Executor executor = (Executor) bVar.b.a.get();
+        hg e10 = og.e();
+        zzd zzdVar = new zzd(dVar2, executor);
+        fa.f fVar = new fa.f(1);
+        fVar.d = lb.b;
+        p4.q qVar = new p4.q();
+        qVar.b = dVar.a();
+        qVar.a = nb.b;
+        fVar.e = new ie(qVar);
+        mb.m.a.execute(new cg(e10, new kg(fVar, 1), ob.O4, e10.c(), 0));
+        return zzdVar;
     }
 }

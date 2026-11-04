@@ -1,457 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class cu0 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class cu0 extends Drawable implements Drawable.Callback {
+    public final g6 a;
+    public final Paint b;
 
-    public /* synthetic */ cu0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public cu0() {
+        g6 g6Var = new g6(false, true, true);
+        this.a = g6Var;
+        g6Var.setCallback(this);
+        g6Var.n(0.3f, 165L, xq.h);
+        g6Var.b = 1;
+        g6Var.x(org.telegram.messenger.g0.o());
+        g6Var.w(org.telegram.messenger.g0.L(10.0f));
+        Paint.Style style = Paint.Style.FILL_AND_STROKE;
+        TextPaint textPaint = g6Var.a;
+        textPaint.setStyle(style);
+        textPaint.setStrokeWidth(org.telegram.messenger.g0.N(0.6f));
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    @Override // s4.s0
-    public void a(RecyclerView recyclerView, int i10) {
-        dk0 dk0Var;
-        org.telegram.ui.Wallet.y8 y8Var;
-        switch (this.a) {
-            case 4:
-                f61 f61Var = (f61) this.b;
-                ag.b1 b1Var = f61Var.k1;
-                if (i10 == 0 && f61Var.x1) {
-                    if (org.telegram.messenger.i0.L(13.0f) + f61Var.u1 + f61Var.s0 < org.telegram.messenger.i0.m * 2 && b1Var.canScrollVertically(1) && (dk0Var = (dk0) b1Var.K(0)) != null) {
-                        View view = dk0Var.a;
-                        if (view.getTop() > 0) {
-                            b1Var.w0(0, view.getTop(), null);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 6:
-                if (i10 == 1 && (y8Var = ((org.telegram.ui.Wallet.b6) this.b).i0) != null) {
-                    y8Var.a();
-                    break;
-                }
-                break;
-            case 14:
-                qh.c cVar = (qh.c) this.b;
-                cVar.c0 = i10 == 1;
-                if (i10 != 0) {
-                    cVar.a0 = qh.c.b();
-                }
-                cVar.invalidate();
-                break;
-            case 15:
-                if (i10 == 0) {
-                    ((qh.g0) this.b).w = false;
-                    break;
-                }
-                break;
-            case 23:
-                th.y3 y3Var = (th.y3) this.b;
-                if (i10 == 0) {
-                    y3Var.V = true;
-                    y3Var.invalidate();
-                }
-                if (i10 == 1) {
-                    y3Var.V = false;
-                    a5.a aVar = y3Var.d;
-                    ValueAnimator valueAnimator = (ValueAnimator) aVar.c;
-                    if (valueAnimator != null) {
-                        valueAnimator.removeAllListeners();
-                        ((ValueAnimator) aVar.c).cancel();
-                        aVar.c = null;
-                    }
-                    org.telegram.messenger.i0.v1(y3Var);
-                    break;
-                }
-                break;
-            case 25:
-                vh.l1 l1Var = (vh.l1) this.b;
-                if (i10 == 0 && l1Var.n >= 0.0f && !l1Var.b.canScrollVertically(-1)) {
-                    l1Var.n = -1.0f;
-                    break;
-                }
-                break;
-            case 26:
-                if (i10 == 0) {
-                    vh.f5 f5Var = (vh.f5) this.b;
-                    if (f5Var.a2) {
-                        f5Var.a2 = false;
-                        break;
-                    }
-                }
-                break;
+    public static String a(float f10) {
+        Math.abs(f10 - 0.25f);
+        float round = Math.round(f10 * 10.0f) / 10.0f;
+        long j10 = (long) round;
+        if (round == j10) {
+            return a1.g.p(j10, "");
+        }
+        return "" + round;
+    }
+
+    public final void b(boolean z10, float f10) {
+        String str = a(f10) + "X";
+        g6 g6Var = this.a;
+        if (z10 && TextUtils.equals(g6Var.i, str)) {
+            return;
+        }
+        g6Var.a();
+        g6Var.t(str, z10, true);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        g6 g6Var = this.a;
+        Paint paint = this.b;
+        if (paint != null) {
+            paint.setStrokeWidth(org.telegram.messenger.g0.N(1.6f));
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(((org.telegram.messenger.g0.L(24.0f) - g6Var.c()) / 2.0f) - org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(0.2f) + ((org.telegram.messenger.g0.L(24.0f) - g6Var.e) / 2.0f), org.telegram.messenger.g0.N(3.0f) + ((g6Var.c() + org.telegram.messenger.g0.L(24.0f)) / 2.0f), (org.telegram.messenger.g0.L(24.0f) + g6Var.e) / 2.0f);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(3.0f), org.telegram.messenger.g0.N(3.0f), paint);
+        }
+        g6Var.a.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
+        g6Var.setBounds(0, (int) ((org.telegram.messenger.g0.L(24.0f) - g6Var.e) / 2.0f), org.telegram.messenger.g0.L(24.0f), (int) ((org.telegram.messenger.g0.L(24.0f) + g6Var.e) / 2.0f));
+        g6Var.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        scheduleSelf(runnable, j10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        this.a.B = i3;
+        Paint paint = this.b;
+        if (paint != null) {
+            paint.setAlpha(i3);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x002d, code lost:
-    
-        r10 = ((org.telegram.ui.ActionBar.k2) r5).currentAccount;
-        rh.r.g(r10).d(r11).a();
-        r10 = ((org.telegram.ui.ActionBar.k2) r5).currentAccount;
-        rh.r.g(r10).e(r11).a();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:117:0x01a8, code lost:
-    
-        if (r11.s() != false) goto L103;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0080, code lost:
-    
-        if (r11.s() != false) goto L29;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0209  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0233  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0240  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0235  */
-    @Override // s4.s0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.ui.Wallet.x5 x5Var;
-        float f7;
-        Object[] objArr;
-        float y3;
-        int measuredHeight;
-        org.telegram.ui.ActionBar.i5 i5Var;
-        vh.p1 p1Var;
-        int i12;
-        vh.p1 p1Var2;
-        org.telegram.ui.ActionBar.i5 i5Var2;
-        int i13 = this.a;
-        int i14 = -1;
-        int i15 = 0;
-        boolean z10 = false;
-        int i16 = 0;
-        boolean z11 = false;
-        boolean z12 = true;
-        Object obj = this.b;
-        switch (i13) {
-            case 0:
-                eu0.I0((eu0) obj);
-                break;
-            case 1:
-                lu0 lu0Var = (lu0) obj;
-                if (recyclerView == lu0Var.G) {
-                    lu0Var.R += i11;
-                }
-                if (lu0Var.P == null && lu0Var.Q == 0) {
-                    lu0Var.B();
-                    break;
-                }
-                break;
-            case 2:
-                ((kv0) obj).P1.W();
-                break;
-            case 3:
-                dx0.I0((dx0) obj);
-                break;
-            case 4:
-                ((f61) obj).Q0();
-                break;
-            case 5:
-                ((w71) obj).invalidate();
-                break;
-            case 6:
-                org.telegram.ui.Wallet.b6 b6Var = (org.telegram.ui.Wallet.b6) obj;
-                if (i11 != 0 && recyclerView.getScrollState() == 1 && (x5Var = b6Var.q0) != null && x5Var.f) {
-                    x5Var.d = true;
-                }
-                b6Var.T0();
-                break;
-            case 7:
-                int[] iArr = (int[]) obj;
-                iArr[0] = iArr[0] + i11;
-                break;
-            case 8:
-                org.telegram.ui.Wallet.ba baVar = (org.telegram.ui.Wallet.ba) obj;
-                if (baVar.a.I1) {
-                    org.telegram.messenger.i0.v1(baVar.N);
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.web.m mVar = (org.telegram.ui.web.m) obj;
-                if (!mVar.a.canScrollVertically(1)) {
-                    if (TextUtils.isEmpty(mVar.w)) {
-                        mVar.e.d();
-                    } else {
-                        org.telegram.ui.web.h hVar = mVar.f;
-                        if (hVar != null) {
-                            hVar.d();
-                        }
-                    }
-                }
-                if (mVar.a.I1) {
-                    org.telegram.messenger.i0.v1(mVar.fragmentView);
-                    break;
-                }
-                break;
-            case 10:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
-                if (b1Var.a.I1) {
-                    org.telegram.messenger.i0.v1(b1Var.fragmentView);
-                    break;
-                }
-                break;
-            case 11:
-                ph.r3 r3Var = (ph.r3) obj;
-                int i17 = 0;
-                while (true) {
-                    if (i17 < r3Var.n.getChildCount()) {
-                        if (r3Var.n.getChildAt(i17) instanceof zz) {
-                            r3Var.d.g(false);
-                        } else {
-                            i17++;
-                        }
-                    }
-                }
-                org.telegram.messenger.a30.m(r3Var.h.animate().alpha((r3Var.K && r3Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), gr.h, 320L);
-                break;
-            case 12:
-                ((ph.q3) obj).d1();
-                break;
-            case 13:
-                ph.t3 t3Var = (ph.t3) obj;
-                if (t3Var.e1()) {
-                    t3Var.Q1.b();
-                    break;
-                }
-                break;
-            case 14:
-                qh.c cVar = (qh.c) obj;
-                if (i11 != 0) {
-                    cVar.a0 = qh.c.b();
-                    cVar.invalidate();
-                    break;
-                }
-                break;
-            case 15:
-                qh.g0 g0Var = (qh.g0) obj;
-                if (!g0Var.w) {
-                    g0Var.h.a(g0Var.f(g0Var.c()), true);
-                    break;
-                }
-                break;
-            case 16:
-                rh.h hVar2 = (rh.h) obj;
-                ph.x1 x1Var = hVar2.n;
-                if (!recyclerView.canScrollVertically(1)) {
-                    hVar2.removeCallbacks(x1Var);
-                    hVar2.post(x1Var);
-                    break;
-                }
-                break;
-            case 17:
-                rh.t0 t0Var = (rh.t0) obj;
-                View view = t0Var.i2;
-                FrameLayout frameLayout = t0Var.d2;
-                uk0 uk0Var = t0Var.k1;
-                for (int childCount = uk0Var.getChildCount() - 1; childCount >= 0; childCount--) {
-                    View childAt = uk0Var.getChildAt(childCount);
-                    int R = RecyclerView.R(childAt);
-                    if (R >= 0) {
-                        if (R == 2) {
-                            y3 = childAt.getY();
-                            measuredHeight = frameLayout.getMeasuredHeight();
-                        } else if (R == 1) {
-                            f7 = childAt.getY();
-                            objArr = true;
-                            float height = frameLayout.getHeight() + f7;
-                            if (objArr != false && height >= 0.0f) {
-                                z12 = false;
-                            }
-                            if (t0Var.n2 != z12) {
-                                t0Var.n2 = z12;
-                                if (z12) {
-                                    view.setVisibility(0);
-                                }
-                                view.animate().alpha(z12 ? 1.0f : 0.0f).setDuration(200L).withEndAction(new org.telegram.ui.xv0(5, t0Var, z12)).start();
-                            }
-                            t0Var.B1 = f7 <= 0.0f ? 0 : org.telegram.messenger.i0.L(6.0f);
-                            frameLayout.setVisibility(objArr == true ? 0 : 8);
-                            frameLayout.setTranslationY(f7);
-                            break;
-                        } else if (R == 0) {
-                            y3 = childAt.getY();
-                            measuredHeight = frameLayout.getMeasuredHeight();
-                        }
-                        f7 = y3 - measuredHeight;
-                        objArr = true;
-                        float height2 = frameLayout.getHeight() + f7;
-                        if (objArr != false) {
-                            z12 = false;
-                        }
-                        if (t0Var.n2 != z12) {
-                        }
-                        t0Var.B1 = f7 <= 0.0f ? 0 : org.telegram.messenger.i0.L(6.0f);
-                        frameLayout.setVisibility(objArr == true ? 0 : 8);
-                        frameLayout.setTranslationY(f7);
-                    }
-                }
-                f7 = 0.0f;
-                objArr = false;
-                float height22 = frameLayout.getHeight() + f7;
-                if (objArr != false) {
-                }
-                if (t0Var.n2 != z12) {
-                }
-                t0Var.B1 = f7 <= 0.0f ? 0 : org.telegram.messenger.i0.L(6.0f);
-                frameLayout.setVisibility(objArr == true ? 0 : 8);
-                frameLayout.setTranslationY(f7);
-            case 18:
-                ((rh.e4) obj).Q1.g();
-                break;
-            case 19:
-                rh.h8 h8Var = (rh.h8) obj;
-                fe.b bVar = h8Var.X;
-                if (!h8Var.c.canScrollVertically(-1)) {
-                    i5Var = ((org.telegram.ui.ActionBar.k2) h8Var).simpleActionBar;
-                    break;
-                }
-                z11 = true;
-                bVar.a(z11, true);
-                break;
-            case 20:
-                rh.e8 e8Var = (rh.e8) obj;
-                v51 v51Var = e8Var.a;
-                if (v51Var.canScrollVertically(1)) {
-                    for (int i18 = 0; i18 < v51Var.getChildCount(); i18++) {
-                        if (!(v51Var.getChildAt(i18) instanceof zz)) {
-                        }
-                    }
-                    break;
-                }
-                e8Var.h.run();
-                break;
-            case 21:
-                ((sg.s) obj).c(true);
-                break;
-            case 22:
-                org.telegram.ui.tw twVar = (org.telegram.ui.tw) obj;
-                twVar.invalidate();
-                twVar.c();
-                vh.p2 p2Var = twVar.J;
-                if (p2Var != null) {
-                    p2Var.e(true);
-                    break;
-                }
-                break;
-            case 23:
-                th.y3 y3Var = (th.y3) obj;
-                y3Var.c();
-                y3Var.invalidate();
-                break;
-            case 24:
-                vh.g1 g1Var = (vh.g1) obj;
-                vh.e1 e1Var = g1Var.c;
-                vh.u1 u1Var = g1Var.r;
-                int i19 = vh.u1.y1;
-                u1Var.b.invalidate();
-                if (u1Var.d && g1Var.b.I1 && (p1Var = g1Var.d) != null && p1Var.e != null) {
-                    u1Var.L0();
-                }
-                if (g1Var.e.M0() + 7 >= e1Var.b() - 1) {
-                    e1Var.G();
-                    break;
-                }
-                break;
-            case 25:
-                vh.l1 l1Var = (vh.l1) obj;
-                vh.k1 k1Var = l1Var.c;
-                vh.c1 c1Var = l1Var.b;
-                vh.u1 u1Var2 = l1Var.s;
-                int i20 = vh.u1.y1;
-                u1Var2.b.invalidate();
-                if (l1Var.n < 0.0f) {
-                    i12 = l1Var.d.I0();
-                } else {
-                    while (true) {
-                        if (i16 < c1Var.getChildCount()) {
-                            View childAt2 = c1Var.getChildAt(i16);
-                            if (childAt2.getY() + childAt2.getHeight() > l1Var.n + c1Var.getPaddingTop()) {
-                                c1Var.getClass();
-                                i12 = RecyclerView.R(childAt2);
-                            } else {
-                                i16++;
-                            }
-                        } else {
-                            i12 = -1;
-                        }
-                    }
-                    if (i12 == -1) {
-                    }
-                }
-                int size = k1Var.D.size() - 1;
-                while (true) {
-                    if (size >= 0) {
-                        int keyAt = k1Var.D.keyAt(size);
-                        int valueAt = k1Var.D.valueAt(size);
-                        if (i12 >= keyAt) {
-                            i14 = valueAt;
-                        } else {
-                            size--;
-                        }
-                    }
-                }
-                if (i14 >= 0) {
-                    l1Var.e.j(i14, true);
-                }
-                if (u1Var2.d && c1Var.I1 && (p1Var2 = l1Var.f) != null && p1Var2.e != null) {
-                    u1Var2.L0();
-                    break;
-                }
-                break;
-            case 26:
-                vh.f5 f5Var = (vh.f5) obj;
-                f5Var.j1();
-                if (f5Var.k1.I1 && !f5Var.a2) {
-                    org.telegram.messenger.i0.v1(f5Var.b);
-                    break;
-                }
-                break;
-            case 27:
-                wh.g gVar = (wh.g) obj;
-                fe.b bVar2 = gVar.X;
-                if (!gVar.c.canScrollVertically(-1)) {
-                    i5Var2 = ((org.telegram.ui.ActionBar.k2) gVar).simpleActionBar;
-                    break;
-                }
-                z10 = true;
-                bVar2.a(z10, true);
-                break;
-            case 28:
-                qe qeVar = (qe) obj;
-                View m10 = qeVar.c.getLayoutManager().m(0);
-                float y10 = m10 != null ? m10.getY() : 0.0f;
-                qeVar.h = y10 >= 0.0f ? y10 : 0.0f;
-                qeVar.b();
-                break;
-            default:
-                xh.z2 z2Var = (xh.z2) obj;
-                long j10 = z2Var.R;
-                while (true) {
-                    if (i15 < z2Var.c.getChildCount()) {
-                        if (z2Var.c.getChildAt(i15) instanceof zz) {
-                            break;
-                        } else {
-                            i15++;
-                        }
-                    } else if (recyclerView.canScrollVertically(1)) {
-                    }
-                }
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

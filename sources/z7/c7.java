@@ -1,19 +1,31 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c7 implements ja.d {
-    public static final c7 a = new c7();
+public enum c7 implements z {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    h(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF79(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF88(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF101(9);
 
-    static {
-        sc.e.v(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, new s(1)), 2)), 3)), 4)), 5)));
+    public final int a;
+
+    c7(int i3) {
+        this.a = i3;
     }
 
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // z7.z
+    public final int zza() {
+        return this.a;
     }
 }

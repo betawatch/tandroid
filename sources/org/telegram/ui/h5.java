@@ -1,233 +1,130 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Spannable;
+import android.text.style.ReplacementSpan;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h5 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t5 b;
-    public final /* synthetic */ CountDownLatch c;
-    public final /* synthetic */ Runnable d;
+public final class h5 extends ReplacementSpan {
+    public final Paint a;
+    public final ImageReceiver b;
+    public final org.telegram.ui.Components.u8 c;
+    public float d;
+    public final int e;
+    public View f;
+    public boolean h;
+    public final g5 n;
+    public float r;
+    public int s;
+    public boolean w;
 
-    public /* synthetic */ h5(t5 t5Var, CountDownLatch countDownLatch, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = t5Var;
-        this.c = countDownLatch;
-        this.d = runnable;
+    public h5(int i3, View view) {
+        this(18.0f, i3, view);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 1;
-                final t5 t5Var = this.b;
-                final CountDownLatch countDownLatch = this.c;
-                final Runnable runnable = this.d;
-                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.i5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                t5 t5Var2 = t5Var;
-                                ArrayList arrayList = t5Var2.X;
-                                CountDownLatch countDownLatch2 = countDownLatch;
-                                if (countDownLatch2 != null) {
-                                    countDownLatch2.countDown();
-                                }
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    t5Var2.l0 = 20;
-                                    TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
-                                    boolean z10 = false;
-                                    org.telegram.messenger.wp.r1(t5Var2.S).V3(tL_premium_boostsList.users, false);
-                                    t5Var2.k0 = tL_premium_boostsList.next_offset;
-                                    arrayList.addAll(tL_premium_boostsList.boosts);
-                                    int size = arrayList.size();
-                                    int i11 = 0;
-                                    int i12 = 0;
-                                    while (true) {
-                                        int i13 = 1;
-                                        if (i12 >= size) {
-                                            t5Var2.b0 = Math.max(0, tL_premium_boostsList.count - i11);
-                                            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && t5Var2.b0 > 0) {
-                                                z10 = true;
-                                            }
-                                            t5Var2.a0 = z10;
-                                            t5Var2.n0 = tL_premium_boostsList.count;
-                                            Runnable runnable2 = runnable;
-                                            if (runnable2 != null) {
-                                                runnable2.run();
-                                                break;
-                                            }
-                                        } else {
-                                            Object obj = arrayList.get(i12);
-                                            i12++;
-                                            int i14 = ((TL_stories.Boost) obj).multiplier;
-                                            if (i14 > 0) {
-                                                i13 = i14;
-                                            }
-                                            i11 += i13;
-                                        }
-                                    }
-                                }
-                                break;
-                            default:
-                                t5 t5Var3 = t5Var;
-                                ArrayList arrayList2 = t5Var3.W;
-                                CountDownLatch countDownLatch3 = countDownLatch;
-                                if (countDownLatch3 != null) {
-                                    countDownLatch3.countDown();
-                                }
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 != null) {
-                                    t5Var3.m0 = 20;
-                                    TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
-                                    boolean z11 = false;
-                                    org.telegram.messenger.wp.r1(t5Var3.S).V3(tL_premium_boostsList2.users, false);
-                                    t5Var3.j0 = tL_premium_boostsList2.next_offset;
-                                    arrayList2.addAll(tL_premium_boostsList2.boosts);
-                                    int size2 = arrayList2.size();
-                                    int i15 = 0;
-                                    int i16 = 0;
-                                    while (true) {
-                                        int i17 = 1;
-                                        if (i16 >= size2) {
-                                            t5Var3.Z = Math.max(0, tL_premium_boostsList2.count - i15);
-                                            if (!TextUtils.isEmpty(tL_premium_boostsList2.next_offset) && t5Var3.Z > 0) {
-                                                z11 = true;
-                                            }
-                                            t5Var3.Y = z11;
-                                            t5Var3.o0 = tL_premium_boostsList2.count;
-                                            Runnable runnable3 = runnable;
-                                            if (runnable3 != null) {
-                                                runnable3.run();
-                                                break;
-                                            }
-                                        } else {
-                                            Object obj2 = arrayList2.get(i16);
-                                            i16++;
-                                            int i18 = ((TL_stories.Boost) obj2).multiplier;
-                                            if (i18 > 0) {
-                                                i17 = i18;
-                                            }
-                                            i15 += i17;
-                                        }
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 0;
-                final t5 t5Var2 = this.b;
-                final CountDownLatch countDownLatch2 = this.c;
-                final Runnable runnable2 = this.d;
-                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.i5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                t5 t5Var22 = t5Var2;
-                                ArrayList arrayList = t5Var22.X;
-                                CountDownLatch countDownLatch22 = countDownLatch2;
-                                if (countDownLatch22 != null) {
-                                    countDownLatch22.countDown();
-                                }
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null) {
-                                    t5Var22.l0 = 20;
-                                    TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
-                                    boolean z10 = false;
-                                    org.telegram.messenger.wp.r1(t5Var22.S).V3(tL_premium_boostsList.users, false);
-                                    t5Var22.k0 = tL_premium_boostsList.next_offset;
-                                    arrayList.addAll(tL_premium_boostsList.boosts);
-                                    int size = arrayList.size();
-                                    int i112 = 0;
-                                    int i12 = 0;
-                                    while (true) {
-                                        int i13 = 1;
-                                        if (i12 >= size) {
-                                            t5Var22.b0 = Math.max(0, tL_premium_boostsList.count - i112);
-                                            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && t5Var22.b0 > 0) {
-                                                z10 = true;
-                                            }
-                                            t5Var22.a0 = z10;
-                                            t5Var22.n0 = tL_premium_boostsList.count;
-                                            Runnable runnable22 = runnable2;
-                                            if (runnable22 != null) {
-                                                runnable22.run();
-                                                break;
-                                            }
-                                        } else {
-                                            Object obj = arrayList.get(i12);
-                                            i12++;
-                                            int i14 = ((TL_stories.Boost) obj).multiplier;
-                                            if (i14 > 0) {
-                                                i13 = i14;
-                                            }
-                                            i112 += i13;
-                                        }
-                                    }
-                                }
-                                break;
-                            default:
-                                t5 t5Var3 = t5Var2;
-                                ArrayList arrayList2 = t5Var3.W;
-                                CountDownLatch countDownLatch3 = countDownLatch2;
-                                if (countDownLatch3 != null) {
-                                    countDownLatch3.countDown();
-                                }
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 != null) {
-                                    t5Var3.m0 = 20;
-                                    TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
-                                    boolean z11 = false;
-                                    org.telegram.messenger.wp.r1(t5Var3.S).V3(tL_premium_boostsList2.users, false);
-                                    t5Var3.j0 = tL_premium_boostsList2.next_offset;
-                                    arrayList2.addAll(tL_premium_boostsList2.boosts);
-                                    int size2 = arrayList2.size();
-                                    int i15 = 0;
-                                    int i16 = 0;
-                                    while (true) {
-                                        int i17 = 1;
-                                        if (i16 >= size2) {
-                                            t5Var3.Z = Math.max(0, tL_premium_boostsList2.count - i15);
-                                            if (!TextUtils.isEmpty(tL_premium_boostsList2.next_offset) && t5Var3.Z > 0) {
-                                                z11 = true;
-                                            }
-                                            t5Var3.Y = z11;
-                                            t5Var3.o0 = tL_premium_boostsList2.count;
-                                            Runnable runnable3 = runnable2;
-                                            if (runnable3 != null) {
-                                                runnable3.run();
-                                                break;
-                                            }
-                                        } else {
-                                            Object obj2 = arrayList2.get(i16);
-                                            i16++;
-                                            int i18 = ((TL_stories.Boost) obj2).multiplier;
-                                            if (i18 > 0) {
-                                                i17 = i18;
-                                            }
-                                            i15 += i17;
-                                        }
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    public static void a(CharSequence charSequence, org.telegram.ui.Cells.q8 q8Var) {
+        if (charSequence != null && (charSequence instanceof Spannable)) {
+            Spannable spannable = (Spannable) charSequence;
+            for (h5 h5Var : (h5[]) spannable.getSpans(0, spannable.length(), h5.class)) {
+                h5Var.d(q8Var);
+            }
         }
+    }
+
+    public final void b(TLRPC.Chat chat) {
+        org.telegram.ui.Components.u8 u8Var = this.c;
+        u8Var.q(chat);
+        this.b.i0(chat, u8Var, null);
+    }
+
+    public final void c(long j10) {
+        int i3 = this.e;
+        if (j10 >= 0) {
+            e(org.telegram.messenger.hp.s1(i3).a2(Long.valueOf(j10)));
+        } else {
+            b(org.telegram.messenger.hp.s1(i3).M0(Long.valueOf(-j10)));
+        }
+    }
+
+    public final void d(View view) {
+        View view2 = this.f;
+        if (view2 == view) {
+            return;
+        }
+        g5 g5Var = this.n;
+        ImageReceiver imageReceiver = this.b;
+        if (view2 != null) {
+            view2.removeOnAttachStateChangeListener(g5Var);
+            if (this.f.isAttachedToWindow() && !view.isAttachedToWindow()) {
+                imageReceiver.R();
+            }
+        }
+        View view3 = this.f;
+        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
+            imageReceiver.P();
+        }
+        this.f = view;
+        imageReceiver.H0(view);
+        if (view != null) {
+            view.addOnAttachStateChangeListener(g5Var);
+        }
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        if (this.h) {
+            int i14 = this.s;
+            int alpha = paint.getAlpha();
+            Paint paint2 = this.a;
+            if (i14 != alpha) {
+                int alpha2 = paint.getAlpha();
+                this.s = alpha2;
+                paint2.setAlpha(alpha2);
+                paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.k6.r1(this.s / 255.0f, 855638016));
+            }
+            canvas.drawCircle((org.telegram.messenger.g0.L(this.d) / 2.0f) + 0.0f + f10, ((i11 + i13) / 2.0f) + this.r, org.telegram.messenger.g0.L(this.d) / 2.0f, paint2);
+        }
+        float f11 = 0.0f + f10;
+        float L = (((i11 + i13) / 2.0f) + this.r) - (org.telegram.messenger.g0.L(this.d) / 2.0f);
+        float L2 = org.telegram.messenger.g0.L(this.d);
+        float L3 = org.telegram.messenger.g0.L(this.d);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.y0(f11, L, L2, L3);
+        imageReceiver.setAlpha(this.w ? paint.getAlpha() / 255.0f : 1.0f);
+        imageReceiver.h(canvas, null);
+    }
+
+    public final void e(TLRPC.User user) {
+        org.telegram.ui.Components.u8 u8Var = this.c;
+        u8Var.r(user);
+        this.b.i0(user, u8Var, null);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        return org.telegram.messenger.g0.L(this.d);
+    }
+
+    public h5(float f10, int i3, View view) {
+        this.h = true;
+        this.n = new g5(this, 0);
+        this.s = org.telegram.messenger.hs.e4;
+        this.w = true;
+        this.e = i3;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.b = imageReceiver;
+        imageReceiver.K0 = true;
+        this.c = new org.telegram.ui.Components.u8((org.telegram.ui.ActionBar.e6) null);
+        imageReceiver.J0(org.telegram.messenger.g0.L(f10));
+        this.d = f10;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), 855638016);
+        d(view);
     }
 }

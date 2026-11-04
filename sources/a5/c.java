@@ -1,51 +1,84 @@
 package a5;
 
-import android.content.pm.PackageInfo;
-import android.net.Uri;
-import android.webkit.WebView;
-import b5.m;
-import b5.n;
-import b5.o;
-import java.util.Set;
-import java.util.WeakHashMap;
-import k6.h;
+import a0.f;
+import a1.g;
+import android.os.Parcel;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static final boolean a;
-    public static final WeakHashMap b;
+public final class c extends b {
+    public final SparseIntArray d;
+    public final Parcel e;
+    public final int f;
+    public final int g;
+    public final String h;
+    public int i;
+    public int j;
+    public int k;
 
-    static {
-        Uri.parse("*");
-        Uri.parse("");
-        a = true;
-        b = new WeakHashMap();
+    public c(Parcel parcel) {
+        this(parcel, parcel.dataPosition(), parcel.dataSize(), "", new f(0), new f(0), new f(0));
     }
 
-    public static void a(WebView webView, String str, Set set, b bVar) {
-        if (!m.c.b()) {
-            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+    @Override // a5.b
+    public final c a() {
+        Parcel parcel = this.e;
+        int dataPosition = parcel.dataPosition();
+        int i3 = this.j;
+        if (i3 == this.f) {
+            i3 = this.g;
         }
-        o c10 = c(webView);
-        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new me.a(new h(bVar, 8)));
+        return new c(parcel, dataPosition, i3, g.s(new StringBuilder(), this.h, "  "), this.a, this.b, this.c);
     }
 
-    public static PackageInfo b() {
-        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
+    @Override // a5.b
+    public final boolean e(int i3) {
+        while (this.j < this.g) {
+            int i10 = this.k;
+            if (i10 == i3) {
+                return true;
+            }
+            if (String.valueOf(i10).compareTo(String.valueOf(i3)) > 0) {
+                return false;
+            }
+            int i11 = this.j;
+            Parcel parcel = this.e;
+            parcel.setDataPosition(i11);
+            int readInt = parcel.readInt();
+            this.k = parcel.readInt();
+            this.j += readInt;
+        }
+        return this.k == i3;
     }
 
-    public static o c(WebView webView) {
-        if (!m.e.b() || !a) {
-            return new o(n.a.createWebView(webView));
+    @Override // a5.b
+    public final void i(int i3) {
+        int i10 = this.i;
+        SparseIntArray sparseIntArray = this.d;
+        Parcel parcel = this.e;
+        if (i10 >= 0) {
+            int i11 = sparseIntArray.get(i10);
+            int dataPosition = parcel.dataPosition();
+            parcel.setDataPosition(i11);
+            parcel.writeInt(dataPosition - i11);
+            parcel.setDataPosition(dataPosition);
         }
-        WeakHashMap weakHashMap = b;
-        o oVar = (o) weakHashMap.get(webView);
-        if (oVar != null) {
-            return oVar;
-        }
-        o oVar2 = new o(n.a.createWebView(webView));
-        weakHashMap.put(webView, oVar2);
-        return oVar2;
+        this.i = i3;
+        sparseIntArray.put(i3, parcel.dataPosition());
+        parcel.writeInt(0);
+        parcel.writeInt(i3);
+    }
+
+    public c(Parcel parcel, int i3, int i10, String str, f fVar, f fVar2, f fVar3) {
+        super(fVar, fVar2, fVar3);
+        this.d = new SparseIntArray();
+        this.i = -1;
+        this.k = -1;
+        this.e = parcel;
+        this.f = i3;
+        this.g = i10;
+        this.j = i3;
+        this.h = str;
     }
 }

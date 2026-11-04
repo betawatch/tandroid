@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzqf extends zzqg {
     final /* synthetic */ zzqm zza;
@@ -21,11 +21,11 @@ final class zzqf extends zzqg {
 
     @Override // com.google.android.recaptcha.internal.zzqi
     public final byte zza() {
-        int i10 = this.zzb;
-        if (i10 >= this.zzc) {
+        int i3 = this.zzb;
+        if (i3 >= this.zzc) {
             throw new NoSuchElementException();
         }
-        this.zzb = i10 + 1;
-        return this.zza.zzb(i10);
+        this.zzb = i3 + 1;
+        return this.zza.zzb(i3);
     }
 }

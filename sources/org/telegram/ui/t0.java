@@ -2,47 +2,58 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class t0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ i4 a;
 
-    public /* synthetic */ t0(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public t0(i4 i4Var) {
+        this.a = i4Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                h4 h4Var = (h4) this.c;
-                h4Var.u0[1].b();
-                h4Var.u0[1].setVisibility(8);
-                h4Var.P0.S(h4Var.u0[0].b);
-                org.telegram.ui.Cells.k9 k9Var = h4Var.P0;
-                l3[] l3VarArr = h4Var.u0;
-                k9Var.z0 = l3VarArr[0].d;
-                int i10 = this.b;
-                l3VarArr[i10].setBackgroundDrawable(null);
-                h4Var.u0[i10].setLayerType(0, null);
-                h4Var.v0 = null;
-                h4Var.f0.f = false;
-                break;
-            case 1:
-                Activity activity = (Activity) this.c;
-                int i11 = this.b;
-                org.telegram.messenger.i0.s3(activity, i11, false);
-                org.telegram.messenger.i0.l3(activity, org.telegram.messenger.i0.B(i11) >= 0.721f);
-                break;
-            default:
-                ((LaunchActivity) this.c).D0(this.b);
-                break;
+        i4 i4Var = this.a;
+        u3 u3Var = i4Var.L;
+        if (i4Var.g0.e) {
+            i4Var.v0[0].setBackgroundDrawable(null);
+            l3[] l3VarArr = i4Var.v0;
+            l3 l3Var = l3VarArr[1];
+            l3VarArr[1] = l3VarArr[0];
+            l3VarArr[0] = l3Var;
+            i4Var.i0.i();
+            i4Var.b1.a(i4Var.v0[0].getBackgroundColor(), true);
+            i4Var.c1.a(i4Var.v0[1].getBackgroundColor(), true);
+            if (u3Var != null) {
+                u3Var.z();
+            }
+            Object o10 = org.telegram.ui.Cells.f1.o(1, i4Var.e0);
+            i4Var.Q0.S(i4Var.v0[0].b);
+            org.telegram.ui.Cells.h9 h9Var = i4Var.Q0;
+            h9Var.z0 = i4Var.v0[0].d;
+            h9Var.f(true);
+            i4Var.g0(false);
+            i4Var.d0();
+            i4Var.v0[1].b();
+            i4Var.v0[1].setVisibility(8);
+            if (o10 instanceof y2) {
+                ((y2) o10).a();
+            }
+            if (o10 instanceof TLRPC.WebPage) {
+                org.telegram.ui.web.u1.o((TLRPC.WebPage) o10);
+            }
+        } else if (u3Var != null) {
+            u3Var.release();
+            i4Var.q();
+        } else {
+            i4Var.S();
+            i4Var.K();
         }
+        ArticleViewer$WindowView articleViewer$WindowView = i4Var.g0;
+        articleViewer$WindowView.e = false;
+        articleViewer$WindowView.d = false;
+        i4Var.V0 = false;
     }
 }

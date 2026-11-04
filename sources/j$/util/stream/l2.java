@@ -17,13 +17,13 @@ public final class l2 extends o2 implements y1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i10) {
-        t3.M(this, (Double[]) objArr, i10);
+    public final /* synthetic */ void f(Object[] objArr, int i3) {
+        t3.M(this, (Double[]) objArr, i3);
     }
 
     @Override // j$.util.stream.d2
-    public final Object newArray(int i10) {
-        return new double[i10];
+    public final Object newArray(int i3) {
+        return new double[i3];
     }
 
     @Override // j$.util.stream.e2

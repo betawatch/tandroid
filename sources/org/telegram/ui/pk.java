@@ -1,69 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextPaint;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pk extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+public final class pk extends org.telegram.ui.Components.sy0 {
+    public final /* synthetic */ wm L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pk(un unVar, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = unVar;
+    public pk(Activity activity, org.telegram.ui.ActionBar.e6 e6Var, wm wmVar) {
+        super(activity);
+        this.L = wmVar;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = org.telegram.messenger.g0.L(24.0f);
+        this.e = new OvershootInterpolator();
+        this.I = new org.telegram.ui.Components.sp0(this, 14);
+        this.K = new Path();
+        int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.vj, e6Var);
+        int alpha = Color.alpha(w02);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        textPaint.setColor(w02);
+        paint.setColor(w02);
+        paint.setAlpha((int) (alpha * 0.14d));
+        int L = org.telegram.messenger.g0.L(6.0f);
+        int i3 = org.telegram.ui.ActionBar.k6.tj;
+        ShapeDrawable d02 = org.telegram.ui.ActionBar.k6.d0(L, org.telegram.ui.ActionBar.k6.w0(i3, e6Var));
+        org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i3);
+        setBackground(d02);
+        org.telegram.ui.ActionBar.r6.k(this, d02, N, null, e6Var);
     }
 
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                un unVar = this.b;
-                if (view == unVar.i3) {
-                    ImageView imageView = unVar.g3;
-                    int i14 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
-                    ImageView imageView2 = unVar.h3;
-                    if (imageView2 != null && imageView2.getVisibility() != 8) {
-                        i14 += 48;
-                    }
-                    ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).leftMargin = org.telegram.messenger.i0.L(i14);
-                }
-                super.measureChildWithMargins(view, i10, i11, i12, i13);
-                break;
-            default:
-                super.measureChildWithMargins(view, i10, i11, i12, i13);
-                break;
-        }
+    public final void d() {
+        int i3 = -(org.telegram.messenger.g0.L(16.0f) + getMeasuredHeight());
+        wm wmVar = this.L;
+        setTranslationY((wmVar.a0.getTop() - wmVar.m1.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i3)));
     }
 
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        switch (this.a) {
-            case 2:
-                super.setTranslationY(f7);
-                this.b.l1.invalidate();
-                break;
-            default:
-                super.setTranslationY(f7);
-                break;
-        }
+    @Override // org.telegram.ui.Components.sy0, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        d();
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i10);
-                this.b.Yc.h(2, i10 == 0, getMeasuredWidth() > 0);
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+    @Override // org.telegram.ui.Components.sy0, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
+        d();
     }
 }

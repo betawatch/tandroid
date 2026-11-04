@@ -1,45 +1,47 @@
 package com.google.firebase.messaging;
 
-import b2.n0;
+import b8.r1;
 import com.google.firebase.components.ComponentRegistrar;
+import d2.l0;
 import java.util.Arrays;
 import java.util.List;
-import l9.h;
-import oa.f;
-import pa.a;
-import r9.b;
-import r9.j;
-import ra.d;
-import th.m1;
-import w7.v9;
+import k5.f;
+import n9.h;
+import ra.g;
+import sa.a;
+import t9.b;
+import t9.j;
+import t9.r;
+import ua.e;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(b bVar) {
-        h hVar = (h) bVar.b(h.class);
-        if (bVar.b(a.class) == null) {
-            return new FirebaseMessaging(hVar, bVar.c(za.b.class), bVar.c(f.class), (d) bVar.b(d.class), (i5.f) bVar.b(i5.f.class), (na.b) bVar.b(na.b.class));
+    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(r rVar, b bVar) {
+        h hVar = (h) bVar.a(h.class);
+        if (bVar.a(a.class) == null) {
+            return new FirebaseMessaging(hVar, bVar.f(bb.b.class), bVar.f(g.class), (e) bVar.a(e.class), bVar.c(rVar), (qa.b) bVar.a(qa.b.class));
         }
         throw new ClassCastException();
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<r9.a> getComponents() {
-        n0 a2 = r9.a.a(FirebaseMessaging.class);
-        a2.d = LIBRARY_NAME;
-        a2.a(j.a(h.class));
-        a2.a(new j(0, 0, a.class));
-        a2.a(new j(0, 1, za.b.class));
-        a2.a(new j(0, 1, f.class));
-        a2.a(new j(0, 0, i5.f.class));
-        a2.a(j.a(d.class));
-        a2.a(j.a(na.b.class));
-        a2.f = new m1(26);
-        a2.c(1);
-        return Arrays.asList(a2.b(), v9.a(LIBRARY_NAME, "23.4.0"));
+    public List<t9.a> getComponents() {
+        r rVar = new r(ka.b.class, f.class);
+        l0 a10 = t9.a.a(FirebaseMessaging.class);
+        a10.d = LIBRARY_NAME;
+        a10.a(j.a(h.class));
+        a10.a(new j(0, 0, a.class));
+        a10.a(new j(0, 1, bb.b.class));
+        a10.a(new j(0, 1, g.class));
+        a10.a(j.a(e.class));
+        a10.a(new j(rVar, 0, 1));
+        a10.a(j.a(qa.b.class));
+        a10.f = new ra.b(rVar, 1);
+        a10.c(1);
+        return Arrays.asList(a10.b(), r1.a(LIBRARY_NAME, "25.1.3"));
     }
 }

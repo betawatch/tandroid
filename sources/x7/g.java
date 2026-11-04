@@ -1,31 +1,20 @@
 package x7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g extends e9.v {
-    public final /* synthetic */ int f;
-    public final /* synthetic */ j h;
+public final class g {
+    public static final g a;
+    public static final /* synthetic */ g[] b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(j jVar, int i10) {
-        super(jVar);
-        this.f = i10;
-        this.h = jVar;
+    static {
+        g gVar = new g("DEFAULT", 0);
+        a = gVar;
+        b = new g[]{gVar, new g("SIGNED", 1), new g("FIXED", 2)};
     }
 
-    @Override // e9.v
-    public final Object b(int i10) {
-        switch (this.f) {
-            case 0:
-                Object[] objArr = this.h.c;
-                objArr.getClass();
-                return objArr[i10];
-            case 1:
-                return new i(this.h, i10);
-            default:
-                Object[] objArr2 = this.h.d;
-                objArr2.getClass();
-                return objArr2[i10];
-        }
+    public static g[] values() {
+        return (g[]) b.clone();
     }
 }

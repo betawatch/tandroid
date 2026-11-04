@@ -12,7 +12,7 @@ import android.os.Build;
 import android.view.Surface;
 import org.webrtc.EglBase14;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 class EglBase14Impl implements EglBase14 {
     private static final int CURRENT_SDK_VERSION = Build.VERSION.SDK_INT;
@@ -24,7 +24,7 @@ class EglBase14Impl implements EglBase14 {
     private EGLSurface eglSurface;
     private EGLSurface eglSurfaceBackground;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class Context implements EglBase14.Context {
         private final EGLContext egl14Context;
 
@@ -61,12 +61,12 @@ class EglBase14Impl implements EglBase14 {
         }
     }
 
-    private static EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i10) {
+    private static EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, EGLConfig eGLConfig, int i3) {
         EGLContext eglCreateContext;
         if (eGLContext != null && eGLContext == EGL14.EGL_NO_CONTEXT) {
             throw new RuntimeException("Invalid sharedContext");
         }
-        int[] iArr = {12440, i10, 12344};
+        int[] iArr = {12440, i3, 12344};
         if (eGLContext == null) {
             eGLContext = EGL14.EGL_NO_CONTEXT;
         }
@@ -136,12 +136,12 @@ class EglBase14Impl implements EglBase14 {
 
     public static boolean isEGL14Supported() {
         StringBuilder sb2 = new StringBuilder("SDK version: ");
-        int i10 = CURRENT_SDK_VERSION;
-        sb2.append(i10);
+        int i3 = CURRENT_SDK_VERSION;
+        sb2.append(i3);
         sb2.append(". isEGL14Supported: ");
-        sb2.append(i10 >= 18);
+        sb2.append(i3 >= 18);
         Logging.d(TAG, sb2.toString());
-        return i10 >= 18;
+        return i3 >= 18;
     }
 
     @Override // org.webrtc.EglBase
@@ -155,17 +155,17 @@ class EglBase14Impl implements EglBase14 {
     }
 
     @Override // org.webrtc.EglBase
-    public void createPbufferSurface(int i10, int i11) {
+    public void createPbufferSurface(int i3, int i10) {
         checkIsNotReleased();
         if (this.eglSurface != EGL14.EGL_NO_SURFACE) {
             throw new RuntimeException("Already has an EGLSurface");
         }
-        EGLSurface eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i10, 12374, i11, 12344}, 0);
+        EGLSurface eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i3, 12374, i10, 12344}, 0);
         this.eglSurface = eglCreatePbufferSurface;
         if (eglCreatePbufferSurface != EGL14.EGL_NO_SURFACE) {
             return;
         }
-        StringBuilder m10 = i0.a.m("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
+        StringBuilder m10 = com.google.android.recaptcha.internal.a.m("Failed to create pixel buffer surface with size ", i3, "x", i10, ": 0x");
         m10.append(Integer.toHexString(EGL14.eglGetError()));
         throw new RuntimeException(m10.toString());
     }

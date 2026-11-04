@@ -1,100 +1,69 @@
 package org.telegram.ui;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.ContextThemeWrapper;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yc implements org.telegram.ui.ActionBar.p6 {
-    public final /* synthetic */ zc a;
+public final class yc extends RadialProgressView {
+    public final /* synthetic */ int O;
+    public final /* synthetic */ Object P;
 
-    public yc(zc zcVar) {
-        this.a = zcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ yc(org.telegram.ui.Components.e30 e30Var, Context context, int i3) {
+        super(context, null);
+        this.O = i3;
+        this.P = e30Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final boolean a() {
-        return this.a.J;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void b(float f7, float f10, int i10, int i11) {
-        org.telegram.ui.ActionBar.t6.r(f7, f10, i10, i11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final ColorFilter c() {
-        return org.telegram.ui.ActionBar.t6.v3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final Paint d(String str) {
-        return str.equals("paintDivider") ? this.a.y0 : org.telegram.ui.ActionBar.t6.V0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final boolean e() {
-        return org.telegram.messenger.uz.H0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final int f(int i10) {
-        return h(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final Drawable getDrawable(String str) {
-        zc zcVar = this.a;
-        Drawable drawable = zcVar.x0;
-        Drawable drawable2 = zcVar.w0;
-        if (str.equals("drawableMsgIn")) {
-            return zcVar.s0;
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.O) {
+            case 3:
+                super.invalidate();
+                gq0 gq0Var = ((PhotoViewer) this.P).f0;
+                if (gq0Var != null) {
+                    gq0Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
         }
-        if (str.equals("drawableMsgInSelected")) {
-            return zcVar.t0;
-        }
-        if (str.equals("drawableMsgOut")) {
-            return zcVar.u0;
-        }
-        if (str.equals("drawableMsgOutSelected")) {
-            return zcVar.v0;
-        }
-        if (str.equals("drawableMsgOutCheckRead")) {
-            drawable2.setColorFilter(h(org.telegram.ui.ActionBar.t6.zb), PorterDuff.Mode.MULTIPLY);
-            return drawable2;
-        }
-        if (str.equals("drawableMsgOutHalfCheck")) {
-            drawable.setColorFilter(h(org.telegram.ui.ActionBar.t6.zb), PorterDuff.Mode.MULTIPLY);
-            return drawable;
-        }
-        org.telegram.ui.ActionBar.p6 p6Var = zcVar.q0;
-        return p6Var != null ? p6Var.getDrawable(str) : org.telegram.ui.ActionBar.t6.R0(str);
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final int h(int i10) {
-        zc zcVar = this.a;
-        int indexOfKey = zcVar.r0.indexOfKey(i10);
-        if (indexOfKey >= 0) {
-            return zcVar.r0.valueAt(indexOfKey);
+    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
+    public final void setAlpha(float f10) {
+        switch (this.O) {
+            case 0:
+                super.setAlpha(f10);
+                ((ad) this.P).h.invalidate();
+                break;
+            case 1:
+                super.setAlpha(f10);
+                ((y40) this.P).e.invalidate();
+                break;
+            case 2:
+                super.setAlpha(f10);
+                ((nc0) this.P).h.invalidate();
+                break;
+            default:
+                super.setAlpha(f10);
+                gq0 gq0Var = ((PhotoViewer) this.P).f0;
+                if (gq0Var != null) {
+                    gq0Var.invalidate();
+                    break;
+                }
+                break;
         }
-        org.telegram.ui.ActionBar.p6 p6Var = zcVar.q0;
-        return p6Var != null ? p6Var.h(i10) : org.telegram.ui.ActionBar.t6.v0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final int j(int i10) {
-        return h(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void i(int i10, int i11) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yc(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(contextThemeWrapper, e6Var);
+        this.O = 3;
+        this.P = photoViewer;
     }
 }

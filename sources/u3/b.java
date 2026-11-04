@@ -1,25 +1,27 @@
 package u3;
 
-import c3.p;
-import java.util.ArrayDeque;
+import d2.p0;
+import d2.r0;
+import d2.v;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b {
-    public final byte[] a = new byte[8];
-    public final ArrayDeque b = new ArrayDeque();
-    public final g c = new g();
-    public s9.g d;
-    public int e;
-    public int f;
-    public long g;
+public abstract class b implements r0 {
+    @Override // d2.r0
+    public final /* synthetic */ v b() {
+        return null;
+    }
 
-    public final long a(p pVar, int i10) {
-        pVar.readFully(this.a, 0, i10);
-        long j10 = 0;
-        for (int i11 = 0; i11 < i10; i11++) {
-            j10 = (j10 << 8) | (r0[i11] & 255);
-        }
-        return j10;
+    @Override // d2.r0
+    public final /* synthetic */ byte[] c() {
+        return null;
+    }
+
+    public String toString() {
+        return "SCTE-35 splice command: type=".concat(getClass().getSimpleName());
+    }
+
+    @Override // d2.r0
+    public final /* synthetic */ void a(p0 p0Var) {
     }
 }

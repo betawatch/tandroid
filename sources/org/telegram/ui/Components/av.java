@@ -1,95 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.os.Bundle;
+import android.util.SparseIntArray;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class av implements org.telegram.messenger.vs {
-    public final ArrayList a;
-    public ArrayList b;
-    public ArrayList[] c;
-    public final int d;
-    public boolean e = false;
-    public final /* synthetic */ cv f;
+public final /* synthetic */ class av implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ey b;
 
-    public av(int i10, ArrayList arrayList, cv cvVar) {
-        this.f = cvVar;
-        this.d = i10;
-        this.a = arrayList == null ? new ArrayList() : arrayList;
+    public /* synthetic */ av(ey eyVar, int i3) {
+        this.a = i3;
+        this.b = eyVar;
     }
 
-    public final void a(int i10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        ArrayList<Long> arrayList;
-        if (i10 >= 0) {
-            ArrayList[] arrayListArr = this.c;
-            if (i10 >= arrayListArr.length) {
-                return;
-            }
-            if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents == null) {
-                arrayListArr[i10] = new ArrayList(12);
-                for (int i11 = 0; i11 < 12; i11++) {
-                    this.c[i10].add(null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        ey eyVar = this.b;
+        switch (i3) {
+            case 0:
+                eyVar.X(false);
+                eyVar.D();
+                break;
+            case 1:
+                ow owVar = eyVar.S;
+                if (owVar != null) {
+                    owVar.F(true);
+                    break;
                 }
-                return;
-            }
-            arrayListArr[i10] = new ArrayList();
-            for (int i12 = 0; i12 < tL_messages_stickerSet.documents.size(); i12++) {
-                TLRPC.Document document = tL_messages_stickerSet.documents.get(i12);
-                if (document == null) {
-                    this.c[i10].add(null);
-                } else {
-                    ax axVar = new ax();
-                    long j10 = document.id;
-                    for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j10))); i13++) {
-                    }
-                    axVar.a = tL_messages_stickerSet;
-                    axVar.b = document.id;
-                    this.c[i10].add(axVar);
-                    if (this.f.y1) {
-                        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-                        if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
-                            return;
-                        }
-                    } else {
-                        continue;
-                    }
+                break;
+            case 2:
+                fx fxVar = eyVar.u1;
+                if (fxVar != null) {
+                    fxVar.t(eyVar.S.h);
+                    break;
                 }
-            }
-        }
-    }
-
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        TLRPC.StickerSet stickerSet;
-        if (i10 == org.telegram.messenger.at.B0) {
-            for (int i12 = 0; i12 < this.b.size(); i12++) {
-                if (this.b.get(i12) == null) {
-                    TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.vi.b0(this.d).m0((TLRPC.InputStickerSet) this.a.get(i12), true);
-                    if (this.b.size() == 1 && m0 != null && (stickerSet = m0.set) != null && !stickerSet.emojis) {
-                        cv cvVar = this.f;
-                        cvVar.dismiss();
-                        Context context = cvVar.getContext();
-                        org.telegram.ui.ActionBar.k2 k2Var = cvVar.j1;
-                        TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
-                        org.telegram.ui.ActionBar.k2 k2Var2 = cvVar.j1;
-                        new dx0(context, k2Var, inputStickerSet, null, k2Var2 instanceof org.telegram.ui.un ? ((org.telegram.ui.un) k2Var2).Z : null, cvVar.I0).show();
-                        return;
-                    }
-                    this.b.set(i12, m0);
-                    if (m0 != null) {
-                        a(i12, m0);
+                break;
+            case 3:
+                fx fxVar2 = eyVar.u1;
+                if (fxVar2 != null) {
+                    fxVar2.q();
+                    break;
+                }
+                break;
+            case 4:
+                eyVar.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", org.telegram.messenger.h10.i(eyVar.d1).e());
+                eyVar.Z1.presentFragment(new dw(bundle));
+                break;
+            default:
+                ArrayList<sw> emojipacks = eyVar.getEmojipacks();
+                for (int i10 = 0; i10 < emojipacks.size(); i10++) {
+                    if (emojipacks.get(i10).i) {
+                        SparseIntArray sparseIntArray = eyVar.S.s;
+                        char[] cArr = org.telegram.messenger.j6.a;
+                        int i11 = sparseIntArray.get(i10 + 8);
+                        eyVar.Q.C0();
+                        eyVar.U(i11);
+                        eyVar.G(i11, org.telegram.messenger.g0.L(-9.0f));
+                        eyVar.n(0, null);
                     }
                 }
-            }
-            cv cvVar2 = ((ou) this).h;
-            cvVar2.N0();
-            org.telegram.ui.g3 g3Var = cvVar2.n1;
-            if (g3Var == null || g3Var.getAdapter() == null) {
-                return;
-            }
-            g3Var.getAdapter().f();
+                break;
         }
     }
 }

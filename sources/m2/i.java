@@ -1,45 +1,35 @@
 package m2;
 
-import j$.util.Objects;
+import android.media.AudioDeviceInfo;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class i {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
+    public final d2.v a;
+    public d2.f b;
+    public AudioDeviceInfo c;
+    public boolean d;
+    public int e;
+    public int f;
+    public boolean g;
+    public int h;
 
-    public i(String str, String str2, String str3, String str4, String str5) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
-        this.e = str5;
+    public i(i iVar) {
+        this.a = iVar.a;
+        this.b = iVar.b;
+        this.c = iVar.c;
+        this.d = iVar.d;
+        this.e = iVar.e;
+        this.f = iVar.f;
+        this.g = iVar.g;
+        this.h = iVar.h;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof i)) {
-            return false;
-        }
-        i iVar = (i) obj;
-        return Objects.equals(this.a, iVar.a) && Objects.equals(this.b, iVar.b) && Objects.equals(this.c, iVar.c) && Objects.equals(this.d, iVar.d) && Objects.equals(this.e, iVar.e);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
-        String str2 = this.b;
-        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-        String str3 = this.c;
-        int hashCode3 = (hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31;
-        String str4 = this.d;
-        int hashCode4 = (hashCode3 + (str4 != null ? str4.hashCode() : 0)) * 31;
-        String str5 = this.e;
-        return hashCode4 + (str5 != null ? str5.hashCode() : 0);
+    public i(d2.v vVar) {
+        this.a = vVar;
+        this.b = d2.f.i;
+        this.e = 0;
+        this.f = -1;
+        this.h = -1;
     }
 }

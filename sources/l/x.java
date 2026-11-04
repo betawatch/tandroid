@@ -1,9 +1,23 @@
 package l;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public interface x {
-    boolean B(l lVar);
+    void b(k kVar, boolean z10);
 
-    void g(l lVar, boolean z10);
+    boolean c(m mVar);
+
+    boolean d();
+
+    void e();
+
+    void h(w wVar);
+
+    void i(Context context, k kVar);
+
+    boolean j(d0 d0Var);
+
+    boolean k(m mVar);
 }

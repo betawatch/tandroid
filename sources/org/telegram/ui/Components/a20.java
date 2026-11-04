@@ -1,76 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class a20 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c20 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    public a20(org.telegram.ui.b71 b71Var, ih.e eVar, org.telegram.ui.Cells.q1 q1Var, org.telegram.ui.mk mkVar, org.telegram.ui.un unVar) {
-        this.f = b71Var;
-        this.b = eVar;
-        this.c = q1Var;
-        this.d = mkVar;
-        this.e = unVar;
+    public /* synthetic */ a20(c20 c20Var, String str, int i3, int i10) {
+        this.a = i10;
+        this.b = c20Var;
+        this.c = str;
+        this.d = i3;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                WindowManager windowManager = (WindowManager) this.f;
-                View view = this.b;
-                if (view.getParent() != null) {
-                    view.setVisibility(8);
-                    View view2 = this.c;
-                    view2.setVisibility(8);
-                    View view3 = this.d;
-                    view3.setVisibility(8);
-                    windowManager.removeView(view);
-                    windowManager.removeView(view2);
-                    windowManager.removeView(view3);
-                    windowManager.removeView((View) this.e);
+                c20 c20Var = this.b;
+                String str = this.c;
+                int i3 = this.d;
+                if (c20Var.e != null) {
+                    c20Var.e = null;
+                    org.telegram.messenger.g0.h3(new a20(c20Var, str, i3, 1));
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.b71 b71Var = (org.telegram.ui.b71) this.f;
-                b71Var.D.e();
-                ih.e eVar = (ih.e) this.b;
-                ((ArrayList) eVar.c).remove(b71Var);
-                eVar.a();
-                ((ViewGroup) eVar.d).invalidate();
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.c;
-                q1Var.setEnterTransitionInProgress(false);
-                q1Var.getTransitionParams().E0.set(q1Var.getBackgroundDrawableLeft(), q1Var.getBackgroundDrawableTop(), q1Var.getBackgroundDrawableRight(), q1Var.getBackgroundDrawableBottom());
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
-                chatActivityEnterView.setTextTransitionIsRunning(false);
-                chatActivityEnterView.getEditField().setAlpha(1.0f);
-                org.telegram.ui.un unVar = (org.telegram.ui.un) this.e;
-                ((io[]) unVar.b0.b)[0].c.setAlpha(1.0f);
-                ((io[]) unVar.b0.b)[0].d.setAlpha(1.0f);
-                o5.release((View) null, b71Var.H);
+                c20 c20Var2 = this.b;
+                String str2 = this.c;
+                int i10 = this.d;
+                ArrayList arrayList = null;
+                c20Var2.e = null;
+                if (!org.telegram.messenger.t3.T(c20Var2.x.N1) && c20Var2.x.O1 != null) {
+                    arrayList = new ArrayList(c20Var2.x.O1.participants.participants);
+                }
+                ArrayList arrayList2 = arrayList;
+                if (arrayList2 != null) {
+                    Utilities.g.c(new bi.q0(c20Var2, str2, i10, arrayList2, 25));
+                } else {
+                    c20Var2.h = false;
+                }
+                c20Var2.d.g(str2, org.telegram.messenger.t3.w(3, c20Var2.x.N1), false, true, false, org.telegram.messenger.t3.T(c20Var2.x.N1) ? c20Var2.x.N1.id : 0L, false, 2, i10);
                 break;
         }
-    }
-
-    public a20(e20 e20Var, jg.l0 l0Var, FrameLayout frameLayout, WindowManager windowManager, org.telegram.ui.w7 w7Var) {
-        this.b = e20Var;
-        this.c = l0Var;
-        this.d = frameLayout;
-        this.f = windowManager;
-        this.e = w7Var;
     }
 }

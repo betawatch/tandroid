@@ -1,90 +1,176 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.widget.ImageView;
+import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class n60 extends ReplacementSpan {
-    public final Paint a;
-    public final ImageReceiver b;
-    public final float c;
-    public float d;
-    public final View e;
-    public boolean f;
-    public float h;
-    public int n;
+public final /* synthetic */ class n60 implements org.telegram.messenger.u10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public n60(float f7, int i10, View view) {
-        d5 d5Var = new d5(this, 3);
-        this.f = true;
-        this.n = org.telegram.messenger.at.e4;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.b = imageReceiver;
-        imageReceiver.d = i10;
-        this.c = f7;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setShadowLayer(org.telegram.messenger.i0.L(1.0f), 0.0f, org.telegram.messenger.i0.L(0.66f), 855638016);
-        View view2 = this.e;
-        if (view2 == view) {
-            return;
-        }
-        if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(d5Var);
-            if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                imageReceiver.R();
-            }
-        }
-        View view3 = this.e;
-        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-            imageReceiver.P();
-        }
-        this.e = view;
-        imageReceiver.H0(view);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(d5Var);
+    public /* synthetic */ n60(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i3) {
+        this.a = i3;
+        this.b = obj;
+        this.c = obj2;
+        this.e = obj3;
+        this.g = obj4;
+        this.f = obj5;
+        this.d = obj6;
+    }
+
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        pv pvVar;
+        int i3 = this.a;
+        boolean z10 = false;
+        Object obj2 = this.d;
+        Object obj3 = this.f;
+        Object obj4 = this.g;
+        Object obj5 = this.e;
+        Object obj6 = this.c;
+        Object obj7 = this.b;
+        switch (i3) {
+            case 0:
+                LaunchActivity launchActivity = (LaunchActivity) obj7;
+                sf.b bVar = (sf.b) obj6;
+                Long l10 = (Long) obj5;
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj4;
+                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj3;
+                Runnable runnable = (Runnable) obj2;
+                org.telegram.messenger.e3 e3Var = (org.telegram.messenger.e3) obj;
+                String str = LaunchActivity.E1;
+                if (bVar != null) {
+                    bVar.b();
+                }
+                org.telegram.ui.ActionBar.d2 Q = LaunchActivity.Q();
+                if (Q instanceof ee0) {
+                    Q = ((ee0) Q).c0();
+                }
+                org.telegram.ui.ActionBar.d2 d2Var = Q;
+                if (d2Var != null) {
+                    org.telegram.ui.ActionBar.e6 resourceProvider = d2Var.getResourceProvider();
+                    if (d2Var.getLastStoryViewer() != null && d2Var.getLastStoryViewer().L0) {
+                        resourceProvider = d2Var.getLastStoryViewer().E;
+                    }
+                    vg.i0 i0Var = new vg.i0(19, launchActivity.P, launchActivity, d2Var, resourceProvider);
+                    i0Var.A1(e3Var);
+                    if (!(d2Var instanceof wm) ? !(!(d2Var instanceof uw) || (pvVar = ((uw) d2Var).G3) == null || pvVar.getCurrentFragmetDialogId() != l10.longValue()) : ((wm) d2Var).a() == l10.longValue()) {
+                        z10 = true;
+                    }
+                    i0Var.z1(tL_premium_boostsStatus, z10);
+                    i0Var.B1(l10.longValue());
+                    i0Var.Z1 = q1Var;
+                    d2Var.showDialog(i0Var);
+                    if (runnable != null) {
+                        try {
+                            runnable.run();
+                            break;
+                        } catch (Exception e10) {
+                            org.telegram.messenger.a8.g(e10, true);
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 1:
+                LaunchActivity launchActivity2 = (LaunchActivity) obj7;
+                sf.b bVar2 = (sf.b) obj6;
+                Runnable runnable2 = (Runnable) obj2;
+                org.telegram.messenger.f3 f3Var = (org.telegram.messenger.f3) obj4;
+                Long l11 = (Long) obj5;
+                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) obj3;
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj;
+                String str2 = LaunchActivity.E1;
+                if (tL_premium_boostsStatus2 != null) {
+                    f3Var.b(l11.longValue(), tL_premium_boostsStatus2, new n60(launchActivity2, bVar2, l11, tL_premium_boostsStatus2, q1Var2, runnable2, 0));
+                    break;
+                } else {
+                    if (bVar2 != null) {
+                        bVar2.b();
+                    }
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj5;
+                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) obj4;
+                org.telegram.ui.ActionBar.t2 t2Var = (org.telegram.ui.ActionBar.t2) obj3;
+                cg.k0 k0Var = (cg.k0) obj2;
+                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
+                ((org.telegram.ui.ActionBar.t2[]) obj7)[0] = null;
+                yh0.a = null;
+                if (!((boolean[]) obj6)[0]) {
+                    inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
+                    if (!tL_urlAuthResultRequest.request_write_access && !tL_urlAuthResultRequest.request_phone_number) {
+                        k0Var.run();
+                        break;
+                    } else {
+                        yh0.a = t2Var;
+                        t2Var.show();
+                        break;
+                    }
+                } else {
+                    Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
+                    break;
+                }
+                break;
+            case 3:
+                gi.d dVar = (gi.d) obj6;
+                org.telegram.ui.Wallet.x2 x2Var = (org.telegram.ui.Wallet.x2) obj5;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj4;
+                org.telegram.ui.Wallet.g gVar = (org.telegram.ui.Wallet.g) obj3;
+                org.telegram.ui.Wallet.y1 y1Var = (org.telegram.ui.Wallet.y1) obj2;
+                String str3 = (String) obj;
+                ((gi.d) obj7).setLoading(false);
+                dVar.setLoading(false);
+                if (str3 != null) {
+                    org.telegram.ui.Components.fc.c0(str3, x2Var.F, e6Var);
+                    gVar.run();
+                    dVar.setEnabled((y1Var.n || y1Var.o) ? false : true);
+                    break;
+                } else {
+                    x2Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.y2 y2Var = (org.telegram.ui.Wallet.y2) obj4;
+                org.telegram.ui.ActionBar.e6 e6Var2 = (org.telegram.ui.ActionBar.e6) obj3;
+                kg.t0 t0Var = (kg.t0) obj2;
+                String str4 = (String) obj;
+                ((gi.d) obj7).setLoading(false);
+                ((gi.d) obj6).setEnabled(true);
+                ((ImageView) obj5).setEnabled(true);
+                if (str4 != null) {
+                    org.telegram.ui.Components.fc.c0(str4, y2Var.F, e6Var2);
+                    t0Var.run();
+                    break;
+                } else {
+                    y2Var.dismiss();
+                    break;
+                }
         }
     }
 
-    public final void a(float f7) {
-        float L = org.telegram.messenger.i0.L(f7);
-        this.d = L;
-        this.b.J0((int) L);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        boolean z10 = this.f;
-        Paint paint2 = this.a;
-        if (z10 && this.n != paint.getAlpha()) {
-            int alpha = paint.getAlpha();
-            this.n = alpha;
-            paint2.setAlpha(alpha);
-            paint2.setShadowLayer(org.telegram.messenger.i0.L(1.0f), 0.0f, org.telegram.messenger.i0.L(0.66f), org.telegram.ui.ActionBar.t6.r1(this.n / 255.0f, 855638016));
-        }
-        float f10 = this.h + f7;
-        float L = (((i12 + i14) / 2.0f) + 0.0f) - (org.telegram.messenger.i0.L(this.c) / 2.0f);
-        if (this.f) {
-            RectF rectF = org.telegram.messenger.i0.P;
-            rectF.set(f10, L, org.telegram.messenger.i0.L(this.c) + f10, org.telegram.messenger.i0.L(this.c) + L);
-            float f11 = this.d;
-            canvas.drawRoundRect(rectF, f11, f11, paint2);
-        }
-        float L2 = org.telegram.messenger.i0.L(this.c);
-        float L3 = org.telegram.messenger.i0.L(this.c);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.y0(f10, L, L2, L3);
-        imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
-        imageReceiver.h(canvas, null);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return org.telegram.messenger.i0.L(this.c);
+    public /* synthetic */ n60(LaunchActivity launchActivity, sf.b bVar, Runnable runnable, org.telegram.messenger.f3 f3Var, Long l10, org.telegram.ui.Cells.q1 q1Var) {
+        this.a = 1;
+        this.b = launchActivity;
+        this.c = bVar;
+        this.d = runnable;
+        this.g = f3Var;
+        this.e = l10;
+        this.f = q1Var;
     }
 }

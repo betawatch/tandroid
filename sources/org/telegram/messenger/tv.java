@@ -1,20 +1,19 @@
 package org.telegram.messenger;
 
-import android.view.View;
 import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tv implements Runnable {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a;
     public final /* synthetic */ vv b;
-    public final /* synthetic */ wv c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ tv(vv vvVar, View view, wv wvVar) {
+    public /* synthetic */ tv(vv vvVar, ArrayList arrayList, int i3) {
+        this.a = i3;
         this.b = vvVar;
-        this.d = view;
-        this.c = wvVar;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
@@ -23,43 +22,34 @@ public final /* synthetic */ class tv implements Runnable {
             case 0:
                 vv vvVar = this.b;
                 vvVar.getClass();
-                View view = this.d;
-                if (view != null) {
-                    view.post(new tv(vvVar, this.c, view));
-                    break;
+                int i3 = 0;
+                while (true) {
+                    ArrayList arrayList = this.c;
+                    if (i3 >= arrayList.size()) {
+                        break;
+                    } else {
+                        zi ziVar = new zi(vvVar.currentAccount, (TLRPC.Message) arrayList.get(i3), false, true);
+                        ziVar.A0 = true;
+                        vvVar.getSendMessagesHelper().k0(0L, ziVar, true);
+                        i3++;
+                    }
                 }
-                break;
             default:
                 vv vvVar2 = this.b;
-                wv wvVar = this.c;
-                if (wvVar != null) {
-                    vvVar2.getClass();
-                    kj kjVar = wvVar.b;
-                    if (kjVar != null) {
-                        kjVar.L0 = true;
-                    }
-                    ArrayList arrayList = wvVar.n;
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        org.telegram.ui.Cells.u9 u9Var = (org.telegram.ui.Cells.u9) obj;
-                        if (u9Var instanceof vv) {
-                            ((vv) u9Var).x.clear();
+                vvVar2.getClass();
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.c;
+                    if (i10 >= arrayList2.size()) {
+                        break;
+                    } else {
+                        zi ziVar2 = (zi) vvVar2.getMessagesController().T.f(((Long) arrayList2.get(i10)).longValue());
+                        if (ziVar2 != null) {
+                            ziVar2.Z = true;
                         }
+                        i10++;
                     }
-                } else {
-                    vvVar2.x.clear();
                 }
-                this.d.invalidate();
-                break;
         }
-    }
-
-    public /* synthetic */ tv(vv vvVar, wv wvVar, View view) {
-        this.b = vvVar;
-        this.c = wvVar;
-        this.d = view;
     }
 }

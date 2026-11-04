@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -26,7 +26,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -41,184 +41,184 @@ public class PushListenerController {
         str.getClass();
         switch (str) {
             case "CHAT_REACT_CONTACT":
-                return dd.a0(null, null, 2131746589, objArr);
+                return bd.a0(null, null, 2131746582, objArr);
             case "REACT_WALLET_TONCONNECT_REQUEST":
-                return dd.a0(null, null, 2131746526, objArr);
+                return bd.a0(null, null, 2131746519, objArr);
             case "CHAT_REACT_POLL_APPEND":
-                return dd.a0(null, null, 2131746578, objArr);
+                return bd.a0(null, null, 2131746571, objArr);
             case "REACT_GEOLIVE":
-                return dd.a0(null, null, 2131746562, objArr);
+                return bd.a0(null, null, 2131746555, objArr);
             case "REACT_GAME_SCORE":
-                return dd.a0(null, null, 2131746564, objArr);
+                return bd.a0(null, null, 2131746557, objArr);
             case "REACT_STORY_HIDDEN":
-                return dd.a0(null, null, 2131746538, objArr);
+                return bd.a0(null, null, 2131746531, objArr);
             case "CHAT_REACT_TODO_DONE":
             case "CHAT_REACT_TODO_APPEND":
-                return dd.a0(null, null, 2131746570, objArr);
+                return bd.a0(null, null, 2131746563, objArr);
             case "REACT_RECURRING_PAY":
-                return dd.a0(null, null, 2131746548, objArr);
+                return bd.a0(null, null, 2131746541, objArr);
             case "REACT_STARGIFT_UPGRADE":
-                return dd.a0(null, null, 2131746541, objArr);
+                return bd.a0(null, null, 2131746534, objArr);
             case "REACT_HIDDEN":
-                return dd.a0(null, null, 2131746557, objArr);
+                return bd.a0(null, null, 2131746550, objArr);
             case "CHAT_REACT_NOTEXT":
-                return dd.a0(null, null, 2131746581, objArr);
+                return bd.a0(null, null, 2131746574, objArr);
             case "CHAT_REACT_GAME_SCORE":
-                return dd.a0(null, null, 2131746586, objArr);
+                return bd.a0(null, null, 2131746579, objArr);
             case "REACT_NOTEXT":
-                return dd.a0(null, null, 2131746555, objArr);
+                return bd.a0(null, null, 2131746548, objArr);
             case "REACT_PHOTO_SECRET":
-                return dd.a0(null, null, 2131746552, objArr);
+                return bd.a0(null, null, 2131746545, objArr);
             case "REACT_WALLPAPER":
-                return dd.a0(null, null, 2131746525, objArr);
+                return bd.a0(null, null, 2131746518, objArr);
             case "CHAT_REACT_INVOICE":
-                return dd.a0(null, null, 2131746582, objArr);
+                return bd.a0(null, null, 2131746575, objArr);
             case "CHAT_REACT_NOTHEME":
             case "CHAT_REACT_THEME":
-                return dd.a0(null, null, 2131746572, objArr);
+                return bd.a0(null, null, 2131746565, objArr);
             case "REACT_CONTACT":
-                return dd.a0(null, null, 2131746567, objArr);
+                return bd.a0(null, null, 2131746560, objArr);
             case "REACT_STARGIFT_PREPAID_UPGRADE":
-                return dd.a0(null, null, 2131746543, objArr);
+                return bd.a0(null, null, 2131746536, objArr);
             case "CHAT_REACT_STICKER":
-                return dd.a0(null, null, 2131746575, objArr);
+                return bd.a0(null, null, 2131746568, objArr);
             case "REACT_SAME_WALLPAPER":
-                return dd.a0(null, null, 2131746546, objArr);
+                return bd.a0(null, null, 2131746539, objArr);
             case "REACT_GRAM_TRANSFER_COMMENT":
-                return dd.a0(null, null, 2131746558, objArr);
+                return bd.a0(null, null, 2131746551, objArr);
             case "REACT_GAME":
-                return dd.a0(null, null, 2131746565, objArr);
+                return bd.a0(null, null, 2131746558, objArr);
             case "REACT_POLL":
-                return dd.a0(null, null, 2131746551, objArr);
+                return bd.a0(null, null, 2131746544, objArr);
             case "REACT_QUIZ":
-                return dd.a0(null, null, 2131746549, objArr);
+                return bd.a0(null, null, 2131746542, objArr);
             case "REACT_TEXT":
-                return dd.a0(null, null, 2131746533, objArr);
+                return bd.a0(null, null, 2131746526, objArr);
             case "REACT_TODO":
-                return dd.a0(null, null, 2131746531, objArr);
+                return bd.a0(null, null, 2131746524, objArr);
             case "REACT_INVOICE":
-                return dd.a0(null, null, 2131746556, objArr);
+                return bd.a0(null, null, 2131746549, objArr);
             case "REACT_SCREENSHOT":
-                return dd.a0(null, null, 2131746545, objArr);
+                return bd.a0(null, null, 2131746538, objArr);
             case "CHAT_REACT_DOC":
-                return dd.a0(null, null, 2131746588, objArr);
+                return bd.a0(null, null, 2131746581, objArr);
             case "CHAT_REACT_GEO":
-                return dd.a0(null, null, 2131746585, objArr);
+                return bd.a0(null, null, 2131746578, objArr);
             case "CHAT_REACT_GIF":
-                return dd.a0(null, null, 2131746583, objArr);
+                return bd.a0(null, null, 2131746576, objArr);
             case "REACT_TODO_DONE":
             case "REACT_TODO_APPEND":
-                return dd.a0(null, null, 2131746530, objArr);
+                return bd.a0(null, null, 2131746523, objArr);
             case "REACT_NOTHEME":
             case "REACT_THEME":
             case "REACT_GIFT_THEME":
-                return dd.a0(null, null, 2131746532, objArr);
+                return bd.a0(null, null, 2131746525, objArr);
             case "REACT_GRAM_TRANSFER":
-                return dd.a0(null, null, 2131746559, objArr);
+                return bd.a0(null, null, 2131746552, objArr);
             case "REACT_STARGIFT_UNPACK_UPGRADE":
-                return dd.a0(null, null, 2131746542, objArr);
+                return bd.a0(null, null, 2131746535, objArr);
             case "REACT_GIFTCODE":
-                return dd.a0(null, null, 2131746560, objArr);
+                return bd.a0(null, null, 2131746553, objArr);
             case "REACT_STICKER":
-                return dd.a0(null, null, 2131746540, objArr);
+                return bd.a0(null, null, 2131746533, objArr);
             case "CHAT_REACT_AUDIO":
-                return dd.a0(null, null, 2131746590, objArr);
+                return bd.a0(null, null, 2131746583, objArr);
             case "CHAT_REACT_PHOTO":
-                return dd.a0(null, null, 2131746580, objArr);
+                return bd.a0(null, null, 2131746573, objArr);
             case "CHAT_REACT_ROUND":
-                return dd.a0(null, null, 2131746576, objArr);
+                return bd.a0(null, null, 2131746569, objArr);
             case "CHAT_REACT_STORY":
-                return dd.a0(null, null, 2131746574, objArr);
+                return bd.a0(null, null, 2131746567, objArr);
             case "CHAT_REACT_VIDEO":
-                return dd.a0(null, null, 2131746569, objArr);
+                return bd.a0(null, null, 2131746562, objArr);
             case "CHAT_REACT_GIVEAWAY":
-                return dd.a0(null, null, 2131748064, objArr);
+                return bd.a0(null, null, 2131748056, objArr);
             case "REACT_UNIQUE_STARGIFT":
-                return dd.a0(null, null, 2131746529, objArr);
+                return bd.a0(null, null, 2131746522, objArr);
             case "REACT_STORY_MENTION":
-                return dd.a0(null, null, 2131746536, objArr);
+                return bd.a0(null, null, 2131746529, objArr);
             case "REACT_GIVEAWAY_STARS":
-                return dd.a0(null, null, 2131747953, objArr);
+                return bd.a0(null, null, 2131747945, objArr);
             case "REACT_GIVEAWAY":
-                return dd.a0(null, null, 2131747953, objArr);
+                return bd.a0(null, null, 2131747945, objArr);
             case "REACT_STARGIFT":
-                return dd.a0(null, null, 2131746544, objArr);
+                return bd.a0(null, null, 2131746537, objArr);
             case "CHAT_REACT_GEOLIVE":
-                return dd.a0(null, null, 2131746584, objArr);
+                return bd.a0(null, null, 2131746577, objArr);
             case "REACT_VIDEO_SECRET":
-                return dd.a0(null, null, 2131746527, objArr);
+                return bd.a0(null, null, 2131746520, objArr);
             case "REACT_SUGGEST_BIRTHDAY":
-                return dd.a0(null, null, 2131746535, objArr);
+                return bd.a0(null, null, 2131746528, objArr);
             case "REACT_PROXIMITY":
-                return dd.a0(null, null, 2131746550, objArr);
+                return bd.a0(null, null, 2131746543, objArr);
             case "REACT_PAID_MEDIA":
-                return dd.a0(null, null, 2131746554, objArr);
+                return bd.a0(null, null, 2131746547, objArr);
             case "REACT_AUDIO":
-                return dd.a0(null, null, 2131746568, objArr);
+                return bd.a0(null, null, 2131746561, objArr);
             case "REACT_PHOTO":
-                return dd.a0(null, null, 2131746553, objArr);
+                return bd.a0(null, null, 2131746546, objArr);
             case "REACT_ROUND":
-                return dd.a0(null, null, 2131746547, objArr);
+                return bd.a0(null, null, 2131746540, objArr);
             case "REACT_STORY":
-                return dd.a0(null, null, 2131746539, objArr);
+                return bd.a0(null, null, 2131746532, objArr);
             case "REACT_VIDEO":
-                return dd.a0(null, null, 2131746528, objArr);
+                return bd.a0(null, null, 2131746521, objArr);
             case "REACT_SUGGEST_USERPIC":
-                return dd.a0(null, null, 2131746534, objArr);
+                return bd.a0(null, null, 2131746527, objArr);
             case "REACT_DOC":
-                return dd.a0(null, null, 2131746566, objArr);
+                return bd.a0(null, null, 2131746559, objArr);
             case "REACT_GEO":
-                return dd.a0(null, null, 2131746563, objArr);
+                return bd.a0(null, null, 2131746556, objArr);
             case "REACT_GIF":
-                return dd.a0(null, null, 2131746561, objArr);
+                return bd.a0(null, null, 2131746554, objArr);
             case "CHAT_REACT_GAME":
-                return dd.a0(null, null, 2131746587, objArr);
+                return bd.a0(null, null, 2131746580, objArr);
             case "CHAT_REACT_POLL":
-                return dd.a0(null, null, 2131746579, objArr);
+                return bd.a0(null, null, 2131746572, objArr);
             case "CHAT_REACT_QUIZ":
-                return dd.a0(null, null, 2131746577, objArr);
+                return bd.a0(null, null, 2131746570, objArr);
             case "CHAT_REACT_TEXT":
-                return dd.a0(null, null, 2131746573, objArr);
+                return bd.a0(null, null, 2131746566, objArr);
             case "CHAT_REACT_TODO":
-                return dd.a0(null, null, 2131746571, objArr);
+                return bd.a0(null, null, 2131746564, objArr);
             default:
                 return null;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$processRemoteMessage$2(int i10, TLRPC.TL_updates tL_updates) {
-        wp.r1(i10).L3(tL_updates, false);
+    public static /* synthetic */ void lambda$processRemoteMessage$2(int i3, TLRPC.TL_updates tL_updates) {
+        hp.s1(i3).O3(tL_updates, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$processRemoteMessage$3(int i10) {
-        if (e20.i(i10).e() != 0) {
-            e20.i(i10).b();
-            wp.r1(i10).x3(0);
+    public static /* synthetic */ void lambda$processRemoteMessage$3(int i3) {
+        if (h10.i(i3).e() != 0) {
+            h10.i(i3).b();
+            hp.s1(i3).A3(0);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void lambda$processRemoteMessage$4(int i10) {
-        od f7 = od.f(i10);
-        if (f7.b.isEmpty()) {
+    public static void lambda$processRemoteMessage$4(int i3) {
+        ld f10 = ld.f(i3);
+        if (f10.b.isEmpty()) {
             return;
         }
-        f7.H = SystemClock.elapsedRealtime() + 65000;
-        f7.p();
+        f10.I = SystemClock.elapsedRealtime() + 65000;
+        f10.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$processRemoteMessage$5(int i10, long j10, int i11) {
-        wp.r1(i10).k4(i11, j10, true);
+    public static /* synthetic */ void lambda$processRemoteMessage$5(int i3, long j10, int i10) {
+        hp.s1(i3).n4(i10, j10, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:1030:0x0753, code lost:
     
-        if (org.telegram.messenger.is.a0(r27).m(r12) == false) goto L282;
+        if (org.telegram.messenger.qr.a0(r27).m(r12) == false) goto L282;
      */
     /* JADX WARN: Code restructure failed: missing block: B:1124:0x03b9, code lost:
     
@@ -302,26 +302,26 @@ public class PushListenerController {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static void lambda$processRemoteMessage$6(String str, String str2, long j10) {
-        int i10;
+        int i3;
         String str3;
         String str4;
-        int i11;
+        int i10;
         byte[] decode;
         NativeByteBuffer nativeByteBuffer;
         byte[] bArr;
         JSONObject jSONObject;
         JSONObject jSONObject2;
-        long e;
+        long e10;
         int intValue;
         boolean z10;
         String str5;
         JSONObject jSONObject3;
         long j11;
         long j12;
-        int i12;
+        int i11;
         String str6;
         long j13;
-        final int i13;
+        final int i12;
         long j14;
         long j15;
         String str7;
@@ -336,22 +336,22 @@ public class PushListenerController {
         String str11;
         String str12;
         String[] strArr;
+        int i13;
         int i14;
-        int i15;
         long j19;
         long j20;
         long j21;
         boolean z12;
         boolean z13;
-        int i16;
+        int i15;
         boolean z14;
-        int i17;
+        int i16;
         String str13;
         boolean z15;
         boolean z16;
         JSONObject jSONObject5;
         boolean z17;
-        int i18;
+        int i17;
         String[] strArr2;
         String str14;
         boolean z18;
@@ -370,62 +370,62 @@ public class PushListenerController {
         boolean z24;
         String reactedText;
         boolean z25;
-        final int i19;
+        final int i18;
         String str19;
         String str20;
         String str21;
         final long j24;
         boolean z26;
         long j25;
-        int i20;
+        int i19;
         boolean z27;
-        kj kjVar;
+        zi ziVar;
         boolean z28;
         String Y;
-        String K0;
+        String L0;
         String Y2;
-        int i21;
+        int i20;
         String G;
+        int i21;
         int i22;
-        int i23;
-        if (v2.a) {
-            f8.b(str + " START PROCESSING");
+        if (r2.a) {
+            a8.b(str + " START PROCESSING");
         }
         try {
             decode = Base64.decode(str2, 8);
             nativeByteBuffer = new NativeByteBuffer(decode.length);
             nativeByteBuffer.writeBytes(decode);
             nativeByteBuffer.position(0);
-            if (uz.m == null) {
-                uz.m = new byte[8];
-                byte[] n10 = Utilities.n(uz.l);
-                System.arraycopy(n10, n10.length - 8, uz.m, 0, 8);
+            if (az.m == null) {
+                az.m = new byte[8];
+                byte[] n4 = Utilities.n(az.l);
+                System.arraycopy(n4, n4.length - 8, az.m, 0, 8);
             }
             bArr = new byte[8];
             nativeByteBuffer.readBytes(bArr, true);
         } catch (Throwable th2) {
             th = th2;
-            i10 = -1;
+            i3 = -1;
             str3 = null;
             str4 = null;
         }
-        if (!Arrays.equals(uz.m, bArr)) {
+        if (!Arrays.equals(az.m, bArr)) {
             onDecryptError();
-            if (v2.a) {
-                f8.b(String.format(Locale.US, str + " DECRYPT ERROR 2 k1=%s k2=%s, key=%s", Utilities.f(uz.m), Utilities.f(bArr), Utilities.f(uz.l)));
+            if (r2.a) {
+                a8.b(String.format(Locale.US, str + " DECRYPT ERROR 2 k1=%s k2=%s, key=%s", Utilities.f(az.m), Utilities.f(bArr), Utilities.f(az.l)));
             }
             return;
         }
         byte[] bArr2 = new byte[16];
         nativeByteBuffer.readBytes(bArr2, true);
-        m5.e M = m5.e.M(2, true, uz.l, bArr2);
-        Utilities.c(nativeByteBuffer.buffer, (byte[]) M.b, (byte[]) M.c, false, false, 24, decode.length - 24);
-        byte[] bArr3 = uz.l;
+        mi.h0 x10 = mi.h0.x(2, true, az.l, bArr2);
+        Utilities.c(nativeByteBuffer.buffer, (byte[]) x10.b, (byte[]) x10.c, false, false, 24, decode.length - 24);
+        byte[] bArr3 = az.l;
         ByteBuffer byteBuffer = nativeByteBuffer.buffer;
         if (!Utilities.d(bArr2, Utilities.p(bArr3, 96, byteBuffer, 24, byteBuffer.limit()), 8)) {
             onDecryptError();
-            if (v2.a) {
-                f8.b(String.format(str + " DECRYPT ERROR 3, key = %s", Utilities.f(uz.l)));
+            if (r2.a) {
+                a8.b(String.format(str + " DECRYPT ERROR 3, key = %s", Utilities.f(az.l)));
                 return;
             }
             return;
@@ -435,20 +435,20 @@ public class PushListenerController {
         str4 = new String(bArr4);
         try {
             jSONObject = new JSONObject(str4);
-            w0 w0Var = w0.a;
+            t0 t0Var = t0.a;
             if (jSONObject.has("loc_key")) {
                 try {
                     str3 = jSONObject.getString("loc_key");
                 } catch (Throwable th3) {
                     th = th3;
-                    i10 = -1;
+                    i3 = -1;
                     str3 = null;
-                    i11 = -1;
-                    if (i11 != i10) {
+                    i10 = -1;
+                    if (i10 != i3) {
                     }
-                    if (v2.a) {
+                    if (r2.a) {
                     }
-                    f8.f(th);
+                    a8.f(th);
                     return;
                 }
             } else {
@@ -460,13 +460,13 @@ public class PushListenerController {
                         jSONObject2 = jSONObject.getJSONObject("custom");
                     } catch (Throwable th4) {
                         th = th4;
+                        i3 = -1;
                         i10 = -1;
-                        i11 = -1;
-                        if (i11 != i10) {
+                        if (i10 != i3) {
                         }
-                        if (v2.a) {
+                        if (r2.a) {
                         }
-                        f8.f(th);
+                        a8.f(th);
                         return;
                     }
                 } else {
@@ -474,32 +474,32 @@ public class PushListenerController {
                 }
                 Object obj2 = jSONObject.has("user_id") ? jSONObject.get("user_id") : null;
                 if (obj2 == null) {
-                    e = e20.i(e20.s0).e();
+                    e10 = h10.i(h10.t0).e();
                 } else if (obj2 instanceof Long) {
-                    e = ((Long) obj2).longValue();
+                    e10 = ((Long) obj2).longValue();
                 } else {
                     if (obj2 instanceof Integer) {
                         intValue = ((Integer) obj2).intValue();
                     } else if (obj2 instanceof String) {
                         intValue = Utilities.z((String) obj2).intValue();
                     } else {
-                        e = e20.i(e20.s0).e();
+                        e10 = h10.i(h10.t0).e();
                     }
-                    e = intValue;
+                    e10 = intValue;
                 }
-                int i24 = e20.s0;
-                i11 = 0;
+                int i23 = h10.t0;
+                i10 = 0;
                 while (true) {
-                    if (i11 >= 4) {
-                        i11 = i24;
+                    if (i10 >= 4) {
+                        i10 = i23;
                         z10 = false;
                         break;
                     } else {
-                        if (e20.i(i11).e() == e) {
+                        if (h10.i(i10).e() == e10) {
                             z10 = true;
                             break;
                         }
-                        i11++;
+                        i10++;
                     }
                 }
             } catch (Throwable th5) {
@@ -509,8 +509,8 @@ public class PushListenerController {
             th = th6;
         }
         if (!z10) {
-            if (v2.a) {
-                f8.b(str + " ACCOUNT NOT FOUND");
+            if (r2.a) {
+                a8.b(str + " ACCOUNT NOT FOUND");
             }
             countDownLatch.countDown();
             return;
@@ -524,15 +524,15 @@ public class PushListenerController {
             th = th8;
             str5 = str4;
         }
-        if (!e20.i(i11).p()) {
-            if (v2.a) {
-                f8.b(str + " ACCOUNT NOT ACTIVATED");
+        if (!h10.i(i10).p()) {
+            if (r2.a) {
+                a8.b(str + " ACCOUNT NOT ACTIVATED");
             }
             countDownLatch.countDown();
             return;
         }
-        if (v2.a) {
-            f8.b(str + " " + str3);
+        if (r2.a) {
+            a8.b(str + " " + str3);
         }
         try {
         } catch (Throwable th9) {
@@ -541,7 +541,7 @@ public class PushListenerController {
         switch (str3.hashCode()) {
             case -1963663249:
                 if (str3.equals("SESSION_REVOKE")) {
-                    i0.g3(new xd(i11, 3));
+                    g0.h3(new ii.i2(i10, 5));
                     countDownLatch.countDown();
                     break;
                 }
@@ -551,14 +551,14 @@ public class PushListenerController {
                         jSONObject3 = jSONObject6;
                         j11 = 0;
                         j12 = jSONObject3.getLong("channel_id");
-                        i12 = i11;
+                        i11 = i10;
                         str6 = "";
                         j13 = -j12;
                     } catch (Throwable th10) {
                         th = th10;
                     }
                 } else {
-                    i12 = i11;
+                    i11 = i10;
                     str6 = "";
                     jSONObject3 = jSONObject6;
                     j11 = 0;
@@ -582,13 +582,13 @@ public class PushListenerController {
                             j14 = -j16;
                         } catch (Throwable th11) {
                             th = th11;
-                            i11 = i12;
-                            i10 = -1;
-                            if (i11 != i10) {
+                            i10 = i11;
+                            i3 = -1;
+                            if (i10 != i3) {
                             }
-                            if (v2.a) {
+                            if (r2.a) {
                             }
-                            f8.f(th);
+                            a8.f(th);
                             return;
                         }
                     } else {
@@ -604,13 +604,13 @@ public class PushListenerController {
                 try {
                     if (jSONObject3.has("topic_id")) {
                         try {
-                            i13 = jSONObject3.getInt("topic_id");
+                            i12 = jSONObject3.getInt("topic_id");
                         } catch (Throwable th13) {
                             th = th13;
-                            i11 = i12;
+                            i10 = i11;
                         }
                     } else {
-                        i13 = 0;
+                        i12 = 0;
                     }
                     StringBuilder sb2 = new StringBuilder();
                     str8 = str6;
@@ -619,19 +619,19 @@ public class PushListenerController {
                     sb2.append("} chatId ");
                     sb2.append(j16);
                     sb2.append(" custom topicId ");
-                    sb2.append(i13);
-                    f8.b(sb2.toString());
+                    sb2.append(i12);
+                    a8.b(sb2.toString());
                     if (jSONObject3.has("encryption_id")) {
                         str9 = "loc_args";
                         str10 = "silent";
-                        j14 = o5.F(jSONObject3.getInt("encryption_id"));
+                        j14 = m5.F(jSONObject3.getInt("encryption_id"));
                     } else {
                         str9 = "loc_args";
                         str10 = "silent";
                     }
                     z11 = !jSONObject3.has("schedule") && jSONObject3.getInt("schedule") == 1;
                     if (j14 == j11 && "ENCRYPTED_MESSAGE".equals(str3)) {
-                        j14 = pt.n0;
+                        j14 = us.o0;
                     }
                     j17 = j14;
                     try {
@@ -640,15 +640,15 @@ public class PushListenerController {
                     }
                 } catch (Throwable th15) {
                     th = th15;
-                    i13 = i12;
-                    i11 = i13;
+                    i12 = i11;
+                    i10 = i12;
                     str4 = str5;
-                    i10 = -1;
-                    if (i11 != i10) {
+                    i3 = -1;
+                    if (i10 != i3) {
                     }
-                    if (v2.a) {
+                    if (r2.a) {
                     }
-                    f8.f(th);
+                    a8.f(th);
                     return;
                 }
                 if (j17 != j11) {
@@ -663,15 +663,15 @@ public class PushListenerController {
                         str11 = "msg_id";
                         str12 = "call_id";
                     } else if ("READ_HISTORY".equals(str3)) {
-                        int i25 = jSONObject3.getInt("max_id");
+                        int i24 = jSONObject3.getInt("max_id");
                         ArrayList arrayList = new ArrayList();
-                        if (v2.a) {
-                            f8.b(str + " received read notification max_id = " + i25 + " for dialogId = " + j17);
+                        if (r2.a) {
+                            a8.b(str + " received read notification max_id = " + i24 + " for dialogId = " + j17);
                         }
                         if (j12 != j11) {
                             TL_update.TL_updateReadChannelInbox tL_updateReadChannelInbox = new TL_update.TL_updateReadChannelInbox();
                             tL_updateReadChannelInbox.channel_id = j12;
-                            tL_updateReadChannelInbox.max_id = i25;
+                            tL_updateReadChannelInbox.max_id = i24;
                             tL_updateReadChannelInbox.still_unread_count = 0;
                             arrayList.add(tL_updateReadChannelInbox);
                         } else {
@@ -685,14 +685,14 @@ public class PushListenerController {
                                 tL_updateReadHistoryInbox.peer = tL_peerChat;
                                 tL_peerChat.chat_id = j16;
                             }
-                            tL_updateReadHistoryInbox.max_id = i25;
+                            tL_updateReadHistoryInbox.max_id = i24;
                             arrayList.add(tL_updateReadHistoryInbox);
                         }
-                        wp.r1(i12).K3(arrayList, null, null, false, 0);
+                        hp.s1(i11).N3(arrayList, null, null, false, 0);
                     } else if ("READ_STORIES".equals(str3)) {
-                        pt.k0.c(new et(pt.t(i12), j17, jSONObject3.getInt("max_id"), 1));
+                        us.l0.c(new ls(us.t(i11), j17, jSONObject3.getInt("max_id"), 1));
                     } else if ("STORY_DELETED".equals(str3)) {
-                        pt.k0.c(new et(pt.t(i12), j17, jSONObject3.getInt("story_id"), 0));
+                        us.l0.c(new ls(us.t(i11), j17, jSONObject3.getInt("story_id"), 0));
                     } else if ("MESSAGE_DELETED".equals(str3)) {
                         String[] split = jSONObject3.getString("messages").split(",");
                         a0.h hVar = new a0.h();
@@ -701,10 +701,10 @@ public class PushListenerController {
                             arrayList2.add(Utilities.z(str23));
                         }
                         hVar.k(arrayList2, -j12);
-                        pt.t(i12).M(hVar, false);
-                        wp.r1(i12).c0(j17, j12, arrayList2);
-                        if (v2.a) {
-                            f8.b(str + " received " + str3 + " for dialogId = " + j17 + " mids = " + TextUtils.join(",", arrayList2));
+                        us.t(i11).M(hVar, false);
+                        hp.s1(i11).c0(j17, j12, arrayList2);
+                        if (r2.a) {
+                            a8.b(str + " received " + str3 + " for dialogId = " + j17 + " mids = " + TextUtils.join(",", arrayList2));
                         }
                     } else {
                         long j26 = j15;
@@ -720,19 +720,19 @@ public class PushListenerController {
                                 sparseBooleanArray.put(intValue2, false);
                             }
                             hVar2.k(arrayList3, -j12);
-                            pt.t(i12).M(hVar2, true);
-                            wp.r1(i12).P(j17, i13, sparseBooleanArray, true);
-                            if (v2.a) {
-                                f8.b(str + " received " + str3 + " for dialogId = " + j17 + " mids = " + TextUtils.join(",", arrayList3));
+                            us.t(i11).M(hVar2, true);
+                            hp.s1(i11).P(j17, i12, sparseBooleanArray, true);
+                            if (r2.a) {
+                                a8.b(str + " received " + str3 + " for dialogId = " + j17 + " mids = " + TextUtils.join(",", arrayList3));
                             }
                         } else if (!TextUtils.isEmpty(str3)) {
                             if (jSONObject3.has("msg_id")) {
-                                i15 = jSONObject3.getInt("msg_id");
+                                i14 = jSONObject3.getInt("msg_id");
                             } else if (jSONObject3.has("story_id")) {
-                                i15 = jSONObject3.getInt("story_id");
+                                i14 = jSONObject3.getInt("story_id");
                             } else {
-                                i14 = i13;
-                                i15 = 0;
+                                i13 = i12;
+                                i14 = 0;
                                 if (jSONObject3.has("random_id")) {
                                     j19 = j16;
                                     j20 = j11;
@@ -740,53 +740,53 @@ public class PushListenerController {
                                     j19 = j16;
                                     j20 = Utilities.A(jSONObject3.getString("random_id")).longValue();
                                 }
-                                if (i15 != 0) {
+                                if (i14 != 0) {
                                     j21 = j12;
                                     if (j20 != j11) {
                                         break;
                                     }
                                 } else {
                                     j21 = j12;
-                                    Integer num = (Integer) wp.r1(i12).O.get(Long.valueOf(j17));
+                                    Integer num = (Integer) hp.s1(i11).P.get(Long.valueOf(j17));
                                     if (num == null) {
-                                        num = Integer.valueOf(is.a0(i12).U(j17, false));
-                                        wp.r1(i12).O.put(Long.valueOf(j17), num);
+                                        num = Integer.valueOf(qr.a0(i11).U(j17, false));
+                                        hp.s1(i11).P.put(Long.valueOf(j17), num);
                                     }
-                                    z12 = i15 > num.intValue();
+                                    z12 = i14 > num.intValue();
                                 }
                                 if (!str3.startsWith("REACT_") || str3.startsWith("CHAT_REACT_")) {
                                     z12 = true;
                                 }
                                 z13 = z12;
                                 if (!str3.equals("STORY_NOTEXT") || str3.equals("STORY_LIVE") || str3.equals("STORY_HIDDEN_AUTHOR")) {
-                                    i16 = !jSONObject3.has("story_id") ? jSONObject3.getInt("story_id") : -1;
-                                    z13 = i16 < 0;
+                                    i15 = !jSONObject3.has("story_id") ? jSONObject3.getInt("story_id") : -1;
+                                    z13 = i15 < 0;
                                 } else {
-                                    i16 = -1;
+                                    i15 = -1;
                                 }
                                 if (z13) {
-                                    i13 = i12;
+                                    i12 = i11;
                                     if ("CONF_CALL_MISSED".equalsIgnoreCase(str3)) {
-                                        VoIPGroupNotification.hideByCallId(w0.b, i13, jSONObject3.getLong("call_id"));
+                                        VoIPGroupNotification.hideByCallId(t0.b, i12, jSONObject3.getLong("call_id"));
                                     }
                                 } else {
-                                    int i26 = i16;
+                                    int i25 = i15;
                                     long j27 = j20;
                                     long j28 = j11;
                                     long optLong = jSONObject3.optLong("chat_from_id", j28);
                                     long optLong2 = jSONObject3.optLong("chat_from_broadcast_id", j28);
                                     long optLong3 = jSONObject3.optLong("chat_from_group_id", j28);
-                                    int i27 = (optLong > j28 ? 1 : (optLong == j28 ? 0 : -1));
-                                    if (i27 == 0 && optLong3 == j28) {
+                                    int i26 = (optLong > j28 ? 1 : (optLong == j28 ? 0 : -1));
+                                    if (i26 == 0 && optLong3 == j28) {
                                         z14 = false;
                                         if (jSONObject3.has("mention") || jSONObject3.getInt("mention") == 0) {
                                             String str25 = str10;
-                                            i17 = i27;
+                                            i16 = i26;
                                             str13 = str25;
                                             z15 = false;
                                         } else {
                                             String str26 = str10;
-                                            i17 = i27;
+                                            i16 = i26;
                                             str13 = str26;
                                             z15 = true;
                                         }
@@ -803,15 +803,15 @@ public class PushListenerController {
                                         }
                                         boolean z31 = z15;
                                         if (jSONObject5.has(str22)) {
-                                            i18 = i15;
+                                            i17 = i14;
                                             strArr2 = null;
                                         } else {
                                             JSONArray jSONArray = jSONObject5.getJSONArray(str22);
                                             int length = jSONArray.length();
-                                            i18 = i15;
+                                            i17 = i14;
                                             String[] strArr3 = new String[length];
-                                            for (int i28 = 0; i28 < length; i28++) {
-                                                strArr3[i28] = jSONArray.getString(i28);
+                                            for (int i27 = 0; i27 < length; i27++) {
+                                                strArr3[i27] = jSONArray.getString(i27);
                                             }
                                             strArr2 = strArr3;
                                         }
@@ -837,15 +837,15 @@ public class PushListenerController {
                                                         z22 = z17;
                                                         z23 = z19;
                                                         String str27 = str14;
-                                                        i13 = i12;
+                                                        i12 = i11;
                                                         z24 = false;
                                                         reactedText = getReactedText(str3, strArr2);
                                                         z25 = false;
-                                                        i19 = i18;
+                                                        i18 = i17;
                                                         str19 = str27;
                                                         str20 = null;
                                                         str21 = reactedText;
-                                                        if (v2.a) {
+                                                        if (r2.a) {
                                                         }
                                                         if (str21 != null) {
                                                         }
@@ -866,15 +866,15 @@ public class PushListenerController {
                                                     z22 = z17;
                                                     z23 = z19;
                                                     String str272 = str14;
-                                                    i13 = i12;
+                                                    i12 = i11;
                                                     z24 = false;
                                                     reactedText = getReactedText(str3, strArr2);
                                                     z25 = false;
-                                                    i19 = i18;
+                                                    i18 = i17;
                                                     str19 = str272;
                                                     str20 = null;
                                                     str21 = reactedText;
-                                                    if (v2.a) {
+                                                    if (r2.a) {
                                                     }
                                                     if (str21 != null) {
                                                     }
@@ -894,11 +894,11 @@ public class PushListenerController {
                                                         z22 = z17;
                                                         z23 = z19;
                                                         String str2722 = str14;
-                                                        i13 = i12;
+                                                        i12 = i11;
                                                         z24 = false;
                                                         reactedText = getReactedText(str3, strArr2);
                                                         z25 = false;
-                                                        i19 = i18;
+                                                        i18 = i17;
                                                         str19 = str2722;
                                                         str20 = null;
                                                     } else {
@@ -912,111 +912,111 @@ public class PushListenerController {
                                                         JSONObject jSONObject9 = jSONObject3;
                                                         switch (str3.hashCode()) {
                                                             case -2104766184:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
                                                                 if (str3.equals(obj)) {
-                                                                    str21 = dd.K0(2131744613);
+                                                                    str21 = bd.L0(2131744604);
                                                                     z25 = false;
-                                                                    i19 = i26;
+                                                                    i18 = i25;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     break;
                                                                 }
-                                                                if (v2.a) {
-                                                                    f8.l("unhandled loc_key = " + str3);
+                                                                if (r2.a) {
+                                                                    a8.l("unhandled loc_key = " + str3);
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -2100047043:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (!str3.equals("MESSAGE_GAME_SCORE")) {
                                                                     z24 = false;
                                                                     obj = "STORY_NOTEXT";
-                                                                    if (v2.a) {
+                                                                    if (r2.a) {
                                                                     }
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
                                                                 z24 = false;
-                                                                Y2 = dd.Y(2131748020, "NotificationMessageGameScored", strArr2[0], strArr2[1], strArr2[2]);
+                                                                Y2 = bd.Y(2131748012, "NotificationMessageGameScored", strArr2[0], strArr2[1], strArr2[2]);
                                                                 z25 = false;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = Y2;
                                                                 obj = "STORY_NOTEXT";
                                                                 break;
                                                             case -2091498420:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHANNEL_MESSAGE_CONTACT")) {
-                                                                    Y = dd.Y(2131752373, "ChannelMessageContact2", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753979);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752373, "ChannelMessageContact2", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753979);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -2053872415:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 break;
                                                             case -2039746363:
                                                                 String str29 = str7;
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("MESSAGE_STICKER")) {
                                                                     if (strArr2.length <= 1 || TextUtils.isEmpty(strArr2[1])) {
-                                                                        Y = dd.Y(2131747973, "NotificationMessageSticker", strArr2[0]);
-                                                                        K0 = dd.K0(2131753936);
+                                                                        Y = bd.Y(2131747965, "NotificationMessageSticker", strArr2[0]);
+                                                                        L0 = bd.L0(2131753936);
                                                                     } else {
-                                                                        Y = dd.Y(2131747972, "NotificationMessageStickerEmoji", strArr2[0], strArr2[1]);
-                                                                        K0 = strArr2[1] + str29 + dd.K0(2131753936);
+                                                                        Y = bd.Y(2131747964, "NotificationMessageStickerEmoji", strArr2[0], strArr2[1]);
+                                                                        L0 = strArr2[1] + str29 + bd.L0(2131753936);
                                                                     }
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -2023218804:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHANNEL_MESSAGE_VIDEOS")) {
-                                                                    Y2 = dd.Y(2131752371, "ChannelMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "Videos", new Object[0]));
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131752371, "ChannelMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "Videos", new Object[0]));
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1027,91 +1027,91 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1979538588:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHANNEL_MESSAGE_DOC")) {
-                                                                    Y = dd.Y(2131752372, "ChannelMessageDocument", strArr2[0]);
-                                                                    K0 = dd.K0(2131753975);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752372, "ChannelMessageDocument", strArr2[0]);
+                                                                    L0 = bd.L0(2131753975);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1979536003:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHANNEL_MESSAGE_GEO")) {
-                                                                    Y = dd.Y(2131752368, "ChannelMessageMap", strArr2[0]);
-                                                                    K0 = dd.K0(2131753961);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752368, "ChannelMessageMap", strArr2[0]);
+                                                                    L0 = bd.L0(2131753961);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1979535888:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHANNEL_MESSAGE_GIF")) {
-                                                                    Y = dd.Y(2131752370, "ChannelMessageGIF", strArr2[0]);
-                                                                    K0 = dd.K0(2131753971);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752370, "ChannelMessageGIF", strArr2[0]);
+                                                                    L0 = bd.L0(2131753971);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1969004705:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHAT_ADD_MEMBER")) {
-                                                                    Y2 = dd.Y(2131748050, "NotificationGroupAddMember", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748042, "NotificationGroupAddMember", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1122,19 +1122,19 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1946699248:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHAT_JOINED")) {
-                                                                    Y2 = dd.Y(2131748048, "NotificationGroupAddSelfMega", strArr2[0], strArr2[1]);
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748040, "NotificationGroupAddSelfMega", strArr2[0], strArr2[1]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1145,19 +1145,19 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1891964556:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHAT_MESSAGE_TODO_APPEND")) {
-                                                                    Y2 = dd.Z(2131747997, strArr2[0], strArr2[1], strArr2[2]);
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131747989, strArr2[0], strArr2[1], strArr2[2]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1168,48 +1168,48 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1833440864:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHAT_MESSAGE_GIVEAWAY_STARS")) {
                                                                     try {
-                                                                        i21 = Integer.parseInt(strArr2[2]);
+                                                                        i20 = Integer.parseInt(strArr2[2]);
                                                                     } catch (Exception unused) {
-                                                                        i21 = 1;
+                                                                        i20 = 1;
                                                                     }
-                                                                    Y = dd.Z(2131748026, strArr2[0], strArr2[1], dd.G(i21, "AmongWinners", new Object[0]), strArr2[3]);
-                                                                    K0 = dd.K0(2131753492);
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131748018, strArr2[0], strArr2[1], bd.G(i20, "AmongWinners", new Object[0]), strArr2[3]);
+                                                                    L0 = bd.L0(2131753492);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1717283471:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHAT_REQ_JOINED")) {
-                                                                    Y2 = dd.Y(2131743795, "UserAcceptedToGroupPushWithGroup", strArr2[0], strArr2[1]);
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131743779, "UserAcceptedToGroupPushWithGroup", strArr2[0], strArr2[1]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1220,19 +1220,19 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1646640058:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHAT_VOICECHAT_START")) {
-                                                                    Y2 = dd.Y(2131748046, "NotificationGroupCreatedCall", strArr2[0], strArr2[1]);
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748038, "NotificationGroupCreatedCall", strArr2[0], strArr2[1]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1243,21 +1243,21 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1633328296:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("PINNED_PAID_MEDIA")) {
                                                                     int parseInt = Integer.parseInt(strArr2[1]);
-                                                                    reactedText = dd.G(parseInt, "NotificationPinnedPaidMedia", strArr2[0]);
-                                                                    str20 = dd.G(parseInt, "NotificationPinnedPaidMedia", strArr2[0]);
-                                                                    i19 = i18;
+                                                                    reactedText = bd.G(parseInt, "NotificationPinnedPaidMedia", strArr2[0]);
+                                                                    str20 = bd.G(parseInt, "NotificationPinnedPaidMedia", strArr2[0]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
@@ -1266,19 +1266,19 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1528047021:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("CHAT_MESSAGES")) {
-                                                                    Y2 = dd.Y(2131748047, "NotificationGroupAlbum", strArr2[0], strArr2[1]);
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748039, "NotificationGroupAlbum", strArr2[0], strArr2[1]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1289,168 +1289,168 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1507149394:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("MESSAGE_RECURRING_PAY")) {
-                                                                    Y = dd.Y(2131747983, "NotificationMessageRecurringPay", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131747414);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747975, "NotificationMessageRecurringPay", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131747406);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1493579426:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("MESSAGE_AUDIO")) {
-                                                                    Y = dd.Z(2131748030, strArr2[0]);
-                                                                    K0 = dd.K0(2131753982);
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131748022, strArr2[0]);
+                                                                    L0 = bd.L0(2131753982);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1482481933:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 break;
                                                             case -1480102982:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("MESSAGE_PHOTO")) {
-                                                                    Y = dd.Y(2131747986, "NotificationMessagePhoto", strArr2[0]);
-                                                                    K0 = dd.K0(2131753948);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747978, "NotificationMessagePhoto", strArr2[0]);
+                                                                    L0 = bd.L0(2131753948);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1478041834:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("MESSAGE_ROUND")) {
-                                                                    Y = dd.Y(2131747982, "NotificationMessageRound", strArr2[0]);
-                                                                    K0 = dd.K0(2131753941);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747974, "NotificationMessageRound", strArr2[0]);
+                                                                    L0 = bd.L0(2131753941);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1476974979:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("MESSAGE_STORY")) {
-                                                                    Y = dd.Y(2131747947, "NotificationStory", strArr2[0]);
-                                                                    K0 = dd.K0(2131744753);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747939, "NotificationStory", strArr2[0]);
+                                                                    L0 = bd.L0(2131744745);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1474543101:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("MESSAGE_VIDEO")) {
-                                                                    Y = dd.Y(2131747962, "NotificationMessageVideo", strArr2[0]);
-                                                                    K0 = dd.K0(2131753933);
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747954, "NotificationMessageVideo", strArr2[0]);
+                                                                    L0 = bd.L0(2131753933);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1465695932:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 if (str3.equals("ENCRYPTION_ACCEPT")) {
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
@@ -1458,21 +1458,21 @@ public class PushListenerController {
                                                                 }
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1428026623:
                                                                 if (str3.equals("CONF_CALL_MISSED")) {
-                                                                    i13 = i12;
-                                                                    VoIPGroupNotification.hideByCallId(w0.b, i13, jSONObject9.getLong("call_id"));
+                                                                    i12 = i11;
+                                                                    VoIPGroupNotification.hideByCallId(t0.b, i12, jSONObject9.getLong("call_id"));
                                                                     int parseInt2 = Integer.parseInt(strArr2[1]);
-                                                                    Y2 = parseInt2 <= 0 ? dd.Z(2131748135, strArr2[0]) : dd.J(parseInt2, "NotificationActionMissedCallConferenceOther", strArr2[0]);
-                                                                    i19 = i18;
+                                                                    Y2 = parseInt2 <= 0 ? bd.Z(2131748127, strArr2[0]) : bd.J(parseInt2, "NotificationActionMissedCallConferenceOther", strArr2[0]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1481,23 +1481,23 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1374906292:
                                                                 if (str3.equals("ENCRYPTED_MESSAGE")) {
-                                                                    Y2 = dd.K0(2131742862);
-                                                                    str19 = dd.K0(2131745710);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.L0(2131742847);
+                                                                    str19 = bd.L0(2131745703);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     z24 = false;
                                                                     str20 = null;
                                                                     z25 = true;
@@ -1505,22 +1505,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1372940586:
                                                                 if (str3.equals("CHAT_RETURNED")) {
-                                                                    Y2 = dd.Y(2131748049, "NotificationGroupAddSelf", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748041, "NotificationGroupAddSelf", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1529,22 +1529,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1264245338:
                                                                 if (str3.equals("PINNED_INVOICE")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748108, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748110, strArr2[0], strArr2[1]) : dd.Z(2131748109, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748100, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748102, strArr2[0], strArr2[1]) : bd.Z(2131748101, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1553,22 +1553,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1236154001:
                                                                 if (str3.equals("CHANNEL_MESSAGE_DOCS")) {
-                                                                    Y2 = dd.Y(2131752371, "ChannelMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "Files", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131752371, "ChannelMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "Files", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1577,22 +1577,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1236086700:
                                                                 if (str3.equals("CHANNEL_MESSAGE_FWDS")) {
-                                                                    Y2 = dd.Y(2131752371, "ChannelMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "ForwardedMessageCount", new Object[0]).toLowerCase());
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131752371, "ChannelMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "ForwardedMessageCount", new Object[0]).toLowerCase());
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1601,88 +1601,88 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1236077786:
                                                                 if (str3.equals("CHANNEL_MESSAGE_GAME")) {
-                                                                    Y = dd.Y(2131748021, "NotificationMessageGame", strArr2[0]);
-                                                                    K0 = dd.K0(2131753972);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748013, "NotificationMessageGame", strArr2[0]);
+                                                                    L0 = bd.L0(2131753972);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1235796237:
                                                                 if (str3.equals("CHANNEL_MESSAGE_POLL")) {
-                                                                    Y = dd.Z(2131752364, strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131747200);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131752364, strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131747193);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1235760759:
                                                                 if (str3.equals("CHANNEL_MESSAGE_QUIZ")) {
-                                                                    Y = dd.Y(2131752363, "ChannelMessageQuiz2", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131746460);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752363, "ChannelMessageQuiz2", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131746453);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -1691,84 +1691,84 @@ public class PushListenerController {
                                                                 break;
                                                             case -1235677318:
                                                                 if (str3.equals("CHANNEL_MESSAGE_TODO")) {
-                                                                    Y = dd.Z(2131752359, strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131744134);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131752359, strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131744119);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1198046100:
                                                                 if (str3.equals("MESSAGE_VIDEO_SECRET")) {
-                                                                    Y = dd.Y(2131747980, "NotificationMessageSDVideo", strArr2[0]);
-                                                                    K0 = dd.K0(2131753976);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747972, "NotificationMessageSDVideo", strArr2[0]);
+                                                                    L0 = bd.L0(2131753976);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1124254527:
                                                                 if (str3.equals("CHAT_MESSAGE_CONTACT")) {
-                                                                    Y = dd.Y(2131748015, "NotificationMessageGroupContact2", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = dd.K0(2131753979);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748007, "NotificationMessageGroupContact2", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = bd.L0(2131753979);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1085137927:
                                                                 if (str3.equals("PINNED_GAME")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748120, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748125, strArr2[0], strArr2[1]) : dd.Z(2131748124, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748112, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748117, strArr2[0], strArr2[1]) : bd.Z(2131748116, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1777,22 +1777,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1084856378:
                                                                 if (str3.equals("PINNED_POLL")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748096, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748098, strArr2[0], strArr2[2], strArr2[1]) : dd.Z(2131748097, strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748088, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748090, strArr2[0], strArr2[2], strArr2[1]) : bd.Z(2131748089, strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1801,22 +1801,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1084820900:
                                                                 if (str3.equals("PINNED_QUIZ")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748093, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748095, strArr2[0], strArr2[2], strArr2[1]) : dd.Z(2131748094, strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748085, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748087, strArr2[0], strArr2[2], strArr2[1]) : bd.Z(2131748086, strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1825,22 +1825,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1084746444:
                                                                 if (str3.equals("PINNED_TEXT")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748081, "NotificationActionPinnedTextUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748083, "NotificationActionPinnedText", strArr2[0], strArr2[1], strArr2[2]) : dd.Y(2131748082, "NotificationActionPinnedTextChannel", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748073, "NotificationActionPinnedTextUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748075, "NotificationActionPinnedText", strArr2[0], strArr2[1], strArr2[2]) : bd.Y(2131748074, "NotificationActionPinnedTextChannel", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1849,22 +1849,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -1084737459:
                                                                 if (str3.equals("PINNED_TODO")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748078, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748080, strArr2[0], strArr2[2], strArr2[1]) : dd.Z(2131748079, strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748070, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748072, strArr2[0], strArr2[2], strArr2[1]) : bd.Z(2131748071, strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1873,22 +1873,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -947756761:
                                                                 if (str3.equals("CHANNEL_MESSAGE_TODO_DONE")) {
-                                                                    Y2 = dd.Z(2131752357, strArr2[0], strArr2[2]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131752357, strArr2[0], strArr2[2]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1897,23 +1897,23 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -891852842:
                                                                 if (str3.equals("STORY_HIDDEN_AUTHOR")) {
-                                                                    G = dd.G(1, "StoryNotificationHidden", new Object[0]);
+                                                                    G = bd.G(1, "StoryNotificationHidden", new Object[0]);
                                                                     str21 = G;
-                                                                    i13 = i12;
-                                                                    i19 = i26;
+                                                                    i12 = i11;
+                                                                    i18 = i25;
                                                                     str19 = str28;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
@@ -1921,22 +1921,22 @@ public class PushListenerController {
                                                                     z25 = false;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -819729482:
                                                                 if (str3.equals("PINNED_STICKER")) {
-                                                                    Y2 = j17 > j11 ? (strArr2.length <= 1 || TextUtils.isEmpty(strArr2[1])) ? dd.Y(2131748084, "NotificationActionPinnedStickerUser", strArr2[0]) : dd.Y(2131748085, "NotificationActionPinnedStickerEmojiUser", strArr2[0], strArr2[1]) : z16 ? (strArr2.length <= 2 || TextUtils.isEmpty(strArr2[2])) ? dd.Y(2131748089, "NotificationActionPinnedSticker", strArr2[0], strArr2[1]) : dd.Y(2131748087, "NotificationActionPinnedStickerEmoji", strArr2[0], strArr2[2], strArr2[1]) : (strArr2.length <= 1 || TextUtils.isEmpty(strArr2[1])) ? dd.Y(2131748088, "NotificationActionPinnedStickerChannel", strArr2[0]) : dd.Y(2131748086, "NotificationActionPinnedStickerEmojiChannel", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? (strArr2.length <= 1 || TextUtils.isEmpty(strArr2[1])) ? bd.Y(2131748076, "NotificationActionPinnedStickerUser", strArr2[0]) : bd.Y(2131748077, "NotificationActionPinnedStickerEmojiUser", strArr2[0], strArr2[1]) : z16 ? (strArr2.length <= 2 || TextUtils.isEmpty(strArr2[2])) ? bd.Y(2131748081, "NotificationActionPinnedSticker", strArr2[0], strArr2[1]) : bd.Y(2131748079, "NotificationActionPinnedStickerEmoji", strArr2[0], strArr2[2], strArr2[1]) : (strArr2.length <= 1 || TextUtils.isEmpty(strArr2[1])) ? bd.Y(2131748080, "NotificationActionPinnedStickerChannel", strArr2[0]) : bd.Y(2131748078, "NotificationActionPinnedStickerEmojiChannel", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -1945,36 +1945,36 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -772141857:
                                                                 if (str3.equals("PHONE_CALL_REQUEST")) {
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -1982,25 +1982,25 @@ public class PushListenerController {
                                                             case -706345256:
                                                                 if (str3.equals("MESSAGE_UNIQUE_STARGIFT")) {
                                                                     str15 = strArr2[0];
-                                                                    Y = dd.Z(2131747968, str15);
-                                                                    K0 = dd.K0(2131749905);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747960, str15);
+                                                                    L0 = bd.L0(2131749904);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2009,38 +2009,38 @@ public class PushListenerController {
                                                                 String str30 = str7;
                                                                 if (str3.equals("CHANNEL_MESSAGE_STICKER")) {
                                                                     if (strArr2.length <= 1 || TextUtils.isEmpty(strArr2[1])) {
-                                                                        Y = dd.Y(2131752361, "ChannelMessageSticker", strArr2[0]);
-                                                                        K0 = dd.K0(2131753936);
+                                                                        Y = bd.Y(2131752361, "ChannelMessageSticker", strArr2[0]);
+                                                                        L0 = bd.L0(2131753936);
                                                                     } else {
-                                                                        Y = dd.Y(2131752360, "ChannelMessageStickerEmoji", strArr2[0], strArr2[1]);
-                                                                        K0 = strArr2[1] + str30 + dd.K0(2131753936);
+                                                                        Y = bd.Y(2131752360, "ChannelMessageStickerEmoji", strArr2[0], strArr2[1]);
+                                                                        L0 = strArr2[1] + str30 + bd.L0(2131753936);
                                                                     }
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -590403924:
                                                                 if (str3.equals("PINNED_GAME_SCORE")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748121, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748123, strArr2[0], strArr2[1]) : dd.Z(2131748122, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748113, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748115, strArr2[0], strArr2[1]) : bd.Z(2131748114, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2049,22 +2049,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -589196239:
                                                                 if (str3.equals("PINNED_DOC")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748126, "NotificationActionPinnedFileUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748128, "NotificationActionPinnedFile", strArr2[0], strArr2[1]) : dd.Y(2131748127, "NotificationActionPinnedFileChannel", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748118, "NotificationActionPinnedFileUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748120, "NotificationActionPinnedFile", strArr2[0], strArr2[1]) : bd.Y(2131748119, "NotificationActionPinnedFileChannel", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2073,22 +2073,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -589193654:
                                                                 if (str3.equals("PINNED_GEO")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748114, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748119, strArr2[0], strArr2[1]) : dd.Z(2131748118, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748106, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748111, strArr2[0], strArr2[1]) : bd.Z(2131748110, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2097,22 +2097,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -589193539:
                                                                 if (str3.equals("PINNED_GIF")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748111, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748113, strArr2[0], strArr2[1]) : dd.Z(2131748112, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748103, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748105, strArr2[0], strArr2[1]) : bd.Z(2131748104, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2121,13 +2121,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2136,57 +2136,57 @@ public class PushListenerController {
                                                                 break;
                                                             case -455004278:
                                                                 if (str3.equals("MESSAGE_WALLPAPER")) {
-                                                                    Y = dd.Y(2131754564, "ActionSetWallpaperForThisChat", strArr2[0]);
-                                                                    K0 = dd.K0(2131742979);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131754564, "ActionSetWallpaperForThisChat", strArr2[0]);
+                                                                    L0 = bd.L0(2131742963);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -440169325:
                                                                 if (str3.equals("AUTH_UNKNOWN")) {
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -412748110:
                                                                 if (str3.equals("CHAT_DELETE_YOU")) {
-                                                                    Y2 = dd.Y(2131748039, "NotificationGroupKickYou", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748031, "NotificationGroupKickYou", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2195,22 +2195,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -346082433:
                                                                 if (str3.equals("CHANNEL_MESSAGE_TODO_APPEND")) {
-                                                                    Y2 = dd.Z(2131752358, strArr2[0], strArr2[2]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131752358, strArr2[0], strArr2[2]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2219,166 +2219,166 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -242433887:
                                                                 if (str3.equals("MESSAGE_SAME_WALLPAPER")) {
-                                                                    Y = dd.Y(2131754567, "ActionSetSameWallpaperForThisChat", strArr2[0]);
-                                                                    K0 = dd.K0(2131742977);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131754567, "ActionSetSameWallpaperForThisChat", strArr2[0]);
+                                                                    L0 = bd.L0(2131742961);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -228518075:
                                                                 if (str3.equals("MESSAGE_GEOLIVE")) {
-                                                                    Y = dd.Y(2131747993, "NotificationMessageLiveLocation", strArr2[0]);
-                                                                    K0 = dd.K0(2131753966);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747985, "NotificationMessageLiveLocation", strArr2[0]);
+                                                                    L0 = bd.L0(2131753966);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -213586509:
                                                                 if (str3.equals("ENCRYPTION_REQUEST")) {
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -115582002:
                                                                 if (str3.equals("CHAT_MESSAGE_INVOICE")) {
-                                                                    Y = dd.Y(2131748010, "NotificationMessageGroupInvoice", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = dd.K0(2131747414);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748002, "NotificationMessageGroupInvoice", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = bd.L0(2131747406);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -112621464:
                                                                 if (str3.equals("CONTACT_JOINED")) {
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -108522133:
                                                                 if (str3.equals("AUTH_REGION")) {
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -107572034:
                                                                 if (str3.equals("MESSAGE_SCREENSHOT")) {
-                                                                    Y2 = dd.K0(2131754535).replace("un1", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.L0(2131754535).replace("un1", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2387,22 +2387,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -77243824:
                                                                 if (str3.equals("MESSAGE_SUGGEST_BIRTHDAY")) {
-                                                                    Y2 = dd.Z(2131747971, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131747963, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2411,22 +2411,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case -40534265:
                                                                 if (str3.equals("CHAT_DELETE_MEMBER")) {
-                                                                    Y2 = dd.Y(2131748040, "NotificationGroupKickMember", strArr2[0], strArr2[1], strArr2.length <= 2 ? str8 : strArr2[2]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748032, "NotificationGroupKickMember", strArr2[0], strArr2[1], strArr2.length <= 2 ? str8 : strArr2[2]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2435,13 +2435,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2449,25 +2449,25 @@ public class PushListenerController {
                                                             case -35560251:
                                                                 if (str3.equals("CHANNEL_MESSAGE_PAID_MEDIA")) {
                                                                     int parseInt3 = Integer.parseInt(strArr2[1]);
-                                                                    Y = dd.G(parseInt3, "NotificationChannelMessagePaidMedia", strArr2[0]);
-                                                                    K0 = dd.G(parseInt3, "NotificationPaidMedia", new Object[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.G(parseInt3, "NotificationChannelMessagePaidMedia", strArr2[0]);
+                                                                    L0 = bd.G(parseInt3, "NotificationPaidMedia", new Object[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2476,9 +2476,9 @@ public class PushListenerController {
                                                                 break;
                                                             case 65254746:
                                                                 if (str3.equals("CHAT_ADD_YOU")) {
-                                                                    i13 = i12;
-                                                                    Y2 = dd.Y(2131748033, "NotificationInvitedToGroup", strArr2[0], strArr2[1]);
-                                                                    i19 = i18;
+                                                                    i12 = i11;
+                                                                    Y2 = bd.Y(2131748025, "NotificationInvitedToGroup", strArr2[0], strArr2[1]);
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2487,22 +2487,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 120441350:
                                                                 if (str3.equals("PINNED_GIVEAWAY")) {
-                                                                    Y2 = dd.Z(2131747957, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131747949, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2511,22 +2511,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 141040782:
                                                                 if (str3.equals("CHAT_LEFT")) {
-                                                                    Y2 = dd.Y(2131748038, "NotificationGroupLeftMember", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748030, "NotificationGroupLeftMember", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2535,13 +2535,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2552,9 +2552,9 @@ public class PushListenerController {
                                                                     boolean endsWith = str3.endsWith("_COMMENT");
                                                                     if (strArr2 != null) {
                                                                         if (strArr2.length >= (endsWith ? 3 : 2)) {
-                                                                            str20 = dd.Z(startsWith ? endsWith ? 2131748051 : 2131748052 : endsWith ? 2131748053 : 2131748054, strArr2);
-                                                                            i13 = i12;
-                                                                            i19 = i18;
+                                                                            str20 = bd.Z(startsWith ? endsWith ? 2131748043 : 2131748044 : endsWith ? 2131748045 : 2131748046, strArr2);
+                                                                            i12 = i11;
+                                                                            i18 = i17;
                                                                             str19 = str28;
                                                                             obj = "STORY_NOTEXT";
                                                                             z24 = false;
@@ -2563,23 +2563,23 @@ public class PushListenerController {
                                                                             break;
                                                                         }
                                                                     }
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2587,34 +2587,34 @@ public class PushListenerController {
                                                             case 191667248:
                                                                 if (str3.equals("CHAT_MESSAGE_PAID_MEDIA")) {
                                                                     int parseInt4 = Integer.parseInt(strArr2[2]);
-                                                                    Y = dd.G(parseInt4, "NotificationChatMessagePaidMedia", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.G(parseInt4, "NotificationPaidMedia", new Object[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.G(parseInt4, "NotificationChatMessagePaidMedia", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.G(parseInt4, "NotificationPaidMedia", new Object[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 202550149:
                                                                 if (str3.equals("CHAT_VOICECHAT_INVITE")) {
-                                                                    Y2 = dd.Y(2131748042, "NotificationGroupInvitedToCall", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748034, "NotificationGroupInvitedToCall", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2623,97 +2623,97 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 309993049:
                                                                 if (str3.equals("CHAT_MESSAGE_DOC")) {
-                                                                    Y = dd.Y(2131748014, "NotificationMessageGroupDocument", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753975);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748006, "NotificationMessageGroupDocument", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753975);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 309995634:
                                                                 if (str3.equals("CHAT_MESSAGE_GEO")) {
-                                                                    Y = dd.Y(2131748008, "NotificationMessageGroupMap", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753961);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748000, "NotificationMessageGroupMap", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753961);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 309995749:
                                                                 if (str3.equals("CHAT_MESSAGE_GIF")) {
-                                                                    Y = dd.Y(2131748011, "NotificationMessageGroupGif", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753971);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748003, "NotificationMessageGroupGif", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753971);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 320532812:
                                                                 if (str3.equals("MESSAGES")) {
-                                                                    Y2 = dd.Z(2131748031, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131748023, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2722,13 +2722,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2736,63 +2736,63 @@ public class PushListenerController {
                                                             case 328933854:
                                                                 if (str3.equals("CHAT_MESSAGE_STICKER")) {
                                                                     if (strArr2.length <= 2 || TextUtils.isEmpty(strArr2[2])) {
-                                                                        Y = dd.Y(2131748001, "NotificationMessageGroupSticker", strArr2[0], strArr2[1]);
-                                                                        K0 = strArr2[1] + str7 + dd.K0(2131753936);
+                                                                        Y = bd.Y(2131747993, "NotificationMessageGroupSticker", strArr2[0], strArr2[1]);
+                                                                        L0 = strArr2[1] + str7 + bd.L0(2131753936);
                                                                     } else {
-                                                                        Y = dd.Y(2131748000, "NotificationMessageGroupStickerEmoji", strArr2[0], strArr2[1], strArr2[2]);
-                                                                        K0 = strArr2[2] + str7 + dd.K0(2131753936);
+                                                                        Y = bd.Y(2131747992, "NotificationMessageGroupStickerEmoji", strArr2[0], strArr2[1], strArr2[2]);
+                                                                        L0 = strArr2[2] + str7 + bd.L0(2131753936);
                                                                     }
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 331340546:
                                                                 if (str3.equals("CHANNEL_MESSAGE_AUDIO")) {
-                                                                    Y = dd.Y(2131752374, "ChannelMessageAudio", strArr2[0]);
-                                                                    K0 = dd.K0(2131753982);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752374, "ChannelMessageAudio", strArr2[0]);
+                                                                    L0 = bd.L0(2131753982);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 342406591:
                                                                 if (str3.equals("CHAT_VOICECHAT_END")) {
-                                                                    Y2 = dd.Y(2131748045, "NotificationGroupEndedCall", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748037, "NotificationGroupEndedCall", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2801,113 +2801,113 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 344816990:
                                                                 if (str3.equals("CHANNEL_MESSAGE_PHOTO")) {
-                                                                    Y = dd.Y(2131752365, "ChannelMessagePhoto", strArr2[0]);
-                                                                    K0 = dd.K0(2131753948);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752365, "ChannelMessagePhoto", strArr2[0]);
+                                                                    L0 = bd.L0(2131753948);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 346878138:
                                                                 if (str3.equals("CHANNEL_MESSAGE_ROUND")) {
-                                                                    Y = dd.Y(2131752362, "ChannelMessageRound", strArr2[0]);
-                                                                    K0 = dd.K0(2131753941);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752362, "ChannelMessageRound", strArr2[0]);
+                                                                    L0 = bd.L0(2131753941);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 347944993:
                                                                 if (str3.equals("CHANNEL_MESSAGE_STORY")) {
-                                                                    Y = dd.Y(2131748068, "NotificationChannelStory", strArr2[0]);
-                                                                    K0 = dd.K0(2131744753);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748060, "NotificationChannelStory", strArr2[0]);
+                                                                    L0 = bd.L0(2131744745);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 350376871:
                                                                 if (str3.equals("CHANNEL_MESSAGE_VIDEO")) {
-                                                                    Y = dd.Y(2131752356, "ChannelMessageVideo", strArr2[0]);
-                                                                    K0 = dd.K0(2131753933);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752356, "ChannelMessageVideo", strArr2[0]);
+                                                                    L0 = bd.L0(2131753933);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -2918,32 +2918,32 @@ public class PushListenerController {
                                                                     boolean endsWith2 = str3.endsWith("_COMMENT");
                                                                     if (strArr2 != null) {
                                                                     }
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 510462069:
                                                                 if (str3.equals("MESSAGE_GIFTCODE")) {
-                                                                    Y2 = dd.Y(2131748018, "NotificationMessageGiftCode", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "Months", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748010, "NotificationMessageGiftCode", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "Months", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2952,22 +2952,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 608430149:
                                                                 if (str3.equals("CHAT_VOICECHAT_INVITE_YOU")) {
-                                                                    Y2 = dd.Y(2131748041, "NotificationGroupInvitedYouToCall", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748033, "NotificationGroupInvitedYouToCall", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -2976,38 +2976,38 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 615714517:
                                                                 if (str3.equals("MESSAGE_PHOTO_SECRET")) {
-                                                                    Y = dd.Y(2131747981, "NotificationMessageSDPhoto", strArr2[0]);
-                                                                    K0 = dd.K0(2131753977);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747973, "NotificationMessageSDPhoto", strArr2[0]);
+                                                                    L0 = bd.L0(2131753977);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -3018,23 +3018,23 @@ public class PushListenerController {
                                                                     boolean endsWith22 = str3.endsWith("_COMMENT");
                                                                     if (strArr2 != null) {
                                                                     }
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -3042,34 +3042,34 @@ public class PushListenerController {
                                                             case 702966260:
                                                                 if (str3.equals("MESSAGE_STARGIFT_UNPACK_UPGRADE")) {
                                                                     str15 = strArr2[0];
-                                                                    Y = dd.Z(2131747964, str15);
-                                                                    K0 = dd.K0(2131749899);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747956, str15);
+                                                                    L0 = bd.L0(2131749898);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 715508879:
                                                                 if (str3.equals("PINNED_AUDIO")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748072, "NotificationActionPinnedVoiceUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748074, "NotificationActionPinnedVoice", strArr2[0], strArr2[1]) : dd.Y(2131748073, "NotificationActionPinnedVoiceChannel", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748064, "NotificationActionPinnedVoiceUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748066, "NotificationActionPinnedVoice", strArr2[0], strArr2[1]) : bd.Y(2131748065, "NotificationActionPinnedVoiceChannel", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3078,22 +3078,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 728985323:
                                                                 if (str3.equals("PINNED_PHOTO")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748099, "NotificationActionPinnedPhotoUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748101, "NotificationActionPinnedPhoto", strArr2[0], strArr2[1]) : dd.Y(2131748100, "NotificationActionPinnedPhotoChannel", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748091, "NotificationActionPinnedPhotoUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748093, "NotificationActionPinnedPhoto", strArr2[0], strArr2[1]) : bd.Y(2131748092, "NotificationActionPinnedPhotoChannel", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3102,22 +3102,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 731046471:
                                                                 if (str3.equals("PINNED_ROUND")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748090, "NotificationActionPinnedRoundUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748092, "NotificationActionPinnedRound", strArr2[0], strArr2[1]) : dd.Y(2131748091, "NotificationActionPinnedRoundChannel", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748082, "NotificationActionPinnedRoundUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748084, "NotificationActionPinnedRound", strArr2[0], strArr2[1]) : bd.Y(2131748083, "NotificationActionPinnedRoundChannel", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3126,22 +3126,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 734545204:
                                                                 if (str3.equals("PINNED_VIDEO")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748075, "NotificationActionPinnedVideoUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748077, "NotificationActionPinnedVideo", strArr2[0], strArr2[1]) : dd.Y(2131748076, "NotificationActionPinnedVideoChannel", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748067, "NotificationActionPinnedVideoUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748069, "NotificationActionPinnedVideo", strArr2[0], strArr2[1]) : bd.Y(2131748068, "NotificationActionPinnedVideoChannel", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3150,47 +3150,47 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 802032552:
                                                                 if (str3.equals("MESSAGE_CONTACT")) {
-                                                                    Y = dd.Z(2131748025, strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753979);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131748017, strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753979);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 860688476:
                                                                 if (str3.equals("CHAT_MESSAGE_TODO_DONE")) {
-                                                                    Y2 = dd.Z(2131747996, strArr2[0], strArr2[1], strArr2[2]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131747988, strArr2[0], strArr2[1], strArr2[2]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3199,13 +3199,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -3213,38 +3213,38 @@ public class PushListenerController {
                                                             case 901537717:
                                                                 if (str3.equals("CHANNEL_MESSAGE_GIVEAWAY_STARS")) {
                                                                     try {
-                                                                        i22 = Integer.parseInt(strArr2[1]);
+                                                                        i21 = Integer.parseInt(strArr2[1]);
                                                                     } catch (Exception unused2) {
-                                                                        i22 = 1;
+                                                                        i21 = 1;
                                                                     }
-                                                                    Y = dd.Z(2131748028, strArr2[0], dd.G(i22, "AmongWinners", new Object[0]), strArr2[2]);
-                                                                    K0 = dd.K0(2131753492);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131748020, strArr2[0], bd.G(i21, "AmongWinners", new Object[0]), strArr2[2]);
+                                                                    L0 = bd.L0(2131753492);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 954623703:
                                                                 if (str3.equals("MESSAGE_GIVEAWAY")) {
-                                                                    Y2 = dd.Y(2131748017, "NotificationMessageGiveaway", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748009, "NotificationMessageGiveaway", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3253,13 +3253,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -3267,34 +3267,34 @@ public class PushListenerController {
                                                             case 977076186:
                                                                 if (str3.equals("MESSAGE_STARGIFT")) {
                                                                     str15 = strArr2[0];
-                                                                    Y = dd.J(Integer.parseInt(strArr2[1]), "NotificationMessageStarGift", strArr2[0]);
-                                                                    K0 = dd.I(Integer.parseInt(strArr2[1]), "Gift2Notification");
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.J(Integer.parseInt(strArr2[1]), "NotificationMessageStarGift", strArr2[0]);
+                                                                    L0 = bd.I(Integer.parseInt(strArr2[1]), "Gift2Notification");
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 991498806:
                                                                 if (str3.equals("PINNED_GEOLIVE")) {
-                                                                    Y2 = j17 > j11 ? dd.Z(2131748115, strArr2[0], strArr2[1]) : z16 ? dd.Z(2131748117, strArr2[0], strArr2[1]) : dd.Z(2131748116, strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Z(2131748107, strArr2[0], strArr2[1]) : z16 ? bd.Z(2131748109, strArr2[0], strArr2[1]) : bd.Z(2131748108, strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3303,46 +3303,46 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1007364121:
                                                                 if (str3.equals("CHANNEL_MESSAGE_GAME_SCORE")) {
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     z24 = false;
-                                                                    Y2 = dd.Y(2131748020, "NotificationMessageGameScored", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    Y2 = bd.Y(2131748012, "NotificationMessageGameScored", strArr2[0], strArr2[1], strArr2[2]);
                                                                     z25 = false;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = Y2;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1019850010:
                                                                 if (str3.equals("CHAT_MESSAGE_DOCS")) {
-                                                                    Y2 = dd.Y(2131748044, "NotificationGroupFew", strArr2[0], strArr2[1], dd.G(Utilities.z(strArr2[2]).intValue(), "Files", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748036, "NotificationGroupFew", strArr2[0], strArr2[1], bd.G(Utilities.z(strArr2[2]).intValue(), "Files", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3351,22 +3351,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1019917311:
                                                                 if (str3.equals("CHAT_MESSAGE_FWDS")) {
-                                                                    Y2 = dd.Y(2131748043, "NotificationGroupForwardedFew", strArr2[0], strArr2[1], dd.G(Utilities.z(strArr2[2]).intValue(), "messages", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748035, "NotificationGroupForwardedFew", strArr2[0], strArr2[1], bd.G(Utilities.z(strArr2[2]).intValue(), "messages", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3375,147 +3375,147 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1019926225:
                                                                 if (str3.equals("CHAT_MESSAGE_GAME")) {
-                                                                    Y = dd.Y(2131748013, "NotificationMessageGroupGame", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = dd.K0(2131753972);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748005, "NotificationMessageGroupGame", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = bd.L0(2131753972);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1020207774:
                                                                 if (str3.equals("CHAT_MESSAGE_POLL")) {
-                                                                    Y = dd.Z(2131748004, strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = dd.K0(2131747200);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747996, strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = bd.L0(2131747193);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1020243252:
                                                                 if (str3.equals("CHAT_MESSAGE_QUIZ")) {
-                                                                    Y = dd.Y(2131748003, "NotificationMessageGroupQuiz2", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = dd.K0(2131747179);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747995, "NotificationMessageGroupQuiz2", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = bd.L0(2131747172);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1020317708:
                                                                 if (str3.equals("CHAT_MESSAGE_TEXT")) {
-                                                                    Y = dd.Y(2131747999, "NotificationMessageGroupText", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = strArr2[2];
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747991, "NotificationMessageGroupText", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = strArr2[2];
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1020326693:
                                                                 if (str3.equals("CHAT_MESSAGE_TODO")) {
-                                                                    Y = dd.Z(2131747998, strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = dd.K0(2131744134);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747990, strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = bd.L0(2131744119);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1054583304:
                                                                 if (str3.equals("MESSAGE_STORY_MENTION")) {
-                                                                    Y2 = dd.K0(2131744614);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.L0(2131744605);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3524,22 +3524,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1060282259:
                                                                 if (str3.equals("MESSAGE_DOCS")) {
-                                                                    Y2 = dd.Y(2131748023, "NotificationMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "Files", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748015, "NotificationMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "Files", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3548,22 +3548,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1060349560:
                                                                 if (str3.equals("MESSAGE_FWDS")) {
-                                                                    Y2 = dd.Y(2131748022, "NotificationMessageForwardFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "messages", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748014, "NotificationMessageForwardFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "messages", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3572,147 +3572,147 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1060358474:
                                                                 if (str3.equals("MESSAGE_GAME")) {
-                                                                    Y = dd.Y(2131748021, "NotificationMessageGame", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753972);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748013, "NotificationMessageGame", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753972);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1060640023:
                                                                 if (str3.equals("MESSAGE_POLL")) {
-                                                                    Y = dd.Z(2131747985, strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131747200);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747977, strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131747193);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1060675501:
                                                                 if (str3.equals("MESSAGE_QUIZ")) {
-                                                                    Y = dd.Z(2131747984, strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131746460);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747976, strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131746453);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1060749957:
                                                                 if (str3.equals("MESSAGE_TEXT")) {
-                                                                    Y = dd.Y(2131747970, "NotificationMessageText", strArr2[0], strArr2[1]);
-                                                                    K0 = strArr2[1];
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747962, "NotificationMessageText", strArr2[0], strArr2[1]);
+                                                                    L0 = strArr2[1];
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1060758942:
                                                                 if (str3.equals("MESSAGE_TODO")) {
-                                                                    Y = dd.Z(2131747969, strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131744134);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747961, strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131744119);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1073049781:
                                                                 if (str3.equals("PINNED_NOTEXT")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748102, "NotificationActionPinnedNoTextUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748104, "NotificationActionPinnedNoText", strArr2[0], strArr2[1]) : dd.Y(2131748103, "NotificationActionPinnedNoTextChannel", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748094, "NotificationActionPinnedNoTextUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748096, "NotificationActionPinnedNoText", strArr2[0], strArr2[1]) : bd.Y(2131748095, "NotificationActionPinnedNoTextChannel", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3721,22 +3721,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1078101399:
                                                                 if (str3.equals("CHAT_TITLE_EDITED")) {
-                                                                    Y2 = dd.Y(2131748059, "NotificationEditedGroupName", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748051, "NotificationEditedGroupName", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3745,38 +3745,38 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1110103437:
                                                                 if (str3.equals("CHAT_MESSAGE_NOTEXT")) {
-                                                                    Y = dd.Y(2131748006, "NotificationMessageGroupNoText", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131748618);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747998, "NotificationMessageGroupNoText", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131748611);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -3784,13 +3784,13 @@ public class PushListenerController {
                                                             case 1144183001:
                                                                 if (str3.equals("MESSAGE_GIVEAWAY_STARS")) {
                                                                     try {
-                                                                        i23 = Integer.parseInt(strArr2[1]);
+                                                                        i22 = Integer.parseInt(strArr2[1]);
                                                                     } catch (Exception unused3) {
-                                                                        i23 = 1;
+                                                                        i22 = 1;
                                                                     }
-                                                                    Y2 = dd.Z(2131747974, strArr2[0], dd.G(i23, "AmongWinners", new Object[0]), strArr2[2]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Z(2131747966, strArr2[0], bd.G(i22, "AmongWinners", new Object[0]), strArr2[2]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3799,13 +3799,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -3813,34 +3813,34 @@ public class PushListenerController {
                                                             case 1151995881:
                                                                 if (str3.equals("MESSAGE_PAID_MEDIA")) {
                                                                     int parseInt5 = Integer.parseInt(strArr2[1]);
-                                                                    Y = dd.G(parseInt5, "NotificationMessagePaidMedia", strArr2[0]);
-                                                                    K0 = dd.G(parseInt5, "NotificationPaidMedia", new Object[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.G(parseInt5, "NotificationMessagePaidMedia", strArr2[0]);
+                                                                    L0 = bd.G(parseInt5, "NotificationPaidMedia", new Object[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1160762272:
                                                                 if (str3.equals("CHAT_MESSAGE_PHOTOS")) {
-                                                                    Y2 = dd.Y(2131748044, "NotificationGroupFew", strArr2[0], strArr2[1], dd.G(Utilities.z(strArr2[2]).intValue(), "Photos", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748036, "NotificationGroupFew", strArr2[0], strArr2[1], bd.G(Utilities.z(strArr2[2]).intValue(), "Photos", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3849,47 +3849,47 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1172918249:
                                                                 if (str3.equals("CHANNEL_MESSAGE_GEOLIVE")) {
-                                                                    Y = dd.Y(2131752369, "ChannelMessageLiveLocation", strArr2[0]);
-                                                                    K0 = dd.K0(2131753966);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752369, "ChannelMessageLiveLocation", strArr2[0]);
+                                                                    L0 = bd.L0(2131753966);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1234591620:
                                                                 if (str3.equals("CHAT_MESSAGE_GAME_SCORE")) {
-                                                                    Y2 = dd.Y(2131748012, "NotificationMessageGroupGameScored", strArr2[0], strArr2[1], strArr2[2], strArr2[3]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748004, "NotificationMessageGroupGameScored", strArr2[0], strArr2[1], strArr2[2], strArr2[3]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -3898,122 +3898,122 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1281128640:
                                                                 if (str3.equals("MESSAGE_DOC")) {
-                                                                    Y = dd.Y(2131748024, "NotificationMessageDocument", strArr2[0]);
-                                                                    K0 = dd.K0(2131753975);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748016, "NotificationMessageDocument", strArr2[0]);
+                                                                    L0 = bd.L0(2131753975);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1281131225:
                                                                 if (str3.equals("MESSAGE_GEO")) {
-                                                                    Y = dd.Y(2131747992, "NotificationMessageMap", strArr2[0]);
-                                                                    K0 = dd.K0(2131753961);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747984, "NotificationMessageMap", strArr2[0]);
+                                                                    L0 = bd.L0(2131753961);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1281131340:
                                                                 if (str3.equals("MESSAGE_GIF")) {
-                                                                    Y = dd.Y(2131748019, "NotificationMessageGif", strArr2[0]);
-                                                                    K0 = dd.K0(2131753971);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748011, "NotificationMessageGif", strArr2[0]);
+                                                                    L0 = bd.L0(2131753971);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1310789062:
                                                                 if (str3.equals("MESSAGE_NOTEXT")) {
-                                                                    Y = dd.Y(2131747990, "NotificationMessageNoText", strArr2[0]);
-                                                                    K0 = dd.K0(2131748618);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747982, "NotificationMessageNoText", strArr2[0]);
+                                                                    L0 = bd.L0(2131748611);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1333118583:
                                                                 if (str3.equals("CHAT_MESSAGE_VIDEOS")) {
-                                                                    Y2 = dd.Y(2131748044, "NotificationGroupFew", strArr2[0], strArr2[1], dd.G(Utilities.z(strArr2[2]).intValue(), "Videos", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748036, "NotificationGroupFew", strArr2[0], strArr2[1], bd.G(Utilities.z(strArr2[2]).intValue(), "Videos", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4022,22 +4022,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1361447897:
                                                                 if (str3.equals("MESSAGE_PHOTOS")) {
-                                                                    Y2 = dd.Y(2131748023, "NotificationMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "Photos", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748015, "NotificationMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "Photos", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4046,38 +4046,38 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1369266398:
                                                                 if (str3.equals("CHAT_MESSAGE_GIVEAWAY")) {
-                                                                    Y = dd.Y(2131748027, "NotificationMessageChatGiveaway", strArr2[0], strArr2[1], strArr2[2], strArr2[3]);
-                                                                    K0 = dd.K0(2131753492);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748019, "NotificationMessageChatGiveaway", strArr2[0], strArr2[1], strArr2[2], strArr2[3]);
+                                                                    L0 = bd.L0(2131753492);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -4085,82 +4085,82 @@ public class PushListenerController {
                                                             case 1420317335:
                                                                 if (str3.equals("MESSAGE_STARGIFT_UPGRADE")) {
                                                                     str15 = strArr2[0];
-                                                                    Y = dd.Z(2131747963, str15);
-                                                                    K0 = dd.K0(2131749898);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Z(2131747955, str15);
+                                                                    L0 = bd.L0(2131749897);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1449476787:
                                                                 if (str3.equals("CHANNEL_MESSAGE_GIVEAWAY")) {
-                                                                    Y = dd.Y(2131748029, "NotificationMessageChannelGiveaway", strArr2[0], strArr2[1], strArr2[2]);
-                                                                    K0 = dd.K0(2131753492);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748021, "NotificationMessageChannelGiveaway", strArr2[0], strArr2[1], strArr2[2]);
+                                                                    L0 = bd.L0(2131753492);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1498266155:
                                                                 if (str3.equals("PHONE_CALL_MISSED")) {
-                                                                    i13 = i12;
+                                                                    i12 = i11;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = z24;
-                                                                    i19 = i18;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     str20 = null;
                                                                     str21 = null;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1533804208:
                                                                 if (str3.equals("MESSAGE_VIDEOS")) {
-                                                                    Y2 = dd.Y(2131748023, "NotificationMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "Videos", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748015, "NotificationMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "Videos", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4169,22 +4169,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1540131626:
                                                                 if (str3.equals("MESSAGE_PLAYLIST")) {
-                                                                    Y2 = dd.Y(2131748023, "NotificationMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "MusicFiles", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748015, "NotificationMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "MusicFiles", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4193,172 +4193,172 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1547988151:
                                                                 if (str3.equals("CHAT_MESSAGE_AUDIO")) {
-                                                                    Y = dd.Y(2131748016, "NotificationMessageGroupAudio", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753982);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748008, "NotificationMessageGroupAudio", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753982);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1561464595:
                                                                 if (str3.equals("CHAT_MESSAGE_PHOTO")) {
-                                                                    Y = dd.Y(2131748005, "NotificationMessageGroupPhoto", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753948);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747997, "NotificationMessageGroupPhoto", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753948);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1563525743:
                                                                 if (str3.equals("CHAT_MESSAGE_ROUND")) {
-                                                                    Y = dd.Y(2131748002, "NotificationMessageGroupRound", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753941);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747994, "NotificationMessageGroupRound", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753941);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1564592598:
                                                                 if (str3.equals("CHAT_MESSAGE_STORY")) {
-                                                                    Y = dd.Y(2131748063, "NotificationChatStory", strArr2[0]);
-                                                                    K0 = dd.K0(2131744753);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748055, "NotificationChatStory", strArr2[0]);
+                                                                    L0 = bd.L0(2131744745);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1567024476:
                                                                 if (str3.equals("CHAT_MESSAGE_VIDEO")) {
-                                                                    Y = dd.Y(2131747995, "NotificationMessageGroupVideo", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753933);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747987, "NotificationMessageGroupVideo", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753933);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1810705077:
                                                                 if (str3.equals("MESSAGE_INVOICE")) {
-                                                                    Y = dd.Y(2131747994, "NotificationMessageInvoice", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131747414);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131747986, "NotificationMessageInvoice", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131747406);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1815177512:
                                                                 if (str3.equals("CHANNEL_MESSAGES")) {
-                                                                    Y2 = dd.Y(2131752375, "ChannelMessageAlbum", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131752375, "ChannelMessageAlbum", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4367,13 +4367,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -4381,32 +4381,32 @@ public class PushListenerController {
                                                             case 1837240696:
                                                                 if (str3.equals("CHAT_REACT_PAID_MEDIA")) {
                                                                     int parseInt6 = Integer.parseInt(strArr2[1]);
-                                                                    reactedText = dd.G(parseInt6, "NotificationPinnedPaidMedia", strArr2[0]);
-                                                                    str20 = dd.G(parseInt6, "NotificationPinnedPaidMedia", strArr2[0]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    reactedText = bd.G(parseInt6, "NotificationPinnedPaidMedia", strArr2[0]);
+                                                                    str20 = bd.G(parseInt6, "NotificationPinnedPaidMedia", strArr2[0]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 1954774321:
                                                                 if (str3.equals("CHAT_MESSAGE_PLAYLIST")) {
-                                                                    Y2 = dd.Y(2131748044, "NotificationGroupFew", strArr2[0], strArr2[1], dd.G(Utilities.z(strArr2[2]).intValue(), "MusicFiles", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748036, "NotificationGroupFew", strArr2[0], strArr2[1], bd.G(Utilities.z(strArr2[2]).intValue(), "MusicFiles", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4415,13 +4415,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -4430,10 +4430,10 @@ public class PushListenerController {
                                                                 break;
                                                             case 2008915478:
                                                                 if (str3.equals("STORY_LIVE")) {
-                                                                    G = dd.K0(2131744641);
+                                                                    G = bd.L0(2131744632);
                                                                     str21 = G;
-                                                                    i13 = i12;
-                                                                    i19 = i26;
+                                                                    i12 = i11;
+                                                                    i18 = i25;
                                                                     str19 = str28;
                                                                     obj = "STORY_NOTEXT";
                                                                     z24 = false;
@@ -4441,22 +4441,22 @@ public class PushListenerController {
                                                                     z25 = false;
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 2014789757:
                                                                 if (str3.equals("CHAT_PHOTO_EDITED")) {
-                                                                    Y2 = dd.Y(2131748058, "NotificationEditedGroupPhoto", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131748050, "NotificationEditedGroupPhoto", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4465,22 +4465,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 2022049433:
                                                                 if (str3.equals("PINNED_CONTACT")) {
-                                                                    Y2 = j17 > j11 ? dd.Y(2131748129, "NotificationActionPinnedContactUser", strArr2[0], strArr2[1]) : z16 ? dd.Y(2131748131, "NotificationActionPinnedContact2", strArr2[0], strArr2[2], strArr2[1]) : dd.Y(2131748130, "NotificationActionPinnedContactChannel2", strArr2[0], strArr2[1]);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = j17 > j11 ? bd.Y(2131748121, "NotificationActionPinnedContactUser", strArr2[0], strArr2[1]) : z16 ? bd.Y(2131748123, "NotificationActionPinnedContact2", strArr2[0], strArr2[2], strArr2[1]) : bd.Y(2131748122, "NotificationActionPinnedContactChannel2", strArr2[0], strArr2[1]);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4489,22 +4489,22 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 2034984710:
                                                                 if (str3.equals("CHANNEL_MESSAGE_PLAYLIST")) {
-                                                                    Y2 = dd.Y(2131752371, "ChannelMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "MusicFiles", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131752371, "ChannelMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "MusicFiles", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4513,47 +4513,47 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 2048733346:
                                                                 if (str3.equals("CHANNEL_MESSAGE_NOTEXT")) {
-                                                                    Y = dd.Y(2131752366, "ChannelMessageNoText", strArr2[0]);
-                                                                    K0 = dd.K0(2131748618);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131752366, "ChannelMessageNoText", strArr2[0]);
+                                                                    L0 = bd.L0(2131748611);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 2099392181:
                                                                 if (str3.equals("CHANNEL_MESSAGE_PHOTOS")) {
-                                                                    Y2 = dd.Y(2131752371, "ChannelMessageFew", strArr2[0], dd.G(Utilities.z(strArr2[1]).intValue(), "Photos", new Object[0]));
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y2 = bd.Y(2131752371, "ChannelMessageFew", strArr2[0], bd.G(Utilities.z(strArr2[1]).intValue(), "Photos", new Object[0]));
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     str20 = null;
@@ -4562,13 +4562,13 @@ public class PushListenerController {
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
@@ -4576,68 +4576,68 @@ public class PushListenerController {
                                                             case 2103150375:
                                                                 if (str3.equals("MESSAGE_STARGIFT_PREPAID_UPGRADE")) {
                                                                     str15 = strArr2[0];
-                                                                    Y = dd.J(Integer.parseInt(strArr2[1]), "NotificationMessageUniqueStarGiftPrepaidUpgrade", strArr2[0]);
-                                                                    K0 = dd.K0(2131749904);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.J(Integer.parseInt(strArr2[1]), "NotificationMessageUniqueStarGiftPrepaidUpgrade", strArr2[0]);
+                                                                    L0 = bd.L0(2131749903);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             case 2140162142:
                                                                 if (str3.equals("CHAT_MESSAGE_GEOLIVE")) {
-                                                                    Y = dd.Y(2131748009, "NotificationMessageGroupLiveLocation", strArr2[0], strArr2[1]);
-                                                                    K0 = dd.K0(2131753966);
-                                                                    i13 = i12;
-                                                                    i19 = i18;
+                                                                    Y = bd.Y(2131748001, "NotificationMessageGroupLiveLocation", strArr2[0], strArr2[1]);
+                                                                    L0 = bd.L0(2131753966);
+                                                                    i12 = i11;
+                                                                    i18 = i17;
                                                                     str19 = str28;
                                                                     z24 = false;
                                                                     z25 = false;
                                                                     str21 = Y;
-                                                                    str20 = K0;
+                                                                    str20 = L0;
                                                                     obj = "STORY_NOTEXT";
                                                                     break;
                                                                 }
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                             default:
-                                                                i13 = i12;
+                                                                i12 = i11;
                                                                 obj = "STORY_NOTEXT";
                                                                 z24 = false;
-                                                                if (v2.a) {
+                                                                if (r2.a) {
                                                                 }
                                                                 z25 = z24;
-                                                                i19 = i18;
+                                                                i18 = i17;
                                                                 str19 = str28;
                                                                 str20 = null;
                                                                 str21 = null;
                                                                 break;
                                                         }
-                                                        if (v2.a) {
+                                                        if (r2.a) {
                                                             j24 = j17;
                                                         } else {
                                                             StringBuilder sb3 = new StringBuilder();
@@ -4648,17 +4648,17 @@ public class PushListenerController {
                                                             j24 = j17;
                                                             sb3.append(j24);
                                                             sb3.append(" mid = ");
-                                                            sb3.append(i19);
-                                                            f8.b(sb3.toString());
+                                                            sb3.append(i18);
+                                                            a8.b(sb3.toString());
                                                         }
                                                         if (str21 != null) {
                                                             if (!str3.equals("REACT_STORY") && !str3.equals("REACT_STORY_HIDDEN")) {
                                                                 z26 = z24;
                                                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                                                                if (z26 && i19 > 0) {
-                                                                    i19 = -i19;
+                                                                if (z26 && i18 > 0) {
+                                                                    i18 = -i18;
                                                                 }
-                                                                tL_message.id = i19;
+                                                                tL_message.id = i18;
                                                                 tL_message.random_id = j27;
                                                                 if (str20 != null) {
                                                                     str20 = str21;
@@ -4676,19 +4676,19 @@ public class PushListenerController {
                                                                     TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
                                                                     tL_message.peer_id = tL_peerChannel;
                                                                     tL_peerChannel.channel_id = j21;
-                                                                    i20 = i13;
+                                                                    i19 = i12;
                                                                     j25 = j22;
                                                                 } else if (j22 != 0) {
                                                                     TLRPC.TL_peerChat tL_peerChat2 = new TLRPC.TL_peerChat();
                                                                     tL_message.peer_id = tL_peerChat2;
                                                                     j25 = j22;
                                                                     tL_peerChat2.chat_id = j25;
-                                                                    i20 = i13;
+                                                                    i19 = i12;
                                                                 } else {
                                                                     j25 = j22;
                                                                     TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
                                                                     tL_message.peer_id = tL_peerUser2;
-                                                                    i20 = i13;
+                                                                    i19 = i12;
                                                                     tL_peerUser2.user_id = j26;
                                                                 }
                                                                 tL_message.flags |= 256;
@@ -4700,7 +4700,7 @@ public class PushListenerController {
                                                                     TLRPC.TL_peerChannel tL_peerChannel2 = new TLRPC.TL_peerChannel();
                                                                     tL_message.from_id = tL_peerChannel2;
                                                                     tL_peerChannel2.channel_id = j23;
-                                                                } else if (i17 != 0) {
+                                                                } else if (i16 != 0) {
                                                                     TLRPC.TL_peerUser tL_peerUser3 = new TLRPC.TL_peerUser();
                                                                     tL_message.from_id = tL_peerUser3;
                                                                     tL_peerUser3.user_id = optLong;
@@ -4712,103 +4712,103 @@ public class PushListenerController {
                                                                     tL_message.mentioned = z27;
                                                                     tL_message.silent = z22;
                                                                     tL_message.from_scheduled = z18;
-                                                                    kjVar = new kj(i20, tL_message, str21, str19, str15, z25, z20, z21, has);
-                                                                    i13 = i20;
-                                                                    if (i14 != 0) {
+                                                                    ziVar = new zi(i19, tL_message, str21, str19, str15, z25, z20, z21, has);
+                                                                    i12 = i19;
+                                                                    if (i13 != 0) {
                                                                         tL_message.reply_to = new TLRPC.TL_messageReplyHeader();
-                                                                        TLRPC.MessageReplyHeader messageReplyHeader = kjVar.k.reply_to;
+                                                                        TLRPC.MessageReplyHeader messageReplyHeader = ziVar.k.reply_to;
                                                                         messageReplyHeader.forum_topic = true;
-                                                                        messageReplyHeader.reply_to_top_id = i14;
+                                                                        messageReplyHeader.reply_to_top_id = i13;
                                                                     }
-                                                                    kjVar.J = z26;
-                                                                    kjVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
+                                                                    ziVar.J = z26;
+                                                                    ziVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
                                                                     if (!str3.equals(obj) && !str3.equals("STORY_HIDDEN_AUTHOR")) {
                                                                         z28 = false;
-                                                                        kjVar.K = z28;
-                                                                        kjVar.N = str3.equals("STORY_LIVE");
-                                                                        kjVar.L = str3.equals("MESSAGE_STORY_MENTION");
-                                                                        kjVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
+                                                                        ziVar.K = z28;
+                                                                        ziVar.N = str3.equals("STORY_LIVE");
+                                                                        ziVar.L = str3.equals("MESSAGE_STORY_MENTION");
+                                                                        ziVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
                                                                         ArrayList arrayList4 = new ArrayList();
-                                                                        arrayList4.add(kjVar);
-                                                                        f8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
-                                                                        if (!kjVar.J && !kjVar.I && !kjVar.L && !kjVar.K && !kjVar.M && !z31 && !z23 && i19 > 0) {
-                                                                            i0.g3(new Runnable() { // from class: org.telegram.messenger.du
+                                                                        arrayList4.add(ziVar);
+                                                                        a8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
+                                                                        if (!ziVar.J && !ziVar.I && !ziVar.L && !ziVar.K && !ziVar.M && !z31 && !z23 && i18 > 0) {
+                                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.jt
                                                                                 @Override // java.lang.Runnable
                                                                                 public final void run() {
-                                                                                    PushListenerController.lambda$processRemoteMessage$5(i13, j24, i19);
+                                                                                    PushListenerController.lambda$processRemoteMessage$5(i12, j24, i18);
                                                                                 }
                                                                             });
                                                                         }
-                                                                        pt.t(i13).K(arrayList4, true, true, countDownLatch);
-                                                                        ConnectionsManager.onInternalPushReceived(i13);
-                                                                        ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                                                                        us.t(i12).K(arrayList4, true, true, countDownLatch);
+                                                                        ConnectionsManager.onInternalPushReceived(i12);
+                                                                        ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                                                                         break;
                                                                     }
                                                                     z28 = true;
-                                                                    kjVar.K = z28;
-                                                                    kjVar.N = str3.equals("STORY_LIVE");
-                                                                    kjVar.L = str3.equals("MESSAGE_STORY_MENTION");
-                                                                    kjVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
+                                                                    ziVar.K = z28;
+                                                                    ziVar.N = str3.equals("STORY_LIVE");
+                                                                    ziVar.L = str3.equals("MESSAGE_STORY_MENTION");
+                                                                    ziVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
                                                                     ArrayList arrayList42 = new ArrayList();
-                                                                    arrayList42.add(kjVar);
-                                                                    f8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
-                                                                    if (!kjVar.J) {
-                                                                        i0.g3(new Runnable() { // from class: org.telegram.messenger.du
+                                                                    arrayList42.add(ziVar);
+                                                                    a8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
+                                                                    if (!ziVar.J) {
+                                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.jt
                                                                             @Override // java.lang.Runnable
                                                                             public final void run() {
-                                                                                PushListenerController.lambda$processRemoteMessage$5(i13, j24, i19);
+                                                                                PushListenerController.lambda$processRemoteMessage$5(i12, j24, i18);
                                                                             }
                                                                         });
                                                                     }
-                                                                    pt.t(i13).K(arrayList42, true, true, countDownLatch);
-                                                                    ConnectionsManager.onInternalPushReceived(i13);
-                                                                    ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                                                                    us.t(i12).K(arrayList42, true, true, countDownLatch);
+                                                                    ConnectionsManager.onInternalPushReceived(i12);
+                                                                    ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                                                                 }
                                                                 z27 = true;
                                                                 tL_message.mentioned = z27;
                                                                 tL_message.silent = z22;
                                                                 tL_message.from_scheduled = z18;
-                                                                kjVar = new kj(i20, tL_message, str21, str19, str15, z25, z20, z21, has);
-                                                                i13 = i20;
-                                                                if (i14 != 0) {
+                                                                ziVar = new zi(i19, tL_message, str21, str19, str15, z25, z20, z21, has);
+                                                                i12 = i19;
+                                                                if (i13 != 0) {
                                                                 }
-                                                                kjVar.J = z26;
-                                                                kjVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
+                                                                ziVar.J = z26;
+                                                                ziVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
                                                                 if (!str3.equals(obj)) {
                                                                     z28 = false;
-                                                                    kjVar.K = z28;
-                                                                    kjVar.N = str3.equals("STORY_LIVE");
-                                                                    kjVar.L = str3.equals("MESSAGE_STORY_MENTION");
-                                                                    kjVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
+                                                                    ziVar.K = z28;
+                                                                    ziVar.N = str3.equals("STORY_LIVE");
+                                                                    ziVar.L = str3.equals("MESSAGE_STORY_MENTION");
+                                                                    ziVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
                                                                     ArrayList arrayList422 = new ArrayList();
-                                                                    arrayList422.add(kjVar);
-                                                                    f8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
-                                                                    if (!kjVar.J) {
+                                                                    arrayList422.add(ziVar);
+                                                                    a8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
+                                                                    if (!ziVar.J) {
                                                                     }
-                                                                    pt.t(i13).K(arrayList422, true, true, countDownLatch);
-                                                                    ConnectionsManager.onInternalPushReceived(i13);
-                                                                    ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                                                                    us.t(i12).K(arrayList422, true, true, countDownLatch);
+                                                                    ConnectionsManager.onInternalPushReceived(i12);
+                                                                    ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                                                                 }
                                                                 z28 = true;
-                                                                kjVar.K = z28;
-                                                                kjVar.N = str3.equals("STORY_LIVE");
-                                                                kjVar.L = str3.equals("MESSAGE_STORY_MENTION");
-                                                                kjVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
+                                                                ziVar.K = z28;
+                                                                ziVar.N = str3.equals("STORY_LIVE");
+                                                                ziVar.L = str3.equals("MESSAGE_STORY_MENTION");
+                                                                ziVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
                                                                 ArrayList arrayList4222 = new ArrayList();
-                                                                arrayList4222.add(kjVar);
-                                                                f8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
-                                                                if (!kjVar.J) {
+                                                                arrayList4222.add(ziVar);
+                                                                a8.b("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
+                                                                if (!ziVar.J) {
                                                                 }
-                                                                pt.t(i13).K(arrayList4222, true, true, countDownLatch);
-                                                                ConnectionsManager.onInternalPushReceived(i13);
-                                                                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                                                                us.t(i12).K(arrayList4222, true, true, countDownLatch);
+                                                                ConnectionsManager.onInternalPushReceived(i12);
+                                                                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                                                             }
                                                             z26 = true;
                                                             TLRPC.TL_message tL_message2 = new TLRPC.TL_message();
                                                             if (z26) {
-                                                                i19 = -i19;
+                                                                i18 = -i18;
                                                             }
-                                                            tL_message2.id = i19;
+                                                            tL_message2.id = i18;
                                                             tL_message2.random_id = j27;
                                                             if (str20 != null) {
                                                             }
@@ -4829,62 +4829,62 @@ public class PushListenerController {
                                                                 tL_message2.mentioned = z27;
                                                                 tL_message2.silent = z22;
                                                                 tL_message2.from_scheduled = z18;
-                                                                kjVar = new kj(i20, tL_message2, str21, str19, str15, z25, z20, z21, has);
-                                                                i13 = i20;
-                                                                if (i14 != 0) {
+                                                                ziVar = new zi(i19, tL_message2, str21, str19, str15, z25, z20, z21, has);
+                                                                i12 = i19;
+                                                                if (i13 != 0) {
                                                                 }
-                                                                kjVar.J = z26;
-                                                                kjVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
+                                                                ziVar.J = z26;
+                                                                ziVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
                                                                 if (!str3.equals(obj)) {
                                                                 }
                                                                 z28 = true;
-                                                                kjVar.K = z28;
-                                                                kjVar.N = str3.equals("STORY_LIVE");
-                                                                kjVar.L = str3.equals("MESSAGE_STORY_MENTION");
-                                                                kjVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
+                                                                ziVar.K = z28;
+                                                                ziVar.N = str3.equals("STORY_LIVE");
+                                                                ziVar.L = str3.equals("MESSAGE_STORY_MENTION");
+                                                                ziVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
                                                                 ArrayList arrayList42222 = new ArrayList();
-                                                                arrayList42222.add(kjVar);
-                                                                f8.b("PushListenerController push notification to NotificationsController of " + tL_message2.dialog_id);
-                                                                if (!kjVar.J) {
+                                                                arrayList42222.add(ziVar);
+                                                                a8.b("PushListenerController push notification to NotificationsController of " + tL_message2.dialog_id);
+                                                                if (!ziVar.J) {
                                                                 }
-                                                                pt.t(i13).K(arrayList42222, true, true, countDownLatch);
-                                                                ConnectionsManager.onInternalPushReceived(i13);
-                                                                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                                                                us.t(i12).K(arrayList42222, true, true, countDownLatch);
+                                                                ConnectionsManager.onInternalPushReceived(i12);
+                                                                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                                                             }
                                                             z27 = true;
                                                             tL_message2.mentioned = z27;
                                                             tL_message2.silent = z22;
                                                             tL_message2.from_scheduled = z18;
-                                                            kjVar = new kj(i20, tL_message2, str21, str19, str15, z25, z20, z21, has);
-                                                            i13 = i20;
-                                                            if (i14 != 0) {
+                                                            ziVar = new zi(i19, tL_message2, str21, str19, str15, z25, z20, z21, has);
+                                                            i12 = i19;
+                                                            if (i13 != 0) {
                                                             }
-                                                            kjVar.J = z26;
-                                                            kjVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
+                                                            ziVar.J = z26;
+                                                            ziVar.I = z26 && (str3.startsWith(str17) || str3.startsWith(str18));
                                                             if (!str3.equals(obj)) {
                                                             }
                                                             z28 = true;
-                                                            kjVar.K = z28;
-                                                            kjVar.N = str3.equals("STORY_LIVE");
-                                                            kjVar.L = str3.equals("MESSAGE_STORY_MENTION");
-                                                            kjVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
+                                                            ziVar.K = z28;
+                                                            ziVar.N = str3.equals("STORY_LIVE");
+                                                            ziVar.L = str3.equals("MESSAGE_STORY_MENTION");
+                                                            ziVar.M = str3.equals("STORY_HIDDEN_AUTHOR");
                                                             ArrayList arrayList422222 = new ArrayList();
-                                                            arrayList422222.add(kjVar);
-                                                            f8.b("PushListenerController push notification to NotificationsController of " + tL_message2.dialog_id);
-                                                            if (!kjVar.J) {
+                                                            arrayList422222.add(ziVar);
+                                                            a8.b("PushListenerController push notification to NotificationsController of " + tL_message2.dialog_id);
+                                                            if (!ziVar.J) {
                                                             }
-                                                            pt.t(i13).K(arrayList422222, true, true, countDownLatch);
-                                                            ConnectionsManager.onInternalPushReceived(i13);
-                                                            ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                                                            us.t(i12).K(arrayList422222, true, true, countDownLatch);
+                                                            ConnectionsManager.onInternalPushReceived(i12);
+                                                            ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                                                         }
                                                     }
                                                     str21 = reactedText;
-                                                    if (v2.a) {
+                                                    if (r2.a) {
                                                     }
                                                     if (str21 != null) {
                                                     }
                                                 }
-                                            } else if (i20.y(j17)) {
+                                            } else if (l10.y(j17)) {
                                                 str14 = str14 + " @ " + strArr2[1];
                                                 z18 = z29;
                                                 j22 = j19;
@@ -4902,15 +4902,15 @@ public class PushListenerController {
                                                 z22 = z17;
                                                 z23 = z19;
                                                 String str27222 = str14;
-                                                i13 = i12;
+                                                i12 = i11;
                                                 z24 = false;
                                                 reactedText = getReactedText(str3, strArr2);
                                                 z25 = false;
-                                                i19 = i18;
+                                                i18 = i17;
                                                 str19 = str27222;
                                                 str20 = null;
                                                 str21 = reactedText;
-                                                if (v2.a) {
+                                                if (r2.a) {
                                                 }
                                                 if (str21 != null) {
                                                 }
@@ -4933,34 +4933,34 @@ public class PushListenerController {
                                                 z22 = z17;
                                                 z23 = z19;
                                                 String str272222 = str14;
-                                                i13 = i12;
+                                                i12 = i11;
                                                 z24 = false;
                                                 reactedText = getReactedText(str3, strArr2);
                                                 z25 = false;
-                                                i19 = i18;
+                                                i18 = i17;
                                                 str19 = str272222;
                                                 str20 = null;
                                                 str21 = reactedText;
-                                                if (v2.a) {
+                                                if (r2.a) {
                                                 }
                                                 if (str21 != null) {
                                                 }
                                             }
                                             th = th14;
-                                            i11 = i13;
+                                            i10 = i12;
                                             str4 = str5;
-                                            i10 = -1;
-                                            if (i11 != i10) {
-                                                ConnectionsManager.onInternalPushReceived(i11);
-                                                ConnectionsManager.getInstance(i11).resumeNetworkMaybe();
+                                            i3 = -1;
+                                            if (i10 != i3) {
+                                                ConnectionsManager.onInternalPushReceived(i10);
+                                                ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
                                                 countDownLatch.countDown();
                                             } else {
                                                 onDecryptError();
                                             }
-                                            if (v2.a) {
-                                                f8.d("error in loc_key = " + str3 + " json " + str4);
+                                            if (r2.a) {
+                                                a8.d("error in loc_key = " + str3 + " json " + str4);
                                             }
-                                            f8.f(th);
+                                            a8.f(th);
                                         }
                                         str14 = null;
                                         boolean has2 = jSONObject3.has("edit_date");
@@ -4973,7 +4973,7 @@ public class PushListenerController {
                                     if (jSONObject3.has("mention")) {
                                     }
                                     String str252 = str10;
-                                    i17 = i27;
+                                    i16 = i26;
                                     str13 = str252;
                                     z15 = false;
                                     if (jSONObject3.has(str13)) {
@@ -5001,13 +5001,13 @@ public class PushListenerController {
                                     }
                                 }
                                 countDownLatch.countDown();
-                                ConnectionsManager.onInternalPushReceived(i13);
-                                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                                ConnectionsManager.onInternalPushReceived(i12);
+                                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                             }
-                            i14 = i13;
+                            i13 = i12;
                             if (jSONObject3.has("random_id")) {
                             }
-                            if (i15 != 0) {
+                            if (i14 != 0) {
                             }
                             if (!str3.startsWith("REACT_")) {
                             }
@@ -5017,56 +5017,56 @@ public class PushListenerController {
                             }
                             if (!jSONObject3.has("story_id")) {
                             }
-                            if (i16 < 0) {
+                            if (i15 < 0) {
                             }
                             if (z13) {
                             }
                             countDownLatch.countDown();
-                            ConnectionsManager.onInternalPushReceived(i13);
-                            ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                            ConnectionsManager.onInternalPushReceived(i12);
+                            ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                         }
                     }
                     JSONObject jSONObject10 = jSONObject4;
-                    i13 = i12;
+                    i12 = i11;
                     long j29 = jSONObject3.getLong(str12);
-                    int i29 = jSONObject3.getInt(str11);
+                    int i28 = jSONObject3.getInt(str11);
                     if (jSONObject10.has(str22)) {
                         JSONArray jSONArray2 = jSONObject10.getJSONArray(str22);
                         int length2 = jSONArray2.length();
                         strArr = new String[length2];
-                        for (int i30 = 0; i30 < length2; i30++) {
-                            strArr[i30] = jSONArray2.getString(i30);
+                        for (int i29 = 0; i29 < length2; i29++) {
+                            strArr[i29] = jSONArray2.getString(i29);
                         }
                     } else {
                         strArr = null;
                     }
-                    if (System.currentTimeMillis() - j10 < wp.r1(i13).h3) {
-                        VoIPGroupNotification.request(w0.b, i13, j18, (strArr == null || strArr.length <= 2) ? null : strArr[2], j29, i29, "CONF_VIDEOCALL_REQUEST".equals(str3));
-                        i13 = i13;
+                    if (System.currentTimeMillis() - j10 < hp.s1(i12).i3) {
+                        VoIPGroupNotification.request(t0.b, i12, j18, (strArr == null || strArr.length <= 2) ? null : strArr[2], j29, i28, "CONF_VIDEOCALL_REQUEST".equals(str3));
+                        i12 = i12;
                     } else {
-                        VoIPGroupNotification.hide(w0.b, i13, i29);
+                        VoIPGroupNotification.hide(t0.b, i12, i28);
                     }
                     countDownLatch.countDown();
-                    ConnectionsManager.onInternalPushReceived(i13);
-                    ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                    ConnectionsManager.onInternalPushReceived(i12);
+                    ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 }
-                i13 = i12;
+                i12 = i11;
                 countDownLatch.countDown();
-                ConnectionsManager.onInternalPushReceived(i13);
-                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                ConnectionsManager.onInternalPushReceived(i12);
+                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 break;
             case -1702432235:
                 break;
             case -920689527:
                 if (str3.equals("DC_UPDATE")) {
-                    int i31 = jSONObject2.getInt("dc");
+                    int i30 = jSONObject2.getInt("dc");
                     String[] split3 = jSONObject2.getString("addr").split(":");
                     if (split3.length != 2) {
                         countDownLatch.countDown();
                         break;
                     } else {
-                        ConnectionsManager.getInstance(i11).applyDatacenterAddress(i31, split3[0], Integer.parseInt(split3[1]));
-                        ConnectionsManager.getInstance(i11).resumeNetworkMaybe();
+                        ConnectionsManager.getInstance(i10).applyDatacenterAddress(i30, split3[0], Integer.parseInt(split3[1]));
+                        ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
                         countDownLatch.countDown();
                         break;
                     }
@@ -5087,24 +5087,24 @@ public class PushListenerController {
                 sb22.append("} chatId ");
                 sb22.append(j16);
                 sb22.append(" custom topicId ");
-                sb22.append(i13);
-                f8.b(sb22.toString());
+                sb22.append(i12);
+                a8.b(sb22.toString());
                 if (jSONObject3.has("encryption_id")) {
                 }
                 if (jSONObject3.has("schedule")) {
                     break;
                 }
                 if (j14 == j11) {
-                    j14 = pt.n0;
+                    j14 = us.o0;
                     break;
                 }
                 j17 = j14;
                 if (j17 != j11) {
                 }
-                i13 = i12;
+                i12 = i11;
                 countDownLatch.countDown();
-                ConnectionsManager.onInternalPushReceived(i13);
-                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                ConnectionsManager.onInternalPushReceived(i12);
+                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 break;
             case -763636569:
                 if (str3.equals("OAUTH_REQUEST")) {
@@ -5112,8 +5112,8 @@ public class PushListenerController {
                         JSONArray jSONArray3 = jSONObject.getJSONArray("loc_args");
                         int length3 = jSONArray3.length();
                         String[] strArr4 = new String[length3];
-                        for (int i32 = 0; i32 < length3; i32++) {
-                            strArr4[i32] = jSONArray3.getString(i32);
+                        for (int i31 = 0; i31 < length3; i31++) {
+                            strArr4[i31] = jSONArray3.getString(i31);
                         }
                         if (length3 < 2) {
                             break;
@@ -5122,7 +5122,7 @@ public class PushListenerController {
                             if (TextUtils.isEmpty(optString)) {
                                 break;
                             } else {
-                                String Z = dd.Z(2131753122, strArr4[0], strArr4[1]);
+                                String Z = bd.Z(2131753122, strArr4[0], strArr4[1]);
                                 TLRPC.TL_message tL_message3 = new TLRPC.TL_message();
                                 tL_message3.id = 2147483637;
                                 tL_message3.random_id = 9223372036854775797L;
@@ -5135,12 +5135,12 @@ public class PushListenerController {
                                 tL_message3.flags |= 256;
                                 tL_message3.from_id = tL_peerUser4;
                                 tL_message3.silent = jSONObject2.has("silent") && jSONObject2.getInt("silent") != 0;
-                                kj kjVar2 = new kj(i11, tL_message3, Z, optString, null, true, false, false, false);
-                                kjVar2.O = true;
+                                zi ziVar2 = new zi(i10, tL_message3, Z, optString, null, true, false, false, false);
+                                ziVar2.O = true;
                                 ArrayList arrayList5 = new ArrayList();
-                                arrayList5.add(kjVar2);
-                                f8.b("PushListenerController push OAUTH notification to NotificationsController of " + tL_message3.dialog_id);
-                                pt.t(i11).K(arrayList5, true, true, countDownLatch);
+                                arrayList5.add(ziVar2);
+                                a8.b("PushListenerController push OAUTH notification to NotificationsController of " + tL_message3.dialog_id);
+                                us.t(i10).K(arrayList5, true, true, countDownLatch);
                                 break;
                             }
                         }
@@ -5162,8 +5162,8 @@ public class PushListenerController {
                 sb222.append("} chatId ");
                 sb222.append(j16);
                 sb222.append(" custom topicId ");
-                sb222.append(i13);
-                f8.b(sb222.toString());
+                sb222.append(i12);
+                a8.b(sb222.toString());
                 if (jSONObject3.has("encryption_id")) {
                 }
                 if (jSONObject3.has("schedule")) {
@@ -5173,10 +5173,10 @@ public class PushListenerController {
                 j17 = j14;
                 if (j17 != j11) {
                 }
-                i13 = i12;
+                i12 = i11;
                 countDownLatch.countDown();
-                ConnectionsManager.onInternalPushReceived(i13);
-                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                ConnectionsManager.onInternalPushReceived(i12);
+                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 break;
             case 633004703:
                 if (str3.equals("MESSAGE_ANNOUNCEMENT")) {
@@ -5189,8 +5189,8 @@ public class PushListenerController {
                     tL_updateServiceNotification.media = new TLRPC.TL_messageMediaEmpty();
                     TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
                     tL_updates.updates.add(tL_updateServiceNotification);
-                    Utilities.d.c(new a1(i11, tL_updates, 11));
-                    ConnectionsManager.getInstance(i11).resumeNetworkMaybe();
+                    Utilities.d.c(new x0(i10, tL_updates, 11));
+                    ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
                     countDownLatch.countDown();
                     break;
                 }
@@ -5210,8 +5210,8 @@ public class PushListenerController {
                 sb2222.append("} chatId ");
                 sb2222.append(j16);
                 sb2222.append(" custom topicId ");
-                sb2222.append(i13);
-                f8.b(sb2222.toString());
+                sb2222.append(i12);
+                a8.b(sb2222.toString());
                 if (jSONObject3.has("encryption_id")) {
                 }
                 if (jSONObject3.has("schedule")) {
@@ -5221,17 +5221,17 @@ public class PushListenerController {
                 j17 = j14;
                 if (j17 != j11) {
                 }
-                i13 = i12;
+                i12 = i11;
                 countDownLatch.countDown();
-                ConnectionsManager.onInternalPushReceived(i13);
-                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                ConnectionsManager.onInternalPushReceived(i12);
+                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 break;
             case 657503015:
                 if (str3.equals("MESSAGE_WALLET_TONCONNECT_REQUEST_DAPP")) {
                     JSONArray optJSONArray = jSONObject.optJSONArray("loc_args");
-                    pt.t(i11).a0(j10, (!"MESSAGE_WALLET_TONCONNECT_REQUEST_DAPP".equals(str3) || optJSONArray == null) ? null : optJSONArray.optString(1, null));
-                    ConnectionsManager.onInternalPushReceived(i11);
-                    ConnectionsManager.getInstance(i11).resumeNetworkMaybe();
+                    us.t(i10).a0(j10, (!"MESSAGE_WALLET_TONCONNECT_REQUEST_DAPP".equals(str3) || optJSONArray == null) ? null : optJSONArray.optString(1, null));
+                    ConnectionsManager.onInternalPushReceived(i10);
+                    ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
                     countDownLatch.countDown();
                     break;
                 }
@@ -5251,8 +5251,8 @@ public class PushListenerController {
                 sb22222.append("} chatId ");
                 sb22222.append(j16);
                 sb22222.append(" custom topicId ");
-                sb22222.append(i13);
-                f8.b(sb22222.toString());
+                sb22222.append(i12);
+                a8.b(sb22222.toString());
                 if (jSONObject3.has("encryption_id")) {
                 }
                 if (jSONObject3.has("schedule")) {
@@ -5262,14 +5262,14 @@ public class PushListenerController {
                 j17 = j14;
                 if (j17 != j11) {
                 }
-                i13 = i12;
+                i12 = i11;
                 countDownLatch.countDown();
-                ConnectionsManager.onInternalPushReceived(i13);
-                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                ConnectionsManager.onInternalPushReceived(i12);
+                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 break;
             case 1365673842:
                 if (str3.equals("GEO_LIVE_PENDING")) {
-                    Utilities.d.c(new xd(i11, 4));
+                    Utilities.d.c(new ii.i2(i10, 6));
                     countDownLatch.countDown();
                     break;
                 }
@@ -5289,8 +5289,8 @@ public class PushListenerController {
                 sb222222.append("} chatId ");
                 sb222222.append(j16);
                 sb222222.append(" custom topicId ");
-                sb222222.append(i13);
-                f8.b(sb222222.toString());
+                sb222222.append(i12);
+                a8.b(sb222222.toString());
                 if (jSONObject3.has("encryption_id")) {
                 }
                 if (jSONObject3.has("schedule")) {
@@ -5300,10 +5300,10 @@ public class PushListenerController {
                 j17 = j14;
                 if (j17 != j11) {
                 }
-                i13 = i12;
+                i12 = i11;
                 countDownLatch.countDown();
-                ConnectionsManager.onInternalPushReceived(i13);
-                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                ConnectionsManager.onInternalPushReceived(i12);
+                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 break;
             default:
                 JSONObject jSONObject6222222 = jSONObject2;
@@ -5322,8 +5322,8 @@ public class PushListenerController {
                 sb2222222.append("} chatId ");
                 sb2222222.append(j16);
                 sb2222222.append(" custom topicId ");
-                sb2222222.append(i13);
-                f8.b(sb2222222.toString());
+                sb2222222.append(i12);
+                a8.b(sb2222222.toString());
                 if (jSONObject3.has("encryption_id")) {
                 }
                 if (jSONObject3.has("schedule")) {
@@ -5333,104 +5333,104 @@ public class PushListenerController {
                 j17 = j14;
                 if (j17 != j11) {
                 }
-                i13 = i12;
+                i12 = i11;
                 countDownLatch.countDown();
-                ConnectionsManager.onInternalPushReceived(i13);
-                ConnectionsManager.getInstance(i13).resumeNetworkMaybe();
+                ConnectionsManager.onInternalPushReceived(i12);
+                ConnectionsManager.getInstance(i12).resumeNetworkMaybe();
                 break;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$processRemoteMessage$7(String str, String str2, long j10) {
-        if (v2.a) {
-            f8.b(str + " PRE INIT APP");
+        if (r2.a) {
+            a8.b(str + " PRE INIT APP");
         }
-        w0.w();
-        if (v2.a) {
-            f8.b(str + " POST INIT APP");
+        t0.w();
+        if (r2.a) {
+            a8.b(str + " POST INIT APP");
         }
-        Utilities.d.c(new eu(0, j10, str, str2));
+        Utilities.d.c(new kt(0, j10, str, str2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$sendRegistrationToServer$0(int i10, int i11, String str) {
-        wp.r1(i10).W3(i11, str);
+    public static /* synthetic */ void lambda$sendRegistrationToServer$0(int i3, int i10, String str) {
+        hp.s1(i3).Z3(i10, str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$sendRegistrationToServer$1(String str, int i10) {
+    public static /* synthetic */ void lambda$sendRegistrationToServer$1(String str, int i3) {
         boolean z10;
-        ConnectionsManager.setRegId(str, i10, uz.h);
+        ConnectionsManager.setRegId(str, i3, az.h);
         if (str == null) {
             return;
         }
-        if (uz.i == 0 || uz.j == 0 || (uz.k && TextUtils.equals(uz.g, str))) {
+        if (az.i == 0 || az.j == 0 || (az.k && TextUtils.equals(az.g, str))) {
             z10 = false;
         } else {
-            uz.k = false;
+            az.k = false;
             z10 = true;
         }
-        uz.g = str;
-        uz.f = i10;
-        for (int i11 = 0; i11 < 4; i11++) {
-            e20 i12 = e20.i(i11);
-            i12.d = false;
-            i12.v(false);
-            if (i12.e() != 0) {
+        az.g = str;
+        az.f = i3;
+        for (int i10 = 0; i10 < 4; i10++) {
+            h10 i11 = h10.i(i10);
+            i11.d = false;
+            i11.v(false);
+            if (i11.e() != 0) {
                 if (z10) {
-                    String str2 = i10 == 2 ? "fcm" : "hcm";
+                    String str2 = i3 == 2 ? "fcm" : "hcm";
                     TLRPC.TL_help_saveAppLog tL_help_saveAppLog = new TLRPC.TL_help_saveAppLog();
                     TLRPC.TL_inputAppEvent tL_inputAppEvent = new TLRPC.TL_inputAppEvent();
-                    tL_inputAppEvent.time = uz.i;
+                    tL_inputAppEvent.time = az.i;
                     tL_inputAppEvent.type = str2.concat("_token_request");
                     tL_inputAppEvent.peer = 0L;
                     tL_inputAppEvent.data = new TLRPC.TL_jsonNull();
                     tL_help_saveAppLog.events.add(tL_inputAppEvent);
                     TLRPC.TL_inputAppEvent tL_inputAppEvent2 = new TLRPC.TL_inputAppEvent();
-                    tL_inputAppEvent2.time = uz.j;
+                    tL_inputAppEvent2.time = az.j;
                     tL_inputAppEvent2.type = str2.concat("_token_response");
-                    tL_inputAppEvent2.peer = uz.j - uz.i;
+                    tL_inputAppEvent2.peer = az.j - az.i;
                     tL_inputAppEvent2.data = new TLRPC.TL_jsonNull();
                     tL_help_saveAppLog.events.add(tL_inputAppEvent2);
-                    uz.k = true;
-                    uz.y();
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_help_saveAppLog, null);
+                    az.k = true;
+                    az.y();
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_help_saveAppLog, null);
                     z10 = false;
                 }
-                i0.g3(new i2.u(i11, i10, str, 4));
+                g0.h3(new k2.u(i10, i3, str, 5));
             }
         }
     }
 
     private static void onDecryptError() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (e20.i(i10).p()) {
-                ConnectionsManager.onInternalPushReceived(i10);
-                ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
+        for (int i3 = 0; i3 < 4; i3++) {
+            if (h10.i(i3).p()) {
+                ConnectionsManager.onInternalPushReceived(i3);
+                ConnectionsManager.getInstance(i3).resumeNetworkMaybe();
             }
         }
         countDownLatch.countDown();
     }
 
-    public static void processRemoteMessage(int i10, String str, long j10) {
-        String str2 = i10 == 2 ? "FCM" : "HCM";
-        if (v2.a) {
-            f8.b(str2.concat(" PRE START PROCESSING"));
+    public static void processRemoteMessage(int i3, String str, long j10) {
+        String str2 = i3 == 2 ? "FCM" : "HCM";
+        if (r2.a) {
+            a8.b(str2.concat(" PRE START PROCESSING"));
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        i0.g3(new eu(1, j10, str2, str));
+        g0.h3(new kt(1, j10, str2, str));
         try {
             countDownLatch.await();
         } catch (Throwable unused) {
         }
-        boolean z10 = v2.a;
+        boolean z10 = r2.a;
         StringBuilder u10 = a1.g.u("finished ", str2, " service, time = ");
         u10.append(SystemClock.elapsedRealtime() - elapsedRealtime);
-        f8.b(u10.toString());
+        a8.b(u10.toString());
     }
 
-    public static void sendRegistrationToServer(int i10, String str) {
-        Utilities.d.c(new a1(str, i10, 10));
+    public static void sendRegistrationToServer(int i3, String str) {
+        Utilities.d.c(new x0(str, i3, 10));
     }
 }

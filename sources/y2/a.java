@@ -1,13 +1,19 @@
 package y2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class a {
-    public final byte[] a;
-    public final int b;
+import g9.i0;
 
-    public a(byte[] bArr, int i10) {
-        this.a = bArr;
-        this.b = i10;
-    }
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public interface a {
+    long a(long j10);
+
+    boolean b(b4.a aVar, long j10);
+
+    i0 c(long j10);
+
+    void clear();
+
+    long d(long j10);
+
+    void e(long j10);
 }

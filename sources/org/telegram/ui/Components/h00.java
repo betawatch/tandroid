@@ -1,185 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.view.View;
-import java.util.HashSet;
+import android.text.TextUtils;
+import android.view.ViewGroup;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class h00 extends View implements org.telegram.ui.ActionBar.k6 {
-    public Matrix D;
-    public e6 E;
-    public TextPaint a;
-    public TextPaint b;
-    public Paint c;
-    public Path d;
-    public float[] e;
-    public rz0 f;
-    public rz0 h;
-    public rz0 n;
-    public LinearGradient r;
-    public LinearGradient s;
-    public Paint w;
-    public Paint x;
-    public Matrix y;
+public final class h00 implements te.a {
+    public final ViewGroup a;
+    public final oh.c b;
 
-    public static CharSequence a(CharSequence charSequence) {
-        return "ALL_CHATS".equals(charSequence.toString()) ? org.telegram.messenger.dd.L0(2131750808, null) : charSequence;
+    public h00(ai.d2 d2Var, GroupCallMessage groupCallMessage) {
+        oh.c cVar = new oh.c(d2Var.getContext());
+        this.b = cVar;
+        cVar.setBackgroundColor(i0.a.o(-16777216, 34));
+        yh.l lVar = cVar.w;
+        lVar.setMaxLines(1);
+        lVar.setSingleLine(true);
+        lVar.setEllipsize(TextUtils.TruncateAt.END);
+        cVar.set(groupCallMessage);
+        cVar.setAlpha(0.0f);
+        this.a = d2Var;
+        d2Var.addView(cVar);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        rz0 rz0Var;
-        float f13;
-        float f14;
-        Paint paint = this.c;
-        Matrix matrix = this.D;
-        Matrix matrix2 = this.y;
-        Path path = this.d;
-        rz0 rz0Var2 = this.f;
-        e6 e6Var = this.E;
-        rz0 rz0Var3 = this.n;
-        super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.at.e4, 31);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        rz0 rz0Var4 = this.h;
-        if (rz0Var4 != null) {
-            canvas.save();
-            float f15 = rz0Var4.c;
-            f7 = 15.32f;
-            CharSequence charSequence = e6Var.i;
-            if (charSequence == null || charSequence.length() == 0) {
-                f14 = 0.0f;
-            } else {
-                f14 = e6Var.c() + org.telegram.messenger.i0.L(15.32f);
-            }
-            float f16 = f15 + f14;
-            f10 = measuredWidth - (f16 / 2.0f);
-            canvas.translate(f10, measuredHeight - (rz0Var4.i() / 2.0f));
-            rz0Var4.d(canvas);
-            canvas.restore();
-            f11 = f16;
-        } else {
-            f7 = 15.32f;
-            f10 = measuredWidth;
-            f11 = 0.0f;
-        }
-        CharSequence charSequence2 = e6Var.i;
-        if (charSequence2 == null || charSequence2.length() == 0) {
-            f12 = measuredHeight;
-            rz0Var = rz0Var4;
-            f13 = 2.0f;
-        } else {
-            Rect rect = org.telegram.messenger.i0.Q;
-            f13 = 2.0f;
-            int L = (int) (rz0Var4.c + f10 + org.telegram.messenger.i0.L(4.66f));
-            int L2 = (int) (measuredHeight - org.telegram.messenger.i0.L(9.0f));
-            f12 = measuredHeight;
-            int c10 = (int) (e6Var.c() + rz0Var4.c + f10 + org.telegram.messenger.i0.L(f7));
-            rz0Var = rz0Var4;
-            rect.set(L, L2, c10, (int) (f12 + org.telegram.messenger.i0.L(9.0f)));
-            RectF rectF = org.telegram.messenger.i0.P;
-            rectF.set(rect);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(9.0f), org.telegram.messenger.i0.L(9.0f), paint);
-            rect.offset(-org.telegram.messenger.i0.L(0.33f), -org.telegram.messenger.i0.L(0.66f));
-            e6Var.setBounds(rect);
-            e6Var.draw(canvas);
-        }
-        float L3 = org.telegram.messenger.i0.L(30.0f);
-        float f17 = (f10 - L3) - rz0Var2.c;
-        canvas.save();
-        canvas.translate(f17, (f12 - (rz0Var2.i() / f13)) + org.telegram.messenger.i0.L(1.0f));
-        rz0Var2.d(canvas);
-        canvas.restore();
-        float f18 = f10 + f11;
-        if (rz0Var3 != null) {
-            canvas.save();
-            canvas.translate(f18 + L3, (f12 - (rz0Var3.i() / f13)) + org.telegram.messenger.i0.L(1.0f));
-            rz0Var3.d(canvas);
-            canvas.restore();
-            f18 += L3 + rz0Var3.c;
-        }
-        float f19 = f18;
-        float L4 = org.telegram.messenger.i0.L(12.0f) + (rz0Var.i() / f13) + f12;
-        canvas.drawRect(0.0f, L4, getMeasuredWidth(), 1.0f + L4, this.a);
-        path.rewind();
-        RectF rectF2 = org.telegram.messenger.i0.P;
-        float f20 = f11 / f13;
-        float f21 = measuredWidth + f20;
-        rectF2.set((measuredWidth - f20) - org.telegram.messenger.i0.L(4.0f), L4 - org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f) + f21, L4);
-        path.addRoundRect(rectF2, this.e, Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.save();
-        float max = Math.max(org.telegram.messenger.i0.L(8.0f), f17);
-        matrix2.reset();
-        matrix2.postTranslate(Math.min(f10, max + org.telegram.messenger.i0.L(8.0f)), 0.0f);
-        this.r.setLocalMatrix(matrix2);
-        float min = Math.min(getMeasuredWidth() - org.telegram.messenger.i0.L(8.0f), f19);
-        matrix.reset();
-        matrix.postTranslate(Math.max(f21, min - org.telegram.messenger.i0.L(88.0f)), 0.0f);
-        this.s.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.w);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.x);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        Paint paint = this.c;
-        TextPaint textPaint = this.b;
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 == null || textPaint == null || paint == null) {
-            return;
-        }
-        int i10 = org.telegram.ui.ActionBar.t6.si;
-        textPaint2.setColor(org.telegram.ui.ActionBar.t6.r1(0.8f, org.telegram.ui.ActionBar.t6.x0(null, i10, false)));
-        int i11 = org.telegram.ui.ActionBar.t6.o6;
-        textPaint.setColor(org.telegram.ui.ActionBar.t6.x0(null, i11, false));
-        paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Hi, false));
-        try {
-            e6 e6Var = this.E;
-            if (e6Var != null) {
-                e6Var.u(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.d6, false));
-            }
-            int r12 = org.telegram.ui.ActionBar.t6.r1(0.8f, org.telegram.ui.ActionBar.t6.x0(null, i10, false));
-            rz0 rz0Var = this.f;
-            if (rz0Var != null) {
-                rz0Var.n(r12);
-            }
-            rz0 rz0Var2 = this.h;
-            if (rz0Var2 != null) {
-                rz0Var2.n(org.telegram.ui.ActionBar.t6.x0(null, i11, false));
-            }
-            rz0 rz0Var3 = this.n;
-            if (rz0Var3 != null) {
-                rz0Var3.n(r12);
-            }
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.E || super.verifyDrawable(drawable);
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // te.a
+    public final void a() {
+        this.a.removeView(this.b);
     }
 }

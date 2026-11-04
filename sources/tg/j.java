@@ -1,102 +1,41 @@
 package tg;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PointF;
 import android.graphics.RectF;
-import android.os.SystemClock;
 import android.view.View;
-import android.view.ViewGroup;
-import g.y;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.l50;
-import org.telegram.ui.lb1;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class j implements ug.a {
-    public final ViewGroup c;
-    public final l50 d;
-    public final ViewGroup e;
-    public boolean h;
-    public final RectF a = new RectF();
-    public final PointF b = new PointF();
-    public final RectF f = new RectF();
+public final class j extends ScrollView {
+    public final /* synthetic */ LinearLayout a;
+    public final /* synthetic */ q b;
 
-    public j(ViewGroup viewGroup, ViewGroup viewGroup2, l50 l50Var) {
-        this.c = viewGroup;
-        this.d = l50Var;
-        this.e = viewGroup2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(q qVar, Context context, LinearLayout linearLayout) {
+        super(context);
+        this.b = qVar;
+        this.a = linearLayout;
+        setWillNotDraw(false);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ug.a
-    public final void d(Canvas canvas, RectF rectF) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        ViewGroup viewGroup = this.c;
-        ViewGroup viewGroup2 = this.e;
-        PointF pointF = this.b;
-        if (zg.h.b(viewGroup, viewGroup2, pointF)) {
-            canvas.save();
-            canvas.clipRect(rectF);
-            canvas.translate(pointF.x, pointF.y);
-            if (!(viewGroup instanceof ug.a) || this.h) {
-                for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                    View childAt = viewGroup.getChildAt(i10);
-                    RectF rectF2 = this.a;
-                    if (zg.h.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
-                        l50 l50Var = this.d;
-                        int i11 = l50Var.a;
-                        Object obj = l50Var.b;
-                        switch (i11) {
-                            case 0:
-                                ((uk0) obj).drawChild(canvas, childAt, uptimeMillis);
-                                break;
-                            case 1:
-                                ProfileActivity profileActivity = (ProfileActivity) obj;
-                                if (childAt == profileActivity.N) {
-                                    break;
-                                } else {
-                                    profileActivity.a.drawChild(canvas, childAt, uptimeMillis);
-                                    break;
-                                }
-                            default:
-                                ((lb1) obj).drawChild(canvas, childAt, uptimeMillis);
-                                break;
-                        }
-                    }
-                }
-            } else {
-                RectF rectF3 = this.f;
-                rectF3.set(rectF);
-                rectF.offset(-pointF.x, -pointF.y);
-                ((ug.a) viewGroup).d(canvas, rectF);
-                rectF.set(rectF3);
-            }
-            canvas.restore();
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float y9 = this.a.getY() + org.telegram.messenger.g0.L(1.0f);
+        int L = org.telegram.messenger.g0.L(36.0f);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set((getMeasuredWidth() - L) / 2.0f, y9, (getMeasuredWidth() + L) / 2.0f, org.telegram.messenger.g0.L(4.0f) + y9);
+        k6.t0.setColor(-10790053);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), k6.t0);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ug.a
-    public final void g(y yVar, RectF rectF) {
-        ViewGroup viewGroup = this.c;
-        ViewGroup viewGroup2 = this.e;
-        PointF pointF = this.b;
-        if (!zg.h.b(viewGroup, viewGroup2, pointF)) {
-            yVar.b = true;
-            return;
-        }
-        if (!(viewGroup instanceof ug.a) || this.h) {
-            yVar.b = true;
-            return;
-        }
-        yVar.c(pointF.x);
-        yVar.c(pointF.y);
-        RectF rectF2 = this.f;
-        rectF2.set(rectF);
-        rectF.offset(-pointF.x, -pointF.y);
-        ((ug.a) viewGroup).g(yVar, rectF);
-        rectF.set(rectF2);
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
+        ((LinearLayout.LayoutParams) this.b.j1.getLayoutParams()).height = (int) (((View.MeasureSpec.getSize(i3) - org.telegram.messenger.g0.L(24.0f)) * 0.8333333f) + org.telegram.messenger.g0.L(88.0f));
     }
 }

@@ -1,18 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qd0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ vd0 a;
+public final /* synthetic */ class qd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ud0 b;
 
-    public qd0(vd0 vd0Var) {
-        this.a = vd0Var;
+    public /* synthetic */ qd0(ud0 ud0Var, int i3) {
+        this.a = i3;
+        this.b = ud0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        if (i10 == -1) {
-            this.a.dismiss();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.e();
+                break;
+            default:
+                this.b.g();
+                break;
         }
     }
 }

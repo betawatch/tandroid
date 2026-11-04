@@ -1,55 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class wy extends ReplacementSpan {
-    public final /* synthetic */ int a;
+public final class wy extends u4.c0 {
+    public final /* synthetic */ kg.f0 r;
 
-    public /* synthetic */ wy(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wy(kg.f0 f0Var, Context context) {
+        super(context);
+        this.r = f0Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.a;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                return (int) paint.measureText(charSequence, i10, i11);
-            case 1:
-                return org.telegram.messenger.i0.L(16.0f);
-            case 2:
-                return org.telegram.messenger.i0.L(12.0f);
-            case 3:
-                return org.telegram.messenger.i0.L(12.0f);
-            default:
-                return org.telegram.messenger.i0.L(16.0f);
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.g0.L(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.bz) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // u4.c0, u4.z0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, u4.y0 y0Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - org.telegram.messenger.g0.L(21.0f) < 0)) {
+            j10 += org.telegram.messenger.g0.L(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
+            }
+            j10 -= org.telegram.messenger.g0.L(60.0f);
         }
-    }
-
-    public /* synthetic */ wy(boolean z10) {
-        this.a = 0;
-    }
-
-    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int k10 = k(p(), view);
+        int max = Math.max(org.telegram.messenger.hs.K2, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            y0Var.b(-j10, -k10, max, this.j);
+        }
     }
 }

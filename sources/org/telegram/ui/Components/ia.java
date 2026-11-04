@@ -1,40 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.LeadingMarginSpan;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ia implements LeadingMarginSpan {
-    public final int a;
-    public final int b;
+public final class ia extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ qt0 G1;
+    public final /* synthetic */ ma H1;
 
-    public ia(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ia(ma maVar, Context context, qt0 qt0Var) {
+        super(context, null);
+        this.H1 = maVar;
+        this.G1 = qt0Var;
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
-        if (((Spanned) charSequence).getSpanStart(this) == i15) {
-            Paint.Style style = paint.getStyle();
-            int color = paint.getColor();
-            paint.setColor(-11491093);
-            paint.setStyle(Paint.Style.FILL);
-            if (layout != null) {
-                i14 -= layout.getLineForOffset(i15) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
-            }
-            canvas.drawCircle((i11 * r7) + i10, (i12 + i14) / 2.0f, this.b, paint);
-            paint.setColor(color);
-            paint.setStyle(style);
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        ma maVar = this.H1;
+        if (maVar.D1 && maVar.E1) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            this.G1.invalidate();
         }
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final int getLeadingMargin(boolean z10) {
-        return (this.b * 2) + this.a;
+    @Override // android.view.View
+    public final void setTag(Object obj) {
+        super.setTag(obj);
+        this.H1.a1();
     }
 }

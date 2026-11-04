@@ -1,50 +1,116 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
+import android.graphics.Matrix;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import java.security.SecureRandom;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class q10 {
-    public static final int w = ViewConfiguration.getTapTimeout();
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final r10 f;
-    public final r10 g;
-    public boolean h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public MotionEvent m;
-    public MotionEvent n;
-    public boolean o;
-    public float p;
-    public float q;
-    public float r;
-    public float s;
-    public boolean t;
-    public VelocityTracker v;
-    public long u = ViewConfiguration.getLongPressTimeout();
-    public final android.support.v4.media.session.q e = new android.support.v4.media.session.q(this, 11);
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public RadialGradient g;
+    public final int i;
+    public int j;
+    public int k;
+    public int l;
+    public float a = -1.0f;
+    public float b = -1.0f;
+    public final Matrix h = new Matrix();
 
-    public q10(Context context, r10 r10Var) {
-        this.f = r10Var;
-        this.g = r10Var;
-        if (context == null) {
-            throw new IllegalArgumentException("Context must not be null");
+    public q10(int i3) {
+        this.i = i3;
+    }
+
+    public final void a(float f10) {
+        int i3 = this.i;
+        if (i3 == 0) {
+            int i10 = this.j;
+            int i11 = org.telegram.ui.ActionBar.k6.Hh;
+            if (i10 != org.telegram.ui.ActionBar.k6.x0(null, i11, false) || this.k != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ih, false)) {
+                int x02 = org.telegram.ui.ActionBar.k6.x0(null, i11, false);
+                this.j = x02;
+                int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ih, false);
+                this.k = x03;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x02, x03}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        } else if (i3 == 1) {
+            int i12 = this.j;
+            int i13 = org.telegram.ui.ActionBar.k6.Jh;
+            if (i12 != org.telegram.ui.ActionBar.k6.x0(null, i13, false) || this.k != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Kh, false)) {
+                int x04 = org.telegram.ui.ActionBar.k6.x0(null, i13, false);
+                this.j = x04;
+                int x05 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Kh, false);
+                this.k = x05;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x04, x05}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        } else {
+            if (i3 != 3) {
+                return;
+            }
+            int i14 = this.j;
+            int i15 = org.telegram.ui.ActionBar.k6.Wh;
+            if (i14 != org.telegram.ui.ActionBar.k6.x0(null, i15, false) || this.k != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xh, false) || this.l != org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yh, false)) {
+                int x06 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xh, false);
+                this.k = x06;
+                int x07 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yh, false);
+                this.l = x07;
+                int x08 = org.telegram.ui.ActionBar.k6.x0(null, i15, false);
+                this.j = x08;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x06, x07, x08}, (float[]) null, Shader.TileMode.CLAMP);
+            }
         }
-        this.t = true;
-        ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-        int scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
-        int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
-        this.c = viewConfiguration.getScaledMinimumFlingVelocity();
-        this.d = viewConfiguration.getScaledMaximumFlingVelocity();
-        this.a = scaledTouchSlop * scaledTouchSlop;
-        this.b = scaledDoubleTapSlop * scaledDoubleTapSlop;
+        int L = org.telegram.messenger.g0.L(130.0f);
+        float f11 = this.e;
+        if (f11 == 0.0f || this.f >= f11) {
+            this.e = Utilities.b.nextInt(700) + 500;
+            this.f = 0.0f;
+            if (this.a == -1.0f) {
+                b();
+            }
+            this.c = this.a;
+            this.d = this.b;
+            b();
+        }
+        float f12 = 16L;
+        float f13 = (f12 * 0.02f * f10) + (1.0f * f12) + this.f;
+        this.f = f13;
+        float f14 = this.e;
+        if (f13 > f14) {
+            this.f = f14;
+        }
+        float interpolation = xq.g.getInterpolation(this.f / f14);
+        float f15 = L;
+        float f16 = this.c;
+        float f17 = ((((this.a - f16) * interpolation) + f16) * f15) - 200.0f;
+        float f18 = this.d;
+        float f19 = ((((this.b - f18) * interpolation) + f18) * f15) - 200.0f;
+        float f20 = (f15 / 400.0f) * (i3 == 3 ? 2.0f : 1.5f);
+        Matrix matrix = this.h;
+        matrix.reset();
+        matrix.postTranslate(f17, f19);
+        matrix.postScale(f20, f20, f17 + 200.0f, f19 + 200.0f);
+        this.g.setLocalMatrix(matrix);
+    }
+
+    public final void b() {
+        int i3 = this.i;
+        if (i3 == 0) {
+            SecureRandom secureRandom = Utilities.b;
+            this.a = a1.g.e(secureRandom.nextInt(100), 0.1f, 100.0f, 0.2f);
+            this.b = a1.g.e(secureRandom.nextInt(100), 0.1f, 100.0f, 0.7f);
+        } else if (i3 == 3) {
+            SecureRandom secureRandom2 = Utilities.b;
+            this.a = a1.g.e(secureRandom2.nextInt(100), 0.1f, 100.0f, 0.6f);
+            this.b = (secureRandom2.nextInt(100) * 0.1f) / 100.0f;
+        } else {
+            SecureRandom secureRandom3 = Utilities.b;
+            this.a = a1.g.A(secureRandom3.nextInt(100), 100.0f, 0.2f, 0.8f);
+            this.b = secureRandom3.nextInt(100) / 100.0f;
+        }
     }
 }

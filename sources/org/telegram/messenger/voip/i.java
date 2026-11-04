@@ -1,31 +1,45 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import org.telegram.messenger.voip.VideoCapturerDevice;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ GroupCallMessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ GroupCallMessage d;
 
-    public /* synthetic */ i(GroupCallMessagesController groupCallMessagesController, long j10, GroupCallMessage groupCallMessage, int i10) {
-        this.a = i10;
-        this.b = groupCallMessagesController;
-        this.c = j10;
-        this.d = groupCallMessage;
+    public /* synthetic */ i(int i3) {
+        this.a = i3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdate$0(this.c, this.d);
+                VideoCapturerDevice.1.lambda$onStop$0();
                 break;
             case 1:
-                this.b.lambda$processUpdate$1(this.c, this.d);
+                VideoCapturerDevice.2.lambda$onFirstFrameAvailable$0();
+                break;
+            case 2:
+                VoIPPreNotificationService.lambda$dismiss$5();
+                break;
+            case 3:
+                VoIPService.lambda$acceptIncomingCall$100();
+                break;
+            case 4:
+                VoIPService.lambda$configureDeviceForCall$110();
+                break;
+            case 5:
+                VoIPService.lambda$startConferenceGroupCall$35();
+                break;
+            case 6:
+                VoIPService.lambda$startOutgoingCall$6();
+                break;
+            case 7:
+                VoIPService.lambda$startGroupCall$24();
                 break;
             default:
-                this.b.lambda$processUpdate$2(this.c, this.d);
+                VoIPService.lambda$onDestroy$97();
                 break;
         }
     }

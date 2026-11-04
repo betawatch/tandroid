@@ -1,227 +1,156 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import java.io.File;
-import java.io.RandomAccessFile;
-import java.lang.reflect.Array;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class vz extends f1 {
-    public final byte[] a;
-    public long b;
-    public final long[][] c;
-    public final long[][] d;
-    public final int[][] e;
-    public final int[][] f;
-    public final long[] h;
-    public final int[] n;
-    public final RandomAccessFile r;
-    public final rf.x s;
-    public final mg.c2 w;
-    public static final r5 x = new r5("statsSaveQueue");
-    public static final com.google.android.gms.common.api.internal.o1 y = new com.google.android.gms.common.api.internal.o1(3);
-    public static volatile vz[] D = new vz[4];
+public final /* synthetic */ class vz implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c00 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ long f;
 
-    public vz(int i10) {
-        super(i10);
-        this.a = new byte[8];
-        Class cls = Long.TYPE;
-        this.c = (long[][]) Array.newInstance((Class<?>) cls, 3, 8);
-        this.d = (long[][]) Array.newInstance((Class<?>) cls, 3, 8);
-        Class cls2 = Integer.TYPE;
-        this.e = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
-        this.f = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
-        this.h = new long[3];
-        this.n = new int[3];
-        this.s = new rf.x(32);
-        this.w = new mg.c2(this, 11);
-        File h = w0.h();
-        if (i10 != 0) {
-            h = new File(w0.h(), i0.a.j(i10, "account", "/"));
-            h.mkdirs();
-        }
-        try {
-            RandomAccessFile randomAccessFile = new RandomAccessFile(new File(h, "stats2.dat"), "rw");
-            this.r = randomAccessFile;
-            if (randomAccessFile.length() > 0) {
-                boolean z10 = false;
-                for (int i11 = 0; i11 < 3; i11++) {
-                    for (int i12 = 0; i12 < 7; i12++) {
-                        this.r.readFully(this.a, 0, 8);
-                        this.c[i11][i12] = d(this.a);
-                        this.r.readFully(this.a, 0, 8);
-                        this.d[i11][i12] = d(this.a);
-                        this.r.readFully(this.a, 0, 4);
-                        this.e[i11][i12] = c(this.a);
-                        this.r.readFully(this.a, 0, 4);
-                        this.f[i11][i12] = c(this.a);
+    public /* synthetic */ vz(c00 c00Var, long j10, ArrayList arrayList, boolean z10, long j11, int i3) {
+        this.a = i3;
+        this.b = c00Var;
+        this.c = j10;
+        this.d = arrayList;
+        this.e = z10;
+        this.f = j11;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:49:? A[ADDED_TO_REGION, REMOVE, RETURN, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r6v4 */
+    /* JADX WARN: Type inference failed for: r6v9 */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        long j10;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        SQLiteCursor sQLiteCursor;
+        NativeByteBuffer byteBufferValue;
+        switch (this.a) {
+            case 0:
+                c00 c00Var = this.b;
+                c00Var.getMessagesStorage().a.c(new vz(c00Var, this.c, this.d, this.e, this.f, 1));
+                break;
+            default:
+                long j11 = this.c;
+                ArrayList arrayList3 = this.d;
+                long j12 = this.f;
+                c00 c00Var2 = this.b;
+                a0.h hVar = c00Var2.e;
+                try {
+                    SQLiteDatabase sQLiteDatabase = c00Var2.getMessagesStorage().b;
+                    Locale locale = Locale.US;
+                    int i3 = 0;
+                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT topic_id, top_message FROM topics WHERE did = " + j11 + " AND top_message IN (" + TextUtils.join(",", arrayList3) + ")", new Object[0]);
+                    arrayList = null;
+                    while (queryFinalized.next()) {
+                        try {
+                            if (arrayList == null) {
+                                arrayList = new ArrayList();
+                            }
+                            TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
+                            tL_forumTopic.id = queryFinalized.intValue(0);
+                            tL_forumTopic.top_message = queryFinalized.intValue(1);
+                            if (this.e) {
+                                tL_forumTopic.from_id = c00Var2.getMessagesController().z1(tL_forumTopic.id);
+                            } else {
+                                tL_forumTopic.from_id = c00Var2.getMessagesController().z1(c00Var2.getUserConfig().e());
+                            }
+                            tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
+                            arrayList.add(tL_forumTopic);
+                        } catch (Exception e10) {
+                            e = e10;
+                            j10 = j12;
+                        }
                     }
-                    this.r.readFully(this.a, 0, 4);
-                    this.n[i11] = c(this.a);
-                    this.r.readFully(this.a, 0, 8);
-                    this.h[i11] = d(this.a);
-                    long[] jArr = this.h;
-                    if (jArr[i11] == 0) {
-                        jArr[i11] = System.currentTimeMillis();
-                        z10 = true;
+                    queryFinalized.dispose();
+                    if (arrayList != null) {
+                        int i10 = 0;
+                        while (i10 < arrayList.size()) {
+                            TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) arrayList.get(i10);
+                            SQLiteDatabase sQLiteDatabase2 = c00Var2.getMessagesStorage().b;
+                            Locale locale2 = Locale.US;
+                            SQLiteCursor queryFinalized2 = sQLiteDatabase2.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j11 + " AND topic_id = " + tL_forumTopic2.id + " ORDER BY mid DESC LIMIT 1", new Object[i3]);
+                            if (!queryFinalized2.next() || (byteBufferValue = queryFinalized2.byteBufferValue(1)) == null) {
+                                long j13 = j12;
+                                sQLiteCursor = queryFinalized2;
+                                j10 = j13;
+                            } else {
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(i3), i3);
+                                long j14 = j12;
+                                try {
+                                    TLdeserialize.readAttachPath(byteBufferValue, c00Var2.getUserConfig().n);
+                                    byteBufferValue.reuse();
+                                    sQLiteCursor = queryFinalized2;
+                                    j10 = j14;
+                                } catch (Exception e11) {
+                                    e = e11;
+                                    j10 = j14;
+                                    e.printStackTrace();
+                                    arrayList2 = arrayList;
+                                    c00Var2.getMessagesStorage().J0(arrayList2, j11);
+                                    if (arrayList2 != null) {
+                                        return;
+                                    }
+                                }
+                                try {
+                                    hVar.l(c00.p(tL_forumTopic2.top_message, j10));
+                                    int i11 = TLdeserialize.id;
+                                    tL_forumTopic2.top_message = i11;
+                                    tL_forumTopic2.topMessage = TLdeserialize;
+                                    tL_forumTopic2.groupedMessages = null;
+                                    hVar.k(tL_forumTopic2, c00.p(i11, j10));
+                                } catch (Exception e12) {
+                                    e = e12;
+                                    e.printStackTrace();
+                                    arrayList2 = arrayList;
+                                    c00Var2.getMessagesStorage().J0(arrayList2, j11);
+                                    if (arrayList2 != null) {
+                                    }
+                                }
+                            }
+                            sQLiteCursor.dispose();
+                            i10++;
+                            j12 = j10;
+                            i3 = 0;
+                        }
+                        j10 = j12;
+                        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                            SQLiteDatabase sQLiteDatabase3 = c00Var2.getMessagesStorage().b;
+                            Locale locale3 = Locale.US;
+                            sQLiteDatabase3.executeFast("UPDATE topics SET top_message = " + ((TLRPC.TL_forumTopic) arrayList.get(i12)).top_message + " WHERE did = " + j11 + " AND topic_id = " + ((TLRPC.TL_forumTopic) arrayList.get(i12)).id).stepThis().dispose();
+                        }
+                    } else {
+                        j10 = j12;
                     }
+                } catch (Exception e13) {
+                    e = e13;
+                    j10 = j12;
+                    arrayList = null;
                 }
-                for (int i13 = 0; i13 < 3; i13++) {
-                    this.r.readFully(this.a, 0, 8);
-                    this.c[i13][7] = d(this.a);
-                    this.r.readFully(this.a, 0, 8);
-                    this.d[i13][7] = d(this.a);
-                    this.r.readFully(this.a, 0, 4);
-                    this.e[i13][7] = c(this.a);
-                    this.r.readFully(this.a, 0, 4);
-                    this.f[i13][7] = c(this.a);
+                arrayList2 = arrayList;
+                c00Var2.getMessagesStorage().J0(arrayList2, j11);
+                if (arrayList2 != null) {
+                    g0.h3(new zq(c00Var2, arrayList2, j10, 6));
+                    break;
                 }
-                if (z10) {
-                    m();
-                    return;
-                }
-                return;
-            }
-        } catch (Exception unused) {
-        }
-        SharedPreferences sharedPreferences = i10 == 0 ? w0.b.getSharedPreferences("stats", 0) : w0.b.getSharedPreferences("stats" + i10, 0);
-        boolean z11 = false;
-        for (int i14 = 0; i14 < 3; i14++) {
-            this.n[i14] = sharedPreferences.getInt("callsTotalTime" + i14, 0);
-            this.h[i14] = sharedPreferences.getLong("resetStatsDate" + i14, 0L);
-            for (int i15 = 0; i15 < 8; i15++) {
-                this.c[i14][i15] = sharedPreferences.getLong(a1.g.j(i14, i15, "sentBytes", "_"), 0L);
-                this.d[i14][i15] = sharedPreferences.getLong(a1.g.j(i14, i15, "receivedBytes", "_"), 0L);
-                this.e[i14][i15] = sharedPreferences.getInt(a1.g.j(i14, i15, "sentItems", "_"), 0);
-                this.f[i14][i15] = sharedPreferences.getInt(a1.g.j(i14, i15, "receivedItems", "_"), 0);
-            }
-            long[] jArr2 = this.h;
-            if (jArr2[i14] == 0) {
-                jArr2[i14] = System.currentTimeMillis();
-                z11 = true;
-            }
-        }
-        if (z11) {
-            m();
-        }
-    }
-
-    public static byte[] a(vz vzVar, long j10) {
-        byte[] bArr = vzVar.a;
-        bArr[0] = (byte) (j10 >>> 56);
-        bArr[1] = (byte) (j10 >>> 48);
-        bArr[2] = (byte) (j10 >>> 40);
-        bArr[3] = (byte) (j10 >>> 32);
-        bArr[4] = (byte) (j10 >>> 24);
-        bArr[5] = (byte) (j10 >>> 16);
-        bArr[6] = (byte) (j10 >>> 8);
-        bArr[7] = (byte) j10;
-        return bArr;
-    }
-
-    public static byte[] b(vz vzVar, int i10) {
-        byte[] bArr = vzVar.a;
-        bArr[0] = (byte) (i10 >>> 24);
-        bArr[1] = (byte) (i10 >>> 16);
-        bArr[2] = (byte) (i10 >>> 8);
-        bArr[3] = (byte) i10;
-        return bArr;
-    }
-
-    public static int c(byte[] bArr) {
-        return (bArr[3] & 255) | (bArr[0] << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8);
-    }
-
-    public static long d(byte[] bArr) {
-        return ((bArr[0] & 255) << 56) | ((bArr[1] & 255) << 48) | ((bArr[2] & 255) << 40) | ((bArr[3] & 255) << 32) | ((bArr[4] & 255) << 24) | ((bArr[5] & 255) << 16) | ((bArr[6] & 255) << 8) | (255 & bArr[7]);
-    }
-
-    public static vz e(int i10) {
-        vz vzVar;
-        vz vzVar2 = D[i10];
-        if (vzVar2 != null) {
-            return vzVar2;
-        }
-        synchronized (vz.class) {
-            try {
-                vzVar = D[i10];
-                if (vzVar == null) {
-                    vz[] vzVarArr = D;
-                    vz vzVar3 = new vz(i10);
-                    vzVarArr[i10] = vzVar3;
-                    vzVar = vzVar3;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return vzVar;
-    }
-
-    public final long f(int i10, int i11) {
-        long[][] jArr = this.d;
-        if (i11 != 1) {
-            return jArr[i10][i11];
-        }
-        long[] jArr2 = jArr[i10];
-        return ((((jArr2[6] - jArr2[5]) - jArr2[3]) - jArr2[2]) - jArr2[4]) - jArr2[7];
-    }
-
-    public final long g(int i10, int i11) {
-        long[][] jArr = this.c;
-        if (i11 != 1) {
-            return jArr[i10][i11];
-        }
-        long[] jArr2 = jArr[i10];
-        return ((((jArr2[6] - jArr2[5]) - jArr2[3]) - jArr2[2]) - jArr2[4]) - jArr2[7];
-    }
-
-    public final void h(int i10, int i11, long j10) {
-        long[] jArr = this.d[i10];
-        jArr[i11] = jArr[i11] + j10;
-        m();
-    }
-
-    public final void i(int i10, int i11, int i12) {
-        int[] iArr = this.f[i10];
-        iArr[i11] = iArr[i11] + i12;
-        m();
-    }
-
-    public final void j(int i10, int i11, long j10) {
-        long[] jArr = this.c[i10];
-        jArr[i11] = jArr[i11] + j10;
-        m();
-    }
-
-    public final void k(int i10, int i11, int i12) {
-        int[] iArr = this.e[i10];
-        iArr[i11] = iArr[i11] + i12;
-        m();
-    }
-
-    public final void l(int i10) {
-        this.h[i10] = System.currentTimeMillis();
-        for (int i11 = 0; i11 < 8; i11++) {
-            this.c[i10][i11] = 0;
-            this.d[i10][i11] = 0;
-            this.e[i10][i11] = 0;
-            this.f[i10][i11] = 0;
-        }
-        this.n[i10] = 0;
-        m();
-    }
-
-    public final void m() {
-        long currentTimeMillis = System.currentTimeMillis();
-        com.google.android.gms.common.api.internal.o1 o1Var = y;
-        if (Math.abs(currentTimeMillis - ((Long) o1Var.get()).longValue()) >= 2000) {
-            o1Var.set(Long.valueOf(currentTimeMillis));
-            r5 r5Var = x;
-            mg.c2 c2Var = this.w;
-            r5Var.a(c2Var);
-            r5Var.c(c2Var);
+                break;
         }
     }
 }

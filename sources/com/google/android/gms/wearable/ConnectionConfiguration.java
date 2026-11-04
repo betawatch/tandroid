@@ -6,15 +6,14 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import n6.l;
-import o6.a;
-import v8.s;
-import w7.h0;
+import p6.m;
+import q6.a;
+import y8.i;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new s(29);
+    public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new i(8);
     public final String a;
     public final String b;
     public final int c;
@@ -28,18 +27,18 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public final int w;
     public final List x;
 
-    public ConnectionConfiguration(String str, String str2, int i10, int i11, boolean z10, boolean z11, String str3, boolean z12, String str4, String str5, int i12, ArrayList arrayList) {
+    public ConnectionConfiguration(String str, String str2, int i3, int i10, boolean z10, boolean z11, String str3, boolean z12, String str4, String str5, int i11, ArrayList arrayList) {
         this.a = str;
         this.b = str2;
-        this.c = i10;
-        this.d = i11;
+        this.c = i3;
+        this.d = i10;
         this.e = z10;
         this.f = z11;
         this.h = str3;
         this.n = z12;
         this.r = str4;
         this.s = str5;
-        this.w = i12;
+        this.w = i11;
         this.x = arrayList;
     }
 
@@ -48,7 +47,7 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
             return false;
         }
         ConnectionConfiguration connectionConfiguration = (ConnectionConfiguration) obj;
-        return l.k(this.a, connectionConfiguration.a) && l.k(this.b, connectionConfiguration.b) && l.k(Integer.valueOf(this.c), Integer.valueOf(connectionConfiguration.c)) && l.k(Integer.valueOf(this.d), Integer.valueOf(connectionConfiguration.d)) && l.k(Boolean.valueOf(this.e), Boolean.valueOf(connectionConfiguration.e)) && l.k(Boolean.valueOf(this.n), Boolean.valueOf(connectionConfiguration.n));
+        return m.k(this.a, connectionConfiguration.a) && m.k(this.b, connectionConfiguration.b) && m.k(Integer.valueOf(this.c), Integer.valueOf(connectionConfiguration.c)) && m.k(Integer.valueOf(this.d), Integer.valueOf(connectionConfiguration.d)) && m.k(Boolean.valueOf(this.e), Boolean.valueOf(connectionConfiguration.e)) && m.k(Boolean.valueOf(this.n), Boolean.valueOf(connectionConfiguration.n));
     }
 
     public final int hashCode() {
@@ -60,32 +59,32 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.l(parcel, 2, this.a);
-        h0.l(parcel, 3, this.b);
-        int i11 = this.c;
-        h0.s(parcel, 4, 4);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.m(parcel, 2, this.a);
+        j8.a.m(parcel, 3, this.b);
+        int i10 = this.c;
+        j8.a.r(parcel, 4, 4);
+        parcel.writeInt(i10);
+        int i11 = this.d;
+        j8.a.r(parcel, 5, 4);
         parcel.writeInt(i11);
-        int i12 = this.d;
-        h0.s(parcel, 5, 4);
-        parcel.writeInt(i12);
         boolean z10 = this.e;
-        h0.s(parcel, 6, 4);
+        j8.a.r(parcel, 6, 4);
         parcel.writeInt(z10 ? 1 : 0);
         boolean z11 = this.f;
-        h0.s(parcel, 7, 4);
+        j8.a.r(parcel, 7, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        h0.l(parcel, 8, this.h);
+        j8.a.m(parcel, 8, this.h);
         boolean z12 = this.n;
-        h0.s(parcel, 9, 4);
+        j8.a.r(parcel, 9, 4);
         parcel.writeInt(z12 ? 1 : 0);
-        h0.l(parcel, 10, this.r);
-        h0.l(parcel, 11, this.s);
-        int i13 = this.w;
-        h0.s(parcel, 12, 4);
-        parcel.writeInt(i13);
-        h0.n(parcel, 13, this.x);
-        h0.r(parcel, q6);
+        j8.a.m(parcel, 10, this.r);
+        j8.a.m(parcel, 11, this.s);
+        int i12 = this.w;
+        j8.a.r(parcel, 12, 4);
+        parcel.writeInt(i12);
+        j8.a.o(parcel, 13, this.x);
+        j8.a.t(parcel, s6);
     }
 }

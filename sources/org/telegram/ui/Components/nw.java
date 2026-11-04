@@ -1,38 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class nw extends cv {
-    public final /* synthetic */ TLRPC.StickerSet N1;
-    public final /* synthetic */ vy O1;
+public final /* synthetic */ class nw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nw(vy vyVar, org.telegram.ui.ActionBar.k2 k2Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
-        super(k2Var, context, p6Var, arrayList);
-        this.O1 = vyVar;
-        this.N1 = stickerSet;
+    public /* synthetic */ nw(Object obj, float f10, int i3, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = f10;
+        this.c = i3;
     }
 
-    @Override // org.telegram.ui.Components.cv
-    public final void K0(boolean z10) {
-        vy vyVar = this.O1;
-        ArrayList arrayList = vyVar.p1;
-        TLRPC.StickerSet stickerSet = this.N1;
-        if (!z10) {
-            arrayList.remove(Long.valueOf(stickerSet.id));
-        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
-            arrayList.add(Long.valueOf(stickerSet.id));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ow owVar = (ow) this.d;
+                float f10 = this.b;
+                int i3 = this.c;
+                ey eyVar = owVar.G;
+                try {
+                    ni.m mVar = new ni.m(eyVar.Q.getContext(), 0, f10);
+                    mVar.a = i3;
+                    eyVar.R.w0(mVar);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            default:
+                org.telegram.ui.g11 g11Var = (org.telegram.ui.g11) this.d;
+                float f11 = this.b;
+                int i10 = this.c;
+                try {
+                    ni.m mVar2 = new ni.m(g11Var.i0.getContext(), 0, f11);
+                    mVar2.a = i10;
+                    g11Var.s0.w0(mVar2);
+                    break;
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                }
         }
-        vyVar.U();
-    }
-
-    @Override // org.telegram.ui.Components.cv, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
-    public final void dismiss() {
-        this.O1.w2 = false;
-        super.dismiss();
     }
 }

@@ -1,20 +1,51 @@
 package gi;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class b {
-    public static final b c = new b(Float.POSITIVE_INFINITY);
-    public final float a;
-    public final float b;
+import android.animation.ValueAnimator;
 
-    public b(float f7) {
-        if (Float.isNaN(Float.POSITIVE_INFINITY)) {
-            throw new IllegalArgumentException("epsX must be >= 0");
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d b;
+
+    public /* synthetic */ b(d dVar, int i3) {
+        this.a = i3;
+        this.b = dVar;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                d dVar = this.b;
+                dVar.getClass();
+                dVar.T = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                dVar.invalidate();
+                break;
+            case 1:
+                d dVar2 = this.b;
+                dVar2.getClass();
+                dVar2.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar2.invalidate();
+                break;
+            case 2:
+                d dVar3 = this.b;
+                dVar3.getClass();
+                dVar3.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar3.invalidate();
+                break;
+            case 3:
+                d dVar4 = this.b;
+                dVar4.getClass();
+                dVar4.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar4.invalidate();
+                break;
+            default:
+                d dVar5 = this.b;
+                dVar5.getClass();
+                dVar5.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar5.invalidate();
+                break;
         }
-        if (Float.isNaN(f7) || f7 < 0.0f) {
-            throw new IllegalArgumentException("epsY must be >= 0");
-        }
-        this.a = Float.POSITIVE_INFINITY;
-        this.b = f7;
     }
 }

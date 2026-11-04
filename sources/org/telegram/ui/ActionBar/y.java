@@ -1,412 +1,107 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ci0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class y extends LinearLayout {
-    public boolean a;
-    public final l b;
-    public boolean c;
-    public boolean d;
-    public ArrayList e;
-    public Runnable f;
+public final /* synthetic */ class y implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q0 b;
 
-    public y(Context context, l lVar) {
-        super(context);
-        this.a = true;
-        setOrientation(0);
-        this.b = lVar;
+    public /* synthetic */ y(q0 q0Var, int i3) {
+        this.a = i3;
+        this.b = q0Var;
     }
 
-    public final t0 a(int i10, int i11) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return b(i10, i11, null, z10 ? lVar.q0 : lVar.p0, null, org.telegram.messenger.i0.L(48.0f), null, null);
-    }
-
-    public final t0 b(int i10, int i11, CharSequence charSequence, int i12, Drawable drawable, int i13, CharSequence charSequence2, p6 p6Var) {
-        if (this.e == null) {
-            this.e = new ArrayList();
-        }
-        this.e.add(Integer.valueOf(i10));
-        return f(-1, i10, i11, charSequence, i12, drawable, i13, charSequence2, p6Var);
-    }
-
-    public final t0 c(int i10, int i11, p6 p6Var) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return b(i10, i11, null, z10 ? lVar.q0 : lVar.p0, null, org.telegram.messenger.i0.L(48.0f), null, p6Var);
-    }
-
-    public final t0 d(int i10, Drawable drawable) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return b(i10, 0, null, z10 ? lVar.q0 : lVar.p0, drawable, org.telegram.messenger.i0.L(48.0f), null, null);
-    }
-
-    public final t0 e(int i10, String str) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return b(i10, 0, str, z10 ? lVar.q0 : lVar.p0, null, 0, str, null);
-    }
-
-    public final t0 f(int i10, int i11, int i12, CharSequence charSequence, int i13, Drawable drawable, int i14, CharSequence charSequence2, p6 p6Var) {
-        Context context = getContext();
-        boolean z10 = this.c;
-        l lVar = this.b;
-        t0 t0Var = new t0(context, this, i13, z10 ? lVar.s0 : lVar.r0, charSequence != null, p6Var);
-        t0Var.setTag(Integer.valueOf(i11));
-        if (charSequence != null) {
-            t0Var.E.setText(charSequence);
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(i14 != 0 ? i14 : -2, -1);
-            int L = org.telegram.messenger.i0.L(14.0f);
-            layoutParams.rightMargin = L;
-            layoutParams.leftMargin = L;
-            addView(t0Var, i10, layoutParams);
-        } else {
-            if (drawable != null) {
-                if (drawable instanceof ci0) {
-                    t0Var.y.setAnimation((ci0) drawable);
-                } else {
-                    t0Var.y.setImageDrawable(drawable);
-                }
-            } else if (i12 != 0) {
-                t0Var.y.setImageResource(i12);
-            }
-            addView(t0Var, i10, new LinearLayout.LayoutParams(i14, -1));
-        }
-        t0Var.setOnClickListener(new ag.g(this, 16));
-        if (charSequence2 != null) {
-            t0Var.setContentDescription(charSequence2);
-        }
-        return t0Var;
-    }
-
-    public final t0 g(int i10, int i11, int i12) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return b(i10, i11, null, z10 ? lVar.q0 : lVar.p0, null, i12, null, null);
-    }
-
-    public int getClosingSearchFieldWidth() {
-        int childCount = getChildCount();
-        int i10 = 0;
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt instanceof t0) {
-                t0 t0Var = (t0) childAt;
-                if (t0Var.u() && t0Var.v() && !t0Var.w()) {
-                    View searchContainer = t0Var.getSearchContainer();
-                    while (searchContainer != null && searchContainer.getParent() != this) {
-                        searchContainer = searchContainer.getParent() instanceof View ? (View) searchContainer.getParent() : null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        m0 m0Var;
+        f1 f1Var;
+        int i3 = this.a;
+        q0 q0Var = this.b;
+        switch (i3) {
+            case 0:
+                ArrayList arrayList = q0Var.h0;
+                if (q0Var.e.length() != 0) {
+                    q0Var.e.setText("");
+                } else if (q0Var.r()) {
+                    q0Var.e.m();
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        if (q0Var.I != null && ((kg.l0) arrayList.get(i10)).h) {
+                            q0Var.I.j((kg.l0) arrayList.get(i10));
+                        }
                     }
-                    if (searchContainer != null && searchContainer.getVisibility() != 8) {
-                        int measuredWidth = searchContainer.getMeasuredWidth() + i10;
-                        if (searchContainer.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-                            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) searchContainer.getLayoutParams();
-                            i10 = marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + measuredWidth;
-                        } else {
-                            i10 = measuredWidth;
+                    q0Var.m();
+                } else {
+                    TextView textView = q0Var.h;
+                    if (textView != null && textView.getVisibility() == 0 && ((m0Var = q0Var.I) == null || m0Var.a())) {
+                        q0Var.h.setVisibility(8);
+                        m0 m0Var2 = q0Var.I;
+                        if (m0Var2 != null) {
+                            m0Var2.f();
                         }
                     }
                 }
-            }
-        }
-        return i10;
-    }
-
-    public int getItemsWidth() {
-        int childCount = getChildCount();
-        float f7 = Float.POSITIVE_INFINITY;
-        float f10 = Float.NEGATIVE_INFINITY;
-        boolean z10 = false;
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if ((childAt instanceof t0) && childAt.getVisibility() == 0) {
-                float x10 = childAt.getX();
-                f7 = Math.min(f7, x10);
-                f10 = Math.max(f10, childAt.getWidth() + x10);
-                z10 = true;
-            }
-        }
-        if (z10) {
-            return (int) (f10 - f7);
-        }
-        return 0;
-    }
-
-    public int getVisibleItemsMeasuredWidth() {
-        int childCount = getChildCount();
-        int i10 = 0;
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = getChildAt(i11);
-            if ((childAt instanceof t0) && childAt.getVisibility() != 8) {
-                i10 = childAt.getMeasuredWidth() + i10;
-            }
-        }
-        return i10;
-    }
-
-    public int getVisibleItemsMeasuredWidthWithAlpha() {
-        int childCount = getChildCount();
-        float f7 = 0.0f;
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if ((childAt instanceof t0) && childAt.getVisibility() == 0) {
-                f7 = (childAt.getAlpha() * childAt.getMeasuredWidth()) + f7;
-            }
-        }
-        return (int) f7;
-    }
-
-    public final t0 h(int i10, int i11, String str, int i12) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return b(i10, i11, null, z10 ? lVar.q0 : lVar.p0, null, i12, str, null);
-    }
-
-    public final void i(boolean z10) {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof t0) {
-                t0 t0Var = (t0) childAt;
-                if (t0Var.u() && t0Var.v()) {
-                    p0 p0Var = t0Var.H;
-                    if (p0Var == null || p0Var.b()) {
-                        this.b.y(false);
-                        t0Var.T(z10);
-                        return;
-                    }
-                    return;
-                }
-            }
-        }
-    }
-
-    public final t0 j(int i10) {
-        View findViewWithTag = findViewWithTag(Integer.valueOf(i10));
-        if (findViewWithTag instanceof t0) {
-            return (t0) findViewWithTag;
-        }
-        return null;
-    }
-
-    public final int k() {
-        int childCount = getChildCount();
-        int i10 = 0;
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt instanceof t0) {
-                i10 = childAt.getMeasuredWidth() + i10;
-            }
-        }
-        return i10;
-    }
-
-    public final x l(int i10, int i11, int i12, Drawable drawable, int i13, p6 p6Var) {
-        if (this.e == null) {
-            this.e = new ArrayList();
-        }
-        this.e.add(Integer.valueOf(i10));
-        x xVar = new x();
-        xVar.i = 1.0f;
-        xVar.l = 8;
-        xVar.a = this;
-        xVar.b = i10;
-        xVar.c = i11;
-        xVar.e = i12;
-        xVar.f = drawable;
-        xVar.g = i13;
-        xVar.h = p6Var;
-        return xVar;
-    }
-
-    public final x m(Drawable drawable, p6 p6Var) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return l(14, 0, z10 ? lVar.q0 : lVar.p0, drawable, org.telegram.messenger.i0.L(48.0f), p6Var);
-    }
-
-    public final x n(p6 p6Var) {
-        boolean z10 = this.c;
-        l lVar = this.b;
-        return l(32, R.drawable.call, z10 ? lVar.q0 : lVar.p0, null, org.telegram.messenger.i0.L(48.0f), p6Var);
-    }
-
-    public final void o(int i10) {
-        k kVar = this.b.u0;
-        if (kVar != null) {
-            kVar.b(i10);
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        Runnable runnable = this.f;
-        if (runnable != null) {
-            runnable.run();
-        }
-        l lVar = this.b;
-        if (lVar != null) {
-            lVar.j();
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (this.d) {
-            int childCount = getChildCount();
-            for (int i12 = 0; i12 < childCount; i12++) {
-                View childAt = getChildAt(i12);
-                if (childAt instanceof t0) {
-                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-                    if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
-                        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-                        marginLayoutParams.leftMargin = -org.telegram.messenger.i0.L(5.0f);
-                        marginLayoutParams.rightMargin = -org.telegram.messenger.i0.L(5.0f);
+                q0Var.e.requestFocus();
+                org.telegram.messenger.g0.K3(q0Var.e);
+                break;
+            case 1:
+                if (q0Var.x()) {
+                    if (!q0Var.U) {
+                        q0Var.U = true;
+                        q0Var.q();
                     }
                 }
-            }
-        }
-        super.onMeasure(i10, i11);
-    }
-
-    public final boolean p() {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof t0) {
-                t0 t0Var = (t0) childAt;
-                if (t0Var.getSearchContainer() != null && t0Var.getSearchContainer().getVisibility() == 0) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public final void q(int i10, int i11) {
-        t0 j10 = j(i10);
-        if (j10 != null) {
-            j10.setVisibility(i11);
-        }
-    }
-
-    public final void r(float f7) {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof t0) {
-                ((t0) childAt).setTransitionOffset(f7);
-            }
-        }
-    }
-
-    public final void s() {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof t0) {
-                boolean z10 = this.c;
-                l lVar = this.b;
-                childAt.setBackgroundDrawable(t6.h0(z10 ? lVar.q0 : lVar.p0, 1, -1));
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public void setEnabled(boolean z10) {
-        super.setEnabled(z10);
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            getChildAt(i10).setEnabled(z10);
-        }
-    }
-
-    public void setFilter(zf.e0 e0Var) {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof t0) {
-                t0 t0Var = (t0) childAt;
-                if (t0Var.u()) {
-                    t0Var.g0.add(e0Var);
-                    if (t0Var.F.getTag() != null) {
-                        t0Var.h0 = r0.size() - 1;
+                x xVar = q0Var.c;
+                if (xVar != null) {
+                    xVar.o(((Integer) view.getTag()).intValue());
+                    break;
+                } else {
+                    l0 l0Var = q0Var.Q;
+                    if (l0Var != null) {
+                        l0Var.i(((Integer) view.getTag()).intValue());
+                        break;
                     }
-                    t0Var.D();
-                    return;
                 }
-            }
-        }
-    }
-
-    public void setGlassMode(boolean z10) {
-        this.d = z10;
-    }
-
-    public void setOnLayoutListener(Runnable runnable) {
-        this.f = runnable;
-    }
-
-    public void setPopupItemsSelectorColor(int i10) {
-        int childCount = getChildCount();
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt instanceof t0) {
-                ((t0) childAt).setPopupItemsSelectorColor(i10);
-            }
-        }
-    }
-
-    public void setSearchCursorColor(int i10) {
-        int childCount = getChildCount();
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt instanceof t0) {
-                t0 t0Var = (t0) childAt;
-                if (t0Var.u()) {
-                    t0Var.getSearchField().setCursorColor(i10);
-                    return;
+                break;
+            case 2:
+                x xVar2 = q0Var.c;
+                if (xVar2 != null) {
+                    xVar2.o(((Integer) view.getTag()).intValue());
+                    break;
+                } else {
+                    l0 l0Var2 = q0Var.Q;
+                    if (l0Var2 != null) {
+                        l0Var2.i(((Integer) view.getTag()).intValue());
+                        break;
+                    }
                 }
-            }
-        }
-    }
-
-    public void setSearchFieldText(String str) {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof t0) {
-                t0 t0Var = (t0) childAt;
-                if (t0Var.u()) {
-                    t0Var.P(str, false);
-                    t0Var.getSearchField().setSelection(str.length());
+                break;
+            default:
+                if (q0Var.x()) {
+                    if (!q0Var.U) {
+                        q0Var.U = true;
+                        if (!q0Var.S && (f1Var = q0Var.d) != null) {
+                            f1Var.setAnimationStyle(R.style.PopupAnimation);
+                        }
+                        q0Var.q();
+                    }
                 }
-            }
-        }
-    }
-
-    public final void t() {
-        int childCount = getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof t0) {
-                t0 t0Var = (t0) childAt;
-                boolean z10 = this.c;
-                l lVar = this.b;
-                t0Var.setIconColor(z10 ? lVar.s0 : lVar.r0);
-            }
+                x xVar3 = q0Var.c;
+                if (xVar3 != null) {
+                    xVar3.o(((Integer) view.getTag()).intValue());
+                    break;
+                } else {
+                    l0 l0Var3 = q0Var.Q;
+                    if (l0Var3 != null) {
+                        l0Var3.i(((Integer) view.getTag()).intValue());
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

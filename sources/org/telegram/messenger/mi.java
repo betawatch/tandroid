@@ -1,124 +1,73 @@
 package org.telegram.messenger;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class mi implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ l00 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ m00 e;
-    public final /* synthetic */ Runnable f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Cloneable h;
-    public final /* synthetic */ Serializable i;
+public final class mi extends c1 {
+    public static final mi[] b = new mi[4];
+    public final LongSparseArray a;
 
-    public /* synthetic */ mi(vi viVar, l00 l00Var, long j10, a0.h hVar, boolean z10, m00 m00Var, AtomicInteger atomicInteger, Runnable runnable) {
-        this.g = viVar;
-        this.b = l00Var;
-        this.c = j10;
-        this.h = hVar;
-        this.d = z10;
-        this.e = m00Var;
-        this.i = atomicInteger;
-        this.f = runnable;
+    public mi(int i3) {
+        super(i3);
+        this.a = new LongSparseArray();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        Runnable runnable;
-        switch (this.a) {
-            case 0:
-                vi viVar = (vi) this.g;
-                a0.h hVar = (a0.h) this.h;
-                AtomicInteger atomicInteger = (AtomicInteger) this.i;
-                viVar.getClass();
-                m00.a(this.b);
-                if (tL_error == null) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    int i10 = 0;
-                    while (true) {
-                        int size = messages_messages.messages.size();
-                        long j10 = this.c;
-                        if (i10 < size) {
-                            TLRPC.Message message = messages_messages.messages.get(i10);
-                            if (message.dialog_id == 0) {
-                                message.dialog_id = j10;
-                            }
-                            i10++;
-                        } else {
-                            ic.X(messages_messages.messages);
-                            viVar.l(messages_messages.messages, hVar, messages_messages.users, messages_messages.chats, j10, false);
-                            viVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                            viVar.T1(hVar, messages_messages.messages, this.d);
-                        }
-                    }
-                } else {
-                    m00.c(this.e, "messages.getMessages error: " + tL_error.code + " " + tL_error.text);
-                }
-                if (atomicInteger.decrementAndGet() == 0 && (runnable = this.f) != null) {
-                    i0.g3(runnable);
-                    break;
-                }
-                break;
-            default:
-                th.r5 r5Var = (th.r5) this.g;
-                ArrayList arrayList = (ArrayList) this.h;
-                int[] iArr = (int[]) this.i;
-                int i11 = r5Var.a;
-                m00.a(this.b);
-                if (tLObject != null) {
-                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        kj kjVar = (kj) arrayList.get(i12);
-                        int i13 = 0;
-                        while (true) {
-                            int size2 = tL_stories_stories.stories.size();
-                            long j11 = this.c;
-                            if (i13 >= size2) {
-                                TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
-                                tL_storyItemDeleted.id = th.r5.e(kjVar);
-                                th.r5.b(i11, j11, kjVar, tL_storyItemDeleted);
-                            } else if (tL_stories_stories.stories.get(i13).id == th.r5.e(kjVar)) {
-                                th.r5.b(i11, j11, kjVar, tL_stories_stories.stories.get(i13));
-                            } else {
-                                i13++;
-                            }
-                        }
-                        if (this.d) {
-                            r5Var.b.a.c(new th.o0(16, r5Var, arrayList));
-                        }
-                    }
-                } else if (tL_error != null) {
-                    m00.c(this.e, "fillMessagesWithStories: getStoriesByID error " + tL_error.code + " " + tL_error.text);
-                }
-                int i14 = iArr[0] - 1;
-                iArr[0] = i14;
-                if (i14 == 0) {
-                    this.f.run();
-                    break;
-                }
-                break;
+    public static mi b(int i3) {
+        mi miVar;
+        mi[] miVarArr = b;
+        mi miVar2 = miVarArr[i3];
+        if (miVar2 != null) {
+            return miVar2;
         }
+        synchronized (mi.class) {
+            try {
+                miVar = miVarArr[i3];
+                if (miVar == null) {
+                    miVar = new mi(i3);
+                    miVarArr[i3] = miVar;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return miVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ mi(th.r5 r5Var, l00 l00Var, ArrayList arrayList, long j10, boolean z10, m00 m00Var, int[] iArr, Runnable runnable) {
-        this.g = r5Var;
-        this.b = l00Var;
-        this.h = arrayList;
-        this.c = j10;
-        this.d = z10;
-        this.e = m00Var;
-        this.i = iArr;
-        this.f = runnable;
+    public final int a(long j10, String str, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, LongSparseArray longSparseArray, ci.d4 d4Var) {
+        boolean isEmpty = TextUtils.isEmpty(str);
+        TLRPC.TL_messages_getChatInviteImporters tL_messages_getChatInviteImporters = new TLRPC.TL_messages_getChatInviteImporters();
+        tL_messages_getChatInviteImporters.peer = hp.s1(this.currentAccount).j1(-j10);
+        tL_messages_getChatInviteImporters.requested = true;
+        tL_messages_getChatInviteImporters.limit = 30;
+        if (!isEmpty) {
+            tL_messages_getChatInviteImporters.q = str;
+            tL_messages_getChatInviteImporters.flags |= 4;
+        }
+        if (tL_chatInviteImporter == null) {
+            tL_messages_getChatInviteImporters.offset_user = new TLRPC.TL_inputUserEmpty();
+        } else {
+            tL_messages_getChatInviteImporters.offset_user = getMessagesController().q1((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id));
+            tL_messages_getChatInviteImporters.offset_date = tL_chatInviteImporter.date;
+        }
+        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new y3(this, tL_chatInviteImporter, isEmpty, j10, d4Var, 1));
+    }
+
+    public final void c(TL_update.TL_updatePendingJoinRequests tL_updatePendingJoinRequests) {
+        long j10 = -zi.C1(tL_updatePendingJoinRequests.peer);
+        this.a.put(j10, null);
+        TLRPC.ChatFull N0 = getMessagesController().N0(j10);
+        if (N0 != null) {
+            N0.requests_pending = tL_updatePendingJoinRequests.requests_pending;
+            N0.recent_requesters = tL_updatePendingJoinRequests.recent_requesters;
+            N0.flags |= 131072;
+            getMessagesStorage().N1(N0, false);
+            hs notificationCenter = getNotificationCenter();
+            Boolean bool = Boolean.FALSE;
+            notificationCenter.k(hs.T, N0, 0, bool, bool);
+        }
     }
 }

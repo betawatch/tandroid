@@ -9,7 +9,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.util.Log;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class q {
     public static final PorterDuff.Mode b = PorterDuff.Mode.SRC_IN;
@@ -37,12 +37,12 @@ public final class q {
                 q qVar = new q();
                 c = qVar;
                 qVar.a = m2.d();
-                c.a.l(new j2.f(3));
+                c.a.l(new l2.e(1));
             }
         }
     }
 
-    public static void d(Drawable drawable, c3 c3Var, int[] iArr) {
+    public static void d(Drawable drawable, b3 b3Var, int[] iArr) {
         PorterDuff.Mode mode = m2.h;
         int[] state = drawable.getState();
         int[] iArr2 = l1.a;
@@ -54,11 +54,11 @@ public final class q {
             drawable.setState(new int[0]);
             drawable.setState(state);
         }
-        boolean z10 = c3Var.b;
-        if (z10 || c3Var.a) {
+        boolean z10 = b3Var.b;
+        if (z10 || b3Var.a) {
             PorterDuffColorFilter porterDuffColorFilter = null;
-            ColorStateList colorStateList = z10 ? (ColorStateList) c3Var.c : null;
-            PorterDuff.Mode mode2 = c3Var.a ? (PorterDuff.Mode) c3Var.d : m2.h;
+            ColorStateList colorStateList = z10 ? (ColorStateList) b3Var.c : null;
+            PorterDuff.Mode mode2 = b3Var.a ? (PorterDuff.Mode) b3Var.d : m2.h;
             if (colorStateList != null && mode2 != null) {
                 porterDuffColorFilter = m2.h(colorStateList.getColorForState(iArr, 0), mode2);
             }
@@ -71,7 +71,7 @@ public final class q {
         }
     }
 
-    public final synchronized Drawable b(Context context, int i10) {
-        return this.a.g(context, i10);
+    public final synchronized Drawable b(Context context, int i3) {
+        return this.a.g(context, i3);
     }
 }

@@ -2,11 +2,11 @@ package org.webrtc;
 
 import android.view.SurfaceHolder;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.ActionBar.w5;
+import org.telegram.ui.ActionBar.d4;
 import org.webrtc.EglBase;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Callback {
     private static final String TAG = "SurfaceEglRenderer";
@@ -92,17 +92,17 @@ public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Cal
     }
 
     @Override // org.webrtc.EglRenderer
-    public void setFpsReduction(float f7) {
+    public void setFpsReduction(float f10) {
         synchronized (this.layoutLock) {
-            this.isRenderingPaused = f7 == 0.0f;
+            this.isRenderingPaused = f10 == 0.0f;
         }
-        super.setFpsReduction(f7);
+        super.setFpsReduction(f10);
     }
 
     @Override // android.view.SurfaceHolder.Callback
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int i10, int i11, int i12) {
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i3, int i10, int i11) {
         ThreadUtils.checkIsOnMainThread();
-        logD("surfaceChanged: format: " + i10 + " size: " + i11 + "x" + i12);
+        logD("surfaceChanged: format: " + i3 + " size: " + i10 + "x" + i11);
     }
 
     @Override // android.view.SurfaceHolder.Callback
@@ -115,7 +115,7 @@ public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Cal
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
         ThreadUtils.checkIsOnMainThread();
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        releaseEglSurface(new w5(countDownLatch, 0), false);
+        releaseEglSurface(new d4(countDownLatch, 4), false);
         ThreadUtils.awaitUninterruptibly(countDownLatch);
     }
 

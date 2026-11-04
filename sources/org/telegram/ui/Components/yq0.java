@@ -1,85 +1,169 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
+import android.util.SparseBooleanArray;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yq0 extends Drawable {
-    public final /* synthetic */ int a;
-    public final ShapeDrawable b;
-    public final Rect c;
+public final class yq0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ tj0 a;
+    public final /* synthetic */ SparseBooleanArray b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ ws0 e;
 
-    public yq0(wq0 wq0Var) {
-        this.a = 1;
-        this.b = org.telegram.ui.ActionBar.t6.e0(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(16.0f), 0);
-        this.c = new Rect();
+    public yq0(ws0 ws0Var, tj0 tj0Var, SparseBooleanArray sparseBooleanArray, iz izVar, int i3) {
+        this.e = ws0Var;
+        this.a = tj0Var;
+        this.b = sparseBooleanArray;
+        this.c = izVar;
+        this.d = i3;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                Rect bounds = getBounds();
-                Rect rect = this.c;
-                rect.set(bounds);
-                rect.inset(org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(8.0f));
-                ShapeDrawable shapeDrawable = this.b;
-                shapeDrawable.setBounds(rect);
-                shapeDrawable.draw(canvas);
-                break;
-            default:
-                Rect bounds2 = getBounds();
-                Rect rect2 = this.c;
-                rect2.set(bounds2);
-                rect2.inset(org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(8.0f));
-                ShapeDrawable shapeDrawable2 = this.b;
-                shapeDrawable2.setBounds(rect2);
-                shapeDrawable2.draw(canvas);
-                break;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        ws0 ws0Var = this.e;
+        ws0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        final tj0 tj0Var = this.a;
+        u4.h0 adapter = tj0Var.getAdapter();
+        final int i3 = 2;
+        final int i10 = 1;
+        final int i11 = 0;
+        if (adapter == ws0Var.K || adapter == ws0Var.N || adapter == ws0Var.P || adapter == ws0Var.O) {
+            SparseBooleanArray sparseBooleanArray = this.b;
+            if (sparseBooleanArray != null) {
+                int childCount = tj0Var.getChildCount();
+                for (int i12 = 0; i12 < childCount; i12++) {
+                    int o10 = ws0.o(tj0Var.getChildAt(i12));
+                    if (o10 != 0 && sparseBooleanArray.get(o10, false)) {
+                        ws0Var.S1.put(o10, Float.valueOf(0.0f));
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                        ofFloat.addUpdateListener(new gi.b4(this, o10, tj0Var));
+                        ofFloat.addListener(new ii.m2(this, o10, 13));
+                        ofFloat.setStartDelay((int) ((Math.min(tj0Var.getMeasuredHeight(), Math.max(0, r10.getTop())) / tj0Var.getMeasuredHeight()) * 100.0f));
+                        ofFloat.setDuration(250L);
+                        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.xq0
+                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                                switch (i11) {
+                                    case 0:
+                                        tj0 tj0Var2 = tj0Var;
+                                        if (tj0Var2.b1()) {
+                                            tj0Var2.invalidate();
+                                            break;
+                                        }
+                                        break;
+                                    case 1:
+                                        tj0 tj0Var3 = tj0Var;
+                                        if (tj0Var3.b1()) {
+                                            tj0Var3.invalidate();
+                                            break;
+                                        }
+                                        break;
+                                    default:
+                                        tj0 tj0Var4 = tj0Var;
+                                        if (tj0Var4.b1()) {
+                                            tj0Var4.invalidate();
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        });
+                        ofFloat.start();
+                    }
+                    tj0Var.invalidate();
+                }
+            }
+            return true;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
+        int childCount2 = tj0Var.getChildCount();
+        AnimatorSet animatorSet = new AnimatorSet();
+        for (int i13 = 0; i13 < childCount2; i13++) {
+            View childAt = tj0Var.getChildAt(i13);
+            View view = this.c;
+            if (childAt != view && RecyclerView.R(childAt) >= this.d - 1) {
+                childAt.setAlpha(0.0f);
+                int min = (int) ((Math.min(tj0Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / tj0Var.getMeasuredHeight()) * 100.0f);
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                ofFloat2.setStartDelay(min);
+                ofFloat2.setDuration(200L);
+                ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.xq0
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        switch (i10) {
+                            case 0:
+                                tj0 tj0Var2 = tj0Var;
+                                if (tj0Var2.b1()) {
+                                    tj0Var2.invalidate();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                tj0 tj0Var3 = tj0Var;
+                                if (tj0Var3.b1()) {
+                                    tj0Var3.invalidate();
+                                    break;
+                                }
+                                break;
+                            default:
+                                tj0 tj0Var4 = tj0Var;
+                                if (tj0Var4.b1()) {
+                                    tj0Var4.invalidate();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                animatorSet.playTogether(ofFloat2);
+            }
+            if (view != null && view.getParent() == null) {
+                tj0Var.addView(view);
+                u4.o0 layoutManager = tj0Var.getLayoutManager();
+                if (layoutManager != null) {
+                    layoutManager.M(view);
+                    ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
+                    ofFloat3.addListener(new a60(this, layoutManager));
+                    ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.xq0
+                        @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                        public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                            switch (i3) {
+                                case 0:
+                                    tj0 tj0Var2 = tj0Var;
+                                    if (tj0Var2.b1()) {
+                                        tj0Var2.invalidate();
+                                        break;
+                                    }
+                                    break;
+                                case 1:
+                                    tj0 tj0Var3 = tj0Var;
+                                    if (tj0Var3.b1()) {
+                                        tj0Var3.invalidate();
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    tj0 tj0Var4 = tj0Var;
+                                    if (tj0Var4.b1()) {
+                                        tj0Var4.invalidate();
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    });
+                    ofFloat3.start();
+                }
+            }
         }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(i10);
-                break;
-            default:
-                this.b.setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i10 = this.a;
-    }
-
-    public yq0(zq0 zq0Var) {
-        this.a = 0;
-        int L = org.telegram.messenger.i0.L(16.0f);
-        int L2 = org.telegram.messenger.i0.L(16.0f);
-        int i10 = org.telegram.ui.ActionBar.t6.d6;
-        org.telegram.ui.ActionBar.p6 p6Var = zq0Var.c;
-        this.b = org.telegram.ui.ActionBar.t6.e0(L, L2, org.telegram.ui.ActionBar.t6.w(org.telegram.ui.ActionBar.t6.w0(i10, p6Var), org.telegram.ui.ActionBar.t6.r1(0.04f, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.G6, p6Var))));
-        this.c = new Rect();
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
+        animatorSet.start();
+        return true;
     }
 }

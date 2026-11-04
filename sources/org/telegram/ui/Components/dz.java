@@ -1,44 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
-import android.os.Looper;
-import android.view.Surface;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dz implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gz b;
+public final class dz {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public int j;
+    public final /* synthetic */ ez k;
 
-    public /* synthetic */ dz(gz gzVar, int i10) {
-        this.a = i10;
-        this.b = gzVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
-                    break;
-                }
-                break;
-            case 1:
-                gz.a(this.b);
-                break;
-            default:
-                gz gzVar = this.b;
-                px pxVar = gzVar.b0;
-                SurfaceTexture surfaceTexture = gzVar.x;
-                l61 l61Var = (l61) pxVar.b;
-                if (l61Var.a != null) {
-                    l61Var.a.y0(new Surface(surfaceTexture));
-                    break;
-                }
-                break;
-        }
+    public dz(ez ezVar) {
+        this.k = ezVar;
     }
 }

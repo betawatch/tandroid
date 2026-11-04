@@ -1,232 +1,417 @@
 package org.telegram.messenger;
 
-import android.graphics.Typeface;
-import android.os.Debug;
-import android.util.Log;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.time.FastDateFormat;
-import org.telegram.messenger.video.MediaCodecVideoConvertor;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class f8 {
-    public static boolean j = false;
-    public static volatile f8 k;
-    public static long l;
-    public OutputStreamWriter a;
-    public FastDateFormat b;
-    public FastDateFormat c;
-    public r5 d;
+    public p5 a;
+    public final int b;
+    public SQLiteDatabase c;
+    public File d;
     public File e;
-    public File f;
-    public boolean g;
-    public OutputStreamWriter h;
-    public File i;
+    public final ConcurrentHashMap f = new ConcurrentHashMap();
+    public final e8 g = new e8();
+    public boolean h;
 
-    static {
-        new AtomicInteger();
+    public f8(int i3) {
+        this.b = i3;
     }
 
-    public static void a() {
-        File[] listFiles;
-        h();
-        File P0 = i0.P0();
-        if (P0 == null || (listFiles = P0.listFiles()) == null) {
+    public final void a() {
+        File h = t0.h();
+        int i3 = this.b;
+        if (i3 != 0) {
+            File file = new File(h, k2.p1.j(i3, "account", "/"));
+            file.mkdirs();
+            h = file;
+        }
+        File file2 = new File(h, "file_to_path_backup.db");
+        try {
+            g0.E(this.d, file2);
+            a8.b("file db backup created " + file2.getAbsolutePath());
+        } catch (IOException e10) {
+            e10.printStackTrace();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0119  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i3, boolean z10) {
+        boolean E;
+        File h = t0.h();
+        int i10 = this.b;
+        if (i10 != 0) {
+            File file = new File(h, k2.p1.j(i10, "account", "/"));
+            file.mkdirs();
+            h = file;
+        }
+        this.d = new File(h, "file_to_path.db");
+        this.e = new File(h, "file_to_path.db-shm");
+        boolean exists = this.d.exists();
+        try {
+            SQLiteDatabase sQLiteDatabase = new SQLiteDatabase(this.d.getPath());
+            this.c = sQLiteDatabase;
+            sQLiteDatabase.executeFast("PRAGMA secure_delete = ON").stepThis().dispose();
+            this.c.executeFast("PRAGMA temp_store = MEMORY").stepThis().dispose();
+            if (exists) {
+                int intValue = this.c.executeInt("PRAGMA user_version", new Object[0]).intValue();
+                if (r2.a) {
+                    a8.b("current files db version = " + intValue);
+                }
+                if (intValue == 0) {
+                    throw new Exception("malformed");
+                }
+                g(intValue);
+            } else {
+                this.c.executeFast("CREATE TABLE paths(document_id INTEGER, dc_id INTEGER, type INTEGER, path TEXT, flags INTEGER, PRIMARY KEY(document_id, dc_id, type));").stepThis().dispose();
+                this.c.executeFast("CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);").stepThis().dispose();
+                this.c.executeFast("CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER, message_id INTEGER, message_type INTEGER);").stepThis().dispose();
+                this.c.executeFast("PRAGMA user_version = 7").stepThis().dispose();
+            }
+            if (!z10) {
+                a();
+            }
+            a8.b("files db created from_backup= " + z10);
+        } catch (Exception e10) {
+            if (i3 < 4) {
+                if (!z10) {
+                    File h7 = t0.h();
+                    if (i10 != 0) {
+                        File file2 = new File(h7, k2.p1.j(i10, "account", "/"));
+                        file2.mkdirs();
+                        h7 = file2;
+                    }
+                    File file3 = new File(h7, "file_to_path_backup.db");
+                    if (file3.exists()) {
+                        try {
+                            E = g0.E(file3, this.d);
+                        } catch (IOException e11) {
+                            a8.g(e11, true);
+                            E = false;
+                            if (E) {
+                            }
+                            this.d.delete();
+                            this.e.delete();
+                            b(i3 + 1, false);
+                            boolean z11 = r2.a;
+                            a8.g(e10, true);
+                        }
+                        if (E) {
+                            b(i3 + 1, true);
+                            return;
+                        }
+                    }
+                    E = false;
+                    if (E) {
+                    }
+                }
+                this.d.delete();
+                this.e.delete();
+                b(i3 + 1, false);
+            }
+            boolean z112 = r2.a;
+            a8.g(e10, true);
+        }
+    }
+
+    public final void c() {
+        if (this.h) {
             return;
         }
-        for (File file : listFiles) {
-            if ((j().e == null || !file.getAbsolutePath().equals(j().e.getAbsolutePath())) && (j().f == null || !file.getAbsolutePath().equals(j().f.getAbsolutePath()))) {
-                j();
-                file.delete();
+        if (!sr.a) {
+            int i3 = 0;
+            while (!sr.a) {
+                try {
+                    Thread.sleep(1000L);
+                } catch (InterruptedException e10) {
+                    e10.printStackTrace();
+                }
+                i3++;
+                if (i3 > 5) {
+                    break;
+                }
+            }
+        }
+        b(0, false);
+        this.h = true;
+    }
+
+    public final void d() {
+        if (this.a == null) {
+            synchronized (this) {
+                try {
+                    if (this.a == null) {
+                        p5 p5Var = new p5("files_database_queue_" + this.b);
+                        this.a = p5Var;
+                        p5Var.setPriority(10);
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
             }
         }
     }
 
-    public static void b(String str) {
-        if (v2.a) {
-            h();
-            Log.d("tmessages", str);
-            if (j().a != null) {
-                j().d.c(new o4(str, 3));
-            }
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0063 A[DONT_GENERATE] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final e8 e(File file, e8 e8Var) {
+        int i3;
+        int i10;
+        SQLiteCursor sQLiteCursor = null;
+        if (file == null) {
+            return null;
         }
-    }
-
-    public static void c(boolean z10) {
-        if (z10 || System.currentTimeMillis() - l >= 30000) {
-            l = System.currentTimeMillis();
+        if (e8Var == null) {
+            e8Var = this.g;
+        }
+        int i11 = 0;
+        long j10 = 0;
+        try {
             try {
-                Debug.dumpHprofData(new File(i0.P0(), j().b.format(System.currentTimeMillis()) + "_heap.hprof").getAbsolutePath());
-            } catch (Exception e) {
-                g(e, true);
+                SQLiteDatabase sQLiteDatabase = this.c;
+                StringBuilder sb2 = new StringBuilder("SELECT dialog_id, message_id, message_type FROM paths_by_dialog_id WHERE path = '");
+                try {
+                    sb2.append(file.getPath().replace("'", "").replace("\"", ""));
+                    sb2.append("'");
+                    sQLiteCursor = sQLiteDatabase.queryFinalized(sb2.toString(), new Object[0]);
+                    if (sQLiteCursor.next()) {
+                        j10 = sQLiteCursor.longValue(0);
+                        i3 = sQLiteCursor.intValue(1);
+                        try {
+                            i11 = i3;
+                            i10 = sQLiteCursor.intValue(2);
+                        } catch (Exception e10) {
+                            e = e10;
+                            a8.g(e, true);
+                            i11 = i3;
+                            i10 = 0;
+                            e8Var.a = j10;
+                            e8Var.b = i11;
+                            e8Var.c = i10;
+                            return e8Var;
+                        }
+                    } else {
+                        i10 = 0;
+                    }
+                    sQLiteCursor.dispose();
+                } catch (Exception e11) {
+                    e = e11;
+                    i3 = 0;
+                    a8.g(e, true);
+                    i11 = i3;
+                    i10 = 0;
+                    e8Var.a = j10;
+                    e8Var.b = i11;
+                    e8Var.c = i10;
+                    return e8Var;
+                }
+            } catch (Exception e12) {
+                e = e12;
+            }
+            e8Var.a = j10;
+            e8Var.b = i11;
+            e8Var.c = i10;
+            return e8Var;
+        } finally {
+            if (sQLiteCursor != null) {
+                sQLiteCursor.dispose();
             }
         }
     }
 
-    public static void d(String str) {
-        if (v2.a) {
-            h();
-            Log.e("tmessages", str);
-            if (j().a != null) {
-                j().d.c(new o4(str, 2));
-            }
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0178  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String f(final int i3, final int i10, final long j10, boolean z10) {
+        int i11;
+        boolean z11;
+        SQLiteCursor sQLiteCursor;
+        SQLiteCursor sQLiteCursor2;
+        String str;
+        final long currentTimeMillis = System.currentTimeMillis();
+        String str2 = j10 + "_" + i3 + "_" + i10;
+        ConcurrentHashMap concurrentHashMap = this.f;
+        String str3 = (String) concurrentHashMap.get(str2);
+        String str4 = null;
+        if (str3 == "~null~") {
+            boolean z12 = r2.a;
+            a8.b("get file path cached null id=" + j10 + " dc=" + i3 + " type=" + i10 + " path=null in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+            return null;
         }
-    }
-
-    public static void e(String str, Throwable th2) {
-        if (v2.a) {
-            h();
-            Log.e("tmessages", str, th2);
-            if (j().a != null) {
-                j().d.c(new t6(9, str, th2));
-            }
+        if (str3 != null) {
+            boolean z13 = r2.a;
+            a8.b("get file path cached id=" + j10 + " dc=" + i3 + " type=" + i10 + " path=" + str3 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+            return str3;
         }
-    }
-
-    public static void f(Throwable th2) {
-        g(th2, true);
-    }
-
-    public static void g(Throwable th2, boolean z10) {
-        if (v2.a) {
-            if (!(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof e8) && z10) {
-                Typeface typeface = i0.a;
-                w0.a(th2);
-            }
-            int i10 = 0;
-            if (th2.getMessage() != null && th2.getMessage().contains("disk image is malformed") && !j) {
-                b("copy malformed files");
-                j = true;
-                File file = new File(w0.h(), "malformed_database/");
-                file.mkdirs();
-                is a02 = is.a0(e20.s0);
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(a02.c);
-                arrayList.add(a02.d);
-                arrayList.add(a02.e);
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+        if (this.a != null) {
+            i11 = 0;
+            if (Thread.currentThread() == this.a) {
+                z11 = false;
+                if (!z11) {
+                    final CountDownLatch countDownLatch = new CountDownLatch(1);
+                    final String[] strArr = new String[1];
+                    h(new Runnable() { // from class: org.telegram.messenger.b8
+                        /* JADX WARN: Code restructure failed: missing block: B:14:0x008f, code lost:
+                        
+                            if (r10 == null) goto L20;
+                         */
+                        @Override // java.lang.Runnable
+                        /*
+                            Code decompiled incorrectly, please refer to instructions dump.
+                        */
+                        public final void run() {
+                            long j11 = j10;
+                            int i12 = i3;
+                            int i13 = i10;
+                            String[] strArr2 = strArr;
+                            long j12 = currentTimeMillis;
+                            f8 f8Var = f8.this;
+                            f8Var.c();
+                            SQLiteDatabase sQLiteDatabase = f8Var.c;
+                            if (sQLiteDatabase != null) {
+                                SQLiteCursor sQLiteCursor3 = null;
+                                try {
+                                    sQLiteCursor3 = sQLiteDatabase.queryFinalized("SELECT path FROM paths WHERE document_id = " + j11 + " AND dc_id = " + i12 + " AND type = " + i13, new Object[0]);
+                                    if (sQLiteCursor3.next()) {
+                                        strArr2[0] = sQLiteCursor3.stringValue(0);
+                                        boolean z14 = r2.a;
+                                        a8.b("get file path id=" + j11 + " dc=" + i12 + " type=" + i13 + " path=" + strArr2[0] + " in " + (System.currentTimeMillis() - j12) + "ms");
+                                    }
+                                } catch (Throwable th2) {
+                                    try {
+                                        a8.g(th2, true);
+                                    } catch (Throwable th3) {
+                                        if (sQLiteCursor3 != null) {
+                                            sQLiteCursor3.dispose();
+                                        }
+                                        throw th3;
+                                    }
+                                }
+                                sQLiteCursor3.dispose();
+                            }
+                            countDownLatch.countDown();
+                        }
+                    });
                     try {
-                        i0.E((File) arrayList.get(i11), new File(file, ((File) arrayList.get(i11)).getName()));
-                    } catch (IOException e) {
-                        g(e, true);
+                        countDownLatch.await();
+                    } catch (Exception unused) {
                     }
+                    String str5 = strArr[i11];
+                    if (str5 != null) {
+                        concurrentHashMap.put(str2, str5);
+                    } else {
+                        concurrentHashMap.put(str2, "~null~");
+                    }
+                    return strArr[i11];
+                }
+                SQLiteDatabase sQLiteDatabase = this.c;
+                try {
+                    if (sQLiteDatabase == null) {
+                        return null;
+                    }
+                    try {
+                        int i12 = i11;
+                        sQLiteCursor2 = sQLiteDatabase.queryFinalized("SELECT path FROM paths WHERE document_id = " + j10 + " AND dc_id = " + i3 + " AND type = " + i10, new Object[i12]);
+                        try {
+                            if (sQLiteCursor2.next()) {
+                                str = sQLiteCursor2.stringValue(i12);
+                                try {
+                                    boolean z14 = r2.a;
+                                    a8.b("get file path id=" + j10 + " dc=" + i3 + " type=" + i10 + " path=" + str + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+                                    str4 = str;
+                                } catch (SQLiteException e10) {
+                                    e = e10;
+                                    a8.g(e, true);
+                                    if (sQLiteCursor2 != null) {
+                                        sQLiteCursor2.dispose();
+                                    }
+                                    if (str == null) {
+                                    }
+                                    return str;
+                                }
+                            }
+                            sQLiteCursor2.dispose();
+                            str = str4;
+                        } catch (SQLiteException e11) {
+                            e = e11;
+                            str = null;
+                        }
+                    } catch (SQLiteException e12) {
+                        e = e12;
+                        sQLiteCursor2 = null;
+                        str = null;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        sQLiteCursor = 0;
+                        if (sQLiteCursor != 0) {
+                            sQLiteCursor.dispose();
+                        }
+                        throw th;
+                    }
+                    if (str == null) {
+                        concurrentHashMap.put(str2, str);
+                    } else {
+                        concurrentHashMap.put(str2, "~null~");
+                    }
+                    return str;
+                } catch (Throwable th3) {
+                    th = th3;
+                    sQLiteCursor = this;
                 }
             }
-            h();
-            th2.printStackTrace();
-            if (j().a != null) {
-                j().d.c(new d8(i10, th2));
-            } else {
-                th2.printStackTrace();
-            }
+        } else {
+            i11 = 0;
+        }
+        z11 = z10;
+        if (!z11) {
         }
     }
 
-    public static void h() {
-        j().k();
-    }
-
-    public static void i(Throwable th2, boolean z10) {
-        if (v2.a) {
-            if (th2 instanceof OutOfMemoryError) {
-                j();
-                c(false);
-            }
-            if (z10 && !(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof e8)) {
-                Typeface typeface = i0.a;
-                w0.a(th2);
-            }
-            h();
-            th2.printStackTrace();
-            if (j().a != null) {
-                j().d.c(new d8(1, th2));
-            } else {
-                th2.printStackTrace();
-            }
+    public final void g(int i3) {
+        if (i3 == 1) {
+            k2.p1.y(this.c, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
+            k2.p1.y(this.c, "PRAGMA user_version = 2");
+            i3 = 2;
         }
-    }
-
-    public static f8 j() {
-        f8 f8Var;
-        f8 f8Var2 = k;
-        if (f8Var2 != null) {
-            return f8Var2;
+        if (i3 == 2) {
+            k2.p1.y(this.c, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
+            k2.p1.y(this.c, "PRAGMA user_version = 3");
+            i3 = 3;
         }
-        synchronized (f8.class) {
+        if (i3 == 3) {
+            k2.p1.y(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
+            k2.p1.y(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
+            k2.p1.y(this.c, "PRAGMA user_version = 4");
+            i3 = 4;
+        }
+        if (i3 == 4 || i3 == 5 || i3 == 6) {
             try {
-                f8Var = k;
-                if (f8Var == null) {
-                    f8Var = new f8();
-                    f8Var.a = null;
-                    f8Var.b = null;
-                    f8Var.c = null;
-                    f8Var.d = null;
-                    f8Var.e = null;
-                    f8Var.f = null;
-                    f8Var.h = null;
-                    f8Var.i = null;
-                    k = f8Var;
-                    if (v2.a) {
-                        f8Var.k();
-                    }
-                }
+                this.c.executeFast("ALTER TABLE paths ADD COLUMN flags INTEGER default 0").stepThis().dispose();
             } catch (Throwable th2) {
-                throw th2;
+                a8.g(th2, true);
             }
-        }
-        return f8Var;
-    }
-
-    public static void l(String str) {
-        if (v2.a) {
-            h();
-            Log.w("tmessages", str);
-            if (j().a != null) {
-                j().d.c(new o4(str, 1));
-            }
+            k2.p1.y(this.c, "PRAGMA user_version = 7");
         }
     }
 
-    public final void k() {
-        File P0;
-        if (this.g) {
-            return;
-        }
-        Locale locale = Locale.US;
-        this.b = FastDateFormat.getInstance("dd_MM_yyyy_HH_mm_ss.SSS", locale);
-        FastDateFormat fastDateFormat = FastDateFormat.getInstance("dd_MM_yyyy_HH_mm_ss", locale);
-        this.c = fastDateFormat;
-        String format = fastDateFormat.format(System.currentTimeMillis());
-        try {
-            P0 = i0.P0();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (P0 == null) {
-            return;
-        }
-        this.e = new File(P0, format + ".txt");
-        this.i = new File(P0, format + "_mtproto.txt");
-        try {
-            this.d = new r5("logQueue");
-            this.e.createNewFile();
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(this.e));
-            this.a = outputStreamWriter;
-            outputStreamWriter.write("-----start log " + format + "-----\n");
-            this.a.flush();
-            OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(new FileOutputStream(this.i));
-            this.h = outputStreamWriter2;
-            outputStreamWriter2.write("-----start log " + format + "-----\n");
-            this.h.flush();
-        } catch (Exception e7) {
-            e7.printStackTrace();
-        }
-        this.g = true;
+    public final void h(Runnable runnable) {
+        d();
+        this.a.c(runnable);
     }
 }

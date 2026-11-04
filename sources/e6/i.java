@@ -1,104 +1,78 @@
 package e6;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class i extends n {
-    public final /* synthetic */ int r;
-    public final /* synthetic */ h s;
+public final class i extends q6.a {
+    public static final Parcelable.Creator<i> CREATOR = new v(5);
+    public final boolean a;
+    public final String b;
+    public final boolean c;
+    public final h d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(h hVar, int i10) {
-        super(hVar, false);
-        this.r = i10;
-        this.s = hVar;
+    public i(boolean z10, String str, boolean z11, h hVar) {
+        this.a = z10;
+        this.b = str;
+        this.c = z11;
+        this.d = hVar;
     }
 
-    @Override // e6.n
-    public final void n() {
-        switch (this.r) {
-            case 0:
-                g6.m mVar = this.s.c;
-                g6.n o10 = o();
-                mVar.getClass();
-                JSONObject jSONObject = new JSONObject();
-                long b10 = mVar.b();
-                try {
-                    jSONObject.put("requestId", b10);
-                    jSONObject.put(TeXSymbolParser.TYPE_ATTR, "GET_STATUS");
-                    c6.q qVar = mVar.f;
-                    if (qVar != null) {
-                        jSONObject.put("mediaSessionId", qVar.b);
-                    }
-                } catch (JSONException unused) {
-                }
-                mVar.c(b10, jSONObject.toString());
-                mVar.p.a(b10, o10);
-                break;
-            case 1:
-                this.s.c.d(o(), -1, null);
-                break;
-            case 2:
-                this.s.c.d(o(), 1, null);
-                break;
-            case 3:
-                this.s.c.d(o(), 0, 2);
-                break;
-            case 4:
-                g6.m mVar2 = this.s.c;
-                g6.n o11 = o();
-                mVar2.getClass();
-                JSONObject jSONObject2 = new JSONObject();
-                long b11 = mVar2.b();
-                try {
-                    jSONObject2.put("requestId", b11);
-                    jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "QUEUE_GET_ITEM_IDS");
-                    jSONObject2.put("mediaSessionId", mVar2.p());
-                } catch (JSONException unused2) {
-                }
-                mVar2.c(b11, jSONObject2.toString());
-                mVar2.r.a(b11, o11);
-                break;
-            case 5:
-                g6.m mVar3 = this.s.c;
-                g6.n o12 = o();
-                mVar3.getClass();
-                JSONObject jSONObject3 = new JSONObject();
-                long b12 = mVar3.b();
-                try {
-                    jSONObject3.put("requestId", b12);
-                    jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "PAUSE");
-                    jSONObject3.put("mediaSessionId", mVar3.p());
-                } catch (JSONException unused3) {
-                }
-                mVar3.c(b12, jSONObject3.toString());
-                mVar3.k.a(b12, o12);
-                break;
-            default:
-                g6.m mVar4 = this.s.c;
-                g6.n o13 = o();
-                mVar4.getClass();
-                JSONObject jSONObject4 = new JSONObject();
-                long b13 = mVar4.b();
-                try {
-                    jSONObject4.put("requestId", b13);
-                    jSONObject4.put(TeXSymbolParser.TYPE_ATTR, "PLAY");
-                    jSONObject4.put("mediaSessionId", mVar4.p());
-                } catch (JSONException unused4) {
-                }
-                mVar4.c(b13, jSONObject4.toString());
-                mVar4.l.a(b13, o13);
-                break;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof i)) {
+            return false;
+        }
+        i iVar = (i) obj;
+        return this.a == iVar.a && i6.a.d(this.b, iVar.b) && this.c == iVar.c && i6.a.d(this.d, iVar.d);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(h hVar) {
-        super(hVar, true);
-        this.r = 4;
-        this.s = hVar;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, Boolean.valueOf(this.c), this.d});
+    }
+
+    public final String toString() {
+        return "LaunchOptions(relaunchIfRunning=" + this.a + ", language=" + this.b + ", androidReceiverCompatible: " + this.c + ")";
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        j8.a.m(parcel, 3, this.b);
+        j8.a.r(parcel, 4, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        j8.a.l(parcel, 5, this.d, i3);
+        j8.a.t(parcel, s6);
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public i() {
+        this(false, r1.toString(), false, null);
+        Locale locale = Locale.getDefault();
+        Pattern pattern = i6.a.a;
+        StringBuilder sb2 = new StringBuilder(20);
+        sb2.append(locale.getLanguage());
+        String country = locale.getCountry();
+        if (!TextUtils.isEmpty(country)) {
+            sb2.append('-');
+            sb2.append(country);
+        }
+        String variant = locale.getVariant();
+        if (!TextUtils.isEmpty(variant)) {
+            sb2.append('-');
+            sb2.append(variant);
+        }
     }
 }

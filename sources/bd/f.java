@@ -1,104 +1,24 @@
 package bd;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
+import gf.p;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f implements Collection {
-    public final Object[] a;
-    public final boolean b;
+public final class f extends h {
+    public static final Pattern e = Pattern.compile("^&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
 
-    public f(Object[] values, boolean z10) {
-        kotlin.jvm.internal.i.e(values, "values");
-        this.a = values;
-        this.b = z10;
-    }
-
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean contains(Object obj) {
-        return h.a(this.a, obj);
-    }
-
-    @Override // java.util.Collection
-    public final boolean containsAll(Collection elements) {
-        kotlin.jvm.internal.i.e(elements, "elements");
-        Collection collection = elements;
-        if (collection.isEmpty()) {
-            return true;
+    @Override // bd.h
+    public final p b() {
+        String a10 = a(e);
+        if (a10 != null) {
+            return f(ff.b.a(a10));
         }
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            if (!h.a(this.a, it.next())) {
-                return false;
-            }
-        }
-        return true;
+        return null;
     }
 
-    @Override // java.util.Collection
-    public final boolean isEmpty() {
-        return this.a.length == 0;
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        Object[] array = this.a;
-        kotlin.jvm.internal.i.e(array, "array");
-        return new b(array);
-    }
-
-    @Override // java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final int size() {
-        return this.a.length;
-    }
-
-    @Override // java.util.Collection
-    public final Object[] toArray() {
-        Object[] objArr = this.a;
-        kotlin.jvm.internal.i.e(objArr, "<this>");
-        if (this.b && objArr.getClass().equals(Object[].class)) {
-            return objArr;
-        }
-        Object[] copyOf = Arrays.copyOf(objArr, objArr.length, Object[].class);
-        kotlin.jvm.internal.i.d(copyOf, "copyOf(...)");
-        return copyOf;
-    }
-
-    @Override // java.util.Collection
-    public final Object[] toArray(Object[] array) {
-        kotlin.jvm.internal.i.e(array, "array");
-        return kotlin.jvm.internal.i.j(this, array);
+    @Override // bd.h
+    public final char d() {
+        return '&';
     }
 }

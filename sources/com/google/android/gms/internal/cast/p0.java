@@ -1,35 +1,30 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
+import b8.ba;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class p0 extends j0 {
-    public final transient r0 d;
-    public final transient q0 e;
+public final class p0 extends g0 {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e;
 
-    public p0(r0 r0Var, q0 q0Var) {
-        this.d = r0Var;
-        this.e = q0Var;
+    public p0(int i3, int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i3;
+        this.e = i10;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.get(obj) != null;
+    @Override // java.util.List
+    public final Object get(int i3) {
+        ba.a(i3, this.e);
+        Object obj = this.c[i3 + i3 + this.d];
+        obj.getClass();
+        return obj;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.e.listIterator(0);
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int l(Object[] objArr) {
-        return this.e.l(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d.h;
+        return this.e;
     }
 }

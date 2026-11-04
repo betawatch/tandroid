@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class m0 extends androidx.lifecycle.p0 {
-    public static final t7.u j = new t7.u(2);
+    public static final mb.b j = new mb.b(3);
     public final boolean g;
     public final HashMap d = new HashMap();
     public final HashMap e = new HashMap();
@@ -50,10 +50,10 @@ public final class m0 extends androidx.lifecycle.p0 {
                 ArrayList arrayList = new ArrayList();
                 arrayList.addAll(m0Var.e.keySet());
                 int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
+                int i3 = 0;
+                while (i3 < size) {
+                    Object obj = arrayList.get(i3);
+                    i3++;
                     m0Var.d((String) obj, true);
                 }
             }

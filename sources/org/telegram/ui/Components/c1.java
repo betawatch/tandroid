@@ -1,46 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ProfileActivity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c1 implements View.OnClickListener {
+public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 c;
-    public final /* synthetic */ AlertDialog$Builder d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.s1 b;
+    public final /* synthetic */ Context c;
 
-    public /* synthetic */ c1(TLRPC.User user, org.telegram.ui.ActionBar.k2 k2Var, AlertDialog$Builder alertDialog$Builder, int i10) {
-        this.a = i10;
-        this.b = user;
-        this.c = k2Var;
-        this.d = alertDialog$Builder;
+    public /* synthetic */ c1(int i3, Context context, org.telegram.ui.ActionBar.s1 s1Var) {
+        this.a = i3;
+        this.b = s1Var;
+        this.c = context;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        Context context = this.c;
+        org.telegram.ui.ActionBar.s1 s1Var = this.b;
+        switch (i3) {
             case 0:
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", this.b.id);
-                org.telegram.ui.ActionBar.k2 k2Var = this.c;
-                if (k2Var.getMessagesController().E(bundle, k2Var, null, null)) {
-                    k2Var.presentFragment(new ProfileActivity(bundle, null));
+                if (s1Var != null) {
+                    s1Var.dismiss();
                 }
-                this.d.a.N0.run();
+                sf.c.t(context, org.telegram.messenger.bd.M0(2131752895, null));
                 break;
             default:
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", this.b.id);
-                org.telegram.ui.ActionBar.k2 k2Var2 = this.c;
-                if (k2Var2.getMessagesController().E(bundle2, k2Var2, null, null)) {
-                    k2Var2.presentFragment(new ProfileActivity(bundle2, null));
+                if (s1Var != null) {
+                    s1Var.dismiss();
                 }
-                this.d.a.N0.run();
+                sf.c.t(context, org.telegram.messenger.bd.M0(2131752895, null));
                 break;
         }
     }

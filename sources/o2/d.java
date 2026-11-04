@@ -1,45 +1,29 @@
 package o2;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import d2.v;
+import g9.i0;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends LinkedHashMap {
-    public final /* synthetic */ int a;
+public final class d {
+    public final v a;
+    public final i0 b;
+    public final s c;
+    public final String d;
+    public final ArrayList e;
+    public final ArrayList f;
+    public final ArrayList g;
+    public final ArrayList h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d(float f7, int i10, int i11, boolean z10) {
-        super(i10, f7, z10);
-        this.a = i11;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static Matcher a(String str, Pattern pattern, d dVar) {
-        Matcher matcher = (Matcher) dVar.get(pattern);
-        if (matcher != null) {
-            matcher.reset(str);
-            return matcher;
-        }
-        Matcher matcher2 = pattern.matcher(str);
-        dVar.put(pattern, matcher2);
-        return matcher2;
-    }
-
-    @Override // java.util.LinkedHashMap
-    public final boolean removeEldestEntry(Map.Entry entry) {
-        switch (this.a) {
-            case 0:
-                if (size() > 4) {
-                }
-                break;
-            default:
-                if (size() > 32) {
-                }
-                break;
-        }
-        return false;
+    public d(v vVar, ArrayList arrayList, s sVar, String str, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5) {
+        this.a = vVar;
+        this.b = i0.q(arrayList);
+        this.c = sVar;
+        this.d = str;
+        this.e = arrayList2;
+        this.f = arrayList3;
+        this.g = arrayList4;
+        this.h = arrayList5;
     }
 }

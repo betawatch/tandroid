@@ -1,47 +1,21 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a10 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u10 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ kj d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
+public final /* synthetic */ class a10 implements u10 {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ a10(u10 u10Var, String str, kj kjVar, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = u10Var;
-        this.c = str;
-        this.d = kjVar;
-        this.e = j10;
-        this.f = i10;
+    public /* synthetic */ a10(int i3, Runnable runnable, boolean[] zArr) {
+        this.a = zArr;
+        this.b = i3;
+        this.c = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                u10 u10Var = this.b;
-                kj kjVar = this.d;
-                long j10 = this.e;
-                int i10 = this.f;
-                ks.d(this.c, new d10(u10Var, kjVar, j10, i10), new d10(u10Var, kjVar, j10, i10), false);
-                break;
-            default:
-                u10 u10Var2 = this.b;
-                u10Var2.getClass();
-                String str = this.c;
-                if (str == null) {
-                    str = "und";
-                }
-                kj kjVar2 = this.d;
-                kjVar2.k.originalLanguage = str;
-                u10Var2.getMessagesStorage().X1(this.e, kjVar2.k);
-                u10Var2.w.remove(Integer.valueOf(this.f));
-                u10Var2.f(kjVar2);
-                break;
-        }
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        this.a[this.b] = ((Boolean) obj).booleanValue();
+        this.c.run();
     }
 }

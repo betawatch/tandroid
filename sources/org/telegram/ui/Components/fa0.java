@@ -1,66 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class fa0 extends x71 {
-    public final /* synthetic */ ab0 V;
+public final /* synthetic */ class fa0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fa0(ab0 ab0Var, Context context, wa0 wa0Var) {
-        super(context, wa0Var);
-        this.V = ab0Var;
+    public /* synthetic */ fa0(i9 i9Var, boolean z10, Runnable runnable) {
+        this.d = i9Var;
+        this.b = z10;
+        this.c = runnable;
     }
 
-    @Override // org.telegram.ui.Components.x71, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        int i10 = 0;
-        while (true) {
-            View[] viewArr = this.V.f.e;
-            if (i10 >= viewArr.length) {
-                z10 = false;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.q6 q6Var = (org.telegram.ui.q6) this.d;
+                Runnable runnable = (Runnable) this.c;
+                org.telegram.ui.ActionBar.d2 Q = LaunchActivity.Q();
+                if (Q != null) {
+                    Q.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
+                    q6Var.dismiss();
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
                 break;
-            }
-            View view = viewArr[i10];
-            if (view != null) {
-                ua0 ua0Var = (ua0) view;
-                if (ua0Var.a == 0) {
-                    z10 = ua0Var.e.i;
+            case 1:
+                i9 i9Var = (i9) this.d;
+                Runnable runnable2 = (Runnable) this.c;
+                if (this.b) {
+                    ((ws0) i9Var.b).J.o();
+                }
+                runnable2.run();
+                break;
+            default:
+                org.telegram.ui.es esVar = (org.telegram.ui.es) this.d;
+                ArrayList arrayList = (ArrayList) this.c;
+                org.telegram.ui.is isVar = esVar.a;
+                if (isVar.w != null && isVar.l != null) {
+                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
+                    if (intValue == 0) {
+                        isVar.l.B(isVar.W);
+                    } else if (intValue == 1) {
+                        isVar.l.u(isVar.W);
+                    } else if (intValue == 2) {
+                        isVar.l.u(null);
+                    } else if (intValue == 3) {
+                        isVar.l.G(isVar.W);
+                    } else if (intValue == 4) {
+                        isVar.l.q(isVar.W);
+                    } else if (intValue == 5) {
+                        org.telegram.messenger.li.b0(isVar.r).d(2, isVar.b0, isVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                    }
+                    isVar.o();
                     break;
                 }
-            }
-            i10++;
-        }
-        if (z10) {
-            return false;
-        }
-        return B(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.x71
-    public final void u() {
-        View view = this.e[0];
-        if (view instanceof ua0) {
-            ((ua0) view).e.V();
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.x71
-    public final void w(boolean z10) {
-        ab0 ab0Var = this.V;
-        ab0Var.e.setSelectedTab(ab0Var.f.getPositionAnimated());
-        View[] viewArr = this.e;
-        View view = viewArr[0];
-        if (view instanceof ua0) {
-            ((ua0) view).e.G();
-        }
-        View view2 = viewArr[1];
-        if (view2 instanceof ua0) {
-            ((ua0) view2).e.G();
-        }
+    public /* synthetic */ fa0(org.telegram.ui.es esVar, ArrayList arrayList, boolean z10) {
+        this.d = esVar;
+        this.c = arrayList;
+        this.b = z10;
+    }
+
+    public /* synthetic */ fa0(boolean z10, org.telegram.ui.q6 q6Var, Runnable runnable) {
+        this.b = z10;
+        this.d = q6Var;
+        this.c = runnable;
     }
 }

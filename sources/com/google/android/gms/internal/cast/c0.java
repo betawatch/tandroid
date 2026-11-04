@@ -2,15 +2,15 @@ package com.google.android.gms.internal.cast;
 
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class c0 implements b0 {
     public final /* synthetic */ int a;
     public Object b;
     public volatile Object c;
 
-    public /* synthetic */ c0(int i10) {
-        this.a = i10;
+    public /* synthetic */ c0(int i3) {
+        this.a = i3;
     }
 
     public String toString() {
@@ -18,9 +18,9 @@ public final class c0 implements b0 {
             case 0:
                 Object obj = (b0) this.c;
                 if (obj == y.b) {
-                    obj = a1.g.n("<supplier that returned ", String.valueOf(this.b), ">");
+                    obj = a1.g.q("<supplier that returned ", String.valueOf(this.b), ">");
                 }
-                return a1.g.n("Suppliers.memoize(", String.valueOf(obj), ")");
+                return a1.g.q("Suppliers.memoize(", String.valueOf(obj), ")");
             default:
                 return super.toString();
         }

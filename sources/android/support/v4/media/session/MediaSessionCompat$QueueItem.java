@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.media.MediaDescriptionCompat;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$QueueItem implements Parcelable {
     public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new z(1);
@@ -34,12 +34,12 @@ public final class MediaSessionCompat$QueueItem implements Parcelable {
         StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem {Description=");
         sb2.append(this.a);
         sb2.append(", Id=");
-        return a1.g.q(sb2, this.b, " }");
+        return a1.g.r(sb2, this.b, " }");
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        this.a.writeToParcel(parcel, i10);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        this.a.writeToParcel(parcel, i3);
         parcel.writeLong(this.b);
     }
 

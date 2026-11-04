@@ -1,86 +1,121 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.util.SparseArray;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.HashSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class xj0 {
-    public final uk0 a;
-    public boolean d;
-    public final boolean e;
-    public final SparseArray b = new SparseArray();
-    public final HashSet c = new HashSet();
-    public final boolean f = true;
-    public final ArrayList g = new ArrayList();
-    public final ArrayList h = new ArrayList();
+public final class xj0 implements u4.s0 {
+    public RecyclerView a;
+    public boolean c;
+    public int d;
+    public int e;
+    public int f;
+    public boolean g;
+    public boolean h;
+    public int i;
+    public final wj0 k;
+    public int b = -1;
+    public final int j = org.telegram.messenger.g0.L(80.0f);
+    public final lt l = new lt(this, 11);
 
-    public xj0(uk0 uk0Var, boolean z10) {
-        this.a = uk0Var;
-        this.e = z10;
-        uk0Var.setItemsEnterAnimator(this);
+    public xj0(wj0 wj0Var) {
+        this.k = wj0Var;
     }
 
-    public final void a() {
-        ArrayList arrayList = this.g;
-        int i10 = 0;
-        if (!arrayList.isEmpty()) {
-            ArrayList arrayList2 = new ArrayList(arrayList);
-            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                ((AnimatorSet) arrayList2.get(i11)).end();
-                ((AnimatorSet) arrayList2.get(i11)).cancel();
+    @Override // u4.s0
+    public final void a(RecyclerView recyclerView, MotionEvent motionEvent) {
+        View E = recyclerView.E(motionEvent.getX(), motionEvent.getY());
+        int R = E != null ? RecyclerView.R(E) : -1;
+        float y9 = motionEvent.getY();
+        int action = motionEvent.getAction();
+        wj0 wj0Var = this.k;
+        lt ltVar = this.l;
+        if (action == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            org.telegram.messenger.g0.r(ltVar);
+            wj0Var.b(false);
+            return;
+        }
+        if (action != 2) {
+            return;
+        }
+        if (this.j > -1) {
+            float f10 = 0;
+            if (y9 >= f10 && y9 <= this.d) {
+                this.h = false;
+                if (!this.g) {
+                    this.g = true;
+                    org.telegram.messenger.g0.r(ltVar);
+                    org.telegram.messenger.g0.h3(ltVar);
+                }
+                this.i = ((int) (this.d - (y9 - f10))) / 2;
+            } else if (y9 >= this.e && y9 <= this.f) {
+                this.g = false;
+                if (!this.h) {
+                    this.h = true;
+                    org.telegram.messenger.g0.r(ltVar);
+                    org.telegram.messenger.g0.h3(ltVar);
+                }
+                this.i = ((int) ((y9 + this.f) - (this.e + r11))) / 2;
+            } else if (this.g || this.h) {
+                org.telegram.messenger.g0.r(ltVar);
+                this.g = false;
+                this.h = false;
             }
         }
-        arrayList.clear();
-        while (true) {
-            ArrayList arrayList3 = this.h;
-            int size = arrayList3.size();
-            uk0 uk0Var = this.a;
-            if (i10 >= size) {
-                arrayList3.clear();
-                this.b.clear();
-                uk0Var.invalidate();
-                this.d = true;
-                return;
-            }
-            uk0Var.getViewTreeObserver().removeOnPreDrawListener((ViewTreeObserver.OnPreDrawListener) arrayList3.get(i10));
-            i10++;
+        if (R == -1 || this.b == R) {
+            return;
         }
+        this.b = R;
+        wj0Var.f(E, !wj0Var.m(R));
     }
 
-    public final void b(int i10) {
-        uk0 uk0Var = this.a;
-        int childCount = uk0Var.getChildCount();
-        View view = null;
-        for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = uk0Var.getChildAt(i11);
-            if (RecyclerView.R(childAt) >= 0 && (childAt instanceof zz)) {
-                view = childAt;
+    @Override // u4.s0
+    public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
+        boolean z10 = this.c && !(recyclerView.getAdapter() == null || recyclerView.getAdapter().b() == 0);
+        if (z10) {
+            this.a = recyclerView;
+            int i3 = this.j;
+            if (i3 > -1) {
+                this.d = i3;
+                this.e = recyclerView.getMeasuredHeight() - i3;
+                this.f = recyclerView.getMeasuredHeight();
             }
         }
-        s4.n0 layoutManager = uk0Var.getLayoutManager();
-        int i12 = 2;
-        if (view != null && layoutManager != null) {
-            uk0Var.removeView(view);
-            this.c.add(view);
-            uk0Var.addView(view);
-            layoutManager.M(view);
-            Animator ofFloat = this.f ? ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f) : ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addListener(new bg.f(this, (zz) view, layoutManager));
-            ofFloat.start();
-            i10--;
+        if (z10 && motionEvent.getAction() == 1) {
+            this.c = false;
+            this.g = false;
+            this.h = false;
+            org.telegram.messenger.g0.r(this.l);
+            this.k.b(false);
         }
-        org.telegram.ui.uq uqVar = new org.telegram.ui.uq(this, (zz) view, i10, i12);
-        this.h.add(uqVar);
-        uk0Var.getViewTreeObserver().addOnPreDrawListener(uqVar);
+        return z10;
+    }
+
+    public final void d(int i3, View view, boolean z10) {
+        if (this.c) {
+            return;
+        }
+        this.b = -1;
+        org.telegram.messenger.g0.r(this.l);
+        this.g = false;
+        this.h = false;
+        wj0 wj0Var = this.k;
+        if (!wj0Var.c(i3)) {
+            this.c = false;
+            return;
+        }
+        wj0Var.b(true);
+        wj0Var.f(view, z10);
+        this.c = true;
+        this.b = i3;
+    }
+
+    @Override // u4.s0
+    public final void c(boolean z10) {
     }
 }

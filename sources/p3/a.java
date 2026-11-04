@@ -1,69 +1,97 @@
 package p3;
 
-import b2.u0;
-import java.nio.ByteBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.StandardCharsets;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import v7.r6;
-import w7.l;
+import d2.p0;
+import d2.r0;
+import d2.u;
+import d2.u0;
+import d2.v;
+import j$.util.Objects;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends l {
-    public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
-    public final CharsetDecoder a = StandardCharsets.UTF_8.newDecoder();
-    public final CharsetDecoder b = StandardCharsets.ISO_8859_1.newDecoder();
+public final class a implements r0 {
+    public static final v g;
+    public static final v h;
+    public final String a;
+    public final String b;
+    public final long c;
+    public final long d;
+    public final byte[] e;
+    public int f;
 
-    @Override // w7.l
-    public final u0 b(l3.a aVar, ByteBuffer byteBuffer) {
-        String str;
-        CharsetDecoder charsetDecoder = this.b;
-        CharsetDecoder charsetDecoder2 = this.a;
-        String str2 = null;
-        try {
-            str = charsetDecoder2.decode(byteBuffer).toString();
-        } catch (CharacterCodingException unused) {
-            try {
-                String charBuffer = charsetDecoder.decode(byteBuffer).toString();
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = charBuffer;
-            } catch (CharacterCodingException unused2) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = null;
-            } catch (Throwable th2) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                throw th2;
+    static {
+        u uVar = new u();
+        uVar.r = u0.n("application/id3");
+        g = new v(uVar);
+        u uVar2 = new u();
+        uVar2.r = u0.n("application/x-scte35");
+        h = new v(uVar2);
+    }
+
+    public a(String str, String str2, long j10, long j11, byte[] bArr) {
+        this.a = str;
+        this.b = str2;
+        this.c = j10;
+        this.d = j11;
+        this.e = bArr;
+    }
+
+    @Override // d2.r0
+    public final v b() {
+        String str = this.a;
+        str.getClass();
+        switch (str) {
+            case "urn:scte:scte35:2014:bin":
+                return h;
+            case "https://aomedia.org/emsg/ID3":
+            case "https://developer.apple.com/streaming/emsg-id3":
+                return g;
+            default:
+                return null;
+        }
+    }
+
+    @Override // d2.r0
+    public final byte[] c() {
+        if (b() != null) {
+            return this.e;
+        }
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.c == aVar.c && this.d == aVar.d && Objects.equals(this.a, aVar.a) && Objects.equals(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
+                return true;
             }
-        } finally {
-            charsetDecoder2.reset();
-            byteBuffer.rewind();
         }
-        byte[] bArr = new byte[byteBuffer.limit()];
-        byteBuffer.get(bArr);
-        if (str == null) {
-            return new u0(new c(bArr, null, null));
+        return false;
+    }
+
+    public final int hashCode() {
+        if (this.f == 0) {
+            String str = this.a;
+            int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+            String str2 = this.b;
+            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+            long j10 = this.c;
+            int i3 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+            long j11 = this.d;
+            this.f = Arrays.hashCode(this.e) + ((i3 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
         }
-        Matcher matcher = c.matcher(str);
-        String str3 = null;
-        for (int i10 = 0; matcher.find(i10); i10 = matcher.end()) {
-            String group = matcher.group(1);
-            String group2 = matcher.group(2);
-            if (group != null) {
-                String c10 = r6.c(group);
-                c10.getClass();
-                if (c10.equals("streamurl")) {
-                    str3 = group2;
-                } else if (c10.equals("streamtitle")) {
-                    str2 = group2;
-                }
-            }
-        }
-        return new u0(new c(bArr, str2, str3));
+        return this.f;
+    }
+
+    public final String toString() {
+        return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
+    }
+
+    @Override // d2.r0
+    public final /* synthetic */ void a(p0 p0Var) {
     }
 }

@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Graphics2D;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class ScaleBox extends Box {
     private Box box;
@@ -21,18 +21,18 @@ public class ScaleBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f7, float f10) {
-        drawDebug(graphics2D, f7, f10);
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
+        drawDebug(graphics2D, f10, f11);
         double d = this.xscl;
         if (d == 0.0d || this.yscl == 0.0d) {
             return;
         }
-        float f11 = d < 0.0d ? this.width : 0.0f;
-        graphics2D.translate(f7 + f11, f10);
+        float f12 = d < 0.0d ? this.width : 0.0f;
+        graphics2D.translate(f10 + f12, f11);
         graphics2D.scale(this.xscl, this.yscl);
         this.box.draw(graphics2D, 0.0f, 0.0f);
         graphics2D.scale(1.0d / this.xscl, 1.0d / this.yscl);
-        graphics2D.translate((-f7) - f11, -f10);
+        graphics2D.translate((-f10) - f12, -f11);
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
@@ -44,8 +44,8 @@ public class ScaleBox extends Box {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ScaleBox(Box box, float f7) {
+    public ScaleBox(Box box, float f10) {
         this(box, r2, r2);
-        double d = f7;
+        double d = f10;
     }
 }

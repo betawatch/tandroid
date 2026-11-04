@@ -1,124 +1,137 @@
 package rh;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.at;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.vs;
-import org.telegram.messenger.wp;
-import org.telegram.ui.Components.cs;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.p80;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a extends LinearLayout implements vs {
+public final class a {
+    public static final a E;
+    public static final a F;
+    public static final a G;
+    public static final a H;
+    public static final a I;
+    public static final a J;
+    public static final a K;
+    public static final a L;
+    public static final a M;
+    public static final a N;
+    public static final a O;
+    public static final a P;
+    public static final a Q;
+    public static final a R;
+    public static final a S;
+    public static final /* synthetic */ a[] T;
+    public static final a f;
+    public static final a h;
+    public static final a n;
+    public static final a r;
+    public static final a s;
+    public static final a w;
+    public static final a x;
+    public static final a y;
     public final int a;
-    public final org.telegram.ui.ActionBar.p6 b;
-    public final TextView c;
-    public final p80 d;
-    public sf.b e;
-    public final dq[] f;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public a(int i10, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        this(context, i10, sf.b.a, p6Var);
+    /* JADX INFO: Fake field, exist only in values array */
+    a EF7;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    a EF0;
+
+    static {
+        a aVar = new a("CONTACTS", 0, R.raw.tab_contacts);
+        f = aVar;
+        a aVar2 = new a("CALLS", 1, R.raw.tab_calls);
+        h = aVar2;
+        a aVar3 = new a("CHATS", 2, R.raw.tab_chats);
+        n = aVar3;
+        a aVar4 = new a("SETTINGS", 3, R.raw.tab_settings);
+        r = aVar4;
+        a aVar5 = new a(4, R.raw.tab_checklist, R.raw.tab_checklist_reverse, "CHECKLIST");
+        s = aVar5;
+        a aVar6 = new a(5, R.raw.tab_colors, R.raw.tab_colors_reverse, "COLORS");
+        w = aVar6;
+        a aVar7 = new a(6, R.raw.tab_files, R.raw.tab_files_reverse, "FILES");
+        x = aVar7;
+        a aVar8 = new a(7, R.raw.tab_gallery, R.raw.tab_gallery_reverse, "GALLERY");
+        y = aVar8;
+        a aVar9 = new a(8, R.raw.tab_gift, R.raw.tab_gift_reverse, "GIFT");
+        a aVar10 = new a(9, R.raw.tab_location, R.raw.tab_location_reverse, "LOCATION");
+        E = aVar10;
+        a aVar11 = new a(10, R.raw.tab_sticker, R.raw.tab_sticker_reverse, "STICKER");
+        F = aVar11;
+        a aVar12 = new a(11, R.raw.tab_emoji, R.raw.tab_emoji_reverse, "EMOJI");
+        G = aVar12;
+        a aVar13 = new a(12, R.raw.tab_models, R.raw.tab_models_reverse, "MODELS");
+        H = aVar13;
+        a aVar14 = new a(13, R.raw.tab_music, R.raw.tab_music_reverse, "MUSIC");
+        I = aVar14;
+        a aVar15 = new a(14, R.raw.tab_poll, R.raw.tab_poll_reverse, "POLL");
+        J = aVar15;
+        a aVar16 = new a(15, R.raw.tab_symbols, R.raw.tab_symbols_reverse, "SYMBOLS");
+        K = aVar16;
+        a aVar17 = new a(16, R.raw.tab_reply, R.raw.tab_reply_reverse, "REPLIES");
+        L = aVar17;
+        a aVar18 = new a(17, R.raw.tab_wallet, R.raw.tab_wallet_reverse, "WALLET");
+        a aVar19 = new a();
+        M = aVar19;
+        a aVar20 = new a(19, R.raw.tab_article, R.raw.tab_article_reverse, "ARTICLE");
+        N = aVar20;
+        a aVar21 = new a(20, R.raw.gram, R.raw.gram_reverse, "GRAM");
+        O = aVar21;
+        a aVar22 = new a("BOOSTS", 21, R.raw.boosts, 25, 49);
+        P = aVar22;
+        a aVar23 = new a("MONETIZATION", 22, R.raw.monetize, 19, 45);
+        Q = aVar23;
+        a aVar24 = new a("STORIES_SAVED", 23, R.raw.msg_stories_saved, 20, 40);
+        R = aVar24;
+        a aVar25 = new a("STORIES_ARCHIVE", 24, R.raw.msg_stories_archive);
+        S = aVar25;
+        T = new a[]{aVar, aVar2, aVar3, aVar4, aVar5, aVar6, aVar7, aVar8, aVar9, aVar10, aVar11, aVar12, aVar13, aVar14, aVar15, aVar16, aVar17, aVar18, aVar19, aVar20, aVar21, aVar22, aVar23, aVar24, aVar25};
     }
 
-    public final void a() {
-        sf.b bVar = this.e;
-        int i10 = this.a;
-        sf.a s10 = e6.x(i10, bVar).s();
-        sf.b bVar2 = this.e;
-        sf.b bVar3 = sf.b.a;
-        TextView textView = this.c;
-        org.telegram.ui.ActionBar.p6 p6Var = this.b;
-        p80 p80Var = this.d;
-        if (bVar2 == bVar3) {
-            textView.setText(h8.a1(false, dd.a0(null, null, 2131750125, dd.E(s10.a(), ',')), 0.6f, null));
-            int i11 = org.telegram.ui.ActionBar.t6.uj;
-            org.telegram.ui.ActionBar.a7.V(p80Var, i11, p6Var);
-            org.telegram.ui.ActionBar.a7.H(p80Var, i11, p6Var);
-            p80Var.setText(org.telegram.messenger.i0.H2(org.telegram.messenger.i0.T2(dd.L0(2131750124, null), new ph.x1(this, 7)), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f)));
-            return;
-        }
-        if (bVar2 == sf.b.b) {
-            SpannableStringBuilder W2 = org.telegram.messenger.i0.W2(dd.a0(null, null, 2131750123, s10.b()));
-            dq[] dqVarArr = this.f;
-            textView.setText(h8.a1(true, W2, 0.6f, dqVarArr));
-            dqVarArr[0].a(org.telegram.ui.ActionBar.t6.uj);
-            StringBuilder sb2 = new StringBuilder(10);
-            sb2.append('~');
-            org.telegram.messenger.u1 i12 = org.telegram.messenger.u1.i();
-            long c10 = (long) (s10.c() * ((org.telegram.messenger.k0) wp.r1(i10).y7.l.b).a * 100.0d);
-            i12.getClass();
-            sb2.append(org.telegram.messenger.u1.g("USD", 2, c10, false));
-            int i13 = org.telegram.ui.ActionBar.t6.vj;
-            int i14 = org.telegram.ui.ActionBar.t6.tj;
-            org.telegram.ui.ActionBar.a7.n(p80Var, i13, i14, 3, 0.33f, p6Var);
-            org.telegram.ui.ActionBar.a7.o(p80Var, 2, i13, i14, 3, 0.33f, p6Var);
-            p80Var.setText(sb2);
-        }
-    }
-
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == at.y3) {
-            a();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return isEnabled() && super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-        int i10 = this.a;
-        at.f(i10).c(this, at.y3);
-        at.f(i10).c(this, at.C3);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        int i10 = this.a;
-        at.f(i10).n(this, at.y3);
-        at.f(i10).n(this, at.C3);
-    }
-
-    public a(Context context, int i10, sf.b bVar, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        this.f = new dq[1];
+    public a(String str, int i3, int i10, int i11, int i12) {
         this.a = i10;
-        this.b = p6Var;
-        this.e = bVar;
-        setOrientation(1);
-        setPadding(org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(9.0f), org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(9.0f));
-        int L = org.telegram.messenger.i0.L(24.0f);
-        int i11 = org.telegram.ui.ActionBar.t6.tj;
-        Drawable d02 = org.telegram.ui.ActionBar.t6.d0(L, org.telegram.ui.ActionBar.t6.w0(i11, p6Var));
-        org.telegram.ui.ActionBar.w6 N = org.telegram.ui.ActionBar.a7.N(i11);
-        setBackground(d02);
-        org.telegram.ui.ActionBar.a7.k(this, d02, N, null, p6Var);
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.vj, p6Var);
-        textView.setGravity(17);
-        addView(textView, w7.b6.q(-2, -2, 0.0f, 17, 0, 0, 0, 0));
-        p80 p80Var = new p80(context, p6Var);
-        this.d = p80Var;
-        p80Var.setTextSize(1, 12.0f);
-        p80Var.setText(org.telegram.messenger.i0.H2(org.telegram.messenger.i0.T2(dd.L0(2131750124, null), new cs(2, context, p6Var)), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.0f)));
-        p80Var.setGravity(17);
-        addView(p80Var, w7.b6.q(-2, -2, 0.0f, 17, 0, 1, 0, 0));
-        a();
+        this.b = i10;
+        this.d = i11;
+        this.e = i12;
+        this.c = -1;
+    }
+
+    public static a valueOf(String str) {
+        return (a) Enum.valueOf(a.class, str);
+    }
+
+    public static a[] values() {
+        return (a[]) T.clone();
+    }
+
+    public a() {
+        this.c = R.drawable.tabs_link_24;
+        this.a = -1;
+        this.b = -1;
+        this.d = -1;
+        this.e = -1;
+    }
+
+    public a(String str, int i3, int i10) {
+        this.a = i10;
+        this.b = i10;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
+    }
+
+    public a(int i3, int i10, int i11, String str) {
+        this.a = i10;
+        this.b = i11;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
     }
 }

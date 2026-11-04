@@ -1,22 +1,25 @@
 package z9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class l implements ja.d {
-    public static final l a = new l();
-    public static final ja.c b = ja.c.c("baseAddress");
-    public static final ja.c c = ja.c.c("size");
-    public static final ja.c d = ja.c.c("name");
-    public static final ja.c e = ja.c.c("uuid");
+import android.os.Bundle;
+import java.util.concurrent.Callable;
+import org.telegram.ui.Cells.f1;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        o0 o0Var = (o0) ((n1) obj);
-        eVar.f(b, o0Var.a);
-        eVar.f(c, o0Var.b);
-        eVar.d(d, o0Var.c);
-        String str = o0Var.d;
-        eVar.d(e, str != null ? str.getBytes(e2.a) : null);
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class l implements Callable {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ m b;
+
+    public l(m mVar, long j10) {
+        this.b = mVar;
+        this.a = j10;
+    }
+
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        Bundle k10 = f1.k(1, "fatal");
+        k10.putLong("timestamp", this.a);
+        this.b.k.t(k10);
+        return null;
     }
 }

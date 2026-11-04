@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import b8.mf;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public abstract class i0 extends FrameLayout {
     public final int a;
@@ -22,16 +23,16 @@ public abstract class i0 extends FrameLayout {
         super(context);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
-        addView(imageView, w7.b6.d(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
+        addView(imageView, mf.d(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
         h0 h0Var = new h0(0, context, null, true);
         this.d = h0Var;
         h0Var.setReportChanges(true);
-        h0Var.setDelegate(new k2.m0(this));
+        h0Var.setDelegate(new gi.v5(this, 26));
         h0Var.setImportantForAccessibility(2);
-        addView(h0Var, w7.b6.d(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
+        addView(h0Var, mf.d(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
-        addView(imageView2, w7.b6.d(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
+        addView(imageView2, mf.d(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
         imageView.setImageResource(R.drawable.msg_brightness_low);
         imageView2.setImageResource(R.drawable.msg_brightness_high);
         this.a = 48;
@@ -40,10 +41,10 @@ public abstract class i0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        int i10 = org.telegram.ui.ActionBar.t6.m6;
+        int i3 = org.telegram.ui.ActionBar.k6.m6;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        org.telegram.ui.ActionBar.a7.t(this.b, i10, null, mode);
-        org.telegram.ui.ActionBar.a7.t(this.c, i10, null, mode);
+        org.telegram.ui.ActionBar.r6.t(this.b, i3, null, mode);
+        org.telegram.ui.ActionBar.r6.t(this.c, i3, null, mode);
     }
 
     @Override // android.view.View
@@ -53,16 +54,16 @@ public abstract class i0 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(this.a), TLObject.FLAG_30));
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.a), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return super.performAccessibilityAction(i10, bundle) || this.d.getSeekBarAccessibilityDelegate().g(this, i10, bundle);
+    public final boolean performAccessibilityAction(int i3, Bundle bundle) {
+        return super.performAccessibilityAction(i3, bundle) || this.d.getSeekBarAccessibilityDelegate().g(this, i3, bundle);
     }
 
-    public void setProgress(float f7) {
-        this.d.setProgress(f7);
+    public void setProgress(float f10) {
+        this.d.setProgress(f10);
     }
 }

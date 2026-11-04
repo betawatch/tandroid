@@ -1,98 +1,23 @@
 package td;
 
-import v7.w6;
-import w7.w9;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class a extends u1 implements cd.c, c0 {
-    public final cd.h c;
+public final class a implements b {
+    public final AtomicReference a;
 
-    public a(cd.h hVar, boolean z10) {
-        super(z10);
-        x((f1) hVar.get(b0.b));
-        this.c = hVar.plus(this);
+    public a(e eVar) {
+        this.a = new AtomicReference(eVar);
     }
 
-    @Override // td.u1
-    public final void F(Object obj) {
-        if (obj instanceof v) {
-            v.b.get((v) obj);
+    @Override // td.b
+    public final Iterator iterator() {
+        b bVar = (b) this.a.getAndSet(null);
+        if (bVar != null) {
+            return bVar.iterator();
         }
-    }
-
-    public final void L(d0 d0Var, a aVar, ld.p pVar) {
-        Object invoke;
-        int ordinal = d0Var.ordinal();
-        if (ordinal == 0) {
-            w9.a(pVar, aVar, this);
-            return;
-        }
-        if (ordinal != 1) {
-            if (ordinal == 2) {
-                kotlin.jvm.internal.i.e(pVar, "<this>");
-                w6.b(w6.a(aVar, this, pVar)).resumeWith(ad.j.a);
-                return;
-            }
-            if (ordinal != 3) {
-                throw new ad.d();
-            }
-            try {
-                cd.h hVar = this.c;
-                Object k10 = yd.a.k(hVar, null);
-                try {
-                    if (pVar instanceof ed.a) {
-                        kotlin.jvm.internal.s.a(2, pVar);
-                        invoke = pVar.invoke(aVar, this);
-                    } else {
-                        kotlin.jvm.internal.i.e(pVar, "<this>");
-                        cd.h hVar2 = this.c;
-                        Object dVar = hVar2 == cd.i.a ? new dd.d(this) : new dd.e(this, hVar2);
-                        kotlin.jvm.internal.s.a(2, pVar);
-                        invoke = pVar.invoke(aVar, dVar);
-                    }
-                    if (invoke != dd.a.a) {
-                        resumeWith(invoke);
-                    }
-                } finally {
-                    yd.a.f(hVar, k10);
-                }
-            } catch (Throwable th2) {
-                resumeWith(l9.b.a(th2));
-            }
-        }
-    }
-
-    @Override // td.c0
-    public final cd.h c() {
-        return this.c;
-    }
-
-    @Override // cd.c
-    public final cd.h getContext() {
-        return this.c;
-    }
-
-    @Override // td.u1
-    public final String k() {
-        return getClass().getSimpleName().concat(" was cancelled");
-    }
-
-    @Override // cd.c
-    public final void resumeWith(Object obj) {
-        Throwable a2 = ad.g.a(obj);
-        if (a2 != null) {
-            obj = new v(a2, false);
-        }
-        Object B = B(obj);
-        if (B == e0.e) {
-            return;
-        }
-        g(B);
-    }
-
-    @Override // td.u1
-    public final void w(ad.d dVar) {
-        e0.m(this.c, dVar);
+        throw new IllegalStateException("This sequence can be consumed only once.");
     }
 }

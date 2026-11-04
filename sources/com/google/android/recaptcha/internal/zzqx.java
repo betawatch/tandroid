@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzqx implements zzsr {
     static final zzsr zza = new zzqx();
@@ -9,19 +9,19 @@ final class zzqx implements zzsr {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsr
-    public final boolean zza(int i10) {
+    public final boolean zza(int i3) {
         zzqy zzqyVar;
         zzqy zzqyVar2 = zzqy.zza;
-        if (i10 == 0) {
+        if (i3 == 0) {
             zzqyVar = zzqy.zza;
-        } else if (i10 == 1) {
+        } else if (i3 == 1) {
             zzqyVar = zzqy.zzg;
-        } else if (i10 == 2) {
+        } else if (i3 == 2) {
             zzqyVar = zzqy.zzh;
-        } else if (i10 == 900) {
+        } else if (i3 == 900) {
             zzqyVar = zzqy.zzb;
-        } else if (i10 != Integer.MAX_VALUE) {
-            switch (i10) {
+        } else if (i3 != Integer.MAX_VALUE) {
+            switch (i3) {
                 case 998:
                     zzqyVar = zzqy.zzc;
                     break;
@@ -35,7 +35,7 @@ final class zzqx implements zzsr {
                     zzqyVar = zzqy.zzf;
                     break;
                 default:
-                    switch (i10) {
+                    switch (i3) {
                         case 99997:
                             zzqyVar = zzqy.zzi;
                             break;

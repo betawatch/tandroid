@@ -1,18 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.tl.TL_iv;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public interface py0 {
-    iy0 c(TL_iv.pageTableCell pagetablecell, int i10);
+public class py0 extends MetricAffectingSpan {
+    public final TextPaint a;
+    public final String b;
 
-    void g(iy0 iy0Var, int i10);
+    public py0(TextPaint textPaint, String str) {
+        this.a = textPaint;
+        this.b = str;
+    }
 
-    Paint getHeaderPaint();
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
+        }
+    }
 
-    Paint getLinePaint();
-
-    Paint getStripPaint();
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
+        }
+    }
 }

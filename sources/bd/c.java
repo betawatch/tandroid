@@ -1,56 +1,44 @@
 package bd;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import b8.ec;
+import gf.p;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends b implements ListIterator {
-    public final /* synthetic */ e d;
+public final class c extends h {
+    public static final Pattern e = Pattern.compile("`+");
+    public static final Pattern f = Pattern.compile("^`+");
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(e eVar, int i10) {
-        super(eVar);
-        this.d = eVar;
-        int l4 = eVar.l();
-        if (i10 < 0 || i10 > l4) {
-            throw new IndexOutOfBoundsException(a1.g.j(i10, l4, "index: ", ", size: "));
+    @Override // bd.h
+    public final p b() {
+        String a10;
+        String a11 = a(f);
+        if (a11 == null) {
+            return null;
         }
-        this.b = i10;
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.b > 0;
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+        int i3 = this.d;
+        do {
+            a10 = a(e);
+            if (a10 == null) {
+                this.d = i3;
+                return f(a11);
+            }
+        } while (!a10.equals(a11));
+        gf.d dVar = new gf.d(0);
+        String replace = this.c.substring(i3, this.d - a11.length()).replace('\n', ' ');
+        if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
+            int length = replace.length();
+            if (ec.b(' ', 0, length, replace) != length) {
+                replace = com.google.android.recaptcha.internal.a.j(replace, 1, 1);
+            }
         }
-        int i10 = this.b - 1;
-        this.b = i10;
-        return this.d.get(i10);
+        dVar.h = replace;
+        return dVar;
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.b - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    @Override // bd.h
+    public final char d() {
+        return '`';
     }
 }

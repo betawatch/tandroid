@@ -1,30 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class sb1 extends hg.b {
-    public final TLRPC.TL_forumTopic c;
+public final class sb1 extends org.telegram.ui.Components.voip.l0 {
+    public final /* synthetic */ zb1 W;
 
-    public sb1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, false);
-        this.c = tL_forumTopic;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sb1(zb1 zb1Var, Context context, float f10, float f11) {
+        super(context, f10, f11);
+        this.W = zb1Var;
     }
 
-    public final boolean equals(Object obj) {
-        TLRPC.TL_forumTopic tL_forumTopic;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || sb1.class != obj.getClass()) {
-            return false;
-        }
-        sb1 sb1Var = (sb1) obj;
-        if (this.a != sb1Var.a) {
-            return false;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
-        return tL_forumTopic2 == null || (tL_forumTopic = sb1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
+    @Override // org.telegram.ui.Components.voip.l0
+    public final int[] getFloatingViewLocation() {
+        int[] iArr = new int[2];
+        zb1 zb1Var = this.W;
+        zb1Var.Z.getLocationOnScreen(iArr);
+        return new int[]{iArr[0], iArr[1], zb1Var.Z.getMeasuredWidth()};
     }
 }

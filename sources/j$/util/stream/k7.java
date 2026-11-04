@@ -50,8 +50,8 @@ public final class k7 extends x6 implements j$.util.a1 {
     public final boolean tryAdvance(LongConsumer longConsumer) {
         long j10;
         Objects.requireNonNull(longConsumer);
-        boolean a2 = a();
-        if (a2) {
+        boolean a10 = a();
+        if (a10) {
             q6 q6Var = (q6) this.h;
             long j11 = this.g;
             int k10 = q6Var.k(j11);
@@ -62,7 +62,7 @@ public final class k7 extends x6 implements j$.util.a1 {
             }
             longConsumer.accept(j10);
         }
-        return a2;
+        return a10;
     }
 
     @Override // j$.util.d1

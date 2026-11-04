@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import ad.g;
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
+import b8.ib;
+import dd.g;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzb extends j implements p {
     int zza;
@@ -24,16 +24,16 @@ final class zzb extends j implements p {
         this.zzd = j10;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         zzb zzbVar = new zzb(this.zzb, this.zzc, this.zzd, cVar);
         zzbVar.zze = obj;
         return zzbVar;
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzb) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzb) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x004b, code lost:
@@ -44,14 +44,14 @@ final class zzb extends j implements p {
     
         if (r12 != r0) goto L23;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i10 = this.zza;
+        gd.a aVar = gd.a.a;
+        int i3 = this.zza;
         try {
         } catch (Exception unused) {
             zzg zzgVar = this.zzb;
@@ -60,8 +60,8 @@ final class zzb extends j implements p {
             this.zza = 3;
             obj = zzgVar.zza(str, this);
         }
-        if (i10 == 0) {
-            b.b(obj);
+        if (i3 == 0) {
+            ib.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzg zzgVar2 = this.zzb;
             String str2 = this.zzc;
@@ -74,17 +74,17 @@ final class zzb extends j implements p {
             }
             return aVar;
         }
-        if (i10 != 1) {
-            if (i10 != 2) {
-                b.b(obj);
+        if (i3 != 1) {
+            if (i3 != 2) {
+                ib.b(obj);
                 return new g(obj);
             }
-            b.b(obj);
+            ib.b(obj);
             obj = (zzxx) obj;
             return new g(obj);
         }
         zzhkVar = (zzhk) this.zze;
-        b.b(obj);
+        ib.b(obj);
         this.zze = null;
         this.zza = 2;
         obj = ((zzhf) obj).zza(zzhkVar, this);

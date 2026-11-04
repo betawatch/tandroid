@@ -1,193 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.graphics.RectF;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class bk implements org.telegram.ui.ActionBar.p6 {
+public final /* synthetic */ class bk implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ bk(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ bk(Object obj, int i3) {
+        this.a = i3;
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final boolean a() {
-        switch (this.a) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        org.telegram.ui.ActionBar.k kVar;
+        int i3 = this.a;
+        Object obj = this.b;
+        switch (i3) {
             case 0:
-                return org.telegram.ui.ActionBar.t6.I.q();
-            case 1:
-                return ((rn0) this.b).S;
-            default:
-                return ((g91) this.b).f.a.a();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void b(float f7, float f10, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.t6.r(f7, f10, i10, i11);
+                kVar = ((org.telegram.ui.ActionBar.d2) ((ck) obj).d).actionBar;
+                kVar.invalidate();
                 break;
             case 1:
-                org.telegram.ui.ActionBar.t6.r(f7, f10, i10, i11);
+                ProfileActivity profileActivity = (ProfileActivity) obj;
+                RectF rectF = ProfileActivity.T6;
+                profileActivity.y5();
+                profileActivity.z5();
                 break;
             default:
-                l81 l81Var = ((g91) this.b).f.a;
-                if (l81Var == null) {
-                    org.telegram.ui.ActionBar.t6.r(f7, f10, i10, i11);
-                    break;
-                } else {
-                    l81Var.b(f7, f10, i10, i11);
-                    break;
-                }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final ColorFilter c() {
-        switch (this.a) {
-        }
-        return org.telegram.ui.ActionBar.t6.v3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final Paint d(String str) {
-        switch (this.a) {
-            case 0:
-                return org.telegram.ui.ActionBar.t6.V0(str);
-            case 1:
-                return org.telegram.ui.ActionBar.t6.V0(str);
-            default:
-                return ((g91) this.b).f.a.d(str);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final boolean e() {
-        switch (this.a) {
-        }
-        return org.telegram.messenger.uz.H0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final int f(int i10) {
-        switch (this.a) {
-            case 0:
-                return h(i10);
-            case 1:
-                return h(i10);
-            default:
-                return ((g91) this.b).f.a.h(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final boolean g() {
-        switch (this.a) {
-            case 0:
-                return false;
-            case 1:
-                return false;
-            default:
-                return ((g91) this.b).f.a.g();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final Drawable getDrawable(String str) {
-        switch (this.a) {
-            case 0:
+                ((r41) obj).t0();
                 break;
-            case 1:
-                rn0 rn0Var = (rn0) this.b;
-                if (!str.equals("drawableMsgIn")) {
-                    if (!str.equals("drawableMsgInSelected")) {
-                        org.telegram.ui.ActionBar.p6 p6Var = rn0Var.s;
-                        if (p6Var == null) {
-                            break;
-                        } else {
-                            break;
-                        }
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            default:
-                k91 k91Var = ((g91) this.b).f;
-                if (!str.equals("drawableMsgOut")) {
-                    if (!str.equals("drawableMsgOutSelected")) {
-                        if (!str.equals("drawableMsgOutMedia")) {
-                            if (!str.equals("drawableMsgOutMediaSelected")) {
-                                l81 l81Var = k91Var.a;
-                                if (l81Var == null) {
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            } else {
-                                break;
-                            }
-                        } else {
-                            break;
-                        }
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
         }
-        return org.telegram.ui.ActionBar.t6.R0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final int h(int i10) {
-        switch (this.a) {
-            case 0:
-                return ((un) this.b).getThemedColor(i10);
-            case 1:
-                rn0 rn0Var = (rn0) this.b;
-                int indexOfKey = rn0Var.w.indexOfKey(i10);
-                if (indexOfKey >= 0) {
-                    return rn0Var.w.valueAt(indexOfKey);
-                }
-                org.telegram.ui.ActionBar.p6 p6Var = rn0Var.s;
-                return p6Var != null ? p6Var.h(i10) : org.telegram.ui.ActionBar.t6.v0(i10);
-            default:
-                return ((g91) this.b).f.a.h(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void i(int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final int j(int i10) {
-        switch (this.a) {
-            case 0:
-                return h(i10);
-            case 1:
-                return h(i10);
-            default:
-                return ((g91) this.b).f.a.j(i10);
-        }
-    }
-
-    private final /* synthetic */ void k(int i10, int i11) {
-    }
-
-    private final /* synthetic */ void l(int i10, int i11) {
-    }
-
-    private final /* synthetic */ void m(int i10, int i11) {
+        return true;
     }
 }

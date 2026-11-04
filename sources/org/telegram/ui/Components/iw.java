@@ -1,63 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class iw extends z4.g {
-    public final /* synthetic */ vy w0;
+public final class iw extends dy {
+    public final /* synthetic */ ey d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iw(vy vyVar, Context context) {
-        super(context);
-        this.w0 = vyVar;
+    public iw(ey eyVar) {
+        super(eyVar, 1);
+        this.d = eyVar;
     }
 
-    @Override // z4.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.w0.f) {
-            return false;
+    @Override // org.telegram.ui.Components.dy, u4.t0
+    public final void a(RecyclerView recyclerView, int i3) {
+        if (i3 == 0) {
+            this.d.g0 = false;
         }
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-        }
-        try {
-            return super.onInterceptTouchEvent(motionEvent);
-        } catch (IllegalArgumentException unused) {
-            return false;
-        }
+        super.a(recyclerView, i3);
     }
 
-    @Override // z4.g
-    public final void x(int i10, boolean z10) {
-        vy vyVar = this.w0;
-        zw zwVar = vyVar.I;
-        vy.a(vyVar, i10 == 1);
-        if (i10 != getCurrentItem()) {
-            super.x(i10, z10);
+    @Override // org.telegram.ui.Components.dy, u4.t0
+    public final void b(RecyclerView recyclerView, int i3, int i10) {
+        ey eyVar = this.d;
+        fw fwVar = eyVar.R;
+        eyVar.U(fwVar.I0());
+        super.b(recyclerView, i3, i10);
+        ex exVar = eyVar.T;
+        if (exVar == null || eyVar.Q.getAdapter() != exVar) {
             return;
         }
-        if (i10 != 0) {
-            if (i10 == 1) {
-                vyVar.h0.y0(0);
-                return;
-            } else {
-                vyVar.D0.y0(1);
-                return;
-            }
+        ex exVar2 = exVar.y.a;
+        if (exVar2.G.W.G || exVar2.F) {
+            return;
         }
-        vyVar.Q0[1] = 0;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(zwVar, (Property<zw, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
-        ofFloat.setDuration(150L);
-        ofFloat.setInterpolator(gr.h);
-        ofFloat.start();
-        vyVar.H(1, 0);
-        if (zwVar != null) {
-            zwVar.j(0, true);
+        if (fwVar.N0() + 20 > exVar.b()) {
+            dx dxVar = exVar.y;
+            Objects.requireNonNull(dxVar);
+            org.telegram.messenger.g0.h3(new nv(dxVar, 1));
         }
     }
 }

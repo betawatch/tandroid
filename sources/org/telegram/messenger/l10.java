@@ -1,112 +1,302 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
+import android.text.TextUtils;
+import java.util.Locale;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l10 implements r20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ l10(Object obj, long j10, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = j10;
-        this.d = obj2;
-        this.e = obj3;
+public abstract class l10 {
+    public static boolean A(long j10) {
+        return j10 == 333000 || j10 == 777000 || j10 == 42777;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
-        int i10 = this.a;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        long j10 = this.b;
-        Object obj4 = this.c;
-        int i11 = 0;
-        switch (i10) {
-            case 0:
-                u10 u10Var = (u10) obj4;
-                kj kjVar = (kj) obj3;
-                String str = (String) obj2;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj;
-                TLRPC.Message message = kjVar.k;
-                message.translatedSummaryLanguage = tL_textWithEntities != null ? str : null;
-                message.translatedSummaryText = tL_textWithEntities;
-                if (tL_textWithEntities == null) {
-                    message.summarizedOpen = false;
-                }
-                u10Var.getMessagesStorage().X1(j10, kjVar.k);
-                at.f(u10Var.currentAccount).k(128, kjVar, Boolean.TRUE);
-                break;
-            case 1:
-                a7 a7Var = (a7) obj4;
-                ArrayList arrayList = (ArrayList) obj3;
-                HashMap hashMap = (HashMap) obj2;
-                ArrayList arrayList2 = (ArrayList) obj;
-                TLRPC.TL_getFactCheck tL_getFactCheck = new TLRPC.TL_getFactCheck();
-                int i12 = a7Var.a;
-                tL_getFactCheck.peer = wp.r1(i12).i1(j10);
-                ArrayList arrayList3 = new ArrayList();
-                int i13 = 0;
-                for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-                    z6 z6Var = (z6) arrayList.get(i14);
-                    TLRPC.TL_factCheck tL_factCheck = (TLRPC.TL_factCheck) arrayList2.get(i14);
-                    if (tL_factCheck == null) {
-                        arrayList3.add(z6Var);
-                        tL_getFactCheck.msg_id.add(Integer.valueOf(z6Var.a));
-                    } else {
-                        a7Var.d.remove(z6Var);
-                        r20 r20Var = (r20) hashMap.get(z6Var);
-                        if (r20Var != null) {
-                            r20Var.a(tL_factCheck);
-                            i13++;
-                        }
-                    }
-                }
-                if (i13 > 0) {
-                    at.f(i12).k(at.B3, new Object[0]);
-                }
-                if (!tL_getFactCheck.msg_id.isEmpty()) {
-                    ConnectionsManager.getInstance(i12).sendRequest(tL_getFactCheck, new r6(a7Var, tL_getFactCheck, arrayList3, hashMap, 0));
-                    break;
-                }
-                break;
-            default:
-                wp wpVar = (wp) obj4;
-                boolean[] zArr = (boolean[]) obj3;
-                org.telegram.ui.me meVar = (org.telegram.ui.me) obj2;
-                org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
-                if (((Boolean) obj).booleanValue()) {
-                    wpVar.W7.add(Long.valueOf(j10));
-                    wpVar.C4(true);
-                    if (T != null) {
-                        org.telegram.ui.Components.cc.a0(T).P(R.raw.chats_infotip, i0.G2(i0.x2(dd.L0(2131745591, null), new yn(i11, T)), true)).k(true);
-                    }
-                    zArr[0] = true;
-                    meVar.run();
-                    break;
-                } else if (T != null) {
-                    org.telegram.ui.Components.cc.a0(T).I(R.raw.error, dd.L0(2131754311, null), dd.L0(2131754312, null)).j();
-                    break;
-                }
-                break;
+    public static boolean B(TLRPC.User user) {
+        if (user != null) {
+            return (user instanceof TLRPC.TL_userSelf_old3) || user.self;
         }
+        return false;
     }
 
-    public /* synthetic */ l10(u10 u10Var, kj kjVar, String str, long j10) {
-        this.a = 0;
-        this.c = u10Var;
-        this.d = kjVar;
-        this.e = str;
-        this.b = j10;
+    public static boolean a(TLRPC.UserFull userFull, TL_account.RequirementToContact requirementToContact) {
+        if (requirementToContact instanceof TL_account.requirementToContactEmpty) {
+            if (userFull.contact_require_premium || userFull.send_paid_messages_stars != 0) {
+                userFull.contact_require_premium = false;
+                userFull.flags2 &= -16385;
+                userFull.send_paid_messages_stars = 0L;
+                return true;
+            }
+        } else if (requirementToContact instanceof TL_account.requirementToContactPremium) {
+            if (!userFull.contact_require_premium || userFull.send_paid_messages_stars != 0) {
+                userFull.contact_require_premium = true;
+                userFull.flags2 &= -16385;
+                userFull.send_paid_messages_stars = 0L;
+                return true;
+            }
+        } else if (requirementToContact instanceof TL_account.requirementToContactPaidMessages) {
+            long j10 = ((TL_account.requirementToContactPaidMessages) requirementToContact).stars_amount;
+            if (userFull.contact_require_premium || userFull.send_paid_messages_stars != j10) {
+                userFull.contact_require_premium = false;
+                userFull.flags2 |= TLObject.FLAG_14;
+                userFull.send_paid_messages_stars = j10;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean b(TLRPC.UserFull userFull) {
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings;
+        return (userFull == null || userFull.id != h10.i(h10.t0).e()) && userFull != null && (disallowedGiftsSettings = userFull.disallowed_stargifts) != null && disallowedGiftsSettings.disallow_limited_stargifts && disallowedGiftsSettings.disallow_unlimited_stargifts && disallowedGiftsSettings.disallow_unique_stargifts && disallowedGiftsSettings.disallow_premium_gifts;
+    }
+
+    public static boolean c(TL_account.RequirementToContact requirementToContact, TL_account.RequirementToContact requirementToContact2) {
+        if (requirementToContact instanceof TL_account.requirementToContactEmpty) {
+            requirementToContact = null;
+        }
+        if (requirementToContact2 instanceof TL_account.requirementToContactEmpty) {
+            requirementToContact2 = null;
+        }
+        if (requirementToContact == null && requirementToContact2 == null) {
+            return true;
+        }
+        if (requirementToContact != null && requirementToContact2 != null) {
+            if ((requirementToContact instanceof TL_account.requirementToContactPremium) && (requirementToContact2 instanceof TL_account.requirementToContactPremium)) {
+                return true;
+            }
+            if ((requirementToContact instanceof TL_account.requirementToContactPaidMessages) && (requirementToContact2 instanceof TL_account.requirementToContactPaidMessages) && ((TL_account.requirementToContactPaidMessages) requirementToContact).stars_amount == ((TL_account.requirementToContactPaidMessages) requirementToContact2).stars_amount) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String d(TLRPC.User user) {
+        String n4 = n(user);
+        if (n4 != null) {
+            String lowerCase = n4.toLowerCase(Locale.ROOT);
+            if (lowerCase.endsWith("agent")) {
+                return bd.M0(2131752944, null);
+            }
+            if (lowerCase.endsWith("game")) {
+                return bd.M0(2131752942, null);
+            }
+            if (lowerCase.endsWith("app")) {
+                return bd.M0(2131752943, null);
+            }
+            if (lowerCase.endsWith("ai")) {
+                return bd.M0(2131752945, null);
+            }
+            if (lowerCase.endsWith("gay")) {
+                return bd.M0(2131752941, null);
+            }
+        }
+        return bd.M0(2131753156, null);
+    }
+
+    public static int e(TLRPC.User user) {
+        if (user == null) {
+            return 0;
+        }
+        TLRPC.PeerColor peerColor = user.color;
+        return (!(peerColor instanceof TLRPC.TL_peerColor) || (peerColor.flags & 1) == 0) ? (int) (user.id % 7) : peerColor.color;
+    }
+
+    public static long f(TLRPC.User user) {
+        if (user == null) {
+            return 0L;
+        }
+        TLRPC.PeerColor peerColor = user.color;
+        if (!(peerColor instanceof TLRPC.TL_peerColor) || (peerColor.flags & 2) == 0) {
+            return 0L;
+        }
+        return peerColor.background_emoji_id;
+    }
+
+    public static Long g(TLRPC.EmojiStatus emojiStatus) {
+        if (emojiStatus == null) {
+            return null;
+        }
+        if (emojiStatus instanceof TLRPC.TL_emojiStatus) {
+            TLRPC.TL_emojiStatus tL_emojiStatus = (TLRPC.TL_emojiStatus) emojiStatus;
+            if ((tL_emojiStatus.flags & 1) == 0 || tL_emojiStatus.until > ((int) (System.currentTimeMillis() / 1000))) {
+                return Long.valueOf(tL_emojiStatus.document_id);
+            }
+            return null;
+        }
+        if (!(emojiStatus instanceof TLRPC.TL_emojiStatusCollectible)) {
+            return null;
+        }
+        TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = (TLRPC.TL_emojiStatusCollectible) emojiStatus;
+        if ((tL_emojiStatusCollectible.flags & 1) == 0 || tL_emojiStatusCollectible.until > ((int) (System.currentTimeMillis() / 1000))) {
+            return Long.valueOf(tL_emojiStatusCollectible.document_id);
+        }
+        return null;
+    }
+
+    public static Long h(TLRPC.User user) {
+        if (user == null) {
+            return null;
+        }
+        return g(user.emoji_status);
+    }
+
+    public static String i(TLRPC.User user) {
+        return j(user, true);
+    }
+
+    public static String j(TLRPC.User user, boolean z10) {
+        if (user == null || x(user)) {
+            return "DELETED";
+        }
+        String str = user.first_name;
+        if (TextUtils.isEmpty(str)) {
+            str = user.last_name;
+        } else if (!z10 && str.length() <= 2) {
+            return g5.m(0, user.first_name, user.last_name);
+        }
+        return !TextUtils.isEmpty(str) ? str : bd.M0(2131749336, null);
+    }
+
+    public static String k(TLRPC.User user) {
+        if (user == null || x(user)) {
+            return bd.M0(2131749336, null);
+        }
+        String str = user.first_name;
+        if (TextUtils.isEmpty(str)) {
+            str = user.last_name;
+        }
+        if (str == null) {
+            return bd.M0(2131749336, null);
+        }
+        int indexOf = str.indexOf(" ", 2);
+        return indexOf >= 0 ? str.substring(0, indexOf) : str;
+    }
+
+    public static int l(TLRPC.User user) {
+        if (user == null) {
+            return 0;
+        }
+        TLRPC.PeerColor peerColor = user.profile_color;
+        if (!(peerColor instanceof TLRPC.TL_peerColor) || (peerColor.flags & 1) == 0) {
+            return -1;
+        }
+        return peerColor.color;
+    }
+
+    public static long m(TLRPC.User user) {
+        TLRPC.PeerColor peerColor;
+        if (user != null) {
+            TLRPC.EmojiStatus emojiStatus = user.emoji_status;
+            if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
+                return ((TLRPC.TL_emojiStatusCollectible) emojiStatus).pattern_document_id;
+            }
+        }
+        if (user == null || (peerColor = user.profile_color) == null || (peerColor.flags & 2) == 0) {
+            return 0L;
+        }
+        return peerColor.background_emoji_id;
+    }
+
+    public static String n(TLRPC.User user) {
+        if (user == null) {
+            return null;
+        }
+        if (!TextUtils.isEmpty(user.username)) {
+            return user.username;
+        }
+        if (user.usernames == null) {
+            return null;
+        }
+        for (int i3 = 0; i3 < user.usernames.size(); i3++) {
+            TLRPC.TL_username tL_username = user.usernames.get(i3);
+            if (tL_username != null && ((tL_username.active || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
+                return tL_username.username;
+            }
+        }
+        return null;
+    }
+
+    public static TL_account.RequirementToContact o(TLRPC.UserFull userFull) {
+        if (userFull.send_paid_messages_stars != 0) {
+            TL_account.requirementToContactPaidMessages requirementtocontactpaidmessages = new TL_account.requirementToContactPaidMessages();
+            requirementtocontactpaidmessages.stars_amount = userFull.send_paid_messages_stars;
+            return requirementtocontactpaidmessages;
+        }
+        if (userFull.contact_require_premium) {
+            return new TL_account.requirementToContactPremium();
+        }
+        return null;
+    }
+
+    public static String p(TLRPC.User user) {
+        if (user == null || x(user)) {
+            return bd.M0(2131749336, null);
+        }
+        String F2 = g0.F2(g0.D2(g5.m(0, user.first_name, user.last_name)));
+        if (F2.length() != 0 || TextUtils.isEmpty(user.phone)) {
+            return F2;
+        }
+        return k5.i(new StringBuilder("+"), user.phone, mf.b.c());
+    }
+
+    public static boolean q(TLRPC.UserFull userFull) {
+        TLRPC.Photo photo;
+        return (userFull == null || (photo = userFull.fallback_photo) == null || (photo instanceof TLRPC.TL_photoEmpty)) ? false : true;
+    }
+
+    public static boolean r(String str, TLRPC.User user) {
+        if (user != null && str != null) {
+            if (str.equalsIgnoreCase(user.username)) {
+                return true;
+            }
+            if (user.usernames != null) {
+                for (int i3 = 0; i3 < user.usernames.size(); i3++) {
+                    TLRPC.TL_username tL_username = user.usernames.get(i3);
+                    if (tL_username != null && tL_username.active && str.equalsIgnoreCase(tL_username.username)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean s(TLRPC.User user) {
+        return user != null && user.id == 2666000;
+    }
+
+    public static boolean t(TLRPC.User user) {
+        return user != null && user.bot;
+    }
+
+    public static boolean u(TLRPC.User user) {
+        return user != null && user.bot_forum_view;
+    }
+
+    public static boolean v(TLRPC.User user) {
+        return user != null && user.bot_forum_view && user.bot_forum_can_manage_topics;
+    }
+
+    public static boolean w(TLRPC.User user) {
+        return (user instanceof TLRPC.TL_userContact_old2) || user.contact || user.mutual_contact;
+    }
+
+    public static boolean x(TLRPC.User user) {
+        return user == null || (user instanceof TLRPC.TL_userDeleted_old2) || (user instanceof TLRPC.TL_userEmpty) || user.deleted;
+    }
+
+    public static boolean y(long j10) {
+        return j10 == 708513 || j10 == 1271266957;
+    }
+
+    public static boolean z(TLRPC.User user) {
+        if (user == null) {
+            return false;
+        }
+        long j10 = user.id;
+        return j10 == 708513 || j10 == 1271266957;
     }
 }

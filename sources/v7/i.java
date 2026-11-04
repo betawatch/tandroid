@@ -1,29 +1,56 @@
 package v7;
 
+import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements ja.d {
-    public static final /* synthetic */ i b = new i(0);
-    public static final /* synthetic */ i c = new i(1);
-    public final /* synthetic */ int a;
+public final class i extends f {
+    public final transient b8.m c;
+    public final transient Object[] d;
+    public final transient int e;
 
-    public /* synthetic */ i(int i10) {
-        this.a = i10;
+    public i(b8.m mVar, Object[] objArr, int i3) {
+        this.c = mVar;
+        this.d = objArr;
+        this.e = i3;
     }
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Map.Entry entry = (Map.Entry) obj;
-                ja.e eVar = (ja.e) obj2;
-                eVar.d(j.g, entry.getKey());
-                eVar.d(j.h, entry.getValue());
-                return;
-            default:
-                throw new ja.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.c.get(key))) {
+                return true;
+            }
         }
+        return false;
+    }
+
+    @Override // v7.a
+    public final int h(Object[] objArr) {
+        d dVar = this.b;
+        if (dVar == null) {
+            dVar = new h(this);
+            this.b = dVar;
+        }
+        return dVar.h(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        d dVar = this.b;
+        if (dVar == null) {
+            dVar = new h(this);
+            this.b = dVar;
+        }
+        return dVar.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.e;
     }
 }

@@ -1,34 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
+import java.io.Serializable;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class w41 extends org.telegram.ui.Components.a51 {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class w41 implements org.telegram.messenger.s10, org.telegram.messenger.t10 {
+    public final /* synthetic */ StickersActivity a;
 
-    static {
-        org.telegram.ui.Components.a51.h(new w41());
+    public /* synthetic */ w41(StickersActivity stickersActivity) {
+        this.a = stickersActivity;
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, org.telegram.ui.Components.b51 b51Var, boolean z10, org.telegram.ui.Components.q51 q51Var, org.telegram.ui.Components.v51 v51Var) {
-        ((x41) view).set(b51Var.z);
+    @Override // org.telegram.messenger.t10
+    public Boolean a(org.telegram.ui.Components.r31 r31Var, View view, Integer num, Float f10, Float f11) {
+        boolean z10;
+        StickersActivity stickersActivity = this.a;
+        if (stickersActivity.x.isEmpty() && (r31Var.G instanceof TLRPC.TL_messages_stickerSet)) {
+            stickersActivity.s0((org.telegram.ui.Cells.f8) view);
+            z10 = true;
+        } else {
+            z10 = false;
+        }
+        return Boolean.valueOf(z10);
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final boolean c(org.telegram.ui.Components.b51 b51Var, org.telegram.ui.Components.b51 b51Var2) {
-        return b51Var.z == b51Var2.z;
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, org.telegram.ui.Components.uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        return new x41(context, p6Var);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean e(org.telegram.ui.Components.b51 b51Var, org.telegram.ui.Components.b51 b51Var2) {
-        return b51Var.d == b51Var2.d;
+    @Override // org.telegram.messenger.s10
+    public void j(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        StickersActivity.Z(this.a, (org.telegram.ui.Components.r31) obj, (View) obj2);
     }
 }

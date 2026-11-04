@@ -21,32 +21,32 @@ import androidx.appcompat.app.AlertController$RecycleListView;
 import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
 import m.v1;
-import org.telegram.messenger.at;
 import org.telegram.messenger.beta.R;
-import r0.h0;
+import org.telegram.messenger.hs;
+import r0.i0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class f extends t implements DialogInterface {
+public class f extends u implements DialogInterface {
     public final e f;
 
-    public f(ContextThemeWrapper contextThemeWrapper, int i10) {
-        super(contextThemeWrapper, e(contextThemeWrapper, i10));
+    public f(ContextThemeWrapper contextThemeWrapper, int i3) {
+        super(contextThemeWrapper, e(contextThemeWrapper, i3));
         this.f = new e(getContext(), this, getWindow());
     }
 
-    public static int e(Context context, int i10) {
-        if (((i10 >>> 24) & at.e4) >= 1) {
-            return i10;
+    public static int e(Context context, int i3) {
+        if (((i3 >>> 24) & hs.e4) >= 1) {
+            return i3;
         }
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(R.attr.alertDialogTheme, typedValue, true);
         return typedValue.resourceId;
     }
 
-    @Override // g.t, androidx.activity.n, android.app.Dialog
+    @Override // g.u, androidx.activity.m, android.app.Dialog
     public void onCreate(Bundle bundle) {
-        int i10;
+        int i3;
         ListAdapter listAdapter;
         View findViewById;
         super.onCreate(bundle);
@@ -109,11 +109,11 @@ public class f extends t implements DialogInterface {
         button.setOnClickListener(wVar);
         if (TextUtils.isEmpty(null)) {
             eVar.h.setVisibility(8);
-            i10 = 0;
+            i3 = 0;
         } else {
             eVar.h.setText((CharSequence) null);
             eVar.h.setVisibility(0);
-            i10 = 1;
+            i3 = 1;
         }
         Button button2 = (Button) b12.findViewById(android.R.id.button2);
         eVar.i = button2;
@@ -123,7 +123,7 @@ public class f extends t implements DialogInterface {
         } else {
             eVar.i.setText(eVar.j);
             eVar.i.setVisibility(0);
-            i10 |= 2;
+            i3 |= 2;
         }
         Button button3 = (Button) b12.findViewById(android.R.id.button3);
         eVar.l = button3;
@@ -133,24 +133,24 @@ public class f extends t implements DialogInterface {
         } else {
             eVar.l.setText((CharSequence) null);
             eVar.l.setVisibility(0);
-            i10 |= 4;
+            i3 |= 4;
         }
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(R.attr.alertDialogCenterButtons, typedValue, true);
         if (typedValue.data != 0) {
-            if (i10 == 1) {
+            if (i3 == 1) {
                 Button button4 = eVar.h;
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) button4.getLayoutParams();
                 layoutParams.gravity = 1;
                 layoutParams.weight = 0.5f;
                 button4.setLayoutParams(layoutParams);
-            } else if (i10 == 2) {
+            } else if (i3 == 2) {
                 Button button5 = eVar.i;
                 LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) button5.getLayoutParams();
                 layoutParams2.gravity = 1;
                 layoutParams2.weight = 0.5f;
                 button5.setLayoutParams(layoutParams2);
-            } else if (i10 == 4) {
+            } else if (i3 == 4) {
                 Button button6 = eVar.l;
                 LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) button6.getLayoutParams();
                 layoutParams3.gravity = 1;
@@ -158,7 +158,7 @@ public class f extends t implements DialogInterface {
                 button6.setLayoutParams(layoutParams3);
             }
         }
-        if (i10 == 0) {
+        if (i3 == 0) {
             b12.setVisibility(8);
         }
         if (eVar.r != null) {
@@ -184,12 +184,12 @@ public class f extends t implements DialogInterface {
             }
         }
         boolean z11 = viewGroup.getVisibility() != 8;
-        int i11 = (b10 == null || b10.getVisibility() == 8) ? 0 : 1;
+        int i10 = (b10 == null || b10.getVisibility() == 8) ? 0 : 1;
         boolean z12 = b12.getVisibility() != 8;
         if (!z12 && (findViewById = b11.findViewById(R.id.textSpacerNoButtons)) != null) {
             findViewById.setVisibility(0);
         }
-        if (i11 != 0) {
+        if (i10 != 0) {
             NestedScrollView nestedScrollView2 = eVar.m;
             if (nestedScrollView2 != null) {
                 nestedScrollView2.setClipToPadding(true);
@@ -207,8 +207,8 @@ public class f extends t implements DialogInterface {
         AlertController$RecycleListView alertController$RecycleListView = eVar.e;
         if (alertController$RecycleListView != null) {
             alertController$RecycleListView.getClass();
-            if (!z12 || i11 == 0) {
-                alertController$RecycleListView.setPadding(alertController$RecycleListView.getPaddingLeft(), i11 != 0 ? alertController$RecycleListView.getPaddingTop() : alertController$RecycleListView.a, alertController$RecycleListView.getPaddingRight(), z12 ? alertController$RecycleListView.getPaddingBottom() : alertController$RecycleListView.b);
+            if (!z12 || i10 == 0) {
+                alertController$RecycleListView.setPadding(alertController$RecycleListView.getPaddingLeft(), i10 != 0 ? alertController$RecycleListView.getPaddingTop() : alertController$RecycleListView.a, alertController$RecycleListView.getPaddingRight(), z12 ? alertController$RecycleListView.getPaddingBottom() : alertController$RecycleListView.b);
             }
         }
         if (!z11) {
@@ -217,11 +217,11 @@ public class f extends t implements DialogInterface {
                 view2 = eVar.m;
             }
             if (view2 != null) {
-                int i12 = z12 ? 2 : 0;
+                int i11 = z12 ? 2 : 0;
                 View findViewById11 = window.findViewById(R.id.scrollIndicatorUp);
                 View findViewById12 = window.findViewById(R.id.scrollIndicatorDown);
-                WeakHashMap weakHashMap = h0.a;
-                r0.a0.b(view2, i11 | i12, 3);
+                WeakHashMap weakHashMap = i0.a;
+                r0.b0.b(view2, i10 | i11, 3);
                 if (findViewById11 != null) {
                     b11.removeView(findViewById11);
                 }
@@ -235,32 +235,32 @@ public class f extends t implements DialogInterface {
             return;
         }
         alertController$RecycleListView2.setAdapter(listAdapter);
-        int i13 = eVar.t;
-        if (i13 > -1) {
-            alertController$RecycleListView2.setItemChecked(i13, true);
-            alertController$RecycleListView2.setSelection(i13);
+        int i12 = eVar.t;
+        if (i12 > -1) {
+            alertController$RecycleListView2.setItemChecked(i12, true);
+            alertController$RecycleListView2.setSelection(i12);
         }
     }
 
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
-    public boolean onKeyDown(int i10, KeyEvent keyEvent) {
+    public boolean onKeyDown(int i3, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.h(keyEvent)) {
-            return super.onKeyDown(i10, keyEvent);
+        if (nestedScrollView == null || !nestedScrollView.f(keyEvent)) {
+            return super.onKeyDown(i3, keyEvent);
         }
         return true;
     }
 
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
-    public boolean onKeyUp(int i10, KeyEvent keyEvent) {
+    public boolean onKeyUp(int i3, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.h(keyEvent)) {
-            return super.onKeyUp(i10, keyEvent);
+        if (nestedScrollView == null || !nestedScrollView.f(keyEvent)) {
+            return super.onKeyUp(i3, keyEvent);
         }
         return true;
     }
 
-    @Override // g.t, android.app.Dialog
+    @Override // g.u, android.app.Dialog
     public final void setTitle(CharSequence charSequence) {
         super.setTitle(charSequence);
         e eVar = this.f;

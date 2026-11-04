@@ -1,64 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import j$.util.function.Predicate$-CC;
-import java.util.Map;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o8 implements Predicate {
+public final /* synthetic */ class o8 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+    public final /* synthetic */ h9 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ o8(long j10, int i10) {
+    public /* synthetic */ o8(h9 h9Var, int i3, int i10) {
         this.a = i10;
-        this.b = j10;
+        this.b = h9Var;
+        this.c = i3;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                return ((TLRPC.User) obj).id == this.b;
-            case 1:
-                return ((TLRPC.User) obj).id == this.b;
-            case 2:
-                TLObject tLObject = (TLObject) obj;
-                if (tLObject instanceof TLRPC.User) {
-                    if (((TLRPC.User) tLObject).id != this.b) {
-                        return true;
-                    }
-                } else if (tLObject instanceof TLRPC.Chat) {
-                    return true ^ org.telegram.messenger.w3.N((TLRPC.Chat) tLObject);
-                }
-                return false;
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
             default:
-                Map.Entry entry = (Map.Entry) obj;
-                if (((View) entry.getKey()).isAttachedToWindow() && ((View) entry.getKey()).isShown() && ((View) entry.getKey()).getWindowVisibility() == 0) {
-                    if (this.b - ((Long) entry.getValue()).longValue() <= 300) {
-                        return false;
-                    }
-                }
-                return true;
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
         }
     }
 }

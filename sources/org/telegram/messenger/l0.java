@@ -3,19 +3,19 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l0 implements m0 {
+public final class l0 implements k0 {
     public final String a;
-    public final int b;
-    public int c;
+    public final long b;
+    public long c;
 
-    public l0(String str, int i10) {
+    public l0(String str, long j10) {
         this.a = str;
-        this.b = i10;
+        this.b = j10;
     }
 
-    @Override // org.telegram.messenger.m0
+    @Override // org.telegram.messenger.k0
     public final boolean a(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
         if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
             return false;
@@ -24,14 +24,14 @@ public final class l0 implements m0 {
         if (d == this.c) {
             return false;
         }
-        int i10 = (int) d;
-        this.c = i10;
-        editor.putInt(this.a, i10);
+        long j10 = (long) d;
+        this.c = j10;
+        editor.putLong(this.a, j10);
         return true;
     }
 
-    @Override // org.telegram.messenger.m0
+    @Override // org.telegram.messenger.k0
     public final void b(SharedPreferences sharedPreferences) {
-        this.c = sharedPreferences.getInt(this.a, this.b);
+        this.c = sharedPreferences.getLong(this.a, this.b);
     }
 }

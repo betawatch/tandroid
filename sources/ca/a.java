@@ -1,24 +1,19 @@
 package ca;
 
-import java.io.File;
-import java.io.FilenameFilter;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements FilenameFilter {
-    public final /* synthetic */ int a;
+public final class a implements ma.d {
+    public static final a a = new a();
+    public static final ma.c b = ma.c.c("arch");
+    public static final ma.c c = ma.c.c("libraryName");
+    public static final ma.c d = ma.c.c("buildId");
 
-    @Override // java.io.FilenameFilter
-    public final boolean accept(File file, String str) {
-        switch (this.a) {
-            case 0:
-                return str.startsWith("event");
-            case 1:
-                return str.startsWith("event") && !str.endsWith("_");
-            case 2:
-                return str.startsWith("aqs.");
-            default:
-                return str.startsWith(".ae");
-        }
+    @Override // ma.a
+    public final void a(Object obj, Object obj2) {
+        ma.e eVar = (ma.e) obj2;
+        g0 g0Var = (g0) ((t1) obj);
+        eVar.a(b, g0Var.a);
+        eVar.a(c, g0Var.b);
+        eVar.a(d, g0Var.c);
     }
 }

@@ -1,32 +1,37 @@
 package org.telegram.ui.Components;
 
+import android.widget.Toast;
+import java.util.ArrayList;
+import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.j91;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class so implements j91 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bi b;
-    public final /* synthetic */ org.telegram.ui.cc c;
+public final class so implements ResultCallback {
+    public final /* synthetic */ org.telegram.messenger.d4 a;
+    public final /* synthetic */ vo b;
 
-    public /* synthetic */ so(bi biVar, org.telegram.ui.cc ccVar, int i10) {
-        this.a = i10;
-        this.b = biVar;
-        this.c = ccVar;
+    public so(vo voVar, org.telegram.messenger.d4 d4Var) {
+        this.b = voVar;
+        this.a = d4Var;
     }
 
-    @Override // org.telegram.ui.j91
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                this.b.L();
-                this.c.a(tL_wallPaper);
-                break;
-            default:
-                this.b.L();
-                this.c.a(tL_wallPaper);
-                break;
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        org.telegram.messenger.d4 d4Var = this.a;
+        ArrayList e10 = d4Var.e((d4Var.f.c ? 2 : 0) | 5);
+        vo voVar = this.b;
+        org.telegram.messenger.hs.f(voVar.a).d(new cl(4, this, e10));
+        voVar.S1 = false;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.k.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

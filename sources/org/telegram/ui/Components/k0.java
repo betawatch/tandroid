@@ -1,65 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.ui.LaunchActivity;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k0 implements org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class k0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ k0(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+    public /* synthetic */ k0(int i3, Runnable runnable) {
+        this.a = i3;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                Context context = this.b;
-                try {
-                    context.startActivity(new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES", Uri.parse("package:" + context.getPackageName())));
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
                     break;
-                } catch (Exception e) {
-                    org.telegram.messenger.f8.g(e, true);
-                    return;
                 }
+                break;
             case 1:
-                Context context2 = this.b;
-                if (context2 != null) {
-                    try {
-                        Intent intent = new Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION", Uri.parse("package:" + context2.getPackageName()));
-                        Activity W = org.telegram.messenger.i0.W(context2);
-                        if (W instanceof LaunchActivity) {
-                            W.startActivityForResult(intent, org.telegram.messenger.at.q1);
-                        } else {
-                            context2.startActivity(intent);
-                        }
-                        break;
-                    } catch (Exception e7) {
-                        org.telegram.messenger.f8.g(e7, true);
-                        return;
-                    }
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
                 }
                 break;
             case 2:
-                gf.f.r(this.b, org.telegram.messenger.v2.g);
+                Runnable runnable3 = this.b;
+                if (runnable3 != null) {
+                    runnable3.run();
+                    break;
+                }
                 break;
             default:
-                Context context3 = this.b;
-                try {
-                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.w0.b.getPackageName()));
-                    context3.startActivity(intent2);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.f8.g(e10, true);
-                }
+                this.b.run();
+                break;
         }
     }
 }

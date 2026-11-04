@@ -1,107 +1,102 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.support.LongSparseIntArray;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wp b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
+    public final /* synthetic */ hp b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ wj(wp wpVar, long j10, int i10, boolean z10, int i11, int i12, int i13) {
-        this.a = i13;
-        this.b = wpVar;
-        this.c = j10;
-        this.d = i10;
-        this.e = z10;
-        this.f = i11;
-        this.h = i12;
+    public /* synthetic */ wj(hp hpVar, long j10, ArrayList arrayList, int i3) {
+        this.a = i3;
+        this.b = hpVar;
+        this.d = j10;
+        this.c = arrayList;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x009c A[SYNTHETIC] */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        boolean z10;
-        int i10;
-        bp[] bpVarArr;
-        int i11;
-        switch (this.a) {
+        int i3 = this.a;
+        long j10 = this.d;
+        ArrayList arrayList = this.c;
+        hp hpVar = this.b;
+        switch (i3) {
             case 0:
-                wp wpVar = this.b;
-                pt notificationsController = wpVar.getNotificationsController();
-                long j10 = this.c;
-                notificationsController.L(null, j10, this.d, 0, this.e);
-                TLRPC.Dialog dialog = (TLRPC.Dialog) wpVar.Q.f(j10);
-                if (dialog != null) {
-                    int i12 = dialog.unread_count;
-                    int i13 = this.f;
-                    if (i13 != 0) {
-                        int i14 = dialog.top_message;
-                        int i15 = this.h;
-                        if (i15 > i14) {
-                            int max = Math.max(i12 - i13, 0);
-                            dialog.unread_count = max;
-                            if (i15 != Integer.MAX_VALUE && max > (i11 = i15 - dialog.top_message)) {
-                                dialog.unread_count = i11;
-                            }
-                            z10 = dialog.unread_mark;
-                            if (z10) {
-                                dialog.unread_mark = false;
-                                wpVar.getMessagesStorage().F1(dialog.id, false);
-                            }
-                            if ((i12 == 0 || z10) && dialog.unread_count == 0) {
-                                wpVar.q2(j10, 0L, null);
-                                i10 = 0;
-                                while (true) {
-                                    bpVarArr = wpVar.M;
-                                    if (i10 < bpVarArr.length) {
-                                        bp bpVar = bpVarArr[i10];
-                                        if (bpVar == null || (bpVar.g & 64) == 0) {
-                                            i10++;
-                                        } else {
-                                            wpVar.Q4(null);
-                                            wpVar.getNotificationCenter().k(3, new Object[0]);
-                                        }
-                                    }
+                qr messagesStorage = hpVar.getMessagesStorage();
+                long j11 = this.d;
+                ArrayList arrayList2 = this.c;
+                hpVar.getMessagesStorage().R1(j11, -j11, arrayList2, messagesStorage.P0(j11, arrayList2, false, true, 0, 0));
+                break;
+            case 1:
+                hpVar.getNotificationCenter().k(7, arrayList, Long.valueOf(j10), Boolean.FALSE);
+                if (j10 == 0) {
+                    int size = arrayList.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        zi ziVar = (zi) hpVar.V.get(((Integer) arrayList.get(i10)).intValue());
+                        if (ziVar != null) {
+                            ziVar.Z = true;
+                        }
+                    }
+                    break;
+                } else {
+                    ArrayList arrayList3 = (ArrayList) hpVar.S.f(-j10);
+                    if (arrayList3 != null) {
+                        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+                            zi ziVar2 = (zi) arrayList3.get(i11);
+                            int size2 = arrayList.size();
+                            int i12 = 0;
+                            while (true) {
+                                if (i12 >= size2) {
+                                    break;
+                                } else if (ziVar2.f1() == ((Integer) arrayList.get(i12)).intValue()) {
+                                    ziVar2.Z = true;
+                                } else {
+                                    i12++;
                                 }
                             }
-                            wpVar.getNotificationCenter().k(2, 256);
                         }
+                        break;
                     }
-                    dialog.unread_count = 0;
-                    z10 = dialog.unread_mark;
-                    if (z10) {
-                    }
-                    if (i12 == 0) {
-                    }
-                    wpVar.q2(j10, 0L, null);
-                    i10 = 0;
-                    while (true) {
-                        bpVarArr = wpVar.M;
-                        if (i10 < bpVarArr.length) {
-                        }
-                        i10++;
-                    }
-                    wpVar.getNotificationCenter().k(2, 256);
                 }
-                LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
-                longSparseIntArray.put(j10, 0);
-                wpVar.getNotificationsController().J(longSparseIntArray);
+                break;
+            case 2:
+                if (arrayList != null) {
+                    hpVar.getClass();
+                    for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                        TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) arrayList.get(i13);
+                        hp messagesController = hpVar.getMessagesController();
+                        int i14 = tL_forumTopic.top_message;
+                        TLRPC.Message message = tL_forumTopic.topMessage;
+                        int i15 = message != null ? message.date : 0;
+                        long j12 = this.d;
+                        messagesController.j3(j12, i14, 0, i15, false, hpVar.y2(j12) ? m5.o(tL_forumTopic.from_id) : tL_forumTopic.id, 0, true, 0);
+                        hpVar.getMessagesStorage().d2(-j12, hpVar.y2(j12) ? m5.o(tL_forumTopic.from_id) : tL_forumTopic.id, tL_forumTopic.top_message, 0);
+                    }
+                }
+                hpVar.getMessagesStorage().a.c(new mj(hpVar, 20));
+                break;
+            case 3:
+                hpVar.l5(0, -j10, arrayList);
+                hpVar.getNotificationCenter().k(3, new Object[0]);
+                break;
+            case 4:
+                g0.h3(new wj(this.b, this.d, this.c, 5));
                 break;
             default:
-                i0.g3(new wj(this.b, this.c, this.d, this.e, this.f, this.h, 0));
+                hpVar.l5(0, j10, arrayList);
+                hpVar.getNotificationCenter().k(3, new Object[0]);
                 break;
         }
+    }
+
+    public /* synthetic */ wj(hp hpVar, ArrayList arrayList, long j10, int i3) {
+        this.a = i3;
+        this.b = hpVar;
+        this.c = arrayList;
+        this.d = j10;
     }
 }

@@ -1,44 +1,21 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e6 {
-    public final r4 a;
-    public final String b;
-    public final Object[] c;
-    public final int d;
+public interface e6 {
+    void a(Object obj);
 
-    public e6(r4 r4Var, String str, Object[] objArr) {
-        this.a = r4Var;
-        this.b = str;
-        this.c = objArr;
-        char charAt = str.charAt(0);
-        if (charAt < 55296) {
-            this.d = charAt;
-            return;
-        }
-        int i10 = charAt & 8191;
-        int i11 = 1;
-        int i12 = 13;
-        while (true) {
-            int i13 = i11 + 1;
-            char charAt2 = str.charAt(i11);
-            if (charAt2 < 55296) {
-                this.d = i10 | (charAt2 << i12);
-                return;
-            } else {
-                i10 |= (charAt2 & 8191) << i12;
-                i12 += 13;
-                i11 = i13;
-            }
-        }
-    }
+    int b(c5 c5Var);
 
-    public final int a() {
-        int i10 = this.d;
-        if ((i10 & 1) != 0) {
-            return 1;
-        }
-        return (i10 & 4) == 4 ? 3 : 2;
-    }
+    boolean c(c5 c5Var, c5 c5Var2);
+
+    void d(Object obj, Object obj2);
+
+    void e(Object obj, r5 r5Var);
+
+    boolean f(Object obj);
+
+    int g(r4 r4Var);
+
+    c5 zzc();
 }

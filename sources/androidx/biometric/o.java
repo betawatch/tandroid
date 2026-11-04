@@ -1,53 +1,58 @@
 package androidx.biometric;
 
-import java.lang.ref.WeakReference;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.Executor;
+import java.util.concurrent.RejectedExecutionException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class o implements Runnable {
+public final class o implements Executor {
     public final /* synthetic */ int a;
-    public final WeakReference b;
+    public final Handler b;
 
-    public o(p pVar) {
-        this.a = 0;
-        this.b = new WeakReference(pVar);
+    public /* synthetic */ o(Handler handler, int i3) {
+        this.a = i3;
+        this.b = handler;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
         switch (this.a) {
             case 0:
-                WeakReference weakReference = this.b;
-                if (weakReference.get() != null) {
-                    ((p) weakReference.get()).X();
-                    break;
-                }
-                break;
+                this.b.post(runnable);
+                return;
             case 1:
-                WeakReference weakReference2 = this.b;
-                if (weakReference2.get() != null) {
-                    ((y) weakReference2.get()).p = false;
-                    break;
+                this.b.post(runnable);
+                return;
+            case 2:
+                this.b.post(runnable);
+                return;
+            case 3:
+                runnable.getClass();
+                Handler handler = this.b;
+                if (handler.post(runnable)) {
+                    return;
                 }
-                break;
+                throw new RejectedExecutionException(handler + " is shutting down");
             default:
-                WeakReference weakReference3 = this.b;
-                if (weakReference3.get() != null) {
-                    ((y) weakReference3.get()).q = false;
-                    break;
+                runnable.getClass();
+                Handler handler2 = this.b;
+                if (handler2.post(runnable)) {
+                    return;
                 }
-                break;
+                throw new RejectedExecutionException(handler2 + " is shutting down");
         }
     }
 
-    public o(y yVar, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 2:
-                this.b = new WeakReference(yVar);
+    public o(int i3) {
+        this.a = i3;
+        switch (i3) {
+            case 1:
+                this.b = new Handler(Looper.getMainLooper());
                 break;
             default:
-                this.b = new WeakReference(yVar);
+                this.b = new Handler(Looper.getMainLooper());
                 break;
         }
     }

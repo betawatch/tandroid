@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class aj extends tk0 {
+public final class aj extends sj0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
@@ -21,82 +21,82 @@ public final class aj extends tk0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 0;
+    @Override // org.telegram.ui.Components.sj0
+    public final boolean D(u4.d1 d1Var) {
+        return d1Var.f == 0;
     }
 
-    public final Object E(int i10) {
-        int i11 = i10 - 1;
-        if (i11 < 0 || i11 >= this.d.size()) {
+    public final Object E(int i3) {
+        int i10 = i3 - 1;
+        if (i10 < 0 || i10 >= this.d.size()) {
             return null;
         }
-        return this.d.get(i11);
+        return this.d.get(i10);
     }
 
-    @Override // s4.g0
+    @Override // u4.h0
     public final int b() {
         return this.d.size() + 2;
     }
 
-    @Override // s4.g0
-    public final int d(int i10) {
-        if (i10 == 0) {
+    @Override // u4.h0
+    public final int d(int i3) {
+        if (i3 == 0) {
             return 1;
         }
-        return i10 == b() - 1 ? 2 : 0;
+        return i3 == b() - 1 ? 2 : 0;
     }
 
-    @Override // s4.g0
+    @Override // u4.h0
     public final void f() {
         super.f();
-        this.n.Q();
+        this.n.R();
     }
 
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
+    @Override // u4.h0
+    public final void t(u4.d1 d1Var, int i3) {
         TLRPC.User user;
-        if (c1Var.f == 0) {
-            dj djVar = (dj) c1Var.a;
-            boolean z10 = i10 != b() + (-2);
-            Object E = E(i10);
-            if (E instanceof org.telegram.messenger.f5) {
-                org.telegram.messenger.f5 f5Var = (org.telegram.messenger.f5) E;
-                user = f5Var.m;
+        if (d1Var.f == 0) {
+            dj djVar = (dj) d1Var.a;
+            boolean z10 = i3 != b() + (-2);
+            Object E = E(i3);
+            if (E instanceof org.telegram.messenger.d5) {
+                org.telegram.messenger.d5 d5Var = (org.telegram.messenger.d5) E;
+                user = d5Var.m;
                 if (user == null) {
-                    djVar.setCurrentId(f5Var.a);
-                    djVar.a(null, (CharSequence) this.e.get(i10 - 1), new wi(f5Var, 1), z10);
+                    djVar.setCurrentId(d5Var.a);
+                    djVar.a(null, (CharSequence) this.e.get(i3 - 1), new wi(d5Var, 1), z10);
                     user = null;
                 }
             } else {
                 user = (TLRPC.User) E;
             }
             if (user != null) {
-                djVar.a(user, (CharSequence) this.e.get(i10 - 1), new xi(1, user), z10);
+                djVar.a(user, (CharSequence) this.e.get(i3 - 1), new xi(1, user), z10);
             }
             boolean containsKey = this.n.x.containsKey(ui.a(E));
-            ep epVar = djVar.d;
-            if (epVar.getVisibility() != 0) {
-                epVar.setVisibility(0);
+            wo woVar = djVar.d;
+            if (woVar.getVisibility() != 0) {
+                woVar.setVisibility(0);
             }
-            epVar.a(containsKey, false);
+            woVar.a(containsKey, false);
         }
     }
 
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
         View djVar;
         Context context = this.c;
-        if (i10 == 0) {
+        if (i3 == 0) {
             djVar = new dj(context, this.n.a);
-        } else if (i10 != 1) {
+        } else if (i3 != 1) {
             djVar = new View(context);
             djVar.setTag(-33024);
         } else {
             djVar = new View(context);
-            djVar.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(56.0f)));
+            djVar.setLayoutParams(new u4.p0(-1, org.telegram.messenger.g0.L(56.0f)));
             djVar.setTag(-33024);
         }
-        return new dk0(djVar);
+        return new bj0(djVar);
     }
 }

@@ -1,0 +1,195 @@
+package z2;
+
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.SparseArray;
+import android.util.SparseBooleanArray;
+import b8.od;
+import d2.r1;
+import d2.s1;
+import g2.n0;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Map;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class i extends s1 {
+    public static final i F0 = new i(new h());
+    public static final String G0;
+    public static final String H0;
+    public static final String I0;
+    public static final String J0;
+    public static final String K0;
+    public static final String L0;
+    public static final String M0;
+    public static final String N0;
+    public static final String O0;
+    public static final String P0;
+    public static final String Q0;
+    public static final String R0;
+    public static final String S0;
+    public static final String T0;
+    public static final String U0;
+    public static final String V0;
+    public static final String W0;
+    public static final String X0;
+    public static final String Y0;
+    public final boolean A0;
+    public final boolean B0;
+    public final boolean C0;
+    public final SparseArray D0;
+    public final SparseBooleanArray E0;
+    public final boolean w0;
+    public final boolean x0;
+    public final boolean y0;
+    public final boolean z0;
+
+    static {
+        String str = n0.a;
+        G0 = Integer.toString(1000, 36);
+        H0 = Integer.toString(1001, 36);
+        I0 = Integer.toString(1002, 36);
+        J0 = Integer.toString(1003, 36);
+        K0 = Integer.toString(1004, 36);
+        L0 = Integer.toString(1005, 36);
+        M0 = Integer.toString(1006, 36);
+        N0 = Integer.toString(1007, 36);
+        O0 = Integer.toString(1008, 36);
+        P0 = Integer.toString(1009, 36);
+        Q0 = Integer.toString(1010, 36);
+        R0 = Integer.toString(1011, 36);
+        S0 = Integer.toString(1012, 36);
+        T0 = Integer.toString(1013, 36);
+        U0 = Integer.toString(1014, 36);
+        V0 = Integer.toString(1015, 36);
+        W0 = Integer.toString(1016, 36);
+        X0 = Integer.toString(1017, 36);
+        Y0 = Integer.toString(1018, 36);
+    }
+
+    public i(h hVar) {
+        super(hVar);
+        this.w0 = hVar.J;
+        this.x0 = hVar.K;
+        this.y0 = hVar.L;
+        this.z0 = hVar.M;
+        this.A0 = hVar.N;
+        this.B0 = hVar.O;
+        this.C0 = hVar.P;
+        this.D0 = hVar.Q;
+        this.E0 = hVar.R;
+    }
+
+    @Override // d2.s1
+    public final r1 a() {
+        return new h(this);
+    }
+
+    @Override // d2.s1
+    public final Bundle c() {
+        Bundle c2 = super.c();
+        c2.putBoolean(G0, this.w0);
+        c2.putBoolean(H0, false);
+        c2.putBoolean(I0, this.x0);
+        c2.putBoolean(U0, false);
+        c2.putBoolean(J0, this.y0);
+        c2.putBoolean(K0, false);
+        c2.putBoolean(L0, false);
+        c2.putBoolean(M0, false);
+        c2.putBoolean(V0, false);
+        c2.putBoolean(Y0, this.z0);
+        c2.putBoolean(W0, this.A0);
+        c2.putBoolean(N0, this.B0);
+        c2.putBoolean(O0, false);
+        c2.putBoolean(P0, this.C0);
+        c2.putBoolean(X0, false);
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        SparseArray sparseArray = new SparseArray();
+        int i3 = 0;
+        while (true) {
+            SparseArray sparseArray2 = this.D0;
+            if (i3 >= sparseArray2.size()) {
+                SparseBooleanArray sparseBooleanArray = this.E0;
+                int[] iArr = new int[sparseBooleanArray.size()];
+                for (int i10 = 0; i10 < sparseBooleanArray.size(); i10++) {
+                    iArr[i10] = sparseBooleanArray.keyAt(i10);
+                }
+                c2.putIntArray(T0, iArr);
+                return c2;
+            }
+            int keyAt = sparseArray2.keyAt(i3);
+            for (Map.Entry entry : ((Map) sparseArray2.valueAt(i3)).entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                arrayList2.add((w2.r1) entry.getKey());
+                arrayList.add(Integer.valueOf(keyAt));
+            }
+            c2.putIntArray(Q0, od.f(arrayList));
+            c2.putParcelableArrayList(R0, g2.f.h(arrayList2, new u9.j(28)));
+            SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
+            if (sparseArray.size() > 0) {
+                sparseArray.keyAt(0);
+                a1.g.z(sparseArray.valueAt(0));
+                throw null;
+            }
+            c2.putSparseParcelableArray(S0, sparseArray3);
+            i3++;
+        }
+    }
+
+    @Override // d2.s1
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && i.class == obj.getClass()) {
+            i iVar = (i) obj;
+            if (super.equals(iVar) && this.w0 == iVar.w0 && this.x0 == iVar.x0 && this.y0 == iVar.y0 && this.z0 == iVar.z0 && this.A0 == iVar.A0 && this.B0 == iVar.B0 && this.C0 == iVar.C0) {
+                SparseBooleanArray sparseBooleanArray = iVar.E0;
+                SparseBooleanArray sparseBooleanArray2 = this.E0;
+                int size = sparseBooleanArray2.size();
+                if (sparseBooleanArray.size() == size) {
+                    int i3 = 0;
+                    while (true) {
+                        if (i3 >= size) {
+                            SparseArray sparseArray = iVar.D0;
+                            SparseArray sparseArray2 = this.D0;
+                            int size2 = sparseArray2.size();
+                            if (sparseArray.size() == size2) {
+                                for (int i10 = 0; i10 < size2; i10++) {
+                                    int indexOfKey = sparseArray.indexOfKey(sparseArray2.keyAt(i10));
+                                    if (indexOfKey >= 0) {
+                                        Map map = (Map) sparseArray2.valueAt(i10);
+                                        Map map2 = (Map) sparseArray.valueAt(indexOfKey);
+                                        if (map2.size() == map.size()) {
+                                            for (Map.Entry entry : map.entrySet()) {
+                                                w2.r1 r1Var = (w2.r1) entry.getKey();
+                                                if (map2.containsKey(r1Var) && Objects.equals(entry.getValue(), map2.get(r1Var))) {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                return true;
+                            }
+                        } else {
+                            if (sparseBooleanArray.indexOfKey(sparseBooleanArray2.keyAt(i3)) < 0) {
+                                break;
+                            }
+                            i3++;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // d2.s1
+    public final int hashCode() {
+        return (((((((((((((((super.hashCode() + 31) * 31) + (this.w0 ? 1 : 0)) * 961) + (this.x0 ? 1 : 0)) * 961) + (this.y0 ? 1 : 0)) * 28629151) + (this.z0 ? 1 : 0)) * 31) + (this.A0 ? 1 : 0)) * 31) + (this.B0 ? 1 : 0)) * 961) + (this.C0 ? 1 : 0)) * 31;
+    }
+}

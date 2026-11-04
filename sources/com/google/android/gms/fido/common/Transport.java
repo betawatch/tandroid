@@ -4,10 +4,10 @@ import a1.g;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import n7.h1;
+import p7.i1;
 import w.a;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public enum Transport implements ReflectedParcelable {
     /* JADX INFO: Fake field, exist only in values array */
@@ -25,7 +25,7 @@ public enum Transport implements ReflectedParcelable {
     /* JADX INFO: Fake field, exist only in values array */
     EF67("hybrid");
 
-    public static final Parcelable.Creator<Transport> CREATOR = new a(3);
+    public static final Parcelable.Creator<Transport> CREATOR = new a(19);
     public final String a;
 
     Transport(String str) {
@@ -34,7 +34,7 @@ public enum Transport implements ReflectedParcelable {
 
     public static Transport a(String str) {
         if (str.equals("hybrid")) {
-            h1.a.O();
+            i1.a.b();
             throw null;
         }
         for (Transport transport : values()) {
@@ -42,7 +42,7 @@ public enum Transport implements ReflectedParcelable {
                 return transport;
             }
         }
-        throw new a7.a(g.n("Transport ", str, " not supported"));
+        throw new c7.a(g.q("Transport ", str, " not supported"));
     }
 
     @Override // android.os.Parcelable
@@ -56,7 +56,7 @@ public enum Transport implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i3) {
         parcel.writeString(this.a);
     }
 }

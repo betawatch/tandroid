@@ -1,49 +1,21 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.CountDownLatch;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t7 implements Runnable {
-    public final /* synthetic */ b8 a;
-    public final /* synthetic */ m7[] b;
-    public final /* synthetic */ TLRPC.Document c;
-    public final /* synthetic */ jc d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ n7 h;
-    public final /* synthetic */ long n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ CountDownLatch w;
+public final class t7 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ w7 d;
 
-    public /* synthetic */ t7(b8 b8Var, m7[] m7VarArr, TLRPC.Document document, jc jcVar, Object obj, int i10, n7 n7Var, long j10, boolean z10, int i11, CountDownLatch countDownLatch) {
-        this.a = b8Var;
-        this.b = m7VarArr;
-        this.c = document;
-        this.d = jcVar;
-        this.e = obj;
-        this.f = i10;
-        this.h = n7Var;
-        this.n = j10;
-        this.r = z10;
-        this.s = i11;
-        this.w = countDownLatch;
+    public t7(w7 w7Var, boolean z10, String str, boolean z11) {
+        this.d = w7Var;
+        this.a = z10;
+        this.b = str;
+        this.c = z11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        b8 b8Var = this.a;
-        b8Var.getClass();
-        TLRPC.Document document = this.c;
-        jc jcVar = this.d;
-        String str = null;
-        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = (document != null || jcVar == null) ? null : jcVar.f;
-        if (document == null && jcVar != null) {
-            str = "mp4";
-        }
-        this.b[0] = b8Var.Z(document, null, null, tL_fileLocationToBeDeprecated, jcVar, this.e, str, (document != null || jcVar == null) ? 0L : jcVar.r, this.f, this.h, this.n, this.r, this.s);
-        this.w.countDown();
+    public final void a() {
+        w7.K.c(new g2.p0(this, this.a, this.b, this.c));
     }
 }

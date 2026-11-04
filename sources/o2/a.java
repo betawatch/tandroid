@@ -1,80 +1,25 @@
 package o2;
 
-import android.net.Uri;
-import g2.d0;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.Map;
-import javax.crypto.Cipher;
-import javax.crypto.CipherInputStream;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements g2.h {
-    public final g2.h a;
-    public final byte[] b;
-    public final byte[] c;
-    public CipherInputStream d;
+public final class a {
+    public final long a;
+    public final int b;
+    public final List c;
+    public final List d;
+    public final List e;
+    public final List f;
 
-    public a(g2.h hVar, byte[] bArr, byte[] bArr2) {
-        this.a = hVar;
-        this.b = bArr;
-        this.c = bArr2;
-    }
-
-    @Override // g2.h
-    public final void addTransferListener(d0 d0Var) {
-        d0Var.getClass();
-        this.a.addTransferListener(d0Var);
-    }
-
-    @Override // g2.h
-    public final void close() {
-        if (this.d != null) {
-            this.d = null;
-            this.a.close();
-        }
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.n nVar) {
-        try {
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            try {
-                cipher.init(2, new SecretKeySpec(this.b, "AES"), new IvParameterSpec(this.c));
-                g2.l lVar = new g2.l(this.a, nVar);
-                this.d = new CipherInputStream(lVar, cipher);
-                lVar.a();
-                return -1L;
-            } catch (InvalidAlgorithmParameterException | InvalidKeyException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e7) {
-            throw new RuntimeException(e7);
-        }
-    }
-
-    @Override // b2.p
-    public final int read(byte[] bArr, int i10, int i11) {
-        this.d.getClass();
-        int read = this.d.read(bArr, i10, i11);
-        if (read < 0) {
-            return -1;
-        }
-        return read;
+    public a(long j10, int i3, ArrayList arrayList, List list, List list2, List list3) {
+        this.a = j10;
+        this.b = i3;
+        this.c = DesugarCollections.unmodifiableList(arrayList);
+        this.d = DesugarCollections.unmodifiableList(list);
+        this.e = DesugarCollections.unmodifiableList(list2);
+        this.f = DesugarCollections.unmodifiableList(list3);
     }
 }

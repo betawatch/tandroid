@@ -1,32 +1,21 @@
 package e0;
 
+import android.app.Notification;
+import android.app.RemoteInput;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class z {
-    public r a;
-    public CharSequence b;
-    public CharSequence c;
-    public boolean d = false;
-
-    public void a(Bundle bundle) {
-        if (this.d) {
-            bundle.putCharSequence("android.summaryText", this.c);
-        }
-        CharSequence charSequence = this.b;
-        if (charSequence != null) {
-            bundle.putCharSequence("android.title.big", charSequence);
-        }
-        String c10 = c();
-        if (c10 != null) {
-            bundle.putString("androidx.core.app.extra.COMPAT_TEMPLATE", c10);
-        }
+    public static Notification.Action.Builder a(Notification.Action.Builder builder, Bundle bundle) {
+        return builder.addExtras(bundle);
     }
 
-    public abstract void b(cc.f fVar);
+    public static Notification.Action.Builder b(Notification.Action.Builder builder, RemoteInput remoteInput) {
+        return builder.addRemoteInput(remoteInput);
+    }
 
-    public String c() {
-        return null;
+    public static Notification.Action c(Notification.Action.Builder builder) {
+        return builder.build();
     }
 }

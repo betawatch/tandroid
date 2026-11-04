@@ -1,79 +1,23 @@
 package a9;
 
-import com.google.android.gms.internal.play_billing.s1;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class i extends o implements ListIterator {
-    public final int b;
-    public int c;
-    public final k d;
+public final class i extends q6.a {
+    public static final Parcelable.Creator<i> CREATOR = new c(5);
+    public final int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(k kVar, int i10) {
-        super(0);
-        int size = kVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(s1.c(i10, size, "index"));
-        }
-        this.b = size;
-        this.c = i10;
-        this.d = kVar;
+    public i(int i3) {
+        this.a = i3;
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.t(parcel, s6);
     }
 }

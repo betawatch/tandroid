@@ -1,58 +1,46 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.StickersActivity;
+import org.telegram.ui.ThemeActivity;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 b;
 
-    public /* synthetic */ bd(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
-        this.c = z10;
+    public /* synthetic */ bd(int i3, org.telegram.ui.ActionBar.d2 d2Var) {
+        this.a = i3;
+        this.b = d2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        pe peVar;
-        int i10 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        boolean z10 = this.c;
-        switch (i10) {
+        int i3 = this.a;
+        org.telegram.ui.ActionBar.d2 d2Var = this.b;
+        switch (i3) {
             case 0:
-                if (!z10) {
-                    chatActivityEnterView.t1.setVisibility(8);
-                    break;
+                int i10 = ChatActivityEnterView.t5;
+                if (d2Var == null) {
+                    if (d2Var.getContext() instanceof LaunchActivity) {
+                        ((LaunchActivity) d2Var.getContext()).t0(new PremiumPreviewFragment(0, null));
+                        break;
+                    }
                 } else {
-                    int i11 = ChatActivityEnterView.s5;
-                    chatActivityEnterView.getClass();
+                    new vg.v0(d2Var, 11, false).show();
                     break;
                 }
+                break;
             case 1:
-                if (!z10) {
-                    chatActivityEnterView.u1.setVisibility(8);
-                    break;
-                } else {
-                    int i12 = ChatActivityEnterView.s5;
-                    chatActivityEnterView.getClass();
-                    break;
-                }
+                d2Var.presentFragment(new StickersActivity(0, null));
+                break;
             default:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                tc tcVar = chatActivityEnterView2.F4;
-                chatActivityEnterView2.M0 = System.currentTimeMillis();
-                boolean R0 = chatActivityEnterView2.R0(false, 0, 0, 0L, true);
-                if (!z10 && (peVar = chatActivityEnterView2.L0) != null) {
-                    peVar.g(!R0);
-                    chatActivityEnterView2.L0 = null;
-                    break;
-                } else {
-                    chatActivityEnterView2.E4 = !R0;
-                    org.telegram.messenger.i0.r(tcVar);
-                    org.telegram.messenger.i0.h3(tcVar, 500L);
-                    break;
-                }
+                ThemeActivity themeActivity = new ThemeActivity(0);
+                themeActivity.U0 = true;
+                d2Var.presentFragment(themeActivity);
+                break;
         }
     }
 }

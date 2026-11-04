@@ -1,34 +1,36 @@
 package x8;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class g implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.wallet.wobs.CommonWalletObject;
 
-    public /* synthetic */ g(d dVar, o6.a aVar, int i10) {
-        this.a = i10;
-        this.b = dVar;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class g extends q6.a {
+    public static final Parcelable.Creator<g> CREATOR = new w8.b(20);
+    public final int a;
+    public final String b;
+    public final CommonWalletObject c;
+
+    public g(int i3, String str, String str2, CommonWalletObject commonWalletObject) {
+        this.a = i3;
+        this.b = str2;
+        if (i3 >= 3) {
+            this.c = commonWalletObject;
+            return;
+        }
+        CommonWalletObject commonWalletObject2 = new CommonWalletObject();
+        commonWalletObject2.a = str;
+        this.c = commonWalletObject2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c.getClass();
-                break;
-            case 1:
-                this.b.c.getClass();
-                break;
-            case 2:
-                this.b.c.getClass();
-                break;
-            case 3:
-                this.b.c.getClass();
-                break;
-            default:
-                this.b.c.getClass();
-                break;
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        j8.a.m(parcel, 3, this.b);
+        j8.a.l(parcel, 4, this.c, i3);
+        j8.a.t(parcel, s6);
     }
 }

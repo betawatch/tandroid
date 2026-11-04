@@ -1,30 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class sw extends s4.b0 {
-    public final /* synthetic */ int r;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sw(Context context, int i10) {
-        super(context);
-        this.r = i10;
-    }
-
-    @Override // s4.b0
-    public final int i(int i10, int i11, int i12, int i13, int i14) {
-        return super.i(i10, i11, i12, i13, i14) + this.r;
-    }
-
-    @Override // s4.b0
-    public final int m(int i10) {
-        return super.m(i10) * 16;
-    }
-
-    @Override // s4.b0
-    public final int p() {
-        return -1;
-    }
+public final class sw {
+    public Long a;
+    public TLRPC.StickerSet b;
+    public ArrayList c = new ArrayList();
+    public TLRPC.TL_inputStickerSetID d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public int j;
 }

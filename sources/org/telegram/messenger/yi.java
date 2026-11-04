@@ -1,57 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class yi {
-    public static void a(TLRPC.Message message, TLRPC.TL_message tL_message) {
-        tL_message.voiceTranscription = message.voiceTranscription;
-        tL_message.voiceTranscriptionOpen = message.voiceTranscriptionOpen;
-        tL_message.voiceTranscriptionFinal = message.voiceTranscriptionFinal;
-        tL_message.voiceTranscriptionForce = message.voiceTranscriptionForce;
-        tL_message.voiceTranscriptionRated = message.voiceTranscriptionRated;
-        tL_message.voiceTranscriptionId = message.voiceTranscriptionId;
-        tL_message.premiumEffectWasPlayed = message.premiumEffectWasPlayed;
-        tL_message.originalLanguage = message.originalLanguage;
-        tL_message.translatedToLanguage = message.translatedToLanguage;
-        tL_message.translatedPoll = message.translatedPoll;
-        tL_message.translatedText = message.translatedText;
-        tL_message.translatedRichMessage = message.translatedRichMessage;
-        tL_message.errorAllowedPriceStars = message.errorAllowedPriceStars;
-        tL_message.errorNewPriceStars = message.errorNewPriceStars;
-        tL_message.translatedVoiceTranscription = message.translatedVoiceTranscription;
-        tL_message.summarizedOpen = message.summarizedOpen;
-        tL_message.summaryText = message.summaryText;
-        tL_message.translatedSummaryText = message.translatedSummaryText;
-        tL_message.translatedSummaryLanguage = message.translatedSummaryLanguage;
+public final class yi {
+    public final int a;
+    public final int b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
+    public final String f;
+
+    public yi(int i3, int i10) {
+        this.a = i3;
+        this.b = i10;
     }
 
-    public static void b(TLRPC.Message message, NativeByteBuffer nativeByteBuffer) {
-        if (nativeByteBuffer == null) {
-            return;
-        }
-        int readInt32 = nativeByteBuffer.readInt32(true);
-        if (readInt32 != 1) {
-            throw new RuntimeException(i0.a.i(readInt32, "can't read params version = "));
-        }
-        new xi(message).readParams(nativeByteBuffer, true);
-    }
-
-    public static NativeByteBuffer c(TLRPC.Message message) {
-        TLRPC.MessageAction messageAction = message.action;
-        if (!((messageAction instanceof TLRPC.TL_messageActionGramTransfer) && ((TLRPC.TL_messageActionGramTransfer) messageAction).comment_encrypted_preparing) && message.voiceTranscription == null && message.translatedVoiceTranscription == null && !message.voiceTranscriptionOpen && !message.summarizedOpen && message.summaryText == null && message.translatedSummaryLanguage == null && message.translatedSummaryText == null && !message.voiceTranscriptionFinal && !message.voiceTranscriptionRated && !message.voiceTranscriptionForce && message.voiceTranscriptionId == 0 && !message.premiumEffectWasPlayed && message.originalLanguage == null && message.translatedToLanguage == null && message.translatedPoll == null && message.translatedText == null && message.translatedRichMessage == null && message.errorAllowedPriceStars == 0 && message.errorNewPriceStars == 0) {
-            return null;
-        }
-        xi xiVar = new xi(message);
-        try {
-            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(xiVar.getObjectSize());
-            xiVar.serializeToStream(nativeByteBuffer);
-            return nativeByteBuffer;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+    public yi(int i3, int i10, boolean z10, boolean z11, boolean z12, String str) {
+        this.a = i3;
+        this.b = i10;
+        this.c = z10;
+        this.d = z11;
+        this.e = z10 && z12;
+        this.f = str;
     }
 }

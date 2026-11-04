@@ -1,47 +1,29 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_bots;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class fs {
-    public final int a;
-    public final bs b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public long f;
-    public String g;
-    public final ArrayList h = new ArrayList();
-    public boolean i = false;
+public final class fs extends ReplacementSpan {
+    public int b;
+    public final Paint a = new Paint(1);
+    public float c = 3.0f;
+    public float d = 3.0f;
 
-    public fs(int i10, bs bsVar) {
-        this.a = i10;
-        this.b = bsVar;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        int color = paint.getColor();
+        Paint paint2 = this.a;
+        if (color != 0) {
+            paint2.setColor(paint.getColor());
+        }
+        canvas.drawCircle(f10 + (org.telegram.messenger.g0.N(this.c) / 2.0f), ((i13 - i11) / 2) + this.b, org.telegram.messenger.g0.N(this.d) / 2.0f, paint2);
     }
 
-    public final void a() {
-        if (this.c || this.e) {
-            return;
-        }
-        this.c = true;
-        boolean z10 = this.d;
-        int i10 = this.a;
-        if (!z10) {
-            es esVar = new es(this, 0);
-            org.telegram.messenger.is a02 = org.telegram.messenger.is.a0(i10);
-            a02.a.c(new jg(this, a02, esVar, 4));
-            return;
-        }
-        TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();
-        getpopularappbots.limit = 20;
-        String str = this.g;
-        if (str == null) {
-            str = "";
-        }
-        getpopularappbots.offset = str;
-        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new x1(this, 2));
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        return org.telegram.messenger.g0.L(this.c);
     }
 }

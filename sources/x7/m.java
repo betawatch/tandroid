@@ -1,78 +1,30 @@
 package x7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import android.os.Build;
+import android.util.Log;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m extends a9.o implements ListIterator {
-    public final int b;
-    public int c;
-    public final o d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(o oVar, int i10) {
-        super(8);
-        int size = oVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(w7.v8.c(i10, size, "index"));
+public abstract class m {
+    public static void a(Object obj, String str, String str2) {
+        String c2 = c(str);
+        if (Log.isLoggable(c2, 3)) {
+            Log.d(c2, String.format(str2, obj));
         }
-        this.b = size;
-        this.c = i10;
-        this.d = oVar;
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    public static void b(String str, String str2, Exception exc) {
+        String c2 = c(str);
+        if (Log.isLoggable(c2, 6)) {
+            Log.e(c2, str2, exc);
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
         }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

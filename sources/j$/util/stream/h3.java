@@ -24,8 +24,8 @@ public abstract class h3 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.o(this, i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i3) {
+        return j$.com.android.tools.r8.a.o(this, i3);
     }
 
     @Override // j$.util.Spliterator
@@ -77,9 +77,9 @@ public abstract class h3 implements Spliterator {
         if (spliterator == null) {
             Deque b10 = b();
             this.e = b10;
-            e2 a2 = a(b10);
-            if (a2 != null) {
-                this.d = a2.spliterator();
+            e2 a10 = a(b10);
+            if (a10 != null) {
+                this.d = a10.spliterator();
                 return true;
             }
             this.a = null;
@@ -101,13 +101,13 @@ public abstract class h3 implements Spliterator {
         }
         if (this.b < e2Var.h() - 1) {
             e2 e2Var2 = this.a;
-            int i10 = this.b;
-            this.b = i10 + 1;
-            return e2Var2.a(i10).spliterator();
+            int i3 = this.b;
+            this.b = i3 + 1;
+            return e2Var2.a(i3).spliterator();
         }
-        e2 a2 = this.a.a(this.b);
-        this.a = a2;
-        if (a2.h() == 0) {
+        e2 a10 = this.a.a(this.b);
+        this.a = a10;
+        if (a10.h() == 0) {
             Spliterator spliterator2 = this.a.spliterator();
             this.c = spliterator2;
             return spliterator2.trySplit();
@@ -127,8 +127,8 @@ public abstract class h3 implements Spliterator {
         if (spliterator != null) {
             return spliterator.estimateSize();
         }
-        for (int i10 = this.b; i10 < this.a.h(); i10++) {
-            j10 += this.a.a(i10).count();
+        for (int i3 = this.b; i3 < this.a.h(); i3++) {
+            j10 += this.a.a(i3).count();
         }
         return j10;
     }

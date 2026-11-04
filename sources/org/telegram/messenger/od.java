@@ -1,629 +1,166 @@
 package org.telegram.messenger;
 
-import android.content.Intent;
-import android.location.Location;
-import android.location.LocationManager;
-import android.os.SystemClock;
-import android.util.SparseIntArray;
-import com.google.android.gms.location.LocationRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.media.AudioRecord;
+import android.os.PowerManager;
+import android.telephony.TelephonyManager;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class od extends f1 implements vs, qa, ra {
-    public static volatile od[] O = new od[4];
-    public static final String[] P = {"Unnamed Road", "Вulicya bez nazvi", "Нeizvestnaya doroga", "İsimsiz Yol", "Ceļš bez nosaukuma", "Kelias be pavadinimo", "Droga bez nazwy", "Cesta bez názvu", "Silnice bez názvu", "Drum fără nume", "Route sans nom", "Vía sin nombre", "Estrada sem nome", "Οdos xoris onomasia", "Rrugë pa emër", "Пat bez ime", "Нeimenovani put", "Strada senza nome", "Straße ohne Straßennamen"};
-    public static final HashMap Q = new HashMap();
-    public boolean D;
-    public boolean E;
-    public final SparseIntArray F;
-    public final a0.h G;
-    public long H;
-    public final ArrayList I;
-    public final a0.h J;
-    public Boolean K;
-    public boolean L;
-    public final ua M;
-    public final ta N;
-    public final a0.h a;
-    public final ArrayList b;
-    public final a0.h c;
-    public final a0.h d;
-    public final LocationManager e;
-    public final md f;
-    public final md h;
-    public final md n;
-    public final m2.t r;
-    public Location s;
-    public long w;
-    public boolean x;
-    public long y;
+public final /* synthetic */ class od implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaController b;
 
-    public od(int i10) {
-        super(i10);
-        this.a = new a0.h();
-        this.b = new ArrayList();
-        this.c = new a0.h();
-        this.d = new a0.h();
-        int i11 = 0;
-        this.f = new md(this, i11);
-        this.h = new md(this, i11);
-        this.n = new md(this, i11);
-        this.r = new m2.t(this, 6);
-        this.x = true;
-        this.F = new SparseIntArray();
-        this.G = new a0.h();
-        this.I = new ArrayList();
-        this.J = new a0.h();
-        this.e = (LocationManager) w0.b.getSystemService("location");
-        this.M = ((li.k) w0.j()).onCreateLocationServicesAPI(w0.b, this, this);
-        ta onCreateLocationRequest = ((li.k) w0.j()).onCreateLocationRequest();
-        this.N = onCreateLocationRequest;
-        da daVar = (da) onCreateLocationRequest;
-        daVar.getClass();
-        LocationRequest locationRequest = daVar.a;
-        locationRequest.a = 100;
-        long j10 = locationRequest.c;
-        long j11 = locationRequest.b;
-        if (j10 == j11 / 6) {
-            locationRequest.c = 166L;
-        }
-        if (locationRequest.r == j11) {
-            locationRequest.r = 1000L;
-        }
-        locationRequest.b = 1000L;
-        locationRequest.c = 1000L;
-        i0.g3(new fd(this, 5));
-        getMessagesStorage().a.c(new fd(this, 0));
+    public /* synthetic */ od(MediaController mediaController, int i3) {
+        this.a = i3;
+        this.b = mediaController;
     }
 
-    public static String b(String str) {
-        if (str == null) {
-            return null;
-        }
-        String upperCase = str.toUpperCase();
-        int codePointCount = upperCase.codePointCount(0, upperCase.length());
-        if (codePointCount > 2) {
-            return null;
-        }
-        StringBuilder sb2 = new StringBuilder();
-        for (int i10 = 0; i10 < codePointCount; i10++) {
-            sb2.append(Character.toChars(Character.codePointAt(upperCase, i10) - (-127397)));
-        }
-        return sb2.toString();
-    }
-
-    public static String c(double d, double d10) {
-        if (d10 > 65.0d) {
-            return "Arctic Ocean";
-        }
-        if (d > -88.0d && d < 40.0d && d10 > 0.0d) {
-            return "Atlantic Ocean";
-        }
-        if (d > -60.0d && d < 20.0d && d10 <= 0.0d) {
-            return "Atlantic Ocean";
-        }
-        if (d10 <= 30.0d && d >= 20.0d && d < 150.0d) {
-            return "Indian Ocean";
-        }
-        if ((d > 106.0d || d < -60.0d) && d10 > 0.0d) {
-            return "Pacific Ocean";
-        }
-        if ((d > 150.0d || d < -60.0d) && d10 <= 0.0d) {
-            return "Pacific Ocean";
-        }
-        return null;
-    }
-
-    public static void d(Location location, int i10, zf.h0 h0Var) {
-        Locale locale;
-        HashMap hashMap = Q;
-        Runnable runnable = (Runnable) hashMap.get(h0Var);
-        if (runnable != null) {
-            Utilities.e.a(runnable);
-            hashMap.remove(h0Var);
-        }
-        if (location == null) {
-            h0Var.L(null, null, null, null, null);
-            return;
-        }
-        try {
-            locale = dd.D0().y;
-        } catch (Exception unused) {
-            locale = dd.D0().z;
-        }
-        Locale locale2 = locale;
-        Locale locale3 = locale2.getLanguage().contains("en") ? locale2 : Locale.US;
-        r5 r5Var = Utilities.e;
-        lk lkVar = new lk(locale2, location, i10, locale3, h0Var, 1);
-        r5Var.d(lkVar, 300L);
-        Q.put(h0Var, lkVar);
-    }
-
-    public static int e(Location location) {
-        float bearing = location.getBearing();
-        return (bearing <= 0.0f || bearing >= 1.0f) ? (int) bearing : bearing < 0.5f ? 360 : 1;
-    }
-
-    public static od f(int i10) {
-        od odVar;
-        od odVar2 = O[i10];
-        if (odVar2 != null) {
-            return odVar2;
-        }
-        synchronized (od.class) {
-            try {
-                odVar = O[i10];
-                if (odVar == null) {
-                    od[] odVarArr = O;
-                    od odVar3 = new od(i10);
-                    odVarArr[i10] = odVar3;
-                    odVar = odVar3;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return odVar;
-    }
-
-    public static int g() {
-        int i10 = 0;
-        for (int i11 = 0; i11 < 4; i11++) {
-            i10 += f(i11).I.size();
-        }
-        return i10;
-    }
-
-    public static void q() {
-        try {
-            if (!w7.c6.d("android.permission.ACCESS_COARSE_LOCATION") && !w7.c6.d("android.permission.ACCESS_FINE_LOCATION")) {
-                LocationSharingService.b();
-                return;
-            }
-            w0.b.startService(new Intent(w0.b, (Class<?>) LocationSharingService.class));
-        } catch (Throwable th2) {
-            f8.g(th2, true);
-            LocationSharingService.b();
-        }
-    }
-
-    public static void s() {
-        if (g() > 0) {
-            return;
-        }
-        int i10 = LocationSharingService.d;
-        new e0.k0(w0.b).b(6, "live_location_paused");
-        w0.b.stopService(new Intent(w0.b, (Class<?>) LocationSharingService.class));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00fa  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(boolean z10) {
-        float[] fArr;
-        TLRPC.InputGeoPoint inputGeoPoint;
-        int i10;
-        int i11;
-        int i12;
-        TLRPC.GeoPoint geoPoint;
-        if (this.s == null) {
-            return;
-        }
-        SparseIntArray sparseIntArray = this.F;
-        if (sparseIntArray.size() != 0) {
-            if (z10) {
-                for (int i13 = 0; i13 < sparseIntArray.size(); i13++) {
-                    getConnectionsManager().cancelRequest(sparseIntArray.keyAt(i13), false);
-                }
-            }
-            sparseIntArray.clear();
-        }
-        ArrayList arrayList = this.b;
-        if (!arrayList.isEmpty()) {
-            int currentTime = getConnectionsManager().getCurrentTime();
-            float[] fArr2 = new float[1];
-            int i14 = 0;
-            while (i14 < arrayList.size()) {
-                nd ndVar = (nd) arrayList.get(i14);
-                TLRPC.Message message = ndVar.h.k;
-                TLRPC.MessageMedia messageMedia = message.media;
-                if (messageMedia != null && (geoPoint = messageMedia.geo) != null && ndVar.g == ndVar.f) {
-                    int i15 = message.edit_date;
-                    if (i15 == 0) {
-                        i15 = message.date;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = 0;
+        switch (this.a) {
+            case 0:
+                MediaController mediaController = this.b;
+                String[] strArr = MediaController.W1;
+                try {
+                    mediaController.B1 = 48000;
+                    int minBufferSize = AudioRecord.getMinBufferSize(48000, 16, 2);
+                    if (minBufferSize <= 0) {
+                        minBufferSize = 1280;
                     }
-                    if (Math.abs(currentTime - i15) < 10) {
-                        fArr = fArr2;
-                        Location.distanceBetween(geoPoint.lat, geoPoint._long, this.s.getLatitude(), this.s.getLongitude(), fArr);
-                        if (fArr[0] < 1.0f) {
-                            i12 = i14;
-                            i14 = i12 + 1;
-                            fArr2 = fArr;
-                        }
-                        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-                        tL_messages_editMessage.peer = getMessagesController().i1(ndVar.a);
-                        tL_messages_editMessage.id = ndVar.b;
-                        tL_messages_editMessage.flags |= TLObject.FLAG_14;
-                        TLRPC.TL_inputMediaGeoLive tL_inputMediaGeoLive = new TLRPC.TL_inputMediaGeoLive();
-                        tL_messages_editMessage.media = tL_inputMediaGeoLive;
-                        tL_inputMediaGeoLive.stopped = false;
-                        tL_inputMediaGeoLive.geo_point = new TLRPC.TL_inputGeoPoint();
-                        tL_messages_editMessage.media.geo_point.lat = i0.b0(this.s.getLatitude());
-                        tL_messages_editMessage.media.geo_point._long = i0.b0(this.s.getLongitude());
-                        tL_messages_editMessage.media.geo_point.accuracy_radius = (int) this.s.getAccuracy();
-                        TLRPC.InputMedia inputMedia = tL_messages_editMessage.media;
-                        inputGeoPoint = inputMedia.geo_point;
-                        if (inputGeoPoint.accuracy_radius != 0) {
-                            inputGeoPoint.flags |= 1;
-                        }
-                        i10 = ndVar.g;
-                        i11 = ndVar.f;
-                        if (i10 != i11) {
-                            inputMedia.proximity_notification_radius = i11;
-                            inputMedia.flags |= 8;
-                        }
-                        inputMedia.heading = e(this.s);
-                        tL_messages_editMessage.media.flags |= 4;
-                        i12 = i14;
-                        int sendRequest = getConnectionsManager().sendRequest(tL_messages_editMessage, new r6(this, ndVar, r3, tL_messages_editMessage, 1));
-                        int[] iArr = {sendRequest};
-                        sparseIntArray.put(sendRequest, 0);
-                        i14 = i12 + 1;
-                        fArr2 = fArr;
+                    mediaController.A1 = minBufferSize;
+                    while (i3 < 5) {
+                        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(mediaController.A1);
+                        allocateDirect.order(ByteOrder.nativeOrder());
+                        mediaController.y1.add(allocateDirect);
+                        i3++;
                     }
-                }
-                fArr = fArr2;
-                TLRPC.TL_messages_editMessage tL_messages_editMessage2 = new TLRPC.TL_messages_editMessage();
-                tL_messages_editMessage2.peer = getMessagesController().i1(ndVar.a);
-                tL_messages_editMessage2.id = ndVar.b;
-                tL_messages_editMessage2.flags |= TLObject.FLAG_14;
-                TLRPC.TL_inputMediaGeoLive tL_inputMediaGeoLive2 = new TLRPC.TL_inputMediaGeoLive();
-                tL_messages_editMessage2.media = tL_inputMediaGeoLive2;
-                tL_inputMediaGeoLive2.stopped = false;
-                tL_inputMediaGeoLive2.geo_point = new TLRPC.TL_inputGeoPoint();
-                tL_messages_editMessage2.media.geo_point.lat = i0.b0(this.s.getLatitude());
-                tL_messages_editMessage2.media.geo_point._long = i0.b0(this.s.getLongitude());
-                tL_messages_editMessage2.media.geo_point.accuracy_radius = (int) this.s.getAccuracy();
-                TLRPC.InputMedia inputMedia2 = tL_messages_editMessage2.media;
-                inputGeoPoint = inputMedia2.geo_point;
-                if (inputGeoPoint.accuracy_radius != 0) {
-                }
-                i10 = ndVar.g;
-                i11 = ndVar.f;
-                if (i10 != i11) {
-                }
-                inputMedia2.heading = e(this.s);
-                tL_messages_editMessage2.media.flags |= 4;
-                i12 = i14;
-                int sendRequest2 = getConnectionsManager().sendRequest(tL_messages_editMessage2, new r6(this, ndVar, iArr, tL_messages_editMessage2, 1));
-                int[] iArr2 = {sendRequest2};
-                sparseIntArray.put(sendRequest2, 0);
-                i14 = i12 + 1;
-                fArr2 = fArr;
-            }
-        }
-        getConnectionsManager().resumeNetworkMaybe();
-        if (SystemClock.elapsedRealtime() > this.H) {
-            r(false);
-        }
-    }
-
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        int i12 = at.F4;
-        a0.h hVar = this.c;
-        if (i10 == 1) {
-            if (((Boolean) objArr[2]).booleanValue()) {
-                return;
-            }
-            Long l4 = (Long) objArr[0];
-            long longValue = l4.longValue();
-            if (i(longValue) && (arrayList2 = (ArrayList) hVar.f(longValue)) != null) {
-                ArrayList arrayList3 = (ArrayList) objArr[1];
-                boolean z10 = false;
-                for (int i13 = 0; i13 < arrayList3.size(); i13++) {
-                    kj kjVar = (kj) arrayList3.get(i13);
-                    if (kjVar.C3()) {
-                        int i14 = 0;
-                        while (true) {
-                            if (i14 >= arrayList2.size()) {
-                                arrayList2.add(kjVar.k);
-                                break;
-                            } else {
-                                if (kj.C1(((TLRPC.Message) arrayList2.get(i14)).from_id) == kjVar.Z0()) {
-                                    arrayList2.set(i14, kjVar.k);
-                                    break;
-                                }
-                                i14++;
-                            }
-                        }
-                        z10 = true;
-                    } else {
-                        TLRPC.Message message = kjVar.k;
-                        if (message.action instanceof TLRPC.TL_messageActionGeoProximityReached) {
-                            long B0 = kj.B0(message);
-                            if (o5.E(B0)) {
-                                o(0, B0, false);
-                            }
-                        }
-                    }
-                }
-                if (z10) {
-                    at.e().k(i12, l4, Integer.valueOf(this.currentAccount));
+                    break;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
                     return;
                 }
-                return;
-            }
-            return;
-        }
-        if (i10 == at.w) {
-            if (((Boolean) objArr[2]).booleanValue()) {
-                return;
-            }
-            ArrayList arrayList4 = this.I;
-            if (arrayList4.isEmpty()) {
-                return;
-            }
-            ArrayList arrayList5 = (ArrayList) objArr[0];
-            long longValue2 = ((Long) objArr[1]).longValue();
-            ArrayList arrayList6 = null;
-            for (int i15 = 0; i15 < arrayList4.size(); i15++) {
-                nd ndVar = (nd) arrayList4.get(i15);
-                kj kjVar2 = ndVar.h;
-                if (longValue2 == (kjVar2 != null ? kj.v0(kjVar2.k) : 0L) && arrayList5.contains(Integer.valueOf(ndVar.b))) {
-                    if (arrayList6 == null) {
-                        arrayList6 = new ArrayList();
-                    }
-                    arrayList6.add(Long.valueOf(ndVar.a));
-                }
-            }
-            if (arrayList6 != null) {
-                for (int i16 = 0; i16 < arrayList6.size(); i16++) {
-                    k(((Long) arrayList6.get(i16)).longValue());
-                }
-                return;
-            }
-            return;
-        }
-        if (i10 == at.m0) {
-            Long l10 = (Long) objArr[0];
-            long longValue3 = l10.longValue();
-            if (i(longValue3) && (arrayList = (ArrayList) hVar.f(longValue3)) != null) {
-                ArrayList arrayList7 = (ArrayList) objArr[1];
-                boolean z11 = false;
-                for (int i17 = 0; i17 < arrayList7.size(); i17++) {
-                    kj kjVar3 = (kj) arrayList7.get(i17);
-                    int i18 = 0;
-                    while (true) {
-                        if (i18 >= arrayList.size()) {
-                            break;
+            case 1:
+                MediaController mediaController2 = this.b;
+                String[] strArr2 = MediaController.W1;
+                try {
+                    mediaController2.q0 = hp.e1().getFloat("playbackSpeed", 1.0f);
+                    mediaController2.r0 = hp.e1().getFloat("musicPlaybackSpeed", 1.0f);
+                    mediaController2.s0 = hp.e1().getFloat("fastPlaybackSpeed", 1.8f);
+                    mediaController2.t0 = hp.e1().getFloat("fastMusicPlaybackSpeed", 1.8f);
+                    SensorManager sensorManager = (SensorManager) t0.b.getSystemService("sensor");
+                    mediaController2.c = sensorManager;
+                    mediaController2.h = sensorManager.getDefaultSensor(10);
+                    Sensor defaultSensor = mediaController2.c.getDefaultSensor(9);
+                    mediaController2.n = defaultSensor;
+                    if (mediaController2.h == null || defaultSensor == null) {
+                        if (r2.a) {
+                            a8.b("gravity or linear sensor not found");
                         }
-                        if (kj.C1(((TLRPC.Message) arrayList.get(i18)).from_id) == kjVar3.Z0()) {
-                            if (kjVar3.C3()) {
-                                arrayList.set(i18, kjVar3.k);
-                            } else {
-                                arrayList.remove(i18);
-                            }
-                            z11 = true;
-                        } else {
-                            i18++;
-                        }
+                        mediaController2.f = mediaController2.c.getDefaultSensor(1);
+                        mediaController2.h = null;
+                        mediaController2.n = null;
                     }
+                    mediaController2.e = mediaController2.c.getDefaultSensor(8);
+                    mediaController2.d = ((PowerManager) t0.b.getSystemService("power")).newWakeLock(32, "telegram:proximity_lock");
+                } catch (Exception e11) {
+                    a8.g(e11, true);
                 }
-                if (z11) {
-                    at.e().k(i12, l10, Integer.valueOf(this.currentAccount));
-                }
-            }
-        }
-    }
-
-    public final nd h(long j10) {
-        return (nd) this.J.f(j10);
-    }
-
-    public final boolean i(long j10) {
-        return this.J.h(j10) >= 0;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [org.telegram.tgnet.TLRPC$TL_messages_readMessageContents] */
-    /* JADX WARN: Type inference failed for: r1v4, types: [org.telegram.tgnet.TLObject] */
-    /* JADX WARN: Type inference failed for: r1v7, types: [org.telegram.tgnet.TLRPC$TL_channels_readMessageContents] */
-    /* JADX WARN: Type inference failed for: r8v2, types: [org.telegram.tgnet.ConnectionsManager] */
-    public final void j(long j10) {
-        ArrayList arrayList;
-        ?? tL_messages_readMessageContents;
-        if (o5.C(j10) || (arrayList = (ArrayList) this.c.f(j10)) == null || arrayList.isEmpty()) {
-            return;
-        }
-        a0.h hVar = this.d;
-        Integer num = (Integer) hVar.f(j10);
-        int elapsedRealtime = (int) (SystemClock.elapsedRealtime() / 1000);
-        if (num == null || num.intValue() + 60 <= elapsedRealtime) {
-            hVar.k(Integer.valueOf(elapsedRealtime), j10);
-            int i10 = 0;
-            if (o5.z(j10)) {
-                long j11 = -j10;
-                if (w3.S(this.currentAccount, j11)) {
-                    tL_messages_readMessageContents = new TLRPC.TL_channels_readMessageContents();
-                    int size = arrayList.size();
-                    while (i10 < size) {
-                        i10 = c3.i0.j(((TLRPC.Message) arrayList.get(i10)).id, i10, 1, tL_messages_readMessageContents.id);
+                try {
+                    ne neVar = new ne(mediaController2);
+                    TelephonyManager telephonyManager = (TelephonyManager) t0.b.getSystemService("phone");
+                    if (telephonyManager != null) {
+                        telephonyManager.listen(neVar, 32);
+                        break;
                     }
-                    tL_messages_readMessageContents.channel = getMessagesController().g1(j11);
-                    getConnectionsManager().sendRequest(tL_messages_readMessageContents, new gd(this, 2));
+                } catch (Exception e12) {
+                    a8.g(e12, true);
+                    return;
                 }
-            }
-            tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
-            int size2 = arrayList.size();
-            while (i10 < size2) {
-                i10 = c3.i0.j(((TLRPC.Message) arrayList.get(i10)).id, i10, 1, tL_messages_readMessageContents.id);
-            }
-            getConnectionsManager().sendRequest(tL_messages_readMessageContents, new gd(this, 2));
-        }
-    }
-
-    public final void k(long j10) {
-        Utilities.d.c(new ld(this, j10, 0));
-    }
-
-    public final void l(nd ndVar, int i10) {
-        getMessagesStorage().a.c(new o7(this, i10, ndVar, 5));
-    }
-
-    public final void m(Location location) {
-        if (location == null || (SystemClock.elapsedRealtimeNanos() - location.getElapsedRealtimeNanos()) / 1000000000 <= 300) {
-            this.s = location;
-            if (location != null) {
-                i0.g3(new ag.f3(21));
-            }
-        }
-    }
-
-    public final void n(Location location, boolean z10) {
-        Location location2;
-        if (location == null) {
-            return;
-        }
-        this.E = true;
-        if (z10 || ((location2 = this.s) != null && location2.distanceTo(location) >= 20.0f)) {
-            this.w = SystemClock.elapsedRealtime() - 30000;
-            this.x = false;
-        } else if (this.x) {
-            this.w = SystemClock.elapsedRealtime() - 10000;
-            this.x = false;
-        }
-        m(location);
-    }
-
-    public final void o(int i10, long j10, boolean z10) {
-        nd ndVar = (nd) this.J.f(j10);
-        if (ndVar != null) {
-            ndVar.f = i10;
-        }
-        getMessagesStorage().a.c(new ed(this, i10, j10, 0));
-        if (z10) {
-            Utilities.d.c(new fd(this, 3));
-        }
-    }
-
-    public final void p() {
-        LocationManager locationManager = this.e;
-        if (this.D) {
-            return;
-        }
-        this.y = SystemClock.elapsedRealtime();
-        this.D = true;
-        if (this.K == null) {
-            ((li.k) w0.j()).getClass();
-            this.K = Boolean.valueOf(fu.b.hasServices());
-        }
-        if (this.K.booleanValue()) {
-            try {
-                ((com.google.android.gms.common.api.internal.h0) this.M).a.d();
-                return;
-            } catch (Throwable th2) {
-                f8.g(th2, true);
-            }
-        }
-        try {
-            this.e.requestLocationUpdates("gps", 1L, 0.0f, this.f);
-        } catch (Exception e) {
-            f8.g(e, true);
-        }
-        try {
-            this.e.requestLocationUpdates("network", 1L, 0.0f, this.h);
-        } catch (Exception e7) {
-            f8.g(e7, true);
-        }
-        try {
-            this.e.requestLocationUpdates("passive", 1L, 0.0f, this.n);
-        } catch (Exception e10) {
-            f8.g(e10, true);
-        }
-        if (this.s == null) {
-            try {
-                m(locationManager.getLastKnownLocation("gps"));
-                if (this.s == null) {
-                    m(locationManager.getLastKnownLocation("network"));
+                break;
+            case 2:
+                MediaController mediaController3 = this.b;
+                String[] strArr3 = MediaController.W1;
+                while (i3 < 4) {
+                    hs.f(i3).b(mediaController3, hs.Y1);
+                    hs.f(i3).b(mediaController3, hs.R1);
+                    hs.f(i3).b(mediaController3, 1);
+                    hs.f(i3).b(mediaController3, 7);
+                    hs.f(i3).b(mediaController3, 41);
+                    hs.f(i3).b(mediaController3, 73);
+                    hs.f(i3).b(mediaController3, 32);
+                    hs.f(i3).b(mediaController3, hs.T3);
+                    hs.e().b(mediaController3, hs.H4);
+                    i3++;
                 }
-            } catch (Exception e11) {
-                f8.g(e11, true);
-            }
-        }
-    }
-
-    public final void r(boolean z10) {
-        this.D = false;
-        if (this.K == null) {
-            ((li.k) w0.j()).getClass();
-            this.K = Boolean.valueOf(fu.b.hasServices());
-        }
-        if (this.K.booleanValue()) {
-            try {
-                ((li.k) w0.j()).removeLocationUpdates(this.r);
-                ((com.google.android.gms.common.api.internal.h0) this.M).a.e();
-            } catch (Throwable th2) {
-                f8.g(th2, false);
-            }
-        }
-        md mdVar = this.f;
-        LocationManager locationManager = this.e;
-        locationManager.removeUpdates(mdVar);
-        if (z10) {
-            locationManager.removeUpdates(this.h);
-            locationManager.removeUpdates(this.n);
-        }
-    }
-
-    public final void t() {
-        Location location;
-        getUserConfig();
-        ArrayList arrayList = this.b;
-        if (!arrayList.isEmpty()) {
-            int i10 = 0;
-            boolean z10 = false;
-            while (i10 < arrayList.size()) {
-                nd ndVar = (nd) arrayList.get(i10);
-                if (ndVar.c <= getConnectionsManager().getCurrentTime()) {
-                    arrayList.remove(i10);
-                    this.a.l(ndVar.a);
-                    l(ndVar, 1);
-                    i0.g3(new hd(this, ndVar, 2));
-                    i10--;
-                    z10 = true;
+                break;
+            case 3:
+                MediaController mediaController4 = this.b;
+                Sensor sensor = mediaController4.n;
+                if (sensor != null) {
+                    mediaController4.c.registerListener(mediaController4, sensor, 30000);
                 }
-                i10++;
-            }
-            if (z10 && arrayList.isEmpty()) {
-                r(true);
-            }
-        }
-        if (!this.D) {
-            if (arrayList.isEmpty() || Math.abs(this.w - SystemClock.elapsedRealtime()) <= 30000) {
-                return;
-            }
-            this.y = SystemClock.elapsedRealtime();
-            p();
-            return;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.E || Math.abs(this.y - elapsedRealtime) > 10000 || (SystemClock.elapsedRealtime() > this.H && Math.abs(this.w - SystemClock.elapsedRealtime()) >= 2000 && (location = this.s) != null && location.getElapsedRealtimeNanos() / 1000000 >= this.y)) {
-            this.E = false;
-            this.x = true;
-            boolean z11 = SystemClock.elapsedRealtime() - this.w > 2000;
-            this.y = elapsedRealtime;
-            this.w = SystemClock.elapsedRealtime();
-            a(z11);
+                Sensor sensor2 = mediaController4.h;
+                if (sensor2 != null) {
+                    mediaController4.c.registerListener(mediaController4, sensor2, 30000);
+                }
+                Sensor sensor3 = mediaController4.f;
+                if (sensor3 != null) {
+                    mediaController4.c.registerListener(mediaController4, sensor3, 30000);
+                }
+                mediaController4.c.registerListener(mediaController4, mediaController4.e, 3);
+                break;
+            case 4:
+                MediaController mediaController5 = this.b;
+                String[] strArr4 = MediaController.W1;
+                mediaController5.q(true, true, false, false);
+                break;
+            case 5:
+                MediaController mediaController6 = this.b;
+                Sensor sensor4 = mediaController6.h;
+                if (sensor4 != null) {
+                    mediaController6.c.unregisterListener(mediaController6, sensor4);
+                }
+                Sensor sensor5 = mediaController6.n;
+                if (sensor5 != null) {
+                    mediaController6.c.unregisterListener(mediaController6, sensor5);
+                }
+                Sensor sensor6 = mediaController6.f;
+                if (sensor6 != null) {
+                    mediaController6.c.unregisterListener(mediaController6, sensor6);
+                }
+                mediaController6.c.unregisterListener(mediaController6, mediaController6.e);
+                break;
+            case 6:
+                MediaController.d(this.b);
+                break;
+            case 7:
+                MediaController mediaController7 = this.b;
+                mediaController7.M1 = null;
+                hs.f(mediaController7.i1).k(hs.m2, Integer.valueOf(mediaController7.h1));
+                break;
+            case 8:
+                MediaController mediaController8 = this.b;
+                String[] strArr5 = MediaController.W1;
+                mediaController8.Y(true);
+                mediaController8.f1 = new AudioRecord(0, mediaController8.B1, 16, 2, mediaController8.A1);
+                System.currentTimeMillis();
+                mediaController8.m1 = 0;
+                mediaController8.w1 = 0L;
+                mediaController8.z1.rewind();
+                mediaController8.f1.startRecording();
+                mediaController8.N1.c(mediaController8.P1);
+                hs.f(mediaController8.i1).k(hs.p2, new Object[0]);
+                break;
+            default:
+                MediaController mediaController9 = this.b;
+                String[] strArr6 = MediaController.W1;
+                mediaController9.q(true, true, false, false);
+                break;
         }
     }
 }

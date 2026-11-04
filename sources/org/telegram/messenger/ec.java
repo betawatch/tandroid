@@ -1,15 +1,13 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class ec {
-    public final BitmapDrawable a;
-    public final String b;
+public interface ec {
+    void D(ImageReceiver imageReceiver);
 
-    public ec(String str, BitmapDrawable bitmapDrawable) {
-        this.b = str;
-        this.a = bitmapDrawable;
-    }
+    void F0(int i3, Drawable drawable);
+
+    void l0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12);
 }

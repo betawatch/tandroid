@@ -1,49 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.widget.TextView;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ja0 extends org.telegram.ui.Cells.m3 {
-    public boolean E;
-    public final /* synthetic */ la0 F;
+public final class ja0 implements TextureView.SurfaceTextureListener {
+    public final TextureView.SurfaceTextureListener a;
+    public final /* synthetic */ la0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ja0(la0 la0Var, Context context, String str, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, str, false, false, -1, p6Var);
-        this.F = la0Var;
+    public ja0(la0 la0Var, TextureView.SurfaceTextureListener surfaceTextureListener) {
+        this.b = la0Var;
+        this.a = surfaceTextureListener;
     }
 
-    @Override // org.telegram.ui.Cells.m3
-    public final void b(Editable editable) {
-        int i10;
-        if (this.E) {
-            return;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i3, int i10) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureAvailable(surfaceTexture, i3, i10);
         }
-        boolean isEmpty = TextUtils.isEmpty(editable);
-        la0 la0Var = this.F;
-        if (isEmpty) {
-            la0Var.s.setText("");
-            return;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        return surfaceTextureListener == null || surfaceTextureListener.onSurfaceTextureDestroyed(surfaceTexture);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i3, int i10) {
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureSizeChanged(surfaceTexture, i3, i10);
         }
-        try {
-            long parseLong = Long.parseLong(editable.toString());
-            if (parseLong > la0Var.getMessagesController().b6) {
-                this.E = true;
-                parseLong = la0Var.getMessagesController().b6;
-                setText(Long.toString(parseLong));
-                this.E = false;
-            }
-            TextView textView = la0Var.s;
-            int i11 = la0Var.getConnectionsManager().isTestBackend() ? 2131746169 : 2131746172;
-            org.telegram.messenger.u1 i12 = org.telegram.messenger.u1.i();
-            i10 = ((org.telegram.ui.ActionBar.k2) la0Var).currentAccount;
-            textView.setText(org.telegram.messenger.dd.a0(null, null, i11, i12.f((long) ((parseLong / 1000.0d) * org.telegram.messenger.wp.r1(i10).d6), "USD")));
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        pi.q qVar;
+        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
+        if (surfaceTextureListener != null) {
+            surfaceTextureListener.onSurfaceTextureUpdated(surfaceTexture);
         }
+        qVar = ((org.telegram.ui.ActionBar.d2) this.b).glassEngine;
+        qVar.g();
     }
 }

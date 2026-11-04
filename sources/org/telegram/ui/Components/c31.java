@@ -1,34 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class c31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.k20 b;
-    public final /* synthetic */ String c;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
 
-    public /* synthetic */ c31(String str, int i10, org.telegram.messenger.k20 k20Var) {
-        this.a = i10;
-        this.b = k20Var;
-        this.c = str;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class c31 extends il0 {
+    public final /* synthetic */ n31 f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c31(n31 n31Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, 14.0f, e6Var);
+        this.f = n31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.k20 k20Var = this.b;
-                if (k20Var != null) {
-                    k20Var.a(this.c, Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.a(null, this.c);
-                break;
-            default:
-                this.b.a(null, this.c);
-                break;
+    @Override // org.telegram.ui.Components.il0
+    public final void a(String str) {
+        kg.y1 y1Var = this.f.w;
+        kg.w1 w1Var = y1Var.T;
+        int i3 = y1Var.c;
+        if (y1Var.O != 0) {
+            ConnectionsManager.getInstance(i3).cancelRequest(y1Var.O, true);
+            y1Var.O = 0;
         }
+        if (y1Var.P != 0) {
+            ConnectionsManager.getInstance(i3).cancelRequest(y1Var.P, true);
+            y1Var.P = 0;
+        }
+        if (TextUtils.isEmpty(str)) {
+            y1Var.S = null;
+            y1Var.G.clear();
+            y1Var.J.clear();
+            y1Var.F.clear();
+            y1Var.e.b(false);
+            y1Var.f();
+        } else {
+            y1Var.S = str.toLowerCase();
+        }
+        org.telegram.messenger.g0.r(w1Var);
+        org.telegram.messenger.g0.i3(w1Var, 300L);
     }
 }

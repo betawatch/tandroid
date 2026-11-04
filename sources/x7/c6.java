@@ -1,19 +1,15 @@
 package x7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c6 implements ja.d {
-    public static final c6 a = new c6();
-
-    static {
-        sc.e.v(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, new z(1)), 2)), 3)));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class c6 {
+    public static final Exception a(x0.a aVar, String str, Exception exc) {
+        if (exc instanceof y0.a) {
+            return new y0.a(aVar, str);
         }
-        throw null;
+        if (exc instanceof y0.b) {
+            return new y0.b(aVar, str);
+        }
+        throw new z0.a();
     }
 }

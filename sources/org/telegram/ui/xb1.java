@@ -1,42 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Intent;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xb1 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class xb1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ zb1 a;
 
-    public /* synthetic */ xb1(TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, boolean z11, Runnable runnable) {
-        this.d = twoStepVerificationActivity;
-        this.b = z10;
-        this.c = z11;
-        this.e = runnable;
+    public xb1(zb1 zb1Var) {
+        this.a = zb1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.i0.g3(new org.telegram.ui.ActionBar.q((TwoStepVerificationActivity) this.d, tL_error, tLObject, this.b, this.c, (Runnable) this.e));
-                break;
-            default:
-                org.telegram.messenger.i0.g3(new ig.k0((th.e5) this.d, this.b, (TL_stories.TL_stories_getAllStories) this.e, tLObject, this.c));
-                break;
+    public final void a() {
+        zb1 zb1Var = this.a;
+        if (zb1Var.q0 != 17) {
+            if (zb1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                zb1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    zb1Var.n(new pu0(this, 26));
+                    return;
+                }
+                return;
+            }
+        }
+        Intent intent = new Intent(zb1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", zb1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", zb1Var.V0);
+        intent.putExtra("can_video_call", zb1Var.V0);
+        intent.putExtra("account", zb1Var.a);
+        try {
+            zb1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            org.telegram.messenger.a8.g(th2, true);
         }
     }
 
-    public /* synthetic */ xb1(th.e5 e5Var, boolean z10, TL_stories.TL_stories_getAllStories tL_stories_getAllStories, boolean z11) {
-        this.d = e5Var;
-        this.b = z10;
-        this.e = tL_stories_getAllStories;
-        this.c = z11;
+    public final void b() {
+        zb1 zb1Var = this.a;
+        if (zb1Var.q0 == 17) {
+            zb1Var.v0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            zb1Var.v0.b();
+        }
     }
 }

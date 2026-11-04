@@ -1,47 +1,46 @@
 package bb;
 
-import android.os.Build;
+import j$.util.DesugarCollections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
-    public final a b;
+    public final c b;
 
-    public b(String appId, a aVar) {
-        String deviceModel = Build.MODEL;
-        String osVersion = Build.VERSION.RELEASE;
-        kotlin.jvm.internal.i.e(appId, "appId");
-        kotlin.jvm.internal.i.e(deviceModel, "deviceModel");
-        kotlin.jvm.internal.i.e(osVersion, "osVersion");
-        this.a = appId;
-        this.b = aVar;
+    public b(Set set, c cVar) {
+        this.a = b(set);
+        this.b = cVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static String b(Set set) {
+        StringBuilder sb2 = new StringBuilder();
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            a aVar = (a) it.next();
+            sb2.append(aVar.a);
+            sb2.append('/');
+            sb2.append(aVar.b);
+            if (it.hasNext()) {
+                sb2.append(' ');
+            }
         }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        if (!kotlin.jvm.internal.i.a(this.a, bVar.a)) {
-            return false;
-        }
-        String str = Build.MODEL;
-        if (!kotlin.jvm.internal.i.a(str, str)) {
-            return false;
-        }
-        String str2 = Build.VERSION.RELEASE;
-        return kotlin.jvm.internal.i.a(str2, str2) && this.b.equals(bVar.b);
+        return sb2.toString();
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + ((p.b.hashCode() + a1.g.f((((Build.MODEL.hashCode() + (this.a.hashCode() * 31)) * 31) + 46672439) * 31, 31, Build.VERSION.RELEASE)) * 31);
-    }
-
-    public final String toString() {
-        return "ApplicationInfo(appId=" + this.a + ", deviceModel=" + Build.MODEL + ", sessionSdkVersion=1.2.0, osVersion=" + Build.VERSION.RELEASE + ", logEnvironment=" + p.b + ", androidAppInfo=" + this.b + ')';
+    public final String a() {
+        Set unmodifiableSet;
+        String str = this.a;
+        c cVar = this.b;
+        synchronized (((HashSet) cVar.b)) {
+            unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) cVar.b);
+        }
+        if (unmodifiableSet.isEmpty()) {
+            return str;
+        }
+        return str + ' ' + b(cVar.c());
     }
 }

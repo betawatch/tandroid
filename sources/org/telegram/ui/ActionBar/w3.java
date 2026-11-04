@@ -1,105 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Bitmap;
-import java.io.File;
-import java.io.FileOutputStream;
-import org.telegram.messenger.f8;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.ui.Components.pm0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w3 implements Runnable {
+public final class w3 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ File c;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ w3(Bitmap bitmap, File file, int i10) {
-        this.a = i10;
-        this.b = bitmap;
-        this.c = file;
+    public w3(pm0 pm0Var, pm0 pm0Var2, pm0 pm0Var3) {
+        this.a = 1;
+        this.b = pm0Var;
+        this.c = pm0Var2;
+        this.d = pm0Var3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i3, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
         switch (this.a) {
             case 0:
-                File file = this.c;
-                Bitmap bitmap = this.b;
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(file);
-                    try {
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
-                        fileOutputStream.close();
-                        return;
-                    } finally {
+                Rect rect = (Rect) this.b;
+                rect.set(i3, i10, i11, i12);
+                Rect rect2 = (Rect) this.c;
+                rect2.set(i13, i14, i15, i16);
+                k4 k4Var = (k4) this.d;
+                i4 i4Var = k4Var.b;
+                if (i4Var.f() && !rect.equals(rect2)) {
+                    k4Var.h = true;
+                    if (i4Var.f()) {
+                        k4Var.c();
+                        break;
                     }
-                } catch (Exception e) {
-                    f8.g(e, true);
-                    return;
                 }
-            case 1:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e7) {
-                    f8.g(e7, true);
-                    return;
-                }
-            case 2:
-                Bitmap bitmap2 = this.b;
-                try {
-                    try {
-                        bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
-                        if (bitmap2.isRecycled()) {
-                            return;
-                        }
-                    } catch (Exception e10) {
-                        f8.g(e10, true);
-                        if (bitmap2.isRecycled()) {
-                            return;
-                        }
-                    }
-                    bitmap2.recycle();
-                    return;
-                } catch (Throwable th2) {
-                    if (!bitmap2.isRecycled()) {
-                        bitmap2.recycle();
-                    }
-                    throw th2;
-                }
-            case 3:
-                Bitmap bitmap3 = this.b;
-                try {
-                    try {
-                        bitmap3.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
-                    } catch (Exception e11) {
-                        f8.g(e11, true);
-                    }
-                    return;
-                } finally {
-                    org.telegram.messenger.i0.z2(bitmap3);
-                }
-            case 4:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e12) {
-                    f8.g(e12, true);
-                    return;
-                }
+                break;
             default:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e13) {
-                    f8.g(e13, true);
-                    return;
-                }
+                ((pm0) this.b).setProgress(org.telegram.ui.j5.k1);
+                ((pm0) this.c).setProgress(org.telegram.ui.j5.l1);
+                ((pm0) this.d).setProgress(org.telegram.ui.j5.m1);
+                break;
         }
     }
 
-    public /* synthetic */ w3(File file, Bitmap bitmap) {
+    public w3(k4 k4Var) {
         this.a = 0;
-        this.c = file;
-        this.b = bitmap;
+        this.d = k4Var;
+        this.b = new Rect();
+        this.c = new Rect();
     }
 }

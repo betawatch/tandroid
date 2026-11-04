@@ -1,18 +1,18 @@
 package d1;
 
-import kotlin.jvm.internal.i;
+import kotlin.jvm.internal.j;
 import v0.h;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
+    public final /* synthetic */ e b;
     public final /* synthetic */ w0.d c;
 
-    public /* synthetic */ a(f fVar, w0.d dVar, int i10) {
-        this.a = i10;
-        this.b = fVar;
+    public /* synthetic */ a(e eVar, w0.d dVar, int i3) {
+        this.a = i3;
+        this.b = eVar;
         this.c = dVar;
     }
 
@@ -22,28 +22,28 @@ public final /* synthetic */ class a implements Runnable {
             case 0:
                 h hVar = this.b.f;
                 if (hVar != null) {
-                    hVar.g(this.c);
+                    hVar.a(this.c);
                     return;
                 } else {
-                    i.h("callback");
+                    j.h("callback");
                     throw null;
                 }
             case 1:
                 h hVar2 = this.b.f;
                 if (hVar2 != null) {
-                    hVar2.g(this.c);
+                    hVar2.a(this.c);
                     return;
                 } else {
-                    i.h("callback");
+                    j.h("callback");
                     throw null;
                 }
             default:
                 h hVar3 = this.b.f;
                 if (hVar3 != null) {
-                    hVar3.g(this.c);
+                    hVar3.a(this.c);
                     return;
                 } else {
-                    i.h("callback");
+                    j.h("callback");
                     throw null;
                 }
         }

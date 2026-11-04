@@ -1,51 +1,64 @@
 package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
+import java.io.File;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w6 implements Runnable {
+public final /* synthetic */ class w6 implements org.telegram.messenger.u10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w7 b;
-    public final /* synthetic */ z60 c;
+    public final /* synthetic */ z7 b;
 
-    public /* synthetic */ w6(w7 w7Var, z60 z60Var, int i10) {
-        this.a = i10;
-        this.b = w7Var;
-        this.c = z60Var;
+    public /* synthetic */ w6(z7 z7Var, int i3) {
+        this.a = i3;
+        this.b = z7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        z60 z60Var = this.c;
-        w7 w7Var = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
+        TLRPC.Document F0;
+        switch (this.a) {
             case 0:
-                w7Var.getClass();
-                z60Var.u();
-                w7Var.P0(1);
-                break;
-            case 1:
-                w7Var.getClass();
-                z60Var.u();
-                w7Var.P0(2);
-                break;
-            case 2:
-                w7Var.getClass();
-                z60Var.u();
-                w7Var.P0(4);
-                break;
-            case 3:
-                w7Var.getClass();
-                z60Var.u();
-                w7Var.P0(7);
+                org.telegram.messenger.zi ziVar = (org.telegram.messenger.zi) obj;
+                if (ziVar != null) {
+                    z7 z7Var = this.b;
+                    if (z7Var.n2 != null && (F0 = ziVar.F0()) != null) {
+                        if (F0.id == 0) {
+                            org.telegram.ui.ActionBar.s1 s1Var = new org.telegram.ui.ActionBar.s1(3, z7Var.getContext(), null);
+                            s1Var.r(180L);
+                            File file = new File(ziVar.k.attachPath);
+                            if (file.exists()) {
+                                org.telegram.messenger.w7.G(z7Var.a).g0(file.getAbsolutePath(), new ai.m(z7Var, s1Var, F0, 8));
+                                break;
+                            }
+                        } else {
+                            TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
+                            TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                            tL_account_saveMusic.id = tL_inputDocument;
+                            tL_inputDocument.id = F0.id;
+                            tL_inputDocument.access_hash = F0.access_hash;
+                            tL_inputDocument.file_reference = F0.file_reference;
+                            org.telegram.messenger.bp bpVar = z7Var.n2;
+                            if (bpVar != null) {
+                                bpVar.c.add(0, bpVar.d(F0));
+                                bpVar.e();
+                            }
+                            z7Var.o2.clear();
+                            z7Var.o2.addAll(z7Var.n2.c);
+                            z7Var.r1.f();
+                            ConnectionsManager.getInstance(z7Var.a).sendRequest(tL_account_saveMusic, null);
+                            break;
+                        }
+                    }
+                }
                 break;
             default:
-                w7Var.U0(true);
-                org.telegram.messenger.m5.n(null, 2131753912, new cc((FrameLayout) w7Var.b, w7Var.I0), R.raw.saved_messages, 36);
-                z60Var.u();
+                z7 z7Var2 = this.b;
+                FrameLayout frameLayout = (FrameLayout) z7Var2.b;
+                org.telegram.ui.ActionBar.e6 e6Var = z7Var2.J0;
+                new fc(frameLayout, e6Var).o(ec.G, e6Var).j();
                 break;
         }
     }

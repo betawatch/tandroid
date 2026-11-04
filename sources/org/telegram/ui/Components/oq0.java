@@ -1,74 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oq0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.x1[] b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+public final class oq0 extends FragmentContextView {
+    public final /* synthetic */ ws0 Y0;
 
-    public /* synthetic */ oq0(org.telegram.ui.ActionBar.x1[] x1VarArr, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = x1VarArr;
-        this.c = i10;
-        this.d = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oq0(ws0 ws0Var, Context context, org.telegram.ui.ActionBar.d2 d2Var, ws0 ws0Var2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, d2Var, ws0Var2, false, e6Var);
+        this.Y0 = ws0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.x1[] x1VarArr = this.b;
-                org.telegram.ui.ActionBar.x1 x1Var = x1VarArr[0];
-                if (x1Var != null) {
-                    final int i10 = 0;
-                    final int i11 = this.c;
-                    final int i12 = this.d;
-                    x1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.sq0
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
-                                    break;
-                            }
-                        }
-                    });
-                    x1VarArr[0].show();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.x1[] x1VarArr2 = this.b;
-                org.telegram.ui.ActionBar.x1 x1Var2 = x1VarArr2[0];
-                if (x1Var2 != null) {
-                    final int i13 = 1;
-                    final int i14 = this.c;
-                    final int i15 = this.d;
-                    x1Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.sq0
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i13) {
-                                case 0:
-                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
-                                    break;
-                            }
-                        }
-                    });
-                    x1VarArr2[0].show();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i3) {
+        ws0 ws0Var = this.Y0;
+        ws0Var.S0.i(ws0Var.T0, i3 == 0, true);
     }
 }

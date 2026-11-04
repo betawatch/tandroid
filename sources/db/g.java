@@ -1,25 +1,20 @@
 package db;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g extends ed.c {
-    public h a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ h c;
-    public int d;
+public final class g implements ma.d {
+    public static final g a = new g();
+    public static final ma.c b = ma.c.c("eventType");
+    public static final ma.c c = ma.c.c("sessionData");
+    public static final ma.c d = ma.c.c("applicationInfo");
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(h hVar, ed.c cVar) {
-        super(cVar);
-        this.c = hVar;
-    }
-
-    @Override // ed.a
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.b(this);
+    @Override // ma.a
+    public final void a(Object obj, Object obj2) {
+        o0 o0Var = (o0) obj;
+        ma.e eVar = (ma.e) obj2;
+        o0Var.getClass();
+        eVar.a(b, m.b);
+        eVar.a(c, o0Var.a);
+        eVar.a(d, o0Var.b);
     }
 }

@@ -1,36 +1,34 @@
 package com.google.android.recaptcha.internal;
 
-import ad.c;
-import ad.h;
 import android.app.Application;
-import ce.a;
-import ce.d;
-import ce.e;
-import kotlin.jvm.internal.i;
-import l9.b;
+import b8.hb;
+import b8.ib;
+import dd.c;
+import fe.d;
+import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
-    private final a zzb = e.a();
+    private final fe.a zzb = new d();
     private zzeq zzc;
     private final c zzd;
 
     public zzeh(Application application) {
         this.zza = application;
-        int i10 = zzby.zza;
-        this.zzd = ib.a.a(zzef.zza);
+        int i3 = zzby.zza;
+        this.zzd = hb.b(zzef.zza);
         zzdp.zza(application);
     }
 
-    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, cd.c cVar, int i10, Object obj) {
-        if ((i10 & 8) != 0) {
+    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, fd.c cVar, int i3, Object obj) {
+        if ((i3 & 8) != 0) {
             zzdqVar = zzdq.zza;
         }
         zzdq zzdqVar2 = zzdqVar;
-        if ((i10 & 2) != 0) {
+        if ((i3 & 2) != 0) {
             j10 = 10000;
         }
         return zzehVar.zzc(str, j10, null, zzdqVar2, cVar);
@@ -40,13 +38,13 @@ public final class zzeh {
         if (j10 < 5000) {
             throw new zzcg(zzce.zzj, zzcd.zzI, null, null, 12, null);
         }
-        if (f0.c.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
+        if (f0.d.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
             throw new zzcg(zzce.zzc, zzcd.zzao, null, null, 12, null);
         }
     }
 
     public final zzcr zza() {
-        return (zzcr) ((h) this.zzd).a();
+        return (zzcr) this.zzd.getValue();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x007e  */
@@ -57,31 +55,31 @@ public final class zzeh {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, cd.c cVar) {
+    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, fd.c cVar) {
         zzea zzeaVar;
         Object obj;
-        dd.a aVar;
-        int i10;
+        gd.a aVar;
+        int i3;
         String str2;
         zzdq zzdqVar2;
         long j11;
         Object obj2;
         Object obj3;
+        int i10;
         int i11;
-        int i12;
         try {
             if (cVar instanceof zzea) {
                 zzeaVar = (zzea) cVar;
-                int i13 = zzeaVar.zzg;
-                if ((i13 & TLObject.FLAG_31) != 0) {
-                    zzeaVar.zzg = i13 - TLObject.FLAG_31;
+                int i12 = zzeaVar.zzg;
+                if ((i12 & TLObject.FLAG_31) != 0) {
+                    zzeaVar.zzg = i12 - TLObject.FLAG_31;
                     zzea zzeaVar2 = zzeaVar;
                     obj = zzeaVar2.zze;
-                    aVar = dd.a.a;
-                    i10 = zzeaVar2.zzg;
-                    if (i10 != 0) {
-                        b.b(obj);
-                        a aVar2 = this.zzb;
+                    aVar = gd.a.a;
+                    i3 = zzeaVar2.zzg;
+                    if (i3 != 0) {
+                        ib.b(obj);
+                        fe.a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
                         zzeaVar2.zzb = null;
@@ -97,91 +95,91 @@ public final class zzeh {
                         }
                         return aVar;
                     }
-                    if (i10 != 1) {
-                        if (i10 != 2) {
+                    if (i3 != 1) {
+                        if (i3 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        obj3 = (a) zzeaVar2.zza;
+                        obj3 = (fe.a) zzeaVar2.zza;
                         try {
-                            b.b(obj);
+                            ib.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
-                            ((d) obj3).e(null);
+                            ((d) obj3).f(null);
                             return zzeqVar;
                         } catch (Throwable th2) {
                             th = th2;
-                            ((d) obj3).e(null);
+                            ((d) obj3).f(null);
                             throw th;
                         }
                     }
                     long j12 = zzeaVar2.zzd;
-                    Object obj4 = (a) zzeaVar2.zzc;
+                    Object obj4 = (fe.a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    b.b(obj);
+                    ib.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;
                     j11 = j12;
-                    if (!i.a(zzdqVar2, zzdq.zza)) {
-                        i12 = 3;
+                    if (!j.a(zzdqVar2, zzdq.zza)) {
+                        i11 = 3;
                     } else {
-                        if (!i.a(zzdqVar2, zzdq.zzb)) {
-                            i11 = 2;
+                        if (!j.a(zzdqVar2, zzdq.zzb)) {
+                            i10 = 2;
                             zzed zzedVar = new zzed(this, str2, null, zzdqVar2, j11, null);
                             zzeaVar2.zza = obj2;
                             zzeaVar2.zzb = null;
                             zzeaVar2.zzh = null;
                             zzeaVar2.zzc = null;
                             zzeaVar2.zzg = 2;
-                            obj = zzedVar.invoke(new zzhh(str2, i11), zzeaVar2);
+                            obj = zzedVar.invoke(new zzhh(str2, i10), zzeaVar2);
                             if (obj != aVar) {
                                 obj3 = obj2;
                                 zzeq zzeqVar2 = (zzeq) obj;
-                                ((d) obj3).e(null);
+                                ((d) obj3).f(null);
                                 return zzeqVar2;
                             }
                             return aVar;
                         }
-                        i12 = 4;
+                        i11 = 4;
                     }
-                    i11 = i12;
+                    i10 = i11;
                     zzed zzedVar2 = new zzed(this, str2, null, zzdqVar2, j11, null);
                     zzeaVar2.zza = obj2;
                     zzeaVar2.zzb = null;
                     zzeaVar2.zzh = null;
                     zzeaVar2.zzc = null;
                     zzeaVar2.zzg = 2;
-                    obj = zzedVar2.invoke(new zzhh(str2, i11), zzeaVar2);
+                    obj = zzedVar2.invoke(new zzhh(str2, i10), zzeaVar2);
                     if (obj != aVar) {
                     }
                     return aVar;
                 }
             }
-            if (!i.a(zzdqVar2, zzdq.zza)) {
+            if (!j.a(zzdqVar2, zzdq.zza)) {
             }
-            i11 = i12;
+            i10 = i11;
             zzed zzedVar22 = new zzed(this, str2, null, zzdqVar2, j11, null);
             zzeaVar2.zza = obj2;
             zzeaVar2.zzb = null;
             zzeaVar2.zzh = null;
             zzeaVar2.zzc = null;
             zzeaVar2.zzg = 2;
-            obj = zzedVar22.invoke(new zzhh(str2, i11), zzeaVar2);
+            obj = zzedVar22.invoke(new zzhh(str2, i10), zzeaVar2);
             if (obj != aVar) {
             }
             return aVar;
         } catch (Throwable th3) {
             th = th3;
             obj3 = obj2;
-            ((d) obj3).e(null);
+            ((d) obj3).f(null);
             throw th;
         }
         zzeaVar = new zzea(this, cVar);
         zzea zzeaVar22 = zzeaVar;
         obj = zzeaVar22.zze;
-        aVar = dd.a.a;
-        i10 = zzeaVar22.zzg;
-        if (i10 != 0) {
+        aVar = gd.a.a;
+        i3 = zzeaVar22.zzg;
+        if (i3 != 0) {
         }
     }
 }

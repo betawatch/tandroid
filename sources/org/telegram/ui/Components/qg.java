@@ -1,65 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.content.DialogInterface;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements ug.a {
+public final /* synthetic */ class qg implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ qg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ qg(KeyEvent.Callback callback, int i3) {
+        this.a = i3;
+        this.b = callback;
     }
 
-    @Override // ug.a
-    public final void d(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        RectF rectF2;
-        uh uhVar;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
                 bi biVar = (bi) this.b;
-                int i10 = 0;
-                while (i10 < 2) {
-                    uh uhVar2 = i10 == 0 ? biVar.s2 : biVar.t2;
-                    if (uhVar2 == null || uhVar2.c == null || uhVar2.getVisibility() != 0) {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                    } else {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                        yg.d.b(uhVar2.c, canvas2, rectF2, uhVar2.d, biVar.b, (int) (((i10 == 0 && (uhVar = biVar.t2) != null && uhVar.getVisibility() == 0) ? (1.0f - biVar.t2.getAlpha()) * uhVar2.getAlpha() : uhVar2.getAlpha()) * 255.0f));
-                    }
-                    i10++;
-                    canvas = canvas2;
-                    rectF = rectF2;
+                q1.g gVar = biVar.k4;
+                if (gVar != null) {
+                    gVar.d();
                 }
-                break;
-            case 1:
-                vy vyVar = (vy) this.b;
-                hx hxVar = vyVar.P;
-                yg.d.a(hxVar, canvas, rectF, hxVar, vyVar);
-                wv wvVar = vyVar.h0;
-                yg.d.a(wvVar, canvas, rectF, wvVar, vyVar);
-                bw bwVar = vyVar.D0;
-                yg.d.a(bwVar, canvas, rectF, bwVar, vyVar);
+                q1.g gVar2 = new q1.g((Object) biVar.b, (q1.e) q1.g.p, 0.0f);
+                biVar.k4 = gVar2;
+                gVar2.m.a(1.5f);
+                biVar.k4.m.b(1500.0f);
+                biVar.k4.h();
                 break;
             default:
-                pp0 pp0Var = (pp0) this.b;
-                po0 po0Var = pp0Var.x1;
-                yg.d.a(po0Var, canvas, rectF, po0Var, pp0Var.b);
+                ((View) this.b).setTag(null);
                 break;
         }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // ug.a
-    public final void g(g.y yVar, RectF rectF) {
-        switch (this.a) {
-        }
-        yVar.b = true;
     }
 }

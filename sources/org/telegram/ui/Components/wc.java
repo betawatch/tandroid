@@ -1,46 +1,50 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.StickersActivity;
-import org.telegram.ui.ThemeActivity;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 b;
+public abstract class wc extends FrameLayout {
+    public ai.o2 a;
+    public uc b;
+    public boolean c;
 
-    public /* synthetic */ wc(int i10, org.telegram.ui.ActionBar.k2 k2Var) {
-        this.a = i10;
-        this.b = k2Var;
+    public final void a(uc ucVar, FrameLayout.LayoutParams layoutParams) {
+        if (this.b == null) {
+            this.b = ucVar;
+            ucVar.setVisibility(8);
+            addView(ucVar, layoutParams);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        org.telegram.ui.ActionBar.k2 k2Var = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = ChatActivityEnterView.s5;
-                if (k2Var == null) {
-                    if (k2Var.getContext() instanceof LaunchActivity) {
-                        ((LaunchActivity) k2Var.getContext()).t0(new PremiumPreviewFragment(0, null));
-                        break;
-                    }
-                } else {
-                    new kg.i1(k2Var, 11, false).show();
-                    break;
-                }
-                break;
-            case 1:
-                k2Var.presentFragment(new StickersActivity(0, null));
-                break;
-            default:
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.T0 = true;
-                k2Var.presentFragment(themeActivity);
-                break;
+    public final void b(ai.o2 o2Var, FrameLayout.LayoutParams layoutParams) {
+        if (this.a == null) {
+            this.a = o2Var;
+            addView(o2Var, layoutParams);
         }
+    }
+
+    public uc getEditView() {
+        return this.b;
+    }
+
+    public View getReplyView() {
+        return this.a;
+    }
+
+    public void setEditMode(boolean z10) {
+        this.c = z10;
+        this.a.setVisibility(z10 ? 8 : 0);
+        this.b.setVisibility(z10 ? 0 : 8);
+    }
+
+    public void setEditSuggestionMode(boolean z10) {
+        setEditMode(z10);
+        if (z10) {
+            this.a.setVisibility(0);
+        }
+        this.b.a[0].setOnlyIconMode(z10);
+        this.b.a[1].setOnlyIconMode(z10);
     }
 }

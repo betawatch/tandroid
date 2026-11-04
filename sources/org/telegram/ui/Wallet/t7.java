@@ -1,67 +1,84 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.ka0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class t7 extends a51 {
-    public static final /* synthetic */ int b = 0;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class t7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b8 b;
 
-    static {
-        a51.h(new t7());
+    public /* synthetic */ t7(b8 b8Var, int i3) {
+        this.a = i3;
+        this.b = b8Var;
     }
 
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
-        u7 u7Var = (u7) view;
-        h8 h8Var = u7Var.x0;
-        if (h8Var != null) {
-            h8Var.h.remove(u7Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        o7 j10;
+        switch (this.a) {
+            case 0:
+                b8 b8Var = this.b;
+                b8Var.t0 = false;
+                b8Var.h0 = null;
+                b8Var.f0();
+                break;
+            case 1:
+                this.b.Q();
+                break;
+            case 2:
+                b8 b8Var2 = this.b;
+                a8 a8Var = b8Var2.h0;
+                if (a8Var != null && !b8Var2.n0) {
+                    if (!b8Var2.v0) {
+                        if (b8Var2.q0 && (j10 = b8Var2.j(a8Var)) != null) {
+                            b8Var2.S(j10);
+                            break;
+                        }
+                    } else {
+                        b8Var2.o0 = true;
+                        b8Var2.i0 = a8Var;
+                        b8Var2.C0 = Float.NaN;
+                        b8Var2.F0 = Float.NaN;
+                        b8Var2.D0 = 0.0f;
+                        b8Var2.M0 = false;
+                        b8Var2.E0 = a8Var.i.b;
+                        a8Var.q.a(0.0f);
+                        a8 a8Var2 = b8Var2.h0;
+                        z7 z7Var = a8Var2.l;
+                        z7Var.d = 260.0f;
+                        z7Var.e = 0.58f;
+                        z7Var.b = 1.0f;
+                        long j11 = b8Var2.O0 + 1;
+                        b8Var2.O0 = j11;
+                        a8Var2.I = j11;
+                        ei.c3 c3Var = a8Var2.c;
+                        c3Var.v0 = true;
+                        c3Var.P0(false);
+                        b8Var2.performHapticFeedback(0);
+                        b8Var2.f0();
+                        break;
+                    }
+                }
+                break;
+            default:
+                b8 b8Var3 = this.b;
+                if (b8Var3.r0 && b8Var3.h0 != null) {
+                    b8Var3.r0 = false;
+                    b8Var3.q0 = true;
+                    b8Var3.removeCallbacks(b8Var3.C1);
+                    ((ka0) b8Var3.d.b).X();
+                    b8Var3.getParent().requestDisallowInterceptTouchEvent(true);
+                    b8Var3.performHapticFeedback(4);
+                    o7 j12 = b8Var3.j(b8Var3.h0);
+                    if (j12 != null) {
+                        j12.o();
+                        j12.animate().scaleX(0.94f).scaleY(0.94f).setDuration(100L).start();
+                    }
+                    b8Var3.f0();
+                    break;
+                }
+                break;
         }
-        ValueAnimator valueAnimator = u7Var.A0;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        u7Var.y0 = 1.0f;
-        u7Var.D.setAlpha(1.0f);
-        u7Var.w0 = (TL_wallet.nftItem) b51Var.G;
-        u7Var.x0 = (h8) b51Var.H;
-        TL_stars.SavedStarGift savedStarGift = new TL_stars.SavedStarGift();
-        savedStarGift.gift = u7Var.w0.gift;
-        u7Var.k(false, true, 0.0f);
-        u7Var.i(savedStarGift, true, false);
-        h8 h8Var2 = u7Var.x0;
-        if (h8Var2 != null) {
-            h8Var2.i(u7Var);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        u7 u7Var = new u7(i10, context, p6Var);
-        u7Var.y0 = 1.0f;
-        u7Var.setStateListAnimator(null);
-        u7Var.setWillNotDraw(false);
-        return u7Var;
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean e(b51 b51Var, b51 b51Var2) {
-        return TextUtils.equals(((TL_wallet.nftItem) b51Var.G).address, ((TL_wallet.nftItem) b51Var2.G).address);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean f() {
-        return true;
     }
 }

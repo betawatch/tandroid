@@ -1,60 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ks extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s4.c1 b;
-    public final /* synthetic */ org.telegram.ui.Cells.v2 c;
-    public final /* synthetic */ ps d;
-
-    public /* synthetic */ ks(ps psVar, s4.c1 c1Var, org.telegram.ui.Cells.v2 v2Var, int i10) {
-        this.a = i10;
-        this.d = psVar;
-        this.b = c1Var;
-        this.c = v2Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                animator.removeAllListeners();
-                org.telegram.ui.Cells.v2 v2Var = this.c;
-                v2Var.setClipProgress(0.0f);
-                v2Var.setElevation(0.0f);
-                ps psVar = this.d;
-                s4.c1 c1Var = this.b;
-                psVar.d(c1Var);
-                psVar.x.remove(c1Var);
-                psVar.A();
-                break;
-            default:
-                animator.removeAllListeners();
-                org.telegram.ui.Cells.v2 v2Var2 = this.c;
-                v2Var2.setClipProgress(0.0f);
-                v2Var2.setElevation(0.0f);
-                ps psVar2 = this.d;
-                s4.c1 c1Var2 = this.b;
-                psVar2.d(c1Var2);
-                psVar2.x.remove(c1Var2);
-                psVar2.A();
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.y();
-                break;
-            default:
-                this.d.y();
-                break;
-        }
-    }
+public abstract class ks {
+    public static final xq a = new xq(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final xq b = new xq(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final xq c = new xq(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final xq d = new xq(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final xq e = new xq(0.455d, 0.03d, 0.515d, 0.955d);
 }

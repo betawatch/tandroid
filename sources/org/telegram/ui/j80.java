@@ -1,34 +1,40 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.regex.Pattern;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j80 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class j80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ k80 b;
+    public final /* synthetic */ org.telegram.messenger.c c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 e;
 
-    public /* synthetic */ j80(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
-        this.b = launchActivity;
+    public /* synthetic */ j80(k80 k80Var, org.telegram.messenger.c cVar, long j10, org.telegram.ui.ActionBar.d2 d2Var, int i3) {
+        this.a = i3;
+        this.b = k80Var;
+        this.c = cVar;
+        this.d = j10;
+        this.e = d2Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                launchActivity.x1 = false;
-                break;
-            case 1:
-                Pattern pattern = LaunchActivity.D1;
-                org.telegram.messenger.i0.h3(new p70(launchActivity, 7), 30000L);
+                org.telegram.messenger.g0.h3(new j80(this.b, this.c, this.d, this.e, 1));
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.D1;
-                org.telegram.messenger.i0.h3(new p70(launchActivity, 10), 30000L);
+                org.telegram.messenger.c cVar = this.c;
+                int i3 = cVar.a;
+                org.telegram.messenger.hp s12 = org.telegram.messenger.hp.s1(i3);
+                long j10 = this.d;
+                long j11 = -j10;
+                org.telegram.messenger.r3 g12 = s12.g1(j11, false, null);
+                TLRPC.Chat M0 = org.telegram.messenger.hp.s1(i3).M0(Long.valueOf(j11));
+                org.telegram.messenger.hp.s1(i3).j1(j10);
+                org.telegram.ui.Components.voip.n1.l(M0, null, false, Boolean.valueOf(g12 == null || !g12.b.rtmp_stream), this.b.h, this.e, cVar);
                 break;
         }
     }

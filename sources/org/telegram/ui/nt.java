@@ -1,61 +1,23 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.support.LongSparseIntArray;
+import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nt implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class nt extends org.telegram.ui.Components.oo0 {
+    public final /* synthetic */ ot S2;
 
-    public /* synthetic */ nt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nt(ot otVar, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.S2 = otVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return ((Comparator) this.b).compare(((mt) obj).a, ((mt) obj2).a);
-            case 1:
-                LongSparseIntArray longSparseIntArray = (LongSparseIntArray) this.b;
-                int i10 = longSparseIntArray.get(((Long) obj).longValue());
-                int i11 = longSparseIntArray.get(((Long) obj2).longValue());
-                if (i10 > i11) {
-                    return 1;
-                }
-                return i10 < i11 ? -1 : 0;
-            case 2:
-                org.telegram.messenger.ad adVar = (org.telegram.messenger.ad) this.b;
-                org.telegram.messenger.ad adVar2 = (org.telegram.messenger.ad) obj;
-                org.telegram.messenger.ad adVar3 = (org.telegram.messenger.ad) obj2;
-                if (adVar2 != adVar) {
-                    if (adVar3 != adVar) {
-                        int i12 = adVar2.k;
-                        int i13 = adVar3.k;
-                        if (i12 == i13) {
-                            return adVar2.a.compareTo(adVar3.a);
-                        }
-                        if (i12 <= i13) {
-                            if (i12 >= i13) {
-                                return 0;
-                            }
-                        }
-                    }
-                    return 1;
-                }
-                return -1;
-            default:
-                StickersActivity stickersActivity = (StickersActivity) this.b;
-                int indexOf = stickersActivity.d.indexOf((TLRPC.TL_messages_stickerSet) obj);
-                int indexOf2 = stickersActivity.d.indexOf((TLRPC.TL_messages_stickerSet) obj2);
-                if (indexOf < 0 || indexOf2 < 0) {
-                    return 0;
-                }
-                return indexOf - indexOf2;
+    @Override // org.telegram.ui.Components.oo0
+    public final void R0(a0.h hVar, int i3, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            org.telegram.messenger.g0.i3(new org.telegram.ui.Components.p11(this, hVar, i3), 250L);
         }
     }
 }

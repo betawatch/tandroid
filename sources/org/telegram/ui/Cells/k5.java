@@ -1,21 +1,19 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import org.telegram.ui.Components.Switch;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class k5 extends Switch {
-    public final /* synthetic */ l5 a0;
+public final class k5 extends View {
+    public int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k5(l5 l5Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        this.a0 = l5Var;
+    @Override // android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(org.telegram.messenger.camera.q.B(2.0f, this.a, TLObject.FLAG_30), org.telegram.messenger.camera.q.B(2.0f, this.a, TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.Switch
-    public final int a(int i10) {
-        return this.a0.a(i10);
+    public void setItemSize(int i3) {
+        this.a = i3;
     }
 }

@@ -1,133 +1,144 @@
 package k2;
 
-import android.media.AudioTrack;
-import android.os.Build;
-import android.os.SystemClock;
-import java.lang.reflect.Method;
-import java.math.RoundingMode;
+import android.view.View;
+import b8.zb;
+import java.util.Arrays;
+import org.telegram.messenger.hs;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class o0 {
-    public boolean A;
-    public long B;
-    public final a4.l a;
-    public final e2.g0 b;
-    public final long[] c;
-    public final AudioTrack d;
-    public final int e;
-    public final long f;
-    public final boolean g;
-    public final d0 h;
-    public float i;
-    public long j;
-    public long k;
-    public long l;
-    public Method m;
-    public long n;
-    public long o;
-    public long p;
-    public long q;
-    public long r;
-    public int s;
-    public int t;
-    public long u;
-    public long v;
-    public long w;
-    public long x;
-    public long y;
-    public long z;
+    public final /* synthetic */ int a = 2;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public int e;
+    public Object f;
 
-    public o0(a4.l lVar, e2.g0 g0Var, AudioTrack audioTrack, int i10, int i11, int i12) {
-        this.a = lVar;
-        this.b = g0Var;
-        this.d = audioTrack;
-        try {
-            this.m = AudioTrack.class.getMethod("getLatency", null);
-        } catch (NoSuchMethodException unused) {
-        }
-        this.c = new long[10];
-        this.z = -9223372036854775807L;
-        this.y = -9223372036854775807L;
-        this.h = new d0(audioTrack, lVar);
-        int sampleRate = audioTrack.getSampleRate();
-        this.e = sampleRate;
-        boolean M = e2.l0.M(i10);
-        this.g = M;
-        this.f = M ? e2.l0.Y(sampleRate, i12 / i11) : -9223372036854775807L;
-        this.q = 0L;
-        this.r = 0L;
-        this.A = false;
-        this.B = 0L;
-        this.u = -9223372036854775807L;
-        this.v = -9223372036854775807L;
-        this.o = 0L;
-        this.n = 0L;
-        this.i = 1.0f;
-        this.j = -9223372036854775807L;
+    public /* synthetic */ o0() {
     }
 
-    public final long a() {
-        if (this.u != -9223372036854775807L) {
-            return Math.min(this.x, c());
-        }
-        this.b.getClass();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (elapsedRealtime - this.p >= 5) {
-            int playState = this.d.getPlayState();
-            if (playState != 1) {
-                long playbackHeadPosition = r4.getPlaybackHeadPosition() & 4294967295L;
-                if (Build.VERSION.SDK_INT <= 29) {
-                    if (playbackHeadPosition != 0 || this.q <= 0 || playState != 3) {
-                        this.v = -9223372036854775807L;
-                    } else if (this.v == -9223372036854775807L) {
-                        this.v = elapsedRealtime;
-                    }
-                }
-                long j10 = this.q;
-                if (j10 > playbackHeadPosition) {
-                    if (this.A) {
-                        this.B += j10;
-                        this.A = false;
-                    } else {
-                        this.r++;
-                    }
-                }
-                this.q = playbackHeadPosition;
+    public void a(int i3, int i10, byte[] bArr) {
+        if (this.c) {
+            int i11 = i10 - i3;
+            byte[] bArr2 = (byte[]) this.f;
+            int length = bArr2.length;
+            int i12 = this.e;
+            if (length < i12 + i11) {
+                this.f = Arrays.copyOf(bArr2, (i12 + i11) * 2);
             }
-            this.p = elapsedRealtime;
+            System.arraycopy(bArr, i3, (byte[]) this.f, this.e, i11);
+            this.e += i11;
         }
-        return this.q + this.B + (this.r << 32);
     }
 
-    public final long b(long j10) {
-        int i10 = this.t;
-        int i11 = this.e;
-        long max = Math.max(0L, (i10 == 0 ? this.u != -9223372036854775807L ? e2.l0.Y(i11, c()) : e2.l0.Y(i11, a()) : e2.l0.B(j10 + this.k, this.i)) - this.n);
-        return this.u != -9223372036854775807L ? Math.min(e2.l0.Y(i11, this.x), max) : max;
+    public void b() {
+        this.e = this.c ? ((androidx.emoji2.text.g) this.f).f() : ((androidx.emoji2.text.g) this.f).j();
     }
 
-    public final long c() {
-        if (this.d.getPlayState() == 2) {
-            return this.w;
+    public void c(int i3, View view) {
+        if (this.c) {
+            int a10 = ((androidx.emoji2.text.g) this.f).a(view);
+            androidx.emoji2.text.g gVar = (androidx.emoji2.text.g) this.f;
+            this.e = (Integer.MIN_VALUE == gVar.a ? 0 : gVar.k() - gVar.a) + a10;
+        } else {
+            this.e = ((androidx.emoji2.text.g) this.f).d(view);
         }
-        this.b.getClass();
-        return this.w + e2.l0.a0(e2.l0.B(e2.l0.S(SystemClock.elapsedRealtime()) - this.u, this.i), this.e, 1000000L, RoundingMode.UP);
+        this.b = i3;
     }
 
-    public final void d(long j10) {
-        long j11 = this.j;
-        if (j11 == -9223372036854775807L || j10 < j11) {
+    public void d(int i3, View view) {
+        androidx.emoji2.text.g gVar = (androidx.emoji2.text.g) this.f;
+        int k10 = Integer.MIN_VALUE == gVar.a ? 0 : gVar.k() - gVar.a;
+        if (k10 >= 0) {
+            c(i3, view);
             return;
         }
-        long F = e2.l0.F(j10 - j11, this.i);
-        this.b.getClass();
-        long currentTimeMillis = System.currentTimeMillis() - e2.l0.h0(F);
-        this.j = -9223372036854775807L;
-        e2.r rVar = ((j0) this.a.b).j;
-        rVar.getClass();
-        if (Thread.currentThread() == rVar.a) {
-            rVar.e(-1, new g0(currentTimeMillis));
+        this.b = i3;
+        if (!this.c) {
+            int d = ((androidx.emoji2.text.g) this.f).d(view);
+            int j10 = d - ((androidx.emoji2.text.g) this.f).j();
+            this.e = d;
+            if (j10 > 0) {
+                int f10 = (((androidx.emoji2.text.g) this.f).f() - Math.min(0, (((androidx.emoji2.text.g) this.f).f() - k10) - ((androidx.emoji2.text.g) this.f).a(view))) - (((androidx.emoji2.text.g) this.f).b(view) + d);
+                if (f10 < 0) {
+                    this.e -= Math.min(j10, -f10);
+                    return;
+                }
+                return;
+            }
+            return;
         }
+        int f11 = (((androidx.emoji2.text.g) this.f).f() - k10) - ((androidx.emoji2.text.g) this.f).a(view);
+        this.e = ((androidx.emoji2.text.g) this.f).f() - f11;
+        if (f11 > 0) {
+            int b10 = this.e - ((androidx.emoji2.text.g) this.f).b(view);
+            int j11 = ((androidx.emoji2.text.g) this.f).j();
+            int min = b10 - (Math.min(((androidx.emoji2.text.g) this.f).d(view) - j11, 0) + j11);
+            if (min < 0) {
+                this.e = Math.min(f11, -min) + this.e;
+            }
+        }
+    }
+
+    public boolean e(int i3) {
+        if (!this.c) {
+            return false;
+        }
+        this.e -= i3;
+        this.c = false;
+        this.d = true;
+        return true;
+    }
+
+    public void f(int i3) {
+        this.c |= i3 > 0;
+        this.b += i3;
+    }
+
+    public void g() {
+        switch (this.a) {
+            case 1:
+                this.c = false;
+                this.d = false;
+                break;
+            default:
+                this.b = -1;
+                this.e = TLObject.FLAG_31;
+                this.c = false;
+                this.d = false;
+                break;
+        }
+    }
+
+    public void h(int i3) {
+        zb.p(!this.c);
+        boolean z10 = i3 == this.b;
+        this.c = z10;
+        if (z10) {
+            this.e = 3;
+            this.d = false;
+        }
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 2:
+                return "AnchorInfo{mPosition=" + this.b + ", mCoordinate=" + this.e + ", mLayoutFromEnd=" + this.c + ", mValid=" + this.d + '}';
+            default:
+                return super.toString();
+        }
+    }
+
+    public o0(int i3) {
+        this.b = i3;
+        byte[] bArr = new byte[hs.P1];
+        this.f = bArr;
+        bArr[2] = 1;
+    }
+
+    public o0(j1 j1Var) {
+        this.f = j1Var;
     }
 }

@@ -1,34 +1,16 @@
 package k4;
 
-import c3.p;
-import e2.x;
-import v7.t6;
+import a3.u;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class d {
-    public final int a;
-    public final long b;
+    public static final u c = new u(20);
+    public final e a;
+    public final int b;
 
-    public /* synthetic */ d(int i10, long j10, boolean z10) {
-        this.a = i10;
-        this.b = j10;
-    }
-
-    public static d b(p pVar, x xVar) {
-        pVar.b(0, 8, xVar.a);
-        xVar.N(0);
-        return new d(xVar.m(), xVar.r(), false);
-    }
-
-    public boolean a() {
-        int i10 = this.a;
-        return i10 == 0 || i10 == 1;
-    }
-
-    public d(int i10, long j10) {
-        t6.f(j10 >= 0);
-        this.a = i10;
-        this.b = j10;
+    public d(e eVar, int i3) {
+        this.a = eVar;
+        this.b = i3;
     }
 }

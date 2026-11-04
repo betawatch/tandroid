@@ -4,7 +4,7 @@ import android.media.session.PlaybackState;
 import android.os.Bundle;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static void a(PlaybackState.Builder builder, PlaybackState.CustomAction customAction) {
@@ -23,8 +23,8 @@ public abstract class b0 {
         return new PlaybackState.Builder();
     }
 
-    public static PlaybackState.CustomAction.Builder e(String str, CharSequence charSequence, int i10) {
-        return new PlaybackState.CustomAction.Builder(str, charSequence, i10);
+    public static PlaybackState.CustomAction.Builder e(String str, CharSequence charSequence, int i3) {
+        return new PlaybackState.CustomAction.Builder(str, charSequence, i3);
     }
 
     public static String f(PlaybackState.CustomAction customAction) {
@@ -99,7 +99,7 @@ public abstract class b0 {
         builder.setExtras(bundle);
     }
 
-    public static void x(PlaybackState.Builder builder, int i10, long j10, float f7, long j11) {
-        builder.setState(i10, j10, f7, j11);
+    public static void x(PlaybackState.Builder builder, int i3, long j10, float f10, long j11) {
+        builder.setState(i3, j10, f10, j11);
     }
 }

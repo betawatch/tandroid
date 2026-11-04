@@ -1,60 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j2.f b;
-    public final /* synthetic */ int c;
+public class cx0 {
+    public int a;
+    public int b;
+    public int c;
 
-    public /* synthetic */ cx0(j2.f fVar, int i10, int i11) {
-        this.a = i11;
-        this.b = fVar;
-        this.c = i10;
+    public cx0() {
+        c();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = (ArrayList) this.b.d;
-                Float f7 = (Float) valueAnimator.getAnimatedValue();
-                f7.getClass();
-                arrayList.set(this.c, f7);
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) this.b.e;
-                Float f10 = (Float) valueAnimator.getAnimatedValue();
-                f10.getClass();
-                arrayList2.set(this.c, f10);
-                break;
-            case 2:
-                ArrayList arrayList3 = (ArrayList) this.b.f;
-                Float f11 = (Float) valueAnimator.getAnimatedValue();
-                f11.getClass();
-                arrayList3.set(this.c, f11);
-                break;
-            case 3:
-                ArrayList arrayList4 = (ArrayList) this.b.d;
-                Float f12 = (Float) valueAnimator.getAnimatedValue();
-                f12.getClass();
-                arrayList4.set(this.c, f12);
-                break;
-            case 4:
-                ArrayList arrayList5 = (ArrayList) this.b.e;
-                Float f13 = (Float) valueAnimator.getAnimatedValue();
-                f13.getClass();
-                arrayList5.set(this.c, f13);
-                break;
-            default:
-                ArrayList arrayList6 = (ArrayList) this.b.f;
-                Float f14 = (Float) valueAnimator.getAnimatedValue();
-                f14.getClass();
-                arrayList6.set(this.c, f14);
-                break;
+    public int a(lx0 lx0Var, ex0 ex0Var, xw0 xw0Var, int i3, boolean z10) {
+        return this.a - xw0Var.a(ex0Var, i3);
+    }
+
+    public void b(int i3, int i10) {
+        this.a = Math.max(this.a, i3);
+        this.b = Math.max(this.b, i10);
+    }
+
+    public void c() {
+        this.a = TLObject.FLAG_31;
+        this.b = TLObject.FLAG_31;
+        this.c = 2;
+    }
+
+    public int d(boolean z10) {
+        if (!z10) {
+            int i3 = this.c;
+            xw0 xw0Var = lx0.S;
+            if ((i3 & 2) != 0) {
+                return 100000;
+            }
         }
+        return this.a + this.b;
     }
 }

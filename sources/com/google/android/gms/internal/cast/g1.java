@@ -1,73 +1,40 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g1 extends d5 {
-    private static final g5 zzb = new d1();
-    private static final g1 zzd;
+public final class g1 extends c5 {
+    private static final g1 zzb;
+    private int zzd;
     private int zze;
-    private k1 zzf;
-    private w2 zzg;
-    private i5 zzh = d6.d;
-    private f5 zzi = e5.d;
+    private double zzf;
+    private double zzg;
+    private double zzh;
+    private double zzi;
 
     static {
         g1 g1Var = new g1();
-        zzd = g1Var;
-        d5.e(g1.class, g1Var);
+        zzb = g1Var;
+        c5.e(g1.class, g1Var);
     }
 
-    public static f1 l() {
-        return (f1) zzd.j();
-    }
-
-    public static /* synthetic */ void m(g1 g1Var, k1 k1Var) {
-        g1Var.zzf = k1Var;
-        g1Var.zze |= 1;
-    }
-
-    public static void n(g1 g1Var, ArrayList arrayList) {
-        List list = g1Var.zzi;
-        if (!((s4) list).a) {
-            int size = list.size();
-            int i10 = size == 0 ? 10 : size + size;
-            e5 e5Var = (e5) list;
-            if (i10 < e5Var.c) {
-                throw new IllegalArgumentException();
-            }
-            g1Var.zzi = new e5(Arrays.copyOf(e5Var.b, i10), e5Var.c, true);
-        }
-        int size2 = arrayList.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            ((e5) g1Var.zzi).zzh(((c1) obj).a);
-        }
-    }
-
-    @Override // com.google.android.gms.internal.cast.d5
-    public final Object h(int i10, d5 d5Var) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+    @Override // com.google.android.gms.internal.cast.c5
+    public final Object h(int i3, c5 c5Var) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
-            return new e6(zzd, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဉ\u0000\u0002ဉ\u0001\u0003\u001b\u0004ࠞ", new Object[]{"zze", "zzf", "zzg", "zzh", u2.class, "zzi", y0.C});
+        if (i10 == 2) {
+            return new d6(zzb, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001ဋ\u0000\u0002က\u0001\u0003က\u0002\u0004က\u0003\u0005က\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new g1();
         }
-        if (i11 == 4) {
-            return new f1(zzd);
+        if (i10 == 4) {
+            return new t0(zzb);
         }
-        if (i11 != 5) {
+        if (i10 != 5) {
             return null;
         }
-        return zzd;
+        return zzb;
     }
 }

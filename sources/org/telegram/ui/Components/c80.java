@@ -1,80 +1,116 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
+import android.view.Choreographer;
+import android.view.PixelCopy;
+import android.view.Surface;
+import android.view.SurfaceView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c80 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j80 b;
+public final class c80 {
+    public final org.telegram.ui.u90 a;
+    public SurfaceView d;
+    public Bitmap e;
+    public Bitmap f;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public long l;
+    public final Handler b = new Handler(Looper.getMainLooper());
+    public final Paint c = new Paint(2);
+    public final a80 m = new Choreographer.FrameCallback() { // from class: org.telegram.ui.Components.a80
+        @Override // android.view.Choreographer.FrameCallback
+        public final void doFrame(long j10) {
+            c80 c80Var = c80.this;
+            c80Var.j = false;
+            c80Var.c();
+        }
+    };
+    public final gp n = new gp(this, 23);
 
-    public /* synthetic */ c80(j80 j80Var, int i10) {
-        this.a = i10;
-        this.b = j80Var;
+    /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Components.a80] */
+    public c80(org.telegram.ui.u90 u90Var) {
+        this.a = u90Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        j80 j80Var = this.b;
-        int i11 = 1;
-        switch (i10) {
-            case 0:
-                j80Var.r.g();
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.k1 k1Var = j80Var.s;
-                if (k1Var != null) {
-                    k1Var.d(true);
+    public final void a() {
+        this.l = SystemClock.uptimeMillis() + 1500;
+        if (this.k) {
+            this.b.removeCallbacks(this.n);
+            this.k = false;
+        }
+        b();
+    }
+
+    public final void b() {
+        if (!this.g || this.i || this.d == null || this.j || this.k) {
+            return;
+        }
+        if (SystemClock.uptimeMillis() < this.l) {
+            this.j = true;
+            Choreographer.getInstance().postFrameCallback(this.m);
+        } else {
+            this.k = true;
+            this.b.postDelayed(this.n, 400L);
+        }
+    }
+
+    public final void c() {
+        Surface surface;
+        if (!this.g || this.i) {
+            return;
+        }
+        if (!this.h) {
+            SurfaceView surfaceView = this.d;
+            if (Build.VERSION.SDK_INT >= 24 && surfaceView != null && surfaceView.isAttachedToWindow() && surfaceView.getWidth() > 0 && surfaceView.getHeight() > 0 && (surface = surfaceView.getHolder().getSurface()) != null && surface.isValid()) {
+                int max = Math.max(1, surfaceView.getWidth() / 4);
+                int max2 = Math.max(1, surfaceView.getHeight() / 4);
+                Bitmap bitmap = this.f;
+                if (bitmap == null || bitmap.getWidth() != max || this.f.getHeight() != max2) {
+                    this.f = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
                 }
-                j80Var.r.b();
-                break;
-            case 2:
-                j80 j80Var2 = this.b;
-                String str = j80Var2.b;
-                boolean z10 = str != null && str.endsWith("?direct");
-                Context context = j80Var2.getContext();
-                String L0 = org.telegram.messenger.dd.L0(2131749180, null);
-                String str2 = j80Var2.b;
-                String str3 = j80Var2.J;
-                if (str3 == null) {
-                    str3 = org.telegram.messenger.dd.L0(j80Var2.H ? z10 ? 2131746522 : 2131746523 : 2131746520, null);
+                final Bitmap bitmap2 = this.f;
+                this.h = true;
+                try {
+                    PixelCopy.request(surfaceView, bitmap2, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.Components.b80
+                        @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
+                        public final void onPixelCopyFinished(int i3) {
+                            c80 c80Var = c80.this;
+                            Bitmap bitmap3 = bitmap2;
+                            c80Var.h = false;
+                            if (c80Var.i || i3 != 0) {
+                                return;
+                            }
+                            c80Var.f = c80Var.e;
+                            c80Var.e = bitmap3;
+                            c80Var.a.run();
+                        }
+                    }, this.b);
+                } catch (Exception e10) {
+                    this.h = false;
+                    org.telegram.messenger.a8.g(e10, true);
                 }
-                g80 g80Var = new g80(j80Var2, context, L0, str2, str3);
-                j80Var2.E = g80Var;
-                g80Var.I0();
-                j80Var2.E.show();
-                org.telegram.ui.ActionBar.k1 k1Var2 = j80Var2.s;
-                if (k1Var2 != null) {
-                    k1Var2.d(true);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.k1 k1Var3 = j80Var.s;
-                if (k1Var3 != null) {
-                    k1Var3.d(true);
-                }
-                org.telegram.ui.ActionBar.k2 k2Var = j80Var.c;
-                if (k2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k2Var.getParentActivity());
-                    String L02 = org.telegram.messenger.dd.L0(2131746040, null);
-                    org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-                    x1Var.R = L02;
-                    x1Var.T = org.telegram.messenger.dd.L0(2131746043, null);
-                    alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131746041, null), new b80(j80Var, i11));
-                    alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, null), null);
-                    TextView textView = (TextView) x1Var.d(-1);
-                    if (textView != null) {
-                        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.q7, null);
-                    }
-                    alertDialog$Builder.p();
-                    break;
-                }
-                break;
+            }
+        }
+        b();
+    }
+
+    public final void d() {
+        if (this.j) {
+            Choreographer.getInstance().removeFrameCallback(this.m);
+            this.j = false;
+        }
+        if (this.k) {
+            this.b.removeCallbacks(this.n);
+            this.k = false;
         }
     }
 }

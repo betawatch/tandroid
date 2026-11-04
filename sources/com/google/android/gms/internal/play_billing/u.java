@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import b8.oa;
 import com.android.billingclient.api.Purchase;
 import java.util.ArrayList;
 import org.json.JSONException;
-import v7.a6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -39,11 +39,11 @@ public abstract class u {
         bundle.putLong("billingClientSessionId", j10);
     }
 
-    public static Bundle c(int i10, c5.g gVar) {
+    public static Bundle c(int i3, e5.f fVar) {
         Bundle bundle = new Bundle();
-        bundle.putInt("RESPONSE_CODE", gVar.a);
-        bundle.putString("DEBUG_MESSAGE", gVar.c);
-        bundle.putInt("LOG_REASON", c3.i0.f(i10));
+        bundle.putInt("RESPONSE_CODE", fVar.a);
+        bundle.putString("DEBUG_MESSAGE", fVar.c);
+        bundle.putInt("LOG_REASON", a1.g.d(i3));
         return bundle;
     }
 
@@ -54,11 +54,11 @@ public abstract class u {
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        a6.a(2, objArr);
-        bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.s(2, objArr)));
+        oa.a(2, objArr);
+        bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.o(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        a6.a(1, objArr2);
-        bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.s(1, objArr2)));
+        oa.a(1, objArr2);
+        bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.o(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
         ArrayList<String> arrayList3 = new ArrayList<>();
@@ -66,13 +66,13 @@ public abstract class u {
         int size = arrayList.size();
         boolean z10 = false;
         boolean z11 = false;
-        for (int i10 = 0; i10 < size; i10++) {
-            c5.p pVar2 = (c5.p) arrayList.get(i10);
+        for (int i3 = 0; i3 < size; i3++) {
+            e5.o oVar = (e5.o) arrayList.get(i3);
             arrayList2.add(null);
             z10 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
             z11 |= !TextUtils.isEmpty(null);
-            if (pVar2.b.equals("first_party")) {
+            if (oVar.b.equals("first_party")) {
                 throw new NullPointerException("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
             }
         }
@@ -91,18 +91,18 @@ public abstract class u {
         return bundle;
     }
 
-    public static c5.g e(String str, Intent intent) {
+    public static e5.f e(String str, Intent intent) {
         if (intent != null) {
-            c3.a a2 = c5.g.a();
-            a2.b = a(str, intent.getExtras());
-            a2.a = f(str, intent.getExtras());
-            return a2.a();
+            e3.a a10 = e5.f.a();
+            a10.b = a(str, intent.getExtras());
+            a10.a = f(str, intent.getExtras());
+            return a10.a();
         }
         h("BillingHelper", "Got null intent!");
-        c3.a a10 = c5.g.a();
-        a10.b = 6;
-        a10.a = "An internal error occurred.";
-        return a10.a();
+        e3.a a11 = e5.f.a();
+        a11.b = 6;
+        a11.a = "An internal error occurred.";
+        return a11.a();
     }
 
     public static String f(String str, Bundle bundle) {
@@ -128,12 +128,12 @@ public abstract class u {
                 Log.v(str, str2);
                 return;
             }
-            int i10 = 40000;
-            while (!str2.isEmpty() && i10 > 0) {
-                int min = Math.min(str2.length(), Math.min(4000, i10));
+            int i3 = 40000;
+            while (!str2.isEmpty() && i3 > 0) {
+                int min = Math.min(str2.length(), Math.min(4000, i3));
                 Log.v(str, str2.substring(0, min));
                 str2 = str2.substring(min);
-                i10 -= min;
+                i3 -= min;
             }
         }
     }
@@ -164,8 +164,8 @@ public abstract class u {
         }
         try {
             return new Purchase(str, str2);
-        } catch (JSONException e) {
-            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e.toString()));
+        } catch (JSONException e10) {
+            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e10.toString()));
             return null;
         }
     }

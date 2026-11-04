@@ -1,128 +1,106 @@
 package tg;
 
-import android.graphics.Color;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.RuntimeShader;
 import java.util.Arrays;
+import java.util.List;
+import org.telegram.messenger.bd;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.i0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class g {
-    public final RenderNode a;
-    public final RuntimeShader b;
-    public RenderEffect c;
-    public RenderEffect[] d;
-    public float[] e;
-    public float[] f;
-    public int g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public float l;
-    public float m;
-    public float n;
-    public float o;
-    public float p;
-    public int q;
+public final class g extends h {
+    public static final List c = Arrays.asList(new g(2), new g(3), new g(4), new g(1), new g(0));
+    public final /* synthetic */ int b;
 
-    public g(RenderNode renderNode) {
-        this.a = renderNode;
-        RuntimeShader runtimeShader = new RuntimeShader(i0.y2(null, R.raw.liquid_glass_shader));
-        this.b = runtimeShader;
-        RenderEffect createRuntimeShaderEffect = RenderEffect.createRuntimeShaderEffect(runtimeShader, "img");
-        this.c = createRuntimeShaderEffect;
-        renderNode.setRenderEffect(createRuntimeShaderEffect);
+    public /* synthetic */ g(int i3) {
+        this.b = i3;
     }
 
-    public final void a(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, int i10, float f18, float f19, int i11) {
-        float f20;
-        float f21;
-        float f22;
-        float f23;
-        int length;
-        float f24 = f11 + f14;
-        if (f24 > f10) {
-            float f25 = f11 / f24;
-            f20 = f10 * f25;
-            f21 = (1.0f - f25) * f10;
-        } else {
-            f20 = f11;
-            f21 = f14;
+    public static g p(int i3) {
+        List list = c;
+        if (i3 >= 0 && i3 <= list.size()) {
+            return (g) list.get(i3);
         }
-        float f26 = f12 + f13;
-        if (f26 > f10) {
-            float f27 = f12 / f26;
-            f22 = f10 * f27;
-            f23 = (1.0f - f27) * f10;
-        } else {
-            f22 = f12;
-            f23 = f13;
+        StringBuilder sb2 = new StringBuilder("Shape type must be in range from 0 to ");
+        sb2.append(list.size() - 1);
+        sb2.append(", but got ");
+        sb2.append(i3);
+        throw new IndexOutOfBoundsException(sb2.toString());
+    }
+
+    @Override // tg.h
+    public final float a() {
+        return 1.0f;
+    }
+
+    @Override // tg.h
+    public final int e() {
+        switch (this.b) {
+            case 0:
+                return R.drawable.photo_arrowshape;
+            case 1:
+                return R.drawable.msg_msgbubble;
+            case 2:
+                return R.drawable.photo_circle;
+            case 3:
+                return R.drawable.photo_rectangle;
+            default:
+                return R.drawable.photo_star;
         }
-        if (this.g != i11 || Math.abs(this.h - f7) > 0.1f || Math.abs(this.i - f10) > 0.1f || Math.abs(this.j - f20) > 0.1f || Math.abs(this.k - f22) > 0.1f || Math.abs(this.l - f23) > 0.1f || Math.abs(this.m - f21) > 0.1f || Math.abs(this.n - f15) > 0.1f || Math.abs(this.o - f16) > 0.1f || Math.abs(this.p - f17) > 0.1f || this.q != i10) {
-            this.q = i10;
-            float alpha = Color.alpha(i10) / 255.0f;
-            float f28 = 1.0f / i11;
-            this.g = i11;
-            this.h = f7;
-            this.i = f10;
-            this.l = f23;
-            this.k = f22;
-            this.m = f21;
-            this.j = f20;
-            this.n = f15;
-            this.b.setFloatUniform("size", (f7 / 2.0f) * f28, (f10 / 2.0f) * f28);
-            this.b.setFloatUniform("radius", f23 * f28, f22 * f28, f21 * f28, f20 * f28);
-            this.b.setFloatUniform("thickness", f15 * f28);
-            RuntimeShader runtimeShader = this.b;
-            this.o = f16;
-            runtimeShader.setFloatUniform("refract_intensity", f16);
-            RuntimeShader runtimeShader2 = this.b;
-            this.p = f17;
-            runtimeShader2.setFloatUniform("refract_index", f17);
-            this.b.setFloatUniform("foreground_color_premultiplied", (Color.red(i10) / 255.0f) * alpha, (Color.green(i10) / 255.0f) * alpha, (Color.blue(i10) / 255.0f) * alpha, alpha);
-            int i12 = (i11 * i11) + 1;
-            RenderEffect[] renderEffectArr = this.d;
-            if (renderEffectArr == null || renderEffectArr.length != i12) {
-                this.d = new RenderEffect[i12];
-                this.e = new float[i12];
-                this.f = new float[i12];
-            } else {
-                Arrays.fill(renderEffectArr, (Object) null);
-            }
+    }
+
+    @Override // tg.h
+    public final String i(int i3) {
+        if (i3 == 0 || i3 == 1) {
+            return "shape";
         }
-        float f29 = i11;
-        float f30 = ((f7 / 2.0f) - f18) / f29;
-        float f31 = ((f10 / 2.0f) - f19) / f29;
-        if (f18 == ((int) f18) && f19 == ((int) f19)) {
-            int i13 = (int) (-f19);
-            int i14 = i13 % i11;
-            if (i14 == 0) {
-                i14 = 0;
-            } else if ((((i13 ^ i11) >> 31) | 1) <= 0) {
-                i14 += i11;
-            }
-            int i15 = (int) (-f18);
-            int i16 = i15 % i11;
-            length = (i14 * i11) + (i16 != 0 ? (((i15 ^ i11) >> 31) | 1) > 0 ? i16 : i16 + i11 : 0);
-        } else {
-            length = this.d.length - 1;
+        if (i3 != 2) {
+            return null;
         }
-        RenderEffect renderEffect = this.d[length];
-        if (renderEffect == null || this.e[length] != f30 || this.f[length] != f31) {
-            this.b.setFloatUniform("center", f30, f31);
-            renderEffect = RenderEffect.createRuntimeShaderEffect(this.b, "img");
-            this.d[length] = renderEffect;
-            this.e[length] = f30;
-            this.f[length] = f31;
+        return "brush";
+    }
+
+    public final int m() {
+        switch (this.b) {
+            case 0:
+                return R.drawable.photo_arrowshape;
+            case 1:
+                return R.drawable.msg_msgbubble2;
+            case 2:
+                return R.drawable.photo_circle_fill;
+            case 3:
+                return R.drawable.photo_rectangle_fill;
+            default:
+                return R.drawable.photo_star_fill;
         }
-        if (this.c != renderEffect) {
-            RenderNode renderNode = this.a;
-            this.c = renderEffect;
-            renderNode.setRenderEffect(renderEffect);
+    }
+
+    public final String n() {
+        switch (this.b) {
+            case 0:
+                return bd.M0(2131747684, null);
+            case 1:
+                return bd.M0(2131747682, null);
+            case 2:
+                return bd.M0(2131747681, null);
+            case 3:
+                return bd.M0(2131747670, null);
+            default:
+                return bd.M0(2131747669, null);
+        }
+    }
+
+    public final int o() {
+        switch (this.b) {
+            case 0:
+                return 4;
+            case 1:
+                return 3;
+            case 2:
+                return 0;
+            case 3:
+                return 1;
+            default:
+                return 2;
         }
     }
 }

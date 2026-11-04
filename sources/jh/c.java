@@ -1,145 +1,149 @@
 package jh;
 
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.view.View;
-import java.io.File;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.b8;
-import org.telegram.messenger.i0;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.w0;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.RadialProgress2;
+import cg.r;
+import k2.p1;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.t0;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c extends ih.f {
-    public final String b;
-    public final Uri c;
-    public final String d;
-    public final long e;
-    public final String f;
-    public final Drawable h;
-    public final StaticLayout n;
+public final class c extends Drawable {
+    public final /* synthetic */ int a;
+    public final Drawable b;
+    public int c;
+    public int d;
 
-    public c(String str) {
-        long j10;
-        this.b = str;
-        this.c = null;
-        File file = new File(str);
-        try {
-            j10 = file.length();
-        } catch (Throwable unused) {
-            j10 = 0;
-        }
-        this.e = j10;
-        String name = file.getName();
-        this.d = name;
-        String[] split = name.split("\\.");
-        String str2 = split.length > 1 ? split[split.length - 1] : "?";
-        this.f = str2;
-        int m12 = i0.m1(name, false);
-        if (m12 != 0) {
-            this.h = w0.b.getResources().getDrawable(m12);
-        } else {
-            this.h = null;
-        }
-        if (TextUtils.isEmpty(str2)) {
-            this.n = null;
-            return;
-        }
-        TextPaint textPaint = new TextPaint(1);
-        textPaint.setTextSize(i0.L(13.0f));
-        textPaint.setTypeface(i0.o());
-        textPaint.setColor(t6.x0(null, t6.pj, false));
-        this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, i0.L(34.0f), TextUtils.TruncateAt.END), textPaint, i0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+    public c() {
+        this.a = 1;
+        this.d = hs.e4;
+        this.b = p1.g(t0.b, R.drawable.settings_arrow);
     }
 
-    public static b d(View view, String str, String str2, TLRPC.Document document, kj kjVar) {
-        b bVar = new b();
-        bVar.a.setColor(t6.x0(null, t6.G6, false));
-        bVar.b.setColor(t6.x0(null, t6.y6, false));
-        bVar.d = true;
-        RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
-        bVar.c = radialProgress2;
-        radialProgress2.setCircleRadius(i0.L(21.0f));
-        bVar.c.g(t6.We, t6.Xe, t6.id, t6.jd);
-        if (kj.J3(document)) {
-            if (kj.W2(document)) {
-                TLRPC.PhotoSize w9 = b8.w(document.thumbs, i0.L(22.0f), true, null, false);
-                bVar.c.j(b8.w(document.thumbs, i0.L(44.0f), true, w9, true), w9, document, kjVar);
-            } else {
-                String t02 = kj.t0(document, true);
-                if (TextUtils.isEmpty(t02)) {
-                    bVar.c.i(null, null, null);
-                } else {
-                    bVar.c.h(t02);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                this.b.draw(canvas);
+                break;
+            default:
+                float exactCenterX = getBounds().exactCenterX();
+                float exactCenterY = getBounds().exactCenterY();
+                int x02 = k6.x0(null, k6.G6, false);
+                int x03 = k6.x0(null, k6.d6, false);
+                int i3 = this.c;
+                Drawable drawable = this.b;
+                if (i3 != x03) {
+                    this.c = x03;
+                    drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
                 }
-            }
-            bVar.c.setIcon(0, false, false);
-        } else {
-            bVar.c.setIcon(5, false, false);
-        }
-        if (str == null) {
-            str = "";
-        }
-        bVar.e = str;
-        if (str2 == null) {
-            str2 = "";
-        }
-        bVar.f = str2;
-        bVar.m = -1;
-        bVar.g = null;
-        bVar.h = null;
-        bVar.invalidateSelf();
-        view.addOnAttachStateChangeListener(new a(bVar));
-        return bVar;
-    }
-
-    @Override // ih.f
-    public final void c(Canvas canvas, int i10, int i11) {
-        Drawable drawable = this.h;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, i10, i11);
-            drawable.draw(canvas);
-            canvas.save();
-            canvas.translate((i10 - i0.L(34.0f)) / 2.0f, i0.L(15.0f));
-            this.n.draw(canvas);
-            canvas.restore();
+                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(7.6666665f), k6.n0(i0.a.o(x03, this.d)));
+                canvas.drawCircle(exactCenterX, exactCenterY, g0.L(6.6666665f), k6.n0(i0.a.o(x02, this.d)));
+                r.d(drawable, exactCenterX, exactCenterY, 17);
+                canvas.translate(0.0f, g0.L(0.66f));
+                canvas.save();
+                canvas.rotate(90.0f, exactCenterX, exactCenterY);
+                r.b(canvas, drawable, 0.8f);
+                canvas.restore();
+                break;
         }
     }
 
-    public c(Uri uri) {
-        this.b = null;
-        this.c = uri;
-        String A = MediaController.A(uri);
-        A = A == null ? "?" : A;
-        this.d = A;
-        String[] split = A.split("\\.");
-        String str = split.length > 1 ? split[split.length - 1] : "?";
-        this.f = str;
-        this.e = 0L;
-        int m12 = i0.m1(A, false);
-        if (m12 != 0) {
-            this.h = w0.b.getResources().getDrawable(m12);
-        } else {
-            this.h = null;
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        switch (this.a) {
+            case 0:
+                return this.b.getAlpha();
+            default:
+                return this.d;
         }
-        if (!TextUtils.isEmpty(str)) {
-            TextPaint textPaint = new TextPaint(1);
-            textPaint.setTextSize(i0.L(13.0f));
-            textPaint.setTypeface(i0.o());
-            textPaint.setColor(t6.x0(null, t6.pj, false));
-            this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, i0.L(34.0f), TextUtils.TruncateAt.END), textPaint, i0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-            return;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return g0.L(13.333333f);
+            default:
+                return super.getIntrinsicHeight();
         }
-        this.n = null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return g0.L(13.333333f);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return this.b.getOpacity();
+            default:
+                return -3;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void onBoundsChange(Rect rect) {
+        switch (this.a) {
+            case 0:
+                super.onBoundsChange(rect);
+                int width = rect.width();
+                int i3 = this.c;
+                int i10 = (width - i3) / 2;
+                int height = rect.height();
+                int i11 = this.d;
+                int i12 = (height - i11) / 2;
+                this.b.setBounds(i10, i12, i3 + i10, i11 + i12);
+                break;
+            default:
+                super.onBoundsChange(rect);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i3);
+                break;
+            default:
+                this.d = i3;
+                this.b.setAlpha(i3);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i3 = this.a;
+    }
+
+    public c(int i3, int i10, Drawable drawable) {
+        this.a = 0;
+        this.c = i3;
+        this.d = i10;
+        this.b = drawable;
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

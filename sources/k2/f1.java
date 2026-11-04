@@ -1,105 +1,135 @@
 package k2;
 
-import java.nio.ByteBuffer;
+import ai.e3;
+import android.util.Pair;
+import ci.v3;
+import ei.h9;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f1 extends c2.n {
-    public int i;
-    public int j;
-    public boolean k;
-    public int l;
-    public byte[] m;
-    public int n;
-    public long o;
+public final class f1 implements w2.k0, p2.k {
+    public final h1 a;
+    public final /* synthetic */ i1 b;
 
-    @Override // c2.n, c2.m
-    public final ByteBuffer a() {
-        int i10;
-        if (super.c() && (i10 = this.n) > 0) {
-            l(i10).put(this.m, 0, this.n).flip();
-            this.n = 0;
+    public f1(i1 i1Var, h1 h1Var) {
+        this.b = i1Var;
+        this.a = h1Var;
+    }
+
+    @Override // p2.k
+    public final void A(int i3, w2.g0 g0Var, Exception exc) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new h9(this, a10, exc, 20));
         }
-        return super.a();
     }
 
-    @Override // c2.m
-    public final void b(ByteBuffer byteBuffer) {
-        int position = byteBuffer.position();
-        int limit = byteBuffer.limit();
-        int i10 = limit - position;
-        if (i10 == 0) {
-            return;
+    @Override // w2.k0
+    public final void D(int i3, w2.g0 g0Var, w2.c0 c0Var) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new c1(this, a10, c0Var, 0));
         }
-        int min = Math.min(i10, this.l);
-        this.o += min / this.b.d;
-        this.l -= min;
-        byteBuffer.position(position + min);
-        if (this.l > 0) {
-            return;
+    }
+
+    @Override // p2.k
+    public final void I(int i3, w2.g0 g0Var) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new e1(this, a10, 1));
         }
-        int i11 = i10 - min;
-        int length = (this.n + i11) - this.m.length;
-        ByteBuffer l4 = l(length);
-        int i12 = e2.l0.i(length, 0, this.n);
-        l4.put(this.m, 0, i12);
-        int i13 = e2.l0.i(length - i12, 0, i11);
-        byteBuffer.limit(byteBuffer.position() + i13);
-        l4.put(byteBuffer);
-        byteBuffer.limit(limit);
-        int i14 = i11 - i13;
-        int i15 = this.n - i12;
-        this.n = i15;
-        byte[] bArr = this.m;
-        System.arraycopy(bArr, i12, bArr, 0, i15);
-        byteBuffer.get(this.m, this.n, i14);
-        this.n += i14;
-        l4.flip();
     }
 
-    @Override // c2.n, c2.m
-    public final boolean c() {
-        return super.c() && this.n == 0;
-    }
-
-    @Override // c2.n, c2.m
-    public final long g(long j10) {
-        return Math.max(0L, j10 - e2.l0.Y(this.b.a, this.j + this.i));
-    }
-
-    @Override // c2.n
-    public final c2.j h(c2.j jVar) {
-        if (!e2.l0.M(jVar.c)) {
-            throw new c2.l(jVar);
+    @Override // w2.k0
+    public final void K(int i3, w2.g0 g0Var, w2.u uVar, w2.c0 c0Var, int i10) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new ai.p1(this, a10, uVar, c0Var, i10, 4));
         }
-        this.k = true;
-        return (this.i == 0 && this.j == 0) ? c2.j.e : jVar;
     }
 
-    @Override // c2.n
-    public final void i() {
-        if (this.k) {
-            this.k = false;
-            int i10 = this.j;
-            int i11 = this.b.d;
-            this.m = new byte[i10 * i11];
-            this.l = this.i * i11;
+    @Override // p2.k
+    public final void M(int i3, w2.g0 g0Var, int i10) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new e3(this, a10, i10, 18));
         }
-        this.n = 0;
     }
 
-    @Override // c2.n
-    public final void j() {
-        if (this.k) {
-            if (this.n > 0) {
-                this.o += r0 / this.b.d;
+    public final Pair a(int i3, w2.g0 g0Var) {
+        w2.g0 g0Var2;
+        h1 h1Var = this.a;
+        w2.g0 g0Var3 = null;
+        if (g0Var != null) {
+            int i10 = 0;
+            while (true) {
+                if (i10 >= h1Var.c.size()) {
+                    g0Var2 = null;
+                    break;
+                }
+                if (((w2.g0) h1Var.c.get(i10)).d == g0Var.d) {
+                    Object obj = g0Var.a;
+                    Object obj2 = h1Var.b;
+                    int i11 = a.g;
+                    g0Var2 = g0Var.a(Pair.create(obj2, obj));
+                    break;
+                }
+                i10++;
             }
-            this.n = 0;
+            if (g0Var2 == null) {
+                return null;
+            }
+            g0Var3 = g0Var2;
+        }
+        return Pair.create(Integer.valueOf(i3 + h1Var.d), g0Var3);
+    }
+
+    @Override // p2.k
+    public final void b(int i3, w2.g0 g0Var) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new e1(this, a10, 0));
         }
     }
 
-    @Override // c2.n
-    public final void k() {
-        this.m = e2.l0.b;
+    @Override // w2.k0
+    public final void d(int i3, w2.g0 g0Var, w2.c0 c0Var) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new c1(this, a10, c0Var, 1));
+        }
+    }
+
+    @Override // w2.k0
+    public final void j(int i3, w2.g0 g0Var, w2.u uVar, w2.c0 c0Var, IOException iOException, boolean z10) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new v3(this, a10, uVar, c0Var, iOException, z10, 1));
+        }
+    }
+
+    @Override // w2.k0
+    public final void t(int i3, w2.g0 g0Var, w2.u uVar, w2.c0 c0Var) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new d1(this, a10, uVar, c0Var, 1));
+        }
+    }
+
+    @Override // p2.k
+    public final void x(int i3, w2.g0 g0Var, v7.s sVar) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new h9(this, a10, sVar, 19));
+        }
+    }
+
+    @Override // w2.k0
+    public final void z(int i3, w2.g0 g0Var, w2.u uVar, w2.c0 c0Var) {
+        Pair a10 = a(i3, g0Var);
+        if (a10 != null) {
+            this.b.i.d(new d1(this, a10, uVar, c0Var, 0));
+        }
     }
 }

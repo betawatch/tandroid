@@ -10,7 +10,7 @@ import ru.noties.jlatexmath.awt.geom.Line2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class AndroidGraphics2D implements Graphics2D {
     private Canvas canvas;
@@ -29,51 +29,51 @@ public class AndroidGraphics2D implements Graphics2D {
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void draw(Rectangle2D.Float r92) {
+    public void draw(Rectangle2D.Float r9) {
         this.paint.setStyle(Paint.Style.STROKE);
         Canvas canvas = this.canvas;
-        float f7 = r92.x;
-        float f10 = r92.y;
-        canvas.drawRect(f7, f10, f7 + r92.w, f10 + r92.h, this.paint);
+        float f10 = r9.x;
+        float f11 = r9.y;
+        canvas.drawRect(f10, f11, f10 + r9.w, f11 + r9.h, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void drawArc(int i10, int i11, int i12, int i13, int i14, int i15) {
+    public void drawArc(int i3, int i10, int i11, int i12, int i13, int i14) {
         this.paint.setStyle(Paint.Style.STROKE);
-        this.rectF.set(i10, i11, i10 + i12, i11 + i13);
-        this.canvas.drawArc(this.rectF, i14, i15, false, this.paint);
+        this.rectF.set(i3, i10, i3 + i11, i10 + i12);
+        this.canvas.drawArc(this.rectF, i13, i14, false, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void drawChars(char[] cArr, int i10, int i11, int i12, int i13) {
+    public void drawChars(char[] cArr, int i3, int i10, int i11, int i12) {
         Font font = this.font;
         if (font != null) {
             this.paint.setTypeface(font.typeface());
             this.paint.setTextSize(this.font.size());
         }
-        this.canvas.drawText(cArr, i10, i11, i12, i13, this.paint);
+        this.canvas.drawText(cArr, i3, i10, i11, i12, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void fill(Rectangle2D.Float r92) {
+    public void fill(Rectangle2D.Float r9) {
         this.paint.setStyle(Paint.Style.FILL);
         Canvas canvas = this.canvas;
-        float f7 = r92.x;
-        float f10 = r92.y;
-        canvas.drawRect(f7, f10, f7 + r92.w, f10 + r92.h, this.paint);
+        float f10 = r9.x;
+        float f11 = r9.y;
+        canvas.drawRect(f10, f11, f10 + r9.w, f11 + r9.h, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void fillArc(int i10, int i11, int i12, int i13, int i14, int i15) {
+    public void fillArc(int i3, int i10, int i11, int i12, int i13, int i14) {
         this.paint.setStyle(Paint.Style.FILL);
-        this.rectF.set(i10, i11, i10 + i12, i11 + i13);
-        this.canvas.drawArc(this.rectF, i14, i15, false, this.paint);
+        this.rectF.set(i3, i10, i3 + i11, i10 + i12);
+        this.canvas.drawArc(this.rectF, i13, i14, false, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void fillRect(int i10, int i11, int i12, int i13) {
+    public void fillRect(int i3, int i10, int i11, int i12) {
         this.paint.setStyle(Paint.Style.FILL);
-        this.canvas.drawRect(i10, i11, i10 + i12, i11 + i13, this.paint);
+        this.canvas.drawRect(i3, i10, i3 + i11, i10 + i12, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
@@ -165,18 +165,18 @@ public class AndroidGraphics2D implements Graphics2D {
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
-    public void draw(Line2D.Float r92) {
+    public void draw(Line2D.Float r9) {
         this.paint.setStyle(Paint.Style.STROKE);
-        this.canvas.drawLine((float) r92.x1, (float) r92.y1, (float) r92.x2, (float) r92.y2, this.paint);
+        this.canvas.drawLine((float) r9.x1, (float) r9.y1, (float) r9.x2, (float) r9.y2, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
     public void draw(RoundRectangle2D.Float r62) {
         this.paint.setStyle(Paint.Style.STROKE);
         RectF rectF = this.rectF;
-        float f7 = r62.x;
-        float f10 = r62.y;
-        rectF.set(f7, f10, r62.width + f7, r62.height + f10);
+        float f10 = r62.x;
+        float f11 = r62.y;
+        rectF.set(f10, f11, r62.width + f10, r62.height + f11);
         this.canvas.drawRoundRect(this.rectF, r62.arcwidth, r62.archeight, this.paint);
     }
 

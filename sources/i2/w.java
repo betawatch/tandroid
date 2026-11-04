@@ -1,80 +1,45 @@
 package i2;
 
-import j$.time.LocalDate;
-import j$.time.ZoneOffset;
-import org.telegram.messenger.dd;
-import org.telegram.ui.Components.ek0;
-import org.telegram.ui.Components.wb0;
+import b8.xb;
+import java.io.IOException;
+import java.io.InterruptedIOException;
+import java.net.SocketTimeoutException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements e2.o, d9.k, e2.j, ek0, wb0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+public class w extends k {
+    public final int b;
 
-    public /* synthetic */ w(int i10, int i11) {
-        this.a = i11;
+    public w() {
+        super(2008);
+        this.b = 1;
+    }
+
+    public static w a(IOException iOException, int i3) {
+        String message = iOException.getMessage();
+        int i10 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !xb.c(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
+        return i10 == 2007 ? new v("Cleartext HTTP traffic not permitted. See https://developer.android.com/guide/topics/media/issues/cleartext-not-permitted", iOException, 2007) : new w(iOException, i10, i3);
+    }
+
+    public w(String str, int i3) {
+        super(str, i3 == 2000 ? 2001 : i3);
+        this.b = 1;
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public w(IOException iOException, int i3, int i10) {
+        super(iOException, i3);
+        if (i3 == 2000 && i10 == 1) {
+            i3 = 2001;
+        }
         this.b = i10;
     }
 
-    @Override // e2.j
-    public void accept(Object obj) {
-        switch (this.a) {
-            case 3:
-                ((m4.n1) obj).f0(this.b);
-                break;
-            case 4:
-                ((m4.n1) obj).M(this.b);
-                break;
-            case 5:
-                ((m4.n1) obj).k(this.b);
-                break;
-            default:
-                ((m4.n1) obj).G0(this.b);
-                break;
-        }
-    }
-
-    @Override // d9.k
-    public Object apply(Object obj) {
-        return Integer.valueOf(this.b);
-    }
-
-    @Override // org.telegram.ui.Components.wb0
-    public String e(int i10) {
-        int i11 = this.a;
-        int i12 = this.b;
-        switch (i11) {
-            case 8:
-                if (i10 == 0) {
-                    return dd.L0(2131748546, null);
-                }
-                LocalDate plusDays = LocalDate.now().plusDays(i10);
-                int year = plusDays.getYear();
-                long epochMilli = plusDays.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
-                if (year != i12) {
-                    return dd.D0().x0().format(epochMilli);
-                }
-                return dd.D0().z0().format(epochMilli) + ", " + dd.D0().v0().format(epochMilli);
-            default:
-                return i10 == i12 ? "—" : String.format("%02d", Integer.valueOf(i10));
-        }
-    }
-
-    @Override // e2.o
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((b2.d1) obj).c(this.b);
-                break;
-            default:
-                ((b2.d1) obj).a(this.b);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ek0
-    public int run() {
-        return this.b;
+    public w(String str, IOException iOException, int i3) {
+        super(str, iOException, i3 == 2000 ? 2001 : i3);
+        this.b = 1;
     }
 }

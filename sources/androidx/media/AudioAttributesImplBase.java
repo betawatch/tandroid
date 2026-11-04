@@ -1,10 +1,10 @@
 package androidx.media;
 
-import i0.a;
 import java.util.Arrays;
-import org.telegram.messenger.at;
+import k2.p1;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -13,27 +13,27 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int d = -1;
 
     public final boolean equals(Object obj) {
-        int i10;
+        int i3;
         if (!(obj instanceof AudioAttributesImplBase)) {
             return false;
         }
         AudioAttributesImplBase audioAttributesImplBase = (AudioAttributesImplBase) obj;
         if (this.b == audioAttributesImplBase.b) {
-            int i11 = this.c;
-            int i12 = audioAttributesImplBase.c;
-            int i13 = audioAttributesImplBase.d;
-            if (i13 == -1) {
-                int i14 = audioAttributesImplBase.a;
-                int i15 = AudioAttributesCompat.b;
-                if ((i12 & 1) != 1) {
-                    i10 = 4;
-                    if ((i12 & 4) != 4) {
-                        switch (i14) {
+            int i10 = this.c;
+            int i11 = audioAttributesImplBase.c;
+            int i12 = audioAttributesImplBase.d;
+            if (i12 == -1) {
+                int i13 = audioAttributesImplBase.a;
+                int i14 = AudioAttributesCompat.b;
+                if ((i11 & 1) != 1) {
+                    i3 = 4;
+                    if ((i11 & 4) != 4) {
+                        switch (i13) {
                             case 2:
-                                i10 = 0;
+                                i3 = 0;
                                 break;
                             case 3:
-                                i10 = 8;
+                                i3 = 8;
                                 break;
                             case 4:
                                 break;
@@ -42,37 +42,37 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                             case 8:
                             case 9:
                             case 10:
-                                i10 = 5;
+                                i3 = 5;
                                 break;
                             case 6:
-                                i10 = 2;
+                                i3 = 2;
                                 break;
                             case 11:
-                                i10 = 10;
+                                i3 = 10;
                                 break;
                             case 12:
                             default:
-                                i10 = 3;
+                                i3 = 3;
                                 break;
                             case 13:
-                                i10 = 1;
+                                i3 = 1;
                                 break;
                         }
                     } else {
-                        i10 = 6;
+                        i3 = 6;
                     }
                 } else {
-                    i10 = 7;
+                    i3 = 7;
                 }
             } else {
-                i10 = i13;
+                i3 = i12;
             }
-            if (i10 == 6) {
-                i12 |= 4;
-            } else if (i10 == 7) {
-                i12 |= 1;
+            if (i3 == 6) {
+                i11 |= 4;
+            } else if (i3 == 7) {
+                i11 |= 1;
             }
-            if (i11 == (i12 & at.w4) && this.a == audioAttributesImplBase.a && this.d == i13) {
+            if (i10 == (i11 & hs.w4) && this.a == audioAttributesImplBase.a && this.d == i12) {
                 return true;
             }
         }
@@ -92,9 +92,9 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
             sb2.append(" derived");
         }
         sb2.append(" usage=");
-        int i10 = this.a;
-        int i11 = AudioAttributesCompat.b;
-        switch (i10) {
+        int i3 = this.a;
+        int i10 = AudioAttributesCompat.b;
+        switch (i3) {
             case 0:
                 str = "USAGE_UNKNOWN";
                 break;
@@ -142,7 +142,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 break;
             case 15:
             default:
-                str = a.i(i10, "unknown usage ");
+                str = p1.i(i3, "unknown usage ");
                 break;
             case 16:
                 str = "USAGE_ASSISTANT";

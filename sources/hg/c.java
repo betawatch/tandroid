@@ -1,21 +1,29 @@
 package hg;
 
-import java.util.ArrayList;
-import org.telegram.ui.Components.tk0;
-import s4.n;
+import android.graphics.Matrix;
+import android.graphics.RectF;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public abstract class c extends tk0 {
-    public final a c = new a();
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class c {
+    public final RectF a;
+    public final Matrix b;
 
-    public final void E(ArrayList arrayList, ArrayList arrayList2) {
-        if (arrayList2 == null) {
-            arrayList2 = new ArrayList();
-        }
-        a aVar = this.c;
-        aVar.c = arrayList;
-        aVar.d = arrayList2;
-        n.c(aVar, true).c(this);
+    public c(RectF rectF, Matrix matrix) {
+        this.a = rectF;
+        this.b = matrix;
+    }
+
+    public static c a(SerializedData serializedData) {
+        float readFloat = serializedData.readFloat(true);
+        float readFloat2 = serializedData.readFloat(true);
+        float readFloat3 = serializedData.readFloat(true);
+        float readFloat4 = serializedData.readFloat(true);
+        float[] fArr = {serializedData.readFloat(true), serializedData.readFloat(true), serializedData.readFloat(true), serializedData.readFloat(true), serializedData.readFloat(true), serializedData.readFloat(true), serializedData.readFloat(true), serializedData.readFloat(true), serializedData.readFloat(true)};
+        RectF rectF = new RectF(readFloat, readFloat2, readFloat3 + readFloat, readFloat4 + readFloat2);
+        Matrix matrix = new Matrix();
+        matrix.setValues(fArr);
+        return new c(rectF, matrix);
     }
 }

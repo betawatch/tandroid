@@ -1,26 +1,28 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.media.AudioManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements RequestDelegate {
+public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ AudioManager c;
 
-    public /* synthetic */ c0(int i10) {
-        this.a = i10;
+    public /* synthetic */ c0(VoIPService voIPService, AudioManager audioManager, int i3) {
+        this.a = i3;
+        this.b = voIPService;
+        this.c = audioManager;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                VoIPService.lambda$callFailed$114(tLObject, tL_error);
+                this.b.lambda$configureDeviceForCall$111(this.c);
                 break;
             default:
-                VoIPService.lambda$createGroupInstance$67(tLObject, tL_error);
+                this.b.lambda$configureDeviceForCall$112(this.c);
                 break;
         }
     }

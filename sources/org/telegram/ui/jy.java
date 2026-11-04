@@ -1,35 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class jy {
-    public float a;
-    public float b;
-    public boolean c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public boolean i;
-    public sg.d j;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public float o;
-    public int p;
-    public TLRPC.Document q;
-    public final ImageReceiver r;
-    public String s;
+public final /* synthetic */ class jy implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ez b;
 
-    public jy() {
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        this.r = imageReceiver;
-        imageReceiver.z1 = true;
-        imageReceiver.b = true;
+    public /* synthetic */ jy(ez ezVar, int i3) {
+        this.a = i3;
+        this.b = ezVar;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.p11(28, this.b, tLObject));
+                break;
+            default:
+                org.telegram.messenger.g0.h3(new pp(this.b, tL_error, tLObject, 6));
+                break;
+        }
     }
 }

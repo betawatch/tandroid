@@ -1,0 +1,12 @@
+package c4;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class i extends b4.j {
+    public a1.c c;
+
+    @Override // j2.j
+    public final void release() {
+        this.c.a(this);
+    }
+}

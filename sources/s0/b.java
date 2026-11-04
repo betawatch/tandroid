@@ -1,106 +1,93 @@
 package s0;
 
-import android.R;
-import android.os.Build;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.tgnet.TLObject;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
+import android.util.Base64;
+import b8.ke;
+import com.google.firebase.components.ComponentRegistrar;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.t0;
+import tg.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b c;
-    public static final b d;
-    public static final b e;
-    public static final b f;
-    public static final b g;
-    public static final b h;
-    public final Object a;
-    public final int b;
+public final /* synthetic */ class b implements s3.g, t9.e, ta.a, i2.g, z, u5.e, t9.d {
+    public final /* synthetic */ int a;
 
-    static {
-        new b(null, 1, null, null);
-        new b(null, 2, null, null);
-        new b(null, 4, null, null);
-        new b(null, 8, null, null);
-        c = new b(null, 16, null, null);
-        new b(null, 32, null, null);
-        new b(null, 64, null, null);
-        new b(null, 128, null, null);
-        new b(null, 256, null, e.class);
-        new b(null, 512, null, e.class);
-        new b(null, 1024, null, f.class);
-        new b(null, 2048, null, f.class);
-        d = new b(null, TLObject.FLAG_12, null, null);
-        e = new b(null, TLObject.FLAG_13, null, null);
-        new b(null, TLObject.FLAG_14, null, null);
-        new b(null, 32768, null, null);
-        new b(null, 65536, null, null);
-        new b(null, 131072, null, j.class);
-        new b(null, 262144, null, null);
-        new b(null, TLObject.FLAG_19, null, null);
-        new b(null, TLObject.FLAG_20, null, null);
-        new b(null, TLObject.FLAG_21, null, k.class);
-        int i10 = Build.VERSION.SDK_INT;
-        new b(AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_ON_SCREEN, R.id.accessibilityActionShowOnScreen, null, null);
-        new b(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_TO_POSITION, R.id.accessibilityActionScrollToPosition, null, h.class);
-        f = new b(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_UP, R.id.accessibilityActionScrollUp, null, null);
-        new b(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_LEFT, R.id.accessibilityActionScrollLeft, null, null);
-        g = new b(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_DOWN, R.id.accessibilityActionScrollDown, null, null);
-        new b(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_RIGHT, R.id.accessibilityActionScrollRight, null, null);
-        new b(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_UP : null, R.id.accessibilityActionPageUp, null, null);
-        new b(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_DOWN : null, R.id.accessibilityActionPageDown, null, null);
-        new b(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_LEFT : null, R.id.accessibilityActionPageLeft, null, null);
-        new b(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_RIGHT : null, R.id.accessibilityActionPageRight, null, null);
-        new b(AccessibilityNodeInfo.AccessibilityAction.ACTION_CONTEXT_CLICK, R.id.accessibilityActionContextClick, null, null);
-        h = new b(i10 >= 24 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS : null, R.id.accessibilityActionSetProgress, null, i.class);
-        new b(i10 >= 26 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_MOVE_WINDOW : null, R.id.accessibilityActionMoveWindow, null, g.class);
-        new b(i10 >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TOOLTIP : null, R.id.accessibilityActionShowTooltip, null, null);
-        new b(i10 >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_HIDE_TOOLTIP : null, R.id.accessibilityActionHideTooltip, null, null);
-        new b(i10 >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PRESS_AND_HOLD : null, R.id.accessibilityActionPressAndHold, null, null);
-        new b(i10 >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_IME_ENTER : null, R.id.accessibilityActionImeEnter, null, null);
-        new b(i10 >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_START : null, R.id.accessibilityActionDragStart, null, null);
-        new b(i10 >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_DROP : null, R.id.accessibilityActionDragDrop, null, null);
-        new b(i10 >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_CANCEL : null, R.id.accessibilityActionDragCancel, null, null);
-        new b(i10 >= 33 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TEXT_SUGGESTIONS : null, R.id.accessibilityActionShowTextSuggestions, null, null);
-        new b(i10 >= 34 ? g1.a.e() : null, R.id.accessibilityActionScrollInDirection, null, null);
+    public /* synthetic */ b(int i3) {
+        this.a = i3;
     }
 
-    public b(Object obj, int i10, CharSequence charSequence, Class cls) {
-        this.b = i10;
-        if (obj == null) {
-            this.a = new AccessibilityNodeInfo.AccessibilityAction(i10, charSequence);
-        } else {
-            this.a = obj;
+    @Override // tg.z
+    public Typeface a() {
+        switch (this.a) {
+            case 20:
+                return g0.o1("fonts/rmedium.ttf");
+            case 21:
+                return g0.o1("fonts/rmediumitalic.ttf");
+            case 22:
+                return Typeface.create("serif", 1);
+            case 23:
+                return g0.o1("fonts/rcondensedbold.ttf");
+            case 24:
+                return g0.o1("fonts/rmono.ttf");
+            default:
+                return g0.o1("fonts/mw_bold.ttf");
         }
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof b)) {
-            return false;
-        }
-        Object obj2 = ((b) obj).a;
-        Object obj3 = this.a;
-        return obj3 == null ? obj2 == null : obj3.equals(obj2);
-    }
-
-    public final int hashCode() {
-        Object obj = this.a;
-        if (obj != null) {
-            return obj.hashCode();
-        }
-        return 0;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("AccessibilityActionCompat: ");
-        String e7 = c.e(this.b);
-        if (e7.equals("ACTION_UNKNOWN")) {
-            Object obj = this.a;
-            if (((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel() != null) {
-                e7 = ((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel().toString();
+    @Override // u5.e
+    public Object apply(Object obj) {
+        Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
+        try {
+            ArrayList arrayList = new ArrayList();
+            while (rawQuery.moveToNext()) {
+                k4.j a10 = n5.i.a();
+                a10.I(rawQuery.getString(1));
+                a10.c = x5.a.b(rawQuery.getInt(2));
+                String string = rawQuery.getString(3);
+                a10.b = string == null ? null : Base64.decode(string, 0);
+                arrayList.add(a10.l());
             }
+            return arrayList;
+        } finally {
+            rawQuery.close();
         }
-        sb2.append(e7);
-        return sb2.toString();
+    }
+
+    @Override // t9.e
+    public List b(ComponentRegistrar componentRegistrar) {
+        return componentRegistrar.getComponents();
+    }
+
+    @Override // i2.g
+    public i2.h createDataSource() {
+        return new i2.b(t0.b);
+    }
+
+    @Override // s3.g
+    public boolean d(int i3, int i10, int i11, int i12, int i13) {
+        return false;
+    }
+
+    @Override // t9.d
+    public Object q1(ke keVar) {
+        switch (this.a) {
+            case 27:
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
+            case 28:
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+            default:
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+        }
+    }
+
+    @Override // ta.a
+    public void c(ta.b bVar) {
     }
 }

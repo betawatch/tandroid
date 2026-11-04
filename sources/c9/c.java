@@ -1,241 +1,139 @@
 package c9;
 
-import android.app.IntentService;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.graphics.Typeface;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Parcel;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.RemoteException;
-import android.os.ResultReceiver;
-import android.util.Log;
-import e0.r;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.i0;
-import org.telegram.messenger.t;
-import v7.f5;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class c extends IntentService {
-    public final boolean a;
-    public final long b;
-    public final Intent c;
-    public final Intent d;
-    public b e;
-    public b f;
-
-    public c() {
-        super("SearchActionVerificationClientService");
-        this.c = new Intent("com.google.android.googlequicksearchbox.SEARCH_ACTION_VERIFICATION_SERVICE").setPackage("com.google.android.googlequicksearchbox");
-        this.d = new Intent("com.google.android.apps.assistant.go.verification.VERIFICATION_SERVICE").setPackage("com.google.android.apps.assistant");
-        this.a = !"user".equals(Build.TYPE);
-        this.b = 1000L;
-    }
-
-    public final boolean a(String str) {
-        ApplicationInfo applicationInfo;
-        try {
-            PackageInfo packageInfo = getPackageManager().getPackageInfo(str, 0);
-            if (packageInfo != null && (applicationInfo = packageInfo.applicationInfo) != null) {
-                if (applicationInfo.enabled) {
-                    return true;
-                }
+public final class c {
+    public static final HashMap o = new HashMap();
+    public final Context a;
+    public final g0 b;
+    public final String c;
+    public boolean g;
+    public final Intent h;
+    public final k0 i;
+    public bg.a m;
+    public IInterface n;
+    public final ArrayList d = new ArrayList();
+    public final HashSet e = new HashSet();
+    public final Object f = new Object();
+    public final i0 k = new IBinder.DeathRecipient() { // from class: c9.i0
+        @Override // android.os.IBinder.DeathRecipient
+        public final void binderDied() {
+            c cVar = c.this;
+            int i3 = 0;
+            cVar.b.b("reportBinderDeath", new Object[0]);
+            if (cVar.j.get() != null) {
+                throw new ClassCastException();
             }
-            return false;
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.w("SAVerificationClientS", "Couldn't find package name ".concat(str), e);
-            return false;
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0194  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(String str, Intent intent, b bVar) {
-        String message;
-        boolean b10;
-        boolean equals = str.equals("com.google.android.googlequicksearchbox");
-        boolean z10 = this.a;
-        if (equals || str.equals("com.google.android.apps.assistant")) {
-            if (!"user".equals(Build.TYPE) || f5.a(this, str)) {
-                if (intent.hasExtra("SearchActionVerificationClientExtraIntent")) {
-                    Intent intent2 = (Intent) intent.getParcelableExtra("SearchActionVerificationClientExtraIntent");
-                    if (z10) {
-                        Log.d("SAVerificationClientU", "Intent:");
-                        String valueOf = String.valueOf(intent2);
-                        StringBuilder sb2 = new StringBuilder(valueOf.length() + 1);
-                        sb2.append("\t");
-                        sb2.append(valueOf);
-                        Log.d("SAVerificationClientU", sb2.toString());
-                        Bundle extras = intent2.getExtras();
-                        if (extras != null) {
-                            Log.d("SAVerificationClientU", "Extras:");
-                            for (String str2 : extras.keySet()) {
-                                Log.d("SAVerificationClientU", String.format("\t%s: %s", str2, extras.get(str2)));
-                            }
-                        }
-                    }
-                    if (b.a(bVar)) {
-                        try {
-                            b9.a aVar = (b9.a) bVar.a;
-                            aVar.getClass();
-                            Parcel obtain = Parcel.obtain();
-                            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
-                            Parcel H0 = aVar.H0(obtain, 2);
-                            int readInt = H0.readInt();
-                            H0.recycle();
-                            Log.i("SAVerificationClientS", str + " Service API version: " + readInt);
-                            b10 = bVar.b(intent2, new Bundle());
-                            Typeface typeface = i0.a;
-                            if (b10) {
-                                i0.g3(new t(intent2, r2));
-                            }
-                            message = "";
-                        } catch (RemoteException e) {
-                            String valueOf2 = String.valueOf(e.getMessage());
-                            Log.e("SAVerificationClientS", valueOf2.length() != 0 ? "Remote exception: ".concat(valueOf2) : new String("Remote exception: "));
-                            message = e.getMessage();
-                        } catch (Exception e7) {
-                            String valueOf3 = String.valueOf(e7.getMessage());
-                            Log.e("SAVerificationClientS", valueOf3.length() != 0 ? "Exception: ".concat(valueOf3) : new String("Exception: "));
-                            message = e7.getMessage();
-                        }
-                        if (intent2.hasExtra("com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER")) {
-                            ResultReceiver resultReceiver = (ResultReceiver) intent2.getExtras().getParcelable("com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER");
-                            Bundle bundle = new Bundle();
-                            bundle.putString("com.google.android.voicesearch.extra.ERROR_MESSAGE", message);
-                            resultReceiver.send(b10 ? 0 : -1, bundle);
-                        }
-                        return b10;
-                    }
-                    Object[] objArr = {str, intent};
-                    message = "VerificationService is not connected to %s, unable to check intent: %s";
-                    Log.e("SAVerificationClientS", String.format("VerificationService is not connected to %s, unable to check intent: %s", objArr));
-                    b10 = false;
-                    if (intent2.hasExtra("com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER")) {
-                    }
-                    return b10;
-                }
-                if (z10) {
-                    String valueOf4 = String.valueOf(intent);
-                    StringBuilder sb3 = new StringBuilder(valueOf4.length() + 28);
-                    sb3.append("No extra, nothing to check: ");
-                    sb3.append(valueOf4);
-                    Log.d("SAVerificationClientS", sb3.toString());
-                }
-            } else if (z10) {
-                Log.d("SAVerificationClientS", "Cannot verify the intent with package " + str + " in unsafe mode.");
-                return false;
+            cVar.b.b("%s : Binder has died.", cVar.c);
+            ArrayList arrayList = cVar.d;
+            int size = arrayList.size();
+            while (i3 < size) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                ((h0) obj).a(new RemoteException(String.valueOf(cVar.c).concat(" : Binder has died.")));
             }
-        } else if (z10) {
-            Log.d("SAVerificationClientS", "Unsupported package " + str + " for verification.");
-            return false;
+            cVar.d.clear();
+            synchronized (cVar.f) {
+                cVar.e();
+            }
         }
-        return false;
+    };
+    public final AtomicInteger l = new AtomicInteger(0);
+    public final WeakReference j = new WeakReference(null);
+
+    /* JADX WARN: Type inference failed for: r0v3, types: [c9.i0] */
+    public c(Context context, g0 g0Var, String str, Intent intent, k0 k0Var) {
+        this.a = context;
+        this.b = g0Var;
+        this.c = str;
+        this.h = intent;
+        this.i = k0Var;
     }
 
-    @Override // android.app.IntentService, android.app.Service
-    public final void onCreate() {
-        if (this.a) {
-            Log.d("SAVerificationClientS", "onCreate");
-        }
-        super.onCreate();
-        this.e = new b(this);
-        if (a("com.google.android.googlequicksearchbox") && (!"user".equals(Build.TYPE) || f5.a(this, "com.google.android.googlequicksearchbox"))) {
-            bindService(this.c, this.e, 1);
-        }
-        this.f = new b(this);
-        if (a("com.google.android.apps.assistant") && (!"user".equals(Build.TYPE) || f5.a(this, "com.google.android.apps.assistant"))) {
-            bindService(this.d, this.f, 1);
-        }
-        if (Build.VERSION.SDK_INT >= 26) {
-            NotificationChannel notificationChannel = new NotificationChannel("Assistant_verifier", getApplicationContext().getResources().getString(R.drawable.$avd_flip__0), 2);
-            notificationChannel.enableVibration(false);
-            notificationChannel.enableLights(false);
-            notificationChannel.setShowBadge(false);
-            ((NotificationManager) getApplicationContext().getSystemService(NotificationManager.class)).createNotificationChannel(notificationChannel);
-            r rVar = new r(getApplicationContext(), "Assistant_verifier");
-            rVar.q = "Assistant_verifier";
-            rVar.e = r.d(getApplicationContext().getResources().getString(R.drawable.$avd_flip__1));
-            rVar.F.icon = android.R.drawable.ic_dialog_email;
-            rVar.j = -2;
-            rVar.x = 1;
-            startForeground(10000, rVar.b());
-        }
-    }
-
-    @Override // android.app.IntentService, android.app.Service
-    public final void onDestroy() {
-        if (this.a) {
-            Log.d("SAVerificationClientS", "onDestroy");
-        }
-        super.onDestroy();
-        if (b.a(this.e)) {
-            unbindService(this.e);
-        }
-        if (b.a(this.f)) {
-            unbindService(this.f);
-        }
-        if (Build.VERSION.SDK_INT >= 26) {
-            stopForeground(true);
-        }
-    }
-
-    @Override // android.app.IntentService
-    public final void onHandleIntent(Intent intent) {
-        boolean z10 = this.a;
-        if (intent == null) {
-            if (z10) {
-                Log.d("SAVerificationClientS", "Unable to verify null intent");
+    public static void b(c cVar, h0 h0Var) {
+        IInterface iInterface = cVar.n;
+        g0 g0Var = cVar.b;
+        ArrayList arrayList = cVar.d;
+        int i3 = 0;
+        if (iInterface != null || cVar.g) {
+            if (!cVar.g) {
+                h0Var.run();
+                return;
+            } else {
+                g0Var.b("Waiting to bind to the service.", new Object[0]);
+                arrayList.add(h0Var);
                 return;
             }
+        }
+        g0Var.b("Initiate binding to the service.", new Object[0]);
+        arrayList.add(h0Var);
+        bg.a aVar = new bg.a(cVar, 1);
+        cVar.m = aVar;
+        cVar.g = true;
+        if (cVar.a.bindService(cVar.h, aVar, 1)) {
             return;
         }
-        long nanoTime = System.nanoTime();
-        while (true) {
-            boolean a2 = a("com.google.android.googlequicksearchbox");
-            boolean z11 = true;
-            boolean z12 = !a2 || b.a(this.e);
-            if (z10) {
-                Log.d("SAVerificationClientS", "GSA app com.google.android.googlequicksearchbox installed: " + a2 + " connected " + b.a(this.e));
-            }
-            boolean a10 = a("com.google.android.apps.assistant");
-            if (a10 && !b.a(this.f)) {
-                z11 = false;
-            }
-            if (z10) {
-                Log.d("SAVerificationClientS", "AssistantGo app com.google.android.apps.assistant installed: " + a10 + " connected " + b.a(this.f));
-            }
-            if ((!z12 || !z11) && System.nanoTime() - nanoTime < this.b * 1000000) {
-                try {
-                    Thread.sleep(50L);
-                } catch (InterruptedException e) {
-                    if (z10) {
-                        String valueOf = String.valueOf(e);
-                        StringBuilder sb2 = new StringBuilder(valueOf.length() + 33);
-                        sb2.append("Unexpected InterruptedException: ");
-                        sb2.append(valueOf);
-                        Log.d("SAVerificationClientS", sb2.toString());
-                    }
+        g0Var.b("Failed to bind to the service.", new Object[0]);
+        cVar.g = false;
+        int size = arrayList.size();
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            ((h0) obj).a(new d("Failed to bind to the service."));
+        }
+        arrayList.clear();
+    }
+
+    public final Handler a() {
+        Handler handler;
+        HashMap hashMap = o;
+        synchronized (hashMap) {
+            try {
+                if (!hashMap.containsKey(this.c)) {
+                    HandlerThread handlerThread = new HandlerThread(this.c, 10);
+                    handlerThread.start();
+                    hashMap.put(this.c, new Handler(handlerThread.getLooper()));
                 }
+                handler = (Handler) hashMap.get(this.c);
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        if (b("com.google.android.googlequicksearchbox", intent, this.e)) {
-            Log.i("SAVerificationClientS", "Verified the intent with GSA.");
-            return;
+        return handler;
+    }
+
+    public final void c(h0 h0Var, TaskCompletionSource taskCompletionSource) {
+        a().post(new j0(this, h0Var.c(), taskCompletionSource, h0Var));
+    }
+
+    public final void d(TaskCompletionSource taskCompletionSource) {
+        synchronized (this.f) {
+            this.e.remove(taskCompletionSource);
         }
-        Log.i("SAVerificationClientS", "Unable to verify the intent with GSA.");
-        if (b("com.google.android.apps.assistant", intent, this.f)) {
-            Log.i("SAVerificationClientS", "Verified the intent with Assistant Go.");
-        } else {
-            Log.i("SAVerificationClientS", "Unable to verify the intent with Assistant Go.");
+        a().post(new b(this, 1));
+    }
+
+    public final void e() {
+        HashSet hashSet = this.e;
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            ((TaskCompletionSource) it.next()).trySetException(new RemoteException(String.valueOf(this.c).concat(" : Binder has died.")));
         }
+        hashSet.clear();
     }
 }

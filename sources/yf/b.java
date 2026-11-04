@@ -1,61 +1,46 @@
 package yf;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import pi.h;
+import x7.p6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class b {
-    public final String a;
-    public final String b;
-
-    public b(String str, String str2) {
-        this.a = str;
-        this.b = str2;
-    }
-
-    public static boolean a(b bVar, b bVar2) {
-        if (bVar == bVar2) {
-            return true;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class b implements View.OnAttachStateChangeListener {
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        a a10;
+        c cVar = (c) view.getTag(R.id.tag_view_on_post_draw_state);
+        if (cVar == null || (a10 = p6.a(view, cVar)) == null) {
+            return;
         }
-        if (bVar == null || bVar2 == null) {
-            return false;
+        ArrayList arrayList = cVar.a;
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            ((ue.b) a10.a.b).add((h) obj);
         }
-        return bVar.equals(bVar2);
     }
 
-    public static b c(TLRPC.ChatTheme chatTheme) {
-        if (chatTheme instanceof TLRPC.TL_chatTheme) {
-            return new b(((TLRPC.TL_chatTheme) chatTheme).emoticon, null);
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        a aVar;
+        c cVar = (c) view.getTag(R.id.tag_view_on_post_draw_state);
+        if (cVar == null || (aVar = cVar.b) == null) {
+            return;
         }
-        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
-            return new b(null, ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift.slug);
+        ArrayList arrayList = cVar.a;
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            ((ue.b) aVar.a.b).remove((h) obj);
         }
-        return null;
-    }
-
-    public static b d(String str) {
-        return new b(str, null);
-    }
-
-    public final boolean b() {
-        return TextUtils.isEmpty(this.a) && TextUtils.isEmpty(this.b);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof b) {
-            b bVar = (b) obj;
-            if (TextUtils.equals(this.a, bVar.a) && TextUtils.equals(this.b, bVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = str != null ? str.hashCode() : 0;
-        String str2 = this.b;
-        return (str2 != null ? str2.hashCode() : 0) ^ hashCode;
+        cVar.b = null;
     }
 }

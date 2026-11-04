@@ -1,42 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xh implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ un b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.messenger.kj d;
+public final class xh extends org.telegram.ui.Cells.t0 {
+    public final /* synthetic */ wm u2;
 
-    public /* synthetic */ xh(un unVar, int i10, org.telegram.messenger.kj kjVar) {
-        this.b = unVar;
-        this.c = i10;
-        this.d = kjVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xh(Activity activity, org.telegram.ui.ActionBar.e6 e6Var, wm wmVar) {
+        super(activity, e6Var, false);
+        this.u2 = wmVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        org.telegram.messenger.kj kjVar = this.d;
-        int i11 = this.c;
-        un unVar = this.b;
-        switch (i10) {
-            case 0:
-                unVar.B4 = null;
-                kjVar.k.replies.read_max_id = i11;
-                break;
-            default:
-                org.telegram.ui.Components.cc.a0(unVar).c(org.telegram.messenger.dd.L0(2131754488, null)).j();
-                org.telegram.messenger.wp.r1(i11).o0(false);
-                unVar.Za(kjVar);
-                unVar.bb(kjVar);
-                break;
-        }
-    }
-
-    public /* synthetic */ xh(un unVar, org.telegram.messenger.kj kjVar, int i10) {
-        this.b = unVar;
-        this.d = kjVar;
-        this.c = i10;
+    @Override // org.telegram.ui.Cells.t0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
+        float y9 = getY();
+        wm wmVar = this.u2;
+        h0(wmVar.g1.getY() + y9, wmVar.m1.getBackgroundSizeY());
     }
 }

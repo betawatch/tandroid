@@ -1,73 +1,61 @@
 package p4;
 
-import android.content.IntentFilter;
+import android.content.Context;
+import android.media.session.MediaSession;
 import android.os.Bundle;
-import android.os.Parcelable;
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.os.RemoteCallbackList;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l {
-    public final Bundle a;
-    public final ArrayList b;
-    public final ArrayList c;
-    public final HashSet d;
+public class l {
+    public final MediaSession a;
+    public final k b;
+    public final p c;
+    public final Bundle e;
+    public w g;
+    public List h;
+    public i i;
+    public int j;
+    public int k;
+    public android.support.v4.media.session.s l;
+    public r m;
+    public final Object d = new Object();
+    public final RemoteCallbackList f = new RemoteCallbackList();
 
-    public l(String str, String str2) {
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = new HashSet();
-        Bundle bundle = new Bundle();
-        this.a = bundle;
-        if (str == null) {
-            throw new NullPointerException("id must not be null");
-        }
-        bundle.putString("id", str);
-        if (str2 == null) {
-            throw new NullPointerException("name must not be null");
-        }
-        bundle.putString("name", str2);
+    public l(Context context, String str, Bundle bundle) {
+        MediaSession a10 = a(context, str, bundle);
+        this.a = a10;
+        k kVar = new k(this);
+        this.b = kVar;
+        this.c = new p(a10.getSessionToken(), kVar);
+        this.e = bundle;
+        a10.setFlags(3);
     }
 
-    public final void a(ArrayList arrayList) {
-        if (arrayList == null) {
-            throw new IllegalArgumentException("filters must not be null");
-        }
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            IntentFilter intentFilter = (IntentFilter) obj;
-            if (intentFilter != null) {
-                ArrayList arrayList2 = this.c;
-                if (!arrayList2.contains(intentFilter)) {
-                    arrayList2.add(intentFilter);
-                }
-            }
-        }
+    public MediaSession a(Context context, String str, Bundle bundle) {
+        return new MediaSession(context, str);
     }
 
-    public final m b() {
-        ArrayList<? extends Parcelable> arrayList = new ArrayList<>(this.c);
-        Bundle bundle = this.a;
-        bundle.putParcelableArrayList("controlFilters", arrayList);
-        bundle.putStringArrayList("groupMemberIds", new ArrayList<>(this.b));
-        bundle.putStringArrayList("allowedPackages", new ArrayList<>(this.d));
-        return new m(bundle);
+    public final android.support.v4.media.session.s b() {
+        android.support.v4.media.session.s sVar;
+        synchronized (this.d) {
+            sVar = this.l;
+        }
+        return sVar;
     }
 
-    public l(m mVar) {
-        this.b = new ArrayList();
-        this.c = new ArrayList();
-        this.d = new HashSet();
-        this.a = new Bundle(mVar.a);
-        this.b = mVar.c();
-        this.c = mVar.b();
-        this.d = mVar.a();
+    public r c() {
+        r rVar;
+        synchronized (this.d) {
+            rVar = this.m;
+        }
+        return rVar;
+    }
+
+    public void d(r rVar) {
+        synchronized (this.d) {
+            this.m = rVar;
+        }
     }
 }

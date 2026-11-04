@@ -1,162 +1,124 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class v9 extends Drawable {
-    public float a = 1.0f;
-    public final Paint b = new Paint(1);
-    public final Rect c = new Rect();
-    public final Path d = new Path();
-    public final /* synthetic */ float e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ Drawable g;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ w9 i;
+public final class v9 {
+    public org.telegram.messenger.q5 a;
+    public final int b;
+    public final View c;
+    public final gi.n5 d;
+    public Bitmap[] e;
+    public Bitmap[] f;
+    public Bitmap[] g;
+    public Canvas[] h;
+    public Canvas[] i;
+    public Canvas[] j;
+    public boolean k;
+    public float m;
+    public boolean n;
+    public boolean o;
+    public int q;
+    public int r;
+    public int s;
+    public boolean t;
+    public float u;
+    public final Paint x;
+    public final org.telegram.ui.ActionBar.e6 y;
+    public boolean l = true;
+    public boolean p = true;
+    public u9 v = new u9(this);
+    public final Paint w = new Paint(2);
 
-    public v9(w9 w9Var, float f7, float f10, Drawable drawable, float f11) {
-        this.i = w9Var;
-        this.e = f7;
-        this.f = f10;
-        this.g = drawable;
-        this.h = f11;
+    public v9(View view, gi.n5 n5Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        Paint paint = new Paint();
+        this.x = paint;
+        this.b = 1;
+        this.c = view;
+        this.d = n5Var;
+        this.y = e6Var;
+        paint.setColor(-16777216);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Bitmap b10;
-        w9 w9Var = this.i;
-        s9 s9Var = w9Var.a;
-        Matrix matrix = w9Var.p;
-        Paint paint = null;
-        if (s9Var != null && (b10 = s9Var.b()) != null) {
-            if (w9Var.o == null || w9Var.n != b10) {
-                w9Var.n = b10;
-                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                BitmapShader bitmapShader = new BitmapShader(b10, tileMode, tileMode);
-                w9Var.o = bitmapShader;
-                w9Var.h.setShader(bitmapShader);
-            }
-            matrix.reset();
-            matrix.postTranslate((-0.0f) - this.e, (-0.0f) - this.f);
-            if (s9Var.b != null) {
-                matrix.preScale(r3.getWidth() / b10.getWidth(), s9Var.b.getHeight() / b10.getHeight());
-            }
-            w9Var.o.setLocalMatrix(matrix);
-            w9Var.h.setAlpha((int) (this.a * 255.0f));
-            paint = w9Var.h;
+    public final void a() {
+        Bitmap[] bitmapArr = this.g;
+        if (bitmapArr == null) {
+            bitmapArr = new Bitmap[2];
+            this.g = bitmapArr;
+            this.h = new Canvas[2];
         }
-        Paint paint2 = paint;
-        Rect bounds = getBounds();
-        Drawable drawable = this.g;
-        Paint paint3 = this.b;
-        float f7 = this.h;
-        if (paint2 == null && (s9Var == null || !s9Var.c())) {
-            if (drawable != null) {
-                drawable.setBounds(bounds);
-                drawable.draw(canvas);
-                return;
+        if (this.e == null) {
+            this.e = new Bitmap[2];
+            this.j = new Canvas[2];
+        }
+        this.v.a = true;
+        this.v = new u9(this);
+        for (int i3 = 0; i3 < 2; i3++) {
+            gi.n5 n5Var = this.d;
+            int measuredHeight = n5Var.getMeasuredHeight();
+            int measuredWidth = n5Var.getMeasuredWidth();
+            int L = org.telegram.messenger.g0.L(200.0f) + org.telegram.messenger.g0.m;
+            this.s = L;
+            if (i3 != 0) {
+                L = measuredHeight;
             }
-            paint3.setColor(-14145495);
-            if (f7 <= 0.0f) {
-                canvas.drawRect(bounds, paint3);
-                return;
+            Bitmap bitmap = bitmapArr[i3];
+            if (bitmap == null || bitmap.getHeight() != L || bitmapArr[i3].getWidth() != n5Var.getMeasuredWidth()) {
+                org.telegram.messenger.q5 q5Var = this.a;
+                if (q5Var != null) {
+                    q5Var.cleanupQueue();
+                }
+                Bitmap[] bitmapArr2 = this.e;
+                int i10 = (int) (measuredWidth / 15.0f);
+                Bitmap.Config config = Bitmap.Config.ARGB_8888;
+                bitmapArr2[i3] = Bitmap.createBitmap(i10, (int) (L / 15.0f), config);
+                org.telegram.ui.ActionBar.e6 e6Var = this.y;
+                if (i3 == 1) {
+                    this.e[i3].eraseColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, e6Var));
+                }
+                this.j[i3] = new Canvas(this.e[i3]);
+                if (i3 == 0) {
+                    measuredHeight = this.s;
+                }
+                this.g[i3] = Bitmap.createBitmap(i10, (int) (measuredHeight / 15.0f), config);
+                this.h[i3] = new Canvas(this.g[i3]);
+                this.h[i3].scale(this.g[i3].getWidth() / this.e[i3].getWidth(), this.g[i3].getHeight() / this.e[i3].getHeight());
+                this.j[i3].save();
+                this.j[i3].scale(0.06666667f, 0.06666667f, 0.0f, 0.0f);
+                View view = this.c;
+                Drawable background = view.getBackground();
+                if (background == null) {
+                    background = e6Var instanceof org.telegram.ui.um ? ((org.telegram.ui.um) e6Var).m() : org.telegram.ui.ActionBar.k6.t0();
+                }
+                view.setTag(67108867, Integer.valueOf(i3));
+                if (i3 == 0) {
+                    this.j[i3].translate(0.0f, -this.u);
+                    view.draw(this.j[i3]);
+                }
+                if (i3 == 1) {
+                    Rect bounds = background.getBounds();
+                    background.setBounds(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                    background.draw(this.j[i3]);
+                    background.setBounds(bounds);
+                    view.draw(this.j[i3]);
+                }
+                view.setTag(67108867, null);
+                this.j[i3].restore();
+                Utilities.stackBlurBitmap(this.e[i3], 15);
+                Paint paint = this.w;
+                paint.setAlpha(org.telegram.messenger.hs.e4);
+                if (i3 == 1) {
+                    this.g[i3].eraseColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, e6Var));
+                }
+                this.h[i3].drawBitmap(this.e[i3], 0.0f, 0.0f, paint);
             }
-            RectF rectF = org.telegram.messenger.i0.P;
-            rectF.set(bounds);
-            canvas.drawRoundRect(rectF, f7, f7, paint3);
-            return;
         }
-        Path path = this.d;
-        if (drawable != null) {
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, org.telegram.messenger.at.e4, 31);
-            drawable.setBounds(bounds);
-            drawable.draw(canvas);
-            Rect rect = this.c;
-            if (s9Var == null || !s9Var.c()) {
-                canvas.drawRect(bounds, paint2);
-            } else {
-                canvas.save();
-                getPadding(rect);
-                RectF rectF2 = org.telegram.messenger.i0.P;
-                rectF2.set(bounds.left + rect.left, bounds.top + rect.top, bounds.right - rect.right, bounds.bottom - rect.bottom);
-                path.rewind();
-                path.addRoundRect(rectF2, f7, f7, Path.Direction.CW);
-                canvas.clipPath(path);
-                w9Var.b(canvas, false);
-                canvas.restore();
-            }
-            canvas.restore();
-            getPadding(rect);
-            RectF rectF3 = org.telegram.messenger.i0.P;
-            rectF3.set(bounds.left + rect.left, bounds.top + rect.top, bounds.right - rect.right, bounds.bottom - rect.bottom);
-            paint3.setColor(1711276032);
-            canvas.drawRoundRect(rectF3, f7, f7, paint3);
-            return;
-        }
-        if (f7 > 0.0f) {
-            RectF rectF4 = org.telegram.messenger.i0.P;
-            rectF4.set(bounds);
-            if (s9Var == null || !s9Var.c()) {
-                canvas.drawRoundRect(rectF4, f7, f7, paint2);
-            } else {
-                canvas.save();
-                path.rewind();
-                path.addRoundRect(rectF4, f7, f7, Path.Direction.CW);
-                canvas.clipPath(path);
-                w9Var.b(canvas, false);
-                canvas.restore();
-            }
-        } else if (s9Var == null || !s9Var.c()) {
-            canvas.drawRect(bounds, paint2);
-        } else {
-            canvas.save();
-            canvas.clipRect(bounds);
-            w9Var.b(canvas, false);
-            canvas.restore();
-        }
-        paint3.setColor(1711276032);
-        if (f7 <= 0.0f) {
-            canvas.drawRect(bounds, paint3);
-            return;
-        }
-        RectF rectF5 = org.telegram.messenger.i0.P;
-        rectF5.set(bounds);
-        canvas.drawRoundRect(rectF5, f7, f7, paint3);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean getPadding(Rect rect) {
-        Drawable drawable = this.g;
-        if (drawable != null) {
-            return drawable.getPadding(rect);
-        }
-        rect.set(0, 0, 0, 0);
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a = i10 / 255.0f;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

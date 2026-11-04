@@ -1,44 +1,77 @@
 package g6;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import ei.z5;
+import java.net.Socket;
+import java.util.ArrayDeque;
+import java.util.TimerTask;
+import org.telegram.messenger.g0;
+import org.telegram.ui.Components.gp;
+import org.telegram.ui.cc0;
+import org.telegram.ui.fz;
+import org.telegram.ui.sg0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class q extends b8.b implements e {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TaskCompletionSource c;
+public final class q extends TimerTask {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(int i10, TaskCompletionSource taskCompletionSource) {
-        super("com.google.android.gms.cast.internal.IBundleCallback", 1);
-        this.b = i10;
-        this.c = taskCompletionSource;
+    public /* synthetic */ q(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // b8.b
-    public final boolean K0(int i10, Parcel parcel, Parcel parcel2) {
-        if (i10 != 1) {
-            return false;
-        }
-        Bundle bundle = (Bundle) com.google.android.gms.internal.cast.u.a(parcel, Bundle.CREATOR);
-        com.google.android.gms.internal.cast.u.b(parcel);
-        m0(bundle);
-        return true;
-    }
-
-    @Override // g6.e
-    public final void m0(Bundle bundle) {
-        switch (this.b) {
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        BasePendingResult basePendingResult;
+        switch (this.a) {
             case 0:
-                this.c.setResult(bundle);
+                c cVar = (c) this.b;
+                ArrayDeque arrayDeque = cVar.h;
+                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
+                    h hVar = cVar.c;
+                    int[] e10 = i6.a.e(arrayDeque);
+                    hVar.getClass();
+                    p6.m.d("Must be called from the main thread.");
+                    if (hVar.w()) {
+                        j jVar = new j(hVar, e10);
+                        h.x(jVar);
+                        basePendingResult = jVar;
+                    } else {
+                        basePendingResult = h.t();
+                    }
+                    cVar.k = basePendingResult;
+                    basePendingResult.i(new p(cVar, 1));
+                    arrayDeque.clear();
+                    break;
+                }
                 break;
             case 1:
-                this.c.setResult(bundle);
+                g0.h3(new z5(this, 25));
+                break;
+            case 2:
+                try {
+                    Socket socket = ((oc.q) this.b).a.a.g;
+                    if (socket != null) {
+                        socket.close();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
+            case 3:
+                g0.h3(new gp(this, 22));
+                break;
+            case 4:
+                if (((cc0) this.b).O != null) {
+                    g0.h3(new fz(this, 24));
+                    break;
+                }
                 break;
             default:
-                this.c.setResult(bundle);
+                g0.h3(new sg0(this, 7));
                 break;
         }
     }

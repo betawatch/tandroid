@@ -1,209 +1,117 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.RectF;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.Calendar;
-import java.util.regex.Pattern;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.l20;
-import org.telegram.messenger.q20;
-import org.telegram.messenger.qc;
-import org.telegram.ui.Components.ac0;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.gk0;
-import org.telegram.ui.Components.ju0;
-import org.telegram.ui.Components.nu0;
-import org.telegram.ui.Components.ou0;
-import org.telegram.ui.Components.wb0;
-import org.telegram.ui.Components.yb0;
-import org.telegram.ui.bs;
-import org.telegram.ui.fe;
-import org.telegram.ui.le;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ye;
+import org.telegram.ui.Components.sl;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m5 implements l20, org.telegram.ui.ActionBar.u1, ju0, q20, zg.f, gk0, nu0, ou0, qc, yb0, wb0 {
-    public final /* synthetic */ int a;
+public final class m5 extends org.telegram.ui.Components.k9 {
+    public final Paint H;
+    public long I;
+    public Drawable J;
+    public Drawable K;
+    public final /* synthetic */ q5 L;
 
-    public /* synthetic */ m5(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m5(q5 q5Var, Context context) {
+        super(context);
+        this.L = q5Var;
+        this.H = new Paint(1);
     }
 
-    @Override // org.telegram.messenger.q20
-    public Boolean a(b51 b51Var, View view, Integer num, Float f7, Float f10) {
-        return Boolean.FALSE;
-    }
-
-    @Override // org.telegram.ui.Components.ou0
-    public void b(Object obj, float f7) {
-        bs bsVar = (bs) obj;
-        switch (this.a) {
-            case 10:
-                bsVar.G1 = f7;
-                if (bsVar.getParent() != null) {
-                    ((View) bsVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-            case 11:
-            case 13:
-            default:
-                bsVar.J1 = f7;
-                if (bsVar.getParent() != null) {
-                    ((View) bsVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-            case 12:
-                bsVar.H1 = f7;
-                if (bsVar.getParent() != null) {
-                    ((View) bsVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-            case 14:
-                bsVar.I1 = f7;
-                if (bsVar.getParent() != null) {
-                    ((View) bsVar.getParent()).invalidate();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.k9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Bitmap bitmap;
+        ye yeVar;
+        Drawable drawable;
+        org.telegram.ui.Components.g5 g5Var = this.e;
+        ImageReceiver imageReceiver = g5Var != null ? g5Var.k : this.a;
+        if (imageReceiver == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.messenger.l20
-    public Object d(Number number, Object obj) {
-        Integer num = (Integer) number;
-        Integer num2 = (Integer) obj;
-        switch (this.a) {
-            case 1:
-                if (num.intValue() == 0) {
-                    return dd.G(num2.intValue(), "MaximumReactionsValue", new Object[0]);
-                }
-                return "" + num2;
-            default:
-                if (num.intValue() == 0) {
-                    return dd.H(',', "Stars", num2.intValue());
-                }
-                return "" + num2;
+        if (this.c == -1 || this.d == -1) {
+            imageReceiver.y0(0.0f, 0.0f, getWidth(), getHeight());
+            this.b.y0(0.0f, 0.0f, getWidth(), getHeight());
+        } else {
+            float width = (getWidth() - this.c) / 2;
+            int height = getHeight();
+            imageReceiver.y0(width, (height - r5) / 2, this.c, this.d);
+            ImageReceiver imageReceiver2 = this.b;
+            float width2 = (getWidth() - this.c) / 2;
+            int height2 = getHeight();
+            imageReceiver2.y0(width2, (height2 - r6) / 2, this.c, this.d);
         }
-    }
-
-    @Override // org.telegram.ui.Components.wb0
-    public String e(int i10) {
-        switch (this.a) {
-            case 21:
-                if (i10 != 0) {
-                    Calendar calendar = Calendar.getInstance();
-                    int i11 = calendar.get(1);
-                    calendar.add(6, i10);
-                    long timeInMillis = calendar.getTimeInMillis();
-                    if (calendar.get(1) != i11) {
-                        break;
-                    } else {
-                        break;
+        imageReceiver.h(canvas, null);
+        q5 q5Var = this.L;
+        if (q5Var.P) {
+            Rect rect = q5.c0;
+            this.b.h(canvas, null);
+            if (q5Var.O == null) {
+                if (q5Var.N == null) {
+                    yh.f fVar = new yh.f();
+                    q5Var.N = fVar;
+                    fVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
+                }
+                q5Var.N.setBounds(0, 0, getWidth(), getHeight());
+                q5Var.N.draw(canvas);
+            }
+            invalidate();
+        }
+        float f10 = q5Var.V;
+        if (f10 != 1.0f && q5Var.T != null) {
+            int interpolation = (int) (xq.f.getInterpolation(1.0f - f10) * 255.0f);
+            Paint paint = this.H;
+            paint.setAlpha(interpolation);
+            canvas.drawBitmap(q5Var.T, 0.0f, 0.0f, paint);
+            long min = Math.min(16L, System.currentTimeMillis() - this.I);
+            Float f11 = q5Var.U;
+            q5Var.V = f1.h(min, f11 == null ? 250.0f : f11.floatValue(), q5Var.V, 1.0f);
+            this.I = System.currentTimeMillis();
+            invalidate();
+            if (q5Var.O != null) {
+                q5Var.b.invalidate();
+            }
+        } else if (f10 == 1.0f && (bitmap = q5Var.T) != null) {
+            bitmap.recycle();
+            q5Var.T = null;
+            q5Var.U = null;
+            invalidate();
+        }
+        if (q5Var.s) {
+            o5 o5Var = q5Var.W;
+            if ((o5Var == null || !((sl) ((org.telegram.ui.Components.t) o5Var).b).s) && (yeVar = q5Var.I) != null && yeVar.i() && q5Var.I.d()) {
+                if (q5Var.I.j()) {
+                    if (this.K == null) {
+                        this.K = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();
                     }
+                    drawable = this.K;
                 } else {
-                    break;
-                }
-            case 22:
-                if (i10 != 0) {
-                    Calendar calendar2 = Calendar.getInstance();
-                    int i12 = calendar2.get(1);
-                    calendar2.add(6, i10);
-                    long timeInMillis2 = calendar2.getTimeInMillis();
-                    int i13 = calendar2.get(1);
-                    if (i13 == i12 && i10 < 7) {
-                        break;
-                    } else if (i13 != i12) {
-                        break;
-                    } else {
-                        break;
+                    if (this.J == null) {
+                        this.J = getContext().getResources().getDrawable(R.drawable.media_live_on).mutate();
                     }
-                } else {
-                    break;
+                    drawable = this.J;
                 }
-                break;
-            case 27:
-                Calendar calendar3 = Calendar.getInstance();
-                calendar3.set(5, 1);
-                calendar3.set(2, i10);
-                break;
-        }
-        return String.format("%02d", Integer.valueOf(i10));
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public /* synthetic */ float f(RecyclerView recyclerView) {
-        return f1.c(recyclerView);
-    }
-
-    @Override // org.telegram.ui.Components.nu0
-    public float get(Object obj) {
-        bs bsVar = (bs) obj;
-        switch (this.a) {
-            case 9:
-                return bsVar.G1;
-            case 10:
-            case 12:
-            default:
-                return bsVar.J1;
-            case 11:
-                return bsVar.H1;
-            case 13:
-                return bsVar.I1;
+                drawable.setBounds((int) (imageReceiver.L0 + org.telegram.messenger.g0.L(8.0f)), (int) (imageReceiver.M0 + org.telegram.messenger.g0.L(8.0f)), (int) (imageReceiver.L0 + org.telegram.messenger.g0.L(30.0f)), (int) (imageReceiver.M0 + org.telegram.messenger.g0.L(26.0f)));
+                drawable.draw(canvas);
+            }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        switch (this.a) {
-            case 2:
-                x1Var.dismiss();
-                break;
-            case 7:
-                x1Var.dismiss();
-                break;
-            default:
-                x1Var.dismiss();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public RecyclerView j(View view) {
-        return ((fe) view).a;
-    }
-
-    @Override // zg.f
-    public void l(RectF rectF, View view) {
-        view.invalidate();
-    }
-
-    @Override // org.telegram.messenger.qc
-    public void p(Exception exc) {
-        switch (this.a) {
-            case 17:
-                org.telegram.messenger.f8.g(exc, true);
-                break;
-            default:
-                org.telegram.messenger.f8.g(exc, true);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public /* synthetic */ void q(RecyclerView recyclerView) {
-        f1.b(recyclerView);
-    }
-
-    @Override // org.telegram.ui.Components.yb0
-    public void t(ac0 ac0Var, int i10) {
-        Pattern pattern = org.telegram.ui.Components.s4.a;
-    }
-
-    public /* synthetic */ m5(le leVar) {
-        this.a = 4;
+    @Override // android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
+        q5 q5Var = this.L;
+        ye yeVar = q5Var.I;
+        q5Var.h(yeVar != null && yeVar.M);
     }
 }

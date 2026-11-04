@@ -7,7 +7,7 @@ import android.os.RemoteCallbackList;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class u {
     public final MediaSession a;
@@ -21,15 +21,15 @@ public class u {
     public int i;
     public int j;
     public s k;
-    public y1.a l;
+    public a2.a l;
 
     public u(Context context, String str) {
-        MediaSession a2 = a(context, str);
-        this.a = a2;
+        MediaSession a10 = a(context, str);
+        this.a = a10;
         t tVar = new t(this);
         this.b = tVar;
-        this.c = new MediaSessionCompat$Token(a2.getSessionToken(), tVar);
-        a2.setFlags(3);
+        this.c = new MediaSessionCompat$Token(a10.getSessionToken(), tVar);
+        a10.setFlags(3);
     }
 
     public MediaSession a(Context context, String str) {
@@ -44,8 +44,8 @@ public class u {
         return sVar;
     }
 
-    public y1.a c() {
-        y1.a aVar;
+    public a2.a c() {
+        a2.a aVar;
         synchronized (this.d) {
             aVar = this.l;
         }
@@ -70,7 +70,7 @@ public class u {
         }
     }
 
-    public void f(y1.a aVar) {
+    public void f(a2.a aVar) {
         synchronized (this.d) {
             this.l = aVar;
         }

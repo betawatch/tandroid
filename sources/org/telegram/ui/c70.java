@@ -1,82 +1,121 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import android.os.Bundle;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c70 extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
-    public final org.telegram.ui.ActionBar.u5 a;
-    public final org.telegram.ui.Components.u8 b;
-    public boolean c;
-    public int d;
-    public final /* synthetic */ d70 e;
+public final /* synthetic */ class c70 implements Runnable {
+    public final /* synthetic */ Object E;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ Bundle c;
+    public final /* synthetic */ Long d;
+    public final /* synthetic */ ly e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ sf.b h;
+    public final /* synthetic */ Long n;
+    public final /* synthetic */ Integer r;
+    public final /* synthetic */ Integer s;
+    public final /* synthetic */ byte[] w;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 x;
+    public final /* synthetic */ int y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c70(d70 d70Var, Context context) {
-        super(context);
-        this.e = d70Var;
-        int i10 = org.telegram.ui.ActionBar.t6.i6;
-        this.d = org.telegram.ui.ActionBar.t6.x0(null, i10, false);
-        org.telegram.ui.ActionBar.u5 u5Var = new org.telegram.ui.ActionBar.u5(context);
-        this.a = u5Var;
-        u5Var.setTextSize(16);
-        u5Var.setEllipsizeByGradient(true);
-        u5Var.setRightPadding(org.telegram.messenger.i0.L(68.0f));
-        org.telegram.ui.ActionBar.a7.Y(u5Var, org.telegram.ui.ActionBar.t6.j5, null);
-        addView(u5Var, w7.b6.d(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
-        org.telegram.ui.Components.u8 u8Var = new org.telegram.ui.Components.u8(context, false);
-        this.b = u8Var;
-        u8Var.a.a = true;
-        u8Var.setStyle(11);
-        u8Var.setAvatarsTextSize(org.telegram.messenger.i0.L(22.0f));
-        addView(u8Var, w7.b6.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
-        setBackground(org.telegram.ui.ActionBar.t6.a0(org.telegram.ui.ActionBar.t6.x0(null, i10, false), 0, 4));
+    public /* synthetic */ c70(LaunchActivity launchActivity, Bundle bundle, Long l10, int[] iArr, ly lyVar, boolean z10, sf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.d2 d2Var, int i3) {
+        this.b = launchActivity;
+        this.c = bundle;
+        this.d = l10;
+        this.E = iArr;
+        this.e = lyVar;
+        this.f = z10;
+        this.h = bVar;
+        this.n = l11;
+        this.r = num;
+        this.s = num2;
+        this.w = bArr;
+        this.x = d2Var;
+        this.y = i3;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View view = (View) getParent();
-        if (view != null && view.getWidth() > 0) {
-            i10 = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        Object obj = this.E;
+        switch (i3) {
+            case 0:
+                ly lyVar = this.e;
+                TLObject tLObject = (TLObject) obj;
+                String str = LaunchActivity.E1;
+                try {
+                    lyVar.run();
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                }
+                boolean z10 = tLObject instanceof TLRPC.TL_messages_chats;
+                LaunchActivity launchActivity = this.b;
+                if (z10) {
+                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject;
+                    if (!tL_messages_chats.chats.isEmpty()) {
+                        org.telegram.messenger.hp.s1(launchActivity.P).S3(tL_messages_chats.chats, false);
+                        TLRPC.Chat chat = tL_messages_chats.chats.get(0);
+                        Long l10 = this.d;
+                        if (chat != null && this.f && org.telegram.messenger.t3.R(chat)) {
+                            launchActivity.w0(Long.valueOf(-l10.longValue()), null, this.h, null);
+                        } else if (chat != null && chat.forum) {
+                            Long l11 = this.n;
+                            Integer num = this.s;
+                            byte[] bArr = this.w;
+                            if (l11 != null) {
+                                launchActivity.l0(-l10.longValue(), this.r, null, num, bArr, null, 0, -1);
+                            } else {
+                                launchActivity.l0(-l10.longValue(), null, null, num, bArr, null, 0, -1);
+                            }
+                        }
+                        org.telegram.ui.ActionBar.d2 d2Var = this.x;
+                        Bundle bundle = this.c;
+                        if (d2Var == null || org.telegram.messenger.hp.s1(this.y).E(bundle, d2Var, null, null)) {
+                            ((ActionBarLayout) launchActivity.M()).S(new wm(bundle));
+                            break;
+                        }
+                    }
+                }
+                launchActivity.F0(org.telegram.ui.Components.t4.G(launchActivity, org.telegram.messenger.bd.M0(2131751455, null), org.telegram.messenger.bd.M0(2131748903, null)));
+                break;
+            default:
+                int[] iArr = (int[]) obj;
+                String str2 = LaunchActivity.E1;
+                LaunchActivity launchActivity2 = this.b;
+                org.telegram.ui.ActionBar.q4 M = launchActivity2.M();
+                Bundle bundle2 = this.c;
+                if (!((ActionBarLayout) M).S(new wm(bundle2))) {
+                    TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
+                    TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
+                    Long l12 = this.d;
+                    tL_inputChannel.channel_id = l12.longValue();
+                    tL_channels_getChannels.id.add(tL_inputChannel);
+                    iArr[0] = ConnectionsManager.getInstance(launchActivity2.P).sendRequest(tL_channels_getChannels, new org.telegram.messenger.o4(launchActivity2, this.e, this.f, l12, this.h, this.n, this.r, this.s, this.w, this.x, this.y, bundle2));
+                    break;
+                }
+                break;
         }
-        this.c = true;
-        org.telegram.ui.ActionBar.u5 u5Var = this.a;
-        u5Var.setVisibility(8);
-        super.onMeasure(i10, i11);
-        u5Var.setVisibility(0);
-        u5Var.getLayoutParams().width = getMeasuredWidth();
-        this.c = false;
-        this.e.g();
-        super.onMeasure(i10, i11);
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        try {
-            int x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.i6, false);
-            if (x02 != this.d) {
-                this.d = x02;
-                org.telegram.ui.ActionBar.t6.H1(getBackground(), x02, true);
-                invalidate();
-            }
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public /* synthetic */ c70(LaunchActivity launchActivity, ly lyVar, TLObject tLObject, boolean z10, Long l10, sf.b bVar, Long l11, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.d2 d2Var, int i3, Bundle bundle) {
+        this.b = launchActivity;
+        this.e = lyVar;
+        this.E = tLObject;
+        this.f = z10;
+        this.d = l10;
+        this.h = bVar;
+        this.n = l11;
+        this.r = num;
+        this.s = num2;
+        this.w = bArr;
+        this.x = d2Var;
+        this.y = i3;
+        this.c = bundle;
     }
 }

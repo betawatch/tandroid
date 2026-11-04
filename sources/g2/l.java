@@ -1,61 +1,64 @@
 package g2;
 
-import java.io.InputStream;
-import v7.t6;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l extends InputStream {
-    public final h a;
-    public final n b;
-    public boolean d = false;
-    public boolean e = false;
-    public final byte[] c = new byte[1];
+public final class l implements Iterable {
+    public final Object a = new Object();
+    public final HashMap b = new HashMap();
+    public Set c = Collections.EMPTY_SET;
+    public List d = Collections.EMPTY_LIST;
 
-    public l(h hVar, n nVar) {
-        this.a = hVar;
-        this.b = nVar;
-    }
-
-    public final void a() {
-        if (this.d) {
-            return;
+    public final int h(p2.j jVar) {
+        int intValue;
+        synchronized (this.a) {
+            try {
+                intValue = this.b.containsKey(jVar) ? ((Integer) this.b.get(jVar)).intValue() : 0;
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        this.a.open(this.b);
-        this.d = true;
+        return intValue;
     }
 
-    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        if (this.e) {
-            return;
+    public final void i(p2.j jVar) {
+        synchronized (this.a) {
+            try {
+                Integer num = (Integer) this.b.get(jVar);
+                if (num == null) {
+                    return;
+                }
+                ArrayList arrayList = new ArrayList(this.d);
+                arrayList.remove(jVar);
+                this.d = DesugarCollections.unmodifiableList(arrayList);
+                if (num.intValue() == 1) {
+                    this.b.remove(jVar);
+                    HashSet hashSet = new HashSet(this.c);
+                    hashSet.remove(jVar);
+                    this.c = DesugarCollections.unmodifiableSet(hashSet);
+                } else {
+                    this.b.put(jVar, Integer.valueOf(num.intValue() - 1));
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        this.a.close();
-        this.e = true;
     }
 
-    @Override // java.io.InputStream
-    public final int read() {
-        byte[] bArr = this.c;
-        if (read(bArr, 0, bArr.length) == -1) {
-            return -1;
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        Iterator it;
+        synchronized (this.a) {
+            it = this.d.iterator();
         }
-        return bArr[0] & 255;
-    }
-
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr) {
-        return read(bArr, 0, bArr.length);
-    }
-
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        t6.p(!this.e);
-        a();
-        int read = this.a.read(bArr, i10, i11);
-        if (read == -1) {
-            return -1;
-        }
-        return read;
+        return it;
     }
 }

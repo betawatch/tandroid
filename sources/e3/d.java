@@ -1,41 +1,119 @@
 package e3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import d2.v0;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d implements a {
-    public final int a;
+public final class d {
+    public final ArrayList a;
     public final int b;
     public final int c;
     public final int d;
     public final int e;
     public final int f;
+    public final int g;
+    public final int h;
+    public final int i;
+    public final int j;
+    public final float k;
+    public final String l;
 
-    public d(int i10, int i11, int i12, int i13, int i14, int i15) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
+    public d(ArrayList arrayList, int i3, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, float f10, String str) {
+        this.a = arrayList;
+        this.b = i3;
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.f = i13;
+        this.g = i14;
+        this.h = i15;
+        this.i = i16;
+        this.j = i17;
+        this.k = f10;
+        this.l = str;
     }
 
-    public final int a() {
-        int i10 = this.a;
-        if (i10 == 1935960438) {
-            return 2;
+    public static d a(g2.y yVar) {
+        String str;
+        int i3;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        float f10;
+        int i15;
+        int i16;
+        try {
+            yVar.O(4);
+            int A = (yVar.A() & 3) + 1;
+            if (A == 3) {
+                throw new IllegalStateException();
+            }
+            ArrayList arrayList = new ArrayList();
+            int A2 = yVar.A() & 31;
+            for (int i17 = 0; i17 < A2; i17++) {
+                int H = yVar.H();
+                int i18 = yVar.b;
+                yVar.O(H);
+                byte[] bArr = yVar.a;
+                byte[] bArr2 = new byte[H + 4];
+                System.arraycopy(g2.h.a, 0, bArr2, 0, 4);
+                System.arraycopy(bArr, i18, bArr2, 4, H);
+                arrayList.add(bArr2);
+            }
+            int A3 = yVar.A();
+            for (int i19 = 0; i19 < A3; i19++) {
+                int H2 = yVar.H();
+                int i20 = yVar.b;
+                yVar.O(H2);
+                byte[] bArr3 = yVar.a;
+                byte[] bArr4 = new byte[H2 + 4];
+                System.arraycopy(g2.h.a, 0, bArr4, 0, 4);
+                System.arraycopy(bArr3, i20, bArr4, 4, H2);
+                arrayList.add(bArr4);
+            }
+            if (A2 > 0) {
+                h2.n m10 = h2.o.m(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
+                int i21 = m10.e;
+                int i22 = m10.f;
+                int i23 = m10.h + 8;
+                int i24 = m10.i + 8;
+                int i25 = m10.p;
+                int i26 = m10.q;
+                int i27 = m10.r;
+                int i28 = m10.s;
+                float f11 = m10.g;
+                int i29 = m10.a;
+                int i30 = m10.b;
+                int i31 = m10.c;
+                byte[] bArr5 = g2.h.a;
+                str = String.format("avc1.%02X%02X%02X", Integer.valueOf(i29), Integer.valueOf(i30), Integer.valueOf(i31));
+                i14 = i28;
+                f10 = f11;
+                i15 = i26;
+                i16 = i27;
+                i12 = i24;
+                i13 = i25;
+                i10 = i22;
+                i11 = i23;
+                i3 = i21;
+            } else {
+                str = null;
+                i3 = -1;
+                i10 = -1;
+                i11 = -1;
+                i12 = -1;
+                i13 = -1;
+                i14 = 16;
+                f10 = 1.0f;
+                i15 = -1;
+                i16 = -1;
+            }
+            return new d(arrayList, A, i3, i10, i11, i12, i13, i15, i16, i14, f10, str);
+        } catch (ArrayIndexOutOfBoundsException e10) {
+            throw v0.a(e10, "Error parsing AVC config");
         }
-        if (i10 == 1935963489) {
-            return 1;
-        }
-        if (i10 == 1937012852) {
-            return 3;
-        }
-        e2.a.l("AviStreamHeaderChunk", "Found unsupported streamType fourCC: " + Integer.toHexString(i10));
-        return -1;
-    }
-
-    @Override // e3.a
-    public final int getType() {
-        return 1752331379;
     }
 }

@@ -1,36 +1,19 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class u00 implements Runnable {
-    public final /* synthetic */ FragmentContextView a;
+public interface u00 {
+    void a1();
 
-    public u00(FragmentContextView fragmentContextView) {
-        this.a = fragmentContextView;
-    }
+    boolean onDown(MotionEvent motionEvent);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.k2 k2Var = fragmentContextView.h;
-        if (fragmentContextView.g0 == null || !(k2Var instanceof org.telegram.ui.un)) {
-            fragmentContextView.l0 = false;
-            return;
-        }
-        org.telegram.messenger.u3 groupCall = fragmentContextView.n.getGroupCall();
-        if (groupCall == null || !groupCall.j()) {
-            fragmentContextView.h0 = false;
-            fragmentContextView.l0 = false;
-            return;
-        }
-        int currentTime = groupCall.b.schedule_date - k2Var.getConnectionsManager().getCurrentTime();
-        String G = currentTime >= 86400 ? org.telegram.messenger.dd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]) : org.telegram.messenger.i0.j0(currentTime);
-        e6 e6Var = fragmentContextView.j0;
-        if (!fragmentContextView.i0) {
-            G = org.telegram.messenger.dd.L0(2131743466, null);
-        }
-        e6Var.t(G, true, true);
-        org.telegram.messenger.i0.h3(fragmentContextView.m0, 1000L);
-        fragmentContextView.s.invalidate();
-    }
+    boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11);
+
+    void onLongPress(MotionEvent motionEvent);
+
+    boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11);
+
+    boolean onSingleTapUp(MotionEvent motionEvent);
 }

@@ -8,9 +8,9 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import r0.h0;
+import r0.i0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class ButtonBarLayout extends LinearLayout {
     public boolean a;
@@ -22,7 +22,7 @@ public class ButtonBarLayout extends LinearLayout {
         this.c = -1;
         int[] iArr = f.a.k;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr);
-        h0.i(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
+        i0.i(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
         this.a = obtainStyledAttributes.getBoolean(0, true);
         obtainStyledAttributes.recycle();
         if (getOrientation() == 1) {
@@ -48,73 +48,73 @@ public class ButtonBarLayout extends LinearLayout {
     }
 
     @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
+    public final void onMeasure(int i3, int i10) {
+        int i11;
         boolean z10;
-        int i13;
-        int size = View.MeasureSpec.getSize(i10);
-        int i14 = 0;
+        int i12;
+        int size = View.MeasureSpec.getSize(i3);
+        int i13 = 0;
         if (this.a) {
             if (size > this.c && this.b) {
                 setStacked(false);
             }
             this.c = size;
         }
-        if (this.b || View.MeasureSpec.getMode(i10) != 1073741824) {
-            i12 = i10;
+        if (this.b || View.MeasureSpec.getMode(i3) != 1073741824) {
+            i11 = i3;
             z10 = false;
         } else {
-            i12 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31);
+            i11 = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31);
             z10 = true;
         }
-        super.onMeasure(i12, i11);
+        super.onMeasure(i11, i10);
         if (this.a && !this.b && (getMeasuredWidthAndState() & (-16777216)) == 16777216) {
             setStacked(true);
             z10 = true;
         }
         if (z10) {
-            super.onMeasure(i10, i11);
+            super.onMeasure(i3, i10);
         }
         int childCount = getChildCount();
-        int i15 = 0;
+        int i14 = 0;
         while (true) {
-            i13 = -1;
-            if (i15 >= childCount) {
-                i15 = -1;
+            i12 = -1;
+            if (i14 >= childCount) {
+                i14 = -1;
                 break;
-            } else if (getChildAt(i15).getVisibility() == 0) {
+            } else if (getChildAt(i14).getVisibility() == 0) {
                 break;
             } else {
-                i15++;
+                i14++;
             }
         }
-        if (i15 >= 0) {
-            View childAt = getChildAt(i15);
+        if (i14 >= 0) {
+            View childAt = getChildAt(i14);
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt.getLayoutParams();
             int measuredHeight = childAt.getMeasuredHeight() + getPaddingTop() + layoutParams.topMargin + layoutParams.bottomMargin;
             if (this.b) {
-                int i16 = i15 + 1;
+                int i15 = i14 + 1;
                 int childCount2 = getChildCount();
                 while (true) {
-                    if (i16 >= childCount2) {
+                    if (i15 >= childCount2) {
                         break;
                     }
-                    if (getChildAt(i16).getVisibility() == 0) {
-                        i13 = i16;
+                    if (getChildAt(i15).getVisibility() == 0) {
+                        i12 = i15;
                         break;
                     }
-                    i16++;
+                    i15++;
                 }
-                i14 = i13 >= 0 ? getChildAt(i13).getPaddingTop() + ((int) (getResources().getDisplayMetrics().density * 16.0f)) + measuredHeight : measuredHeight;
+                i13 = i12 >= 0 ? getChildAt(i12).getPaddingTop() + ((int) (getResources().getDisplayMetrics().density * 16.0f)) + measuredHeight : measuredHeight;
             } else {
-                i14 = getPaddingBottom() + measuredHeight;
+                i13 = getPaddingBottom() + measuredHeight;
             }
         }
-        WeakHashMap weakHashMap = h0.a;
-        if (getMinimumHeight() != i14) {
-            setMinimumHeight(i14);
-            if (i11 == 0) {
-                super.onMeasure(i10, i11);
+        WeakHashMap weakHashMap = i0.a;
+        if (getMinimumHeight() != i13) {
+            setMinimumHeight(i13);
+            if (i10 == 0) {
+                super.onMeasure(i3, i10);
             }
         }
     }

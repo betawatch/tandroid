@@ -1,77 +1,21 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c4 extends LinearLayout {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ ac0 c;
+public final class c4 extends cb0 {
+    public final /* synthetic */ int[] z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c4(Context context, ac0 ac0Var, int i10) {
-        super(context);
-        this.a = i10;
-        this.c = ac0Var;
-        this.b = false;
+    public c4(Context context, org.telegram.ui.ActionBar.e6 e6Var, int[] iArr) {
+        super(context, e6Var);
+        this.z0 = iArr;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                b4 b4Var = (b4) this.c;
-                this.b = true;
-                Point point = org.telegram.messenger.i0.q;
-                int i12 = point.x > point.y ? 3 : 5;
-                b4Var.setItemCount(i12);
-                b4Var.getLayoutParams().height = org.telegram.messenger.i0.L(42.0f) * i12;
-                this.b = false;
-                super.onMeasure(i10, i11);
-                break;
-            case 1:
-                g4 g4Var = (g4) this.c;
-                this.b = true;
-                Point point2 = org.telegram.messenger.i0.q;
-                int i13 = point2.x > point2.y ? 3 : 5;
-                g4Var.setItemCount(i13);
-                g4Var.getLayoutParams().height = org.telegram.messenger.i0.L(42.0f) * i13;
-                this.b = false;
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                this.b = true;
-                this.c.getLayoutParams().height = org.telegram.messenger.i0.L(42.0f) * 8;
-                this.b = false;
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            case 1:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.cb0
+    public final CharSequence d(int i3) {
+        int i10 = this.z0[i3];
+        return i10 == 0 ? org.telegram.messenger.bd.M0(2131753849, null) : i10 < 10080 ? org.telegram.messenger.bd.G(i10 / 1440, "Days", new Object[0]) : i10 < 44640 ? org.telegram.messenger.bd.G(i10 / 1440, "Weeks", new Object[0]) : i10 < 525600 ? org.telegram.messenger.bd.G(i10 / 10080, "Months", new Object[0]) : org.telegram.messenger.bd.G(((i10 * 5) / 31) * 1440, "Years", new Object[0]);
     }
 }

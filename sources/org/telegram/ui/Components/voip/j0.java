@@ -1,271 +1,136 @@
 package org.telegram.ui.Components.voip;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.m5;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.ActionBar.w6;
-import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Wallet.b6;
-import org.telegram.ui.Wallet.ba;
-import org.telegram.ui.Wallet.g6;
-import org.telegram.ui.sd1;
-import rh.e4;
-import rh.h8;
-import vh.o8;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.hs;
+import org.telegram.ui.Components.la0;
+import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class j0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class j0 extends TextView {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ FrameLayout d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(Object obj, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = obj;
+    public j0(w1 w1Var, Activity activity, x0 x0Var) {
+        super(activity);
+        this.d = w1Var;
+        this.c = x0Var;
+        this.b = new RectF();
+        x0Var.a(this);
     }
 
-    public void a(tg.b bVar, wg.d dVar) {
-        bh.i iVar = (bh.i) this.b;
-        iVar.c(bVar, dVar);
-        iVar.setIgnoreFastWay(true);
-        iVar.setFadeHeightTop(org.telegram.messenger.i0.L(48.0f));
-        iVar.setFadeHeightBottom(org.telegram.messenger.i0.L(48.0f));
-    }
-
-    @Override // android.view.ViewGroup
-    public void addView(View view, int i10, int i11) {
-        switch (this.a) {
-            case 13:
-                super.addView(view, i10, i11);
-                ((zg.e) this.b).e();
-                break;
-            default:
-                super.addView(view, i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 6:
-                if (((h8) this.b).t0) {
-                    return false;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i3;
+        int i10 = this.a;
+        Object obj = this.c;
+        FrameLayout frameLayout = this.d;
+        Object obj2 = this.b;
+        switch (i10) {
+            case 0:
+                Paint paint = (Paint) obj2;
+                sb1 sb1Var = (sb1) frameLayout;
+                j0 j0Var = sb1Var.c;
+                sb1Var.Q.m(-getX(), -getY(), sb1Var.getWidth() - getX(), sb1Var.getHeight() - getY());
+                sb1Var.R.m(-getX(), -getY(), sb1Var.getWidth() - getX(), sb1Var.getHeight() - getY());
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                Paint[] paintArr = (Paint[]) obj;
+                paintArr[sb1Var.w].setAlpha(hs.e4);
+                float L = org.telegram.messenger.g0.L(8.0f) + ((int) ((1.0f - sb1Var.E) * (org.telegram.messenger.g0.L(26.0f) - org.telegram.messenger.g0.L(8.0f))));
+                canvas.drawRoundRect(rectF, L, L, paintArr[sb1Var.w]);
+                float f10 = sb1Var.s;
+                if (f10 > 0.0f && (i3 = sb1Var.w + 1) < paintArr.length) {
+                    paintArr[i3].setAlpha((int) (f10 * 255.0f));
+                    canvas.drawRoundRect(rectF, L, L, paintArr[sb1Var.w + 1]);
                 }
-                return super.dispatchTouchEvent(motionEvent);
-            case 10:
-                if (((wh.g) this.b).s0) {
-                    return false;
+                float f11 = sb1Var.E;
+                if (f11 < 1.0f) {
+                    paint.setAlpha((int) ((1.0f - f11) * 255.0f));
+                    canvas.drawRoundRect(rectF, L, L, paint);
                 }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.a) {
-            case 2:
-                if (!((g6) this.b).a || view.getTag() == g6.n0) {
-                    return super.drawChild(canvas, view, j10);
-                }
-                return false;
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 7:
                 super.onDraw(canvas);
-                sg.o oVar = (sg.o) this.b;
-                if (oVar.y > 0) {
-                    canvas.drawRect(0.0f, getHeight() - oVar.y, getWidth(), getHeight(), oVar.D);
+                if (sb1Var.P) {
+                    canvas.drawText(bd.M0(2131743250, null), getWidth() / 2, (int) ((getHeight() / 2) - ((j0Var.getPaint().ascent() + j0Var.getPaint().descent()) / 2.0f)), j0Var.getPaint());
                     break;
                 }
                 break;
             default:
+                RectF rectF2 = (RectF) obj2;
+                rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+                w1 w1Var = (w1) frameLayout;
+                x0 x0Var = (x0) obj;
+                x0Var.d(((View) w1Var.getParent()).getX() + w1Var.getX() + ((View) getParent()).getX() + getX(), ((View) w1Var.getParent()).getY() + w1Var.getY() + ((View) getParent()).getY() + getY());
+                canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), x0Var.b());
                 super.onDraw(canvas);
                 break;
         }
     }
 
-    @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 2:
-                return ((g6) this.b).a || super.onInterceptTouchEvent(motionEvent);
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 7:
-                super.onLayout(z10, i10, i11, i12, i13);
-                sg.o oVar = (sg.o) this.b;
-                if (oVar.N && z10) {
-                    oVar.j0(oVar.P.e);
-                    break;
-                }
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                super.onMeasure(i10, i11);
-                setMeasuredDimension(getMeasuredWidth(), (int) Math.ceil(((b6) this.b).S.c(org.telegram.messenger.i0.L(4.0f))));
-                break;
-            case 4:
-                super.onMeasure(i10, i11);
-                ((ph.c1) this.b).K.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
     @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    public void onSizeChanged(int i3, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                ((sd1) this.b).T.onTouchEvent(motionEvent);
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public void onViewAdded(View view) {
-        switch (this.a) {
-            case 12:
-                super.onViewAdded(view);
-                bringChildToFront((bh.i) this.b);
-                break;
-            default:
-                super.onViewAdded(view);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onWindowFocusChanged(boolean z10) {
-        switch (this.a) {
-            case 3:
-                super.onWindowFocusChanged(z10);
-                if (z10) {
-                    ((ba) this.b).k0(true);
-                    break;
+                sb1 sb1Var = (sb1) this.d;
+                l2.e eVar = sb1Var.Q;
+                super.onSizeChanged(i3, i10, i11, i12);
+                int i13 = 0;
+                while (true) {
+                    Paint[] paintArr = (Paint[]) this.c;
+                    if (i13 >= paintArr.length) {
+                        break;
+                    } else {
+                        if (i13 == 0) {
+                            paintArr[i13] = (Paint) eVar.a;
+                        } else if (i13 == 1) {
+                            paintArr[i13] = (Paint) sb1Var.R.a;
+                        } else {
+                            paintArr[i13] = (Paint) eVar.a;
+                        }
+                        i13++;
+                    }
                 }
-                break;
             default:
-                super.onWindowFocusChanged(z10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        switch (this.a) {
-            case 5:
-                super.setTranslationY(f7);
-                e4 e4Var = (e4) this.b;
-                rh.n2 n2Var = e4Var.W1;
-                if (n2Var != null && n2Var.getVisibility() == 0) {
-                    e4Var.W1.invalidate();
-                    break;
-                }
-                break;
-            case 9:
-                o8 o8Var = (o8) this.b;
-                if (getTranslationY() != f7 && o8Var.c1 != null) {
-                    super.setTranslationY(f7);
-                    o8Var.c1.y();
-                    break;
-                }
-                break;
-            default:
-                super.setTranslationY(f7);
+                super.onSizeChanged(i3, i10, i11, i12);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(Context context, int i10) {
+    public j0(sb1 sb1Var, Context context) {
         super(context);
-        this.a = i10;
-        switch (i10) {
-            case 12:
-                super(context);
-                bh.i iVar = new bh.i(context);
-                this.b = iVar;
-                addView(iVar, w7.b6.g());
-                break;
-            default:
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(Context context, String str, th.b bVar) {
-        super(context);
-        this.a = 8;
-        int L = org.telegram.messenger.i0.L(12.0f);
-        int i10 = t6.j5;
-        Drawable d02 = t6.d0(L, t6.r1(0.06f, t6.w0(i10, bVar)));
-        w6 L2 = a7.L(0.06f, i10);
-        setBackground(d02);
-        a7.k(this, d02, L2, null, bVar);
-        LinearLayout f7 = m5.f(context, 1);
-        addView(f7, w7.b6.d(-1, -2.0f, 17, 6.0f, 0.0f, 6.0f, 0.0f));
-        f6 f6Var = new f6(context, false, true, true);
-        this.b = f6Var;
-        f6Var.b(0.6f, 450L, gr.h);
-        f6Var.setTextSize(org.telegram.messenger.i0.L(17.0f));
-        a7.Z(f6Var, i10, bVar);
-        f6Var.setScaleProperty(0.7f);
-        f6Var.setGravity(17);
-        f6Var.setTypeface(org.telegram.messenger.i0.o());
-        f6Var.setAllowCancel(true);
-        f7.addView(f6Var, w7.b6.k(0.0f, 0.0f, 0.0f, 1.66f, -1, 20));
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 11.0f);
-        a7.V(textView, i10, bVar);
-        textView.setGravity(17);
-        f7.addView(textView, w7.b6.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        textView.setText(str);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(sg.o oVar, Context context) {
-        super(context);
-        this.a = 7;
-        this.b = oVar;
-        setWillNotDraw(false);
+        this.d = sb1Var;
+        Paint paint = new Paint();
+        this.b = paint;
+        this.c = new Paint[sb1Var.e.length];
+        la0 la0Var = sb1Var.S;
+        la0Var.setBounds(0, 0, 80, 80);
+        la0 la0Var2 = sb1Var.T;
+        la0Var2.setBounds(0, 0, 80, 80);
+        l2.e eVar = sb1Var.Q;
+        eVar.m(0.0f, 0.0f, 80.0f, 80.0f);
+        l2.e eVar2 = sb1Var.R;
+        eVar2.m(0.0f, 0.0f, 80.0f, 80.0f);
+        la0Var.setAlpha(hs.e4);
+        la0Var2.setAlpha(hs.e4);
+        Canvas canvas = (Canvas) eVar.b;
+        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
+        canvas.drawColor(0, mode);
+        ((Canvas) eVar2.b).drawColor(0, mode);
+        la0Var.draw((Canvas) eVar.b);
+        la0Var2.draw((Canvas) eVar2.b);
+        paint.setColor(-1);
     }
 }

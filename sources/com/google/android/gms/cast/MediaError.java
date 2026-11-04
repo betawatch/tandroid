@@ -2,14 +2,13 @@ package com.google.android.gms.cast;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c6.v;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import o6.a;
+import e6.v;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import w7.h0;
+import q6.a;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class MediaError extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaError> CREATOR = new v(6);
@@ -29,20 +28,20 @@ public class MediaError extends a implements ReflectedParcelable {
     }
 
     public static MediaError b(JSONObject jSONObject) {
-        return new MediaError(jSONObject.optString(TeXSymbolParser.TYPE_ATTR, "ERROR"), jSONObject.optLong("requestId"), jSONObject.has("detailedErrorCode") ? Integer.valueOf(jSONObject.optInt("detailedErrorCode")) : null, g6.a.a("reason", jSONObject), jSONObject.has("customData") ? jSONObject.optJSONObject("customData") : null);
+        return new MediaError(jSONObject.optString(TeXSymbolParser.TYPE_ATTR, "ERROR"), jSONObject.optLong("requestId"), jSONObject.has("detailedErrorCode") ? Integer.valueOf(jSONObject.optInt("detailedErrorCode")) : null, i6.a.a("reason", jSONObject), jSONObject.has("customData") ? jSONObject.optJSONObject("customData") : null);
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i3) {
         JSONObject jSONObject = this.f;
         this.e = jSONObject == null ? null : jSONObject.toString();
-        int q6 = h0.q(parcel, 20293);
-        h0.l(parcel, 2, this.a);
-        h0.s(parcel, 3, 8);
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.m(parcel, 2, this.a);
+        j8.a.r(parcel, 3, 8);
         parcel.writeLong(this.b);
-        h0.i(parcel, 4, this.c);
-        h0.l(parcel, 5, this.d);
-        h0.l(parcel, 6, this.e);
-        h0.r(parcel, q6);
+        j8.a.j(parcel, 4, this.c);
+        j8.a.m(parcel, 5, this.d);
+        j8.a.m(parcel, 6, this.e);
+        j8.a.t(parcel, s6);
     }
 }

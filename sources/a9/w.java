@@ -1,36 +1,28 @@
 package a9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.List;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class w {
+public final class w extends q6.a {
+    public static final Parcelable.Creator<w> CREATOR = new c(20);
     public final int a;
-    public final long b;
+    public final List b;
 
-    public w(int i10, long j10) {
-        this.a = i10;
-        this.b = j10;
+    public w(int i3, ArrayList arrayList) {
+        this.a = i3;
+        this.b = arrayList;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof w)) {
-            return false;
-        }
-        w wVar = (w) obj;
-        return this.a == wVar.a && this.b == wVar.b;
-    }
-
-    public final int hashCode() {
-        long j10 = this.b;
-        return ((this.a ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)));
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("EventRecord{eventType=");
-        sb2.append(this.a);
-        sb2.append(", eventTimestamp=");
-        return a1.g.q(sb2, this.b, "}");
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.q(parcel, 3, this.b);
+        j8.a.t(parcel, s6);
     }
 }

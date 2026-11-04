@@ -1,46 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ir extends ImageView {
-    public final /* synthetic */ int a = 0;
-    public Object b;
-    public final /* synthetic */ ViewGroup c;
+public final /* synthetic */ class ir implements Predicate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ir(lr lrVar, Context context, m2.t tVar) {
-        super(context);
-        this.c = lrVar;
-        this.b = tVar;
+    public /* synthetic */ ir(int i3, TLObject tLObject) {
+        this.a = i3;
+        this.b = tLObject;
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i3 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i3 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
         switch (this.a) {
             case 0:
-                lr lrVar = (lr) this.c;
-                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (lrVar.n || lrVar.f)) {
-                    lrVar.n = false;
-                    lrVar.f = false;
-                    removeCallbacks(lrVar.r);
-                    removeCallbacks(lrVar.h);
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.b;
+                TLRPC.Peer peer = ((org.telegram.messenger.zi) obj).k.from_id;
+                if ((inputPeer != null || peer != null) && (inputPeer == null || peer == null || (!(inputPeer instanceof TLRPC.TL_inputPeerChat) || !(peer instanceof TLRPC.TL_peerChat) ? !(inputPeer instanceof TLRPC.TL_inputPeerChannel) || !(peer instanceof TLRPC.TL_peerChannel) ? !(inputPeer instanceof TLRPC.TL_inputPeerUser) || !(peer instanceof TLRPC.TL_peerUser) || inputPeer.user_id != peer.user_id : inputPeer.channel_id != peer.channel_id : inputPeer.chat_id != peer.chat_id))) {
                 }
-                super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((m2.t) this.b).b).onTouchEvent(motionEvent);
             default:
-                return super.onTouchEvent(motionEvent);
+                org.telegram.messenger.zi ziVar = (org.telegram.messenger.zi) obj;
+                TLObject tLObject = this.b;
+                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || ziVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : ziVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
+                }
+                break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ir(nj0 nj0Var, Context context) {
-        super(context);
-        this.c = nj0Var;
+        return false;
     }
 }

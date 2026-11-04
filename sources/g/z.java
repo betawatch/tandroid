@@ -3,26 +3,26 @@ package g;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import java.util.WeakHashMap;
-import r0.h0;
-import r0.m0;
+import r0.i0;
+import r0.n0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class z extends m0 {
+public final class z extends n0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ b0 b;
 
-    public /* synthetic */ z(b0 b0Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ z(b0 b0Var, int i3) {
+        this.a = i3;
         this.b = b0Var;
     }
 
-    @Override // r0.l0
+    @Override // r0.m0
     public final void c() {
         View view;
-        int i10 = this.a;
+        int i3 = this.a;
         b0 b0Var = this.b;
-        switch (i10) {
+        switch (i3) {
             case 0:
                 if (b0Var.o && (view = b0Var.g) != null) {
                     view.setTranslationY(0.0f);
@@ -31,16 +31,16 @@ public final class z extends m0 {
                 b0Var.d.setVisibility(8);
                 b0Var.d.setTransitioning(false);
                 b0Var.s = null;
-                n4.q qVar = b0Var.k;
-                if (qVar != null) {
-                    qVar.B(b0Var.j);
+                tf.b bVar = b0Var.k;
+                if (bVar != null) {
+                    bVar.v(b0Var.j);
                     b0Var.j = null;
                     b0Var.k = null;
                 }
                 ActionBarOverlayLayout actionBarOverlayLayout = b0Var.c;
                 if (actionBarOverlayLayout != null) {
-                    WeakHashMap weakHashMap = h0.a;
-                    r0.x.c(actionBarOverlayLayout);
+                    WeakHashMap weakHashMap = i0.a;
+                    r0.y.c(actionBarOverlayLayout);
                     break;
                 }
                 break;

@@ -1,39 +1,71 @@
 package mf;
 
-import android.content.SharedPreferences;
-import android.os.SystemClock;
-import org.telegram.messenger.w0;
-import w7.u;
+import a1.g;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
-    public final SharedPreferences a;
-    public long b;
-    public long c;
-    public int d;
+    public String a;
+    public ArrayList b;
+    public ArrayList c;
+    public ArrayList d;
 
-    public a(String str) {
-        SharedPreferences sharedPreferences = w0.b.getSharedPreferences("pip_duration_".concat(str), 0);
-        this.a = sharedPreferences;
-        this.b = sharedPreferences.getLong("estimated", 400L);
-        this.d = sharedPreferences.getInt("count", 0);
-    }
-
-    public final void a() {
-        if (this.c == 0) {
-            return;
+    public final String a(String str) {
+        String str2;
+        String str3;
+        String str4;
+        String str5 = null;
+        if (str.startsWith(this.a)) {
+            str4 = this.a;
+            str3 = str.substring(str4.length());
+        } else {
+            ArrayList arrayList = this.b;
+            int size = arrayList.size();
+            int i3 = 0;
+            while (true) {
+                if (i3 >= size) {
+                    str2 = null;
+                    break;
+                }
+                Object obj = arrayList.get(i3);
+                i3++;
+                str2 = (String) obj;
+                if (str.startsWith(str2)) {
+                    break;
+                }
+            }
+            if (str2 != null) {
+                str3 = str.substring(str2.length());
+                str4 = null;
+                str5 = str2;
+            } else {
+                str3 = str;
+                str4 = null;
+            }
         }
-        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * u.b(this.d, 0, 9)) / 10);
-        this.c = 0L;
-        this.d++;
-        this.a.edit().putLong("estimated", this.b).putInt("count", this.d).apply();
-    }
-
-    public final float b() {
-        if (this.b > 0) {
-            return u.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
+        ArrayList arrayList2 = this.d;
+        int size2 = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size2) {
+            Object obj2 = arrayList2.get(i10);
+            i10++;
+            String a10 = ((d) obj2).a(str3, str4, str5, true);
+            if (a10 != null) {
+                return a10;
+            }
         }
-        return 0.5f;
+        ArrayList arrayList3 = this.d;
+        int size3 = arrayList3.size();
+        int i11 = 0;
+        while (i11 < size3) {
+            Object obj3 = arrayList3.get(i11);
+            i11++;
+            String a11 = ((d) obj3).a(str3, str4, str5, false);
+            if (a11 != null) {
+                return a11;
+            }
+        }
+        return (str4 == null || str3.length() == 0) ? str : g.C(str4, " ", str3);
     }
 }

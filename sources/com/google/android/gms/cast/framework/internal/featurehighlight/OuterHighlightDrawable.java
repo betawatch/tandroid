@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 class OuterHighlightDrawable extends Drawable {
     public float a;
@@ -27,7 +27,7 @@ class OuterHighlightDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void setAlpha(int i3) {
         throw null;
     }
 
@@ -36,18 +36,18 @@ class OuterHighlightDrawable extends Drawable {
         throw null;
     }
 
-    public void setScale(float f7) {
-        this.a = f7;
+    public void setScale(float f10) {
+        this.a = f10;
         invalidateSelf();
     }
 
-    public void setTranslationX(float f7) {
-        this.b = f7;
+    public void setTranslationX(float f10) {
+        this.b = f10;
         invalidateSelf();
     }
 
-    public void setTranslationY(float f7) {
-        this.c = f7;
+    public void setTranslationY(float f10) {
+        this.c = f10;
         invalidateSelf();
     }
 }

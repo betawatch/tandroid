@@ -1,45 +1,99 @@
 package wa;
 
-import java.util.concurrent.Executor;
-import kotlin.jvm.internal.i;
-import n9.b;
-import n9.c;
-import r9.d;
-import r9.r;
-import td.y0;
+import o1.g;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements d {
-    public static final a b = new a(0);
-    public static final a c = new a(1);
-    public static final a d = new a(2);
-    public static final a e = new a(3);
-    public final /* synthetic */ int a;
+public final class a {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final b d;
+    public final int e;
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
+    public a(String str, String str2, String str3, b bVar, int i3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = bVar;
+        this.e = i3;
     }
 
-    @Override // r9.d
-    public final Object K(bh.d dVar) {
-        switch (this.a) {
-            case 0:
-                Object d10 = dVar.d(new r(n9.a.class, Executor.class));
-                i.d(d10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) d10);
-            case 1:
-                Object d11 = dVar.d(new r(c.class, Executor.class));
-                i.d(d11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) d11);
-            case 2:
-                Object d12 = dVar.d(new r(b.class, Executor.class));
-                i.d(d12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) d12);
-            default:
-                Object d13 = dVar.d(new r(n9.d.class, Executor.class));
-                i.d(d13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) d13);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        int i3 = aVar.e;
+        b bVar = aVar.d;
+        String str = aVar.c;
+        String str2 = aVar.b;
+        String str3 = aVar.a;
+        String str4 = this.a;
+        if (str4 == null) {
+            if (str3 != null) {
+                return false;
+            }
+        } else if (!str4.equals(str3)) {
+            return false;
+        }
+        String str5 = this.b;
+        if (str5 == null) {
+            if (str2 != null) {
+                return false;
+            }
+        } else if (!str5.equals(str2)) {
+            return false;
+        }
+        String str6 = this.c;
+        if (str6 == null) {
+            if (str != null) {
+                return false;
+            }
+        } else if (!str6.equals(str)) {
+            return false;
+        }
+        b bVar2 = this.d;
+        if (bVar2 == null) {
+            if (bVar != null) {
+                return false;
+            }
+        } else if (!bVar2.equals(bVar)) {
+            return false;
+        }
+        int i10 = this.e;
+        return i10 == 0 ? i3 == 0 : g.b(i10, i3);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = ((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003;
+        String str2 = this.b;
+        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
+        String str3 = this.c;
+        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
+        b bVar = this.d;
+        int hashCode4 = (hashCode3 ^ (bVar == null ? 0 : bVar.hashCode())) * 1000003;
+        int i3 = this.e;
+        return (i3 != 0 ? g.c(i3) : 0) ^ hashCode4;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("InstallationResponse{uri=");
+        sb2.append(this.a);
+        sb2.append(", fid=");
+        sb2.append(this.b);
+        sb2.append(", refreshToken=");
+        sb2.append(this.c);
+        sb2.append(", authToken=");
+        sb2.append(this.d);
+        sb2.append(", responseCode=");
+        int i3 = this.e;
+        sb2.append(i3 != 1 ? i3 != 2 ? "null" : "BAD_CONFIG" : "OK");
+        sb2.append("}");
+        return sb2.toString();
     }
 }

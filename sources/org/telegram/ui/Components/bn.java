@@ -1,153 +1,130 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Point;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class bn extends View {
-    public final /* synthetic */ int a;
+public final class bn extends th {
+    public final gy n;
+    public final tj0 r;
+    public final int s;
+    public final org.telegram.ui.y7 w;
+    public int x;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bn(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public bn(int i3, Context context, org.telegram.ui.ActionBar.e6 e6Var, bi biVar) {
+        super(context, e6Var, biVar);
+        this.s = i3;
+        gy gyVar = new gy(context, e6Var);
+        this.n = gyVar;
+        gyVar.setText(org.telegram.messenger.bd.M0(2131748188, null));
+        gyVar.setOnTouchListener(null);
+        gyVar.setTextSize(16);
+        addView(gyVar, b8.mf.c(-2.0f, -1));
+        gyVar.a(R.raw.media_forbidden, org.telegram.messenger.hs.g2, org.telegram.messenger.hs.g2);
+        TLRPC.Chat Y0 = this.b.Y0();
+        int i10 = 4;
+        if (i3 == 1) {
+            gyVar.setText(org.telegram.messenger.t3.L(7, Y0));
+        } else if (i3 == 3) {
+            gyVar.setText(org.telegram.messenger.t3.L(18, Y0));
+        } else if (i3 == 4) {
+            gyVar.setText(org.telegram.messenger.t3.L(19, Y0));
+        } else {
+            gyVar.setText(org.telegram.messenger.t3.L(22, Y0));
+        }
+        gyVar.c();
+        tj0 tj0Var = new tj0(context, e6Var);
+        this.r = tj0Var;
+        tj0Var.setSectionsType(2);
+        tj0Var.setVerticalScrollBarEnabled(false);
+        tj0Var.setLayoutManager(new u4.b0());
+        tj0Var.setClipToPadding(false);
+        org.telegram.ui.y7 y7Var = new org.telegram.ui.y7(this, i10);
+        this.w = y7Var;
+        tj0Var.setAdapter(y7Var);
+        tj0Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(48.0f));
+        tj0Var.setOnScrollListener(new ji(this, 6));
+        addView(tj0Var, b8.mf.c(-1.0f, -1));
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 5:
-                super.onDraw(canvas);
-                canvas.drawLine(0.0f, org.telegram.messenger.i0.L(14.0f), 2.0f, getMeasuredHeight() - org.telegram.messenger.i0.L(14.0f), org.telegram.ui.ActionBar.t6.k0);
-                break;
-            case 12:
-                canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
-                break;
-            case 13:
-                canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
-                break;
-            case 14:
-                canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
-                break;
-            case 15:
-                canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
-                break;
-            case 23:
-                canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
-                break;
-            case 25:
-                if (getAlpha() != 0.0f) {
-                    org.telegram.messenger.i0.P.set(0.0f, 0.0f, getWidth(), getHeight());
-                    invalidate();
-                    break;
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.th
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void B(int i3, int i10) {
+        int i11;
+        int i12;
+        tj0 tj0Var;
+        int max = Math.max(0, i10 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
+        if (this.x != max) {
+            this.x = max;
+            this.w.f();
+        }
+        if (!org.telegram.messenger.g0.Q1()) {
+            Point point = org.telegram.messenger.g0.q;
+            if (point.x > point.y) {
+                i11 = (int) (i10 / 3.5f);
+                int L = i11 - org.telegram.messenger.g0.L(52.0f);
+                i12 = L >= 0 ? L : 0;
+                tj0Var = this.r;
+                if (tj0Var.getPaddingTop() == i12) {
+                    tj0Var.setPadding(org.telegram.messenger.g0.L(6.0f), i12, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(48.0f));
+                    return;
                 }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+                return;
+            }
+        }
+        i11 = (i10 / 5) * 2;
+        int L2 = i11 - org.telegram.messenger.g0.L(52.0f);
+        if (L2 >= 0) {
+        }
+        tj0Var = this.r;
+        if (tj0Var.getPaddingTop() == i12) {
         }
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(16.0f), TLObject.FLAG_30));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(68.0f), TLObject.FLAG_30));
-                break;
-            case 3:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(52.0f), TLObject.FLAG_30));
-                break;
-            case 4:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (org.telegram.messenger.i0.q.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 5:
-            case 12:
-            case 13:
-            case 14:
-            case 15:
-            case 23:
-            case 25:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 6:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(300.0f), TLObject.FLAG_30));
-                break;
-            case 7:
-                Point point = org.telegram.messenger.i0.q;
-                int i12 = point.x;
-                int i13 = point.y;
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (i13 * (i12 < i13 ? 0.56f : 0.3f)), TLObject.FLAG_30));
-                break;
-            case 8:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(5.0f), TLObject.FLAG_30));
-                break;
-            case 9:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (org.telegram.messenger.i0.q.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 10:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(4.0f), TLObject.FLAG_30));
-                break;
-            case 11:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(org.telegram.ui.a50.w5 ? 0.0f : 8.0f), TLObject.FLAG_30));
-                break;
-            case 16:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(12.0f), TLObject.FLAG_30));
-                break;
-            case 17:
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.i0.L(36.0f));
-                break;
-            case 18:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(7.33f), TLObject.FLAG_30));
-                break;
-            case 19:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(16.0f), TLObject.FLAG_30));
-                break;
-            case 20:
-                super.onMeasure(i10, i11);
-                setPivotX(getMeasuredWidth() / 2);
-                setPivotY(getMeasuredHeight());
-                break;
-            case 21:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(52.0f), TLObject.FLAG_30));
-                break;
-            case 22:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(4.0f), TLObject.FLAG_30));
-                break;
-            case 24:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(6.0f), TLObject.FLAG_30));
-                break;
-            case 26:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(32.0f), TLObject.FLAG_30));
-                break;
-            case 27:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(60.0f), TLObject.FLAG_30));
-                break;
-            case 28:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(52.0f), TLObject.FLAG_30));
-                break;
-            case 29:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(81.0f), TLObject.FLAG_30));
-                break;
+    @Override // org.telegram.ui.Components.th
+    public int getCurrentItemTop() {
+        tj0 tj0Var = this.r;
+        if (tj0Var.getChildCount() <= 0) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
+        int i3 = 0;
+        View childAt = tj0Var.getChildAt(0);
+        bj0 bj0Var = (bj0) tj0Var.G(childAt);
+        int top = childAt.getTop() - org.telegram.messenger.g0.L(8.0f);
+        if (top > 0 && bj0Var != null && bj0Var.b() == 0) {
+            i3 = top;
+        }
+        if (top < 0 || bj0Var == null || bj0Var.b() != 0) {
+            top = i3;
+        }
+        int measuredHeight = (getMeasuredHeight() - top) - org.telegram.messenger.g0.L(50.0f);
+        this.n.setTranslationY(((measuredHeight - r1.getMeasuredHeight()) / 2) + top);
+        return org.telegram.messenger.g0.L(12.0f) + top;
+    }
+
+    @Override // org.telegram.ui.Components.th
+    public int getFirstOffset() {
+        return org.telegram.messenger.g0.L(4.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.th
+    public int getListTopPadding() {
+        return this.r.getPaddingTop();
     }
 
     @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 25:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
+    public void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        this.b.b.invalidate();
     }
 }

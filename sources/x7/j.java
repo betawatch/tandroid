@@ -1,423 +1,241 @@
 package x7;
 
-import java.io.Serializable;
-import java.util.AbstractMap;
-import java.util.Arrays;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.charset.Charset;
 import java.util.Collection;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j extends AbstractMap implements Serializable {
-    public static final Object s = new Object();
-    public transient Object a;
-    public transient int[] b;
-    public transient Object[] c;
-    public transient Object[] d;
-    public transient int e = Math.min(Math.max(12, 1), 1073741823);
-    public transient int f;
-    public transient h h;
-    public transient h n;
-    public transient e9.o r;
+public final class j implements ma.e {
+    public static final Charset f = Charset.forName("UTF-8");
+    public static final ma.c g = new ma.c("key", k2.p1.o(t4.c.i(h.class, new e(1))));
+    public static final ma.c h = new ma.c("value", k2.p1.o(t4.c.i(h.class, new e(2))));
+    public static final i i = i.b;
+    public OutputStream a;
+    public final HashMap b;
+    public final HashMap c;
+    public final ma.d d;
+    public final b8.h0 e = new b8.h0(this, 2);
 
-    public final Map a() {
-        Object obj = this.a;
-        if (obj instanceof Map) {
-            return (Map) obj;
-        }
-        return null;
+    public j(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, ma.d dVar) {
+        this.a = byteArrayOutputStream;
+        this.b = hashMap;
+        this.c = hashMap2;
+        this.d = dVar;
     }
 
-    public final void b(int i10, int i11) {
-        Object obj = this.a;
-        obj.getClass();
-        int[] iArr = this.b;
-        iArr.getClass();
-        Object[] objArr = this.c;
-        objArr.getClass();
-        Object[] objArr2 = this.d;
-        objArr2.getClass();
-        int size = size();
-        int i12 = size - 1;
-        if (i10 >= i12) {
-            objArr[i10] = null;
-            objArr2[i10] = null;
-            iArr[i10] = 0;
+    public static int i(ma.c cVar) {
+        h hVar = (h) cVar.b(h.class);
+        if (hVar != null) {
+            return ((e) hVar).a;
+        }
+        throw new ma.b("Field has no @Protobuf config");
+    }
+
+    @Override // ma.e
+    public final ma.e a(ma.c cVar, Object obj) {
+        g(cVar, obj, true);
+        return this;
+    }
+
+    @Override // ma.e
+    public final /* synthetic */ ma.e b(ma.c cVar, boolean z10) {
+        h(cVar, z10 ? 1 : 0, true);
+        return this;
+    }
+
+    @Override // ma.e
+    public final ma.e c(ma.c cVar, double d) {
+        d(cVar, d, true);
+        return this;
+    }
+
+    public final void d(ma.c cVar, double d, boolean z10) {
+        if (z10 && d == 0.0d) {
             return;
         }
-        Object obj2 = objArr[i12];
-        objArr[i10] = obj2;
-        objArr2[i10] = objArr2[i12];
-        objArr[i12] = null;
-        objArr2[i12] = null;
-        iArr[i10] = iArr[i12];
-        iArr[i12] = 0;
-        int a2 = w7.r8.a(obj2) & i11;
-        int b10 = w7.q8.b(a2, obj);
-        if (b10 == size) {
-            w7.q8.d(a2, i10 + 1, obj);
+        k((i(cVar) << 3) | 1);
+        this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
+    }
+
+    @Override // ma.e
+    public final /* synthetic */ ma.e e(ma.c cVar, int i3) {
+        h(cVar, i3, true);
+        return this;
+    }
+
+    @Override // ma.e
+    public final ma.e f(ma.c cVar, long j10) {
+        if (j10 == 0) {
+            return this;
+        }
+        h hVar = (h) cVar.b(h.class);
+        if (hVar == null) {
+            throw new ma.b("Field has no @Protobuf config");
+        }
+        k(((e) hVar).a << 3);
+        l(j10);
+        return this;
+    }
+
+    public final void g(ma.c cVar, Object obj, boolean z10) {
+        if (obj == null) {
             return;
         }
-        while (true) {
-            int i13 = b10 - 1;
-            int i14 = iArr[i13];
-            int i15 = i14 & i11;
-            if (i15 == size) {
-                iArr[i13] = ((i10 + 1) & i11) | (i14 & (~i11));
+        if (obj instanceof CharSequence) {
+            CharSequence charSequence = (CharSequence) obj;
+            if (z10 && charSequence.length() == 0) {
                 return;
             }
-            b10 = i15;
-        }
-    }
-
-    public final boolean c() {
-        return this.a == null;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        if (c()) {
+            k((i(cVar) << 3) | 2);
+            byte[] bytes = charSequence.toString().getBytes(f);
+            k(bytes.length);
+            this.a.write(bytes);
             return;
         }
-        this.e += 32;
-        Map a2 = a();
-        if (a2 != null) {
-            this.e = Math.min(Math.max(size(), 3), 1073741823);
-            a2.clear();
-            this.a = null;
-            this.f = 0;
+        if (obj instanceof Collection) {
+            Iterator it = ((Collection) obj).iterator();
+            while (it.hasNext()) {
+                g(cVar, it.next(), false);
+            }
             return;
         }
-        Object[] objArr = this.c;
-        objArr.getClass();
-        Arrays.fill(objArr, 0, this.f, (Object) null);
-        Object[] objArr2 = this.d;
-        objArr2.getClass();
-        Arrays.fill(objArr2, 0, this.f, (Object) null);
-        Object obj = this.a;
-        obj.getClass();
+        if (obj instanceof Map) {
+            Iterator it2 = ((Map) obj).entrySet().iterator();
+            while (it2.hasNext()) {
+                j(i, cVar, (Map.Entry) it2.next(), false);
+            }
+            return;
+        }
+        if (obj instanceof Double) {
+            d(cVar, ((Double) obj).doubleValue(), z10);
+            return;
+        }
+        if (obj instanceof Float) {
+            float floatValue = ((Float) obj).floatValue();
+            if (z10 && floatValue == 0.0f) {
+                return;
+            }
+            k((i(cVar) << 3) | 5);
+            this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putFloat(floatValue).array());
+            return;
+        }
+        if (obj instanceof Number) {
+            long longValue = ((Number) obj).longValue();
+            if (z10 && longValue == 0) {
+                return;
+            }
+            h hVar = (h) cVar.b(h.class);
+            if (hVar == null) {
+                throw new ma.b("Field has no @Protobuf config");
+            }
+            k(((e) hVar).a << 3);
+            l(longValue);
+            return;
+        }
+        if (obj instanceof Boolean) {
+            h(cVar, ((Boolean) obj).booleanValue() ? 1 : 0, z10);
+            return;
+        }
         if (obj instanceof byte[]) {
-            Arrays.fill((byte[]) obj, (byte) 0);
-        } else if (obj instanceof short[]) {
-            Arrays.fill((short[]) obj, (short) 0);
+            byte[] bArr = (byte[]) obj;
+            if (z10 && bArr.length == 0) {
+                return;
+            }
+            k((i(cVar) << 3) | 2);
+            k(bArr.length);
+            this.a.write(bArr);
+            return;
+        }
+        ma.d dVar = (ma.d) this.b.get(obj.getClass());
+        if (dVar != null) {
+            j(dVar, cVar, obj, z10);
+            return;
+        }
+        ma.f fVar = (ma.f) this.c.get(obj.getClass());
+        if (fVar != null) {
+            b8.h0 h0Var = this.e;
+            h0Var.b = false;
+            h0Var.d = cVar;
+            h0Var.c = z10;
+            fVar.a(obj, h0Var);
+            return;
+        }
+        if (obj instanceof f) {
+            h(cVar, ((f) obj).zza(), true);
+        } else if (obj instanceof Enum) {
+            h(cVar, ((Enum) obj).ordinal(), true);
         } else {
-            Arrays.fill((int[]) obj, 0);
+            j(this.d, cVar, obj, z10);
         }
-        int[] iArr = this.b;
-        iArr.getClass();
-        Arrays.fill(iArr, 0, this.f, 0);
-        this.f = 0;
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean containsKey(Object obj) {
-        Map a2 = a();
-        return a2 != null ? a2.containsKey(obj) : e(obj) != -1;
+    public final void h(ma.c cVar, int i3, boolean z10) {
+        if (z10 && i3 == 0) {
+            return;
+        }
+        h hVar = (h) cVar.b(h.class);
+        if (hVar == null) {
+            throw new ma.b("Field has no @Protobuf config");
+        }
+        k(((e) hVar).a << 3);
+        k(i3);
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean containsValue(Object obj) {
-        Map a2 = a();
-        if (a2 != null) {
-            return a2.containsValue(obj);
-        }
-        for (int i10 = 0; i10 < this.f; i10++) {
-            Object[] objArr = this.d;
-            objArr.getClass();
-            if (w7.u8.a(obj, objArr[i10])) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int d() {
-        return (1 << (this.e & 31)) - 1;
-    }
-
-    public final int e(Object obj) {
-        if (c()) {
-            return -1;
-        }
-        int a2 = w7.r8.a(obj);
-        int d = d();
-        Object obj2 = this.a;
-        obj2.getClass();
-        int b10 = w7.q8.b(a2 & d, obj2);
-        if (b10 != 0) {
-            int i10 = ~d;
-            int i11 = a2 & i10;
-            do {
-                int i12 = b10 - 1;
-                int[] iArr = this.b;
-                iArr.getClass();
-                int i13 = iArr[i12];
-                if ((i13 & i10) == i11) {
-                    Object[] objArr = this.c;
-                    objArr.getClass();
-                    if (w7.u8.a(obj, objArr[i12])) {
-                        return i12;
-                    }
+    public final void j(ma.d dVar, ma.c cVar, Object obj, boolean z10) {
+        b8.b0 b0Var = new b8.b0(2);
+        b0Var.b = 0L;
+        try {
+            OutputStream outputStream = this.a;
+            this.a = b0Var;
+            try {
+                dVar.a(obj, this);
+                this.a = outputStream;
+                long j10 = b0Var.b;
+                b0Var.close();
+                if (z10 && j10 == 0) {
+                    return;
                 }
-                b10 = i13 & d;
-            } while (b10 != 0);
-        }
-        return -1;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
-        h hVar = this.n;
-        if (hVar != null) {
-            return hVar;
-        }
-        h hVar2 = new h(this, 0);
-        this.n = hVar2;
-        return hVar2;
-    }
-
-    public final int f(int i10, int i11, int i12, int i13) {
-        Object c10 = w7.q8.c(i11);
-        int i14 = i11 - 1;
-        if (i13 != 0) {
-            w7.q8.d(i12 & i14, i13 + 1, c10);
-        }
-        Object obj = this.a;
-        obj.getClass();
-        int[] iArr = this.b;
-        iArr.getClass();
-        for (int i15 = 0; i15 <= i10; i15++) {
-            int b10 = w7.q8.b(i15, obj);
-            while (b10 != 0) {
-                int i16 = b10 - 1;
-                int i17 = iArr[i16];
-                int i18 = ((~i10) & i17) | i15;
-                int i19 = i18 & i14;
-                int b11 = w7.q8.b(i19, c10);
-                w7.q8.d(i19, b10, c10);
-                iArr[i16] = ((~i14) & i18) | (b11 & i14);
-                b10 = i17 & i10;
+                k((i(cVar) << 3) | 2);
+                l(j10);
+                dVar.a(obj, this);
+            } catch (Throwable th2) {
+                this.a = outputStream;
+                throw th2;
             }
-        }
-        this.a = c10;
-        this.e = ((32 - Integer.numberOfLeadingZeros(i14)) & 31) | (this.e & (-32));
-        return i14;
-    }
-
-    public final Object g(Object obj) {
-        if (!c()) {
-            int d = d();
-            Object obj2 = this.a;
-            obj2.getClass();
-            int[] iArr = this.b;
-            iArr.getClass();
-            Object[] objArr = this.c;
-            objArr.getClass();
-            int a2 = w7.q8.a(obj, null, d, obj2, iArr, objArr, null);
-            if (a2 != -1) {
-                Object[] objArr2 = this.d;
-                objArr2.getClass();
-                Object obj3 = objArr2[a2];
-                b(a2, d);
-                this.f--;
-                this.e += 32;
-                return obj3;
-            }
-        }
-        return s;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Object get(Object obj) {
-        Map a2 = a();
-        if (a2 != null) {
-            return a2.get(obj);
-        }
-        int e = e(obj);
-        if (e == -1) {
-            return null;
-        }
-        Object[] objArr = this.d;
-        objArr.getClass();
-        return objArr[e];
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean isEmpty() {
-        return size() == 0;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Set keySet() {
-        h hVar = this.h;
-        if (hVar != null) {
-            return hVar;
-        }
-        h hVar2 = new h(this, 1);
-        this.h = hVar2;
-        return hVar2;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        int i10;
-        int i11 = 32;
-        if (c()) {
-            if (!c()) {
-                throw new IllegalStateException("Arrays already allocated");
-            }
-            int i12 = this.e;
-            int max = Math.max(i12 + 1, 2);
-            int highestOneBit = Integer.highestOneBit(max);
-            if (max > highestOneBit && (highestOneBit = highestOneBit + highestOneBit) <= 0) {
-                highestOneBit = TLObject.FLAG_30;
-            }
-            int max2 = Math.max(4, highestOneBit);
-            this.a = w7.q8.c(max2);
-            this.e = ((32 - Integer.numberOfLeadingZeros(max2 - 1)) & 31) | (this.e & (-32));
-            this.b = new int[i12];
-            this.c = new Object[i12];
-            this.d = new Object[i12];
-        }
-        Map a2 = a();
-        if (a2 != null) {
-            return a2.put(obj, obj2);
-        }
-        int[] iArr = this.b;
-        iArr.getClass();
-        Object[] objArr = this.c;
-        objArr.getClass();
-        Object[] objArr2 = this.d;
-        objArr2.getClass();
-        int i13 = this.f;
-        int i14 = i13 + 1;
-        int a10 = w7.r8.a(obj);
-        int d = d();
-        int i15 = a10 & d;
-        Object obj3 = this.a;
-        obj3.getClass();
-        int b10 = w7.q8.b(i15, obj3);
-        if (b10 == 0) {
-            if (i14 > d) {
-                d = f(d, (d + 1) * (d < 32 ? 4 : 2), a10, i13);
-            } else {
-                Object obj4 = this.a;
-                obj4.getClass();
-                w7.q8.d(i15, i14, obj4);
-            }
-            i10 = 1;
-        } else {
-            int i16 = ~d;
-            int i17 = a10 & i16;
-            int i18 = 0;
-            while (true) {
-                int i19 = b10 - 1;
-                int i20 = iArr[i19];
-                i10 = 1;
-                int i21 = i20 & i16;
-                int i22 = i11;
-                if (i21 == i17 && w7.u8.a(obj, objArr[i19])) {
-                    Object obj5 = objArr2[i19];
-                    objArr2[i19] = obj2;
-                    return obj5;
-                }
-                int i23 = i20 & d;
-                int i24 = i18 + 1;
-                if (i23 != 0) {
-                    i18 = i24;
-                    b10 = i23;
-                    i11 = i22;
-                } else {
-                    if (i24 >= 9) {
-                        LinkedHashMap linkedHashMap = new LinkedHashMap(d() + 1, 1.0f);
-                        int i25 = isEmpty() ? -1 : 0;
-                        while (i25 >= 0) {
-                            Object[] objArr3 = this.c;
-                            objArr3.getClass();
-                            Object obj6 = objArr3[i25];
-                            Object[] objArr4 = this.d;
-                            objArr4.getClass();
-                            linkedHashMap.put(obj6, objArr4[i25]);
-                            int i26 = i25 + 1;
-                            i25 = i26 < this.f ? i26 : -1;
-                        }
-                        this.a = linkedHashMap;
-                        this.b = null;
-                        this.c = null;
-                        this.d = null;
-                        this.e += 32;
-                        return linkedHashMap.put(obj, obj2);
-                    }
-                    if (i14 > d) {
-                        d = f(d, (d + 1) * (d < i22 ? 4 : 2), a10, i13);
-                    } else {
-                        iArr[i19] = (i14 & d) | i21;
-                    }
+        } catch (Throwable th3) {
+            try {
+                b0Var.close();
+            } catch (Throwable th4) {
+                try {
+                    Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th3, th4);
+                } catch (Exception unused) {
                 }
             }
+            throw th3;
         }
-        int[] iArr2 = this.b;
-        iArr2.getClass();
-        int length = iArr2.length;
-        if (i14 > length) {
-            int i27 = i10;
-            int min = Math.min(1073741823, (Math.max(i27, length >>> 1) + length) | i27);
-            if (min != length) {
-                int[] iArr3 = this.b;
-                iArr3.getClass();
-                this.b = Arrays.copyOf(iArr3, min);
-                Object[] objArr5 = this.c;
-                objArr5.getClass();
-                this.c = Arrays.copyOf(objArr5, min);
-                Object[] objArr6 = this.d;
-                objArr6.getClass();
-                this.d = Arrays.copyOf(objArr6, min);
-            }
-        }
-        int[] iArr4 = this.b;
-        iArr4.getClass();
-        iArr4[i13] = (~d) & a10;
-        Object[] objArr7 = this.c;
-        objArr7.getClass();
-        objArr7[i13] = obj;
-        Object[] objArr8 = this.d;
-        objArr8.getClass();
-        objArr8[i13] = obj2;
-        this.f = i14;
-        this.e += 32;
-        return null;
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        Map a2 = a();
-        if (a2 != null) {
-            return a2.remove(obj);
+    public final void k(int i3) {
+        while ((i3 & (-128)) != 0) {
+            this.a.write((i3 & hs.L1) | 128);
+            i3 >>>= 7;
         }
-        Object g10 = g(obj);
-        if (g10 == s) {
-            return null;
-        }
-        return g10;
+        this.a.write(i3 & hs.L1);
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int size() {
-        Map a2 = a();
-        return a2 != null ? a2.size() : this.f;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Collection values() {
-        e9.o oVar = this.r;
-        if (oVar != null) {
-            return oVar;
+    public final void l(long j10) {
+        while (((-128) & j10) != 0) {
+            this.a.write((((int) j10) & hs.L1) | 128);
+            j10 >>>= 7;
         }
-        e9.o oVar2 = new e9.o((Object) this, 4);
-        this.r = oVar2;
-        return oVar2;
+        this.a.write(((int) j10) & hs.L1);
     }
 }

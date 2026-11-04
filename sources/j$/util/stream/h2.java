@@ -22,7 +22,7 @@ public class h2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public final e2 a(int i10) {
+    public final e2 a(int i3) {
         throw new IndexOutOfBoundsException();
     }
 
@@ -45,8 +45,8 @@ public class h2 implements e2 {
     }
 
     @Override // j$.util.stream.e2
-    public final void f(Object[] objArr, int i10) {
-        System.arraycopy(this.a, 0, objArr, i10, this.b);
+    public final void f(Object[] objArr, int i3) {
+        System.arraycopy(this.a, 0, objArr, i3, this.b);
     }
 
     @Override // j$.util.stream.e2
@@ -65,8 +65,8 @@ public class h2 implements e2 {
 
     @Override // j$.util.stream.e2
     public final void forEach(Consumer consumer) {
-        for (int i10 = 0; i10 < this.b; i10++) {
-            consumer.x(this.a[i10]);
+        for (int i3 = 0; i3 < this.b; i3++) {
+            consumer.x(this.a[i3]);
         }
     }
 

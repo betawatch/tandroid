@@ -3,23 +3,23 @@ package m;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import w7.r6;
+import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class t {
     public final TextView a;
-    public final k2.m0 b;
+    public final y00 b;
 
     public t(TextView textView) {
         this.a = textView;
-        k2.m0 m0Var = new k2.m0();
-        m0Var.a = new q1.g(textView);
-        this.b = m0Var;
+        y00 y00Var = new y00();
+        y00Var.a = new s1.g(textView);
+        this.b = y00Var;
     }
 
-    public final void a(AttributeSet attributeSet, int i10) {
-        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, f.a.i, i10, 0);
+    public final void a(AttributeSet attributeSet, int i3) {
+        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, f.a.i, i3, 0);
         try {
             boolean z10 = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
             obtainStyledAttributes.recycle();
@@ -31,10 +31,10 @@ public final class t {
     }
 
     public final void b(boolean z10) {
-        ((r6) this.b.a).b(z10);
+        ((x7.p) this.b.a).b(z10);
     }
 
     public final void c(boolean z10) {
-        ((r6) this.b.a).c(z10);
+        ((x7.p) this.b.a).c(z10);
     }
 }

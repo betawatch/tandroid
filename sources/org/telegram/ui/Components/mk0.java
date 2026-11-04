@@ -1,139 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class mk0 extends r10 {
-    public View a;
-    public final /* synthetic */ nk0 b;
+public final class mk0 extends Drawable {
+    public int a = org.telegram.messenger.hs.e4;
+    public final /* synthetic */ n70 b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ Bitmap f;
+    public final /* synthetic */ RectF g;
+    public final /* synthetic */ Paint h;
+    public final /* synthetic */ Paint i;
+    public final /* synthetic */ StaticLayout j;
 
-    public mk0(nk0 nk0Var) {
-        this.b = nk0Var;
+    public mk0(n70 n70Var, int[] iArr, org.telegram.ui.Cells.q1 q1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
+        this.b = n70Var;
+        this.c = iArr;
+        this.d = q1Var;
+        this.e = iArr2;
+        this.f = bitmap;
+        this.g = rectF;
+        this.h = paint;
+        this.i = paint2;
+        this.j = staticLayout;
     }
 
-    @Override // org.telegram.ui.Components.r10
-    public final boolean a() {
-        return ((uk0) this.b.b).W0 != null;
-    }
-
-    public final void b(View view, MotionEvent motionEvent) {
-        uk0 uk0Var = (uk0) this.b.b;
-        if (view != null) {
-            if (uk0Var.T0 == null && uk0Var.U0 == null) {
-                return;
-            }
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            uk0Var.j1(view, x10, y3, true);
-            int i10 = uk0Var.M1;
-            if (uk0Var.P1 && i10 != -1) {
-                try {
-                    view.playSoundEffect(0);
-                } catch (Exception unused) {
-                }
-                view.sendAccessibilityEvent(1);
-                hk0 hk0Var = uk0Var.T0;
-                if (hk0Var != null) {
-                    hk0Var.f(i10, view);
-                } else {
-                    ik0 ik0Var = uk0Var.U0;
-                    if (ik0Var != null) {
-                        ik0Var.b(x10 - view.getX(), y3 - view.getY(), i10, view);
-                    }
-                }
-            }
-            lk0 lk0Var = new lk0(this, view, i10, x10, y3);
-            uk0Var.Q1 = lk0Var;
-            org.telegram.messenger.i0.h3(lk0Var, ViewConfiguration.getPressedStateDuration());
-            lg.k kVar = uk0Var.c1;
-            if (kVar != null) {
-                org.telegram.messenger.i0.r(kVar);
-                uk0Var.c1 = null;
-                uk0Var.L1 = null;
-                uk0Var.N1 = false;
-                uk0Var.m1(view, motionEvent);
-            }
-        }
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        ik0 ik0Var;
-        uk0 uk0Var = (uk0) this.b.b;
-        View view = this.a;
-        if (view == null || (ik0Var = uk0Var.U0) == null || !ik0Var.h1(view)) {
-            return false;
-        }
-        uk0Var.U0.q0(this.a, motionEvent.getX(), motionEvent.getY());
-        this.a = null;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-        int i10;
-        uk0 uk0Var = (uk0) this.b.b;
-        View view = uk0Var.L1;
-        if (view == null || (i10 = uk0Var.M1) == -1) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.a <= 0) {
             return;
         }
-        jk0 jk0Var = uk0Var.V0;
-        if (jk0Var == null && uk0Var.W0 == null) {
-            return;
-        }
-        if (jk0Var != null) {
-            if (jk0Var.f(i10, view)) {
-                try {
-                    view.performHapticFeedback(0);
-                } catch (Exception unused) {
-                }
-                view.sendAccessibilityEvent(2);
-                return;
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(getBounds());
+        float f10 = rectF.left;
+        CornerPathEffect cornerPathEffect = n70.w;
+        rectF.left = f10 - (org.telegram.messenger.g0.L(5.0f) / 2.0f);
+        canvas.save();
+        canvas.saveLayerAlpha(rectF, this.a, 31);
+        int[] iArr = this.c;
+        canvas.translate(iArr[0], iArr[1]);
+        n70 n70Var = this.b;
+        org.telegram.ui.Cells.q1 q1Var = this.d;
+        if (q1Var == null || !q1Var.L0()) {
+            canvas.drawPath(n70Var, this.i);
+        } else {
+            org.telegram.ui.ActionBar.t4 t4Var = q1Var.K6;
+            if (t4Var == null || t4Var.c == null) {
+                canvas.translate(-iArr[0], -iArr[1]);
+                int[] iArr2 = this.e;
+                canvas.translate(iArr2[0], q1Var.getPaddingTop() + iArr2[1]);
+                q1Var.M0(canvas, true, false);
+                canvas.translate(-iArr2[0], (-iArr2[1]) - q1Var.getPaddingTop());
+                canvas.translate(iArr[0], iArr[1]);
+            } else {
+                canvas.save();
+                q1Var.setBackgroundTopY(true);
+                canvas.translate(0.0f, -q1Var.K6.r);
+                canvas.drawPaint(q1Var.K6.c);
+                canvas.restore();
             }
-            return;
-        }
-        if (uk0Var.W0.b(motionEvent.getX() - uk0Var.L1.getX(), motionEvent.getY() - uk0Var.L1.getY(), i10, view)) {
-            try {
-                view.performHapticFeedback(0);
-            } catch (Exception unused2) {
+            Bitmap bitmap = this.f;
+            if (bitmap != null) {
+                canvas.save();
+                RectF rectF2 = this.g;
+                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
+                canvas.restore();
             }
-            view.sendAccessibilityEvent(2);
-            uk0Var.X0 = true;
         }
+        canvas.clipPath(n70Var);
+        this.j.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-        ik0 ik0Var;
-        View view = this.a;
-        if (view == null || (ik0Var = ((uk0) this.b.b).U0) == null || !ik0Var.h1(view)) {
-            return false;
-        }
-        b(this.a, motionEvent);
-        this.a = null;
-        return true;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        uk0 uk0Var = (uk0) this.b.b;
-        View view = uk0Var.L1;
-        if (view != null) {
-            ik0 ik0Var = uk0Var.U0;
-            if (ik0Var != null && ik0Var.h1(view)) {
-                this.a = uk0Var.L1;
-                return false;
-            }
-            b(uk0Var.L1, motionEvent);
-        }
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        this.a = i3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,30 +1,17 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ni0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wi0 b;
-    public final /* synthetic */ TLObject c;
+public final class ni0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
 
-    public /* synthetic */ ni0(wi0 wi0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = wi0Var;
-        this.c = tLObject;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wi0 wi0Var = this.b;
-                org.telegram.messenger.at.f(wi0Var.b).d(new ni0(wi0Var, this.c, 1));
-                break;
-            default:
-                wi0.a(this.b, this.c);
-                break;
-        }
+    public ni0(float f10, float f11, float f12, float f13) {
+        this.a = f10;
+        this.b = f11;
+        this.c = f12;
+        this.d = f13;
     }
 }

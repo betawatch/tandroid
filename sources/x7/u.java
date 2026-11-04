@@ -1,55 +1,13 @@
 package x7;
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class u extends p {
-    public final transient com.google.android.gms.internal.cast.i0 c;
-    public final transient Object[] d;
-    public final transient int e = 1;
-
-    public u(com.google.android.gms.internal.cast.i0 i0Var, Object[] objArr) {
-        this.c = i0Var;
-        this.d = objArr;
+public abstract class u {
+    public static boolean a(int i3, int i10) {
+        return (i3 & i10) != 0;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        o oVar = this.b;
-        if (oVar == null) {
-            oVar = new t(this);
-            this.b = oVar;
-        }
-        return oVar.listIterator(0);
-    }
-
-    @Override // x7.k
-    public final int l(Object[] objArr) {
-        o oVar = this.b;
-        if (oVar == null) {
-            oVar = new t(this);
-            this.b = oVar;
-        }
-        return oVar.l(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
+    public static int b(int i3, int i10, boolean z10) {
+        return z10 ? i3 | i10 : i3 & (~i10);
     }
 }

@@ -1,25 +1,39 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ta1 implements View.OnClickListener {
-    public final /* synthetic */ nb1 a;
+public final /* synthetic */ class ta1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    public ta1(nb1 nb1Var) {
-        this.a = nb1Var;
+    public /* synthetic */ ta1(UserInfoActivity userInfoActivity, int i3) {
+        this.a = i3;
+        this.b = userInfoActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        nb1 nb1Var = this.a;
-        if (nb1Var.M == 1) {
-            org.telegram.ui.Components.s4.i0(nb1Var, -nb1Var.a, null, nb1Var.g(), null, false, nb1Var.J, new ra(this, 5), nb1Var.getResourceProvider());
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.presentFragment(new PrivacyControlActivity(9, true));
+                break;
+            case 1:
+                ai.h4 h4Var = this.b.y;
+                if (h4Var != null) {
+                    h4Var.g3.O(true);
+                    break;
+                }
+                break;
+            case 2:
+                UserInfoActivity userInfoActivity = this.b;
+                userInfoActivity.getClass();
+                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
+                break;
+            default:
+                UserInfoActivity userInfoActivity2 = this.b;
+                userInfoActivity2.getClass();
+                userInfoActivity2.presentFragment(new PremiumPreviewFragment(0, "add_account"));
+                break;
         }
-        nb1Var.getMessagesController().m(nb1Var.a, nb1Var.getUserConfig().f(), 0, null, nb1Var, false, new la1(nb1Var, 2), new ma1(nb1Var), null);
-        org.telegram.messenger.at.e().k(org.telegram.messenger.at.I4, new Object[0]);
-        nb1Var.S0(false);
     }
 }

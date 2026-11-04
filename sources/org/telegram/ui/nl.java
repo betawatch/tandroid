@@ -1,93 +1,155 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
+import android.graphics.Rect;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class nl implements gm {
-    public final /* synthetic */ un a;
-    public final /* synthetic */ un b;
+public final class nl extends eq0 {
+    public final ArrayList a;
+    public final int[] b = new int[2];
+    public final /* synthetic */ wm c;
 
-    public nl(un unVar, un unVar2) {
-        this.b = unVar;
-        this.a = unVar2;
+    public nl(wm wmVar, ArrayList arrayList) {
+        this.c = wmVar;
+        this.a = arrayList;
     }
 
-    @Override // org.telegram.ui.gm
-    public final void T0(int i10) {
-        this.b.l(i10, 0, true, 0, true, 0);
-    }
-
-    @Override // org.telegram.ui.gm
-    public final void X(boolean z10, boolean z11) {
-        org.telegram.ui.Components.ta taVar;
-        int i10;
-        un unVar = this.b;
-        if (!z10) {
-            org.telegram.messenger.kj kjVar = (org.telegram.messenger.kj) unVar.V4.get(Integer.valueOf(unVar.X4));
-            if (kjVar == null) {
-                kjVar = (org.telegram.messenger.kj) unVar.E6[0].get(unVar.X4);
-            }
-            unVar.Bc(kjVar);
-            return;
+    @Override // org.telegram.ui.eq0, org.telegram.ui.kq0
+    public final mq0 E(org.telegram.messenger.zi ziVar, TLRPC.FileLocation fileLocation, int i3, boolean z10, boolean z11) {
+        char c2;
+        char c10;
+        ImageReceiver imageReceiver;
+        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.messenger.zi messageObject;
+        org.telegram.messenger.cv cvVar;
+        TL_iv.PageBlock pageBlock;
+        ImageReceiver imageReceiver2;
+        nl nlVar = this;
+        wm wmVar = nlVar.c;
+        if (wmVar.A0 == null || i3 < 0) {
+            return null;
         }
-        ArrayList arrayList = new ArrayList(unVar.T4);
-        ArrayList arrayList2 = new ArrayList(unVar.V4.values());
-        org.telegram.ui.Components.wb wbVar = null;
-        if (z11) {
-            i10 = ((org.telegram.ui.ActionBar.k2) unVar).currentAccount;
-            SharedPreferences sharedPreferences = org.telegram.messenger.wp.r1(i10).e7;
-            if (unVar.T4.isEmpty()) {
-                sharedPreferences.edit().remove("pin_" + unVar.j6).commit();
+        ArrayList arrayList = nlVar.a;
+        if (i3 >= arrayList.size()) {
+            return null;
+        }
+        TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) arrayList.get(i3);
+        int childCount = wmVar.A0.getChildCount();
+        int i10 = 0;
+        while (i10 < childCount) {
+            View childAt = wmVar.A0.getChildAt(i10);
+            boolean z12 = childAt instanceof org.telegram.ui.Cells.q1;
+            int[] iArr = nlVar.b;
+            if (!z12 || (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) == null || (cvVar = messageObject.w2) == null) {
+                c2 = 0;
+                c10 = 1;
+                imageReceiver = null;
             } else {
-                sharedPreferences.edit().putInt("pin_" + unVar.j6, ((Integer) unVar.T4.get(0)).intValue()).commit();
+                int[] iArr2 = new int[2];
+                ArrayList arrayList2 = cvVar.g;
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= arrayList2.size()) {
+                        c2 = 0;
+                        c10 = 1;
+                        imageReceiver = null;
+                        break;
+                    }
+                    org.telegram.messenger.xt xtVar = (org.telegram.messenger.xt) arrayList2.get(i11);
+                    if (xtVar instanceof org.telegram.messenger.ku) {
+                        org.telegram.messenger.ku kuVar = (org.telegram.messenger.ku) xtVar;
+                        pageBlock = kuVar.r0;
+                        imageReceiver2 = kuVar.Y;
+                    } else if (xtVar instanceof org.telegram.messenger.wu) {
+                        org.telegram.messenger.wu wuVar = (org.telegram.messenger.wu) xtVar;
+                        TL_iv.pageBlockVideo pageblockvideo = wuVar.r0;
+                        imageReceiver2 = wuVar.Y;
+                        pageBlock = pageblockvideo;
+                    } else if (xtVar instanceof org.telegram.messenger.cu) {
+                        ArrayList arrayList3 = ((org.telegram.messenger.cu) xtVar).Y;
+                        int size = arrayList3.size();
+                        c2 = 0;
+                        int i12 = 0;
+                        while (i12 < size) {
+                            Object obj = arrayList3.get(i12);
+                            i12++;
+                            c10 = 1;
+                            org.telegram.messenger.qt qtVar = (org.telegram.messenger.qt) obj;
+                            if (qtVar.b == pageBlock2) {
+                                Rect rect = xtVar.b;
+                                iArr2[0] = rect.left;
+                                iArr2[1] = xtVar.U + rect.top;
+                                imageReceiver = qtVar.c;
+                                break;
+                            }
+                        }
+                        i11++;
+                    } else {
+                        c2 = 0;
+                        c10 = 1;
+                        if (xtVar instanceof org.telegram.messenger.ou) {
+                            org.telegram.messenger.ou ouVar = (org.telegram.messenger.ou) xtVar;
+                            ArrayList arrayList4 = ouVar.Y;
+                            int i13 = ouVar.b0;
+                            if (i13 >= 0 && i13 < arrayList4.size() && ((org.telegram.messenger.qt) arrayList4.get(i13)).b == pageBlock2) {
+                                Rect rect2 = xtVar.b;
+                                iArr2[0] = rect2.left;
+                                iArr2[1] = xtVar.U + rect2.top;
+                                imageReceiver = ((org.telegram.messenger.qt) arrayList4.get(i13)).c;
+                                break;
+                            }
+                            i11++;
+                        } else {
+                            pageBlock = null;
+                            imageReceiver2 = null;
+                            if (pageBlock == pageBlock2 && imageReceiver2 != null) {
+                                Rect rect3 = xtVar.b;
+                                iArr2[c2] = rect3.left;
+                                iArr2[c10] = xtVar.U + rect3.top;
+                                imageReceiver = imageReceiver2;
+                                break;
+                            }
+                            i11++;
+                        }
+                    }
+                    c2 = 0;
+                    c10 = 1;
+                    if (pageBlock == pageBlock2) {
+                        Rect rect32 = xtVar.b;
+                        iArr2[c2] = rect32.left;
+                        iArr2[c10] = xtVar.U + rect32.top;
+                        imageReceiver = imageReceiver2;
+                        break;
+                    }
+                    continue;
+                    i11++;
+                }
+                if (imageReceiver != null) {
+                    childAt.getLocationInWindow(iArr);
+                    iArr[c2] = q1Var.getTextX() + iArr2[c2] + iArr[c2];
+                    iArr[c10] = q1Var.getTextY() + iArr2[c10] + iArr[c10];
+                }
             }
-            unVar.Xc(0, true);
-        } else {
-            unVar.getNotificationCenter().k(org.telegram.messenger.at.t0, Long.valueOf(unVar.j6), arrayList, Boolean.FALSE, null, null, 0, 0, Boolean.TRUE);
-        }
-        org.telegram.ui.Components.wb wbVar2 = unVar.O3;
-        if (wbVar2 != null) {
-            wbVar2.b();
-        }
-        unVar.P3 = true;
-        int i11 = unVar.Q3 + 1;
-        unVar.Q3 = i11;
-        boolean z12 = unVar.v4;
-        un unVar2 = this.a;
-        int X8 = z12 ? unVar2.X8() : unVar.X8();
-        ArrayList arrayList3 = new ArrayList(unVar.v4 ? unVar2.T4 : unVar.T4);
-        ml mlVar = new ml(this, z11, arrayList, arrayList2, X8, i11);
-        org.telegram.messenger.voip.p0 p0Var = new org.telegram.messenger.voip.p0(this, z11, arrayList3, i11);
-        sn snVar = unVar.xa;
-        if (unVar.getParentActivity() == null) {
-            p0Var.run();
-        } else {
-            if (z11) {
-                org.telegram.ui.Components.tb tbVar = new org.telegram.ui.Components.tb(unVar.getParentActivity(), snVar);
-                tbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                tbVar.b.setText(org.telegram.messenger.dd.L0(2131747240, null));
-                tbVar.c.setText(org.telegram.messenger.dd.L0(2131747239, null));
-                taVar = tbVar;
-            } else {
-                org.telegram.ui.Components.eb ebVar = new org.telegram.ui.Components.eb(unVar.getParentActivity(), snVar);
-                ebVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                ebVar.b.setText(org.telegram.messenger.dd.G(X8, "MessagesUnpinned", new Object[0]));
-                taVar = ebVar;
+            if (imageReceiver != null) {
+                mq0 mq0Var = new mq0();
+                mq0Var.b = iArr[c2];
+                mq0Var.c = iArr[c10];
+                mq0Var.d = wmVar.A0;
+                mq0Var.a = imageReceiver;
+                mq0Var.e = imageReceiver.p();
+                mq0Var.h = imageReceiver.E();
+                mq0Var.j = (int) ((wmVar.M9 - wmVar.O9) - org.telegram.messenger.g0.L(4.0f));
+                mq0Var.i = (int) (wmVar.r9(org.telegram.ui.Components.c11.c) + wmVar.w.d() + org.telegram.messenger.g0.L(9.0f) + wmVar.Va + wmVar.Xc);
+                return mq0Var;
             }
-            org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(unVar.getParentActivity(), snVar, true);
-            ubVar.b = mlVar;
-            ubVar.c = p0Var;
-            taVar.setButton(ubVar);
-            wbVar = org.telegram.ui.Components.wb.g(unVar, taVar, 5000);
+            i10++;
+            nlVar = this;
         }
-        unVar.O3 = wbVar;
-    }
-
-    @Override // org.telegram.ui.gm
-    public final void v0(String str) {
-        this.b.ya(str, false);
+        return null;
     }
 }

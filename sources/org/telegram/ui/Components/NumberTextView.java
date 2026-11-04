@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -53,14 +53,14 @@ public class NumberTextView extends View {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(int i10, boolean z10) {
+    public final void a(int i3, boolean z10) {
         String sb2;
         String sb3;
         boolean z11;
-        float f7;
-        int i11;
+        float f10;
+        int i10;
         String str;
-        if (this.f == i10 && z10) {
+        if (this.f == i3 && z10) {
             return;
         }
         ObjectAnimator objectAnimator = this.d;
@@ -75,16 +75,16 @@ public class NumberTextView extends View {
         arrayList2.clear();
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = i0.a.i(this.f, "#");
-            sb3 = i0.a.i(i10, "#");
+            sb2 = k2.p1.i(this.f, "#");
+            sb3 = k2.p1.i(i3, "#");
         } else {
             Locale locale2 = Locale.US;
-            int i12 = this.f;
+            int i11 = this.f;
             StringBuilder sb4 = new StringBuilder();
-            sb4.append(i12);
+            sb4.append(i11);
             sb2 = sb4.toString();
             StringBuilder sb5 = new StringBuilder();
-            sb5.append(i10);
+            sb5.append(i3);
             sb3 = sb5.toString();
         }
         TextPaint textPaint = this.c;
@@ -92,41 +92,41 @@ public class NumberTextView extends View {
         float measureText = textPaint.measureText(sb2);
         this.s = measureText;
         boolean z12 = this.n && this.r != measureText;
-        this.f = i10;
-        float f10 = 0.0f;
+        this.f = i3;
+        float f11 = 0.0f;
         this.e = 0.0f;
-        int i13 = 0;
-        while (i13 < sb3.length()) {
-            int i14 = i13 + 1;
-            String substring = sb3.substring(i13, i14);
-            String substring2 = (arrayList.isEmpty() || i13 >= sb2.length()) ? null : sb2.substring(i13, i14);
+        int i12 = 0;
+        while (i12 < sb3.length()) {
+            int i13 = i12 + 1;
+            String substring = sb3.substring(i12, i13);
+            String substring2 = (arrayList.isEmpty() || i12 >= sb2.length()) ? null : sb2.substring(i12, i13);
             if (z12 || substring2 == null || !substring2.equals(substring)) {
                 if (z12 && substring2 == null) {
-                    i11 = i14;
-                    f7 = f10;
+                    i10 = i13;
+                    f10 = f11;
                     str = substring;
                     arrayList.add(new StaticLayout("", textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                 } else {
-                    f7 = f10;
-                    i11 = i14;
+                    f10 = f11;
+                    i10 = i13;
                     str = substring;
                 }
                 arrayList2.add(new StaticLayout(str, textPaint, (int) Math.ceil(textPaint.measureText(str)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
             } else {
-                arrayList2.add((StaticLayout) arrayList.get(i13));
-                arrayList.set(i13, null);
-                f7 = f10;
-                i11 = i14;
+                arrayList2.add((StaticLayout) arrayList.get(i12));
+                arrayList.set(i12, null);
+                f10 = f11;
+                i10 = i13;
             }
-            f10 = f7;
-            i13 = i11;
+            f11 = f10;
+            i12 = i10;
         }
-        float f11 = f10;
+        float f12 = f11;
         if (z10 && !arrayList.isEmpty()) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f11);
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f12);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new t60(this, 5));
+            this.d.addListener(new a60(this, 5));
             this.d.start();
         }
         invalidate();
@@ -146,38 +146,38 @@ public class NumberTextView extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float f7;
         float f10;
+        float f11;
         ArrayList arrayList = this.a;
         if (arrayList.isEmpty()) {
             return;
         }
         float height = ((StaticLayout) arrayList.get(0)).getHeight();
-        float L = this.h ? org.telegram.messenger.i0.L(4.0f) : height;
+        float L = this.h ? org.telegram.messenger.g0.L(4.0f) : height;
         if (this.n) {
-            f7 = (getMeasuredWidth() - this.r) / 2.0f;
-            f10 = ((getMeasuredWidth() - this.s) / 2.0f) - f7;
+            f10 = (getMeasuredWidth() - this.r) / 2.0f;
+            f11 = ((getMeasuredWidth() - this.s) / 2.0f) - f10;
         } else {
-            f7 = 0.0f;
             f10 = 0.0f;
+            f11 = 0.0f;
         }
         canvas.save();
-        canvas.translate(getPaddingLeft() + f7, (getMeasuredHeight() - height) / 2.0f);
+        canvas.translate(getPaddingLeft() + f10, (getMeasuredHeight() - height) / 2.0f);
         int size = arrayList.size();
         ArrayList arrayList2 = this.b;
         int max = Math.max(size, arrayList2.size());
-        int i10 = 0;
-        while (i10 < max) {
+        int i3 = 0;
+        while (i3 < max) {
             canvas.save();
-            StaticLayout staticLayout = i10 < arrayList2.size() ? (StaticLayout) arrayList2.get(i10) : null;
-            StaticLayout staticLayout2 = i10 < arrayList.size() ? (StaticLayout) arrayList.get(i10) : null;
-            float f11 = this.e;
+            StaticLayout staticLayout = i3 < arrayList2.size() ? (StaticLayout) arrayList2.get(i3) : null;
+            StaticLayout staticLayout2 = i3 < arrayList.size() ? (StaticLayout) arrayList.get(i3) : null;
+            float f12 = this.e;
             TextPaint textPaint = this.c;
-            if (f11 > 0.0f) {
+            if (f12 > 0.0f) {
                 if (staticLayout != null) {
-                    textPaint.setAlpha((int) (f11 * 255.0f));
+                    textPaint.setAlpha((int) (f12 * 255.0f));
                     canvas.save();
-                    canvas.translate(f10, (this.e - 1.0f) * L);
+                    canvas.translate(f11, (this.e - 1.0f) * L);
                     staticLayout.draw(canvas);
                     canvas.restore();
                     if (staticLayout2 != null) {
@@ -185,36 +185,36 @@ public class NumberTextView extends View {
                         canvas.translate(0.0f, this.e * L);
                     }
                 } else {
-                    textPaint.setAlpha(org.telegram.messenger.at.e4);
+                    textPaint.setAlpha(org.telegram.messenger.hs.e4);
                 }
-            } else if (f11 < 0.0f) {
+            } else if (f12 < 0.0f) {
                 if (staticLayout != null) {
-                    textPaint.setAlpha((int) ((-f11) * 255.0f));
+                    textPaint.setAlpha((int) ((-f12) * 255.0f));
                     canvas.save();
-                    canvas.translate(f10, (this.e + 1.0f) * L);
+                    canvas.translate(f11, (this.e + 1.0f) * L);
                     staticLayout.draw(canvas);
                     canvas.restore();
                 }
                 if (staticLayout2 != null) {
-                    if (i10 == max - 1 || staticLayout != null) {
+                    if (i3 == max - 1 || staticLayout != null) {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.e * L);
                     } else {
-                        textPaint.setAlpha(org.telegram.messenger.at.e4);
+                        textPaint.setAlpha(org.telegram.messenger.hs.e4);
                     }
                 }
             } else if (staticLayout2 != null) {
-                textPaint.setAlpha(org.telegram.messenger.at.e4);
+                textPaint.setAlpha(org.telegram.messenger.hs.e4);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);
             }
             canvas.restore();
-            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + org.telegram.messenger.i0.L(1.0f), 0.0f);
+            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + org.telegram.messenger.g0.L(1.0f), 0.0f);
             if (staticLayout2 != null && staticLayout != null) {
-                f10 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f10;
+                f11 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f11;
             }
-            i10++;
+            i3++;
         }
         canvas.restore();
     }
@@ -223,21 +223,21 @@ public class NumberTextView extends View {
         this.n = z10;
     }
 
-    public void setProgress(float f7) {
-        if (this.e == f7) {
+    public void setProgress(float f10) {
+        if (this.e == f10) {
             return;
         }
-        this.e = f7;
+        this.e = f10;
         invalidate();
     }
 
-    public void setTextColor(int i10) {
-        this.c.setColor(i10);
+    public void setTextColor(int i3) {
+        this.c.setColor(i3);
         invalidate();
     }
 
-    public void setTextSize(int i10) {
-        this.c.setTextSize(org.telegram.messenger.i0.L(i10));
+    public void setTextSize(int i3) {
+        this.c.setTextSize(org.telegram.messenger.g0.L(i3));
         this.b.clear();
         this.a.clear();
         a(this.f, false);
@@ -250,6 +250,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(bc0 bc0Var) {
+    public void setOnTextWidthProgressChangedListener(db0 db0Var) {
     }
 }

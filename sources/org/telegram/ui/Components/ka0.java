@@ -1,34 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ka0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ua0 b;
-    public final /* synthetic */ Context c;
+    public final /* synthetic */ la0 b;
 
-    public /* synthetic */ ka0(ua0 ua0Var, Context context, int i10) {
-        this.a = i10;
-        this.b = ua0Var;
-        this.c = context;
+    public /* synthetic */ ka0(la0 la0Var, int i3) {
+        this.a = i3;
+        this.b = la0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ua0 ua0Var = this.b;
-                ua0Var.c0.a(false);
-                org.telegram.messenger.i0.g3(new ka0(ua0Var, this.c, 1));
+                this.b.y();
                 break;
             default:
-                Context context = this.c;
-                if (org.telegram.messenger.i0.E1(context)) {
-                    new kg.i1(43, context, this.b.c0.F).show();
-                    break;
-                }
+                this.b.m(true);
                 break;
         }
     }

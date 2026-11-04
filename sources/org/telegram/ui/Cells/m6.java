@@ -1,105 +1,74 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
-import android.util.Property;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.a30;
-import org.telegram.messenger.dd;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import b8.mf;
+import org.telegram.messenger.bd;
+import org.telegram.ui.Components.CheckBoxSquare;
+import org.telegram.ui.Components.s70;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class m6 extends FrameLayout {
-    public final TextView a;
-    public final RadioButton b;
-    public boolean c;
+public final class m6 extends FrameLayout {
+    public final m2.p0 a;
+    public final s70 b;
+    public final CheckBoxSquare c;
 
-    public m6(Context context) {
-        this(context, null);
+    public m6(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        CheckBoxSquare checkBoxSquare = new CheckBoxSquare(context, null, false);
+        this.c = checkBoxSquare;
+        checkBoxSquare.setDuplicateParentStateEnabled(false);
+        checkBoxSquare.setFocusable(false);
+        checkBoxSquare.setFocusableInTouchMode(false);
+        checkBoxSquare.setClickable(false);
+        addView(checkBoxSquare, mf.d(18, 18.0f, (bd.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
+        m2.p0 p0Var = new m2.p0(this);
+        this.a = p0Var;
+        s70 s70Var = new s70(context, p0Var, e6Var);
+        this.b = s70Var;
+        org.telegram.ui.ActionBar.r6.V(s70Var, org.telegram.ui.ActionBar.k6.G6, e6Var);
+        org.telegram.ui.ActionBar.r6.H(s70Var, org.telegram.ui.ActionBar.k6.J6, e6Var);
+        s70Var.setTextSize(1, 15.0f);
+        s70Var.setMaxLines(2);
+        s70Var.setGravity((bd.a0 ? 5 : 3) | 16);
+        s70Var.setEllipsize(TextUtils.TruncateAt.END);
+        boolean z10 = bd.a0;
+        addView(s70Var, mf.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
+        setWillNotDraw(false);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        this.b.a(z10, z11);
+    public CheckBoxSquare getCheckBox() {
+        return this.c;
     }
 
-    public final void b(ArrayList arrayList, boolean z10) {
-        super.setEnabled(z10);
-        RadioButton radioButton = this.b;
-        TextView textView = this.a;
-        if (arrayList == null) {
-            textView.setAlpha(z10 ? 1.0f : 0.5f);
-            radioButton.setAlpha(z10 ? 1.0f : 0.5f);
-        } else {
-            float[] fArr = {z10 ? 1.0f : 0.5f};
-            Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, fArr));
-            arrayList.add(ObjectAnimator.ofFloat(radioButton, (Property<RadioButton, Float>) property, z10 ? 1.0f : 0.5f));
-        }
-    }
-
-    public final void c(String str, boolean z10, boolean z11) {
-        this.a.setText(str);
-        this.b.a(z10, false);
-        this.c = z11;
-        setWillNotDraw(!z11);
+    public TextView getTextView() {
+        return this.b;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.c) {
-            canvas.drawLine(dd.X ? 0.0f : org.telegram.messenger.i0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (dd.X ? org.telegram.messenger.i0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.t6.k0);
+        super.onDraw(canvas);
+        m2.p0 p0Var = this.a;
+        if (p0Var != null) {
+            canvas.save();
+            s70 s70Var = this.b;
+            canvas.translate(s70Var.getLeft(), s70Var.getTop());
+            if (p0Var.h(canvas)) {
+                invalidate();
+            }
+            canvas.restore();
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.f);
+    public void setChecked(boolean z10) {
+        this.c.a(z10, true);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.i0.L(50.0f) + (this.c ? 1 : 0));
-        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - org.telegram.messenger.i0.L(34.0f);
-        this.b.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(22.0f), TLObject.FLAG_30));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-    }
-
-    public void setRadioIcon(Drawable drawable) {
-        this.b.setIcon(drawable);
-    }
-
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
-    }
-
-    public m6(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.G6, p6Var);
-        a30.o(textView, 1, 16.0f, 1, 1);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((dd.X ? 5 : 3) | 16);
-        float f7 = 21;
-        addView(textView, w7.b6.d(-1, -1.0f, (dd.X ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
-        RadioButton radioButton = new RadioButton(context);
-        this.b = radioButton;
-        radioButton.setSize(org.telegram.messenger.i0.L(20.0f));
-        org.telegram.ui.ActionBar.a7.P(radioButton, org.telegram.ui.ActionBar.t6.g7, org.telegram.ui.ActionBar.t6.h7, p6Var);
-        boolean z10 = dd.X;
-        addView(radioButton, w7.b6.d(22, 22.0f, (z10 ? 3 : 5) | 48, z10 ? 22 : 0, 14.0f, z10 ? 0 : 22, 0.0f));
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

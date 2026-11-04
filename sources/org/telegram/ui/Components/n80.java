@@ -1,102 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.view.MotionEvent;
+import android.app.Activity;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class n80 extends org.telegram.ui.ActionBar.u5 {
-    public final org.telegram.ui.ActionBar.p6 M0;
-    public final ji.a N0;
-    public q80 O0;
+public final /* synthetic */ class n80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r80 b;
 
-    public n80(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        this.N0 = new ji.a(this);
-        this.M0 = p6Var;
+    public /* synthetic */ n80(r80 r80Var, int i3) {
+        this.a = i3;
+        this.b = r80Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.u5, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getLayoutX(), getLayoutY());
-        if (this.N0.h(canvas)) {
-            invalidate();
-        }
-        canvas.restore();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
-    @Override // org.telegram.ui.ActionBar.u5, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ClickableSpan clickableSpan;
-        CharacterStyle characterStyle;
-        ji.a aVar = this.N0;
-        if (aVar != null) {
-            Layout layout = getLayout();
-            int x10 = (int) motionEvent.getX();
-            int y3 = (int) motionEvent.getY();
-            Layout layout2 = getLayout();
-            if (layout2 != null) {
-                int layoutX = (int) (x10 - getLayoutX());
-                int layoutY = (int) (y3 - getLayoutY());
-                int lineForVertical = layout2.getLineForVertical(layoutY);
-                float f7 = layoutX;
-                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f7);
-                float lineLeft = layout2.getLineLeft(lineForVertical);
-                if (lineLeft <= f7 && layout2.getLineWidth(lineForVertical) + lineLeft >= f7 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                    if (clickableSpanArr.length != 0 && !org.telegram.messenger.i0.C1()) {
-                        clickableSpan = clickableSpanArr[0];
-                        if (clickableSpan == null && motionEvent.getAction() == 0) {
-                            q80 q80Var = new q80(clickableSpan, this.M0, motionEvent.getX(), motionEvent.getY(), 0);
-                            this.O0 = q80Var;
-                            aVar.b(q80Var, null);
-                            SpannableString spannableString = new SpannableString(layout.getText());
-                            int spanStart = spannableString.getSpanStart(this.O0.i);
-                            int spanEnd = spannableString.getSpanEnd(this.O0.i);
-                            k80 b10 = this.O0.b();
-                            b10.d(layout, spanStart, 0.0f);
-                            layout.getSelectionPath(spanStart, spanEnd, b10);
-                            return true;
-                        }
-                        if (motionEvent.getAction() == 1) {
-                            aVar.f(true);
-                            q80 q80Var2 = this.O0;
-                            if (q80Var2 != null && (characterStyle = q80Var2.i) == clickableSpan) {
-                                if (characterStyle instanceof ClickableSpan) {
-                                    ((ClickableSpan) characterStyle).onClick(this);
-                                }
-                                this.O0 = null;
-                                return true;
-                            }
-                            this.O0 = null;
-                        }
-                        if (motionEvent.getAction() == 3) {
-                            aVar.f(true);
-                            this.O0 = null;
-                        }
-                    }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        r80 r80Var = this.b;
+        switch (i3) {
+            case 0:
+                r80Var.b0();
+                break;
+            default:
+                Activity parentActivity = r80Var.getParentActivity();
+                Activity parentActivity2 = r80Var.getParentActivity();
+                org.telegram.messenger.q5 q5Var = tg.b1.m;
+                boolean z10 = parentActivity2.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false);
+                SharedPreferences.Editor edit = parentActivity.getSharedPreferences("shapedetector_conf", 0).edit();
+                if (z10) {
+                    edit.clear();
+                } else {
+                    edit.putBoolean("learning", true);
                 }
-            }
-            clickableSpan = null;
-            if (clickableSpan == null) {
-            }
-            if (motionEvent.getAction() == 1) {
-            }
-            if (motionEvent.getAction() == 3) {
-            }
+                edit.apply();
+                break;
         }
-        return this.O0 != null || super.onTouchEvent(motionEvent);
     }
 }

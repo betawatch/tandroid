@@ -1,82 +1,74 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.IBinder;
-import android.os.IInterface;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
+import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c0 extends m0 {
-    public final /* synthetic */ int b = 0;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class c0 extends com.google.android.gms.internal.cast.z {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(d0 d0Var, l0 l0Var, k6.a aVar) {
-        super(l0Var);
-        this.d = d0Var;
-        this.c = aVar;
+    public /* synthetic */ c0(Object obj, Looper looper, int i3) {
+        super(looper, 2);
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // com.google.android.gms.common.api.internal.m0
-    public final void a() {
-        n6.h l0Var;
-        int i10 = this.b;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        switch (i10) {
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        switch (this.a) {
             case 0:
-                ((d0) obj).c.d((k6.a) obj2);
-                break;
-            default:
-                g0 g0Var = (g0) obj2;
-                o8.h hVar = (o8.h) obj;
-                if (g0Var.g(0)) {
-                    k6.a aVar = hVar.b;
-                    if (!aVar.c()) {
-                        if (g0Var.x && !aVar.b()) {
-                            g0Var.a();
-                            g0Var.f();
-                            break;
-                        } else {
-                            g0Var.d(aVar);
-                            break;
+                d0 d0Var = (d0) this.b;
+                int i3 = message.what;
+                if (i3 == 1) {
+                    ReentrantLock reentrantLock = d0Var.b;
+                    reentrantLock.lock();
+                    try {
+                        if (d0Var.i()) {
+                            d0Var.m();
                         }
-                    } else {
-                        n6.v vVar = hVar.c;
-                        n6.l.g(vVar);
-                        k6.a aVar2 = vVar.c;
-                        if (!aVar2.c()) {
-                            Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
-                            g0Var.d(aVar2);
-                            break;
-                        } else {
-                            g0Var.D = true;
-                            IBinder iBinder = vVar.b;
-                            if (iBinder == null) {
-                                l0Var = null;
-                            } else {
-                                int i11 = n6.a.b;
-                                IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-                                l0Var = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
-                            }
-                            n6.l.g(l0Var);
-                            g0Var.E = l0Var;
-                            g0Var.F = vVar.d;
-                            g0Var.G = vVar.e;
-                            g0Var.f();
-                            break;
-                        }
+                        return;
+                    } finally {
+                        reentrantLock.unlock();
                     }
                 }
-                break;
+                if (i3 == 2) {
+                    d0Var.k();
+                    return;
+                }
+                StringBuilder sb2 = new StringBuilder(String.valueOf(i3).length() + 20);
+                sb2.append("Unknown message id: ");
+                sb2.append(i3);
+                Log.w("GoogleApiClientImpl", sb2.toString());
+                return;
+            default:
+                int i10 = message.what;
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        throw ((RuntimeException) message.obj);
+                    }
+                    StringBuilder sb3 = new StringBuilder(String.valueOf(i10).length() + 20);
+                    sb3.append("Unknown message id: ");
+                    sb3.append(i10);
+                    Log.w("GACStateManager", sb3.toString());
+                    return;
+                }
+                f0 f0Var = (f0) message.obj;
+                g0 g0Var = (g0) this.b;
+                f0Var.getClass();
+                g0Var.a.lock();
+                try {
+                    if (g0Var.m == f0Var.a) {
+                        f0Var.a();
+                    }
+                    return;
+                } finally {
+                    g0Var.a.unlock();
+                }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(g0 g0Var, g0 g0Var2, o8.h hVar) {
-        super(g0Var);
-        this.c = g0Var2;
-        this.d = hVar;
     }
 }

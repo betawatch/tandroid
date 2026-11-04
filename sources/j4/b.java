@@ -1,524 +1,287 @@
 package j4;
 
-import b2.v0;
-import c3.k0;
-import j$.util.Objects;
-import v7.t6;
+import a1.g;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
+import b4.d;
+import b4.l;
+import b4.m;
+import c4.f;
+import g2.k;
+import g2.n0;
+import g2.y;
+import g9.g0;
+import g9.i0;
+import g9.s1;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.zip.Inflater;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b implements i {
-    public final /* synthetic */ int a;
-    public final a4.g b;
-    public final e2.x c;
-    public final String d;
-    public final int e;
-    public final String f;
-    public String g;
-    public k0 h;
-    public int i;
-    public int j;
-    public boolean k;
-    public long l;
-    public b2.x m;
-    public int n;
-    public long o;
+public final class b implements m {
+    public static final b4.a e;
+    public final y a = new y();
+    public final y b = new y();
+    public final a c;
+    public Inflater d;
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public b(String str) {
-        this(0, 0, null, str);
-        this.a = 0;
+    static {
+        g0 g0Var = i0.b;
+        e = new b4.a(-9223372036854775807L, -9223372036854775807L, s1.e);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0389  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x03ba  */
-    @Override // j4.i
+    public b(List list) {
+        int i3;
+        a aVar = new a();
+        this.c = aVar;
+        String trim = new String((byte[]) list.get(0), StandardCharsets.UTF_8).trim();
+        String str = n0.a;
+        for (String str2 : trim.split("\\r?\\n", -1)) {
+            if (str2.startsWith("palette: ")) {
+                String[] split = str2.substring(9).split(",", -1);
+                aVar.f = new int[split.length];
+                for (int i10 = 0; i10 < split.length; i10++) {
+                    int[] iArr = aVar.f;
+                    try {
+                        i3 = Integer.parseInt(split[i10].trim(), 16);
+                    } catch (RuntimeException e10) {
+                        g2.a.m("VobsubParser", "Parsing color failed", e10);
+                        i3 = 0;
+                    }
+                    iArr[i10] = i3;
+                }
+            } else if (str2.startsWith("size: ")) {
+                String[] split2 = str2.substring(6).trim().split("x", -1);
+                if (split2.length != 2) {
+                    g2.a.l("VobsubParser", "Ignoring malformed IDX size line: '" + str2 + "'");
+                } else {
+                    try {
+                        aVar.g = Integer.parseInt(split2[0]);
+                        aVar.h = Integer.parseInt(split2[1]);
+                        aVar.d = true;
+                    } catch (RuntimeException e11) {
+                        g2.a.m("VobsubParser", "Parsing IDX failed", e11);
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // b4.m
+    public final /* synthetic */ d B(int i3, int i10, byte[] bArr) {
+        return g.a(this, bArr, i10);
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Failed to find 'out' block for switch in B:76:0x00bd. Please report as an issue. */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0276  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0292  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0286  */
+    @Override // b4.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(e2.x xVar) {
-        int i10;
+    public final void F(byte[] bArr, int i3, int i10, l lVar, k kVar) {
+        b4.a aVar;
+        boolean z10;
+        long j10;
         int i11;
-        int i12;
-        String str;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        int i20;
-        int i21;
-        int i22;
-        int i23;
-        int i24;
-        int i25;
-        int i26;
-        switch (this.a) {
-            case 0:
-                this.h.getClass();
-                while (xVar.a() > 0) {
-                    int i27 = this.i;
-                    e2.x xVar2 = this.c;
-                    if (i27 == 0) {
-                        while (true) {
-                            if (xVar.a() <= 0) {
-                                break;
-                            }
-                            if (this.k) {
-                                int A = xVar.A();
-                                if (A == 119) {
-                                    this.k = false;
-                                    this.i = 1;
-                                    byte[] bArr = xVar2.a;
-                                    bArr[0] = 11;
-                                    bArr[1] = 119;
-                                    this.j = 2;
-                                } else {
-                                    this.k = A == 11;
-                                }
-                            } else {
-                                this.k = xVar.A() == 11;
-                            }
+        boolean z11;
+        f2.b bVar;
+        long j11;
+        long j12;
+        Rect rect;
+        y yVar = this.a;
+        yVar.L(i3 + i10, bArr);
+        yVar.N(i3);
+        if (this.d == null) {
+            this.d = new Inflater();
+        }
+        Inflater inflater = this.d;
+        y yVar2 = this.b;
+        if (n0.Q(yVar, yVar2, inflater)) {
+            yVar.L(yVar2.c, yVar2.a);
+        }
+        a aVar2 = this.c;
+        long j13 = -9223372036854775807L;
+        aVar2.b = -9223372036854775807L;
+        aVar2.c = -9223372036854775807L;
+        boolean z12 = false;
+        aVar2.e = false;
+        aVar2.i = null;
+        aVar2.j = -1;
+        aVar2.k = -1;
+        int a10 = yVar.a();
+        if (a10 < 2 || yVar.H() != a10) {
+            aVar = e;
+        } else {
+            if (aVar2.f == null) {
+                g2.a.l("VobsubParser", "Skipping SPU (no palette)");
+            } else if (aVar2.d) {
+                int i12 = yVar.b - 2;
+                yVar.N(yVar.H() + i12);
+                while (true) {
+                    if (yVar.a() < 4) {
+                        z11 = z12;
+                        z10 = z11;
+                        j10 = j13;
+                    } else {
+                        int i13 = yVar.b;
+                        int H = yVar.H() * 10000;
+                        int H2 = yVar.H() + i12;
+                        z10 = (H2 == i13 || H2 >= yVar.c) ? z12 : true;
+                        if (z10) {
+                            j10 = j13;
+                            i11 = H2;
+                        } else {
+                            j10 = j13;
+                            i11 = yVar.c;
                         }
-                    } else if (i27 == 1) {
-                        byte[] bArr2 = xVar2.a;
-                        int min = Math.min(xVar.a(), 128 - this.j);
-                        xVar.k(this.j, min, bArr2);
-                        int i28 = this.j + min;
-                        this.j = i28;
-                        if (i28 == 128) {
-                            a4.g gVar = this.b;
-                            gVar.d0(0);
-                            int[] iArr = c3.b.f;
-                            int[] iArr2 = c3.b.d;
-                            int f7 = gVar.f();
-                            gVar.f0(40);
-                            Object[] objArr = gVar.i(5) > 10;
-                            gVar.d0(f7);
-                            if (objArr == true) {
-                                gVar.f0(16);
-                                int i29 = gVar.i(2);
-                                char c10 = i29 != 0 ? i29 != 1 ? i29 != 2 ? (char) 65535 : (char) 2 : (char) 1 : (char) 0;
-                                gVar.f0(3);
-                                i14 = (gVar.i(11) + 1) * 2;
-                                int i30 = gVar.i(2);
-                                if (i30 == 3) {
-                                    i15 = c3.b.e[gVar.i(2)];
-                                    i16 = 3;
-                                    i17 = 6;
-                                } else {
-                                    int i31 = gVar.i(2);
-                                    int i32 = c3.b.c[i31];
-                                    i15 = iArr2[i30];
-                                    i16 = i31;
-                                    i17 = i32;
-                                }
-                                i12 = i17 * 256;
-                                int i33 = (i14 * i15) / (i17 * 32);
-                                int i34 = gVar.i(3);
-                                boolean h = gVar.h();
-                                i11 = iArr[i34] + (h ? 1 : 0);
-                                gVar.f0(10);
-                                if (gVar.h()) {
-                                    gVar.f0(8);
-                                }
-                                if (i34 == 0) {
-                                    gVar.f0(5);
-                                    if (gVar.h()) {
-                                        gVar.f0(8);
-                                    }
-                                }
-                                if (c10 == 1 && gVar.h()) {
-                                    gVar.f0(16);
-                                }
-                                if (gVar.h()) {
-                                    if (i34 > 2) {
-                                        gVar.f0(2);
-                                    }
-                                    if ((i34 & 1) == 0 || i34 <= 2) {
-                                        i22 = 6;
-                                    } else {
-                                        i22 = 6;
-                                        gVar.f0(6);
-                                    }
-                                    if ((i34 & 4) != 0) {
-                                        gVar.f0(i22);
-                                    }
-                                    if (h && gVar.h()) {
-                                        gVar.f0(5);
-                                    }
-                                    if (c10 == 0) {
-                                        if (gVar.h()) {
-                                            i23 = 6;
-                                            gVar.f0(6);
+                        boolean z13 = true;
+                        while (yVar.b < i11 && z13) {
+                            long j14 = H;
+                            boolean z14 = z12;
+                            int[] iArr = aVar2.a;
+                            int A = yVar.A();
+                            if (A != 255) {
+                                switch (A) {
+                                    case 0:
+                                        z13 = true;
+                                        break;
+                                    case 1:
+                                        aVar2.b = j14;
+                                        z13 = true;
+                                        break;
+                                    case 2:
+                                        aVar2.c = j14;
+                                        z13 = true;
+                                        break;
+                                    case 3:
+                                        if (yVar.a() >= 2) {
+                                            int A2 = yVar.A();
+                                            int A3 = yVar.A();
+                                            iArr[3] = a.a(aVar2.f, A2 >> 4);
+                                            iArr[2] = a.a(aVar2.f, A2 & 15);
+                                            iArr[1] = a.a(aVar2.f, A3 >> 4);
+                                            iArr[z14 ? 1 : 0] = a.a(aVar2.f, A3 & 15);
+                                            aVar2.e = true;
+                                            z13 = true;
+                                            break;
                                         } else {
-                                            i23 = 6;
+                                            g2.a.l("VobsubParser", "Incomplete color command");
+                                            break;
                                         }
-                                        if (i34 == 0 && gVar.h()) {
-                                            gVar.f0(i23);
-                                        }
-                                        if (gVar.h()) {
-                                            gVar.f0(i23);
-                                        }
-                                        int i35 = gVar.i(2);
-                                        if (i35 == 1) {
-                                            gVar.f0(5);
-                                            i25 = 2;
+                                    case 4:
+                                        if (yVar.a() >= 2) {
+                                            if (!aVar2.e) {
+                                                g2.a.l("VobsubParser", "Ignoring alpha command before color command");
+                                                break;
+                                            } else {
+                                                int A4 = yVar.A();
+                                                int A5 = yVar.A();
+                                                iArr[3] = a.c(iArr[3], A4 >> 4);
+                                                iArr[2] = a.c(iArr[2], A4 & 15);
+                                                iArr[1] = a.c(iArr[1], A5 >> 4);
+                                                iArr[z14 ? 1 : 0] = a.c(iArr[z14 ? 1 : 0], A5 & 15);
+                                                z13 = true;
+                                                break;
+                                            }
                                         } else {
-                                            if (i35 == 2) {
-                                                gVar.f0(12);
-                                            } else if (i35 == 3) {
-                                                int i36 = gVar.i(5);
-                                                if (gVar.h()) {
-                                                    gVar.f0(5);
-                                                    if (gVar.h()) {
-                                                        i26 = 4;
-                                                        gVar.f0(4);
-                                                    } else {
-                                                        i26 = 4;
-                                                    }
-                                                    if (gVar.h()) {
-                                                        gVar.f0(i26);
-                                                    }
-                                                    if (gVar.h()) {
-                                                        gVar.f0(i26);
-                                                    }
-                                                    if (gVar.h()) {
-                                                        gVar.f0(i26);
-                                                    }
-                                                    if (gVar.h()) {
-                                                        gVar.f0(i26);
-                                                    }
-                                                    if (gVar.h()) {
-                                                        gVar.f0(i26);
-                                                    }
-                                                    if (gVar.h()) {
-                                                        gVar.f0(i26);
-                                                    }
-                                                    if (gVar.h()) {
-                                                        if (gVar.h()) {
-                                                            gVar.f0(i26);
-                                                        }
-                                                        if (gVar.h()) {
-                                                            gVar.f0(i26);
-                                                        }
-                                                    }
-                                                }
-                                                if (gVar.h()) {
-                                                    gVar.f0(5);
-                                                    if (gVar.h()) {
-                                                        gVar.f0(7);
-                                                        if (gVar.h()) {
-                                                            i24 = 8;
-                                                            gVar.f0(8);
-                                                            i25 = 2;
-                                                            gVar.f0((i36 + 2) * i24);
-                                                            gVar.c();
-                                                        }
-                                                    }
-                                                }
-                                                i24 = 8;
-                                                i25 = 2;
-                                                gVar.f0((i36 + 2) * i24);
-                                                gVar.c();
-                                            }
-                                            i25 = 2;
+                                            g2.a.l("VobsubParser", "Incomplete alpha command");
+                                            break;
                                         }
-                                        if (i34 < i25) {
-                                            if (gVar.h()) {
-                                                gVar.f0(14);
-                                            }
-                                            if (i34 == 0 && gVar.h()) {
-                                                gVar.f0(14);
-                                            }
+                                    case 5:
+                                        if (yVar.a() >= 6) {
+                                            int A6 = yVar.A();
+                                            int A7 = yVar.A();
+                                            int i14 = (A6 << 4) | (A7 >> 4);
+                                            int A8 = ((A7 & 15) << 8) | yVar.A();
+                                            int A9 = yVar.A();
+                                            int A10 = yVar.A();
+                                            aVar2.i = new Rect(i14, (A9 << 4) | (A10 >> 4), A8 + 1, (((A10 & 15) << 8) | yVar.A()) + 1);
+                                            z13 = true;
+                                            break;
+                                        } else {
+                                            g2.a.l("VobsubParser", "Incomplete area command");
+                                            break;
                                         }
-                                        if (gVar.h()) {
-                                            i18 = i16;
-                                            if (i18 == 0) {
-                                                gVar.f0(5);
-                                            } else {
-                                                for (int i37 = 0; i37 < i17; i37++) {
-                                                    if (gVar.h()) {
-                                                        gVar.f0(5);
-                                                    }
-                                                }
-                                            }
-                                            if (gVar.h()) {
-                                                i19 = 3;
-                                            } else {
-                                                gVar.f0(5);
-                                                if (i34 == 2) {
-                                                    gVar.f0(4);
-                                                }
-                                                if (i34 >= 6) {
-                                                    gVar.f0(2);
-                                                }
-                                                if (gVar.h()) {
-                                                    i21 = 8;
-                                                    gVar.f0(8);
-                                                } else {
-                                                    i21 = 8;
-                                                }
-                                                if (i34 == 0 && gVar.h()) {
-                                                    gVar.f0(i21);
-                                                }
-                                                i19 = 3;
-                                                if (i30 < 3) {
-                                                    gVar.e0();
-                                                }
-                                            }
-                                            if (c10 == 0 && i18 != i19) {
-                                                gVar.e0();
-                                            }
-                                            if (c10 == 2 || !(i18 == i19 || gVar.h())) {
-                                                i20 = 6;
-                                            } else {
-                                                i20 = 6;
-                                                gVar.f0(6);
-                                            }
-                                            str = (!gVar.h() && gVar.i(i20) == 1 && gVar.i(8) == 1) ? "audio/eac3-joc" : "audio/eac3";
-                                            i13 = i33;
+                                    case 6:
+                                        if (yVar.a() >= 4) {
+                                            aVar2.j = yVar.H();
+                                            aVar2.k = yVar.H();
+                                            z13 = true;
+                                            break;
+                                        } else {
+                                            g2.a.l("VobsubParser", "Incomplete offsets command");
+                                            break;
                                         }
-                                    }
+                                    default:
+                                        com.google.android.recaptcha.internal.a.o(A, "Unrecognized command: ", "VobsubParser");
+                                        break;
                                 }
-                                i18 = i16;
-                                if (gVar.h()) {
-                                }
-                                if (c10 == 0) {
-                                    gVar.e0();
-                                }
-                                if (c10 == 2) {
-                                }
-                                i20 = 6;
-                                if (!gVar.h()) {
-                                }
-                                i13 = i33;
-                            } else {
-                                gVar.f0(32);
-                                int i38 = gVar.i(2);
-                                String str2 = i38 == 3 ? null : "audio/ac3";
-                                int i39 = gVar.i(6);
-                                int i40 = c3.b.g[i39 / 2] * 1000;
-                                int e = c3.b.e(i38, i39);
-                                gVar.f0(8);
-                                int i41 = gVar.i(3);
-                                if ((i41 & 1) == 0 || i41 == 1) {
-                                    i10 = 2;
-                                } else {
-                                    i10 = 2;
-                                    gVar.f0(2);
-                                }
-                                if ((i41 & 4) != 0) {
-                                    gVar.f0(i10);
-                                }
-                                if (i41 == i10) {
-                                    gVar.f0(i10);
-                                }
-                                int i42 = i38 < 3 ? iArr2[i38] : -1;
-                                i11 = iArr[i41] + (gVar.h() ? 1 : 0);
-                                i12 = 1536;
-                                str = str2;
-                                i13 = i40;
-                                i14 = e;
-                                i15 = i42;
+                                z12 = z14 ? 1 : 0;
                             }
-                            b2.x xVar3 = this.m;
-                            if (xVar3 == null || i11 != xVar3.K || i15 != xVar3.L || !Objects.equals(str, xVar3.s)) {
-                                b2.w wVar = new b2.w();
-                                wVar.a = this.g;
-                                wVar.q = v0.n(this.f);
-                                wVar.r = v0.n(str);
-                                wVar.J = i11;
-                                wVar.K = i15;
-                                wVar.d = this.d;
-                                wVar.f = this.e;
-                                wVar.i = i13;
-                                if ("audio/ac3".equals(str)) {
-                                    wVar.h = i13;
-                                }
-                                b2.x xVar4 = new b2.x(wVar);
-                                this.m = xVar4;
-                                this.h.b(xVar4);
-                            }
-                            this.n = i14;
-                            this.l = (i12 * 1000000) / this.m.L;
-                            xVar2.N(0);
-                            this.h.d(128, xVar2);
-                            this.i = 2;
+                            z13 = z14 ? 1 : 0;
+                            z12 = z14 ? 1 : 0;
                         }
-                    } else if (i27 == 2) {
-                        int min2 = Math.min(xVar.a(), this.n - this.j);
-                        this.h.d(min2, xVar);
-                        int i43 = this.j + min2;
-                        this.j = i43;
-                        if (i43 == this.n) {
-                            t6.p(this.o != -9223372036854775807L);
-                            this.h.c(this.o, 1, this.n, 0, null);
-                            this.o += this.l;
-                            this.i = 0;
+                        z11 = z12;
+                        if (z10) {
+                            yVar.N(H2);
                         }
                     }
-                }
-                break;
-            default:
-                this.h.getClass();
-                while (xVar.a() > 0) {
-                    int i44 = this.i;
-                    e2.x xVar5 = this.c;
-                    if (i44 == 0) {
-                        while (xVar.a() > 0) {
-                            if (this.k) {
-                                int A2 = xVar.A();
-                                this.k = A2 == 172;
-                                if (A2 == 64 || A2 == 65) {
-                                    Object[] objArr2 = A2 == 65;
-                                    this.i = 1;
-                                    byte[] bArr3 = xVar5.a;
-                                    bArr3[0] = -84;
-                                    bArr3[1] = (byte) (objArr2 == true ? 65 : 64);
-                                    this.j = 2;
-                                }
-                            } else {
-                                this.k = xVar.A() == 172;
-                            }
+                    if (z10) {
+                        j13 = j10;
+                        z12 = z11;
+                    } else {
+                        if (aVar2.f != null || !aVar2.d || !aVar2.e || (rect = aVar2.i) == null || aVar2.j == -1 || aVar2.k == -1 || rect.width() < 2 || aVar2.i.height() < 2) {
+                            bVar = null;
+                        } else {
+                            Rect rect2 = aVar2.i;
+                            int[] iArr2 = new int[rect2.height() * rect2.width()];
+                            f fVar = new f();
+                            yVar.N(aVar2.j);
+                            fVar.I(yVar);
+                            aVar2.b(fVar, true, rect2, iArr2);
+                            yVar.N(aVar2.k);
+                            fVar.I(yVar);
+                            aVar2.b(fVar, z11, rect2, iArr2);
+                            bVar = new f2.b(null, null, null, Bitmap.createBitmap(iArr2, rect2.width(), rect2.height(), Bitmap.Config.ARGB_8888), rect2.top / aVar2.h, 0, 0, rect2.left / aVar2.g, 0, TLObject.FLAG_31, -3.4028235E38f, rect2.width() / aVar2.g, rect2.height() / aVar2.h, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
                         }
-                    } else if (i44 == 1) {
-                        byte[] bArr4 = xVar5.a;
-                        int min3 = Math.min(xVar.a(), 16 - this.j);
-                        xVar.k(this.j, min3, bArr4);
-                        int i45 = this.j + min3;
-                        this.j = i45;
-                        if (i45 == 16) {
-                            a4.g gVar2 = this.b;
-                            gVar2.d0(0);
-                            a3.l m10 = c3.b.m(gVar2);
-                            int i46 = m10.a;
-                            b2.x xVar6 = this.m;
-                            if (xVar6 == null || 2 != xVar6.K || i46 != xVar6.L || !"audio/ac4".equals(xVar6.s)) {
-                                b2.w wVar2 = new b2.w();
-                                wVar2.a = this.g;
-                                wVar2.q = v0.n(this.f);
-                                wVar2.r = v0.n("audio/ac4");
-                                wVar2.J = 2;
-                                wVar2.K = i46;
-                                wVar2.d = this.d;
-                                wVar2.f = this.e;
-                                b2.x xVar7 = new b2.x(wVar2);
-                                this.m = xVar7;
-                                this.h.b(xVar7);
-                            }
-                            this.n = m10.b;
-                            this.l = (m10.c * 1000000) / this.m.L;
-                            xVar5.N(0);
-                            this.h.d(16, xVar5);
-                            this.i = 2;
+                        j11 = aVar2.c;
+                        if (j11 == j10) {
+                            long j15 = aVar2.b;
+                            j12 = (j15 == j10 || j11 <= j15) ? j11 : j11 - j15;
+                        } else {
+                            j12 = j10;
                         }
-                    } else if (i44 == 2) {
-                        int min4 = Math.min(xVar.a(), this.n - this.j);
-                        this.h.d(min4, xVar);
-                        int i47 = this.j + min4;
-                        this.j = i47;
-                        if (i47 == this.n) {
-                            t6.p(this.o != -9223372036854775807L);
-                            this.h.c(this.o, 1, this.n, 0, null);
-                            this.o += this.l;
-                            this.i = 0;
-                        }
+                        aVar = new b4.a(aVar2.b, j12, bVar == null ? i0.u(bVar) : s1.e);
                     }
                 }
-                break;
+            } else {
+                g2.a.l("VobsubParser", "Skipping SPU (no plane)");
+            }
+            z11 = false;
+            j10 = -9223372036854775807L;
+            if (aVar2.f != null) {
+            }
+            bVar = null;
+            j11 = aVar2.c;
+            if (j11 == j10) {
+            }
+            aVar = new b4.a(aVar2.b, j12, bVar == null ? i0.u(bVar) : s1.e);
         }
+        kVar.accept(aVar);
     }
 
-    @Override // j4.i
-    public final void e() {
-        switch (this.a) {
-            case 0:
-                this.i = 0;
-                this.j = 0;
-                this.k = false;
-                this.o = -9223372036854775807L;
-                break;
-            default:
-                this.i = 0;
-                this.j = 0;
-                this.k = false;
-                this.o = -9223372036854775807L;
-                break;
-        }
+    @Override // b4.m
+    public final int Y() {
+        return 2;
     }
 
-    @Override // j4.i
-    public final void f(c3.q qVar, g0 g0Var) {
-        switch (this.a) {
-            case 0:
-                g0Var.b();
-                g0Var.c();
-                this.g = (String) g0Var.e;
-                g0Var.c();
-                this.h = qVar.I1(g0Var.c, 1);
-                break;
-            default:
-                g0Var.b();
-                g0Var.c();
-                this.g = (String) g0Var.e;
-                g0Var.c();
-                this.h = qVar.I1(g0Var.c, 1);
-                break;
-        }
-    }
-
-    @Override // j4.i
-    public final void g(boolean z10) {
-        int i10 = this.a;
-    }
-
-    @Override // j4.i
-    public final void h(int i10, long j10) {
-        switch (this.a) {
-            case 0:
-                this.o = j10;
-                break;
-            default:
-                this.o = j10;
-                break;
-        }
-    }
-
-    public b(int i10, int i11, String str, String str2) {
-        this.a = i11;
-        switch (i11) {
-            case 1:
-                a4.g gVar = new a4.g(new byte[16], 16);
-                this.b = gVar;
-                this.c = new e2.x((byte[]) gVar.b);
-                this.i = 0;
-                this.j = 0;
-                this.k = false;
-                this.o = -9223372036854775807L;
-                this.d = str;
-                this.e = i10;
-                this.f = str2;
-                break;
-            default:
-                a4.g gVar2 = new a4.g(new byte[128], 128);
-                this.b = gVar2;
-                this.c = new e2.x((byte[]) gVar2.b);
-                this.i = 0;
-                this.o = -9223372036854775807L;
-                this.d = str;
-                this.e = i10;
-                this.f = str2;
-                break;
-        }
-    }
-
-    private final void a(boolean z10) {
-    }
-
-    private final void b(boolean z10) {
+    @Override // b4.m
+    public final /* synthetic */ void reset() {
     }
 }

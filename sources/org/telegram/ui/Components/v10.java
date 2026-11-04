@@ -1,51 +1,69 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.accessibility.AccessibilityEvent;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class v10 extends s4.n {
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ z10 d;
+public final class v10 extends ImageView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public v10(z10 z10Var, ArrayList arrayList, ArrayList arrayList2) {
-        this.d = z10Var;
-        this.b = arrayList;
-        this.c = arrayList2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v10(Object obj, Context context, int i3, int i10) {
+        super(context);
+        this.a = i10;
+        this.c = obj;
+        this.b = i3;
     }
 
-    @Override // s4.n
-    public final boolean a(int i10, int i11) {
-        return true;
-    }
-
-    @Override // s4.n
-    public final boolean b(int i10, int i11) {
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        z10 z10Var = this.d;
-        if (i10 < size && i11 < z10Var.e.size()) {
-            return ((org.telegram.messenger.v3) arrayList.get(i10)).equals(z10Var.e.get(i11));
+    @Override // android.widget.ImageView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.onDraw(canvas);
+                org.telegram.ui.yz yzVar = (org.telegram.ui.yz) this.c;
+                w70 w70Var = yzVar.s;
+                if (yzVar.r) {
+                    int i3 = this.b / 2;
+                    w70Var.setBounds(i3, i3, getWidth() - i3, getHeight() - i3);
+                    w70Var.draw(canvas);
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
-        int size2 = i10 - arrayList.size();
-        int size3 = i11 - z10Var.e.size();
-        ArrayList arrayList2 = this.c;
-        if (size3 < 0 || size3 >= z10Var.f.size() || size2 < 0 || size2 >= arrayList2.size()) {
-            return org.telegram.messenger.kj.C1((i10 < arrayList.size() ? ((org.telegram.messenger.v3) arrayList.get(i10)).a : (TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.kj.C1((i11 < z10Var.e.size() ? ((org.telegram.messenger.v3) z10Var.e.get(i11)).a : (TLRPC.GroupCallParticipant) z10Var.f.get(size3)).peer);
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        switch (this.a) {
+            case 0:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                if (accessibilityEvent.getEventType() == 32768) {
+                    ((org.telegram.ui.x20) ((w10) this.c).d).j1.x(this.b, true);
+                    break;
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                break;
         }
-        return org.telegram.messenger.kj.C1(((TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == org.telegram.messenger.kj.C1(((TLRPC.GroupCallParticipant) z10Var.f.get(size3)).peer);
     }
 
-    @Override // s4.n
-    public final int d() {
-        z10 z10Var = this.d;
-        return z10Var.f.size() + z10Var.e.size();
-    }
-
-    @Override // s4.n
-    public final int e() {
-        return this.c.size() + this.b.size();
+    @Override // android.widget.ImageView, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 1:
+                return drawable == ((org.telegram.ui.yz) this.c).s || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
+        }
     }
 }

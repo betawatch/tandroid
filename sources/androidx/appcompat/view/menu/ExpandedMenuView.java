@@ -7,29 +7,29 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import l.a0;
+import l.j;
 import l.k;
-import l.l;
-import l.n;
+import l.m;
+import l.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class ExpandedMenuView extends ListView implements k, a0, AdapterView.OnItemClickListener {
+public final class ExpandedMenuView extends ListView implements j, z, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
-    public l a;
+    public k a;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.listViewStyle);
     }
 
-    @Override // l.k
-    public final boolean a(n nVar) {
-        return this.a.q(nVar, null, 0);
+    @Override // l.j
+    public final boolean a(m mVar) {
+        return this.a.q(mVar, null, 0);
     }
 
-    @Override // l.a0
-    public final void b(l lVar) {
-        this.a = lVar;
+    @Override // l.z
+    public final void b(k kVar) {
+        this.a = kVar;
     }
 
     public int getWindowAnimations() {
@@ -43,21 +43,21 @@ public final class ExpandedMenuView extends ListView implements k, a0, AdapterVi
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
-        a((n) getAdapter().getItem(i10));
+    public final void onItemClick(AdapterView adapterView, View view, int i3, long j10) {
+        a((m) getAdapter().getItem(i3));
     }
 
-    public ExpandedMenuView(Context context, AttributeSet attributeSet, int i10) {
+    public ExpandedMenuView(Context context, AttributeSet attributeSet, int i3) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        li.k G = li.k.G(context, attributeSet, b, i10);
-        TypedArray typedArray = (TypedArray) G.c;
+        k4.j F = k4.j.F(context, attributeSet, b, i3);
+        TypedArray typedArray = (TypedArray) F.b;
         if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(G.v(0));
+            setBackgroundDrawable(F.A(0));
         }
         if (typedArray.hasValue(1)) {
-            setDivider(G.v(1));
+            setDivider(F.A(1));
         }
-        G.I();
+        F.H();
     }
 }

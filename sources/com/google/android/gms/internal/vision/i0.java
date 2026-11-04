@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class i0 implements k1 {
     public static final i0 b = new i0(0);
@@ -13,41 +13,41 @@ public final class i0 implements k1 {
     public static final i0 i = new i0(7);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ i0(int i10) {
-        this.a = i10;
+    public /* synthetic */ i0(int i3) {
+        this.a = i3;
     }
 
     @Override // com.google.android.gms.internal.vision.k1
-    public final boolean zza(int i10) {
+    public final boolean zza(int i3) {
         j0 j0Var;
         k0 k0Var;
         switch (this.a) {
             case 0:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : l.e : l.d : l.c : l.b) != null) {
+                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? null : l.e : l.d : l.c : l.b) != null) {
                 }
                 break;
             case 1:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : n.e : n.d : n.c : n.b) != null) {
+                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? null : n.e : n.d : n.c : n.b) != null) {
                 }
                 break;
             case 2:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? null : q.d : q.c : q.b) != null) {
+                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? null : q.d : q.c : q.b) != null) {
                 }
                 break;
             case 3:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : r.e : r.d : r.c : r.b) != null) {
+                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? null : r.e : r.d : r.c : r.b) != null) {
                 }
                 break;
             case 4:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : s.e : s.d : s.c : s.b) != null) {
+                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? null : s.e : s.d : s.c : s.b) != null) {
                 }
                 break;
             case 5:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : x.e : x.d : x.c : x.b) != null) {
+                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? null : x.e : x.d : x.c : x.b) != null) {
                 }
                 break;
             case 6:
-                switch (i10) {
+                switch (i3) {
                     case 0:
                         j0Var = j0.b;
                         break;
@@ -85,27 +85,27 @@ public final class i0 implements k1 {
                         j0Var = j0.y;
                         break;
                     case 12:
-                        j0Var = j0.D;
-                        break;
-                    case 13:
                         j0Var = j0.E;
                         break;
-                    case 14:
+                    case 13:
                         j0Var = j0.F;
+                        break;
+                    case 14:
+                        j0Var = j0.G;
                         break;
                     case 15:
                     default:
                         j0Var = null;
                         break;
                     case 16:
-                        j0Var = j0.G;
+                        j0Var = j0.H;
                         break;
                 }
                 if (j0Var != null) {
                 }
                 break;
             default:
-                switch (i10) {
+                switch (i3) {
                     case 0:
                         k0Var = k0.b;
                         break;
@@ -143,10 +143,10 @@ public final class i0 implements k1 {
                         k0Var = k0.y;
                         break;
                     case 12:
-                        k0Var = k0.D;
+                        k0Var = k0.E;
                         break;
                     case 13:
-                        k0Var = k0.E;
+                        k0Var = k0.F;
                         break;
                     default:
                         k0Var = null;

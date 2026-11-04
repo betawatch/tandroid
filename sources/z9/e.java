@@ -1,17 +1,52 @@
 package z9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class e implements ja.d {
-    public static final e a = new e();
-    public static final ja.c b = ja.c.c("files");
-    public static final ja.c c = ja.c.c("orgId");
+import android.os.Process;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Date;
+import java.util.Locale;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        e0 e0Var = (e0) ((j1) obj);
-        eVar.d(b, e0Var.a);
-        eVar.d(c, e0Var.b);
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class e {
+    public static final String b = g.i(UUID.randomUUID().toString() + System.currentTimeMillis());
+    public static final AtomicLong c = new AtomicLong(0);
+    public final String a;
+
+    public e() {
+        long time = new Date().getTime();
+        ByteBuffer allocate = ByteBuffer.allocate(4);
+        allocate.putInt((int) (time / 1000));
+        allocate.order(ByteOrder.BIG_ENDIAN);
+        allocate.position(0);
+        byte[] array = allocate.array();
+        byte b10 = array[0];
+        byte b11 = array[1];
+        byte b12 = array[2];
+        byte b13 = array[3];
+        byte[] a10 = a(time % 1000);
+        byte b14 = a10[0];
+        byte b15 = a10[1];
+        byte[] a11 = a(c.incrementAndGet());
+        byte b16 = a11[0];
+        byte b17 = a11[1];
+        byte[] a12 = a(Integer.valueOf(Process.myPid()).shortValue());
+        String f10 = g.f(new byte[]{b10, b11, b12, b13, b14, b15, b16, b17, a12[0], a12[1]});
+        Locale locale = Locale.US;
+        this.a = String.format(locale, "%s%s%s%s", f10.substring(0, 12), f10.substring(12, 16), f10.subSequence(16, 20), b.substring(0, 12)).toUpperCase(locale);
+    }
+
+    public static byte[] a(long j10) {
+        ByteBuffer allocate = ByteBuffer.allocate(2);
+        allocate.putShort((short) j10);
+        allocate.order(ByteOrder.BIG_ENDIAN);
+        allocate.position(0);
+        return allocate.array();
+    }
+
+    public final String toString() {
+        return this.a;
     }
 }

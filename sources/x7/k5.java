@@ -1,19 +1,60 @@
 package x7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class k5 implements ja.d {
-    public static final k5 a = new k5();
-
-    static {
-        sc.e.v(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, sc.e.r(sc.e.m(c0.class, new z(3)), 4)), 5)));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class k5 {
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String q10;
+        int i3 = 0;
+        int i10 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i10 >= length) {
+                break;
+            }
+            Object obj = objArr[i10];
+            if (obj == null) {
+                q10 = "null";
+            } else {
+                try {
+                    q10 = obj.toString();
+                } catch (Exception e10) {
+                    String C = a1.g.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e10);
+                    q10 = org.telegram.ui.Cells.f1.q("<", C, " threw ", e10.getClass().getName(), ">");
+                }
+            }
+            objArr[i10] = q10;
+            i10++;
         }
-        throw null;
+        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
+        int i11 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i3 >= length2 || (indexOf = str.indexOf("%s", i11)) == -1) {
+                break;
+            }
+            sb2.append((CharSequence) str, i11, indexOf);
+            sb2.append(objArr[i3]);
+            i3++;
+            i11 = indexOf + 2;
+        }
+        sb2.append((CharSequence) str, i11, str.length());
+        if (i3 < length2) {
+            sb2.append(" [");
+            sb2.append(objArr[i3]);
+            for (int i12 = i3 + 1; i12 < objArr.length; i12++) {
+                sb2.append(", ");
+                sb2.append(objArr[i12]);
+            }
+            sb2.append(']');
+        }
+        return sb2.toString();
     }
 }

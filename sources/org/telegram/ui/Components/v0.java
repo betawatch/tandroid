@@ -1,51 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements org.telegram.ui.ActionBar.u1 {
+public final /* synthetic */ class v0 implements ya0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ int[] b;
 
-    public /* synthetic */ v0(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
+    public /* synthetic */ v0(int[] iArr, int i3) {
+        this.a = i3;
+        this.b = iArr;
     }
 
-    @Override // org.telegram.ui.ActionBar.u1
-    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.ya0
+    public final String e(int i3) {
+        int i10 = this.a;
+        int[] iArr = this.b;
+        switch (i10) {
             case 0:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 1:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.run();
-                break;
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                x1Var.dismiss();
-                break;
+                int i11 = iArr[i3];
+                return i11 == 0 ? org.telegram.messenger.bd.M0(2131748315, null) : i11 < 60 ? org.telegram.messenger.bd.G(i11, "Minutes", new Object[0]) : i11 < 1440 ? org.telegram.messenger.bd.G(i11 / 60, "Hours", new Object[0]) : i11 < 10080 ? org.telegram.messenger.bd.G(i11 / 1440, "Days", new Object[0]) : i11 < 44640 ? org.telegram.messenger.bd.G(i11 / 10080, "Weeks", new Object[0]) : i11 < 525600 ? org.telegram.messenger.bd.G(i11 / 44640, "Months", new Object[0]) : org.telegram.messenger.bd.G(i11 / 525600, "Years", new Object[0]);
             default:
-                x1Var.dismiss();
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
-                break;
+                int i12 = iArr[i3];
+                return i12 == 0 ? org.telegram.messenger.bd.M0(2131753849, null) : i12 < 10080 ? org.telegram.messenger.bd.G(i12 / 1440, "Days", new Object[0]) : i12 < 44640 ? org.telegram.messenger.bd.G(i12 / 10080, "Weeks", new Object[0]) : i12 < 525600 ? org.telegram.messenger.bd.G(i12 / 44640, "Months", new Object[0]) : org.telegram.messenger.bd.G(i12 / 525600, "Years", new Object[0]);
         }
     }
 }

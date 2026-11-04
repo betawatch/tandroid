@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class UnderOverArrowAtom extends Atom {
     private Atom base;
@@ -18,16 +18,16 @@ public class UnderOverArrowAtom extends Atom {
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
         Box create;
-        float f7;
+        float f10;
         Atom atom = this.base;
         Box createBox = atom != null ? atom.createBox(teXEnvironment) : new StrutBox(0.0f, 0.0f, 0.0f, 0.0f);
         float width = new SpaceAtom(3, 1.0f, 0.0f, 0.0f).createBox(teXEnvironment).getWidth();
         if (this.dble) {
             create = XLeftRightArrowFactory.create(teXEnvironment, createBox.getWidth());
-            f7 = width * 4.0f;
+            f10 = width * 4.0f;
         } else {
             create = XLeftRightArrowFactory.create(this.left, teXEnvironment, createBox.getWidth());
-            f7 = -width;
+            f10 = -width;
         }
         VerticalBox verticalBox = new VerticalBox();
         if (this.over) {
@@ -39,7 +39,7 @@ public class UnderOverArrowAtom extends Atom {
             return verticalBox;
         }
         verticalBox.add(new HorizontalBox(createBox, create.getWidth(), 2));
-        verticalBox.add(new StrutBox(0.0f, f7, 0.0f, 0.0f));
+        verticalBox.add(new StrutBox(0.0f, f10, 0.0f, 0.0f));
         verticalBox.add(create);
         verticalBox.setDepth((verticalBox.getHeight() + verticalBox.getDepth()) - createBox.getHeight());
         verticalBox.setHeight(createBox.getHeight());

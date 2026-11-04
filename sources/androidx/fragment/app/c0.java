@@ -2,7 +2,7 @@ package androidx.fragment.app;
 
 import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class c0 {
     public static final a0.l b = new a0.l(0);
@@ -31,24 +31,24 @@ public final class c0 {
     public static Class c(ClassLoader classLoader, String str) {
         try {
             return b(classLoader, str);
-        } catch (ClassCastException e) {
-            throw new ad.d(a1.g.n("Unable to instantiate fragment ", str, ": make sure class is a valid subclass of Fragment"), e);
-        } catch (ClassNotFoundException e7) {
-            throw new ad.d(a1.g.n("Unable to instantiate fragment ", str, ": make sure class name exists"), e7);
+        } catch (ClassCastException e10) {
+            throw new androidx.car.app.j(a1.g.q("Unable to instantiate fragment ", str, ": make sure class is a valid subclass of Fragment"), e10);
+        } catch (ClassNotFoundException e11) {
+            throw new androidx.car.app.j(a1.g.q("Unable to instantiate fragment ", str, ": make sure class name exists"), e11);
         }
     }
 
     public final s a(String str) {
         try {
             return (s) c(this.a.w.b.getClassLoader(), str).getConstructor(null).newInstance(null);
-        } catch (IllegalAccessException e) {
-            throw new ad.d(a1.g.n("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e);
-        } catch (InstantiationException e7) {
-            throw new ad.d(a1.g.n("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e7);
-        } catch (NoSuchMethodException e10) {
-            throw new ad.d(a1.g.n("Unable to instantiate fragment ", str, ": could not find Fragment constructor"), e10);
-        } catch (InvocationTargetException e11) {
-            throw new ad.d(a1.g.n("Unable to instantiate fragment ", str, ": calling Fragment constructor caused an exception"), e11);
+        } catch (IllegalAccessException e10) {
+            throw new androidx.car.app.j(a1.g.q("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e10);
+        } catch (InstantiationException e11) {
+            throw new androidx.car.app.j(a1.g.q("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e11);
+        } catch (NoSuchMethodException e12) {
+            throw new androidx.car.app.j(a1.g.q("Unable to instantiate fragment ", str, ": could not find Fragment constructor"), e12);
+        } catch (InvocationTargetException e13) {
+            throw new androidx.car.app.j(a1.g.q("Unable to instantiate fragment ", str, ": calling Fragment constructor caused an exception"), e13);
         }
     }
 }

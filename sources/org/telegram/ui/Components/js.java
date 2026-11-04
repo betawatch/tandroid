@@ -1,0 +1,329 @@
+package org.telegram.ui.Components;
+
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.media.AudioDeviceInfo;
+import android.media.AudioManager;
+import android.os.Build;
+import android.os.PowerManager;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.PhotoViewer;
+import org.webrtc.MediaStreamTrack;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class js implements SensorEventListener {
+    public int E;
+    public int F;
+    public int G;
+    public long H;
+    public boolean J;
+    public boolean K;
+    public float M;
+    public final SensorManager a;
+    public final AudioManager b;
+    public final Sensor c;
+    public final Sensor d;
+    public final Sensor e;
+    public final Sensor f;
+    public final PowerManager.WakeLock h;
+    public boolean n;
+    public boolean r;
+    public m51 s;
+    public boolean w;
+    public long x;
+    public int y;
+    public long I = 0;
+    public float L = -100.0f;
+    public final float[] N = new float[3];
+    public final float[] O = new float[3];
+    public final float[] P = new float[3];
+
+    public js() {
+        SensorManager sensorManager = (SensorManager) org.telegram.messenger.t0.b.getSystemService("sensor");
+        this.a = sensorManager;
+        this.c = sensorManager.getDefaultSensor(8);
+        Sensor defaultSensor = sensorManager.getDefaultSensor(10);
+        this.e = defaultSensor;
+        Sensor defaultSensor2 = sensorManager.getDefaultSensor(9);
+        this.f = defaultSensor2;
+        if (defaultSensor == null || defaultSensor2 == null) {
+            if (org.telegram.messenger.r2.a) {
+                org.telegram.messenger.a8.b("gravity or linear sensor not found");
+            }
+            this.d = sensorManager.getDefaultSensor(1);
+            this.e = null;
+            this.f = null;
+        }
+        this.h = ((PowerManager) org.telegram.messenger.t0.b.getSystemService("power")).newWakeLock(32, "telegram:proximity_lock2");
+        this.b = (AudioManager) org.telegram.messenger.t0.b.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+    }
+
+    public final void a() {
+        m51 m51Var = this.s;
+        if (m51Var == null) {
+            return;
+        }
+        m51Var.x0(this.r ? 0 : 3);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x02d3  */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        Sensor sensor;
+        int i3;
+        int i10;
+        int i11;
+        long j10;
+        Sensor sensor2;
+        double d;
+        int i12;
+        int i13;
+        boolean z10;
+        PowerManager.WakeLock wakeLock;
+        boolean z11;
+        boolean isHeld;
+        if (this.n && VoIPService.getSharedInstance() == null) {
+            int type = sensorEvent.sensor.getType();
+            Sensor sensor3 = this.f;
+            Sensor sensor4 = this.e;
+            float[] fArr = this.P;
+            float[] fArr2 = this.N;
+            Sensor sensor5 = this.d;
+            float[] fArr3 = this.O;
+            if (type == 8) {
+                if (org.telegram.messenger.r2.a) {
+                    org.telegram.messenger.a8.b("proximity changed to " + sensorEvent.values[0] + " max value = " + sensorEvent.sensor.getMaximumRange());
+                }
+                float f10 = this.L;
+                float f11 = sensorEvent.values[0];
+                if (f10 != f11) {
+                    this.K = true;
+                }
+                this.L = f11;
+                if (this.K) {
+                    this.J = f11 < 5.0f && f11 != this.c.getMaximumRange();
+                }
+                sensor2 = sensor3;
+                i3 = 1;
+                i10 = 0;
+                i11 = 2;
+                j10 = 0;
+            } else {
+                Sensor sensor6 = sensorEvent.sensor;
+                if (sensor6 == sensor5) {
+                    if (this.I == 0) {
+                        d = 0.9800000190734863d;
+                        i3 = 1;
+                        i11 = 2;
+                    } else {
+                        i3 = 1;
+                        i11 = 2;
+                        d = 1.0d / (((sensorEvent.timestamp - r8) / 1.0E9d) + 1.0d);
+                    }
+                    this.I = sensorEvent.timestamp;
+                    double d10 = 1.0d - d;
+                    float[] fArr4 = sensorEvent.values;
+                    j10 = 0;
+                    i10 = 0;
+                    float f12 = (float) ((fArr4[0] * d10) + (fArr2[0] * d));
+                    fArr2[0] = f12;
+                    sensor = sensor3;
+                    float f13 = (float) ((fArr4[i3 == true ? 1 : 0] * d10) + (fArr2[i3 == true ? 1 : 0] * d));
+                    fArr2[i3 == true ? 1 : 0] = f13;
+                    float f14 = (float) ((d10 * fArr4[i11]) + (d * fArr2[i11]));
+                    fArr2[i11] = f14;
+                    fArr3[0] = (fArr4[0] * 0.19999999f) + (f12 * 0.8f);
+                    fArr3[i3 == true ? 1 : 0] = (fArr4[i3 == true ? 1 : 0] * 0.19999999f) + (f13 * 0.8f);
+                    fArr3[i11] = (fArr4[i11] * 0.19999999f) + (f14 * 0.8f);
+                    fArr[0] = fArr4[0] - fArr2[0];
+                    fArr[i3 == true ? 1 : 0] = fArr4[i3 == true ? 1 : 0] - fArr2[i3 == true ? 1 : 0];
+                    fArr[i11] = fArr4[i11] - fArr2[i11];
+                } else {
+                    sensor = sensor3;
+                    i3 = 1;
+                    i10 = 0;
+                    i11 = 2;
+                    j10 = 0;
+                    if (sensor6 == sensor4) {
+                        float[] fArr5 = sensorEvent.values;
+                        fArr[0] = fArr5[0];
+                        fArr[1] = fArr5[1];
+                        fArr[2] = fArr5[2];
+                    } else {
+                        sensor2 = sensor;
+                        if (sensor6 == sensor2) {
+                            float[] fArr6 = sensorEvent.values;
+                            float f15 = fArr6[0];
+                            fArr2[0] = f15;
+                            fArr3[0] = f15;
+                            float f16 = fArr6[1];
+                            fArr2[1] = f16;
+                            fArr3[1] = f16;
+                            float f17 = fArr6[2];
+                            fArr2[2] = f17;
+                            fArr3[2] = f17;
+                        }
+                    }
+                }
+                sensor2 = sensor;
+            }
+            Sensor sensor7 = sensorEvent.sensor;
+            if (sensor7 == sensor4 || sensor7 == sensor2 || sensor7 == sensor5) {
+                float f18 = (fArr2[i11] * fArr[i11]) + (fArr2[i3] * fArr[i3]) + (fArr2[i10] * fArr[i10]);
+                int i14 = this.F;
+                if (i14 != 6 && ((f18 > 0.0f && this.M > 0.0f) || (f18 < 0.0f && this.M < 0.0f))) {
+                    if (f18 > 0.0f) {
+                        i12 = f18 > 15.0f ? i3 : i10;
+                        i13 = i3;
+                    } else {
+                        i12 = f18 < -15.0f ? i3 : i10;
+                        i13 = i11;
+                    }
+                    int i15 = this.E;
+                    if (i15 != 0 && i15 != i13) {
+                        int i16 = this.y;
+                        if (i16 != 6 || i12 == 0) {
+                            if (i12 == 0) {
+                                this.G++;
+                            }
+                            if (this.G == 10 || i16 != 6 || i14 != 0) {
+                                this.y = 0;
+                                this.E = 0;
+                                this.F = 0;
+                                this.G = 0;
+                            }
+                        } else if (i14 < 6) {
+                            int i17 = i14 + 1;
+                            this.F = i17;
+                            if (i17 == 6) {
+                                int i18 = i10;
+                                this.y = i18;
+                                this.E = i18;
+                                this.G = i18;
+                                this.H = System.currentTimeMillis();
+                                boolean z12 = org.telegram.messenger.r2.a;
+                            }
+                        }
+                    } else if (i12 != 0 && i14 == 0 && (i15 == 0 || i15 == i13)) {
+                        int i19 = this.y;
+                        if (i19 < 6 && !this.J) {
+                            this.E = i13;
+                            int i20 = i19 + 1;
+                            this.y = i20;
+                            if (i20 == 6) {
+                                this.G = 0;
+                            }
+                        }
+                    } else {
+                        if (i12 == 0) {
+                            this.G++;
+                        }
+                        if (i15 != i13 || this.G == 10 || this.y != 6 || i14 != 0) {
+                            this.F = 0;
+                            this.y = 0;
+                            this.E = 0;
+                            this.G = 0;
+                        }
+                    }
+                }
+                this.M = f18;
+                this.w = (fArr3[i3] <= 2.5f || Math.abs(fArr3[i11]) >= 4.0f || Math.abs(fArr3[0]) <= 1.5f) ? false : i3;
+            }
+            if (this.F == 6 || this.w) {
+                this.x = System.currentTimeMillis();
+            }
+            if (this.F == 6 || this.w || System.currentTimeMillis() - this.x < 60) {
+                try {
+                    for (AudioDeviceInfo audioDeviceInfo : this.b.getDevices(i11)) {
+                        int type2 = audioDeviceInfo.getType();
+                        if ((type2 == 8 || type2 == 7 || type2 == 26 || type2 == 27 || type2 == 4 || type2 == 3) && audioDeviceInfo.isSink()) {
+                            break;
+                        }
+                    }
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, i3);
+                }
+                if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.v1().U1()) {
+                    z10 = true;
+                    wakeLock = this.h;
+                    if (wakeLock != null && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
+                        isHeld = wakeLock.isHeld();
+                        if (!isHeld && !z10) {
+                            if (org.telegram.messenger.r2.a) {
+                                org.telegram.messenger.a8.b("wake lock releasing");
+                            }
+                            wakeLock.release();
+                        } else if (!isHeld && z10) {
+                            if (org.telegram.messenger.r2.a) {
+                                org.telegram.messenger.a8.b("wake lock acquiring");
+                            }
+                            wakeLock.acquire();
+                        }
+                    }
+                    z11 = this.J;
+                    if (!z11 && z10) {
+                        if (!this.r) {
+                            this.r = true;
+                            a();
+                        }
+                        this.F = 0;
+                        this.y = 0;
+                        this.E = 0;
+                        this.G = 0;
+                    } else if (z11 || !((sensor5 == null || sensor4 == null) && sensor2 == null && !VoIPService.isAnyKindOfCallActive())) {
+                        if (!this.J && this.r) {
+                            this.r = false;
+                            a();
+                        }
+                    } else if (!this.r) {
+                        this.r = true;
+                        a();
+                    }
+                    if (this.H == j10 && this.F == 6 && Math.abs(System.currentTimeMillis() - this.H) > 1000) {
+                        this.F = 0;
+                        this.y = 0;
+                        this.E = 0;
+                        this.G = 0;
+                        this.H = j10;
+                        return;
+                    }
+                    return;
+                }
+            }
+            z10 = false;
+            wakeLock = this.h;
+            if (wakeLock != null) {
+                isHeld = wakeLock.isHeld();
+                if (!isHeld) {
+                }
+                if (!isHeld) {
+                    if (org.telegram.messenger.r2.a) {
+                    }
+                    wakeLock.acquire();
+                }
+            }
+            z11 = this.J;
+            if (!z11) {
+            }
+            if (z11) {
+            }
+            if (!this.J) {
+                this.r = false;
+                a();
+            }
+            if (this.H == j10) {
+            }
+        }
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i3) {
+    }
+}

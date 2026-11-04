@@ -1,34 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class aj0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nj0 b;
+public final class aj0 implements View.OnTouchListener {
+    public float a;
+    public float b;
+    public boolean c;
 
-    public /* synthetic */ aj0(nj0 nj0Var, int i10) {
-        this.a = i10;
-        this.b = nj0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                this.b.L0.e();
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                nj0 nj0Var = this.b;
-                nj0Var.Q = null;
-                nj0Var.n0 = 0.0f;
-                nj0Var.l0 = null;
-                nj0Var.invalidate();
-                break;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        ViewParent parent = view.getParent();
+        if (parent != null) {
+            if (motionEvent.getAction() == 0) {
+                this.a = motionEvent.getX();
+                this.b = motionEvent.getY();
+                this.c = true;
+                parent.requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction() == 2) {
+                float x10 = this.a - motionEvent.getX();
+                float y9 = this.b - motionEvent.getY();
+                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
+                if (this.c) {
+                    if (Math.sqrt((y9 * y9) + (x10 * x10)) > scaledTouchSlop) {
+                        this.c = false;
+                        parent.requestDisallowInterceptTouchEvent(false);
+                        return false;
+                    }
+                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                this.c = false;
+                parent.requestDisallowInterceptTouchEvent(false);
+                return false;
+            }
         }
+        return false;
     }
 }

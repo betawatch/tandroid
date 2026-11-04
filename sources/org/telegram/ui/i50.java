@@ -1,46 +1,35 @@
 package org.telegram.ui;
 
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i50 implements org.telegram.ui.Components.i10, org.telegram.ui.ActionBar.u1, r0.m {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u50 b;
+public abstract class i50 {
+    public String G;
+    public int H;
+    public org.telegram.ui.ActionBar.f1 I;
+    public org.telegram.ui.ActionBar.t2 J;
+    public org.telegram.ui.Components.t70 b;
+    public a3 d;
+    public int e;
+    public View f;
+    public boolean h;
+    public TLRPC.Chat n;
+    public boolean r;
+    public View s;
+    public org.telegram.ui.Components.w70 w;
+    public VideoPlayerHolderBase x;
+    public w2 y;
+    public int a = 0;
+    public final m2.p0 c = new m2.p0();
+    public final a0.h E = new a0.h();
+    public ArrayList F = new ArrayList();
 
-    public /* synthetic */ i50(u50 u50Var, int i10) {
-        this.a = i10;
-        this.b = u50Var;
-    }
+    public abstract void a(g4 g4Var, org.telegram.ui.Components.py0 py0Var);
 
-    @Override // r0.m
-    public r0.j1 R0(View view, r0.j1 j1Var) {
-        int i10 = org.telegram.messenger.i0.I0(j1Var, false).d;
-        u50 u50Var = this.b;
-        u50Var.m0 = i10;
-        jg.a3 a3Var = u50Var.F;
-        if (a3Var != null) {
-            a3Var.setPadding(0, 0, 0, i10);
-        }
-        u50Var.o0();
-        u50Var.m0();
-        return r0.j1.b;
-    }
-
-    @Override // org.telegram.ui.Components.i10
-    public void a(int i10) {
-        this.b.b.a(Math.min(i10, r0.c0));
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        switch (this.a) {
-            case 1:
-                this.b.t0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
-    }
+    public abstract boolean b(TL_iv.PageBlock pageBlock, g4 g4Var);
 }

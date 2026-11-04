@@ -5,11 +5,12 @@ import android.opengl.GLES20;
 import android.os.Handler;
 import android.os.HandlerThread;
 import java.util.concurrent.Callable;
+import k2.p1;
 import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
@@ -31,7 +32,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 
@@ -51,8 +52,8 @@ public class SurfaceTextureHelper {
             public SurfaceTextureHelper call() {
                 try {
                     return new SurfaceTextureHelper(EglBase.Context.this, handler, z10, yuvConverter, frameRefMonitor);
-                } catch (RuntimeException e) {
-                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e);
+                } catch (RuntimeException e10) {
+                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e10);
                     return null;
                 }
             }
@@ -94,14 +95,14 @@ public class SurfaceTextureHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setFrameRotation$4(int i10) {
-        this.frameRotation = i10;
+    public /* synthetic */ void lambda$setFrameRotation$4(int i3) {
+        this.frameRotation = i3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setTextureSize$2(int i10, int i11) {
-        this.textureWidth = i10;
-        this.textureHeight = i11;
+    public /* synthetic */ void lambda$setTextureSize$2(int i3, int i10) {
+        this.textureWidth = i3;
+        this.textureHeight = i10;
         tryDeliverTextureFrame();
     }
 
@@ -200,19 +201,19 @@ public class SurfaceTextureHelper {
         return this.isTextureInUse;
     }
 
-    public void setFrameRotation(int i10) {
-        this.handler.post(new i(this, i10, 1));
+    public void setFrameRotation(int i3) {
+        this.handler.post(new i(this, i3, 1));
     }
 
-    public void setTextureSize(int i10, int i11) {
+    public void setTextureSize(int i3, int i10) {
+        if (i3 <= 0) {
+            throw new IllegalArgumentException(p1.i(i3, "Texture width must be positive, but was "));
+        }
         if (i10 <= 0) {
-            throw new IllegalArgumentException(i0.a.i(i10, "Texture width must be positive, but was "));
+            throw new IllegalArgumentException(p1.i(i10, "Texture height must be positive, but was "));
         }
-        if (i11 <= 0) {
-            throw new IllegalArgumentException(i0.a.i(i11, "Texture height must be positive, but was "));
-        }
-        this.surfaceTexture.setDefaultBufferSize(i10, i11);
-        this.handler.post(new i2.u(this, i10, i11, 14));
+        this.surfaceTexture.setDefaultBufferSize(i3, i10);
+        this.handler.post(new k2.u(this, i3, i10, 15));
     }
 
     public void startListening(VideoSink videoSink) {
@@ -293,10 +294,10 @@ public class SurfaceTextureHelper {
                     SurfaceTextureHelper.this.lambda$new$0(surfaceTexture2);
                 }
             }, handler);
-        } catch (RuntimeException e) {
+        } catch (RuntimeException e10) {
             this.eglBase.release();
             handler.getLooper().quit();
-            throw e;
+            throw e10;
         }
     }
 

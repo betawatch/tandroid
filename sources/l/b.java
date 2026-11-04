@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import m.u1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b extends u1 {
     public final /* synthetic */ int s = 0;
@@ -17,17 +17,17 @@ public final class b extends u1 {
     }
 
     @Override // m.u1
-    public final c0 b() {
+    public final b0 b() {
         m.d dVar;
         switch (this.s) {
             case 0:
                 c cVar = ((ActionMenuItemView) this.w).y;
-                if (cVar == null || (dVar = ((m.e) cVar).a.J) == null) {
+                if (cVar == null || (dVar = ((m.e) cVar).a.K) == null) {
                     return null;
                 }
                 return dVar.a();
             default:
-                m.d dVar2 = ((m.g) this.w).d.I;
+                m.d dVar2 = ((m.g) this.w).d.J;
                 if (dVar2 == null) {
                     return null;
                 }
@@ -37,12 +37,12 @@ public final class b extends u1 {
 
     @Override // m.u1
     public final boolean c() {
-        c0 b10;
+        b0 b10;
         switch (this.s) {
             case 0:
                 ActionMenuItemView actionMenuItemView = (ActionMenuItemView) this.w;
-                k kVar = actionMenuItemView.w;
-                return kVar != null && kVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
+                j jVar = actionMenuItemView.w;
+                return jVar != null && jVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
             default:
                 ((m.g) this.w).d.l();
                 return true;
@@ -54,7 +54,7 @@ public final class b extends u1 {
         switch (this.s) {
             case 1:
                 m.h hVar = ((m.g) this.w).d;
-                if (hVar.K != null) {
+                if (hVar.L != null) {
                     return false;
                 }
                 hVar.f();

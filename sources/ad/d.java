@@ -1,15 +1,10 @@
 package ad;
 
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class d extends RuntimeException {
-    public /* synthetic */ d() {
-        super("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
-    }
-
-    public d(String str, Parcel parcel) {
-        super(str + " Parcel: pos=" + parcel.dataPosition() + " size=" + parcel.dataSize());
+public final class d extends e {
+    @Override // ad.e, ad.l
+    public final String toString() {
+        return a1.g.s(new StringBuilder("<![CDATA["), this.c, "]]>");
     }
 }

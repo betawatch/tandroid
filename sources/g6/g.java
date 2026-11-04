@@ -1,105 +1,53 @@
 package g6;
 
-import android.os.Parcel;
+import com.google.android.gms.cast.MediaError;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class g extends b8.b implements h {
-    public g() {
-        super("com.google.android.gms.cast.internal.ICastDeviceControllerListener", 1);
+public abstract class g {
+    public void a() {
     }
 
-    @Override // b8.b
-    public final boolean K0(int i10, Parcel parcel, Parcel parcel2) {
-        switch (i10) {
-            case 1:
-                int readInt = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                Q(readInt);
-                return true;
-            case 2:
-                c6.d dVar = (c6.d) com.google.android.gms.internal.cast.u.a(parcel, c6.d.CREATOR);
-                String readString = parcel.readString();
-                String readString2 = parcel.readString();
-                boolean z10 = parcel.readInt() != 0;
-                com.google.android.gms.internal.cast.u.b(parcel);
-                n(dVar, readString, readString2, z10);
-                return true;
-            case 3:
-                int readInt2 = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                Y(readInt2);
-                return true;
-            case 4:
-                parcel.readString();
-                parcel.readDouble();
-                int i11 = com.google.android.gms.internal.cast.u.a;
-                parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                zzn();
-                return true;
-            case 5:
-                String readString3 = parcel.readString();
-                String readString4 = parcel.readString();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                U(readString3, readString4);
-                return true;
-            case 6:
-                String readString5 = parcel.readString();
-                byte[] createByteArray = parcel.createByteArray();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                C0(readString5, createByteArray);
-                return true;
-            case 7:
-                int readInt3 = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                d(readInt3);
-                return true;
-            case 8:
-                int readInt4 = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                zzg(readInt4);
-                return true;
-            case 9:
-                int readInt5 = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                zzd(readInt5);
-                return true;
-            case 10:
-                parcel.readString();
-                long readLong = parcel.readLong();
-                int readInt6 = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                zzm(readInt6, readLong);
-                return true;
-            case 11:
-                parcel.readString();
-                long readLong2 = parcel.readLong();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                Z(readLong2);
-                return true;
-            case 12:
-                c cVar = (c) com.google.android.gms.internal.cast.u.a(parcel, c.CREATOR);
-                com.google.android.gms.internal.cast.u.b(parcel);
-                A0(cVar);
-                return true;
-            case 13:
-                d dVar2 = (d) com.google.android.gms.internal.cast.u.a(parcel, d.CREATOR);
-                com.google.android.gms.internal.cast.u.b(parcel);
-                v0(dVar2);
-                return true;
-            case 14:
-                int readInt7 = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                g(readInt7);
-                return true;
-            case 15:
-                int readInt8 = parcel.readInt();
-                com.google.android.gms.internal.cast.u.b(parcel);
-                x0(readInt8);
-                return true;
-            default:
-                return false;
-        }
+    public void c() {
+    }
+
+    public void d() {
+    }
+
+    public void e() {
+    }
+
+    public void f() {
+    }
+
+    public void g() {
+    }
+
+    public void o() {
+    }
+
+    public void b(MediaError mediaError) {
+    }
+
+    public void i(int[] iArr) {
+    }
+
+    public void k(e6.o[] oVarArr) {
+    }
+
+    public void l(int[] iArr) {
+    }
+
+    public void n(int[] iArr) {
+    }
+
+    public void j(int[] iArr, int i3) {
+    }
+
+    public void m(ArrayList arrayList, ArrayList arrayList2, int i3) {
+    }
+
+    public void h(String str, long j10, int i3, long j11, long j12) {
     }
 }

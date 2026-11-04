@@ -1,60 +1,78 @@
 package p4;
 
-import android.media.MediaRouter2$RouteCallback;
-import java.util.List;
+import android.media.MediaMetadata;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class i extends MediaRouter2$RouteCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k b;
+public final class i implements Parcelable {
+    public static final Parcelable.Creator<i> CREATOR;
+    public static final a0.f c;
+    public static final String[] d;
+    public final Bundle a;
+    public MediaMetadata b;
 
-    public /* synthetic */ i(k kVar, int i10) {
-        this.a = i10;
-        this.b = kVar;
+    static {
+        a0.f fVar = new a0.f(0);
+        c = fVar;
+        fVar.put("android.media.metadata.TITLE", 1);
+        fVar.put("android.media.metadata.ARTIST", 1);
+        fVar.put("android.media.metadata.DURATION", 0);
+        fVar.put("android.media.metadata.ALBUM", 1);
+        fVar.put("android.media.metadata.AUTHOR", 1);
+        fVar.put("android.media.metadata.WRITER", 1);
+        fVar.put("android.media.metadata.COMPOSER", 1);
+        fVar.put("android.media.metadata.COMPILATION", 1);
+        fVar.put("android.media.metadata.DATE", 1);
+        fVar.put("android.media.metadata.YEAR", 0);
+        fVar.put("android.media.metadata.GENRE", 1);
+        fVar.put("android.media.metadata.TRACK_NUMBER", 0);
+        fVar.put("android.media.metadata.NUM_TRACKS", 0);
+        fVar.put("android.media.metadata.DISC_NUMBER", 0);
+        fVar.put("android.media.metadata.ALBUM_ARTIST", 1);
+        fVar.put("android.media.metadata.ART", 2);
+        fVar.put("android.media.metadata.ART_URI", 1);
+        fVar.put("android.media.metadata.ALBUM_ART", 2);
+        fVar.put("android.media.metadata.ALBUM_ART_URI", 1);
+        fVar.put("android.media.metadata.USER_RATING", 3);
+        fVar.put("android.media.metadata.RATING", 3);
+        fVar.put("android.media.metadata.DISPLAY_TITLE", 1);
+        fVar.put("android.media.metadata.DISPLAY_SUBTITLE", 1);
+        fVar.put("android.media.metadata.DISPLAY_DESCRIPTION", 1);
+        fVar.put("android.media.metadata.DISPLAY_ICON", 2);
+        fVar.put("android.media.metadata.DISPLAY_ICON_URI", 1);
+        fVar.put("android.media.metadata.MEDIA_ID", 1);
+        fVar.put("android.media.metadata.BT_FOLDER_TYPE", 0);
+        fVar.put("android.media.metadata.MEDIA_URI", 1);
+        fVar.put("android.media.metadata.ADVERTISEMENT", 0);
+        fVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
+        d = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION"};
+        CREATOR = new n8.g(10);
     }
 
-    public void onRoutesAdded(List list) {
-        switch (this.a) {
-            case 0:
-                this.b.q();
-                break;
-            default:
-                super.onRoutesAdded(list);
-                break;
-        }
+    public i(Bundle bundle) {
+        Bundle bundle2 = new Bundle(bundle);
+        this.a = bundle2;
+        ClassLoader classLoader = q.class.getClassLoader();
+        classLoader.getClass();
+        bundle2.setClassLoader(classLoader);
     }
 
-    public void onRoutesChanged(List list) {
-        switch (this.a) {
-            case 0:
-                this.b.q();
-                break;
-            default:
-                super.onRoutesChanged(list);
-                break;
-        }
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public void onRoutesRemoved(List list) {
-        switch (this.a) {
-            case 0:
-                this.b.q();
-                break;
-            default:
-                super.onRoutesRemoved(list);
-                break;
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        parcel.writeBundle(this.a);
     }
 
-    public void onRoutesUpdated(List list) {
-        switch (this.a) {
-            case 1:
-                this.b.q();
-                break;
-            default:
-                super.onRoutesUpdated(list);
-                break;
-        }
+    public i(Parcel parcel) {
+        Bundle readBundle = parcel.readBundle(q.class.getClassLoader());
+        readBundle.getClass();
+        this.a = readBundle;
     }
 }

@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import w7.s6;
+import org.telegram.ui.Components.nh;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public final Context a;
@@ -30,16 +30,16 @@ public abstract class g3 {
         this.n = str2;
     }
 
-    public p4.p c(String str) {
+    public r4.p c(String str) {
         if (str != null) {
             return null;
         }
         throw new IllegalArgumentException("initialMemberRouteId cannot be null.");
     }
 
-    public abstract p4.q d(String str);
+    public abstract r4.q d(String str);
 
-    public p4.q e(String str, String str2) {
+    public r4.q e(String str, String str2) {
         if (str == null) {
             throw new IllegalArgumentException("routeId cannot be null");
         }
@@ -49,12 +49,12 @@ public abstract class g3 {
         throw new IllegalArgumentException("routeGroupId cannot be null");
     }
 
-    public abstract void f(p4.n nVar);
+    public abstract void f(r4.n nVar);
 
-    public void g(b2.u uVar) {
-        p4.y.b();
-        if (((b2.u) this.n) != uVar) {
-            this.n = uVar;
+    public void g(ba.i iVar) {
+        r4.y.b();
+        if (((ba.i) this.n) != iVar) {
+            this.n = iVar;
             if (this.c) {
                 return;
             }
@@ -63,9 +63,9 @@ public abstract class g3 {
         }
     }
 
-    public void h(p4.n nVar) {
-        p4.y.b();
-        if (Objects.equals((p4.n) this.h, nVar)) {
+    public void h(r4.n nVar) {
+        r4.y.b();
+        if (Objects.equals((r4.n) this.h, nVar)) {
             return;
         }
         this.h = nVar;
@@ -76,7 +76,7 @@ public abstract class g3 {
         ((android.support.v4.media.session.q) this.e).sendEmptyMessage(2);
     }
 
-    public abstract Object i(y6.e eVar, Context context);
+    public abstract Object i(a7.f fVar, Context context);
 
     public abstract void j();
 
@@ -91,30 +91,30 @@ public abstract class g3 {
             }
             try {
                 j();
-            } catch (RemoteException e) {
-                Log.e((String) this.f, "Could not finalize native handle", e);
+            } catch (RemoteException e10) {
+                Log.e((String) this.f, "Could not finalize native handle", e10);
             }
         }
     }
 
     public Object m() {
-        y6.e eVar;
+        a7.f fVar;
         synchronized (this.d) {
             Object obj = this.e;
             if (obj != null) {
                 return obj;
             }
             try {
-                eVar = y6.e.c(this.a, y6.e.c, (String) this.h);
-            } catch (y6.b unused) {
+                fVar = a7.f.c(this.a, a7.f.c, (String) this.h);
+            } catch (a7.b unused) {
                 String str = "com.google.android.gms.vision." + ((String) this.n);
                 if (Log.isLoggable("Vision", 3)) {
                     Log.d("Vision", "Cannot load thick client module, fall back to load optional module " + str);
                 }
                 try {
-                    eVar = y6.e.c(this.a, y6.e.b, str);
-                } catch (y6.b e) {
-                    s6.a(e, "Error loading optional module %s", str);
+                    fVar = a7.f.c(this.a, a7.f.b, str);
+                } catch (a7.b e10) {
+                    x7.q.a(e10, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -128,14 +128,14 @@ public abstract class g3 {
                         this.a.sendBroadcast(intent);
                         this.b = true;
                     }
-                    eVar = null;
+                    fVar = null;
                 }
             }
-            if (eVar != null) {
+            if (fVar != null) {
                 try {
-                    this.e = i(eVar, this.a);
-                } catch (RemoteException | y6.b e7) {
-                    Log.e((String) this.f, "Error creating remote native handle", e7);
+                    this.e = i(fVar, this.a);
+                } catch (a7.b | RemoteException e11) {
+                    Log.e((String) this.f, "Error creating remote native handle", e11);
                 }
             }
             boolean z10 = this.c;
@@ -149,15 +149,15 @@ public abstract class g3 {
         }
     }
 
-    public g3(Context context, l2.f fVar) {
-        this.e = new android.support.v4.media.session.q(this, 13);
+    public g3(Context context, nh nhVar) {
+        this.e = new android.support.v4.media.session.q(this, 12);
         if (context != null) {
             this.a = context;
-            if (fVar == null) {
-                this.d = new l2.f(new ComponentName(context, getClass()), 22);
+            if (nhVar == null) {
+                this.d = new nh(new ComponentName(context, getClass()), 15);
                 return;
             } else {
-                this.d = fVar;
+                this.d = nhVar;
                 return;
             }
         }

@@ -1,85 +1,52 @@
 package androidx.datastore.preferences.protobuf;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f0 extends h0 {
-    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
+public final class f0 {
+    public static final f0 a;
+    public static final f0 b;
+    public static final f0 c;
+    public static final f0 d;
+    public static final f0 e;
+    public static final f0 f;
+    public static final f0 h;
+    public static final f0 n;
+    public static final f0 r;
+    public static final f0 s;
+    public static final /* synthetic */ f0[] w;
 
-    public static List d(long j10, Object obj, int i10) {
-        List list = (List) r1.d.i(obj, j10);
-        if (list.isEmpty()) {
-            List d0Var = list instanceof e0 ? new d0(i10) : ((list instanceof x0) && (list instanceof y)) ? ((y) list).b(i10) : new ArrayList(i10);
-            r1.o(obj, j10, d0Var);
-            return d0Var;
-        }
-        if (c.isAssignableFrom(list.getClass())) {
-            ArrayList arrayList = new ArrayList(list.size() + i10);
-            arrayList.addAll(list);
-            r1.o(obj, j10, arrayList);
-            return arrayList;
-        }
-        if (list instanceof m1) {
-            d0 d0Var2 = new d0(list.size() + i10);
-            d0Var2.addAll((m1) list);
-            r1.o(obj, j10, d0Var2);
-            return d0Var2;
-        }
-        if ((list instanceof x0) && (list instanceof y)) {
-            y yVar = (y) list;
-            if (!((b) yVar).a) {
-                y b10 = yVar.b(list.size() + i10);
-                r1.o(obj, j10, b10);
-                return b10;
-            }
-        }
-        return list;
+    static {
+        f0 f0Var = new f0("VOID", 0);
+        a = f0Var;
+        f0 f0Var2 = new f0("INT", 1);
+        b = f0Var2;
+        f0 f0Var3 = new f0("LONG", 2);
+        c = f0Var3;
+        f0 f0Var4 = new f0("FLOAT", 3);
+        d = f0Var4;
+        f0 f0Var5 = new f0("DOUBLE", 4);
+        e = f0Var5;
+        f0 f0Var6 = new f0("BOOLEAN", 5);
+        f = f0Var6;
+        f0 f0Var7 = new f0("STRING", 6);
+        h = f0Var7;
+        h hVar = h.c;
+        f0 f0Var8 = new f0("BYTE_STRING", 7);
+        n = f0Var8;
+        f0 f0Var9 = new f0("ENUM", 8);
+        r = f0Var9;
+        f0 f0Var10 = new f0("MESSAGE", 9);
+        s = f0Var10;
+        w = new f0[]{f0Var, f0Var2, f0Var3, f0Var4, f0Var5, f0Var6, f0Var7, f0Var8, f0Var9, f0Var10};
     }
 
-    @Override // androidx.datastore.preferences.protobuf.h0
-    public final void a(Object obj, long j10) {
-        Object unmodifiableList;
-        List list = (List) r1.d.i(obj, j10);
-        if (list instanceof e0) {
-            unmodifiableList = ((e0) list).h();
-        } else {
-            if (c.isAssignableFrom(list.getClass())) {
-                return;
-            }
-            if ((list instanceof x0) && (list instanceof y)) {
-                b bVar = (b) ((y) list);
-                if (bVar.a) {
-                    bVar.a = false;
-                    return;
-                }
-                return;
-            }
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
-        }
-        r1.o(obj, j10, unmodifiableList);
+    public static f0 valueOf(String str) {
+        return (f0) Enum.valueOf(f0.class, str);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.h0
-    public final void b(Object obj, long j10, Object obj2) {
-        List list = (List) r1.d.i(obj2, j10);
-        List d = d(j10, obj, list.size());
-        int size = d.size();
-        int size2 = list.size();
-        if (size > 0 && size2 > 0) {
-            d.addAll(list);
-        }
-        if (size > 0) {
-            list = d;
-        }
-        r1.o(obj, j10, list);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.h0
-    public final List c(Object obj, long j10) {
-        return d(j10, obj, 10);
+    public static f0[] values() {
+        return (f0[]) w.clone();
     }
 }

@@ -20,34 +20,34 @@ public final class s1 {
         this.c = "";
     }
 
-    public static int c(String str, char[] cArr, int i10) {
+    public static int c(String str, char[] cArr, int i3) {
         int length = str.length();
-        str.getChars(0, length, cArr, i10);
+        str.getChars(0, length, cArr, i3);
         return length;
     }
 
     public final String toString() {
         String[] strArr = this.d;
-        int i10 = this.e;
+        int i3 = this.e;
         String str = this.a;
         int length = str.length();
         String str2 = this.c;
         int length2 = str2.length() + length;
         if (length2 == 0) {
             b();
-            return i10 == 0 ? "" : strArr[0];
+            return i3 == 0 ? "" : strArr[0];
         }
         char[] cArr = new char[this.f + length2];
-        int c10 = c(str, cArr, 0);
-        if (i10 > 0) {
-            int c11 = c(strArr[0], cArr, c10) + c10;
-            for (int i11 = 1; i11 < i10; i11++) {
-                int c12 = c(this.b, cArr, c11) + c11;
-                c11 = c(strArr[i11], cArr, c12) + c12;
+        int c2 = c(str, cArr, 0);
+        if (i3 > 0) {
+            int c10 = c(strArr[0], cArr, c2) + c2;
+            for (int i10 = 1; i10 < i3; i10++) {
+                int c11 = c(this.b, cArr, c10) + c10;
+                c10 = c(strArr[i10], cArr, c11) + c11;
             }
-            c10 = c11;
+            c2 = c10;
         }
-        c(str2, cArr, c10);
+        c(str2, cArr, c2);
         return new String(cArr);
     }
 
@@ -57,32 +57,32 @@ public final class s1 {
         if (strArr == null) {
             this.d = new String[8];
         } else {
-            int i10 = this.e;
-            if (i10 == strArr.length) {
-                this.d = (String[]) Arrays.copyOf(strArr, i10 * 2);
+            int i3 = this.e;
+            if (i3 == strArr.length) {
+                this.d = (String[]) Arrays.copyOf(strArr, i3 * 2);
             }
             this.f = this.b.length() + this.f;
         }
         this.f = valueOf.length() + this.f;
         String[] strArr2 = this.d;
-        int i11 = this.e;
-        this.e = i11 + 1;
-        strArr2[i11] = valueOf;
+        int i10 = this.e;
+        this.e = i10 + 1;
+        strArr2[i10] = valueOf;
     }
 
     public final void b() {
         String[] strArr;
         if (this.e > 1) {
             char[] cArr = new char[this.f];
-            int c10 = c(this.d[0], cArr, 0);
-            int i10 = 1;
+            int c2 = c(this.d[0], cArr, 0);
+            int i3 = 1;
             do {
-                int c11 = c(this.b, cArr, c10) + c10;
-                c10 = c(this.d[i10], cArr, c11) + c11;
+                int c10 = c(this.b, cArr, c2) + c2;
+                c2 = c(this.d[i3], cArr, c10) + c10;
                 strArr = this.d;
-                strArr[i10] = null;
-                i10++;
-            } while (i10 < this.e);
+                strArr[i3] = null;
+                i3++;
+            } while (i3 < this.e);
             this.e = 1;
             strArr[0] = new String(cArr);
         }

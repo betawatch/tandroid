@@ -1,105 +1,125 @@
 package h3;
 
-import c3.e;
-import c3.f;
-import c3.g;
-import c3.h;
-import c3.i;
-import c3.p;
-import c3.s;
+import e3.d0;
+import e3.l;
+import e3.o;
+import e3.p;
+import e3.q;
+import e3.s;
+import g2.y;
+import g9.g0;
+import g9.i0;
+import g9.s1;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public final e a;
-    public final i b;
-    public f c;
-    public final int d;
+public final class a implements o {
+    public final /* synthetic */ int a;
+    public final y b;
+    public final d0 c;
 
-    public a(g gVar, i iVar, long j10, long j11, long j12, long j13, long j14, int i10) {
-        this.b = iVar;
-        this.d = i10;
-        this.a = new e(gVar, j10, j11, j12, j13, j14);
-    }
-
-    public static int a(int i10, byte[] bArr) {
-        return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
-    }
-
-    public static int c(p pVar, long j10, s sVar) {
-        if (j10 == pVar.getPosition()) {
-            return 0;
-        }
-        sVar.a = j10;
-        return 1;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00cc, code lost:
-    
-        return c(r28, r8, r29);
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int b(p pVar, s sVar) {
-        while (true) {
-            f fVar = this.c;
-            fVar.getClass();
-            long j10 = fVar.f;
-            long j11 = fVar.g;
-            long j12 = fVar.h;
-            long j13 = j11 - j10;
-            long j14 = this.d;
-            i iVar = this.b;
-            if (j13 <= j14) {
-                this.c = null;
-                iVar.e();
-                return c(pVar, j10, sVar);
-            }
-            long position = j12 - pVar.getPosition();
-            if (position < 0 || position > 262144) {
+    public a(int i3) {
+        this.a = i3;
+        switch (i3) {
+            case 1:
+                this.b = new y(4);
+                this.c = new d0(-1, -1, "image/webp");
                 break;
-            }
-            pVar.q((int) position);
-            pVar.m();
-            h b10 = iVar.b(pVar, fVar.b);
-            int i10 = b10.a;
-            long j15 = b10.b;
-            long j16 = b10.c;
-            if (i10 == -3) {
-                this.c = null;
-                iVar.e();
-                return c(pVar, j12, sVar);
-            }
-            if (i10 == -2) {
-                fVar.d = j15;
-                fVar.f = j16;
-                fVar.h = f.a(fVar.b, j15, fVar.e, j16, fVar.g, fVar.c);
-            } else {
-                if (i10 != -1) {
-                    if (i10 != 0) {
-                        throw new IllegalStateException("Invalid case");
-                    }
-                    long position2 = j16 - pVar.getPosition();
-                    if (position2 >= 0 && position2 <= 262144) {
-                        pVar.q((int) position2);
-                    }
-                    this.c = null;
-                    iVar.e();
-                    return c(pVar, j16, sVar);
-                }
-                fVar.e = j15;
-                fVar.g = j16;
-                fVar.h = f.a(fVar.b, fVar.d, j15, fVar.f, j16, fVar.c);
-            }
+            default:
+                this.b = new y(4);
+                this.c = new d0(-1, -1, "image/avif");
+                break;
         }
     }
 
-    public final void d(long j10) {
-        f fVar = this.c;
-        if (fVar == null || fVar.a != j10) {
-            e eVar = this.a;
-            this.c = new f(j10, eVar.a.g(j10), eVar.c, eVar.d, eVar.e, eVar.f);
+    @Override // e3.o
+    public final o a() {
+        int i3 = this.a;
+        return this;
+    }
+
+    @Override // e3.o
+    public final boolean b(p pVar) {
+        switch (this.a) {
+            case 0:
+                l lVar = (l) pVar;
+                lVar.w(4, false);
+                y yVar = this.b;
+                yVar.K(4);
+                lVar.h(yVar.a, 0, 4, false);
+                if (yVar.C() == 1718909296) {
+                    yVar.K(4);
+                    lVar.h(yVar.a, 0, 4, false);
+                    if (yVar.C() == 1635150182) {
+                    }
+                }
+                break;
+            default:
+                y yVar2 = this.b;
+                yVar2.K(4);
+                l lVar2 = (l) pVar;
+                lVar2.h(yVar2.a, 0, 4, false);
+                if (yVar2.C() == 1380533830) {
+                    lVar2.w(4, false);
+                    yVar2.K(4);
+                    lVar2.h(yVar2.a, 0, 4, false);
+                    if (yVar2.C() == 1464156752) {
+                    }
+                }
+                break;
         }
+        return false;
+    }
+
+    @Override // e3.o
+    public final void c(q qVar) {
+        switch (this.a) {
+            case 0:
+                this.c.c(qVar);
+                break;
+            default:
+                this.c.c(qVar);
+                break;
+        }
+    }
+
+    @Override // e3.o
+    public final void d(long j10, long j11) {
+        switch (this.a) {
+            case 0:
+                this.c.d(j10, j11);
+                break;
+            default:
+                this.c.d(j10, j11);
+                break;
+        }
+    }
+
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // e3.o
+    public final List e() {
+        switch (this.a) {
+        }
+        g0 g0Var = i0.b;
+        return s1.e;
+    }
+
+    @Override // e3.o
+    public final int f(p pVar, s sVar) {
+        switch (this.a) {
+        }
+        return this.c.f(pVar, sVar);
+    }
+
+    @Override // e3.o
+    public final void release() {
+        int i3 = this.a;
+    }
+
+    private final void g() {
+    }
+
+    private final void h() {
     }
 }

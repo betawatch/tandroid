@@ -1,24 +1,42 @@
 package z3;
 
-import e9.n0;
-import java.util.List;
+import e3.a0;
+import e3.b0;
+import e3.c0;
+import g2.n0;
+import java.math.BigInteger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public final n0 a;
-    public final long b;
-    public final long c;
-    public final long d;
+public final class a implements b0 {
+    public final /* synthetic */ b a;
 
-    public a(long j10, long j11, List list) {
-        this.a = n0.u(list);
-        this.b = j10;
-        this.c = j11;
-        long j12 = -9223372036854775807L;
-        if (j10 != -9223372036854775807L && j11 != -9223372036854775807L) {
-            j12 = j10 + j11;
-        }
-        this.d = j12;
+    public a(b bVar) {
+        this.a = bVar;
+    }
+
+    @Override // e3.b0
+    public final boolean d() {
+        return true;
+    }
+
+    @Override // e3.b0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // e3.b0
+    public final a0 f(long j10) {
+        b bVar = this.a;
+        long j11 = bVar.b;
+        BigInteger valueOf = BigInteger.valueOf((bVar.d.i * j10) / 1000000);
+        long j12 = bVar.c;
+        c0 c0Var = new c0(j10, n0.j((valueOf.multiply(BigInteger.valueOf(j12 - j11)).divide(BigInteger.valueOf(bVar.f)).longValue() + j11) - 30000, bVar.b, j12 - 1));
+        return new a0(c0Var, c0Var);
+    }
+
+    @Override // e3.b0
+    public final long h() {
+        return (this.a.f * 1000000) / r0.d.i;
     }
 }

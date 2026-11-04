@@ -1,10 +1,77 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.text.style.ReplacementSpan;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yo extends s4.b0 {
-    @Override // s4.b0
-    public final int n(int i10) {
-        return super.n(i10) * 6;
+public final class yo extends ReplacementSpan {
+    public final /* synthetic */ int a;
+    public final Object b;
+
+    public /* synthetic */ yo(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        switch (this.a) {
+            case 0:
+                Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
+                int i14 = ((fontMetricsInt.ascent + fontMetricsInt.descent) / 2) + i12;
+                Drawable drawable = (Drawable) this.b;
+                int i15 = (int) f10;
+                drawable.setBounds(i15, i14 - org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(24.0f) + i15, org.telegram.messenger.g0.L(12.0f) + i14);
+                drawable.setAlpha(paint.getAlpha());
+                drawable.draw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                if (fontMetricsInt != null) {
+                    Paint.FontMetricsInt fontMetricsInt2 = paint.getFontMetricsInt();
+                    int i11 = fontMetricsInt2.ascent;
+                    int i12 = (fontMetricsInt2.descent + i11) / 2;
+                    int C = org.telegram.messenger.camera.q.C(12.0f, i12, i11);
+                    fontMetricsInt.top = C;
+                    fontMetricsInt.ascent = C;
+                    int b10 = org.telegram.messenger.k5.b(12.0f, i12, fontMetricsInt2.descent);
+                    fontMetricsInt.bottom = b10;
+                    fontMetricsInt.descent = b10;
+                }
+                return org.telegram.messenger.g0.L(32.0f);
+            case 1:
+                return ((h90) this.b).y;
+            case 2:
+                return (int) ((org.telegram.ui.kg0) this.b).g2;
+            case 3:
+                return (int) ((xg.e1) this.b).m2;
+            default:
+                return ((org.telegram.messenger.f6) this.b).getSize(paint, charSequence, i3, i10, fontMetricsInt);
+        }
+    }
+
+    public yo(ch0 ch0Var) {
+        this.a = 0;
+        this.b = ch0Var;
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    }
+
+    private final void d(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
     }
 }

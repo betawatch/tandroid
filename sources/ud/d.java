@@ -1,114 +1,184 @@
 package ud;
 
-import android.os.Handler;
-import android.os.Looper;
-import cd.h;
-import java.util.concurrent.CancellationException;
-import k1.i;
-import td.a0;
-import td.e0;
-import td.f2;
-import td.j0;
-import td.m;
-import td.m0;
-import td.o0;
-import td.w1;
-import td.z1;
-import yd.o;
+import k2.p1;
+import x7.e5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class d extends a0 implements j0 {
-    public final Handler c;
-    public final boolean d;
-    public final d e;
-
-    public d(Handler handler, boolean z10) {
-        this.c = handler;
-        this.d = z10;
-        this.e = z10 ? this : new d(handler, true);
+public abstract class d extends l {
+    public static boolean e(String str, String str2) {
+        kotlin.jvm.internal.j.e(str, "<this>");
+        return i(0, 2, str, str2) >= 0;
     }
 
-    @Override // td.j0
-    public final void a(long j10, m mVar) {
-        z1 z1Var = new z1(mVar, this, false, 6);
-        if (j10 > 4611686018427387903L) {
-            j10 = 4611686018427387903L;
-        }
-        if (this.c.postDelayed(z1Var, j10)) {
-            mVar.u(new i(1, this, z1Var));
-        } else {
-            f(mVar.e, z1Var);
-        }
+    public static final int f(CharSequence charSequence) {
+        kotlin.jvm.internal.j.e(charSequence, "<this>");
+        return charSequence.length() - 1;
     }
 
-    @Override // td.j0
-    public final o0 b(long j10, final f2 f2Var, h hVar) {
-        if (j10 > 4611686018427387903L) {
-            j10 = 4611686018427387903L;
-        }
-        if (this.c.postDelayed(f2Var, j10)) {
-            return new o0() { // from class: ud.c
-                @Override // td.o0
-                public final void dispose() {
-                    d.this.c.removeCallbacks(f2Var);
-                }
-            };
-        }
-        f(hVar, f2Var);
-        return w1.a;
-    }
-
-    @Override // td.a0
-    public final void c(h hVar, Runnable runnable) {
-        if (this.c.post(runnable)) {
-            return;
-        }
-        f(hVar, runnable);
-    }
-
-    @Override // td.a0
-    public final boolean d() {
-        return (this.d && kotlin.jvm.internal.i.a(Looper.myLooper(), this.c.getLooper())) ? false : true;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof d)) {
-            return false;
-        }
-        d dVar = (d) obj;
-        return dVar.c == this.c && dVar.d == this.d;
-    }
-
-    public final void f(h hVar, Runnable runnable) {
-        e0.e(hVar, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
-        m0.b.c(hVar, runnable);
-    }
-
-    public final int hashCode() {
-        return System.identityHashCode(this.c) ^ (this.d ? 1231 : 1237);
-    }
-
-    @Override // td.a0
-    public final String toString() {
-        d dVar;
+    public static final int g(int i3, CharSequence other, String string, boolean z10) {
         String str;
-        ae.e eVar = m0.a;
-        d dVar2 = o.a;
-        if (this == dVar2) {
-            str = "Dispatchers.Main";
-        } else {
-            try {
-                dVar = dVar2.e;
-            } catch (UnsupportedOperationException unused) {
-                dVar = null;
+        boolean z11;
+        boolean regionMatches;
+        kotlin.jvm.internal.j.e(other, "<this>");
+        kotlin.jvm.internal.j.e(string, "string");
+        if (!z10 && (other instanceof String)) {
+            return ((String) other).indexOf(string, i3);
+        }
+        int length = other.length();
+        if (i3 < 0) {
+            i3 = 0;
+        }
+        int length2 = other.length();
+        if (length > length2) {
+            length = length2;
+        }
+        rd.e eVar = new rd.e(i3, length, 1);
+        boolean z12 = other instanceof String;
+        int i10 = eVar.c;
+        int i11 = eVar.b;
+        int i12 = eVar.a;
+        if (z12 && (string instanceof String)) {
+            if ((i10 <= 0 || i12 > i11) && (i10 >= 0 || i11 > i12)) {
+                return -1;
             }
-            str = this == dVar ? "Dispatchers.Main.immediate" : null;
+            int i13 = i12;
+            while (true) {
+                String other2 = (String) other;
+                int length3 = string.length();
+                kotlin.jvm.internal.j.e(string, "<this>");
+                kotlin.jvm.internal.j.e(other2, "other");
+                if (z10) {
+                    str = string;
+                    z11 = z10;
+                    regionMatches = str.regionMatches(z11, 0, other2, i13, length3);
+                } else {
+                    regionMatches = string.regionMatches(0, other2, i13, length3);
+                    str = string;
+                    z11 = z10;
+                }
+                if (regionMatches) {
+                    return i13;
+                }
+                if (i13 == i11) {
+                    return -1;
+                }
+                i13 += i10;
+                string = str;
+                z10 = z11;
+            }
+        } else {
+            if ((i10 <= 0 || i12 > i11) && (i10 >= 0 || i11 > i12)) {
+                return -1;
+            }
+            while (true) {
+                int length4 = string.length();
+                kotlin.jvm.internal.j.e(other, "other");
+                if (i12 >= 0 && string.length() - length4 >= 0 && i12 <= other.length() - length4) {
+                    for (int i14 = 0; i14 < length4; i14++) {
+                        if (e5.a(string.charAt(i14), other.charAt(i12 + i14), z10)) {
+                        }
+                    }
+                    return i12;
+                }
+                if (i12 == i11) {
+                    return -1;
+                }
+                i12 += i10;
+            }
         }
-        if (str != null) {
-            return str;
+    }
+
+    public static int h(char c2, int i3, int i10, CharSequence charSequence) {
+        if ((i10 & 2) != 0) {
+            i3 = 0;
         }
-        String handler = this.c.toString();
-        return this.d ? sc.e.A(handler, ".immediate") : handler;
+        kotlin.jvm.internal.j.e(charSequence, "<this>");
+        if (charSequence instanceof String) {
+            return ((String) charSequence).indexOf(c2, i3);
+        }
+        char[] cArr = {c2};
+        if (charSequence instanceof String) {
+            return ((String) charSequence).indexOf(cArr[0], i3);
+        }
+        if (i3 < 0) {
+            i3 = 0;
+        }
+        int f10 = f(charSequence);
+        if (i3 > f10) {
+            return -1;
+        }
+        while (!e5.a(cArr[0], charSequence.charAt(i3), false)) {
+            if (i3 == f10) {
+                return -1;
+            }
+            i3++;
+        }
+        return i3;
+    }
+
+    public static /* synthetic */ int i(int i3, int i10, CharSequence charSequence, String str) {
+        if ((i10 & 2) != 0) {
+            i3 = 0;
+        }
+        return g(i3, charSequence, str, false);
+    }
+
+    public static boolean j(String str) {
+        kotlin.jvm.internal.j.e(str, "<this>");
+        for (int i3 = 0; i3 < str.length(); i3++) {
+            char charAt = str.charAt(i3);
+            if (!Character.isWhitespace(charAt) && !Character.isSpaceChar(charAt)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static String k(int i3, String str) {
+        CharSequence charSequence;
+        kotlin.jvm.internal.j.e(str, "<this>");
+        if (i3 < 0) {
+            throw new IllegalArgumentException(p1.j(i3, "Desired length ", " is less than zero."));
+        }
+        if (i3 <= str.length()) {
+            charSequence = str.subSequence(0, str.length());
+        } else {
+            StringBuilder sb2 = new StringBuilder(i3);
+            sb2.append((CharSequence) str);
+            int length = i3 - str.length();
+            int i10 = 1;
+            if (1 <= length) {
+                while (true) {
+                    sb2.append(' ');
+                    if (i10 == length) {
+                        break;
+                    }
+                    i10++;
+                }
+            }
+            charSequence = sb2;
+        }
+        return charSequence.toString();
+    }
+
+    public static String l(String str, String delimiter, String str2) {
+        kotlin.jvm.internal.j.e(delimiter, "delimiter");
+        int i3 = i(0, 6, str, delimiter);
+        if (i3 == -1) {
+            return str2;
+        }
+        String substring = str.substring(delimiter.length() + i3, str.length());
+        kotlin.jvm.internal.j.d(substring, "substring(...)");
+        return substring;
+    }
+
+    public static String m(String str, String str2) {
+        int lastIndexOf = str.lastIndexOf(46, f(str));
+        if (lastIndexOf == -1) {
+            return str2;
+        }
+        String substring = str.substring(lastIndexOf + 1, str.length());
+        kotlin.jvm.internal.j.d(substring, "substring(...)");
+        return substring;
     }
 }

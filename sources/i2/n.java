@@ -1,97 +1,90 @@
 package i2;
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Looper;
-import org.telegram.tgnet.ConnectionsManager;
-import v7.r6;
-import v7.t6;
+import android.net.Uri;
+import b8.zb;
+import d2.o0;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class n {
-    public static final int C;
-    public static final boolean D;
-    public final String A;
-    public final boolean B;
-    public final Context a;
-    public final e2.g0 b;
-    public d9.t c;
-    public final c2.c d;
-    public d9.t e;
-    public d9.t f;
-    public final c2.c g;
-    public final Looper h;
-    public final int i;
-    public final b2.f j;
-    public final int k;
-    public final boolean l;
-    public final v1 m;
-    public final u1 n;
-    public final long o;
-    public final long p;
-    public final long q;
-    public final f r;
-    public final long s;
-    public final long t;
-    public final int u;
-    public final int v;
-    public final int w;
-    public final int x;
-    public final boolean y;
-    public boolean z;
+    public static final /* synthetic */ int i = 0;
+    public final Uri a;
+    public final int b;
+    public final byte[] c;
+    public final Map d;
+    public final long e;
+    public final long f;
+    public final String g;
+    public final int h;
 
     static {
-        String str = e2.l0.a;
-        String c10 = r6.c(Build.DEVICE);
-        C = (c10.contains("emulator") || c10.contains("emu64a") || c10.contains("emu64x") || c10.contains("generic")) ? 30000 : 10000;
-        D = true;
+        o0.a("media3.datasource");
     }
 
-    public n(Context context) {
-        c2.c cVar = new c2.c(context, 1);
-        c2.c cVar2 = new c2.c(context, 2);
-        c2.c cVar3 = new c2.c(context, 3);
-        a3.s sVar = new a3.s(3);
-        c2.c cVar4 = new c2.c(context, 4);
-        context.getClass();
-        this.a = context;
-        this.c = cVar;
-        this.d = cVar2;
-        this.e = cVar3;
-        this.f = sVar;
-        this.g = cVar4;
-        String str = e2.l0.a;
-        Looper myLooper = Looper.myLooper();
-        this.h = myLooper == null ? Looper.getMainLooper() : myLooper;
-        this.j = b2.f.i;
-        this.k = 1;
-        this.l = true;
-        this.m = v1.f;
-        this.o = 5000L;
-        this.p = 15000L;
-        this.q = 3000L;
-        this.n = u1.b;
-        this.r = new f(e2.l0.S(20L), e2.l0.S(500L));
-        this.b = e2.g0.a;
-        this.s = 500L;
-        this.t = 2000L;
-        this.u = 600000;
-        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        boolean z10 = D;
-        this.v = z10 ? C : Integer.MAX_VALUE;
-        this.w = z10 ? 60000 : i10;
-        this.x = 600000;
-        this.y = true;
-        this.A = "";
-        this.i = -1000;
-        new t7.u();
-        this.B = true;
+    public n(Uri uri, int i3, byte[] bArr, Map map, long j10, long j11, String str, int i10) {
+        zb.f(j10 >= 0);
+        zb.f(j10 >= 0);
+        zb.f(j11 > 0 || j11 == -1);
+        uri.getClass();
+        this.a = uri;
+        this.b = i3;
+        this.c = (bArr == null || bArr.length == 0) ? null : bArr;
+        this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
+        this.e = j10;
+        this.f = j11;
+        this.g = str;
+        this.h = i10;
     }
 
-    public final i0 a() {
-        t6.p(!this.z);
-        this.z = true;
-        return new i0(this);
+    public final m a() {
+        m mVar = new m();
+        mVar.e = this.a;
+        mVar.a = this.b;
+        mVar.f = this.c;
+        mVar.g = this.d;
+        mVar.b = this.e;
+        mVar.d = this.f;
+        mVar.h = this.g;
+        mVar.c = this.h;
+        return mVar;
+    }
+
+    public final n b(long j10) {
+        long j11 = this.f;
+        long j12 = j11 != -1 ? j11 - j10 : -1L;
+        if (j10 == 0 && j11 == j12) {
+            return this;
+        }
+        return new n(this.a, this.b, this.c, this.d, this.e + j10, j12, this.g, this.h);
+    }
+
+    public final String toString() {
+        String str;
+        StringBuilder sb2 = new StringBuilder("DataSpec[");
+        int i3 = this.b;
+        if (i3 == 1) {
+            str = "GET";
+        } else if (i3 == 2) {
+            str = "POST";
+        } else {
+            if (i3 != 3) {
+                throw new IllegalStateException();
+            }
+            str = "HEAD";
+        }
+        sb2.append(str);
+        sb2.append(" ");
+        sb2.append(this.a);
+        sb2.append(", ");
+        sb2.append(this.e);
+        sb2.append(", ");
+        sb2.append(this.f);
+        sb2.append(", ");
+        sb2.append(this.g);
+        sb2.append(", ");
+        return a1.g.o(this.h, "]", sb2);
     }
 }

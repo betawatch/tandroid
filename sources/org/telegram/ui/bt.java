@@ -1,68 +1,67 @@
 package org.telegram.ui;
 
-import android.view.View;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class bt implements View.OnClickListener {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ft c;
+public final /* synthetic */ class bt implements org.telegram.ui.Components.cj0, org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ et a;
 
-    public bt(ft ftVar, ArrayList arrayList, boolean z10) {
-        this.c = ftVar;
-        this.a = arrayList;
-        this.b = z10;
+    public /* synthetic */ bt(et etVar) {
+        this.a = etVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        kt ktVar = this.c.a;
-        if (ktVar.w == null) {
-            return;
-        }
-        int intValue = ((Integer) view.getTag()).intValue();
-        ArrayList arrayList = this.a;
-        if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
-            ht htVar = ktVar.l;
-            if (htVar != null) {
-                TLRPC.Document document = ktVar.W;
-                String str = ktVar.Y;
-                boolean z10 = true;
-                Object obj = ktVar.b0;
-                if (((Integer) arrayList.get(intValue)).intValue() != 0) {
-                    z10 = false;
-                }
-                htVar.l(document, str, obj, z10, 0, 0);
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
-            ht htVar2 = ktVar.l;
-            if (htVar2 != null) {
-                htVar2.L(ktVar.a0, ktVar.i);
-            }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
-            org.telegram.messenger.vi.b0(ktVar.r).d(2, ktVar.b0, ktVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
-            TLRPC.Document document2 = ktVar.W;
-            Object obj2 = ktVar.b0;
-            String str2 = ktVar.Y;
-            ht htVar3 = ktVar.l;
-            if (htVar3 == null) {
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        int i10;
+        int i11;
+        int i12;
+        et etVar = this.a;
+        ht htVar = etVar.w3;
+        ArrayList arrayList = etVar.n3;
+        arrayList.clear();
+        int i13 = 0;
+        while (true) {
+            dt[] dtVarArr = etVar.o3;
+            if (i13 >= dtVarArr.length) {
+                i10 = ((org.telegram.ui.ActionBar.d2) htVar).currentAccount;
+                org.telegram.messenger.bz.e(i10).l(0);
+                i11 = ((org.telegram.ui.ActionBar.d2) htVar).currentAccount;
+                org.telegram.messenger.bz.e(i11).l(1);
+                i12 = ((org.telegram.ui.ActionBar.d2) htVar).currentAccount;
+                org.telegram.messenger.bz.e(i12).l(2);
+                etVar.f3 = true;
+                etVar.C1();
+                etVar.D1(true);
                 return;
-            } else {
-                org.telegram.ui.Components.s4.K(ktVar.w, htVar3.a(), new a1.d(htVar3, document2, str2, obj2, 9));
             }
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
-            org.telegram.messenger.vi.b0(ktVar.r).d(0, ktVar.b0, ktVar.W, (int) (System.currentTimeMillis() / 1000), true);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
-            ktVar.l.i(ktVar.X);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
-            ktVar.l.n(ktVar.W);
-        } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
-            ktVar.l.E(ktVar.W);
+            dt dtVar = dtVarArr[i13];
+            if (dtVar.c > 0) {
+                arrayList.add(Integer.valueOf(dtVar.d));
+            }
+            i13++;
         }
-        ktVar.o();
+    }
+
+    @Override // org.telegram.ui.Components.cj0
+    public int run() {
+        et etVar = this.a;
+        ArrayList arrayList = etVar.k3;
+        int i3 = 0;
+        while (true) {
+            if (i3 >= arrayList.size()) {
+                i3 = -1;
+                break;
+            }
+            if (((at) arrayList.get(i3)).a == 5) {
+                break;
+            }
+            i3++;
+        }
+        if (i3 < 0) {
+            return -1;
+        }
+        etVar.h3.h1(i3, org.telegram.messenger.g0.L(60.0f));
+        return i3;
     }
 }

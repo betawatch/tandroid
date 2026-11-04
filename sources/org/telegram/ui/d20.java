@@ -1,60 +1,43 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class d20 extends s4.s0 {
-    public final /* synthetic */ a50 a;
+public final class d20 implements TextWatcher {
+    public final /* synthetic */ x30 a;
 
-    public d20(a50 a50Var) {
-        this.a = a50Var;
+    public d20(x30 x30Var) {
+        this.a = x30Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        org.telegram.ui.Components.dk0 dk0Var;
-        a50 a50Var = this.a;
-        h40 h40Var = a50Var.H1;
-        if (i10 != 0) {
-            org.telegram.ui.Components.q30 q30Var = a50Var.d2;
-            if (q30Var != null) {
-                q30Var.b(true);
-            }
-            org.telegram.ui.Components.q30 q30Var2 = a50Var.e2;
-            if (q30Var2 != null) {
-                q30Var2.b(true);
-                return;
-            }
-            return;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        x30 x30Var = this.a;
+        x30Var.s5.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i3 = x30Var.V1;
+        if (codePointCount + 25 > i3) {
+            str = "" + (i3 - codePointCount);
+        } else {
+            str = null;
         }
-        float L = a50Var.p2 - org.telegram.messenger.i0.L(74.0f);
-        h40Var.getChildAt(0);
-        if (L + a50Var.s0 >= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() || !h40Var.canScrollVertically(1) || (dk0Var = (org.telegram.ui.Components.dk0) h40Var.K(0)) == null) {
-            return;
-        }
-        View view = dk0Var.a;
-        if (view.getTop() > 0) {
-            h40Var.w0(0, view.getTop(), null);
+        x30Var.E1.a();
+        x30Var.E1.setText(str);
+        x30Var.E1.setTextColor(codePointCount >= i3 ? -1280137 : -1);
+        if (codePointCount > i3) {
+            org.telegram.messenger.p2.E.a();
         }
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.messenger.u3 u3Var;
-        a50 a50Var = this.a;
-        if (a50Var.H1.getChildCount() <= 0 || (u3Var = a50Var.R2) == null) {
-            return;
-        }
-        if (!u3Var.u && !u3Var.t && a50Var.P1.N0() > a50Var.G1.F - 5) {
-            a50Var.R2.k(false);
-        }
-        a50.P0(a50Var);
-        p40 p40Var = a50Var.L2;
-        if (p40Var != null) {
-            p40Var.invalidate();
-        }
-        a50Var.b.invalidate();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 }

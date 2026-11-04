@@ -1,51 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ee implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class ee extends bg {
+    public final /* synthetic */ int o0 = 0;
+    public final /* synthetic */ ChatActivityEnterView p0;
 
-    public /* synthetic */ ee(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ee(ChatActivityEnterView chatActivityEnterView, Activity activity, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i3, activity, e6Var, true);
+        this.p0 = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.bg
+    public boolean b() {
+        switch (this.o0) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                ee eeVar = chatActivityEnterView.r3;
-                if ((!chatActivityEnterView.f0() || !chatActivityEnterView.r()) && !org.telegram.ui.ActionBar.k2.hasSheets(chatActivityEnterView.P2) && !chatActivityEnterView.Y1 && chatActivityEnterView.E0 != null && chatActivityEnterView.k3 && !chatActivityEnterView.z2 && !org.telegram.messenger.i0.D && !org.telegram.messenger.i0.E) {
-                    sf sfVar = chatActivityEnterView.Z2;
-                    if (sfVar != null) {
-                        sfVar.b1();
-                    }
-                    chatActivityEnterView.E0.requestFocus();
-                    org.telegram.messenger.i0.J3(chatActivityEnterView.E0);
-                    org.telegram.messenger.i0.r(eeVar);
-                    org.telegram.messenger.i0.h3(eeVar, 100L);
-                    break;
-                }
-                break;
-            case 1:
-                sf sfVar2 = this.b.Z2;
-                if (sfVar2 != null) {
-                    sfVar2.V1(0, 0, 0, 0L, 0L, true);
-                    break;
-                }
+                return this.p0.c();
+            default:
+                return super.b();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bg
+    public final boolean c() {
+        switch (this.o0) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.p0;
+                return !chatActivityEnterView.c() && chatActivityEnterView.H0 == Integer.MAX_VALUE;
+            default:
+                return !this.p0.r3;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bg
+    public final boolean d() {
+        switch (this.o0) {
+            case 0:
+                se seVar = this.p0.M0;
+                return !(seVar == null || seVar.q0) || this.r > 0;
+            default:
+                return true;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bg
+    public boolean j() {
+        switch (this.o0) {
+            case 0:
+                return this.p0.z4;
+            default:
+                return super.j();
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        switch (this.o0) {
+            case 0:
+                super.setAlpha(f10);
+                int i3 = ChatActivityEnterView.t5;
+                this.p0.A1();
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                AnimatorSet animatorSet = chatActivityEnterView2.V0;
-                if (animatorSet != null && !animatorSet.isRunning()) {
-                    chatActivityEnterView2.V0.start();
-                    break;
-                }
+                super.setAlpha(f10);
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ee(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(R.drawable.input_done, context, e6Var, true);
+        this.p0 = chatActivityEnterView;
     }
 }

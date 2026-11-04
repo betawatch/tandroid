@@ -13,12 +13,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.PowerManager;
-import i0.a;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.f8;
+import k2.p1;
+import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class JobIntentService extends Service {
     static final boolean DEBUG = false;
@@ -33,7 +33,7 @@ public abstract class JobIntentService extends Service {
     boolean mStopped = false;
     boolean mDestroyed = false;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public final class CommandProcessor extends AsyncTask<Void, Void, Void> {
         public CommandProcessor() {
         }
@@ -64,14 +64,14 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public interface CompatJobEngine {
         IBinder compatGetBinder();
 
         GenericWorkItem dequeueWork();
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static final class CompatWorkEnqueuer extends WorkEnqueuer {
         private final Context mContext;
         private final PowerManager.WakeLock mLaunchWakeLock;
@@ -138,7 +138,7 @@ public abstract class JobIntentService extends Service {
                             this.mRunWakeLock.acquire(120000L);
                             this.mLaunchWakeLock.release();
                         } catch (Throwable th2) {
-                            f8.g(th2, true);
+                            a8.g(th2, true);
                             this.mServiceProcessing = false;
                         }
                     }
@@ -156,14 +156,14 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public final class CompatWorkItem implements GenericWorkItem {
         final Intent mIntent;
         final int mStartId;
 
-        public CompatWorkItem(Intent intent, int i10) {
+        public CompatWorkItem(Intent intent, int i3) {
             this.mIntent = intent;
-            this.mStartId = i10;
+            this.mStartId = i3;
         }
 
         @Override // org.telegram.messenger.support.JobIntentService.GenericWorkItem
@@ -177,14 +177,14 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public interface GenericWorkItem {
         void complete();
 
         Intent getIntent();
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static final class JobServiceEngineImpl extends JobServiceEngine implements CompatJobEngine {
         static final boolean DEBUG = false;
         static final String TAG = "JobServiceEngineImpl";
@@ -192,7 +192,7 @@ public abstract class JobIntentService extends Service {
         JobParameters mParams;
         final JobIntentService mService;
 
-        /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
         public final class WrapperWorkItem implements GenericWorkItem {
             final JobWorkItem mJobWork;
 
@@ -267,15 +267,15 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static final class JobWorkEnqueuer extends WorkEnqueuer {
         private final JobInfo mJobInfo;
         private final JobScheduler mJobScheduler;
 
-        public JobWorkEnqueuer(Context context, ComponentName componentName, int i10) {
+        public JobWorkEnqueuer(Context context, ComponentName componentName, int i3) {
             super(context, componentName);
-            ensureJobId(i10);
-            this.mJobInfo = new JobInfo.Builder(i10, this.mComponentName).setOverrideDeadline(0L).setRequiredNetworkType(1).build();
+            ensureJobId(i3);
+            this.mJobInfo = new JobInfo.Builder(i3, this.mComponentName).setOverrideDeadline(0L).setRequiredNetworkType(1).build();
             this.mJobScheduler = (JobScheduler) context.getApplicationContext().getSystemService("jobscheduler");
         }
 
@@ -293,11 +293,11 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    public static void enqueueWork(Context context, Class cls, int i10, Intent intent) {
-        enqueueWork(context, new ComponentName(context, (Class<?>) cls), i10, intent);
+    public static void enqueueWork(Context context, Class cls, int i3, Intent intent) {
+        enqueueWork(context, new ComponentName(context, (Class<?>) cls), i3, intent);
     }
 
-    public static WorkEnqueuer getWorkEnqueuer(Context context, ComponentName componentName, boolean z10, int i10) {
+    public static WorkEnqueuer getWorkEnqueuer(Context context, ComponentName componentName, boolean z10, int i3) {
         WorkEnqueuer compatWorkEnqueuer;
         HashMap<ComponentName, WorkEnqueuer> hashMap = sClassWorkEnqueuer;
         WorkEnqueuer workEnqueuer = hashMap.get(componentName);
@@ -310,7 +310,7 @@ public abstract class JobIntentService extends Service {
             if (!z10) {
                 throw new IllegalArgumentException("Can't be here without a job id");
             }
-            compatWorkEnqueuer = new JobWorkEnqueuer(context, componentName, i10);
+            compatWorkEnqueuer = new JobWorkEnqueuer(context, componentName, i3);
         }
         hashMap.put(componentName, compatWorkEnqueuer);
         return compatWorkEnqueuer;
@@ -393,7 +393,7 @@ public abstract class JobIntentService extends Service {
     public abstract void onHandleWork(Intent intent);
 
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i10, int i11) {
+    public int onStartCommand(Intent intent, int i3, int i10) {
         if (this.mCompatQueue == null) {
             return 2;
         }
@@ -403,7 +403,7 @@ public abstract class JobIntentService extends Service {
             if (intent == null) {
                 intent = new Intent();
             }
-            arrayList.add(new CompatWorkItem(intent, i11));
+            arrayList.add(new CompatWorkItem(intent, i10));
             ensureProcessorRunningLocked(true);
         }
         return 3;
@@ -436,18 +436,18 @@ public abstract class JobIntentService extends Service {
         this.mInterruptIfStopped = z10;
     }
 
-    public static void enqueueWork(Context context, ComponentName componentName, int i10, Intent intent) {
+    public static void enqueueWork(Context context, ComponentName componentName, int i3, Intent intent) {
         if (intent == null) {
             throw new IllegalArgumentException("work must not be null");
         }
         synchronized (sLock) {
-            WorkEnqueuer workEnqueuer = getWorkEnqueuer(context, componentName, true, i10);
-            workEnqueuer.ensureJobId(i10);
+            WorkEnqueuer workEnqueuer = getWorkEnqueuer(context, componentName, true, i3);
+            workEnqueuer.ensureJobId(i3);
             workEnqueuer.enqueueWork(intent);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static abstract class WorkEnqueuer {
         final ComponentName mComponentName;
         boolean mHasJobId;
@@ -459,17 +459,17 @@ public abstract class JobIntentService extends Service {
 
         public abstract void enqueueWork(Intent intent);
 
-        public void ensureJobId(int i10) {
+        public void ensureJobId(int i3) {
             if (!this.mHasJobId) {
                 this.mHasJobId = true;
-                this.mJobId = i10;
+                this.mJobId = i3;
             } else {
-                if (this.mJobId == i10) {
+                if (this.mJobId == i3) {
                     return;
                 }
-                StringBuilder l4 = a.l(i10, "Given job ID ", " is different than previous ");
-                l4.append(this.mJobId);
-                throw new IllegalArgumentException(l4.toString());
+                StringBuilder m10 = p1.m(i3, "Given job ID ", " is different than previous ");
+                m10.append(this.mJobId);
+                throw new IllegalArgumentException(m10.toString());
             }
         }
 

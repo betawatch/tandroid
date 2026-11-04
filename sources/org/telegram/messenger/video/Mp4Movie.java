@@ -5,20 +5,20 @@ import android.media.MediaFormat;
 import java.io.File;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class Mp4Movie {
     private File cacheFile;
     private int height;
-    private jc.d matrix = jc.d.j;
+    private mc.d matrix = mc.d.j;
     private ArrayList<Track> tracks = new ArrayList<>();
     private int width;
 
-    public void addSample(int i10, long j10, MediaCodec.BufferInfo bufferInfo) {
-        if (i10 < 0 || i10 >= this.tracks.size()) {
+    public void addSample(int i3, long j10, MediaCodec.BufferInfo bufferInfo) {
+        if (i3 < 0 || i3 >= this.tracks.size()) {
             return;
         }
-        this.tracks.get(i10).addSample(j10, bufferInfo);
+        this.tracks.get(i3).addSample(j10, bufferInfo);
     }
 
     public int addTrack(MediaFormat mediaFormat, boolean z10) {
@@ -34,14 +34,14 @@ public class Mp4Movie {
         return this.height;
     }
 
-    public long getLastFrameTimestamp(int i10) {
-        if (i10 < 0 || i10 >= this.tracks.size()) {
+    public long getLastFrameTimestamp(int i3) {
+        if (i3 < 0 || i3 >= this.tracks.size()) {
             return 0L;
         }
-        return this.tracks.get(i10).getLastFrameTimestamp();
+        return this.tracks.get(i3).getLastFrameTimestamp();
     }
 
-    public jc.d getMatrix() {
+    public mc.d getMatrix() {
         return this.matrix;
     }
 
@@ -57,22 +57,22 @@ public class Mp4Movie {
         this.cacheFile = file;
     }
 
-    public void setRotation(int i10) {
-        if (i10 == 0) {
-            this.matrix = jc.d.j;
+    public void setRotation(int i3) {
+        if (i3 == 0) {
+            this.matrix = mc.d.j;
             return;
         }
-        if (i10 == 90) {
-            this.matrix = jc.d.k;
-        } else if (i10 == 180) {
-            this.matrix = jc.d.l;
-        } else if (i10 == 270) {
-            this.matrix = jc.d.m;
+        if (i3 == 90) {
+            this.matrix = mc.d.k;
+        } else if (i3 == 180) {
+            this.matrix = mc.d.l;
+        } else if (i3 == 270) {
+            this.matrix = mc.d.m;
         }
     }
 
-    public void setSize(int i10, int i11) {
-        this.width = i10;
-        this.height = i11;
+    public void setSize(int i3, int i10) {
+        this.width = i3;
+        this.height = i10;
     }
 }

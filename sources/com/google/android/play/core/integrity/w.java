@@ -2,15 +2,15 @@ package com.google.android.play.core.integrity;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class w implements aw {
-    private final a9.t a;
-    private final a9.t b;
-    private final a9.t c;
-    private final a9.t d;
-    private final a9.t e;
-    private final a9.t f;
+    private final c9.q a;
+    private final c9.q b;
+    private final c9.q c;
+    private final c9.q d;
+    private final c9.q e;
+    private final c9.q f;
 
     public w(Context context, v vVar) {
         bc bcVar;
@@ -19,20 +19,20 @@ final class w implements aw {
         if (context == null) {
             throw new NullPointerException("instance cannot be null");
         }
-        a9.r rVar = new a9.r(context);
-        this.a = rVar;
+        c9.o oVar3 = new c9.o(context);
+        this.a = oVar3;
         bcVar = bb.a;
-        a9.p b10 = a9.p.b(bcVar);
+        c9.m b10 = c9.m.b(bcVar);
         this.b = b10;
         oVar = n.a;
-        au auVar = new au(rVar, oVar);
+        au auVar = new au(oVar3, oVar);
         this.c = auVar;
         oVar2 = n.a;
-        a9.p b11 = a9.p.b(new bp(rVar, b10, auVar, oVar2));
+        c9.m b11 = c9.m.b(new bp(oVar3, b10, auVar, oVar2));
         this.d = b11;
-        a9.p b12 = a9.p.b(new bu(b11));
+        c9.m b12 = c9.m.b(new bu(b11));
         this.e = b12;
-        this.f = a9.p.b(new ba(b11, b12));
+        this.f = c9.m.b(new ba(b11, b12));
     }
 
     @Override // com.google.android.play.core.integrity.aw

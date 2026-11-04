@@ -1,209 +1,64 @@
 package org.telegram.ui.Cells;
 
-import android.text.Editable;
-import android.text.Spannable;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.text.style.CharacterStyle;
-import android.text.style.ParagraphStyle;
-import android.text.style.SuggestionSpan;
-import android.util.Pair;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.kd0;
+import android.view.View;
+import android.widget.FrameLayout;
+import b8.mf;
+import org.telegram.messenger.bd;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class l3 implements TextWatcher {
-    public final /* synthetic */ int a = 2;
-    public boolean b;
-    public int c;
-    public Object d;
+public final class l3 extends FrameLayout {
+    public final EditTextBoldCursor a;
 
-    public /* synthetic */ l3() {
+    public l3(Context context) {
+        super(context);
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.a = editTextBoldCursor;
+        org.telegram.ui.ActionBar.r6.V(editTextBoldCursor, org.telegram.ui.ActionBar.k6.G6, null);
+        org.telegram.ui.ActionBar.r6.E(editTextBoldCursor, org.telegram.ui.ActionBar.k6.H6, null);
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
+        editTextBoldCursor.setGravity((bd.a0 ? 5 : 3) | 16);
+        editTextBoldCursor.setBackgroundDrawable(null);
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | TLObject.FLAG_14);
+        addView(editTextBoldCursor, mf.d(-1, -1.0f, (bd.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                int i10 = this.c;
-                m3 m3Var = (m3) this.d;
-                k3 k3Var = m3Var.d;
-                if (!m3Var.c) {
-                    if (i10 > 0 && editable != null && editable.length() > i10) {
-                        m3Var.c = true;
-                        k3Var.setText(editable.subSequence(0, i10));
-                        k3Var.setSelection(k3Var.length());
-                        m3Var.c = false;
-                    }
-                    m3Var.b(editable);
-                }
-                if (!this.b) {
-                    while (true) {
-                        int indexOf = editable.toString().indexOf("\n");
-                        if (indexOf < 0) {
-                            break;
-                        } else {
-                            editable.delete(indexOf, indexOf + 1);
-                        }
-                    }
-                }
-                break;
-            case 1:
-                org.telegram.ui.Components.r4 r4Var = (org.telegram.ui.Components.r4) this.d;
-                if (!this.b) {
-                    int length = editable.length();
-                    int i11 = this.c;
-                    if (length > i11) {
-                        this.b = true;
-                        editable.delete(i11, editable.length());
-                        org.telegram.messenger.i0.E3(r4Var);
-                        try {
-                            r4Var.performHapticFeedback(3, 2);
-                        } catch (Exception unused) {
-                        }
-                        this.b = false;
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                break;
-            default:
-                kd0 kd0Var = (kd0) this.d;
-                org.telegram.ui.ActionBar.n0 n0Var = kd0Var.c;
-                if (!this.b) {
-                    kd0Var.p(true);
-                    org.telegram.messenger.i0.r(kd0Var.V);
-                    kd0Var.n(false);
-                    if (TextUtils.isEmpty(editable)) {
-                        kd0Var.D = false;
-                    }
-                    if (!kd0Var.o(editable.toString())) {
-                        kd0Var.r(true);
-                        this.b = true;
-                        boolean z10 = n0Var.getSelectionEnd() >= n0Var.getText().length();
-                        if (!kd0Var.D) {
-                            String str = kd0Var.K;
-                            n0Var.setText(str.substring(0, Utilities.j(this.c, str.length(), 0)));
-                            if (z10) {
-                                n0Var.setSelection(n0Var.getText().length());
-                            }
-                        }
-                        this.b = false;
-                        break;
-                    }
-                }
-                break;
-        }
+    public final void a(String str) {
+        EditTextBoldCursor editTextBoldCursor = this.a;
+        editTextBoldCursor.setText("");
+        editTextBoldCursor.setHint(str);
+        setWillNotDraw(true);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                m3 m3Var = (m3) this.d;
-                if (!m3Var.c) {
-                    m3Var.r = false;
-                    break;
-                }
-                break;
-            case 1:
-                break;
-            case 2:
-                if (!this.b) {
-                    HashMap hashMap = new HashMap();
-                    boolean z10 = charSequence instanceof Spannable;
-                    if (z10) {
-                        Spannable spannable = (Spannable) charSequence;
-                        CharacterStyle[] characterStyleArr = (CharacterStyle[]) spannable.getSpans(0, spannable.length(), CharacterStyle.class);
-                        ParagraphStyle[] paragraphStyleArr = (ParagraphStyle[]) spannable.getSpans(0, spannable.length(), ParagraphStyle.class);
-                        if (characterStyleArr != null && characterStyleArr.length > 0) {
-                            for (CharacterStyle characterStyle : characterStyleArr) {
-                                if (characterStyle != null && !(characterStyle instanceof SuggestionSpan)) {
-                                    hashMap.put(characterStyle, new Pair(Integer.valueOf(spannable.getSpanStart(characterStyle)), Integer.valueOf(spannable.getSpanEnd(characterStyle))));
-                                }
-                            }
-                        }
-                        if (paragraphStyleArr != null && paragraphStyleArr.length > 0) {
-                            for (ParagraphStyle paragraphStyle : paragraphStyleArr) {
-                                if (paragraphStyle != null && !(paragraphStyle instanceof SuggestionSpan)) {
-                                    hashMap.put(paragraphStyle, new Pair(Integer.valueOf(spannable.getSpanStart(paragraphStyle)), Integer.valueOf(spannable.getSpanEnd(paragraphStyle))));
-                                }
-                            }
-                        }
-                    }
-                    this.d = hashMap;
-                    this.c = z10 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-                    break;
-                }
-                break;
-            default:
-                if (!this.b && charSequence != null && ((kd0) this.d).K != null) {
-                    this.c = kd0.s(charSequence.toString()).length();
-                    break;
-                }
-                break;
-        }
+    public String getText() {
+        return this.a.getText().toString();
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 2:
-                if (!this.b) {
-                    boolean z10 = charSequence instanceof Spannable;
-                    int length = z10 ? ((SuggestionSpan[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), SuggestionSpan.class)).length : 0;
-                    HashMap hashMap = (HashMap) this.d;
-                    if (hashMap != null) {
-                        if ((length > 0 || this.c > 0) && i10 == 0 && i11 == i12) {
-                            this.b = true;
-                            if (z10) {
-                                Spannable spannable = (Spannable) charSequence;
-                                for (Map.Entry entry : hashMap.entrySet()) {
-                                    if (spannable.getSpanStart(entry.getKey()) == -1) {
-                                        spannable.setSpan(entry.getKey(), ((Integer) ((Pair) entry.getValue()).first).intValue(), ((Integer) ((Pair) entry.getValue()).second).intValue(), 33);
-                                    }
-                                }
-                            }
-                            this.b = false;
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
+    public EditTextBoldCursor getTextView() {
+        return this.a;
     }
 
-    public l3(m3 m3Var, int i10, boolean z10) {
-        this.d = m3Var;
-        this.c = i10;
-        this.b = z10;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i3), org.telegram.messenger.g0.L(50.0f));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }
 
-    public l3(int i10, org.telegram.ui.Components.r4 r4Var) {
-        this.c = i10;
-        this.d = r4Var;
+    public void setTextColor(int i3) {
+        this.a.setTextColor(i3);
     }
 
-    public l3(kd0 kd0Var) {
-        this.d = kd0Var;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
     }
 }

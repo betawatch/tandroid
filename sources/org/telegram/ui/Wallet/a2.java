@@ -1,48 +1,48 @@
 package org.telegram.ui.Wallet;
 
+import android.util.Base64;
 import org.json.JSONObject;
-import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
 public final class a2 {
-    public final TL_wallet.tonConnectSession a;
-    public final int b;
-    public final int c;
+    public final String a;
+    public final String b;
+    public final String c;
     public final String d;
-    public final String e;
-    public final d2 f;
-    public final byte[] g;
-    public final String h;
-    public final String i;
-    public final String j;
-    public final String k;
-    public final int l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public Runnable r;
+    public final long e;
+    public final boolean f;
 
-    public a2(TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, JSONObject jSONObject, String str, byte[] bArr) {
-        this.a = tonconnectpending.session;
-        this.b = tonconnectrequest.msg_id;
-        this.c = tonconnectrequest.expires;
-        tonconnectrequest.body.clone();
-        this.i = tonconnectrequest.trace_id;
-        this.d = jSONObject.getString("id");
-        this.e = jSONObject.optString("method");
-        int optInt = jSONObject.optInt("errorCode", -1);
-        this.l = optInt;
-        String str2 = null;
-        this.j = jSONObject.optString("errorMessage", null);
-        this.f = (optInt >= 0 || !jSONObject.has("transaction")) ? null : new d2(jSONObject.getJSONObject("transaction"));
-        if (optInt < 0 && jSONObject.has("data")) {
-            str2 = jSONObject.getJSONObject("data").toString();
+    public a2(JSONObject jSONObject) {
+        String string = jSONObject.getString("address");
+        this.a = string;
+        if (string.contains(":") || !WalletEngine2.isValidAddress(string)) {
+            throw new IllegalArgumentException("Expected a friendly destination address");
         }
-        this.k = str2;
-        this.h = str;
-        this.g = (byte[]) bArr.clone();
+        this.f = (Base64.decode(string.replace('-', '+').replace('_', '/'), 2)[0] & Byte.MAX_VALUE) == 17;
+        Object obj = jSONObject.get("amount");
+        if (obj instanceof String) {
+            String str = (String) obj;
+            if (str.matches("[0-9]+")) {
+                long parseLong = Long.parseLong(str);
+                this.e = parseLong;
+                if (jSONObject.has("extra_currency") && jSONObject.getJSONObject("extra_currency").length() != 0) {
+                    throw new IllegalArgumentException("Extra currencies are not supported");
+                }
+                if (parseLong < 0) {
+                    throw new IllegalArgumentException("Transfer amount must not be negative");
+                }
+                String string2 = jSONObject.has("payload") ? jSONObject.getString("payload") : null;
+                this.b = string2;
+                String string3 = jSONObject.has("stateInit") ? jSONObject.getString("stateInit") : null;
+                this.c = string3;
+                if ((string2 != null && !WalletEngine2.isValidCellBoc(string2)) || (string3 != null && !WalletEngine2.isValidCellBoc(string3))) {
+                    throw new IllegalArgumentException("Invalid transaction cell");
+                }
+                this.d = WalletEngine2.textCommentFromBody(string2);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Invalid transfer amount");
     }
 }

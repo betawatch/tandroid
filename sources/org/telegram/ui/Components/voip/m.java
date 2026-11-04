@@ -2,14 +2,14 @@ package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ r b;
 
-    public /* synthetic */ m(r rVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ m(r rVar, int i3) {
+        this.a = i3;
         this.b = rVar;
     }
 
@@ -20,8 +20,8 @@ public final /* synthetic */ class m implements ValueAnimator.AnimatorUpdateList
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 r rVar = this.b;
-                rVar.a0 = floatValue;
-                rVar.b0.setAlpha(floatValue);
+                rVar.b0 = floatValue;
+                rVar.c0.setAlpha(floatValue);
                 rVar.a.invalidate();
                 break;
             default:
@@ -34,14 +34,14 @@ public final /* synthetic */ class m implements ValueAnimator.AnimatorUpdateList
                     floatValue2 -= 1.0f;
                     z10 = true;
                 }
-                if (z10 && !rVar2.K0) {
-                    rVar2.x0.setAlpha(1.0f);
-                    rVar2.K0 = true;
+                if (z10 && !rVar2.L0) {
+                    rVar2.y0.setAlpha(1.0f);
+                    rVar2.L0 = true;
                     nVar.d.clearImage();
                 }
-                float f7 = floatValue2 * 180.0f;
-                rVar2.x0.setRotationY(f7);
-                nVar.d.setRotationY(f7);
+                float f10 = floatValue2 * 180.0f;
+                rVar2.y0.setRotationY(f10);
+                nVar.d.setRotationY(f10);
                 break;
         }
     }

@@ -1,14 +1,14 @@
 package org.telegram.utils.code.highlight;
 
 import com.google.android.gms.internal.play_billing.s0;
-import di.t;
+import oi.r;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public final class PrismaHighlighter implements AutoCloseable {
     public long a;
     public final String[] b;
-    public final t c;
+    public final r c;
 
     public PrismaHighlighter(byte[] bArr) {
         if (bArr == null) {
@@ -25,45 +25,45 @@ public final class PrismaHighlighter implements AutoCloseable {
             if (nativeGetTokenNames == null || nativeGetTokenNames.length == 0 || !"".equals(nativeGetTokenNames[0])) {
                 throw new IllegalStateException("Invalid native token name table");
             }
-            this.c = new t(nativeGetTokenNames);
-        } catch (Error e) {
-            e = e;
+            this.c = new r(nativeGetTokenNames);
+        } catch (Error e10) {
+            e = e10;
             close();
             throw e;
-        } catch (RuntimeException e7) {
-            e = e7;
+        } catch (RuntimeException e11) {
+            e = e11;
             close();
             throw e;
         }
     }
 
-    public static boolean b(int i10, String str) {
-        return i10 > 0 && i10 < str.length() && Character.isHighSurrogate(str.charAt(i10 + (-1))) && Character.isLowSurrogate(str.charAt(i10));
+    public static boolean b(int i3, String str) {
+        return i3 > 0 && i3 < str.length() && Character.isHighSurrogate(str.charAt(i3 + (-1))) && Character.isLowSurrogate(str.charAt(i3));
     }
 
-    public static void d(int i10, int[] iArr, String str) {
+    public static void d(int[] iArr, String str, int i3) {
         if (iArr == null || iArr.length % 5 != 0) {
             throw new IllegalStateException("Invalid native token array");
         }
+        int i10 = 0;
         int i11 = 0;
-        int i12 = 0;
-        while (i11 < iArr.length) {
-            int i13 = iArr[i11];
-            int i14 = iArr[i11 + 1];
-            int i15 = iArr[i11 + 2];
-            int i16 = iArr[i11 + 3];
-            int i17 = iArr[i11 + 4];
-            if (i13 < i12 || i14 <= i13 || i14 > str.length() || i15 < 0 || i15 >= i10 || i16 < 0 || i16 >= i10 || i17 < -1 || i17 >= i11 / 5 || b(i13, str) || b(i14, str)) {
+        while (i10 < iArr.length) {
+            int i12 = iArr[i10];
+            int i13 = iArr[i10 + 1];
+            int i14 = iArr[i10 + 2];
+            int i15 = iArr[i10 + 3];
+            int i16 = iArr[i10 + 4];
+            if (i12 < i11 || i13 <= i12 || i13 > str.length() || i14 < 0 || i14 >= i3 || i15 < 0 || i15 >= i3 || i16 < -1 || i16 >= i10 / 5 || b(i12, str) || b(i13, str)) {
                 throw new IllegalStateException("Invalid native token range");
             }
-            if (i17 >= 0) {
-                int i18 = i17 * 5;
-                if (i13 < iArr[i18] || i14 > iArr[i18 + 1]) {
+            if (i16 >= 0) {
+                int i17 = i16 * 5;
+                if (i12 < iArr[i17] || i13 > iArr[i17 + 1]) {
                     throw new IllegalStateException("Native token is outside its parent");
                 }
             }
-            i11 += 5;
-            i12 = i13;
+            i10 += 5;
+            i11 = i12;
         }
     }
 
@@ -96,7 +96,7 @@ public final class PrismaHighlighter implements AutoCloseable {
             throw new NullPointerException("text");
         }
         nativeHighlight = nativeHighlight(j10, str, str2);
-        d(this.b.length, nativeHighlight, str);
+        d(nativeHighlight, str, this.b.length);
         return new s0(nativeHighlight, this.c);
     }
 

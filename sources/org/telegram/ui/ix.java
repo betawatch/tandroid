@@ -1,34 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ix implements ValueAnimator.AnimatorUpdateListener {
-    public int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ zx d;
+public final class ix extends org.telegram.ui.Components.q31 {
+    public static final /* synthetic */ int b = 0;
 
-    public ix(zx zxVar, float f7, boolean z10, float f10) {
-        this.d = zxVar;
-        this.b = f7;
-        this.c = f10;
-        this.a = (int) f7;
+    static {
+        org.telegram.ui.Components.q31.h(new ix());
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        ((Float) valueAnimator.getAnimatedValue()).getClass();
-        int T1 = (int) org.telegram.messenger.i0.T1(this.b, this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        int i10 = T1 - this.a;
-        this.a = T1;
-        zx zxVar = this.d;
-        zxVar.e0[0].a.scrollBy(0, i10);
-        View view = zxVar.fragmentView;
-        if (view != null) {
-            view.invalidate();
-        }
+    @Override // org.telegram.ui.Components.q31
+    public final void b(View view, org.telegram.ui.Components.r31 r31Var, boolean z10, org.telegram.ui.Components.f41 f41Var, org.telegram.ui.Components.l41 l41Var) {
+        jx jxVar = (jx) view;
+        jxVar.n = (org.telegram.messenger.u10) r31Var.G;
+        jxVar.r = r31Var;
+        jxVar.b(r31Var.z, false);
+    }
+
+    @Override // org.telegram.ui.Components.q31
+    public final View d(Context context, org.telegram.ui.Components.tj0 tj0Var, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new jx(context, e6Var);
     }
 }

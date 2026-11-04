@@ -3,18 +3,19 @@ package org.webrtc;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import k2.p1;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpCapabilities;
 import org.webrtc.RtpParameters;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class RtpTransceiver {
     private RtpReceiver cachedReceiver;
     private RtpSender cachedSender;
     private long nativeRtpTransceiver;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public enum RtpTransceiverDirection {
         SEND_RECV(0),
         SEND_ONLY(1),
@@ -24,17 +25,17 @@ public class RtpTransceiver {
 
         private final int nativeIndex;
 
-        RtpTransceiverDirection(int i10) {
-            this.nativeIndex = i10;
+        RtpTransceiverDirection(int i3) {
+            this.nativeIndex = i3;
         }
 
-        public static RtpTransceiverDirection fromNativeIndex(int i10) {
+        public static RtpTransceiverDirection fromNativeIndex(int i3) {
             for (RtpTransceiverDirection rtpTransceiverDirection : values()) {
-                if (rtpTransceiverDirection.getNativeIndex() == i10) {
+                if (rtpTransceiverDirection.getNativeIndex() == i3) {
                     return rtpTransceiverDirection;
                 }
             }
-            throw new IllegalArgumentException(i0.a.i(i10, "Uknown native RtpTransceiverDirection type"));
+            throw new IllegalArgumentException(p1.i(i3, "Uknown native RtpTransceiverDirection type"));
         }
 
         public int getNativeIndex() {
@@ -42,7 +43,7 @@ public class RtpTransceiver {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static final class RtpTransceiverInit {
         private final RtpTransceiverDirection direction;
         private final List<RtpParameters.Encoding> sendEncodings;

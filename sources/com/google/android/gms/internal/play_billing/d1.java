@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class d1 implements x1 {
     public static final d1 b = new d1(0);
@@ -13,20 +13,20 @@ public final class d1 implements x1 {
     public static final d1 i = new d1(7);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ d1(int i10) {
-        this.a = i10;
+    public /* synthetic */ d1(int i3) {
+        this.a = i3;
     }
 
     @Override // com.google.android.gms.internal.play_billing.x1
-    public final boolean zza(int i10) {
+    public final boolean zza(int i3) {
         switch (this.a) {
             case 0:
-                switch (i10) {
+                switch (i3) {
                 }
             case 1:
-                switch (i10) {
+                switch (i3) {
                     default:
-                        switch (i10) {
+                        switch (i3) {
                         }
                     case 0:
                     case 1:
@@ -47,25 +47,25 @@ public final class d1 implements x1 {
                         return true;
                 }
             case 2:
-                if (c3.i0.d(i10) != 0) {
+                if (a1.g.c(i3) != 0) {
                 }
                 break;
             case 3:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : m3.e : m3.d : m3.c : m3.b) != null) {
+                if ((i3 != 0 ? i3 != 1 ? i3 != 2 ? i3 != 3 ? null : m3.e : m3.d : m3.c : m3.b) != null) {
                 }
                 break;
             case 4:
-                if (i10 == 0 || i10 == 1 || i10 == 2 || i10 == 3) {
+                if (i3 == 0 || i3 == 1 || i3 == 2 || i3 == 3) {
                 }
                 break;
             case 5:
-                switch (i10) {
+                switch (i3) {
                 }
             case 6:
-                switch (i10) {
+                switch (i3) {
                 }
             default:
-                if (i10 == 0 || i10 == 1) {
+                if (i3 == 0 || i3 == 1) {
                 }
                 break;
         }

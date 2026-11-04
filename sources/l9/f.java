@@ -1,40 +1,96 @@
 package l9;
 
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicReference;
+import b8.xd;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f implements com.google.android.gms.common.api.internal.c {
-    public static final AtomicReference a = new AtomicReference();
-
-    @Override // com.google.android.gms.common.api.internal.c
-    public final void a(boolean z10) {
-        synchronized (h.k) {
+public final class f extends xd {
+    @Override // b8.xd
+    public final boolean a(o oVar, c cVar, c cVar2) {
+        synchronized (oVar) {
             try {
-                ArrayList arrayList = new ArrayList(h.l.values());
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    h hVar = (h) obj;
-                    if (hVar.e.get()) {
-                        Log.d("FirebaseApp", "Notifying background state change listeners.");
-                        Iterator it = hVar.i.iterator();
-                        while (it.hasNext()) {
-                            h hVar2 = ((e) it.next()).a;
-                            if (!z10) {
-                                ((oa.c) hVar2.h.get()).c();
-                            }
-                        }
-                    }
+                if (oVar.b != cVar) {
+                    return false;
+                }
+                oVar.b = cVar2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // b8.xd
+    public final boolean b(o oVar, Object obj, Object obj2) {
+        synchronized (oVar) {
+            try {
+                if (oVar.a != obj) {
+                    return false;
+                }
+                oVar.a = obj2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // b8.xd
+    public final boolean c(o oVar, n nVar, n nVar2) {
+        synchronized (oVar) {
+            try {
+                if (oVar.c != nVar) {
+                    return false;
+                }
+                oVar.c = nVar2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // b8.xd
+    public final c d(o oVar) {
+        c cVar;
+        c cVar2 = c.d;
+        synchronized (oVar) {
+            try {
+                cVar = oVar.b;
+                if (cVar != cVar2) {
+                    oVar.b = cVar2;
                 }
             } catch (Throwable th2) {
                 throw th2;
             }
         }
+        return cVar;
+    }
+
+    @Override // b8.xd
+    public final n e(o oVar) {
+        n nVar;
+        n nVar2 = n.c;
+        synchronized (oVar) {
+            try {
+                nVar = oVar.c;
+                if (nVar != nVar2) {
+                    oVar.c = nVar2;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return nVar;
+    }
+
+    @Override // b8.xd
+    public final void f(n nVar, n nVar2) {
+        nVar.b = nVar2;
+    }
+
+    @Override // b8.xd
+    public final void g(n nVar, Thread thread) {
+        nVar.a = thread;
     }
 }

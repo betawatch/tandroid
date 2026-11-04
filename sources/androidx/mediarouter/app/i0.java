@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class i0 extends f0 {
     public final int A;
@@ -24,7 +24,7 @@ public final class i0 extends f0 {
         this.B = m0Var;
         o0 o0Var = m0Var.x;
         this.z = (TextView) view.findViewById(R.id.mr_group_volume_route_name);
-        Resources resources = o0Var.D.getResources();
+        Resources resources = o0Var.E.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         TypedValue typedValue = new TypedValue();
         resources.getValue(R.dimen.mr_dynamic_volume_group_list_item_height, typedValue, true);

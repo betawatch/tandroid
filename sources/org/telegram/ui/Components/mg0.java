@@ -1,129 +1,111 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg0 implements Runnable {
+public final /* synthetic */ class mg0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ng0 b;
 
-    public /* synthetic */ mg0(ng0 ng0Var, int i10) {
-        this.a = i10;
+    public /* synthetic */ mg0(ng0 ng0Var, int i3) {
+        this.a = i3;
         this.b = ng0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
-    
-        if (r3.getHeight() != r5.b.getHeight()) goto L30;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        ah0[] ah0VarArr;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 ng0 ng0Var = this.b;
-                synchronized (ng0Var.b) {
-                    ah0[] ah0VarArr2 = ng0Var.c;
-                    ah0 ah0Var = ah0VarArr2[0];
-                    ah0[] ah0VarArr3 = ng0Var.d;
-                    i10 = 2;
-                    ah0VarArr = new ah0[]{ah0Var, ah0VarArr3[0], ah0VarArr2[1], ah0VarArr3[1], ah0VarArr2[2], ah0VarArr3[2]};
+                ng0Var.v = floatValue;
+                org.telegram.ui.Cells.t2 t2Var = ng0Var.H;
+                if (t2Var != null) {
+                    t2Var.invalidate();
                 }
-                boolean z10 = false;
-                for (int i11 = 0; i11 < 6; i11 += 2) {
-                    ah0 ah0Var2 = ah0VarArr[i11];
-                    ah0 ah0Var3 = ah0VarArr[i11 + 1];
-                    if (ah0Var2 != null && !ah0Var2.c && ah0Var2.f) {
-                        ah0Var2.e = true;
-                        if (ah0Var3 != null) {
-                            Bitmap bitmap = ah0Var3.b;
-                            if (!ah0Var3.d) {
-                                if (bitmap.getWidth() == ah0Var2.b.getWidth()) {
-                                    break;
-                                }
-                            }
-                        }
-                        if (ah0Var3 != null) {
-                            ah0Var3.a();
-                        }
-                        ah0Var3 = new ah0();
-                        Bitmap createBitmap = Bitmap.createBitmap(ah0Var2.b.getWidth(), ah0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
-                        ah0Var3.b = createBitmap;
-                        ah0Var3.a = new Canvas(createBitmap);
-                        synchronized (ng0Var.b) {
-                            ah0[] ah0VarArr4 = ng0Var.d;
-                            int i12 = 0;
-                            while (true) {
-                                ah0[] ah0VarArr5 = ng0Var.c;
-                                if (i12 >= ah0VarArr5.length) {
-                                    i12 = 0;
-                                } else if (ah0VarArr5[i12] != ah0Var2) {
-                                    i12++;
-                                }
-                            }
-                            ah0VarArr4[i12] = ah0Var3;
-                        }
-                        Bitmap bitmap2 = ah0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / org.telegram.messenger.at.K2));
-                        synchronized (ng0Var.b) {
-                            if (!ah0Var3.d) {
-                                ah0Var3.f = false;
-                                ah0Var3.b.eraseColor(0);
-                            }
-                            ah0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                            ah0Var3.f = true;
-                            Bitmap bitmap3 = ah0Var3.b;
-                            int i13 = 0;
-                            while (true) {
-                                ah0[] ah0VarArr6 = ng0Var.c;
-                                if (i13 >= ah0VarArr6.length) {
-                                    i13 = 0;
-                                } else if (ah0VarArr6[i13] != ah0Var2) {
-                                    i13++;
-                                }
-                            }
-                            ng0Var.b(bitmap3, i13);
-                        }
-                        if (!ah0Var2.d) {
-                            ah0Var2.f = false;
-                            ah0Var2.b.eraseColor(0);
-                        }
-                        ah0Var2.e = false;
-                        if (!ah0Var2.d && ah0Var2.c) {
-                            ah0Var2.d = true;
-                            ah0Var2.b.recycle();
-                        }
-                        z10 = true;
-                    }
+                tj0 tj0Var = ng0Var.I;
+                if (tj0Var != null) {
+                    tj0Var.invalidate();
+                    break;
                 }
-                if (z10 && ng0Var.e && ng0Var.h != null) {
-                    ng0Var.postInvalidateOnAnimation();
-                }
-                if (ng0Var.e && (ng0Var.F || ng0Var.H)) {
-                    org.telegram.messenger.i0.g3(new mg0(ng0Var, i10));
-                    return;
-                } else {
-                    ng0Var.e = false;
-                    return;
-                }
+                break;
             case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 ng0 ng0Var2 = this.b;
-                ng0Var2.H = true;
-                ng0Var2.postInvalidateOnAnimation();
-                return;
-            default:
+                ng0Var2.w = floatValue2;
+                org.telegram.ui.Cells.t2 t2Var2 = ng0Var2.H;
+                if (t2Var2 != null) {
+                    t2Var2.invalidate();
+                }
+                tj0 tj0Var2 = ng0Var2.I;
+                if (tj0Var2 != null) {
+                    tj0Var2.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 ng0 ng0Var3 = this.b;
-                ng0Var3.c();
-                bh0.a.postRunnable(ng0Var3.s);
-                return;
+                ng0Var3.p = floatValue3;
+                org.telegram.ui.Cells.t2 t2Var3 = ng0Var3.H;
+                if (t2Var3 != null) {
+                    t2Var3.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ng0 ng0Var4 = this.b;
+                ng0Var4.o = floatValue4;
+                org.telegram.ui.Cells.t2 t2Var4 = ng0Var4.H;
+                if (t2Var4 != null) {
+                    t2Var4.invalidate();
+                    break;
+                }
+                break;
+            case 4:
+                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ng0 ng0Var5 = this.b;
+                ng0Var5.x = floatValue5;
+                org.telegram.ui.Cells.t2 t2Var5 = ng0Var5.H;
+                if (t2Var5 != null) {
+                    t2Var5.invalidate();
+                    break;
+                }
+                break;
+            case 5:
+                ng0 ng0Var6 = this.b;
+                ng0Var6.getClass();
+                ng0Var6.e(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                org.telegram.ui.Cells.t2 t2Var6 = ng0Var6.H;
+                if (t2Var6 != null) {
+                    t2Var6.invalidate();
+                    break;
+                }
+                break;
+            case 6:
+                ng0 ng0Var7 = this.b;
+                ng0Var7.getClass();
+                ng0Var7.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ng0Var7.F = true;
+                org.telegram.ui.Cells.t2 t2Var7 = ng0Var7.H;
+                if (t2Var7 != null) {
+                    t2Var7.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ng0 ng0Var8 = this.b;
+                ng0Var8.getClass();
+                ng0Var8.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ng0Var8.F = false;
+                org.telegram.ui.Cells.t2 t2Var8 = ng0Var8.H;
+                if (t2Var8 != null) {
+                    t2Var8.invalidate();
+                    break;
+                }
+                break;
         }
     }
 }

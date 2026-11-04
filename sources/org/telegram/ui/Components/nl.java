@@ -1,47 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-import java.io.File;
-import org.telegram.messenger.camera.CameraController;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class nl implements fu0 {
-    public File a;
+public final class nl extends TextView {
+    public float a;
     public boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout e;
+    public final /* synthetic */ Paint c;
 
-    public nl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.ui.ActionBar.p2 p2Var) {
-        this.e = chatAttachAlertPhotoLayout;
-        this.c = p6Var;
-        this.d = p2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nl(Context context, Paint paint) {
+        super(context);
+        this.c = paint;
+        this.a = 0.0f;
     }
 
-    public final void a() {
-        yl ylVar;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e;
-        bi biVar = chatAttachAlertPhotoLayout.b;
-        ShutterButton shutterButton = chatAttachAlertPhotoLayout.k0;
-        if (chatAttachAlertPhotoLayout.s0 || (ylVar = chatAttachAlertPhotoLayout.P) == null || ylVar.getCameraSession() == null) {
-            return;
-        }
-        if (shutterButton.getState() == gu0.b) {
-            chatAttachAlertPhotoLayout.m0();
-            CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.P.getCameraSession(), false);
-            shutterButton.a(gu0.a);
-        } else {
-            if (!chatAttachAlertPhotoLayout.x0) {
-                org.telegram.messenger.m5.o(null, 2131749551, new cc(chatAttachAlertPhotoLayout.P, this.c), null);
-                return;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i3 = (int) ((this.a * 130.0f) + 125.0f);
+        Paint paint = this.c;
+        paint.setAlpha(i3);
+        if (this.b) {
+            float f10 = this.a + 0.026666667f;
+            this.a = f10;
+            if (f10 >= 1.0f) {
+                this.a = 1.0f;
+                this.b = false;
             }
-            org.telegram.ui.ActionBar.k2 k2Var = biVar.W1;
-            File q02 = org.telegram.messenger.i0.q0(null, (k2Var instanceof org.telegram.ui.un) && ((org.telegram.ui.un) k2Var).A());
-            boolean isSameTakePictureOrientation = chatAttachAlertPhotoLayout.P.getCameraSession().isSameTakePictureOrientation();
-            chatAttachAlertPhotoLayout.P.getCameraSession().setFlipFront((biVar.W1 instanceof org.telegram.ui.un) || biVar.K2 == 2);
-            chatAttachAlertPhotoLayout.s0 = CameraController.getInstance().takePicture(q02, false, chatAttachAlertPhotoLayout.P.getCameraSessionObject(), new ll(this, q02, isSameTakePictureOrientation));
-            chatAttachAlertPhotoLayout.P.startTakePictureAnimation(true);
+        } else {
+            float f11 = this.a - 0.026666667f;
+            this.a = f11;
+            if (f11 <= 0.0f) {
+                this.a = 0.0f;
+                this.b = true;
+            }
         }
+        super.onDraw(canvas);
+        canvas.drawCircle(org.telegram.messenger.g0.L(14.0f), getMeasuredHeight() / 2, org.telegram.messenger.g0.L(4.0f), paint);
+        invalidate();
     }
 }

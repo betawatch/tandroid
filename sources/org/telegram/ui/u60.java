@@ -1,124 +1,84 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Timer;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class u60 extends org.telegram.ui.Components.tk0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public Timer f;
-    public boolean h;
-    public final /* synthetic */ x60 n;
+public final /* synthetic */ class u60 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ly d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    public u60(x60 x60Var, Context context) {
-        this.n = x60Var;
-        this.c = context;
+    public /* synthetic */ u60(LaunchActivity launchActivity, ly lyVar, int i3, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
+        this.a = 0;
+        this.b = launchActivity;
+        this.d = lyVar;
+        this.c = i3;
+        this.i = authorizationform;
+        this.e = getauthorizationform;
+        this.f = str;
+        this.g = str2;
+        this.h = str3;
     }
 
-    @Override // s4.g0
-    public final void A(s4.c1 c1Var) {
-        View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.s4) {
-            ((org.telegram.ui.Cells.s4) view).a.getImageReceiver().c();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i3 = this.a;
+        Object obj = this.h;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.i;
+        switch (i3) {
+            case 0:
+                String str = LaunchActivity.E1;
+                org.telegram.messenger.g0.h3(new ci.p8(this.b, this.d, tLObject, this.c, (TL_account.authorizationForm) obj5, (TL_account.getAuthorizationForm) obj4, (String) obj3, (String) obj2, (String) obj, 2));
+                break;
+            case 1:
+                int[] iArr = (int[]) obj5;
+                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
+                String str2 = (String) obj3;
+                String str3 = (String) obj2;
+                String str4 = (String) obj;
+                String str5 = LaunchActivity.E1;
+                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
+                LaunchActivity launchActivity = this.b;
+                ly lyVar = this.d;
+                if (authorizationform == null) {
+                    org.telegram.messenger.g0.h3(new pp(launchActivity, lyVar, tL_error, 15));
+                    break;
+                } else {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    int i10 = this.c;
+                    iArr[0] = ConnectionsManager.getInstance(i10).sendRequest(getpassword, new u60(launchActivity, lyVar, i10, authorizationform, getauthorizationform, str2, str3, str4));
+                    break;
+                }
+            default:
+                String str6 = LaunchActivity.E1;
+                org.telegram.messenger.g0.h3(new ci.p8(this.b, tLObject, (int[]) obj5, this.c, this.d, (Integer) obj4, (Integer) obj3, (Long) obj2, (Integer) obj, 1));
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f != 2;
-    }
-
-    public final void E(String str) {
-        try {
-            Timer timer = this.f;
-            if (timer != null) {
-                timer.cancel();
-            }
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-        }
-        if (str == null) {
-            this.d.clear();
-            this.e.clear();
-            f();
-        } else {
-            Timer timer2 = new Timer();
-            this.f = timer2;
-            timer2.schedule(new org.telegram.messenger.we(2, this, str), 200L, 300L);
-        }
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        return this.h ? this.d.size() : this.n.w.size() + 2;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        if (this.h) {
-            return 0;
-        }
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10 == 1 ? 2 : 0;
-    }
-
-    @Override // s4.g0
-    public final void f() {
-        super.f();
-        x60 x60Var = this.n;
-        u60 u60Var = x60Var.s;
-        if (u60Var == null || x60Var.y) {
-            return;
-        }
-        x60Var.r.setVisibility(u60Var.b() == 2 ? 0 : 4);
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        org.telegram.messenger.f5 f5Var;
-        CharSequence charSequence;
-        if (c1Var.f == 0) {
-            org.telegram.ui.Cells.s4 s4Var = (org.telegram.ui.Cells.s4) c1Var.a;
-            boolean z10 = this.h;
-            x60 x60Var = this.n;
-            if (z10) {
-                f5Var = (org.telegram.messenger.f5) this.d.get(i10);
-                charSequence = (CharSequence) this.e.get(i10);
-            } else {
-                f5Var = (org.telegram.messenger.f5) x60Var.w.get(i10 - 2);
-                charSequence = null;
-            }
-            s4Var.a(f5Var, charSequence);
-            boolean containsKey = x60Var.D.containsKey(f5Var.b);
-            org.telegram.ui.Components.ep epVar = s4Var.e;
-            if (epVar != null) {
-                epVar.a(containsKey, false);
-            }
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        View view;
-        Context context = this.c;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(context);
-            int i11 = org.telegram.ui.ActionBar.t6.G6;
-            p8Var.g(i11, i11);
-            p8Var.u(org.telegram.messenger.dd.L0(2131745445, null), "", false, R.drawable.msg_shareout, false);
-            view = p8Var;
-        } else {
-            view = i10 == 2 ? new org.telegram.ui.Cells.c7(context, (org.telegram.ui.Cells.f1) null) : new org.telegram.ui.Cells.s4(context, true);
-        }
-        return new org.telegram.ui.Components.dk0(view);
+    public /* synthetic */ u60(LaunchActivity launchActivity, int[] iArr, int i3, ly lyVar, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+        this.a = i10;
+        this.b = launchActivity;
+        this.i = iArr;
+        this.c = i3;
+        this.d = lyVar;
+        this.e = obj;
+        this.f = obj2;
+        this.g = obj3;
+        this.h = obj4;
     }
 }

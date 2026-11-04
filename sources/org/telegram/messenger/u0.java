@@ -1,111 +1,57 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
-import android.app.Application;
-import android.os.Bundle;
-import android.os.SystemClock;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class u0 implements Application.ActivityLifecycleCallbacks {
-    public static u0 f;
-    public int a;
-    public boolean b = true;
-    public long c = 0;
-    public final CopyOnWriteArrayList d = new CopyOnWriteArrayList();
-    public final ArrayList e = new ArrayList();
+public final /* synthetic */ class u0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m2.t b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ge d;
+    public final /* synthetic */ File e;
 
-    public u0(w0 w0Var) {
-        f = this;
-        w0Var.registerActivityLifecycleCallbacks(this);
+    public /* synthetic */ u0(m2.t tVar, long j10, ge geVar, File file, int i3) {
+        this.a = i3;
+        this.b = tVar;
+        this.c = j10;
+        this.d = geVar;
+        this.e = file;
     }
 
-    public final void a(Activity activity) {
-        int i10 = this.a + 1;
-        this.a = i10;
-        if (i10 == 1) {
-            if (SystemClock.elapsedRealtime() - this.c < 200) {
-                this.b = false;
-            }
-            if (v2.a) {
-                f8.b("switch to foreground");
-            }
-            Iterator it = this.d.iterator();
-            while (it.hasNext()) {
-                try {
-                    ((org.telegram.ui.Components.m00) it.next()).b();
-                } catch (Exception e) {
-                    f8.g(e, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        File file = this.e;
+        ge geVar = this.d;
+        long j10 = this.c;
+        m2.t tVar = this.b;
+        switch (i3) {
+            case 0:
+                if (((HashSet) ((e0.g) tVar.c).h).remove(Long.valueOf(j10))) {
+                    z0.b(file);
+                    MediaController mediaController = geVar.a;
+                    if (file.equals(mediaController.k1)) {
+                        mediaController.k1 = null;
+                        break;
+                    }
                 }
-            }
-        }
-    }
-
-    public final void b(Activity activity) {
-        ArrayList arrayList = this.e;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            Activity activity2 = (Activity) ((WeakReference) arrayList.get(size)).get();
-            if (activity2 == null || activity2 == activity) {
-                arrayList.remove(size);
-            }
-        }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityDestroyed(Activity activity) {
-        b(activity);
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityPaused(Activity activity) {
-        b(activity);
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityResumed(Activity activity) {
-        b(activity);
-        this.e.add(new WeakReference(activity));
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStarted(Activity activity) {
-        boolean z10 = this.a == 0;
-        a(activity);
-        if (z10) {
-            w0.c(true);
-        }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStopped(Activity activity) {
-        int i10 = this.a - 1;
-        this.a = i10;
-        if (i10 == 0) {
-            this.c = SystemClock.elapsedRealtime();
-            this.b = true;
-            if (v2.a) {
-                f8.b("switch to background");
-            }
-            Iterator it = this.d.iterator();
-            while (it.hasNext()) {
-                try {
-                    ((org.telegram.ui.Components.m00) it.next()).a();
-                } catch (Exception e) {
-                    f8.g(e, true);
+                break;
+            default:
+                e0.g gVar = (e0.g) tVar.c;
+                if (!gVar.c) {
+                    ((HashSet) gVar.h).add(Long.valueOf(j10));
+                    Set set = z0.a;
+                    String absolutePath = file.getAbsolutePath();
+                    if (absolutePath != null) {
+                        z0.a.add(absolutePath);
+                    }
+                    geVar.a.k1 = file;
+                    break;
                 }
-            }
+                break;
         }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityCreated(Activity activity, Bundle bundle) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

@@ -1,24 +1,13 @@
 package x2;
 
-import b2.p1;
-import b2.x;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class m {
-    public final int a;
-    public final p1 b;
-    public final int c;
-    public final x d;
+public interface m {
+    public static final mb.b B = new mb.b(27);
 
-    public m(int i10, p1 p1Var, int i11) {
-        this.a = i10;
-        this.b = p1Var;
-        this.c = i11;
-        this.d = p1Var.d[i11];
-    }
+    long D();
 
-    public abstract int a();
+    boolean next();
 
-    public abstract boolean b(m mVar);
+    long t();
 }

@@ -1,17 +1,22 @@
 package org.telegram.messenger;
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class m6 {
-    public static final n6 a;
+public final class m6 {
+    public final String a;
+    public final String b;
 
-    static {
-        try {
-            a = new n6();
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to open emoji.pack", e);
+    public /* synthetic */ m6(String str, String str2, boolean z10) {
+        this.a = str;
+        this.b = str2;
+    }
+
+    public m6(String str, String str2) {
+        Object[] objArr = {str, 23};
+        if (!(str.length() <= 23)) {
+            throw new IllegalArgumentException(String.format("tag \"%s\" is longer than the %d character maximum", objArr));
         }
+        this.a = str;
+        this.b = (str2 == null || str2.length() <= 0) ? null : str2;
     }
 }

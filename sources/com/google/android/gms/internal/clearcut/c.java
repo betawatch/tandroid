@@ -3,7 +3,7 @@ package com.google.android.gms.internal.clearcut;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.os.Handler;
-import m.z2;
+import m.y2;
 
 /* loaded from: classes.dex */
 public final class c extends ContentObserver {
@@ -38,18 +38,18 @@ public final class c extends ContentObserver {
                 b.a((b) this.b);
                 return;
             default:
-                z2 z2Var = (z2) this.b;
-                if (!z2Var.b || (cursor = z2Var.c) == null || cursor.isClosed()) {
+                y2 y2Var = (y2) this.b;
+                if (!y2Var.b || (cursor = y2Var.c) == null || cursor.isClosed()) {
                     return;
                 }
-                z2Var.a = z2Var.c.requery();
+                y2Var.a = y2Var.c.requery();
                 return;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(z2 z2Var) {
+    public c(y2 y2Var) {
         super(new Handler());
-        this.b = z2Var;
+        this.b = y2Var;
     }
 }

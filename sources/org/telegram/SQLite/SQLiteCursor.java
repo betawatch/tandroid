@@ -1,12 +1,12 @@
 package org.telegram.SQLite;
 
-import org.telegram.messenger.f8;
-import org.telegram.messenger.v2;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.r2;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class SQLiteCursor {
     public static final int FIELD_TYPE_BYTEARRAY = 4;
@@ -21,14 +21,14 @@ public class SQLiteCursor {
         this.preparedStatement = sQLitePreparedStatement;
     }
 
-    public byte[] byteArrayValue(int i10) {
+    public byte[] byteArrayValue(int i3) {
         checkRow();
-        return columnByteArrayValue(this.preparedStatement.getStatementHandle(), i10);
+        return columnByteArrayValue(this.preparedStatement.getStatementHandle(), i3);
     }
 
-    public NativeByteBuffer byteBufferValue(int i10) {
+    public NativeByteBuffer byteBufferValue(int i3) {
         checkRow();
-        long columnByteBufferValue = columnByteBufferValue(this.preparedStatement.getStatementHandle(), i10);
+        long columnByteBufferValue = columnByteBufferValue(this.preparedStatement.getStatementHandle(), i3);
         if (columnByteBufferValue != 0) {
             return NativeByteBuffer.wrap(columnByteBufferValue);
         }
@@ -41,31 +41,31 @@ public class SQLiteCursor {
         }
     }
 
-    public native byte[] columnByteArrayValue(long j10, int i10);
+    public native byte[] columnByteArrayValue(long j10, int i3);
 
-    public native long columnByteBufferValue(long j10, int i10);
+    public native long columnByteBufferValue(long j10, int i3);
 
     public native int columnCount(long j10);
 
-    public native double columnDoubleValue(long j10, int i10);
+    public native double columnDoubleValue(long j10, int i3);
 
-    public native int columnIntValue(long j10, int i10);
+    public native int columnIntValue(long j10, int i3);
 
-    public native int columnIsNull(long j10, int i10);
+    public native int columnIsNull(long j10, int i3);
 
-    public native long columnLongValue(long j10, int i10);
+    public native long columnLongValue(long j10, int i3);
 
-    public native String columnStringValue(long j10, int i10);
+    public native String columnStringValue(long j10, int i3);
 
-    public native int columnType(long j10, int i10);
+    public native int columnType(long j10, int i3);
 
     public void dispose() {
         this.preparedStatement.dispose();
     }
 
-    public double doubleValue(int i10) {
+    public double doubleValue(int i3) {
         checkRow();
-        return columnDoubleValue(this.preparedStatement.getStatementHandle(), i10);
+        return columnDoubleValue(this.preparedStatement.getStatementHandle(), i3);
     }
 
     public int getColumnCount() {
@@ -80,49 +80,49 @@ public class SQLiteCursor {
         return this.preparedStatement.getStatementHandle();
     }
 
-    public int getTypeOf(int i10) {
+    public int getTypeOf(int i3) {
         checkRow();
-        return columnType(this.preparedStatement.getStatementHandle(), i10);
+        return columnType(this.preparedStatement.getStatementHandle(), i3);
     }
 
-    public int intValue(int i10) {
+    public int intValue(int i3) {
         checkRow();
-        return columnIntValue(this.preparedStatement.getStatementHandle(), i10);
+        return columnIntValue(this.preparedStatement.getStatementHandle(), i3);
     }
 
-    public boolean isNull(int i10) {
+    public boolean isNull(int i3) {
         checkRow();
-        return columnIsNull(this.preparedStatement.getStatementHandle(), i10) == 1;
+        return columnIsNull(this.preparedStatement.getStatementHandle(), i3) == 1;
     }
 
-    public long longValue(int i10) {
+    public long longValue(int i3) {
         checkRow();
-        return columnLongValue(this.preparedStatement.getStatementHandle(), i10);
+        return columnLongValue(this.preparedStatement.getStatementHandle(), i3);
     }
 
     public boolean next() {
         SQLitePreparedStatement sQLitePreparedStatement = this.preparedStatement;
         int step = sQLitePreparedStatement.step(sQLitePreparedStatement.getStatementHandle());
         if (step == -1) {
-            int i10 = 6;
+            int i3 = 6;
             while (true) {
-                int i11 = i10 - 1;
-                if (i10 == 0) {
+                int i10 = i3 - 1;
+                if (i3 == 0) {
                     break;
                 }
                 try {
-                    if (v2.a) {
-                        f8.b("sqlite busy, waiting...");
+                    if (r2.a) {
+                        a8.b("sqlite busy, waiting...");
                     }
                     Thread.sleep(500L);
                     step = this.preparedStatement.step();
-                } catch (Exception e) {
-                    f8.g(e, true);
+                } catch (Exception e10) {
+                    a8.g(e10, true);
                 }
                 if (step == 0) {
                     break;
                 }
-                i10 = i11;
+                i3 = i10;
             }
             if (step == -1) {
                 throw new SQLiteException("sqlite busy");
@@ -133,13 +133,13 @@ public class SQLiteCursor {
         return z10;
     }
 
-    public String stringValue(int i10) {
+    public String stringValue(int i3) {
         checkRow();
-        return columnStringValue(this.preparedStatement.getStatementHandle(), i10);
+        return columnStringValue(this.preparedStatement.getStatementHandle(), i3);
     }
 
-    public <T extends TLObject> T tlObjectValue(int i10, Vector.TLDeserializer<T> tLDeserializer, boolean z10) {
-        NativeByteBuffer byteBufferValue = byteBufferValue(i10);
+    public <T extends TLObject> T tlObjectValue(int i3, Vector.TLDeserializer<T> tLDeserializer, boolean z10) {
+        NativeByteBuffer byteBufferValue = byteBufferValue(i3);
         if (byteBufferValue == null) {
             return null;
         }

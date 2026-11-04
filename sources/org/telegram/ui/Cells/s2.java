@@ -1,293 +1,136 @@
 package org.telegram.ui.Cells;
 
-import android.text.TextUtils;
-import j$.util.Objects;
+import android.graphics.Typeface;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import j$.util.Comparator$-CC;
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.vi;
-import org.telegram.messenger.wp;
-import org.telegram.messenger.y00;
-import org.telegram.tgnet.TLObject;
+import java.util.Collections;
+import java.util.HashMap;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.h10;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.zi;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.o31;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class s2 {
-    public long a;
-    public long b;
-    public boolean c;
+    public final t2 a;
+    public int b;
+    public int c;
     public boolean d;
-    public long e;
-    public int f;
-    public Integer g;
-    public int h;
-    public int i;
-    public boolean j;
-    public boolean k;
-    public float l;
-    public boolean m;
-    public int n;
-    public boolean o = false;
-    public long p;
-    public final /* synthetic */ v2 q;
+    public boolean e;
+    public HashMap f;
+    public CharSequence g;
 
-    public s2(v2 v2Var) {
-        this.q = v2Var;
+    public s2(t2 t2Var) {
+        this.a = t2Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x010c, code lost:
-    
-        if (org.telegram.messenger.wp.r1(r2).r7.e(-r1.H0) != false) goto L58;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x014b, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r5.message) != false) goto L71;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0244  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x020c  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x023c  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x023f  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0187  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0113  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x01ff  */
-    /* JADX WARN: Type inference failed for: r5v11, types: [int] */
-    /* JADX WARN: Type inference failed for: r5v12 */
-    /* JADX WARN: Type inference failed for: r5v18 */
-    /* JADX WARN: Type inference failed for: r5v19 */
-    /* JADX WARN: Type inference failed for: r5v6 */
-    /* JADX WARN: Type inference failed for: r5v7, types: [int] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a() {
-        Integer num;
-        int i10;
+    public static void a(s2 s2Var, int i3, zi ziVar, TLRPC.Chat chat) {
         long j10;
         boolean z10;
-        boolean z11;
-        TLRPC.DraftMessage R;
-        ?? r52;
-        boolean z12;
-        boolean B;
-        boolean z13;
-        int topicId;
-        int topicId2;
-        int topicId3;
-        int topicId4;
-        v2 v2Var = this.q;
-        int i11 = v2Var.F0;
-        TLRPC.Dialog dialog = (TLRPC.Dialog) wp.r1(i11).Q.f(v2Var.H0);
-        if (dialog == null) {
-            if (v2Var.j1 == 3) {
-                long j11 = this.a;
-                long j12 = v2Var.H0;
-                if (j11 != j12) {
-                    this.a = j12;
-                    return true;
+        int i10;
+        s2Var.getClass();
+        int f12 = (ziVar == null || chat == null) ? 0 : ziVar.f1();
+        if (s2Var.b != f12 || s2Var.e) {
+            s2Var.f = null;
+            s2Var.c = 0;
+            s2Var.d = false;
+            s2Var.e = false;
+            s2Var.b = f12;
+            TextPaint textPaint = org.telegram.ui.ActionBar.k6.F0[0];
+            if (chat != null) {
+                ArrayList l10 = hp.s1(i3).q7.l(chat.id);
+                boolean z11 = true;
+                if (l10 == null || l10.isEmpty()) {
+                    if (hp.s1(i3).q7.e(chat.id)) {
+                        s2Var.g = bd.M0(org.telegram.messenger.t3.p0(chat) ? 2131748198 : 2131748145, null);
+                        return;
+                    }
+                    hp.s1(i3).q7.n(0, chat.id, true);
+                    s2Var.g = bd.M0(2131748787, null);
+                    s2Var.e = true;
+                    return;
                 }
-            }
-            return false;
-        }
-        kj kjVar = v2Var.f1;
-        int hashCode = kjVar == null ? 0 : v2Var.f1.hashCode() + kjVar.f1();
-        long j13 = dialog.read_inbox_max_id + (dialog.read_outbox_max_id << 8) + ((dialog.unread_count + (dialog.unread_mark ? -1 : 0)) << 16) + (dialog.unread_reactions_count > 0 ? 262144 : 0) + (dialog.unread_mentions_count > 0 ? TLObject.FLAG_19 : 0) + (dialog.unread_poll_votes_count > 0 ? TLObject.FLAG_21 : 0);
-        if (v2Var.X()) {
-            wp.r1(i11).r7.h(-v2Var.H0);
-            int[] iArr = y00.n;
-            if (iArr[2] > 0) {
-                j13 |= 1048576;
-            }
-            if (iArr[4] > 0) {
-                j13 |= 4194304;
-            }
-        }
-        if (!v2Var.X() && (v2Var.N0 || v2Var.P)) {
-            wp r12 = wp.r1(i11);
-            long j14 = v2Var.H0;
-            topicId3 = v2Var.getTopicId();
-            if (!TextUtils.isEmpty(r12.C1(j14, topicId3, true))) {
-                wp r13 = wp.r1(i11);
-                long j15 = v2Var.H0;
-                topicId4 = v2Var.getTopicId();
-                num = r13.D1(j15, topicId4);
-                int measuredWidth = v2Var.getMeasuredWidth() + (v2Var.getMeasuredHeight() << 16);
-                if (v2Var.X()) {
-                    ArrayList l4 = wp.r1(i11).r7.l(-v2Var.H0);
-                    i10 = l4 == null ? -1 : l4.size();
-                    if (i10 == -1) {
-                    }
-                    if (!v2Var.P) {
-                        j10 = j13;
-                        z10 = false;
-                        if (v2Var.N0) {
-                            z11 = vi.b0(i11).S(v2Var.H0, 0L) != null;
-                            R = !z11 ? vi.b0(i11).R(v2Var.H0, 0L) : null;
-                            if (R == null) {
-                            }
-                            TLRPC.Chat chat = v2Var.g2;
-                            if (chat == null) {
-                            }
-                            B = wp.r1(i11).t7.B(v2Var.H0);
-                            if (this.h != measuredWidth) {
-                            }
-                            if (this.a != v2Var.H0) {
-                            }
-                            if (num != null) {
-                            }
-                            this.a = v2Var.H0;
-                            this.b = hashCode;
-                            this.d = dialog.isFolder;
-                            this.e = j10;
-                            this.g = num;
-                            this.h = measuredWidth;
-                            this.f = r52;
-                            this.i = i10;
-                            this.j = v2Var.A3;
-                            this.k = z12;
-                            this.c = B;
-                            return true;
-                        }
-                        z11 = false;
-                        R = null;
-                        if (R == null) {
-                        }
-                        TLRPC.Chat chat2 = v2Var.g2;
-                        if (chat2 == null) {
-                        }
-                        B = wp.r1(i11).t7.B(v2Var.H0);
-                        if (this.h != measuredWidth) {
-                        }
-                        if (this.a != v2Var.H0) {
-                        }
-                        if (num != null) {
-                        }
-                        this.a = v2Var.H0;
-                        this.b = hashCode;
-                        this.d = dialog.isFolder;
-                        this.e = j10;
-                        this.g = num;
-                        this.h = measuredWidth;
-                        this.f = r52;
-                        this.i = i10;
-                        this.j = v2Var.A3;
-                        this.k = z12;
-                        this.c = B;
-                        return true;
-                    }
-                    vi b02 = vi.b0(i11);
-                    long j16 = v2Var.H0;
-                    topicId = v2Var.getTopicId();
+                ArrayList arrayList = new ArrayList(l10);
+                Collections.sort(arrayList, Comparator$-CC.comparingInt(new cg.d(14)));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                if (ziVar == null || org.telegram.messenger.t3.p0(chat)) {
+                    j10 = 0;
                     z10 = false;
-                    z11 = b02.S(j16, (long) topicId) != null;
-                    if (z11) {
-                        j10 = j13;
-                        R = null;
+                    i10 = 0;
+                } else {
+                    j10 = zi.c2(i3, ziVar.k, true, false);
+                    TLRPC.TL_forumTopic f10 = hp.s1(i3).q7.f(chat.id, j10);
+                    if (f10 != null) {
+                        CharSequence j11 = rg.c.j(f10, textPaint, null);
+                        spannableStringBuilder.append(j11);
+                        i10 = f10.unread_count > 0 ? j11.length() : 0;
+                        s2Var.c = j11.length();
+                        if (ziVar.Q3()) {
+                            s2Var.d = false;
+                        } else {
+                            s2Var.d = f10.unread_count > 0;
+                        }
                     } else {
-                        vi b03 = vi.b0(i11);
-                        long j17 = v2Var.H0;
-                        topicId2 = v2Var.getTopicId();
-                        j10 = j13;
-                        R = b03.R(j17, topicId2);
+                        s2Var.d = false;
+                        i10 = 0;
                     }
-                    if (R != null) {
-                    }
-                    if (R == null) {
-                        r52 = z10;
+                    if (s2Var.d) {
+                        spannableStringBuilder.append((CharSequence) " ");
+                        spannableStringBuilder.setSpan(new r2(org.telegram.messenger.g0.L(3.0f)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+                        z10 = true;
                     } else {
-                        int hashCode2 = R.message.hashCode();
-                        TLRPC.InputReplyTo inputReplyTo = R.reply_to;
-                        r52 = (inputReplyTo != null ? inputReplyTo.reply_to_msg_id << 16 : z10) + hashCode2;
+                        z10 = false;
                     }
-                    TLRPC.Chat chat22 = v2Var.g2;
-                    z12 = (chat22 == null && chat22.call_active && chat22.call_not_empty) ? true : z10;
-                    B = wp.r1(i11).t7.B(v2Var.H0);
-                    if (this.h != measuredWidth && this.b == hashCode && this.c == B && this.a == v2Var.H0 && this.d == dialog.isFolder && this.e == j10 && Objects.equals(this.g, num) && this.i == i10 && r52 == this.f && this.j == v2Var.A3 && this.k == z12 && v2Var.k2 == z11) {
-                        return z10;
+                }
+                if (org.telegram.messenger.t3.p0(chat)) {
+                    s2Var.f = new HashMap();
+                    for (int i11 = 0; i11 < Math.min(4, arrayList.size()); i11++) {
+                        if (spannableStringBuilder.length() != 0) {
+                            spannableStringBuilder.append((CharSequence) "  ");
+                        }
+                        long o10 = org.telegram.messenger.m5.o(((TLRPC.TL_forumTopic) arrayList.get(i11)).from_id);
+                        org.telegram.ui.h5 h5Var = new org.telegram.ui.h5(i3, s2Var.a);
+                        h5Var.h = false;
+                        h5Var.c(o10);
+                        s2Var.f.put(Long.valueOf(o10), h5Var);
+                        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(org.telegram.messenger.m5.l(h10.t0, o10));
+                        valueOf.insert(0, (CharSequence) "  ");
+                        valueOf.setSpan(h5Var, 0, 1, 33);
+                        spannableStringBuilder.append((CharSequence) valueOf);
                     }
-                    if (this.a != v2Var.H0) {
-                        this.l = num == null ? 0.0f : 1.0f;
-                        this.o = z10;
-                    } else if (!Objects.equals(this.g, num) || this.o) {
-                        boolean z14 = this.o;
-                        if (!z14 && num == null) {
-                            this.o = true;
-                            this.p = System.currentTimeMillis();
-                        } else if (z14 && this.b != hashCode) {
-                            z13 = false;
-                            this.o = false;
-                            if (this.b == hashCode) {
-                                this.m = z13;
-                            } else {
-                                this.m = true;
+                } else {
+                    int i12 = 0;
+                    for (int i13 = 4; i12 < Math.min(i13, arrayList.size()); i13 = 4) {
+                        if (((TLRPC.TL_forumTopic) arrayList.get(i12)).id != j10) {
+                            if (spannableStringBuilder.length() != 0) {
+                                if (z11 && z10) {
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                } else {
+                                    spannableStringBuilder.append((CharSequence) ", ");
+                                }
                             }
+                            spannableStringBuilder.append(rg.c.j((TLRPC.ForumTopic) arrayList.get(i12), textPaint, null));
+                            z11 = false;
                         }
-                        z13 = false;
-                        if (this.b == hashCode) {
-                        }
+                        i12++;
                     }
-                    if (num != null) {
-                        this.n = num.intValue();
-                    }
-                    this.a = v2Var.H0;
-                    this.b = hashCode;
-                    this.d = dialog.isFolder;
-                    this.e = j10;
-                    this.g = num;
-                    this.h = measuredWidth;
-                    this.f = r52;
-                    this.i = i10;
-                    this.j = v2Var.A3;
-                    this.k = z12;
-                    this.c = B;
-                    return true;
                 }
-                i10 = 0;
-                if (!v2Var.P) {
+                if (i10 > 0) {
+                    Typeface o11 = org.telegram.messenger.g0.o();
+                    int i14 = org.telegram.ui.ActionBar.k6.X8;
+                    o31 o31Var = new o31();
+                    o31Var.a = o11;
+                    o31Var.c = i14;
+                    o31Var.b = org.telegram.ui.ActionBar.k6.v0(i14);
+                    spannableStringBuilder.setSpan(o31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
                 }
+                s2Var.g = spannableStringBuilder;
             }
         }
-        num = null;
-        int measuredWidth2 = v2Var.getMeasuredWidth() + (v2Var.getMeasuredHeight() << 16);
-        if (v2Var.X()) {
-        }
-        i10 = 0;
-        if (!v2Var.P) {
-        }
-    }
-
-    public final void b() {
-        boolean z10 = this.o;
-        v2 v2Var = this.q;
-        if (z10) {
-            if (System.currentTimeMillis() - this.p > 100) {
-                this.o = false;
-            }
-            v2Var.invalidate();
-            return;
-        }
-        Integer num = this.g;
-        if (num != null && v2Var.f3 != null) {
-            float f7 = this.l;
-            if (f7 != 1.0f) {
-                this.l = f7 + 0.08f;
-                v2Var.invalidate();
-                this.l = Utilities.i(this.l, 1.0f, 0.0f);
-            }
-        }
-        if (num == null) {
-            float f10 = this.l;
-            if (f10 != 0.0f) {
-                this.l = f10 - 0.08f;
-                v2Var.invalidate();
-            }
-        }
-        this.l = Utilities.i(this.l, 1.0f, 0.0f);
     }
 }

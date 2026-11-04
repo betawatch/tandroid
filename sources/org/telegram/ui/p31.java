@@ -1,80 +1,82 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class p31 implements org.telegram.messenger.vs {
-    public final int a;
-    public final TLRPC.Chat b;
-    public TLRPC.ChannelParticipantsFilter c;
-    public boolean f;
-    public boolean h;
-    public boolean r;
-    public boolean s;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public int n = -1;
+public final class p31 extends org.telegram.ui.Components.n61 {
+    public boolean W;
+    public final /* synthetic */ r41 a0;
 
-    public p31(int i10, long j10, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
-        this.a = i10;
-        this.b = org.telegram.messenger.wp.r1(i10).L0(Long.valueOf(j10));
-        TLRPC.ChatFull M0 = org.telegram.messenger.wp.r1(i10).M0(j10);
-        this.c = channelParticipantsFilter;
-        if (M0 == null) {
-            if (!this.s) {
-                this.s = true;
-                org.telegram.messenger.at.f(i10).c(this, org.telegram.messenger.at.T);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p31(r41 r41Var, Activity activity) {
+        super(activity, null);
+        this.a0 = r41Var;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            r41 r41Var = this.a0;
+            if (r41Var.k0 != null) {
+                View currentView = getCurrentView();
+                xd xdVar = r41Var.k0;
+                if (currentView == xdVar) {
+                    boolean G = xdVar.G(motionEvent.getX() - r41Var.k0.getX(), motionEvent.getY() - r41Var.k0.getY());
+                    xdVar.R0 = G;
+                    if (G && xdVar.b1.b.canScrollHorizontally(-1)) {
+                        z10 = true;
+                        this.W = z10;
+                    }
+                }
             }
-            org.telegram.messenger.wp.r1(i10).T2(0, j10, false);
+            z10 = false;
+            this.W = z10;
+        }
+        try {
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if (actionMasked != 1 && actionMasked != 3) {
+                return dispatchTouchEvent;
+            }
+            this.W = false;
+            return dispatchTouchEvent;
+        } catch (Throwable th2) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.W = false;
+            }
+            throw th2;
         }
     }
 
-    public final void a() {
-        if (this.s) {
-            this.s = false;
-            int i10 = this.a;
-            org.telegram.messenger.at.f(i10).n(this, org.telegram.messenger.at.T);
-            if (this.n >= 0) {
-                ConnectionsManager.getInstance(i10).cancelRequest(this.n, true);
-                this.n = -1;
-            }
-            this.f = false;
-        }
+    @Override // org.telegram.ui.Components.n61, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.W && super.onInterceptTouchEvent(motionEvent);
     }
 
-    public final void b() {
-        if (this.f || this.h) {
+    @Override // org.telegram.ui.Components.n61, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.W && A(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final void s() {
+        r41 r41Var = this.a0;
+        r41Var.p0(r41Var.i0.getCurrentPosition(), true);
+        r41Var.q0(false, 0.0f);
+    }
+
+    @Override // org.telegram.ui.Components.n61
+    public final void u(boolean z10) {
+        r41 r41Var = this.a0;
+        float positionAnimated = r41Var.i0.getPositionAnimated();
+        r41Var.q0(!z10, positionAnimated);
+        if (z10) {
             return;
         }
-        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = this.c;
-        if ((channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) && TextUtils.isEmpty(channelParticipantsFilter.q)) {
-            return;
-        }
-        this.f = true;
-        TLRPC.Chat chat = this.b;
-        if (org.telegram.messenger.w3.T(chat)) {
-            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-            tL_channels_getParticipants.channel = org.telegram.messenger.wp.h1(chat);
-            tL_channels_getParticipants.filter = this.c;
-            tL_channels_getParticipants.limit = 30;
-            tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
-            ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_channels_getParticipants, new a3.b(1), new z4(this, 24));
-        }
-    }
-
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == org.telegram.messenger.at.T) {
-            long j10 = ((TLRPC.ChatFull) objArr[0]).id;
-            TLRPC.Chat chat = this.b;
-            if (j10 == chat.id && !org.telegram.messenger.w3.T(chat) && this.f) {
-                this.f = false;
-                b();
-            }
-        }
+        r41Var.p0(Math.round(positionAnimated), true);
     }
 }

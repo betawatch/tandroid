@@ -1,57 +1,47 @@
 package bi;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a51;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.v51;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.g5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class x0 extends a51 {
-    public static final /* synthetic */ int b = 0;
-
-    static {
-        a51.h(new x0());
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final void b(View view, b51 b51Var, boolean z10, q51 q51Var, v51 v51Var) {
-        y0 y0Var = (y0) view;
-        a aVar = (a) b51Var.G;
-        l3 l3Var = (l3) b51Var.H;
-        n1 n1Var = y0Var.d;
-        boolean z11 = y0Var.f != aVar;
-        y0Var.f = aVar;
-        y0Var.h = l3Var;
-        TL_iv.PageBlock pageBlock = aVar.b;
-        if (pageBlock instanceof TL_iv.pageBlockDetails) {
-            TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
-            y0Var.c.a(pageblockdetails.open ? 0.0f : 1.0f);
-            SpannableStringBuilder r10 = s6.r(pageblockdetails.title, null, true);
-            if (!aVar.s) {
-                aVar.s = true;
-                aVar.r = r10.length() == 0 || (s6.q(0, r10.length(), r10) & 1) != 0;
-            }
-            n1Var.setAutoBold(aVar.r);
-            if (z11 || !String.valueOf(n1Var.getText()).equals(s6.l(pageblockdetails.title))) {
-                n1Var.setTextSilently(r10);
-                n1Var.f();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final View d(Context context, uk0 uk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        return new y0(context, p6Var);
-    }
-
-    @Override // org.telegram.ui.Components.a51
-    public final boolean f() {
-        return false;
-    }
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class x0 {
+    public TLRPC.Document A;
+    public TL_stars.TL_starGiftUnique B;
+    public long C;
+    public Bitmap D;
+    public long E;
+    public t F;
+    public boolean G;
+    public int a;
+    public Drawable[] b;
+    public g5 c;
+    public g5 d;
+    public Bitmap e;
+    public Bitmap f;
+    public long g;
+    public boolean h;
+    public int j;
+    public Bitmap k;
+    public Bitmap l;
+    public Bitmap m;
+    public Bitmap n;
+    public int o;
+    public int p;
+    public int r;
+    public PorterDuffColorFilter u;
+    public long[] w;
+    public boolean[] x;
+    public long[] y;
+    public TLRPC.Document z;
+    public final Paint i = new Paint(2);
+    public int q = -1;
+    public int s = -1;
+    public int t = -1;
+    public final Paint v = new Paint(2);
 }

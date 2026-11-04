@@ -1,87 +1,56 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.RectF;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.nb1;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class md implements org.telegram.ui.th0, org.telegram.ui.tx {
-    public final /* synthetic */ ChatActivityEnterView a;
-    public final /* synthetic */ org.telegram.messenger.kj b;
-    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
+public final /* synthetic */ class md implements r4, org.telegram.messenger.jc {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.messenger.cs c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ md(ChatActivityEnterView chatActivityEnterView, org.telegram.messenger.kj kjVar, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer) {
-        this.a = chatActivityEnterView;
-        this.b = kjVar;
-        this.c = tL_buttonTypeRequestPeer;
+    public /* synthetic */ md(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, org.telegram.messenger.vi viVar, boolean z10) {
+        this.c = chatActivityEnterView;
+        this.d = document;
+        this.a = str;
+        this.e = obj;
+        this.f = viVar;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.tx
-    public /* synthetic */ boolean H() {
-        return false;
+    @Override // org.telegram.ui.Components.r4
+    public void L(int i3, int i10, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+        TLRPC.Document document = (TLRPC.Document) this.d;
+        org.telegram.messenger.vi viVar = (org.telegram.messenger.vi) this.f;
+        int i11 = ChatActivityEnterView.t5;
+        chatActivityEnterView.a(document, this.a, this.e, viVar, this.b, z10, i3, i10);
     }
 
-    @Override // org.telegram.ui.tx
-    public /* synthetic */ boolean O(org.telegram.ui.zx zxVar) {
-        return false;
+    @Override // org.telegram.messenger.jc
+    public void a(String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = (ProfileActivity) this.c;
+        String[] strArr = (String[]) this.d;
+        boolean[] zArr = (boolean[]) this.e;
+        ai.d3 d3Var = (ai.d3) this.f;
+        RectF rectF = ProfileActivity.T6;
+        strArr[0] = str;
+        zArr[0] = str != null && (!str.equals(this.a) || str.equals("und")) && ((this.b && !org.telegram.ui.gy0.d0().contains(str)) || ((chat = profileActivity.E2) != null && ((chat.has_link || org.telegram.messenger.t3.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        d3Var.run();
     }
 
-    @Override // org.telegram.ui.th0
-    public void a(ArrayList arrayList) {
-        int i10 = ChatActivityEnterView.s5;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        org.telegram.messenger.wp r12 = org.telegram.messenger.wp.r1(chatActivityEnterView.Q);
-        org.telegram.messenger.kj kjVar = this.b;
-        tL_messages_sendBotRequestedPeer.peer = r12.l1(kjVar.k.peer_id);
-        tL_messages_sendBotRequestedPeer.flags |= 1;
-        tL_messages_sendBotRequestedPeer.msg_id = kjVar.f1();
-        tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            tL_messages_sendBotRequestedPeer.requested_peers.add(org.telegram.messenger.wp.r1(chatActivityEnterView.Q).i1(((Long) obj).longValue()));
-        }
-        ConnectionsManager.getInstance(chatActivityEnterView.Q).sendRequest(tL_messages_sendBotRequestedPeer, null);
-    }
-
-    @Override // org.telegram.ui.tx
-    public boolean z(org.telegram.ui.zx zxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, nb1 nb1Var) {
-        int i12 = ChatActivityEnterView.s5;
-        if (!arrayList.isEmpty()) {
-            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-            ChatActivityEnterView chatActivityEnterView = this.a;
-            org.telegram.messenger.wp r12 = org.telegram.messenger.wp.r1(chatActivityEnterView.Q);
-            org.telegram.messenger.kj kjVar = this.b;
-            tL_messages_sendBotRequestedPeer.peer = r12.l1(kjVar.k.peer_id);
-            tL_messages_sendBotRequestedPeer.flags |= 1;
-            tL_messages_sendBotRequestedPeer.msg_id = kjVar.f1();
-            tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
-            HashSet hashSet = new HashSet();
-            int size = arrayList.size();
-            int i13 = 0;
-            while (i13 < size) {
-                Object obj = arrayList.get(i13);
-                i13++;
-                hashSet.add(Long.valueOf(((org.telegram.messenger.hs) obj).a));
-            }
-            Iterator it = hashSet.iterator();
-            while (it.hasNext()) {
-                tL_messages_sendBotRequestedPeer.requested_peers.add(org.telegram.messenger.wp.r1(chatActivityEnterView.Q).i1(((Long) it.next()).longValue()));
-            }
-            ConnectionsManager.getInstance(chatActivityEnterView.Q).sendRequest(tL_messages_sendBotRequestedPeer, null);
-        }
-        zxVar.finishFragment();
-        return true;
+    public /* synthetic */ md(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, ai.d3 d3Var) {
+        this.c = profileActivity;
+        this.d = strArr;
+        this.e = zArr;
+        this.a = str;
+        this.b = z10;
+        this.f = d3Var;
     }
 }

@@ -1,154 +1,62 @@
 package w3;
 
-import b2.x;
-import c3.k0;
-import e2.l0;
-import org.telegram.messenger.at;
-import org.telegram.tgnet.TLObject;
+import e3.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class g {
-    public final k0 a;
-    public t d;
-    public d e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public final x j;
-    public boolean m;
-    public final s b = new s();
-    public final e2.x c = new e2.x();
-    public final e2.x k = new e2.x(1);
-    public final e2.x l = new e2.x();
+    public static final long[] d = {128, 64, 32, 16, 8, 4, 2, 1};
+    public final byte[] a = new byte[8];
+    public int b;
+    public int c;
 
-    public g(k0 k0Var, t tVar, d dVar, x xVar) {
-        this.a = k0Var;
-        this.d = tVar;
-        this.e = dVar;
-        this.j = xVar;
-        this.d = tVar;
-        this.e = dVar;
-        k0Var.b(xVar);
-        e();
+    public static long a(int i3, boolean z10, byte[] bArr) {
+        long j10 = bArr[0] & 255;
+        if (z10) {
+            j10 &= ~d[i3 - 1];
+        }
+        for (int i10 = 1; i10 < i3; i10++) {
+            j10 = (j10 << 8) | (bArr[i10] & 255);
+        }
+        return j10;
     }
 
-    public final int a() {
-        int i10 = !this.m ? this.d.g[this.f] : this.b.j[this.f] ? 1 : 0;
-        return b() != null ? i10 | TLObject.FLAG_30 : i10;
-    }
-
-    public final r b() {
-        if (!this.m) {
-            return null;
+    public final long b(p pVar, boolean z10, boolean z11, int i3) {
+        int i10;
+        int i11 = this.b;
+        byte[] bArr = this.a;
+        if (i11 == 0) {
+            if (!pVar.d(bArr, 0, 1, z10)) {
+                return -1L;
+            }
+            int i12 = bArr[0] & 255;
+            int i13 = 0;
+            while (true) {
+                if (i13 >= 8) {
+                    i10 = -1;
+                    break;
+                }
+                if ((d[i13] & i12) != 0) {
+                    i10 = i13 + 1;
+                    break;
+                }
+                i13++;
+            }
+            this.c = i10;
+            if (i10 == -1) {
+                throw new IllegalStateException("No valid varint length mask found");
+            }
+            this.b = 1;
         }
-        s sVar = this.b;
-        d dVar = sVar.a;
-        String str = l0.a;
-        int i10 = dVar.a;
-        r rVar = sVar.m;
-        if (rVar == null) {
-            rVar = this.d.a.l[i10];
+        int i14 = this.c;
+        if (i14 > i3) {
+            this.b = 0;
+            return -2L;
         }
-        if (rVar == null || !rVar.a) {
-            return null;
+        if (i14 != 1) {
+            pVar.readFully(bArr, 1, i14 - 1);
         }
-        return rVar;
-    }
-
-    public final boolean c() {
-        this.f++;
-        if (!this.m) {
-            return false;
-        }
-        int i10 = this.g + 1;
-        this.g = i10;
-        int[] iArr = this.b.g;
-        int i11 = this.h;
-        if (i10 != iArr[i11]) {
-            return true;
-        }
-        this.h = i11 + 1;
-        this.g = 0;
-        return false;
-    }
-
-    public final int d(int i10, int i11) {
-        e2.x xVar;
-        r b10 = b();
-        if (b10 == null) {
-            return 0;
-        }
-        int i12 = b10.d;
-        s sVar = this.b;
-        if (i12 != 0) {
-            xVar = sVar.n;
-        } else {
-            byte[] bArr = b10.e;
-            String str = l0.a;
-            int length = bArr.length;
-            e2.x xVar2 = this.l;
-            xVar2.L(length, bArr);
-            i12 = bArr.length;
-            xVar = xVar2;
-        }
-        boolean z10 = sVar.k && sVar.l[this.f];
-        boolean z11 = z10 || i11 != 0;
-        e2.x xVar3 = this.k;
-        xVar3.a[0] = (byte) ((z11 ? 128 : 0) | i12);
-        xVar3.N(0);
-        k0 k0Var = this.a;
-        k0Var.g(xVar3, 1, 1);
-        k0Var.g(xVar, i12, 1);
-        if (!z11) {
-            return i12 + 1;
-        }
-        e2.x xVar4 = this.c;
-        if (!z10) {
-            xVar4.K(8);
-            byte[] bArr2 = xVar4.a;
-            bArr2[0] = 0;
-            bArr2[1] = 1;
-            bArr2[2] = (byte) 0;
-            bArr2[3] = (byte) (i11 & at.e4);
-            bArr2[4] = (byte) ((i10 >> 24) & at.e4);
-            bArr2[5] = (byte) ((i10 >> 16) & at.e4);
-            bArr2[6] = (byte) ((i10 >> 8) & at.e4);
-            bArr2[7] = (byte) (i10 & at.e4);
-            k0Var.g(xVar4, 8, 1);
-            return i12 + 9;
-        }
-        e2.x xVar5 = sVar.n;
-        int H = xVar5.H();
-        xVar5.O(-2);
-        int i13 = (H * 6) + 2;
-        if (i11 != 0) {
-            xVar4.K(i13);
-            byte[] bArr3 = xVar4.a;
-            xVar5.k(0, i13, bArr3);
-            int i14 = (((bArr3[2] & 255) << 8) | (bArr3[3] & 255)) + i11;
-            bArr3[2] = (byte) ((i14 >> 8) & at.e4);
-            bArr3[3] = (byte) (i14 & at.e4);
-        } else {
-            xVar4 = xVar5;
-        }
-        k0Var.g(xVar4, i13, 1);
-        return i12 + 1 + i13;
-    }
-
-    public final void e() {
-        s sVar = this.b;
-        sVar.d = 0;
-        sVar.p = 0L;
-        sVar.q = false;
-        sVar.k = false;
-        sVar.o = false;
-        sVar.m = null;
-        this.f = 0;
-        this.h = 0;
-        this.g = 0;
-        this.i = 0;
-        this.m = false;
+        this.b = 0;
+        return a(this.c, z11, bArr);
     }
 }

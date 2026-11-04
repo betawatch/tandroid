@@ -1,0 +1,408 @@
+package kg;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import ci.r4;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.g5;
+import org.telegram.messenger.h10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.tj0;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class n0 extends tj0 implements z5 {
+    public static final l0[] k3 = {new l0(R.drawable.search_media_filled, 2131745417, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new l0(R.drawable.search_links_filled, 2131745420, new TLRPC.TL_inputMessagesFilterUrl(), 2), new l0(R.drawable.search_files_filled, 2131745424, new TLRPC.TL_inputMessagesFilterDocument(), 1), new l0(R.drawable.search_music_filled, 2131745415, new TLRPC.TL_inputMessagesFilterMusic(), 3), new l0(R.drawable.search_voice_filled, 2131745412, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
+    public static final Pattern l3 = Pattern.compile("20[0-9]{1,2}");
+    public static final Pattern m3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
+    public static final Pattern n3 = Pattern.compile("([0-9]{0,4}) (\\w{2,})");
+    public static final Pattern o3 = Pattern.compile("^([0-9]{1,4})(\\.| |/|\\-)([0-9]{1,4})$");
+    public static final Pattern p3 = Pattern.compile("^([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,4})$");
+    public static final int[] q3 = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    public final ArrayList f3;
+    public final ArrayList g3;
+    public final f0 h3;
+    public boolean i3;
+    public final i0 j3;
+
+    public n0(Context context, e6 e6Var) {
+        super(context, e6Var);
+        this.f3 = new ArrayList();
+        this.g3 = new ArrayList();
+        this.i3 = true;
+        this.j3 = new i0(this);
+        f0 f0Var = new f0((Object) this, 0);
+        this.h3 = f0Var;
+        f0Var.j1(0);
+        setLayoutManager(f0Var);
+        setAdapter(new r4(this, 1));
+        i(new ei.l(3));
+        setItemAnimator(new h0());
+        setWillNotDraw(false);
+        setHideIfEmpty(false);
+        setSelectorRadius(org.telegram.messenger.g0.L(28.0f));
+        r6.m(this, 20, k6.i6, e6Var);
+    }
+
+    public static void A1(int i3, int i10, ArrayList arrayList) {
+        int i11 = Calendar.getInstance().get(1);
+        long timeInMillis = Calendar.getInstance().getTimeInMillis();
+        if (i10 < 2013 || i10 > i11) {
+            return;
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(i10, i3, 1, 0, 0, 0);
+        long timeInMillis2 = calendar.getTimeInMillis();
+        if (timeInMillis2 > timeInMillis) {
+            return;
+        }
+        calendar.add(2, 1);
+        arrayList.add(new j0(timeInMillis2, bd.E0().v0().format(timeInMillis2), calendar.getTimeInMillis() - 1));
+    }
+
+    public static void B1(String str, ArrayList arrayList) {
+        arrayList.clear();
+        if (str == null) {
+            return;
+        }
+        String trim = str.trim();
+        if (trim.length() < 3) {
+            return;
+        }
+        if (bd.M0(2131745718, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
+            Calendar calendar = Calendar.getInstance();
+            int i3 = calendar.get(1);
+            int i10 = calendar.get(2);
+            int i11 = calendar.get(5);
+            calendar.set(i3, i10, i11, 0, 0, 0);
+            long timeInMillis = calendar.getTimeInMillis();
+            calendar.set(i3, i10, i11 + 1, 0, 0, 0);
+            arrayList.add(new j0(timeInMillis, bd.M0(2131745718, null), calendar.getTimeInMillis() - 1));
+            return;
+        }
+        if (bd.M0(2131745717, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
+            Calendar calendar2 = Calendar.getInstance();
+            int i12 = calendar2.get(1);
+            int i13 = calendar2.get(2);
+            int i14 = calendar2.get(5);
+            calendar2.set(i12, i13, i14, 0, 0, 0);
+            long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
+            calendar2.set(i12, i13, i14 + 1, 0, 0, 0);
+            arrayList.add(new j0(timeInMillis2, bd.M0(2131745717, null), calendar2.getTimeInMillis() - 86400001));
+            return;
+        }
+        Calendar calendar3 = Calendar.getInstance();
+        int i15 = -1;
+        if (trim.length() > 3) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
+            for (int i16 = 0; i16 < 7; i16++) {
+                calendar3.set(7, i16);
+                if (bd.E0().B0().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
+                    i15 = i16;
+                    break;
+                }
+            }
+        }
+        if (i15 >= 0) {
+            Calendar calendar4 = Calendar.getInstance();
+            long timeInMillis3 = calendar4.getTimeInMillis();
+            calendar4.set(7, i15);
+            if (calendar4.getTimeInMillis() > timeInMillis3) {
+                calendar4.setTimeInMillis(calendar4.getTimeInMillis() - 604800000);
+            }
+            int i17 = calendar4.get(1);
+            int i18 = calendar4.get(2);
+            int i19 = calendar4.get(5);
+            calendar4.set(i17, i18, i19, 0, 0, 0);
+            long timeInMillis4 = calendar4.getTimeInMillis();
+            calendar4.set(i17, i18, i19 + 1, 0, 0, 0);
+            arrayList.add(new j0(timeInMillis4, bd.E0().B0().format(timeInMillis4), calendar4.getTimeInMillis() - 1));
+            return;
+        }
+        Matcher matcher = o3.matcher(trim);
+        if (matcher.matches()) {
+            String group = matcher.group(1);
+            String group2 = matcher.group(3);
+            int parseInt = Integer.parseInt(group);
+            int parseInt2 = Integer.parseInt(group2);
+            if (parseInt <= 0 || parseInt > 31) {
+                if (parseInt < 2013 || parseInt2 > 12) {
+                    return;
+                }
+                A1(parseInt2 - 1, parseInt, arrayList);
+                return;
+            }
+            if (parseInt2 >= 2013 && parseInt <= 12) {
+                A1(parseInt - 1, parseInt2, arrayList);
+                return;
+            } else {
+                if (parseInt2 <= 12) {
+                    z1(parseInt - 1, parseInt2 - 1, arrayList);
+                    return;
+                }
+                return;
+            }
+        }
+        Matcher matcher2 = p3.matcher(trim);
+        if (matcher2.matches()) {
+            String group3 = matcher2.group(1);
+            String group4 = matcher2.group(3);
+            String group5 = matcher2.group(5);
+            if (matcher2.group(2).equals(matcher2.group(4))) {
+                int parseInt3 = Integer.parseInt(group3);
+                int parseInt4 = Integer.parseInt(group4) - 1;
+                int parseInt5 = Integer.parseInt(group5);
+                if (parseInt5 >= 10 && parseInt5 <= 99) {
+                    parseInt5 += 2000;
+                }
+                int i20 = parseInt5;
+                int i21 = Calendar.getInstance().get(1);
+                int i22 = parseInt3 - 1;
+                if (parseInt4 < 0 || parseInt4 >= 12 || i22 < 0 || i22 >= q3[parseInt4] || i20 < 2013 || i20 > i21) {
+                    return;
+                }
+                Calendar calendar5 = Calendar.getInstance();
+                calendar5.set(i20, parseInt4, parseInt3, 0, 0, 0);
+                long timeInMillis5 = calendar5.getTimeInMillis();
+                calendar5.set(i20, parseInt4, parseInt3 + 1, 0, 0, 0);
+                arrayList.add(new j0(timeInMillis5, bd.E0().D0().format(timeInMillis5), calendar5.getTimeInMillis() - 1));
+                return;
+            }
+            return;
+        }
+        if (l3.matcher(trim).matches()) {
+            int intValue = Integer.valueOf(trim).intValue();
+            int i23 = Calendar.getInstance().get(1);
+            if (intValue < 2013) {
+                while (i23 >= 2013) {
+                    Calendar calendar6 = Calendar.getInstance();
+                    calendar6.set(i23, 0, 1, 0, 0, 0);
+                    long timeInMillis6 = calendar6.getTimeInMillis();
+                    calendar6.set(i23 + 1, 0, 1, 0, 0, 0);
+                    arrayList.add(new j0(timeInMillis6, Integer.toString(i23), calendar6.getTimeInMillis() - 1));
+                    i23--;
+                }
+                return;
+            }
+            if (intValue <= i23) {
+                Calendar calendar7 = Calendar.getInstance();
+                calendar7.set(intValue, 0, 1, 0, 0, 0);
+                long timeInMillis7 = calendar7.getTimeInMillis();
+                calendar7.set(intValue + 1, 0, 1, 0, 0, 0);
+                arrayList.add(new j0(timeInMillis7, Integer.toString(intValue), calendar7.getTimeInMillis() - 1));
+                return;
+            }
+            return;
+        }
+        Matcher matcher3 = m3.matcher(trim);
+        if (matcher3.matches()) {
+            String group6 = matcher3.group(1);
+            String group7 = matcher3.group(2);
+            int C1 = C1(group6);
+            if (C1 >= 0) {
+                int intValue2 = Integer.valueOf(group7).intValue();
+                if (intValue2 > 0 && intValue2 <= 31) {
+                    z1(intValue2 - 1, C1, arrayList);
+                    return;
+                } else if (intValue2 >= 2013) {
+                    A1(C1, intValue2, arrayList);
+                    return;
+                }
+            }
+        }
+        Matcher matcher4 = n3.matcher(trim);
+        if (matcher4.matches()) {
+            String group8 = matcher4.group(1);
+            int C12 = C1(matcher4.group(2));
+            if (C12 >= 0) {
+                int intValue3 = Integer.valueOf(group8).intValue();
+                if (intValue3 > 0 && intValue3 <= 31) {
+                    z1(intValue3 - 1, C12, arrayList);
+                    return;
+                } else if (intValue3 >= 2013) {
+                    A1(C12, intValue3, arrayList);
+                }
+            }
+        }
+        if (TextUtils.isEmpty(trim) || trim.length() <= 2) {
+            return;
+        }
+        int C13 = C1(trim);
+        long timeInMillis8 = Calendar.getInstance().getTimeInMillis();
+        if (C13 >= 0) {
+            for (int i24 = Calendar.getInstance().get(1); i24 >= 2013; i24--) {
+                Calendar calendar8 = Calendar.getInstance();
+                calendar8.set(i24, C13, 1, 0, 0, 0);
+                long timeInMillis9 = calendar8.getTimeInMillis();
+                if (timeInMillis9 <= timeInMillis8) {
+                    calendar8.add(2, 1);
+                    arrayList.add(new j0(timeInMillis9, bd.E0().v0().format(timeInMillis9), calendar8.getTimeInMillis() - 1));
+                }
+            }
+        }
+    }
+
+    public static int C1(String str) {
+        String[] strArr = {bd.M0(2131749094, null).toLowerCase(), bd.M0(2131750830, null).toLowerCase(), bd.M0(2131748691, null).toLowerCase(), bd.M0(2131754173, null).toLowerCase(), bd.M0(2131748670, null).toLowerCase(), bd.M0(2131749072, null).toLowerCase(), bd.M0(2131749074, null).toLowerCase(), bd.M0(2131753895, null).toLowerCase(), bd.M0(2131745575, null).toLowerCase(), bd.M0(2131747838, null).toLowerCase(), bd.M0(2131747843, null).toLowerCase(), bd.M0(2131751606, null).toLowerCase()};
+        String[] strArr2 = new String[12];
+        Calendar calendar = Calendar.getInstance();
+        for (int i3 = 1; i3 <= 12; i3++) {
+            calendar.set(0, 0, 0, 0, 0, 0);
+            calendar.set(2, i3);
+            strArr2[i3 - 1] = calendar.getDisplayName(2, 2, Locale.ENGLISH).toLowerCase();
+        }
+        for (int i10 = 0; i10 < 12; i10++) {
+            if (strArr2[i10].startsWith(str) || strArr[i10].startsWith(str)) {
+                return i10;
+            }
+        }
+        return -1;
+    }
+
+    public static void z1(int i3, int i10, ArrayList arrayList) {
+        int i11 = i10;
+        if (i11 < 0 || i11 >= 12 || i3 < 0 || i3 >= q3[i11]) {
+            return;
+        }
+        int i12 = Calendar.getInstance().get(1);
+        long timeInMillis = Calendar.getInstance().getTimeInMillis();
+        GregorianCalendar gregorianCalendar = (GregorianCalendar) Calendar.getInstance();
+        int i13 = i12;
+        while (i13 >= 2013) {
+            if (i11 != 1 || i3 != 28 || gregorianCalendar.isLeapYear(i13)) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(i13, i11, i3 + 1, 0, 0, 0);
+                long timeInMillis2 = calendar.getTimeInMillis();
+                if (timeInMillis2 <= timeInMillis) {
+                    calendar.set(i13, i10, i3 + 2, 0, 0, 0);
+                    long timeInMillis3 = calendar.getTimeInMillis() - 1;
+                    if (i13 == i12) {
+                        arrayList.add(new j0(timeInMillis2, bd.E0().q0().format(timeInMillis2), timeInMillis3));
+                    } else {
+                        arrayList.add(new j0(timeInMillis2, bd.E0().D0().format(timeInMillis2), timeInMillis3));
+                    }
+                }
+            }
+            i13--;
+            i11 = i10;
+        }
+    }
+
+    public final void D1(ArrayList arrayList, ArrayList arrayList2, boolean z10) {
+        ArrayList arrayList3 = this.g3;
+        arrayList3.clear();
+        ArrayList arrayList4 = this.f3;
+        arrayList3.addAll(arrayList4);
+        arrayList4.clear();
+        if (arrayList != null) {
+            for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                Object obj = arrayList.get(i3);
+                if (obj instanceof TLRPC.User) {
+                    TLRPC.User user = (TLRPC.User) obj;
+                    l0 l0Var = new l0(R.drawable.search_users_filled, 4, h10.i(h10.t0).f().id == user.id ? bd.M0(2131745911, null) : g5.m(10, user.first_name, user.last_name));
+                    l0Var.f = user;
+                    arrayList4.add(l0Var);
+                } else if (obj instanceof TLRPC.Chat) {
+                    TLRPC.Chat chat = (TLRPC.Chat) obj;
+                    String str = chat.title;
+                    if (str.length() > 12) {
+                        str = t4.c.q(str.substring(0, 10), "...");
+                    }
+                    l0 l0Var2 = new l0(R.drawable.search_users_filled, 4, str);
+                    l0Var2.f = chat;
+                    arrayList4.add(l0Var2);
+                }
+            }
+        }
+        if (arrayList2 != null) {
+            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                j0 j0Var = (j0) arrayList2.get(i10);
+                l0 l0Var3 = new l0(R.drawable.search_date_filled, 6, j0Var.a);
+                l0Var3.g = j0Var;
+                arrayList4.add(l0Var3);
+            }
+        }
+        if (z10) {
+            arrayList4.add(new l0(R.drawable.chats_archive, 2131754150, null, 7));
+        }
+        if (getAdapter() != null) {
+            ba.i iVar = new ba.i(3, getAdapter(), false);
+            u4.o.c(this.j3, true).b(iVar);
+            if (arrayList4.isEmpty() || !iVar.b) {
+                return;
+            }
+            this.h3.h1(0, 0);
+        }
+    }
+
+    public ArrayList<t6> getThemeDescriptions() {
+        ArrayList<t6> arrayList = new ArrayList<>();
+        arrayList.add(new t6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (s6) null, k6.e7));
+        arrayList.add(new t6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (s6) null, k6.f7));
+        return arrayList;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.i3) {
+            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), k6.k0);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onInterceptTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        for (int i3 = 0; i3 < getCachedChildCount(); i3++) {
+            View P = P(i3);
+            if (P instanceof k0) {
+                ((k0) P).updateColors();
+            }
+        }
+        for (int i10 = 0; i10 < getAttachedScrapChildCount(); i10++) {
+            View O = O(i10);
+            if (O instanceof k0) {
+                ((k0) O).updateColors();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    }
+}

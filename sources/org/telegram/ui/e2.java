@@ -9,19 +9,19 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class e2 extends View {
-    public final /* synthetic */ l60 a;
-    public final /* synthetic */ f4 b;
+    public final /* synthetic */ i50 a;
+    public final /* synthetic */ g4 b;
     public final /* synthetic */ f2 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e2(f2 f2Var, Context context, l60 l60Var, f4 f4Var) {
+    public e2(f2 f2Var, Context context, i50 i50Var, g4 g4Var) {
         super(context);
         this.c = f2Var;
-        this.a = l60Var;
-        this.b = f4Var;
+        this.a = i50Var;
+        this.b = g4Var;
     }
 
     @Override // android.view.View
@@ -29,7 +29,7 @@ public final class e2 extends View {
         f2 f2Var = this.c;
         if (f2Var.c != null) {
             canvas.save();
-            h4.t(this.a, canvas, f2Var, 0);
+            i4.t(this.a, canvas, f2Var, 0);
             f2Var.c.d(canvas, this);
             canvas.restore();
             f2Var.c.s = (int) getX();
@@ -38,41 +38,41 @@ public final class e2 extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
+    public final void onMeasure(int i3, int i10) {
+        int i11;
         StaticLayout staticLayout;
         StaticLayout staticLayout2;
         f2 f2Var = this.c;
         TL_iv.pageBlockPreformatted pageblockpreformatted = f2Var.f;
-        int i13 = 1;
+        int i12 = 1;
         if (pageblockpreformatted != null) {
             CharSequence charSequence = f2Var.h;
-            f4 f4Var = this.b;
-            l60 l60Var = this.a;
+            g4 g4Var = this.b;
+            i50 i50Var = this.a;
             if (charSequence == null) {
                 TL_iv.RichText richText = pageblockpreformatted.text;
-                int L = org.telegram.messenger.i0.L(5000.0f);
-                HashSet hashSet = h4.c1;
-                CharSequence A = h4.A(l60Var, f4Var.E, this, richText, richText, pageblockpreformatted, L);
+                int L = org.telegram.messenger.g0.L(5000.0f);
+                HashSet hashSet = i4.d1;
+                CharSequence A = i4.A(i50Var, g4Var.F, this, richText, richText, pageblockpreformatted, L);
                 f2Var.h = A;
                 TL_iv.pageBlockPreformatted pageblockpreformatted2 = f2Var.f;
                 if (pageblockpreformatted2.diff) {
                     f2Var.h = f2.b(f2Var, A, pageblockpreformatted2.language);
                 } else if (!TextUtils.isEmpty(pageblockpreformatted2.language)) {
-                    f2Var.h = di.l.b(f2Var.h, f2Var.f.language);
+                    f2Var.h = oi.k.b(f2Var.h, f2Var.f.language);
                 }
             }
-            z2 o10 = h4.o(l60Var, this, f2Var.h, null, org.telegram.messenger.i0.L(5000.0f), 0, f2Var.f, f4Var);
+            a3 o10 = i4.o(i50Var, this, f2Var.h, null, org.telegram.messenger.g0.L(5000.0f), 0, f2Var.f, g4Var);
             f2Var.c = o10;
             if (o10 != null) {
-                i12 = o10.d.getHeight();
+                i11 = o10.d.getHeight();
                 int lineCount = f2Var.c.d.getLineCount();
-                int i14 = 1;
-                for (int i15 = 0; i15 < lineCount; i15++) {
-                    i14 = Math.max((int) Math.ceil(f2Var.c.d.getLineWidth(i15)), i14);
+                int i13 = 1;
+                for (int i14 = 0; i14 < lineCount; i14++) {
+                    i13 = Math.max((int) Math.ceil(f2Var.c.d.getLineWidth(i14)), i13);
                 }
                 if (f2Var.f.diff && (staticLayout2 = f2Var.c.d) != null) {
-                    i14 = Math.max((int) Math.ceil(staticLayout2.getPaint().measureText("m") * f2Var.f.diffColumns), i14);
+                    i13 = Math.max((int) Math.ceil(staticLayout2.getPaint().measureText("m") * f2Var.f.diffColumns), i13);
                 }
                 f2Var.r = 0;
                 if (f2Var.f.continuesNext && (staticLayout = f2Var.c.d) != null && staticLayout.getLineCount() > 1) {
@@ -80,21 +80,21 @@ public final class e2 extends View {
                     int lineCount2 = staticLayout3.getLineCount() - 1;
                     int max = Math.max(0, (staticLayout3.getLineBottom(0) - staticLayout3.getLineTop(0)) - (staticLayout3.getLineBottom(lineCount2) - staticLayout3.getLineTop(lineCount2)));
                     f2Var.r = max;
-                    i12 += max;
+                    i11 += max;
                 }
-                i13 = i14;
+                i12 = i13;
             } else {
-                i12 = 0;
+                i11 = 0;
             }
         } else {
-            i12 = 1;
+            i11 = 1;
         }
-        setMeasuredDimension(org.telegram.messenger.i0.L(32.0f) + i13, i12);
+        setMeasuredDimension(org.telegram.messenger.g0.L(32.0f) + i12, i11);
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         f2 f2Var = this.c;
-        return h4.j(this.a, this.b, motionEvent, f2Var, f2Var.c, 0, 0) || super.onTouchEvent(motionEvent);
+        return i4.j(this.a, this.b, motionEvent, f2Var, f2Var.c, 0, 0) || super.onTouchEvent(motionEvent);
     }
 }

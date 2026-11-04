@@ -1,21 +1,18 @@
 package r2;
 
-import e2.j0;
+import j$.util.DesugarCollections;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class q {
-    public static final q g = new q(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L);
-    public final long a;
-    public final long b;
-    public final long c;
-    public boolean e;
-    public final j0 d = new j0();
-    public long f = -9223372036854775807L;
+public abstract class q implements v2.a {
+    public final String a;
+    public final List b;
+    public final boolean c;
 
-    public q(long j10, long j11, long j12) {
-        this.a = j10;
-        this.b = j11;
-        this.c = j12;
+    public q(String str, List list, boolean z10) {
+        this.a = str;
+        this.b = DesugarCollections.unmodifiableList(list);
+        this.c = z10;
     }
 }

@@ -1,373 +1,146 @@
 package androidx.datastore.preferences.protobuf;
 
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class o0 {
-    /* JADX WARN: Removed duplicated region for block: B:16:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0170  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x017c  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0188  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x01a2  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x01ad  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x01b4  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01d0  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01d6  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01dc  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x01f2  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01fd  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0204  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0138 A[SYNTHETIC] */
+public final class o0 extends LinkedHashMap {
+    public static final o0 b;
+    public boolean a = true;
+
+    static {
+        o0 o0Var = new o0();
+        b = o0Var;
+        o0Var.a = false;
+    }
+
+    public final void b() {
+        if (!this.a) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    public final o0 c() {
+        if (isEmpty()) {
+            return new o0();
+        }
+        o0 o0Var = new o0(this);
+        o0Var.a = true;
+        return o0Var;
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        b();
+        super.clear();
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Set entrySet() {
+        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:7:0x005d A[RETURN] */
+    @Override // java.util.AbstractMap, java.util.Map
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int a(int i10, Object obj, Object obj2) {
-        int A;
-        int size;
-        int z10;
-        z1 z1Var;
-        int size2;
-        int z11;
-        n0 n0Var = (n0) obj;
-        m0 m0Var = (m0) obj2;
-        int i11 = 0;
-        if (n0Var.isEmpty()) {
-            return 0;
-        }
-        for (Map.Entry entry : n0Var.entrySet()) {
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            m0Var.getClass();
-            int y3 = j.y(i10);
-            l0 l0Var = m0Var.a;
-            z1 z1Var2 = l0Var.a;
-            int i12 = p.c;
-            int i13 = 1;
-            int y10 = j.y(1);
-            w1 w1Var = z1.d;
-            if (z1Var2 == w1Var) {
-                y10 *= 2;
+    public final boolean equals(Object obj) {
+        boolean z10;
+        if (obj instanceof Map) {
+            Map map = (Map) obj;
+            if (this != map) {
+                if (size() == map.size()) {
+                    for (Map.Entry entry : entrySet()) {
+                        if (map.containsKey(entry.getKey())) {
+                            Object value = entry.getValue();
+                            Object obj2 = map.get(entry.getKey());
+                            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
+                            }
+                        }
+                    }
+                }
+                z10 = false;
+                if (!z10) {
+                    return true;
+                }
             }
-            switch (z1Var2.ordinal()) {
-                case 0:
-                    ((Double) key).getClass();
-                    A = 8;
-                    int i14 = A + y10;
-                    z1Var = l0Var.b;
-                    int y11 = j.y(2);
-                    if (z1Var == w1Var) {
-                        y11 *= 2;
-                    }
-                    switch (z1Var.ordinal()) {
-                        case 0:
-                            ((Double) value).getClass();
-                            i13 = 8;
-                            int i15 = i13 + y11 + i14;
-                            i11 = a1.g.e(i15, i15, y3, i11);
-                        case 1:
-                            ((Float) value).getClass();
-                            i13 = 4;
-                            int i152 = i13 + y11 + i14;
-                            i11 = a1.g.e(i152, i152, y3, i11);
-                        case 2:
-                            i13 = j.A(((Long) value).longValue());
-                            int i1522 = i13 + y11 + i14;
-                            i11 = a1.g.e(i1522, i1522, y3, i11);
-                        case 3:
-                            i13 = j.A(((Long) value).longValue());
-                            int i15222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i15222, i15222, y3, i11);
-                        case 4:
-                            i13 = j.w(((Integer) value).intValue());
-                            int i152222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i152222, i152222, y3, i11);
-                        case 5:
-                            ((Long) value).getClass();
-                            i13 = 8;
-                            int i1522222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i1522222, i1522222, y3, i11);
-                        case 6:
-                            ((Integer) value).getClass();
-                            i13 = 4;
-                            int i15222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i15222222, i15222222, y3, i11);
-                        case 7:
-                            ((Boolean) value).getClass();
-                            int i152222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i152222222, i152222222, y3, i11);
-                        case 8:
-                            if (value instanceof g) {
-                                size2 = ((g) value).size();
-                                z11 = j.z(size2);
-                                i13 = z11 + size2;
-                                int i1522222222 = i13 + y11 + i14;
-                                i11 = a1.g.e(i1522222222, i1522222222, y3, i11);
-                            } else {
-                                i13 = j.x((String) value);
-                                int i15222222222 = i13 + y11 + i14;
-                                i11 = a1.g.e(i15222222222, i15222222222, y3, i11);
-                            }
-                        case 9:
-                            i13 = ((a) value).a();
-                            int i152222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i152222222222, i152222222222, y3, i11);
-                        case 10:
-                            size2 = ((a) value).a();
-                            z11 = j.z(size2);
-                            i13 = z11 + size2;
-                            int i1522222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i1522222222222, i1522222222222, y3, i11);
-                        case 11:
-                            if (value instanceof g) {
-                                size2 = ((g) value).size();
-                                z11 = j.z(size2);
-                            } else {
-                                size2 = ((byte[]) value).length;
-                                z11 = j.z(size2);
-                            }
-                            i13 = z11 + size2;
-                            int i15222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i15222222222222, i15222222222222, y3, i11);
-                        case 12:
-                            i13 = j.z(((Integer) value).intValue());
-                            int i152222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i152222222222222, i152222222222222, y3, i11);
-                        case 13:
-                            i13 = j.w(((Integer) value).intValue());
-                            int i1522222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i1522222222222222, i1522222222222222, y3, i11);
-                        case 14:
-                            ((Integer) value).getClass();
-                            i13 = 4;
-                            int i15222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i15222222222222222, i15222222222222222, y3, i11);
-                        case 15:
-                            ((Long) value).getClass();
-                            i13 = 8;
-                            int i152222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i152222222222222222, i152222222222222222, y3, i11);
-                        case 16:
-                            int intValue = ((Integer) value).intValue();
-                            i13 = j.z((intValue >> 31) ^ (intValue << 1));
-                            int i1522222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i1522222222222222222, i1522222222222222222, y3, i11);
-                        case 17:
-                            long longValue = ((Long) value).longValue();
-                            i13 = j.A((longValue >> 63) ^ (longValue << 1));
-                            int i15222222222222222222 = i13 + y11 + i14;
-                            i11 = a1.g.e(i15222222222222222222, i15222222222222222222, y3, i11);
-                        default:
-                            throw new RuntimeException("There is no way to get here, but the compiler thinks otherwise.");
-                    }
-                case 1:
-                    ((Float) key).getClass();
-                    A = 4;
-                    int i142 = A + y10;
-                    z1Var = l0Var.b;
-                    int y112 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 2:
-                    A = j.A(((Long) key).longValue());
-                    int i1422 = A + y10;
-                    z1Var = l0Var.b;
-                    int y1122 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 3:
-                    A = j.A(((Long) key).longValue());
-                    int i14222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y11222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 4:
-                    A = j.w(((Integer) key).intValue());
-                    int i142222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y112222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 5:
-                    ((Long) key).getClass();
-                    A = 8;
-                    int i1422222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y1122222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 6:
-                    ((Integer) key).getClass();
-                    A = 4;
-                    int i14222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y11222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 7:
-                    ((Boolean) key).getClass();
-                    A = 1;
-                    int i142222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y112222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 8:
-                    if (key instanceof g) {
-                        size = ((g) key).size();
-                        z10 = j.z(size);
-                        A = size + z10;
-                        int i1422222222 = A + y10;
-                        z1Var = l0Var.b;
-                        int y1122222222 = j.y(2);
-                        if (z1Var == w1Var) {
-                        }
-                        switch (z1Var.ordinal()) {
-                        }
-                    } else {
-                        A = j.x((String) key);
-                        int i14222222222 = A + y10;
-                        z1Var = l0Var.b;
-                        int y11222222222 = j.y(2);
-                        if (z1Var == w1Var) {
-                        }
-                        switch (z1Var.ordinal()) {
-                        }
-                    }
-                case 9:
-                    A = ((a) key).a();
-                    int i142222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y112222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 10:
-                    size = ((a) key).a();
-                    z10 = j.z(size);
-                    A = size + z10;
-                    int i1422222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y1122222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 11:
-                    if (key instanceof g) {
-                        size = ((g) key).size();
-                        z10 = j.z(size);
-                    } else {
-                        size = ((byte[]) key).length;
-                        z10 = j.z(size);
-                    }
-                    A = size + z10;
-                    int i14222222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y11222222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 12:
-                    A = j.z(((Integer) key).intValue());
-                    int i142222222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y112222222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 13:
-                    A = j.w(((Integer) key).intValue());
-                    int i1422222222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y1122222222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 14:
-                    ((Integer) key).getClass();
-                    A = 4;
-                    int i14222222222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y11222222222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 15:
-                    ((Long) key).getClass();
-                    A = 8;
-                    int i142222222222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y112222222222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 16:
-                    int intValue2 = ((Integer) key).intValue();
-                    A = j.z((intValue2 >> 31) ^ (intValue2 << 1));
-                    int i1422222222222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y1122222222222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                case 17:
-                    long longValue2 = ((Long) key).longValue();
-                    A = j.A((longValue2 << 1) ^ (longValue2 >> 63));
-                    int i14222222222222222222 = A + y10;
-                    z1Var = l0Var.b;
-                    int y11222222222222222222 = j.y(2);
-                    if (z1Var == w1Var) {
-                    }
-                    switch (z1Var.ordinal()) {
-                    }
-                default:
-                    throw new RuntimeException("There is no way to get here, but the compiler thinks otherwise.");
+            z10 = true;
+            if (!z10) {
             }
         }
-        return i11;
+        return false;
     }
 
-    public static n0 b(Object obj, Object obj2) {
-        n0 n0Var = (n0) obj;
-        n0 n0Var2 = (n0) obj2;
-        if (!n0Var2.isEmpty()) {
-            if (!n0Var.a) {
-                n0Var = n0Var.b();
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int hashCode() {
+        int hashCode;
+        int i3 = 0;
+        for (Map.Entry entry : entrySet()) {
+            Object key = entry.getKey();
+            int i10 = 1;
+            if (key instanceof byte[]) {
+                byte[] bArr = (byte[]) key;
+                int length = bArr.length;
+                Charset charset = c0.a;
+                hashCode = length;
+                for (byte b10 : bArr) {
+                    hashCode = (hashCode * 31) + b10;
+                }
+                if (hashCode == 0) {
+                    hashCode = 1;
+                }
+            } else {
+                hashCode = key.hashCode();
             }
-            n0Var.a();
-            if (!n0Var2.isEmpty()) {
-                n0Var.putAll(n0Var2);
+            Object value = entry.getValue();
+            if (value instanceof byte[]) {
+                byte[] bArr2 = (byte[]) value;
+                int length2 = bArr2.length;
+                Charset charset2 = c0.a;
+                int i11 = length2;
+                for (byte b11 : bArr2) {
+                    i11 = (i11 * 31) + b11;
+                }
+                if (i11 != 0) {
+                    i10 = i11;
+                }
+            } else {
+                i10 = value.hashCode();
             }
+            i3 += hashCode ^ i10;
         }
-        return n0Var;
+        return i3;
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        b();
+        Charset charset = c0.a;
+        obj.getClass();
+        obj2.getClass();
+        return super.put(obj, obj2);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void putAll(Map map) {
+        b();
+        for (Object obj : map.keySet()) {
+            Charset charset = c0.a;
+            obj.getClass();
+            map.get(obj).getClass();
+        }
+        super.putAll(map);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        b();
+        return super.remove(obj);
     }
 }

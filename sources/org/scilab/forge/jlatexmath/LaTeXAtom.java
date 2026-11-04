@@ -4,7 +4,7 @@ import java.lang.Character;
 import java.util.Map;
 import org.scilab.forge.jlatexmath.TeXFormula;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class LaTeXAtom extends Atom {
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -29,14 +29,14 @@ public class LaTeXAtom extends Atom {
         CharBox charBox = new CharBox(copy.getTeXFont().getChar('A', "mathnormal", copy.supStyle().getStyle()));
         charBox.setShift(-width);
         horizontalBox.add(charBox);
-        float f7 = scaleFactor * (-0.15f);
-        horizontalBox.add(new SpaceAtom(0, f7, 0.0f, 0.0f).createBox(copy));
+        float f10 = scaleFactor * (-0.15f);
+        horizontalBox.add(new SpaceAtom(0, f10, 0.0f, 0.0f).createBox(copy));
         horizontalBox.add(rowAtom.getLastAtom().createBox(copy));
-        horizontalBox.add(new SpaceAtom(0, f7, 0.0f, 0.0f).createBox(copy));
+        horizontalBox.add(new SpaceAtom(0, f10, 0.0f, 0.0f).createBox(copy));
         Box createBox = rowAtom.getLastAtom().createBox(copy);
         createBox.setShift(width2);
         horizontalBox.add(createBox);
-        horizontalBox.add(new SpaceAtom(0, f7, 0.0f, 0.0f).createBox(copy));
+        horizontalBox.add(new SpaceAtom(0, f10, 0.0f, 0.0f).createBox(copy));
         horizontalBox.add(rowAtom.getLastAtom().createBox(copy));
         return horizontalBox;
     }

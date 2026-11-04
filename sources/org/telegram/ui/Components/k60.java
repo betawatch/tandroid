@@ -1,32 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class k60 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l60 b;
+public final class k60 extends tj0 {
+    public final /* synthetic */ o60 f3;
 
-    public /* synthetic */ k60(l60 l60Var, int i10) {
-        this.a = i10;
-        this.b = l60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k60(o60 o60Var, Context context) {
+        super(context, null);
+        this.f3 = o60Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                l60 l60Var = this.b;
-                l60Var.e.U1 = null;
-                l60Var.requestLayout();
-                break;
-            default:
-                l60 l60Var2 = this.b;
-                l60Var2.e.U1 = null;
-                l60Var2.a = false;
-                break;
+    @Override // org.telegram.ui.Components.tj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3.r1) {
+            return;
         }
+        super.requestLayout();
     }
 }

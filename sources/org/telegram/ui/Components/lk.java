@@ -1,72 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
-import android.view.View;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bl b;
+    public final /* synthetic */ uk b;
+    public final /* synthetic */ org.telegram.messenger.sa c;
 
-    public /* synthetic */ lk(bl blVar, int i10) {
-        this.a = i10;
-        this.b = blVar;
+    public /* synthetic */ lk(uk ukVar, org.telegram.messenger.sa saVar, int i3) {
+        this.a = i3;
+        this.b = ukVar;
+        this.c = saVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Location location;
         switch (this.a) {
             case 0:
-                bl blVar = this.b;
-                double[] dArr = blVar.b.u4;
-                blVar.e0(dArr[0], dArr[1]);
-                break;
-            case 1:
-                bl.P(this.b);
-                break;
-            case 2:
-                org.telegram.messenger.i0.g3(new lk(this.b, 3));
-                break;
-            case 3:
-                View view = this.b.K;
-                view.setTag(1);
-                view.animate().alpha(0.0f).setDuration(180L).start();
-                break;
-            case 4:
-                bl blVar2 = this.b;
-                zf.h0 h0Var = blVar2.M;
-                if (!blVar2.q0) {
-                    org.telegram.messenger.ha haVar = blVar2.F;
-                    if (haVar != null && (location = blVar2.o0) != null) {
-                        location.setLatitude(((org.telegram.messenger.db) haVar.d().b).a);
-                        blVar2.o0.setLongitude(((org.telegram.messenger.db) blVar2.F.d().b).b);
-                    }
-                    h0Var.M(blVar2.o0);
-                    h0Var.I();
-                    break;
-                } else {
-                    blVar2.q0 = false;
-                    break;
+                org.telegram.messenger.sa saVar = this.c;
+                try {
+                    ((b8.ke) saVar).w();
+                } catch (Exception unused) {
                 }
-                break;
-            case 5:
-                yk ykVar = this.b.D;
-                if (ykVar != null) {
-                    ykVar.a();
-                    break;
-                }
-                break;
-            case 6:
-                View view2 = this.b.K;
-                if (view2.getTag() == null) {
-                    view2.animate().alpha(0.0f).setDuration(180L).start();
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new lk(this.b, saVar, 1));
                 break;
             default:
-                this.b.e0(0.0d, 0.0d);
+                uk.R(this.b, this.c);
                 break;
         }
     }

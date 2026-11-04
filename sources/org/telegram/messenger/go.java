@@ -1,104 +1,207 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.RequestDelegate;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import android.text.TextUtils;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_ephemeral;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.et0;
+import org.telegram.ui.Components.it0;
+import org.telegram.ui.Components.jt0;
+import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.tt0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class go implements RequestDelegate {
+public final /* synthetic */ class go implements Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.p1, tt0, o10, et0, t10, kh.i, ej0, it0, jt0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ go(Object obj, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+    public /* synthetic */ go(int i3) {
+        this.a = i3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.t10
+    public Boolean a(r31 r31Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.FALSE;
+    }
+
+    @Override // org.telegram.ui.Components.jt0
+    public void c(Object obj, float f10) {
+        org.telegram.ui.zq zqVar = (org.telegram.ui.zq) obj;
         switch (this.a) {
-            case 0:
-                wp wpVar = (wp) this.c;
-                String str = (String) this.d;
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    boolean z10 = v2.a;
-                    int i10 = this.b;
-                    if (z10) {
-                        f8.b("account " + wpVar.currentAccount + " registered for push, push type: " + i10);
-                    }
-                    wpVar.getUserConfig().d = true;
-                    uz.g = str;
-                    uz.f = i10;
-                    wpVar.getUserConfig().v(false);
-                }
-                i0.g3(new fo(wpVar, 9));
-                break;
-            case 1:
-                m7 m7Var = (m7) this.c;
-                l7 l7Var = (l7) this.d;
-                m7Var.z0 = false;
-                boolean z11 = tLObject instanceof Vector;
-                int i11 = this.b;
-                if (z11) {
-                    Vector vector = (Vector) tLObject;
-                    if (!vector.objects.isEmpty()) {
-                        if (m7Var.q0 == null) {
-                            m7Var.q0 = new HashMap();
-                        }
-                        for (int i12 = 0; i12 < vector.objects.size(); i12++) {
-                            TLRPC.TL_fileHash tL_fileHash = (TLRPC.TL_fileHash) vector.objects.get(i12);
-                            m7Var.q0.put(Long.valueOf(tL_fileHash.offset), tL_fileHash);
-                        }
-                    }
-                    m7Var.s(i11);
-                    break;
-                } else if (tL_error != null) {
-                    if (!tL_error.text.equals("FILE_TOKEN_INVALID") && !tL_error.text.equals("REQUEST_TOKEN_INVALID")) {
-                        m7Var.j(0, false);
-                        break;
-                    } else {
-                        m7Var.u0 = false;
-                        m7Var.e(l7Var, false, false);
-                        m7Var.s(i11);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                i0.g3(new o7((vi) this.c, (TLRPC.StickerSet) this.d, this.b, 9));
-                break;
-            case 3:
-                vi viVar = (vi) this.c;
-                r20 r20Var = (r20) this.d;
-                boolean z12 = tLObject instanceof TLRPC.TL_messages_stickerSet;
-                int i13 = this.b;
-                if (z12) {
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add((TLRPC.TL_messages_stickerSet) tLObject);
-                    viVar.z1(i13, arrayList, false, (int) (System.currentTimeMillis() / 1000), vi.q(arrayList), new qf(r20Var, 4));
-                    break;
-                } else {
-                    viVar.z1(i13, null, false, (int) (System.currentTimeMillis() / 1000), 0L, new qf(r20Var, 5));
+            case 23:
+                zqVar.H1 = f10;
+                if (zqVar.getParent() != null) {
+                    ((View) zqVar.getParent()).invalidate();
                     break;
                 }
+                break;
+            case 24:
+            case 26:
             default:
-                i0.g3(new dg((wp) this.c, tLObject, this.b, (yo) this.d));
+                zqVar.K1 = f10;
+                if (zqVar.getParent() != null) {
+                    ((View) zqVar.getParent()).invalidate();
+                    break;
+                }
+                break;
+            case 25:
+                zqVar.I1 = f10;
+                if (zqVar.getParent() != null) {
+                    ((View) zqVar.getParent()).invalidate();
+                    break;
+                }
+                break;
+            case 27:
+                zqVar.J1 = f10;
+                if (zqVar.getParent() != null) {
+                    ((View) zqVar.getParent()).invalidate();
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ go(vi viVar, TLRPC.StickerSet stickerSet, int i10) {
-        this.a = 2;
-        this.c = viVar;
-        this.d = stickerSet;
-        this.b = i10;
+    @Override // org.telegram.messenger.o10
+    public Object d(Number number, Object obj) {
+        Integer num = (Integer) number;
+        Integer num2 = (Integer) obj;
+        switch (this.a) {
+            case 14:
+                if (num.intValue() == 0) {
+                    return bd.G(num2.intValue(), "MaximumReactionsValue", new Object[0]);
+                }
+                return "" + num2;
+            default:
+                if (num.intValue() == 0) {
+                    return bd.H(',', "Stars", num2.intValue());
+                }
+                return "" + num2;
+        }
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+        switch (this.a) {
+            case 0:
+                return TL_account.WebBrowserSettings.TLdeserialize(inputSerializedData, i3, z10);
+            case 1:
+                return TLRPC.MessageEntity.TLdeserialize(inputSerializedData, i3, z10);
+            case 2:
+                return TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, i3, z10);
+            case 3:
+            case 4:
+            case 5:
+            default:
+                return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i3, z10);
+            case 6:
+                return TL_iv.RichText.TLdeserialize(inputSerializedData, i3, z10);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
+            case 8:
+                int i10 = az.a;
+                break;
+            case 11:
+                s1Var.dismiss();
+                break;
+            case 15:
+                s1Var.dismiss();
+                break;
+            default:
+                s1Var.dismiss();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.it0
+    public float get(Object obj) {
+        org.telegram.ui.zq zqVar = (org.telegram.ui.zq) obj;
+        switch (this.a) {
+            case 22:
+                return zqVar.H1;
+            case 23:
+            case 25:
+            default:
+                return zqVar.K1;
+            case 24:
+                return zqVar.I1;
+            case 26:
+                return zqVar.J1;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.et0
+    public /* synthetic */ float i(RecyclerView recyclerView) {
+        return org.telegram.ui.Cells.f1.c(recyclerView);
+    }
+
+    @Override // kh.i
+    public void k(RectF rectF, View view) {
+        view.invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.tt0
+    public void l(int i3) {
+        if (i3 == 0) {
+            az.A(3);
+            return;
+        }
+        if (i3 == 1) {
+            az.A(0);
+        } else if (i3 == 2) {
+            az.A(1);
+        } else if (i3 == 3) {
+            az.A(2);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.et0
+    public RecyclerView m(View view) {
+        return ((org.telegram.ui.rd) view).a;
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        az.j = SystemClock.elapsedRealtime();
+        if (task.isSuccessful()) {
+            String str = (String) task.getResult();
+            if (TextUtils.isEmpty(str)) {
+                return;
+            }
+            PushListenerController.sendRegistrationToServer(2, str);
+            return;
+        }
+        if (r2.a) {
+            a8.b("Failed to get regid");
+        }
+        az.h = "__FIREBASE_FAILED__";
+        PushListenerController.sendRegistrationToServer(2, null);
+    }
+
+    @Override // org.telegram.ui.Components.et0
+    public /* synthetic */ void r(RecyclerView recyclerView) {
+        org.telegram.ui.Cells.f1.b(recyclerView);
+    }
+
+    public /* synthetic */ go(Object obj, int i3) {
+        this.a = i3;
+    }
+
+    @Override // org.telegram.ui.Components.tt0
+    public /* synthetic */ void p() {
     }
 }

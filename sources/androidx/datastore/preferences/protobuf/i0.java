@@ -1,8 +1,19 @@
 package androidx.datastore.preferences.protobuf;
 
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class i0 extends b implements RandomAccess, x0 {
+public abstract class i0 {
+    public static final h0 a;
+    public static final h0 b;
+
+    static {
+        y0 y0Var = y0.c;
+        h0 h0Var = null;
+        try {
+            h0Var = (h0) Class.forName("androidx.datastore.preferences.protobuf.ListFieldSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+        }
+        a = h0Var;
+        b = new h0();
+    }
 }

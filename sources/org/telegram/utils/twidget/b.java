@@ -3,7 +3,7 @@ package org.telegram.utils.twidget;
 import android.graphics.BlendMode;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public abstract class b {
     public static final BlendMode[] a;
@@ -30,12 +30,12 @@ public abstract class b {
         a = new BlendMode[]{blendMode, blendMode2, BlendMode.SRC_OUT, BlendMode.SRC_ATOP, BlendMode.DST_OVER, blendMode3, BlendMode.DST_OUT, BlendMode.DST_ATOP, blendMode4, BlendMode.SRC, BlendMode.XOR, BlendMode.MULTIPLY, blendMode5, blendMode6, BlendMode.DARKEN, BlendMode.LIGHTEN, blendMode7, blendMode8, BlendMode.HARD_LIGHT, blendMode9, BlendMode.DIFFERENCE, BlendMode.EXCLUSION, BlendMode.HUE, BlendMode.SATURATION, BlendMode.COLOR, BlendMode.LUMINOSITY};
     }
 
-    public static void a(int i10, Paint paint) {
+    public static void a(int i3, Paint paint) {
         BlendMode blendMode;
-        if (i10 > 0) {
+        if (i3 > 0) {
             BlendMode[] blendModeArr = a;
-            if (i10 < blendModeArr.length) {
-                blendMode = blendModeArr[i10];
+            if (i3 < blendModeArr.length) {
+                blendMode = blendModeArr[i3];
                 paint.setBlendMode(blendMode);
             }
         }

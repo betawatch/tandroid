@@ -1,40 +1,68 @@
 package y1;
 
-import android.os.Build;
-import android.text.TextUtils;
+import androidx.lifecycle.a0;
+import androidx.lifecycle.t;
+import androidx.lifecycle.z;
+import ba.i;
+import c6.d;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public d a;
+public final class a extends z {
+    public final d l;
+    public t m;
+    public i n;
 
-    public a(String str, int i10, int i11) {
-        if (str == null) {
-            throw new NullPointerException("package shouldn't be null");
+    public a(d dVar) {
+        this.l = dVar;
+        if (dVar.a != null) {
+            throw new IllegalStateException("There is already a listener registered");
         }
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("packageName should be nonempty");
-        }
-        if (Build.VERSION.SDK_INT < 28) {
-            this.a = new d(str, i10, i11);
+        dVar.a = this;
+    }
+
+    @Override // androidx.lifecycle.z
+    public final void f() {
+        d dVar = this.l;
+        dVar.b = true;
+        dVar.d = false;
+        dVar.c = false;
+        dVar.i.drainPermits();
+        dVar.c();
+    }
+
+    @Override // androidx.lifecycle.z
+    public final void g() {
+        this.l.b = false;
+    }
+
+    @Override // androidx.lifecycle.z
+    public final void i(a0 a0Var) {
+        super.i(a0Var);
+        this.m = null;
+        this.n = null;
+    }
+
+    public final void k() {
+        t tVar = this.m;
+        i iVar = this.n;
+        if (tVar == null || iVar == null) {
             return;
         }
-        c cVar = new c(str, i10, i11);
-        b.a(i10, i11, str);
-        this.a = cVar;
+        super.i(iVar);
+        d(tVar, iVar);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof a) {
-            return this.a.equals(((a) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder(64);
+        sb2.append("LoaderInfo{");
+        sb2.append(Integer.toHexString(System.identityHashCode(this)));
+        sb2.append(" #0 : ");
+        Class<?> cls = this.l.getClass();
+        sb2.append(cls.getSimpleName());
+        sb2.append("{");
+        sb2.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb2.append("}}");
+        return sb2.toString();
     }
 }

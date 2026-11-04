@@ -1,56 +1,32 @@
 package g6;
 
-import android.os.Build;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.Locale;
+import android.os.Parcel;
+import android.os.Parcelable;
+import f6.c0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final boolean b;
-    public final String c;
+public final class b extends q6.a {
+    public static final Parcelable.Creator<b> CREATOR = new c0(4);
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public b(String str, String str2) {
-        n6.l.f(str, "The log tag cannot be null or empty.");
-        this.a = str;
-        this.b = str.length() <= 23;
-        this.c = TextUtils.isEmpty(str2) ? null : a1.g.n("[", str2, "] ");
+    public b(int i3, int i10, int i11) {
+        this.a = i3;
+        this.b = i10;
+        this.c = i11;
     }
 
-    public final void a(Exception exc, String str, Object... objArr) {
-        if (Build.TYPE.equals("user") || !this.b) {
-            return;
-        }
-        String str2 = this.a;
-        if (Log.isLoggable(str2, 3)) {
-            Log.d(str2, d(str, objArr), exc);
-        }
-    }
-
-    public final void b(String str, Object... objArr) {
-        if (Build.TYPE.equals("user") || !this.b) {
-            return;
-        }
-        String str2 = this.a;
-        if (Log.isLoggable(str2, 3)) {
-            Log.d(str2, d(str, objArr));
-        }
-    }
-
-    public final void c(Object... objArr) {
-        Log.e(this.a, d("Bundle is null", objArr));
-    }
-
-    public final String d(String str, Object... objArr) {
-        if (objArr.length != 0) {
-            str = String.format(Locale.ROOT, str, objArr);
-        }
-        String str2 = this.c;
-        if (TextUtils.isEmpty(str2)) {
-            return str;
-        }
-        return String.valueOf(str2).concat(String.valueOf(str));
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.r(parcel, 3, 4);
+        parcel.writeInt(this.b);
+        j8.a.r(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        j8.a.t(parcel, s6);
     }
 }

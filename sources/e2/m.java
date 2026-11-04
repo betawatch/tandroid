@@ -1,12 +1,28 @@
 package e2;
 
-import e9.x1;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m extends Exception {
-    public m(String str, x1 x1Var) {
-        super(str);
-        e9.n0.u(x1Var);
-    }
+public interface m {
+    public static final ByteBuffer a = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
+
+    boolean a();
+
+    ByteBuffer b();
+
+    void c(ByteBuffer byteBuffer);
+
+    j d(j jVar);
+
+    void e(k kVar);
+
+    void f();
+
+    long g(long j10);
+
+    boolean isActive();
+
+    void reset();
 }

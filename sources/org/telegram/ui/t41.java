@@ -1,20 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class t41 extends gy0 {
-    public final /* synthetic */ c51 G;
+public final /* synthetic */ class t41 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ StickersActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t41(c51 c51Var, c51 c51Var2, Context context) {
-        super(context, c51Var2);
-        this.G = c51Var;
+    public /* synthetic */ t41(StickersActivity stickersActivity, int i3) {
+        this.a = i3;
+        this.b = stickersActivity;
     }
 
-    @Override // s4.g0
-    public final void f() {
-        this.G.c.f3.O(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.r0();
+                break;
+            default:
+                StickersActivity stickersActivity = this.b;
+                stickersActivity.n--;
+                break;
+        }
     }
 }

@@ -2,14 +2,14 @@ package com.google.android.gms.internal.cast;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ m b;
 
-    public /* synthetic */ j(m mVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ j(m mVar, int i3) {
+        this.a = i3;
         this.b = mVar;
     }
 
@@ -18,11 +18,11 @@ public final /* synthetic */ class j implements Runnable {
         switch (this.a) {
             case 0:
                 m mVar = this.b;
-                n4.q qVar = mVar.e;
-                if (((p4.y) qVar.b) == null) {
-                    qVar.b = p4.y.d((Context) qVar.a);
+                p4.q qVar = mVar.e;
+                if (((r4.y) qVar.b) == null) {
+                    qVar.b = r4.y.d((Context) qVar.a);
                 }
-                p4.y yVar = (p4.y) qVar.b;
+                r4.y yVar = (r4.y) qVar.b;
                 if (yVar != null) {
                     yVar.h(mVar);
                     break;

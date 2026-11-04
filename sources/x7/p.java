@@ -1,38 +1,13 @@
 package x7;
 
-import java.util.Iterator;
-import java.util.Set;
+import android.text.InputFilter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class p extends k implements Set {
-    public transient o b;
+public abstract class p {
+    public abstract InputFilter[] a(InputFilter[] inputFilterArr);
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
-        }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
-    }
+    public abstract void b(boolean z10);
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i10 = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i10 += next != null ? next.hashCode() : 0;
-        }
-        return i10;
-    }
+    public abstract void c(boolean z10);
 }

@@ -1,120 +1,245 @@
 package e2;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import java.util.ArrayDeque;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArraySet;
-import v7.t6;
+import b8.zb;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class r {
-    public final Thread a;
-    public final i0 b;
-    public final p c;
-    public final CopyOnWriteArraySet d;
-    public final ArrayDeque e;
-    public final ArrayDeque f;
-    public final Object g;
-    public boolean h;
-    public final boolean i;
+    public final int a;
+    public final int b;
+    public final float c;
+    public final float d;
+    public final float e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final p i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public double q;
 
-    public r(Thread thread) {
-        this(new CopyOnWriteArraySet(), null, thread, null, null, true);
+    public r(int i3, int i10, float f10, float f11, int i11, boolean z10) {
+        this.a = i3;
+        this.b = i10;
+        this.c = f10;
+        this.d = f11;
+        this.e = i3 / i11;
+        this.f = i3 / 400;
+        int i12 = i3 / 65;
+        this.g = i12;
+        this.h = i12 * 2;
+        this.i = z10 ? new o(this) : new q(this);
     }
 
-    public final void a(Object obj) {
-        obj.getClass();
-        synchronized (this.g) {
-            try {
-                if (this.h) {
+    public final void a(int i3, int i10) {
+        p pVar = this.i;
+        pVar.i(i10);
+        Object g7 = pVar.g();
+        int i11 = this.b;
+        System.arraycopy(g7, i3 * i11, pVar.h(), this.k * i11, i11 * i10);
+        this.k += i10;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b() {
+        float f10;
+        int i3;
+        double d;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        long j10;
+        long j11;
+        int i17 = this.k;
+        float f11 = this.c;
+        float f12 = this.d;
+        double d10 = f11 / f12;
+        float f13 = this.e * f12;
+        int i18 = this.a;
+        int i19 = 1;
+        p pVar = this.i;
+        int i20 = this.b;
+        if (d10 > 1.0000100135803223d || d10 < 0.9999899864196777d) {
+            int i21 = this.j;
+            int i22 = this.h;
+            if (i21 >= i22) {
+                int i23 = 0;
+                while (true) {
+                    int i24 = this.o;
+                    if (i24 > 0) {
+                        int min = Math.min(i22, i24);
+                        a(i23, min);
+                        this.o -= min;
+                        i23 += min;
+                        f10 = f13;
+                        d = d10;
+                        i12 = i19;
+                        i10 = i22;
+                    } else {
+                        int i25 = i18 > 4000 ? i18 / 4000 : i19;
+                        int i26 = this.g;
+                        int i27 = this.f;
+                        if (i20 == i19 && i25 == i19) {
+                            i3 = pVar.e(i23, i27, i26);
+                            f10 = f13;
+                        } else {
+                            pVar.d(i23, i25);
+                            f10 = f13;
+                            int q10 = pVar.q(i27 / i25, i26 / i25);
+                            if (i25 != i19) {
+                                int i28 = q10 * i25;
+                                int i29 = i25 * 4;
+                                int i30 = i28 - i29;
+                                int i31 = i28 + i29;
+                                if (i30 >= i27) {
+                                    i27 = i30;
+                                }
+                                if (i31 <= i26) {
+                                    i26 = i31;
+                                }
+                                if (i20 == i19) {
+                                    i3 = pVar.e(i23, i27, i26);
+                                } else {
+                                    pVar.d(i23, i19);
+                                    i3 = pVar.q(i27, i26);
+                                }
+                            } else {
+                                i3 = q10;
+                            }
+                        }
+                        int i32 = pVar.j() ? this.p : i3;
+                        pVar.f();
+                        this.p = i3;
+                        if (d10 > 1.0d) {
+                            if (d10 >= 2.0d) {
+                                i13 = i19;
+                                double d11 = (i32 / (d10 - 1.0d)) + this.q;
+                                i14 = (int) Math.round(d11);
+                                d = d10;
+                                this.q = d11 - i14;
+                                pVar = pVar;
+                            } else {
+                                d = d10;
+                                i13 = i19;
+                                double d12 = (((2.0d - d) * i32) / (d - 1.0d)) + this.q;
+                                int round = (int) Math.round(d12);
+                                this.o = round;
+                                this.q = d12 - round;
+                                i14 = i32;
+                            }
+                            pVar.i(i14);
+                            int i33 = i22;
+                            int i34 = i14;
+                            pVar.m(i34, this.b, this.k, i23, i23 + i32);
+                            this.k += i34;
+                            i23 = i32 + i34 + i23;
+                            i10 = i33;
+                            i12 = i13;
+                        } else {
+                            d = d10;
+                            int i35 = i19;
+                            int i36 = i22;
+                            if (d < 0.5d) {
+                                i10 = i36;
+                                double d13 = ((i32 * d) / (1.0d - d)) + this.q;
+                                int round2 = (int) Math.round(d13);
+                                this.q = d13 - round2;
+                                i11 = round2;
+                            } else {
+                                i10 = i36;
+                                double d14 = ((((d * 2.0d) - 1.0d) * i32) / (1.0d - d)) + this.q;
+                                int round3 = (int) Math.round(d14);
+                                this.o = round3;
+                                this.q = d14 - round3;
+                                i11 = i32;
+                            }
+                            int i37 = i32 + i11;
+                            pVar.i(i37);
+                            i12 = i35;
+                            System.arraycopy(pVar.g(), i23 * i20, pVar.h(), this.k * i20, i32 * i20);
+                            int i38 = i23;
+                            pVar.m(i11, this.b, this.k + i32, i32 + i23, i38);
+                            this.k += i37;
+                            i23 = i38 + i11;
+                        }
+                    }
+                    if (i23 + i10 > i21) {
+                        break;
+                    }
+                    i22 = i10;
+                    f13 = f10;
+                    i19 = i12;
+                    d10 = d;
+                }
+                int i39 = this.j - i23;
+                System.arraycopy(pVar.g(), i23 * i20, pVar.g(), 0, i39 * i20);
+                this.j = i39;
+                if (f10 != 1.0f || this.k == i17) {
+                }
+                long j12 = (long) (i18 / f10);
+                long j13 = i18;
+                while (j12 != 0 && j13 != 0 && j12 % 2 == 0 && j13 % 2 == 0) {
+                    j12 /= 2;
+                    j13 /= 2;
+                }
+                int i40 = this.k - i17;
+                pVar.n(i40);
+                System.arraycopy(pVar.h(), i17 * i20, pVar.l(), this.l * i20, i40 * i20);
+                this.k = i17;
+                this.l += i40;
+                int i41 = 0;
+                while (true) {
+                    i15 = this.l - 1;
+                    if (i41 >= i15) {
+                        break;
+                    }
+                    while (true) {
+                        i16 = this.m + 1;
+                        j10 = i16;
+                        long j14 = j10 * j12;
+                        j11 = this.n;
+                        if (j14 <= j11 * j13) {
+                            break;
+                        }
+                        int i42 = i12;
+                        pVar.i(i42);
+                        pVar.k(j13, i41, j12);
+                        this.n += i42;
+                        this.k += i42;
+                    }
+                    int i43 = i12;
+                    this.m = i16;
+                    if (j10 == j13) {
+                        this.m = 0;
+                        zb.p(j11 == j12 ? i43 : 0);
+                        this.n = 0;
+                    }
+                    i41++;
+                    i12 = i43;
+                }
+                if (i15 == 0) {
                     return;
                 }
-                this.d.add(new q(obj));
-            } catch (Throwable th2) {
-                throw th2;
+                System.arraycopy(pVar.l(), i15 * i20, pVar.l(), 0, (this.l - i15) * i20);
+                this.l -= i15;
+                return;
             }
-        }
-    }
-
-    public final void b() {
-        if (this.i) {
-            t6.p(Thread.currentThread() == this.a);
-        }
-        ArrayDeque arrayDeque = this.f;
-        if (arrayDeque.isEmpty()) {
-            return;
-        }
-        if (this.c != null) {
-            i0 i0Var = this.b;
-            i0Var.getClass();
-            Handler handler = i0Var.a;
-            if (!handler.hasMessages(1)) {
-                h0 a2 = i0Var.a(1);
-                Message message = a2.a;
-                message.getClass();
-                handler.sendMessageAtFrontOfQueue(message);
-                a2.a();
-            }
-        }
-        ArrayDeque arrayDeque2 = this.e;
-        boolean isEmpty = arrayDeque2.isEmpty();
-        arrayDeque2.addAll(arrayDeque);
-        arrayDeque.clear();
-        if (isEmpty) {
-            while (!arrayDeque2.isEmpty()) {
-                ((Runnable) arrayDeque2.peekFirst()).run();
-                arrayDeque2.removeFirst();
-            }
-        }
-    }
-
-    public final void c(int i10, o oVar) {
-        if (this.i) {
-            t6.p(Thread.currentThread() == this.a);
-        }
-        this.f.add(new ag.o0(new CopyOnWriteArraySet(this.d), i10, oVar, 3));
-    }
-
-    public final void d() {
-        if (this.i) {
-            t6.p(Thread.currentThread() == this.a);
-        }
-        synchronized (this.g) {
-            this.h = true;
-        }
-        Iterator it = this.d.iterator();
-        while (it.hasNext()) {
-            q qVar = (q) it.next();
-            p pVar = this.c;
-            qVar.d = true;
-            if (pVar != null && qVar.c) {
-                qVar.c = false;
-                pVar.c(qVar.a, qVar.b.d());
-            }
-        }
-        this.d.clear();
-    }
-
-    public final void e(int i10, o oVar) {
-        c(i10, oVar);
-        b();
-    }
-
-    public r(CopyOnWriteArraySet copyOnWriteArraySet, Looper looper, Thread thread, g0 g0Var, p pVar, boolean z10) {
-        this.a = thread;
-        this.d = copyOnWriteArraySet;
-        this.c = pVar;
-        this.g = new Object();
-        this.e = new ArrayDeque();
-        this.f = new ArrayDeque();
-        if (looper == null || g0Var == null || pVar == null) {
-            this.b = null;
         } else {
-            this.b = g0Var.a(looper, new n(this, 0));
+            a(0, this.j);
+            this.j = 0;
         }
-        this.i = z10;
+        f10 = f13;
+        i12 = 1;
+        if (f10 != 1.0f) {
+        }
     }
 }

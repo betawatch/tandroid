@@ -1,117 +1,82 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ff;
-import org.telegram.ui.Components.bm;
-import org.telegram.ui.Components.gr;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import b8.mf;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class r5 extends org.telegram.ui.Components.g9 {
-    public final Paint G;
-    public long H;
-    public Drawable I;
-    public Drawable J;
-    public final /* synthetic */ v5 K;
+public final class r5 extends FrameLayout {
+    public final TextView a;
+    public final LinearLayout b;
+    public View.OnClickListener c;
+    public int d;
+    public final int[] e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r5(v5 v5Var, Context context) {
+    public r5(Context context) {
         super(context);
-        this.K = v5Var;
-        this.G = new Paint(1);
+        int i3 = 8;
+        this.e = new int[]{0, -45747, -753630, -13056, -8269183, -9321002, -16747844, -10080879};
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setGravity(5);
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 12.0f);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, mf.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        for (int i10 = 0; i10 < this.e.length; i10++) {
+            RadioButton radioButton = new RadioButton(context);
+            radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
+            radioButton.setTag(Integer.valueOf(i10));
+            this.b.addView(radioButton, mf.l(1.0f / this.e.length, 0, -1));
+            radioButton.setOnClickListener(new a(this, i3));
+        }
+        addView(this.b, mf.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.g9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Bitmap bitmap;
-        ff ffVar;
-        Drawable drawable;
-        org.telegram.ui.Components.f5 f5Var = this.e;
-        ImageReceiver imageReceiver = f5Var != null ? f5Var.k : this.a;
-        if (imageReceiver == null) {
-            return;
-        }
-        if (this.c == -1 || this.d == -1) {
-            imageReceiver.y0(0.0f, 0.0f, getWidth(), getHeight());
-            this.b.y0(0.0f, 0.0f, getWidth(), getHeight());
-        } else {
-            float width = (getWidth() - this.c) / 2;
-            int height = getHeight();
-            imageReceiver.y0(width, (height - r5) / 2, this.c, this.d);
-            ImageReceiver imageReceiver2 = this.b;
-            float width2 = (getWidth() - this.c) / 2;
-            int height2 = getHeight();
-            imageReceiver2.y0(width2, (height2 - r6) / 2, this.c, this.d);
-        }
-        imageReceiver.h(canvas, null);
-        v5 v5Var = this.K;
-        if (v5Var.N) {
-            Rect rect = v5.a0;
-            this.b.h(canvas, null);
-            if (v5Var.M == null) {
-                if (v5Var.L == null) {
-                    nh.i iVar = new nh.i();
-                    v5Var.L = iVar;
-                    iVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f)));
-                }
-                v5Var.L.setBounds(0, 0, getWidth(), getHeight());
-                v5Var.L.draw(canvas);
-            }
-            invalidate();
-        }
-        float f7 = v5Var.T;
-        if (f7 != 1.0f && v5Var.R != null) {
-            int interpolation = (int) (gr.f.getInterpolation(1.0f - f7) * 255.0f);
-            Paint paint = this.G;
-            paint.setAlpha(interpolation);
-            canvas.drawBitmap(v5Var.R, 0.0f, 0.0f, paint);
-            long min = Math.min(16L, System.currentTimeMillis() - this.H);
-            Float f10 = v5Var.S;
-            v5Var.T = f1.e(min, f10 == null ? 250.0f : f10.floatValue(), v5Var.T, 1.0f);
-            this.H = System.currentTimeMillis();
-            invalidate();
-            if (v5Var.M != null) {
-                v5Var.b.invalidate();
-            }
-        } else if (f7 == 1.0f && (bitmap = v5Var.R) != null) {
-            bitmap.recycle();
-            v5Var.R = null;
-            v5Var.S = null;
-            invalidate();
-        }
-        if (v5Var.s) {
-            t5 t5Var = v5Var.U;
-            if ((t5Var == null || !((bm) ((org.telegram.ui.Components.t) t5Var).b).s) && (ffVar = v5Var.G) != null && ffVar.d()) {
-                if (v5Var.G.i()) {
-                    if (this.J == null) {
-                        this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();
-                    }
-                    drawable = this.J;
-                } else {
-                    if (this.I == null) {
-                        this.I = getContext().getResources().getDrawable(R.drawable.media_live_on).mutate();
-                    }
-                    drawable = this.I;
-                }
-                drawable.setBounds((int) (imageReceiver.K0 + org.telegram.messenger.i0.L(8.0f)), (int) (imageReceiver.L0 + org.telegram.messenger.i0.L(8.0f)), (int) (imageReceiver.K0 + org.telegram.messenger.i0.L(30.0f)), (int) (imageReceiver.L0 + org.telegram.messenger.i0.L(26.0f)));
-                drawable.draw(canvas);
+    public final void a(int i3, String str) {
+        this.d = i3;
+        this.a.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        b(false);
+    }
+
+    public final void b(boolean z10) {
+        LinearLayout linearLayout = this.b;
+        int childCount = linearLayout.getChildCount();
+        for (int i3 = 0; i3 < childCount; i3++) {
+            View childAt = linearLayout.getChildAt(i3);
+            if (childAt instanceof RadioButton) {
+                RadioButton radioButton = (RadioButton) childAt;
+                int intValue = ((Integer) radioButton.getTag()).intValue();
+                int[] iArr = this.e;
+                radioButton.a(this.d == iArr[intValue], z10);
+                radioButton.b(intValue == 0 ? -1 : iArr[intValue], intValue != 0 ? iArr[intValue] : -1);
             }
         }
+    }
+
+    public int getCurrentColor() {
+        return this.d;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(40.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        v5 v5Var = this.K;
-        ff ffVar = v5Var.G;
-        v5Var.h(ffVar != null && ffVar.M);
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.c = onClickListener;
     }
 }

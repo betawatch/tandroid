@@ -1,103 +1,58 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.ui.Components.y51;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class pv extends ru implements Drawable.Callback {
-    public final y51 W;
-    public final int X;
-    public final int Y;
-    public final int Z;
-    public final int a0;
-    public hb.a b0;
-    public Bitmap c0;
+public final /* synthetic */ class pv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vv b;
+    public final /* synthetic */ long c;
 
-    public pv(wv wvVar, Rect rect, int i10, int i11, int i12) {
-        super(wvVar, rect, i10);
-        this.Z = i11;
-        this.a0 = i12;
-        y51 y51Var = new y51();
-        this.W = y51Var;
-        y51Var.setCallback(this);
-        y51Var.n = dd.L0(2131743856, null);
-        y51Var.o = dd.L0(2131743857, null);
-        y51Var.p = dd.L0(2131743852, null);
-        y51Var.j = new ns(wvVar, 8);
-        int i13 = this.c;
-        this.X = i13;
-        this.Y = y51Var.a(i13);
+    public /* synthetic */ pv(vv vvVar, long j10, int i3) {
+        this.a = i3;
+        this.b = vvVar;
+        this.c = j10;
     }
 
-    @Override // org.telegram.messenger.ru
-    public final int H() {
-        Rect rect = this.b;
-        return rect.top + this.Y + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final boolean X(MotionEvent motionEvent) {
-        View view = this.V;
-        if (view != null) {
-            return this.W.i.a(view, motionEvent);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        int i10 = 2;
+        long j10 = this.c;
+        int i11 = 1;
+        vv vvVar = this.b;
+        switch (i3) {
+            case 0:
+                a0.h hVar = vvVar.getMessagesController().R;
+                long j11 = this.c;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) hVar.f(j11);
+                if (dialog != null) {
+                    dialog.unread_count = 0;
+                    vvVar.getMessagesController().S.l(dialog.id);
+                }
+                vvVar.getMessagesStorage().a.c(new pv(vvVar, j11, i11));
+                qr messagesStorage = vvVar.getMessagesStorage();
+                messagesStorage.a.c(new rp(messagesStorage, 1, j11, 1));
+                vvVar.getNotificationCenter().k(3, new Object[0]);
+                vvVar.getNotificationCenter().k(41, Long.valueOf(j11), Boolean.FALSE, null);
+                break;
+            case 1:
+                g0.h3(new pv(vvVar, j10, i10));
+                break;
+            case 2:
+                us notificationsController = vvVar.getNotificationsController();
+                long j12 = this.c;
+                notificationsController.L(null, j12, 0, ConnectionsManager.DEFAULT_DATACENTER_ID, false);
+                LongSparseIntArray longSparseIntArray = new LongSparseIntArray(1);
+                longSparseIntArray.put(j12, 0);
+                vvVar.getNotificationsController().J(longSparseIntArray);
+                break;
+            default:
+                vvVar.getMessagesController().X(0, j10, false);
+                break;
         }
-        return false;
-    }
-
-    public final float h0(org.telegram.ui.Cells.x1 x1Var) {
-        int i10;
-        if (x1Var != null) {
-            wv wvVar = this.a;
-            if (wvVar.s || wvVar.u) {
-                i10 = i0.W1(Math.max(0.0f, Math.min(1.0f, x1Var.L1)), this.P, this.N);
-                return i10;
-            }
-        }
-        i10 = this.N;
-        return i10;
-    }
-
-    public final float i0(org.telegram.ui.Cells.x1 x1Var) {
-        if (x1Var != null) {
-            wv wvVar = this.a;
-            if (wvVar.s || wvVar.u) {
-                return i0.T1(this.O, this.M, Math.max(0.0f, Math.min(1.0f, x1Var.L1)));
-            }
-        }
-        return this.M;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        View view = this.V;
-        if (view != null) {
-            view.invalidate();
-        }
-    }
-
-    @Override // org.telegram.messenger.ru
-    public final void q(Canvas canvas) {
-        Rect rect = this.b;
-        int i10 = rect.left;
-        int i11 = rect.top;
-        int i12 = this.X + i10;
-        int i13 = this.Y + i11;
-        y51 y51Var = this.W;
-        y51Var.setBounds(i10, i11, i12, i13);
-        y51Var.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
     }
 }

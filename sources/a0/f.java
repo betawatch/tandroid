@@ -11,7 +11,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class f extends l implements Map, j$.util.Map {
     public a d;
@@ -49,7 +49,7 @@ public final class f extends l implements Map, j$.util.Map {
         Map.-CC.$default$forEach(this, biConsumer);
     }
 
-    public final boolean i(Collection collection) {
+    public final boolean j(Collection collection) {
         Iterator it = collection.iterator();
         while (it.hasNext()) {
             if (!super.containsKey(it.next())) {
@@ -59,13 +59,13 @@ public final class f extends l implements Map, j$.util.Map {
         return true;
     }
 
-    public final boolean j(Collection collection) {
-        int i10 = this.c;
+    public final boolean k(Collection collection) {
+        int i3 = this.c;
         Iterator it = collection.iterator();
         while (it.hasNext()) {
             super.remove(it.next());
         }
-        return i10 != this.c;
+        return i3 != this.c;
     }
 
     @Override // java.util.Map
@@ -87,17 +87,17 @@ public final class f extends l implements Map, j$.util.Map {
     @Override // java.util.Map
     public final void putAll(java.util.Map map) {
         int size = map.size() + this.c;
-        int i10 = this.c;
+        int i3 = this.c;
         int[] iArr = this.a;
         if (iArr.length < size) {
             int[] copyOf = Arrays.copyOf(iArr, size);
-            kotlin.jvm.internal.i.d(copyOf, "copyOf(this, newSize)");
+            kotlin.jvm.internal.j.d(copyOf, "copyOf(this, newSize)");
             this.a = copyOf;
             Object[] copyOf2 = Arrays.copyOf(this.b, size * 2);
-            kotlin.jvm.internal.i.d(copyOf2, "copyOf(this, newSize)");
+            kotlin.jvm.internal.j.d(copyOf2, "copyOf(this, newSize)");
             this.b = copyOf2;
         }
-        if (this.c != i10) {
+        if (this.c != i3) {
             throw new ConcurrentModificationException();
         }
         for (Map.Entry entry : map.entrySet()) {

@@ -1,149 +1,99 @@
 package th;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.tw;
+import k2.p1;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.m5;
+import org.telegram.messenger.n0;
+import org.telegram.messenger.zi;
+import org.telegram.tgnet.TLRPC;
+import x7.u;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class g extends uk0 {
-    public final /* synthetic */ int e3;
-    public final /* synthetic */ tw f3;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(tw twVar, Context context, int i10) {
-        super(context, null);
-        this.e3 = i10;
-        this.f3 = twVar;
-    }
-
-    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        switch (this.e3) {
-            case 1:
-                tw twVar = this.f3;
-                ArrayList arrayList = twVar.P;
-                arrayList.clear();
-                int i10 = 0;
-                for (int i11 = 0; i11 < getChildCount(); i11++) {
-                    l lVar = (l) getChildAt(i11);
-                    int R = RecyclerView.R(lVar);
-                    lVar.b = R;
-                    boolean z10 = true;
-                    lVar.a = true;
-                    lVar.d = R == 0;
-                    if (R != twVar.D.size() - 1) {
-                        z10 = false;
-                    }
-                    lVar.c = z10;
-                    arrayList.add(lVar);
-                }
-                Collections.sort(arrayList, twVar.w0);
-                while (i10 < arrayList.size()) {
-                    l lVar2 = (l) arrayList.get(i10);
-                    int save = canvas.save();
-                    canvas.translate(lVar2.getX(), lVar2.getY());
-                    if (lVar2.getAlpha() != 1.0f) {
-                        canvas2 = canvas;
-                        canvas2.saveLayerAlpha(-org.telegram.messenger.i0.L(4.0f), -org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(50.0f), org.telegram.messenger.i0.L(50.0f), (int) (lVar2.getAlpha() * 255.0f), 31);
-                    } else {
-                        canvas2 = canvas;
-                    }
-                    canvas2.scale(lVar2.getScaleX(), lVar2.getScaleY(), org.telegram.messenger.i0.L(14.0f), lVar2.getCy());
-                    lVar2.draw(canvas2);
-                    canvas2.restoreToCount(save);
-                    i10++;
-                    canvas = canvas2;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uk0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 0:
-                if (motionEvent.getAction() == 0) {
-                    tw twVar = this.f3;
-                    if (twVar.c0 > 0.2f || twVar.getAlpha() == 0.0f) {
-                        return false;
+public abstract class g {
+    public static int a(zi ziVar) {
+        if (ziVar.D == 17) {
+            TLRPC.Message message = ziVar.k;
+            int i3 = ziVar.I1;
+            TLRPC.MessageMedia o12 = zi.o1(message);
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) (TLRPC.TL_messageMediaPoll.class.isInstance(o12) ? (TLRPC.MessageMedia) TLRPC.TL_messageMediaPoll.class.cast(o12) : null);
+            if (tL_messageMediaPoll != null) {
+                TLRPC.Poll poll = tL_messageMediaPoll.poll;
+                int i10 = poll.closed ? 8 : 0;
+                if (poll.subscribers_only) {
+                    TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+                    TLRPC.Chat M0 = hp.s1(i3).M0(Long.valueOf(-(messageFwdHeader != null ? m5.o(messageFwdHeader.from_id) : zi.B0(ziVar.k))));
+                    if (M0 != null) {
+                        if (M0.left || M0.kicked) {
+                            i10 |= 1;
+                        }
+                        TLRPC.MessageFwdHeader messageFwdHeader2 = message.fwd_from;
+                        if ((messageFwdHeader2 != null ? messageFwdHeader2.date : message.date) - M0.date < 86400) {
+                            i10 |= 2;
+                        }
                     }
                 }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.e3) {
-            case 0:
-                if (!this.f3.P.contains(view)) {
-                    break;
+                ArrayList<String> arrayList = tL_messageMediaPoll.poll.countries_iso2;
+                if (arrayList != null && !arrayList.isEmpty()) {
+                    if (!tL_messageMediaPoll.poll.countries_iso2.contains(((n0) hp.s1(i3).x7.O.b).c)) {
+                        return i10 | 4;
+                    }
                 }
-                break;
+                return i10;
+            }
         }
-        return super.drawChild(canvas, view, j10);
+        return 0;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void l0(int i10) {
-        switch (this.e3) {
-            case 1:
-                vh.p2 p2Var = this.f3.J;
-                if (p2Var != null) {
-                    p2Var.e(true);
-                    break;
+    public static SpannableStringBuilder b(int i3, zi ziVar) {
+        if (ziVar.D == 17) {
+            TLRPC.Message message = ziVar.k;
+            int i10 = ziVar.I1;
+            TLRPC.MessageMedia o12 = zi.o1(message);
+            TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) (TLRPC.TL_messageMediaPoll.class.isInstance(o12) ? (TLRPC.MessageMedia) TLRPC.TL_messageMediaPoll.class.cast(o12) : null);
+            if (tL_messageMediaPoll != null) {
+                if (u.a(i3, 4)) {
+                    ArrayList arrayList = new ArrayList(tL_messageMediaPoll.poll.countries_iso2.size());
+                    ArrayList<String> arrayList2 = tL_messageMediaPoll.poll.countries_iso2;
+                    int size = arrayList2.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        String str = arrayList2.get(i11);
+                        i11++;
+                        String str2 = str;
+                        String i02 = bd.i0(2131750529, str2);
+                        if (!TextUtils.isEmpty(i02)) {
+                            str2 = i02;
+                        }
+                        arrayList.add(str2);
+                    }
+                    boolean z10 = tL_messageMediaPoll.poll.subscribers_only;
+                    if (arrayList.size() == 1) {
+                        return g0.X2(bd.a0(null, null, z10 ? 2131747125 : 2131747122, arrayList.get(0)));
+                    }
+                    StringBuffer stringBuffer = new StringBuffer();
+                    for (int i12 = 0; i12 < arrayList.size() - 1; i12++) {
+                        if (stringBuffer.length() > 0) {
+                            stringBuffer.append(", ");
+                        }
+                        stringBuffer.append((String) arrayList.get(i12));
+                    }
+                    return g0.X2(bd.a0(null, null, z10 ? 2131747124 : 2131747121, stringBuffer, p1.h(1, arrayList)));
                 }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 1:
-                return false;
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.e3) {
-            case 0:
-                ArrayList arrayList = this.f3.b0;
-                super.onLayout(z10, i10, i11, i12, i13);
-                for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                    ((Runnable) arrayList.get(i14)).run();
+                if (u.a(i3, 1)) {
+                    TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+                    return g0.X2(bd.a0(null, null, 2131747126, m5.u(hp.s1(i10).M0(Long.valueOf(-(messageFwdHeader != null ? m5.o(messageFwdHeader.from_id) : zi.B0(ziVar.k)))))));
                 }
-                arrayList.clear();
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+                if (u.a(i3, 2)) {
+                    return g0.X2(bd.M0(2131747123, null));
+                }
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 1:
-                return false;
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
+        return null;
     }
 }

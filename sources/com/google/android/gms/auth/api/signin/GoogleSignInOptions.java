@@ -12,21 +12,18 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import o6.a;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import w7.h0;
-import z5.c;
-import z5.d;
+import q6.a;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInOptions> CREATOR;
-    public static final Scope D;
     public static final Scope E;
-    public static final c F;
+    public static final Scope F;
+    public static final b5.b G;
     public static final GoogleSignInOptions w;
     public static final Scope x;
     public static final Scope y;
@@ -47,14 +44,14 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         Scope scope2 = new Scope(1, "openid");
         y = scope2;
         Scope scope3 = new Scope(1, "https://www.googleapis.com/auth/games_lite");
-        D = scope3;
-        E = new Scope(1, "https://www.googleapis.com/auth/games");
+        E = scope3;
+        F = new Scope(1, "https://www.googleapis.com/auth/games");
         HashSet hashSet = new HashSet();
         HashMap hashMap = new HashMap();
         hashSet.add(scope2);
         hashSet.add(scope);
-        if (hashSet.contains(E)) {
-            Scope scope4 = D;
+        if (hashSet.contains(F)) {
+            Scope scope4 = E;
             if (hashSet.contains(scope4)) {
                 hashSet.remove(scope4);
             }
@@ -64,19 +61,19 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         HashMap hashMap2 = new HashMap();
         hashSet2.add(scope3);
         hashSet2.addAll(Arrays.asList(new Scope[0]));
-        if (hashSet2.contains(E)) {
-            Scope scope5 = D;
+        if (hashSet2.contains(F)) {
+            Scope scope5 = E;
             if (hashSet2.contains(scope5)) {
                 hashSet2.remove(scope5);
             }
         }
         new GoogleSignInOptions(3, new ArrayList(hashSet2), null, false, false, false, null, null, hashMap2, null);
-        CREATOR = new d(1);
-        F = new c(1);
+        CREATOR = new w.a(14);
+        G = new b5.b(3);
     }
 
-    public GoogleSignInOptions(int i10, ArrayList arrayList, Account account, boolean z10, boolean z11, boolean z12, String str, String str2, HashMap hashMap, String str3) {
-        this.a = i10;
+    public GoogleSignInOptions(int i3, ArrayList arrayList, Account account, boolean z10, boolean z11, boolean z12, String str, String str2, HashMap hashMap, String str3) {
+        this.a = i3;
         this.b = arrayList;
         this.c = account;
         this.d = z10;
@@ -96,8 +93,8 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         HashSet hashSet = new HashSet();
         JSONArray jSONArray = jSONObject.getJSONArray("scopes");
         int length = jSONArray.length();
-        for (int i10 = 0; i10 < length; i10++) {
-            hashSet.add(new Scope(1, jSONArray.getString(i10)));
+        for (int i3 = 0; i3 < length; i3++) {
+            hashSet.add(new Scope(1, jSONArray.getString(i3)));
         }
         String optString = jSONObject.has("accountName") ? jSONObject.optString("accountName") : null;
         return new GoogleSignInOptions(3, new ArrayList(hashSet), !TextUtils.isEmpty(optString) ? new Account(optString, "com.google") : null, jSONObject.getBoolean("idTokenRequested"), jSONObject.getBoolean("serverAuthRequested"), jSONObject.getBoolean("forceCodeForRefreshToken"), jSONObject.has("serverClientId") ? jSONObject.optString("serverClientId") : null, jSONObject.has("hostedDomain") ? jSONObject.optString("hostedDomain") : null, new HashMap(), null);
@@ -107,11 +104,11 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         HashMap hashMap = new HashMap();
         if (arrayList != null) {
             int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                a6.a aVar = (a6.a) obj;
+            int i3 = 0;
+            while (i3 < size) {
+                Object obj = arrayList.get(i3);
+                i3++;
+                c6.a aVar = (c6.a) obj;
                 hashMap.put(Integer.valueOf(aVar.b), aVar);
             }
         }
@@ -120,33 +117,36 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
 
     public final boolean equals(Object obj) {
         String str = this.h;
-        ArrayList arrayList = this.b;
         if (obj == null) {
             return false;
         }
         try {
             GoogleSignInOptions googleSignInOptions = (GoogleSignInOptions) obj;
-            ArrayList arrayList2 = googleSignInOptions.b;
+            ArrayList arrayList = googleSignInOptions.b;
             String str2 = googleSignInOptions.h;
             Account account = googleSignInOptions.c;
-            if (this.r.isEmpty() && googleSignInOptions.r.isEmpty() && arrayList.size() == new ArrayList(arrayList2).size() && arrayList.containsAll(new ArrayList(arrayList2))) {
-                Account account2 = this.c;
-                if (account2 == null) {
-                    if (account != null) {
+            if (this.r.isEmpty() && googleSignInOptions.r.isEmpty()) {
+                ArrayList arrayList2 = this.b;
+                if (arrayList2.size() == new ArrayList(arrayList).size() && arrayList2.containsAll(new ArrayList(arrayList))) {
+                    Account account2 = this.c;
+                    if (account2 == null) {
+                        if (account != null) {
+                            return false;
+                        }
+                    } else if (!account2.equals(account)) {
                         return false;
                     }
-                } else if (!account2.equals(account)) {
-                    return false;
-                }
-                if (TextUtils.isEmpty(str)) {
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (TextUtils.isEmpty(str)) {
+                        if (!TextUtils.isEmpty(str2)) {
+                            return false;
+                        }
+                    } else if (!str.equals(str2)) {
                         return false;
                     }
-                } else if (!str.equals(str2)) {
+                    if (this.f == googleSignInOptions.f && this.d == googleSignInOptions.d && this.e == googleSignInOptions.e) {
+                        return TextUtils.equals(this.s, googleSignInOptions.s);
+                    }
                     return false;
-                }
-                if (this.f == googleSignInOptions.f && this.d == googleSignInOptions.d && this.e == googleSignInOptions.e) {
-                    return TextUtils.equals(this.s, googleSignInOptions.s);
                 }
                 return false;
             }
@@ -160,8 +160,8 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = this.b;
         int size = arrayList2.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            arrayList.add(((Scope) arrayList2.get(i10)).b);
+        for (int i3 = 0; i3 < size; i3++) {
+            arrayList.add(((Scope) arrayList2.get(i3)).b);
         }
         Collections.sort(arrayList);
         int hashCode = (arrayList.hashCode() + (1 * 31)) * 31;
@@ -174,22 +174,22 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 1, 4);
         parcel.writeInt(this.a);
-        h0.p(parcel, 2, new ArrayList(this.b));
-        h0.k(parcel, 3, this.c, i10);
-        h0.s(parcel, 4, 4);
+        j8.a.q(parcel, 2, new ArrayList(this.b));
+        j8.a.l(parcel, 3, this.c, i3);
+        j8.a.r(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        h0.s(parcel, 5, 4);
+        j8.a.r(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        h0.s(parcel, 6, 4);
+        j8.a.r(parcel, 6, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        h0.l(parcel, 7, this.h);
-        h0.l(parcel, 8, this.n);
-        h0.p(parcel, 9, this.r);
-        h0.l(parcel, 10, this.s);
-        h0.r(parcel, q6);
+        j8.a.m(parcel, 7, this.h);
+        j8.a.m(parcel, 8, this.n);
+        j8.a.q(parcel, 9, this.r);
+        j8.a.m(parcel, 10, this.s);
+        j8.a.t(parcel, s6);
     }
 }

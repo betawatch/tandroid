@@ -1,79 +1,47 @@
 package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
-import android.os.DeadObjectException;
-import android.os.RemoteException;
-import com.google.android.gms.common.api.Status;
-import java.util.Set;
+import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a0 implements l0 {
-    public final n0 a;
+public final class a0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
+    public final /* synthetic */ b0 a;
 
-    public a0(n0 n0Var) {
-        this.a = n0Var;
+    public /* synthetic */ a0(b0 b0Var) {
+        this.a = b0Var;
     }
 
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final void K(int i10) {
-        n0 n0Var = this.a;
-        n0Var.h();
-        n0Var.p.w(i10);
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnected(Bundle bundle) {
+        b0 b0Var = this.a;
+        p6.m.g(b0Var.I);
+        q8.a aVar = b0Var.w;
+        p6.m.g(aVar);
+        aVar.A(new z(b0Var));
     }
 
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final boolean b0() {
-        n0 n0Var = this.a;
-        n0Var.o.getClass();
-        n0Var.h();
-        return true;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final e j0(e eVar) {
-        n0 n0Var = this.a;
+    @Override // com.google.android.gms.common.api.l
+    public final void onConnectionFailed(m6.a aVar) {
+        b0 b0Var = this.a;
+        Lock lock = b0Var.b;
+        Lock lock2 = b0Var.b;
+        lock.lock();
         try {
-            h1 h1Var = n0Var.o.M;
-            ((Set) h1Var.a).add(eVar);
-            eVar.g.set((g1) h1Var.b);
-            com.google.android.gms.common.api.d dVar = eVar.o;
-            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) n0Var.o.E.get(dVar);
-            n6.l.h(cVar, "Appropriate Api was not requested.");
-            if (!cVar.k() && n0Var.i.containsKey(dVar)) {
-                eVar.o(new Status(17, null, null, null));
-                return eVar;
+            if (b0Var.x && !aVar.b()) {
+                b0Var.f();
+                b0Var.c();
+            } else {
+                b0Var.g(aVar);
             }
-            try {
-                eVar.n(cVar);
-            } catch (DeadObjectException e) {
-                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
-                throw e;
-            } catch (RemoteException e7) {
-                eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
-            }
-            return eVar;
-        } catch (DeadObjectException unused) {
-            z zVar = new z(this, this);
-            i0 i0Var = n0Var.e;
-            i0Var.sendMessage(i0Var.obtainMessage(1, zVar));
-            return eVar;
+            lock2.unlock();
+        } catch (Throwable th2) {
+            lock2.unlock();
+            throw th2;
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final void Q() {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final void q() {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final void l(Bundle bundle) {
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final void I(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnectionSuspended(int i3) {
     }
 }

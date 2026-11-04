@@ -2,7 +2,7 @@ package com.google.android.gms.tasks;
 
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzn implements zzq {
     private final Executor zza;
@@ -15,14 +15,7 @@ final class zzn implements zzq {
     }
 
     @Override // com.google.android.gms.tasks.zzq
-    public final void zzc() {
-        synchronized (this.zzb) {
-            this.zzc = null;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.zzq
-    public final void zzd(Task task) {
+    public final void zza(Task task) {
         if (task.isSuccessful()) {
             synchronized (this.zzb) {
                 try {
@@ -35,5 +28,20 @@ final class zzn implements zzq {
                 }
             }
         }
+    }
+
+    @Override // com.google.android.gms.tasks.zzq
+    public final void zzb() {
+        synchronized (this.zzb) {
+            this.zzc = null;
+        }
+    }
+
+    public final /* synthetic */ Object zzc() {
+        return this.zzb;
+    }
+
+    public final /* synthetic */ OnSuccessListener zzd() {
+        return this.zzc;
     }
 }

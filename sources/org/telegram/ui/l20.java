@@ -1,71 +1,45 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import java.util.ArrayList;
-import org.telegram.messenger.voip.VoIPService;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class l20 extends org.telegram.ui.Components.fi0 {
-    public final /* synthetic */ a50 r;
+public final class l20 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ org.telegram.ui.Components.cb0 b;
+    public final /* synthetic */ h20 c;
+    public final /* synthetic */ i20 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l20(a50 a50Var, LaunchActivity launchActivity) {
+    public l20(LaunchActivity launchActivity, org.telegram.ui.Components.cb0 cb0Var, h20 h20Var, i20 i20Var) {
         super(launchActivity);
-        this.r = a50Var;
+        this.b = cb0Var;
+        this.c = h20Var;
+        this.d = i20Var;
+        this.a = false;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-        a50 a50Var = this.r;
-        int i10 = a50Var.w3;
-        accessibilityNodeInfo.setEnabled(i10 == 0 || i10 == 1);
-        if (a50Var.w3 == 1) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.dd.L0(2131743319, null)));
-        }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        this.a = true;
+        org.telegram.ui.Components.cb0 cb0Var = this.b;
+        cb0Var.setItemCount(5);
+        h20 h20Var = this.c;
+        h20Var.setItemCount(5);
+        i20 i20Var = this.d;
+        i20Var.setItemCount(5);
+        cb0Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
+        h20Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
+        i20Var.getLayoutParams().height = org.telegram.messenger.g0.L(54.0f) * 5;
+        this.a = false;
+        super.onMeasure(i3, i10);
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        a50 a50Var = this.r;
-        s10 s10Var = a50Var.p4;
-        ArrayList arrayList = a50Var.Q3;
-        if (a50Var.t1()) {
-            return super.onTouchEvent(motionEvent);
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
-        if (motionEvent.getAction() == 0 && a50Var.w3 == 0 && a50Var.R2 != null) {
-            org.telegram.messenger.i0.h3(s10Var, 300L);
-            a50Var.I3 = true;
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (a50Var.I3) {
-                org.telegram.messenger.i0.r(s10Var);
-                a50Var.I3 = false;
-            } else if (a50Var.J3) {
-                org.telegram.messenger.i0.r(a50Var.o4);
-                a50Var.M1(0, true);
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().setMicMute(true, true, false);
-                    try {
-                        a50Var.s1.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                }
-                arrayList.clear();
-                arrayList.addAll(a50Var.P3);
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    ((org.telegram.ui.Components.voip.r) arrayList.get(i10)).j(true);
-                }
-                a50Var.J3 = false;
-                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                super.onTouchEvent(obtain);
-                obtain.recycle();
-                return true;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+        super.requestLayout();
     }
 }

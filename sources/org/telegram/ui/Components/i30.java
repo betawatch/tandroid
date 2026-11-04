@@ -1,51 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Paint;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ j30 c;
+public final class i30 {
+    public long a;
+    public float b;
+    public float c;
+    public boolean d;
+    public float e;
+    public final RectF f = new RectF();
+    public int g;
+    public final Paint h;
+    public final int i;
 
-    public /* synthetic */ i30(j30 j30Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = j30Var;
-        this.b = z10;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.vn vnVar;
-        ag.b1 b1Var;
-        switch (this.a) {
-            case 0:
-                float f7 = this.b ? 1.0f : 0.0f;
-                j30 j30Var = this.c;
-                j30Var.x = f7;
-                j30Var.e.setTranslationY(f7 * org.telegram.messenger.i0.L(48.0f));
-                j30Var.e.setPadding(0, 0, 0, (int) (j30Var.x * org.telegram.messenger.i0.L(48.0f)));
-                break;
-            default:
-                boolean z10 = this.b;
-                float f10 = z10 ? 1.0f : 0.0f;
-                j30 j30Var2 = this.c;
-                j30Var2.E = f10;
-                j30Var2.n.setScaleX(org.telegram.messenger.i0.T1(0.95f, 1.0f, f10));
-                j30Var2.n.setScaleY(org.telegram.messenger.i0.T1(0.95f, 1.0f, j30Var2.E));
-                org.telegram.ui.ik ikVar = j30Var2.f;
-                if (ikVar != null && (vnVar = ikVar.a) != null && (b1Var = vnVar.Z3) != null) {
-                    b1Var.setScaleX(org.telegram.messenger.i0.T1(1.0f, 0.95f, j30Var2.E));
-                    j30Var2.f.a.Z3.setScaleY(org.telegram.messenger.i0.T1(1.0f, 0.95f, j30Var2.E));
-                }
-                j30Var2.h.setAlpha(j30Var2.E);
-                if (!z10) {
-                    j30Var2.h.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    public i30(int i3) {
+        this.i = i3;
+        Paint paint = new Paint(1);
+        this.h = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
     }
 }

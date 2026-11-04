@@ -7,17 +7,17 @@ import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.s9;
-import org.telegram.ui.zd1;
+import org.telegram.ui.Cells.w9;
+import org.telegram.ui.Components.xq;
+import org.telegram.ui.zb1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public abstract class d2 extends FrameLayout {
     public Activity a;
     public boolean b;
-    public e2.f c;
+    public g2.g c;
     public VelocityTracker d;
     public boolean e;
     public boolean f;
@@ -33,7 +33,7 @@ public abstract class d2 extends FrameLayout {
         layoutParams.gravity = 51;
         layoutParams.type = 99;
         layoutParams.screenOrientation = 1;
-        org.telegram.messenger.i0.m(layoutParams);
+        org.telegram.messenger.g0.m(layoutParams);
         layoutParams.flags = -2144665216;
         return layoutParams;
     }
@@ -47,25 +47,25 @@ public abstract class d2 extends FrameLayout {
             return;
         }
         this.f = true;
-        if (zd1.n1 != null) {
+        if (zb1.o1 != null) {
             if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = zd1.n1.u0.getMeasuredHeight();
-                if (zd1.n1.D0 && !VoIPService.getSharedInstance().isConverting()) {
-                    zd1 zd1Var = zd1.n1;
-                    u1.e(zd1Var.b, zd1Var.a, zd1Var.u0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = zd1.n1.r0;
+                int measuredHeight = zb1.o1.v0.getMeasuredHeight();
+                if (zb1.o1.E0 && !VoIPService.getSharedInstance().isConverting()) {
+                    zb1 zb1Var = zb1.o1;
+                    u1.e(zb1Var.b, zb1Var.a, zb1Var.v0.getMeasuredWidth(), measuredHeight, 0);
+                    WindowInsets windowInsets = zb1.o1.s0;
                     if (windowInsets != null) {
-                        u1.X = windowInsets.getSystemWindowInsetTop();
-                        zd1.n1.r0.getSystemWindowInsetBottom();
+                        u1.Y = windowInsets.getSystemWindowInsetTop();
+                        zb1.o1.s0.getSystemWindowInsetBottom();
                     }
                 }
             }
-            zd1.n1.c0.d.release();
-            zd1.n1.d0.d.release();
-            zd1.n1.b0.release();
-            zd1.n1.d();
+            zb1.o1.d0.d.release();
+            zb1.o1.e0.d.release();
+            zb1.o1.c0.release();
+            zb1.o1.d();
         }
-        zd1.n1 = null;
+        zb1.o1 = null;
         if (this.b) {
             try {
                 ((WindowManager) this.a.getSystemService("window")).removeView(this);
@@ -73,13 +73,13 @@ public abstract class d2 extends FrameLayout {
             }
         } else {
             this.c.d();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new s9(this, 29)).setDuration(j10).setInterpolator(gr.f).start();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new w9(this, 18)).setDuration(j10).setInterpolator(xq.f).start();
         }
     }
 
     public final void d() {
         if (getParent() != null) {
-            org.telegram.messenger.i0.P3(this.a);
+            org.telegram.messenger.g0.Q3(this.a);
             WindowManager windowManager = (WindowManager) this.a.getSystemService("window");
             setVisibility(8);
             windowManager.removeView(this);
@@ -93,8 +93,8 @@ public abstract class d2 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(i3, i10);
         if (this.e) {
             return;
         }
@@ -104,7 +104,7 @@ public abstract class d2 extends FrameLayout {
         }
         setTranslationY(getMeasuredHeight());
         setAlpha(0.0f);
-        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(gr.f).start();
+        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(xq.f).start();
     }
 
     @Override // android.view.View
@@ -121,19 +121,19 @@ public abstract class d2 extends FrameLayout {
             }
             if (motionEvent.getAction() == 2) {
                 float x10 = motionEvent.getX() - this.h;
-                float y3 = motionEvent.getY() - this.n;
-                if (!this.r && Math.abs(y3) > org.telegram.messenger.i0.a1(true, 0.4f) && Math.abs(y3) / 3.0f > x10) {
+                float y9 = motionEvent.getY() - this.n;
+                if (!this.r && Math.abs(y9) > org.telegram.messenger.g0.a1(true, 0.4f) && Math.abs(y9) / 3.0f > x10) {
                     this.n = motionEvent.getY();
                     this.r = true;
-                    y3 = 0.0f;
+                    y9 = 0.0f;
                 }
                 if (this.r) {
-                    float f7 = y3 >= 0.0f ? y3 : 0.0f;
+                    float f10 = y9 >= 0.0f ? y9 : 0.0f;
                     if (this.d == null) {
                         this.d = VelocityTracker.obtain();
                     }
                     this.d.addMovement(motionEvent);
-                    setTranslationY(f7);
+                    setTranslationY(f10);
                 }
                 return this.r;
             }

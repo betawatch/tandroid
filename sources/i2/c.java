@@ -1,66 +1,78 @@
 package i2;
 
-import android.media.MediaFormat;
-import j$.util.DesugarCollections;
-import java.nio.ByteBuffer;
-import java.util.HashMap;
-import java.util.Iterator;
+import g2.n0;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
-import java.util.Set;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c {
-    public static final c b = new c(new HashMap());
-    public final Map a;
+public abstract class c implements h {
+    private n dataSpec;
+    private final boolean isNetwork;
+    private int listenerCount;
+    private final ArrayList<d0> listeners = new ArrayList<>(1);
 
-    public c(HashMap hashMap) {
-        this.a = DesugarCollections.unmodifiableMap(hashMap);
+    public c(boolean z10) {
+        this.isNetwork = z10;
     }
 
-    public static a6.i a(MediaFormat mediaFormat, Set set) {
-        a6.i iVar = new a6.i(26);
-        HashMap hashMap = (HashMap) iVar.b;
-        Iterator it = set.iterator();
-        while (it.hasNext()) {
-            String str = (String) it.next();
-            if (mediaFormat.containsKey(str)) {
-                int valueTypeForKey = mediaFormat.getValueTypeForKey(str);
-                if (valueTypeForKey == 1) {
-                    hashMap.put(str, Integer.valueOf(mediaFormat.getInteger(str)));
-                } else if (valueTypeForKey == 2) {
-                    hashMap.put(str, Long.valueOf(mediaFormat.getLong(str)));
-                } else if (valueTypeForKey == 3) {
-                    hashMap.put(str, Float.valueOf(mediaFormat.getFloat(str)));
-                } else if (valueTypeForKey == 4) {
-                    hashMap.put(str, mediaFormat.getString(str));
-                } else if (valueTypeForKey == 5) {
-                    ByteBuffer byteBuffer = mediaFormat.getByteBuffer(str);
-                    if (byteBuffer == null) {
-                        hashMap.put(str, null);
-                    } else {
-                        ByteBuffer allocate = ByteBuffer.allocate(byteBuffer.remaining());
-                        allocate.put(byteBuffer.duplicate());
-                        allocate.flip();
-                        hashMap.put(str, allocate);
+    @Override // i2.h
+    public final void addTransferListener(d0 d0Var) {
+        d0Var.getClass();
+        if (this.listeners.contains(d0Var)) {
+            return;
+        }
+        this.listeners.add(d0Var);
+        this.listenerCount++;
+    }
+
+    public final void bytesTransferred(int i3) {
+        n nVar = this.dataSpec;
+        String str = n0.a;
+        for (int i10 = 0; i10 < this.listenerCount; i10++) {
+            d0 d0Var = this.listeners.get(i10);
+            boolean z10 = this.isNetwork;
+            a3.g gVar = (a3.g) d0Var;
+            synchronized (gVar) {
+                if (z10) {
+                    if (nVar != null) {
+                        try {
+                            if ((nVar.h & 8) == 8) {
+                            }
+                        } finally {
+                        }
                     }
+                    gVar.i += i3;
                 }
             }
         }
-        return iVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof c) {
-            return this.a.equals(((c) obj).a);
-        }
-        return false;
+    @Override // i2.h
+    public Map getResponseHeaders() {
+        return Collections.EMPTY_MAP;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    public final void transferEnded() {
+        n nVar = this.dataSpec;
+        String str = n0.a;
+        for (int i3 = 0; i3 < this.listenerCount; i3++) {
+            ((a3.g) this.listeners.get(i3)).f(nVar, this.isNetwork);
+        }
+        this.dataSpec = null;
+    }
+
+    public final void transferInitializing(n nVar) {
+        for (int i3 = 0; i3 < this.listenerCount; i3++) {
+            this.listeners.get(i3).getClass();
+        }
+    }
+
+    public final void transferStarted(n nVar) {
+        this.dataSpec = nVar;
+        for (int i3 = 0; i3 < this.listenerCount; i3++) {
+            ((a3.g) this.listeners.get(i3)).g(nVar, this.isNetwork);
+        }
     }
 }

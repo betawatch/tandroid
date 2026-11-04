@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class OpenMicrophoneResponse {
     private final CarAudioCallbackDelegate mCarAudioCallbackDelegate;
@@ -28,8 +28,8 @@ public final class OpenMicrophoneResponse {
                 ParcelFileDescriptor[] createReliablePipe = ParcelFileDescriptor.createReliablePipe();
                 createReliablePipe[1].close();
                 parcelFileDescriptor = createReliablePipe[0];
-            } catch (IOException e) {
-                throw new IllegalStateException(e);
+            } catch (IOException e10) {
+                throw new IllegalStateException(e10);
             }
         }
         return new ParcelFileDescriptor.AutoCloseInputStream(parcelFileDescriptor);

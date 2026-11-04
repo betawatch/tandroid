@@ -4,8 +4,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
 public final class h0 implements AutoCloseable {
     public final byte[] a;
     public boolean b;
@@ -52,27 +52,27 @@ public final class h0 implements AutoCloseable {
         try {
             a();
             arrayList = new ArrayList();
-            int i10 = 0;
-            while (i10 < this.a.length) {
+            int i3 = 0;
+            while (i3 < this.a.length) {
                 while (true) {
                     byte[] bArr = this.a;
-                    if (i10 >= bArr.length || !e(bArr[i10])) {
+                    if (i3 >= bArr.length || !e(bArr[i3])) {
+                        break;
+                    }
+                    i3++;
+                }
+                int i10 = i3;
+                while (true) {
+                    byte[] bArr2 = this.a;
+                    if (i10 >= bArr2.length || e(bArr2[i10])) {
                         break;
                     }
                     i10++;
                 }
-                int i11 = i10;
-                while (true) {
-                    byte[] bArr2 = this.a;
-                    if (i11 >= bArr2.length || e(bArr2[i11])) {
-                        break;
-                    }
-                    i11++;
+                if (i10 > i3) {
+                    arrayList.add(new String(this.a, i3, i10 - i3, StandardCharsets.UTF_8));
                 }
-                if (i11 > i10) {
-                    arrayList.add(new String(this.a, i10, i11 - i10, StandardCharsets.UTF_8));
-                }
-                i10 = i11;
+                i3 = i10;
             }
         } catch (Throwable th2) {
             throw th2;
@@ -81,19 +81,19 @@ public final class h0 implements AutoCloseable {
     }
 
     public final synchronized int g() {
-        int i10;
+        int i3;
         a();
-        i10 = 0;
+        i3 = 0;
         boolean z10 = false;
         for (byte b10 : this.a) {
             if (e(b10)) {
                 z10 = false;
             } else if (!z10) {
-                i10++;
+                i3++;
                 z10 = true;
             }
         }
-        return i10;
+        return i3;
     }
 
     public final String toString() {

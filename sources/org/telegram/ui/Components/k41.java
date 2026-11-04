@@ -1,50 +1,45 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class k41 {
-    public final /* synthetic */ t41 a;
-    public final /* synthetic */ x41 b;
+public final class k41 extends u4.k {
+    public final /* synthetic */ l41 F;
 
-    public k41(x41 x41Var, t41 t41Var) {
-        this.b = x41Var;
-        this.a = t41Var;
+    public k41(l41 l41Var) {
+        this.F = l41Var;
     }
 
-    public final int a() {
-        return this.b.s.w;
+    @Override // u4.k
+    public final void M() {
+        l41 l41Var = this.F;
+        if (l41Var.b1()) {
+            l41Var.invalidate();
+        }
+        l41Var.F1();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(boolean z10) {
-        x41 x41Var = this.b;
-        m41 m41Var = x41Var.n;
-        if (z10) {
-            s4.g0 adapter = m41Var.getAdapter();
-            zf.o1 o1Var = x41Var.w;
-            if (adapter != o1Var) {
-                m41Var.setAdapter(o1Var);
-                if (m41Var.getAdapter().b() <= 0) {
-                    x41Var.r.i1(0, org.telegram.messenger.i0.L(58.0f) + (-m41Var.getPaddingTop()) + x41Var.E, false);
-                    return;
-                }
-                return;
-            }
+    @Override // u4.k
+    public final void O() {
+        l41 l41Var = this.F;
+        if (l41Var.b1()) {
+            l41Var.invalidate();
         }
-        if (z10) {
-            return;
+        l41Var.F1();
+    }
+
+    @Override // u4.k
+    public final void P(u4.d1 d1Var) {
+        l41 l41Var = this.F;
+        l41Var.invalidate();
+        l41Var.F1();
+    }
+
+    @Override // u4.k
+    public final void Q() {
+        l41 l41Var = this.F;
+        if (l41Var.b1()) {
+            l41Var.invalidate();
         }
-        s4.g0 adapter2 = m41Var.getAdapter();
-        w41 w41Var = x41Var.s;
-        if (adapter2 == w41Var) {
-            return;
-        }
-        m41Var.setAdapter(w41Var);
-        if (m41Var.getAdapter().b() <= 0) {
-        }
+        l41Var.F1();
     }
 }

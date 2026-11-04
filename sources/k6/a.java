@@ -1,144 +1,47 @@
 package k6;
 
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-import w7.h0;
+import a9.j0;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.util.Log;
+import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.internal.clearcut.a2;
+import com.google.android.gms.internal.clearcut.o1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class a extends o6.a {
-    public final int a;
-    public final int b;
-    public final PendingIntent c;
+public final class a {
+    public static final e j = new e("ClearcutLogger.API", new a6.b(6), new d());
+    public final Context a;
+    public final String b;
+    public final int c;
     public final String d;
-    public static final a e = new a(0);
-    public static final Parcelable.Creator<a> CREATOR = new g8.g(16);
+    public final int e;
+    public final o1 f;
+    public final j0 g;
+    public final w6.a h;
+    public final a2 i;
 
-    public a(int i10, int i11, PendingIntent pendingIntent, String str) {
-        this.a = i10;
-        this.b = i11;
-        this.c = pendingIntent;
-        this.d = str;
-    }
-
-    public static String d(int i10) {
-        if (i10 == 99) {
-            return "UNFINISHED";
+    public a(Context context) {
+        j0 j0Var = new j0(context, j, null, new mb.b(5));
+        a2 a2Var = new a2(context);
+        this.e = -1;
+        o1 o1Var = o1.b;
+        this.f = o1Var;
+        this.a = context;
+        this.b = context.getPackageName();
+        int i3 = 0;
+        try {
+            i3 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
+        } catch (PackageManager.NameNotFoundException e10) {
+            Log.wtf("ClearcutLogger", "This can't happen.", e10);
         }
-        if (i10 == 1500) {
-            return "DRIVE_EXTERNAL_STORAGE_REQUIRED";
-        }
-        switch (i10) {
-            case -1:
-                return "UNKNOWN";
-            case 0:
-                return "SUCCESS";
-            case 1:
-                return "SERVICE_MISSING";
-            case 2:
-                return "SERVICE_VERSION_UPDATE_REQUIRED";
-            case 3:
-                return "SERVICE_DISABLED";
-            case 4:
-                return "SIGN_IN_REQUIRED";
-            case 5:
-                return "INVALID_ACCOUNT";
-            case 6:
-                return "RESOLUTION_REQUIRED";
-            case 7:
-                return "NETWORK_ERROR";
-            case 8:
-                return "INTERNAL_ERROR";
-            case 9:
-                return "SERVICE_INVALID";
-            case 10:
-                return "DEVELOPER_ERROR";
-            case 11:
-                return "LICENSE_CHECK_FAILED";
-            default:
-                switch (i10) {
-                    case 13:
-                        return "CANCELED";
-                    case 14:
-                        return "TIMEOUT";
-                    case 15:
-                        return "INTERRUPTED";
-                    case 16:
-                        return "API_UNAVAILABLE";
-                    case 17:
-                        return "SIGN_IN_FAILED";
-                    case 18:
-                        return "SERVICE_UPDATING";
-                    case 19:
-                        return "SERVICE_MISSING_PERMISSION";
-                    case 20:
-                        return "RESTRICTED_PROFILE";
-                    case 21:
-                        return "API_VERSION_UPDATE_REQUIRED";
-                    case 22:
-                        return "RESOLUTION_ACTIVITY_NOT_FOUND";
-                    case 23:
-                        return "API_DISABLED";
-                    case 24:
-                        return "API_DISABLED_FOR_CONNECTION";
-                    case 25:
-                        return "API_INSTALL_REQUIRED";
-                    default:
-                        return i0.a.j(i10, "UNKNOWN_ERROR_CODE(", ")");
-                }
-        }
-    }
-
-    public final boolean b() {
-        return (this.b == 0 || this.c == null) ? false : true;
-    }
-
-    public final boolean c() {
-        return this.b == 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.b == aVar.b && n6.l.k(this.c, aVar.c) && n6.l.k(this.d, aVar.d);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), this.c, this.d});
-    }
-
-    public final String toString() {
-        m4.c cVar = new m4.c(this);
-        cVar.u(d(this.b), "statusCode");
-        cVar.u(this.c, "resolution");
-        cVar.u(this.d, "message");
-        return cVar.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        h0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        h0.k(parcel, 3, this.c, i10);
-        h0.l(parcel, 4, this.d);
-        h0.r(parcel, q6);
-    }
-
-    public a(int i10) {
-        this(1, i10, null, null);
-    }
-
-    public a(int i10, PendingIntent pendingIntent) {
-        this(1, i10, pendingIntent, null);
+        this.c = i3;
+        this.e = -1;
+        this.d = "VISION";
+        this.g = j0Var;
+        this.h = w6.a.a;
+        this.f = o1Var;
+        this.i = a2Var;
     }
 }

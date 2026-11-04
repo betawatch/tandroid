@@ -1,224 +1,78 @@
 package ih;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.MotionEvent;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.i0;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.Cells.e6;
-import org.telegram.ui.Components.mt;
-import org.telegram.ui.u21;
-import org.telegram.ui.y11;
-import sg.e0;
+import android.graphics.Color;
+import hh.e;
+import org.telegram.messenger.g0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b extends mt {
-    public final /* synthetic */ int Y1;
-    public final /* synthetic */ Object Z1;
+public final class b extends e {
+    public final /* synthetic */ e6 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(FrameLayout frameLayout, Context context, p6 p6Var, int i10) {
-        super(context, p6Var);
-        this.Y1 = i10;
-        this.Z1 = frameLayout;
+    public b(e6 e6Var, e6 e6Var2) {
+        super(e6Var);
+        this.s = e6Var2;
     }
 
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.Y1) {
-            case 3:
-                super.dispatchDraw(canvas);
-                Drawable drawable = (Drawable) this.Z1;
-                drawable.setBounds(0, i0.L(8.0f), i0.L(20.0f), i0.L(28.0f));
-                drawable.draw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    @Override // hh.e, hh.a
+    public final int F() {
+        e6 e6Var = this.s;
+        if (k6.i1(e6Var)) {
+            return k6.w0(k6.wa, e6Var);
         }
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.qt
-    public int e() {
-        switch (this.Y1) {
-            case 0:
-                return 3;
-            case 1:
-                return 3;
-            default:
-                return super.e();
+    @Override // hh.e, hh.a
+    public final int M() {
+        int a10 = a(this.d);
+        e6 e6Var = this.s;
+        if (k6.i1(e6Var) && Color.alpha(k6.w0(k6.wa, e6Var)) != 0) {
+            return 0;
         }
+        return a10;
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.Y1) {
-            case 2:
-                if (!e0.b) {
-                    super.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
+    @Override // hh.e, hh.a
+    public final float a0() {
+        return g0.N(0.6f);
+    }
+
+    @Override // hh.e
+    public final float b() {
+        return k6.i1(this.s) ? g0.N(1.0f) : this.r;
+    }
+
+    @Override // hh.e
+    public final float c() {
+        return k6.i1(this.s) ? g0.N(2.25f) : this.n;
+    }
+
+    @Override // hh.e, hh.a
+    public final int c0() {
+        e6 e6Var = this.s;
+        if (k6.i1(e6Var)) {
+            return k6.w0(k6.ya, e6Var);
         }
+        return 0;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        switch (this.Y1) {
-            case 0:
-                InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-                editorInfo.imeOptions &= -1073741825;
-                return onCreateInputConnection;
-            case 1:
-                InputConnection onCreateInputConnection2 = super.onCreateInputConnection(editorInfo);
-                if (((e6) this.Z1).s) {
-                    editorInfo.imeOptions &= -1073741825;
-                }
-                return onCreateInputConnection2;
-            default:
-                return super.onCreateInputConnection(editorInfo);
+    @Override // hh.e, hh.a
+    public final int u0() {
+        e6 e6Var = this.s;
+        return k6.i1(e6Var) ? k6.w0(k6.xa, e6Var) : a(this.b);
+    }
+
+    @Override // hh.e, hh.a
+    public final int x() {
+        int a10 = a(this.c);
+        e6 e6Var = this.s;
+        if (k6.i1(e6Var) && Color.alpha(k6.w0(k6.wa, e6Var)) != 0) {
+            return 0;
         }
-    }
-
-    @Override // org.telegram.ui.Components.mt, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.qt, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.Y1) {
-            case 1:
-                super.onDraw(canvas);
-                ((e6) this.Z1).getClass();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z10, int i10, Rect rect) {
-        switch (this.Y1) {
-            case 1:
-                super.onFocusChanged(z10, i10, rect);
-                ((e6) this.Z1).i(z10);
-                break;
-            case 2:
-                if (z10) {
-                    ((y11) this.Z1).F.q();
-                    i0.h3(new u21(this, 0), 200L);
-                }
-                super.onFocusChanged(z10, i10, rect);
-                break;
-            default:
-                super.onFocusChanged(z10, i10, rect);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qt, android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.Y1) {
-            case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
-                postOnAnimation(new gg.c(this, 11));
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mt, android.widget.EditText, android.widget.TextView
-    public boolean onTextContextMenuItem(int i10) {
-        ClipData primaryClip;
-        switch (this.Y1) {
-            case 1:
-                if (i10 == 16908322 && (primaryClip = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip()) != null && primaryClip.getItemCount() == 1 && i0.t(primaryClip.getItemAt(0).getText(), "\n") > 0) {
-                    CharSequence text = primaryClip.getItemAt(0).getText();
-                    ArrayList arrayList = new ArrayList();
-                    StringBuilder sb2 = new StringBuilder();
-                    for (int i11 = 0; i11 < text.length(); i11++) {
-                        char charAt = text.charAt(i11);
-                        if (charAt == '\n') {
-                            arrayList.add(sb2.toString());
-                            sb2.setLength(0);
-                        } else {
-                            sb2.append(charAt);
-                        }
-                    }
-                    if (!TextUtils.isEmpty(sb2)) {
-                        arrayList.add(sb2);
-                    }
-                    if (((e6) this.Z1).l(arrayList)) {
-                    }
-                }
-                break;
-        }
-        return super.onTextContextMenuItem(i10);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.Y1) {
-            case 1:
-                if (isEnabled()) {
-                    if (motionEvent.getAction() == 1) {
-                        ((e6) this.Z1).k(this);
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                if (motionEvent.getAction() != 1 || !((y11) this.Z1).F.u()) {
-                    break;
-                } else {
-                    i0.h3(new u21(this, 1), 200L);
-                    break;
-                }
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.mt, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-    public ActionMode startActionMode(ActionMode.Callback callback, int i10) {
-        switch (this.Y1) {
-            case 1:
-                ActionMode startActionMode = super.startActionMode(callback, i10);
-                ((e6) this.Z1).g(this, startActionMode);
-                return startActionMode;
-            default:
-                return super.startActionMode(callback, i10);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(Context context, p6 p6Var, Drawable drawable) {
-        super(context, p6Var);
-        this.Y1 = 3;
-        this.Z1 = drawable;
-    }
-
-    @Override // org.telegram.ui.Components.mt, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-    public ActionMode startActionMode(ActionMode.Callback callback) {
-        switch (this.Y1) {
-            case 1:
-                ActionMode startActionMode = super.startActionMode(callback);
-                ((e6) this.Z1).g(this, startActionMode);
-                return startActionMode;
-            default:
-                return super.startActionMode(callback);
-        }
+        return a10;
     }
 }

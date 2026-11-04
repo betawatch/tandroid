@@ -1,52 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i8 extends org.telegram.ui.g31 {
-    public boolean e2;
-    public final /* synthetic */ o8 f2;
+public final class i8 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i8(o8 o8Var, o8 o8Var2, Activity activity, int i10) {
-        super(o8Var2, activity, false, null, 4, true, null, 16, i10);
-        this.f2 = o8Var;
-        this.e2 = true;
+    public /* synthetic */ i8(r8 r8Var, int i3) {
+        this.a = i3;
+        this.b = r8Var;
     }
 
-    @Override // org.telegram.ui.g31, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.e2) {
-            this.e2 = false;
-            this.f2.b.s(null);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i3) {
+        switch (this.a) {
+            case 0:
+                if (i3 == -1) {
+                    r8.Z(this.b);
+                    break;
+                }
+                break;
+            default:
+                r8 r8Var = this.b;
+                if (i3 == -1) {
+                    r8.Z(r8Var);
+                }
+                if (i3 == 1) {
+                    r8Var.k0();
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.g31
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i10;
-        TLRPC.TL_emojiList tL_emojiList;
-        boolean z10;
-        int i11;
-        boolean z11 = this.R;
-        o8 o8Var = this.f2;
-        if (z11) {
-            i11 = ((org.telegram.ui.ActionBar.k2) o8Var).currentAccount;
-            tL_emojiList = org.telegram.messenger.vi.b0(i11).J1;
-        } else {
-            i10 = ((org.telegram.ui.ActionBar.k2) o8Var).currentAccount;
-            tL_emojiList = org.telegram.messenger.vi.b0(i10).K1;
-        }
-        if (tL_emojiList != null) {
-            z10 = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l4 != null ? l4.longValue() : 0L));
-        } else {
-            z10 = false;
-        }
-        o8Var.m0(z10, l4 != null ? l4.longValue() : 0L, document);
     }
 }

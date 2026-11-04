@@ -1,35 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pw0 extends pp0 {
-    public final /* synthetic */ dx0 R2;
+public final class pw0 {
+    public final ly0 a;
+    public final ly0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pw0(dx0 dx0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, null, str, false, str2, false, p6Var);
-        this.R2 = dx0Var;
-    }
-
-    @Override // org.telegram.ui.Components.pp0, org.telegram.ui.ActionBar.z2
-    public final void L() {
-        super.L();
-        org.telegram.ui.ActionBar.k2 k2Var = this.R2.C1;
-        if (k2Var instanceof org.telegram.ui.un) {
-            org.telegram.messenger.i0.Z2(k2Var.getParentActivity(), k2Var.getClassGuid());
-            if (((org.telegram.ui.un) k2Var).Z.getVisibility() == 0) {
-                k2Var.getFragmentView().requestLayout();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pp0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            org.telegram.messenger.i0.h3(new ki0(this, hVar, i10, 10), 100L);
-        }
+    public pw0(ly0 ly0Var, ly0 ly0Var2) {
+        this.a = ly0Var;
+        this.b = ly0Var2;
     }
 }

@@ -1,18 +1,38 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class z6 {
-    public final int a;
-    public final long b;
+public final /* synthetic */ class z6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i7 b;
+    public final /* synthetic */ int c;
 
-    public z6(long j10, int i10, long j11) {
+    public /* synthetic */ z6(i7 i7Var, int i3, int i10) {
         this.a = i10;
-        this.b = j11;
+        this.b = i7Var;
+        this.c = i3;
     }
 
-    public final int hashCode() {
-        long j10 = this.b;
-        return (int) (j10 ^ (j10 >>> 32));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.F0.add(Integer.valueOf(this.c));
+                break;
+            case 1:
+                this.b.F0.remove(Integer.valueOf(this.c));
+                break;
+            case 2:
+                this.b.F0.remove(Integer.valueOf(this.c));
+                break;
+            default:
+                i7 i7Var = this.b;
+                u7 u7Var = i7Var.g0;
+                if (u7Var != null) {
+                    u7Var.b(i7Var, this.c);
+                }
+                i7Var.i();
+                break;
+        }
     }
 }

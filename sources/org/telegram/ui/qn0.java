@@ -1,129 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qn0 extends FrameLayout {
-    public int D;
-    public int E;
-    public bn0 F;
-    public vg.f G;
-    public vg.f H;
-    public boolean I;
-    public final Path J;
-    public int K;
-    public final mb0 a;
-    public final s4.a0 b;
-    public final x7 c;
-    public int d;
-    public final org.telegram.ui.Components.t5 e;
-    public final ArrayList f;
-    public dn0 h;
-    public final RectF n;
-    public final RectF r;
-    public final RectF s;
-    public final Paint w;
-    public final Paint x;
-    public int y;
+public final /* synthetic */ class qn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
 
-    public qn0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        this.f = new ArrayList();
-        this.n = new RectF();
-        this.r = new RectF();
-        this.s = new RectF();
-        this.w = new Paint(1);
-        this.x = new Paint(1);
-        this.J = new Path();
-        this.K = TLObject.FLAG_31;
-        mb0 mb0Var = new mb0(this, context, p6Var, 1);
-        this.a = mb0Var;
-        mb0Var.setClipToPadding(false);
-        mb0Var.setClipChildren(false);
-        mb0Var.setPadding(org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f));
-        mb0Var.setOverScrollMode(2);
-        mb0Var.setHorizontalScrollBarEnabled(false);
-        mb0Var.setItemAnimator(null);
-        s4.a0 a0Var = new s4.a0(0, false);
-        this.b = a0Var;
-        mb0Var.setLayoutManager(a0Var);
-        x7 x7Var = new x7(this, 6);
-        this.c = x7Var;
-        mb0Var.setAdapter(x7Var);
-        mb0Var.setOnItemClickListener(new g(this, 20));
-        addView(mb0Var, w7.b6.e(-1, -1, org.telegram.messenger.at.E1));
-        setHorizontalScrollBarEnabled(false);
-        setClipToPadding(false);
-        setClipChildren(false);
-        this.e = new org.telegram.ui.Components.t5(mb0Var, 0L, 320L, org.telegram.ui.Components.gr.h);
+    public /* synthetic */ qn0(PhotoViewer photoViewer, int i3) {
+        this.a = i3;
+        this.b = photoViewer;
     }
 
-    public final void a(int i10, boolean z10) {
-        int i11 = this.d;
-        this.d = i10;
-        if (!z10) {
-            this.e.e(true, i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i3) {
+            case 0:
+                Drawable[] drawableArr = PhotoViewer.V8;
+                photoViewer.H0(true, false);
+                break;
+            case 1:
+                Drawable[] drawableArr2 = PhotoViewer.V8;
+                photoViewer.i3(1, false);
+                break;
+            case 2:
+                Drawable[] drawableArr3 = PhotoViewer.V8;
+                photoViewer.i3(-1, false);
+                break;
+            default:
+                PhotoViewer.S(photoViewer);
+                break;
         }
-        b(i11);
-        if (i10 != i11) {
-            b(i10);
-        }
-        ArrayList arrayList = this.f;
-        boolean isEmpty = arrayList.isEmpty();
-        mb0 mb0Var = this.a;
-        if (!isEmpty) {
-            int j10 = Utilities.j(i10, arrayList.size() - 1, 0);
-            if (z10) {
-                mb0Var.y0(j10);
-            } else {
-                mb0Var.v0(j10);
-            }
-        }
-        mb0Var.invalidate();
-    }
-
-    public final void b(int i10) {
-        View m10 = this.b.m(i10);
-        if (m10 instanceof TextView) {
-            ((TextView) m10).setTextColor(i10 == this.d ? this.E : this.D);
-            m10.invalidate();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        rf.o.g(this.G, 0, 0, getWidth(), getHeight());
-        rf.o.g(this.H, 0, 0, getWidth(), getHeight());
-        (this.I ? this.H : this.G).draw(canvas);
-        canvas.save();
-        canvas.clipPath(this.J);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        int L = org.telegram.messenger.i0.L(3.0f);
-        Path path = this.J;
-        path.rewind();
-        float f7 = L;
-        path.addRoundRect(f7, f7, i10 - L, i11 - L, org.telegram.messenger.i0.L(18.0f) - L, org.telegram.messenger.i0.L(18.0f) - L, Path.Direction.CW);
     }
 }

@@ -8,9 +8,9 @@ public final class v extends y {
     public final /* synthetic */ Object t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v(a aVar, int i10, Object obj, int i11) {
-        super(aVar, i10);
-        this.s = i11;
+    public /* synthetic */ v(a aVar, int i3, Object obj, int i10) {
+        super(aVar, i3);
+        this.s = i10;
         this.t = obj;
     }
 
@@ -22,7 +22,7 @@ public final class v extends y {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i10, j5 j5Var) {
+    public final j5 Q0(int i3, j5 j5Var) {
         switch (this.s) {
             case 0:
                 return new u(this, j5Var);

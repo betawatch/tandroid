@@ -1,21 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.view.View;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class hv extends kg.l1 {
-    @Override // android.view.View
-    public final void invalidate() {
-        if (sg.e0.b(this)) {
-            return;
-        }
-        super.invalidate();
+public final class hv implements View.OnFocusChangeListener {
+    public final /* synthetic */ ey a;
+
+    public hv(ey eyVar) {
+        this.a = eyVar;
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (sg.e0.b(this)) {
-            return;
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        if (z10) {
+            String[] G0 = org.telegram.messenger.g0.G0();
+            ey eyVar = this.a;
+            eyVar.X0 = G0;
+            org.telegram.messenger.li.b0(eyVar.d1).M(eyVar.X0, false);
         }
-        super.invalidate(i10, i11, i12, i13);
     }
 }

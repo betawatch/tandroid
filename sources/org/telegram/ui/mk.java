@@ -1,242 +1,130 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class mk extends ChatActivityEnterView {
-    public int t5;
-    public int u5;
-    public int v5;
-    public final /* synthetic */ un w5;
+public final /* synthetic */ class mk implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Serializable h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mk(un unVar, Activity activity, org.telegram.ui.Components.vu0 vu0Var, un unVar2, boolean z10, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(activity, vu0Var, unVar2, z10, p6Var);
-        this.w5 = unVar;
+    public /* synthetic */ mk(g2.d dVar, Bitmap bitmap, int i3, int i10, String str, boolean z10) {
+        this.e = dVar;
+        this.f = bitmap;
+        this.b = i3;
+        this.c = i10;
+        this.h = str;
+        this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void A0(int i10, int i11) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
-        un unVar = this.w5;
-        if (unVar.Z != null) {
-            if (unVar.z0 != null) {
-                if (unVar.Xa > 0.0f) {
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.ac acVar;
+        int i3;
+        int i10;
+        int i11;
+        Rect rect;
+        int i12 = this.a;
+        Serializable serializable = this.h;
+        int i13 = this.c;
+        int i14 = this.b;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        switch (i12) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = (ArrayList) serializable;
+                wm wmVar = ((nk) obj2).b;
+                if (this.d) {
+                    i3 = ((org.telegram.ui.ActionBar.d2) wmVar).currentAccount;
+                    org.telegram.messenger.hp.s1(i3).d7.edit().remove("pin_" + wmVar.k6).commit();
+                    wmVar.cd(0, true);
+                    acVar = null;
+                } else {
+                    acVar = null;
+                    wmVar.getNotificationCenter().k(56, Long.valueOf(wmVar.k6), arrayList, Boolean.TRUE, arrayList2, null, 0, Integer.valueOf(i14), Boolean.valueOf(wmVar.f5));
                 }
-                lVar = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
-                if (lVar != null) {
-                    lVar2 = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
-                    if (lVar2.u()) {
-                        return;
+                if (i13 == wmVar.R3) {
+                    wmVar.P3 = acVar;
+                    break;
+                }
+                break;
+            default:
+                g2.d dVar = (g2.d) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                String str = (String) serializable;
+                Paint paint = (Paint) dVar.d;
+                int i15 = dVar.a;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    float width = bitmap.getWidth() / bitmap.getHeight();
+                    int round = (int) Math.round(Math.sqrt(width * 324.0f));
+                    int round2 = (int) Math.round(Math.sqrt(324.0f / width));
+                    if (i14 == 90 || i14 == 270) {
+                        i10 = round2;
+                        i11 = round;
+                    } else {
+                        i11 = round2;
+                        i10 = round;
                     }
-                }
-            }
-            this.n3 = true;
-            this.u5 = this.E0.getMeasuredHeight();
-            this.v5 = this.E0.getScrollY();
-            unVar.l1.invalidate();
-            unVar.c0 = unVar.Z.getBackgroundTop();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void F0() {
-        if (this.w5.Ya != null) {
-            return;
-        }
-        super.F0();
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final boolean L0() {
-        return this.w5.d6;
-    }
-
-    public final void S1() {
-        org.telegram.ui.ActionBar.l lVar;
-        un unVar = this.w5;
-        lVar = ((org.telegram.ui.ActionBar.k2) unVar).actionBar;
-        final int i10 = 0;
-        if (lVar.u() || unVar.R9()) {
-            ValueAnimator valueAnimator = unVar.J9;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            ValueAnimator valueAnimator2 = unVar.I9;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-            }
-            unVar.c0 = 0;
-            this.n3 = false;
-            return;
-        }
-        int backgroundTop = getBackgroundTop();
-        int i11 = unVar.c0;
-        final int i12 = 1;
-        if (i11 != 0 && backgroundTop != i11 && this.t5 == unVar.l1.getMeasuredHeight()) {
-            int i13 = (this.T1 + unVar.c0) - backgroundTop;
-            setAnimatedTop(i13);
-            this.y1.invalidate();
-            ValueAnimator valueAnimator3 = unVar.I9;
-            if (valueAnimator3 != null) {
-                valueAnimator3.removeAllListeners();
-                unVar.I9.cancel();
-            }
-            View view = this.G1;
-            if (view != null && view.getVisibility() == 0) {
-                this.G1.setTranslationY(((1.0f - getTopViewEnterProgress()) * this.G1.getLayoutParams().height) + this.T1);
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(i13, 0.0f);
-            unVar.I9 = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.lk
-                public final /* synthetic */ mk b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                    switch (i10) {
-                        case 0:
-                            mk mkVar = this.b;
-                            un unVar2 = mkVar.w5;
-                            float floatValue = ((Float) valueAnimator4.getAnimatedValue()).floatValue();
-                            mkVar.setAnimatedTop((int) floatValue);
-                            View view2 = mkVar.G1;
-                            if (view2 == null || view2.getVisibility() != 0) {
-                                unVar2.F9();
-                                unVar2.H9();
-                            } else {
-                                mkVar.G1.setTranslationY(((1.0f - mkVar.getTopViewEnterProgress()) * mkVar.G1.getLayoutParams().height) + floatValue);
-                            }
-                            mkVar.y1.invalidate();
-                            mkVar.invalidate();
-                            break;
-                        default:
-                            this.b.E0.setOffsetY(((Float) valueAnimator4.getAnimatedValue()).floatValue());
-                            break;
+                    int i16 = i15 * 2;
+                    Bitmap createBitmap = Bitmap.createBitmap(i16 + i10, i16 + i11, Bitmap.Config.ARGB_8888);
+                    Canvas canvas = new Canvas(createBitmap);
+                    Rect rect2 = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+                    int i17 = i15 + round;
+                    int i18 = i15 + round2;
+                    Rect rect3 = new Rect(i15, i15, i17, i18);
+                    float f10 = i15;
+                    canvas.translate((i10 / 2.0f) + f10, (i11 / 2.0f) + f10);
+                    if (i13 == 1) {
+                        canvas.scale(-1.0f, 1.0f);
+                        rect = rect2;
+                    } else {
+                        rect = rect2;
+                        if (i13 == 2) {
+                            canvas.scale(1.0f, -1.0f);
+                        }
                     }
-                }
-            });
-            unVar.I9.addListener(new s9(this, 16));
-            unVar.I9.setDuration(250L);
-            unVar.I9.setInterpolator(ci.o.V);
-            if (!unVar.H9) {
-                unVar.I9.start();
-            }
-            unVar.F9();
-            unVar.H9();
-            unVar.c0 = 0;
-        } else if (this.t5 != unVar.l1.getMeasuredHeight()) {
-            unVar.c0 = 0;
-        }
-        if (this.n3) {
-            float scrollY = (this.v5 - this.E0.getScrollY()) + (this.u5 - this.E0.getMeasuredHeight());
-            org.telegram.ui.Components.se seVar = this.E0;
-            seVar.setOffsetY(seVar.getOffsetY() - scrollY);
-            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.E0.getOffsetY(), 0.0f);
-            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.lk
-                public final /* synthetic */ mk b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                    switch (i12) {
-                        case 0:
-                            mk mkVar = this.b;
-                            un unVar2 = mkVar.w5;
-                            float floatValue = ((Float) valueAnimator4.getAnimatedValue()).floatValue();
-                            mkVar.setAnimatedTop((int) floatValue);
-                            View view2 = mkVar.G1;
-                            if (view2 == null || view2.getVisibility() != 0) {
-                                unVar2.F9();
-                                unVar2.H9();
-                            } else {
-                                mkVar.G1.setTranslationY(((1.0f - mkVar.getTopViewEnterProgress()) * mkVar.G1.getLayoutParams().height) + floatValue);
-                            }
-                            mkVar.y1.invalidate();
-                            mkVar.invalidate();
-                            break;
-                        default:
-                            this.b.E0.setOffsetY(((Float) valueAnimator4.getAnimatedValue()).floatValue());
-                            break;
+                    canvas.rotate(i14);
+                    float f11 = -i15;
+                    canvas.translate(f11 - (round / 2.0f), f11 - (round2 / 2.0f));
+                    try {
+                        canvas.drawBitmap(bitmap, rect, rect3, (Paint) null);
+                    } catch (Exception unused) {
                     }
+                    Utilities.stackBlurBitmap(createBitmap, 6);
+                    if (i15 > 0) {
+                        float f12 = i17;
+                        canvas.drawRect(0.0f, 0.0f, f12, f10, paint);
+                        float f13 = i18;
+                        canvas.drawRect(0.0f, f10, f10, f13, paint);
+                        float f14 = i17 + i15;
+                        canvas.drawRect(f12, f10, f14, f13, paint);
+                        canvas.drawRect(0.0f, f13, f14, i18 + i15, paint);
+                    }
+                    org.telegram.messenger.g0.h3(new gi.q1(dVar, str, createBitmap, this.d, bitmap));
+                    break;
                 }
-            });
-            ValueAnimator valueAnimator4 = unVar.J9;
-            if (valueAnimator4 != null) {
-                valueAnimator4.cancel();
-            }
-            unVar.J9 = ofFloat2;
-            ofFloat2.setDuration(250L);
-            ofFloat2.setInterpolator(ci.o.V);
-            ofFloat2.start();
-            this.n3 = false;
-        }
-        this.t5 = unVar.l1.getMeasuredHeight();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() != 1.0f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void m0(boolean z10) {
-        super.m0(z10);
-        un unVar = this.w5;
-        nf nfVar = unVar.Jb;
-        if (nfVar != null) {
-            org.telegram.messenger.i0.g3(nfVar);
-            unVar.Jb = null;
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() != 1.0f) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() != 1.0f) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView, android.view.View
-    public final void setVisibility(int i10) {
-        super.setVisibility(i10);
-        un unVar = this.w5;
-        j6.m mVar = unVar.Yc;
-        boolean z10 = false;
-        boolean z11 = i10 == 0;
-        if (getMeasuredWidth() > 0 && !unVar.Oc) {
-            z10 = true;
-        }
-        mVar.h(1, z11, z10);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void y0(float f7) {
-        this.w5.C7();
+    public /* synthetic */ mk(nk nkVar, boolean z10, ArrayList arrayList, ArrayList arrayList2, int i3, int i10) {
+        this.e = nkVar;
+        this.d = z10;
+        this.f = arrayList;
+        this.h = arrayList2;
+        this.b = i3;
+        this.c = i10;
     }
 }

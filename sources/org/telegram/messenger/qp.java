@@ -1,123 +1,178 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class qp {
-    public final int a;
-    public final long b;
-    public final ArrayList c = new ArrayList();
-    public int d;
-    public boolean e;
-    public boolean f;
+public final /* synthetic */ class qp implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qr b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
 
-    public qp(int i10, long j10) {
-        this.a = i10;
-        this.b = j10;
+    public /* synthetic */ qp(int i3, long j10, qr qrVar, boolean z10) {
+        this.a = i3;
+        this.b = qrVar;
+        this.c = j10;
+        this.d = z10;
     }
 
-    public final TLRPC.Document a() {
-        kj kjVar;
-        ArrayList arrayList = this.c;
-        if (arrayList.isEmpty() || (kjVar = (kj) arrayList.get(0)) == null) {
-            return null;
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0044, code lost:
+    
+        if (r3 == null) goto L27;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x006b A[Catch: all -> 0x0038, Exception -> 0x003a, TRY_ENTER, TryCatch #4 {Exception -> 0x003a, blocks: (B:12:0x0034, B:16:0x0050, B:36:0x006b, B:37:0x006e), top: B:11:0x0034, outer: #7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00e9 A[Catch: all -> 0x00b0, Exception -> 0x00b2, TRY_ENTER, TryCatch #10 {Exception -> 0x00b2, blocks: (B:50:0x00ac, B:54:0x00cb, B:68:0x00e9, B:69:0x00ec, B:63:0x00be), top: B:43:0x0088, outer: #0 }] */
+    /* JADX WARN: Type inference failed for: r3v13, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r3v24, types: [org.telegram.SQLite.SQLiteCursor] */
+    /* JADX WARN: Type inference failed for: r3v27 */
+    /* JADX WARN: Type inference failed for: r3v28 */
+    /* JADX WARN: Type inference failed for: r3v29 */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        SQLiteCursor sQLiteCursor;
+        int i3;
+        SQLiteCursor sQLiteCursor2;
+        switch (this.a) {
+            case 0:
+                long j10 = this.c;
+                qr qrVar = this.b;
+                qrVar.getClass();
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    try {
+                        try {
+                            sQLiteCursor = qrVar.b.queryFinalized("SELECT flags FROM dialogs WHERE did = " + j10, new Object[0]);
+                            try {
+                                try {
+                                    i3 = sQLiteCursor.next() ? sQLiteCursor.intValue(0) : 0;
+                                    sQLiteCursor.dispose();
+                                } catch (Exception e10) {
+                                    e = e10;
+                                    qrVar.o(e, true);
+                                    if (sQLiteCursor != null) {
+                                        sQLiteCursor.dispose();
+                                    }
+                                    i3 = 0;
+                                    if (!this.d) {
+                                    }
+                                    sQLitePreparedStatement = qrVar.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
+                                    sQLitePreparedStatement.bindInteger(1, r3);
+                                    sQLitePreparedStatement.bindLong(2, j10);
+                                    sQLitePreparedStatement.step();
+                                    sQLitePreparedStatement.dispose();
+                                    qrVar.t1(false);
+                                    sQLitePreparedStatement.dispose();
+                                    return;
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (Throwable th3) {
+                            if (0 != 0) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            throw th3;
+                        }
+                    } catch (Exception e11) {
+                        e = e11;
+                        sQLiteCursor = null;
+                    } catch (Throwable th4) {
+                        th = th4;
+                        sQLiteCursor = null;
+                        if (sQLiteCursor != null) {
+                        }
+                        throw th;
+                    }
+                    int i10 = !this.d ? i3 | 1 : i3 & (-2);
+                    sQLitePreparedStatement = qrVar.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
+                    sQLitePreparedStatement.bindInteger(1, i10);
+                    sQLitePreparedStatement.bindLong(2, j10);
+                    sQLitePreparedStatement.step();
+                    sQLitePreparedStatement.dispose();
+                    qrVar.t1(false);
+                } catch (Exception e12) {
+                    qrVar.o(e12, true);
+                    if (0 == 0) {
+                        return;
+                    }
+                }
+                sQLitePreparedStatement.dispose();
+                return;
+            default:
+                long j11 = this.c;
+                qr qrVar2 = this.b;
+                qrVar2.getClass();
+                SQLiteCursor sQLiteCursor3 = "SELECT flags FROM dialogs WHERE did = ";
+                SQLitePreparedStatement sQLitePreparedStatement2 = null;
+                int i11 = 0;
+                try {
+                    try {
+                        sQLiteCursor2 = qrVar2.b.queryFinalized("SELECT flags FROM dialogs WHERE did = " + j11, new Object[0]);
+                        try {
+                            boolean next = sQLiteCursor2.next();
+                            sQLiteCursor3 = sQLiteCursor2;
+                            if (next) {
+                                i11 = sQLiteCursor2.intValue(0);
+                                sQLiteCursor3 = sQLiteCursor2;
+                            }
+                        } catch (Exception e13) {
+                            e = e13;
+                            qrVar2.o(e, true);
+                            sQLiteCursor3 = sQLiteCursor2;
+                            break;
+                        }
+                    } catch (Throwable th5) {
+                        th = th5;
+                        if (sQLiteCursor3 != 0) {
+                            sQLiteCursor3.dispose();
+                        }
+                        throw th;
+                    }
+                } catch (Exception e14) {
+                    e = e14;
+                    sQLiteCursor2 = null;
+                } catch (Throwable th6) {
+                    th = th6;
+                    sQLiteCursor3 = 0;
+                    if (sQLiteCursor3 != 0) {
+                    }
+                    throw th;
+                }
+                try {
+                    try {
+                        sQLiteCursor3.dispose();
+                        int i12 = this.d ? i11 | 64 : i11 & (-65);
+                        sQLitePreparedStatement2 = qrVar2.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
+                        sQLitePreparedStatement2.bindInteger(1, i12);
+                        sQLitePreparedStatement2.bindLong(2, j11);
+                        sQLitePreparedStatement2.step();
+                        sQLitePreparedStatement2.dispose();
+                    } catch (Exception e15) {
+                        qrVar2.o(e15, true);
+                        if (0 == 0) {
+                            return;
+                        }
+                    }
+                    sQLitePreparedStatement2.dispose();
+                    return;
+                } catch (Throwable th7) {
+                    if (0 != 0) {
+                        sQLitePreparedStatement2.dispose();
+                    }
+                    throw th7;
+                }
         }
-        return kjVar.F0();
-    }
-
-    public final void b() {
-        if (this.f || this.e) {
-            return;
-        }
-        this.f = true;
-        TLRPC.TL_getSavedMusic tL_getSavedMusic = new TLRPC.TL_getSavedMusic();
-        int i10 = this.a;
-        tL_getSavedMusic.id = wp.r1(i10).n1(this.b);
-        tL_getSavedMusic.offset = this.c.size();
-        tL_getSavedMusic.limit = 30;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_getSavedMusic, new v1(this, 6));
-    }
-
-    public final void c(int i10, int i11) {
-        TLRPC.Document a2 = a();
-        ArrayList arrayList = this.c;
-        kj kjVar = (kj) arrayList.get(i11);
-        kj kjVar2 = (kj) arrayList.get(i10);
-        arrayList.set(i10, kjVar);
-        arrayList.set(i11, kjVar2);
-        if (a() != a2) {
-            e();
-        }
-        kj kjVar3 = i11 == 0 ? null : (kj) arrayList.get(i11 - 1);
-        TLRPC.Document F0 = kjVar2.F0();
-        TLRPC.Document F02 = kjVar3 == null ? null : kjVar3.F0();
-        TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
-        if (F0 == null) {
-            return;
-        }
-        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-        tL_account_saveMusic.id = tL_inputDocument;
-        tL_inputDocument.id = F0.id;
-        tL_inputDocument.access_hash = F0.access_hash;
-        byte[] bArr = F0.file_reference;
-        tL_inputDocument.file_reference = bArr;
-        if (bArr == null) {
-            tL_inputDocument.file_reference = new byte[0];
-        }
-        if (F02 != null) {
-            tL_account_saveMusic.flags |= 2;
-            TLRPC.TL_inputDocument tL_inputDocument2 = new TLRPC.TL_inputDocument();
-            tL_account_saveMusic.after_id = tL_inputDocument2;
-            tL_inputDocument2.id = F02.id;
-            tL_inputDocument2.access_hash = F02.access_hash;
-            byte[] bArr2 = F02.file_reference;
-            tL_inputDocument2.file_reference = bArr2;
-            if (bArr2 == null) {
-                tL_inputDocument2.file_reference = new byte[0];
-            }
-        }
-        tL_account_saveMusic.unsave = false;
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_account_saveMusic, null);
-    }
-
-    public final kj d(TLRPC.Document document) {
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.id = uz.p();
-        int i10 = this.a;
-        wp r12 = wp.r1(i10);
-        long j10 = this.b;
-        tL_message.peer_id = r12.y1(j10);
-        tL_message.from_id = wp.r1(i10).y1(j10);
-        TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
-        tL_message.media = tL_messageMediaDocument;
-        tL_messageMediaDocument.document = document;
-        kj kjVar = new kj(i10, tL_message, false, false);
-        kjVar.K(true);
-        return kjVar;
-    }
-
-    public final void e() {
-        TLRPC.Document a2 = a();
-        int i10 = this.a;
-        wp r12 = wp.r1(i10);
-        long j10 = this.b;
-        TLRPC.UserFull a22 = r12.a2(j10);
-        if (a22 == null) {
-            return;
-        }
-        if (a2 == null) {
-            a22.flags2 &= -2097153;
-            a22.saved_music = null;
-        } else {
-            a22.flags2 |= TLObject.FLAG_21;
-            a22.saved_music = a2;
-        }
-        is.a0(i10).j2(a22, false);
-        e20.i(i10).v(true);
-        at.f(i10).k(at.V3, Long.valueOf(j10));
     }
 }

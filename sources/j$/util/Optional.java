@@ -1,6 +1,10 @@
 package j$.util;
 
 import java.util.NoSuchElementException;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public final class Optional<T> {
@@ -33,6 +37,45 @@ public final class Optional<T> {
 
     public boolean isPresent() {
         return this.a != null;
+    }
+
+    public void ifPresent(Consumer<? super T> consumer) {
+        a0.h hVar = (Object) this.a;
+        if (hVar != null) {
+            consumer.accept(hVar);
+        }
+    }
+
+    public Optional<T> filter(Predicate<? super T> predicate) {
+        Objects.requireNonNull(predicate);
+        return (isPresent() && !predicate.test((Object) this.a)) ? empty() : this;
+    }
+
+    public <U> Optional<U> map(Function<? super T, ? extends U> function) {
+        Objects.requireNonNull(function);
+        if (!isPresent()) {
+            return empty();
+        }
+        U apply = function.apply((Object) this.a);
+        return apply == null ? empty() : of(apply);
+    }
+
+    public <U> Optional<U> flatMap(Function<? super T, ? extends Optional<? extends U>> function) {
+        Objects.requireNonNull(function);
+        if (!isPresent()) {
+            return empty();
+        }
+        return (Optional) Objects.requireNonNull(function.apply((Object) this.a));
+    }
+
+    public Optional<T> or(Supplier<? extends Optional<? extends T>> supplier) {
+        Objects.requireNonNull(supplier);
+        return isPresent() ? this : (Optional) Objects.requireNonNull(supplier.get());
+    }
+
+    public T orElse(T t10) {
+        T t11 = (T) this.a;
+        return t11 != null ? t11 : t10;
     }
 
     public final boolean equals(Object obj) {

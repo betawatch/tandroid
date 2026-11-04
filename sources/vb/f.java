@@ -1,56 +1,29 @@
 package vb;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import b8.ke;
+import mb.g;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f extends d {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final /* synthetic */ class f implements t9.d {
+    public static final /* synthetic */ f b = new f(0);
+    public static final /* synthetic */ f c = new f(1);
+    public static final /* synthetic */ f d = new f(2);
+    public final /* synthetic */ int a;
 
-    public f(int i10, int i11, int i12, int i13, int i14, int i15) {
-        super(i14, i15);
-        if (i14 + i12 > i10 || i15 + i13 > i11) {
-            throw new IllegalArgumentException("Crop rectangle does not fit within image data.");
-        }
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+    public /* synthetic */ f(int i3) {
+        this.a = i3;
     }
 
-    @Override // vb.d
-    public final byte[] a() {
-        int i10 = this.a;
-        int i11 = this.b;
-        int i12 = this.c;
-        if (i10 == i12 && i11 == this.d) {
-            return null;
+    @Override // t9.d
+    public final Object q1(ke keVar) {
+        switch (this.a) {
+            case 0:
+                return new d((g) keVar.a(g.class));
+            case 1:
+                return new c((d) keVar.a(d.class), (mb.d) keVar.a(mb.d.class));
+            default:
+                return new sb.b(keVar.f(c.class));
         }
-        int i13 = i10 * i11;
-        byte[] bArr = new byte[i13];
-        int i14 = (this.f * i12) + this.e;
-        if (i10 == i12) {
-            System.arraycopy(null, i14, bArr, 0, i13);
-            return bArr;
-        }
-        for (int i15 = 0; i15 < i11; i15++) {
-            System.arraycopy(null, i14, bArr, i15 * i10, i10);
-            i14 += i12;
-        }
-        return bArr;
-    }
-
-    @Override // vb.d
-    public final byte[] b(int i10, byte[] bArr) {
-        if (i10 < 0 || i10 >= this.b) {
-            throw new IllegalArgumentException(i0.a.i(i10, "Requested row is outside the image: "));
-        }
-        int i11 = this.a;
-        if (bArr == null || bArr.length < i11) {
-            bArr = new byte[i11];
-        }
-        System.arraycopy(null, ((i10 + this.f) * this.c) + this.e, bArr, 0, i11);
-        return bArr;
     }
 }

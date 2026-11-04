@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import kotlin.jvm.internal.i;
+import kotlin.jvm.internal.j;
 import m.p;
-import t4.c;
-import t4.e;
+import v4.c;
+import v4.e;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -35,55 +35,55 @@ public final class Recreator implements r {
         }
         tVar.m().b(this);
         e eVar = this.a;
-        Bundle c10 = eVar.g().c("androidx.savedstate.Restarter");
-        if (c10 == null) {
+        Bundle c2 = eVar.g().c("androidx.savedstate.Restarter");
+        if (c2 == null) {
             return;
         }
-        ArrayList<String> stringArrayList = c10.getStringArrayList("classes_to_restore");
+        ArrayList<String> stringArrayList = c2.getStringArrayList("classes_to_restore");
         if (stringArrayList == null) {
             throw new IllegalStateException("Bundle with restored state for the component \"androidx.savedstate.Restarter\" must contain list of strings by the key \"classes_to_restore\"");
         }
         int size = stringArrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            String str = stringArrayList.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            String str = stringArrayList.get(i3);
+            i3++;
             String str2 = str;
             try {
                 Class<? extends U> asSubclass = Class.forName(str2, false, Recreator.class.getClassLoader()).asSubclass(c.class);
-                i.d(asSubclass, "{\n                Class.…class.java)\n            }");
+                j.d(asSubclass, "{\n                Class.…class.java)\n            }");
                 try {
                     Constructor declaredConstructor = asSubclass.getDeclaredConstructor(null);
                     declaredConstructor.setAccessible(true);
                     try {
                         Object newInstance = declaredConstructor.newInstance(null);
-                        i.d(newInstance, "{\n                constr…wInstance()\n            }");
+                        j.d(newInstance, "{\n                constr…wInstance()\n            }");
                         if (!(eVar instanceof u0)) {
                             throw new IllegalStateException("Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner");
                         }
-                        t0 f7 = ((u0) eVar).f();
-                        p g10 = eVar.g();
-                        f7.getClass();
-                        LinkedHashMap linkedHashMap = f7.a;
+                        t0 f10 = ((u0) eVar).f();
+                        p g7 = eVar.g();
+                        f10.getClass();
+                        LinkedHashMap linkedHashMap = f10.a;
                         Iterator it = new HashSet(linkedHashMap.keySet()).iterator();
                         while (it.hasNext()) {
                             String key = (String) it.next();
-                            i.e(key, "key");
+                            j.e(key, "key");
                             p0 p0Var = (p0) linkedHashMap.get(key);
-                            i.b(p0Var);
-                            j0.a(p0Var, g10, eVar.m());
+                            j.b(p0Var);
+                            j0.a(p0Var, g7, eVar.m());
                         }
                         if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
-                            g10.g();
+                            g7.g();
                         }
-                    } catch (Exception e) {
-                        throw new RuntimeException(sc.e.h("Failed to instantiate ", str2), e);
+                    } catch (Exception e10) {
+                        throw new RuntimeException(t4.c.f("Failed to instantiate ", str2), e10);
                     }
-                } catch (NoSuchMethodException e7) {
-                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e7);
+                } catch (NoSuchMethodException e11) {
+                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e11);
                 }
-            } catch (ClassNotFoundException e10) {
-                throw new RuntimeException(g.n("Class ", str2, " wasn't found"), e10);
+            } catch (ClassNotFoundException e12) {
+                throw new RuntimeException(g.q("Class ", str2, " wasn't found"), e12);
             }
         }
     }

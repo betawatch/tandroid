@@ -7,16 +7,16 @@ import j$.time.ZoneOffset;
 public final class h implements f {
     @Override // j$.time.format.f
     public final boolean j(r rVar, StringBuilder sb2) {
-        Long a2 = rVar.a(j$.time.temporal.a.INSTANT_SECONDS);
+        Long a10 = rVar.a(j$.time.temporal.a.INSTANT_SECONDS);
         j$.time.temporal.l lVar = rVar.a;
         j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
         Long valueOf = lVar.e(aVar) ? Long.valueOf(lVar.y(aVar)) : null;
-        int i10 = 0;
-        if (a2 == null) {
+        int i3 = 0;
+        if (a10 == null) {
             return false;
         }
-        long longValue = a2.longValue();
-        int a10 = aVar.b.a(valueOf != null ? valueOf.longValue() : 0L, aVar);
+        long longValue = a10.longValue();
+        int a11 = aVar.b.a(valueOf != null ? valueOf.longValue() : 0L, aVar);
         if (longValue >= -62167219200L) {
             long j10 = longValue - 253402300800L;
             long R = j$.com.android.tools.r8.a.R(j10, 315569520000L) + 1;
@@ -49,18 +49,18 @@ public final class h implements f {
                 }
             }
         }
-        if (a10 > 0) {
+        if (a11 > 0) {
             sb2.append('.');
-            int i11 = 100000000;
+            int i10 = 100000000;
             while (true) {
-                if (a10 <= 0 && i10 % 3 == 0 && i10 >= -2) {
+                if (a11 <= 0 && i3 % 3 == 0 && i3 >= -2) {
                     break;
                 }
-                int i12 = a10 / i11;
-                sb2.append((char) (i12 + 48));
-                a10 -= i12 * i11;
-                i11 /= 10;
-                i10++;
+                int i11 = a11 / i10;
+                sb2.append((char) (i11 + 48));
+                a11 -= i11 * i10;
+                i10 /= 10;
+                i3++;
             }
         }
         sb2.append('Z');

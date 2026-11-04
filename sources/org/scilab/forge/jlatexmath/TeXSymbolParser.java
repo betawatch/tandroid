@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class TeXSymbolParser {
     public static final String DELIMITER_ATTR = "del";
@@ -44,15 +44,15 @@ public class TeXSymbolParser {
     public Map<String, SymbolAtom> readSymbols() {
         HashMap hashMap = new HashMap();
         NodeList elementsByTagName = this.root.getElementsByTagName("Symbol");
-        for (int i10 = 0; i10 < elementsByTagName.getLength(); i10++) {
-            Element element = (Element) elementsByTagName.item(i10);
+        for (int i3 = 0; i3 < elementsByTagName.getLength(); i3++) {
+            Element element = (Element) elementsByTagName.item(i3);
             String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element);
             String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull(TYPE_ATTR, element);
             String attribute = element.getAttribute(DELIMITER_ATTR);
             boolean z10 = attribute != null && attribute.equals("true");
             Integer num = typeMappings.get(attrValueAndCheckIfNotNull2);
             if (num == null) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, g.n("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
+                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, g.q("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
             }
             hashMap.put(attrValueAndCheckIfNotNull, new SymbolAtom(attrValueAndCheckIfNotNull, num.intValue(), z10));
         }
@@ -66,8 +66,8 @@ public class TeXSymbolParser {
             newInstance.setIgnoringComments(true);
             this.root = newInstance.newDocumentBuilder().parse(inputStream).getDocumentElement();
             setTypeMappings();
-        } catch (Exception e) {
-            throw new XMLResourceParseException(str, e);
+        } catch (Exception e10) {
+            throw new XMLResourceParseException(str, e10);
         }
     }
 }

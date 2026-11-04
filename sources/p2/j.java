@@ -1,25 +1,64 @@
 package p2;
 
-import e9.l0;
-import e9.n0;
-import e9.x1;
-import java.util.List;
+import g2.n0;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.ui.Components.iv0;
+import org.telegram.ui.rw;
+import w2.g0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j extends k {
-    public final String x;
-    public final n0 y;
+public final class j {
+    public final int a;
+    public final g0 b;
+    public final CopyOnWriteArrayList c;
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public j(String str, long j10, long j11, String str2, String str3) {
-        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j10, j11, false, x1.e);
-        l0 l0Var = n0.b;
+    public j(CopyOnWriteArrayList copyOnWriteArrayList, int i3, g0 g0Var) {
+        this.c = copyOnWriteArrayList;
+        this.a = i3;
+        this.b = g0Var;
     }
 
-    public j(String str, j jVar, String str2, long j10, int i10, long j11, b2.t tVar, String str3, String str4, long j12, long j13, boolean z10, List list) {
-        super(str, jVar, j10, i10, j11, tVar, str3, str4, j12, j13, z10);
-        this.x = str2;
-        this.y = n0.u(list);
+    public final void a(v7.s sVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            i iVar = (i) it.next();
+            n0.W(iVar.a, new iv0(this, iVar.b, sVar, 18));
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, p2.k] */
+    public final void b() {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            i iVar = (i) it.next();
+            n0.W(iVar.a, new h(this, iVar.b, 1));
+        }
+    }
+
+    public final void c(int i3) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            i iVar = (i) it.next();
+            n0.W(iVar.a, new rw(this, iVar.b, i3, 22));
+        }
+    }
+
+    public final void d(Exception exc) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            i iVar = (i) it.next();
+            n0.W(iVar.a, new iv0(this, iVar.b, exc, 17));
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, p2.k] */
+    public final void e() {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            i iVar = (i) it.next();
+            n0.W(iVar.a, new h(this, iVar.b, 0));
+        }
     }
 }

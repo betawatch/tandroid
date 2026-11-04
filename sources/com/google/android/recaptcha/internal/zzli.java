@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.t;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
+import wd.t;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzli extends j implements p {
     Object zza;
@@ -23,27 +23,27 @@ final class zzli extends j implements p {
         this.zzd = str;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzli(this.zzc, this.zzd, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
         String zza;
-        a aVar = a.a;
+        gd.a aVar = gd.a.a;
         try {
             if (this.zzb != 0) {
                 String str = (String) this.zza;
-                b.b(obj);
+                ib.b(obj);
                 zza = str;
             } else {
-                b.b(obj);
+                ib.b(obj);
                 zzly zzlyVar = this.zzc;
                 zza = zzly.zzm(zzlyVar).zza();
                 this.zza = zza;
@@ -54,10 +54,10 @@ final class zzli extends j implements p {
                 }
             }
             ((WebView) obj).loadDataWithBaseURL(zza, this.zzd, "text/html", "utf-8", null);
-            return ad.j.a;
-        } catch (Exception e) {
-            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e.getMessage(), null, 8, null);
-            ((t) this.zzc.zzz()).L(zzcgVar);
+            return k.a;
+        } catch (Exception e10) {
+            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e10.getMessage(), null, 8, null);
+            ((t) this.zzc.zzz()).Q(zzcgVar);
             throw zzcgVar;
         }
     }

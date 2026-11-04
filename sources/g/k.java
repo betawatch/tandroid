@@ -1,30 +1,11 @@
 package g;
 
-import android.content.res.Configuration;
-import android.os.LocaleList;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class k {
-    public static void a(Configuration configuration, Configuration configuration2, Configuration configuration3) {
-        LocaleList locales = configuration.getLocales();
-        LocaleList locales2 = configuration2.getLocales();
-        if (locales.equals(locales2)) {
-            return;
-        }
-        configuration3.setLocales(locales2);
-        configuration3.locale = configuration2.locale;
-    }
-
-    public static n0.c b(Configuration configuration) {
-        return n0.c.b(configuration.getLocales().toLanguageTags());
-    }
-
-    public static void c(n0.c cVar) {
-        LocaleList.setDefault(LocaleList.forLanguageTags(cVar.a.a()));
-    }
-
-    public static void d(Configuration configuration, n0.c cVar) {
-        configuration.setLocales(LocaleList.forLanguageTags(cVar.a.a()));
+    public static String a(Locale locale) {
+        return locale.toLanguageTag();
     }
 }

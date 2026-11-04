@@ -1,16 +1,31 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b10 extends FrameLayout {
-    public org.telegram.ui.Components.fi0 a;
+public final class b10 extends g.p {
+    public final /* synthetic */ x30 c;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public b10(x30 x30Var) {
+        this.c = x30Var;
+    }
+
+    @Override // g.p
+    public final int i(int i3) {
+        r30 r30Var;
+        int i10;
+        int i11;
+        int i12 = x30.x5 ? 6 : 2;
+        if (x30.y5 || i3 < (i10 = (r30Var = this.c.H1).H) || i3 >= (i11 = r30Var.I)) {
+            return i12;
+        }
+        int i13 = i11 - i10;
+        int i14 = (i3 != i11 - 1 || (!x30.x5 && i13 % 2 == 0)) ? 1 : 2;
+        if (!x30.x5) {
+            return i14;
+        }
+        if (i13 == 1) {
+            return 6;
+        }
+        return i13 == 2 ? 3 : 2;
     }
 }

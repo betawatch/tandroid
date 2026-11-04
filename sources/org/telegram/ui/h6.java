@@ -1,187 +1,230 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class h6 implements org.telegram.ui.Components.iu0, i7 {
-    public final /* synthetic */ y6 a;
+public final /* synthetic */ class h6 implements org.telegram.ui.ActionBar.s6 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d2 b;
 
-    public /* synthetic */ h6(y6 y6Var) {
-        this.a = y6Var;
+    public /* synthetic */ h6(int i3, org.telegram.ui.ActionBar.d2 d2Var) {
+        this.a = i3;
+        this.b = d2Var;
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public void F(boolean z10) {
-        fe.b bVar = this.a.T;
-        if (bVar == null || bVar.f == z10) {
-            return;
-        }
-        bVar.a(z10, true);
+    @Override // org.telegram.ui.ActionBar.s6
+    public final /* synthetic */ void a(float f10) {
+        int i3 = this.a;
     }
 
-    @Override // org.telegram.ui.i7
-    public void a(s6 s6Var, sh.a aVar, boolean z10) {
-        HashSet hashSet;
-        y6 y6Var = this.a;
-        if (s6Var == null) {
-            if (aVar != null) {
-                y6Var.d0.i(aVar);
-                y6Var.M.e();
-                y6.i0(y6Var);
-                return;
-            }
-            return;
-        }
-        if (y6Var.d0.j.size() > 0 || z10) {
-            sh.b bVar = y6Var.d0;
-            HashSet hashSet2 = bVar.j;
-            HashSet hashSet3 = bVar.l;
-            long j10 = s6Var.a;
-            SparseArray sparseArray = s6Var.d;
-            if (hashSet3.contains(Long.valueOf(j10))) {
-                for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-                    ArrayList arrayList = ((t6) sparseArray.valueAt(i10)).b;
-                    int size = arrayList.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj = arrayList.get(i11);
-                        i11++;
-                        sh.a aVar2 = (sh.a) obj;
-                        if (hashSet2.remove(aVar2)) {
-                            bVar.k -= aVar2.c;
-                        }
-                    }
+    @Override // org.telegram.ui.ActionBar.s6
+    public final void b() {
+        int i3 = this.a;
+        org.telegram.ui.ActionBar.d2 d2Var = this.b;
+        switch (i3) {
+            case 0:
+                ut utVar = ((z6) d2Var).a0;
+                if (utVar != null) {
+                    utVar.v0(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h5, false));
+                    break;
                 }
-            } else {
-                for (int i12 = 0; i12 < sparseArray.size(); i12++) {
-                    ArrayList arrayList2 = ((t6) sparseArray.valueAt(i12)).b;
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (i13 < size2) {
-                        Object obj2 = arrayList2.get(i13);
-                        i13++;
-                        sh.a aVar3 = (sh.a) obj2;
-                        if (hashSet2.add(aVar3)) {
-                            bVar.k += aVar3.c;
-                        }
-                    }
-                }
-            }
-            bVar.c();
-            y6Var.M.e();
-            y6.i0(y6Var);
-            return;
-        }
-        if (y6Var.G <= 0 || y6Var.getParentActivity() == null) {
-            return;
-        }
-        s6Var.getClass();
-        boolean z11 = true;
-        sh.b bVar2 = new sh.b(true);
-        SparseArray sparseArray2 = s6Var.d;
-        Object obj3 = sparseArray2.get(0);
-        ArrayList arrayList3 = bVar2.d;
-        if (obj3 != null) {
-            arrayList3.addAll(((t6) sparseArray2.get(0)).b);
-        }
-        if (sparseArray2.get(1) != null) {
-            arrayList3.addAll(((t6) sparseArray2.get(1)).b);
-        }
-        Object obj4 = sparseArray2.get(2);
-        ArrayList arrayList4 = bVar2.e;
-        if (obj4 != null) {
-            arrayList4.addAll(((t6) sparseArray2.get(2)).b);
-        }
-        Object obj5 = sparseArray2.get(3);
-        ArrayList arrayList5 = bVar2.f;
-        if (obj5 != null) {
-            arrayList5.addAll(((t6) sparseArray2.get(3)).b);
-        }
-        Object obj6 = sparseArray2.get(4);
-        ArrayList arrayList6 = bVar2.g;
-        if (obj6 != null) {
-            arrayList6.addAll(((t6) sparseArray2.get(4)).b);
-        }
-        int i14 = 0;
-        while (true) {
-            int size3 = arrayList3.size();
-            hashSet = bVar2.j;
-            if (i14 >= size3) {
                 break;
-            }
-            hashSet.add((sh.a) arrayList3.get(i14));
-            if (((sh.a) arrayList3.get(i14)).d == 0) {
-                bVar2.r += ((sh.a) arrayList3.get(i14)).c;
-            } else {
-                bVar2.s += ((sh.a) arrayList3.get(i14)).c;
-            }
-            i14++;
+            case 1:
+                ((wm) d2Var).Bb();
+                break;
+            case 2:
+                ((qo) d2Var).getClass();
+                break;
+            case 3:
+                ((xo) d2Var).h.f();
+                break;
+            case 4:
+                ((ip) d2Var).getClass();
+                break;
+            case 5:
+                ((nq) d2Var).getClass();
+                break;
+            case 6:
+                ((ContactsActivity) d2Var).getClass();
+                break;
+            case 7:
+                uw uwVar = (uw) d2Var;
+                cw cwVar = uwVar.D0;
+                if (cwVar != null) {
+                    org.telegram.ui.ActionBar.x actionMode = cwVar.getActionMode();
+                    if (actionMode != null) {
+                        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.w8, actionMode, uwVar.getResourceProvider());
+                    }
+                    org.telegram.ui.ActionBar.q0 speedItem = uwVar.D0.getSpeedItem();
+                    if (speedItem != null) {
+                        speedItem.getIconView().setColorFilter(new PorterDuffColorFilter(uwVar.getThemedColor(org.telegram.ui.ActionBar.k6.y8), PorterDuff.Mode.SRC_IN));
+                        break;
+                    }
+                }
+                break;
+            case 8:
+                ((ez) d2Var).getClass();
+                break;
+            case 9:
+                ((l00) d2Var).x0();
+                break;
+            case 10:
+                ((o50) d2Var).a0(true);
+                break;
+            case 11:
+                ((xd0) d2Var).H1();
+                break;
+            case 12:
+                ((xe0) d2Var).g0();
+                break;
+            case 13:
+                ((dg0) d2Var).f0();
+                break;
+            case 14:
+                ((NotificationsCustomSettingsActivity) d2Var).getClass();
+                break;
+            case 15:
+                ((cm0) d2Var).J0();
+                break;
+            case 16:
+                ((PremiumPreviewFragment) d2Var).z0();
+                break;
+            case 17:
+                ((it0) d2Var).getClass();
+                break;
+            case 18:
+                RectF rectF = ProfileActivity.T6;
+                ((ProfileActivity) d2Var).m5();
+                break;
+            case 19:
+                ((yw0) d2Var).getClass();
+                break;
+            case 20:
+                ((sx0) d2Var).b.f();
+                break;
+            case 21:
+                ((r41) d2Var).s0();
+                break;
+            case 22:
+                ThemeActivity themeActivity = (ThemeActivity) d2Var;
+                for (int i10 = 0; i10 < themeActivity.b.getChildCount(); i10++) {
+                    View childAt = themeActivity.b.getChildAt(i10);
+                    if (childAt instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) childAt).getAdapter().f();
+                    } else if (childAt instanceof il0) {
+                        ((il0) childAt).updateColors();
+                    }
+                }
+                for (int i11 = 0; i11 < themeActivity.b.getCachedChildCount(); i11++) {
+                    View P = themeActivity.b.P(i11);
+                    if (P instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) P).getAdapter().f();
+                    } else if (P instanceof il0) {
+                        ((il0) P).updateColors();
+                    }
+                }
+                for (int i12 = 0; i12 < themeActivity.b.getHiddenChildCount(); i12++) {
+                    View V = themeActivity.b.V(i12);
+                    if (V instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) V).getAdapter().f();
+                    } else if (V instanceof il0) {
+                        ((il0) V).updateColors();
+                    }
+                }
+                for (int i13 = 0; i13 < themeActivity.b.getAttachedScrapChildCount(); i13++) {
+                    View O = themeActivity.b.O(i13);
+                    if (O instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) O).getAdapter().f();
+                    } else if (O instanceof il0) {
+                        ((il0) O).updateColors();
+                    }
+                }
+                break;
+            case 23:
+                ((l71) d2Var).V0();
+                break;
+            default:
+                ((d81) d2Var).Z();
+                break;
         }
-        for (int i15 = 0; i15 < arrayList4.size(); i15++) {
-            hashSet.add((sh.a) arrayList4.get(i15));
-            bVar2.t += ((sh.a) arrayList4.get(i15)).c;
-        }
-        for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-            hashSet.add((sh.a) arrayList5.get(i16));
-            bVar2.u += ((sh.a) arrayList5.get(i16)).c;
-        }
-        int i17 = 0;
-        while (i17 < arrayList6.size()) {
-            hashSet.add((sh.a) arrayList6.get(i17));
-            bVar2.v += ((sh.a) arrayList6.get(i17)).c;
-            i17++;
-            z11 = true;
-        }
-        bVar2.m = z11;
-        bVar2.n = z11;
-        bVar2.o = z11;
-        bVar2.p = z11;
-        bVar2.q = z11;
-        Collections.sort(arrayList3, new dx0(17));
-        Collections.sort(arrayList4, new dx0(17));
-        Collections.sort(arrayList5, new dx0(17));
-        Collections.sort(arrayList6, new dx0(17));
-        Collections.sort(bVar2.h, new dx0(17));
-        yu yuVar = new yu(y6Var, s6Var, bVar2, new m4.c(13, y6Var, s6Var));
-        y6Var.Z = yuVar;
-        y6Var.showDialog(yuVar);
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public float a1() {
-        return i0.a.d(9.66f, ei.b.d(this.a.P), 0);
+    private final /* synthetic */ void A(float f10) {
     }
 
-    @Override // org.telegram.ui.i7
-    public void clear() {
-        y6.k0(this.a);
+    private final /* synthetic */ void c(float f10) {
     }
 
-    @Override // org.telegram.ui.i7
-    public void d() {
-        y6 y6Var = this.a;
-        sh.b bVar = y6Var.d0;
-        if (bVar == null || bVar.j.size() <= 0) {
-            return;
-        }
-        y6Var.d0.d();
-        j6 j6Var = y6Var.M;
-        if (j6Var != null) {
-            j6Var.f(false);
-            y6Var.M.e();
-        }
+    private final /* synthetic */ void d(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.iu0
-    public int g1() {
-        return this.a.Q;
+    private final /* synthetic */ void e(float f10) {
     }
 
-    @Override // org.telegram.ui.i7
-    public /* synthetic */ void dismiss() {
+    private final /* synthetic */ void f(float f10) {
+    }
+
+    private final /* synthetic */ void g(float f10) {
+    }
+
+    private final /* synthetic */ void h(float f10) {
+    }
+
+    private final /* synthetic */ void i(float f10) {
+    }
+
+    private final /* synthetic */ void j(float f10) {
+    }
+
+    private final /* synthetic */ void k(float f10) {
+    }
+
+    private final /* synthetic */ void l(float f10) {
+    }
+
+    private final /* synthetic */ void m(float f10) {
+    }
+
+    private final /* synthetic */ void n(float f10) {
+    }
+
+    private final /* synthetic */ void o(float f10) {
+    }
+
+    private final /* synthetic */ void p(float f10) {
+    }
+
+    private final /* synthetic */ void q(float f10) {
+    }
+
+    private final /* synthetic */ void r(float f10) {
+    }
+
+    private final /* synthetic */ void s(float f10) {
+    }
+
+    private final /* synthetic */ void t(float f10) {
+    }
+
+    private final /* synthetic */ void u(float f10) {
+    }
+
+    private final /* synthetic */ void v(float f10) {
+    }
+
+    private final /* synthetic */ void w(float f10) {
+    }
+
+    private final /* synthetic */ void x(float f10) {
+    }
+
+    private final /* synthetic */ void y(float f10) {
+    }
+
+    private final /* synthetic */ void z(float f10) {
     }
 }

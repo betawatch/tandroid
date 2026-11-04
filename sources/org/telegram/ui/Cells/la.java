@@ -4,19 +4,19 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.kp;
+import org.telegram.ui.Components.cp;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class la extends TextView {
     public boolean a;
-    public final org.telegram.ui.Components.t5 b;
-    public kp c;
+    public final org.telegram.ui.Components.u5 b;
+    public cp c;
 
     public la(Context context) {
         super(context);
-        this.b = new org.telegram.ui.Components.t5(this, 0L, 350L, gr.h);
+        this.b = new org.telegram.ui.Components.u5(this, 0L, 350L, xq.h);
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -43,22 +43,22 @@ public final class la extends TextView {
         if (d < 1.0f) {
             canvas2 = canvas;
             canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - d) * 255.0f), 31);
-            float f7 = 1.0f - (0.2f * d);
-            canvas2.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
-            canvas2.translate(0.0f, org.telegram.messenger.i0.L(-12.0f) * d);
+            float f10 = 1.0f - (0.2f * d);
+            canvas2.scale(f10, f10, getWidth() / 2.0f, getHeight() / 2.0f);
+            canvas2.translate(0.0f, org.telegram.messenger.g0.L(-12.0f) * d);
             super.onDraw(canvas2);
             canvas2.restore();
         } else {
             canvas2 = canvas;
         }
         if (this.c == null) {
-            kp kpVar = new kp(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(2.0f), getCurrentTextColor());
-            this.c = kpVar;
-            kpVar.setCallback(this);
+            cp cpVar = new cp(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(2.0f), getCurrentTextColor());
+            this.c = cpVar;
+            cpVar.setCallback(this);
         }
         this.c.b(getCurrentTextColor());
-        float f10 = 1.0f - d;
-        this.c.setBounds(getWidth() / 2, (getHeight() / 2) + ((int) (org.telegram.messenger.i0.L(12.0f) * f10)), getWidth() / 2, (getHeight() / 2) + ((int) (f10 * org.telegram.messenger.i0.L(12.0f))));
+        float f11 = 1.0f - d;
+        this.c.setBounds(getWidth() / 2, (getHeight() / 2) + ((int) (org.telegram.messenger.g0.L(12.0f) * f11)), getWidth() / 2, (getHeight() / 2) + ((int) (f11 * org.telegram.messenger.g0.L(12.0f))));
         this.c.setAlpha((int) (d * 255.0f));
         this.c.draw(canvas2);
         invalidate();

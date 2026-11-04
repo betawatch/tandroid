@@ -1,107 +1,78 @@
 package l9;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.os.Bundle;
-import j$.util.DesugarCollections;
-import java.util.HashSet;
-import java.util.Set;
-import r9.r;
+import b8.xd;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements qa.b {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class d extends xd {
+    public final AtomicReferenceFieldUpdater a;
+    public final AtomicReferenceFieldUpdater b;
+    public final AtomicReferenceFieldUpdater c;
+    public final AtomicReferenceFieldUpdater d;
+    public final AtomicReferenceFieldUpdater e;
 
-    public /* synthetic */ d(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+    public d(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
+        this.a = atomicReferenceFieldUpdater;
+        this.b = atomicReferenceFieldUpdater2;
+        this.c = atomicReferenceFieldUpdater3;
+        this.d = atomicReferenceFieldUpdater4;
+        this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // qa.b
-    public final Object get() {
-        ApplicationInfo applicationInfo;
-        Bundle bundle;
-        switch (this.a) {
-            case 0:
-                h hVar = (h) this.c;
-                Context context = (Context) this.b;
-                String d = hVar.d();
-                va.a aVar = new va.a();
-                int i10 = Build.VERSION.SDK_INT;
-                if (i10 >= 24) {
-                    context = i10 >= 24 ? f0.a.a(context) : null;
-                }
-                SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.common.prefs:" + d, 0);
-                boolean z10 = true;
-                if (sharedPreferences.contains("firebase_data_collection_default_enabled")) {
-                    z10 = sharedPreferences.getBoolean("firebase_data_collection_default_enabled", true);
-                } else {
-                    try {
-                        PackageManager packageManager = context.getPackageManager();
-                        if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_data_collection_default_enabled")) {
-                            z10 = applicationInfo.metaData.getBoolean("firebase_data_collection_default_enabled");
-                        }
-                    } catch (PackageManager.NameNotFoundException unused) {
-                    }
-                }
-                aVar.a = z10;
-                return aVar;
-            case 1:
-                return new oa.g((Context) this.b, (String) this.c);
-            default:
-                r9.g gVar = (r9.g) this.c;
-                r9.a aVar2 = (r9.a) this.b;
-                r9.d dVar = aVar2.f;
-                bh.d dVar2 = new bh.d();
-                HashSet hashSet = new HashSet();
-                HashSet hashSet2 = new HashSet();
-                HashSet hashSet3 = new HashSet();
-                HashSet hashSet4 = new HashSet();
-                HashSet hashSet5 = new HashSet();
-                Set<r9.j> set = aVar2.c;
-                Set set2 = aVar2.g;
-                for (r9.j jVar : set) {
-                    int i11 = jVar.c;
-                    int i12 = jVar.b;
-                    boolean z11 = i11 == 0;
-                    r rVar = jVar.a;
-                    if (z11) {
-                        if (i12 == 2) {
-                            hashSet4.add(rVar);
-                        } else {
-                            hashSet.add(rVar);
-                        }
-                    } else if (i11 == 2) {
-                        hashSet3.add(rVar);
-                    } else if (i12 == 2) {
-                        hashSet5.add(rVar);
-                    } else {
-                        hashSet2.add(rVar);
-                    }
-                }
-                if (!set2.isEmpty()) {
-                    hashSet.add(r.a(na.a.class));
-                }
-                dVar2.a = DesugarCollections.unmodifiableSet(hashSet);
-                dVar2.b = DesugarCollections.unmodifiableSet(hashSet2);
-                dVar2.c = DesugarCollections.unmodifiableSet(hashSet3);
-                dVar2.d = DesugarCollections.unmodifiableSet(hashSet4);
-                DesugarCollections.unmodifiableSet(hashSet5);
-                dVar2.e = gVar;
-                return dVar.K(dVar2);
-        }
+    @Override // b8.xd
+    public final boolean a(o oVar, c cVar, c cVar2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.d;
+            if (atomicReferenceFieldUpdater.compareAndSet(oVar, cVar, cVar2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(oVar) == cVar);
+        return false;
     }
 
-    public /* synthetic */ d(Context context, String str) {
-        this.a = 1;
-        this.b = context;
-        this.c = str;
+    @Override // b8.xd
+    public final boolean b(o oVar, Object obj, Object obj2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.e;
+            if (atomicReferenceFieldUpdater.compareAndSet(oVar, obj, obj2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(oVar) == obj);
+        return false;
+    }
+
+    @Override // b8.xd
+    public final boolean c(o oVar, n nVar, n nVar2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.c;
+            if (atomicReferenceFieldUpdater.compareAndSet(oVar, nVar, nVar2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(oVar) == nVar);
+        return false;
+    }
+
+    @Override // b8.xd
+    public final c d(o oVar) {
+        return (c) this.d.getAndSet(oVar, c.d);
+    }
+
+    @Override // b8.xd
+    public final n e(o oVar) {
+        return (n) this.c.getAndSet(oVar, n.c);
+    }
+
+    @Override // b8.xd
+    public final void f(n nVar, n nVar2) {
+        this.b.lazySet(nVar, nVar2);
+    }
+
+    @Override // b8.xd
+    public final void g(n nVar, Thread thread) {
+        this.a.lazySet(nVar, thread);
     }
 }

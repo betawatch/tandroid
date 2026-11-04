@@ -1,127 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.PointF;
+import android.view.animation.Interpolator;
+import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class xq extends tk0 {
-    public final /* synthetic */ yq c;
+public final class xq implements Interpolator {
+    public static final xq f = new xq(0.25d, 0.1d, 0.25d, 1.0d);
+    public static final xq g = new xq(0.0d, 0.0d, 0.58d, 1.0d);
+    public static final xq h = new xq(0.23d, 1.0d, 0.32d, 1.0d);
+    public static final xq i = new xq(0.42d, 0.0d, 1.0d, 1.0d);
+    public static final xq j = new xq(0.42d, 0.0d, 0.58d, 1.0d);
+    public static final xq k = new xq(0.34d, 1.56d, 0.64d, 1.0d);
+    public static final PathInterpolator l;
+    public final PointF a;
+    public final PointF b;
+    public final PointF c;
+    public final PointF d;
+    public final PointF e;
 
-    public xq(yq yqVar) {
-        this.c = yqVar;
+    static {
+        new PathInterpolator(b8.rc.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
+        new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
+        l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 3;
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        yq yqVar = this.c;
-        return yqVar.R1 ? yqVar.Q1.size() + 3 : yqVar.S1 ? 2 : 1;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        if (i10 == 0) {
-            return 0;
+    public xq(float f10, float f11, float f12, float f13) {
+        PointF pointF = new PointF(f10, f11);
+        PointF pointF2 = new PointF(f12, f13);
+        this.c = new PointF();
+        this.d = new PointF();
+        this.e = new PointF();
+        float f14 = pointF.x;
+        if (f14 < 0.0f || f14 > 1.0f) {
+            throw new IllegalArgumentException("startX value must be in the range [0, 1]");
         }
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                return 3;
+        float f15 = pointF2.x;
+        if (f15 < 0.0f || f15 > 1.0f) {
+            throw new IllegalArgumentException("endX value must be in the range [0, 1]");
+        }
+        this.a = pointF;
+        this.b = pointF2;
+    }
+
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f10) {
+        PointF pointF;
+        PointF pointF2;
+        PointF pointF3;
+        PointF pointF4;
+        PointF pointF5;
+        int i3 = 1;
+        float f11 = f10;
+        while (true) {
+            pointF = this.b;
+            pointF2 = this.a;
+            pointF3 = this.c;
+            pointF4 = this.d;
+            pointF5 = this.e;
+            if (i3 >= 14) {
+                break;
             }
-        }
-        return i11;
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        TLObject L0;
-        String str;
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 != 3) {
-            if (i11 != 2) {
-                if (i11 == 1) {
-                    ((org.telegram.ui.Cells.b9) view).setText(org.telegram.messenger.i0.H2(org.telegram.messenger.i0.R2(org.telegram.messenger.dd.L0(2131743456, null), org.telegram.ui.ActionBar.t6.L6, 0, new ho(this, 5), null), true, org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(1.0f)));
-                    return;
-                }
-                return;
-            } else {
-                org.telegram.ui.Cells.p4 p4Var = (org.telegram.ui.Cells.p4) view;
-                p4Var.setTextSize(15.0f);
-                p4Var.setPadding(0, 0, 0, org.telegram.messenger.i0.L(2.0f));
-                p4Var.setText(org.telegram.messenger.dd.L0(2131743469, null).replace(":", ""));
-                return;
+            float f12 = pointF2.x * 3.0f;
+            pointF5.x = f12;
+            float f13 = ((pointF.x - pointF2.x) * 3.0f) - f12;
+            pointF4.x = f13;
+            float f14 = (1.0f - pointF5.x) - f13;
+            pointF3.x = f14;
+            float f15 = (((((f14 * f11) + pointF4.x) * f11) + pointF5.x) * f11) - f10;
+            if (Math.abs(f15) < 0.001d) {
+                break;
             }
+            f11 -= f15 / (((((pointF3.x * 3.0f) * f11) + (pointF4.x * 2.0f)) * f11) + pointF5.x);
+            i3++;
         }
-        yq yqVar = this.c;
-        TLRPC.Peer peer = (TLRPC.Peer) yqVar.Q1.get(i10 - 3);
-        long C1 = org.telegram.messenger.kj.C1(peer);
-        if (C1 > 0) {
-            L0 = org.telegram.messenger.wp.r1(yqVar.a).Z1(Long.valueOf(C1));
-            str = org.telegram.messenger.dd.L0(2131743375, null);
-        } else {
-            L0 = org.telegram.messenger.wp.r1(yqVar.a).L0(Long.valueOf(-C1));
-            str = null;
-        }
-        org.telegram.ui.Cells.j4 j4Var = (org.telegram.ui.Cells.j4) view;
-        j4Var.e(L0, null, str, i10 != b() - 1);
-        j4Var.c(peer == yqVar.V1, false);
+        float f16 = pointF2.y * 3.0f;
+        pointF5.y = f16;
+        float f17 = ((pointF.y - pointF2.y) * 3.0f) - f16;
+        pointF4.y = f17;
+        float f18 = (1.0f - pointF5.y) - f17;
+        pointF3.y = f18;
+        return ((((f18 * f11) + pointF4.y) * f11) + pointF5.y) * f11;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v5, types: [android.view.ViewGroup, android.widget.LinearLayout, jg.z2] */
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        Context context = viewGroup.getContext();
-        yq yqVar = this.c;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.b9 b9Var = new org.telegram.ui.Cells.b9(context);
-            org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.a7, b9Var, yqVar.I0);
-            b9Var.setTopPadding(17);
-            b9Var.setBottomPadding(17);
-            frameLayout = b9Var;
-        } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.p4(context, 22);
-        } else if (i10 != 3) {
-            boolean z10 = yqVar.T1;
-            ?? z2Var = new jg.z2(context, 6);
-            z2Var.setOrientation(1);
-            fi0 fi0Var = new fi0(context);
-            fi0Var.setAutoRepeat(true);
-            fi0Var.f(R.raw.utyan_schedule, org.telegram.messenger.at.x1, org.telegram.messenger.at.x1, null);
-            fi0Var.d();
-            z2Var.addView(fi0Var, w7.b6.t(org.telegram.messenger.at.x1, org.telegram.messenger.at.x1, 49, 0, 24, 0, 0));
-            TextView textView = new TextView(context);
-            textView.setTypeface(org.telegram.messenger.i0.o());
-            textView.setText(z10 ? org.telegram.messenger.dd.a0(null, null, 2131744921, new Object[0]) : org.telegram.messenger.dd.a0(null, null, 2131744918, new Object[0]));
-            textView.setTextSize(1, 20.0f);
-            org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.G6, null);
-            z2Var.addView(textView, w7.b6.t(-2, -2, 1, 0, 14, 0, 7));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setGravity(1);
-            org.telegram.ui.ActionBar.a7.V(textView2, org.telegram.ui.ActionBar.t6.j5, null);
-            textView2.setText(z10 ? org.telegram.messenger.dd.a0(null, null, 2131743484, new Object[0]) : org.telegram.messenger.dd.a0(null, null, 2131743359, new Object[0]));
-            textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            z2Var.addView(textView2, w7.b6.t(-2, -2, 1, 28, 0, 28, 17));
-            frameLayout = z2Var;
-        } else {
-            frameLayout = new org.telegram.ui.Cells.j4(context, 1, 0, false);
-        }
-        frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new dk0(frameLayout);
+    public xq(double d, double d10, double d11, double d12) {
+        this((float) d, (float) d10, (float) d11, (float) d12);
     }
 }

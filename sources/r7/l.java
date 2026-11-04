@@ -1,132 +1,34 @@
 package r7;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.WorkSource;
-import com.google.android.gms.location.LocationRequest;
-import java.util.ArrayList;
-import w7.h0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class l extends o6.a {
-    public static final Parcelable.Creator<l> CREATOR = new m(0);
-    public final LocationRequest a;
+public final class l extends q6.a {
+    public static final Parcelable.Creator<l> CREATOR = new q8.i(7);
+    public final boolean a;
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x006a  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public l(LocationRequest locationRequest, ArrayList arrayList, boolean z10, boolean z11, String str, boolean z12, boolean z13, String str2, long j10) {
-        j jVar;
-        long j11;
-        int i10 = locationRequest.a;
-        long j12 = locationRequest.b;
-        long j13 = locationRequest.c;
-        long j14 = locationRequest.d;
-        long j15 = locationRequest.e;
-        int i11 = locationRequest.f;
-        float f7 = locationRequest.h;
-        boolean z14 = locationRequest.n;
-        long j16 = locationRequest.r;
-        boolean z15 = z14;
-        int i12 = locationRequest.s;
-        int i13 = locationRequest.w;
-        String str3 = locationRequest.x;
-        boolean z16 = locationRequest.y;
-        WorkSource workSource = locationRequest.D;
-        j jVar2 = locationRequest.E;
-        if (arrayList == null) {
-            jVar = jVar2;
-        } else {
-            if (!arrayList.isEmpty()) {
-                workSource = new WorkSource();
-                jVar = jVar2;
-                j11 = j15;
-                int i14 = 0;
-                for (int size = arrayList.size(); i14 < size; size = size) {
-                    Object obj = arrayList.get(i14);
-                    i14++;
-                    n6.d dVar = (n6.d) obj;
-                    u6.f.a(workSource, dVar.a, dVar.b);
-                }
-                boolean z17 = true;
-                i12 = z10 ? 1 : i12;
-                i13 = z11 ? 2 : i13;
-                if (str == null) {
-                    if (Build.VERSION.SDK_INT < 30) {
-                        str3 = str;
-                    }
-                } else if (str2 != null && Build.VERSION.SDK_INT < 30) {
-                    str3 = str2;
-                }
-                z16 = z12 ? true : z16;
-                z15 = z13 ? true : z15;
-                if (j10 != Long.MAX_VALUE) {
-                    if (j10 != -1 && j10 < 0) {
-                        z17 = false;
-                    }
-                    n6.l.a("maxUpdateAgeMillis must be greater than or equal to 0, or IMPLICIT_MAX_UPDATE_AGE", z17);
-                    j16 = j10;
-                }
-                if (j13 != -1) {
-                    j13 = j12;
-                } else if (i10 != 105) {
-                    j13 = Math.min(j13, j12);
-                }
-                this.a = new LocationRequest(i10, j12, j13, Math.max(j14, j12), Long.MAX_VALUE, j11, i11, f7, z15, j16 == -1 ? j12 : j16, i12, i13, str3, z16, new WorkSource(workSource), jVar);
-            }
-            jVar = jVar2;
-            workSource = null;
-        }
-        j11 = j15;
-        boolean z172 = true;
-        if (z10) {
-        }
-        if (z11) {
-        }
-        if (str == null) {
-        }
-        if (z12) {
-        }
-        if (z13) {
-        }
-        if (j10 != Long.MAX_VALUE) {
-        }
-        if (j13 != -1) {
-        }
-        this.a = new LocationRequest(i10, j12, j13, Math.max(j14, j12), Long.MAX_VALUE, j11, i11, f7, z15, j16 == -1 ? j12 : j16, i12, i13, str3, z16, new WorkSource(workSource), jVar);
+    public l(boolean z10) {
+        this.a = z10;
     }
 
     public final boolean equals(Object obj) {
-        if (obj instanceof l) {
-            return n6.l.k(this.a, ((l) obj).a);
+        if (this == obj) {
+            return true;
         }
-        return false;
+        return (obj instanceof l) && this.a == ((l) obj).a;
     }
 
     public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a.toString();
+        return this.a ? 1 : 0;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.k(parcel, 1, this.a, i10);
-        h0.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        j8.a.t(parcel, s6);
     }
 }

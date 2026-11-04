@@ -1,0 +1,80 @@
+package w2;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class k1 implements d1 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ m1 c;
+
+    public k1(m1 m1Var) {
+        this.c = m1Var;
+    }
+
+    @Override // w2.d1
+    public final void a() {
+        m1 m1Var = this.c;
+        if (m1Var.w) {
+            return;
+        }
+        m1Var.r.a();
+    }
+
+    public final void b() {
+        if (this.b) {
+            return;
+        }
+        m1 m1Var = this.c;
+        m1Var.e.k(d2.u0.h(m1Var.s.s), m1Var.s, 0, null, 0L);
+        this.b = true;
+    }
+
+    @Override // w2.d1
+    public final boolean f() {
+        return this.c.x;
+    }
+
+    @Override // w2.d1
+    public final int m(long j10) {
+        b();
+        if (j10 <= 0 || this.a == 2) {
+            return 0;
+        }
+        this.a = 2;
+        return 1;
+    }
+
+    @Override // w2.d1
+    public final int o(tf.b bVar, j2.h hVar, int i3) {
+        b();
+        m1 m1Var = this.c;
+        boolean z10 = m1Var.x;
+        if (z10 && m1Var.y == null) {
+            this.a = 2;
+        }
+        int i10 = this.a;
+        if (i10 == 2) {
+            hVar.addFlag(4);
+            return -4;
+        }
+        if ((i3 & 2) != 0 || i10 == 0) {
+            bVar.b = m1Var.s;
+            this.a = 1;
+            return -5;
+        }
+        if (!z10) {
+            return -3;
+        }
+        m1Var.y.getClass();
+        hVar.addFlag(1);
+        hVar.e = 0L;
+        if ((i3 & 4) == 0) {
+            hVar.b(m1Var.E);
+            hVar.c.put(m1Var.y, 0, m1Var.E);
+        }
+        if ((i3 & 1) == 0) {
+            this.a = 2;
+        }
+        return -4;
+    }
+}

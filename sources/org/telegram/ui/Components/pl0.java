@@ -1,39 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pl0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vl0 b;
+public final class pl0 extends u4.o {
+    public final /* synthetic */ tl0 b;
 
-    public /* synthetic */ pl0(vl0 vl0Var, int i10) {
-        this.a = i10;
-        this.b = vl0Var;
+    public pl0(tl0 tl0Var) {
+        this.b = tl0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        vl0 vl0Var = this.b;
-        switch (i10) {
-            case 0:
-                vl0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 1:
-                vl0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 2:
-                vl0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 3:
-                vl0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            default:
-                vl0Var.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-        }
+    @Override // u4.o
+    public final boolean a(int i3, int i10) {
+        tl0 tl0Var = this.b;
+        return ((ql0) tl0Var.n.get(i3)).equals(tl0Var.r.get(i10));
+    }
+
+    @Override // u4.o
+    public final boolean b(int i3, int i10) {
+        tl0 tl0Var = this.b;
+        return ((ql0) tl0Var.n.get(i3)).a.h == ((ql0) tl0Var.r.get(i10)).a.h;
+    }
+
+    @Override // u4.o
+    public final int d() {
+        return this.b.r.size();
+    }
+
+    @Override // u4.o
+    public final int e() {
+        return this.b.n.size();
     }
 }

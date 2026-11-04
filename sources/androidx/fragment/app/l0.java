@@ -4,10 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class l0 implements Parcelable {
-    public static final Parcelable.Creator<l0> CREATOR = new w.a(13);
+    public static final Parcelable.Creator<l0> CREATOR = new w.a(11);
     public ArrayList a;
     public ArrayList b;
     public b[] c;
@@ -23,10 +23,10 @@ public final class l0 implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i3) {
         parcel.writeStringList(this.a);
         parcel.writeStringList(this.b);
-        parcel.writeTypedArray(this.c, i10);
+        parcel.writeTypedArray(this.c, i3);
         parcel.writeInt(this.d);
         parcel.writeString(this.e);
         parcel.writeStringList(this.f);

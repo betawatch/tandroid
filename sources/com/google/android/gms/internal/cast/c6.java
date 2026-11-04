@@ -1,80 +1,107 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.nio.charset.Charset;
+import java.util.AbstractList;
+import java.util.Arrays;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c6 {
-    public static final c6 c = new c6();
-    public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final s5 a = new s5();
+public final class c6 extends s4 implements RandomAccess {
+    public static final c6 d = new c6(new Object[0], 0, false);
+    public Object[] b;
+    public int c;
 
-    public final f6 a(Class cls) {
-        f6 j10;
-        Class cls2;
-        Charset charset = j5.a;
-        if (cls == null) {
-            throw new NullPointerException("messageType");
+    public c6(Object[] objArr, int i3, boolean z10) {
+        super(z10);
+        this.b = objArr;
+        this.c = i3;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final void add(int i3, Object obj) {
+        int i10;
+        h();
+        if (i3 < 0 || i3 > (i10 = this.c)) {
+            throw new IndexOutOfBoundsException(a1.g.n(i3, this.c, "Index:", ", Size:"));
         }
-        ConcurrentHashMap concurrentHashMap = this.b;
-        f6 f6Var = (f6) concurrentHashMap.get(cls);
-        if (f6Var != null) {
-            return f6Var;
-        }
-        s5 s5Var = this.a;
-        s5Var.getClass();
-        Class cls3 = g6.a;
-        if (!d5.class.isAssignableFrom(cls) && (cls2 = g6.a) != null && !cls2.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
-        }
-        e6 zzb = ((r5) s5Var.a).zzb(cls);
-        int i10 = zzb.d;
-        r4 r4Var = zzb.a;
-        if ((i10 & 2) == 2) {
-            if (d5.class.isAssignableFrom(cls)) {
-                j10 = new y5(g6.c, z4.a, r4Var);
-            } else {
-                i6 i6Var = g6.b;
-                y4 y4Var = z4.b;
-                if (y4Var == null) {
-                    throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
-                }
-                j10 = new y5(i6Var, y4Var, r4Var);
-            }
-        } else if (d5.class.isAssignableFrom(cls)) {
-            if (zzb.a() - 1 != 1) {
-                int i11 = a6.a;
-                o5 o5Var = p5.b;
-                i6 i6Var2 = g6.c;
-                y4 y4Var2 = z4.a;
-                int i12 = u5.a;
-                j10 = x5.j(zzb, o5Var, i6Var2, y4Var2);
-            } else {
-                int i13 = a6.a;
-                o5 o5Var2 = p5.b;
-                i6 i6Var3 = g6.c;
-                int i14 = u5.a;
-                j10 = x5.j(zzb, o5Var2, i6Var3, null);
-            }
-        } else if (zzb.a() - 1 != 1) {
-            int i15 = a6.a;
-            n5 n5Var = p5.a;
-            i6 i6Var4 = g6.b;
-            y4 y4Var3 = z4.b;
-            if (y4Var3 == null) {
-                throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
-            }
-            int i16 = u5.a;
-            j10 = x5.j(zzb, n5Var, i6Var4, y4Var3);
+        int i11 = i3 + 1;
+        Object[] objArr = this.b;
+        if (i10 < objArr.length) {
+            System.arraycopy(objArr, i3, objArr, i11, i10 - i3);
         } else {
-            int i17 = a6.a;
-            n5 n5Var2 = p5.a;
-            i6 i6Var5 = g6.b;
-            int i18 = u5.a;
-            j10 = x5.j(zzb, n5Var2, i6Var5, null);
+            Object[] objArr2 = new Object[((i10 * 3) / 2) + 1];
+            System.arraycopy(objArr, 0, objArr2, 0, i3);
+            System.arraycopy(this.b, i3, objArr2, i11, this.c - i3);
+            this.b = objArr2;
         }
-        f6 f6Var2 = (f6) concurrentHashMap.putIfAbsent(cls, j10);
-        return f6Var2 == null ? j10 : f6Var2;
+        this.b[i3] = obj;
+        this.c++;
+        ((AbstractList) this).modCount++;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object get(int i3) {
+        i(i3);
+        return this.b[i3];
+    }
+
+    public final void i(int i3) {
+        if (i3 < 0 || i3 >= this.c) {
+            throw new IndexOutOfBoundsException(a1.g.n(i3, this.c, "Index:", ", Size:"));
+        }
+    }
+
+    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.List
+    public final Object remove(int i3) {
+        h();
+        i(i3);
+        Object[] objArr = this.b;
+        Object obj = objArr[i3];
+        if (i3 < this.c - 1) {
+            System.arraycopy(objArr, i3 + 1, objArr, i3, (r2 - i3) - 1);
+        }
+        this.c--;
+        ((AbstractList) this).modCount++;
+        return obj;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object set(int i3, Object obj) {
+        h();
+        i(i3);
+        Object[] objArr = this.b;
+        Object obj2 = objArr[i3];
+        objArr[i3] = obj;
+        ((AbstractList) this).modCount++;
+        return obj2;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c;
+    }
+
+    @Override // com.google.android.gms.internal.cast.h5
+    public final /* bridge */ /* synthetic */ h5 zzg(int i3) {
+        if (i3 >= this.c) {
+            return new c6(Arrays.copyOf(this.b, i3), this.c, true);
+        }
+        throw new IllegalArgumentException();
+    }
+
+    @Override // com.google.android.gms.internal.cast.s4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean add(Object obj) {
+        h();
+        int i3 = this.c;
+        Object[] objArr = this.b;
+        if (i3 == objArr.length) {
+            this.b = Arrays.copyOf(objArr, ((i3 * 3) / 2) + 1);
+        }
+        Object[] objArr2 = this.b;
+        int i10 = this.c;
+        this.c = i10 + 1;
+        objArr2[i10] = obj;
+        ((AbstractList) this).modCount++;
+        return true;
     }
 }

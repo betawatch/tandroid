@@ -1,46 +1,38 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class o01 extends hg.b {
-    public final org.telegram.messenger.cw c;
-    public final String d;
+public final class o01 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q01 b;
 
-    public o01(int i10) {
-        super(i10, false);
-        this.c = null;
+    public /* synthetic */ o01(q01 q01Var, int i3) {
+        this.a = i3;
+        this.b = q01Var;
     }
 
-    public final boolean equals(Object obj) {
-        org.telegram.messenger.cw cwVar;
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.J = null;
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                this.b.J = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                q01 q01Var = this.b;
+                q01Var.O = 0.0f;
+                q01Var.J = null;
+                q01Var.N = false;
+                q01Var.d(true, false);
+                break;
         }
-        if (obj == null || o01.class != obj.getClass()) {
-            return false;
-        }
-        o01 o01Var = (o01) obj;
-        if (this.a != o01Var.a) {
-            return false;
-        }
-        String str = this.d;
-        if (str != null) {
-            return Objects.equals(str, o01Var.d);
-        }
-        org.telegram.messenger.cw cwVar2 = this.c;
-        return cwVar2 == null || (cwVar = o01Var.c) == null || cwVar2.d == cwVar.d;
-    }
-
-    public o01(org.telegram.messenger.cw cwVar) {
-        super(2, false);
-        this.c = cwVar;
-    }
-
-    public o01(int i10, String str) {
-        super(i10, false);
-        this.d = str;
-        this.c = null;
     }
 }

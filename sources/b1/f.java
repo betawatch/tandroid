@@ -1,85 +1,70 @@
 package b1;
 
-import ad.j;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.CancellationSignal;
-import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
+import dd.k;
+import ed.p;
+import ed.s;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.concurrent.Executor;
-import ld.l;
-import w0.i;
+import kotlin.jvm.internal.j;
+import v0.h;
+import v0.n;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements l {
+public final /* synthetic */ class f implements od.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ f(int i10, Object obj, Object obj2) {
-        this.a = i10;
+    public /* synthetic */ f(int i3, Object obj, Object obj2) {
+        this.a = i3;
         this.b = obj;
         this.c = obj2;
     }
 
-    @Override // ld.l
-    public final Object invoke(Object obj) {
+    @Override // od.a
+    public final Object invoke() {
+        String[] names;
         switch (this.a) {
             case 0:
-                Executor executor = (Executor) this.b;
-                v0.h hVar = (v0.h) this.c;
-                i e = (i) obj;
-                kotlin.jvm.internal.i.e(e, "e");
-                executor.execute(new h(hVar, e, 1));
-                return j.a;
+                ((Executor) this.b).execute(new a1.e((h) this.c, 7));
+                break;
             case 1:
-                CancellationSignal cancellationSignal = (CancellationSignal) this.b;
-                c1.d dVar = (c1.d) this.c;
-                Context context = dVar.e;
-                x5.f fVar = (x5.f) obj;
-                CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.h.a(cancellationSignal)) {
-                    Intent intent = new Intent(context, (Class<?>) HiddenActivity.class);
-                    d.a(dVar.i, intent, "BEGIN_SIGN_IN");
-                    intent.putExtra("EXTRA_FLOW_PENDING_INTENT", fVar.a);
-                    try {
-                        context.startActivity(intent);
-                    } catch (Exception unused) {
-                        CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (!a1.h.a(cancellationSignal)) {
-                            dVar.f().execute(new a3.d(dVar, 24));
-                        }
-                    }
-                }
-                return j.a;
+                c1.e eVar = (c1.e) this.b;
+                eVar.f().execute(new a1.f(24, eVar, (n) this.c));
+                break;
             default:
-                CancellationSignal cancellationSignal2 = (CancellationSignal) this.b;
-                d1.f fVar2 = (d1.f) this.c;
-                Context context2 = fVar2.e;
-                PendingIntent result = (PendingIntent) obj;
-                kotlin.jvm.internal.i.e(result, "result");
-                CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.h.a(cancellationSignal2)) {
-                    Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
-                    d.a(fVar2.i, intent2, "CREATE_PUBLIC_KEY_CREDENTIAL");
-                    intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", result);
-                    try {
-                        context2.startActivity(intent2);
-                    } catch (Exception unused2) {
-                        CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (!a1.h.a(cancellationSignal2)) {
-                            Executor executor2 = fVar2.g;
-                            if (executor2 == null) {
-                                kotlin.jvm.internal.i.h("executor");
-                                throw null;
+                je.d dVar = (je.d) this.b;
+                me.b bVar = (me.b) this.c;
+                LinkedHashMap linkedHashMap = new LinkedHashMap();
+                bVar.a.getClass();
+                ne.f.e(dVar, bVar);
+                int f10 = dVar.f();
+                for (int i3 = 0; i3 < f10; i3++) {
+                    List h = dVar.h(i3);
+                    ArrayList arrayList = new ArrayList();
+                    for (Object obj : h) {
+                        if (obj instanceof me.d) {
+                            arrayList.add(obj);
+                        }
+                    }
+                    me.d dVar2 = (me.d) (arrayList.size() == 1 ? arrayList.get(0) : null);
+                    if (dVar2 != null && (names = dVar2.names()) != null) {
+                        for (String str : names) {
+                            String str2 = j.a(dVar.e(), je.e.c) ? "enum value" : "property";
+                            if (linkedHashMap.containsKey(str)) {
+                                String message = "The suggested name '" + str + "' for " + str2 + ' ' + dVar.g(i3) + " is already one of the names for " + str2 + ' ' + dVar.g(((Number) s.a(linkedHashMap, str)).intValue()) + " in " + dVar;
+                                j.e(message, "message");
+                                throw new he.d(message);
                             }
-                            executor2.execute(new d1.d(fVar2, 0));
+                            linkedHashMap.put(str, Integer.valueOf(i3));
                         }
                     }
                 }
-                return j.a;
+                return linkedHashMap.isEmpty() ? p.a : linkedHashMap;
         }
+        return k.a;
     }
 }

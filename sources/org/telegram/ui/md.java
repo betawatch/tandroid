@@ -1,66 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class md implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ le b;
+public final class md implements TextWatcher {
+    public final /* synthetic */ xd a;
 
-    public /* synthetic */ md(le leVar, int i10) {
-        this.a = i10;
-        this.b = leVar;
+    public md(xd xdVar) {
+        this.a = xdVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Object[] objArr = 0;
-        le leVar = this.b;
-        switch (i10) {
-            case 0:
-                gf.f.r(leVar.getContext(), org.telegram.messenger.dd.L0(2131748419, null));
-                break;
-            case 1:
-                gf.f.r(leVar.getContext(), org.telegram.messenger.dd.L0(2131748385, null));
-                break;
-            case 2:
-                org.telegram.ui.Components.v51 v51Var = leVar.X0;
-                if (v51Var != null) {
-                    boolean z10 = leVar.e0;
-                    v51Var.f3.O((leVar.R0 != -1) == leVar.a1.a());
-                    if (z10 && leVar.R0 != -1) {
-                        leVar.a();
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                leVar.k1 = leVar.j1;
-                break;
-            case 4:
-                leVar.J0.setLoading(false);
-                break;
-            case 5:
-                leVar.Y0.setVisibility(8);
-                break;
-            case 6:
-                leVar.Y0.setVisibility(8);
-                break;
-            default:
-                int i11 = leVar.o0;
-                org.telegram.messenger.i0.r(leVar.s1);
-                if (leVar.j1 != leVar.k1) {
-                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
-                    tL_channels_restrictSponsoredMessages.channel = org.telegram.messenger.wp.r1(i11).g1(-leVar.p0);
-                    tL_channels_restrictSponsoredMessages.restricted = leVar.j1;
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_channels_restrictSponsoredMessages, new td(leVar, objArr == true ? 1 : 0));
-                    break;
-                }
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        xd xdVar = this.a;
+        dd ddVar = xdVar.g1;
+        ci.s sVar = xdVar.P0;
+        if (xdVar.M0) {
+            return;
         }
+        long parseLong = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+        xdVar.O0 = parseLong;
+        long j10 = xdVar.E0.amount;
+        if (parseLong > j10) {
+            xdVar.O0 = j10;
+            xdVar.M0 = true;
+            sVar.setText(Long.toString(j10));
+            sVar.setSelection(sVar.getText().length());
+            xdVar.M0 = false;
+        }
+        xdVar.N0 = xdVar.O0 == xdVar.E0.amount;
+        org.telegram.messenger.g0.r(ddVar);
+        ddVar.run();
+        xdVar.N0 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 }

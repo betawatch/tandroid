@@ -1,64 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class zv extends FrameLayout {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ vy b;
+public final class zv extends k31 {
+    public final /* synthetic */ ey b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zv(vy vyVar, Context context, boolean z10) {
-        super(context);
-        this.b = vyVar;
-        this.a = z10;
+    public zv(ey eyVar) {
+        this.b = eyVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        vy vyVar = this.b;
-        gw gwVar = vyVar.B0;
-        bw bwVar = vyVar.D0;
-        fw fwVar = vyVar.G0;
-        if (this.a || !(view == bwVar || view == fwVar)) {
-            return super.drawChild(canvas, view, j10);
-        }
-        canvas.save();
-        float y3 = gwVar.getY() + gwVar.getMeasuredHeight() + 1.0f;
-        if (view == bwVar) {
-            y3 = Math.max(y3, fwVar.getY() + fwVar.getMeasuredHeight() + 1.0f);
-        }
-        canvas.clipRect(0.0f, y3 - (org.telegram.messenger.i0.L(16.0f) * vyVar.a.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+    @Override // org.telegram.ui.Components.k31
+    public final boolean a() {
+        return this.b.u1.b();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        vy vyVar = this.b;
-        vyVar.K0 = true;
-        vyVar.Z();
-        mw mwVar = vyVar.T0;
-        if (mwVar != null) {
-            mwVar.a();
+    @Override // org.telegram.ui.Components.k31
+    public final String[] b() {
+        return this.b.X0;
+    }
+
+    @Override // org.telegram.ui.Components.k31
+    public final boolean c() {
+        return this.b.u1.c();
+    }
+
+    @Override // org.telegram.ui.Components.k31
+    public final boolean d(d31 d31Var, MotionEvent motionEvent) {
+        org.telegram.ui.is p10 = org.telegram.ui.is.p();
+        ey eyVar = this.b;
+        eyVar.getMeasuredHeight();
+        return p10.q(motionEvent, d31Var, eyVar.h2, eyVar.a2);
+    }
+
+    @Override // org.telegram.ui.Components.k31
+    public final boolean e(d31 d31Var, k kVar, MotionEvent motionEvent) {
+        org.telegram.ui.is p10 = org.telegram.ui.is.p();
+        ey eyVar = this.b;
+        eyVar.getMeasuredHeight();
+        return p10.r(motionEvent, d31Var, kVar, eyVar.h2, eyVar.a2);
+    }
+
+    @Override // org.telegram.ui.Components.k31
+    public final void f(TLRPC.Document document, Object obj, boolean z10, int i3) {
+        this.b.u1.m(null, document, null, obj, null, z10, i3);
+    }
+
+    @Override // org.telegram.ui.Components.k31
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
+        ey eyVar = this.b;
+        eyVar.u1.r(stickerSetCovered);
+        if (z10) {
+            eyVar.X(true);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        vy vyVar = this.b;
-        vyVar.K0 = false;
-        vyVar.Z();
-        mw mwVar = vyVar.T0;
-        if (mwVar != null) {
-            mwVar.a();
-        }
+    @Override // org.telegram.ui.Components.k31
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        this.b.u1.h(stickerSetCovered);
+    }
+
+    @Override // org.telegram.ui.Components.k31
+    public final void i(String[] strArr) {
+        this.b.X0 = strArr;
     }
 }

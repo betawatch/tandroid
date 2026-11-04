@@ -14,12 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import b8.oc;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import v7.r7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class d extends ArrayAdapter implements AdapterView.OnItemClickListener {
     public final LayoutInflater a;
@@ -32,10 +32,10 @@ public final class d extends ArrayAdapter implements AdapterView.OnItemClickList
         super(context, 0, arrayList);
         this.a = LayoutInflater.from(context);
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(new int[]{R.attr.mediaRouteDefaultIconDrawable, R.attr.mediaRouteTvIconDrawable, R.attr.mediaRouteSpeakerIconDrawable, R.attr.mediaRouteSpeakerGroupIconDrawable});
-        this.b = r7.b(context, obtainStyledAttributes.getResourceId(0, 0));
-        this.c = r7.b(context, obtainStyledAttributes.getResourceId(1, 0));
-        this.d = r7.b(context, obtainStyledAttributes.getResourceId(2, 0));
-        this.e = r7.b(context, obtainStyledAttributes.getResourceId(3, 0));
+        this.b = oc.b(context, obtainStyledAttributes.getResourceId(0, 0));
+        this.c = oc.b(context, obtainStyledAttributes.getResourceId(1, 0));
+        this.d = oc.b(context, obtainStyledAttributes.getResourceId(2, 0));
+        this.e = oc.b(context, obtainStyledAttributes.getResourceId(3, 0));
         obtainStyledAttributes.recycle();
     }
 
@@ -52,18 +52,18 @@ public final class d extends ArrayAdapter implements AdapterView.OnItemClickList
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
+    public final View getView(int i3, View view, ViewGroup viewGroup) {
         Drawable createFromStream;
         if (view == null) {
             view = this.a.inflate(R.layout.mr_chooser_list_item, viewGroup, false);
         }
-        p4.w wVar = (p4.w) getItem(i10);
+        r4.w wVar = (r4.w) getItem(i3);
         TextView textView = (TextView) view.findViewById(R.id.mr_chooser_route_name);
         TextView textView2 = (TextView) view.findViewById(R.id.mr_chooser_route_desc);
         textView.setText(wVar.d);
         String str = wVar.e;
-        int i11 = wVar.i;
-        if ((i11 == 2 || i11 == 1) && !TextUtils.isEmpty(str)) {
+        int i10 = wVar.i;
+        if ((i10 == 2 || i10 == 1) && !TextUtils.isEmpty(str)) {
             textView.setGravity(80);
             textView2.setVisibility(0);
             textView2.setText(str);
@@ -79,25 +79,25 @@ public final class d extends ArrayAdapter implements AdapterView.OnItemClickList
             if (uri != null) {
                 try {
                     createFromStream = Drawable.createFromStream(getContext().getContentResolver().openInputStream(uri), null);
-                } catch (IOException e) {
-                    Log.w("MediaRouteChooserDialog", "Failed to load " + uri, e);
+                } catch (IOException e10) {
+                    Log.w("MediaRouteChooserDialog", "Failed to load " + uri, e10);
                 }
             }
-            int i12 = wVar.n;
-            createFromStream = i12 != 1 ? i12 != 2 ? wVar.e() ? this.e : this.b : this.d : this.c;
+            int i11 = wVar.n;
+            createFromStream = i11 != 1 ? i11 != 2 ? wVar.e() ? this.e : this.b : this.d : this.c;
             imageView.setImageDrawable(createFromStream);
         }
         return view;
     }
 
     @Override // android.widget.BaseAdapter, android.widget.ListAdapter
-    public final boolean isEnabled(int i10) {
-        return ((p4.w) getItem(i10)).g;
+    public final boolean isEnabled(int i3) {
+        return ((r4.w) getItem(i3)).g;
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
-        p4.w wVar = (p4.w) getItem(i10);
+    public final void onItemClick(AdapterView adapterView, View view, int i3, long j10) {
+        r4.w wVar = (r4.w) getItem(i3);
         ImageView imageView = (ImageView) view.findViewById(R.id.mr_chooser_route_icon);
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_chooser_route_progress_bar);
         if (imageView != null && progressBar != null) {

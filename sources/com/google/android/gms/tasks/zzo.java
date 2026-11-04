@@ -1,25 +1,25 @@
 package com.google.android.gms.tasks;
 
+import j$.util.Objects;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzo implements Runnable {
     final /* synthetic */ Task zza;
     final /* synthetic */ zzp zzb;
 
     public zzo(zzp zzpVar, Task task) {
-        this.zzb = zzpVar;
         this.zza = task;
+        Objects.requireNonNull(zzpVar);
+        this.zzb = zzpVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        SuccessContinuation successContinuation;
         try {
-            successContinuation = this.zzb.zzb;
-            Task then = successContinuation.then(this.zza.getResult());
+            Task then = this.zzb.zzc().then(this.zza.getResult());
             if (then == null) {
                 this.zzb.onFailure(new NullPointerException("Continuation returned null"));
                 return;
@@ -27,18 +27,18 @@ final class zzo implements Runnable {
             zzp zzpVar = this.zzb;
             Executor executor = TaskExecutors.zza;
             then.addOnSuccessListener(executor, zzpVar);
-            then.addOnFailureListener(executor, this.zzb);
-            then.addOnCanceledListener(executor, this.zzb);
-        } catch (RuntimeExecutionException e) {
-            if (e.getCause() instanceof Exception) {
-                this.zzb.onFailure((Exception) e.getCause());
+            then.addOnFailureListener(executor, zzpVar);
+            then.addOnCanceledListener(executor, zzpVar);
+        } catch (RuntimeExecutionException e10) {
+            if (e10.getCause() instanceof Exception) {
+                this.zzb.onFailure((Exception) e10.getCause());
             } else {
-                this.zzb.onFailure(e);
+                this.zzb.onFailure(e10);
             }
         } catch (CancellationException unused) {
             this.zzb.onCanceled();
-        } catch (Exception e7) {
-            this.zzb.onFailure(e7);
+        } catch (Exception e11) {
+            this.zzb.onFailure(e11);
         }
     }
 }

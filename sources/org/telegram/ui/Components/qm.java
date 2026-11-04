@@ -1,34 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qm extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jn b;
+public final class qm extends u4.c0 {
+    public final /* synthetic */ lg.d0 r;
 
-    public /* synthetic */ qm(jn jnVar, int i10) {
-        this.a = i10;
-        this.b = jnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qm(lg.d0 d0Var, Context context) {
+        super(context);
+        this.r = d0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.E.setTranslationY(0.0f);
-                break;
-            case 1:
-                this.b.E.setTranslationY(0.0f);
-                break;
-            default:
-                jn jnVar = this.b;
-                jnVar.f1 = false;
-                jnVar.E.setTranslationY(0.0f);
-                jnVar.d0();
-                break;
+    @Override // u4.c0
+    public final int k(int i3, View view) {
+        int i10;
+        an anVar = (an) this.r.V;
+        if (anVar.W0) {
+            i3 = -1;
         }
+        int k10 = super.k(i3, view);
+        if (anVar.W0) {
+            k10 += org.telegram.messenger.g0.L(160.0f);
+        }
+        if (!anVar.W0) {
+            k10 = org.telegram.messenger.k5.B(7.0f, anVar.S0 - org.telegram.messenger.g0.m, k10);
+        }
+        if (anVar.W0 && k10 == 0 && (i10 = anVar.X0) >= 0) {
+            an.O(anVar, i10);
+            anVar.X0 = -1;
+        }
+        anVar.W0 = false;
+        return k10;
+    }
+
+    @Override // u4.c0
+    public final int m(int i3) {
+        return super.m(i3) * 2;
     }
 }

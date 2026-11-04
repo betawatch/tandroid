@@ -14,21 +14,21 @@ import android.widget.FrameLayout;
 import java.io.File;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
     public DecelerateInterpolator b;
     public Paint c;
     public Paint d;
-    public fu0 e;
-    public gu0 f;
+    public at0 e;
+    public bt0 f;
     public boolean h;
     public float n;
     public long r;
     public long s;
     public boolean w;
-    public ew x;
+    public lt x;
 
     private void setHighlighted(boolean z10) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -45,23 +45,23 @@ public class ShutterButton extends View {
         animatorSet.start();
     }
 
-    public final void a(gu0 gu0Var) {
-        if (this.f != gu0Var) {
-            this.f = gu0Var;
+    public final void a(bt0 bt0Var) {
+        if (this.f != bt0Var) {
+            this.f = bt0Var;
             this.r = System.currentTimeMillis();
             this.s = 0L;
-            if (this.f != gu0.b) {
+            if (this.f != bt0.b) {
                 this.n = 0.0f;
             }
             invalidate();
         }
     }
 
-    public fu0 getDelegate() {
+    public at0 getDelegate() {
         return this.e;
     }
 
-    public gu0 getState() {
+    public bt0 getState() {
         return this.f;
     }
 
@@ -72,7 +72,7 @@ public class ShutterButton extends View {
         int measuredWidth = getMeasuredWidth() / 2;
         int measuredHeight = getMeasuredHeight() / 2;
         Drawable drawable = this.a;
-        drawable.setBounds(measuredWidth - org.telegram.messenger.i0.L(36.0f), measuredHeight - org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(36.0f) + measuredWidth, org.telegram.messenger.i0.L(36.0f) + measuredHeight);
+        drawable.setBounds(measuredWidth - org.telegram.messenger.g0.L(36.0f), measuredHeight - org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f) + measuredWidth, org.telegram.messenger.g0.L(36.0f) + measuredHeight);
         drawable.draw(canvas);
         if (!this.h && getScaleX() == 1.0f) {
             if (this.n != 0.0f) {
@@ -83,12 +83,12 @@ public class ShutterButton extends View {
         }
         float scaleX = (getScaleX() - 1.0f) / 0.06f;
         paint2.setAlpha((int) (255.0f * scaleX));
-        float f7 = measuredWidth;
-        float f10 = measuredHeight;
-        canvas.drawCircle(f7, f10, org.telegram.messenger.i0.L(26.0f), paint2);
-        if (this.f != gu0.b) {
+        float f10 = measuredWidth;
+        float f11 = measuredHeight;
+        canvas.drawCircle(f10, f11, org.telegram.messenger.g0.L(26.0f), paint2);
+        if (this.f != bt0.b) {
             if (this.n != 0.0f) {
-                canvas.drawCircle(f7, f10, org.telegram.messenger.i0.L(26.5f) * scaleX, paint);
+                canvas.drawCircle(f10, f11, org.telegram.messenger.g0.L(26.5f) * scaleX, paint);
                 return;
             }
             return;
@@ -106,7 +106,7 @@ public class ShutterButton extends View {
             this.n = this.b.getInterpolation(this.s / 120.0f);
             invalidate();
         }
-        canvas.drawCircle(f7, f10, org.telegram.messenger.i0.L(26.5f) * scaleX * this.n, paint);
+        canvas.drawCircle(f10, f11, org.telegram.messenger.g0.L(26.5f) * scaleX * this.n, paint);
     }
 
     @Override // android.view.View
@@ -115,13 +115,13 @@ public class ShutterButton extends View {
         accessibilityNodeInfo.setClassName("android.widget.Button");
         accessibilityNodeInfo.setClickable(true);
         accessibilityNodeInfo.setLongClickable(true);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), org.telegram.messenger.dd.L0(2131754926, null)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), org.telegram.messenger.dd.L0(2131754928, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), org.telegram.messenger.bd.M0(2131754926, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), org.telegram.messenger.bd.M0(2131754928, null)));
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(org.telegram.messenger.i0.L(84.0f), org.telegram.messenger.i0.L(84.0f));
+    public final void onMeasure(int i3, int i10) {
+        setMeasuredDimension(org.telegram.messenger.g0.L(84.0f), org.telegram.messenger.g0.L(84.0f));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0074, code lost:
@@ -137,12 +137,12 @@ public class ShutterButton extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ew ewVar = this.x;
+        lt ltVar = this.x;
         float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
+        float y9 = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            org.telegram.messenger.i0.h3(ewVar, 800L);
+            org.telegram.messenger.g0.i3(ltVar, 800L);
             this.h = true;
             this.w = true;
             setHighlighted(true);
@@ -150,56 +150,56 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            org.telegram.messenger.i0.r(ewVar);
+            org.telegram.messenger.g0.r(ltVar);
             if (this.w) {
-                ((nl) this.e).a();
+                ((gl) this.e).a();
             }
         } else if (action == 2) {
             if (x10 >= 0.0f && x10 <= getMeasuredWidth()) {
                 x10 = 0.0f;
             }
-            if (y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                y3 = 0.0f;
+            if (y9 >= 0.0f && y9 <= getMeasuredHeight()) {
+                y9 = 0.0f;
             }
-            nl nlVar = (nl) this.e;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = nlVar.e;
-            t81 t81Var = chatAttachAlertPhotoLayout.l0;
-            FrameLayout frameLayout = nlVar.d;
+            gl glVar = (gl) this.e;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = glVar.e;
+            j71 j71Var = chatAttachAlertPhotoLayout.m0;
+            FrameLayout frameLayout = glVar.d;
             boolean z10 = frameLayout.getWidth() < frameLayout.getHeight();
-            float f7 = z10 ? x10 : y3;
-            float f10 = z10 ? y3 : x10;
-            if (nlVar.b || Math.abs(f7) <= Math.abs(f10)) {
-                if (f10 < 0.0f) {
-                    boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                    chatAttachAlertPhotoLayout.u0(true);
-                    t81Var.b(true, (-f10) / org.telegram.messenger.i0.L(200.0f));
-                    nlVar.b = true;
+            float f10 = z10 ? x10 : y9;
+            float f11 = z10 ? y9 : x10;
+            if (glVar.b || Math.abs(f10) <= Math.abs(f11)) {
+                if (f11 < 0.0f) {
+                    boolean z11 = ChatAttachAlertPhotoLayout.r1;
+                    chatAttachAlertPhotoLayout.w0(true);
+                    j71Var.b(true, (-f11) / org.telegram.messenger.g0.L(200.0f));
+                    glVar.b = true;
                     return true;
                 }
-                if (nlVar.b) {
-                    t81Var.b(true, 0.0f);
+                if (glVar.b) {
+                    j71Var.b(true, 0.0f);
                 }
-                if (x10 == 0.0f && y3 == 0.0f) {
-                    nlVar.b = false;
+                if (x10 == 0.0f && y9 == 0.0f) {
+                    glVar.b = false;
                 }
-                if (!nlVar.b) {
+                if (!glVar.b) {
                     if (x10 == 0.0f) {
                     }
-                    org.telegram.messenger.i0.r(ewVar);
-                    if (this.f == gu0.b) {
+                    org.telegram.messenger.g0.r(ltVar);
+                    if (this.f == bt0.b) {
                         this.w = false;
                         setHighlighted(false);
-                        nl nlVar2 = (nl) this.e;
-                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = nlVar2.e;
-                        File file = nlVar2.a;
+                        gl glVar2 = (gl) this.e;
+                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = glVar2.e;
+                        File file = glVar2.a;
                         if (file != null) {
                             file.delete();
-                            nlVar2.a = null;
+                            glVar2.a = null;
                         }
-                        boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                        chatAttachAlertPhotoLayout2.m0();
-                        CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.P.getCameraSession(), true);
-                        a(gu0.a);
+                        boolean z12 = ChatAttachAlertPhotoLayout.r1;
+                        chatAttachAlertPhotoLayout2.o0();
+                        CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.Q.getCameraSession(), true);
+                        a(bt0.a);
                         return true;
                     }
                 }
@@ -212,13 +212,13 @@ public class ShutterButton extends View {
         return true;
     }
 
-    public void setDelegate(fu0 fu0Var) {
-        this.e = fu0Var;
+    public void setDelegate(at0 at0Var) {
+        this.e = at0Var;
     }
 
     @Override // android.view.View
-    public void setScaleX(float f7) {
-        super.setScaleX(f7);
+    public void setScaleX(float f10) {
+        super.setScaleX(f10);
         invalidate();
     }
 }

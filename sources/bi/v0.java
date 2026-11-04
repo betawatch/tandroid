@@ -1,143 +1,36 @@
 package bi;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.k9;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class v0 implements m1 {
-    public final /* synthetic */ y0 a;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final class v0 implements SensorEventListener {
+    public final /* synthetic */ a1 a;
 
-    public v0(y0 y0Var) {
-        this.a = y0Var;
+    public v0(a1 a1Var) {
+        this.a = a1Var;
     }
 
-    @Override // bi.m1
-    public final void B(Editable editable) {
-        y0 y0Var = this.a;
-        a aVar = y0Var.f;
-        if (aVar != null) {
-            aVar.s = true;
-            aVar.r = y0Var.d.k2;
-        }
-        if (aVar != null) {
-            TL_iv.PageBlock pageBlock = aVar.b;
-            if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                ((TL_iv.pageBlockDetails) pageBlock).title = s6.f(editable);
-            }
-        }
-        l3 l3Var = y0Var.h;
-        if (l3Var == null || y0Var.f == null) {
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        float[] fArr = sensorEvent.values;
+        float f10 = fArr[0];
+        a1 a1Var = this.a;
+        a1Var.I6 = f10;
+        float f11 = fArr[1];
+        a1Var.J6 = f11;
+        float f12 = fArr[2];
+        if (a1Var.M6) {
             return;
         }
-        d4 d4Var = l3Var.a;
-        o2 o2Var = d4Var.Q3;
-        if (o2Var != null) {
-            o2Var.g();
-        }
-        d4Var.o3.onContentChanged();
+        a1Var.K6 = f10;
+        a1Var.L6 = f11;
+        a1Var.M6 = true;
     }
 
-    @Override // bi.m1
-    public final /* synthetic */ boolean H(boolean z10) {
-        return false;
-    }
-
-    @Override // bi.m1
-    public final /* synthetic */ boolean I(n1 n1Var) {
-        return false;
-    }
-
-    @Override // bi.m1
-    public final void b(n1 n1Var) {
-        l3 l3Var = this.a.h;
-        if (l3Var != null) {
-            d4 d4Var = l3Var.a;
-            d4.P1(d4Var, n1Var);
-            d4Var.o3.h(n1Var, true);
-        }
-    }
-
-    @Override // bi.m1
-    public final void e(n1 n1Var) {
-        a aVar;
-        d4 d4Var;
-        ArrayList arrayList;
-        int indexOf;
-        y0 y0Var = this.a;
-        l3 l3Var = y0Var.h;
-        if (l3Var == null || (aVar = y0Var.f) == null || (indexOf = (arrayList = (d4Var = l3Var.a).s3).indexOf(aVar)) < 0) {
-            return;
-        }
-        TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
-        if (!pageblockdetails.open) {
-            pageblockdetails.open = true;
-            d4Var.f3.O(true);
-        }
-        int i10 = indexOf + 1;
-        if (i10 >= arrayList.size() || ((a) arrayList.get(i10)).i || d4.A3((a) arrayList.get(i10))) {
-            return;
-        }
-        d4Var.post(new v2(d4Var, (a) arrayList.get(i10), 24));
-    }
-
-    @Override // bi.m1
-    public final boolean f() {
-        y0 y0Var = this.a;
-        l3 l3Var = y0Var.h;
-        if (l3Var == null || y0Var.f == null) {
-            return false;
-        }
-        return l3Var.a.V4();
-    }
-
-    @Override // bi.m1
-    public final void i(n1 n1Var, int i10, int i11) {
-        l3 l3Var;
-        k9 textSelectionHelper;
-        y0 y0Var = this.a;
-        if (y0Var.n || i10 == i11 || (l3Var = y0Var.h) == null || (textSelectionHelper = l3Var.a.getTextSelectionHelper()) == null) {
-            return;
-        }
-        if (textSelectionHelper.x() && textSelectionHelper.W == y0Var) {
-            return;
-        }
-        y0Var.post(new u0(this, n1Var, i11, textSelectionHelper, i10, 0));
-    }
-
-    @Override // bi.m1
-    public final void r() {
-        a aVar;
-        y0 y0Var = this.a;
-        l3 l3Var = y0Var.h;
-        if (l3Var == null || (aVar = y0Var.f) == null) {
-            return;
-        }
-        l3Var.a(aVar);
-    }
-
-    @Override // bi.m1
-    public final void w(CharSequence charSequence) {
-        l3 l3Var = this.a.h;
-        if (l3Var == null || charSequence == null || charSequence.length() <= 0) {
-            return;
-        }
-        l3Var.a.w4(charSequence.toString());
-    }
-
-    @Override // bi.m1
-    public final boolean x(n1 n1Var) {
-        y0 y0Var = this.a;
-        if (y0Var.h == null || y0Var.f == null || n1Var.length() != 0) {
-            return false;
-        }
-        y0Var.h.a(y0Var.f);
-        return true;
-    }
-
-    @Override // bi.m1
-    public final /* synthetic */ void h(int i10, int i11) {
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i3) {
     }
 }

@@ -1,72 +1,82 @@
 package org.telegram.ui;
 
-import android.location.Location;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.beta.R;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x50 implements org.telegram.ui.Components.ik0, sb0 {
-    public final /* synthetic */ b60 a;
+public final class x50 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.ActionBar.k5 a;
+    public final org.telegram.ui.Components.x8 b;
+    public boolean c;
+    public int d;
+    public final /* synthetic */ y50 e;
 
-    public /* synthetic */ x50(b60 b60Var) {
-        this.a = b60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x50(y50 y50Var, Context context) {
+        super(context);
+        this.e = y50Var;
+        int i3 = org.telegram.ui.ActionBar.k6.i6;
+        this.d = org.telegram.ui.ActionBar.k6.x0(null, i3, false);
+        org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
+        this.a = k5Var;
+        k5Var.setTextSize(16);
+        k5Var.setEllipsizeByGradient(true);
+        k5Var.setRightPadding(org.telegram.messenger.g0.L(68.0f));
+        org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.j5, null);
+        addView(k5Var, b8.mf.d(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
+        org.telegram.ui.Components.x8 x8Var = new org.telegram.ui.Components.x8(context, false);
+        this.b = x8Var;
+        x8Var.a.a = true;
+        x8Var.setStyle(11);
+        x8Var.setAvatarsTextSize(org.telegram.messenger.g0.L(22.0f));
+        addView(x8Var, b8.mf.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+        setBackground(org.telegram.ui.ActionBar.k6.a0(org.telegram.ui.ActionBar.k6.x0(null, i3, false), 0, 4));
     }
 
-    @Override // org.telegram.ui.Components.ik0
-    public void b(float f7, float f10, int i10, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.x9;
-        b60 b60Var = this.a;
-        if (z10) {
-            if (!org.telegram.messenger.i0.J1(b60Var)) {
-                return;
-            }
-            xb0 xb0Var = new xb0(4);
-            xb0Var.n0 = 0L;
-            xb0Var.N0 = new x50(b60Var);
-            b60Var.presentFragment(xb0Var);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        View view = (View) getParent();
+        if (view != null && view.getWidth() > 0) {
+            i3 = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
         }
-        if (!(view instanceof org.telegram.ui.Cells.p8) || b60Var.P == 5) {
+        this.c = true;
+        org.telegram.ui.ActionBar.k5 k5Var = this.a;
+        k5Var.setVisibility(8);
+        super.onMeasure(i3, i10);
+        k5Var.setVisibility(0);
+        k5Var.getLayoutParams().width = getMeasuredWidth();
+        this.c = false;
+        this.e.g();
+        super.onMeasure(i3, i10);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
             return;
         }
-        org.telegram.ui.ActionBar.k1 k1Var = b60Var.x;
-        if (k1Var == null || !k1Var.isShowing()) {
-            m4.n0 n0Var = new m4.n0(b60Var.getParentActivity(), null, new e(b60Var, 19), true, 1, null);
-            n0Var.t(b60Var.W);
-            org.telegram.ui.ActionBar.k1 k1Var2 = new org.telegram.ui.ActionBar.k1((ActionBarPopupWindow$ActionBarPopupWindowLayout) n0Var.a, -2, -2);
-            b60Var.x = k1Var2;
-            k1Var2.e = true;
-            k1Var2.c = org.telegram.messenger.at.x3;
-            k1Var2.setOutsideTouchable(true);
-            b60Var.x.setClippingEnabled(true);
-            b60Var.x.setAnimationStyle(R.style.PopupContextAnimation);
-            b60Var.x.setFocusable(true);
-            ((ActionBarPopupWindow$ActionBarPopupWindowLayout) n0Var.a).measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(1000.0f), TLObject.FLAG_31));
-            b60Var.x.setInputMethodMode(2);
-            b60Var.x.getContentView().setFocusableInTouchMode(true);
-            b60Var.x.showAtLocation(b60Var.getFragmentView(), 0, (int) (view.getX() + f7), (int) ((((ActionBarPopupWindow$ActionBarPopupWindowLayout) n0Var.a).getMeasuredHeight() / 2.0f) + view.getY() + f10));
-            b60Var.x.b();
+        super.requestLayout();
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        try {
+            int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false);
+            if (x02 != this.d) {
+                this.d = x02;
+                org.telegram.ui.ActionBar.k6.H1(getBackground(), x02, true);
+                invalidate();
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.sb0
-    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
-        b60 b60Var = this.a;
-        Location location = b60Var.U;
-        location.setLatitude(messageMedia.geo.lat);
-        location.setLongitude(messageMedia.geo._long);
-        b60Var.T = messageMedia.address;
-    }
-
-    @Override // org.telegram.ui.Components.ik0
-    public /* synthetic */ boolean h1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ik0
-    public /* synthetic */ void q0(View view, float f7, float f10) {
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

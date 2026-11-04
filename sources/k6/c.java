@@ -2,34 +2,43 @@ package k6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.internal.clearcut.b2;
+import com.google.android.gms.internal.clearcut.v1;
+import i7.p;
 import java.util.Arrays;
-import w7.h0;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
 /* loaded from: classes.dex */
-public final class c extends o6.a {
-    public static final Parcelable.Creator<c> CREATOR = new g8.g(17);
-    public final String a;
-    public final int b;
-    public final long c;
+public final class c extends q6.a {
+    public static final Parcelable.Creator<c> CREATOR = new p(12);
+    public final b2 a;
+    public byte[] b;
+    public final int[] c;
+    public final String[] d;
+    public final int[] e;
+    public final byte[][] f;
+    public final m8.a[] h;
+    public final boolean n;
+    public final v1 r;
 
-    public c(int i10, String str, long j10) {
-        this.a = str;
-        this.b = i10;
-        this.c = j10;
-    }
-
-    public final long b() {
-        long j10 = this.c;
-        return j10 == -1 ? this.b : j10;
+    public c(b2 b2Var, v1 v1Var) {
+        this.a = b2Var;
+        this.r = v1Var;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = null;
+        this.h = null;
+        this.n = true;
     }
 
     public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj instanceof c) {
             c cVar = (c) obj;
-            String str = cVar.a;
-            String str2 = this.a;
-            if (((str2 != null && str2.equals(str)) || (str2 == null && str == null)) && b() == cVar.b()) {
+            if (m.k(this.a, cVar.a) && Arrays.equals(this.b, cVar.b) && Arrays.equals(this.c, cVar.c) && Arrays.equals(this.d, cVar.d) && m.k(this.r, cVar.r) && m.k(null, null) && m.k(null, null) && Arrays.equals(this.e, cVar.e) && Arrays.deepEquals(this.f, cVar.f) && Arrays.equals(this.h, cVar.h) && this.n == cVar.n) {
                 return true;
             }
         }
@@ -37,31 +46,57 @@ public final class c extends o6.a {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Long.valueOf(b())});
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.r, null, null, this.e, this.f, this.h, Boolean.valueOf(this.n)});
     }
 
     public final String toString() {
-        m4.c cVar = new m4.c(this);
-        cVar.u(this.a, "name");
-        cVar.u(Long.valueOf(b()), "version");
-        return cVar.toString();
+        StringBuilder sb2 = new StringBuilder("LogEventParcelable[");
+        sb2.append(this.a);
+        sb2.append(", LogEventBytes: ");
+        byte[] bArr = this.b;
+        sb2.append(bArr == null ? null : new String(bArr));
+        sb2.append(", TestCodes: ");
+        sb2.append(Arrays.toString(this.c));
+        sb2.append(", MendelPackages: ");
+        sb2.append(Arrays.toString(this.d));
+        sb2.append(", LogEvent: ");
+        sb2.append(this.r);
+        sb2.append(", ExtensionProducer: null, VeProducer: null, ExperimentIDs: ");
+        sb2.append(Arrays.toString(this.e));
+        sb2.append(", ExperimentTokens: ");
+        sb2.append(Arrays.toString(this.f));
+        sb2.append(", ExperimentTokensParcelables: ");
+        sb2.append(Arrays.toString(this.h));
+        sb2.append(", AddPhenotypeExperimentTokens: ");
+        sb2.append(this.n);
+        sb2.append("]");
+        return sb2.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.l(parcel, 1, this.a);
-        h0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        long b10 = b();
-        h0.s(parcel, 3, 8);
-        parcel.writeLong(b10);
-        h0.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.l(parcel, 2, this.a, i3);
+        j8.a.d(parcel, 3, this.b);
+        j8.a.h(parcel, 4, this.c);
+        j8.a.n(parcel, 5, this.d);
+        j8.a.h(parcel, 6, this.e);
+        j8.a.e(parcel, 7, this.f);
+        j8.a.r(parcel, 8, 4);
+        parcel.writeInt(this.n ? 1 : 0);
+        j8.a.p(parcel, 9, this.h, i3);
+        j8.a.t(parcel, s6);
     }
 
-    public c(String str, long j10) {
-        this.a = str;
-        this.c = j10;
-        this.b = -1;
+    public c(b2 b2Var, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z10, m8.a[] aVarArr) {
+        this.a = b2Var;
+        this.b = bArr;
+        this.c = iArr;
+        this.d = strArr;
+        this.r = null;
+        this.e = iArr2;
+        this.f = bArr2;
+        this.h = aVarArr;
+        this.n = z10;
     }
 }

@@ -1,190 +1,291 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
+import android.util.Pair;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class lp {
-    public boolean b;
-    public int c;
-    public boolean d;
-    public int e;
-    public int f;
-    public int a = 0;
-    public final int[] g = new int[6];
-    public final int[] h = new int[6];
+public final /* synthetic */ class lp implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qr b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
 
-    public static lp a(TLRPC.EmojiStatus emojiStatus) {
-        if (!(emojiStatus instanceof TLRPC.TL_emojiStatusCollectible)) {
-            return null;
-        }
-        TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = (TLRPC.TL_emojiStatusCollectible) emojiStatus;
-        lp lpVar = new lp();
-        lpVar.c = -1;
-        lpVar.d = true;
-        int i10 = tL_emojiStatusCollectible.edge_color;
-        int[] iArr = lpVar.g;
-        iArr[0] = i10 | (-16777216);
-        int i11 = tL_emojiStatusCollectible.center_color;
-        iArr[1] = i11 | (-16777216);
-        iArr[2] = i10 | (-16777216);
-        iArr[3] = i11 | (-16777216);
-        int i12 = tL_emojiStatusCollectible.text_color;
-        iArr[4] = i12 | (-16777216);
-        iArr[5] = i12 | (-16777216);
-        System.arraycopy(iArr, 0, lpVar.h, 0, 6);
-        lpVar.a = tL_emojiStatusCollectible.pattern_color | (-16777216);
-        return lpVar;
+    public /* synthetic */ lp(qr qrVar, int i3, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = qrVar;
+        this.c = i3;
+        this.d = arrayList;
     }
 
-    public static lp b(TLRPC.TL_help_peerColorOption tL_help_peerColorOption) {
-        if (tL_help_peerColorOption == null) {
-            return null;
-        }
-        lp lpVar = new lp();
-        lpVar.c = tL_help_peerColorOption.color_id;
-        lpVar.d = tL_help_peerColorOption.hidden;
-        int i10 = tL_help_peerColorOption.flags;
-        if ((i10 & 8) != 0) {
-            lpVar.e = tL_help_peerColorOption.channel_min_level;
-        }
-        if ((i10 & 16) != 0) {
-            lpVar.f = tL_help_peerColorOption.group_min_level;
-        }
-        System.arraycopy(p(tL_help_peerColorOption.colors), 0, lpVar.g, 0, 6);
-        System.arraycopy(p(tL_help_peerColorOption.dark_colors), 0, lpVar.h, 0, 6);
-        return lpVar;
-    }
-
-    public static int[] p(TLRPC.help_PeerColorSet help_peercolorset) {
-        ArrayList<Integer> arrayList;
-        int[] iArr = new int[6];
-        iArr[0] = 0;
-        iArr[1] = 0;
-        iArr[2] = 0;
-        iArr[3] = 0;
-        iArr[4] = 0;
-        iArr[5] = 0;
-        if (help_peercolorset instanceof TLRPC.TL_help_peerColorSet) {
-            arrayList = ((TLRPC.TL_help_peerColorSet) help_peercolorset).colors;
-        } else if (help_peercolorset instanceof TLRPC.TL_help_peerColorProfileSet) {
-            TLRPC.TL_help_peerColorProfileSet tL_help_peerColorProfileSet = (TLRPC.TL_help_peerColorProfileSet) help_peercolorset;
-            ArrayList<Integer> arrayList2 = tL_help_peerColorProfileSet.palette_colors;
-            ArrayList<Integer> arrayList3 = tL_help_peerColorProfileSet.bg_colors;
-            ArrayList<Integer> arrayList4 = tL_help_peerColorProfileSet.story_colors;
-            ArrayList<Integer> arrayList5 = new ArrayList<>();
-            if (arrayList2 != null) {
-                for (int i10 = 0; i10 < Math.min(2, arrayList2.size()); i10++) {
-                    arrayList5.add(arrayList2.get(i10));
+    /* JADX WARN: Removed duplicated region for block: B:102:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x02b5  */
+    /* JADX WARN: Removed duplicated region for block: B:173:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x02bd  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x02c2  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        Throwable th2;
+        SQLiteDatabase sQLiteDatabase;
+        Exception e10;
+        SQLiteDatabase sQLiteDatabase2;
+        SQLitePreparedStatement sQLitePreparedStatement;
+        TLRPC.PhotoSize photoSize;
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = this.d;
+                qr qrVar = this.b;
+                qrVar.getClass();
+                int i3 = this.c;
+                SQLitePreparedStatement sQLitePreparedStatement2 = null;
+                if (i3 == 1) {
+                    try {
+                        try {
+                            qrVar.b.executeFast("DELETE FROM wallpapers2 WHERE num >= -1").stepThis().dispose();
+                        } catch (Exception e11) {
+                            e10 = e11;
+                            qrVar.o(e10, true);
+                            sQLiteDatabase2 = qrVar.b;
+                            if (sQLiteDatabase2 != null) {
+                                sQLiteDatabase2.commitTransaction();
+                            }
+                            if (sQLitePreparedStatement2 == null) {
+                                sQLitePreparedStatement2.dispose();
+                                return;
+                            }
+                            return;
+                        }
+                    } catch (Throwable th3) {
+                        th2 = th3;
+                        sQLiteDatabase = qrVar.b;
+                        if (sQLiteDatabase != null) {
+                            sQLiteDatabase.commitTransaction();
+                        }
+                        if (sQLitePreparedStatement2 != null) {
+                            sQLitePreparedStatement2.dispose();
+                        }
+                        throw th2;
+                    }
                 }
-            }
-            if (arrayList3 != null) {
-                for (int i11 = 0; i11 < Math.min(2, arrayList3.size()); i11++) {
-                    arrayList5.add(arrayList3.get(i11));
+                qrVar.b.beginTransaction();
+                SQLitePreparedStatement executeFast = i3 != 0 ? qrVar.b.executeFast("REPLACE INTO wallpapers2 VALUES(?, ?, ?)") : qrVar.b.executeFast("UPDATE wallpapers2 SET data = ? WHERE uid = ?");
+                try {
+                    int size = arrayList.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) arrayList.get(i10);
+                        executeFast.requery();
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(wallPaper.getObjectSize());
+                        wallPaper.serializeToStream(nativeByteBuffer);
+                        if (i3 != 0) {
+                            executeFast.bindLong(1, wallPaper.id);
+                            executeFast.bindByteBuffer(2, nativeByteBuffer);
+                            if (i3 < 0) {
+                                executeFast.bindInteger(3, i3);
+                            } else {
+                                executeFast.bindInteger(3, i3 == 2 ? -1 : i10);
+                            }
+                        } else {
+                            executeFast.bindByteBuffer(1, nativeByteBuffer);
+                            executeFast.bindLong(2, wallPaper.id);
+                        }
+                        executeFast.step();
+                        nativeByteBuffer.reuse();
+                    }
+                    executeFast.dispose();
+                    qrVar.b.commitTransaction();
+                    SQLiteDatabase sQLiteDatabase3 = qrVar.b;
+                    if (sQLiteDatabase3 != null) {
+                        sQLiteDatabase3.commitTransaction();
+                        return;
+                    }
+                    return;
+                } catch (Exception e12) {
+                    e10 = e12;
+                    sQLitePreparedStatement2 = executeFast;
+                    qrVar.o(e10, true);
+                    sQLiteDatabase2 = qrVar.b;
+                    if (sQLiteDatabase2 != null) {
+                    }
+                    if (sQLitePreparedStatement2 == null) {
+                    }
+                } catch (Throwable th4) {
+                    th2 = th4;
+                    sQLitePreparedStatement2 = executeFast;
+                    sQLiteDatabase = qrVar.b;
+                    if (sQLiteDatabase != null) {
+                    }
+                    if (sQLitePreparedStatement2 != null) {
+                    }
+                    throw th2;
                 }
-            }
-            if (arrayList4 != null) {
-                for (int i12 = 0; i12 < Math.min(2, arrayList4.size()); i12++) {
-                    arrayList5.add(arrayList4.get(i12));
+            case 1:
+                int i11 = this.c;
+                ArrayList arrayList2 = this.d;
+                qr qrVar2 = this.b;
+                qrVar2.getClass();
+                try {
+                    qrVar2.b.beginTransaction();
+                    qrVar2.b.executeFast("DELETE FROM shortcut_widget WHERE id = " + i11).stepThis().dispose();
+                    SQLitePreparedStatement executeFast2 = qrVar2.b.executeFast("REPLACE INTO shortcut_widget VALUES(?, ?, ?)");
+                    if (arrayList2.isEmpty()) {
+                        executeFast2.requery();
+                        executeFast2.bindInteger(1, i11);
+                        executeFast2.bindLong(2, -1L);
+                        executeFast2.bindInteger(3, 0);
+                        executeFast2.step();
+                    } else {
+                        int size2 = arrayList2.size();
+                        for (int i12 = 0; i12 < size2; i12++) {
+                            long j10 = ((pr) arrayList2.get(i12)).a;
+                            executeFast2.requery();
+                            executeFast2.bindInteger(1, i11);
+                            executeFast2.bindLong(2, j10);
+                            executeFast2.bindInteger(3, i12);
+                            executeFast2.step();
+                        }
+                    }
+                    executeFast2.dispose();
+                    qrVar2.b.commitTransaction();
+                    return;
+                } catch (Exception e13) {
+                    qrVar2.o(e13, true);
+                    return;
                 }
-            }
-            arrayList = arrayList5;
-        } else {
-            arrayList = null;
+            case 2:
+                ArrayList arrayList3 = this.d;
+                qr qrVar3 = this.b;
+                qrVar3.getClass();
+                SQLiteCursor sQLiteCursor = null;
+                try {
+                    ArrayList arrayList4 = new ArrayList();
+                    SQLiteDatabase sQLiteDatabase4 = qrVar3.b;
+                    Locale locale = Locale.US;
+                    SQLiteCursor queryFinalized = sQLiteDatabase4.queryFinalized("SELECT did, folder_id FROM dialogs WHERE pinned > 0 AND did NOT IN (" + TextUtils.join(",", arrayList3) + ")", new Object[0]);
+                    while (queryFinalized.next()) {
+                        try {
+                            long longValue = queryFinalized.longValue(0);
+                            if (queryFinalized.intValue(1) == this.c && !m5.C(longValue) && !m5.D(longValue)) {
+                                arrayList4.add(Long.valueOf(queryFinalized.longValue(0)));
+                            }
+                        } catch (Exception e14) {
+                            e = e14;
+                            sQLitePreparedStatement = null;
+                            sQLiteCursor = queryFinalized;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            sQLitePreparedStatement = null;
+                            sQLiteCursor = queryFinalized;
+                            if (sQLiteCursor != null) {
+                            }
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            throw th;
+                        }
+                    }
+                    queryFinalized.dispose();
+                    if (arrayList4.isEmpty()) {
+                        return;
+                    }
+                    sQLitePreparedStatement = qrVar3.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
+                    for (int i13 = 0; i13 < arrayList4.size(); i13++) {
+                        try {
+                            try {
+                                long longValue2 = ((Long) arrayList4.get(i13)).longValue();
+                                sQLitePreparedStatement.requery();
+                                sQLitePreparedStatement.bindInteger(1, 0);
+                                sQLitePreparedStatement.bindLong(2, longValue2);
+                                sQLitePreparedStatement.step();
+                            } catch (Exception e15) {
+                                e = e15;
+                                qrVar3.o(e, true);
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
+                                    return;
+                                }
+                                return;
+                            }
+                        } catch (Throwable th6) {
+                            th = th6;
+                            if (sQLiteCursor != null) {
+                                sQLiteCursor.dispose();
+                            }
+                            if (sQLitePreparedStatement != null) {
+                                sQLitePreparedStatement.dispose();
+                            }
+                            throw th;
+                        }
+                    }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Exception e16) {
+                    e = e16;
+                    sQLitePreparedStatement = null;
+                } catch (Throwable th7) {
+                    th = th7;
+                    sQLitePreparedStatement = null;
+                }
+                break;
+            default:
+                z5 downloadController = this.b.getDownloadController();
+                HashMap hashMap = downloadController.f;
+                ArrayList arrayList5 = this.d;
+                if (arrayList5.isEmpty()) {
+                    return;
+                }
+                int i14 = this.c;
+                ArrayList arrayList6 = i14 == 1 ? downloadController.b : i14 == 2 ? downloadController.c : i14 == 4 ? downloadController.e : downloadController.d;
+                for (int i15 = 0; i15 < arrayList5.size(); i15++) {
+                    a6 a6Var = (a6) arrayList5.get(i15);
+                    TLObject tLObject = a6Var.a;
+                    String str = null;
+                    if (tLObject instanceof TLRPC.Document) {
+                        str = w7.r(null, (TLRPC.Document) tLObject);
+                        photoSize = null;
+                    } else if (tLObject instanceof TLRPC.Photo) {
+                        photoSize = w7.w(((TLRPC.Photo) tLObject).sizes, g0.Z0(false), false, null, false);
+                        str = w7.r(null, photoSize);
+                    } else {
+                        photoSize = null;
+                    }
+                    if (str != null && !hashMap.containsKey(str)) {
+                        if (photoSize != null) {
+                            downloadController.getFileLoader().W(ac.i(photoSize, (TLRPC.Photo) a6Var.a), a6Var.f, null, 0, a6Var.d ? 2 : a6Var.e ? 1 : 0);
+                        } else {
+                            TLObject tLObject2 = a6Var.a;
+                            if (tLObject2 instanceof TLRPC.Document) {
+                                downloadController.getFileLoader().X((TLRPC.Document) tLObject2, a6Var.f, 0, a6Var.d ? 2 : 0);
+                            }
+                        }
+                        arrayList6.add(a6Var);
+                        hashMap.put(str, a6Var);
+                        downloadController.h.put(new Pair(Long.valueOf(a6Var.c), Integer.valueOf(a6Var.b)), a6Var);
+                    }
+                }
+                return;
         }
-        if (arrayList != null) {
-            if (arrayList.size() > 0) {
-                Arrays.fill(iArr, arrayList.get(0).intValue() | (-16777216));
-            }
-            for (int i13 = 0; i13 < Math.min(6, arrayList.size()); i13++) {
-                iArr[i13] = arrayList.get(i13).intValue() | (-16777216);
-            }
-        }
-        return iArr;
     }
 
-    public final int c(boolean z10) {
-        return o(z10) ? j(z10) : h(z10);
-    }
-
-    public final int d(boolean z10) {
-        if (o(z10)) {
-            return (z10 ? this.h : this.g)[3];
-        }
-        return h(z10);
-    }
-
-    public final int e(int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        int i11;
-        if (i10 < 0 || i10 > 5) {
-            return 0;
-        }
-        if (!this.b || (i11 = this.c) < 0 || i11 >= 7) {
-            return (p6Var != null ? p6Var.a() : org.telegram.ui.ActionBar.t6.I.q() ? this.h : this.g)[i10];
-        }
-        return org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.r8[i11], p6Var);
-    }
-
-    public final int f() {
-        return (org.telegram.ui.ActionBar.t6.I.q() ? this.h : this.g)[0];
-    }
-
-    public final int g() {
-        return (org.telegram.ui.ActionBar.t6.I.q() ? this.h : this.g)[1];
-    }
-
-    public final int h(boolean z10) {
-        return (z10 ? this.h : this.g)[1];
-    }
-
-    public final int i() {
-        return (org.telegram.ui.ActionBar.t6.I.q() ? this.h : this.g)[2];
-    }
-
-    public final int j(boolean z10) {
-        return (z10 ? this.h : this.g)[2];
-    }
-
-    public final int k() {
-        return (org.telegram.ui.ActionBar.t6.I.q() ? this.h : this.g)[4];
-    }
-
-    public final int l(boolean z10) {
-        return z10 ? this.f : this.e;
-    }
-
-    public final int m(boolean z10) {
-        if (o(z10)) {
-            return (z10 ? this.h : this.g)[4];
-        }
-        return j(z10);
-    }
-
-    public final int n(boolean z10) {
-        boolean o10 = o(z10);
-        int[] iArr = this.g;
-        int[] iArr2 = this.h;
-        if (o10) {
-            if (z10) {
-                iArr = iArr2;
-            }
-            return iArr[5];
-        }
-        if (z10) {
-            iArr = iArr2;
-        }
-        return iArr[3];
-    }
-
-    public final boolean o(boolean z10) {
-        int[] iArr = this.g;
-        int[] iArr2 = this.h;
-        int i10 = (z10 ? iArr2 : iArr)[5];
-        if (z10) {
-            iArr = iArr2;
-        }
-        return i10 != iArr[0];
+    public /* synthetic */ lp(qr qrVar, ArrayList arrayList, int i3) {
+        this.a = 2;
+        this.b = qrVar;
+        this.d = arrayList;
+        this.c = i3;
     }
 }

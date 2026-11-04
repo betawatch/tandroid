@@ -1,27 +1,31 @@
 package s3;
 
-import b2.r0;
-import b2.t0;
-import b2.x;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class b implements t0 {
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
-        return null;
+public final class b extends i {
+    public final byte[] b;
+
+    public b(String str, byte[] bArr) {
+        super(str);
+        this.b = bArr;
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ byte[] c() {
-        return null;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && b.class == obj.getClass()) {
+            b bVar = (b) obj;
+            if (this.a.equals(bVar.a) && Arrays.equals(this.b, bVar.b)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public String toString() {
-        return "SCTE-35 splice command: type=".concat(getClass().getSimpleName());
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
+    public final int hashCode() {
+        return Arrays.hashCode(this.b) + com.google.android.recaptcha.internal.a.g(527, 31, this.a);
     }
 }

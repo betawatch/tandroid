@@ -1,15 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import bd.i;
-import bd.k;
+import ed.g;
+import ed.i;
 import java.util.ArrayList;
 import java.util.Iterator;
-import od.b;
-import od.e;
-import rd.a;
-import w7.w5;
+import rd.b;
+import rd.e;
+import x7.n;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzkd implements zzjt {
     public static final zzkd zza = new zzkd();
@@ -42,27 +41,27 @@ public final class zzkd implements zzjt {
         if (z15 && (obj2 instanceof Double)) {
             return Double.valueOf(((Number) obj).doubleValue() % ((Number) obj2).doubleValue());
         }
-        int i10 = 0;
+        int i3 = 0;
         if (obj instanceof String) {
             if (obj2 instanceof Byte) {
-                byte[] bytes = ((String) obj).getBytes(a.a);
+                byte[] bytes = ((String) obj).getBytes(ud.a.a);
                 int length = bytes.length;
                 ArrayList arrayList = new ArrayList(length);
-                while (i10 < length) {
-                    arrayList.add(Byte.valueOf((byte) (bytes[i10] % ((Number) obj2).intValue())));
-                    i10++;
+                while (i3 < length) {
+                    arrayList.add(Byte.valueOf((byte) (bytes[i3] % ((Number) obj2).intValue())));
+                    i3++;
                 }
-                return new String(i.j(arrayList), a.a);
+                return new String(g.i(arrayList), ud.a.a);
             }
             if (obj2 instanceof Integer) {
                 char[] charArray = ((String) obj).toCharArray();
                 int length2 = charArray.length;
                 ArrayList arrayList2 = new ArrayList(length2);
-                while (i10 < length2) {
-                    arrayList2.add(Integer.valueOf(charArray[i10] % ((Number) obj2).intValue()));
-                    i10++;
+                while (i3 < length2) {
+                    arrayList2.add(Integer.valueOf(charArray[i3] % ((Number) obj2).intValue()));
+                    i3++;
                 }
-                return i.l(arrayList2);
+                return g.k(arrayList2);
             }
         }
         if (z10 && (obj2 instanceof byte[])) {
@@ -76,16 +75,16 @@ public final class zzkd implements zzjt {
         if (z11 && (obj2 instanceof short[])) {
             short[] sArr = (short[]) obj2;
             ArrayList arrayList4 = new ArrayList(sArr.length);
-            for (short s10 : sArr) {
-                arrayList4.add(Integer.valueOf(s10 % ((Number) obj).intValue()));
+            for (short s6 : sArr) {
+                arrayList4.add(Integer.valueOf(s6 % ((Number) obj).intValue()));
             }
             return arrayList4.toArray(new Integer[0]);
         }
         if (z12 && (obj2 instanceof int[])) {
             int[] iArr = (int[]) obj2;
             ArrayList arrayList5 = new ArrayList(iArr.length);
-            for (int i11 : iArr) {
-                arrayList5.add(Integer.valueOf(i11 % ((Number) obj).intValue()));
+            for (int i10 : iArr) {
+                arrayList5.add(Integer.valueOf(i10 % ((Number) obj).intValue()));
             }
             return arrayList5.toArray(new Integer[0]);
         }
@@ -100,8 +99,8 @@ public final class zzkd implements zzjt {
         if (z14 && (obj2 instanceof float[])) {
             float[] fArr = (float[]) obj2;
             ArrayList arrayList7 = new ArrayList(fArr.length);
-            for (float f7 : fArr) {
-                arrayList7.add(Float.valueOf(f7 % ((Number) obj).floatValue()));
+            for (float f10 : fArr) {
+                arrayList7.add(Float.valueOf(f10 % ((Number) obj).floatValue()));
             }
             return arrayList7.toArray(new Float[0]);
         }
@@ -126,8 +125,8 @@ public final class zzkd implements zzjt {
         if (z17 && (obj2 instanceof Short)) {
             short[] sArr2 = (short[]) obj;
             ArrayList arrayList10 = new ArrayList(sArr2.length);
-            for (short s11 : sArr2) {
-                arrayList10.add(Integer.valueOf(s11 % ((Number) obj2).intValue()));
+            for (short s10 : sArr2) {
+                arrayList10.add(Integer.valueOf(s10 % ((Number) obj2).intValue()));
             }
             return arrayList10.toArray(new Integer[0]);
         }
@@ -136,11 +135,11 @@ public final class zzkd implements zzjt {
             int[] iArr2 = (int[]) obj;
             int length3 = iArr2.length;
             ArrayList arrayList11 = new ArrayList(length3);
-            while (i10 < length3) {
-                arrayList11.add(Integer.valueOf(iArr2[i10] % ((Number) obj2).intValue()));
-                i10++;
+            while (i3 < length3) {
+                arrayList11.add(Integer.valueOf(iArr2[i3] % ((Number) obj2).intValue()));
+                i3++;
             }
-            return i.l(arrayList11);
+            return g.k(arrayList11);
         }
         boolean z19 = obj instanceof long[];
         if (z19 && (obj2 instanceof Long)) {
@@ -155,8 +154,8 @@ public final class zzkd implements zzjt {
         if (z20 && (obj2 instanceof Float)) {
             float[] fArr2 = (float[]) obj;
             ArrayList arrayList13 = new ArrayList(fArr2.length);
-            for (float f10 : fArr2) {
-                arrayList13.add(Float.valueOf(f10 % ((Number) obj2).floatValue()));
+            for (float f11 : fArr2) {
+                arrayList13.add(Float.valueOf(f11 % ((Number) obj2).floatValue()));
             }
             return arrayList13.toArray(new Float[0]);
         }
@@ -174,9 +173,9 @@ public final class zzkd implements zzjt {
             int length4 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
             zzjs.zza(this, length4, bArr4.length);
-            e a2 = w5.a(0, length4);
-            ArrayList arrayList15 = new ArrayList(k.d(a2));
-            Iterator it = a2.iterator();
+            e a10 = n.a(0, length4);
+            ArrayList arrayList15 = new ArrayList(i.d(a10, 10));
+            Iterator it = a10.iterator();
             while (true) {
                 b bVar = (b) it;
                 if (!bVar.d) {
@@ -190,9 +189,9 @@ public final class zzkd implements zzjt {
             int length5 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
             zzjs.zza(this, length5, sArr4.length);
-            e a10 = w5.a(0, length5);
-            ArrayList arrayList16 = new ArrayList(k.d(a10));
-            Iterator it2 = a10.iterator();
+            e a11 = n.a(0, length5);
+            ArrayList arrayList16 = new ArrayList(i.d(a11, 10));
+            Iterator it2 = a11.iterator();
             while (true) {
                 b bVar2 = (b) it2;
                 if (!bVar2.d) {
@@ -206,9 +205,9 @@ public final class zzkd implements zzjt {
             int length6 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
             zzjs.zza(this, length6, iArr4.length);
-            e a11 = w5.a(0, length6);
-            ArrayList arrayList17 = new ArrayList(k.d(a11));
-            Iterator it3 = a11.iterator();
+            e a12 = n.a(0, length6);
+            ArrayList arrayList17 = new ArrayList(i.d(a12, 10));
+            Iterator it3 = a12.iterator();
             while (true) {
                 b bVar3 = (b) it3;
                 if (!bVar3.d) {
@@ -222,9 +221,9 @@ public final class zzkd implements zzjt {
             int length7 = jArr3.length;
             long[] jArr4 = (long[]) obj2;
             zzjs.zza(this, length7, jArr4.length);
-            e a12 = w5.a(0, length7);
-            ArrayList arrayList18 = new ArrayList(k.d(a12));
-            Iterator it4 = a12.iterator();
+            e a13 = n.a(0, length7);
+            ArrayList arrayList18 = new ArrayList(i.d(a13, 10));
+            Iterator it4 = a13.iterator();
             while (true) {
                 b bVar4 = (b) it4;
                 if (!bVar4.d) {
@@ -238,9 +237,9 @@ public final class zzkd implements zzjt {
             int length8 = fArr3.length;
             float[] fArr4 = (float[]) obj2;
             zzjs.zza(this, length8, fArr4.length);
-            e a13 = w5.a(0, length8);
-            ArrayList arrayList19 = new ArrayList(k.d(a13));
-            Iterator it5 = a13.iterator();
+            e a14 = n.a(0, length8);
+            ArrayList arrayList19 = new ArrayList(i.d(a14, 10));
+            Iterator it5 = a14.iterator();
             while (true) {
                 b bVar5 = (b) it5;
                 if (!bVar5.d) {
@@ -257,9 +256,9 @@ public final class zzkd implements zzjt {
             int length9 = dArr3.length;
             double[] dArr4 = (double[]) obj2;
             zzjs.zza(this, length9, dArr4.length);
-            e a14 = w5.a(0, length9);
-            ArrayList arrayList20 = new ArrayList(k.d(a14));
-            Iterator it6 = a14.iterator();
+            e a15 = n.a(0, length9);
+            ArrayList arrayList20 = new ArrayList(i.d(a15, 10));
+            Iterator it6 = a15.iterator();
             while (true) {
                 b bVar6 = (b) it6;
                 if (!bVar6.d) {
@@ -272,7 +271,7 @@ public final class zzkd implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i3, zziz zzizVar, zzzt... zzztVarArr) {
         if (zzztVarArr.length != 2) {
             throw new zzdm(4, 3, null);
         }
@@ -291,9 +290,9 @@ public final class zzkd implements zzjt {
             throw new zzdm(4, 5, null);
         }
         try {
-            zzizVar.zzc().zze(i10, zzb(zza2, zza3));
-        } catch (ArithmeticException e) {
-            throw new zzdm(4, 6, e);
+            zzizVar.zzc().zze(i3, zzb(zza2, zza3));
+        } catch (ArithmeticException e10) {
+            throw new zzdm(4, 6, e10);
         }
     }
 }

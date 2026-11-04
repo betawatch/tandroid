@@ -1,68 +1,76 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class jf extends af {
-    public String B;
-    public String C;
-    public String D;
-    public int E;
-    public int F;
-    public int G;
-    public int H;
-    public CharSequence I;
-    public TLRPC.Document J;
-    public TLRPC.Photo K;
-    public TLRPC.PhotoSize L;
-    public TLRPC.PhotoSize M;
-    public TLRPC.BotInlineResult N;
-    public HashMap O;
+public final /* synthetic */ class jf implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u10 b;
 
-    @Override // org.telegram.messenger.af
-    public final String a() {
-        if (this.L != null) {
-            b8.G(e20.s0);
-            return b8.K(this.L, null, true, true).getAbsolutePath();
-        }
-        if (this.J == null) {
-            return ic.A(this.C).getAbsolutePath();
-        }
-        b8.G(e20.s0);
-        return b8.K(this.J, null, true, true).getAbsolutePath();
+    public /* synthetic */ jf(u10 u10Var, int i3) {
+        this.a = i3;
+        this.b = u10Var;
     }
 
-    /* renamed from: f, reason: merged with bridge method [inline-methods] */
-    public final jf clone() {
-        jf jfVar = new jf();
-        jfVar.B = this.B;
-        jfVar.C = this.C;
-        jfVar.D = this.D;
-        jfVar.E = this.E;
-        jfVar.F = this.F;
-        jfVar.G = this.G;
-        jfVar.H = this.H;
-        jfVar.I = this.I;
-        jfVar.J = this.J;
-        jfVar.K = this.K;
-        jfVar.L = this.L;
-        jfVar.M = this.M;
-        jfVar.N = this.N;
-        jfVar.O = this.O;
-        return jfVar;
-    }
-
-    public final String g() {
-        if (this.L != null) {
-            b8.G(e20.s0);
-            return b8.K(this.L, null, true, true).getAbsolutePath();
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        u10 u10Var = this.b;
+        switch (i3) {
+            case 0:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            case 1:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            case 2:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            case 3:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            case 4:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            case 5:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            case 6:
+                u10Var.a(null);
+                break;
+            case 7:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            case 8:
+                if (u10Var != null) {
+                    u10Var.a(null);
+                    break;
+                }
+                break;
+            default:
+                int i10 = ShortcutResultReceiver.a;
+                u10Var.a(Boolean.TRUE);
+                break;
         }
-        if (this.J == null) {
-            return this.C;
-        }
-        b8.G(e20.s0);
-        return b8.K(this.J, null, true, true).getAbsolutePath();
     }
 }

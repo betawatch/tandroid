@@ -63,9 +63,9 @@ public final class p8 extends d {
         if (!b10 && this.j) {
             v6 v6Var = v6.SIZED;
             a aVar = this.h;
-            int i10 = aVar.j;
-            int i11 = v6Var.e;
-            if ((i10 & i11) == i11) {
+            int i3 = aVar.j;
+            int i10 = v6Var.e;
+            if ((i3 & i10) == i10) {
                 j10 = aVar.k0(this.b);
                 w1 A0 = this.a.A0(j10, this.i);
                 o8 h = ((n8) this.h).h(A0, (this.j || b10) ? false : true);
@@ -78,11 +78,11 @@ public final class p8 extends d {
         }
         j10 = -1;
         w1 A02 = this.a.A0(j10, this.i);
-        o8 h10 = ((n8) this.h).h(A02, (this.j || b10) ? false : true);
-        this.a.F0(this.b, h10);
+        o8 h7 = ((n8) this.h).h(A02, (this.j || b10) ? false : true);
+        this.a.F0(this.b, h7);
         e2 build2 = A02.build();
         this.k = build2.count();
-        this.l = h10.s();
+        this.l = h7.s();
         return build2;
     }
 }

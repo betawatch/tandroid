@@ -1,87 +1,42 @@
 package tg;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import java.util.Arrays;
-import org.telegram.messenger.f8;
-import org.telegram.messenger.i0;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.t6;
-import vg.k;
+import ug.o1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i extends Drawable {
-    public wg.a a;
-    public int b;
-    public int c;
-    public int f;
-    public vg.g j;
-    public boolean l;
-    public float m;
-    public float d = 1.0f;
-    public final RectF e = new RectF();
-    public final Paint g = new Paint(1);
-    public final k h = new k();
-    public final float[] i = new float[8];
-    public int k = a7.b;
+public final class i extends o1 {
+    public final /* synthetic */ q E;
 
-    public final void a() {
-        this.k = a7.b;
-        wg.a aVar = this.a;
-        if (aVar == null) {
-            return;
-        }
-        this.b = t6.r1(this.d, aVar.u());
-        this.c = t6.r1(this.d, this.a.E());
-        float N = i0.N(1.0f);
-        this.j = new vg.g(this.b, N, this.c, i0.N(0.6666667f), 0, 0.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.k != a7.b) {
-            try {
-                a();
-            } catch (Exception e) {
-                f8.g(e, true);
-            }
-        }
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        float min = (Math.min(getBounds().width(), getBounds().height()) / 2.0f) - this.f;
-        RectF rectF = this.e;
-        rectF.set(centerX - min, centerY - min, centerX + min, centerY + min);
-        if (this.l) {
-            rectF.set(getBounds());
-            min = this.m;
-        }
-        Paint paint = this.g;
-        if (Color.alpha(paint.getColor()) > 0) {
-            canvas.drawCircle(centerX, centerY, min, paint);
-        }
-        if (this.j != null) {
-            Arrays.fill(this.i, min);
-            this.h.a(canvas, rectF.left, rectF.top, rectF.right, rectF.bottom, this.i, this.j, 1.0f);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10 / 255.0f;
-        a();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(q qVar, Context context, Bitmap bitmap) {
+        super(context);
+        this.E = qVar;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        Paint paint3 = new Paint(1);
+        this.d = paint3;
+        this.e = 0.5f;
+        this.f = 0.5f;
+        this.h = new Path();
+        this.n = new Rect();
+        this.r = new RectF();
+        this.a = bitmap;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(4.0f));
+        paint.setColor(-1);
+        paint2.setStyle(style);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
+        paint2.setColor(-1711276033);
+        paint3.setStyle(style);
+        paint3.setStrokeWidth(org.telegram.messenger.g0.L(12.0f));
     }
 }

@@ -1,69 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dl implements q4, jk0, s81 {
+public final /* synthetic */ class dl implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ dl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
-        this.a = i10;
-        this.b = chatAttachAlertPhotoLayout;
+    public /* synthetic */ dl(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.q4
-    public void K(int i10, int i11, boolean z10) {
-        int i12 = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        switch (i12) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int indexOf;
+        int indexOf2;
+        int i3 = this.a;
+        Object obj3 = this.b;
+        switch (i3) {
             case 0:
-                boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                bi biVar = chatAttachAlertPhotoLayout.b;
-                biVar.M0();
-                biVar.T3.H0(7, false, z10, i10, 0, 0L, biVar.e1(), false, 0L);
-                break;
-            default:
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                bi biVar2 = chatAttachAlertPhotoLayout.b;
-                biVar2.M0();
-                biVar2.T3.H0(4, true, z10, i10, 0, 0L, biVar2.e1(), false, 0L);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.s81
-    public void c(float f7) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        yl ylVar = chatAttachAlertPhotoLayout.P;
-        if (ylVar != null) {
-            chatAttachAlertPhotoLayout.B0 = f7;
-            ylVar.setZoom(f7);
-        }
-        chatAttachAlertPhotoLayout.u0(true);
-    }
-
-    @Override // org.telegram.ui.Components.jk0
-    public boolean f(int i10, View view) {
-        boolean z10 = ChatAttachAlertPhotoLayout.q1;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        bi biVar = chatAttachAlertPhotoLayout.b;
-        if (!biVar.N2) {
-            if (i10 == 0 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0) {
-                ai aiVar = biVar.T3;
-                if (aiVar != null) {
-                    aiVar.H0(0, false, true, 0, 0, 0L, biVar.e1(), false, 0L);
+                ArrayList arrayList = (ArrayList) obj3;
+                org.telegram.messenger.pe peVar = (org.telegram.messenger.pe) obj;
+                org.telegram.messenger.pe peVar2 = (org.telegram.messenger.pe) obj2;
+                boolean z10 = ChatAttachAlertPhotoLayout.r1;
+                int i10 = peVar.a;
+                if (i10 != 0 || peVar2.a == 0) {
+                    if ((i10 != 0 && peVar2.a == 0) || (indexOf = arrayList.indexOf(peVar)) > (indexOf2 = arrayList.indexOf(peVar2))) {
+                        return 1;
+                    }
+                    if (indexOf >= indexOf2) {
+                        return 0;
+                    }
                 }
-                return true;
-            }
-            if (view instanceof org.telegram.ui.Cells.v5) {
-                yk0 yk0Var = chatAttachAlertPhotoLayout.I;
-                boolean z11 = !((org.telegram.ui.Cells.v5) view).a();
-                chatAttachAlertPhotoLayout.K = z11;
-                yk0Var.d(i10, view, z11);
-            }
+                return -1;
+            default:
+                ey eyVar = ((sv) obj3).H0;
+                int indexOf3 = eyVar.e1.indexOf((TLRPC.TL_messages_stickerSet) obj);
+                int indexOf4 = eyVar.e1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
+                if (indexOf3 < 0 || indexOf4 < 0) {
+                    return 0;
+                }
+                return indexOf3 - indexOf4;
         }
-        return false;
     }
 }

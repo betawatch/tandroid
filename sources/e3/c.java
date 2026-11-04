@@ -1,20 +1,13 @@
 package e3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c implements a {
-    public final int a;
-    public final int b;
-    public final int c;
-
-    public c(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-    }
-
-    @Override // e3.a
-    public final int getType() {
-        return 1751742049;
-    }
+public final class c {
+    public boolean a;
+    public int b;
+    public int c;
+    public boolean d;
+    public int e;
+    public int f;
+    public int g;
 }

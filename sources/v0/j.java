@@ -8,41 +8,40 @@ import android.credentials.GetCredentialResponse;
 import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
-import org.telegram.messenger.zt;
-import r2.y;
-import w7.f8;
-import w7.g8;
-import w7.l9;
+import org.telegram.messenger.et;
+import x7.g5;
+import x7.h5;
+import x7.q6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class j implements OutcomeReceiver {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ h b;
 
-    public j(zt ztVar, k kVar) {
-        this.b = ztVar;
+    public j(et etVar, k kVar) {
+        this.b = etVar;
     }
 
     public final void onError(Throwable th2) {
         switch (this.a) {
             case 0:
                 CreateCredentialException error = (CreateCredentialException) th2;
-                kotlin.jvm.internal.i.e(error, "error");
+                kotlin.jvm.internal.j.e(error, "error");
                 Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                y yVar = (y) this.b;
+                ge.b bVar = (ge.b) this.b;
                 String type = error.getType();
-                kotlin.jvm.internal.i.d(type, "getType(...)");
-                yVar.g(l9.a(error.getMessage(), type));
+                kotlin.jvm.internal.j.d(type, "getType(...)");
+                bVar.a(q6.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
-                kotlin.jvm.internal.i.e(error2, "error");
+                kotlin.jvm.internal.j.e(error2, "error");
                 Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
-                zt ztVar = (zt) this.b;
+                et etVar = (et) this.b;
                 String type2 = error2.getType();
-                kotlin.jvm.internal.i.d(type2, "getType(...)");
-                ztVar.g(l9.b(error2.getMessage(), type2));
+                kotlin.jvm.internal.j.d(type2, "getType(...)");
+                etVar.a(q6.b(error2.getMessage(), type2));
                 break;
         }
     }
@@ -51,30 +50,30 @@ public final class j implements OutcomeReceiver {
         switch (this.a) {
             case 0:
                 CreateCredentialResponse response = (CreateCredentialResponse) obj;
-                kotlin.jvm.internal.i.e(response, "response");
+                kotlin.jvm.internal.j.e(response, "response");
                 Log.i("CredManProvService", "Create Result returned from framework: ");
-                y yVar = (y) this.b;
+                ge.b bVar = (ge.b) this.b;
                 Bundle data = response.getData();
-                kotlin.jvm.internal.i.d(data, "getData(...)");
-                yVar.onResult(f8.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                kotlin.jvm.internal.j.d(data, "getData(...)");
+                bVar.onResult(g5.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
                 break;
             default:
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
-                kotlin.jvm.internal.i.e(response2, "response");
+                kotlin.jvm.internal.j.e(response2, "response");
                 Log.i("CredManProvService", "GetCredentialResponse returned from framework");
-                zt ztVar = (zt) this.b;
+                et etVar = (et) this.b;
                 Credential credential = response2.getCredential();
-                kotlin.jvm.internal.i.d(credential, "getCredential(...)");
+                kotlin.jvm.internal.j.d(credential, "getCredential(...)");
                 String type = credential.getType();
-                kotlin.jvm.internal.i.d(type, "getType(...)");
+                kotlin.jvm.internal.j.d(type, "getType(...)");
                 Bundle data2 = credential.getData();
-                kotlin.jvm.internal.i.d(data2, "getData(...)");
-                ztVar.onResult(new n(g8.a(type, data2)));
+                kotlin.jvm.internal.j.d(data2, "getData(...)");
+                etVar.onResult(new n(h5.a(type, data2)));
                 break;
         }
     }
 
-    public j(y yVar, e eVar, k kVar) {
-        this.b = yVar;
+    public j(ge.b bVar, e eVar, k kVar) {
+        this.b = bVar;
     }
 }

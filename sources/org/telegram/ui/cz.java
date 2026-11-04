@@ -1,36 +1,93 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cz implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AlertDialog$Builder b;
+public class cz extends ReplacementSpan {
+    public final TextPaint a;
+    public final Paint b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public int f;
+    public final int h;
+    public boolean n;
+    public int r;
+    public org.telegram.ui.ActionBar.e6 s;
+    public CharSequence w;
 
-    public /* synthetic */ cz(AlertDialog$Builder alertDialog$Builder, int i10) {
-        this.a = i10;
-        this.b = alertDialog$Builder;
+    public cz(int i3) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.w = "NEW";
+        this.h = i3;
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        paint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(i3 < 0 ? 12.0f : i3));
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.i0.v1(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
-            case 1:
-                org.telegram.messenger.i0.v1(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
-            default:
-                org.telegram.messenger.i0.v1(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
+    public final void a() {
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(this.w, this.a, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineWidth(0);
+            this.e = this.c.getHeight();
         }
-        return false;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public void draw(Canvas canvas, CharSequence charSequence, int i3, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        a();
+        if (this.n) {
+            this.f = org.telegram.ui.ActionBar.k6.w0(this.r, this.s);
+        }
+        int i14 = this.f;
+        if (i14 == 0) {
+            i14 = paint.getColor();
+        }
+        Paint paint2 = this.b;
+        paint2.setColor(i14);
+        int i15 = org.telegram.messenger.g0.B(i14) > 0.721f ? -16777216 : -1;
+        TextPaint textPaint = this.a;
+        textPaint.setColor(i15);
+        paint2.setAlpha((int) (paint2.getAlpha() * 1.0f));
+        textPaint.setAlpha((int) (textPaint.getAlpha() * 1.0f));
+        float L = f10 + org.telegram.messenger.g0.L(2.0f);
+        float L2 = (i12 - this.e) + org.telegram.messenger.g0.L(1.0f);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(L, L2, this.d + L, this.e + L2);
+        float L3 = org.telegram.messenger.g0.L(4.4f);
+        rectF.inset(org.telegram.messenger.g0.L(-4.0f), org.telegram.messenger.g0.L(this.h == 8 ? -3.66f : -2.33f));
+        canvas.drawRoundRect(rectF, L3, L3, paint2);
+        canvas.save();
+        canvas.translate(L, L2);
+        this.c.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i3, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        a();
+        return (int) (org.telegram.messenger.g0.L(10.0f) + this.d);
+    }
+
+    public cz() {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.w = "NEW";
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        paint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(10.0f));
     }
 }

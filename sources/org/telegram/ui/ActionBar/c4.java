@@ -1,42 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.ImageButton;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c4 {
-    public final s4 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e = true;
-    public boolean f;
-    public long g;
+public final class c4 extends ImageButton {
+    public final /* synthetic */ i4 a;
 
-    public c4(s4 s4Var) {
-        this.a = s4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c4(i4 i4Var, Context context) {
+        super(context);
+        this.a = i4Var;
     }
 
-    public final void a() {
-        if (this.f) {
-            boolean z10 = this.b;
-            s4 s4Var = this.a;
-            if (z10 || this.c || this.d || !this.e) {
-                q4 q4Var = s4Var.b;
-                if (q4Var.f()) {
-                    q4Var.G = true;
-                    q4Var.x.start();
-                    q4Var.D.setEmpty();
-                    return;
-                }
-                return;
-            }
-            View view = s4Var.a;
-            f4 f4Var = s4Var.l;
-            view.removeOnLayoutChangeListener(f4Var);
-            s4Var.a.addOnLayoutChangeListener(f4Var);
-            s4Var.c();
-            this.g = System.currentTimeMillis();
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.a.N) {
+            return false;
         }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

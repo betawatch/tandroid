@@ -1,37 +1,25 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class t81 extends w7.y5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.vs b;
+public final class t81 implements View.OnClickListener {
+    public final /* synthetic */ m91 a;
 
-    public /* synthetic */ t81(org.telegram.messenger.vs vsVar, int i10) {
-        this.a = i10;
-        this.b = vsVar;
+    public t81(m91 m91Var) {
+        this.a = m91Var;
     }
 
-    @Override // w7.y5
-    public void a() {
-        switch (this.a) {
-            case 1:
-                ((zd1) this.b).w.invalidate();
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        m91 m91Var = this.a;
+        if (m91Var.N == 1) {
+            org.telegram.ui.Components.t4.i0(m91Var, -m91Var.a, null, m91Var.g(), null, false, m91Var.K, new ma(this, 4), m91Var.getResourceProvider());
+            return;
         }
-    }
-
-    @Override // w7.y5
-    public void b(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                Point point = org.telegram.messenger.i0.q;
-                if ((point.x <= point.y) == (i10 <= i11)) {
-                    ((k91) this.b).y0.invalidate();
-                    break;
-                }
-                break;
-        }
+        m91Var.getMessagesController().m(m91Var.a, m91Var.getUserConfig().f(), 0, null, m91Var, false, new n81(m91Var, 2), new o81(m91Var), null);
+        org.telegram.messenger.hs.e().k(org.telegram.messenger.hs.I4, new Object[0]);
+        m91Var.S0(false);
     }
 }

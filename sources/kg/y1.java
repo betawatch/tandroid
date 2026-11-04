@@ -1,88 +1,553 @@
 package kg;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
+import b8.mf;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.h10;
+import org.telegram.messenger.li;
 import org.telegram.tgnet.TLRPC;
-import w7.b6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Cells.i8;
+import org.telegram.ui.Cells.m3;
+import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Cells.y7;
+import org.telegram.ui.Components.b31;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.sj0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class y1 extends FrameLayout {
-    public float a;
-    public final x1 b;
-    public final ImageReceiver c;
-    public final ImageReceiver d;
-    public boolean e;
-    public boolean f;
-    public float h;
-    public float n;
-    public TLRPC.Document r;
-    public boolean s;
-    public final /* synthetic */ b1 w;
+public final class y1 extends sj0 {
+    public int E;
+    public ImageView M;
+    public TextView N;
+    public int O;
+    public int P;
+    public int Q;
+    public boolean R;
+    public String S;
+    public final e6 U;
+    public final Context d;
+    public final b31 e;
+    public final TLRPC.StickerSetCovered[] f;
+    public final LongSparseArray h;
+    public final LongSparseArray n;
+    public final int c = h10.t0;
+    public final SparseArray r = new SparseArray();
+    public final SparseArray s = new SparseArray();
+    public final SparseArray w = new SparseArray();
+    public final SparseIntArray x = new SparseIntArray();
+    public final SparseArray y = new SparseArray();
+    public final ArrayList F = new ArrayList();
+    public final ArrayList G = new ArrayList();
+    public final HashMap H = new HashMap();
+    public final HashMap I = new HashMap();
+    public final HashMap J = new HashMap();
+    public final ArrayList K = new ArrayList();
+    public final SparseArray L = new SparseArray();
+    public final w1 T = new w1(this);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y1(b1 b1Var, Context context) {
-        super(context);
-        this.w = b1Var;
-        this.f = true;
-        x1 x1Var = new x1(this, context);
-        this.b = x1Var;
-        ImageReceiver imageReceiver = new ImageReceiver(x1Var);
-        this.c = imageReceiver;
-        ImageReceiver imageReceiver2 = new ImageReceiver(x1Var);
-        this.d = imageReceiver2;
-        imageReceiver.t0 = false;
-        imageReceiver2.t0 = false;
-        setClipChildren(false);
-        addView(x1Var, b6.e(-1, -2, 21));
+    public y1(Context context, b31 b31Var, TLRPC.StickerSetCovered[] stickerSetCoveredArr, LongSparseArray longSparseArray, LongSparseArray longSparseArray2, e6 e6Var) {
+        this.d = context;
+        this.e = b31Var;
+        this.f = stickerSetCoveredArr;
+        this.h = longSparseArray;
+        this.n = longSparseArray2;
+        this.U = e6Var;
     }
 
-    public final void a(boolean z10, boolean z11, boolean z12) {
-        boolean z13 = this.e;
-        x1 x1Var = this.b;
-        if (z13 != z11) {
-            this.e = z11;
-            if (!z12) {
-                this.h = z11 ? 1.0f : 0.0f;
+    @Override // org.telegram.ui.Components.sj0
+    public final boolean D(u4.d1 d1Var) {
+        return false;
+    }
+
+    public final void E(u3 u3Var, int i3, boolean z10) {
+        boolean z11;
+        u3 u3Var2;
+        boolean z12;
+        int i10 = this.c;
+        li b02 = li.b0(i10);
+        ArrayList arrayList = b02.v0[0];
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) this.s.get(i3);
+        boolean z13 = arrayList != null && arrayList.contains(Long.valueOf(stickerSetCovered.set.id));
+        int i11 = 0;
+        while (true) {
+            TLRPC.StickerSetCovered[] stickerSetCoveredArr = this.f;
+            if (i11 >= stickerSetCoveredArr.length) {
+                z11 = false;
+                break;
             }
-            x1Var.invalidate();
-        }
-        if (this.f != z10) {
-            this.f = z10;
-            if (!z12) {
-                this.n = z10 ? 1.0f : 0.0f;
+            if (stickerSetCoveredArr[i11] != null) {
+                TLRPC.TL_messages_stickerSet o02 = li.b0(i10).o0(stickerSetCoveredArr[i11].set.id);
+                if (o02 != null && !o02.set.archived) {
+                    stickerSetCoveredArr[i11] = null;
+                } else if (stickerSetCoveredArr[i11].set.id == stickerSetCovered.set.id) {
+                    z11 = true;
+                    break;
+                }
             }
-            x1Var.invalidate();
+            i11++;
+        }
+        int A1 = TextUtils.isEmpty(this.S) ? -1 : org.telegram.messenger.g0.A1(stickerSetCovered.set.title, this.S);
+        if (A1 >= 0) {
+            u3Var2 = u3Var;
+            z12 = z10;
+            u3Var2.c(stickerSetCovered, z13, z12, A1, this.S.length(), z11);
+        } else {
+            u3Var2 = u3Var;
+            z12 = z10;
+            u3Var2.c(stickerSetCovered, z13, z12, 0, 0, z11);
+            if (!TextUtils.isEmpty(this.S) && org.telegram.messenger.g0.A1(stickerSetCovered.set.short_name, this.S) == 0) {
+                u3Var2.d(this.S.length(), stickerSetCovered.set.short_name);
+            }
+        }
+        if (z13) {
+            b02.e1(stickerSetCovered.set.id);
+        }
+        long j10 = stickerSetCovered.set.id;
+        LongSparseArray longSparseArray = this.h;
+        boolean z14 = longSparseArray.indexOfKey(j10) >= 0;
+        long j11 = stickerSetCovered.set.id;
+        LongSparseArray longSparseArray2 = this.n;
+        boolean z15 = longSparseArray2.indexOfKey(j11) >= 0;
+        if (z14 || z15) {
+            if (z14 && u3Var2.r) {
+                longSparseArray.remove(stickerSetCovered.set.id);
+                z14 = false;
+            } else if (z15 && !u3Var2.r) {
+                longSparseArray2.remove(stickerSetCovered.set.id);
+            }
+        }
+        u3Var2.b(!z11 && z14, z12);
+        b02.p1(stickerSetCovered);
+        u3Var2.setNeedDivider(i3 > 0);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0039, code lost:
+    
+        r1 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x003c, code lost:
+    
+        if (r1 >= r2.length) goto L47;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0040, code lost:
+    
+        if (r2[r1] != null) goto L22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0046, code lost:
+    
+        r1 = r1 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0042, code lost:
+    
+        r2[r1] = r8;
+        r1 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x004a, code lost:
+    
+        if (r1 != false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x004c, code lost:
+    
+        if (r9 == null) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x004e, code lost:
+    
+        r9.b(true, true);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0051, code lost:
+    
+        r7.h.put(r8.set.id, r8);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x005a, code lost:
+    
+        if (r9 == null) goto L31;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x005c, code lost:
+    
+        r7.e.a.g(r9.getStickerSet(), r1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0067, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0068, code lost:
+    
+        r9 = r7.L;
+        r1 = r9.size();
+        r2 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x006f, code lost:
+    
+        if (r2 >= r1) goto L49;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0071, code lost:
+    
+        r3 = (org.telegram.tgnet.TLRPC.StickerSetCovered) r9.get(r2);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0077, code lost:
+    
+        if (r3 == null) goto L50;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0083, code lost:
+    
+        if (r3.set.id != r8.set.id) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0085, code lost:
+    
+        h(r2, 0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x008c, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x008d, code lost:
+    
+        r2 = r2 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:41:?, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x0049, code lost:
+    
+        r1 = false;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void F(TLRPC.StickerSetCovered stickerSetCovered, u3 u3Var) {
+        int i3 = 0;
+        while (true) {
+            TLRPC.StickerSetCovered[] stickerSetCoveredArr = this.f;
+            if (i3 >= stickerSetCoveredArr.length) {
+                break;
+            }
+            if (stickerSetCoveredArr[i3] != null) {
+                TLRPC.TL_messages_stickerSet o02 = li.b0(this.c).o0(stickerSetCoveredArr[i3].set.id);
+                if (o02 != null && !o02.set.archived) {
+                    stickerSetCoveredArr[i3] = null;
+                    break;
+                } else if (stickerSetCoveredArr[i3].set.id == stickerSetCovered.set.id) {
+                    return;
+                }
+            }
+            i3++;
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.P();
-        this.d.P();
+    @Override // u4.h0
+    public final int b() {
+        return Math.max(1, this.E + 1);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.R();
-        this.d.R();
+    @Override // u4.h0
+    public final int d(int i3) {
+        if (i3 == 0 && this.E == 0) {
+            return 5;
+        }
+        if (i3 == b() - 1) {
+            return 4;
+        }
+        Object obj = this.s.get(i3);
+        if (obj == null) {
+            return 1;
+        }
+        if (obj instanceof TLRPC.Document) {
+            return 0;
+        }
+        return obj instanceof TLRPC.StickerSetCovered ? 3 : 2;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = (int) (this.w.r3 * 0.6f);
-        x1 x1Var = this.b;
-        ViewGroup.LayoutParams layoutParams = x1Var.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = x1Var.getLayoutParams();
-        int L = i12 - org.telegram.messenger.i0.L(16.0f);
-        layoutParams2.height = L;
-        layoutParams.width = L;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i12 * 0.7f), TLObject.FLAG_30));
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r6v21, types: [org.telegram.tgnet.TLRPC$TL_messages_stickerSet, org.telegram.tgnet.TLRPC$messages_StickerSet] */
+    @Override // u4.h0
+    public final void f() {
+        b31 b31Var;
+        int i3;
+        SparseArray sparseArray;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        int i10;
+        ArrayList<TLRPC.Document> arrayList3;
+        ArrayList arrayList4;
+        TLRPC.StickerSetCovered stickerSetCovered;
+        SparseArray sparseArray2 = this.r;
+        sparseArray2.clear();
+        SparseIntArray sparseIntArray = this.x;
+        sparseIntArray.clear();
+        SparseArray sparseArray3 = this.s;
+        sparseArray3.clear();
+        SparseArray sparseArray4 = this.L;
+        sparseArray4.clear();
+        SparseArray sparseArray5 = this.y;
+        sparseArray5.clear();
+        this.E = 0;
+        ArrayList arrayList5 = this.F;
+        int size = arrayList5.size();
+        ArrayList arrayList6 = this.G;
+        int size2 = arrayList6.size();
+        ArrayList arrayList7 = this.K;
+        int i11 = !arrayList7.isEmpty() ? 1 : 0;
+        int i12 = 0;
+        int i13 = 0;
+        while (i12 < size + size2 + i11) {
+            SparseArray sparseArray6 = this.w;
+            b31 b31Var2 = this.e;
+            if (i12 < size2) {
+                b31Var = b31Var2;
+                ?? r62 = (TLRPC.TL_messages_stickerSet) arrayList6.get(i12);
+                i3 = size;
+                arrayList3 = r62.documents;
+                sparseArray = sparseArray5;
+                arrayList = arrayList6;
+                arrayList2 = arrayList7;
+                i10 = i11;
+                stickerSetCovered = r62;
+            } else {
+                b31Var = b31Var2;
+                i3 = size;
+                int i14 = i12 - size2;
+                if (i14 < i11) {
+                    int size3 = arrayList7.size();
+                    String str = "";
+                    arrayList = arrayList6;
+                    i10 = i11;
+                    int i15 = 0;
+                    int i16 = 0;
+                    while (i15 < size3) {
+                        int i17 = size3;
+                        ArrayList arrayList8 = (ArrayList) arrayList7.get(i15);
+                        int i18 = i15;
+                        String str2 = (String) this.J.get(arrayList8);
+                        if (str2 != null && !str.equals(str2)) {
+                            sparseArray5.put(this.E + i16, str2);
+                            str = str2;
+                        }
+                        int size4 = arrayList8.size();
+                        SparseArray sparseArray7 = sparseArray5;
+                        int i19 = 0;
+                        while (i19 < size4) {
+                            String str3 = str;
+                            int i20 = this.E + i16;
+                            int i21 = size4;
+                            int a10 = (i16 / b31Var.a()) + i13;
+                            int i22 = i19;
+                            TLRPC.Document document = (TLRPC.Document) arrayList8.get(i19);
+                            sparseArray3.put(i20, document);
+                            ArrayList arrayList9 = arrayList7;
+                            int i23 = i16;
+                            TLRPC.TL_messages_stickerSet o02 = li.b0(this.c).o0(li.q0(document));
+                            if (o02 != null) {
+                                sparseArray6.put(i20, o02);
+                            }
+                            sparseIntArray.put(i20, a10);
+                            i16 = i23 + 1;
+                            i19 = i22 + 1;
+                            str = str3;
+                            size4 = i21;
+                            arrayList7 = arrayList9;
+                        }
+                        i15 = i18 + 1;
+                        size3 = i17;
+                        sparseArray5 = sparseArray7;
+                    }
+                    sparseArray = sparseArray5;
+                    arrayList2 = arrayList7;
+                    int ceil = (int) Math.ceil(i16 / b31Var.a());
+                    for (int i24 = 0; i24 < ceil; i24++) {
+                        sparseArray2.put(i13 + i24, Integer.valueOf(i16));
+                    }
+                    this.E = (b31Var.a() * ceil) + this.E;
+                    i13 += ceil;
+                    arrayList4 = arrayList5;
+                    i12++;
+                    size = i3;
+                    arrayList6 = arrayList;
+                    i11 = i10;
+                    sparseArray5 = sparseArray;
+                    arrayList5 = arrayList4;
+                    arrayList7 = arrayList2;
+                } else {
+                    sparseArray = sparseArray5;
+                    arrayList = arrayList6;
+                    arrayList2 = arrayList7;
+                    i10 = i11;
+                    TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList5.get(i14 - i10);
+                    arrayList3 = stickerSetCovered2.covers;
+                    stickerSetCovered = stickerSetCovered2;
+                }
+            }
+            if (!arrayList3.isEmpty()) {
+                int ceil2 = (int) Math.ceil(arrayList3.size() / b31Var.a());
+                sparseArray3.put(this.E, stickerSetCovered);
+                if (i12 >= size2 && (stickerSetCovered instanceof TLRPC.StickerSetCovered)) {
+                    sparseArray4.put(this.E, stickerSetCovered);
+                }
+                sparseIntArray.put(this.E, i13);
+                int size5 = arrayList3.size();
+                int i25 = 0;
+                while (i25 < size5) {
+                    int i26 = i25 + 1;
+                    int i27 = ceil2;
+                    int i28 = this.E + i26;
+                    int a11 = i25 / b31Var.a();
+                    ArrayList arrayList10 = arrayList5;
+                    sparseArray3.put(i28, arrayList3.get(i25));
+                    sparseArray6.put(i28, stickerSetCovered);
+                    sparseIntArray.put(i28, a11 + i13 + 1);
+                    if (i12 >= size2 && (stickerSetCovered instanceof TLRPC.StickerSetCovered)) {
+                        sparseArray4.put(i28, stickerSetCovered);
+                    }
+                    i25 = i26;
+                    ceil2 = i27;
+                    arrayList5 = arrayList10;
+                }
+                int i29 = ceil2;
+                arrayList4 = arrayList5;
+                int i30 = i29 + 1;
+                for (int i31 = 0; i31 < i30; i31++) {
+                    sparseArray2.put(i13 + i31, stickerSetCovered);
+                }
+                this.E = (b31Var.a() * i29) + 1 + this.E;
+                i13 += i30;
+                i12++;
+                size = i3;
+                arrayList6 = arrayList;
+                i11 = i10;
+                sparseArray5 = sparseArray;
+                arrayList5 = arrayList4;
+                arrayList7 = arrayList2;
+            }
+            arrayList4 = arrayList5;
+            i12++;
+            size = i3;
+            arrayList6 = arrayList;
+            i11 = i10;
+            sparseArray5 = sparseArray;
+            arrayList5 = arrayList4;
+            arrayList7 = arrayList2;
+        }
+        super.f();
+    }
+
+    @Override // u4.h0
+    public final void t(u4.d1 d1Var, int i3) {
+        int i10 = d1Var.f;
+        View view = d1Var.a;
+        SparseArray sparseArray = this.s;
+        if (i10 == 0) {
+            ((y7) view).d((TLRPC.Document) sparseArray.get(i3), null, this.w.get(i3), (String) this.y.get(i3), false, false);
+            return;
+        }
+        if (i10 == 1) {
+            ((m3) view).setHeight(0);
+            return;
+        }
+        if (i10 != 2) {
+            if (i10 != 3) {
+                return;
+            }
+            E((u3) view, i3, false);
+            return;
+        }
+        i8 i8Var = (i8) view;
+        Object obj = sparseArray.get(i3);
+        if (obj instanceof TLRPC.TL_messages_stickerSet) {
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
+            if (!TextUtils.isEmpty(this.S) && this.H.containsKey(tL_messages_stickerSet)) {
+                TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+                if (stickerSet != null) {
+                    i8Var.a(0, stickerSet.title);
+                }
+                i8Var.c(this.S.length(), tL_messages_stickerSet.set.short_name);
+                return;
+            }
+            Integer num = (Integer) this.I.get(tL_messages_stickerSet);
+            TLRPC.StickerSet stickerSet2 = tL_messages_stickerSet.set;
+            if (stickerSet2 != null && num != null) {
+                i8Var.b(stickerSet2.title, 0, null, num.intValue(), !TextUtils.isEmpty(this.S) ? this.S.length() : 0);
+            }
+            i8Var.c(0, null);
+        }
+    }
+
+    @Override // u4.h0
+    public final void v(u4.d1 d1Var, int i3, List list) {
+        if (list.contains(0) && d1Var.f == 3) {
+            E((u3) d1Var.a, i3, true);
+        } else {
+            t(d1Var, i3);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r12v6, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
+    /* JADX WARN: Type inference failed for: r3v6, types: [android.view.View] */
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
+        FrameLayout frameLayout;
+        e6 e6Var = this.U;
+        Context context = this.d;
+        if (i3 == 0) {
+            x1 x1Var = new x1(0, context, e6Var, false ? 1 : 0);
+            x1Var.getImageView().E0(3);
+            frameLayout = x1Var;
+        } else if (i3 == 1) {
+            frameLayout = new m3(context);
+        } else if (i3 == 2) {
+            frameLayout = new i8(this.d, false, true, this.U, false);
+        } else if (i3 == 3) {
+            u3 u3Var = new u3(17, this.d, this.U, true, true);
+            u3Var.setAddOnClickListener(new ii.m(this, 9));
+            frameLayout = u3Var;
+        } else if (i3 != 4) {
+            frameLayout = null;
+            if (i3 == 5) {
+                ?? linearLayout = new LinearLayout(context);
+                linearLayout.setOrientation(1);
+                linearLayout.setGravity(17);
+                ImageView imageView = new ImageView(context);
+                this.M = imageView;
+                imageView.setScaleType(ImageView.ScaleType.CENTER);
+                this.M.setImageResource(R.drawable.stickers_empty);
+                ImageView imageView2 = this.M;
+                int i10 = k6.Af;
+                r6.t(imageView2, i10, e6Var, PorterDuff.Mode.MULTIPLY);
+                linearLayout.addView(this.M, mf.o(-2, -2));
+                linearLayout.addView(new Space(context), mf.o(-1, 15));
+                TextView textView = new TextView(context);
+                this.N = textView;
+                textView.setText(bd.M0(2131748157, null));
+                this.N.setTextSize(1, 16.0f);
+                r6.V(this.N, i10, e6Var);
+                linearLayout.addView(this.N, mf.o(-2, -2));
+                linearLayout.setMinimumHeight(org.telegram.messenger.g0.L(112.0f));
+                linearLayout.setLayoutParams(mf.c(-1.0f, -1));
+                frameLayout = linearLayout;
+            }
+        } else {
+            frameLayout = new View(context);
+        }
+        return new bj0(frameLayout);
     }
 }

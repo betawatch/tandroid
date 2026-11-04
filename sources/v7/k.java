@@ -1,25 +1,31 @@
 package v7;
 
-import android.os.Build;
+import j$.util.Objects;
+import x7.j5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class k {
-    public static boolean a(int i10) {
-        return (i10 & 32768) != 0;
+public final class k extends d {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e;
+
+    public k(int i3, int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i3;
+        this.e = i10;
     }
 
-    public static boolean b(int i10) {
-        if (i10 == 15 || i10 == 255) {
-            return true;
-        }
-        if (i10 == 32768) {
-            return Build.VERSION.SDK_INT >= 30;
-        }
-        if (i10 != 32783) {
-            return i10 == 33023 || i10 == 0;
-        }
-        int i11 = Build.VERSION.SDK_INT;
-        return i11 < 28 || i11 > 29;
+    @Override // java.util.List
+    public final Object get(int i3) {
+        j5.a(i3, this.e);
+        Object obj = this.c[i3 + i3 + this.d];
+        Objects.requireNonNull(obj);
+        return obj;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.e;
     }
 }

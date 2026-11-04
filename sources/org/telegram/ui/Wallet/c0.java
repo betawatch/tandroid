@@ -4,10 +4,9 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.bv0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
 public final class c0 {
     public String e;
     public boolean g;
@@ -31,10 +30,10 @@ public final class c0 {
     public static void a(c0 c0Var, TL_wallet.walletTransaction wallettransaction) {
         ArrayList arrayList = c0Var.c;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
             if (((TL_wallet.walletTransaction) obj) == wallettransaction) {
                 if (wallettransaction.failed && !c0Var.d(wallettransaction.nft.address)) {
                     c0Var.b.add(0, wallettransaction.nft);
@@ -74,10 +73,10 @@ public final class c0 {
     public final boolean d(String str) {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
             if (k0.b(((TL_wallet.nftItem) obj).address, str)) {
                 return true;
             }
@@ -104,16 +103,16 @@ public final class c0 {
         this.j = z10;
         this.k = null;
         g();
-        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(getnfts, new a3.b(1), new bv0(1, this, z10));
+        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(getnfts, new c3.b(1), new gi.m9(3, this, z10));
     }
 
     public final void g() {
         ArrayList arrayList = new ArrayList(this.d);
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
             ((Runnable) obj).run();
         }
     }
@@ -123,21 +122,21 @@ public final class c0 {
         arrayList.clear();
         ArrayList arrayList2 = this.b;
         int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList2.get(i3);
+            i3++;
             TL_wallet.nftItem nftitem = (TL_wallet.nftItem) obj;
             ArrayList arrayList3 = this.c;
             int size2 = arrayList3.size();
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
-                if (i11 >= size2) {
+                if (i10 >= size2) {
                     arrayList.add(nftitem);
                     break;
                 }
-                Object obj2 = arrayList3.get(i11);
-                i11++;
+                Object obj2 = arrayList3.get(i10);
+                i10++;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
                 if (wallettransaction.failed || !k0.b(wallettransaction.nft.address, nftitem.address)) {
                 }

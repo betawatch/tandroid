@@ -2,15 +2,15 @@ package o;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b extends e implements Iterator {
     public c a;
     public c b;
     public final /* synthetic */ int c;
 
-    public b(c cVar, c cVar2, int i10) {
-        this.c = i10;
+    public b(c cVar, c cVar2, int i3) {
+        this.c = i3;
         this.a = cVar2;
         this.b = cVar;
     }

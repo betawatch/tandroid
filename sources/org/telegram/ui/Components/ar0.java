@@ -1,52 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ar0 extends org.telegram.ui.yy0 {
-    public final /* synthetic */ au0 x;
+public final class ar0 implements org.telegram.ui.Cells.i7 {
+    public final /* synthetic */ ws0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ar0(au0 au0Var, Context context, th.t4 t4Var, zq0 zq0Var) {
-        super(context, t4Var, zq0Var);
-        this.x = au0Var;
+    public ar0(ws0 ws0Var) {
+        this.a = ws0Var;
     }
 
-    @Override // org.telegram.ui.yy0
-    public final void b() {
-        er0 er0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.s;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        au0 au0Var = this.x;
-        ts0[] ts0VarArr = au0Var.m0;
-        if (ts0VarArr != null) {
-            for (ts0 ts0Var : ts0VarArr) {
-                if (ts0Var != null && (er0Var = ts0Var.h) != null) {
-                    int paddingTop = er0Var.getPaddingTop();
-                    er0 er0Var2 = ts0Var.h;
-                    int paddingLeft = er0Var2.getPaddingLeft();
-                    int i02 = au0Var.i0(ts0Var.E);
-                    int paddingRight = ts0Var.h.getPaddingRight();
-                    er0 er0Var3 = ts0Var.h;
-                    int h02 = au0Var.h0(au0Var.F0());
-                    er0Var3.h3 = h02;
-                    er0Var2.setPadding(paddingLeft, i02, paddingRight, h02);
-                    int paddingTop2 = paddingTop - ts0Var.h.getPaddingTop();
-                    if (paddingTop2 != 0) {
-                        org.telegram.messenger.i0.J(ts0Var.h, new eq0(ts0Var, paddingTop2, 2));
-                    }
-                }
-                if (ts0Var != null && ts0Var.s != null) {
-                    au0Var.G1(ts0Var);
-                }
-            }
+    @Override // org.telegram.ui.Cells.i7
+    public final void a(String str, boolean z10) {
+        ws0 ws0Var = this.a;
+        org.telegram.ui.ActionBar.d2 d2Var = ws0Var.y1;
+        if (!z10) {
+            ws0Var.b1(str);
+            return;
         }
-        au0Var.T();
+        org.telegram.ui.ActionBar.t2 h = org.telegram.messenger.camera.q.h(d2Var.getParentActivity(), false, 1, null);
+        h.P = str;
+        h.Q = false;
+        CharSequence[] charSequenceArr = {org.telegram.messenger.bd.M0(2131747825, "Open"), org.telegram.messenger.bd.M0(2131751767, "Copy")};
+        org.telegram.ui.u uVar = new org.telegram.ui.u(5, this, str);
+        h.M = charSequenceArr;
+        h.L = uVar;
+        d2Var.showDialog(h);
+    }
+
+    @Override // org.telegram.ui.Cells.i7
+    public final void b(TLRPC.WebPage webPage, org.telegram.messenger.zi ziVar) {
+        ws0 ws0Var = this.a;
+        ut.K0(ws0Var.y1, ziVar, ws0Var.u1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    }
+
+    @Override // org.telegram.ui.Cells.i7
+    public final boolean c() {
+        return !this.a.F1;
     }
 }

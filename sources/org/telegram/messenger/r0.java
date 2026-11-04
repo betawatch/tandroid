@@ -1,46 +1,111 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import java.util.HashSet;
-import java.util.Set;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
+import android.os.SystemClock;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class r0 implements m0 {
-    public final String a;
-    public final HashSet b;
-    public HashSet c;
+public final class r0 implements Application.ActivityLifecycleCallbacks {
+    public static r0 f;
+    public int a;
+    public boolean b = true;
+    public long c = 0;
+    public final CopyOnWriteArrayList d = new CopyOnWriteArrayList();
+    public final ArrayList e = new ArrayList();
 
-    public r0(String str, Set set) {
-        this.a = str;
-        this.b = set == null ? null : new HashSet(set);
+    public r0(t0 t0Var) {
+        f = this;
+        t0Var.registerActivityLifecycleCallbacks(this);
     }
 
-    @Override // org.telegram.messenger.m0
-    public final boolean a(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-        if (jSONValue instanceof TLRPC.TL_jsonArray) {
-            TLRPC.TL_jsonArray tL_jsonArray = (TLRPC.TL_jsonArray) jSONValue;
-            HashSet hashSet = new HashSet();
-            int size = tL_jsonArray.value.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                TLRPC.JSONValue jSONValue2 = tL_jsonArray.value.get(i10);
-                if (jSONValue2 instanceof TLRPC.TL_jsonString) {
-                    hashSet.add(((TLRPC.TL_jsonString) jSONValue2).value);
+    public final void a(Activity activity) {
+        int i3 = this.a + 1;
+        this.a = i3;
+        if (i3 == 1) {
+            if (SystemClock.elapsedRealtime() - this.c < 200) {
+                this.b = false;
+            }
+            if (r2.a) {
+                a8.b("switch to foreground");
+            }
+            Iterator it = this.d.iterator();
+            while (it.hasNext()) {
+                try {
+                    ((org.telegram.ui.Components.uz) it.next()).b();
+                } catch (Exception e10) {
+                    a8.g(e10, true);
                 }
             }
-            if (!hashSet.equals(this.c)) {
-                this.c = hashSet;
-                editor.putStringSet(this.a, new HashSet(this.c));
-                return true;
-            }
         }
-        return false;
     }
 
-    @Override // org.telegram.messenger.m0
-    public final void b(SharedPreferences sharedPreferences) {
-        Set<String> stringSet = sharedPreferences.getStringSet(this.a, this.b);
-        this.c = stringSet == null ? null : new HashSet(stringSet);
+    public final void b(Activity activity) {
+        ArrayList arrayList = this.e;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            Activity activity2 = (Activity) ((WeakReference) arrayList.get(size)).get();
+            if (activity2 == null || activity2 == activity) {
+                arrayList.remove(size);
+            }
+        }
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityDestroyed(Activity activity) {
+        b(activity);
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityPaused(Activity activity) {
+        b(activity);
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityResumed(Activity activity) {
+        b(activity);
+        this.e.add(new WeakReference(activity));
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStarted(Activity activity) {
+        boolean z10 = this.a == 0;
+        a(activity);
+        if (z10) {
+            t0.c(true);
+        }
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityStopped(Activity activity) {
+        int i3 = this.a - 1;
+        this.a = i3;
+        if (i3 == 0) {
+            this.c = SystemClock.elapsedRealtime();
+            this.b = true;
+            if (r2.a) {
+                a8.b("switch to background");
+            }
+            Iterator it = this.d.iterator();
+            while (it.hasNext()) {
+                try {
+                    ((org.telegram.ui.Components.uz) it.next()).a();
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                }
+            }
+        }
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivityCreated(Activity activity, Bundle bundle) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

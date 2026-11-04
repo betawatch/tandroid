@@ -82,11 +82,11 @@ public final class i extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         Object it = iterator();
-        int i10 = 0;
+        int i3 = 0;
         while (((a) it).hasNext()) {
-            i10 += ((h) it).next().hashCode();
+            i3 += ((h) it).next().hashCode();
         }
-        return i10;
+        return i3;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -119,11 +119,11 @@ public final class i extends b implements Set, j$.util.Set {
         }
         p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
         while (true) {
-            l a2 = pVar.a();
-            if (a2 == null) {
+            l a10 = pVar.a();
+            if (a10 == null) {
                 return;
             } else {
-                consumer.x(a2.b);
+                consumer.x(a10.b);
             }
         }
     }

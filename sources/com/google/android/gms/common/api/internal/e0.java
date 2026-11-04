@@ -1,25 +1,21 @@
 package com.google.android.gms.common.api.internal;
 
-import java.lang.ref.WeakReference;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e0 extends o8.c {
-    public final WeakReference b;
+public interface e0 {
+    boolean B();
 
-    public e0(g0 g0Var) {
-        this.b = new WeakReference(g0Var);
-    }
+    void D(m6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10);
 
-    @Override // o8.d
-    public final void C(o8.h hVar) {
-        g0 g0Var = (g0) this.b.get();
-        if (g0Var == null) {
-            return;
-        }
-        n0 n0Var = g0Var.a;
-        c0 c0Var = new c0(g0Var, g0Var, hVar);
-        i0 i0Var = n0Var.e;
-        i0Var.sendMessage(i0Var.obtainMessage(1, c0Var));
-    }
+    void L();
+
+    void a();
+
+    d b(d dVar);
+
+    void l(Bundle bundle);
+
+    void x(int i3);
 }

@@ -5,18 +5,18 @@ import android.net.Uri;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class NotificationBadge$NovaHomeBadger implements ms {
-    @Override // org.telegram.messenger.ms
-    public final void a(int i10) {
+public class NotificationBadge$NovaHomeBadger implements ur {
+    @Override // org.telegram.messenger.ur
+    public final void a(int i3) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("tag", ps.d.getPackageName() + "/" + ps.d.getClassName());
-        contentValues.put("count", Integer.valueOf(i10));
-        w0.b.getContentResolver().insert(Uri.parse("content://com.teslacoilsw.notifier/unread_count"), contentValues);
+        contentValues.put("tag", wr.d.getPackageName() + "/" + wr.d.getClassName());
+        contentValues.put("count", Integer.valueOf(i3));
+        t0.b.getContentResolver().insert(Uri.parse("content://com.teslacoilsw.notifier/unread_count"), contentValues);
     }
 
-    @Override // org.telegram.messenger.ms
+    @Override // org.telegram.messenger.ur
     public final List b() {
         return Arrays.asList("com.teslacoilsw.launcher");
     }

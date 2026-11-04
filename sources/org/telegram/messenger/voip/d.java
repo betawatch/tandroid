@@ -1,24 +1,34 @@
 package org.telegram.messenger.voip;
 
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import org.telegram.messenger.voip.ConferenceCall;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements Function {
-    public /* synthetic */ Function andThen(Function function) {
-        return Function$-CC.$default$andThen(this, function);
+public final /* synthetic */ class d implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ConferenceCall b;
+    public final /* synthetic */ long c;
+
+    public /* synthetic */ d(ConferenceCall conferenceCall, long j10, int i3) {
+        this.a = i3;
+        this.b = conferenceCall;
+        this.c = j10;
     }
 
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
-        String lambda$poll$9;
-        lambda$poll$9 = ConferenceCall.lambda$poll$9((ConferenceCall.CallParticipant) obj);
-        return lambda$poll$9;
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        return Function$-CC.$default$compose(this, function);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$updateParticipants$11(this.c, tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$pull_outbound$6(this.c, tLObject, tL_error);
+                break;
+            default:
+                this.b.lambda$kick$13(this.c, tLObject, tL_error);
+                break;
+        }
     }
 }

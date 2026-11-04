@@ -1,84 +1,43 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.ui.vb0;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class z7 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class z7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h8 b;
-
-    public /* synthetic */ z7(h8 h8Var, int i10) {
-        this.a = i10;
-        this.b = h8Var;
+    public z7(float f10, float f11, float f12) {
+        this.b = f10;
+        this.a = f10;
+        this.d = f11;
+        this.e = f12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        u7 j10;
-        switch (this.a) {
-            case 0:
-                h8 h8Var = this.b;
-                h8Var.s0 = false;
-                h8Var.g0 = null;
-                h8Var.f0();
-                break;
-            case 1:
-                this.b.Q();
-                break;
-            case 2:
-                h8 h8Var2 = this.b;
-                g8 g8Var = h8Var2.g0;
-                if (g8Var != null && !h8Var2.m0) {
-                    if (!h8Var2.u0) {
-                        if (h8Var2.p0 && (j10 = h8Var2.j(g8Var)) != null) {
-                            h8Var2.S(j10);
-                            break;
-                        }
-                    } else {
-                        h8Var2.n0 = true;
-                        h8Var2.h0 = g8Var;
-                        h8Var2.B0 = Float.NaN;
-                        h8Var2.E0 = Float.NaN;
-                        h8Var2.C0 = 0.0f;
-                        h8Var2.L0 = false;
-                        h8Var2.D0 = g8Var.i.b;
-                        g8Var.q.a(0.0f);
-                        g8 g8Var2 = h8Var2.g0;
-                        f8 f8Var = g8Var2.l;
-                        f8Var.d = 260.0f;
-                        f8Var.e = 0.58f;
-                        f8Var.b = 1.0f;
-                        long j11 = h8Var2.N0 + 1;
-                        h8Var2.N0 = j11;
-                        g8Var2.I = j11;
-                        ag.c2 c2Var = g8Var2.c;
-                        c2Var.u0 = true;
-                        c2Var.P0(false);
-                        h8Var2.performHapticFeedback(0);
-                        h8Var2.f0();
-                        break;
-                    }
-                }
-                break;
-            default:
-                h8 h8Var3 = this.b;
-                if (h8Var3.q0 && h8Var3.g0 != null) {
-                    h8Var3.q0 = false;
-                    h8Var3.p0 = true;
-                    h8Var3.removeCallbacks(h8Var3.B1);
-                    ((vb0) h8Var3.d.b).X();
-                    h8Var3.getParent().requestDisallowInterceptTouchEvent(true);
-                    h8Var3.performHapticFeedback(4);
-                    u7 j12 = h8Var3.j(h8Var3.g0);
-                    if (j12 != null) {
-                        j12.o();
-                        j12.animate().scaleX(0.94f).scaleY(0.94f).setDuration(100L).start();
-                    }
-                    h8Var3.f0();
-                    break;
-                }
-                break;
+    public final void a(float f10) {
+        this.b = f10;
+        this.a = f10;
+        this.c = 0.0f;
+    }
+
+    public final boolean b(float f10) {
+        float sqrt = this.e * 2.0f * ((float) Math.sqrt(this.d));
+        while (f10 > 0.0f) {
+            float min = Math.min(f10, 0.0020833334f);
+            float f11 = this.c;
+            float f12 = -this.d;
+            float f13 = this.a;
+            float f14 = ((((f13 - this.b) * f12) - (sqrt * f11)) * min) + f11;
+            this.c = f14;
+            this.a = (f14 * min) + f13;
+            f10 -= min;
         }
+        boolean z10 = Math.abs(this.a - this.b) > 0.002f || Math.abs(this.c) > 0.02f;
+        if (!z10) {
+            a(this.b);
+        }
+        return z10;
     }
 }

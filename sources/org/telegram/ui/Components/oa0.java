@@ -1,81 +1,72 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class oa0 extends org.telegram.ui.Cells.l9 {
-    public final /* synthetic */ ua0 w0;
+public final class oa0 {
+    public final Paint a;
+    public final pa0 b;
+    public final pa0 c;
+    public final pa0 d;
+    public final na0 e;
+    public final na0 f;
+    public final float[] g;
+    public int h;
+    public float i;
 
-    public oa0(ua0 ua0Var) {
-        this.w0 = ua0Var;
-        this.g0 = ua0Var.c0.F;
+    public oa0() {
+        Paint paint = new Paint();
+        this.a = paint;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new pa0(tileMode);
+        this.c = new pa0(tileMode);
+        this.d = new pa0(Shader.TileMode.REPEAT);
+        this.e = new na0(R.raw.wallpaper_pos_intensity);
+        this.f = new na0(R.raw.wallpaper_neg_intensity);
+        this.g = new float[4];
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
     }
 
-    @Override // org.telegram.ui.Cells.w9
-    public final void I(int i10, int i11, org.telegram.messenger.kj kjVar) {
-        org.telegram.ui.kn knVar;
-        org.telegram.messenger.kj kjVar2;
-        ua0 ua0Var = this.w0;
-        oa0 oa0Var = ua0Var.e;
-        int i12 = oa0Var.v - oa0Var.u;
-        ab0 ab0Var = ua0Var.c0;
-        if (i12 > org.telegram.messenger.wp.r1(ab0Var.x).p4) {
-            ua0Var.g();
-            return;
+    public final Paint a(Bitmap bitmap, Bitmap bitmap2, Bitmap bitmap3, int i3, int i10) {
+        pa0 pa0Var = this.b;
+        boolean b10 = pa0Var.b(bitmap);
+        pa0 pa0Var2 = this.d;
+        boolean b11 = b10 | pa0Var2.b(bitmap2);
+        Paint paint = this.a;
+        if (i10 >= 0) {
+            pa0 pa0Var3 = this.c;
+            if ((b11 | pa0Var3.b(bitmap3)) || this.h != 1) {
+                this.h = 1;
+                na0 na0Var = this.e;
+                na0Var.a.setInputBuffer("shaderPattern", pa0Var2.d);
+                na0Var.a.setInputBuffer("shaderGradient", pa0Var.d);
+                na0Var.a.setInputBuffer("shaderGradientSoftLight", pa0Var3.d);
+                na0Var.a.setFloatUniform("transformGradient", na0Var.b);
+                na0Var.a.setFloatUniform("transformPattern", na0Var.c);
+                paint.setShader(na0Var.a);
+                return paint;
+            }
+        } else {
+            float a10 = b8.be.a((i3 * (-i10)) / 25500.0f, 0.0f, 1.0f);
+            if (b11 || this.i != a10 || this.h != 2) {
+                this.h = 2;
+                this.i = a10;
+                na0 na0Var2 = this.f;
+                na0Var2.a.setInputBuffer("shaderPattern", pa0Var2.d);
+                na0Var2.a.setInputBuffer("shaderGradient", pa0Var.d);
+                na0Var2.a.setFloatUniform("intensity", a10);
+                na0Var2.a.setFloatUniform("transformGradient", na0Var2.b);
+                na0Var2.a.setFloatUniform("transformPattern", na0Var2.c);
+                paint.setShader(na0Var2.a);
+                return paint;
+            }
         }
-        org.telegram.messenger.oj ojVar = ab0Var.d;
-        ojVar.e = oa0Var.u;
-        ojVar.f = oa0Var.v;
-        org.telegram.messenger.kj c10 = ua0Var.c(kjVar);
-        if (c10 != null && ((knVar = ab0Var.d.d) == null || knVar.m || (kjVar2 = knVar.a) == null || kjVar2.f1() != c10.f1())) {
-            ab0Var.d.d = org.telegram.ui.kn.b(i10, i11, c10);
-        }
-        ab0Var.b();
-        ab0Var.a(true);
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean b() {
-        org.telegram.messenger.kj c10;
-        TLRPC.Message message;
-        ua0 ua0Var = this.w0;
-        if (ua0Var.a == 0 && (c10 = ua0Var.c(null)) != null && (message = c10.k) != null && message.rich_message != null) {
-            return false;
-        }
-        org.telegram.messenger.oj ojVar = ua0Var.c0.d;
-        return ojVar == null || !ojVar.s;
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean e() {
-        org.telegram.messenger.kj c10;
-        TLRPC.Message message;
-        ua0 ua0Var = this.w0;
-        int i10 = ua0Var.a;
-        if (i10 != 0 || ua0Var.c0.d.i) {
-            return false;
-        }
-        return i10 != 0 || (c10 = ua0Var.c(null)) == null || (message = c10.k) == null || message.rich_message == null || org.telegram.messenger.aw.c(ua0Var.c(null));
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final org.telegram.ui.ActionBar.p6 q() {
-        return this.g0;
-    }
-
-    @Override // org.telegram.ui.Cells.l9, org.telegram.ui.Cells.w9
-    public final void w() {
-        super.w();
-        ag.b1 b1Var = this.w0.f;
-        if (b1Var != null) {
-            b1Var.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.w9
-    public final boolean z(org.telegram.messenger.kj kjVar) {
-        ua0 ua0Var = this.w0;
-        return ua0Var.a == 0 && !ua0Var.c0.d.i && x();
+        return paint;
     }
 }

@@ -1,96 +1,108 @@
 package kg;
 
 import android.content.Context;
-import org.telegram.messenger.v2;
-import org.telegram.ui.cu0;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.View;
+import android.widget.TextView;
+import b8.mf;
+import gi.y4;
+import org.telegram.messenger.h10;
+import org.telegram.messenger.hs;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.Cells.d3;
+import org.telegram.ui.Components.k9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class h extends lg.q {
-    public final /* synthetic */ int i0;
+public final class h extends d3 {
+    public final /* synthetic */ m f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h(Context context, int i10, int i11, int i12) {
-        super(context, i10, i11);
-        this.i0 = i12;
-    }
+    public h(m mVar, Context context) {
+        super(context);
+        this.f = mVar;
+        this.a = h10.t0;
+        final int i3 = 1;
+        setOrientation(1);
+        r6.i(k6.a7, this, null);
+        y4 y4Var = new y4(context, 3);
+        y4Var.c = new Path();
+        Paint paint = new Paint(1);
+        y4Var.b = paint;
+        final int i10 = 0;
+        paint.setColor(k6.x0(null, k6.d6, false));
+        paint.setShadowLayer(org.telegram.messenger.g0.L(1.33f), 0.0f, org.telegram.messenger.g0.L(0.33f), 503316480);
+        y4Var.setWillNotDraw(false);
+        y4Var.setOrientation(1);
+        y4Var.setPadding(org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
+        k9 k9Var = new k9(context);
+        this.b = k9Var;
+        k9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
+            public final /* synthetic */ kg.h b;
 
-    @Override // lg.q
-    public void h() {
-        switch (this.i0) {
-            case 4:
-                boolean z10 = v2.a;
-                break;
-        }
-    }
+            {
+                this.b = this;
+            }
 
-    @Override // lg.q
-    public void n() {
-        switch (this.i0) {
-            case 5:
-                break;
-            default:
-                super.n();
-                break;
-        }
-    }
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        this.b.b.getImageReceiver().P0(false);
+                        break;
+                    default:
+                        this.b.f.L();
+                        break;
+                }
+            }
+        });
+        a();
+        y4Var.addView(k9Var, mf.r(hs.O1, hs.O1, 49));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setGravity(17);
+        textView.setTextSize(1, 18.0f);
+        r6.V(textView, k6.G6, null);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        y4Var.addView(textView, mf.t(-1, -2, 49, 0, 6, 0, 0));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setGravity(17);
+        textView2.setTextSize(1, 14.0f);
+        r6.V(textView2, k6.y6, null);
+        y4Var.addView(textView2, mf.t(-1, -2, 49, 0, 7, 0, 0));
+        TextView textView3 = new TextView(context);
+        this.e = textView3;
+        textView3.setGravity(17);
+        textView3.setBackground(y5.f(k6.Ci, 8.0f));
+        textView3.setTextSize(1, 14.0f);
+        r6.V(textView3, k6.Gi, null);
+        textView3.setTypeface(org.telegram.messenger.g0.o());
+        textView3.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f));
+        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
+            public final /* synthetic */ kg.h b;
 
-    @Override // lg.q, android.view.TextureView, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.i0) {
-            case 0:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 2:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 3:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
-    }
+            {
+                this.b = this;
+            }
 
-    @Override // lg.q, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.i0) {
-            case 0:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 1:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 3:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(cu0 cu0Var, Context context, int i10, int i11, Context context2) {
-        super(context, i10, i11);
-        this.i0 = 4;
-    }
-
-    private final void p() {
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i3) {
+                    case 0:
+                        this.b.b.getImageReceiver().P0(false);
+                        break;
+                    default:
+                        this.b.f.L();
+                        break;
+                }
+            }
+        });
+        y4Var.addView(textView3, mf.t(-1, -2, 49, 0, 18, 0, 0));
+        addView(y4Var, mf.o(-1, -2));
+        set(null);
     }
 }

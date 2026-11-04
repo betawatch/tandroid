@@ -1,100 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class hn extends View {
-    public final ArrayList a;
-    public final ArrayList b;
-    public final /* synthetic */ un c;
+public final /* synthetic */ class hn implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ln b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hn(un unVar, Context context) {
-        super(context);
-        this.c = unVar;
-        this.a = new ArrayList();
-        this.b = new ArrayList();
+    public /* synthetic */ hn(ln lnVar, int i3) {
+        this.a = i3;
+        this.b = lnVar;
     }
 
-    public final void a() {
-        ArrayList arrayList = this.a;
-        arrayList.clear();
-        un unVar = this.c;
-        arrayList.add(unVar.Y1);
-        arrayList.add(unVar.z0);
-        arrayList.add(unVar.Y);
-        arrayList.add(unVar.Y3);
-        arrayList.add(unVar.W1);
-        arrayList.add(unVar.l3);
-        arrayList.add(unVar.Z);
-        arrayList.add(unVar.x1);
-        arrayList.add(unVar.T);
-        arrayList.add(unVar.f2);
-        arrayList.removeAll(Collections.singleton(null));
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        un unVar = this.c;
-        unVar.Oc = true;
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((View) obj).setVisibility(0);
-        }
-        arrayList.clear();
-        unVar.Oc = false;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        a();
-        un unVar = this.c;
-        unVar.Oc = true;
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            View view = (View) obj;
-            if (view.getVisibility() == 0) {
-                view.setVisibility(8);
-                this.b.add(view);
-            }
-        }
-        unVar.Oc = false;
-    }
-
-    @Override // android.view.View
-    public void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        a();
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            View view = (View) obj;
-            if (view != null) {
-                view.setTranslationX(f7);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i3 = this.a;
+        ln lnVar = this.b;
+        switch (i3) {
+            case 0:
+                ln.a0(lnVar);
+                break;
+            case 1:
+                ln.f0(lnVar);
+                break;
+            case 2:
+                lnVar.b.dismiss();
+                lnVar.finishFragment();
+                break;
+            case 3:
+                lnVar.N.setChecked(lnVar.x0.autotranslation);
+                break;
+            default:
+                lnVar.e.setImageDrawable(lnVar.r);
+                lnVar.c0.o(R.drawable.msg_addphoto, org.telegram.messenger.bd.M0(2131752212, "ChatSetPhotoOrVideo"), true);
+                TLRPC.User user = lnVar.D0;
+                if (user != null) {
+                    user.photo = null;
+                    lnVar.getMessagesController().X3(lnVar.D0, true, false);
+                }
+                lnVar.P0 = true;
+                if (lnVar.S0 == null) {
+                    lnVar.S0 = new org.telegram.ui.Components.ch0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
+                }
+                lnVar.c0.e.setTranslationX(-org.telegram.messenger.g0.L(8.0f));
+                lnVar.c0.e.setAnimation(lnVar.S0);
+                break;
         }
     }
 }

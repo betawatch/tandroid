@@ -17,8 +17,8 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
         l lVar = (l) obj;
-        int i10 = this.a - lVar.a;
-        return i10 == 0 ? this.b - lVar.b : i10;
+        int i3 = this.a - lVar.a;
+        return i3 == 0 ? this.b - lVar.b : i3;
     }
 
     static {
@@ -30,9 +30,9 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
         pVar.l(Locale.getDefault(), w.SMART, null);
     }
 
-    public l(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public l(int i3, int i10) {
+        this.a = i3;
+        this.b = i10;
     }
 
     @Override // j$.time.temporal.l
@@ -50,8 +50,8 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
         }
         j J = j.J(this.a);
         J.getClass();
-        int i10 = i.a[J.ordinal()];
-        return j$.time.temporal.s.f(i10 != 1 ? (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31 : 28, j.J(this.a).I());
+        int i3 = i.a[J.ordinal()];
+        return j$.time.temporal.s.f(i3 != 1 ? (i3 == 2 || i3 == 3 || i3 == 4 || i3 == 5) ? 30 : 31 : 28, j.J(this.a).I());
     }
 
     @Override // j$.time.temporal.l
@@ -61,20 +61,20 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
 
     @Override // j$.time.temporal.l
     public final long y(j$.time.temporal.o oVar) {
-        int i10;
+        int i3;
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i11 = k.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i11 == 1) {
-            i10 = this.b;
+        int i10 = k.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 == 1) {
+            i3 = this.b;
         } else {
-            if (i11 != 2) {
+            if (i10 != 2) {
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i10 = this.a;
+            i3 = this.a;
         }
-        return i10;
+        return i3;
     }
 
     @Override // j$.time.temporal.l
@@ -90,9 +90,9 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
         if (!j$.com.android.tools.r8.a.M(temporal).equals(j$.time.chrono.r.c)) {
             throw new b("Adjustment only supported on ISO date-time");
         }
-        Temporal c10 = temporal.c(this.a, j$.time.temporal.a.MONTH_OF_YEAR);
+        Temporal c2 = temporal.c(this.a, j$.time.temporal.a.MONTH_OF_YEAR);
         j$.time.temporal.a aVar = j$.time.temporal.a.DAY_OF_MONTH;
-        return c10.c(Math.min(c10.l(aVar).d, this.b), aVar);
+        return c2.c(Math.min(c2.l(aVar).d, this.b), aVar);
     }
 
     public final boolean equals(Object obj) {

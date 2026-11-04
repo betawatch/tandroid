@@ -1,117 +1,67 @@
 package j4;
 
-import e9.l0;
-import e9.n0;
-import e9.x1;
-import java.util.List;
+import android.graphics.Rect;
+import c4.f;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements c3.o {
-    public final b a = new b("audio/ac3");
-    public final e2.x b = new e2.x(2786);
-    public boolean c;
+public final class a {
+    public boolean d;
+    public boolean e;
+    public int[] f;
+    public int g;
+    public int h;
+    public Rect i;
+    public long b = -9223372036854775807L;
+    public long c = -9223372036854775807L;
+    public final int[] a = new int[4];
+    public int j = -1;
+    public int k = -1;
 
-    @Override // c3.o
-    public final boolean a(c3.p pVar) {
-        c3.l lVar;
-        int e;
-        e2.x xVar = new e2.x(10);
-        int i10 = 0;
+    public static int a(int[] iArr, int i3) {
+        return (i3 < 0 || i3 >= iArr.length) ? iArr[0] : iArr[i3];
+    }
+
+    public static int c(int i3, int i10) {
+        return (i3 & 16777215) | ((i10 * 17) << 24);
+    }
+
+    public final void b(f fVar, boolean z10, Rect rect, int[] iArr) {
+        int i3;
+        int i10;
+        int width = rect.width();
+        int height = rect.height();
+        int i11 = !z10 ? 1 : 0;
+        int i12 = i11 * width;
         while (true) {
-            lVar = (c3.l) pVar;
-            lVar.j(xVar.a, 0, 10, false);
-            xVar.N(0);
-            if (xVar.D() != 4801587) {
-                break;
+            int i13 = 0;
+            do {
+                int i14 = 0;
+                for (int i15 = 1; i14 < i15 && i15 <= 64; i15 <<= 2) {
+                    if (fVar.b() < 4) {
+                        i3 = -1;
+                        i10 = 0;
+                        break;
+                    }
+                    i14 = (i14 << 4) | fVar.j(4);
+                }
+                i3 = i14 & 3;
+                i10 = i14 < 4 ? width : i14 >> 2;
+                int min = Math.min(i10, width - i13);
+                if (min > 0) {
+                    int i16 = i12 + min;
+                    Arrays.fill(iArr, i12, i16, this.a[i3]);
+                    i13 += min;
+                    i12 = i16;
+                }
+            } while (i13 < width);
+            i11 += 2;
+            if (i11 >= height) {
+                return;
             }
-            xVar.O(3);
-            int z10 = xVar.z();
-            i10 += z10 + 10;
-            lVar.r(z10, false);
+            i12 = i11 * width;
+            fVar.c();
         }
-        lVar.f = 0;
-        lVar.r(i10, false);
-        int i11 = 0;
-        int i12 = i10;
-        while (true) {
-            lVar.j(xVar.a, 0, 6, false);
-            xVar.N(0);
-            if (xVar.H() != 2935) {
-                lVar.f = 0;
-                i12++;
-                if (i12 - i10 >= 8192) {
-                    break;
-                }
-                lVar.r(i12, false);
-                i11 = 0;
-            } else {
-                i11++;
-                if (i11 >= 4) {
-                    return true;
-                }
-                byte[] bArr = xVar.a;
-                if (bArr.length < 6) {
-                    e = -1;
-                } else if (((bArr[5] & 248) >> 3) > 10) {
-                    e = ((((bArr[2] & 7) << 8) | (bArr[3] & 255)) + 1) * 2;
-                } else {
-                    byte b10 = bArr[4];
-                    e = c3.b.e((b10 & 192) >> 6, b10 & 63);
-                }
-                if (e == -1) {
-                    break;
-                }
-                lVar.r(e - 6, false);
-            }
-        }
-        return false;
-    }
-
-    @Override // c3.o
-    public final void c(c3.q qVar) {
-        this.a.f(qVar, new g0(0, 1));
-        qVar.Q0();
-        qVar.G1(new c3.t(-9223372036854775807L));
-    }
-
-    @Override // c3.o
-    public final void d(long j10, long j11) {
-        this.c = false;
-        this.a.e();
-    }
-
-    @Override // c3.o
-    public final List e() {
-        l0 l0Var = n0.b;
-        return x1.e;
-    }
-
-    @Override // c3.o
-    public final int f(c3.p pVar, c3.s sVar) {
-        e2.x xVar = this.b;
-        int read = pVar.read(xVar.a, 0, 2786);
-        if (read == -1) {
-            return -1;
-        }
-        xVar.N(0);
-        xVar.M(read);
-        boolean z10 = this.c;
-        b bVar = this.a;
-        if (!z10) {
-            bVar.o = 0L;
-            this.c = true;
-        }
-        bVar.c(xVar);
-        return 0;
-    }
-
-    @Override // c3.o
-    public final c3.o b() {
-        return this;
-    }
-
-    @Override // c3.o
-    public final void release() {
     }
 }

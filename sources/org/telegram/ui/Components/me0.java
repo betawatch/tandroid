@@ -1,115 +1,61 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.NativeByteBuffer;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class me0 {
-    public float a = 0.0f;
-    public float b = 25.0f;
-    public float c = 50.0f;
-    public float d = 75.0f;
-    public float e = 100.0f;
-    public float[] f;
+public final class me0 extends tj0 {
+    public final cg.b0 f3;
+    public long g3;
+    public final /* synthetic */ se0 h3;
 
-    public final float[] a() {
-        float f7 = this.a;
-        float f10 = this.b / 100.0f;
-        float f11 = this.c / 100.0f;
-        float f12 = this.d / 100.0f;
-        float f13 = this.e;
-        int i10 = 2;
-        int i11 = 5;
-        char c10 = '\f';
-        char c11 = '\r';
-        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
-        int i12 = 100;
-        ArrayList arrayList = new ArrayList(100);
-        ArrayList arrayList2 = new ArrayList(100);
-        arrayList2.add(Float.valueOf(fArr[0]));
-        arrayList2.add(Float.valueOf(fArr[1]));
-        int i13 = 1;
-        while (i13 < i11) {
-            int i14 = (i13 - 1) * i10;
-            float f14 = fArr[i14];
-            float f15 = fArr[i14 + 1];
-            int i15 = i13 * 2;
-            float f16 = fArr[i15];
-            float f17 = fArr[i15 + 1];
-            int i16 = i13 + 1;
-            int i17 = i16 * 2;
-            int i18 = i10;
-            float f18 = fArr[i17];
-            char c12 = c10;
-            float f19 = fArr[i17 + 1];
-            int i19 = (i13 + 2) * 2;
-            float f20 = fArr[i19];
-            float f21 = fArr[i19 + 1];
-            char c13 = c11;
-            int i20 = 1;
-            while (i20 < i12) {
-                float f22 = i20 * 0.01f;
-                float f23 = f22 * f22;
-                float f24 = f23 * f22;
-                float z10 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + c3.i0.z(f18, f14, f22, f16 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + c3.i0.z(f19, f15, f22, f17 * 2.0f)) * 0.5f));
-                if (z10 > f14) {
-                    arrayList2.add(Float.valueOf(z10));
-                    arrayList2.add(Float.valueOf(max));
-                }
-                if ((i20 - 1) % 2 == 0) {
-                    arrayList.add(Float.valueOf(max));
-                }
-                i20++;
-                i12 = 100;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public me0(se0 se0Var, Context context) {
+        super(context, null);
+        this.h3 = se0Var;
+        this.f3 = new cg.b0(8);
+    }
+
+    @Override // org.telegram.ui.Components.tj0
+    public final boolean E0(float f10) {
+        return f10 >= ((float) (this.h3.w1 + org.telegram.messenger.g0.m));
+    }
+
+    @Override // org.telegram.ui.Components.tj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f10;
+        se0 se0Var = this.h3;
+        if (se0Var.D1) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long abs = Math.abs(this.g3 - elapsedRealtime);
+            if (abs > 17) {
+                abs = 16;
             }
-            arrayList2.add(Float.valueOf(f18));
-            arrayList2.add(Float.valueOf(f19));
-            i13 = i16;
-            i10 = i18;
-            c10 = c12;
-            c11 = c13;
-            i11 = 5;
-            i12 = 100;
-        }
-        arrayList2.add(Float.valueOf(fArr[c10]));
-        arrayList2.add(Float.valueOf(fArr[c11]));
-        this.f = new float[arrayList.size()];
-        int i21 = 0;
-        while (true) {
-            float[] fArr2 = this.f;
-            if (i21 >= fArr2.length) {
-                break;
+            this.g3 = elapsedRealtime;
+            se0Var.B1 += (abs * se0Var.C1) / 1800.0f;
+            while (true) {
+                f10 = se0Var.B1;
+                float f11 = se0Var.C1 * 2.0f;
+                if (f10 < f11) {
+                    break;
+                } else {
+                    se0Var.B1 = f10 - f11;
+                }
             }
-            fArr2[i21] = ((Float) arrayList.get(i21)).floatValue();
-            i21++;
+            se0Var.A1.setTranslate(f10, 0.0f);
+            se0Var.z1.setLocalMatrix(se0Var.A1);
+            g1();
+            invalidate();
         }
-        int size = arrayList2.size();
-        float[] fArr3 = new float[size];
-        for (int i22 = 0; i22 < size; i22++) {
-            fArr3[i22] = ((Float) arrayList2.get(i22)).floatValue();
-        }
-        return fArr3;
-    }
-
-    public final boolean b() {
-        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
-    }
-
-    public final void c(NativeByteBuffer nativeByteBuffer) {
-        this.a = nativeByteBuffer.readFloat(true);
-        this.b = nativeByteBuffer.readFloat(true);
-        this.c = nativeByteBuffer.readFloat(true);
-        this.d = nativeByteBuffer.readFloat(true);
-        this.e = nativeByteBuffer.readFloat(true);
-    }
-
-    public final void d(NativeByteBuffer nativeByteBuffer) {
-        nativeByteBuffer.writeFloat(this.a);
-        nativeByteBuffer.writeFloat(this.b);
-        nativeByteBuffer.writeFloat(this.c);
-        nativeByteBuffer.writeFloat(this.d);
-        nativeByteBuffer.writeFloat(this.e);
+        super.dispatchDraw(canvas);
+        int measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.n;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight2 = getMeasuredHeight();
+        cg.b0 b0Var = this.f3;
+        b0Var.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
+        b0Var.b(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.i5, this.o2));
+        b0Var.draw(canvas);
     }
 }

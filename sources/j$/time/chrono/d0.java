@@ -138,7 +138,7 @@ public final class d0 implements Externalizable {
                 V = new h0(LocalDate.of(readInt4 - 543, readByte8, readByte9));
                 break;
             case 9:
-                int i10 = g.e;
+                int i3 = g.e;
                 V = new g(j$.com.android.tools.r8.a.V(objectInput.readUTF()), objectInput.readInt(), objectInput.readInt(), objectInput.readInt());
                 break;
             default:

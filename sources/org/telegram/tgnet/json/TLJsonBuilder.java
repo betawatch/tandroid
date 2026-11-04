@@ -5,14 +5,14 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.f8;
+import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class TLJsonBuilder {
     private final JSONObject result2 = new JSONObject();
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public interface Serializable {
         void serializeToJson(TLJsonBuilder tLJsonBuilder);
     }
@@ -28,8 +28,8 @@ public class TLJsonBuilder {
             TLJsonBuilder tLJsonBuilder = new TLJsonBuilder();
             serializable.serializeToJson(tLJsonBuilder);
             return tLJsonBuilder.result2;
-        } catch (Exception e) {
-            f8.g(e, true);
+        } catch (Exception e10) {
+            a8.g(e10, true);
             return null;
         }
     }
@@ -37,8 +37,8 @@ public class TLJsonBuilder {
     private void write(String str, Object obj) {
         try {
             this.result2.putOpt(str, obj);
-        } catch (JSONException e) {
-            f8.g(e, true);
+        } catch (JSONException e10) {
+            a8.g(e10, true);
         }
     }
 
@@ -46,8 +46,8 @@ public class TLJsonBuilder {
         write(str, Boolean.valueOf(z10));
     }
 
-    public void writeInt32(String str, int i10) {
-        writeString(str, Integer.toString(i10, 10));
+    public void writeInt32(String str, int i3) {
+        writeString(str, Integer.toString(i3, 10));
     }
 
     public void writeInt64(String str, long j10) {

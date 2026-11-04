@@ -11,7 +11,7 @@ import java.util.function.LongConsumer;
 public abstract class u7 extends x7 implements j$.util.d1 {
     public abstract void d(Object obj);
 
-    public abstract b7 e(int i10);
+    public abstract b7 e(int i3);
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
@@ -19,8 +19,8 @@ public abstract class u7 extends x7 implements j$.util.d1 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.o(this, i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i3) {
+        return j$.com.android.tools.r8.a.o(this, i3);
     }
 
     @Override // j$.util.Spliterator
@@ -45,23 +45,23 @@ public abstract class u7 extends x7 implements j$.util.d1 {
         Objects.requireNonNull(obj);
         b7 b7Var = null;
         while (true) {
-            w7 c10 = c();
-            if (c10 == w7.NO_MORE) {
+            w7 c2 = c();
+            if (c2 == w7.NO_MORE) {
                 return;
             }
             w7 w7Var = w7.MAYBE_MORE;
             Spliterator spliterator = this.a;
-            if (c10 == w7Var) {
-                int i10 = this.c;
+            if (c2 == w7Var) {
+                int i3 = this.c;
                 if (b7Var == null) {
-                    b7Var = e(i10);
+                    b7Var = e(i3);
                 } else {
                     b7Var.b = 0;
                 }
                 long j10 = 0;
                 while (((j$.util.d1) spliterator).tryAdvance(b7Var)) {
                     j10++;
-                    if (j10 >= i10) {
+                    if (j10 >= i3) {
                         break;
                     }
                 }

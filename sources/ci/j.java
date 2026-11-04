@@ -1,44 +1,47 @@
 package ci;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.ui.Cells.f0;
-import org.telegram.ui.Cells.ra;
+import android.app.Activity;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes4.dex */
-public final class j implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ o c;
-    public final /* synthetic */ View d;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class j implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ j(o oVar, View view, float f7, int i10) {
-        this.a = i10;
-        this.c = oVar;
-        this.d = view;
-        this.b = f7;
+    public /* synthetic */ j(v vVar, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j10) {
+        this.d = vVar;
+        this.e = twoStepVerificationActivity;
+        this.f = activity;
+        this.b = z10;
+        this.c = j10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o oVar = this.c;
-                float measuredHeight = ((oVar.G.getMeasuredHeight() - oVar.F.L9) - r2.Ua) / 2.0f;
-                f0 f0Var = (f0) this.d;
-                float measuredHeight2 = (measuredHeight - (f0Var.getMeasuredHeight() / 2.0f)) + oVar.F.L9;
-                f0Var.setTranslationY(((((float) f0Var.getTop()) > measuredHeight2 ? measuredHeight2 - f0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
+                org.telegram.messenger.g0.h3(new k((v) this.d, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.f, this.b, this.c, tLObject));
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o oVar2 = this.c;
-                float measuredHeight3 = ((oVar2.G.getMeasuredHeight() - oVar2.F.L9) - r2.Ua) / 2.0f;
-                ra raVar = (ra) this.d;
-                float measuredHeight4 = (measuredHeight3 - (raVar.getMeasuredHeight() / 2.0f)) + oVar2.F.L9;
-                raVar.setTranslationY(((((float) raVar.getTop()) > measuredHeight4 ? measuredHeight4 - raVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
+                org.telegram.messenger.g0.h3(new n((ei.z6) this.d, tL_error, this.b, this.c, (u10) this.e, (org.telegram.ui.ActionBar.e6) this.f));
                 break;
         }
+    }
+
+    public /* synthetic */ j(ei.z6 z6Var, boolean z10, long j10, u10 u10Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.d = z6Var;
+        this.b = z10;
+        this.c = j10;
+        this.e = u10Var;
+        this.f = e6Var;
     }
 }

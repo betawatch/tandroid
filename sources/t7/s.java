@@ -1,41 +1,57 @@
 package t7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import x7.y;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class s {
-    public static r a;
+public final class s extends r {
+    public static final s e = new s(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public static Object a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() != 0) {
-            return creator.createFromParcel(parcel);
-        }
-        return null;
+    public s(int i3, Object[] objArr) {
+        this.c = objArr;
+        this.d = i3;
     }
 
-    public static void b(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 1);
-        }
+    @Override // java.util.List
+    public final Object get(int i3) {
+        y.a(i3, this.d);
+        Object obj = this.c[i3];
+        obj.getClass();
+        return obj;
     }
 
-    public static synchronized q c(o oVar) {
-        q qVar;
-        synchronized (s.class) {
-            try {
-                if (a == null) {
-                    a = new r(0);
-                }
-                qVar = (q) a.R0(oVar);
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return qVar;
+    @Override // t7.r, t7.o
+    public final int h(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i3 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i3);
+        return i3;
+    }
+
+    @Override // t7.o
+    public final int i() {
+        return this.d;
+    }
+
+    @Override // t7.o
+    public final int j() {
+        return 0;
+    }
+
+    @Override // t7.o
+    public final boolean k() {
+        return false;
+    }
+
+    @Override // t7.o
+    public final Object[] l() {
+        return this.c;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

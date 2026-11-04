@@ -1,6 +1,5 @@
 package org.telegram.ui.Components.voip;
 
-import ag.x2;
 import android.animation.ValueAnimator;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -8,11 +7,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.a30;
-import org.telegram.ui.ActionBar.w5;
-import org.telegram.ui.Components.gr;
+import ci.uc;
+import org.telegram.ui.ActionBar.d4;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout {
     public TextView[] a;
@@ -27,14 +26,14 @@ public final class w1 extends FrameLayout {
     public final void a(View view, View view2, Runnable runnable) {
         view.setVisibility(0);
         view2.setVisibility(0);
-        view2.setTranslationY(org.telegram.messenger.i0.L(15.0f));
+        view2.setTranslationY(org.telegram.messenger.g0.L(15.0f));
         view2.setAlpha(0.0f);
         this.f = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new ag.p2(18, view2, view));
-        this.h.addListener(new ci.i((Object) this, (Object) view, (Object) view2, (Object) runnable, 3));
-        this.h.setDuration(250L).setInterpolator(gr.f);
+        ofFloat.addUpdateListener(new uc(19, view2, view));
+        this.h.addListener(new kg.g0((FrameLayout) this, view, view2, (Object) runnable, 4));
+        this.h.setDuration(250L).setInterpolator(xq.f);
         this.h.start();
     }
 
@@ -45,7 +44,7 @@ public final class w1 extends FrameLayout {
         if (z10) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             SpannableString spannableString = new SpannableString(".");
-            spannableString.setSpan(new x2(textViewArr), 0, 1, 33);
+            spannableString.setSpan(new lg.p1(textViewArr), 0, 1, 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             str = spannableStringBuilder;
         }
@@ -76,7 +75,7 @@ public final class w1 extends FrameLayout {
                 return;
             }
             textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new w5(this, 8));
+            a(textViewArr[0], textViewArr[1], new d4(this, 12));
         }
     }
 
@@ -86,7 +85,7 @@ public final class w1 extends FrameLayout {
             if (frameLayout.getVisibility() == 8) {
                 return;
             }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(gr.f).setListener(new v1(this, 1)).setDuration(300L).start();
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(xq.f).setListener(new v1(this, 1)).setDuration(300L).start();
         } else {
             if (frameLayout.getVisibility() == 0) {
                 return;
@@ -96,7 +95,7 @@ public final class w1 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            a30.m(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), gr.k, 300L);
+            org.telegram.messenger.camera.q.l(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), xq.k, 300L);
         }
     }
 
@@ -150,7 +149,7 @@ public final class w1 extends FrameLayout {
         a2Var.setVisibility(0);
     }
 
-    public void setSignalBarCount(int i10) {
-        this.d.setSignalBarCount(i10);
+    public void setSignalBarCount(int i3) {
+        this.d.setSignalBarCount(i3);
     }
 }

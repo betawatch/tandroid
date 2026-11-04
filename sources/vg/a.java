@@ -1,73 +1,58 @@
 package vg;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Shader;
-import java.lang.ref.WeakReference;
-import org.telegram.ui.ActionBar.t6;
-import w7.k8;
+import android.widget.FrameLayout;
+import b8.mf;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.tj0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class a extends k8 {
-    public final Paint a;
-    public final Paint b;
-    public final Matrix c;
-    public WeakReference d;
-    public BitmapShader e;
-    public final /* synthetic */ f f;
+public abstract class a extends FrameLayout implements k0 {
+    public final e6 a;
+    public final tj0 b;
+    public final u4.b0 c;
 
-    public a(f fVar) {
-        this.f = fVar;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        this.c = new Matrix();
-        this.d = new WeakReference(null);
-        paint.setFilterBitmap(true);
+    public a(Context context, e6 e6Var) {
+        super(context);
+        this.a = e6Var;
+        tj0 tj0Var = new tj0(context, e6Var);
+        this.b = tj0Var;
+        tj0Var.setNestedScrollingEnabled(true);
+        tj0Var.setAdapter(a());
+        u4.b0 b0Var = new u4.b0(1, false);
+        this.c = b0Var;
+        tj0Var.setLayoutManager(b0Var);
+        tj0Var.setClipToPadding(false);
+        addView(tj0Var, mf.c(-1.0f, -1));
     }
 
-    @Override // w7.k8
-    public final void b(Canvas canvas, hi.a aVar) {
-        hi.b bVar = (hi.b) f.u(aVar);
-        f fVar = this.f;
-        int i10 = fVar.c;
-        Bitmap bitmap = bVar.d;
-        Object obj = this.d.get();
-        Paint paint = this.a;
-        if (bitmap != obj) {
-            this.d = new WeakReference(bitmap);
-            if (bitmap == null || bitmap.isRecycled()) {
-                this.e = null;
-                paint.setShader(null);
-            } else {
-                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                this.e = bitmapShader;
-                paint.setShader(bitmapShader);
+    public abstract u4.h0 a();
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Paint W0 = k6.W0("paintDivider", this.a);
+        if (W0 == null) {
+            W0 = k6.k0;
+        }
+        canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, W0);
+    }
+
+    @Override // vg.k0
+    public void setOffset(float f10) {
+        if (Math.abs(f10 / getMeasuredWidth()) == 1.0f) {
+            tj0 tj0Var = this.b;
+            if (tj0Var.K(0) == null || tj0Var.K(0).a.getTop() != tj0Var.getPaddingTop()) {
+                tj0Var.v0(0);
             }
         }
-        if (Color.alpha(fVar.x) > 0) {
-            fVar.b0.c(canvas, 0);
-        }
-        if (this.e != null && bitmap != null && !bitmap.isRecycled() && i10 > 0) {
-            Matrix matrix = bVar.b;
-            Matrix matrix2 = this.c;
-            matrix2.set(matrix);
-            matrix2.postTranslate(-fVar.d, -fVar.e);
-            this.e.setLocalMatrix(matrix2);
-            paint.setAlpha(i10);
-            fVar.P.b(canvas, paint);
-        }
-        int r12 = t6.r1(i10 / 255.0f, fVar.y);
-        if (Color.alpha(r12) > 0) {
-            Paint paint2 = this.b;
-            paint2.setColor(r12);
-            fVar.P.b(canvas, paint2);
-        }
+    }
+
+    public void setTopOffset(int i3) {
+        this.b.setPadding(0, i3, 0, 0);
     }
 }

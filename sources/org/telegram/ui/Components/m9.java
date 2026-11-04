@@ -1,201 +1,143 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Path;
-import java.util.Random;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class m9 {
-    public float a;
-    public float b;
-    public final Path c;
+public final class m9 extends Drawable {
+    public TextPaint a;
+    public final Paint b;
+    public final Paint c;
     public final Paint d;
-    public final float[] e;
-    public final float[] f;
-    public final float[] g;
-    public final float[] h;
-    public final float[] i;
-    public final float[] j;
-    public final float[] k;
-    public final float[] l;
-    public final Random m;
-    public final float n;
-    public final float o;
-    public final float p;
-    public final Matrix q;
-    public final int r;
-    public float s;
-    public float t;
-    public float u;
+    public final float e;
+    public float f;
+    public float g;
+    public final RectF h;
+    public ValueAnimator i;
 
-    public m9(int i10) {
-        this(i10, 512);
+    public m9() {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new Paint(1);
+        this.d = new Paint(1);
+        this.e = 1.0f;
+        this.f = 0.0f;
+        this.g = 1.0f;
+        this.h = new RectF();
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    public final void a(float f7, float f10, Canvas canvas, Paint paint) {
-        if (!org.telegram.messenger.tc.e(this.r)) {
+    public final void a(boolean z10, float f10) {
+        float max = Math.max(Math.min(f10, 1.0f), 0.0f);
+        ValueAnimator valueAnimator = this.i;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.i = null;
+        }
+        if (!z10) {
+            this.g = max;
+            invalidateSelf();
             return;
         }
-        Path path = this.c;
-        path.reset();
-        int i10 = 0;
-        while (true) {
-            float f11 = i10;
-            float f12 = this.n;
-            if (f11 >= f12) {
-                canvas.save();
-                canvas.drawPath(path, paint);
-                canvas.restore();
-                return;
-            }
-            float[] fArr = this.i;
-            float f13 = fArr[i10];
-            int i11 = i10 + 1;
-            int i12 = ((float) i11) < f12 ? i11 : 0;
-            float f14 = fArr[i12];
-            float[] fArr2 = this.e;
-            float f15 = 1.0f - f13;
-            float f16 = fArr2[i10] * f15;
-            float[] fArr3 = this.g;
-            float f17 = (fArr3[i10] * f13) + f16;
-            float f18 = 1.0f - f14;
-            float f19 = (fArr3[i12] * f14) + (fArr2[i12] * f18);
-            float[] fArr4 = this.f;
-            float f20 = fArr4[i10] * f15;
-            float[] fArr5 = this.h;
-            float f21 = (fArr5[i10] * f13) + f20;
-            float f22 = (fArr5[i12] * f14) + (fArr4[i12] * f18);
-            float max = (((Math.max(f17, f19) - Math.min(f17, f19)) / 2.0f) + Math.min(f17, f19)) * this.o * this.p;
-            Matrix matrix = this.q;
-            matrix.reset();
-            matrix.setRotate(f21, f7, f10);
-            float[] fArr6 = this.k;
-            fArr6[0] = f7;
-            float f23 = f10 - f17;
-            fArr6[1] = f23;
-            fArr6[2] = f7 + max;
-            fArr6[3] = f23;
-            matrix.mapPoints(fArr6);
-            float[] fArr7 = this.l;
-            fArr7[0] = f7;
-            float f24 = f10 - f19;
-            fArr7[1] = f24;
-            fArr7[2] = f7 - max;
-            fArr7[3] = f24;
-            matrix.reset();
-            matrix.setRotate(f22, f7, f10);
-            matrix.mapPoints(fArr7);
-            if (i10 == 0) {
-                path.moveTo(fArr6[0], fArr6[1]);
-            }
-            path.cubicTo(fArr6[2], fArr6[3], fArr7[2], fArr7[3], fArr7[0], fArr7[1]);
-            i10 = i11;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.g, max);
+        this.i = ofFloat;
+        ofFloat.addUpdateListener(new c6(this, 5));
+        this.i.addListener(new org.telegram.ui.ActionBar.s0(this, max, 4));
+        this.i.setInterpolator(xq.h);
+        this.i.setDuration(200L);
+        this.i.start();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (getBounds() == null) {
+            return;
+        }
+        int i3 = getBounds().left;
+        int i10 = getBounds().top + ((int) this.f);
+        int width = getBounds().width();
+        int height = getBounds().height();
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY() + ((int) this.f);
+        TextPaint textPaint = this.a;
+        Paint paint = this.d;
+        Paint paint2 = this.c;
+        Paint paint3 = this.b;
+        if (textPaint != null) {
+            int color = textPaint.getColor();
+            paint3.setColor(color);
+            paint2.setColor(color);
+            paint.setColor(color);
+        }
+        if (this.e != 1.0f) {
+            canvas.save();
+            float f10 = this.e;
+            canvas.scale(f10, f10, centerX, centerY);
+        }
+        paint3.setStrokeWidth(org.telegram.messenger.g0.N(1.1f));
+        float f11 = i3;
+        float f12 = width;
+        float N = (((f12 - org.telegram.messenger.g0.N(16.33f)) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.33f);
+        float f13 = i10;
+        float f14 = height;
+        float N2 = ((f14 - org.telegram.messenger.g0.N(10.33f)) / 2.0f) + f13;
+        float N3 = (((org.telegram.messenger.g0.N(16.33f) + f12) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.33f);
+        float N4 = ((org.telegram.messenger.g0.N(10.33f) + f14) / 2.0f) + f13;
+        RectF rectF = this.h;
+        rectF.set(N, N2, N3, N4);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(2.33f), org.telegram.messenger.g0.N(2.33f), paint3);
+        rectF.set((((f12 - org.telegram.messenger.g0.N(13.0f)) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.66f), ((f14 - org.telegram.messenger.g0.N(7.33f)) / 2.0f) + f13, Math.max(org.telegram.messenger.g0.N(1.1f), this.g * org.telegram.messenger.g0.N(13.0f)) + ((((f12 - org.telegram.messenger.g0.N(13.0f)) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.66f)), ((org.telegram.messenger.g0.N(7.33f) + f14) / 2.0f) + f13);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(0.83f), org.telegram.messenger.g0.N(0.83f), paint);
+        float f15 = centerY;
+        rectF.set((((org.telegram.messenger.g0.N(17.5f) + f12) - org.telegram.messenger.g0.N(4.66f)) / 2.0f) + f11, f15 - org.telegram.messenger.g0.N(2.65f), ((org.telegram.messenger.g0.N(4.66f) + (org.telegram.messenger.g0.N(17.5f) + f12)) / 2.0f) + f11, org.telegram.messenger.g0.N(2.65f) + f15);
+        canvas.drawArc(rectF, -90.0f, 180.0f, false, paint2);
+        if (this.e != 1.0f) {
+            canvas.restore();
         }
     }
 
-    public final void b() {
-        for (int i10 = 0; i10 < this.n; i10++) {
-            c(this.e, this.f, i10);
-            c(this.g, this.h, i10);
-            this.i[i10] = 0.0f;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(this.e * 24.0f);
     }
 
-    public final void c(float[] fArr, float[] fArr2, int i10) {
-        float f7 = this.n;
-        float f10 = this.b;
-        float f11 = this.a;
-        Random random = this.m;
-        fArr[i10] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f10 - f11)) + f11;
-        fArr2[i10] = (((random.nextInt() % 100.0f) / 100.0f) * (360.0f / f7) * 0.05f) + ((360.0f / f7) * i10);
-        this.j[i10] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(this.e * 24.0f);
     }
 
-    public final void d(boolean z10, float f7) {
-        this.s = f7;
-        if (org.telegram.messenger.tc.e(this.r)) {
-            if (z10) {
-                float f10 = this.s;
-                float f11 = this.t;
-                if (f10 > f11) {
-                    this.u = (f10 - f11) / 205.0f;
-                    return;
-                } else {
-                    this.u = (f10 - f11) / 275.0f;
-                    return;
-                }
-            }
-            float f12 = this.s;
-            float f13 = this.t;
-            if (f12 > f13) {
-                this.u = (f12 - f13) / 320.0f;
-            } else {
-                this.u = (f12 - f13) / 375.0f;
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public final void e(float f7, float f10) {
-        if (org.telegram.messenger.tc.e(this.r)) {
-            for (int i10 = 0; i10 < this.n; i10++) {
-                float[] fArr = this.i;
-                float f11 = fArr[i10];
-                float f12 = this.j[i10];
-                float f13 = (f12 * f7 * 8.2f * f10) + (0.8f * f12) + f11;
-                fArr[i10] = f13;
-                if (f13 >= 1.0f) {
-                    fArr[i10] = 0.0f;
-                    float[] fArr2 = this.g;
-                    this.e[i10] = fArr2[i10];
-                    float[] fArr3 = this.h;
-                    this.f[i10] = fArr3[i10];
-                    c(fArr2, fArr3, i10);
-                }
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i3) {
+        this.b.setAlpha(i3);
+        this.c.setAlpha(i3);
+        this.d.setAlpha(i3);
     }
 
-    public final void f(long j10) {
-        float f7 = this.s;
-        float f10 = this.t;
-        if (f7 != f10) {
-            float f11 = this.u;
-            float f12 = (j10 * f11) + f10;
-            this.t = f12;
-            if (f11 > 0.0f) {
-                if (f12 > f7) {
-                    this.t = f7;
-                }
-            } else if (f12 < f7) {
-                this.t = f7;
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.b.setColorFilter(colorFilter);
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
     }
 
-    public m9(int i10, int i11) {
-        this.c = new Path();
-        this.d = new Paint(1);
-        this.k = new float[4];
-        this.l = new float[4];
-        this.m = new Random();
-        this.p = 1.0f;
-        this.q = new Matrix();
-        this.n = i10;
-        this.o = (float) (Math.tan(3.141592653589793d / (r0 * 2.0f)) * 1.3333333333333333d);
-        this.e = new float[i10];
-        this.f = new float[i10];
-        this.g = new float[i10];
-        this.h = new float[i10];
-        this.i = new float[i10];
-        this.j = new float[i10];
-        for (int i12 = 0; i12 < this.n; i12++) {
-            c(this.e, this.f, i12);
-            c(this.g, this.h, i12);
-            this.i[i12] = 0.0f;
-        }
-        this.r = i11;
+    public m9(float f10, int i3) {
+        this();
+        a(false, f10);
+        this.b.setColor(-1);
+        this.c.setColor(-1);
+        this.d.setColor(i3);
+        this.e = 1.3f;
+        invalidateSelf();
     }
 }

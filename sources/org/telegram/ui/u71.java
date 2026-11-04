@@ -1,160 +1,65 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewParent;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class u71 extends org.telegram.ui.Components.uk0 {
-    public final /* synthetic */ int e3;
+public final class u71 extends org.telegram.ui.Cells.q1 {
+    public final Path kd;
+    public final Paint ld;
+    public final /* synthetic */ int md;
+    public final /* synthetic */ int nd;
+    public final /* synthetic */ int od;
+    public final /* synthetic */ w71 pd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u71(int i10, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        this.e3 = i10;
+    public u71(w71 w71Var, Context context, int i3, org.telegram.ui.ActionBar.e6 e6Var, int i10, int i11, int i12) {
+        super(context, i3, false, null, e6Var);
+        this.pd = w71Var;
+        this.md = i10;
+        this.nd = i11;
+        this.od = i12;
+        this.kd = new Path();
+        this.ld = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public Integer V0(int i10) {
-        switch (this.e3) {
-            case 1:
-                return 0;
-            case 2:
-                return 0;
-            case 6:
-                return 0;
-            case 12:
-                return 0;
-            default:
-                return super.V0(i10);
-        }
+    @Override // org.telegram.ui.Cells.q1
+    public final void j1(Canvas canvas) {
+        this.R4 = 0;
+        this.S4 = this.P4.size() - 1;
+        super.j1(canvas);
     }
 
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 0:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
-                break;
-            case 4:
-                if (getParent() != null && getParent().getParent() != null) {
-                    ViewParent parent = getParent().getParent();
-                    boolean z10 = true;
-                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
-                        z10 = false;
-                    }
-                    parent.requestDisallowInterceptTouchEvent(z10);
-                }
-                break;
-            case 11:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
-                break;
-            case 13:
-                if (getParent() != null && getParent().getParent() != null) {
-                    ViewParent parent2 = getParent().getParent();
-                    boolean z11 = true;
-                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
-                        z11 = false;
-                    }
-                    parent2.requestDisallowInterceptTouchEvent(z11);
-                }
-                break;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int b22 = b2(this.md);
+        float U1 = U1(b22);
+        float T1 = T1(b22);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(getPollButtonsLeft(), U1, getPollButtonsRight(), T1);
+        Path path = this.kd;
+        path.rewind();
+        path.addRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), Path.Direction.CW);
+        Paint paint = this.ld;
+        paint.setColor(0);
+        paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.k6.r1(this.pd.y * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
+        canvas.clipPath(path);
+        d1(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.e3) {
-            case 5:
-                int size = View.MeasureSpec.getSize(i11);
-                int b10 = (getAdapter().b() * org.telegram.messenger.i0.L(50.0f)) + org.telegram.messenger.i0.L(4.0f);
-                if (b10 <= size) {
-                    size = b10;
-                }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-                break;
-            case 8:
-                int size2 = View.MeasureSpec.getSize(i11);
-                int b11 = (getAdapter().b() * org.telegram.messenger.i0.L(50.0f)) + org.telegram.messenger.i0.L(4.0f);
-                if (b11 <= size2) {
-                    size2 = b11;
-                }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        setMeasuredDimension(this.nd, this.od);
     }
 
-    @Override // org.telegram.ui.Components.uk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
-            case 10:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void r0(View view, View view2) {
-        switch (this.e3) {
-            case 3:
-                if (view instanceof org.telegram.ui.Cells.e6) {
-                    super.r0(view, view2);
-                    break;
-                }
-                break;
-            case 9:
-                if (view instanceof org.telegram.ui.Cells.e6) {
-                    super.r0(view, view2);
-                    break;
-                }
-                break;
-            default:
-                super.r0(view, view2);
-                break;
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        switch (this.e3) {
-            case 3:
-                rect.bottom = org.telegram.messenger.i0.L(60.0f) + rect.bottom;
-                break;
-            case 9:
-                rect.bottom = org.telegram.messenger.i0.L(60.0f) + rect.bottom;
-                break;
-        }
-        return super.requestChildRectangleOnScreen(view, rect, z10);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean requestFocus(int i10, Rect rect) {
-        switch (this.e3) {
-            case 7:
-                return false;
-            default:
-                return super.requestFocus(i10, rect);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u71(Context context) {
-        super(context, null);
-        this.e3 = 10;
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

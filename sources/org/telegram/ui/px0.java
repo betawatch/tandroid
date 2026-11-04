@@ -1,52 +1,59 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.app.Activity;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_fragment;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class px0 extends ClickableSpan {
-    public final /* synthetic */ TLRPC.TL_username a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ wx0 c;
+public final class px0 extends g11 {
+    public final /* synthetic */ rx0 f2;
+    public final /* synthetic */ x01[] g2;
+    public final /* synthetic */ sx0 h2;
 
-    public px0(wx0 wx0Var, TLRPC.TL_username tL_username, String str) {
-        this.c = wx0Var;
-        this.a = tL_username;
-        this.b = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public px0(sx0 sx0Var, sx0 sx0Var2, Activity activity, Integer num, rx0 rx0Var, x01[] x01VarArr) {
+        super(sx0Var2, activity, false, num, 2, null);
+        this.h2 = sx0Var;
+        this.f2 = rx0Var;
+        this.g2 = x01VarArr;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        ProfileActivity profileActivity = this.c.e;
-        TLRPC.TL_username tL_username = this.a;
-        if (!tL_username.editable) {
-            if (profileActivity.i5 == this) {
-                return;
-            }
-            profileActivity.e5(this);
-            TL_fragment.TL_getCollectibleInfo tL_getCollectibleInfo = new TL_fragment.TL_getCollectibleInfo();
-            TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
-            tL_inputCollectibleUsername.username = tL_username.username;
-            tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
-            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new sl0(8, this, tL_username)), profileActivity.getClassGuid());
+    @Override // org.telegram.ui.g11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i3;
+        if (l10 == null) {
             return;
         }
-        profileActivity.e5(null);
-        String str = profileActivity.getMessagesController().U2 + "/" + this.b;
-        TLRPC.Chat chat = profileActivity.D2;
-        if (chat == null || !chat.noforwards) {
-            org.telegram.messenger.i0.g(str);
-            profileActivity.L.j(56, 0L, null);
+        sx0 sx0Var = this.h2;
+        i3 = ((org.telegram.ui.ActionBar.d2) sx0Var).currentAccount;
+        org.telegram.messenger.li.b0(i3).a2("animated_" + l10);
+        rx0 rx0Var = this.f2;
+        if (rx0Var != null) {
+            rx0Var.a(true);
+        }
+        x01 x01Var = this.g2[0];
+        if (x01Var != null) {
+            sx0Var.n = null;
+            x01Var.dismiss();
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
-        textPaint.setColor(textPaint.linkColor);
+    @Override // org.telegram.ui.g11
+    public final void r(q01 q01Var, dh.n0 n0Var) {
+        int i3;
+        sx0 sx0Var = this.h2;
+        i3 = ((org.telegram.ui.ActionBar.d2) sx0Var).currentAccount;
+        org.telegram.messenger.li.b0(i3).a2(n0Var.f);
+        rx0 rx0Var = this.f2;
+        if (rx0Var != null) {
+            rx0Var.a(true);
+        }
+        x01 x01Var = this.g2[0];
+        if (x01Var != null) {
+            sx0Var.n = null;
+            x01Var.dismiss();
+        }
     }
 }

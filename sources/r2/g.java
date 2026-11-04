@@ -1,56 +1,74 @@
 package r2;
 
-import java.nio.ByteBuffer;
-import org.telegram.tgnet.TLObject;
-import v7.t6;
+import android.net.Uri;
+import b8.zb;
+import g9.i0;
+import g9.s1;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.ui.Components.d80;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g extends h2.h {
-    public long r;
-    public int s;
-    public int w;
+public final class g {
+    public final String a;
+    public final Uri b;
+    public final Uri c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final long g;
+    public final List h;
+    public final boolean i;
+    public final long j;
+    public final long k;
+    public final i0 l;
+    public final i0 m;
+    public final s1 n;
+    public final boolean o;
+    public final String p;
+    public final String q;
+    public final long r;
+    public final long s;
+    public final String t;
 
-    @Override // h2.h, h2.a
-    public final void clear() {
-        super.clear();
-        this.s = 0;
+    public g(String str, Uri uri, Uri uri2, long j10, long j11, long j12, long j13, ArrayList arrayList, boolean z10, long j14, long j15, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, boolean z11, String str2, String str3, long j16, long j17, String str4) {
+        zb.f((uri == null || uri2 == null) && !(uri == null && uri2 == null));
+        this.a = str;
+        this.b = uri;
+        this.c = uri2;
+        this.d = j10;
+        this.e = j11;
+        this.f = j12;
+        this.g = j13;
+        this.h = arrayList;
+        this.i = z10;
+        this.j = j14;
+        this.k = j15;
+        this.l = i0.q(arrayList2);
+        this.m = i0.q(arrayList3);
+        this.n = i0.w(new d80(29), arrayList4);
+        this.o = z11;
+        this.p = str2;
+        this.q = str3;
+        this.r = j16;
+        this.s = j17;
+        this.t = str4;
     }
 
-    public final boolean e(h2.h hVar) {
-        ByteBuffer byteBuffer;
-        t6.f(!hVar.getFlag(TLObject.FLAG_30));
-        t6.f(!hVar.hasSupplementalData());
-        t6.f(!hVar.isEndOfStream());
-        if (f()) {
-            if (this.s >= this.w) {
-                return false;
-            }
-            ByteBuffer byteBuffer2 = hVar.c;
-            if (byteBuffer2 != null && (byteBuffer = this.c) != null) {
-                if (byteBuffer2.remaining() + byteBuffer.position() > 3072000) {
-                    return false;
-                }
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        int i10 = this.s;
-        this.s = i10 + 1;
-        if (i10 == 0) {
-            this.e = hVar.e;
-            if (hVar.isKeyFrame()) {
-                setFlags(1);
-            }
+        if (!(obj instanceof g)) {
+            return false;
         }
-        ByteBuffer byteBuffer3 = hVar.c;
-        if (byteBuffer3 != null) {
-            c(byteBuffer3.remaining());
-            this.c.put(byteBuffer3);
-        }
-        this.r = hVar.e;
-        return true;
+        g gVar = (g) obj;
+        return this.d == gVar.d && this.e == gVar.e && this.f == gVar.f && this.g == gVar.g && this.i == gVar.i && this.j == gVar.j && this.k == gVar.k && this.o == gVar.o && this.r == gVar.r && this.s == gVar.s && Objects.equals(this.a, gVar.a) && Objects.equals(this.b, gVar.b) && Objects.equals(this.c, gVar.c) && Objects.equals(this.h, gVar.h) && Objects.equals(this.l, gVar.l) && Objects.equals(this.m, gVar.m) && Objects.equals(this.n, gVar.n) && Objects.equals(this.p, gVar.p) && Objects.equals(this.q, gVar.q) && Objects.equals(this.t, gVar.t);
     }
 
-    public final boolean f() {
-        return this.s > 0;
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, this.c, Long.valueOf(this.d), Long.valueOf(this.e), Long.valueOf(this.f), Long.valueOf(this.g), this.h, Boolean.valueOf(this.i), Long.valueOf(this.j), Long.valueOf(this.k), this.l, this.m, this.n, Boolean.valueOf(this.o), this.p, this.q, Long.valueOf(this.r), Long.valueOf(this.s), this.t);
     }
 }

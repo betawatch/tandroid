@@ -1,38 +1,30 @@
 package k2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t implements Runnable {
+public final /* synthetic */ class t implements g2.p, g2.k {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hf.b b;
-    public final /* synthetic */ x0 c;
+    public final /* synthetic */ float b;
 
-    public /* synthetic */ t(hf.b bVar, x0 x0Var, int i10) {
-        this.a = i10;
-        this.b = bVar;
-        this.c = x0Var;
+    public /* synthetic */ t(float f10, int i3) {
+        this.a = i3;
+        this.b = f10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        x0 x0Var = this.c;
-        hf.b bVar = this.b;
-        switch (i10) {
-            case 0:
-                w wVar = (w) bVar.c;
-                String str = e2.l0.a;
-                j2.g gVar = ((i2.c0) wVar).a.s;
-                j2.a U = gVar.U();
-                gVar.V(U, 1032, new j2.e(U, x0Var, 17));
+    @Override // g2.k
+    public void accept(Object obj) {
+        switch (this.a) {
+            case 1:
+                ((o4.l1) obj).b(this.b);
                 break;
             default:
-                w wVar2 = (w) bVar.c;
-                String str2 = e2.l0.a;
-                j2.g gVar2 = ((i2.c0) wVar2).a.s;
-                j2.a U2 = gVar2.U();
-                gVar2.V(U2, 1031, new j2.e(U2, x0Var, 0));
+                ((o4.l1) obj).R(this.b);
                 break;
         }
+    }
+
+    @Override // g2.p
+    public void invoke(Object obj) {
+        ((d2.c1) obj).s(this.b);
     }
 }

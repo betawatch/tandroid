@@ -1,492 +1,64 @@
 package m4;
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import e9.x1;
-import j$.util.Objects;
-import java.util.Arrays;
-import java.util.List;
-import v7.t6;
+import e3.a0;
+import e3.b0;
+import e3.c0;
+import g2.n0;
+import h2.s;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e {
-    public static final String h;
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public final p1 a;
+public final class e implements b0 {
+    public final s a;
     public final int b;
-    public final int c;
-    public final Bundle d;
-    public final i9.a e;
-    public final boolean f;
-    public final Object g;
+    public final long c;
+    public final long d;
+    public final long e;
 
-    static {
-        String str = e2.l0.a;
-        h = Integer.toString(0, 36);
-        i = Integer.toString(1, 36);
-        j = Integer.toString(2, 36);
-        Integer.toString(3, 36);
-        k = Integer.toString(4, 36);
-        l = Integer.toString(5, 36);
-        Integer.toString(6, 36);
-        Integer.toString(7, 36);
-        m = Integer.toString(8, 36);
-        n = Integer.toString(9, 36);
+    public e(s sVar, int i3, long j10, long j11) {
+        this.a = sVar;
+        this.b = i3;
+        this.c = j10;
+        long j12 = (j11 - j10) / sVar.c;
+        this.d = j12;
+        this.e = i(j12);
     }
 
-    public e(p1 p1Var, int i10, int i11, Bundle bundle, boolean z10, i9.a aVar, Object obj) {
-        this.a = p1Var;
-        this.b = i10;
-        this.c = i11;
-        this.d = new Bundle(bundle);
-        this.f = z10;
-        this.e = aVar;
-        this.g = obj;
+    @Override // e3.b0
+    public final boolean d() {
+        return true;
     }
 
-    public static Object a(int i10, Object obj) {
-        if (obj == null) {
-            return null;
-        }
-        switch (i10) {
-            case 1:
-                if (obj instanceof Integer) {
-                    obj = Long.valueOf(((Integer) obj).longValue());
-                }
-                t6.e("Parameter has incorrect type.", obj instanceof Long);
-                break;
-            case 2:
-                t6.e("Parameter has incorrect type.", obj instanceof Integer);
-                break;
-            case 3:
-                t6.e("Parameter has incorrect type.", obj instanceof Boolean);
-                break;
-            case 4:
-                if (obj instanceof Double) {
-                    obj = Float.valueOf(((Double) obj).floatValue());
-                }
-                t6.e("Parameter has incorrect type.", obj instanceof Float);
-                break;
-            case 5:
-                t6.e("Parameter has incorrect type.", obj instanceof b2.g1);
-                break;
-            case 6:
-                t6.e("Parameter has incorrect type.", obj instanceof b2.p0);
-                break;
-            case 7:
-                t6.e("Parameter has incorrect type.", obj instanceof b2.s0);
-                break;
-            case 8:
-                t6.e("Parameter has incorrect type.", obj instanceof b2.u1);
-                break;
-        }
-        return obj;
-    }
-
-    public static boolean c(int i10, List list) {
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            if (((e) list.get(i11)).e.b(0) == i10) {
-                return true;
-            }
-        }
+    @Override // e3.b0
+    public final /* synthetic */ boolean e() {
         return false;
     }
 
-    public static e d(p1 p1Var) {
-        String str = p1Var.b;
-        Bundle bundle = p1Var.c;
-        if (str.startsWith("androidx.media3.session.PLAYER_COMMAND_")) {
-            int parseInt = Integer.parseInt(str.substring(39));
-            Object h10 = h(i(parseInt), bundle);
-            d dVar = new d();
-            t6.e("sessionCommand is already set. Only one of sessionCommand and playerCommand should be set.", ((p1) dVar.d) == null);
-            dVar.a = parseInt;
-            dVar.g = a(i(parseInt), h10);
-            return dVar.a();
+    @Override // e3.b0
+    public final a0 f(long j10) {
+        s sVar = this.a;
+        long j11 = this.d;
+        long j12 = n0.j((sVar.b * j10) / (this.b * 1000000), 0L, j11 - 1);
+        long j13 = this.c;
+        long i3 = i(j12);
+        c0 c0Var = new c0(i3, (sVar.c * j12) + j13);
+        if (i3 >= j10 || j12 == j11 - 1) {
+            return new a0(c0Var, c0Var);
         }
-        int parseInt2 = Integer.parseInt(str.substring(40));
-        Object h11 = h(parseInt2 == 40010 ? 5 : 0, bundle);
-        d dVar2 = new d();
-        p1 p1Var2 = new p1(parseInt2);
-        t6.e("playerCommands is already set. Only one of sessionCommand and playerCommand should be set.", dVar2.a == -1);
-        dVar2.d = p1Var2;
-        dVar2.g = a(p1Var2.a == 40010 ? 5 : 0, h11);
-        return dVar2.a();
+        long j14 = j12 + 1;
+        return new a0(c0Var, new c0(i(j14), (sVar.c * j14) + j13));
     }
 
-    public static x1 g(List list) {
-        int b10;
-        if (list.isEmpty()) {
-            e9.l0 l0Var = e9.n0.b;
-            return x1.e;
-        }
-        int i10 = -1;
-        int i11 = -1;
-        for (int i12 = 0; i12 < list.size(); i12++) {
-            e eVar = (e) list.get(i12);
-            boolean z10 = eVar.f;
-            i9.a aVar = eVar.e;
-            if (z10 && eVar.b()) {
-                int i13 = 0;
-                while (true) {
-                    if (i13 < aVar.b && (b10 = aVar.b(i13)) != 6) {
-                        if (i10 == -1 && b10 == 2) {
-                            i10 = i12;
-                            break;
-                        }
-                        if (i11 == -1 && b10 == 3) {
-                            i11 = i12;
-                            break;
-                        }
-                        i13++;
-                    }
-                }
-            }
-        }
-        e9.k0 t10 = e9.n0.t();
-        if (i10 != -1) {
-            t10.c(((e) list.get(i10)).e(2));
-        }
-        if (i11 != -1) {
-            t10.c(((e) list.get(i11)).e(3));
-        }
-        for (int i14 = 0; i14 < list.size(); i14++) {
-            e eVar2 = (e) list.get(i14);
-            if (eVar2.f && eVar2.b() && i14 != i10 && i14 != i11 && eVar2.e.a(6)) {
-                t10.c(eVar2.e(6));
-            }
-        }
-        return t10.f();
+    @Override // e3.b0
+    public final long h() {
+        return this.e;
     }
 
-    public static Object h(int i10, Bundle bundle) {
-        if (!bundle.containsKey("androidx.media3.session.CUSTOM_COMMAND_PARAMETER")) {
-            return null;
-        }
-        switch (i10) {
-            case 1:
-                return Long.valueOf(bundle.getLong("androidx.media3.session.CUSTOM_COMMAND_PARAMETER"));
-            case 2:
-                return Integer.valueOf(bundle.getInt("androidx.media3.session.CUSTOM_COMMAND_PARAMETER"));
-            case 3:
-                return Boolean.valueOf(bundle.getBoolean("androidx.media3.session.CUSTOM_COMMAND_PARAMETER"));
-            case 4:
-                return Float.valueOf(bundle.getFloat("androidx.media3.session.CUSTOM_COMMAND_PARAMETER"));
-            case 5:
-                Bundle bundle2 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
-                bundle2.getClass();
-                return b2.g1.a(bundle2);
-            case 6:
-                Bundle bundle3 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
-                bundle3.getClass();
-                return b2.p0.a(9, bundle3);
-            case 7:
-                Bundle bundle4 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
-                bundle4.getClass();
-                return b2.s0.b(9, bundle4);
-            case 8:
-                Bundle bundle5 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
-                bundle5.getClass();
-                return b2.u1.b(bundle5);
-            default:
-                return null;
-        }
-    }
-
-    public static int i(int i10) {
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 == 5) {
-            return 1;
-        }
-        if (i10 == 10) {
-            return 2;
-        }
-        if (i10 == 19) {
-            return 7;
-        }
-        if (i10 == 24) {
-            return 4;
-        }
-        if (i10 == 29) {
-            return 8;
-        }
-        if (i10 == 31) {
-            return 6;
-        }
-        switch (i10) {
-            case 13:
-                return 4;
-            case 14:
-                return 3;
-            case 15:
-                return 2;
-            default:
-                return 0;
-        }
-    }
-
-    public static boolean j(String str) {
-        return str.startsWith("androidx.media3.session.PLAYER_COMMAND_") || str.startsWith("androidx.media3.session.SESSION_COMMAND_");
-    }
-
-    public final boolean b() {
-        Object obj = this.g;
-        p1 p1Var = this.a;
-        if (p1Var != null) {
-            int i10 = p1Var.a;
-            if (i10 != 0) {
-                return i10 == 40010 && obj != null;
-            }
-            return true;
-        }
-        int i11 = this.b;
-        if (i11 != 19) {
-            if (i11 != 24) {
-                if (i11 != 29 && i11 != 31) {
-                    switch (i11) {
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                        case 6:
-                        case 7:
-                        case 8:
-                        case 9:
-                        case 11:
-                        case 12:
-                        case 14:
-                            break;
-                        case 5:
-                        case 10:
-                        case 13:
-                        case 15:
-                            break;
-                        default:
-                            return false;
-                    }
-                }
-            }
-            return true;
-        }
-        return obj != null;
-    }
-
-    public final e e(int i10) {
-        String str;
-        p1 p1Var = this.a;
-        if (p1Var != null && p1Var.a == 0) {
-            i9.a aVar = new i9.a(new int[]{i10});
-            if (this.e.equals(aVar)) {
-                return this;
-            }
-            return new e(this.a, this.b, this.c, new Bundle(this.d), this.f, aVar, this.g);
-        }
-        Bundle bundle = Bundle.EMPTY;
-        if (this.g != null) {
-            bundle = new Bundle();
-            l("androidx.media3.session.CUSTOM_COMMAND_PARAMETER", 9, bundle);
-        }
-        if (p1Var != null) {
-            str = "androidx.media3.session.SESSION_COMMAND_" + p1Var.a;
-        } else {
-            str = "androidx.media3.session.PLAYER_COMMAND_" + this.b;
-        }
-        return new e(new p1(str, bundle), -1, this.c, this.d, this.f, new i9.a(new int[]{i10}), null);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof e)) {
-            return false;
-        }
-        e eVar = (e) obj;
-        return Objects.equals(this.a, eVar.a) && this.b == eVar.b && this.c == eVar.c && TextUtils.equals("", "") && this.f == eVar.f && this.e.equals(eVar.e) && Objects.equals(this.g, eVar.g);
-    }
-
-    public final void f(b2.f1 f1Var) {
-        if (this.f) {
-            Object obj = this.g;
-            int i10 = this.b;
-            if (i10 == 19) {
-                if (obj != null) {
-                    f1Var.B((b2.s0) obj);
-                    return;
-                }
-                return;
-            }
-            if (i10 == 24) {
-                if (obj != null) {
-                    f1Var.S(((Float) obj).floatValue());
-                    return;
-                } else if (f1Var.F() == 0.0f) {
-                    f1Var.b0();
-                    return;
-                } else {
-                    f1Var.B0();
-                    return;
-                }
-            }
-            if (i10 == 29) {
-                if (obj != null) {
-                    f1Var.p((b2.u1) obj);
-                    return;
-                }
-                return;
-            }
-            if (i10 == 31) {
-                if (obj != null) {
-                    f1Var.s0((b2.p0) obj);
-                    return;
-                }
-                return;
-            }
-            switch (i10) {
-                case 1:
-                    if (obj == null) {
-                        f1Var.W(!f1Var.t());
-                        break;
-                    } else {
-                        f1Var.W(((Boolean) obj).booleanValue());
-                        break;
-                    }
-                case 2:
-                    f1Var.a();
-                    break;
-                case 3:
-                    f1Var.stop();
-                    break;
-                case 4:
-                    f1Var.G();
-                    break;
-                case 5:
-                    if (obj != null) {
-                        f1Var.f(((Long) obj).longValue());
-                        break;
-                    }
-                    break;
-                case 6:
-                    f1Var.E();
-                    break;
-                case 7:
-                    f1Var.T();
-                    break;
-                case 8:
-                    f1Var.e0();
-                    break;
-                case 9:
-                    f1Var.H0();
-                    break;
-                case 10:
-                    if (obj != null) {
-                        f1Var.X(((Integer) obj).intValue());
-                        break;
-                    }
-                    break;
-                case 11:
-                    f1Var.J0();
-                    break;
-                case 12:
-                    f1Var.I0();
-                    break;
-                case 13:
-                    if (obj != null) {
-                        f1Var.b(((Float) obj).floatValue());
-                        break;
-                    }
-                    break;
-                case 14:
-                    if (obj == null) {
-                        f1Var.w(!f1Var.D0());
-                        break;
-                    } else {
-                        f1Var.w(((Boolean) obj).booleanValue());
-                        break;
-                    }
-                case 15:
-                    if (obj != null) {
-                        f1Var.k(((Integer) obj).intValue());
-                        break;
-                    }
-                    break;
-            }
-        }
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, Integer.valueOf(this.b), 0, Integer.valueOf(this.c), "", Boolean.valueOf(this.f), null, this.e, this.g);
-    }
-
-    public final Bundle k(int i10) {
-        Bundle bundle = new Bundle();
-        p1 p1Var = this.a;
-        if (p1Var != null) {
-            bundle.putBundle(h, p1Var.a());
-        }
-        int i11 = this.b;
-        if (i11 != -1) {
-            bundle.putInt(i, i11);
-        }
-        int i12 = this.c;
-        if (i12 != 0) {
-            bundle.putInt(j, i12);
-        }
-        Bundle bundle2 = this.d;
-        if (!bundle2.isEmpty()) {
-            bundle.putBundle(k, bundle2);
-        }
-        boolean z10 = this.f;
-        if (!z10) {
-            bundle.putBoolean(l, z10);
-        }
-        i9.a aVar = this.e;
-        if (aVar.b != 1 || aVar.b(0) != 6) {
-            bundle.putIntArray(m, Arrays.copyOfRange(aVar.a, 0, aVar.b));
-        }
-        if (this.g != null) {
-            l(n, i10, bundle);
-        }
-        return bundle;
-    }
-
-    public final void l(String str, int i10, Bundle bundle) {
-        p1 p1Var = this.a;
-        int i11 = p1Var != null ? p1Var.a == 40010 ? 5 : 0 : i(this.b);
-        Object obj = this.g;
-        switch (i11) {
-            case 1:
-                bundle.putLong(str, ((Long) obj).longValue());
-                break;
-            case 2:
-                bundle.putInt(str, ((Integer) obj).intValue());
-                break;
-            case 3:
-                bundle.putBoolean(str, ((Boolean) obj).booleanValue());
-                break;
-            case 4:
-                bundle.putFloat(str, ((Float) obj).floatValue());
-                break;
-            case 5:
-                bundle.putBundle(str, ((b2.g1) obj).c());
-                break;
-            case 6:
-                bundle.putBundle(str, ((b2.p0) obj).c(i10, false));
-                break;
-            case 7:
-                bundle.putBundle(str, ((b2.s0) obj).c(i10));
-                break;
-            case 8:
-                bundle.putBundle(str, ((b2.u1) obj).c());
-                break;
-        }
+    public final long i(long j10) {
+        long j11 = j10 * this.b;
+        long j12 = this.a.b;
+        String str = n0.a;
+        return n0.a0(j11, 1000000L, j12, RoundingMode.DOWN);
     }
 }

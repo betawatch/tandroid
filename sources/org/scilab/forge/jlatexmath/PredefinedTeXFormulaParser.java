@@ -7,7 +7,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class PredefinedTeXFormulaParser {
     public static final String RESOURCE_NAME = "PredefinedTeXFormulas.xml";
@@ -21,8 +21,8 @@ public class PredefinedTeXFormulaParser {
             newInstance.setIgnoringElementContentWhitespace(true);
             newInstance.setIgnoringComments(true);
             this.root = newInstance.newDocumentBuilder().parse(inputStream).getDocumentElement();
-        } catch (Exception e) {
-            throw new XMLResourceParseException("", e);
+        } catch (Exception e10) {
+            throw new XMLResourceParseException("", e10);
         }
     }
 
@@ -37,8 +37,8 @@ public class PredefinedTeXFormulaParser {
     public void parse(Map map) {
         if ("true".equals(getAttrValueAndCheckIfNotNull("enabled", this.root))) {
             NodeList elementsByTagName = this.root.getElementsByTagName(this.type);
-            for (int i10 = 0; i10 < elementsByTagName.getLength(); i10++) {
-                Element element = (Element) elementsByTagName.item(i10);
+            for (int i3 = 0; i3 < elementsByTagName.getLength(); i3++) {
+                Element element = (Element) elementsByTagName.item(i3);
                 if ("true".equals(getAttrValueAndCheckIfNotNull("enabled", element))) {
                     String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element);
                     if ("TeXFormula".equals(this.type)) {

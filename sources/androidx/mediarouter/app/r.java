@@ -2,10 +2,10 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class r implements SeekBar.OnSeekBarChangeListener {
-    public final androidx.activity.i a = new androidx.activity.i(this, 7);
+    public final a3.o a = new a3.o(this, 8);
     public final /* synthetic */ t b;
 
     public r(t tVar) {
@@ -13,25 +13,25 @@ public final class r implements SeekBar.OnSeekBarChangeListener {
     }
 
     @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onProgressChanged(SeekBar seekBar, int i10, boolean z10) {
+    public final void onProgressChanged(SeekBar seekBar, int i3, boolean z10) {
         if (z10) {
-            p4.w wVar = (p4.w) seekBar.getTag();
-            int i11 = t.F0;
-            wVar.j(i10);
+            r4.w wVar = (r4.w) seekBar.getTag();
+            int i10 = t.G0;
+            wVar.j(i3);
         }
     }
 
     @Override // android.widget.SeekBar.OnSeekBarChangeListener
     public final void onStartTrackingTouch(SeekBar seekBar) {
         t tVar = this.b;
-        if (tVar.c0 != null) {
-            tVar.a0.removeCallbacks(this.a);
+        if (tVar.d0 != null) {
+            tVar.b0.removeCallbacks(this.a);
         }
-        tVar.c0 = (p4.w) seekBar.getTag();
+        tVar.d0 = (r4.w) seekBar.getTag();
     }
 
     @Override // android.widget.SeekBar.OnSeekBarChangeListener
     public final void onStopTrackingTouch(SeekBar seekBar) {
-        this.b.a0.postDelayed(this.a, 500L);
+        this.b.b0.postDelayed(this.a, 500L);
     }
 }

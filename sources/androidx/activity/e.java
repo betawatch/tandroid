@@ -6,24 +6,24 @@ import androidx.lifecycle.i0;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements t4.d {
+public final /* synthetic */ class e implements v4.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ e(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ e(Object obj, int i3) {
+        this.a = i3;
         this.b = obj;
     }
 
-    @Override // t4.d
+    @Override // v4.d
     public final Bundle c() {
         switch (this.a) {
             case 0:
-                m mVar = (m) this.b;
+                l lVar = (l) this.b;
                 Bundle bundle = new Bundle();
-                h hVar = mVar.x;
+                h hVar = lVar.x;
                 hVar.getClass();
                 HashMap hashMap = hVar.b;
                 bundle.putIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS", new ArrayList<>(hashMap.values()));
@@ -35,7 +35,7 @@ public final /* synthetic */ class e implements t4.d {
                 androidx.fragment.app.v vVar = (androidx.fragment.app.v) this.b;
                 while (androidx.fragment.app.v.t(vVar.s())) {
                 }
-                vVar.K.e(androidx.lifecycle.m.ON_STOP);
+                vVar.L.e(androidx.lifecycle.m.ON_STOP);
                 return new Bundle();
             case 2:
                 return ((j0) this.b).Y();

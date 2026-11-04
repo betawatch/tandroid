@@ -1,90 +1,51 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ki extends z4.a {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ SparseArray d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ org.telegram.messenger.kj g;
-    public final /* synthetic */ org.telegram.ui.Components.mi0 h;
-    public final /* synthetic */ org.telegram.messenger.kj i;
-    public final /* synthetic */ SparseIntArray j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ z4.g l;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
-    public final /* synthetic */ int[] n;
-    public final /* synthetic */ int o;
-    public final /* synthetic */ un p;
+public final class ki extends hh.b {
+    public final /* synthetic */ int s;
+    public final /* synthetic */ wm w;
 
-    public ki(un unVar, int i10, SparseArray sparseArray, boolean z10, List list, org.telegram.messenger.kj kjVar, org.telegram.ui.Components.mi0 mi0Var, org.telegram.messenger.kj kjVar2, SparseIntArray sparseIntArray, int i11, z4.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
-        this.p = unVar;
-        this.c = i10;
-        this.d = sparseArray;
-        this.e = z10;
-        this.f = list;
-        this.g = kjVar;
-        this.h = mi0Var;
-        this.i = kjVar2;
-        this.j = sparseIntArray;
-        this.k = i11;
-        this.l = gVar;
-        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.n = iArr;
-        this.o = i12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ki(wm wmVar, org.telegram.ui.ActionBar.e6 e6Var, int i3, int i10) {
+        super(i3, e6Var);
+        this.s = i10;
+        this.w = wmVar;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.c;
-    }
-
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        int i11;
-        SparseArray sparseArray = this.d;
-        View view = (View) sparseArray.get(i10);
-        if (view != null) {
-            gVar.addView(view);
-            return view;
+    @Override // hh.b, hh.a
+    public final int w0() {
+        int i3;
+        int i10;
+        switch (this.s) {
+            case 0:
+                wm wmVar = this.w;
+                i3 = ((org.telegram.ui.ActionBar.d2) wmVar).currentAccount;
+                if (!b8.cd.c(i3, wmVar.ya)) {
+                    return i0.a.o(wmVar.getThemedColor(org.telegram.ui.ActionBar.k6.Ge), org.telegram.messenger.hs.e4);
+                }
+                um umVar = wmVar.ya;
+                if (umVar == null || umVar.a()) {
+                    a();
+                    return this.d;
+                }
+                a();
+                return i0.a.o(this.d, org.telegram.messenger.hs.t3);
+            case 1:
+                return this.w.x.w0();
+            default:
+                wm wmVar2 = this.w;
+                i10 = ((org.telegram.ui.ActionBar.d2) wmVar2).currentAccount;
+                if (!b8.cd.c(i10, wmVar2.ya)) {
+                    return i0.a.o(wmVar2.getThemedColor(org.telegram.ui.ActionBar.k6.d6), org.telegram.messenger.hs.e4);
+                }
+                um umVar2 = wmVar2.ya;
+                if (umVar2 == null || umVar2.a()) {
+                    a();
+                    return this.d;
+                }
+                a();
+                return i0.a.o(this.d, org.telegram.messenger.hs.t3);
         }
-        int i12 = this.e ? i10 - 1 : i10;
-        TLRPC.ReactionCount reactionCount = i12 >= 0 ? (TLRPC.ReactionCount) this.f.get(i12) : null;
-        Context context = gVar.getContext();
-        un unVar = this.p;
-        sn snVar = unVar.xa;
-        i11 = ((org.telegram.ui.ActionBar.k2) unVar).currentAccount;
-        org.telegram.ui.Components.wi0 wi0Var = new org.telegram.ui.Components.wi0(context, snVar, i11, this.g, reactionCount, true);
-        org.telegram.ui.Components.mi0 mi0Var = this.h;
-        wi0Var.h(mi0Var.getSeenUsers());
-        wi0Var.G = new y0(this, 18);
-        wi0Var.E = new ng.d(13, this, this.i);
-        wi0Var.D = new mg.e(this.j, i10, this.k, this.l, this.m, this.n);
-        if (i12 < 0) {
-            wi0Var.setPredictiveCount(this.o);
-            mi0Var.setSeenCallback(new f3(wi0Var, 1));
-        }
-        gVar.addView(wi0Var);
-        sparseArray.put(i10, wi0Var);
-        return wi0Var;
-    }
-
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
     }
 }

@@ -1,20 +1,25 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class ap {
-    public final TL_communities.CommunityPeer a;
-    public final TLRPC.Chat b;
-    public final TLRPC.User c;
-    public final TLRPC.Dialog d;
+    public final int a;
+    public final HashSet b = new HashSet();
+    public boolean c;
+    public boolean d;
 
-    public ap(TLRPC.Chat chat, TLRPC.Dialog dialog, TLRPC.User user, TL_communities.CommunityPeer communityPeer) {
-        this.a = communityPeer;
-        this.b = chat;
-        this.c = user;
-        this.d = dialog;
+    public ap(int i3) {
+        this.a = i3;
+        if (this.c || this.d) {
+            return;
+        }
+        this.c = true;
+        TL_account.getSavedMusicIds getsavedmusicids = new TL_account.getSavedMusicIds();
+        getsavedmusicids.hash = 0L;
+        ConnectionsManager.getInstance(i3).sendRequest(getsavedmusicids, new s1(this, 5));
     }
 }

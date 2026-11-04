@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzvl {
     public static final /* synthetic */ int zza = 0;
@@ -42,18 +42,18 @@ public final class zzvl {
         if (!zze(j11)) {
             throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j11)));
         }
-        int i10 = (int) ((j10 % 1000) * 1000000);
-        if (i10 <= -1000000000 || i10 >= 1000000000) {
-            j11 = zzps.zza(j11, i10 / 1000000000);
-            i10 %= 1000000000;
+        int i3 = (int) ((j10 % 1000) * 1000000);
+        if (i3 <= -1000000000 || i3 >= 1000000000) {
+            j11 = zzps.zza(j11, i3 / 1000000000);
+            i3 %= 1000000000;
         }
-        if (i10 < 0) {
-            i10 += 1000000000;
+        if (i3 < 0) {
+            i3 += 1000000000;
             j11 = zzps.zzb(j11, 1L);
         }
         zzur zzi = zzut.zzi();
         zzi.zzf(j11);
-        zzi.zze(i10);
+        zzi.zze(i3);
         zzut zzutVar = (zzut) zzi.zzk();
         zza(zzutVar);
         return zzutVar;

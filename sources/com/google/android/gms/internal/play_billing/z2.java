@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class z2 extends b3 {
     @Override // com.google.android.gms.internal.play_billing.b3
@@ -37,8 +37,8 @@ public final class z2 extends b3 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.b3
-    public final void f(Object obj, long j10, float f7) {
-        this.a.putInt(obj, j10, Float.floatToIntBits(f7));
+    public final void f(Object obj, long j10, float f10) {
+        this.a.putInt(obj, j10, Float.floatToIntBits(f10));
     }
 
     @Override // com.google.android.gms.internal.play_billing.b3

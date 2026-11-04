@@ -1,34 +1,88 @@
 package c1;
 
-import kotlin.jvm.internal.h;
-import ld.p;
+import android.util.Log;
+import db.j0;
+import db.k0;
+import dd.k;
+import java.util.concurrent.Executor;
+import kotlin.jvm.internal.j;
+import le.m;
+import od.l;
+import w0.i;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b extends h implements p {
+public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(int i10, Object obj, Class cls, String str, String str2, int i11, int i12) {
-        super(i10, obj, cls, str, str2, i11);
-        this.a = i12;
+    public /* synthetic */ b(fe.d dVar, fe.c cVar) {
+        this.a = 5;
+        this.b = dVar;
     }
 
-    @Override // ld.p
-    public final Object invoke(Object obj, Object obj2) {
+    @Override // od.l
+    public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
-                ((b1.a) this.receiver).getClass();
-                return b1.a.b((String) obj, (String) obj2);
+                e eVar = (e) this.b;
+                i e10 = (i) obj;
+                j.e(e10, "e");
+                eVar.f().execute(new a(eVar, e10, 2));
+                return k.a;
             case 1:
-                ((b1.a) this.receiver).getClass();
-                return b1.a.a((String) obj, (String) obj2);
+                d1.e eVar2 = (d1.e) this.b;
+                w0.d e11 = (w0.d) obj;
+                j.e(e11, "e");
+                Executor executor = eVar2.g;
+                if (executor != null) {
+                    executor.execute(new d1.a(eVar2, e11, 0));
+                    return k.a;
+                }
+                j.h("executor");
+                throw null;
             case 2:
-                ((b1.a) this.receiver).getClass();
-                return b1.a.a((String) obj, (String) obj2);
+                k0 k0Var = (k0) this.b;
+                l1.b ex = (l1.b) obj;
+                j.e(ex, "ex");
+                Log.w("FirebaseSessions", "CorruptionException in session data DataStore", ex);
+                return new j0(k0Var.a.a(null), null, null);
+            case 3:
+                e1.d dVar = (e1.d) this.b;
+                w0.d e12 = (w0.d) obj;
+                j.e(e12, "e");
+                Executor executor2 = dVar.g;
+                if (executor2 != null) {
+                    executor2.execute(new e1.c(dVar, e12, 0));
+                    return k.a;
+                }
+                j.h("executor");
+                throw null;
+            case 4:
+                return obj == ((ed.d) this.b) ? "(this Collection)" : String.valueOf(obj);
+            case 5:
+                ((fe.d) this.b).f(null);
+                return k.a;
+            case 6:
+                m mVar = (m) this.b;
+                int intValue = ((Integer) obj).intValue();
+                return mVar.e[intValue] + ": " + mVar.i(intValue).a();
             default:
-                ((b1.a) this.receiver).getClass();
-                return b1.a.b((String) obj, (String) obj2);
+                String str = (String) this.b;
+                p1.b bVar = (p1.b) obj;
+                bVar.d(ra.i.d, str);
+                ra.i.f(bVar, str);
+                return null;
         }
+    }
+
+    public /* synthetic */ b(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
+    }
+
+    public /* synthetic */ b(ra.i iVar, String str) {
+        this.a = 7;
+        this.b = str;
     }
 }

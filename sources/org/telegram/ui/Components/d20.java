@@ -1,32 +1,277 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.voip.VoIPService;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class d20 implements Runnable {
-    public final /* synthetic */ e20 a;
+public final class d20 extends v41 {
+    public final c20 L1;
+    public int M1;
+    public final TLRPC.Chat N1;
+    public final TLRPC.ChatFull O1;
+    public final ArrayList P1;
+    public final ArrayList Q1;
+    public boolean R1;
+    public final a0.h S1;
+    public final a0.h T1;
+    public boolean U1;
+    public boolean V1;
+    public final a0.h W1;
+    public final HashSet X1;
+    public org.telegram.ui.d10 Y1;
+    public boolean Z1;
+    public int a2;
+    public int b2;
+    public int c2;
+    public int d2;
+    public int e2;
+    public int f2;
+    public int g2;
+    public int h2;
+    public int i2;
+    public int j2;
 
-    public d20(e20 e20Var) {
-        this.a = e20Var;
+    public d20(Context context, int i3, TLRPC.Chat chat, TLRPC.ChatFull chatFull, a0.h hVar, HashSet hashSet) {
+        super(i3, context, null);
+        this.P1 = new ArrayList();
+        this.Q1 = new ArrayList();
+        this.S1 = new a0.h();
+        this.T1 = new a0.h();
+        this.q0 = 75;
+        this.N1 = chat;
+        this.O1 = chatFull;
+        this.W1 = hVar;
+        this.X1 = hashSet;
+        this.l1.setOnItemClickListener(new k(this, 9));
+        c20 c20Var = new c20(this, context);
+        this.L1 = c20Var;
+        this.m1 = c20Var;
+        ci.j1 j1Var = this.l1;
+        z10 z10Var = new z10(this, context);
+        this.n1 = z10Var;
+        j1Var.setAdapter(z10Var);
+        if (!this.U1) {
+            this.R1 = false;
+            S0();
+        }
+        T0();
+        M0(0.0f);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !sharedInstance.isMicMute()) {
+    @Override // org.telegram.ui.Components.v41
+    public final void J0(MotionEvent motionEvent, bh.g gVar) {
+        org.telegram.ui.x30 x30Var = this.Y1.a;
+        if (x30Var.o2) {
             return;
         }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.d.f(sharedInstance.getSelfId());
-        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || org.telegram.messenger.w3.w(14, sharedInstance.getChat())) {
-            e20 e20Var = this.a;
-            org.telegram.messenger.i0.h3(e20Var.f, 90L);
-            try {
-                e20Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            e20Var.c = true;
+        if (motionEvent.getX() <= gVar.getLeft() || motionEvent.getX() >= gVar.getRight() || motionEvent.getY() <= gVar.getTop() || motionEvent.getY() >= gVar.getBottom()) {
+            x30Var.u1(x30Var.w3, null, gVar, false);
+        } else {
+            x30Var.u1(x30Var.w3, null, gVar, true);
         }
+    }
+
+    @Override // org.telegram.ui.Components.v41
+    public final void L0(String str) {
+        c20 c20Var = this.L1;
+        kg.v1 v1Var = c20Var.d;
+        d20 d20Var = c20Var.x;
+        a20 a20Var = c20Var.e;
+        if (a20Var != null) {
+            org.telegram.messenger.g0.r(a20Var);
+            c20Var.e = null;
+        }
+        v1Var.f(null, null);
+        TLRPC.Chat chat = d20Var.N1;
+        ci.j1 j1Var = d20Var.l1;
+        v1Var.g(null, true, false, true, false, chat.id, false, 2, -1);
+        if (TextUtils.isEmpty(str)) {
+            c20Var.n = -1;
+            return;
+        }
+        d20Var.r1.e(true, true);
+        j1Var.X1 = false;
+        j1Var.Y1 = 0;
+        c20Var.f();
+        j1Var.X1 = true;
+        j1Var.Y1 = 0;
+        c20Var.h = true;
+        int i3 = c20Var.n + 1;
+        c20Var.n = i3;
+        a20 a20Var2 = new a20(c20Var, str, i3, 0);
+        c20Var.e = a20Var2;
+        org.telegram.messenger.g0.i3(a20Var2, 300L);
+        u4.h0 adapter = j1Var.getAdapter();
+        sj0 sj0Var = d20Var.m1;
+        if (adapter != sj0Var) {
+            j1Var.setAdapter(sj0Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.v41
+    public final void P0() {
+        this.A1 = org.telegram.ui.ActionBar.k6.Dh;
+        this.B1 = org.telegram.ui.ActionBar.k6.Sg;
+        int i3 = org.telegram.ui.ActionBar.k6.a;
+        this.C1 = org.telegram.ui.ActionBar.k6.Tg;
+        this.D1 = org.telegram.ui.ActionBar.k6.hh;
+        this.E1 = org.telegram.ui.ActionBar.k6.bh;
+        this.F1 = org.telegram.ui.ActionBar.k6.ch;
+        this.G1 = org.telegram.ui.ActionBar.k6.Zg;
+        this.H1 = org.telegram.ui.ActionBar.k6.fh;
+        this.I1 = org.telegram.ui.ActionBar.k6.ah;
+    }
+
+    public final void R0() {
+        if (this.Z1) {
+            ArrayList arrayList = org.telegram.messenger.g5.r(this.a).f0;
+            ArrayList arrayList2 = this.Q1;
+            arrayList2.addAll(arrayList);
+            long j10 = org.telegram.messenger.h10.i(this.a).n;
+            int size = arrayList2.size();
+            int i3 = 0;
+            while (i3 < size) {
+                TLObject tLObject = (TLObject) arrayList2.get(i3);
+                if (tLObject instanceof TLRPC.TL_contact) {
+                    long j11 = ((TLRPC.TL_contact) tLObject).user_id;
+                    if (j11 == j10 || this.W1.h(j11) >= 0 || this.X1.contains(Long.valueOf(j11))) {
+                        arrayList2.remove(i3);
+                        i3--;
+                        size--;
+                    }
+                }
+                i3++;
+            }
+            Collections.sort(arrayList2, new kg.d(org.telegram.messenger.hp.s1(this.a), ConnectionsManager.getInstance(this.a).getCurrentTime(), 2));
+        }
+    }
+
+    public final void S0() {
+        a0.h hVar;
+        TLRPC.Chat chat = this.N1;
+        boolean T = org.telegram.messenger.t3.T(chat);
+        TLRPC.ChatFull chatFull = this.O1;
+        if (T) {
+            this.U1 = true;
+            zu0 zu0Var = this.r1;
+            if (zu0Var != null) {
+                zu0Var.e(true, false);
+            }
+            sj0 sj0Var = this.n1;
+            if (sj0Var != null) {
+                sj0Var.f();
+            }
+            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
+            tL_channels_getParticipants.channel = org.telegram.messenger.hp.i1(chat);
+            if (chatFull != null && chatFull.participants_count <= 200) {
+                tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
+            } else if (this.R1) {
+                tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
+            } else {
+                this.M1 = 2;
+                tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsContacts();
+                this.R1 = true;
+                S0();
+            }
+            tL_channels_getParticipants.filter.q = "";
+            tL_channels_getParticipants.offset = 0;
+            tL_channels_getParticipants.limit = org.telegram.messenger.hs.e3;
+            ConnectionsManager.getInstance(this.a).sendRequest(tL_channels_getParticipants, new org.telegram.ui.ActionBar.h6(19, this, tL_channels_getParticipants));
+            return;
+        }
+        this.U1 = false;
+        ArrayList arrayList = this.P1;
+        arrayList.clear();
+        this.Q1.clear();
+        a0.h hVar2 = this.S1;
+        hVar2.b();
+        this.T1.b();
+        if (chatFull != null) {
+            long j10 = org.telegram.messenger.h10.i(this.a).n;
+            int size = chatFull.participants.participants.size();
+            for (int i3 = 0; i3 < size; i3++) {
+                TLRPC.ChatParticipant chatParticipant = chatFull.participants.participants.get(i3);
+                long j11 = chatParticipant.user_id;
+                if (j11 != j10 && ((hVar = this.W1) == null || hVar.h(j11) < 0)) {
+                    TLRPC.User a22 = org.telegram.messenger.hp.s1(this.a).a2(Long.valueOf(chatParticipant.user_id));
+                    if (!org.telegram.messenger.l10.x(a22) && !a22.bot) {
+                        arrayList.add(chatParticipant);
+                        hVar2.k(chatParticipant, chatParticipant.user_id);
+                    }
+                }
+            }
+            if (arrayList.isEmpty()) {
+                this.Z1 = true;
+                R0();
+            }
+        }
+        T0();
+        sj0 sj0Var2 = this.n1;
+        if (sj0Var2 != null) {
+            sj0Var2.f();
+        }
+    }
+
+    public final void T0() {
+        this.a2 = -1;
+        this.c2 = -1;
+        this.d2 = -1;
+        this.e2 = -1;
+        this.f2 = -1;
+        this.g2 = -1;
+        this.h2 = -1;
+        this.b2 = -1;
+        boolean z10 = true;
+        this.j2 = 1;
+        TLRPC.Chat chat = this.N1;
+        if (org.telegram.messenger.t3.t0(chat) || org.telegram.messenger.t3.y(3, chat)) {
+            int i3 = this.j2;
+            this.j2 = i3 + 1;
+            this.a2 = i3;
+        }
+        if (!this.U1 || this.V1) {
+            ArrayList arrayList = this.Q1;
+            if (arrayList.isEmpty()) {
+                z10 = false;
+            } else {
+                int i10 = this.j2;
+                int i11 = i10 + 1;
+                this.j2 = i11;
+                this.e2 = i10;
+                this.f2 = i11;
+                int size = arrayList.size() + i11;
+                this.j2 = size;
+                this.g2 = size;
+            }
+            ArrayList arrayList2 = this.P1;
+            if (!arrayList2.isEmpty()) {
+                if (z10) {
+                    int i12 = this.j2;
+                    this.j2 = i12 + 1;
+                    this.h2 = i12;
+                }
+                int i13 = this.j2;
+                this.c2 = i13;
+                int size2 = arrayList2.size() + i13;
+                this.j2 = size2;
+                this.d2 = size2;
+            }
+        }
+        if (this.U1) {
+            int i14 = this.j2;
+            this.j2 = i14 + 1;
+            this.i2 = i14;
+        }
+        int i15 = this.j2;
+        this.j2 = i15 + 1;
+        this.b2 = i15;
     }
 }

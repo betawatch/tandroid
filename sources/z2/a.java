@@ -1,21 +1,28 @@
 package z2;
 
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements Executor {
-    public final /* synthetic */ Executor a;
-    public final /* synthetic */ xg.a b;
+public final class a {
+    public final long a;
+    public final long b;
 
-    public a(ExecutorService executorService, xg.a aVar) {
-        this.a = executorService;
-        this.b = aVar;
+    public a(long j10, long j11) {
+        this.a = j10;
+        this.b = j11;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.a.execute(runnable);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        return this.a == aVar.a && this.b == aVar.b;
+    }
+
+    public final int hashCode() {
+        return (((int) this.a) * 31) + ((int) this.b);
     }
 }

@@ -7,136 +7,136 @@ import android.widget.TextView;
 import java.util.HashMap;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class AlertDialog$Builder {
-    public final x1 a;
+    public final s1 a;
     public final boolean[] b;
 
     public AlertDialog$Builder(Context context) {
         this(0, context, null);
     }
 
-    public final x1 a() {
+    public final s1 a() {
         return this.a;
     }
 
-    public x1 b(int i10, Context context, p6 p6Var) {
-        return new x1(i10, context, p6Var);
+    public s1 b(int i3, Context context, e6 e6Var) {
+        return new s1(i3, context, e6Var);
     }
 
     public final void c() {
-        int i10 = x1.l1;
+        int i3 = s1.m1;
         this.a.getClass();
     }
 
-    public final void d(int i10) {
-        int i11 = (-i10) - 1;
-        if (i11 >= 0) {
+    public final void d(int i3) {
+        int i10 = (-i3) - 1;
+        if (i10 >= 0) {
             boolean[] zArr = this.b;
-            if (i11 < zArr.length) {
-                zArr[i11] = true;
+            if (i10 < zArr.length) {
+                zArr[i10] = true;
             }
         }
     }
 
     public final void e() {
-        this.a.S0 = 0.5f;
+        this.a.T0 = 0.5f;
     }
 
     public final void f(CharSequence[] charSequenceArr, DialogInterface.OnClickListener onClickListener) {
-        x1 x1Var = this.a;
-        x1Var.P = charSequenceArr;
-        x1Var.M = onClickListener;
+        s1 s1Var = this.a;
+        s1Var.Q = charSequenceArr;
+        s1Var.N = onClickListener;
     }
 
     public final void g(CharSequence charSequence) {
-        this.a.T = charSequence;
+        this.a.U = charSequence;
     }
 
-    public final void h(String str, u1 u1Var) {
-        x1 x1Var = this.a;
-        x1Var.p0 = str;
-        x1Var.q0 = u1Var;
+    public final void h(String str, p1 p1Var) {
+        s1 s1Var = this.a;
+        s1Var.q0 = str;
+        s1Var.r0 = p1Var;
     }
 
-    public final void i(String str, u1 u1Var) {
-        x1 x1Var = this.a;
-        x1Var.t0 = str;
-        x1Var.u0 = u1Var;
+    public final void i(String str, p1 p1Var) {
+        s1 s1Var = this.a;
+        s1Var.u0 = str;
+        s1Var.v0 = p1Var;
     }
 
     public final void j(DialogInterface.OnDismissListener onDismissListener) {
         this.a.setOnDismissListener(onDismissListener);
     }
 
-    public final void k(CharSequence charSequence, u1 u1Var) {
-        x1 x1Var = this.a;
-        x1Var.n0 = charSequence;
-        x1Var.o0 = u1Var;
+    public final void k(CharSequence charSequence, p1 p1Var) {
+        s1 s1Var = this.a;
+        s1Var.o0 = charSequence;
+        s1Var.p0 = p1Var;
     }
 
     public final void l(CharSequence charSequence) {
-        this.a.R = charSequence;
+        this.a.S = charSequence;
     }
 
-    public final void m(int i10, int i11, int i12, HashMap hashMap) {
-        x1 x1Var = this.a;
-        x1Var.X = i10;
-        x1Var.Y = i11;
-        x1Var.U0 = false;
-        x1Var.c0 = i12;
-        x1Var.d0 = -1;
-        x1Var.Z = hashMap;
+    public final void m(int i3, int i10, int i11, HashMap hashMap) {
+        s1 s1Var = this.a;
+        s1Var.Y = i3;
+        s1Var.Z = i10;
+        s1Var.V0 = false;
+        s1Var.d0 = i11;
+        s1Var.e0 = -1;
+        s1Var.a0 = hashMap;
     }
 
-    public final void n(int i10, p6 p6Var) {
-        x1 x1Var = this.a;
-        x1Var.d0 = i10;
-        x1Var.e0 = p6Var;
-        x1Var.c0 = t6.w0(i10, p6Var);
+    public final void n(int i3, e6 e6Var) {
+        s1 s1Var = this.a;
+        s1Var.e0 = i3;
+        s1Var.f0 = e6Var;
+        s1Var.d0 = k6.w0(i3, e6Var);
     }
 
     public final void o(View view) {
-        x1 x1Var = this.a;
-        x1Var.b = view;
-        x1Var.e = -2;
+        s1 s1Var = this.a;
+        s1Var.b = view;
+        s1Var.e = -2;
     }
 
-    public final x1 p() {
+    public final s1 p() {
         TextView textView;
-        x1 x1Var = this.a;
-        x1Var.show();
-        int i10 = 0;
+        s1 s1Var = this.a;
+        s1Var.show();
+        int i3 = 0;
         while (true) {
             boolean[] zArr = this.b;
-            if (i10 >= zArr.length) {
-                return x1Var;
+            if (i3 >= zArr.length) {
+                return s1Var;
             }
-            if (zArr[i10] && (textView = (TextView) x1Var.d(-(i10 + 1))) != null) {
-                a7.V(textView, t6.q7, x1Var.k1);
+            if (zArr[i3] && (textView = (TextView) s1Var.d(-(i3 + 1))) != null) {
+                r6.V(textView, k6.q7, s1Var.l1);
             }
-            i10++;
+            i3++;
         }
     }
 
-    public AlertDialog$Builder setTopImage(int i10, int i11) {
-        x1 x1Var = this.a;
-        x1Var.U = i10;
-        x1Var.c0 = i11;
-        x1Var.d0 = -1;
+    public AlertDialog$Builder setTopImage(int i3, int i10) {
+        s1 s1Var = this.a;
+        s1Var.V = i3;
+        s1Var.d0 = i10;
+        s1Var.e0 = -1;
         return this;
     }
 
-    public AlertDialog$Builder(Context context, p6 p6Var) {
-        this(0, context, p6Var);
+    public AlertDialog$Builder(Context context, e6 e6Var) {
+        this(0, context, e6Var);
     }
 
-    public AlertDialog$Builder(int i10, Context context, p6 p6Var) {
+    public AlertDialog$Builder(int i3, Context context, e6 e6Var) {
         this.b = new boolean[3];
-        if (context == null && (context = org.telegram.messenger.i0.W(LaunchActivity.I1)) == null) {
-            context = org.telegram.messenger.w0.b;
+        if (context == null && (context = org.telegram.messenger.g0.W(LaunchActivity.K1)) == null) {
+            context = org.telegram.messenger.t0.b;
         }
-        this.a = b(i10, context, p6Var);
+        this.a = b(i3, context, e6Var);
     }
 }

@@ -9,23 +9,23 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.n;
+import org.telegram.tgnet.m;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class TL_wallet {
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class InputWalletReplacement extends TLObject {
-        public static InputWalletReplacement TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (InputWalletReplacement) TLObject.TLdeserialize(InputWalletReplacement.class, i10 != 1671708892 ? i10 != 1722182203 ? null : new inputWalletImported() : new inputWalletNew(), inputSerializedData, i10, z10);
+        public static InputWalletReplacement TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (InputWalletReplacement) TLObject.TLdeserialize(InputWalletReplacement.class, i3 != 1671708892 ? i3 != 1722182203 ? null : new inputWalletImported() : new inputWalletNew(), inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_walletState extends WalletState {
         public static final int constructor = -1782238101;
         public String address;
@@ -56,7 +56,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class TL_walletStateEmpty extends WalletState {
         public static final int constructor = -1665551636;
         public boolean creating;
@@ -73,23 +73,23 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class WalletState extends TLObject {
-        public static WalletState TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (WalletState) TLObject.TLdeserialize(WalletState.class, i10 != -1782238101 ? i10 != -1665551636 ? null : new TL_walletStateEmpty() : new TL_walletState(), inputSerializedData, i10, z10);
+        public static WalletState TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (WalletState) TLObject.TLdeserialize(WalletState.class, i3 != -1782238101 ? i3 != -1665551636 ? null : new TL_walletStateEmpty() : new TL_walletState(), inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class WalletTransactionPeer extends TLObject {
         public String address;
         public long channel_id;
         public String domain;
         public long user_id;
 
-        public static WalletTransactionPeer TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+        public static WalletTransactionPeer TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
             TLObject wallettransactionpeeruser;
-            switch (i10) {
+            switch (i3) {
                 case walletTransactionPeerUser.constructor /* -722833299 */:
                     wallettransactionpeeruser = new walletTransactionPeerUser();
                     break;
@@ -112,7 +112,7 @@ public class TL_wallet {
                     wallettransactionpeeruser = null;
                     break;
             }
-            return (WalletTransactionPeer) TLObject.TLdeserialize(WalletTransactionPeer.class, wallettransactionpeeruser, inputSerializedData, i10, z10);
+            return (WalletTransactionPeer) TLObject.TLdeserialize(WalletTransactionPeer.class, wallettransactionpeeruser, inputSerializedData, i3, z10);
         }
 
         public boolean equals(Object obj) {
@@ -152,7 +152,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class card extends TLObject {
         public static final int constructor = -1898953807;
         public String address;
@@ -160,8 +160,8 @@ public class TL_wallet {
         public nftItem bg_nft_item;
         public ArrayList<cardSticker> stickers = new ArrayList<>();
 
-        public static card TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (card) TLObject.TLdeserialize(card.class, -1898953807 != i10 ? null : new card(), inputSerializedData, i10, z10);
+        public static card TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (card) TLObject.TLdeserialize(card.class, -1898953807 != i3 ? null : new card(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -194,14 +194,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class cardSticker extends TLObject {
         public static final int constructor = -218035014;
         public TL_stories.MediaAreaCoordinates coordinates;
         public nftItem nft;
 
-        public static cardSticker TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (cardSticker) TLObject.TLdeserialize(cardSticker.class, -218035014 != i10 ? null : new cardSticker(), inputSerializedData, i10, z10);
+        public static cardSticker TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (cardSticker) TLObject.TLdeserialize(cardSticker.class, -218035014 != i3 ? null : new cardSticker(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -218,7 +218,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class currencyRate extends TLObject {
         public static final int constructor = 819557436;
         public String currency;
@@ -233,8 +233,8 @@ public class TL_wallet {
         public String title;
         public String translatedTitle;
 
-        public static currencyRate TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (currencyRate) TLObject.TLdeserialize(currencyRate.class, 819557436 != i10 ? null : new currencyRate(), inputSerializedData, i10, z10);
+        public static currencyRate TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (currencyRate) TLObject.TLdeserialize(currencyRate.class, 819557436 != i3 ? null : new currencyRate(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -251,13 +251,13 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class currencyRates extends TLObject {
         public static final int constructor = -1144199998;
         public ArrayList<currencyRate> rates = new ArrayList<>();
 
-        public static currencyRates TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (currencyRates) TLObject.TLdeserialize(currencyRates.class, -1144199998 != i10 ? null : new currencyRates(), inputSerializedData, i10, z10);
+        public static currencyRates TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (currencyRates) TLObject.TLdeserialize(currencyRates.class, -1144199998 != i3 ? null : new currencyRates(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -272,7 +272,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class disableBackup extends TLMethod<WalletState> {
         public static final int constructor = 185331930;
         public byte[] new_public_key;
@@ -296,12 +296,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return WalletState.TLdeserialize(inputSerializedData, i10, z10);
+        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return WalletState.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class enableBackup extends TLMethod<WalletState> {
         public static final int constructor = 1157678373;
         public byte[] new_public_key;
@@ -323,18 +323,18 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return WalletState.TLdeserialize(inputSerializedData, i10, z10);
+        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return WalletState.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class encryptedSecretPhrasePart extends TLObject {
         public static final int constructor = 417867063;
         public byte[] data;
 
-        public static encryptedSecretPhrasePart TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (encryptedSecretPhrasePart) TLObject.TLdeserialize(encryptedSecretPhrasePart.class, 417867063 != i10 ? null : new encryptedSecretPhrasePart(), inputSerializedData, i10, z10);
+        public static encryptedSecretPhrasePart TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (encryptedSecretPhrasePart) TLObject.TLdeserialize(encryptedSecretPhrasePart.class, 417867063 != i3 ? null : new encryptedSecretPhrasePart(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -349,14 +349,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class existingBalance extends TLObject {
         public static final int constructor = -1108800883;
         public boolean has_balance;
         public String url;
 
-        public static existingBalance TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (existingBalance) TLObject.TLdeserialize(existingBalance.class, -1108800883 != i10 ? null : new existingBalance(), inputSerializedData, i10, z10);
+        public static existingBalance TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (existingBalance) TLObject.TLdeserialize(existingBalance.class, -1108800883 != i3 ? null : new existingBalance(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -373,7 +373,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class exportSecretPhrase extends TLMethod<secretPhraseParts> {
         public static final int constructor = -1871197780;
         public TLRPC.InputCheckPasswordSRP password;
@@ -389,12 +389,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public secretPhraseParts deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return secretPhraseParts.TLdeserialize(inputSerializedData, i10, z10);
+        public secretPhraseParts deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return secretPhraseParts.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class fetchEncryptedSecretPhrasePart extends TLMethod<encryptedSecretPhrasePart> {
         public static final int constructor = -180804145;
         public byte[] public_key;
@@ -408,12 +408,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public encryptedSecretPhrasePart deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return encryptedSecretPhrasePart.TLdeserialize(inputSerializedData, i10, z10);
+        public encryptedSecretPhrasePart deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return encryptedSecretPhrasePart.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getBackupHolderDcs extends TLMethod<Vector<holderDc>> {
         public static final int constructor = -780544876;
 
@@ -423,12 +423,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public Vector<holderDc> deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return Vector.TLDeserialize(inputSerializedData, i10, z10, new d(20));
+        public Vector<holderDc> deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return Vector.TLDeserialize(inputSerializedData, i3, z10, new d(20));
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getCurrencyRates extends TLMethod<currencyRates> {
         public static final int constructor = -749108248;
 
@@ -438,12 +438,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public currencyRates deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return currencyRates.TLdeserialize(inputSerializedData, i10, z10);
+        public currencyRates deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return currencyRates.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getExistingWaltBalance extends TLMethod<existingBalance> {
         public static final int constructor = 1763656544;
 
@@ -453,12 +453,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public existingBalance deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return existingBalance.TLdeserialize(inputSerializedData, i10, z10);
+        public existingBalance deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return existingBalance.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getGaslessInfo extends TLMethod<TLRPC.Updates> {
         public static final int constructor = 1949167777;
 
@@ -468,12 +468,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getNfts extends TLMethod<nftItems> {
         public static final int constructor = -1944915036;
         public int limit;
@@ -487,12 +487,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public nftItems deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return nftItems.TLdeserialize(inputSerializedData, i10, z10);
+        public nftItems deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return nftItems.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getProofChallenge extends TLMethod<proofChallenge> {
         public static final int constructor = 539354775;
 
@@ -502,12 +502,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public proofChallenge deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return proofChallenge.TLdeserialize(inputSerializedData, i10, z10);
+        public proofChallenge deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return proofChallenge.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getState extends TLMethod<WalletState> {
         public static final int constructor = -1417432262;
 
@@ -517,12 +517,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return WalletState.TLdeserialize(inputSerializedData, i10, z10);
+        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return WalletState.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getTransactions extends TLMethod<walletTransactions> {
         public static final int constructor = -1467807101;
         public boolean inbound;
@@ -539,12 +539,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public walletTransactions deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return walletTransactions.TLdeserialize(inputSerializedData, i10, z10);
+        public walletTransactions deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return walletTransactions.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getTransactionsByIDs extends TLMethod<walletTransactions> {
         public static final int constructor = -2128811338;
         public ArrayList<String> id = new ArrayList<>();
@@ -556,12 +556,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public walletTransactions deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return walletTransactions.TLdeserialize(inputSerializedData, i10, z10);
+        public walletTransactions deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return walletTransactions.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getTransactionsByMsgHash extends TLMethod<walletTransactions> {
         public static final int constructor = -1497663139;
         public ArrayList<String> msg_hash = new ArrayList<>();
@@ -573,12 +573,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public walletTransactions deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return walletTransactions.TLdeserialize(inputSerializedData, i10, z10);
+        public walletTransactions deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return walletTransactions.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getUserAddresses extends TLMethod<userAddresses> {
         public static final int constructor = 1383456733;
         public boolean force;
@@ -594,19 +594,19 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public userAddresses deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return userAddresses.TLdeserialize(inputSerializedData, i10, z10);
+        public userAddresses deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return userAddresses.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class holderDc extends TLObject {
         public static final int constructor = -103410961;
         public int dc;
         public byte[] public_key;
 
-        public static holderDc TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (holderDc) TLObject.TLdeserialize(holderDc.class, -103410961 != i10 ? null : new holderDc(), inputSerializedData, i10, z10);
+        public static holderDc TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (holderDc) TLObject.TLdeserialize(holderDc.class, -103410961 != i3 ? null : new holderDc(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -623,7 +623,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class inputTonConnectOauthSession extends TLObject {
         public static final int constructor = 1654613710;
         public byte[] body;
@@ -631,8 +631,8 @@ public class TL_wallet {
         public walletOwnershipProof proof;
         public long session_id;
 
-        public static inputTonConnectOauthSession TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (inputTonConnectOauthSession) TLObject.TLdeserialize(inputTonConnectOauthSession.class, 1654613710 != i10 ? null : new inputTonConnectOauthSession(), inputSerializedData, i10, z10);
+        public static inputTonConnectOauthSession TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (inputTonConnectOauthSession) TLObject.TLdeserialize(inputTonConnectOauthSession.class, 1654613710 != i3 ? null : new inputTonConnectOauthSession(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -653,14 +653,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class inputWalletCardSticker extends TLObject {
         public static final int constructor = 1474250151;
         public TL_stories.MediaAreaCoordinates coordinates;
         public String nft_address;
 
-        public static inputWalletCardSticker TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (inputWalletCardSticker) TLObject.TLdeserialize(inputWalletCardSticker.class, 1474250151 != i10 ? null : new inputWalletCardSticker(), inputSerializedData, i10, z10);
+        public static inputWalletCardSticker TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (inputWalletCardSticker) TLObject.TLdeserialize(inputWalletCardSticker.class, 1474250151 != i3 ? null : new inputWalletCardSticker(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -677,7 +677,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class inputWalletImported extends InputWalletReplacement {
         public static final int constructor = 1722182203;
         public byte[] anchor_public_key;
@@ -707,7 +707,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class inputWalletNew extends InputWalletReplacement {
         public static final int constructor = 1671708892;
 
@@ -717,13 +717,13 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class mnemonic_decryptedKeyPart extends TLObject {
         public static final int constructor = -1953440504;
         public byte[] share;
 
-        public static mnemonic_decryptedKeyPart TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (mnemonic_decryptedKeyPart) TLObject.TLdeserialize(mnemonic_decryptedKeyPart.class, -1953440504 != i10 ? null : new mnemonic_decryptedKeyPart(), inputSerializedData, i10, z10);
+        public static mnemonic_decryptedKeyPart TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (mnemonic_decryptedKeyPart) TLObject.TLdeserialize(mnemonic_decryptedKeyPart.class, -1953440504 != i3 ? null : new mnemonic_decryptedKeyPart(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -738,14 +738,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class nftAttribute extends TLObject {
         public static final int constructor = 1277096206;
         public String trait_type;
         public String value;
 
-        public static nftAttribute TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (nftAttribute) TLObject.TLdeserialize(nftAttribute.class, 1277096206 != i10 ? null : new nftAttribute(), inputSerializedData, i10, z10);
+        public static nftAttribute TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (nftAttribute) TLObject.TLdeserialize(nftAttribute.class, 1277096206 != i3 ? null : new nftAttribute(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -762,7 +762,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class nftItem extends TLObject {
         public static final int constructor = 389937907;
         public String address;
@@ -779,8 +779,8 @@ public class TL_wallet {
         public String name;
         public String owner_address;
 
-        public static nftItem TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (nftItem) TLObject.TLdeserialize(nftItem.class, 389937907 != i10 ? null : new nftItem(), inputSerializedData, i10, z10);
+        public static nftItem TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (nftItem) TLObject.TLdeserialize(nftItem.class, 389937907 != i3 ? null : new nftItem(), inputSerializedData, i3, z10);
         }
 
         public boolean isGift() {
@@ -897,14 +897,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class nftItems extends TLObject {
         public static final int constructor = 2035107951;
         public ArrayList<nftItem> items = new ArrayList<>();
         public String next_offset;
 
-        public static nftItems TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (nftItems) TLObject.TLdeserialize(nftItems.class, 2035107951 != i10 ? null : new nftItems(), inputSerializedData, i10, z10);
+        public static nftItems TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (nftItems) TLObject.TLdeserialize(nftItems.class, 2035107951 != i3 ? null : new nftItems(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -928,15 +928,15 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class proofChallenge extends TLObject {
         public static final int constructor = -1713105145;
         public String domain;
         public int expires;
         public String payload;
 
-        public static proofChallenge TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (proofChallenge) TLObject.TLdeserialize(proofChallenge.class, -1713105145 != i10 ? null : new proofChallenge(), inputSerializedData, i10, z10);
+        public static proofChallenge TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (proofChallenge) TLObject.TLdeserialize(proofChallenge.class, -1713105145 != i3 ? null : new proofChallenge(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -955,7 +955,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class replaceWallet extends TLMethod<WalletState> {
         public static final int constructor = -658034964;
         public TLRPC.InputCheckPasswordSRP password;
@@ -973,19 +973,19 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return WalletState.TLdeserialize(inputSerializedData, i10, z10);
+        public WalletState deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return WalletState.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class secretPhraseParts extends TLObject {
         public static final int constructor = -422514943;
         public ArrayList<Integer> dcs = new ArrayList<>();
         public String token;
 
-        public static secretPhraseParts TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (secretPhraseParts) TLObject.TLdeserialize(secretPhraseParts.class, -422514943 != i10 ? null : new secretPhraseParts(), inputSerializedData, i10, z10);
+        public static secretPhraseParts TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (secretPhraseParts) TLObject.TLdeserialize(secretPhraseParts.class, -422514943 != i3 ? null : new secretPhraseParts(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1002,7 +1002,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class sendTransfer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -639247902;
         public byte[] data_gasless;
@@ -1026,12 +1026,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Updates.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Updates deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Updates.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class setCardStickers extends TLMethod<card> {
         public static final int constructor = 109382060;
         public String bg_nft_address;
@@ -1049,19 +1049,19 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public card deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return card.TLdeserialize(inputSerializedData, i10, z10);
+        public card deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return card.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectChallenge extends TLObject {
         public static final int constructor = 1271436947;
         public byte[] challenge;
         public long event_id;
 
-        public static tonConnectChallenge TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (tonConnectChallenge) TLObject.TLdeserialize(tonConnectChallenge.class, 1271436947 != i10 ? null : new tonConnectChallenge(), inputSerializedData, i10, z10);
+        public static tonConnectChallenge TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (tonConnectChallenge) TLObject.TLdeserialize(tonConnectChallenge.class, 1271436947 != i3 ? null : new tonConnectChallenge(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1078,7 +1078,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectClaimRequest extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1723169601;
         public String app_request_id;
@@ -1101,12 +1101,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectCloseSession extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -700489266;
         public byte[] body;
@@ -1124,12 +1124,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectCreateSession extends TLMethod<tonConnectSession> {
         public static final int constructor = -862777274;
         public String dapp_client_id;
@@ -1143,12 +1143,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public tonConnectSession deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return tonConnectSession.TLdeserialize(inputSerializedData, i10, z10);
+        public tonConnectSession deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return tonConnectSession.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectGetNextEventId extends TLMethod<tonConnectNextEventId> {
         public static final int constructor = 2002612804;
         public long session_id;
@@ -1160,12 +1160,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public tonConnectNextEventId deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return tonConnectNextEventId.TLdeserialize(inputSerializedData, i10, z10);
+        public tonConnectNextEventId deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return tonConnectNextEventId.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectGetPending extends TLMethod<tonConnectPending> {
         public static final int constructor = 296673381;
         public String dapp_client_id;
@@ -1185,12 +1185,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public tonConnectPending deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return tonConnectPending.TLdeserialize(inputSerializedData, i10, z10);
+        public tonConnectPending deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return tonConnectPending.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectGetSessions extends TLMethod<tonConnectSessions> {
         public static final int constructor = -1476414098;
 
@@ -1200,20 +1200,20 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public tonConnectSessions deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return tonConnectSessions.TLdeserialize(inputSerializedData, i10, z10);
+        public tonConnectSessions deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return tonConnectSessions.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectManifest extends TLObject {
         public static final int constructor = 304255588;
         public TLRPC.WebDocument icon;
         public String name;
         public String url;
 
-        public static tonConnectManifest TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (tonConnectManifest) TLObject.TLdeserialize(tonConnectManifest.class, 304255588 != i10 ? null : new tonConnectManifest(), inputSerializedData, i10, z10);
+        public static tonConnectManifest TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (tonConnectManifest) TLObject.TLdeserialize(tonConnectManifest.class, 304255588 != i3 ? null : new tonConnectManifest(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1239,13 +1239,13 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectNextEventId extends TLObject {
         public static final int constructor = 1478780131;
         public long event_id;
 
-        public static tonConnectNextEventId TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (tonConnectNextEventId) TLObject.TLdeserialize(tonConnectNextEventId.class, 1478780131 != i10 ? null : new tonConnectNextEventId(), inputSerializedData, i10, z10);
+        public static tonConnectNextEventId TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (tonConnectNextEventId) TLObject.TLdeserialize(tonConnectNextEventId.class, 1478780131 != i3 ? null : new tonConnectNextEventId(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1260,14 +1260,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectPending extends TLObject {
         public static final int constructor = -2050952924;
         public ArrayList<tonConnectRequest> requests = new ArrayList<>();
         public tonConnectSession session;
 
-        public static tonConnectPending TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (tonConnectPending) TLObject.TLdeserialize(tonConnectPending.class, -2050952924 != i10 ? null : new tonConnectPending(), inputSerializedData, i10, z10);
+        public static tonConnectPending TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (tonConnectPending) TLObject.TLdeserialize(tonConnectPending.class, -2050952924 != i3 ? null : new tonConnectPending(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1284,7 +1284,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectRegisterKey extends TLMethod<tonConnectChallenge> {
         public static final int constructor = 864800540;
         public String client_id;
@@ -1298,12 +1298,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public tonConnectChallenge deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return tonConnectChallenge.TLdeserialize(inputSerializedData, i10, z10);
+        public tonConnectChallenge deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return tonConnectChallenge.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectRequest extends TLObject {
         public static final int constructor = -1587575533;
         public byte[] body;
@@ -1313,8 +1313,8 @@ public class TL_wallet {
         public String topic;
         public String trace_id;
 
-        public static tonConnectRequest TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (tonConnectRequest) TLObject.TLdeserialize(tonConnectRequest.class, -1587575533 != i10 ? null : new tonConnectRequest(), inputSerializedData, i10, z10);
+        public static tonConnectRequest TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (tonConnectRequest) TLObject.TLdeserialize(tonConnectRequest.class, -1587575533 != i3 ? null : new tonConnectRequest(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1350,7 +1350,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectSession extends TLObject {
         public static final int constructor = 308631238;
         public String client_id;
@@ -1364,8 +1364,8 @@ public class TL_wallet {
         public byte[] nonce;
         public boolean pending;
 
-        public static tonConnectSession TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (tonConnectSession) TLObject.TLdeserialize(tonConnectSession.class, 308631238 != i10 ? null : new tonConnectSession(), inputSerializedData, i10, z10);
+        public static tonConnectSession TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (tonConnectSession) TLObject.TLdeserialize(tonConnectSession.class, 308631238 != i3 ? null : new tonConnectSession(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1410,13 +1410,13 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectSessions extends TLObject {
         public static final int constructor = 236939414;
         public ArrayList<tonConnectSession> sessions = new ArrayList<>();
 
-        public static tonConnectSessions TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (tonConnectSessions) TLObject.TLdeserialize(tonConnectSessions.class, 236939414 != i10 ? null : new tonConnectSessions(), inputSerializedData, i10, z10);
+        public static tonConnectSessions TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (tonConnectSessions) TLObject.TLdeserialize(tonConnectSessions.class, 236939414 != i3 ? null : new tonConnectSessions(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1431,7 +1431,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectSubmitConnectResult extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1027602567;
         public byte[] body;
@@ -1454,12 +1454,12 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class tonConnectSubmitResponse extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -87655108;
         public byte[] body;
@@ -1481,25 +1481,25 @@ public class TL_wallet {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return TLRPC.Bool.TLdeserialize(inputSerializedData, i10, z10);
+        public TLRPC.Bool deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return TLRPC.Bool.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class userAddresses extends TLObject {
         public static final int constructor = -1836156075;
         public ArrayList<walletUserAddress> addresses = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static userAddresses TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (userAddresses) TLObject.TLdeserialize(userAddresses.class, -1836156075 != i10 ? null : new userAddresses(), inputSerializedData, i10, z10);
+        public static userAddresses TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (userAddresses) TLObject.TLdeserialize(userAddresses.class, -1836156075 != i3 ? null : new userAddresses(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.addresses = Vector.deserialize(inputSerializedData, new d(25), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1510,14 +1510,14 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletOwnershipProof extends TLObject {
         public static final int constructor = 1622985485;
         public byte[] signature;
         public int timestamp;
 
-        public static walletOwnershipProof TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (walletOwnershipProof) TLObject.TLdeserialize(walletOwnershipProof.class, 1622985485 != i10 ? null : new walletOwnershipProof(), inputSerializedData, i10, z10);
+        public static walletOwnershipProof TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (walletOwnershipProof) TLObject.TLdeserialize(walletOwnershipProof.class, 1622985485 != i3 ? null : new walletOwnershipProof(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1534,7 +1534,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransaction extends TLObject {
         public static final int constructor = -1792163517;
         public long amount;
@@ -1566,8 +1566,8 @@ public class TL_wallet {
         public String tx_hash;
         public long validUntil;
 
-        public static walletTransaction TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (walletTransaction) TLObject.TLdeserialize(walletTransaction.class, -1792163517 != i10 ? null : new walletTransaction(), inputSerializedData, i10, z10);
+        public static walletTransaction TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (walletTransaction) TLObject.TLdeserialize(walletTransaction.class, -1792163517 != i3 ? null : new walletTransaction(), inputSerializedData, i3, z10);
         }
 
         private static boolean peerEquals(WalletTransactionPeer walletTransactionPeer, WalletTransactionPeer walletTransactionPeer2) {
@@ -1663,7 +1663,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransactionPeerAddress extends WalletTransactionPeer {
         public static final int constructor = 103596476;
 
@@ -1688,7 +1688,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransactionPeerChannel extends WalletTransactionPeer {
         public static final int constructor = 1424428081;
 
@@ -1715,7 +1715,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransactionPeerOnramp extends WalletTransactionPeer {
         public static final int constructor = -443213714;
         public String provider_name;
@@ -1743,7 +1743,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransactionPeerTelegramGift extends WalletTransactionPeer {
         public static final int constructor = -193817447;
         public boolean own_profile;
@@ -1760,7 +1760,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransactionPeerUser extends WalletTransactionPeer {
         public static final int constructor = -722833299;
 
@@ -1787,7 +1787,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransactions extends TLObject {
         public static final int constructor = 1126356389;
         public long balance;
@@ -1796,8 +1796,8 @@ public class TL_wallet {
         public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
         public ArrayList<TLRPC.User> users = new ArrayList<>();
 
-        public static walletTransactions TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (walletTransactions) TLObject.TLdeserialize(walletTransactions.class, 1126356389 != i10 ? null : new walletTransactions(), inputSerializedData, i10, z10);
+        public static walletTransactions TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (walletTransactions) TLObject.TLdeserialize(walletTransactions.class, 1126356389 != i3 ? null : new walletTransactions(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1808,8 +1808,8 @@ public class TL_wallet {
             if (TLObject.hasFlag(readInt32, 1)) {
                 this.next_offset = inputSerializedData.readString(z10);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new n(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1827,15 +1827,15 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletUserAddress extends TLObject {
         public static final int constructor = -25628980;
         public String address;
         public byte[] public_key;
         public long user_id;
 
-        public static walletUserAddress TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (walletUserAddress) TLObject.TLdeserialize(walletUserAddress.class, -25628980 != i10 ? null : new walletUserAddress(), inputSerializedData, i10, z10);
+        public static walletUserAddress TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (walletUserAddress) TLObject.TLdeserialize(walletUserAddress.class, -25628980 != i3 ? null : new walletUserAddress(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1860,7 +1860,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class walletTransactionPeerUnsupported extends WalletTransactionPeer {
         public static final int constructor = 1921772890;
 

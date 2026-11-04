@@ -5,18 +5,18 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public interface IMediaPlaybackHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$media$IMediaPlaybackHost".replace('$', '.');
 
     void registerMediaSessionToken(w.b bVar);
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static abstract class Stub extends Binder implements IMediaPlaybackHost {
         static final int TRANSACTION_registerMediaSessionToken = 1;
 
-        /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+        /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
         public static class Proxy implements IMediaPlaybackHost {
             private IBinder mRemote;
 
@@ -67,17 +67,17 @@ public interface IMediaPlaybackHost extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        public boolean onTransact(int i3, Parcel parcel, Parcel parcel2, int i10) {
             String str = IMediaPlaybackHost.DESCRIPTOR;
-            if (i10 >= 1 && i10 <= 16777215) {
+            if (i3 >= 1 && i3 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i10 == 1598968902) {
+            if (i3 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i10 != 1) {
-                return super.onTransact(i10, parcel, parcel2, i11);
+            if (i3 != 1) {
+                return super.onTransact(i3, parcel, parcel2, i10);
             }
             registerMediaSessionToken(parcel.readInt() != 0 ? w.b.CREATOR.createFromParcel(parcel) : null);
             parcel2.writeNoException();
@@ -90,7 +90,7 @@ public interface IMediaPlaybackHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class Default implements IMediaPlaybackHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {

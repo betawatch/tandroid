@@ -1,55 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bq0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ FrameLayout d;
+public final class bq0 extends g.p {
+    public final /* synthetic */ zp0 c;
+    public final /* synthetic */ ws0 d;
 
-    public /* synthetic */ bq0(FrameLayout frameLayout, boolean z10, int i10, int i11) {
-        this.a = i11;
-        this.d = frameLayout;
-        this.b = z10;
-        this.c = i10;
+    public bq0(ws0 ws0Var, zp0 zp0Var) {
+        this.d = ws0Var;
+        this.c = zp0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                au0 au0Var = (au0) this.d;
-                org.telegram.ui.ActionBar.k2 k2Var = au0Var.x1;
-                if (!this.b) {
-                    k2Var.getMessagesController().f7.edit().putBoolean("story_keep", true).apply();
-                    vh.o8.D(k2Var.getParentActivity(), k2Var.getCurrentAccount()).Q(null);
-                    break;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
+    
+        if (r3.h.getAdapter().d(r9) == 2) goto L22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
+    
+        if (r5.d(r9) == 2) goto L22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
+    
+        r1 = 1;
+     */
+    @Override // g.p
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int i(int i3) {
+        ws0 ws0Var = this.d;
+        int[] iArr = ws0Var.p1;
+        mr0 mr0Var = ws0Var.R;
+        zp0 zp0Var = this.c;
+        int i10 = iArr[ws0.z0(zp0Var.F) ? 1 : 0];
+        u4.h0 adapter = zp0Var.h.getAdapter();
+        dr0 dr0Var = ws0Var.K;
+        if (adapter != dr0Var) {
+            if (ws0.x(ws0Var, zp0Var.h.getAdapter()) == -1) {
+                if (zp0Var.h.getAdapter() != mr0Var) {
+                    i10 = zp0Var.x.J;
+                } else if (zp0Var.h.getAdapter() == mr0Var && ws0Var.w1[5].a.isEmpty()) {
+                    i10 = zp0Var.x.J;
                 } else {
-                    au0Var.W0(k2Var, au0Var.l1, this.c);
-                    break;
+                    aq0 aq0Var = zp0Var.x;
+                    aq0Var.B1();
+                    i10 = aq0Var.R.get(i3);
                 }
-            default:
-                wq0 wq0Var = (wq0) this.d;
-                if (wq0Var.e.h() && wq0Var.h.getCurrentPosition() != 0) {
-                    wq0Var.a();
-                    break;
-                } else {
-                    boolean z10 = this.b;
-                    int i10 = this.c;
-                    if (!z10) {
-                        mg.i2.l1(2, org.telegram.messenger.y1.a(i10).b());
-                        break;
-                    } else {
-                        ph.l1 l1Var = new ph.l1(wq0Var.getContext(), i10, wq0Var.c, null, null);
-                        l1Var.e1(org.telegram.messenger.y1.a(i10).c(wq0Var.c));
-                        l1Var.show();
-                        break;
-                    }
-                }
+            }
         }
+        return Math.min(i10, zp0Var.x.J);
     }
 }

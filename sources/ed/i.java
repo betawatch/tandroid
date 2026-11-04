@@ -1,31 +1,12 @@
 package ed;
 
-import kotlin.jvm.internal.q;
-import kotlin.jvm.internal.r;
+import java.util.Collection;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class i extends h implements kotlin.jvm.internal.f {
-    public final int a;
-
-    public i(cd.c cVar) {
-        super(cVar);
-        this.a = 2;
-    }
-
-    @Override // kotlin.jvm.internal.f
-    public final int getArity() {
-        return this.a;
-    }
-
-    @Override // ed.a
-    public final String toString() {
-        if (getCompletion() != null) {
-            return super.toString();
-        }
-        q.a.getClass();
-        String a2 = r.a(this);
-        kotlin.jvm.internal.i.d(a2, "renderLambdaToString(...)");
-        return a2;
+public abstract class i extends h {
+    public static int d(Iterable iterable, int i3) {
+        kotlin.jvm.internal.j.e(iterable, "<this>");
+        return iterable instanceof Collection ? ((Collection) iterable).size() : i3;
     }
 }

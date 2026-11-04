@@ -11,11 +11,11 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import b8.oc;
 import java.util.Iterator;
 import java.util.Map;
-import v7.r7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class p {
     public Parcelable a;
@@ -94,9 +94,9 @@ public final class p {
         return bundle2;
     }
 
-    public t4.d d() {
+    public v4.d d() {
         String str;
-        t4.d dVar;
+        v4.d dVar;
         Iterator it = ((o.f) this.f).iterator();
         do {
             o.b bVar = (o.b) it;
@@ -104,10 +104,10 @@ public final class p {
                 return null;
             }
             Map.Entry components = (Map.Entry) bVar.next();
-            kotlin.jvm.internal.i.d(components, "components");
+            kotlin.jvm.internal.j.d(components, "components");
             str = (String) components.getKey();
-            dVar = (t4.d) components.getValue();
-        } while (!kotlin.jvm.internal.i.a(str, "androidx.lifecycle.internal.SavedStateHandlesProvider"));
+            dVar = (v4.d) components.getValue();
+        } while (!kotlin.jvm.internal.j.a(str, "androidx.lifecycle.internal.SavedStateHandlesProvider"));
         return dVar;
     }
 
@@ -116,50 +116,50 @@ public final class p {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void e(AttributeSet attributeSet, int i10) {
+    public void e(AttributeSet attributeSet, int i3) {
         int resourceId;
         int resourceId2;
         CompoundButton compoundButton = (CompoundButton) this.f;
         Context context = compoundButton.getContext();
         int[] iArr = f.a.m;
-        li.k G = li.k.G(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) G.c;
-        r0.h0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) G.c, i10);
+        k4.j F = k4.j.F(context, attributeSet, iArr, i3);
+        TypedArray typedArray = (TypedArray) F.b;
+        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) F.b, i3);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
-                    compoundButton.setButtonDrawable(r7.b(compoundButton.getContext(), resourceId2));
+                    compoundButton.setButtonDrawable(oc.b(compoundButton.getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(G.u(2));
+                    compoundButton.setButtonTintList(F.y(2));
                 }
                 if (typedArray.hasValue(3)) {
                     compoundButton.setButtonTintMode(l1.b(typedArray.getInt(3, -1), null));
                 }
-                G.I();
+                F.H();
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(r7.b(compoundButton.getContext(), resourceId));
+                compoundButton.setButtonDrawable(oc.b(compoundButton.getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
             }
             if (typedArray.hasValue(3)) {
             }
-            G.I();
+            F.H();
         } catch (Throwable th2) {
-            G.I();
+            F.H();
             throw th2;
         }
     }
 
-    public void f(String str, t4.d provider) {
+    public void f(String str, v4.d provider) {
         Object obj;
-        kotlin.jvm.internal.i.e(provider, "provider");
+        kotlin.jvm.internal.j.e(provider, "provider");
         o.f fVar = (o.f) this.f;
-        o.c l4 = fVar.l(str);
-        if (l4 != null) {
-            obj = l4.b;
+        o.c h = fVar.h(str);
+        if (h != null) {
+            obj = h.b;
         } else {
             o.c cVar = new o.c(str, provider);
             fVar.d++;
@@ -174,7 +174,7 @@ public final class p {
             }
             obj = null;
         }
-        if (((t4.d) obj) != null) {
+        if (((v4.d) obj) != null) {
             throw new IllegalArgumentException("SavedStateProvider with the given key is already registered");
         }
     }
@@ -183,19 +183,19 @@ public final class p {
         if (!this.e) {
             throw new IllegalStateException("Can not perform this action after onSaveInstanceState");
         }
-        t4.a aVar = (t4.a) this.b;
+        v4.a aVar = (v4.a) this.b;
         if (aVar == null) {
-            aVar = new t4.a(this);
+            aVar = new v4.a(this);
         }
         this.b = aVar;
         try {
             androidx.lifecycle.j.class.getDeclaredConstructor(null);
-            t4.a aVar2 = (t4.a) this.b;
+            v4.a aVar2 = (v4.a) this.b;
             if (aVar2 != null) {
                 aVar2.a.add(androidx.lifecycle.j.class.getName());
             }
-        } catch (NoSuchMethodException e) {
-            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e);
+        } catch (NoSuchMethodException e10) {
+            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e10);
         }
     }
 

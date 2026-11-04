@@ -1,99 +1,64 @@
 package m2;
 
-import e2.l0;
-import java.math.RoundingMode;
-import java.util.List;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class n extends s {
-    public final long d;
-    public final long e;
-    public final List f;
-    public final long g;
-    public final long h;
-    public final long i;
+public final class n {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final boolean e;
+    public final int f;
+    public final d2.f g;
+    public final int h;
+    public final int i;
+    public final boolean j;
+    public final boolean k;
 
-    public n(j jVar, long j10, long j11, long j12, long j13, List list, long j14, long j15, long j16) {
-        super(jVar, j10, j11);
-        this.d = j12;
-        this.e = j13;
-        this.f = list;
-        this.i = j14;
-        this.g = j15;
-        this.h = j16;
+    public n(m mVar) {
+        this.a = mVar.a;
+        this.b = mVar.b;
+        this.c = mVar.c;
+        this.d = mVar.d;
+        this.e = mVar.e;
+        this.f = mVar.f;
+        this.g = mVar.g;
+        this.h = mVar.h;
+        this.i = mVar.i;
+        this.j = mVar.j;
+        this.k = mVar.k;
     }
 
-    public final long b(long j10, long j11) {
-        long d = d(j10);
-        return d != -1 ? d : (int) (f((j11 - this.h) + this.i, j10) - c(j10, j11));
+    public final m a() {
+        m mVar = new m();
+        mVar.a = this.a;
+        mVar.b = this.b;
+        mVar.c = this.c;
+        mVar.d = this.d;
+        mVar.e = this.e;
+        mVar.f = this.f;
+        mVar.g = this.g;
+        mVar.h = this.h;
+        mVar.i = this.i;
+        mVar.j = this.j;
+        mVar.k = this.k;
+        return mVar;
     }
 
-    public final long c(long j10, long j11) {
-        long d = d(j10);
-        long j12 = this.d;
-        if (d == -1) {
-            long j13 = this.g;
-            if (j13 != -9223372036854775807L) {
-                return Math.max(j12, f((j11 - this.h) - j13, j10));
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return j12;
-    }
-
-    public abstract long d(long j10);
-
-    public final long e(long j10, long j11) {
-        long j12 = this.b;
-        long j13 = this.d;
-        List list = this.f;
-        if (list != null) {
-            return (((q) list.get((int) (j10 - j13))).b * 1000000) / j12;
+        if (obj == null || n.class != obj.getClass()) {
+            return false;
         }
-        long d = d(j11);
-        return (d == -1 || j10 != (j13 + d) - 1) ? (this.e * 1000000) / j12 : j11 - g(j10);
+        n nVar = (n) obj;
+        return this.a == nVar.a && this.b == nVar.b && this.c == nVar.c && this.d == nVar.d && this.e == nVar.e && this.f == nVar.f && this.h == nVar.h && this.i == nVar.i && this.j == nVar.j && this.k == nVar.k && this.g.equals(nVar.g);
     }
 
-    public final long f(long j10, long j11) {
-        long d = d(j11);
-        long j12 = this.d;
-        if (d != 0) {
-            if (this.f != null) {
-                long j13 = (d + j12) - 1;
-                long j14 = j12;
-                while (j14 <= j13) {
-                    long j15 = ((j13 - j14) / 2) + j14;
-                    long g10 = g(j15);
-                    if (g10 < j10) {
-                        j14 = j15 + 1;
-                    } else {
-                        if (g10 <= j10) {
-                            return j15;
-                        }
-                        j13 = j15 - 1;
-                    }
-                }
-                return j14 == j12 ? j14 : j13;
-            }
-            long j16 = (j10 / ((this.e * 1000000) / this.b)) + j12;
-            if (j16 >= j12) {
-                return d == -1 ? j16 : Math.min(j16, (j12 + d) - 1);
-            }
-        }
-        return j12;
-    }
-
-    public final long g(long j10) {
-        long j11 = this.d;
-        List list = this.f;
-        long j12 = list != null ? ((q) list.get((int) (j10 - j11))).a - this.c : (j10 - j11) * this.e;
-        String str = l0.a;
-        return l0.a0(j12, 1000000L, this.b, RoundingMode.DOWN);
-    }
-
-    public abstract j h(k kVar, long j10);
-
-    public boolean i() {
-        return this.f != null;
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c), Boolean.valueOf(this.d), Boolean.valueOf(this.e), Integer.valueOf(this.f), this.g, Integer.valueOf(this.h), Integer.valueOf(this.i), Boolean.valueOf(this.k), Boolean.valueOf(this.j));
     }
 }

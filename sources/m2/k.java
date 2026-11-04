@@ -1,87 +1,21 @@
 package m2;
 
-import b2.x;
-import e9.n0;
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class k extends m implements l2.i {
-    public final n n;
+public final class k {
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
+    public final int d;
 
-    public k(x xVar, n0 n0Var, n nVar, ArrayList arrayList, List list, List list2) {
-        super(xVar, n0Var, nVar, arrayList, list, list2);
-        this.n = nVar;
+    static {
+        new j().a();
     }
 
-    @Override // l2.i
-    public final long A(long j10, long j11) {
-        return this.n.b(j10, j11);
-    }
-
-    @Override // l2.i
-    public final long a(long j10) {
-        return this.n.g(j10);
-    }
-
-    @Override // m2.m
-    public final String b() {
-        return null;
-    }
-
-    @Override // l2.i
-    public final long c(long j10, long j11) {
-        return this.n.e(j10, j11);
-    }
-
-    @Override // l2.i
-    public final long e(long j10, long j11) {
-        return this.n.c(j10, j11);
-    }
-
-    @Override // l2.i
-    public final long f(long j10, long j11) {
-        n nVar = this.n;
-        if (nVar.f != null) {
-            return -9223372036854775807L;
-        }
-        long b10 = nVar.b(j10, j11) + nVar.c(j10, j11);
-        return (nVar.e(b10, j10) + nVar.g(b10)) - nVar.i;
-    }
-
-    @Override // l2.i
-    public final j g(long j10) {
-        return this.n.h(this, j10);
-    }
-
-    @Override // m2.m
-    public final j h() {
-        return null;
-    }
-
-    @Override // l2.i
-    public final long o(long j10, long j11) {
-        return this.n.f(j10, j11);
-    }
-
-    @Override // l2.i
-    public final boolean t() {
-        return this.n.i();
-    }
-
-    @Override // l2.i
-    public final long u() {
-        return this.n.d;
-    }
-
-    @Override // l2.i
-    public final long z(long j10) {
-        return this.n.d(j10);
-    }
-
-    @Override // m2.m
-    public final l2.i d() {
-        return this;
+    public k(j jVar) {
+        this.a = jVar.b;
+        this.b = jVar.c;
+        this.c = jVar.d;
+        this.d = jVar.a;
     }
 }

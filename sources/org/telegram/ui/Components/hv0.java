@@ -1,95 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class hv0 extends CharacterStyle {
-    public final Paint a;
-    public final Path b;
+public final /* synthetic */ class hv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xv0 b;
 
-    public hv0() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
+    public /* synthetic */ hv0(xv0 xv0Var, int i3) {
+        this.a = i3;
+        this.b = xv0Var;
     }
 
-    public static void a(Canvas canvas, Layout layout) {
-        CharSequence text;
-        Layout layout2 = layout;
-        if (layout2 == null || (text = layout2.getText()) == null || !(text instanceof Spanned)) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.l1.f();
+                break;
+            case 1:
+                this.b.l1.f();
+                break;
+            case 2:
+                xv0 xv0Var = this.b;
+                xv0Var.dismiss();
+                org.telegram.messenger.li.b0(xv0Var.a).f2(xv0Var.getContext(), xv0Var.K1, 1, xv0Var.D1, false, false);
+                break;
+            case 3:
+                xv0 xv0Var2 = this.b;
+                org.telegram.messenger.hp.s1(xv0Var2.a).y3("stickers", xv0Var2.D1, 1, null);
+                break;
+            default:
+                xv0 xv0Var3 = this.b;
+                xv0Var3.dismiss();
+                org.telegram.messenger.li.b0(xv0Var3.a).f2(xv0Var3.getContext(), xv0Var3.K1, 1, xv0Var3.D1, false, false);
+                break;
         }
-        Spanned spanned = (Spanned) text;
-        hv0[] hv0VarArr = (hv0[]) spanned.getSpans(0, spanned.length(), hv0.class);
-        if (hv0VarArr == null || hv0VarArr.length == 0) {
-            return;
-        }
-        int i10 = 0;
-        while (i10 < hv0VarArr.length) {
-            hv0 hv0Var = hv0VarArr[i10];
-            int spanStart = spanned.getSpanStart(hv0Var);
-            int spanEnd = spanned.getSpanEnd(hv0Var);
-            int lineForOffset = layout2.getLineForOffset(spanStart);
-            int lineForOffset2 = layout2.getLineForOffset(spanEnd);
-            int i11 = lineForOffset;
-            while (i11 <= lineForOffset2) {
-                float lineBottom = layout2.getLineBottom(i11) - org.telegram.messenger.i0.L(1.0f);
-                float primaryHorizontal = layout2.getPrimaryHorizontal(i11 == lineForOffset ? spanStart : layout2.getLineStart(i11));
-                float primaryHorizontal2 = layout2.getPrimaryHorizontal(i11 == lineForOffset2 ? spanEnd : layout2.getLineEnd(i11) - 1);
-                hv0Var.getClass();
-                float L = org.telegram.messenger.i0.L(1.33f);
-                float L2 = org.telegram.messenger.i0.L(10.0f);
-                float L3 = org.telegram.messenger.i0.L(2.0f);
-                Paint paint = hv0Var.a;
-                Spanned spanned2 = spanned;
-                hv0[] hv0VarArr2 = hv0VarArr;
-                int i12 = i10;
-                paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Ci, false));
-                paint.setStrokeWidth(L);
-                Path path = hv0Var.b;
-                path.rewind();
-                path.moveTo(primaryHorizontal, lineBottom);
-                float f7 = primaryHorizontal;
-                while (f7 < primaryHorizontal2) {
-                    float f10 = f7;
-                    float f11 = L2;
-                    path.quadTo((L2 / 4.0f) + f7, lineBottom - L3, (L2 / 2.0f) + f10, lineBottom);
-                    float f12 = f10 + f11;
-                    path.quadTo(((f11 * 3.0f) / 4.0f) + f10, lineBottom + L3, f12, lineBottom);
-                    f7 = f12;
-                    L2 = f11;
-                }
-                if (f7 > primaryHorizontal2) {
-                    canvas.save();
-                    float f13 = L / 2.0f;
-                    canvas.clipRect(primaryHorizontal - f13, (lineBottom - L3) - f13, primaryHorizontal2 + f13, lineBottom + L3 + f13);
-                    canvas.drawPath(path, paint);
-                    canvas.restore();
-                } else {
-                    canvas.drawPath(path, paint);
-                }
-                i11++;
-                layout2 = layout;
-                spanned = spanned2;
-                hv0VarArr = hv0VarArr2;
-                i10 = i12;
-            }
-            i10++;
-            layout2 = layout;
-        }
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
     }
 }

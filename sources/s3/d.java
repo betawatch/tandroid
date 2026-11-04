@@ -1,27 +1,42 @@
 package s3;
 
-import a1.g;
-import j$.util.DesugarCollections;
-import java.util.List;
+import j$.util.Objects;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends b {
-    public final long a;
-    public final long b;
-    public final List c;
+public final class d extends i {
+    public final String b;
+    public final boolean c;
+    public final boolean d;
+    public final String[] e;
+    public final i[] f;
 
-    public d(long j10, long j11, List list) {
-        this.a = j10;
-        this.b = j11;
-        this.c = DesugarCollections.unmodifiableList(list);
+    public d(String str, boolean z10, boolean z11, String[] strArr, i[] iVarArr) {
+        super("CTOC");
+        this.b = str;
+        this.c = z10;
+        this.d = z11;
+        this.e = strArr;
+        this.f = iVarArr;
     }
 
-    @Override // s3.b
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("SCTE-35 SpliceInsertCommand { programSplicePts=");
-        sb2.append(this.a);
-        sb2.append(", programSplicePlaybackPositionUs= ");
-        return g.q(sb2, this.b, " }");
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && d.class == obj.getClass()) {
+            d dVar = (d) obj;
+            if (this.c == dVar.c && this.d == dVar.d && Objects.equals(this.b, dVar.b) && Arrays.equals(this.e, dVar.e) && Arrays.equals(this.f, dVar.f)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int i3 = (((527 + (this.c ? 1 : 0)) * 31) + (this.d ? 1 : 0)) * 31;
+        String str = this.b;
+        return i3 + (str != null ? str.hashCode() : 0);
     }
 }

@@ -1,120 +1,131 @@
 package org.telegram.ui;
 
-import android.app.Dialog;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.RectF;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uu0 implements org.telegram.ui.ActionBar.u1 {
+public final class uu0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacySettingsActivity b;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ uu0(PrivacySettingsActivity privacySettingsActivity, int i10) {
-        this.a = i10;
-        this.b = privacySettingsActivity;
+    public /* synthetic */ uu0(ProfileActivity profileActivity, int i3) {
+        this.a = i3;
+        this.b = profileActivity;
     }
 
-    public void a() {
-        int i10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
-            case 2:
-                PrivacySettingsActivity privacySettingsActivity = this.b;
-                vu0 vu0Var = privacySettingsActivity.a;
-                if (vu0Var != null && (i10 = privacySettingsActivity.s) >= 0) {
-                    vu0Var.g(i10);
-                    break;
-                }
-                break;
-            default:
-                PrivacySettingsActivity.Z(this.b);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.u1
-    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
-        String L0;
-        int i11 = this.a;
-        int i12 = 0;
-        PrivacySettingsActivity privacySettingsActivity = this.b;
-        int i13 = 1;
-        switch (i11) {
-            case 0:
-                try {
-                    Dialog dialog = privacySettingsActivity.visibleDialog;
-                    if (dialog != null) {
-                        dialog.dismiss();
-                    }
-                } catch (Exception e) {
-                    org.telegram.messenger.f8.g(e, true);
-                }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
-                String L02 = org.telegram.messenger.dd.L0(2131746809, "PrivacyPaymentsClearAlertTitle");
-                org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder.a;
-                x1Var2.R = L02;
-                x1Var2.T = org.telegram.messenger.dd.L0(2131746811, "PrivacyPaymentsClearAlert");
-                alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131752099, "ClearButton"), new uu0(privacySettingsActivity, i13));
-                alertDialog$Builder.h(org.telegram.messenger.dd.L0(2131752589, "Cancel"), null);
-                privacySettingsActivity.showDialog(x1Var2);
-                privacySettingsActivity.showDialog(x1Var2);
-                TextView textView = (TextView) x1Var2.d(-1);
-                if (textView != null) {
-                    org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.q7, null);
-                    break;
-                }
-                break;
             case 1:
-                TLRPC.TL_payments_clearSavedInfo tL_payments_clearSavedInfo = new TLRPC.TL_payments_clearSavedInfo();
-                boolean[] zArr = privacySettingsActivity.Z;
-                tL_payments_clearSavedInfo.credentials = zArr[1];
-                tL_payments_clearSavedInfo.info = zArr[0];
-                privacySettingsActivity.getUserConfig().y = null;
-                privacySettingsActivity.getUserConfig().v(false);
-                privacySettingsActivity.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new ag.c3(4));
-                boolean z10 = zArr[0];
-                if (z10 && zArr[1]) {
-                    L0 = org.telegram.messenger.dd.L0(2131746807, "PrivacyPaymentsPaymentShippingCleared");
-                } else if (z10) {
-                    L0 = org.telegram.messenger.dd.L0(2131746806, "PrivacyPaymentsShippingInfoCleared");
-                } else if (zArr[1]) {
-                    L0 = org.telegram.messenger.dd.L0(2131746808, "PrivacyPaymentsPaymentInfoCleared");
-                }
-                org.telegram.ui.Components.cc.a0(privacySettingsActivity).Q(R.raw.chats_infotip, 36, L0).j();
-                break;
-            case 2:
-            case 3:
-            default:
-                org.telegram.ui.ActionBar.x1 p5 = new AlertDialog$Builder(3, privacySettingsActivity.getParentActivity(), null).p();
-                privacySettingsActivity.c = p5;
-                p5.i0 = false;
-                if (privacySettingsActivity.S != privacySettingsActivity.T) {
-                    org.telegram.messenger.e20 userConfig = privacySettingsActivity.getUserConfig();
-                    boolean z11 = privacySettingsActivity.T;
-                    userConfig.U = z11;
-                    privacySettingsActivity.S = z11;
-                    privacySettingsActivity.getUserConfig().v(false);
-                }
-                org.telegram.messenger.i5 contactsController = privacySettingsActivity.getContactsController();
-                tu0 tu0Var = new tu0(privacySettingsActivity, i13);
-                contactsController.K();
-                TLRPC.TL_contacts_deleteContacts tL_contacts_deleteContacts = new TLRPC.TL_contacts_deleteContacts();
-                int size = contactsController.e0.size();
-                for (int i14 = 0; i14 < size; i14++) {
-                    tL_contacts_deleteContacts.id.add(contactsController.getMessagesController().n1(((TLRPC.TL_contact) contactsController.e0.get(i14)).user_id));
-                }
-                contactsController.getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new org.telegram.messenger.v4(i12, contactsController, tu0Var));
+                this.b.P5 = null;
                 break;
             case 4:
-                gf0 gf0Var = new gf0();
-                tu0 tu0Var2 = new tu0(privacySettingsActivity, 2);
-                gf0Var.F = 3;
-                gf0Var.a = 12;
-                gf0Var.d0 = tu0Var2;
-                privacySettingsActivity.presentFragment(gf0Var);
+                ProfileActivity profileActivity = this.b;
+                profileActivity.O1 = false;
+                profileActivity.a.P0 = true;
+                break;
+            default:
+                super.onAnimationCancel(animator);
                 break;
         }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        pi.q qVar;
+        org.telegram.ui.ActionBar.k kVar;
+        int i3 = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (i3) {
+            case 0:
+                qVar = ((org.telegram.ui.ActionBar.d2) profileActivity).glassEngine;
+                qVar.g();
+                kVar = ((org.telegram.ui.ActionBar.d2) profileActivity).actionBar;
+                kVar.C(profileActivity.p2 ? 1090519039 : profileActivity.h6 != null ? 553648127 : org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.f8, profileActivity.A0), false);
+                qu0 qu0Var = profileActivity.f0;
+                ImageReceiver imageReceiver = qu0Var.V;
+                org.telegram.ui.Components.t5 m10 = imageReceiver.m();
+                if (m10 != null) {
+                    m10.w(qu0Var);
+                }
+                imageReceiver.f();
+                org.telegram.messenger.cc ccVar = qu0Var.a0;
+                if (ccVar != null) {
+                    ccVar.a();
+                    qu0Var.a0 = null;
+                }
+                qu0Var.W = 0.0f;
+                qu0Var.invalidate();
+                profileActivity.I0 = false;
+                profileActivity.L5(false);
+                break;
+            case 1:
+                if (profileActivity.P5 != null && !profileActivity.S5) {
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    profileActivity.Q5 = animatorSet;
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(profileActivity, profileActivity.k5, 1.0f));
+                    profileActivity.Q5.setDuration(100L);
+                    profileActivity.Q5.addListener(new y20(this, 21));
+                    profileActivity.Q5.start();
+                }
+                profileActivity.L5(false);
+                profileActivity.P5 = null;
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                RectF rectF = ProfileActivity.T6;
+                profileActivity.y4(true);
+                break;
+            case 3:
+                AnimatorSet animatorSet2 = profileActivity.w;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    profileActivity.w = null;
+                    break;
+                }
+                break;
+            case 4:
+                profileActivity.O1 = false;
+                profileActivity.a.P0 = true;
+                profileActivity.j2.removeListener(this);
+                profileActivity.d1.setBackgroundColor(-16777216);
+                profileActivity.Y.setVisibility(8);
+                profileActivity.o0.setVisibility(0);
+                profileActivity.o0.setAlpha(1.0f);
+                break;
+            case 5:
+                profileActivity.j2.removeListener(this);
+                profileActivity.o0.setVisibility(8);
+                profileActivity.o0.setAlpha(1.0f);
+                break;
+            default:
+                profileActivity.x0 = null;
+                profileActivity.fragmentView.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 4:
+                ProfileActivity profileActivity = this.b;
+                ProfileActivity.G3(profileActivity, false);
+                profileActivity.o0.setAnimatedFileMaybe(profileActivity.f0.getImageReceiver().m());
+                profileActivity.o0.L();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
+    }
+
+    private final void a(Animator animator) {
     }
 }

@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class p3 {
     public TextPaint a;
@@ -35,32 +35,32 @@ public final class p3 {
     public final SparseArray z = new SparseArray();
     public final SparseArray A = new SparseArray();
 
-    public static void a(l60 l60Var, SparseArray sparseArray) {
-        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-            int keyAt = sparseArray.keyAt(i10);
-            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i10);
+    public static void a(i50 i50Var, SparseArray sparseArray) {
+        for (int i3 = 0; i3 < sparseArray.size(); i3++) {
+            int keyAt = sparseArray.keyAt(i3);
+            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i3);
             if (textPaint != null) {
                 if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
-                    textPaint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.G6, false));
+                    textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.G6, false));
                 } else {
-                    textPaint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.J6, false));
+                    textPaint.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.J6, false));
                 }
             }
         }
     }
 
-    public static void b(int i10, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
-        int i11 = i10 & 1;
-        if (i11 != 0 && (i10 & 2) != 0) {
+    public static void b(int i3, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
+        int i10 = i3 & 1;
+        if (i10 != 0 && (i3 & 2) != 0) {
             textPaint.setTypeface(typeface2);
             return;
         }
-        if (i11 != 0) {
+        if (i10 != 0) {
             textPaint.setTypeface(typeface3);
-        } else if ((i10 & 2) != 0) {
+        } else if ((i3 & 2) != 0) {
             textPaint.setTypeface(typeface4);
         } else {
-            if ((i10 & 4) != 0) {
+            if ((i3 & 4) != 0) {
                 return;
             }
             textPaint.setTypeface(typeface);

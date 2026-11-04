@@ -1,34 +1,21 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.EditText;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ga0 extends EditText {
-    public final /* synthetic */ int a;
+public final class ga0 extends org.telegram.ui.ActionBar.f1 {
+    public final /* synthetic */ la0 o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ga0(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public ga0(la0 la0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = la0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (motionEvent.getAction() == 1) {
-                    setCursorVisible(true);
-                }
-                break;
-            default:
-                if (motionEvent.getAction() == 1) {
-                    setCursorVisible(true);
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.ActionBar.f1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.K0 = null;
     }
 }

@@ -1,23 +1,23 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public interface b1 {
-    Object a();
+    z a();
 
-    void b(Object obj, k0 k0Var);
+    void b(Object obj, Object obj2);
 
-    void c(Object obj);
+    void c(Object obj, l0 l0Var);
 
-    void d(Object obj, a4.g gVar, m mVar);
+    void d(Object obj);
 
-    int e(a aVar);
+    boolean e(Object obj);
 
-    boolean f(Object obj);
+    int f(z zVar);
 
-    void g(w wVar, w wVar2);
+    int g(z zVar);
 
-    int h(w wVar);
+    boolean h(z zVar, z zVar2);
 
-    boolean i(w wVar, w wVar2);
+    void i(Object obj, c4.f fVar, p pVar);
 }

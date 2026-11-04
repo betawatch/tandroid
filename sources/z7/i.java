@@ -1,148 +1,423 @@
 package z7;
 
+import java.io.Serializable;
+import java.util.AbstractMap;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class i extends e implements List, RandomAccess {
-    public static final g b = new g(m.e, 0);
+public final class i extends AbstractMap implements Serializable {
+    public static final Object s = new Object();
+    public transient Object a;
+    public transient int[] b;
+    public transient Object[] c;
+    public transient Object[] d;
+    public transient int e = Math.min(Math.max(12, 1), 1073741823);
+    public transient int f;
+    public transient g h;
+    public transient g n;
+    public transient b8.f r;
 
-    public static m q(int i10, Object[] objArr) {
-        return i10 == 0 ? m.e : new m(i10, objArr);
-    }
-
-    @Override // java.util.List
-    public final void add(int i10, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List
-    public final boolean addAll(int i10, Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) >= 0;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public final Map b() {
+        Object obj = this.a;
+        if (obj instanceof Map) {
+            return (Map) obj;
         }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (int i10 = 0; i10 < size; i10++) {
-                        if (w7.s9.a(get(i10), list.get(i10))) {
-                        }
-                    }
-                    return true;
-                }
-                g listIterator = listIterator(0);
-                Iterator it = list.iterator();
-                while (true) {
-                    if (listIterator.hasNext()) {
-                        if (!it.hasNext() || !w7.s9.a(listIterator.next(), it.next())) {
-                            break;
-                        }
-                    } else if (!it.hasNext()) {
-                        return true;
-                    }
-                }
+        return null;
+    }
+
+    public final void c(int i3, int i10) {
+        Object obj = this.a;
+        obj.getClass();
+        int[] iArr = this.b;
+        iArr.getClass();
+        Object[] objArr = this.c;
+        objArr.getClass();
+        Object[] objArr2 = this.d;
+        objArr2.getClass();
+        int size = size();
+        int i11 = size - 1;
+        if (i3 >= i11) {
+            objArr[i3] = null;
+            objArr2[i3] = null;
+            iArr[i3] = 0;
+            return;
+        }
+        Object obj2 = objArr[i11];
+        objArr[i3] = obj2;
+        objArr2[i3] = objArr2[i11];
+        objArr[i11] = null;
+        objArr2[i11] = null;
+        iArr[i3] = iArr[i11];
+        iArr[i11] = 0;
+        int a10 = x7.t6.a(obj2) & i10;
+        int b10 = x7.s6.b(a10, obj);
+        if (b10 == size) {
+            x7.s6.d(a10, i3 + 1, obj);
+            return;
+        }
+        while (true) {
+            int i12 = b10 - 1;
+            int i13 = iArr[i12];
+            int i14 = i13 & i10;
+            if (i14 == size) {
+                iArr[i12] = ((i3 + 1) & i10) | (i13 & (~i10));
+                return;
+            }
+            b10 = i14;
+        }
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        if (d()) {
+            return;
+        }
+        this.e += 32;
+        Map b10 = b();
+        if (b10 != null) {
+            this.e = Math.min(Math.max(size(), 3), 1073741823);
+            b10.clear();
+            this.a = null;
+            this.f = 0;
+            return;
+        }
+        Object[] objArr = this.c;
+        objArr.getClass();
+        Arrays.fill(objArr, 0, this.f, (Object) null);
+        Object[] objArr2 = this.d;
+        objArr2.getClass();
+        Arrays.fill(objArr2, 0, this.f, (Object) null);
+        Object obj = this.a;
+        obj.getClass();
+        if (obj instanceof byte[]) {
+            Arrays.fill((byte[]) obj, (byte) 0);
+        } else if (obj instanceof short[]) {
+            Arrays.fill((short[]) obj, (short) 0);
+        } else {
+            Arrays.fill((int[]) obj, 0);
+        }
+        int[] iArr = this.b;
+        iArr.getClass();
+        Arrays.fill(iArr, 0, this.f, 0);
+        this.f = 0;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean containsKey(Object obj) {
+        Map b10 = b();
+        return b10 != null ? b10.containsKey(obj) : f(obj) != -1;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean containsValue(Object obj) {
+        Map b10 = b();
+        if (b10 != null) {
+            return b10.containsValue(obj);
+        }
+        for (int i3 = 0; i3 < this.f; i3++) {
+            Object[] objArr = this.d;
+            objArr.getClass();
+            if (x7.w6.a(obj, objArr[i3])) {
+                return true;
             }
         }
         return false;
     }
 
-    @Override // java.util.Collection, java.util.List
-    public final int hashCode() {
-        int size = size();
-        int i10 = 1;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 = (i10 * 31) + get(i11).hashCode();
-        }
-        return i10;
+    public final boolean d() {
+        return this.a == null;
     }
 
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        if (obj == null) {
+    public final int e() {
+        return (1 << (this.e & 31)) - 1;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Set entrySet() {
+        g gVar = this.n;
+        if (gVar != null) {
+            return gVar;
+        }
+        g gVar2 = new g(this, 0);
+        this.n = gVar2;
+        return gVar2;
+    }
+
+    public final int f(Object obj) {
+        if (d()) {
             return -1;
         }
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (obj.equals(get(i10))) {
-                return i10;
-            }
+        int a10 = x7.t6.a(obj);
+        int e10 = e();
+        Object obj2 = this.a;
+        obj2.getClass();
+        int b10 = x7.s6.b(a10 & e10, obj2);
+        if (b10 != 0) {
+            int i3 = ~e10;
+            int i10 = a10 & i3;
+            do {
+                int i11 = b10 - 1;
+                int[] iArr = this.b;
+                iArr.getClass();
+                int i12 = iArr[i11];
+                if ((i12 & i3) == i10) {
+                    Object[] objArr = this.c;
+                    objArr.getClass();
+                    if (x7.w6.a(obj, objArr[i11])) {
+                        return i11;
+                    }
+                }
+                b10 = i12 & e10;
+            } while (b10 != 0);
         }
         return -1;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final /* synthetic */ Iterator iterator() {
-        return listIterator(0);
-    }
-
-    @Override // z7.e
-    public int l(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
+    public final int g(int i3, int i10, int i11, int i12) {
+        Object c2 = x7.s6.c(i10);
+        int i13 = i10 - 1;
+        if (i12 != 0) {
+            x7.s6.d(i11 & i13, i12 + 1, c2);
         }
-        return size;
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        for (int size = size() - 1; size >= 0; size--) {
-            if (obj.equals(get(size))) {
-                return size;
+        Object obj = this.a;
+        obj.getClass();
+        int[] iArr = this.b;
+        iArr.getClass();
+        for (int i14 = 0; i14 <= i3; i14++) {
+            int b10 = x7.s6.b(i14, obj);
+            while (b10 != 0) {
+                int i15 = b10 - 1;
+                int i16 = iArr[i15];
+                int i17 = ((~i3) & i16) | i14;
+                int i18 = i17 & i13;
+                int b11 = x7.s6.b(i18, c2);
+                x7.s6.d(i18, b10, c2);
+                iArr[i15] = ((~i13) & i17) | (b11 & i13);
+                b10 = i16 & i3;
             }
         }
-        return -1;
+        this.a = c2;
+        this.e = ((32 - Integer.numberOfLeadingZeros(i13)) & 31) | (this.e & (-32));
+        return i13;
     }
 
-    @Override // java.util.List
-    public final /* synthetic */ ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    /* renamed from: p */
-    public i subList(int i10, int i11) {
-        w7.t9.b(i10, i11, size());
-        int i12 = i11 - i10;
-        return i12 == size() ? this : i12 == 0 ? m.e : new h(this, i10, i12);
-    }
-
-    @Override // java.util.List
-    /* renamed from: r, reason: merged with bridge method [inline-methods] */
-    public final g listIterator(int i10) {
-        int size = size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(w7.t9.c(i10, size, "index"));
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object get(Object obj) {
+        Map b10 = b();
+        if (b10 != null) {
+            return b10.get(obj);
         }
-        return isEmpty() ? b : new g(this, i10);
+        int f10 = f(obj);
+        if (f10 == -1) {
+            return null;
+        }
+        Object[] objArr = this.d;
+        objArr.getClass();
+        return objArr[f10];
     }
 
-    @Override // java.util.List
-    public final Object remove(int i10) {
-        throw new UnsupportedOperationException();
+    public final Object h(Object obj) {
+        if (!d()) {
+            int e10 = e();
+            Object obj2 = this.a;
+            obj2.getClass();
+            int[] iArr = this.b;
+            iArr.getClass();
+            Object[] objArr = this.c;
+            objArr.getClass();
+            int a10 = x7.s6.a(obj, null, e10, obj2, iArr, objArr, null);
+            if (a10 != -1) {
+                Object[] objArr2 = this.d;
+                objArr2.getClass();
+                Object obj3 = objArr2[a10];
+                c(a10, e10);
+                this.f--;
+                this.e += 32;
+                return obj3;
+            }
+        }
+        return s;
     }
 
-    @Override // java.util.List
-    public final Object set(int i10, Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean isEmpty() {
+        return size() == 0;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Set keySet() {
+        g gVar = this.h;
+        if (gVar != null) {
+            return gVar;
+        }
+        g gVar2 = new g(this, 1);
+        this.h = gVar2;
+        return gVar2;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        int i3;
+        int i10 = 32;
+        if (d()) {
+            if (!d()) {
+                throw new IllegalStateException("Arrays already allocated");
+            }
+            int i11 = this.e;
+            int max = Math.max(i11 + 1, 2);
+            int highestOneBit = Integer.highestOneBit(max);
+            if (max > highestOneBit && (highestOneBit = highestOneBit + highestOneBit) <= 0) {
+                highestOneBit = TLObject.FLAG_30;
+            }
+            int max2 = Math.max(4, highestOneBit);
+            this.a = x7.s6.c(max2);
+            this.e = ((32 - Integer.numberOfLeadingZeros(max2 - 1)) & 31) | (this.e & (-32));
+            this.b = new int[i11];
+            this.c = new Object[i11];
+            this.d = new Object[i11];
+        }
+        Map b10 = b();
+        if (b10 != null) {
+            return b10.put(obj, obj2);
+        }
+        int[] iArr = this.b;
+        iArr.getClass();
+        Object[] objArr = this.c;
+        objArr.getClass();
+        Object[] objArr2 = this.d;
+        objArr2.getClass();
+        int i12 = this.f;
+        int i13 = i12 + 1;
+        int a10 = x7.t6.a(obj);
+        int e10 = e();
+        int i14 = a10 & e10;
+        Object obj3 = this.a;
+        obj3.getClass();
+        int b11 = x7.s6.b(i14, obj3);
+        if (b11 == 0) {
+            if (i13 > e10) {
+                e10 = g(e10, (e10 + 1) * (e10 < 32 ? 4 : 2), a10, i12);
+            } else {
+                Object obj4 = this.a;
+                obj4.getClass();
+                x7.s6.d(i14, i13, obj4);
+            }
+            i3 = 1;
+        } else {
+            int i15 = ~e10;
+            int i16 = a10 & i15;
+            int i17 = 0;
+            while (true) {
+                int i18 = b11 - 1;
+                int i19 = iArr[i18];
+                i3 = 1;
+                int i20 = i19 & i15;
+                int i21 = i10;
+                if (i20 == i16 && x7.w6.a(obj, objArr[i18])) {
+                    Object obj5 = objArr2[i18];
+                    objArr2[i18] = obj2;
+                    return obj5;
+                }
+                int i22 = i19 & e10;
+                int i23 = i17 + 1;
+                if (i22 != 0) {
+                    i17 = i23;
+                    b11 = i22;
+                    i10 = i21;
+                } else {
+                    if (i23 >= 9) {
+                        LinkedHashMap linkedHashMap = new LinkedHashMap(e() + 1, 1.0f);
+                        int i24 = isEmpty() ? -1 : 0;
+                        while (i24 >= 0) {
+                            Object[] objArr3 = this.c;
+                            objArr3.getClass();
+                            Object obj6 = objArr3[i24];
+                            Object[] objArr4 = this.d;
+                            objArr4.getClass();
+                            linkedHashMap.put(obj6, objArr4[i24]);
+                            int i25 = i24 + 1;
+                            i24 = i25 < this.f ? i25 : -1;
+                        }
+                        this.a = linkedHashMap;
+                        this.b = null;
+                        this.c = null;
+                        this.d = null;
+                        this.e += 32;
+                        return linkedHashMap.put(obj, obj2);
+                    }
+                    if (i13 > e10) {
+                        e10 = g(e10, (e10 + 1) * (e10 < i21 ? 4 : 2), a10, i12);
+                    } else {
+                        iArr[i18] = (i13 & e10) | i20;
+                    }
+                }
+            }
+        }
+        int[] iArr2 = this.b;
+        iArr2.getClass();
+        int length = iArr2.length;
+        if (i13 > length) {
+            int i26 = i3;
+            int min = Math.min(1073741823, (Math.max(i26, length >>> 1) + length) | i26);
+            if (min != length) {
+                int[] iArr3 = this.b;
+                iArr3.getClass();
+                this.b = Arrays.copyOf(iArr3, min);
+                Object[] objArr5 = this.c;
+                objArr5.getClass();
+                this.c = Arrays.copyOf(objArr5, min);
+                Object[] objArr6 = this.d;
+                objArr6.getClass();
+                this.d = Arrays.copyOf(objArr6, min);
+            }
+        }
+        int[] iArr4 = this.b;
+        iArr4.getClass();
+        iArr4[i12] = (~e10) & a10;
+        Object[] objArr7 = this.c;
+        objArr7.getClass();
+        objArr7[i12] = obj;
+        Object[] objArr8 = this.d;
+        objArr8.getClass();
+        objArr8[i12] = obj2;
+        this.f = i13;
+        this.e += 32;
+        return null;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        Map b10 = b();
+        if (b10 != null) {
+            return b10.remove(obj);
+        }
+        Object h = h(obj);
+        if (h == s) {
+            return null;
+        }
+        return h;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int size() {
+        Map b10 = b();
+        return b10 != null ? b10.size() : this.f;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Collection values() {
+        b8.f fVar = this.r;
+        if (fVar != null) {
+            return fVar;
+        }
+        b8.f fVar2 = new b8.f((Object) this, 6);
+        this.r = fVar2;
+        return fVar2;
     }
 }

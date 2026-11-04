@@ -1,69 +1,168 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.lc;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class e4 extends org.telegram.ui.ActionBar.u5 {
-    public float M0;
-    public final /* synthetic */ int N0;
-    public final /* synthetic */ h4 O0;
+public final class e4 {
+    public float a;
+    public float b;
+    public float c;
+    public boolean e;
+    public final org.telegram.ui.Components.q9 f;
+    public final org.telegram.ui.Components.q9 g;
+    public boolean h;
+    public int i;
+    public float d = 0.0f;
+    public float j = 0.0f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e4(h4 h4Var, Context context, int i10) {
-        super(context);
-        this.O0 = h4Var;
-        this.N0 = i10;
+    public e4(int i3, int i10) {
+        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(6);
+        this.f = q9Var;
+        org.telegram.ui.Components.q9 q9Var2 = new org.telegram.ui.Components.q9(8);
+        this.g = q9Var2;
+        float f10 = i3;
+        q9Var.a = f10;
+        float f11 = i10;
+        q9Var.b = f11;
+        q9Var2.a = f10;
+        q9Var2.b = f11;
+        q9Var.b();
+        q9Var2.b();
+        int i11 = org.telegram.ui.ActionBar.k6.eh;
+        q9Var.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
+        q9Var2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i11, false), 38));
     }
 
-    @Override // android.view.View
-    public final float getAlpha() {
-        return this.M0;
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0073  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Canvas canvas, float f10, float f11, View view) {
+        if (lc.e(512)) {
+            float f12 = (this.a * 0.4f) + 0.8f;
+            if (this.e || this.d != 0.0f) {
+                canvas.save();
+                float interpolation = xq.f.getInterpolation(this.d) * f12;
+                canvas.scale(interpolation, interpolation, f10, f11);
+                boolean z10 = this.h;
+                org.telegram.ui.Components.q9 q9Var = this.f;
+                if (!z10) {
+                    int i3 = this.i;
+                    if (i3 != 1) {
+                        float f13 = this.j;
+                        if (f13 != 1.0f) {
+                            float f14 = f13 + 0.10666667f;
+                            this.j = f14;
+                            if (f14 > 1.0f) {
+                                this.j = 1.0f;
+                            }
+                            q9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
+                        }
+                    }
+                    if (i3 == 1) {
+                        float f15 = this.j;
+                        if (f15 != 0.0f) {
+                            float f16 = f15 - 0.10666667f;
+                            this.j = f16;
+                            if (f16 < 0.0f) {
+                                this.j = 0.0f;
+                            }
+                        }
+                    }
+                    q9Var.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.eh, false), org.telegram.ui.ActionBar.k6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.k6.gh : org.telegram.ui.ActionBar.k6.dh, false)), 38));
+                }
+                q9Var.e(this.a, 1.0f);
+                Paint paint = q9Var.d;
+                q9Var.a(f10, f11, canvas, paint);
+                float f17 = this.a;
+                org.telegram.ui.Components.q9 q9Var2 = this.g;
+                q9Var2.e(f17, 1.0f);
+                q9Var2.a(f10, f11, canvas, paint);
+                canvas.restore();
+            }
+            if (this.d != 0.0f) {
+                view.invalidate();
+            }
+        }
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        this.M0 = f7;
-        h4 h4Var = this.O0;
-        if (this.N0 != 4) {
-            super.setAlpha((1.0f - h4Var.d[4].getFullAlpha()) * f7);
+    public final float b() {
+        float f10 = (this.a * 0.2f) + 0.9f;
+        float interpolation = xq.g.getInterpolation(this.d);
+        return com.google.android.recaptcha.internal.a.y(1.0f, interpolation, 1.0f, f10 * interpolation);
+    }
+
+    public final void c(double d) {
+        float f10 = ((float) d) / 80.0f;
+        float f11 = 0.0f;
+        if (!this.e) {
+            f10 = 0.0f;
+        }
+        if (f10 > 1.0f) {
+            f11 = 1.0f;
+        } else if (f10 >= 0.0f) {
+            f11 = f10;
+        }
+        this.b = f11;
+        this.c = (f11 - this.a) / 200.0f;
+    }
+
+    public final void d(int i3) {
+        this.h = true;
+        this.f.d.setColor(i3);
+    }
+
+    public final void e(View view, boolean z10) {
+        if (this.e != z10) {
+            view.invalidate();
+        }
+        this.e = z10;
+    }
+
+    public final void f() {
+        float f10 = this.b;
+        float f11 = this.a;
+        if (f10 != f11) {
+            float f12 = this.c;
+            float f13 = (16.0f * f12) + f11;
+            this.a = f13;
+            if (f12 > 0.0f) {
+                if (f13 > f10) {
+                    this.a = f10;
+                }
+            } else if (f13 < f10) {
+                this.a = f10;
+            }
+        }
+        boolean z10 = this.e;
+        if (z10) {
+            float f14 = this.d;
+            if (f14 != 1.0f) {
+                float f15 = f14 + 0.045714285f;
+                this.d = f15;
+                if (f15 > 1.0f) {
+                    this.d = 1.0f;
+                    return;
+                }
+                return;
+            }
+        }
+        if (z10) {
             return;
         }
-        float fullAlpha = h4Var.d[4].getFullAlpha();
-        if (h4Var.c()) {
-            float f10 = h4Var.e0;
-            if (f10 > 0.0f) {
-                super.setAlpha(1.0f - f10);
-                return;
+        float f16 = this.d;
+        if (f16 != 0.0f) {
+            float f17 = f16 - 0.045714285f;
+            this.d = f17;
+            if (f17 < 0.0f) {
+                this.d = 0.0f;
             }
         }
-        if (fullAlpha > 0.0f) {
-            super.setAlpha(Math.max(f7, fullAlpha));
-        } else {
-            super.setAlpha(f7);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.u5
-    public final void setFullAlpha(float f7) {
-        super.setFullAlpha(f7);
-        int i10 = 0;
-        while (true) {
-            org.telegram.ui.ActionBar.u5[] u5VarArr = this.O0.d;
-            if (i10 >= u5VarArr.length) {
-                return;
-            }
-            org.telegram.ui.ActionBar.u5 u5Var = u5VarArr[i10];
-            u5Var.setAlpha(u5Var.getAlpha());
-            i10++;
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (this.N0 == 4 && getFullAlpha() > 0.0f) {
-            f7 = 0.0f;
-        }
-        super.setTranslationY(f7);
     }
 }

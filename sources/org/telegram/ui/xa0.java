@@ -1,42 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.TextView;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class xa0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class xa0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ ya0 c;
+    public final /* synthetic */ nc0 b;
 
-    public /* synthetic */ xa0(ya0 ya0Var, float f7, int i10) {
-        this.a = i10;
-        this.c = ya0Var;
-        this.b = f7;
+    public /* synthetic */ xa0(nc0 nc0Var, int i3) {
+        this.a = i3;
+        this.b = nc0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ya0 ya0Var = this.c;
-                TextView textView = ya0Var.f;
-                int x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.y6, false);
-                int x03 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.n6, false);
-                float f7 = this.b;
-                ya0Var.s = f7;
-                textView.setTextColor(i0.b.f(f7, x02, x03));
+                this.b.M.m();
+                break;
+            case 1:
+                nc0 nc0Var = this.b;
+                nc0Var.N = null;
+                nc0Var.O = null;
+                nc0Var.o(true);
+                nc0Var.e.j(null, null, nc0Var.f, null);
+                xc xcVar = nc0Var.n;
+                org.telegram.ui.Components.ch0 ch0Var = nc0Var.J;
+                xcVar.setAnimation(ch0Var);
+                ch0Var.M(0);
+                nc0Var.L = true;
+                break;
+            case 2:
+                this.b.L = true;
                 break;
             default:
-                ya0 ya0Var2 = this.c;
-                TextView textView2 = ya0Var2.d;
-                int x04 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.y6, false);
-                int x05 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.n6, false);
-                float f10 = this.b;
-                ya0Var2.x = f10;
-                textView2.setTextColor(i0.b.f(f10, x04, x05));
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    org.telegram.messenger.g0.K3(editTextBoldCursor);
+                    break;
+                }
                 break;
         }
     }

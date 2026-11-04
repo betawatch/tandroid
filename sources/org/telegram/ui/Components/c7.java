@@ -1,44 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c7 implements hk0 {
+public final /* synthetic */ class c7 implements q1.d {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ c7(int i10) {
-        this.a = i10;
+    public /* synthetic */ c7(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.hk0
-    public final void f(int i10, View view) {
+    @Override // q1.d
+    public final void a(q1.g gVar, float f10, float f11) {
         switch (this.a) {
             case 0:
-                if (view instanceof org.telegram.ui.Cells.w) {
-                    ((org.telegram.ui.Cells.w) view).a();
-                    break;
-                }
+                ((z7) this.b).K1.setBufferedProgress(f10 / 1000.0f);
                 break;
             case 1:
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.v5) {
-                    org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) view;
-                    v5Var.x.d(v5Var);
+                ac acVar = (ac) this.b;
+                acVar.o = (int) f10;
+                acVar.l();
+                break;
+            case 2:
+                if (Math.abs(f10) > ((fb) this.b).getWidth()) {
+                    gVar.d();
                     break;
                 }
                 break;
-            case 2:
-                break;
             case 3:
-                int i11 = ph.c.S1;
+                bi biVar = (bi) ((ci.h4) this.b).d;
+                th thVar = biVar.u2;
+                if (thVar == biVar.e2 || thVar == biVar.f2 || (biVar.x1 && biVar.o3 != null)) {
+                    biVar.P1(1);
+                }
+                biVar.u2.m(biVar.g4);
+                biVar.Y0.g();
+                biVar.b.invalidate();
+                break;
+            case 4:
+                hk hkVar = (hk) this.b;
+                hkVar.n0 = f10;
+                hkVar.m0();
                 break;
             default:
-                int i12 = ph.m.s2;
+                ((la0) this.b).y();
                 break;
         }
-    }
-
-    private final void a(int i10, View view) {
     }
 }

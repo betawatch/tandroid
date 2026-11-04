@@ -131,9 +131,9 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
             throw new IllegalStateException("ChronoLocalDateImpl only supports Chronologies with 12 months per year");
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.PROLEPTIC_MONTH;
-        long y3 = y(aVar) * 32;
+        long y9 = y(aVar) * 32;
         j$.time.temporal.a aVar2 = j$.time.temporal.a.DAY_OF_MONTH;
-        return (((bVar.y(aVar) * 32) + bVar.j(aVar2)) - (y3 + j$.time.temporal.p.a(this, aVar2))) / 32;
+        return (((bVar.y(aVar) * 32) + bVar.j(aVar2)) - (y9 + j$.time.temporal.p.a(this, aVar2))) / 32;
     }
 
     public boolean equals(Object obj) {
@@ -157,7 +157,7 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
 
     @Override // j$.time.chrono.b
     public final String toString() {
-        long y3 = y(j$.time.temporal.a.YEAR_OF_ERA);
+        long y9 = y(j$.time.temporal.a.YEAR_OF_ERA);
         long y10 = y(j$.time.temporal.a.MONTH_OF_YEAR);
         long y11 = y(j$.time.temporal.a.DAY_OF_MONTH);
         StringBuilder sb2 = new StringBuilder(30);
@@ -165,7 +165,7 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
         sb2.append(" ");
         sb2.append(H());
         sb2.append(" ");
-        sb2.append(y3);
+        sb2.append(y9);
         sb2.append(y10 < 10 ? "-0" : "-");
         sb2.append(y10);
         sb2.append(y11 < 10 ? "-0" : "-");

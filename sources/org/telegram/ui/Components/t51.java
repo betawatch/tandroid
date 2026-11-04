@@ -1,102 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.os.AsyncTask;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class t51 extends yy {
-    public final /* synthetic */ int X;
-    public final Object Y;
+public final class t51 extends AsyncTask {
+    public int a = 0;
+    public final Paint b = new Paint(3);
+    public final /* synthetic */ w51 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t51(v51 v51Var, int i10, int i11) {
-        super(i10, false);
-        this.X = i11;
-        this.Y = v51Var;
+    public t51(w51 w51Var) {
+        this.c = w51Var;
     }
 
-    @Override // s4.n0
-    public int A() {
-        switch (this.X) {
-            case 2:
-                return 0;
-            default:
-                return super.A();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yy
-    public qu0 D1(int i10) {
-        switch (this.X) {
-            case 2:
-                qu0 qu0Var = (qu0) this.Y;
-                qu0Var.b = 100.0f;
-                qu0Var.a = 100.0f;
-                return qu0Var;
-            default:
-                return super.D1(i10);
-        }
-    }
-
-    @Override // s4.r, s4.n0
-    public void U(hf.e eVar, s4.z0 z0Var, View view, s0.c cVar) {
-        switch (this.X) {
-            case 2:
-                super.U(eVar, z0Var, view, cVar);
-                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
-                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-                a9.r rVar = collectionItemInfo != null ? new a9.r(collectionItemInfo) : null;
-                if (rVar != null) {
-                    Object obj = rVar.a;
-                    if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
-                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
-                        break;
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        Bitmap frameAtTime;
+        w51 w51Var = this.c;
+        this.a = ((Integer[]) objArr)[0].intValue();
+        Bitmap bitmap = null;
+        if (!isCancelled()) {
+            try {
+                frameAtTime = w51Var.E.getFrameAtTime(w51Var.I * this.a * 1000, 2);
+            } catch (Exception e10) {
+                e = e10;
+            }
+            try {
+                if (!isCancelled()) {
+                    if (frameAtTime == null) {
+                        return frameAtTime;
                     }
+                    Bitmap createBitmap = Bitmap.createBitmap(w51Var.J, w51Var.K, frameAtTime.getConfig());
+                    Canvas canvas = new Canvas(createBitmap);
+                    float max = Math.max(w51Var.J / frameAtTime.getWidth(), w51Var.K / frameAtTime.getHeight());
+                    int width = (int) (frameAtTime.getWidth() * max);
+                    int height = (int) (frameAtTime.getHeight() * max);
+                    Rect rect = new Rect(0, 0, frameAtTime.getWidth(), frameAtTime.getHeight());
+                    int i3 = w51Var.J;
+                    int i10 = w51Var.K;
+                    canvas.drawBitmap(frameAtTime, rect, new Rect((i3 - width) / 2, (i10 - height) / 2, (i3 + width) / 2, (i10 + height) / 2), this.b);
+                    frameAtTime.recycle();
+                    return createBitmap;
                 }
-                break;
-            default:
-                super.U(eVar, z0Var, view, cVar);
-                break;
+            } catch (Exception e11) {
+                e = e11;
+                bitmap = frameAtTime;
+                org.telegram.messenger.a8.g(e, true);
+                return bitmap;
+            }
         }
+        return null;
     }
 
-    @Override // s4.a0
-    public int W0(s4.z0 z0Var) {
-        switch (this.X) {
-            case 0:
-                if (!((v51) this.Y).h3) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                if (!((v51) this.Y).h3) {
-                    break;
-                } else {
-                    break;
-                }
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        if (isCancelled()) {
+            return;
         }
-        return super.W0(z0Var);
-    }
-
-    @Override // s4.a0
-    public void z0(s4.z0 z0Var, int[] iArr) {
-        switch (this.X) {
-            case 2:
-                super.z0(z0Var, iArr);
-                iArr[1] = Math.max(iArr[1], org.telegram.ui.Cells.t7.a(1) * 2);
-                break;
-            default:
-                super.z0(z0Var, iArr);
-                break;
+        w51 w51Var = this.c;
+        ArrayList arrayList = w51Var.G;
+        u51 u51Var = new u51();
+        u51Var.a = bitmap;
+        arrayList.add(u51Var);
+        w51Var.invalidate();
+        int i3 = this.a;
+        if (i3 < w51Var.L) {
+            w51Var.d(i3 + 1);
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t51() {
-        super(100, false);
-        this.X = 2;
-        this.Y = new qu0();
     }
 }

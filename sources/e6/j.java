@@ -1,139 +1,52 @@
 package e6;
 
-import android.util.Log;
-import com.google.android.gms.cast.MediaInfo;
-import java.util.regex.Pattern;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class j extends n {
-    public final /* synthetic */ int r;
-    public final /* synthetic */ h s;
-    public final /* synthetic */ Object t;
+public final class j extends q6.a {
+    public final long a;
+    public final long b;
+    public final boolean c;
+    public final boolean d;
+    public static final i6.b e = new i6.b("MediaLiveSeekableRange", null);
+    public static final Parcelable.Creator<j> CREATOR = new v(8);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(h hVar, Object obj, int i10) {
-        super(hVar, false);
-        this.r = i10;
-        this.s = hVar;
-        this.t = obj;
+    public j(long j10, long j11, boolean z10, boolean z11) {
+        this.a = Math.max(j10, 0L);
+        this.b = Math.max(j11, 0L);
+        this.c = z10;
+        this.d = z11;
     }
 
-    @Override // e6.n
-    public final void n() {
-        JSONObject jSONObject;
-        int i10 = this.r;
-        Object obj = this.t;
-        h hVar = this.s;
-        boolean z10 = false;
-        switch (i10) {
-            case 0:
-                g6.m mVar = hVar.c;
-                g6.n o10 = o();
-                int[] iArr = (int[]) obj;
-                mVar.getClass();
-                JSONObject jSONObject2 = new JSONObject();
-                long b10 = mVar.b();
-                try {
-                    jSONObject2.put("requestId", b10);
-                    jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "QUEUE_GET_ITEMS");
-                    jSONObject2.put("mediaSessionId", mVar.p());
-                    JSONArray jSONArray = new JSONArray();
-                    for (int i11 : iArr) {
-                        jSONArray.put(i11);
-                    }
-                    jSONObject2.put("itemIds", jSONArray);
-                } catch (JSONException unused) {
-                }
-                mVar.c(b10, jSONObject2.toString());
-                mVar.s.a(b10, o10);
-                return;
-            case 1:
-                g6.m mVar2 = hVar.c;
-                g6.n o11 = o();
-                c6.k kVar = (c6.k) obj;
-                mVar2.getClass();
-                MediaInfo mediaInfo = kVar.a;
-                c6.n nVar = kVar.b;
-                if (mediaInfo == null && nVar == null) {
-                    throw new IllegalArgumentException("MediaInfo and MediaQueueData should not be both null");
-                }
-                long[] jArr = kVar.f;
-                JSONObject jSONObject3 = new JSONObject();
-                try {
-                    MediaInfo mediaInfo2 = kVar.a;
-                    if (mediaInfo2 != null) {
-                        jSONObject3.put("media", mediaInfo2.b());
-                    }
-                    if (nVar != null) {
-                        jSONObject3.put("queueData", nVar.b());
-                    }
-                    jSONObject3.putOpt("autoplay", kVar.c);
-                    long j10 = kVar.d;
-                    if (j10 != -1) {
-                        Pattern pattern = g6.a.a;
-                        jSONObject3.put("currentTime", j10 / 1000.0d);
-                    }
-                    jSONObject3.put("playbackRate", kVar.e);
-                    jSONObject3.putOpt("credentials", kVar.r);
-                    jSONObject3.putOpt("credentialsType", kVar.s);
-                    jSONObject3.putOpt("atvCredentials", kVar.w);
-                    jSONObject3.putOpt("atvCredentialsType", kVar.x);
-                    if (jArr != null) {
-                        JSONArray jSONArray2 = new JSONArray();
-                        for (int i12 = 0; i12 < jArr.length; i12++) {
-                            jSONArray2.put(i12, jArr[i12]);
-                        }
-                        jSONObject3.put("activeTrackIds", jSONArray2);
-                    }
-                    jSONObject3.putOpt("customData", kVar.n);
-                    jSONObject3.put("requestId", kVar.y);
-                    jSONObject = jSONObject3;
-                } catch (JSONException e) {
-                    g6.b bVar = c6.k.D;
-                    Log.e(bVar.a, bVar.d("Error transforming MediaLoadRequestData into JSONObject", e));
-                    jSONObject = new JSONObject();
-                }
-                long b11 = mVar2.b();
-                try {
-                    jSONObject.put("requestId", b11);
-                    jSONObject.put(TeXSymbolParser.TYPE_ATTR, "LOAD");
-                } catch (JSONException unused2) {
-                }
-                mVar2.c(b11, jSONObject.toString());
-                mVar2.j.a(b11, o11);
-                return;
-            default:
-                g6.m mVar3 = hVar.c;
-                g6.n o12 = o();
-                mVar3.getClass();
-                JSONObject jSONObject4 = new JSONObject();
-                long b12 = mVar3.b();
-                long j11 = ((c6.p) obj).a;
-                try {
-                    jSONObject4.put("requestId", b12);
-                    jSONObject4.put(TeXSymbolParser.TYPE_ATTR, "SEEK");
-                    jSONObject4.put("mediaSessionId", mVar3.p());
-                    Pattern pattern2 = g6.a.a;
-                    jSONObject4.put("currentTime", j11 / 1000.0d);
-                } catch (JSONException unused3) {
-                }
-                mVar3.c(b12, jSONObject4.toString());
-                mVar3.g = Long.valueOf(j11);
-                mVar3.m.a(b12, new hf.b(mVar3, o12, z10 ? 1 : 0, 20));
-                return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof j)) {
+            return false;
+        }
+        j jVar = (j) obj;
+        return this.a == jVar.a && this.b == jVar.b && this.c == jVar.c && this.d == jVar.d;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(h hVar, int[] iArr) {
-        super(hVar, true);
-        this.r = 0;
-        this.s = hVar;
-        this.t = iArr;
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Long.valueOf(this.b), Boolean.valueOf(this.c), Boolean.valueOf(this.d)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 8);
+        parcel.writeLong(this.a);
+        j8.a.r(parcel, 3, 8);
+        parcel.writeLong(this.b);
+        j8.a.r(parcel, 4, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        j8.a.r(parcel, 5, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        j8.a.t(parcel, s6);
     }
 }

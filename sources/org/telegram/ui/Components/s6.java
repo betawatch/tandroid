@@ -1,72 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s6 implements Runnable {
+public final /* synthetic */ class s6 implements org.telegram.messenger.n10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w7 b;
-    public final /* synthetic */ org.telegram.messenger.kj c;
+    public final /* synthetic */ z7 b;
 
-    public /* synthetic */ s6(w7 w7Var, org.telegram.messenger.kj kjVar, int i10) {
-        this.a = i10;
-        this.b = w7Var;
-        this.c = kjVar;
+    public /* synthetic */ s6(z7 z7Var, int i3) {
+        this.a = i3;
+        this.b = z7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        org.telegram.messenger.kj kjVar = this.c;
-        w7 w7Var = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.n10
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
             case 0:
-                org.telegram.messenger.qp qpVar = w7Var.m2;
-                if (qpVar != null) {
-                    TLRPC.Document a2 = qpVar.a();
-                    qpVar.c.remove(kjVar);
-                    if (qpVar.a() != a2) {
-                        qpVar.e();
-                    }
-                    if (!w7Var.m2.c.isEmpty()) {
-                        org.telegram.messenger.at.f(w7Var.a).k(org.telegram.messenger.at.T3, w7Var.m2);
-                        break;
-                    } else {
-                        MediaController.B().o();
-                        w7Var.dismiss();
-                        break;
-                    }
-                }
+                boolean z10 = !((Boolean) obj2).booleanValue();
+                z7 z7Var = this.b;
+                z7Var.P1 = z10;
+                MediaController B = MediaController.B();
+                org.telegram.ui.ActionBar.u0 u0Var = z7Var.O1;
+                float floatValue = ((Float) obj).floatValue();
+                u0Var.getClass();
+                B.m0(true, (floatValue * 2.8f) + 0.2f);
                 break;
             default:
-                LaunchActivity launchActivity = w7Var.w2;
-                int i11 = org.telegram.messenger.e20.s0;
-                int i12 = w7Var.a;
-                if (i11 != i12) {
-                    launchActivity.O0(i12);
-                }
-                Bundle bundle = new Bundle();
-                long B0 = org.telegram.messenger.kj.B0(kjVar.k);
-                if (org.telegram.messenger.o5.C(B0)) {
-                    bundle.putInt("enc_id", (int) (B0 & 4294967295L));
-                } else if (org.telegram.messenger.o5.E(B0)) {
-                    bundle.putLong("user_id", B0);
-                } else {
-                    TLRPC.Chat L0 = org.telegram.messenger.wp.r1(w7Var.a).L0(Long.valueOf(-B0));
-                    if (L0 != null && L0.migrated_to != null) {
-                        bundle.putLong("migrated_to", B0);
-                        B0 = -L0.migrated_to.channel_id;
-                    }
-                    bundle.putLong("chat_id", -B0);
-                }
-                bundle.putInt("message_id", kjVar.f1());
-                org.telegram.messenger.at.f(w7Var.a).k(4, new Object[0]);
-                launchActivity.u0(new org.telegram.ui.un(bundle), false, false);
-                w7Var.dismiss();
+                this.b.Z1.setBackground(new BitmapDrawable((Bitmap) obj));
                 break;
         }
     }

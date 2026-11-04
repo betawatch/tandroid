@@ -1,296 +1,240 @@
 package e9;
 
-import java.util.AbstractSet;
-import java.util.Collection;
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.RandomAccess;
-import v7.t6;
-import z7.de;
-import z7.ed;
-import z7.mg;
+import android.app.IntentService;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.os.ResultReceiver;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
+import b8.kb;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.s;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class d implements Iterator {
-    public final /* synthetic */ int a;
-    public final Iterator b;
-    public Object c;
-    public final /* synthetic */ Object d;
+public abstract class d extends IntentService {
+    public final boolean a;
+    public final long b;
+    public final Intent c;
+    public final Intent d;
+    public c e;
+    public c f;
 
-    public d(m mVar, ListIterator listIterator, byte b10) {
-        this.a = 3;
-        this.d = mVar;
-        this.c = mVar.c;
-        this.b = listIterator;
+    public d() {
+        super("SearchActionVerificationClientService");
+        this.c = new Intent("com.google.android.googlequicksearchbox.SEARCH_ACTION_VERIFICATION_SERVICE").setPackage("com.google.android.googlequicksearchbox");
+        this.d = new Intent("com.google.android.apps.assistant.go.verification.VERIFICATION_SERVICE").setPackage("com.google.android.apps.assistant");
+        this.a = !"user".equals(Build.TYPE);
+        this.b = 1000L;
     }
 
-    public void a() {
-        m mVar = (m) this.d;
-        mVar.m();
-        if (mVar.c != ((Collection) this.c)) {
-            throw new ConcurrentModificationException();
+    public final boolean a(String str) {
+        ApplicationInfo applicationInfo;
+        try {
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(str, 0);
+            if (packageInfo != null && (applicationInfo = packageInfo.applicationInfo) != null) {
+                if (applicationInfo.enabled) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (PackageManager.NameNotFoundException e10) {
+            Log.w("SAVerificationClientS", "Couldn't find package name ".concat(str), e10);
+            return false;
         }
     }
 
-    public void b() {
-        switch (this.a) {
-            case 3:
-                m mVar = (m) this.d;
-                mVar.zzb();
-                if (mVar.c != ((Collection) this.c)) {
-                    throw new ConcurrentModificationException();
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0194  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(String str, Intent intent, c cVar) {
+        String message;
+        boolean b10;
+        boolean equals = str.equals("com.google.android.googlequicksearchbox");
+        boolean z10 = this.a;
+        if (equals || str.equals("com.google.android.apps.assistant")) {
+            if (!"user".equals(Build.TYPE) || kb.a(this, str)) {
+                if (intent.hasExtra("SearchActionVerificationClientExtraIntent")) {
+                    Intent intent2 = (Intent) intent.getParcelableExtra("SearchActionVerificationClientExtraIntent");
+                    if (z10) {
+                        Log.d("SAVerificationClientU", "Intent:");
+                        String valueOf = String.valueOf(intent2);
+                        StringBuilder sb2 = new StringBuilder(valueOf.length() + 1);
+                        sb2.append("\t");
+                        sb2.append(valueOf);
+                        Log.d("SAVerificationClientU", sb2.toString());
+                        Bundle extras = intent2.getExtras();
+                        if (extras != null) {
+                            Log.d("SAVerificationClientU", "Extras:");
+                            for (String str2 : extras.keySet()) {
+                                Log.d("SAVerificationClientU", String.format("\t%s: %s", str2, extras.get(str2)));
+                            }
+                        }
+                    }
+                    if (c.a(cVar)) {
+                        try {
+                            d9.a aVar = (d9.a) cVar.a;
+                            aVar.getClass();
+                            Parcel obtain = Parcel.obtain();
+                            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
+                            Parcel H0 = aVar.H0(obtain, 2);
+                            int readInt = H0.readInt();
+                            H0.recycle();
+                            Log.i("SAVerificationClientS", str + " Service API version: " + readInt);
+                            b10 = cVar.b(intent2, new Bundle());
+                            Typeface typeface = g0.a;
+                            if (b10) {
+                                g0.h3(new s(intent2, r2));
+                            }
+                            message = "";
+                        } catch (RemoteException e10) {
+                            String valueOf2 = String.valueOf(e10.getMessage());
+                            Log.e("SAVerificationClientS", valueOf2.length() != 0 ? "Remote exception: ".concat(valueOf2) : new String("Remote exception: "));
+                            message = e10.getMessage();
+                        } catch (Exception e11) {
+                            String valueOf3 = String.valueOf(e11.getMessage());
+                            Log.e("SAVerificationClientS", valueOf3.length() != 0 ? "Exception: ".concat(valueOf3) : new String("Exception: "));
+                            message = e11.getMessage();
+                        }
+                        if (intent2.hasExtra("com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER")) {
+                            ResultReceiver resultReceiver = (ResultReceiver) intent2.getExtras().getParcelable("com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER");
+                            Bundle bundle = new Bundle();
+                            bundle.putString("com.google.android.voicesearch.extra.ERROR_MESSAGE", message);
+                            resultReceiver.send(b10 ? 0 : -1, bundle);
+                        }
+                        return b10;
+                    }
+                    Object[] objArr = {str, intent};
+                    message = "VerificationService is not connected to %s, unable to check intent: %s";
+                    Log.e("SAVerificationClientS", String.format("VerificationService is not connected to %s, unable to check intent: %s", objArr));
+                    b10 = false;
+                    if (intent2.hasExtra("com.google.android.voicesearch.extra.SEND_MESSAGE_RESULT_RECEIVER")) {
+                    }
+                    return b10;
                 }
-                return;
-            default:
-                m mVar2 = (m) this.d;
-                mVar2.zzb();
-                if (mVar2.c != ((Collection) this.c)) {
-                    throw new ConcurrentModificationException();
+                if (z10) {
+                    String valueOf4 = String.valueOf(intent);
+                    StringBuilder sb3 = new StringBuilder(valueOf4.length() + 28);
+                    sb3.append("No extra, nothing to check: ");
+                    sb3.append(valueOf4);
+                    Log.d("SAVerificationClientS", sb3.toString());
                 }
-                return;
+            } else if (z10) {
+                Log.d("SAVerificationClientS", "Cannot verify the intent with package " + str + " in unsafe mode.");
+                return false;
+            }
+        } else if (z10) {
+            Log.d("SAVerificationClientS", "Unsupported package " + str + " for verification.");
+            return false;
+        }
+        return false;
+    }
+
+    public final void c() {
+        b.e();
+        NotificationChannel c2 = b.c(getApplicationContext().getResources().getString(R.drawable.$avd_flip__0));
+        c2.enableVibration(false);
+        c2.enableLights(false);
+        c2.setShowBadge(false);
+        ((NotificationManager) getApplicationContext().getSystemService(NotificationManager.class)).createNotificationChannel(c2);
+        startForeground(10000, new NotificationCompat.Builder(getApplicationContext(), "Assistant_verifier").setGroup("Assistant_verifier").setContentTitle(getApplicationContext().getResources().getString(R.drawable.$avd_flip__1)).setSmallIcon(android.R.drawable.ic_dialog_email).setPriority(-2).setVisibility(1).build());
+    }
+
+    @Override // android.app.IntentService, android.app.Service
+    public final void onCreate() {
+        if (this.a) {
+            Log.d("SAVerificationClientS", "onCreate");
+        }
+        super.onCreate();
+        this.e = new c(this);
+        if (a("com.google.android.googlequicksearchbox") && (!"user".equals(Build.TYPE) || kb.a(this, "com.google.android.googlequicksearchbox"))) {
+            bindService(this.c, this.e, 1);
+        }
+        this.f = new c(this);
+        if (a("com.google.android.apps.assistant") && (!"user".equals(Build.TYPE) || kb.a(this, "com.google.android.apps.assistant"))) {
+            bindService(this.d, this.f, 1);
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            c();
         }
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                a();
-                break;
-            case 3:
-                b();
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            default:
-                b();
-                break;
+    @Override // android.app.IntentService, android.app.Service
+    public final void onDestroy() {
+        if (this.a) {
+            Log.d("SAVerificationClientS", "onDestroy");
         }
-        return this.b.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-            case 0:
-                Map.Entry entry = (Map.Entry) this.b.next();
-                this.c = (Collection) entry.getValue();
-                return ((e) this.d).a(entry);
-            case 1:
-                Map.Entry entry2 = (Map.Entry) this.b.next();
-                this.c = entry2;
-                return entry2.getKey();
-            case 2:
-                a();
-                return this.b.next();
-            case 3:
-                b();
-                return this.b.next();
-            case 4:
-                Map.Entry entry3 = (Map.Entry) this.b.next();
-                this.c = (Collection) entry3.getValue();
-                e eVar = (e) this.d;
-                Object key = entry3.getKey();
-                x7.f fVar = (x7.f) eVar.e;
-                Collection collection = (Collection) entry3.getValue();
-                fVar.getClass();
-                List list = (List) collection;
-                return new x7.l(key, list instanceof RandomAccess ? new x7.b(fVar, key, list, null) : new m(fVar, key, list, (m) null));
-            case 5:
-                Map.Entry entry4 = (Map.Entry) this.b.next();
-                this.c = entry4;
-                return entry4.getKey();
-            case 6:
-                Map.Entry entry5 = (Map.Entry) this.b.next();
-                this.c = (Collection) entry5.getValue();
-                Object key2 = entry5.getKey();
-                Collection collection2 = (Collection) entry5.getValue();
-                mg mgVar = (mg) ((e) this.d).e;
-                mgVar.getClass();
-                List list2 = (List) collection2;
-                return new z7.f(key2, list2 instanceof RandomAccess ? new de(mgVar, key2, list2, null) : new m(mgVar, key2, list2, (m) null));
-            case 7:
-                Map.Entry entry6 = (Map.Entry) this.b.next();
-                this.c = entry6;
-                return entry6.getKey();
-            default:
-                b();
-                return this.b.next();
+        super.onDestroy();
+        if (c.a(this.e)) {
+            unbindService(this.e);
+        }
+        if (c.a(this.f)) {
+            unbindService(this.f);
+        }
+        if (Build.VERSION.SDK_INT >= 26) {
+            stopForeground(true);
         }
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
-            case 0:
-                t6.o("no calls to next() since the last call to remove()", ((Collection) this.c) != null);
-                this.b.remove();
-                ((p1) ((e) this.d).e).f -= ((Collection) this.c).size();
-                ((Collection) this.c).clear();
-                this.c = null;
+    @Override // android.app.IntentService
+    public final void onHandleIntent(Intent intent) {
+        boolean z10 = this.a;
+        if (intent == null) {
+            if (z10) {
+                Log.d("SAVerificationClientS", "Unable to verify null intent");
                 return;
-            case 1:
-                t6.o("no calls to next() since the last call to remove()", ((Map.Entry) this.c) != null);
-                Collection collection = (Collection) ((Map.Entry) this.c).getValue();
-                this.b.remove();
-                ((f) this.d).c.f -= collection.size();
-                collection.clear();
-                this.c = null;
-                return;
-            case 2:
-                this.b.remove();
-                m mVar = (m) this.d;
-                p1 p1Var = (p1) mVar.f;
-                p1Var.f--;
-                mVar.n();
-                return;
-            case 3:
-                this.b.remove();
-                m mVar2 = (m) this.d;
-                x7.f fVar = (x7.f) mVar2.f;
-                fVar.d--;
-                mVar2.p();
-                return;
-            case 4:
-                if (!(((Collection) this.c) != null)) {
-                    throw new IllegalStateException("no calls to next() since the last call to remove()");
-                }
-                this.b.remove();
-                ((x7.f) ((e) this.d).e).d -= ((Collection) this.c).size();
-                ((Collection) this.c).clear();
-                this.c = null;
-                return;
-            case 5:
-                Map.Entry entry = (Map.Entry) this.c;
-                if (!(entry != null)) {
-                    throw new IllegalStateException("no calls to next() since the last call to remove()");
-                }
-                Collection collection2 = (Collection) entry.getValue();
-                this.b.remove();
-                ((x7.a) this.d).c.d -= collection2.size();
-                collection2.clear();
-                this.c = null;
-                return;
-            case 6:
-                if (!(((Collection) this.c) != null)) {
-                    throw new IllegalStateException("no calls to next() since the last call to remove()");
-                }
-                this.b.remove();
-                ((mg) ((e) this.d).e).getClass();
-                ((Collection) this.c).size();
-                ((Collection) this.c).clear();
-                this.c = null;
-                return;
-            case 7:
-                Map.Entry entry2 = (Map.Entry) this.c;
-                if (!(entry2 != null)) {
-                    throw new IllegalStateException("no calls to next() since the last call to remove()");
-                }
-                Collection collection3 = (Collection) entry2.getValue();
-                this.b.remove();
-                ((ed) this.d).c.getClass();
-                collection3.size();
-                collection3.clear();
-                this.c = null;
-                return;
-            default:
-                this.b.remove();
-                ((m) this.d).p();
-                return;
+            }
+            return;
         }
-    }
-
-    public d(m mVar, ListIterator listIterator, char c10) {
-        this.a = 8;
-        this.d = mVar;
-        this.c = mVar.c;
-        this.b = listIterator;
-    }
-
-    public /* synthetic */ d(AbstractSet abstractSet, Iterator it, int i10) {
-        this.a = i10;
-        this.b = it;
-        this.d = abstractSet;
-    }
-
-    public d(e eVar, byte b10) {
-        this.a = 4;
-        this.d = eVar;
-        this.b = eVar.b.entrySet().iterator();
-    }
-
-    public d(e eVar, char c10) {
-        this.a = 6;
-        this.d = eVar;
-        this.b = eVar.b.entrySet().iterator();
-    }
-
-    public d(m mVar, byte b10) {
-        Iterator it;
-        this.a = 3;
-        this.d = mVar;
-        Collection collection = mVar.c;
-        this.c = collection;
-        if (collection instanceof List) {
-            it = ((List) collection).listIterator();
+        long nanoTime = System.nanoTime();
+        while (true) {
+            boolean a10 = a("com.google.android.googlequicksearchbox");
+            boolean z11 = true;
+            boolean z12 = !a10 || c.a(this.e);
+            if (z10) {
+                Log.d("SAVerificationClientS", "GSA app com.google.android.googlequicksearchbox installed: " + a10 + " connected " + c.a(this.e));
+            }
+            boolean a11 = a("com.google.android.apps.assistant");
+            if (a11 && !c.a(this.f)) {
+                z11 = false;
+            }
+            if (z10) {
+                Log.d("SAVerificationClientS", "AssistantGo app com.google.android.apps.assistant installed: " + a11 + " connected " + c.a(this.f));
+            }
+            if ((!z12 || !z11) && System.nanoTime() - nanoTime < this.b * 1000000) {
+                try {
+                    Thread.sleep(50L);
+                } catch (InterruptedException e10) {
+                    if (z10) {
+                        String valueOf = String.valueOf(e10);
+                        StringBuilder sb2 = new StringBuilder(valueOf.length() + 33);
+                        sb2.append("Unexpected InterruptedException: ");
+                        sb2.append(valueOf);
+                        Log.d("SAVerificationClientS", sb2.toString());
+                    }
+                }
+            }
+        }
+        if (b("com.google.android.googlequicksearchbox", intent, this.e)) {
+            Log.i("SAVerificationClientS", "Verified the intent with GSA.");
+            return;
+        }
+        Log.i("SAVerificationClientS", "Unable to verify the intent with GSA.");
+        if (b("com.google.android.apps.assistant", intent, this.f)) {
+            Log.i("SAVerificationClientS", "Verified the intent with Assistant Go.");
         } else {
-            it = collection.iterator();
+            Log.i("SAVerificationClientS", "Unable to verify the intent with Assistant Go.");
         }
-        this.b = it;
-    }
-
-    public d(m mVar, char c10) {
-        Iterator it;
-        this.a = 8;
-        this.d = mVar;
-        Collection collection = mVar.c;
-        this.c = collection;
-        if (collection instanceof List) {
-            it = ((List) collection).listIterator();
-        } else {
-            it = collection.iterator();
-        }
-        this.b = it;
-    }
-
-    public d(m mVar) {
-        Iterator it;
-        this.a = 2;
-        this.d = mVar;
-        Collection collection = mVar.c;
-        this.c = collection;
-        if (collection instanceof List) {
-            it = ((List) collection).listIterator();
-        } else {
-            it = collection.iterator();
-        }
-        this.b = it;
-    }
-
-    public d(m mVar, ListIterator listIterator) {
-        this.a = 2;
-        this.d = mVar;
-        this.c = mVar.c;
-        this.b = listIterator;
-    }
-
-    public d(e eVar) {
-        this.a = 0;
-        this.d = eVar;
-        this.b = eVar.b.entrySet().iterator();
     }
 }

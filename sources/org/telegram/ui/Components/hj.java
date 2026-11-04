@@ -3,37 +3,37 @@ package org.telegram.ui.Components;
 import java.io.File;
 import java.util.Comparator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hj implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xj b;
+    public final /* synthetic */ uj b;
 
-    public /* synthetic */ hj(xj xjVar, int i10) {
-        this.a = i10;
-        this.b = xjVar;
+    public /* synthetic */ hj(uj ujVar, int i3) {
+        this.a = i3;
+        this.b = ujVar;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        qj qjVar = (qj) obj;
-        qj qjVar2 = (qj) obj2;
+        oj ojVar = (oj) obj;
+        oj ojVar2 = (oj) obj2;
         switch (this.a) {
             case 0:
-                xj xjVar = this.b;
-                xjVar.getClass();
-                File file = qjVar.f;
+                uj ujVar = this.b;
+                ujVar.getClass();
+                File file = ojVar.f;
                 if (file != null) {
-                    if (qjVar2.f != null) {
+                    if (ojVar2.f != null) {
                         boolean isDirectory = file.isDirectory();
-                        if (isDirectory != qjVar2.f.isDirectory()) {
+                        if (isDirectory != ojVar2.f.isDirectory()) {
                             if (isDirectory) {
                             }
-                        } else if (isDirectory || xjVar.c0) {
+                        } else if (isDirectory || ujVar.d0) {
                             break;
                         } else {
-                            long lastModified = qjVar.f.lastModified();
-                            long lastModified2 = qjVar2.f.lastModified();
+                            long lastModified = ojVar.f.lastModified();
+                            long lastModified2 = ojVar2.f.lastModified();
                             if (lastModified != lastModified2) {
                                 if (lastModified > lastModified2) {
                                 }
@@ -43,11 +43,11 @@ public final /* synthetic */ class hj implements Comparator {
                 }
                 break;
             default:
-                if (this.b.c0) {
+                if (this.b.d0) {
                     break;
                 } else {
-                    long lastModified3 = qjVar.f.lastModified();
-                    long lastModified4 = qjVar2.f.lastModified();
+                    long lastModified3 = ojVar.f.lastModified();
+                    long lastModified4 = ojVar2.f.lastModified();
                     if (lastModified3 != lastModified4) {
                         if (lastModified3 > lastModified4) {
                         }
@@ -55,6 +55,6 @@ public final /* synthetic */ class hj implements Comparator {
                 }
                 break;
         }
-        return qjVar.f.getName().compareToIgnoreCase(qjVar2.f.getName());
+        return ojVar.f.getName().compareToIgnoreCase(ojVar2.f.getName());
     }
 }

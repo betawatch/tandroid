@@ -1,107 +1,57 @@
 package kg;
 
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
+import ai.x2;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.sj0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class k1 {
-    public final p6 a;
-    public LinearGradient d;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public boolean m;
-    public boolean n;
-    public float b = 0.5f;
-    public float c = 0.5f;
-    public final Matrix e = new Matrix();
-    public final Paint f = new Paint(1);
-    public final int[] l = new int[5];
-    public float o = 1.0f;
-    public float p = 1.5f;
-    public float q = 0.0f;
-    public final int k = -1;
+public final class k1 extends sj0 {
+    public e1 c;
+    public Integer d;
+    public x2 e;
+    public boolean f;
+    public int h;
 
-    public k1(int i10, int i11, int i12, int i13, p6 p6Var) {
-        this.a = p6Var;
-        this.g = i10;
-        this.h = i11;
-        this.i = i12;
-        this.j = i13;
-    }
-
-    public final void a() {
-        int b10 = b(this.g);
-        int b11 = b(this.h);
-        int i10 = this.i;
-        int b12 = i10 < 0 ? 0 : b(i10);
-        int i11 = this.j;
-        int b13 = i11 < 0 ? 0 : b(i11);
-        int i12 = this.k;
-        int b14 = i12 < 0 ? 0 : b(i12);
-        LinearGradient linearGradient = this.d;
-        int[] iArr = this.l;
-        if (linearGradient != null && iArr[0] == b10 && iArr[1] == b11 && iArr[2] == b12 && iArr[3] == b13 && iArr[4] == b14) {
-            return;
+    @Override // org.telegram.ui.Components.sj0
+    public final boolean D(u4.d1 d1Var) {
+        if (d1Var.b() == 0) {
+            return false;
         }
-        iArr[0] = b10;
-        iArr[1] = b11;
-        iArr[2] = b12;
-        iArr[3] = b13;
-        iArr[4] = b14;
-        if (b12 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1]}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else if (b13 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2]}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP);
-        } else if (b14 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3]}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
-        } else {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3], iArr[4]}, new float[]{0.0f, 0.425f, 0.655f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
+        return this.c.D(d1Var);
+    }
+
+    @Override // u4.h0
+    public final int b() {
+        e1 e1Var = this.c;
+        int K = e1Var.K();
+        e1Var.N0 = K;
+        return K + 1;
+    }
+
+    @Override // u4.h0
+    public final int d(int i3) {
+        if (i3 == 0) {
+            return -983904;
         }
-        this.d.setLocalMatrix(this.e);
-        this.f.setShader(this.d);
+        return this.c.d(i3 - 1);
     }
 
-    public final int b(int i10) {
-        int c10 = c(i10);
-        if (!this.n) {
-            return c10;
+    @Override // u4.h0
+    public final void t(u4.d1 d1Var, int i3) {
+        if (i3 > 0) {
+            this.c.t(d1Var, i3 - 1);
         }
-        return Color.argb(Color.alpha(c10), Color.red(c10) - 15, Color.green(c10) - 15, Color.blue(c10) - 15);
     }
 
-    public int c(int i10) {
-        return t6.w0(i10, this.a);
-    }
-
-    public final void d(int i10, float f7, int i11, int i12, float f10, int i13) {
-        a();
-        boolean z10 = this.m;
-        Matrix matrix = this.e;
-        if (z10) {
-            matrix.reset();
-            matrix.postScale((i12 - i10) / 100.0f, (i13 - i11) / 100.0f, this.b * 100.0f, this.c * 100.0f);
-            matrix.postTranslate(f7, f10);
-            this.d.setLocalMatrix(matrix);
-            return;
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
+        if (i3 != -983904) {
+            return this.c.x(viewGroup, i3);
         }
-        int i14 = i13 - i11;
-        a();
-        matrix.reset();
-        matrix.postScale((i12 - i10) / 100.0f, (i14 + i14) / 100.0f, 75.0f, 50.0f);
-        matrix.postTranslate(f7, (-r9) + f10);
-        this.d.setLocalMatrix(matrix);
-    }
-
-    public final void e(RectF rectF) {
-        d((int) rectF.left, 0.0f, (int) rectF.top, (int) rectF.right, 0.0f, (int) rectF.bottom);
+        x2 x2Var = new x2(7, viewGroup.getContext(), this);
+        this.e = x2Var;
+        return new bj0(x2Var);
     }
 }

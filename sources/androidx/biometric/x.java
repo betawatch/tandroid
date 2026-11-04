@@ -1,35 +1,45 @@
 package androidx.biometric;
 
-import android.content.DialogInterface;
+import b8.k0;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class x implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
+public final class x extends d {
+    public final WeakReference a;
 
-    public x(y yVar) {
-        this.b = new WeakReference(yVar);
+    public x(z zVar) {
+        this.a = new WeakReference(zVar);
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                WeakReference weakReference = (WeakReference) this.b;
-                if (weakReference.get() != null) {
-                    ((y) weakReference.get()).g(true);
-                    break;
-                }
-                break;
-            default:
-                ((f0) this.b).C0.g(true);
-                break;
+    @Override // androidx.biometric.d
+    public final void a(int i3, CharSequence charSequence) {
+        WeakReference weakReference = this.a;
+        if (weakReference.get() == null || ((z) weakReference.get()).o || !((z) weakReference.get()).n) {
+            return;
         }
+        ((z) weakReference.get()).d(new e(i3, charSequence));
     }
 
-    public x(f0 f0Var) {
-        this.b = f0Var;
+    @Override // androidx.biometric.d
+    public final void b(u uVar) {
+        WeakReference weakReference = this.a;
+        if (weakReference.get() == null || !((z) weakReference.get()).n) {
+            return;
+        }
+        int i3 = -1;
+        if (uVar.b == -1) {
+            v vVar = uVar.a;
+            int c2 = ((z) weakReference.get()).c();
+            if ((c2 & 32767) != 0 && !k0.a(c2)) {
+                i3 = 2;
+            }
+            uVar = new u(vVar, i3);
+        }
+        z zVar = (z) weakReference.get();
+        if (zVar.r == null) {
+            zVar.r = new androidx.lifecycle.z();
+        }
+        z.h(zVar.r, uVar);
     }
 }

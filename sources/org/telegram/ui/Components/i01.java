@@ -1,96 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.TextureView;
-import android.view.View;
-import java.util.ArrayList;
+import android.widget.EditText;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i01 extends TextureView {
-    public static Boolean f;
-    public g01 a;
-    public final o1.a b;
-    public final ArrayList c;
-    public Runnable d;
-    public boolean e;
+public final class i01 extends u4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ n01 c;
 
-    public i01(Context context, Runnable runnable) {
-        super(context);
-        this.b = new o1.a(this, 1);
-        this.c = new ArrayList();
-        this.d = runnable;
-        setOpaque(false);
-        setSurfaceTextureListener(new li.e(this, 4));
+    public i01(n01 n01Var, int i3, long j10) {
+        this.c = n01Var;
+        this.a = i3;
+        this.b = j10;
     }
 
-    public static void b(Runnable runnable) {
-        if (runnable == null) {
+    @Override // u4.t0
+    public final void a(RecyclerView recyclerView, int i3) {
+        EditText editText = this.c.w;
+        if (i3 == 1 && editText.hasFocus()) {
+            org.telegram.messenger.g0.v1(editText);
+            editText.clearFocus();
+        }
+    }
+
+    @Override // u4.t0
+    public final void b(RecyclerView recyclerView, int i3, int i10) {
+        n01 n01Var = this.c;
+        n01Var.h();
+        u4.b0 b0Var = (u4.b0) recyclerView.getLayoutManager();
+        if (b0Var == null || b0Var.N0() < n01Var.s.c.size() - 3) {
             return;
         }
-        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
-            org.telegram.messenger.i0.g3(runnable);
-        } else {
-            runnable.run();
-        }
-    }
-
-    public static boolean c() {
-        if (f == null) {
-            f = Boolean.valueOf(org.telegram.messenger.wp.d1().getBoolean("nothanos", false));
-        }
-        Boolean bool = f;
-        return bool == null || !bool.booleanValue();
-    }
-
-    public final void a(View view) {
-        int i10 = 0;
-        int i11 = 0;
-        boolean z10 = false;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            h01 h01Var = (h01) arrayList.get(i11);
-            if (h01Var.a == view) {
-                Runnable runnable = h01Var.d;
-                if (runnable != null) {
-                    b(runnable);
-                    h01Var.d = null;
-                }
-                arrayList.remove(i11);
-                i11--;
-                z10 = true;
-            }
-            i11++;
-        }
+        boolean z10 = n01Var.d;
+        int i11 = this.a;
         if (z10) {
+            org.telegram.messenger.hp.s1(i11).G1().g(false);
             return;
         }
-        g01 g01Var = this.a;
-        ArrayList arrayList2 = g01Var.W;
-        if (g01Var.b.get()) {
-            Handler handler = g01Var.getHandler();
-            if (handler != null) {
-                handler.sendMessage(handler.obtainMessage(5, view));
-                return;
-            }
-            while (i10 < arrayList2.size()) {
-                f01 f01Var = (f01) arrayList2.get(i10);
-                if (f01Var.a.contains(view)) {
-                    Runnable runnable2 = f01Var.f;
-                    if (runnable2 != null) {
-                        b(runnable2);
-                        f01Var.f = null;
-                    }
-                    arrayList2.remove(i10);
-                    i10--;
-                }
-                i10++;
-            }
+        org.telegram.messenger.c00 c00Var = org.telegram.messenger.hp.s1(i11).q7;
+        long j10 = -this.b;
+        if (c00Var.e(j10)) {
+            return;
         }
+        c00Var.o(j10);
     }
 }

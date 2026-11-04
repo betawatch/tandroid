@@ -1,81 +1,143 @@
 package t7;
 
-import java.util.Collection;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.LocationRequest;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class m implements ExecutorService, AutoCloseable {
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean awaitTermination(long j10, TimeUnit timeUnit) {
-        return ((jb.h) this).a.awaitTermination(j10, timeUnit);
+public final class m implements Parcelable.Creator {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ m(int i3) {
+        this.a = i3;
     }
 
-    @Override // java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        cf.b.i(this);
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        Status status = null;
+        switch (this.a) {
+            case 0:
+                int z10 = g6.e.z(parcel);
+                boolean z11 = false;
+                boolean z12 = false;
+                boolean z13 = false;
+                boolean z14 = false;
+                LocationRequest locationRequest = null;
+                ArrayList arrayList = null;
+                String str = null;
+                String str2 = null;
+                long j10 = Long.MAX_VALUE;
+                while (parcel.dataPosition() < z10) {
+                    int readInt = parcel.readInt();
+                    char c2 = (char) readInt;
+                    if (c2 == 1) {
+                        locationRequest = (LocationRequest) g6.e.g(parcel, readInt, LocationRequest.CREATOR);
+                    } else if (c2 != 5) {
+                        switch (c2) {
+                            case '\b':
+                                z11 = g6.e.n(parcel, readInt);
+                                break;
+                            case '\t':
+                                z12 = g6.e.n(parcel, readInt);
+                                break;
+                            case '\n':
+                                str = g6.e.h(parcel, readInt);
+                                break;
+                            case 11:
+                                z13 = g6.e.n(parcel, readInt);
+                                break;
+                            case '\f':
+                                z14 = g6.e.n(parcel, readInt);
+                                break;
+                            case '\r':
+                                str2 = g6.e.h(parcel, readInt);
+                                break;
+                            case 14:
+                                j10 = g6.e.w(parcel, readInt);
+                                break;
+                            default:
+                                g6.e.y(parcel, readInt);
+                                break;
+                        }
+                    } else {
+                        arrayList = g6.e.l(parcel, readInt, p6.e.CREATOR);
+                    }
+                }
+                g6.e.m(parcel, z10);
+                return new l(locationRequest, arrayList, z11, z12, str, z13, z14, str2, j10);
+            case 1:
+                int z15 = g6.e.z(parcel);
+                p pVar = r.b;
+                int i3 = 0;
+                int i10 = 0;
+                int i11 = 0;
+                List list = s.e;
+                String str3 = null;
+                String str4 = null;
+                String str5 = null;
+                j jVar = null;
+                while (parcel.dataPosition() < z15) {
+                    int readInt2 = parcel.readInt();
+                    switch ((char) readInt2) {
+                        case 1:
+                            i3 = g6.e.u(parcel, readInt2);
+                            break;
+                        case 2:
+                            i10 = g6.e.u(parcel, readInt2);
+                            break;
+                        case 3:
+                            str3 = g6.e.h(parcel, readInt2);
+                            break;
+                        case 4:
+                            str4 = g6.e.h(parcel, readInt2);
+                            break;
+                        case 5:
+                            i11 = g6.e.u(parcel, readInt2);
+                            break;
+                        case 6:
+                            str5 = g6.e.h(parcel, readInt2);
+                            break;
+                        case 7:
+                            jVar = (j) g6.e.g(parcel, readInt2, j.CREATOR);
+                            break;
+                        case '\b':
+                            list = g6.e.l(parcel, readInt2, m6.c.CREATOR);
+                            break;
+                        default:
+                            g6.e.y(parcel, readInt2);
+                            break;
+                    }
+                }
+                g6.e.m(parcel, z15);
+                return new j(i3, i10, str3, str4, str5, i11, list, jVar);
+            default:
+                int z16 = g6.e.z(parcel);
+                while (parcel.dataPosition() < z16) {
+                    int readInt3 = parcel.readInt();
+                    if (((char) readInt3) != 1) {
+                        g6.e.y(parcel, readInt3);
+                    } else {
+                        status = (Status) g6.e.g(parcel, readInt3, Status.CREATOR);
+                    }
+                }
+                g6.e.m(parcel, z16);
+                return new t(status);
+        }
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final List invokeAll(Collection collection) {
-        return ((jb.h) this).a.invokeAll(collection);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Object invokeAny(Collection collection) {
-        return ((jb.h) this).a.invokeAny(collection);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isShutdown() {
-        return ((jb.h) this).a.isShutdown();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isTerminated() {
-        return ((jb.h) this).a.isTerminated();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final void shutdown() {
-        ((jb.h) this).a.shutdown();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List shutdownNow() {
-        return ((jb.h) this).a.shutdownNow();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Runnable runnable) {
-        return ((jb.h) this).a.submit(runnable);
-    }
-
-    public final String toString() {
-        return ((jb.h) this).a.toString();
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final List invokeAll(Collection collection, long j10, TimeUnit timeUnit) {
-        return ((jb.h) this).a.invokeAll(collection, j10, timeUnit);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Object invokeAny(Collection collection, long j10, TimeUnit timeUnit) {
-        return ((jb.h) this).a.invokeAny(collection, j10, timeUnit);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Runnable runnable, Object obj) {
-        return ((jb.h) this).a.submit(runnable, obj);
-    }
-
-    @Override // java.util.concurrent.ExecutorService
-    public final Future submit(Callable callable) {
-        return ((jb.h) this).a.submit(callable);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i3) {
+        switch (this.a) {
+            case 0:
+                return new l[i3];
+            case 1:
+                return new j[i3];
+            default:
+                return new t[i3];
+        }
     }
 }

@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import ad.g;
-import cd.c;
+import b8.ib;
 import com.google.android.recaptcha.RecaptchaAction;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
+import dd.g;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzel extends j implements p {
     int zza;
@@ -25,16 +25,16 @@ final class zzel extends j implements p {
         this.zzd = recaptchaAction;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         zzel zzelVar = new zzel(this.zzb, this.zzc, this.zzd, cVar);
         zzelVar.zze = obj;
         return zzelVar;
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzel) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzel) create((zzhk) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0045, code lost:
@@ -49,20 +49,20 @@ final class zzel extends j implements p {
     
         if (r11 != r0) goto L15;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i10 = this.zza;
+        gd.a aVar = gd.a.a;
+        int i3 = this.zza;
         try {
-        } catch (zzcg e) {
-            obj = b.a(e.zzc());
+        } catch (zzcg e10) {
+            obj = ib.a(e10.zzc());
         }
-        if (i10 == 0) {
-            b.b(obj);
+        if (i3 == 0) {
+            ib.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzeq zzeqVar = this.zzb;
             long j10 = this.zzc;
@@ -71,12 +71,12 @@ final class zzel extends j implements p {
             this.zza = 1;
             obj = new zzhf(9, new zzeo(zzeqVar, j10, recaptchaAction, null), null);
         } else {
-            if (i10 != 1) {
-                b.b(obj);
+            if (i3 != 1) {
+                ib.b(obj);
                 return new g(obj);
             }
             zzhkVar = (zzhk) this.zze;
-            b.b(obj);
+            ib.b(obj);
         }
         this.zze = null;
         this.zza = 2;

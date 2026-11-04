@@ -1,32 +1,8 @@
 package org.telegram.messenger;
 
-import android.util.Base64;
-import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class gp {
-    public final long a;
-    public final long b;
-    public final byte[] c;
-
-    public gp(long j10, String str, long j11) {
-        this.a = j10;
-        this.b = j11;
-        this.c = Base64.decode(str, 8);
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof gp)) {
-            return false;
-        }
-        gp gpVar = (gp) obj;
-        return this.a == gpVar.a && this.b == gpVar.b && Arrays.equals(this.c, gpVar.c);
-    }
-
-    public gp(long j10, long j11, byte[] bArr) {
-        this.a = j10;
-        this.b = j11;
-        this.c = bArr;
-    }
+public abstract class gp extends TLRPC.Updates {
 }

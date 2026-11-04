@@ -1,9 +1,10 @@
 package v0;
 
 import android.os.Bundle;
+import mi.h0;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class e extends b {
     public final String d;
@@ -14,13 +15,13 @@ public final class e extends b {
     */
     public e(String requestJson) {
         super(r0, r7, r1);
-        kotlin.jvm.internal.i.e(requestJson, "requestJson");
+        kotlin.jvm.internal.j.e(requestJson, "requestJson");
         try {
             JSONObject jSONObject = new JSONObject(requestJson).getJSONObject("user");
             String string = jSONObject.getString("name");
             String string2 = jSONObject.isNull("displayName") ? null : jSONObject.getString("displayName");
-            kotlin.jvm.internal.i.b(string);
-            m5.e eVar = new m5.e(string, string2);
+            kotlin.jvm.internal.j.b(string);
+            h0 h0Var = new h0(string, string2);
             Bundle bundle = new Bundle();
             bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
             bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", requestJson);

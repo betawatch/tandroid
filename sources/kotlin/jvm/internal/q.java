@@ -1,25 +1,13 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class q {
-    public static final r a;
+public final class q implements Serializable {
+    public long a;
 
-    static {
-        r rVar;
-        try {
-            rVar = (r) Class.forName("kotlin.reflect.jvm.internal.ReflectionFactoryImpl").newInstance();
-        } catch (ClassCastException | ClassNotFoundException | IllegalAccessException | InstantiationException unused) {
-            rVar = null;
-        }
-        if (rVar == null) {
-            rVar = new r();
-        }
-        a = rVar;
-    }
-
-    public static d a(Class cls) {
-        a.getClass();
-        return new d(cls);
+    public final String toString() {
+        return String.valueOf(this.a);
     }
 }

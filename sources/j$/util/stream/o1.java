@@ -15,8 +15,8 @@ public final class o1 extends q1 implements i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l4) {
-        t3.H(this, l4);
+    public final /* synthetic */ void x(Long l10) {
+        t3.H(this, l10);
     }
 
     @Override // j$.util.stream.q1, j$.util.stream.j5

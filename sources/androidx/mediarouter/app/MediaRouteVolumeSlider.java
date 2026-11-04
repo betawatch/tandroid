@@ -8,9 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
-import org.telegram.messenger.at;
+import b8.d1;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class MediaRouteVolumeSlider extends m.c0 {
     public final float b;
@@ -23,18 +24,18 @@ public class MediaRouteVolumeSlider extends m.c0 {
         this(context, null);
     }
 
-    public final void a(int i10, int i11) {
-        if (this.e != i10) {
-            if (Color.alpha(i10) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i10));
+    public final void a(int i3, int i10) {
+        if (this.e != i3) {
+            if (Color.alpha(i3) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider progress and thumb color cannot be translucent: #" + Integer.toHexString(i3));
             }
-            this.e = i10;
+            this.e = i3;
         }
-        if (this.f != i11) {
-            if (Color.alpha(i11) != 255) {
-                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i11));
+        if (this.f != i10) {
+            if (Color.alpha(i10) != 255) {
+                Log.e("MediaRouteVolumeSlider", "Volume slider background color cannot be translucent: #" + Integer.toHexString(i10));
             }
-            this.f = i11;
+            this.f = i10;
         }
     }
 
@@ -49,12 +50,12 @@ public class MediaRouteVolumeSlider extends m.c0 {
     @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        int i10 = isEnabled() ? at.e4 : (int) (this.b * 255.0f);
+        int i3 = isEnabled() ? hs.e4 : (int) (this.b * 255.0f);
         Drawable drawable = this.d;
-        int i11 = this.e;
+        int i10 = this.e;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        drawable.setColorFilter(i11, mode);
-        this.d.setAlpha(i10);
+        drawable.setColorFilter(i10, mode);
+        this.d.setAlpha(i3);
         Drawable progressDrawable = getProgressDrawable();
         if (progressDrawable instanceof LayerDrawable) {
             LayerDrawable layerDrawable = (LayerDrawable) getProgressDrawable();
@@ -63,7 +64,7 @@ public class MediaRouteVolumeSlider extends m.c0 {
             progressDrawable = findDrawableByLayerId;
         }
         progressDrawable.setColorFilter(this.e, mode);
-        progressDrawable.setAlpha(i10);
+        progressDrawable.setAlpha(i3);
     }
 
     @Override // android.widget.AbsSeekBar
@@ -79,8 +80,8 @@ public class MediaRouteVolumeSlider extends m.c0 {
         this(context, attributeSet, org.telegram.messenger.beta.R.attr.seekBarStyle);
     }
 
-    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
-        this.b = v7.a0.c(context);
+    public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i3) {
+        super(context, attributeSet, i3);
+        this.b = d1.c(context);
     }
 }

@@ -1,75 +1,43 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class q90 implements org.telegram.messenger.kp {
-    public final /* synthetic */ y60 a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k2 c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Integer e;
-    public final /* synthetic */ Bundle f;
-    public final /* synthetic */ LaunchActivity h;
+public final class q90 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ r90 c;
 
-    public q90(LaunchActivity launchActivity, y60 y60Var, String str, org.telegram.ui.ActionBar.k2 k2Var, long j10, Integer num, Bundle bundle) {
-        this.h = launchActivity;
-        this.a = y60Var;
-        this.b = str;
-        this.c = k2Var;
-        this.d = j10;
-        this.e = num;
-        this.f = bundle;
+    public /* synthetic */ q90(r90 r90Var, float f10, int i3) {
+        this.a = i3;
+        this.c = r90Var;
+        this.b = f10;
     }
 
-    @Override // org.telegram.messenger.kp
-    public final void a() {
-        LaunchActivity launchActivity = this.h;
-        if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.s4.t0((org.telegram.ui.ActionBar.k2) i0.a.g(1, launchActivity.d0), null, org.telegram.messenger.dd.L0(2131749085, null), null);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                r90 r90Var = this.c;
+                TextView textView = r90Var.f;
+                int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.y6, false);
+                int x03 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.n6, false);
+                float f10 = this.b;
+                r90Var.s = f10;
+                textView.setTextColor(i0.a.f(f10, x02, x03));
+                break;
+            default:
+                r90 r90Var2 = this.c;
+                TextView textView2 = r90Var2.d;
+                int x04 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.y6, false);
+                int x05 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.n6, false);
+                float f11 = this.b;
+                r90Var2.x = f11;
+                textView2.setTextColor(i0.a.f(f11, x04, x05));
+                break;
         }
-        try {
-            this.a.run();
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-        }
-    }
-
-    @Override // org.telegram.messenger.kp
-    public final void g(boolean z10) {
-        try {
-            this.a.run();
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-        }
-        LaunchActivity launchActivity = this.h;
-        if (launchActivity.isFinishing()) {
-            return;
-        }
-        String str = this.b;
-        long j10 = this.d;
-        org.telegram.ui.ActionBar.k2 k2Var = this.c;
-        if (str == null || !(k2Var instanceof un) || ((un) k2Var).a() != j10) {
-            if (k2Var instanceof un) {
-                un unVar = (un) k2Var;
-                if (unVar.a() == j10 && this.e == null) {
-                    org.telegram.messenger.i0.F3(5.0f, unVar.z0, null);
-                    org.telegram.messenger.t2.D.a();
-                    mk mkVar = unVar.Z;
-                    for (int i10 = 0; i10 < mkVar.getChildCount(); i10++) {
-                        org.telegram.messenger.i0.F3(5.0f, mkVar.getChildAt(i10), null);
-                    }
-                    org.telegram.ui.ActionBar.l actionBar = unVar.getActionBar();
-                    for (int i11 = 0; i11 < actionBar.getChildCount(); i11++) {
-                        org.telegram.messenger.i0.F3(5.0f, actionBar.getChildAt(i11), null);
-                    }
-                }
-            }
-            k2Var = new un(this.f);
-            ((ActionBarLayout) launchActivity.M()).R(k2Var);
-        }
-        org.telegram.messenger.i0.h3(new ag.a3(this, this.b, this.d, k2Var, 10), 150L);
     }
 }

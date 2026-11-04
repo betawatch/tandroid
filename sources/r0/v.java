@@ -3,47 +3,47 @@ package r0;
 import android.text.TextUtils;
 import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class v extends p1.c {
+public final class v extends x {
     public final /* synthetic */ int e;
 
-    public v(int i10, Class cls, int i11, int i12, int i13) {
-        this.e = i13;
-        this.a = i10;
+    public v(int i3, Class cls, int i10, int i11, int i12) {
+        this.e = i12;
+        this.a = i3;
         this.d = cls;
-        this.c = i11;
-        this.b = i12;
+        this.c = i10;
+        this.b = i11;
     }
 
-    @Override // p1.c
+    @Override // r0.x
     public final Object b(View view) {
         switch (this.e) {
             case 0:
-                return Boolean.valueOf(c0.c(view));
+                return Boolean.valueOf(d0.c(view));
             case 1:
-                return c0.a(view);
+                return d0.a(view);
             default:
-                return Boolean.valueOf(c0.b(view));
+                return Boolean.valueOf(d0.b(view));
         }
     }
 
-    @Override // p1.c
+    @Override // r0.x
     public final void c(View view, Object obj) {
         switch (this.e) {
             case 0:
-                c0.f(view, ((Boolean) obj).booleanValue());
+                d0.f(view, ((Boolean) obj).booleanValue());
                 break;
             case 1:
-                c0.e(view, (CharSequence) obj);
+                d0.e(view, (CharSequence) obj);
                 break;
             default:
-                c0.d(view, ((Boolean) obj).booleanValue());
+                d0.d(view, ((Boolean) obj).booleanValue());
                 break;
         }
     }
 
-    @Override // p1.c
+    @Override // r0.x
     public final boolean e(Object obj, Object obj2) {
         switch (this.e) {
             case 0:

@@ -1,37 +1,70 @@
 package z9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class j implements ja.d {
-    public static final j a = new j();
-    public static final ja.c b = ja.c.c("generator");
-    public static final ja.c c = ja.c.c("identifier");
-    public static final ja.c d = ja.c.c("appQualitySessionId");
-    public static final ja.c e = ja.c.c("startedAt");
-    public static final ja.c f = ja.c.c("endedAt");
-    public static final ja.c g = ja.c.c("crashed");
-    public static final ja.c h = ja.c.c("app");
-    public static final ja.c i = ja.c.c("user");
-    public static final ja.c j = ja.c.c("os");
-    public static final ja.c k = ja.c.c("device");
-    public static final ja.c l = ja.c.c("events");
-    public static final ja.c m = ja.c.c("generatorType");
+import android.util.Log;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        h0 h0Var = (h0) ((d2) obj);
-        eVar.d(b, h0Var.a);
-        eVar.d(c, h0Var.b.getBytes(e2.a));
-        eVar.d(d, h0Var.c);
-        eVar.f(e, h0Var.d);
-        eVar.d(f, h0Var.e);
-        eVar.a(g, h0Var.f);
-        eVar.d(h, h0Var.g);
-        eVar.d(i, h0Var.h);
-        eVar.d(j, h0Var.i);
-        eVar.d(k, h0Var.j);
-        eVar.d(l, h0Var.k);
-        eVar.g(m, h0Var.l);
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j implements Continuation, k5.e {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ j(int i3) {
+        this.a = i3;
+    }
+
+    @Override // k5.e
+    public Object apply(Object obj) {
+        ab.e eVar = (ab.e) obj;
+        eVar.getClass();
+        p7.d dVar = za.n.a;
+        dVar.getClass();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        try {
+            dVar.l(eVar, byteArrayOutputStream);
+        } catch (IOException unused) {
+        }
+        return byteArrayOutputStream.toByteArray();
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        boolean z10;
+        int i3;
+        switch (this.a) {
+            case 3:
+                if (task.isSuccessful()) {
+                    b bVar = (b) task.getResult();
+                    String str = "Crashlytics report successfully enqueued to DataTransport: " + bVar.b;
+                    w9.c cVar = w9.c.a;
+                    cVar.b(str);
+                    File file = bVar.c;
+                    z10 = true;
+                    if (file.delete()) {
+                        cVar.b("Deleted report file: " + file.getPath());
+                    } else {
+                        cVar.d("Crashlytics could not delete report file: " + file.getPath(), null);
+                    }
+                } else {
+                    Log.w("FirebaseCrashlytics", "Crashlytics report could not be enqueued to DataTransport", task.getException());
+                    z10 = false;
+                }
+                return Boolean.valueOf(z10);
+            case 4:
+            default:
+                i3 = -1;
+                break;
+            case 5:
+                i3 = 403;
+                break;
+        }
+        return Integer.valueOf(i3);
+    }
+
+    public /* synthetic */ j(x xVar) {
+        this.a = 3;
     }
 }

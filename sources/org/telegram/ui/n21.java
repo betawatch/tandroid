@@ -1,39 +1,62 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n21 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q21 b;
+public final class n21 implements r9 {
+    public TLObject a = null;
+    public TLRPC.TL_error b = null;
+    public final /* synthetic */ SessionsActivity c;
 
-    public /* synthetic */ n21(q21 q21Var, int i10) {
-        this.a = i10;
-        this.b = q21Var;
+    public n21(SessionsActivity sessionsActivity) {
+        this.c = sessionsActivity;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q21 q21Var = this.b;
-                q21Var.N = floatValue;
-                q21Var.V.h0.invalidate();
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q21 q21Var2 = this.b;
-                q21Var2.N = floatValue2;
-                q21Var2.V.h0.invalidate();
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q21 q21Var3 = this.b;
-                q21Var3.N = floatValue3;
-                q21Var3.V.h0.invalidate();
-                break;
+    @Override // org.telegram.ui.r9
+    public final void M(String str) {
+        TLObject tLObject = this.a;
+        if (!(tLObject instanceof TLRPC.TL_authorization)) {
+            if (this.b != null) {
+                org.telegram.messenger.g0.h3(new l21(this, 0));
+                return;
+            }
+            return;
         }
+        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
+        boolean z10 = tL_authorization.password_pending;
+        SessionsActivity sessionsActivity = this.c;
+        if (z10) {
+            sessionsActivity.e.add(0, tL_authorization);
+            sessionsActivity.V = 4;
+            sessionsActivity.p0(false);
+        } else {
+            sessionsActivity.d.add(0, tL_authorization);
+        }
+        sessionsActivity.r0();
+        sessionsActivity.a.f();
+        sessionsActivity.r.m(0L, this.a, 11);
+    }
+
+    @Override // org.telegram.ui.r9
+    public final /* synthetic */ String M0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.r9
+    public final boolean e1(String str, i9 i9Var) {
+        this.a = null;
+        this.b = null;
+        org.telegram.messenger.g0.i3(new wy0(this, str, i9Var, 3), 750L);
+        return true;
+    }
+
+    @Override // org.telegram.ui.r9
+    public final /* synthetic */ void V0(org.telegram.messenger.rr rrVar) {
+    }
+
+    @Override // org.telegram.ui.r9
+    public final /* synthetic */ void onDismiss() {
     }
 }

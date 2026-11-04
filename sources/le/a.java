@@ -1,106 +1,75 @@
 package le;
 
-import java.util.Hashtable;
-import java.util.StringTokenizer;
-import ji.f;
-import kg.s0;
-import za.c;
+import e0.e0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final Hashtable b;
-    public static final Object[] c;
-    public static /* synthetic */ Class d;
-    public final ClassLoader a;
+public final class a implements he.a {
+    public static final a a = new a();
+    public static final n b = new n("kotlin.Boolean", je.b.b);
 
-    static {
-        Hashtable hashtable = new Hashtable();
-        b = hashtable;
-        hashtable.put("void", Void.TYPE);
-        hashtable.put("boolean", Boolean.TYPE);
-        hashtable.put("byte", Byte.TYPE);
-        hashtable.put("char", Character.TYPE);
-        hashtable.put("short", Short.TYPE);
-        hashtable.put("int", Integer.TYPE);
-        hashtable.put("long", Long.TYPE);
-        hashtable.put("float", Float.TYPE);
-        hashtable.put("double", Double.TYPE);
-        c = new Object[0];
-    }
-
-    public a(Class cls, String str) {
-        this.a = cls.getClassLoader();
-    }
-
-    public static Class a(ClassLoader classLoader, String str) {
-        if (str.equals("*")) {
-            return null;
+    @Override // he.a
+    public final Object a(g2.d decoder) {
+        boolean z10;
+        boolean z11;
+        kotlin.jvm.internal.j.e(decoder, "decoder");
+        e0 e0Var = (e0) decoder.d;
+        int u10 = e0Var.u();
+        String str = (String) e0Var.f;
+        if (u10 == str.length()) {
+            e0.n(e0Var, "EOF", 0, 6);
+            throw null;
         }
-        Class cls = (Class) b.get(str);
-        if (cls != null) {
-            return cls;
+        if (str.charAt(u10) == '\"') {
+            u10++;
+            z10 = true;
+        } else {
+            z10 = false;
         }
-        try {
-            return classLoader == null ? Class.forName(str) : Class.forName(str, false, classLoader);
-        } catch (ClassNotFoundException unused) {
-            Class<?> cls2 = d;
-            if (cls2 == null) {
-                try {
-                    cls2 = Class.forName("java.lang.ClassNotFoundException");
-                    d = cls2;
-                } catch (ClassNotFoundException e) {
-                    throw new NoClassDefFoundError(e.getMessage());
-                }
+        int r5 = e0Var.r(u10);
+        if (r5 >= str.length() || r5 == -1) {
+            e0.n(e0Var, "EOF", 0, 6);
+            throw null;
+        }
+        int i3 = r5 + 1;
+        int charAt = str.charAt(r5) | ' ';
+        if (charAt == 102) {
+            e0Var.f(i3, "alse");
+            z11 = false;
+        } else {
+            if (charAt != 116) {
+                e0.n(e0Var, "Expected valid boolean literal prefix, but had '" + e0Var.k() + '\'', 0, 6);
+                throw null;
             }
-            return cls2;
+            e0Var.f(i3, "rue");
+            z11 = true;
+        }
+        if (z10) {
+            if (e0Var.b == str.length()) {
+                e0.n(e0Var, "EOF", 0, 6);
+                throw null;
+            }
+            if (str.charAt(e0Var.b) != '\"') {
+                e0.n(e0Var, "Expected closing quotation mark", 0, 6);
+                throw null;
+            }
+            e0Var.b++;
+        }
+        return Boolean.valueOf(z11);
+    }
+
+    @Override // he.a
+    public final void c(ne.h hVar, Object obj) {
+        boolean booleanValue = ((Boolean) obj).booleanValue();
+        if (hVar.a) {
+            hVar.j(String.valueOf(booleanValue));
+        } else {
+            ((jc.a) ((ba.i) hVar.b).c).c(String.valueOf(booleanValue));
         }
     }
 
-    public static f b(c cVar, Object obj, Object obj2) {
-        boolean z10 = false;
-        return new f(cVar, obj, obj2, c, z10, 6);
-    }
-
-    public static f c(c cVar, Object obj, Object obj2, Object obj3) {
-        return new f(cVar, obj, obj2, new Object[]{obj3}, false, 6);
-    }
-
-    public final s0 d(String str, String str2, String str3, String str4, String str5) {
-        int parseInt = Integer.parseInt("1", 16);
-        ClassLoader classLoader = this.a;
-        Class a2 = a(classLoader, str2);
-        StringTokenizer stringTokenizer = new StringTokenizer(str3, ":");
-        int countTokens = stringTokenizer.countTokens();
-        Class[] clsArr = new Class[countTokens];
-        for (int i10 = 0; i10 < countTokens; i10++) {
-            clsArr[i10] = a(classLoader, stringTokenizer.nextToken());
-        }
-        StringTokenizer stringTokenizer2 = new StringTokenizer(str4, ":");
-        int countTokens2 = stringTokenizer2.countTokens();
-        String[] strArr = new String[countTokens2];
-        for (int i11 = 0; i11 < countTokens2; i11++) {
-            strArr[i11] = stringTokenizer2.nextToken();
-        }
-        StringTokenizer stringTokenizer3 = new StringTokenizer("", ":");
-        int countTokens3 = stringTokenizer3.countTokens();
-        Class[] clsArr2 = new Class[countTokens3];
-        for (int i12 = 0; i12 < countTokens3; i12++) {
-            clsArr2[i12] = a(classLoader, stringTokenizer3.nextToken());
-        }
-        Class a10 = a(classLoader, str5);
-        s0 s0Var = new s0(1);
-        s0Var.b = parseInt;
-        s0Var.c = str;
-        s0Var.e = a2;
-        s0Var.g = clsArr;
-        s0Var.h = a10;
-        return s0Var;
-    }
-
-    public final c e(s0 s0Var) {
-        c cVar = new c(28, false);
-        cVar.b = s0Var;
-        return cVar;
+    @Override // he.a
+    public final je.d d() {
+        return b;
     }
 }

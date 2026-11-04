@@ -1,72 +1,50 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
+import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xj0 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jl0 b;
+public final class xj0 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public ImageView c;
+    public boolean d;
 
-    public /* synthetic */ xj0(jl0 jl0Var, int i10) {
-        this.a = i10;
-        this.b = jl0Var;
+    public final void a(String str, boolean z10) {
+        this.a.setText(str);
+        this.b.setText("");
+        this.d = z10;
+        setWillNotDraw(!z10);
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        int i10 = this.a;
-        int i11 = 2;
-        int i12 = 3;
-        jl0 jl0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (jl0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        qt qtVar = new qt(null, false);
-                        qtVar.r = new qv(27, jl0Var, view);
-                        jl0Var.presentFragment(qtVar);
-                    }
-                    break;
-                }
-                break;
-            case 1:
-                if (jl0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(jl0Var.getParentActivity());
-                        String L0 = org.telegram.messenger.dd.L0(2131747482, null);
-                        org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
-                        x1Var.R = L0;
-                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.dd.L0(2131747524, null), org.telegram.messenger.dd.L0(2131747585, null)}, new l4(jl0Var, i12));
-                        alertDialog$Builder.k(org.telegram.messenger.dd.L0(2131752589, null), null);
-                        jl0Var.showDialog(x1Var);
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                if (jl0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        qt qtVar2 = new qt(null, false);
-                        qtVar2.r = new yj0(jl0Var, i11);
-                        jl0Var.presentFragment(qtVar2);
-                    }
-                    break;
-                }
-                break;
-            default:
-                if (jl0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        qt qtVar3 = new qt(null, false);
-                        qtVar3.r = new yj0(jl0Var, i12);
-                        jl0Var.presentFragment(qtVar3);
-                    }
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(org.telegram.messenger.bd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.bd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
-        return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(64.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setChecked(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 4);
+    }
+
+    public void setNeedDivider(boolean z10) {
+        this.d = z10;
+        setWillNotDraw(!z10);
+        invalidate();
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

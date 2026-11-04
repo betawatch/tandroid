@@ -2,7 +2,7 @@ package m;
 
 import android.widget.AbsListView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class b2 implements AbsListView.OnScrollListener {
     public final /* synthetic */ d2 a;
@@ -12,18 +12,18 @@ public final class b2 implements AbsListView.OnScrollListener {
     }
 
     @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScrollStateChanged(AbsListView absListView, int i10) {
+    public final void onScrollStateChanged(AbsListView absListView, int i3) {
         d2 d2Var = this.a;
-        a2 a2Var = d2Var.G;
-        x xVar = d2Var.O;
-        if (i10 != 1 || xVar.getInputMethodMode() == 2 || xVar.getContentView() == null) {
+        a2 a2Var = d2Var.H;
+        x xVar = d2Var.P;
+        if (i3 != 1 || xVar.getInputMethodMode() == 2 || xVar.getContentView() == null) {
             return;
         }
-        d2Var.K.removeCallbacks(a2Var);
+        d2Var.L.removeCallbacks(a2Var);
         a2Var.run();
     }
 
     @Override // android.widget.AbsListView.OnScrollListener
-    public final void onScroll(AbsListView absListView, int i10, int i11, int i12) {
+    public final void onScroll(AbsListView absListView, int i3, int i10, int i11) {
     }
 }

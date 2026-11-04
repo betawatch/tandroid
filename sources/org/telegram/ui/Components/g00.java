@@ -1,64 +1,180 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.widget.Button;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class g00 extends FrameLayout {
-    public final f6 a;
-    public final f6 b;
+public final class g00 extends fh0 {
+    public boolean r;
+    public boolean s;
+    public final f00 w;
+    public final f00 x;
+    public final /* synthetic */ FragmentContextView y;
 
-    public g00(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.ui.Components.f00] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [org.telegram.ui.Components.f00] */
+    public g00(FragmentContextView fragmentContextView, Context context) {
         super(context);
-        f6 f6Var = new f6(context, true, true, false);
-        this.a = f6Var;
-        f6Var.setTextSize(org.telegram.messenger.i0.L(15.0f));
-        f6Var.setTypeface(org.telegram.messenger.i0.o());
-        int i10 = org.telegram.ui.ActionBar.t6.L6;
-        org.telegram.ui.ActionBar.a7.Z(f6Var, i10, null);
-        f6Var.setGravity(org.telegram.messenger.dd.X ? 5 : 3);
-        addView(f6Var, w7.b6.d(-1, 20.0f, (org.telegram.messenger.dd.X ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
-        f6 f6Var2 = new f6(context, true, true, true);
-        this.b = f6Var2;
-        f6Var2.b(0.45f, 250L, gr.h);
-        f6Var2.setTextSize(org.telegram.messenger.i0.L(15.0f));
-        org.telegram.ui.ActionBar.a7.Z(f6Var2, i10, null);
-        f6Var2.setGravity(org.telegram.messenger.dd.X ? 3 : 5);
-        addView(f6Var2, w7.b6.d(-2, 20.0f, (org.telegram.messenger.dd.X ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
-        WeakHashMap weakHashMap = r0.h0.a;
-        new r0.v(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
-    }
+        this.y = fragmentContextView;
+        final int i3 = 0;
+        this.w = new Runnable(this) { // from class: org.telegram.ui.Components.f00
+            public final /* synthetic */ g00 b;
 
-    public final void a(String str, Runnable runnable) {
-        boolean z10 = !org.telegram.messenger.dd.X;
-        f6 f6Var = this.b;
-        f6Var.c(str, z10, true);
-        f6Var.setOnClickListener(new k6(1, runnable));
-    }
+            {
+                this.b = this;
+            }
 
-    public final void b(String str, boolean z10) {
-        f6 f6Var = this.a;
-        if (z10) {
-            f6Var.a();
-        }
-        f6Var.c(str, z10 && !org.telegram.messenger.dd.X, true);
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i3) {
+                    case 0:
+                        FragmentContextView fragmentContextView2 = this.b.y;
+                        if (VoIPService.getSharedInstance() != null) {
+                            VoIPService.getSharedInstance().setMicMute(false, true, false);
+                            if (fragmentContextView2.F.P(fragmentContextView2.Q ? 15 : 29)) {
+                                if (fragmentContextView2.Q) {
+                                    fragmentContextView2.F.M(0);
+                                } else {
+                                    fragmentContextView2.F.M(14);
+                                }
+                            }
+                            fragmentContextView2.E.d();
+                            org.telegram.ui.ActionBar.k6.G0().c(true);
+                            fragmentContextView2.a.h(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        g00 g00Var = this.b;
+                        FragmentContextView fragmentContextView3 = g00Var.y;
+                        if (g00Var.r && VoIPService.getSharedInstance() != null) {
+                            g00Var.r = false;
+                            g00Var.s = true;
+                            fragmentContextView3.Q = false;
+                            org.telegram.messenger.g0.i3(g00Var.w, 90L);
+                            try {
+                                fragmentContextView3.E.performHapticFeedback(3, 2);
+                                break;
+                            } catch (Exception unused) {
+                                return;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        final int i10 = 1;
+        this.x = new Runnable(this) { // from class: org.telegram.ui.Components.f00
+            public final /* synthetic */ g00 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        FragmentContextView fragmentContextView2 = this.b.y;
+                        if (VoIPService.getSharedInstance() != null) {
+                            VoIPService.getSharedInstance().setMicMute(false, true, false);
+                            if (fragmentContextView2.F.P(fragmentContextView2.Q ? 15 : 29)) {
+                                if (fragmentContextView2.Q) {
+                                    fragmentContextView2.F.M(0);
+                                } else {
+                                    fragmentContextView2.F.M(14);
+                                }
+                            }
+                            fragmentContextView2.E.d();
+                            org.telegram.ui.ActionBar.k6.G0().c(true);
+                            fragmentContextView2.a.h(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        g00 g00Var = this.b;
+                        FragmentContextView fragmentContextView3 = g00Var.y;
+                        if (g00Var.r && VoIPService.getSharedInstance() != null) {
+                            g00Var.r = false;
+                            g00Var.s = true;
+                            fragmentContextView3.Q = false;
+                            org.telegram.messenger.g0.i3(g00Var.w, 90L);
+                            try {
+                                fragmentContextView3.E.performHapticFeedback(3, 2);
+                                break;
+                            } catch (Exception unused) {
+                                return;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
     }
 
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setText(this.a.getText());
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setText(org.telegram.messenger.bd.M0(this.y.Q ? 2131743240 : 2131743303, null));
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        FragmentContextView fragmentContextView = this.y;
+        int i3 = fragmentContextView.V;
+        if (i3 != 3 && i3 != 1) {
+            return super.onTouchEvent(motionEvent);
+        }
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        f00 f00Var = this.w;
+        f00 f00Var2 = this.x;
+        if (sharedInstance == null) {
+            org.telegram.messenger.g0.r(f00Var2);
+            org.telegram.messenger.g0.r(f00Var);
+            this.r = false;
+            this.s = false;
+            return true;
+        }
+        if (motionEvent.getAction() == 0 && sharedInstance.isMicMute()) {
+            org.telegram.messenger.g0.i3(f00Var2, 300L);
+            this.r = true;
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            org.telegram.messenger.g0.r(f00Var);
+            if (this.r) {
+                org.telegram.messenger.g0.r(f00Var2);
+                this.r = false;
+            } else if (this.s) {
+                fragmentContextView.Q = true;
+                if (fragmentContextView.F.P(15)) {
+                    if (fragmentContextView.Q) {
+                        fragmentContextView.F.M(0);
+                    } else {
+                        fragmentContextView.F.M(14);
+                    }
+                }
+                fragmentContextView.E.d();
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(true, true, false);
+                    try {
+                        fragmentContextView.E.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                }
+                this.s = false;
+                org.telegram.ui.ActionBar.k6.G0().c(true);
+                fragmentContextView.a.h(true);
+                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                super.onTouchEvent(obtain);
+                obtain.recycle();
+                return true;
+            }
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -1,131 +1,47 @@
 package kg;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.wp;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Cells.a5;
-import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.tk0;
-import w7.b6;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.p5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class c extends tk0 {
-    public final p6 c;
-    public final int d;
-    public final int e;
-    public final ArrayList f;
-    public final k1 h;
-    public int n;
-    public b r;
-    public final boolean s;
+public abstract class c extends sg.b {
+    public final boolean d;
+    public final boolean e;
+    public final ArrayList f = new ArrayList();
+    public String h;
+    public b n;
+    public a r;
+    public int s;
+    public boolean w;
 
-    public c(int i10, p6 p6Var) {
-        ArrayList arrayList = new ArrayList();
-        this.f = arrayList;
-        this.s = true;
-        this.c = p6Var;
-        k1 k1Var = new k1(t6.zk, t6.Ak, t6.Bk, t6.Ck, p6Var);
-        this.h = k1Var;
-        k1Var.o = 0.0f;
-        k1Var.p = 0.0f;
-        k1Var.q = 1.0f;
-        wp r12 = wp.r1(i10);
-        arrayList.add(new d(r12.E4, r12.F4, dd.L0(2131749388, null), dd.a0(null, null, 2131749389, Integer.valueOf(r12.F4))));
-        arrayList.add(new d(r12.Q4, r12.R4, dd.L0(2131747264, null), dd.a0(null, null, 2131747265, Integer.valueOf(r12.R4))));
-        arrayList.add(new d(r12.S4, r12.T4, dd.L0(2131746604, null), dd.a0(null, null, 2131746605, Integer.valueOf(r12.T4))));
-        arrayList.add(new d(r12.G4, r12.H4, dd.L0(2131745919, null), dd.a0(null, null, 2131745920, Integer.valueOf(r12.H4))));
-        arrayList.add(new d(r12.I4, r12.J4, dd.L0(2131750840, null), dd.a0(null, null, 2131750841, Integer.valueOf(r12.J4))));
-        arrayList.add(new d(r12.Y4, r12.Z4, dd.L0(2131753719, null), dd.a0(null, null, 2131753720, Integer.valueOf(r12.J4))));
-        arrayList.add(new d(r12.U4, r12.V4, dd.L0(2131752554, null), dd.a0(null, null, 2131752555, Integer.valueOf(r12.J4))));
-        arrayList.add(new d(r12.M4, r12.N4, dd.L0(2131750612, null), dd.a0(null, null, 2131750613, Integer.valueOf(r12.N4))));
-        arrayList.add(new d(r12.O4, r12.P4, dd.L0(2131752215, null), dd.a0(null, null, 2131752216, Integer.valueOf(r12.P4))));
-        arrayList.add(new d(3, 4, dd.L0(2131751810, null), dd.a0(null, null, 2131751811, 4)));
-        arrayList.add(new d(r12.x4, r12.y4, dd.L0(2131745333, null), dd.a0(null, null, 2131745334, Integer.valueOf(r12.y4))));
-        this.d = 1;
-        this.e = 1;
-        this.d = arrayList.size() + 1;
+    public c(boolean z10, boolean z11) {
+        this.d = z10;
+        this.e = z11;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        return this.d;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        if (i10 == 0) {
-            return 1;
+    public final void F() {
+        if (this.r != null) {
+            Utilities.g.a(this.r);
+            this.r = null;
         }
-        return i10 == 0 ? 2 : 0;
+        this.s++;
     }
 
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            e eVar = (e) c1Var.a;
-            int i11 = i10 - this.e;
-            ArrayList arrayList = this.f;
-            eVar.a((d) arrayList.get(i11));
-            LimitPreviewView limitPreviewView = eVar.c;
-            limitPreviewView.F = ((d) arrayList.get(i11)).e;
-            limitPreviewView.c = this.n;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.Cells.a5] */
-    /* JADX WARN: Type inference failed for: r1v7, types: [kg.e] */
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        x3 x3Var;
-        Context context = viewGroup.getContext();
-        p6 p6Var = this.c;
-        if (i10 != 1) {
-            if (i10 != 2) {
-                ?? eVar = new e(context, p6Var);
-                b bVar = this.r;
-                LimitPreviewView limitPreviewView = eVar.c;
-                limitPreviewView.setParentViewForGradien(bVar);
-                limitPreviewView.setStaticGradinet(this.h);
-                x3Var = eVar;
-            } else {
-                x3Var = new x3(context, 16);
-            }
-        } else if (this.s) {
-            ?? a5Var = new a5(context, 6);
-            LinearLayout f7 = m5.f(context, 0);
-            ImageView imageView = new ImageView(context);
-            imageView.setImageDrawable(ea.f.c(context.getDrawable(R.drawable.other_2x_large), (k1) ea.f.d().b));
-            f7.addView(imageView, b6.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
-            TextView textView = new TextView(context);
-            textView.setText(dd.L0(2131751350, null));
-            textView.setGravity(17);
-            textView.setTextSize(1, 20.0f);
-            a7.V(textView, t6.G6, p6Var);
-            textView.setTypeface(org.telegram.messenger.i0.o());
-            f7.addView(textView, b6.e(-2, -2, 16));
-            a5Var.addView(f7, b6.e(-2, -2, 17));
-            x3Var = a5Var;
+    public final void G(String str) {
+        F();
+        if (TextUtils.isEmpty(str)) {
+            this.f.clear();
+            this.w = false;
+            f();
         } else {
-            x3Var = new x3(context, 64);
+            this.w = true;
+            p5 p5Var = Utilities.g;
+            a aVar = new a((p0) this, str, 0);
+            this.r = aVar;
+            p5Var.e(aVar, 400L);
         }
-        return sc.e.o(x3Var, x3Var, -1, -2);
     }
 }

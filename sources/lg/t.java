@@ -1,113 +1,107 @@
 package lg;
 
 import android.content.Context;
-import android.opengl.EGL14;
-import android.opengl.EGLConfig;
-import android.opengl.EGLContext;
-import android.opengl.EGLDisplay;
-import android.opengl.EGLSurface;
-import android.os.Handler;
-import android.os.HandlerThread;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.at;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import b8.mf;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.hs;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.k5;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class t {
-    public final Context a;
-    public final Handler b;
-    public final int c;
-    public final int e;
-    public EGLConfig m;
-    public a n;
-    public a o;
-    public a p;
-    public long q;
-    public long r;
-    public int s;
-    public final ArrayList f = new ArrayList();
-    public volatile v[] g = new v[0];
-    public final AtomicBoolean h = new AtomicBoolean();
-    public final int[] i = new int[2];
-    public EGLDisplay j = EGL14.EGL_NO_DISPLAY;
-    public EGLContext k = EGL14.EGL_NO_CONTEXT;
-    public EGLSurface l = EGL14.EGL_NO_SURFACE;
-    public final int d = 378;
+public final class t extends FrameLayout {
+    public final k5 a;
+    public final yh.l b;
+    public final k5 c;
+    public final e6 d;
+    public boolean e;
+    public TL_account.TL_businessChatLink f;
 
-    public t(Context context, int i10) {
-        this.a = context;
-        this.e = i10;
-        this.c = Math.max(1, Math.min(at.W2, Math.round(context.getResources().getDisplayMetrics().density * 42.0f)));
-        HandlerThread handlerThread = new HandlerThread("WalletDiamondTextures");
-        handlerThread.start();
-        this.b = new Handler(handlerThread.getLooper());
+    public t(Context context, e6 e6Var) {
+        super(context);
+        this.d = e6Var;
+        setWillNotDraw(false);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.msg_limit_links);
+        imageView.setPadding(org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f));
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        int L = org.telegram.messenger.g0.L(36.0f);
+        int i3 = k6.Ci;
+        ShapeDrawable L2 = k6.L(L, k6.x0(null, i3, false));
+        n6 N = r6.N(i3);
+        imageView.setBackground(L2);
+        r6.k(imageView, L2, N, null, null);
+        imageView.setOnClickListener(new ii.m(this, 11));
+        addView(imageView, mf.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        k5 k5Var = new k5(context);
+        this.a = k5Var;
+        k5Var.setTextSize(15);
+        r6.Y(k5Var, k6.G6, null);
+        k5Var.setGravity(bd.a0 ? 5 : 3);
+        addView(k5Var, mf.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        k5 k5Var2 = new k5(context);
+        this.c = k5Var2;
+        k5Var2.setTextSize(14);
+        int i10 = k6.z6;
+        r6.Y(k5Var2, i10, null);
+        k5Var2.setGravity(bd.a0 ? 3 : 5);
+        addView(k5Var2, mf.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        yh.l lVar = new yh.l(context);
+        this.b = lVar;
+        lVar.setTextSize(1, 13.0f);
+        lVar.setMaxLines(1);
+        lVar.setEllipsize(TextUtils.TruncateAt.END);
+        r6.V(lVar, i10, e6Var);
+        lVar.setGravity(bd.a0 ? 5 : 3);
+        lVar.r = false;
+        lVar.setUseAlphaForEmoji(false);
+        hs.i(lVar);
+        addView(lVar, mf.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
-    public final void a() {
-        EGLDisplay eglGetDisplay = EGL14.eglGetDisplay(0);
-        this.j = eglGetDisplay;
-        int[] iArr = new int[2];
-        if (!EGL14.eglInitialize(eglGetDisplay, iArr, 0, iArr, 1)) {
-            throw new IllegalStateException("Wallet EGL initialize failed");
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            Paint W0 = k6.W0("paintDivider", this.d);
+            if (W0 == null) {
+                W0 = k6.k0;
+            }
+            canvas.drawRect(org.telegram.messenger.g0.L(bd.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(bd.a0 ? 64.0f : 0.0f), getMeasuredHeight(), W0);
         }
-        EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr2 = new int[1];
-        if (!EGL14.eglChooseConfig(this.j, new int[]{12352, 64, 12339, 5, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12344}, 0, eGLConfigArr, 0, 1, iArr2, 0) || iArr2[0] == 0) {
-            throw new IllegalStateException("Wallet EGL config failed");
-        }
-        EGLConfig eGLConfig = eGLConfigArr[0];
-        this.m = eGLConfig;
-        this.k = EGL14.eglCreateContext(this.j, eGLConfig, EGL14.EGL_NO_CONTEXT, new int[]{12440, 3, 12344}, 0);
-        EGLSurface eglCreatePbufferSurface = EGL14.eglCreatePbufferSurface(this.j, this.m, new int[]{12375, 1, 12374, 1, 12344}, 0);
-        this.l = eglCreatePbufferSurface;
-        if (!EGL14.eglMakeCurrent(this.j, eglCreatePbufferSurface, eglCreatePbufferSurface, this.k)) {
-            throw new IllegalStateException("Wallet EGL context failed");
-        }
-        Context context = this.a;
-        a aVar = new a(context, 2);
-        int i10 = this.e;
-        aVar.C = i10;
-        this.n = aVar;
-        a aVar2 = new a(context, 2);
-        aVar2.C = i10;
-        this.o = aVar2;
-        this.r = 0L;
-        this.q = 0L;
-        this.s = 0;
     }
 
-    public final void b() {
-        a aVar = this.n;
-        if (aVar != null) {
-            aVar.b();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
+        boolean z11 = bd.a0;
+        k5 k5Var = this.c;
+        k5 k5Var2 = this.a;
+        if (z11) {
+            k5Var2.setPadding(k5Var.getTextWidth(), 0, 0, 0);
+        } else {
+            k5Var2.setPadding(0, 0, k5Var.getTextWidth(), 0);
         }
-        a aVar2 = this.o;
-        if (aVar2 != null) {
-            aVar2.b();
-        }
-        a aVar3 = this.p;
-        if (aVar3 != null) {
-            aVar3.b();
-        }
-        this.p = null;
-        this.o = null;
-        this.n = null;
-        EGLDisplay eGLDisplay = this.j;
-        EGLSurface eGLSurface = EGL14.EGL_NO_SURFACE;
-        EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, EGL14.EGL_NO_CONTEXT);
-        EGL14.eglDestroySurface(this.j, this.l);
-        EGL14.eglDestroyContext(this.j, this.k);
-        EGL14.eglTerminate(this.j);
-        EGL14.eglReleaseThread();
-        this.j = EGL14.EGL_NO_DISPLAY;
-        this.k = EGL14.EGL_NO_CONTEXT;
-        this.l = EGL14.EGL_NO_SURFACE;
     }
 
-    public final void c() {
-        if (this.h.compareAndSet(false, true)) {
-            this.b.post(new s(this, 0));
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
     }
 }

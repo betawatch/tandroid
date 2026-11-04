@@ -1,438 +1,106 @@
 package p4;
 
-import android.content.ComponentName;
-import android.content.IntentFilter;
-import android.content.IntentSender;
-import android.net.Uri;
+import android.media.session.PlaybackState;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.text.TextUtils;
-import com.google.android.gms.internal.vision.g3;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
+import g9.g0;
+import g9.i0;
+import g9.s1;
+import java.util.AbstractCollection;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.ListIterator;
-import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class w {
-    public final v a;
-    public final String b;
-    public final String c;
-    public String d;
-    public String e;
-    public Uri f;
-    public boolean g;
-    public final boolean h;
-    public int i;
-    public boolean j;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public Bundle s;
-    public IntentSender t;
-    public m u;
-    public a0.f w;
-    public final ArrayList k = new ArrayList();
-    public int r = -1;
-    public ArrayList v = new ArrayList();
+public final class w implements Parcelable {
+    public static final Parcelable.Creator<w> CREATOR = new n8.g(13);
+    public final int a;
+    public final long b;
+    public final long c;
+    public final float d;
+    public final long e;
+    public final int f;
+    public final CharSequence h;
+    public final long n;
+    public final AbstractCollection r;
+    public final long s;
+    public final Bundle w;
+    public PlaybackState x;
 
-    public w(v vVar, String str, String str2, boolean z10) {
-        this.a = vVar;
-        this.b = str;
-        this.c = str2;
-        this.h = z10;
+    public w(int i3, long j10, long j11, float f10, long j12, int i10, CharSequence charSequence, long j13, ArrayList arrayList, long j14, Bundle bundle) {
+        this.a = i3;
+        this.b = j10;
+        this.c = j11;
+        this.d = f10;
+        this.e = j12;
+        this.f = i10;
+        this.h = charSequence;
+        this.n = j13;
+        this.r = new ArrayList(arrayList);
+        this.s = j14;
+        this.w = bundle;
     }
 
-    public static p a() {
-        y.b();
-        q qVar = y.c().e;
-        if (qVar instanceof p) {
-            return (p) qVar;
-        }
-        return null;
-    }
-
-    public final k2.m0 b(w wVar) {
-        if (wVar == null) {
-            throw new NullPointerException("route must not be null");
-        }
-        String str = wVar.c;
-        a0.f fVar = this.w;
-        if (fVar == null || !fVar.containsKey(str)) {
-            return null;
-        }
-        return new k2.m0((o) this.w.get(str));
-    }
-
-    public final g3 c() {
-        v vVar = this.a;
-        vVar.getClass();
-        y.b();
-        return vVar.a;
-    }
-
-    public final boolean d() {
-        y.b();
-        w wVar = y.c().v;
-        if (wVar == null) {
-            throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
-        }
-        if (wVar == this || this.n == 3) {
-            return true;
-        }
-        return TextUtils.equals(((ComponentName) ((l2.f) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
-    }
-
-    public final boolean e() {
-        return DesugarCollections.unmodifiableList(this.v).size() >= 1;
-    }
-
-    public final boolean f() {
-        return this.u != null && this.g;
-    }
-
-    public final boolean g() {
-        y.b();
-        return y.c().e() == this;
-    }
-
-    public final boolean h(s sVar) {
-        if (sVar == null) {
-            throw new IllegalArgumentException("selector must not be null");
-        }
-        y.b();
-        ArrayList arrayList = this.k;
-        if (arrayList != null) {
-            sVar.a();
-            if (!sVar.b.isEmpty()) {
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    IntentFilter intentFilter = (IntentFilter) obj;
-                    if (intentFilter != null) {
-                        Iterator it = sVar.b.iterator();
-                        while (it.hasNext()) {
-                            if (intentFilter.hasCategory((String) it.next())) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x0102, code lost:
-    
-        if (r5.hasNext() == false) goto L69;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(m mVar) {
-        int i10;
-        int i11;
-        w wVar;
-        int countActions;
-        int i12 = 0;
-        if (this.u != mVar) {
-            this.u = mVar;
-            if (mVar != null) {
-                Bundle bundle = mVar.a;
-                if (Objects.equals(this.d, bundle.getString("name"))) {
-                    i10 = 0;
-                } else {
-                    this.d = bundle.getString("name");
-                    i10 = 1;
-                }
-                if (!Objects.equals(this.e, bundle.getString("status"))) {
-                    this.e = bundle.getString("status");
-                    i10 = 1;
-                }
-                Uri uri = this.f;
-                String string = bundle.getString("iconUri");
-                if (!Objects.equals(uri, string == null ? null : Uri.parse(string))) {
-                    String string2 = bundle.getString("iconUri");
-                    this.f = string2 == null ? null : Uri.parse(string2);
-                    i10 = 1;
-                }
-                if (this.g != bundle.getBoolean("enabled", true)) {
-                    this.g = bundle.getBoolean("enabled", true);
-                    i10 = 1;
-                }
-                if (this.i != bundle.getInt("connectionState", 0)) {
-                    this.i = bundle.getInt("connectionState", 0);
-                    i10 = 1;
-                }
-                ArrayList b10 = mVar.b();
-                ArrayList arrayList = this.k;
-                if (arrayList != b10) {
-                    if (arrayList != null) {
-                        ListIterator listIterator = arrayList.listIterator();
-                        ListIterator listIterator2 = b10.listIterator();
-                        loop0: while (listIterator.hasNext() && listIterator2.hasNext()) {
-                            IntentFilter intentFilter = (IntentFilter) listIterator.next();
-                            IntentFilter intentFilter2 = (IntentFilter) listIterator2.next();
-                            if (intentFilter != intentFilter2) {
-                                if (intentFilter == null || intentFilter2 == null || (countActions = intentFilter.countActions()) != intentFilter2.countActions()) {
-                                    break;
-                                }
-                                int i13 = 0;
-                                while (true) {
-                                    if (i13 >= countActions) {
-                                        int countCategories = intentFilter.countCategories();
-                                        if (countCategories != intentFilter2.countCategories()) {
-                                            break;
-                                        }
-                                        for (int i14 = 0; i14 < countCategories; i14++) {
-                                            if (!intentFilter.getCategory(i14).equals(intentFilter2.getCategory(i14))) {
-                                                break loop0;
-                                            }
-                                        }
-                                    } else {
-                                        if (!intentFilter.getAction(i13).equals(intentFilter2.getAction(i13))) {
-                                            break loop0;
-                                        }
-                                        i13++;
-                                    }
-                                }
-                            }
-                        }
-                        if (!listIterator.hasNext()) {
-                        }
-                    }
-                    arrayList.clear();
-                    arrayList.addAll(mVar.b());
-                    i10 = 1;
-                }
-                if (this.l != bundle.getInt("playbackType", 1)) {
-                    this.l = bundle.getInt("playbackType", 1);
-                    i10 = 1;
-                }
-                if (this.m != bundle.getInt("playbackStream", -1)) {
-                    this.m = bundle.getInt("playbackStream", -1);
-                    i10 = 1;
-                }
-                if (this.n != bundle.getInt("deviceType")) {
-                    this.n = bundle.getInt("deviceType");
-                    i10 = 1;
-                }
-                int i15 = 3;
-                if (this.o != bundle.getInt("volumeHandling", 0)) {
-                    this.o = bundle.getInt("volumeHandling", 0);
-                    i10 = 3;
-                }
-                if (this.p != bundle.getInt("volume")) {
-                    this.p = bundle.getInt("volume");
-                    i10 = 3;
-                }
-                if (this.q != bundle.getInt("volumeMax")) {
-                    this.q = bundle.getInt("volumeMax");
-                } else {
-                    i15 = i10;
-                }
-                if (this.r != bundle.getInt("presentationDisplayId", -1)) {
-                    this.r = bundle.getInt("presentationDisplayId", -1);
-                    i15 |= 5;
-                }
-                if (!Objects.equals(this.s, bundle.getBundle("extras"))) {
-                    this.s = bundle.getBundle("extras");
-                    i15 |= 1;
-                }
-                if (!Objects.equals(this.t, (IntentSender) bundle.getParcelable("settingsIntent"))) {
-                    this.t = (IntentSender) bundle.getParcelable("settingsIntent");
-                    i15 |= 1;
-                }
-                if (this.j != bundle.getBoolean("canDisconnect", false)) {
-                    this.j = bundle.getBoolean("canDisconnect", false);
-                    i15 |= 5;
-                }
-                ArrayList c10 = mVar.c();
-                ArrayList arrayList2 = new ArrayList();
-                boolean z10 = c10.size() != this.v.size();
-                if (!c10.isEmpty()) {
-                    e c11 = y.c();
-                    int size = c10.size();
-                    int i16 = 0;
-                    while (i16 < size) {
-                        Object obj = c10.get(i16);
-                        i16++;
-                        c11.getClass();
-                        String str = (String) c11.k.get(new q0.b(((ComponentName) this.a.d.b).flattenToShortString(), (String) obj));
-                        ArrayList arrayList3 = c11.j;
-                        int size2 = arrayList3.size();
-                        int i17 = i12;
-                        while (true) {
-                            if (i17 >= size2) {
-                                i11 = i12;
-                                wVar = null;
-                                break;
-                            }
-                            Object obj2 = arrayList3.get(i17);
-                            i17++;
-                            wVar = (w) obj2;
-                            i11 = i12;
-                            if (wVar.c.equals(str)) {
-                                break;
-                            }
-                            i12 = i11;
-                        }
-                        if (wVar != null) {
-                            arrayList2.add(wVar);
-                            if (!z10 && !this.v.contains(wVar)) {
-                                z10 = true;
-                            }
-                        }
-                        i12 = i11;
-                    }
-                }
-                if (!z10) {
-                    return i15;
-                }
-                this.v = arrayList2;
-                return i15 | 1;
-            }
-        }
+    @Override // android.os.Parcelable
+    public final int describeContents() {
         return 0;
     }
 
-    public final void j(int i10) {
-        q qVar;
-        q qVar2;
-        y.b();
-        e c10 = y.c();
-        int min = Math.min(this.q, Math.max(0, i10));
-        HashMap hashMap = c10.b;
-        if (this == c10.d && (qVar2 = c10.e) != null) {
-            qVar2.f(min);
-        } else {
-            if (hashMap.isEmpty() || (qVar = (q) hashMap.get(this.c)) == null) {
-                return;
-            }
-            qVar.f(min);
-        }
-    }
-
-    public final void k(int i10) {
-        q qVar;
-        q qVar2;
-        y.b();
-        if (i10 != 0) {
-            e c10 = y.c();
-            HashMap hashMap = c10.b;
-            if (this == c10.d && (qVar2 = c10.e) != null) {
-                qVar2.i(i10);
-            } else {
-                if (hashMap.isEmpty() || (qVar = (q) hashMap.get(this.c)) == null) {
-                    return;
-                }
-                qVar.i(i10);
-            }
-        }
-    }
-
-    public final void l() {
-        y.b();
-        y.c().i(this, 3);
-    }
-
-    public final boolean m(String str) {
-        y.b();
-        ArrayList arrayList = this.k;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (((IntentFilter) obj).hasCategory(str)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void n(Collection collection) {
-        this.v.clear();
-        if (this.w == null) {
-            this.w = new a0.f(0);
-        }
-        this.w.clear();
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            o oVar = (o) it.next();
-            w a2 = this.a.a(oVar.a.d());
-            if (a2 != null) {
-                this.w.put(a2.c, oVar);
-                int i10 = oVar.b;
-                if (i10 == 2 || i10 == 3) {
-                    this.v.add(a2);
-                }
-            }
-        }
-        y.c().a.b(at.i4, this);
-    }
-
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("MediaRouter.RouteInfo{ uniqueId=");
+        StringBuilder sb2 = new StringBuilder("PlaybackState {state=");
+        sb2.append(this.a);
+        sb2.append(", position=");
+        sb2.append(this.b);
+        sb2.append(", buffered position=");
         sb2.append(this.c);
-        sb2.append(", name=");
+        sb2.append(", speed=");
         sb2.append(this.d);
-        sb2.append(", description=");
-        sb2.append(this.e);
-        sb2.append(", iconUri=");
-        sb2.append(this.f);
-        sb2.append(", enabled=");
-        sb2.append(this.g);
-        sb2.append(", isSystemRoute=");
-        sb2.append(this.h);
-        sb2.append(", connectionState=");
-        sb2.append(this.i);
-        sb2.append(", canDisconnect=");
-        sb2.append(this.j);
-        sb2.append(", playbackType=");
-        sb2.append(this.l);
-        sb2.append(", playbackStream=");
-        sb2.append(this.m);
-        sb2.append(", deviceType=");
+        sb2.append(", updated=");
         sb2.append(this.n);
-        sb2.append(", volumeHandling=");
-        sb2.append(this.o);
-        sb2.append(", volume=");
-        sb2.append(this.p);
-        sb2.append(", volumeMax=");
-        sb2.append(this.q);
-        sb2.append(", presentationDisplayId=");
+        sb2.append(", actions=");
+        sb2.append(this.e);
+        sb2.append(", error code=");
+        sb2.append(this.f);
+        sb2.append(", error message=");
+        sb2.append(this.h);
+        sb2.append(", custom actions=");
         sb2.append(this.r);
-        sb2.append(", extras=");
-        sb2.append(this.s);
-        sb2.append(", settingsIntent=");
-        sb2.append(this.t);
-        sb2.append(", providerPackageName=");
-        sb2.append(((ComponentName) this.a.d.b).getPackageName());
-        if (e()) {
-            sb2.append(", members=[");
-            int size = this.v.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                if (i10 > 0) {
-                    sb2.append(", ");
-                }
-                if (this.v.get(i10) != this) {
-                    sb2.append(((w) this.v.get(i10)).c);
-                }
-            }
-            sb2.append(']');
+        sb2.append(", active item id=");
+        return a1.g.r(sb2, this.s, "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        parcel.writeInt(this.a);
+        parcel.writeLong(this.b);
+        parcel.writeFloat(this.d);
+        parcel.writeLong(this.n);
+        parcel.writeLong(this.c);
+        parcel.writeLong(this.e);
+        TextUtils.writeToParcel(this.h, parcel, i3);
+        parcel.writeTypedList(this.r);
+        parcel.writeLong(this.s);
+        parcel.writeBundle(this.w);
+        parcel.writeInt(this.f);
+    }
+
+    public w(Parcel parcel) {
+        this.a = parcel.readInt();
+        this.b = parcel.readLong();
+        this.d = parcel.readFloat();
+        this.n = parcel.readLong();
+        this.c = parcel.readLong();
+        this.e = parcel.readLong();
+        this.h = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        AbstractCollection createTypedArrayList = parcel.createTypedArrayList(v.CREATOR);
+        if (createTypedArrayList == null) {
+            g0 g0Var = i0.b;
+            createTypedArrayList = s1.e;
         }
-        sb2.append(" }");
-        return sb2.toString();
+        this.r = createTypedArrayList;
+        this.s = parcel.readLong();
+        this.w = parcel.readBundle(q.class.getClassLoader());
+        this.f = parcel.readInt();
     }
 }

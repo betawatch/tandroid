@@ -1,53 +1,28 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qj0 implements org.telegram.messenger.k20 {
+public final /* synthetic */ class qj0 implements org.telegram.ui.ActionBar.p1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PasskeysActivity b;
+    public final /* synthetic */ uj0 b;
 
-    public /* synthetic */ qj0(PasskeysActivity passkeysActivity, int i10) {
-        this.a = i10;
-        this.b = passkeysActivity;
+    public /* synthetic */ qj0(uj0 uj0Var, int i3) {
+        this.a = i3;
+        this.b = uj0Var;
     }
 
-    @Override // org.telegram.messenger.k20
-    public final void a(Object obj, Object obj2) {
-        int i10 = this.a;
-        PasskeysActivity passkeysActivity = this.b;
-        switch (i10) {
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = passkeysActivity.b;
-                passkeysActivity.addPasskeyRow = -1;
-                String L0 = org.telegram.messenger.dd.L0(2131747645, null);
-                org.telegram.ui.Components.b51 b51Var = new org.telegram.ui.Components.b51(2);
-                b51Var.l = L0;
-                b51Var.k = R.raw.passkey;
-                arrayList.add(b51Var);
-                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i11);
-                    e50 e50Var = new e50(passkeysActivity, 16);
-                    int i12 = sj0.b;
-                    org.telegram.ui.Components.b51 K = org.telegram.ui.Components.b51.K(sj0.class);
-                    K.G = passkey;
-                    K.D = e50Var;
-                    arrayList.add(K);
-                }
-                if (arrayList2.size() + 1 <= ((org.telegram.messenger.l0) passkeysActivity.getMessagesController().y7.z.a).c) {
-                    passkeysActivity.addPasskeyRow = arrayList.size();
-                    org.telegram.ui.Components.b51 c10 = org.telegram.ui.Components.b51.c(-1, R.drawable.menu_passkey_add, org.telegram.messenger.dd.L0(2131747666, null));
-                    c10.q = true;
-                    arrayList.add(c10);
-                }
-                arrayList.add(org.telegram.ui.Components.b51.C(org.telegram.messenger.i0.G2(org.telegram.messenger.i0.T2(org.telegram.messenger.dd.L0(2131747651, null), new kg0(passkeysActivity, 4)), true)));
+                uj0 uj0Var = this.b;
+                uj0Var.c(true);
+                uj0Var.R.finishFragment();
                 break;
             default:
-                PasskeysActivity.Z(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
+                uj0 uj0Var2 = this.b;
+                uj0Var2.c(true);
+                uj0Var2.R.O1(null, 0, true);
                 break;
         }
     }

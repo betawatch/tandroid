@@ -1,88 +1,57 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qi implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class qi extends org.telegram.ui.Components.jn {
+    public final /* synthetic */ wm B0;
 
-    public qi(a50 a50Var, Rect rect) {
-        this.a = 1;
-        this.d = a50Var;
-        this.c = rect;
-        this.b = new int[2];
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qi(wm wmVar, Context context, wm wmVar2, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, wmVar2, z10, e6Var);
+        this.B0 = wmVar;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        b40 b40Var;
-        switch (this.a) {
-            case 0:
-                un unVar = (un) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        unVar.M7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.k1 k1Var = unVar.e9;
-                    if (k1Var != null && k1Var.isShowing()) {
-                        View contentView = unVar.e9.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i10 = iArr[0];
-                        int i11 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i10;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i10, i11, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            unVar.M7(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                a50 a50Var = (a50) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (b40Var = a50Var.W4) != null && b40Var.isShowing()) {
-                        a50Var.W4.dismiss();
-                        break;
-                    }
-                } else {
-                    b40 b40Var2 = a50Var.W4;
-                    if (b40Var2 != null && b40Var2.isShowing()) {
-                        View contentView2 = a50Var.W4.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i12 = iArr2[0];
-                        int i13 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            a50Var.W4.dismiss();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.jn
+    public final boolean a() {
+        boolean z10;
+        wm wmVar = this.B0;
+        if (wmVar.jb || wmVar.isInPreviewMode()) {
+            return false;
         }
-        return false;
+        z10 = ((org.telegram.ui.ActionBar.d2) wmVar).inBubbleMode;
+        if (z10 || wmVar.k0 == null || wmVar.H3) {
+            return false;
+        }
+        return !wmVar.da() || wmVar.w4;
     }
 
-    public qi(un unVar, Rect rect) {
-        this.a = 0;
-        this.d = unVar;
-        this.c = rect;
-        this.b = new int[2];
+    @Override // org.telegram.ui.Components.jn
+    public final boolean d() {
+        wm wmVar = this.B0;
+        TLRPC.User user = wmVar.f;
+        if (user != null && user.linked_community_id != 0) {
+            wmVar.showDialog(new ji.b0(wmVar, wmVar.f.linked_community_id, null, null));
+            return true;
+        }
+        TLRPC.Chat chat = wmVar.e;
+        if (chat == null || chat.linked_community_id == 0) {
+            return false;
+        }
+        wmVar.showDialog(new ji.b0(wmVar, wmVar.e.linked_community_id, null, null));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.jn
+    public final void f() {
+        wm wmVar = this.B0;
+        wmVar.La(wmVar.ca() ? "" : null);
+    }
+
+    @Override // org.telegram.ui.Components.jn
+    public final boolean o() {
+        return this.B0.g4 == 3;
     }
 }

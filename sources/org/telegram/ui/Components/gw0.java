@@ -1,228 +1,102 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gw0 extends sb {
-    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0085 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0255  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0267  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0279  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x028b  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0308  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0375  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public gw0(Context context, TLObject tLObject, int i10, int i11, TLRPC.Document document, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        TLRPC.Document document2;
-        TLRPC.StickerSet stickerSet;
-        TLRPC.TL_stickerSetFullCovered tL_stickerSetFullCovered;
-        ArrayList<TLRPC.Document> arrayList;
-        TLRPC.Document document3;
-        org.telegram.messenger.jc k10;
-        TLRPC.TL_messages_stickerSet m0;
-        boolean z10 = tLObject instanceof TLRPC.TL_messages_stickerSet;
-        if (z10) {
-            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-            stickerSet = tL_messages_stickerSet.set;
-            ArrayList<TLRPC.Document> arrayList2 = tL_messages_stickerSet.documents;
-            if (arrayList2 != null && !arrayList2.isEmpty()) {
-                document3 = arrayList2.get(0);
-                document2 = document3;
-                if (stickerSet == null && document2 != null && (m0 = org.telegram.messenger.vi.b0(org.telegram.messenger.e20.s0).m0(org.telegram.messenger.kj.j1(document2), true)) != null) {
-                    stickerSet = m0.set;
-                }
-                TLRPC.StickerSet stickerSet2 = stickerSet;
-                if (document2 == null) {
-                    TLObject w9 = stickerSet2 == null ? null : org.telegram.messenger.b8.w(stickerSet2.thumbs, 90, false, null, false);
-                    w9 = w9 == null ? document2 : w9;
-                    boolean z11 = w9 instanceof TLRPC.Document;
-                    if (z11) {
-                        k10 = org.telegram.messenger.jc.c(org.telegram.messenger.b8.w(document2.thumbs, 90, false, null, false), document2);
-                    } else {
-                        k10 = org.telegram.messenger.jc.k((TLRPC.PhotoSize) w9, document2, tLObject instanceof TLRPC.StickerSetCovered ? ((TLRPC.StickerSetCovered) tLObject).set.thumb_version : z10 ? ((TLRPC.TL_messages_stickerSet) tLObject).set.thumb_version : 0);
-                    }
-                    org.telegram.messenger.jc jcVar = k10;
-                    if (z11 && (org.telegram.messenger.kj.K2(document2, true) || org.telegram.messenger.kj.N4(document2) || org.telegram.messenger.kj.s3(document2, false))) {
-                        this.a.l(org.telegram.messenger.jc.b(document2), "50_50", jcVar, null, 0, tLObject);
-                    } else if (jcVar == null || jcVar.p != 1) {
-                        this.a.k(jcVar, "50_50", "webp", null, tLObject);
-                    } else {
-                        this.a.k(jcVar, "50_50", "tgs", null, tLObject);
-                    }
-                } else {
-                    this.a.k(null, null, "webp", null, tLObject);
-                }
-                if (org.telegram.messenger.kj.C4(document2)) {
-                    this.a.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                }
-                switch (i11) {
-                    case 0:
-                        if (stickerSet2 != null) {
-                            if (stickerSet2.masks) {
-                                this.b.setText(org.telegram.messenger.dd.L0(2131748687, null));
-                                this.c.setText(org.telegram.messenger.dd.a0("MasksRemovedInfo", null, 2131748686, stickerSet2.title));
-                                return;
-                            } else {
-                                if (!stickerSet2.emojis) {
-                                    this.b.setText(org.telegram.messenger.dd.L0(2131744871, null));
-                                    this.c.setText(org.telegram.messenger.dd.a0("StickersRemovedInfo", null, 2131744870, stickerSet2.title));
-                                    return;
-                                }
-                                this.b.setText(org.telegram.messenger.dd.L0(2131751172, null));
-                                if (i10 > 1) {
-                                    this.c.setText(org.telegram.messenger.dd.G(i10, "EmojiRemovedMultipleInfo", new Object[0]));
-                                    return;
-                                } else {
-                                    this.c.setText(org.telegram.messenger.dd.a0("EmojiRemovedInfo", null, 2131751171, stickerSet2.title));
-                                    return;
-                                }
-                            }
-                        }
-                        return;
-                    case 1:
-                        if (stickerSet2 != null) {
-                            if (stickerSet2.masks) {
-                                this.b.setText(org.telegram.messenger.dd.L0(2131748693, null));
-                                this.c.setText(org.telegram.messenger.dd.a0("MasksArchivedInfo", null, 2131748692, stickerSet2.title));
-                                return;
-                            } else if (stickerSet2.emojis) {
-                                this.b.setText(org.telegram.messenger.dd.L0(2131751188, null));
-                                this.c.setText(org.telegram.messenger.dd.a0("EmojiArchivedInfo", null, 2131751187, stickerSet2.title));
-                                return;
-                            } else {
-                                this.b.setText(org.telegram.messenger.dd.L0(2131744886, null));
-                                this.c.setText(org.telegram.messenger.dd.a0("StickersArchivedInfo", null, 2131744885, stickerSet2.title));
-                                return;
-                            }
-                        }
-                        return;
-                    case 2:
-                        if (stickerSet2 != null) {
-                            if (stickerSet2.masks) {
-                                this.b.setText(org.telegram.messenger.dd.L0(2131754403, null));
-                                this.c.setText(org.telegram.messenger.dd.a0("AddMasksInstalledInfo", null, 2131754402, stickerSet2.title));
-                                return;
-                            } else {
-                                if (!stickerSet2.emojis) {
-                                    this.b.setText(org.telegram.messenger.dd.L0(2131754387, null));
-                                    this.c.setText(org.telegram.messenger.dd.a0("AddStickersInstalledInfo", null, 2131754386, stickerSet2.title));
-                                    return;
-                                }
-                                this.b.setText(org.telegram.messenger.dd.L0(2131754440, null));
-                                if (i10 > 1) {
-                                    this.c.setText(org.telegram.messenger.dd.G(i10, "AddEmojiMultipleInstalledInfo", new Object[0]));
-                                    return;
-                                } else {
-                                    this.c.setText(org.telegram.messenger.dd.a0("AddEmojiInstalledInfo", null, 2131754439, stickerSet2.title));
-                                    return;
-                                }
-                            }
-                        }
-                        return;
-                    case 3:
-                        this.b.setText(org.telegram.messenger.dd.L0(2131746297, null));
-                        this.c.setVisibility(8);
-                        return;
-                    case 4:
-                        this.b.setText(org.telegram.messenger.dd.L0(2131746298, null));
-                        this.c.setVisibility(8);
-                        return;
-                    case 5:
-                        this.b.setText(org.telegram.messenger.dd.L0(2131754354, null));
-                        this.c.setVisibility(8);
-                        return;
-                    case 6:
-                        if (org.telegram.messenger.e20.i(org.telegram.messenger.e20.s0).q() || org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).A3()) {
-                            this.b.setText(org.telegram.messenger.dd.a0("LimitReachedFavoriteStickers", null, 2131748976, Integer.valueOf(org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).J4)));
-                            this.c.setText(org.telegram.messenger.dd.a0("LimitReachedFavoriteStickersSubtitlePremium", null, 2131748974, new Object[0]));
-                            return;
-                        } else {
-                            this.b.setText(org.telegram.messenger.dd.a0("LimitReachedFavoriteStickers", null, 2131748976, Integer.valueOf(org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).I4)));
-                            this.c.setText(org.telegram.messenger.i0.x2(org.telegram.messenger.dd.a0("LimitReachedFavoriteStickersSubtitle", null, 2131748975, Integer.valueOf(org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).J4)), new i20(context, 2)));
-                            return;
-                        }
-                    case 7:
-                        boolean q6 = org.telegram.messenger.e20.i(org.telegram.messenger.e20.s0).q();
-                        if (org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).A3() || q6) {
-                            this.b.setText(org.telegram.messenger.dd.a0(null, null, 2131748979, Integer.valueOf(q6 ? org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).H4 : org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).G4)));
-                            this.c.setText(org.telegram.messenger.dd.L0(2131748977, null));
-                            return;
-                        } else {
-                            this.b.setText(org.telegram.messenger.dd.a0(null, null, 2131748979, Integer.valueOf(org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).G4)));
-                            this.c.setText(org.telegram.messenger.i0.x2(org.telegram.messenger.dd.a0(null, null, 2131748978, Integer.valueOf(org.telegram.messenger.wp.r1(org.telegram.messenger.e20.s0).H4)), new i20(context, 3)));
-                            return;
-                        }
-                    default:
-                        return;
-                }
-            }
-            document3 = document;
-            document2 = document3;
-            if (stickerSet == null) {
-                stickerSet = m0.set;
-            }
-            TLRPC.StickerSet stickerSet22 = stickerSet;
-            if (document2 == null) {
-            }
-            if (org.telegram.messenger.kj.C4(document2)) {
-            }
-            switch (i11) {
-            }
-        } else if (tLObject instanceof TLRPC.StickerSetCovered) {
-            TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) tLObject;
-            stickerSet = stickerSetCovered.set;
-            TLRPC.Document document4 = stickerSetCovered.cover;
-            if (document4 != null) {
-                document3 = document4;
-            } else if (stickerSetCovered.covers.isEmpty()) {
-                if ((stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) && (arrayList = (tL_stickerSetFullCovered = (TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents) != null && !arrayList.isEmpty()) {
-                    document3 = tL_stickerSetFullCovered.documents.get(0);
-                }
-                document3 = document;
-            } else {
-                document3 = stickerSetCovered.covers.get(0);
-            }
-            document2 = document3;
-            if (stickerSet == null) {
-            }
-            TLRPC.StickerSet stickerSet222 = stickerSet;
-            if (document2 == null) {
-            }
-            if (org.telegram.messenger.kj.C4(document2)) {
-            }
-            switch (i11) {
-            }
-        } else {
-            if (document == null && tLObject != null) {
-                boolean z12 = org.telegram.messenger.v2.a;
-                throw new IllegalArgumentException("Invalid type of the given setObject: " + tLObject.getClass());
-            }
-            document2 = document;
-            stickerSet = null;
-            if (stickerSet == null) {
-            }
-            TLRPC.StickerSet stickerSet2222 = stickerSet;
-            if (document2 == null) {
-            }
-            if (org.telegram.messenger.kj.C4(document2)) {
-            }
-            switch (i11) {
-            }
+public final class gw0 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public org.telegram.ui.Cells.v9 E;
+    public float F;
+    public float G;
+    public ValueAnimator H;
+    public ValueAnimator I;
+    public b4.n J;
+    public float K;
+    public boolean L;
+    public org.telegram.ui.Components.voip.g M;
+    public Paint a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public boolean e;
+    public ai.x2 f;
+    public TextView h;
+    public TextView n;
+    public TextView r;
+    public TextView s;
+    public TextView w;
+    public View x;
+    public int y;
+
+    @Override // android.view.View
+    public final void invalidate() {
+        TextView textView = this.s;
+        TextView textView2 = this.r;
+        TextView textView3 = this.n;
+        TextView textView4 = this.h;
+        super.invalidate();
+        this.f.invalidate();
+        int i3 = this.y;
+        int i10 = org.telegram.ui.ActionBar.k6.Jj;
+        if (i3 != org.telegram.ui.ActionBar.k6.x0(null, i10, false)) {
+            this.y = org.telegram.ui.ActionBar.k6.x0(null, i10, false);
+            textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.L(org.telegram.messenger.g0.L(10.0f), this.y), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView4.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
+            textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.L(org.telegram.messenger.g0.L(10.0f), this.y), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView3.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
+            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(this.y, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView2.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
+            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.L(org.telegram.messenger.g0.L(10.0f), i0.a.o(this.y, org.telegram.messenger.hs.L1)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablePadding(org.telegram.messenger.g0.L(6.0f));
         }
+        org.telegram.ui.ActionBar.r6.V(this.E.getTextView(), org.telegram.ui.ActionBar.k6.G6, null);
+        org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d7, this.x, null);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        b4.n nVar = this.J;
+        if (nVar != null) {
+            nVar.a = true;
+            AnimatorSet animatorSet = (AnimatorSet) nVar.c;
+            if (animatorSet.isRunning()) {
+                return;
+            }
+            animatorSet.start();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        b4.n nVar = this.J;
+        if (nVar != null) {
+            nVar.a = false;
+            ((AnimatorSet) nVar.c).cancel();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        try {
+            if (this.f == null || this.h == null || this.y == org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Jj, false)) {
+                return;
+            }
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

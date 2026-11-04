@@ -1,47 +1,27 @@
 package a9;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final class p implements t {
-    public static final Object c = new Object();
-    public volatile t a;
-    public volatile Object b;
+import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
+import android.os.Parcelable;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static p b(q qVar) {
-        if (qVar instanceof p) {
-            return (p) qVar;
-        }
-        p pVar = new p();
-        pVar.b = c;
-        pVar.a = qVar;
-        return pVar;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class p extends q6.a {
+    public static final Parcelable.Creator<p> CREATOR = new c(13);
+    public final int a;
+    public final ParcelFileDescriptor b;
+
+    public p(int i3, ParcelFileDescriptor parcelFileDescriptor) {
+        this.a = i3;
+        this.b = parcelFileDescriptor;
     }
 
-    @Override // a9.u
-    public final Object a() {
-        Object obj;
-        Object obj2 = this.b;
-        Object obj3 = c;
-        if (obj2 != obj3) {
-            return obj2;
-        }
-        synchronized (this) {
-            try {
-                obj = this.b;
-                if (obj == obj3) {
-                    obj = this.a.a();
-                    Object obj4 = this.b;
-                    if (obj4 != obj3 && obj4 != obj) {
-                        throw new IllegalStateException("Scoped provider was invoked recursively returning different results: " + obj4 + " & " + obj + ". This is likely due to a circular dependency.");
-                    }
-                    this.b = obj;
-                    this.a = null;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return obj;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.l(parcel, 3, this.b, i3);
+        j8.a.t(parcel, s6);
     }
 }

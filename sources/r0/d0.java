@@ -1,18 +1,31 @@
 package r0;
 
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.util.AttributeSet;
 import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class d0 {
-    public static View.AccessibilityDelegate a(View view) {
-        return view.getAccessibilityDelegate();
+    public static CharSequence a(View view) {
+        return view.getAccessibilityPaneTitle();
     }
 
-    public static void b(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i10, int i11) {
-        view.saveAttributeDataForStyleable(context, iArr, attributeSet, typedArray, i10, i11);
+    public static boolean b(View view) {
+        return view.isAccessibilityHeading();
+    }
+
+    public static boolean c(View view) {
+        return view.isScreenReaderFocusable();
+    }
+
+    public static void d(View view, boolean z10) {
+        view.setAccessibilityHeading(z10);
+    }
+
+    public static void e(View view, CharSequence charSequence) {
+        view.setAccessibilityPaneTitle(charSequence);
+    }
+
+    public static void f(View view, boolean z10) {
+        view.setScreenReaderFocusable(z10);
     }
 }

@@ -1,13 +1,32 @@
 package k5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c implements ja.d {
-    public static final c a = new c();
-    public static final ja.c b = ja.c.c("logRequest");
+public final class c {
+    public final String a;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ((ja.e) obj2).d(b, ((i) ((o) obj)).a);
+    public c(String str) {
+        if (str == null) {
+            throw new NullPointerException("name is null");
+        }
+        this.a = str;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        return this.a.equals(((c) obj).a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() ^ 1000003;
+    }
+
+    public final String toString() {
+        return a1.g.s(new StringBuilder("Encoding{name=\""), this.a, "\"}");
     }
 }

@@ -1,25 +1,76 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class hr extends org.telegram.ui.Components.t10 {
-    public final /* synthetic */ pr j1;
+public final class hr extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ lr a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hr(pr prVar, Activity activity, pr prVar2) {
-        super(activity, prVar2);
-        this.j1 = prVar;
+    public hr(lr lrVar) {
+        this.a = lrVar;
     }
 
-    @Override // org.telegram.ui.Components.t10
-    public final void J0() {
-        pr prVar = this.j1;
-        prVar.getMessagesController().S(prVar.getParentActivity(), prVar.n, prVar, new y0(this, 26));
-    }
-
-    @Override // org.telegram.ui.Components.t10
-    public final void I0() {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i3) {
+        int i10;
+        int i11;
+        lr lrVar = this.a;
+        if (i3 == -1) {
+            lrVar.finishFragment();
+            return;
+        }
+        if (i3 != 1 || lrVar.b.getText().length() == 0) {
+            return;
+        }
+        TLRPC.User a22 = lrVar.getMessagesController().a2(Long.valueOf(lrVar.I));
+        TLRPC.UserFull b22 = lrVar.getMessagesController().b2(lrVar.I);
+        a22.first_name = lrVar.b.getText().toString();
+        a22.last_name = lrVar.c.getText().toString();
+        a22.contact = true;
+        TLRPC.TL_textWithEntities textWithEntities = lrVar.d.getTextWithEntities();
+        lrVar.getMessagesController().X3(a22, false, false);
+        org.telegram.messenger.g5 contactsController = lrVar.getContactsController();
+        boolean z10 = lrVar.L && lrVar.Y;
+        contactsController.getClass();
+        TLRPC.TL_contacts_addContact tL_contacts_addContact = new TLRPC.TL_contacts_addContact();
+        tL_contacts_addContact.id = contactsController.getMessagesController().q1(a22);
+        tL_contacts_addContact.first_name = a22.first_name;
+        tL_contacts_addContact.last_name = a22.last_name;
+        String str = a22.phone;
+        tL_contacts_addContact.phone = str;
+        tL_contacts_addContact.add_phone_privacy_exception = z10;
+        if (str == null) {
+            tL_contacts_addContact.phone = "";
+        } else if (str.length() > 0 && !tL_contacts_addContact.phone.startsWith("+")) {
+            tL_contacts_addContact.phone = "+" + tL_contacts_addContact.phone;
+        }
+        if (textWithEntities != null) {
+            tL_contacts_addContact.flags |= 2;
+            tL_contacts_addContact.note = textWithEntities;
+        }
+        contactsController.getConnectionsManager().sendRequest(tL_contacts_addContact, new org.telegram.messenger.s4(1, contactsController, a22), 6);
+        i10 = ((org.telegram.ui.ActionBar.d2) lrVar).currentAccount;
+        org.telegram.messenger.hp.s1(i10).d7.edit().putInt("dialog_bar_vis3" + lrVar.I, 3).commit();
+        lrVar.getNotificationCenter().k(org.telegram.messenger.hs.r, 1);
+        lrVar.getNotificationCenter().k(org.telegram.messenger.hs.Q0, Long.valueOf(lrVar.I));
+        if (b22 != null) {
+            if (textWithEntities == null || textWithEntities.text.length() <= 0) {
+                b22.flags2 &= -4194305;
+                b22.note = null;
+            } else {
+                b22.flags2 |= TLObject.FLAG_22;
+                b22.note = textWithEntities;
+            }
+            i11 = ((org.telegram.ui.ActionBar.d2) lrVar).currentAccount;
+            org.telegram.messenger.qr.a0(i11).j2(b22, true);
+            lrVar.getNotificationCenter().k(org.telegram.messenger.hs.E0, Long.valueOf(b22.id), b22);
+        }
+        lrVar.finishFragment();
+        kr krVar = lrVar.P;
+        if (krVar != null) {
+            krVar.a();
+        }
     }
 }

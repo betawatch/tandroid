@@ -1,85 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class p20 extends TextView {
-    public final Paint[] a;
-    public final /* synthetic */ org.telegram.ui.a40 b;
+public final class p20 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.e6 b;
+    public ArrayList c;
+    public final FrameLayout d;
+    public final l41 e;
+    public final f41 f;
+    public org.telegram.messenger.u10 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p20(org.telegram.ui.a40 a40Var, Context context) {
-        super(context);
-        this.b = a40Var;
-        this.a = new Paint[a40Var.l1.length];
-        int i10 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i10 >= paintArr.length) {
-                return;
-            }
-            paintArr[i10] = new Paint(1);
-            i10++;
-        }
+    public p20(int i3, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity);
+        this.a = i3;
+        this.b = e6Var;
+        l41 l41Var = new l41(activity, i3, 0, false, new e(this, 15), new o20(this), new o20(this), e6Var);
+        this.e = l41Var;
+        l41Var.setClipToPadding(false);
+        f41 f41Var = (f41) l41Var.getAdapter();
+        this.f = f41Var;
+        f41Var.r = false;
+        addView(l41Var, -1, -1);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.d = frameLayout;
+        ImageView imageView = new ImageView(activity);
+        int i10 = org.telegram.ui.ActionBar.k6.m6;
+        org.telegram.ui.ActionBar.r6.t(imageView, i10, e6Var, PorterDuff.Mode.MULTIPLY);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.large_hashtags);
+        frameLayout.addView(imageView, b8.mf.e(56, 56, 49));
+        TextView textView = new TextView(activity);
+        org.telegram.ui.ActionBar.r6.V(textView, i10, e6Var);
+        textView.setText(org.telegram.messenger.bd.M0(2131749361, null));
+        textView.setGravity(17);
+        frameLayout.addView(textView, b8.mf.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
+        addView(frameLayout, b8.mf.e(org.telegram.messenger.hs.n3, -2, 17));
+        l41Var.setEmptyView(frameLayout);
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        RectF rectF = org.telegram.messenger.i0.P;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        org.telegram.ui.a40 a40Var = this.b;
-        int i11 = a40Var.n1;
-        Paint[] paintArr = this.a;
-        paintArr[i11].setAlpha(org.telegram.messenger.at.e4);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[a40Var.n1]);
-        float f7 = a40Var.m1;
-        if (f7 > 0.0f && (i10 = a40Var.n1 + 1) < paintArr.length) {
-            paintArr[i10].setAlpha((int) (f7 * 255.0f));
-            canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[a40Var.n1 + 1]);
-        }
-        super.onDraw(canvas);
+    public void setOnHashtagClickListener(org.telegram.messenger.u10 u10Var) {
+        this.h = u10Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x003e  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0029  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        super.onSizeChanged(i10, i11, i12, i13);
-        int i16 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i16 >= paintArr.length) {
-                return;
-            }
-            int i17 = -9015575;
-            if (i16 == 0) {
-                i14 = -9015575;
-                i17 = -11033346;
-            } else if (i16 == 1) {
-                i17 = -8919716;
-                i14 = -11089922;
-            } else {
-                i14 = -1026983;
-                i15 = -1792170;
-                paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
-                i16++;
-            }
-            i15 = 0;
-            paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
-            i16++;
-        }
+    public void setOnScrollListener(u4.t0 t0Var) {
+        this.e.j(t0Var);
     }
 }

@@ -1,40 +1,61 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import b8.mf;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class p5 extends FrameLayout {
-    public View a;
-    public float b;
-    public int c;
-    public final n5 d;
-    public final /* synthetic */ b6 e;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class p5 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final ImageView b;
+    public final TextView c;
+    public final TextView d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(b6 b6Var, Context context) {
+    public p5(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        this.e = b6Var;
-        this.d = new n5(1, this);
+        this.a = e6Var;
+        setPadding(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        addView(imageView, mf.d(28, 28.0f, 51, 0.0f, 2.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, mf.d(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        k2.p1.t(textView, 1, 14.0f);
+        TextView f10 = org.telegram.messenger.camera.q.f(linearLayout, textView, mf.t(-1, -2, 55, 0, 0, 0, 2), context);
+        this.d = f10;
+        f10.setTextSize(1, 14.0f);
+        linearLayout.addView(f10, mf.t(-1, -2, 55, 0, 0, 0, 2));
+        updateColors();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        getViewTreeObserver().addOnPreDrawListener(this.d);
+    public final void a(int i3, CharSequence charSequence, CharSequence charSequence2) {
+        this.b.setImageResource(i3);
+        this.c.setText(charSequence);
+        this.d.setText(charSequence2);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        getViewTreeObserver().removeOnPreDrawListener(this.d);
-        super.onDetachedFromWindow();
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.z6));
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.e.T0();
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i3 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.e6 e6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(i3, e6Var), PorterDuff.Mode.SRC_IN));
+        this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(i3, e6Var));
+        this.d.setTextColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.z6, e6Var));
     }
 }

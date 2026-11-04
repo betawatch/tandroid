@@ -1,26 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.ColorDrawable;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class p51 extends ColorDrawable {
-    public final int a;
-    public final org.telegram.ui.ActionBar.p6 b;
+public final /* synthetic */ class p51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s51 b;
 
-    public p51(int i10, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(org.telegram.ui.ActionBar.t6.w0(i10, p6Var));
-        this.a = i10;
-        this.b = p6Var;
+    public /* synthetic */ p51(s51 s51Var, int i3) {
+        this.a = i3;
+        this.b = s51Var;
     }
 
-    @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.t6.w0(this.a, this.b);
-        if (getColor() != w02) {
-            setColor(w02);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                s51 s51Var = this.b;
+                s51Var.h = 0.0f;
+                t5 t5Var = s51Var.b;
+                if (t5Var != null) {
+                    t5Var.u();
+                    s51Var.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                s51 s51Var2 = this.b;
+                s51Var2.a = true;
+                s51Var2.e = null;
+                if (s51Var2.b != null) {
+                    s51Var2.s = true;
+                    PhotoViewer photoViewer = s51Var2.N.a;
+                    if (photoViewer.v3) {
+                        photoViewer.e3(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                s51 s51Var3 = this.b;
+                s51Var3.a = true;
+                s51Var3.e = null;
+                if (s51Var3.b != null) {
+                    s51Var3.s = true;
+                    PhotoViewer photoViewer2 = s51Var3.N.a;
+                    if (photoViewer2.v3) {
+                        photoViewer2.e3(true);
+                        break;
+                    }
+                }
+                break;
         }
-        super.draw(canvas);
     }
 }

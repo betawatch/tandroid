@@ -1,40 +1,7 @@
 package dd;
 
-import cd.h;
-import kotlin.jvm.internal.i;
-import kotlin.jvm.internal.s;
-import ld.p;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends ed.c {
-    public int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ cd.c c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(cd.c cVar, h hVar, p pVar, cd.c cVar2) {
-        super(cVar, hVar);
-        this.b = pVar;
-        this.c = cVar2;
-    }
-
-    @Override // ed.a
-    public final Object invokeSuspend(Object obj) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            if (i10 != 1) {
-                throw new IllegalStateException("This coroutine had already completed");
-            }
-            this.a = 2;
-            l9.b.b(obj);
-            return obj;
-        }
-        this.a = 1;
-        l9.b.b(obj);
-        p pVar = this.b;
-        i.c(pVar, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted>, kotlin.Any?>");
-        s.a(2, pVar);
-        return pVar.invoke(this.c, this);
-    }
+public interface c {
+    Object getValue();
 }

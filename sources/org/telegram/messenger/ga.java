@@ -1,103 +1,56 @@
 package org.telegram.messenger;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.RemoteException;
-import com.google.android.gms.maps.model.LatLng;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class ga {
-    public final j8.e a;
-    public final /* synthetic */ ha b;
+    public final int c;
+    public k7 e;
+    public boolean f;
+    public int g;
+    public int h;
+    public TLRPC.Peer i;
+    public String k;
+    public int l;
+    public int m;
+    public boolean n;
+    public final ArrayList a = new ArrayList();
+    public final HashMap b = new HashMap();
+    public int d = -1;
+    public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-    public ga(ha haVar, j8.e eVar) {
-        this.b = haVar;
-        this.a = eVar;
+    public ga(int i3) {
+        this.c = i3;
     }
 
-    public final db a() {
-        j8.e eVar = this.a;
-        eVar.getClass();
-        try {
-            s7.i iVar = (s7.i) eVar.a;
-            Parcel O0 = iVar.O0(iVar.P0(), 4);
-            Parcelable.Creator<LatLng> creator = LatLng.CREATOR;
-            int i10 = s7.b.a;
-            LatLng createFromParcel = O0.readInt() == 0 ? null : creator.createFromParcel(O0);
-            O0.recycle();
-            return new db(createFromParcel.a, createFromParcel.b);
-        } catch (RemoteException e) {
-            throw new ad.d(e);
+    public final void a() {
+        if (this.d >= 0) {
+            ConnectionsManager.getInstance(this.c).cancelRequest(this.d, true);
+            this.d = -1;
         }
+        k7 k7Var = this.e;
+        if (k7Var != null) {
+            k7Var.run();
+            this.e = null;
+        }
+        this.a.clear();
+        this.b.clear();
+        this.g = 0;
+        this.h = 0;
+        this.i = null;
+        this.j = 2147483637;
+        this.k = null;
+        this.l = 0;
+        this.m = 0;
+        this.n = false;
     }
 
-    public final Object b() {
-        j8.e eVar = this.a;
-        eVar.getClass();
-        try {
-            s7.i iVar = (s7.i) eVar.a;
-            Parcel O0 = iVar.O0(iVar.P0(), 30);
-            x6.a M0 = x6.b.M0(O0.readStrongBinder());
-            O0.recycle();
-            return x6.b.N0(M0);
-        } catch (RemoteException e) {
-            throw new ad.d(e);
-        }
-    }
-
-    public final void c() {
-        j8.e eVar = this.a;
-        eVar.getClass();
-        try {
-            s7.i iVar = (s7.i) eVar.a;
-            iVar.T0(iVar.P0(), 1);
-            this.b.b.remove(eVar);
-        } catch (RemoteException e) {
-            throw new ad.d(e);
-        }
-    }
-
-    public final void d(db dbVar) {
-        LatLng latLng = new LatLng(dbVar.a, dbVar.b);
-        j8.e eVar = this.a;
-        eVar.getClass();
-        try {
-            s7.i iVar = (s7.i) eVar.a;
-            Parcel P0 = iVar.P0();
-            s7.b.b(P0, latLng);
-            iVar.T0(P0, 3);
-        } catch (RemoteException e) {
-            throw new ad.d(e);
-        }
-    }
-
-    public final void e(int i10) {
-        float f7 = i10;
-        j8.e eVar = this.a;
-        eVar.getClass();
-        try {
-            s7.i iVar = (s7.i) eVar.a;
-            Parcel P0 = iVar.P0();
-            P0.writeFloat(f7);
-            iVar.T0(P0, 22);
-        } catch (RemoteException e) {
-            throw new ad.d(e);
-        }
-    }
-
-    public final void f(Object obj) {
-        j8.e eVar = this.a;
-        eVar.getClass();
-        try {
-            s7.a aVar = eVar.a;
-            x6.b bVar = new x6.b(obj);
-            s7.i iVar = (s7.i) aVar;
-            Parcel P0 = iVar.P0();
-            s7.b.c(P0, bVar);
-            iVar.T0(P0, 29);
-        } catch (RemoteException e) {
-            throw new ad.d(e);
-        }
+    public final int b() {
+        int i3 = this.l >= this.a.size() - 1 ? 0 : 1;
+        return this.l > 0 ? i3 | 2 : i3;
     }
 }

@@ -1,104 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public abstract class t10 extends org.telegram.ui.ActionBar.z2 {
-    public static final /* synthetic */ int i1 = 0;
+public final class t10 implements b5.h {
+    public final /* synthetic */ org.telegram.ui.x20 a;
 
-    public t10(Context context, org.telegram.ui.ActionBar.k2 k2Var) {
-        super(context, true);
-        int i10 = 0;
-        this.v0 = false;
-        this.u0 = false;
-        LinearLayout f7 = org.telegram.messenger.m5.f(context, 1);
-        this.N = f7;
-        fi0 fi0Var = new fi0(context);
-        fi0Var.setAutoRepeat(true);
-        fi0Var.f(R.raw.utyan_gigagroup, 120, 120, null);
-        fi0Var.d();
-        f7.addView(fi0Var, w7.b6.t(org.telegram.messenger.at.q2, org.telegram.messenger.at.q2, 49, 17, 30, 17, 0));
-        TextView textView = new TextView(context);
-        org.telegram.messenger.a30.n(textView, 1, 24.0f);
-        org.telegram.messenger.a30.p(textView, org.telegram.ui.ActionBar.t6.j5, null, null, 2131749563);
-        f7.addView(textView, w7.b6.t(-2, -2, 49, 17, 18, 17, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        f7.addView(linearLayout, w7.b6.t(-2, -2, 1, 0, 12, 0, 0));
-        int i11 = 0;
-        while (true) {
-            int i12 = 16;
-            if (i11 >= 3) {
-                int i13 = i10;
-                s10 s10Var = new s10(context);
-                View view = new View(context);
-                s10Var.a = view;
-                int i14 = org.telegram.ui.ActionBar.t6.Ci;
-                float[] fArr = new float[1];
-                fArr[i13] = 4.0f;
-                view.setBackground(org.telegram.ui.ActionBar.j6.f(i14, fArr));
-                s10Var.addView(view, w7.b6.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
-                TextView textView2 = new TextView(context);
-                s10Var.b = textView2;
-                textView2.setLines(1);
-                textView2.setSingleLine(true);
-                textView2.setGravity(1);
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
-                textView2.setGravity(17);
-                org.telegram.messenger.m5.m(textView2, org.telegram.ui.ActionBar.t6.Gi, null, 1, 14.0f);
-                s10Var.addView(textView2, w7.b6.e(-2, -2, 17));
-                s10Var.setBackground(null);
-                s10Var.setText(org.telegram.messenger.dd.L0(2131749564, null));
-                view.setOnClickListener(new ag.i(this, context, k2Var, i12));
-                f7.addView(s10Var, w7.b6.t(-1, 50, 51, 0, 29, 0, 0));
-                TextView textView3 = new TextView(context);
-                textView3.setTextSize(1, 14.0f);
-                org.telegram.messenger.a30.p(textView3, org.telegram.ui.ActionBar.t6.n5, null, null, 2131749569);
-                textView3.setGravity(17);
-                f7.addView(textView3, w7.b6.t(-2, 48, 49, 17, 0, 17, 16));
-                textView3.setOnClickListener(new h0(this, 18));
-                return;
-            }
-            LinearLayout f10 = org.telegram.messenger.m5.f(context, i10);
-            linearLayout.addView(f10, w7.b6.t(-2, -2, org.telegram.messenger.dd.X ? 5 : 3, 0, 8, 0, 0));
-            ImageView imageView = new ImageView(context);
-            int i15 = org.telegram.ui.ActionBar.t6.r5;
-            org.telegram.ui.ActionBar.a7.t(imageView, i15, null, PorterDuff.Mode.MULTIPLY);
-            imageView.setImageResource(R.drawable.list_circle);
-            TextView textView4 = new TextView(context);
-            int i16 = i10;
-            textView4.setTextSize(1, 15.0f);
-            org.telegram.ui.ActionBar.a7.V(textView4, i15, null);
-            textView4.setGravity((org.telegram.messenger.dd.X ? 5 : 3) | 16);
-            textView4.setMaxWidth(org.telegram.messenger.i0.L(260.0f));
-            if (i11 == 0) {
-                textView4.setText(org.telegram.messenger.dd.L0(2131749567, null));
-            } else if (i11 == 1) {
-                textView4.setText(org.telegram.messenger.dd.L0(2131749566, null));
-            } else if (i11 == 2) {
-                textView4.setText(org.telegram.messenger.dd.L0(2131749565, null));
-            }
-            if (org.telegram.messenger.dd.X) {
-                f10.addView(textView4, w7.b6.o(-2, -2));
-                f10.addView(imageView, w7.b6.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
-            } else {
-                f10.addView(imageView, w7.b6.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
-                f10.addView(textView4, w7.b6.o(-2, -2));
-            }
-            i11++;
-            i10 = i16;
-        }
+    public t10(org.telegram.ui.x20 x20Var) {
+        this.a = x20Var;
     }
 
-    public abstract void I0();
+    @Override // b5.h
+    public final void b(float f10, int i3, int i10) {
+        org.telegram.ui.x20 x20Var = this.a;
+        x20Var.o1 = i3;
+        x20Var.n1 = f10;
+        x10.I0(x20Var);
+    }
 
-    public abstract void J0();
+    @Override // b5.h
+    public final void a(int i3) {
+    }
+
+    @Override // b5.h
+    public final void c(int i3) {
+    }
 }

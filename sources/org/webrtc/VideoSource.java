@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,15 +11,15 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;
         public final int width;
 
-        public AspectRatio(int i10, int i11) {
-            this.width = i10;
-            this.height = i11;
+        public AspectRatio(int i3, int i10) {
+            this.width = i3;
+            this.height = i10;
         }
     }
 
@@ -90,10 +90,10 @@ public class VideoSource extends MediaSource {
         runWithReference(new s(6, this, videoFrame));
     }
 
-    public void adaptOutputFormat(int i10, int i11, int i12) {
-        int max = Math.max(i10, i11);
-        int min = Math.min(i10, i11);
-        adaptOutputFormat(max, min, min, max, i12);
+    public void adaptOutputFormat(int i3, int i10, int i11) {
+        int max = Math.max(i3, i10);
+        int min = Math.min(i3, i10);
+        adaptOutputFormat(max, min, min, max, i11);
     }
 
     @Override // org.webrtc.MediaSource
@@ -137,8 +137,8 @@ public class VideoSource extends MediaSource {
         }
     }
 
-    public void adaptOutputFormat(int i10, int i11, int i12, int i13, int i14) {
-        adaptOutputFormat(new AspectRatio(i10, i11), Integer.valueOf(i10 * i11), new AspectRatio(i12, i13), Integer.valueOf(i12 * i13), Integer.valueOf(i14));
+    public void adaptOutputFormat(int i3, int i10, int i11, int i12, int i13) {
+        adaptOutputFormat(new AspectRatio(i3, i10), Integer.valueOf(i3 * i10), new AspectRatio(i11, i12), Integer.valueOf(i11 * i12), Integer.valueOf(i13));
     }
 
     public void adaptOutputFormat(AspectRatio aspectRatio, Integer num, AspectRatio aspectRatio2, Integer num2, Integer num3) {

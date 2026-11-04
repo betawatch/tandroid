@@ -1,36 +1,31 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.bi;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class r6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u6 b;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class r6 extends AnimatorListenerAdapter {
-    public final /* synthetic */ bi a;
-    public final /* synthetic */ a7 b;
-    public final /* synthetic */ s6 c;
-
-    public r6(s6 s6Var, bi biVar, a7 a7Var) {
-        this.c = s6Var;
-        this.a = biVar;
-        this.b = a7Var;
+    public /* synthetic */ r6(u6 u6Var, int i3) {
+        this.a = i3;
+        this.b = u6Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.a(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.a(true);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            org.telegram.messenger.i0.v1(this.b);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u6.a(this.b);
+                break;
+            default:
+                u6 u6Var = this.b;
+                Runnable runnable = u6Var.d0;
+                u6Var.d0 = null;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
     }
 }

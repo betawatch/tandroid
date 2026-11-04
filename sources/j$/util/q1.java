@@ -19,13 +19,13 @@ public class q1 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.o(this, i10);
+    public final /* synthetic */ boolean hasCharacteristics(int i3) {
+        return j$.com.android.tools.r8.a.o(this, i3);
     }
 
-    public q1(java.util.Collection collection, int i10) {
+    public q1(java.util.Collection collection, int i3) {
         this.a = collection;
-        this.c = (i10 & TLObject.FLAG_12) == 0 ? i10 | 16448 : i10;
+        this.c = (i3 & TLObject.FLAG_12) == 0 ? i3 | 16448 : i3;
     }
 
     @Override // j$.util.Spliterator
@@ -43,28 +43,28 @@ public class q1 implements Spliterator {
         if (j10 <= 1 || !it.hasNext()) {
             return null;
         }
-        int i10 = this.e + 1024;
-        if (i10 > j10) {
-            i10 = (int) j10;
+        int i3 = this.e + 1024;
+        if (i3 > j10) {
+            i3 = (int) j10;
         }
-        if (i10 > 33554432) {
-            i10 = 33554432;
+        if (i3 > 33554432) {
+            i3 = 33554432;
         }
-        Object[] objArr = new Object[i10];
-        int i11 = 0;
+        Object[] objArr = new Object[i3];
+        int i10 = 0;
         do {
-            objArr[i11] = it.next();
-            i11++;
-            if (i11 >= i10) {
+            objArr[i10] = it.next();
+            i10++;
+            if (i10 >= i3) {
                 break;
             }
         } while (it.hasNext());
-        this.e = i11;
+        this.e = i10;
         long j11 = this.d;
         if (j11 != Long.MAX_VALUE) {
-            this.d = j11 - i11;
+            this.d = j11 - i10;
         }
-        return new j1(objArr, 0, i11, this.c);
+        return new j1(objArr, 0, i10, this.c);
     }
 
     @Override // j$.util.Spliterator

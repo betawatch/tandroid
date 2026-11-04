@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzxc extends zzsn implements zztt {
     private static final zzxc zzb;
@@ -34,26 +34,26 @@ public final class zzxc extends zzsn implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i10, Object obj, Object obj2) {
+    public final Object zzh(int i3, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i11 = i10 - 1;
-        if (i11 == 0) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
             return (byte) 1;
         }
-        if (i11 == 2) {
+        if (i10 == 2) {
             return zzsn.zzF(zzb, "\u0000\t\u0000\u0001\u0001\u000b\t\u0000\u0001\u0000\u0001\u0004\u0003ဉ\u0000\u0004ဉ\u0001\u0005\f\u0007\u001b\b\f\tȈ\nȈ\u000bဉ\u0002", new Object[]{"zze", "zzf", "zzj", "zzk", "zzl", "zzn", zzwt.class, "zzg", "zzh", "zzi", "zzm"});
         }
-        if (i11 == 3) {
+        if (i10 == 3) {
             return new zzxc();
         }
         zzxb zzxbVar = null;
-        if (i11 == 4) {
+        if (i10 == 4) {
             return new zzxa(zzxbVar);
         }
-        if (i11 == 5) {
+        if (i10 == 5) {
             return zzb;
         }
-        if (i11 != 6) {
+        if (i10 != 6) {
             throw null;
         }
         zzua zzuaVar2 = zzd;

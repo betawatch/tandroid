@@ -1,38 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class z11 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Integer b;
+public final class z11 implements View.OnClickListener {
+    public final /* synthetic */ org.telegram.ui.Components.cg a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ b21 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z11(Context context, Integer num, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = num;
+    public z11(b21 b21Var, org.telegram.ui.Components.cg cgVar, TLRPC.TL_authorization tL_authorization) {
+        this.c = b21Var;
+        this.a = cgVar;
+        this.b = tL_authorization;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, i11);
-                if (this.b != null) {
-                    setPivotX(r2.intValue());
-                    break;
-                }
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                if (this.b != null) {
-                    setPivotX(r2.intValue());
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ((Switch) this.a.f).c(!r0.h, true);
+        this.b.call_requests_disabled = !((Switch) r4.f).h;
+        b21.J0(this.c);
     }
 }

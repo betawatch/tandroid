@@ -4,7 +4,7 @@ import android.content.ClipDescription;
 import android.net.Uri;
 import android.view.inputmethod.InputContentInfo;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class g implements h {
     public final InputContentInfo a;
@@ -19,7 +19,7 @@ public final class g implements h {
     }
 
     @Override // t0.h
-    public final void c() {
+    public final void b() {
         this.a.requestPermission();
     }
 
@@ -29,12 +29,12 @@ public final class g implements h {
     }
 
     @Override // t0.h
-    public final Object f() {
+    public final Object e() {
         return this.a;
     }
 
     @Override // t0.h
-    public final void g() {
+    public final void f() {
         this.a.releasePermission();
     }
 

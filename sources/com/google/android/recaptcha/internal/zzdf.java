@@ -2,30 +2,32 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import td.e0;
-import td.h0;
-import td.s;
-import td.t;
+import fd.h;
+import wd.b0;
+import wd.e0;
+import wd.n1;
+import wd.s;
+import wd.t;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzdf {
-    public static final h0 zza(Task task) {
-        final t a2 = e0.a();
+    public static final e0 zza(Task task) {
+        final t a10 = b0.a();
         task.addOnCompleteListener(zzdd.zza, new OnCompleteListener() { // from class: com.google.android.recaptcha.internal.zzdc
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {
-                s sVar = s.this;
+                h hVar = s.this;
                 Exception exception = task2.getException();
                 if (exception != null) {
-                    ((t) sVar).L(exception);
+                    ((t) hVar).Q(exception);
                 } else if (task2.isCanceled()) {
-                    sVar.cancel(null);
+                    ((n1) hVar).cancel(null);
                 } else {
-                    ((t) sVar).A(task2.getResult());
+                    ((t) hVar).C(task2.getResult());
                 }
             }
         });
-        return new zzde(a2);
+        return new zzde(a10);
     }
 }

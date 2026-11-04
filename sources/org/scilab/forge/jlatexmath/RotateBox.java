@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.Point2D;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class RotateBox extends Box {
     public static final int BBC = 8;
@@ -27,7 +27,7 @@ public class RotateBox extends Box {
     private float ymax;
     private float ymin;
 
-    public RotateBox(Box box, double d, float f7, float f10) {
+    public RotateBox(Box box, double d, float f10, float f11) {
         this.box = box;
         double d10 = (3.141592653589793d * d) / 180.0d;
         this.angle = d10;
@@ -36,38 +36,38 @@ public class RotateBox extends Box {
         this.width = box.width;
         double sin = Math.sin(d10);
         double cos = Math.cos(this.angle);
-        double d11 = f7;
+        double d11 = f10;
         double d12 = 1.0d - cos;
-        double d13 = f10;
+        double d13 = f11;
         this.shiftX = (float) ((d13 * sin) + (d11 * d12));
         this.shiftY = (float) ((d13 * d12) - (d11 * sin));
-        float f11 = this.height;
-        float f12 = this.depth;
-        float f13 = this.width;
-        this.xmax = ((float) Math.max((-f11) * sin, Math.max(f12 * sin, Math.max((f12 * sin) + (f13 * cos), (f13 * cos) - (f11 * sin))))) + this.shiftX;
-        float f14 = this.height;
-        float f15 = this.depth;
-        float f16 = this.width;
-        this.xmin = ((float) Math.min((-f14) * sin, Math.min(f15 * sin, Math.min((f15 * sin) + (f16 * cos), (f16 * cos) - (f14 * sin))))) + this.shiftX;
-        float f17 = this.height;
-        float f18 = this.depth;
-        float f19 = this.width;
-        this.ymax = (float) Math.max(f17 * cos, Math.max((-f18) * cos, Math.max((f19 * sin) - (f18 * cos), (f17 * cos) + (f19 * sin))));
-        float f20 = this.height;
-        float f21 = this.depth;
-        float f22 = this.width;
-        float min = (float) Math.min(f20 * cos, Math.min((-f21) * cos, Math.min((f22 * sin) - (f21 * cos), (f20 * cos) + (f22 * sin))));
+        float f12 = this.height;
+        float f13 = this.depth;
+        float f14 = this.width;
+        this.xmax = ((float) Math.max((-f12) * sin, Math.max(f13 * sin, Math.max((f13 * sin) + (f14 * cos), (f14 * cos) - (f12 * sin))))) + this.shiftX;
+        float f15 = this.height;
+        float f16 = this.depth;
+        float f17 = this.width;
+        this.xmin = ((float) Math.min((-f15) * sin, Math.min(f16 * sin, Math.min((f16 * sin) + (f17 * cos), (f17 * cos) - (f15 * sin))))) + this.shiftX;
+        float f18 = this.height;
+        float f19 = this.depth;
+        float f20 = this.width;
+        this.ymax = (float) Math.max(f18 * cos, Math.max((-f19) * cos, Math.max((f20 * sin) - (f19 * cos), (f18 * cos) + (f20 * sin))));
+        float f21 = this.height;
+        float f22 = this.depth;
+        float f23 = this.width;
+        float min = (float) Math.min(f21 * cos, Math.min((-f22) * cos, Math.min((f23 * sin) - (f22 * cos), (f21 * cos) + (f23 * sin))));
         this.ymin = min;
         this.width = this.xmax - this.xmin;
-        float f23 = this.ymax;
-        float f24 = this.shiftY;
-        this.height = f23 + f24;
-        this.depth = (-min) - f24;
+        float f24 = this.ymax;
+        float f25 = this.shiftY;
+        this.height = f24 + f25;
+        this.depth = (-min) - f25;
     }
 
-    private static Point2D.Float calculateShift(Box box, int i10) {
+    private static Point2D.Float calculateShift(Box box, int i3) {
         Point2D.Float r02 = new Point2D.Float(0.0f, -box.depth);
-        switch (i10) {
+        switch (i3) {
             case 0:
                 r02.x = 0.0f;
                 r02.y = -box.depth;
@@ -164,16 +164,16 @@ public class RotateBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f7, float f10) {
-        drawDebug(graphics2D, f7, f10);
-        this.box.drawDebug(graphics2D, f7, f10, true);
-        float f11 = f10 - this.shiftY;
-        float f12 = (this.shiftX - this.xmin) + f7;
-        double d = f12;
-        double d10 = f11;
+    public void draw(Graphics2D graphics2D, float f10, float f11) {
+        drawDebug(graphics2D, f10, f11);
+        this.box.drawDebug(graphics2D, f10, f11, true);
+        float f12 = f11 - this.shiftY;
+        float f13 = (this.shiftX - this.xmin) + f10;
+        double d = f13;
+        double d10 = f12;
         graphics2D.rotate(-this.angle, d, d10);
-        this.box.draw(graphics2D, f12, f11);
-        this.box.drawDebug(graphics2D, f12, f11, true);
+        this.box.draw(graphics2D, f13, f12);
+        this.box.drawDebug(graphics2D, f13, f12, true);
         graphics2D.rotate(this.angle, d, d10);
     }
 
@@ -186,7 +186,7 @@ public class RotateBox extends Box {
         this(box, d, r10.x, r10.y);
     }
 
-    public RotateBox(Box box, double d, int i10) {
-        this(box, d, calculateShift(box, i10));
+    public RotateBox(Box box, double d, int i3) {
+        this(box, d, calculateShift(box, i3));
     }
 }

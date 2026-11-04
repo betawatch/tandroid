@@ -3,8 +3,9 @@ package n0;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Locale;
+import k2.p1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class d implements e {
     public static final Locale[] c = new Locale[0];
@@ -36,10 +37,10 @@ public final class d implements e {
         ArrayList arrayList = new ArrayList();
         HashSet hashSet = new HashSet();
         StringBuilder sb2 = new StringBuilder();
-        for (int i10 = 0; i10 < localeArr.length; i10++) {
-            Locale locale = localeArr[i10];
+        for (int i3 = 0; i3 < localeArr.length; i3++) {
+            Locale locale = localeArr[i3];
             if (locale == null) {
-                throw new NullPointerException(i0.a.j(i10, "list[", "] is null"));
+                throw new NullPointerException(p1.j(i3, "list[", "] is null"));
             }
             if (!hashSet.contains(locale)) {
                 Locale locale2 = (Locale) locale.clone();
@@ -50,7 +51,7 @@ public final class d implements e {
                     sb2.append('-');
                     sb2.append(locale2.getCountry());
                 }
-                if (i10 < localeArr.length - 1) {
+                if (i3 < localeArr.length - 1) {
                     sb2.append(',');
                 }
                 hashSet.add(locale2);
@@ -82,8 +83,8 @@ public final class d implements e {
         if (localeArr2.length != localeArr.length) {
             return false;
         }
-        for (int i10 = 0; i10 < localeArr2.length; i10++) {
-            if (!localeArr2[i10].equals(localeArr[i10])) {
+        for (int i3 = 0; i3 < localeArr2.length; i3++) {
+            if (!localeArr2[i3].equals(localeArr[i3])) {
                 return false;
             }
         }
@@ -91,23 +92,23 @@ public final class d implements e {
     }
 
     @Override // n0.e
-    public final Locale get(int i10) {
-        if (i10 < 0) {
+    public final Locale get(int i3) {
+        if (i3 < 0) {
             return null;
         }
         Locale[] localeArr = this.a;
-        if (i10 < localeArr.length) {
-            return localeArr[i10];
+        if (i3 < localeArr.length) {
+            return localeArr[i3];
         }
         return null;
     }
 
     public final int hashCode() {
-        int i10 = 1;
+        int i3 = 1;
         for (Locale locale : this.a) {
-            i10 = (i10 * 31) + locale.hashCode();
+            i3 = (i3 * 31) + locale.hashCode();
         }
-        return i10;
+        return i3;
     }
 
     @Override // n0.e
@@ -117,18 +118,18 @@ public final class d implements e {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("[");
-        int i10 = 0;
+        int i3 = 0;
         while (true) {
             Locale[] localeArr = this.a;
-            if (i10 >= localeArr.length) {
+            if (i3 >= localeArr.length) {
                 sb2.append("]");
                 return sb2.toString();
             }
-            sb2.append(localeArr[i10]);
-            if (i10 < localeArr.length - 1) {
+            sb2.append(localeArr[i3]);
+            if (i3 < localeArr.length - 1) {
                 sb2.append(',');
             }
-            i10++;
+            i3++;
         }
     }
 }

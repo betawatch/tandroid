@@ -1,105 +1,53 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.x1[] c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ pg(un unVar, org.telegram.ui.ActionBar.x1[] x1VarArr, int i10, int i11) {
-        this.a = i11;
-        this.b = unVar;
-        this.c = x1VarArr;
-        this.d = i10;
+    public /* synthetic */ pg(int i3, View view) {
+        this.a = i3;
+        this.b = view;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i3 = this.a;
+        View view = this.b;
+        switch (i3) {
             case 0:
-                org.telegram.ui.ActionBar.x1[] x1VarArr = this.c;
-                org.telegram.ui.ActionBar.x1 x1Var = x1VarArr[0];
-                if (x1Var != null) {
-                    final int i10 = 0;
-                    final un unVar = this.b;
-                    final int i11 = this.d;
-                    x1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    unVar.getConnectionsManager().cancelRequest(i11, true);
-                                    break;
-                                case 1:
-                                    unVar.getConnectionsManager().cancelRequest(i11, true);
-                                    break;
-                                default:
-                                    unVar.getConnectionsManager().cancelRequest(i11, true);
-                                    break;
-                            }
-                        }
-                    });
-                    unVar.showDialog(x1VarArr[0]);
+                try {
+                    view.performHapticFeedback(3, 2);
                     break;
+                } catch (Exception unused) {
+                    return;
                 }
-                break;
             case 1:
-                org.telegram.ui.ActionBar.x1[] x1VarArr2 = this.c;
-                org.telegram.ui.ActionBar.x1 x1Var2 = x1VarArr2[0];
-                if (x1Var2 != null) {
-                    final int i12 = 1;
-                    final un unVar2 = this.b;
-                    final int i13 = this.d;
-                    x1Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i12) {
-                                case 0:
-                                    unVar2.getConnectionsManager().cancelRequest(i13, true);
-                                    break;
-                                case 1:
-                                    unVar2.getConnectionsManager().cancelRequest(i13, true);
-                                    break;
-                                default:
-                                    unVar2.getConnectionsManager().cancelRequest(i13, true);
-                                    break;
-                            }
-                        }
-                    });
-                    unVar2.showDialog(x1VarArr2[0]);
-                    break;
-                }
+                view.setBackgroundDrawable(null);
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.V8;
+                org.telegram.messenger.g0.E2(view);
+                break;
+            case 3:
+                Drawable[] drawableArr2 = PhotoViewer.V8;
+                view.setVisibility(8);
+                break;
+            case 4:
+                org.telegram.messenger.az.I(0);
+                ((org.telegram.ui.Cells.v9) view).c.c(org.telegram.messenger.bd.M0(2131744411, null), true, true);
+                break;
+            case 5:
+                org.telegram.messenger.az.I(1);
+                ((org.telegram.ui.Cells.v9) view).c.c(org.telegram.messenger.bd.M0(2131744410, null), true, true);
                 break;
             default:
-                org.telegram.ui.ActionBar.x1[] x1VarArr3 = this.c;
-                org.telegram.ui.ActionBar.x1 x1Var3 = x1VarArr3[0];
-                if (x1Var3 != null) {
-                    final int i14 = 2;
-                    final un unVar3 = this.b;
-                    final int i15 = this.d;
-                    x1Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.wg
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i14) {
-                                case 0:
-                                    unVar3.getConnectionsManager().cancelRequest(i15, true);
-                                    break;
-                                case 1:
-                                    unVar3.getConnectionsManager().cancelRequest(i15, true);
-                                    break;
-                                default:
-                                    unVar3.getConnectionsManager().cancelRequest(i15, true);
-                                    break;
-                            }
-                        }
-                    });
-                    unVar3.showDialog(x1VarArr3[0]);
-                    break;
-                }
+                org.telegram.messenger.az.I(2);
+                ((org.telegram.ui.Cells.v9) view).c.c(org.telegram.messenger.bd.M0(2131744409, null), true, true);
                 break;
         }
     }

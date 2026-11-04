@@ -5,17 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import c6.p;
-import d6.a;
-import d6.c;
-import d6.f;
-import d6.g;
-import e6.h;
-import e6.i;
-import g6.b;
-import n6.l;
+import e6.p;
+import f6.a;
+import f6.c;
+import f6.f;
+import f6.g;
+import g6.h;
+import g6.i;
+import i6.b;
+import p6.m;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -33,7 +33,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (cVar == null || !cVar.b()) {
             return null;
         }
-        l.d("Must be called from the main thread.");
+        m.d("Must be called from the main thread.");
         return cVar.j;
     }
 
@@ -127,7 +127,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
     public void onReceiveActionMediaButton(f fVar, Intent intent) {
         if ((fVar instanceof c) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
             Bundle extras = intent.getExtras();
-            l.g(extras);
+            m.g(extras);
             KeyEvent keyEvent = (KeyEvent) extras.get("android.intent.extra.KEY_EVENT");
             if (keyEvent != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
                 togglePlayback((c) fVar);
@@ -146,7 +146,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        l.d("Must be called from the main thread.");
+        m.d("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
             h.x(new i(remoteMediaClient, 2));
         } else {
@@ -159,7 +159,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        l.d("Must be called from the main thread.");
+        m.d("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
             h.x(new i(remoteMediaClient, 1));
         } else {

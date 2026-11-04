@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import ad.d;
-import bd.j;
-import bd.k;
-import bd.r;
-import bd.t;
-import cd.c;
+import androidx.car.app.j;
+import ed.h;
+import ed.i;
+import ed.p;
+import ed.s;
+import fd.c;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import kotlin.jvm.internal.e;
+import kotlin.jvm.internal.f;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class zzaj extends zzg {
     private final List zza;
@@ -32,16 +32,16 @@ public final class zzaj extends zzg {
         List list = (List) this.zzc.remove(str);
         if (list != null) {
             List<zzat> list2 = list;
-            int a2 = t.a(k.d(list2));
-            if (a2 < 16) {
-                a2 = 16;
+            int b10 = s.b(i.d(list2, 10));
+            if (b10 < 16) {
+                b10 = 16;
             }
-            map = new LinkedHashMap(a2);
+            map = new LinkedHashMap(b10);
             for (zzat zzatVar : list2) {
                 map.put(Integer.valueOf(zzatVar.zzb()), zzatVar);
             }
         } else {
-            map = r.a;
+            map = p.a;
         }
         zzyo zzr = zzr(map, str);
         zzxw zzf = zzxx.zzf();
@@ -65,7 +65,7 @@ public final class zzaj extends zzg {
             zzf.zzf(zzdn.zza(zzpp.zzh().zzi(zzd, 0, zzd.length), zzqmVar));
         } else {
             if (!(zzatVar instanceof zzak)) {
-                throw new d();
+                throw new j();
             }
             zzyt zza2 = ((zzak) zzatVar).zza();
             zzqm zzqmVar3 = this.zzb;
@@ -87,10 +87,10 @@ public final class zzaj extends zzg {
             }
         }
         int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj2 = arrayList.get(i10);
-            i10++;
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj2 = arrayList.get(i3);
+            i3++;
             zzar zzarVar = (zzar) obj2;
             if (!map.containsKey(Integer.valueOf(zzarVar.zza()))) {
                 int zza = zzarVar.zza();
@@ -102,7 +102,7 @@ public final class zzaj extends zzg {
             }
         }
         Collection values = map.values();
-        ArrayList arrayList2 = new ArrayList(k.d(values));
+        ArrayList arrayList2 = new ArrayList(i.d(values, 10));
         Iterator it = values.iterator();
         while (it.hasNext()) {
             arrayList2.add(zzq((zzat) it.next()));
@@ -148,8 +148,8 @@ public final class zzaj extends zzg {
         return this.zzc;
     }
 
-    public /* synthetic */ zzaj(List list, int i10, e eVar) {
-        this.zza = j.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
+    public /* synthetic */ zzaj(List list, int i3, f fVar) {
+        this.zza = h.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
         this.zzc = new LinkedHashMap();
     }
 }

@@ -1,79 +1,65 @@
 package lg;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import java.security.SecureRandom;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.i0;
+import ai.h4;
+import android.content.Context;
+import android.text.Editable;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Cells.k3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class l implements GestureDetector.OnGestureListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+public final class l extends k3 {
+    public final /* synthetic */ int F;
+    public final /* synthetic */ m G;
 
-    public l(q qVar, int i10) {
-        this.b = qVar;
-        this.a = i10;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        q qVar = this.b;
-        ValueAnimator valueAnimator = qVar.c0;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            qVar.c0.cancel();
-            qVar.c0 = null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l(m mVar, Context context, String str, int i3, e6 e6Var, int i10) {
+        super(context, str, false, false, i3, e6Var);
+        this.F = i10;
+        switch (i10) {
+            case 1:
+                this.G = mVar;
+                super(context, str, true, false, i3, e6Var);
+                break;
+            default:
+                this.G = mVar;
+                break;
         }
-        AnimatorSet animatorSet = qVar.d0;
-        if (animatorSet != null) {
-            animatorSet.removeAllListeners();
-            qVar.d0.cancel();
-            qVar.d0 = null;
+    }
+
+    @Override // org.telegram.ui.Cells.k3
+    public final void a(boolean z10) {
+        h4 h4Var;
+        h4 h4Var2;
+        switch (this.F) {
+            case 0:
+                if (z10 && (h4Var = this.G.a) != null) {
+                    h4Var.y0(2);
+                    break;
+                }
+                break;
+            default:
+                if (z10 && (h4Var2 = this.G.a) != null) {
+                    h4Var2.y0(3);
+                    break;
+                }
+                break;
         }
-        i0.r(qVar.e0);
-        qVar.a = true;
-        return true;
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-        this.b.h();
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        int i10 = this.a;
-        q qVar = this.b;
-        if (i10 == 4) {
-            h hVar = qVar.b;
-            hVar.d -= f7 * 0.5f;
-            hVar.i -= f10 * 0.05f;
-            return true;
+    @Override // org.telegram.ui.Cells.k3
+    public final void b(Editable editable) {
+        switch (this.F) {
+            case 0:
+                m mVar = this.G;
+                mVar.n.d(mVar.s.getText().toString(), mVar.w.getText().toString());
+                mVar.j0(true);
+                break;
+            default:
+                m mVar2 = this.G;
+                mVar2.n.d(mVar2.s.getText().toString(), mVar2.w.getText().toString());
+                mVar2.j0(true);
+                break;
         }
-        h hVar2 = qVar.b;
-        hVar2.d = (f7 * 0.5f) + hVar2.d;
-        hVar2.i = (f10 * 0.05f) + hVar2.i;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        float measuredWidth = this.b.getMeasuredWidth() / 2.0f;
-        SecureRandom secureRandom = Utilities.b;
-        i0.h3(new k(this, ((measuredWidth - motionEvent.getX()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (secureRandom.nextInt(30) + 40)) / measuredWidth, 0), 16L);
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

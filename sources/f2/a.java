@@ -1,37 +1,31 @@
 package f2;
 
-import e2.x;
+import android.graphics.Bitmap;
+import android.text.Layout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class a {
-    public String a;
+    public CharSequence a = null;
+    public Bitmap b = null;
+    public Layout.Alignment c = null;
+    public Layout.Alignment d = null;
+    public float e = -3.4028235E38f;
+    public int f = TLObject.FLAG_31;
+    public int g = TLObject.FLAG_31;
+    public float h = -3.4028235E38f;
+    public int i = TLObject.FLAG_31;
+    public int j = TLObject.FLAG_31;
+    public float k = -3.4028235E38f;
+    public float l = -3.4028235E38f;
+    public final float m = -3.4028235E38f;
+    public final boolean n = false;
+    public final int o = -16777216;
+    public int p = TLObject.FLAG_31;
+    public float q;
 
-    public /* synthetic */ a(String str) {
-        this.a = str;
-    }
-
-    public static a a(x xVar) {
-        String str;
-        xVar.O(2);
-        int A = xVar.A();
-        int i10 = A >> 1;
-        int A2 = ((xVar.A() >> 3) & 31) | ((A & 1) << 5);
-        if (i10 == 4 || i10 == 5 || i10 == 7 || i10 == 8) {
-            str = "dvhe";
-        } else if (i10 == 9) {
-            str = "dvav";
-        } else {
-            if (i10 != 10) {
-                return null;
-            }
-            str = "dav1";
-        }
-        StringBuilder t10 = a1.g.t(str);
-        t10.append(i10 < 10 ? ".0" : ".");
-        t10.append(i10);
-        t10.append(A2 < 10 ? ".0" : ".");
-        t10.append(A2);
-        return new a(t10.toString());
+    public final b a() {
+        return new b(this.a, this.c, this.d, this.b, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, 0);
     }
 }

@@ -1,82 +1,13 @@
 package m4;
 
-import android.content.Context;
-import android.content.IntentFilter;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicBoolean;
+import e3.p;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final Uri g = Uri.parse("content://androidx.car.app.connection");
-    public final Context a;
-    public final g0 b;
-    public final Executor c;
-    public final androidx.mediarouter.app.f d;
-    public final AtomicBoolean e;
-    public final AtomicBoolean f;
+public interface b {
+    void a(long j10);
 
-    public b(Context context, g0 g0Var) {
-        this.a = context.getApplicationContext();
-        this.b = g0Var;
-        Executor e = e2.a.e();
-        this.c = e;
-        this.d = new androidx.mediarouter.app.f(this, 6);
-        this.e = new AtomicBoolean();
-        this.f = new AtomicBoolean();
-        e.execute(new a(this, 1));
-    }
+    boolean b(p pVar, long j10);
 
-    public static /* synthetic */ void a(b bVar) {
-        androidx.mediarouter.app.f fVar = bVar.d;
-        Context context = bVar.a;
-        IntentFilter intentFilter = new IntentFilter("androidx.car.app.connection.action.CAR_CONNECTION_UPDATED");
-        if (Build.VERSION.SDK_INT >= 33) {
-            context.registerReceiver(fVar, intentFilter, 2);
-        } else {
-            context.registerReceiver(fVar, intentFilter);
-        }
-        bVar.b();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x001e, code lost:
-    
-        if (r4 != null) goto L6;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b() {
-        Cursor query;
-        AtomicBoolean atomicBoolean = this.e;
-        boolean z10 = atomicBoolean.get();
-        boolean z11 = false;
-        try {
-            query = this.a.getContentResolver().query(g, new String[]{"CarConnectionState"}, null, null, null);
-        } catch (Exception unused) {
-        }
-        if (query != null) {
-            try {
-                int columnIndex = query.getColumnIndex("CarConnectionState");
-                if (columnIndex != -1 && query.moveToNext()) {
-                    boolean z12 = query.getInt(columnIndex) != 0;
-                    query.close();
-                    z11 = z12;
-                    atomicBoolean.set(z11);
-                    if (z10 != z11 || this.f.get()) {
-                    }
-                    this.b.run();
-                    return;
-                }
-            } finally {
-            }
-        }
-        query.close();
-        atomicBoolean.set(z11);
-        if (z10 != z11) {
-        }
-    }
+    void c(int i3, long j10);
 }

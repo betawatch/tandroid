@@ -1,479 +1,63 @@
 package x2;
 
-import b2.p1;
-import b2.x;
-import e9.b0;
-import e9.n0;
-import e9.s1;
-import e9.v1;
-import j$.util.Objects;
+import b8.uc;
+import d2.v;
+import e3.i0;
+import i2.c0;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import r2.w;
+import w2.c1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class n extends m {
-    public final int D;
-    public final int E;
+public final class n extends a {
     public final int F;
-    public final boolean G;
-    public final int H;
-    public final boolean I;
-    public final int J;
-    public final boolean K;
-    public final boolean L;
-    public final boolean M;
-    public final int N;
-    public final boolean O;
-    public final String P;
-    public final boolean e;
-    public final j f;
-    public final boolean h;
-    public final boolean n;
-    public final boolean r;
-    public final int s;
-    public final int w;
-    public final int x;
-    public final int y;
+    public final v G;
+    public long H;
+    public boolean I;
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x01a1  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x01c3  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x013c  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0120 A[EDGE_INSN: B:162:0x0120->B:84:0x0120 BREAK  A[LOOP:1: B:77:0x0109->B:160:0x011d], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x00ee  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x00bc A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00cc A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00dd  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00ec  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0130 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0145  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0150  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public n(int i10, p1 p1Var, int i11, j jVar, int i12, String str, int i13, boolean z10) {
-        super(i10, p1Var, i11);
-        boolean z11;
-        boolean z12;
-        int i14;
-        int size;
-        int i15;
-        int i16;
-        String str2;
-        int i17;
-        int i18;
-        boolean z13;
-        int i19;
-        boolean z14;
-        boolean z15;
-        j jVar2;
-        x xVar;
-        boolean z16;
-        String c10;
-        int i20;
-        x xVar2;
-        int i21;
-        int i22;
-        float f7;
-        int i23;
-        x xVar3;
-        int i24;
-        int i25;
-        int i26;
-        this.f = jVar;
-        boolean z17 = jVar.x0;
-        n0 n0Var = jVar.m;
-        n0 n0Var2 = jVar.o;
-        int i27 = z17 ? 24 : 16;
-        int i28 = 0;
-        this.I = false;
-        if (z10 && (((i24 = (xVar3 = this.d).z) == -1 || i24 <= jVar.a) && ((i25 = xVar3.A) == -1 || i25 <= jVar.b))) {
-            float f10 = xVar3.D;
-            if ((f10 == -1.0f || f10 <= jVar.c) && ((i26 = xVar3.j) == -1 || i26 <= jVar.d)) {
-                z11 = true;
-                this.e = z11;
-                if (z10 && (((i21 = (xVar2 = this.d).z) == -1 || i21 >= jVar.e) && ((i22 = xVar2.A) == -1 || i22 >= jVar.f))) {
-                    f7 = xVar2.D;
-                    if ((f7 != -1.0f || f7 >= jVar.g) && ((i23 = xVar2.j) == -1 || i23 >= jVar.h)) {
-                        z12 = true;
-                        this.h = z12;
-                        this.n = i0.a.b(i12, false);
-                        x xVar4 = this.d;
-                        float f11 = xVar4.D;
-                        this.r = f11 == -1.0f && f11 >= 10.0f;
-                        this.s = xVar4.j;
-                        int i29 = xVar4.z;
-                        this.w = (i29 != -1 || (i20 = xVar4.A) == -1) ? -1 : i29 * i20;
-                        i14 = 0;
-                        while (true) {
-                            size = n0Var2.size();
-                            i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                            if (i14 < size) {
-                                i16 = 0;
-                                i14 = Integer.MAX_VALUE;
-                                break;
-                            } else {
-                                i16 = o.i(this.d, (String) n0Var2.get(i14), false);
-                                if (i16 > 0) {
-                                    break;
-                                } else {
-                                    i14++;
-                                }
-                            }
-                        }
-                        this.y = i14;
-                        this.D = i16;
-                        int i30 = this.d.f;
-                        int i31 = jVar.p;
-                        v1 v1Var = o.l;
-                        this.E = (i30 == 0 && i30 == i31) ? Integer.MAX_VALUE : Integer.bitCount(i30 & i31);
-                        int i32 = this.d.f;
-                        this.G = (i32 == 0 && (i32 & 1) == 0) ? false : true;
-                        this.H = o.i(this.d, str, o.l(str) != null);
-                        x xVar5 = this.d;
-                        str2 = xVar5.s;
-                        i17 = i12 & 384;
-                        if (i17 == 256 && (c10 = w.c(xVar5)) != null) {
-                            str2 = c10;
-                        }
-                        i18 = 0;
-                        while (true) {
-                            if (i18 < n0Var.size()) {
-                                if (str2 != null && str2.equals(n0Var.get(i18))) {
-                                    i15 = i18;
-                                    break;
-                                }
-                                i18++;
-                            } else {
-                                break;
-                            }
-                        }
-                        this.x = i15;
-                        this.F = o.c(this.d, jVar.n);
-                        this.K = i17 != 128 || i17 == 256;
-                        z13 = i17 != 128;
-                        this.L = z13;
-                        this.M = (i12 & 64) != 64;
-                        this.P = str2;
-                        if (str2 != null) {
-                            i19 = 4;
-                            switch (str2.hashCode()) {
-                                case -1851077871:
-                                    if (str2.equals("video/dolby-vision")) {
-                                        z16 = false;
-                                        break;
-                                    }
-                                    z16 = -1;
-                                    break;
-                                case -1662735862:
-                                    if (str2.equals("video/av01")) {
-                                        z16 = true;
-                                        break;
-                                    }
-                                    z16 = -1;
-                                    break;
-                                case -1662541442:
-                                    if (str2.equals("video/hevc")) {
-                                        z16 = 2;
-                                        break;
-                                    }
-                                    z16 = -1;
-                                    break;
-                                case 1331836730:
-                                    if (str2.equals("video/avc")) {
-                                        z16 = 3;
-                                        break;
-                                    }
-                                    z16 = -1;
-                                    break;
-                                case 1599127257:
-                                    if (str2.equals("video/x-vnd.on2.vp9")) {
-                                        z16 = 4;
-                                        break;
-                                    }
-                                    z16 = -1;
-                                    break;
-                                default:
-                                    z16 = -1;
-                                    break;
-                            }
-                            switch (z16) {
-                                case false:
-                                    i19 = 5;
-                                    break;
-                                case true:
-                                    i19 = 3;
-                                    break;
-                                case true:
-                                    i19 = 1;
-                                    break;
-                                case true:
-                                    i19 = 2;
-                                    break;
-                            }
-                            this.N = i19;
-                            if (z13) {
-                                b2.o oVar = this.d.I;
-                                if (oVar != null) {
-                                    int i33 = oVar.c;
-                                    if (i33 == 7 || i33 == 6) {
-                                        z14 = true;
-                                        this.O = z14;
-                                        z15 = this.e;
-                                        jVar2 = this.f;
-                                        xVar = this.d;
-                                        if ((xVar.f & TLObject.FLAG_14) == 0 && i0.a.b(i12, jVar2.B0) && (z15 || jVar2.w0)) {
-                                            i28 = (i0.a.b(i12, false) || !this.h || !z15 || xVar.j == -1 || jVar2.G || jVar2.F || (i27 & i12) == 0) ? 1 : 2;
-                                        }
-                                        this.J = i28;
-                                    }
-                                } else {
-                                    b2.o oVar2 = b2.o.h;
-                                }
-                            }
-                            z14 = false;
-                            this.O = z14;
-                            z15 = this.e;
-                            jVar2 = this.f;
-                            xVar = this.d;
-                            if ((xVar.f & TLObject.FLAG_14) == 0) {
-                                if (i0.a.b(i12, false)) {
-                                }
-                            }
-                            this.J = i28;
-                        }
-                        i19 = 0;
-                        this.N = i19;
-                        if (z13) {
-                        }
-                        z14 = false;
-                        this.O = z14;
-                        z15 = this.e;
-                        jVar2 = this.f;
-                        xVar = this.d;
-                        if ((xVar.f & TLObject.FLAG_14) == 0) {
-                        }
-                        this.J = i28;
-                    }
-                }
-                z12 = false;
-                this.h = z12;
-                this.n = i0.a.b(i12, false);
-                x xVar42 = this.d;
-                float f112 = xVar42.D;
-                this.r = f112 == -1.0f && f112 >= 10.0f;
-                this.s = xVar42.j;
-                int i292 = xVar42.z;
-                this.w = (i292 != -1 || (i20 = xVar42.A) == -1) ? -1 : i292 * i20;
-                i14 = 0;
-                while (true) {
-                    size = n0Var2.size();
-                    i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    if (i14 < size) {
-                    }
-                    i14++;
-                }
-                this.y = i14;
-                this.D = i16;
-                int i302 = this.d.f;
-                int i312 = jVar.p;
-                v1 v1Var2 = o.l;
-                this.E = (i302 == 0 && i302 == i312) ? Integer.MAX_VALUE : Integer.bitCount(i302 & i312);
-                int i322 = this.d.f;
-                this.G = (i322 == 0 && (i322 & 1) == 0) ? false : true;
-                this.H = o.i(this.d, str, o.l(str) != null);
-                x xVar52 = this.d;
-                str2 = xVar52.s;
-                i17 = i12 & 384;
-                if (i17 == 256) {
-                    str2 = c10;
-                }
-                i18 = 0;
-                while (true) {
-                    if (i18 < n0Var.size()) {
-                    }
-                    i18++;
-                }
-                this.x = i15;
-                this.F = o.c(this.d, jVar.n);
-                this.K = i17 != 128 || i17 == 256;
-                if (i17 != 128) {
-                }
-                this.L = z13;
-                this.M = (i12 & 64) != 64;
-                this.P = str2;
-                if (str2 != null) {
-                }
-                i19 = 0;
-                this.N = i19;
-                if (z13) {
-                }
-                z14 = false;
-                this.O = z14;
-                z15 = this.e;
-                jVar2 = this.f;
-                xVar = this.d;
-                if ((xVar.f & TLObject.FLAG_14) == 0) {
-                }
-                this.J = i28;
-            }
-        }
-        z11 = false;
-        this.e = z11;
-        if (z10) {
-            f7 = xVar2.D;
-            if (f7 != -1.0f) {
-            }
-            z12 = true;
-            this.h = z12;
-            this.n = i0.a.b(i12, false);
-            x xVar422 = this.d;
-            float f1122 = xVar422.D;
-            this.r = f1122 == -1.0f && f1122 >= 10.0f;
-            this.s = xVar422.j;
-            int i2922 = xVar422.z;
-            this.w = (i2922 != -1 || (i20 = xVar422.A) == -1) ? -1 : i2922 * i20;
-            i14 = 0;
-            while (true) {
-                size = n0Var2.size();
-                i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                if (i14 < size) {
-                }
-                i14++;
-            }
-            this.y = i14;
-            this.D = i16;
-            int i3022 = this.d.f;
-            int i3122 = jVar.p;
-            v1 v1Var22 = o.l;
-            this.E = (i3022 == 0 && i3022 == i3122) ? Integer.MAX_VALUE : Integer.bitCount(i3022 & i3122);
-            int i3222 = this.d.f;
-            this.G = (i3222 == 0 && (i3222 & 1) == 0) ? false : true;
-            this.H = o.i(this.d, str, o.l(str) != null);
-            x xVar522 = this.d;
-            str2 = xVar522.s;
-            i17 = i12 & 384;
-            if (i17 == 256) {
-            }
-            i18 = 0;
-            while (true) {
-                if (i18 < n0Var.size()) {
-                }
-                i18++;
-            }
-            this.x = i15;
-            this.F = o.c(this.d, jVar.n);
-            this.K = i17 != 128 || i17 == 256;
-            if (i17 != 128) {
-            }
-            this.L = z13;
-            this.M = (i12 & 64) != 64;
-            this.P = str2;
-            if (str2 != null) {
-            }
-            i19 = 0;
-            this.N = i19;
-            if (z13) {
-            }
-            z14 = false;
-            this.O = z14;
-            z15 = this.e;
-            jVar2 = this.f;
-            xVar = this.d;
-            if ((xVar.f & TLObject.FLAG_14) == 0) {
-            }
-            this.J = i28;
-        }
-        z12 = false;
-        this.h = z12;
-        this.n = i0.a.b(i12, false);
-        x xVar4222 = this.d;
-        float f11222 = xVar4222.D;
-        this.r = f11222 == -1.0f && f11222 >= 10.0f;
-        this.s = xVar4222.j;
-        int i29222 = xVar4222.z;
-        this.w = (i29222 != -1 || (i20 = xVar4222.A) == -1) ? -1 : i29222 * i20;
-        i14 = 0;
-        while (true) {
-            size = n0Var2.size();
-            i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            if (i14 < size) {
-            }
-            i14++;
-        }
-        this.y = i14;
-        this.D = i16;
-        int i30222 = this.d.f;
-        int i31222 = jVar.p;
-        v1 v1Var222 = o.l;
-        this.E = (i30222 == 0 && i30222 == i31222) ? Integer.MAX_VALUE : Integer.bitCount(i30222 & i31222);
-        int i32222 = this.d.f;
-        this.G = (i32222 == 0 && (i32222 & 1) == 0) ? false : true;
-        this.H = o.i(this.d, str, o.l(str) != null);
-        x xVar5222 = this.d;
-        str2 = xVar5222.s;
-        i17 = i12 & 384;
-        if (i17 == 256) {
-        }
-        i18 = 0;
-        while (true) {
-            if (i18 < n0Var.size()) {
-            }
-            i18++;
-        }
-        this.x = i15;
-        this.F = o.c(this.d, jVar.n);
-        this.K = i17 != 128 || i17 == 256;
-        if (i17 != 128) {
-        }
-        this.L = z13;
-        this.M = (i12 & 64) != 64;
-        this.P = str2;
-        if (str2 != null) {
-        }
-        i19 = 0;
-        this.N = i19;
-        if (z13) {
-        }
-        z14 = false;
-        this.O = z14;
-        z15 = this.e;
-        jVar2 = this.f;
-        xVar = this.d;
-        if ((xVar.f & TLObject.FLAG_14) == 0) {
-        }
-        this.J = i28;
+    public n(i2.h hVar, i2.n nVar, v vVar, int i3, Object obj, long j10, long j11, long j12, int i10, v vVar2) {
+        super(hVar, nVar, vVar, i3, obj, j10, j11, -9223372036854775807L, -9223372036854775807L, j12);
+        this.F = i10;
+        this.G = vVar2;
     }
 
-    public static int c(n nVar, n nVar2) {
-        b0 c10 = b0.a.c(nVar.n, nVar2.n);
-        Integer valueOf = Integer.valueOf(nVar.y);
-        Integer valueOf2 = Integer.valueOf(nVar2.y);
-        s1 s1Var = s1.c;
-        return c10.b(valueOf, valueOf2, s1Var).a(nVar.D, nVar2.D).a(nVar.E, nVar2.E).b(Integer.valueOf(nVar.F), Integer.valueOf(nVar2.F), s1Var).c(nVar.G, nVar2.G).a(nVar.H, nVar2.H).c(nVar.r, nVar2.r).c(nVar.e, nVar2.e).c(nVar.h, nVar2.h).b(Integer.valueOf(nVar.x), Integer.valueOf(nVar2.x), s1Var).c(nVar.K, nVar2.K).c(nVar.M, nVar2.M).e();
-    }
-
-    @Override // x2.m
-    public final int a() {
-        return this.J;
-    }
-
-    @Override // x2.m
-    public final boolean b(m mVar) {
-        n nVar = (n) mVar;
-        if (!this.I && !Objects.equals(this.P, nVar.P)) {
-            return false;
+    @Override // a3.m
+    public final void a() {
+        c0 c0Var = this.r;
+        ua.b bVar = this.y;
+        bVar.getClass();
+        for (c1 c1Var : (c1[]) bVar.c) {
+            if (c1Var.H != 0) {
+                c1Var.H = 0L;
+                c1Var.B = true;
+            }
         }
-        this.f.getClass();
-        return this.K == nVar.K && this.M == nVar.M;
+        i0 c2 = bVar.c(this.F);
+        c2.g(this.G);
+        try {
+            long open = c0Var.open(this.b.b(this.H));
+            if (open != -1) {
+                open += this.H;
+            }
+            e3.l lVar = new e3.l(this.r, this.H, open);
+            for (int i3 = 0; i3 != -1; i3 = c2.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
+                this.H += i3;
+            }
+            c2.d(this.h, 1, (int) this.H, 0, null);
+            uc.a(c0Var);
+            this.I = true;
+        } catch (Throwable th2) {
+            uc.a(c0Var);
+            throw th2;
+        }
+    }
+
+    @Override // x2.l
+    public final boolean c() {
+        return this.I;
+    }
+
+    @Override // a3.m
+    public final void X1() {
     }
 }

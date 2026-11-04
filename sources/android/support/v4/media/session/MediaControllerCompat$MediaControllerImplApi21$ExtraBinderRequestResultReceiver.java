@@ -6,13 +6,13 @@ import android.os.IInterface;
 import android.os.ResultReceiver;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver extends ResultReceiver {
     public WeakReference a;
 
     @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i10, Bundle bundle) {
+    public final void onReceiveResult(int i3, Bundle bundle) {
         d dVar;
         h hVar = (h) this.a.get();
         if (hVar == null || bundle == null) {
@@ -21,7 +21,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
         synchronized (hVar.b) {
             MediaSessionCompat$Token mediaSessionCompat$Token = hVar.e;
             IBinder binder = bundle.getBinder("android.support.v4.media.session.EXTRA_BINDER");
-            int i11 = t.b;
+            int i10 = t.b;
             if (binder == null) {
                 dVar = null;
             } else {
@@ -35,7 +35,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
                 }
             }
             mediaSessionCompat$Token.b(dVar);
-            hVar.e.c(y4.a.a(bundle));
+            hVar.e.c(a5.a.a(bundle));
             hVar.a();
         }
     }

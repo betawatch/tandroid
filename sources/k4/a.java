@@ -1,115 +1,79 @@
 package k4;
 
-import b2.v0;
-import b2.w;
-import b2.w0;
-import c3.k0;
-import c3.q;
-import e2.l0;
-import e2.x;
-import f2.u;
-import java.math.RoundingMode;
-import org.telegram.messenger.at;
+import g2.y;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
-    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, at.s1, at.D1, at.O1, at.Z1, at.n2, at.D2, at.U2, at.m3, at.G3, at.c4, at.C4, at.e5, at.I5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
-    public final q a;
-    public final k0 b;
-    public final u c;
-    public final int d;
-    public final byte[] e;
-    public final x f;
-    public final int g;
-    public final b2.x h;
-    public int i;
-    public long j;
-    public int k;
-    public long l;
+public final class a {
+    public static final Pattern c = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
+    public static final Pattern d = Pattern.compile("^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$");
+    public final y a = new y();
+    public final StringBuilder b = new StringBuilder();
 
-    public a(q qVar, k0 k0Var, u uVar) {
-        this.a = qVar;
-        this.b = k0Var;
-        this.c = uVar;
-        int i10 = uVar.b;
-        int max = Math.max(1, i10 / 10);
-        this.g = max;
-        x xVar = new x(uVar.e);
-        xVar.t();
-        int t10 = xVar.t();
-        this.d = t10;
-        int i11 = uVar.a;
-        int i12 = uVar.c;
-        int i13 = (((i12 - (i11 * 4)) * 8) / (uVar.d * i11)) + 1;
-        if (t10 != i13) {
-            throw w0.a(null, "Expected frames per block: " + i13 + "; got: " + t10);
+    public static String a(y yVar, StringBuilder sb2) {
+        boolean z10 = false;
+        sb2.setLength(0);
+        int i3 = yVar.b;
+        int i10 = yVar.c;
+        while (i3 < i10 && !z10) {
+            char c2 = (char) yVar.a[i3];
+            if ((c2 < 'A' || c2 > 'Z') && ((c2 < 'a' || c2 > 'z') && !((c2 >= '0' && c2 <= '9') || c2 == '#' || c2 == '-' || c2 == '.' || c2 == '_'))) {
+                z10 = true;
+            } else {
+                i3++;
+                sb2.append(c2);
+            }
         }
-        int g10 = l0.g(max, t10);
-        this.e = new byte[g10 * i12];
-        this.f = new x(t10 * 2 * i11 * g10);
-        int i14 = ((i12 * i10) * 8) / t10;
-        w wVar = new w();
-        wVar.r = v0.n("audio/raw");
-        wVar.h = i14;
-        wVar.i = i14;
-        wVar.s = max * 2 * i11;
-        wVar.J = i11;
-        wVar.K = i10;
-        wVar.L = 2;
-        this.h = new b2.x(wVar);
+        yVar.O(i3 - yVar.b);
+        return sb2.toString();
     }
 
-    @Override // k4.b
-    public final void a(long j10) {
-        this.i = 0;
-        this.j = j10;
-        this.k = 0;
-        this.l = 0L;
+    public static String b(y yVar, StringBuilder sb2) {
+        c(yVar);
+        if (yVar.a() == 0) {
+            return null;
+        }
+        String a10 = a(yVar, sb2);
+        if (!a10.isEmpty()) {
+            return a10;
+        }
+        return "" + ((char) yVar.A());
     }
 
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0045 A[ADDED_TO_REGION, EDGE_INSN: B:49:0x0045->B:14:0x0045 BREAK  A[LOOP:0: B:5:0x0023->B:11:0x003f], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0027  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x003c -> B:3:0x0020). Please report as a decompilation issue!!! */
-    @Override // k4.b
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(c3.p r25, long r26) {
-        /*
-            Method dump skipped, instructions count: 327
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: k4.a.b(c3.p, long):boolean");
-    }
-
-    @Override // k4.b
-    public final void c(int i10, long j10) {
-        f fVar = new f(this.c, this.d, i10, j10);
-        this.a.G1(fVar);
-        b2.x xVar = this.h;
-        k0 k0Var = this.b;
-        k0Var.b(xVar);
-        k0Var.e(fVar.e);
-    }
-
-    public final void d(int i10) {
-        long j10 = this.j;
-        long j11 = this.l;
-        u uVar = this.c;
-        long j12 = uVar.b;
-        String str = l0.a;
-        long a02 = j10 + l0.a0(j11, 1000000L, j12, RoundingMode.DOWN);
-        int i11 = i10 * 2 * uVar.a;
-        this.b.c(a02, 1, i11, this.k - i11, null);
-        this.l += i10;
-        this.k -= i11;
+    public static void c(y yVar) {
+        while (true) {
+            for (boolean z10 = true; yVar.a() > 0 && z10; z10 = false) {
+                int i3 = yVar.b;
+                byte[] bArr = yVar.a;
+                byte b10 = bArr[i3];
+                char c2 = (char) b10;
+                if (c2 == '\t' || c2 == '\n' || c2 == '\f' || c2 == '\r' || c2 == ' ') {
+                    yVar.O(1);
+                } else {
+                    int i10 = yVar.c;
+                    int i11 = i3 + 2;
+                    if (i11 <= i10) {
+                        int i12 = i3 + 1;
+                        if (b10 == 47 && bArr[i12] == 42) {
+                            while (true) {
+                                int i13 = i11 + 1;
+                                if (i13 >= i10) {
+                                    break;
+                                }
+                                if (((char) bArr[i11]) == '*' && ((char) bArr[i13]) == '/') {
+                                    i11 += 2;
+                                    i10 = i11;
+                                } else {
+                                    i11 = i13;
+                                }
+                            }
+                            yVar.O(i10 - yVar.b);
+                        }
+                    }
+                }
+            }
+            return;
+        }
     }
 }

@@ -4,15 +4,15 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class h0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+    public final /* synthetic */ l0 b;
 
-    public /* synthetic */ h0(m0 m0Var, int i10) {
-        this.a = i10;
-        this.b = m0Var;
+    public /* synthetic */ h0(l0 l0Var, int i3) {
+        this.a = i3;
+        this.b = l0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -20,24 +20,24 @@ public final class h0 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
-                m0 m0Var = this.b;
-                if (m0Var.getParent() != null) {
-                    ((ViewGroup) m0Var.getParent()).removeView(m0Var);
+                l0 l0Var = this.b;
+                if (l0Var.getParent() != null) {
+                    ((ViewGroup) l0Var.getParent()).removeView(l0Var);
                     break;
                 }
                 break;
             case 1:
-                m0 m0Var2 = this.b;
-                if (m0Var2.getParent() != null) {
-                    ((ViewGroup) m0Var2.getParent()).removeView(m0Var2);
+                l0 l0Var2 = this.b;
+                if (l0Var2.getParent() != null) {
+                    ((ViewGroup) l0Var2.getParent()).removeView(l0Var2);
                     break;
                 }
                 break;
             default:
                 super.onAnimationEnd(animator);
-                m0 m0Var3 = this.b;
-                if (m0Var3.getParent() != null) {
-                    ((ViewGroup) m0Var3.getParent()).removeView(m0Var3);
+                l0 l0Var3 = this.b;
+                if (l0Var3.getParent() != null) {
+                    ((ViewGroup) l0Var3.getParent()).removeView(l0Var3);
                     break;
                 }
                 break;

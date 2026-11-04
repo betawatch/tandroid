@@ -4,105 +4,109 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.l20;
-import org.telegram.messenger.nc;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.zi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.ci0;
-import org.telegram.ui.Components.fp;
-import org.telegram.ui.Components.jk0;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.xo;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.zh;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ca implements jk0, rf.l, nc, org.telegram.messenger.k9, fp, l20 {
+public final /* synthetic */ class ca implements hj0, cg.o, ec, org.telegram.messenger.d9, xo, o10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ ca(Object obj, int i10) {
-        this.a = i10;
+    public /* synthetic */ ca(Object obj, int i3) {
+        this.a = i3;
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.fp
+    @Override // org.telegram.messenger.ec
+    public /* synthetic */ void D(ImageReceiver imageReceiver) {
+        int i3 = this.a;
+    }
+
+    @Override // org.telegram.messenger.ec
+    public /* synthetic */ void F0(int i3, Drawable drawable) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.xo
     public void a() {
         switch (this.a) {
             case 4:
-                q4 q4Var = (q4) this.b;
-                float progress = 1.0f - (q4Var.w.getProgress() * 0.143f);
-                org.telegram.ui.Components.g9 g9Var = q4Var.a;
-                g9Var.setScaleX(progress);
-                g9Var.setScaleY(progress);
-                q4Var.invalidate();
+                o4 o4Var = (o4) this.b;
+                float progress = 1.0f - (o4Var.w.getProgress() * 0.143f);
+                org.telegram.ui.Components.k9 k9Var = o4Var.a;
+                k9Var.setScaleX(progress);
+                k9Var.setScaleY(progress);
+                o4Var.invalidate();
                 break;
             default:
-                h7 h7Var = (h7) this.b;
-                float progress2 = 1.0f - (h7Var.d.getProgress() * 0.143f);
-                org.telegram.ui.Components.g9 g9Var2 = h7Var.a;
-                g9Var2.setScaleX(progress2);
-                g9Var2.setScaleY(progress2);
-                h7Var.invalidate();
+                c7 c7Var = (c7) this.b;
+                float progress2 = 1.0f - (c7Var.d.getProgress() * 0.143f);
+                org.telegram.ui.Components.k9 k9Var2 = c7Var.a;
+                k9Var2.setScaleX(progress2);
+                k9Var2.setScaleY(progress2);
+                c7Var.invalidate();
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.l20
+    @Override // org.telegram.messenger.o10
     public Object d(Number number, Object obj) {
-        return (CharSequence) ((zh) this.b).a((Integer) obj);
+        return (CharSequence) ((bi.x) this.b).a((Integer) obj);
     }
 
-    @Override // org.telegram.ui.Components.jk0
-    public boolean f(int i10, View view) {
+    @Override // org.telegram.ui.Components.hj0
+    public boolean f(int i3, View view) {
         ga gaVar = (ga) this.b;
         gaVar.getClass();
         gaVar.C1(((ThemesHorizontalListCell$InnerThemeView) view).b);
         return true;
     }
 
-    @Override // org.telegram.messenger.nc
-    public /* synthetic */ void j(ImageReceiver imageReceiver) {
-        int i10 = this.a;
+    @Override // cg.o
+    public void h(long j10) {
+        ((l) this.b).b(j10);
     }
 
-    @Override // rf.l
-    public void l(long j10) {
-        ((k) this.b).b(j10);
-    }
-
-    @Override // org.telegram.messenger.nc
-    public void q(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ci0 B;
+    @Override // org.telegram.messenger.ec
+    public void l0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ch0 B;
         q0 q0Var;
-        int w9;
-        kj kjVar;
+        int w10;
+        zi ziVar;
         switch (this.a) {
             case 2:
-                s0 s0Var = (s0) this.b;
-                if (z10 && (B = s0Var.I.B()) != null) {
-                    kj kjVar2 = s0Var.P0;
-                    if (kjVar2 != null && !kjVar2.m1) {
-                        kjVar2.m1 = true;
+                t0 t0Var = (t0) this.b;
+                if (z10 && (B = t0Var.J.B()) != null) {
+                    zi ziVar2 = t0Var.Q0;
+                    if (ziVar2 != null && !ziVar2.m1) {
+                        ziVar2.m1 = true;
                         B.N(0, false, false);
-                        org.telegram.messenger.i0.g3(new o0(B, 0));
-                        if (kjVar2.l1 || s0Var.L1) {
-                            kjVar2.l1 = false;
-                            s0Var.L1 = false;
+                        org.telegram.messenger.g0.h3(new o0(B, 0));
+                        if (ziVar2.l1 || t0Var.M1) {
+                            ziVar2.l1 = false;
+                            t0Var.M1 = false;
                             try {
-                                s0Var.performHapticFeedback(3, 2);
+                                t0Var.performHapticFeedback(3, 2);
                             } catch (Exception unused) {
                             }
-                            if (s0Var.getContext() instanceof LaunchActivity) {
-                                ((LaunchActivity) s0Var.getContext()).x0.c(false);
+                            if (t0Var.getContext() instanceof LaunchActivity) {
+                                ((LaunchActivity) t0Var.getContext()).y0.c(false);
                             }
-                            TLRPC.VideoSize videoSize = s0Var.I1;
-                            if (videoSize != null && (q0Var = s0Var.f1) != null) {
-                                q0Var.t0(s0Var, s0Var.H1, videoSize);
+                            TLRPC.VideoSize videoSize = t0Var.J1;
+                            if (videoSize != null && (q0Var = t0Var.g1) != null) {
+                                q0Var.M(t0Var, t0Var.I1, videoSize);
                                 break;
                             }
                         }
-                    } else if (B.a0 < 1) {
+                    } else if (B.b0 < 1) {
                         B.stop();
                         B.N(B.e[0] - 1, false, false);
                         break;
@@ -110,21 +114,21 @@ public final /* synthetic */ class ca implements jk0, rf.l, nc, org.telegram.mes
                 }
                 break;
             default:
-                s7 s7Var = (s7) this.b;
-                ImageReceiver imageReceiver2 = s7Var.d;
-                ImageReceiver imageReceiver3 = s7Var.c;
-                if (z10 && !z11 && (kjVar = s7Var.n) != null && kjVar.t2() && imageReceiver3.n() != null) {
+                n7 n7Var = (n7) this.b;
+                ImageReceiver imageReceiver2 = n7Var.d;
+                ImageReceiver imageReceiver3 = n7Var.c;
+                if (z10 && !z11 && (ziVar = n7Var.n) != null && ziVar.u2() && imageReceiver3.n() != null) {
                     if (imageReceiver2.n() != null) {
                         imageReceiver2.n().recycle();
                     }
                     imageReceiver2.v0(Utilities.D(imageReceiver3.n(), false));
                 }
-                if (z10 && !z11 && s7Var.w0 && imageReceiver3.n() != null) {
-                    int J0 = org.telegram.messenger.i0.J0(imageReceiver3.n());
-                    s7Var.a = J0;
-                    CheckBoxBase checkBoxBase = s7Var.P;
-                    if (checkBoxBase != null && checkBoxBase.x != (w9 = org.telegram.ui.ActionBar.t6.w(J0, org.telegram.ui.ActionBar.t6.r1(0.25f, -1)))) {
-                        checkBoxBase.x = w9;
+                if (z10 && !z11 && n7Var.x0 && imageReceiver3.n() != null) {
+                    int J0 = org.telegram.messenger.g0.J0(imageReceiver3.n());
+                    n7Var.a = J0;
+                    CheckBoxBase checkBoxBase = n7Var.Q;
+                    if (checkBoxBase != null && checkBoxBase.x != (w10 = org.telegram.ui.ActionBar.k6.w(J0, org.telegram.ui.ActionBar.k6.r1(0.25f, -1)))) {
+                        checkBoxBase.x = w10;
                         checkBoxBase.b();
                         break;
                     }
@@ -133,24 +137,19 @@ public final /* synthetic */ class ca implements jk0, rf.l, nc, org.telegram.mes
         }
     }
 
-    @Override // org.telegram.messenger.k9
+    @Override // org.telegram.messenger.d9
     public boolean run() {
         TLRPC.Message message;
-        n4 n4Var;
+        l4 l4Var;
         q1 q1Var = (q1) this.b;
-        kj kjVar = q1Var.O5;
-        if (kjVar == null || (message = kjVar.k) == null) {
+        zi ziVar = q1Var.P5;
+        if (ziVar == null || (message = ziVar.k) == null) {
             return false;
         }
-        if (kjVar.D != 29 || ((n4Var = q1Var.V5) != null && n4Var.i)) {
-            return (message.noforwards && !kj.c3(message)) || q1Var.O5.S4() || q1Var.O5.y2();
+        if (ziVar.D != 29 || ((l4Var = q1Var.W5) != null && l4Var.i)) {
+            return (message.noforwards && !zi.d3(message)) || q1Var.P5.T4() || q1Var.P5.z2();
         }
         return true;
-    }
-
-    @Override // org.telegram.messenger.nc
-    public /* synthetic */ void s(int i10, Drawable drawable) {
-        int i11 = this.a;
     }
 
     private final /* synthetic */ void e(ImageReceiver imageReceiver) {
@@ -159,9 +158,9 @@ public final /* synthetic */ class ca implements jk0, rf.l, nc, org.telegram.mes
     private final /* synthetic */ void g(ImageReceiver imageReceiver) {
     }
 
-    private final /* synthetic */ void b(int i10, Drawable drawable) {
+    private final /* synthetic */ void b(int i3, Drawable drawable) {
     }
 
-    private final /* synthetic */ void c(int i10, Drawable drawable) {
+    private final /* synthetic */ void c(int i3, Drawable drawable) {
     }
 }

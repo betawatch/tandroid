@@ -3,10 +3,11 @@ package androidx.fragment.app;
 import android.os.Handler;
 import android.view.View;
 import android.view.Window;
+import b8.a1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class u extends v7.x implements androidx.lifecycle.u0, androidx.lifecycle.t, t4.e, n0 {
+public final class u extends a1 implements androidx.lifecycle.u0, androidx.lifecycle.t, v4.e, n0 {
     public final v a;
     public final v b;
     public final Handler c;
@@ -22,12 +23,12 @@ public final class u extends v7.x implements androidx.lifecycle.u0, androidx.lif
         this.d = new k0();
     }
 
-    @Override // v7.x
-    public final View b(int i10) {
-        return this.e.findViewById(i10);
+    @Override // b8.a1
+    public final View b(int i3) {
+        return this.e.findViewById(i3);
     }
 
-    @Override // v7.x
+    @Override // b8.a1
     public final boolean c() {
         Window window = this.e.getWindow();
         return (window == null || window.peekDecorView() == null) ? false : true;
@@ -38,14 +39,14 @@ public final class u extends v7.x implements androidx.lifecycle.u0, androidx.lif
         return this.e.f();
     }
 
-    @Override // t4.e
+    @Override // v4.e
     public final m.p g() {
         return (m.p) this.e.e.d;
     }
 
     @Override // androidx.lifecycle.t
     public final androidx.lifecycle.o m() {
-        return this.e.K;
+        return this.e.L;
     }
 
     @Override // androidx.fragment.app.n0

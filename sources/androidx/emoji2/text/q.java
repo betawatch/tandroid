@@ -1,106 +1,220 @@
 package androidx.emoji2.text;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Handler;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
+import android.graphics.Bitmap;
+import android.media.VolumeProvider;
+import android.os.Build;
+import android.util.SparseArray;
+import android.util.SparseBooleanArray;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import w7.q6;
+import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class q implements k {
-    public final Context a;
-    public final o0.d b;
-    public final jb.b c;
-    public final Object d = new Object();
-    public Handler e;
-    public ThreadPoolExecutor f;
-    public ThreadPoolExecutor g;
-    public v7.t h;
+public final class q {
+    public int a;
+    public int b;
+    public int c;
+    public Object d;
+    public Object e;
+    public Object f;
 
-    public q(Context context, o0.d dVar) {
-        q6.a(context, "Context cannot be null");
-        this.a = context.getApplicationContext();
-        this.b = dVar;
-        this.c = r.d;
+    public q(Bitmap bitmap) {
+        ArrayList arrayList = new ArrayList();
+        this.e = arrayList;
+        this.a = 16;
+        this.b = 12544;
+        this.c = -1;
+        ArrayList arrayList2 = new ArrayList();
+        this.f = arrayList2;
+        if (bitmap.isRecycled()) {
+            throw new IllegalArgumentException("Bitmap is not valid");
+        }
+        arrayList2.add(s4.b.g);
+        this.d = bitmap;
+        arrayList.add(s4.e.d);
+        arrayList.add(s4.e.e);
+        arrayList.add(s4.e.f);
+        arrayList.add(s4.e.g);
+        arrayList.add(s4.e.h);
+        arrayList.add(s4.e.i);
     }
 
-    @Override // androidx.emoji2.text.k
-    public final void a(v7.t tVar) {
-        synchronized (this.d) {
-            this.h = tVar;
+    public int a(int i3) {
+        SparseArray sparseArray = ((t) this.e).a;
+        t tVar = sparseArray == null ? null : (t) sparseArray.get(i3);
+        int i10 = 1;
+        int i11 = 2;
+        if (this.a == 2) {
+            if (tVar != null) {
+                this.e = tVar;
+                this.c++;
+            } else if (i3 == 65038) {
+                d();
+            } else if (i3 != 65039) {
+                t tVar2 = (t) this.e;
+                if (tVar2.b != null) {
+                    i11 = 3;
+                    if (this.c != 1) {
+                        this.f = tVar2;
+                        d();
+                    } else if (e()) {
+                        this.f = (t) this.e;
+                        d();
+                    } else {
+                        d();
+                    }
+                } else {
+                    d();
+                }
+            }
+            i10 = i11;
+        } else if (tVar == null) {
+            d();
+        } else {
+            this.a = 2;
+            this.e = tVar;
+            this.c = 1;
+            i10 = i11;
         }
-        c();
+        this.b = i3;
+        return i10;
     }
 
-    public final void b() {
-        synchronized (this.d) {
-            try {
-                this.h = null;
-                Handler handler = this.e;
-                if (handler != null) {
-                    handler.removeCallbacks(null);
-                }
-                this.e = null;
-                ThreadPoolExecutor threadPoolExecutor = this.g;
-                if (threadPoolExecutor != null) {
-                    threadPoolExecutor.shutdown();
-                }
-                this.f = null;
-                this.g = null;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public s4.b b() {
+        int max;
+        s4.b bVar;
+        ArrayList arrayList = (ArrayList) this.f;
+        Bitmap bitmap = (Bitmap) this.d;
+        if (bitmap == null) {
+            throw new AssertionError();
         }
+        int i3 = this.c;
+        int i10 = this.b;
+        double d = -1.0d;
+        if (i10 > 0) {
+            int height = bitmap.getHeight() * bitmap.getWidth();
+            if (height > i10) {
+                d = Math.sqrt(i10 / height);
+            }
+        } else if (i3 > 0 && (max = Math.max(bitmap.getWidth(), bitmap.getHeight())) > i3) {
+            d = i3 / max;
+        }
+        int i11 = 0;
+        Bitmap createScaledBitmap = d <= 0.0d ? bitmap : Bitmap.createScaledBitmap(bitmap, (int) Math.ceil(bitmap.getWidth() * d), (int) Math.ceil(bitmap.getHeight() * d), false);
+        int width = createScaledBitmap.getWidth();
+        int height2 = createScaledBitmap.getHeight();
+        int[] iArr = new int[width * height2];
+        createScaledBitmap.getPixels(iArr, 0, width, 0, 0, width, height2);
+        s4.b bVar2 = new s4.b(iArr, this.a, arrayList.isEmpty() ? null : (s4.c[]) arrayList.toArray(new s4.c[arrayList.size()]));
+        if (createScaledBitmap != bitmap) {
+            createScaledBitmap.recycle();
+        }
+        ArrayList arrayList2 = (ArrayList) bVar2.c;
+        ArrayList arrayList3 = (ArrayList) this.e;
+        s4.b bVar3 = new s4.b(arrayList3, arrayList2);
+        SparseBooleanArray sparseBooleanArray = (SparseBooleanArray) bVar3.d;
+        int size = arrayList3.size();
+        int i12 = 0;
+        while (i12 < size) {
+            s4.e eVar = (s4.e) arrayList3.get(i12);
+            float[] fArr = eVar.c;
+            float[] fArr2 = eVar.a;
+            int length = fArr.length;
+            float f10 = 0.0f;
+            float f11 = 0.0f;
+            for (int i13 = i11; i13 < length; i13++) {
+                float f12 = fArr[i13];
+                if (f12 > 0.0f) {
+                    f11 += f12;
+                }
+            }
+            if (f11 != 0.0f) {
+                int length2 = fArr.length;
+                for (int i14 = i11; i14 < length2; i14++) {
+                    float f13 = fArr[i14];
+                    if (f13 > 0.0f) {
+                        fArr[i14] = f13 / f11;
+                    }
+                }
+            }
+            a0.f fVar = (a0.f) bVar3.c;
+            List list = (List) bVar3.a;
+            int size2 = list.size();
+            int i15 = i11;
+            float f14 = 0.0f;
+            s4.d dVar = null;
+            while (i15 < size2) {
+                s4.d dVar2 = (s4.d) list.get(i15);
+                float[] b10 = dVar2.b();
+                float f15 = b10[1];
+                float f16 = f10;
+                float[] fArr3 = eVar.b;
+                if (f15 >= fArr2[i15] && f15 <= fArr2[2]) {
+                    float f17 = b10[2];
+                    if (f17 >= fArr3[i15] && f17 <= fArr3[2] && !sparseBooleanArray.get(dVar2.d)) {
+                        float[] b11 = dVar2.b();
+                        s4.d dVar3 = (s4.d) bVar3.e;
+                        int i16 = dVar3 != null ? dVar3.e : 1;
+                        bVar = bVar3;
+                        float[] fArr4 = eVar.c;
+                        float f18 = fArr4[i15];
+                        float abs = f18 > f16 ? (1.0f - Math.abs(b11[1] - fArr2[1])) * f18 : f16;
+                        float f19 = fArr4[1];
+                        float abs2 = f19 > f16 ? (1.0f - Math.abs(b11[2] - fArr3[1])) * f19 : f16;
+                        float f20 = fArr4[2];
+                        float f21 = abs + abs2 + (f20 > f16 ? (dVar2.e / i16) * f20 : f16);
+                        if (dVar == null || f21 > f14) {
+                            dVar = dVar2;
+                            f14 = f21;
+                        }
+                        i15++;
+                        bVar3 = bVar;
+                        f10 = f16;
+                    }
+                }
+                bVar = bVar3;
+                i15++;
+                bVar3 = bVar;
+                f10 = f16;
+            }
+            s4.b bVar4 = bVar3;
+            if (dVar != null) {
+                sparseBooleanArray.append(dVar.d, true);
+            }
+            fVar.put(eVar, dVar);
+            i12++;
+            i11 = i15;
+            bVar3 = bVar4;
+        }
+        s4.b bVar5 = bVar3;
+        sparseBooleanArray.clear();
+        return bVar5;
     }
 
-    public final void c() {
-        synchronized (this.d) {
-            try {
-                if (this.h == null) {
-                    return;
-                }
-                if (this.f == null) {
-                    ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new a("emojiCompat", 0));
-                    threadPoolExecutor.allowCoreThreadTimeOut(true);
-                    this.g = threadPoolExecutor;
-                    this.f = threadPoolExecutor;
-                }
-                this.f.execute(new a3.d(this, 14));
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public VolumeProvider c() {
+        q qVar;
+        if (((VolumeProvider) this.e) != null) {
+            qVar = this;
+        } else if (Build.VERSION.SDK_INT >= 30) {
+            qVar = this;
+            qVar.e = new a2.e(qVar, this.a, this.b, this.c, (String) this.d);
+        } else {
+            qVar = this;
+            qVar.e = new a2.f(this, qVar.a, qVar.b, qVar.c);
         }
+        return (VolumeProvider) qVar.e;
     }
 
-    public final o0.h d() {
-        try {
-            jb.b bVar = this.c;
-            Context context = this.a;
-            o0.d dVar = this.b;
-            bVar.getClass();
-            Object[] objArr = {dVar};
-            ArrayList arrayList = new ArrayList(1);
-            Object obj = objArr[0];
-            Objects.requireNonNull(obj);
-            arrayList.add(obj);
-            j4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
-            int i10 = a2.a;
-            if (i10 != 0) {
-                throw new RuntimeException(i0.a.j(i10, "fetchFonts failed (", ")"));
-            }
-            o0.h[] hVarArr = (o0.h[]) a2.b.get(0);
-            if (hVarArr == null || hVarArr.length == 0) {
-                throw new RuntimeException("fetchFonts failed (empty result)");
-            }
-            return hVarArr[0];
-        } catch (PackageManager.NameNotFoundException e) {
-            throw new RuntimeException("provider not found", e);
-        }
+    public void d() {
+        this.a = 1;
+        this.e = (t) this.d;
+        this.c = 0;
+    }
+
+    public boolean e() {
+        r1.a b10 = ((t) this.e).b.b();
+        int a10 = b10.a(6);
+        return !(a10 == 0 || ((ByteBuffer) b10.d).get(a10 + b10.a) == 0) || this.b == 65039;
     }
 }

@@ -1,31 +1,50 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fv implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zx b;
-    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ LaunchActivity d;
+public final class fv extends org.telegram.ui.Components.j6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ uw c;
 
-    public /* synthetic */ fv(zx zxVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity, int i10) {
-        this.a = i10;
-        this.b = zxVar;
-        this.c = tL_attachMenuBot;
-        this.d = launchActivity;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                zx.v0(this.b, this.c, this.d);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fv(uw uwVar, int i3) {
+        super("animationValue", 0);
+        this.b = i3;
+        switch (i3) {
+            case 1:
+                this.c = uwVar;
+                super("viewPagerTranslation", 0);
                 break;
             default:
-                zx.j0(this.b, this.c, this.d);
+                this.c = uwVar;
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.j6
+    public final void c(Object obj, float f10) {
+        switch (this.b) {
+            case 0:
+                ((uw) obj).O4(f10);
+                break;
+            default:
+                uw uwVar = this.c;
+                uwVar.J0 = f10;
+                ((View) obj).setTranslationY(uwVar.K0 + f10);
+                uwVar.R3();
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.O);
+            default:
+                return Float.valueOf(this.c.J0);
         }
     }
 }

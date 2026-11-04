@@ -52,8 +52,8 @@ public final class i4 implements o4, h5 {
         return false;
     }
 
-    public i4(int i10, IntBinaryOperator intBinaryOperator) {
-        this.b = i10;
+    public i4(int i3, IntBinaryOperator intBinaryOperator) {
+        this.b = i3;
         this.c = intBinaryOperator;
     }
 
@@ -68,8 +68,8 @@ public final class i4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
-        this.a = this.c.applyAsInt(this.a, i10);
+    public final void accept(int i3) {
+        this.a = this.c.applyAsInt(this.a, i3);
     }
 
     @Override // java.util.function.Supplier

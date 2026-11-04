@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 interface zzug<T> {
     int zza(Object obj);
@@ -15,7 +15,7 @@ interface zzug<T> {
 
     void zzh(Object obj, zzuf zzufVar, zzry zzryVar);
 
-    void zzi(Object obj, byte[] bArr, int i10, int i11, zzqb zzqbVar);
+    void zzi(Object obj, byte[] bArr, int i3, int i10, zzqb zzqbVar);
 
     void zzj(Object obj, zzvi zzviVar);
 

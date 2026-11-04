@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class ColorAtom extends Atom implements Row {
     public static Map<String, Color> Colors = new HashMap();
@@ -23,9 +23,9 @@ public class ColorAtom extends Atom implements Row {
         this.color = color2;
     }
 
-    private static Color convColor(float f7, float f10, float f11, float f12) {
-        float f13 = 1.0f - f12;
-        return new Color((1.0f - f7) * f13, (1.0f - f10) * f13, (1.0f - f11) * f13);
+    private static Color convColor(float f10, float f11, float f12, float f13) {
+        float f14 = 1.0f - f13;
+        return new Color((1.0f - f10) * f14, (1.0f - f11) * f14, (1.0f - f12) * f14);
     }
 
     public static Color getColor(String str) {

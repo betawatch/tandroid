@@ -1,82 +1,94 @@
 package c6;
 
-import android.net.Uri;
-import android.os.Parcel;
-import android.os.Parcelable;
-import c3.i0;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import w7.h0;
+import android.os.AsyncTask;
+import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
+import java.util.Set;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Semaphore;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d extends o6.a {
-    public static final Parcelable.Creator<d> CREATOR = new v(17);
-    public final String a;
-    public final String b;
-    public final List c;
-    public final String d;
-    public final Uri e;
-    public final String f;
-    public final String h;
-    public final Boolean n;
-    public final Boolean r;
+public final class d {
+    public y1.a a;
+    public boolean b = false;
+    public boolean c = false;
+    public boolean d = true;
+    public boolean e = false;
+    public Executor f;
+    public volatile z1.a g;
+    public volatile z1.a h;
+    public final Semaphore i;
+    public final Set j;
 
-    public d(String str, String str2, ArrayList arrayList, String str3, Uri uri, String str4, String str5, Boolean bool, Boolean bool2) {
-        this.a = str;
-        this.b = str2;
-        this.c = arrayList;
-        this.d = str3;
-        this.e = uri;
-        this.f = str4;
-        this.h = str5;
-        this.n = bool;
-        this.r = bool2;
+    public d(SignInHubActivity signInHubActivity, Set set) {
+        signInHubActivity.getApplicationContext();
+        this.i = new Semaphore(0);
+        this.j = set;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public final void a() {
+        if (this.g != null) {
+            boolean z10 = this.b;
+            if (!z10) {
+                if (z10) {
+                    c();
+                } else {
+                    this.e = true;
+                }
+            }
+            if (this.h != null) {
+                this.g.getClass();
+                this.g = null;
+                return;
+            }
+            this.g.getClass();
+            z1.a aVar = this.g;
+            aVar.c.set(true);
+            if (aVar.a.cancel(false)) {
+                this.h = this.g;
+            }
+            this.g = null;
         }
-        if (!(obj instanceof d)) {
-            return false;
-        }
-        d dVar = (d) obj;
-        return g6.a.d(this.a, dVar.a) && g6.a.d(this.b, dVar.b) && g6.a.d(this.c, dVar.c) && g6.a.d(this.d, dVar.d) && g6.a.d(this.e, dVar.e) && g6.a.d(this.f, dVar.f) && g6.a.d(this.h, dVar.h);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e, this.f});
+    public final void b() {
+        if (this.h != null || this.g == null) {
+            return;
+        }
+        this.g.getClass();
+        if (this.f == null) {
+            this.f = AsyncTask.THREAD_POOL_EXECUTOR;
+        }
+        z1.a aVar = this.g;
+        Executor executor = this.f;
+        if (aVar.b == 1) {
+            aVar.b = 2;
+            executor.execute(aVar.a);
+            return;
+        }
+        int c2 = o1.g.c(aVar.b);
+        if (c2 == 1) {
+            throw new IllegalStateException("Cannot execute task: the task is already running.");
+        }
+        if (c2 == 2) {
+            throw new IllegalStateException("Cannot execute task: the task has already been executed (a task can be executed only once)");
+        }
+        throw new IllegalStateException("We should never reach this state");
+    }
+
+    public final void c() {
+        a();
+        this.g = new z1.a(this);
+        b();
     }
 
     public final String toString() {
-        List list = this.c;
-        int size = list == null ? 0 : list.size();
-        String valueOf = String.valueOf(this.e);
-        StringBuilder v = a1.g.v("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
-        v.append(size);
-        v.append(", senderAppIdentifier: ");
-        v.append(this.d);
-        v.append(", senderAppLaunchUrl: ");
-        i0.r(v, valueOf, ", iconUrl: ", this.f, ", type: ");
-        v.append(this.h);
-        return v.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.l(parcel, 2, this.a);
-        h0.l(parcel, 3, this.b);
-        h0.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
-        h0.l(parcel, 6, this.d);
-        h0.k(parcel, 7, this.e, i10);
-        h0.l(parcel, 8, this.f);
-        h0.l(parcel, 9, this.h);
-        h0.a(parcel, 10, this.n);
-        h0.a(parcel, 11, this.r);
-        h0.r(parcel, q6);
+        StringBuilder sb2 = new StringBuilder(64);
+        Class<?> cls = getClass();
+        sb2.append(cls.getSimpleName());
+        sb2.append("{");
+        sb2.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb2.append(" id=0}");
+        return sb2.toString();
     }
 }

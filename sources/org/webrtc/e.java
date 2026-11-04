@@ -5,7 +5,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 import org.webrtc.EglBase14;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 public abstract /* synthetic */ class e {
     static {
@@ -62,11 +62,11 @@ public abstract /* synthetic */ class e {
     }
 
     public static int k(int[] iArr) {
-        for (int i10 = 0; i10 < iArr.length - 1; i10++) {
-            if (iArr[i10] == 12352) {
-                int i11 = iArr[i10 + 1];
-                if (i11 != 4) {
-                    return i11 != 64 ? 1 : 3;
+        for (int i3 = 0; i3 < iArr.length - 1; i3++) {
+            if (iArr[i3] == 12352) {
+                int i10 = iArr[i3 + 1];
+                if (i10 != 4) {
+                    return i10 != 64 ? 1 : 3;
                 }
                 return 2;
             }

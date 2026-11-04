@@ -1,225 +1,81 @@
 package z3;
 
-import b2.v0;
-import b2.w;
-import b2.x;
-import c3.k0;
-import c3.o;
-import c3.p;
-import c3.q;
-import c3.s;
-import c3.y;
-import e2.l0;
-import e9.n0;
-import e9.x1;
+import d2.s0;
+import d2.u;
+import d2.u0;
+import d2.v;
+import g2.y;
+import g9.i0;
+import h2.o;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import v7.c8;
-import v7.t6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class h implements o {
-    public final m a;
-    public final x b;
-    public final ArrayList c;
-    public k0 f;
-    public int g;
-    public int h;
-    public long[] i;
-    public long j;
-    public byte[] e = l0.b;
-    public final e2.x d = new e2.x();
+public final class h extends i {
+    public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
+    public static final byte[] p = {79, 112, 117, 115, 84, 97, 103, 115};
+    public boolean n;
 
-    public h(m mVar, x xVar) {
-        x xVar2;
-        this.a = mVar;
-        if (xVar != null) {
-            w a2 = xVar.a();
-            a2.r = v0.n("application/x-media3-cues");
-            a2.j = xVar.s;
-            a2.P = mVar.o();
-            xVar2 = new x(a2);
-        } else {
-            xVar2 = null;
+    public static boolean e(y yVar, byte[] bArr) {
+        if (yVar.a() < bArr.length) {
+            return false;
         }
-        this.b = xVar2;
-        this.c = new ArrayList();
-        this.h = 0;
-        this.i = l0.c;
-        this.j = -9223372036854775807L;
+        int i3 = yVar.b;
+        byte[] bArr2 = new byte[bArr.length];
+        yVar.k(0, bArr.length, bArr2);
+        yVar.N(i3);
+        return Arrays.equals(bArr2, bArr);
     }
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
+    @Override // z3.i
+    public final long b(y yVar) {
+        byte[] bArr = yVar.a;
+        return (this.i * o.e(bArr[0], bArr.length > 1 ? bArr[1] : (byte) 0)) / 1000000;
+    }
+
+    @Override // z3.i
+    public final boolean c(y yVar, long j10, ua.b bVar) {
+        if (e(yVar, o)) {
+            byte[] copyOf = Arrays.copyOf(yVar.a, yVar.c);
+            int i3 = copyOf[9] & 255;
+            ArrayList a10 = o.a(copyOf);
+            if (((v) bVar.b) == null) {
+                u uVar = new u();
+                uVar.q = u0.n("audio/ogg");
+                uVar.r = u0.n("audio/opus");
+                uVar.J = i3;
+                uVar.K = 48000;
+                uVar.u = a10;
+                bVar.b = new v(uVar);
+                return true;
+            }
+        } else {
+            if (!e(yVar, p)) {
+                ((v) bVar.b).getClass();
+                return false;
+            }
+            ((v) bVar.b).getClass();
+            if (!this.n) {
+                this.n = true;
+                yVar.O(8);
+                s0 r5 = e3.b.r(i0.r(e3.b.u(yVar, false, false).a));
+                if (r5 != null) {
+                    u a11 = ((v) bVar.b).a();
+                    a11.k = r5.b(((v) bVar.b).l);
+                    bVar.b = new v(a11);
+                    return true;
+                }
+            }
+        }
         return true;
     }
 
-    @Override // c3.o
-    public final void c(q qVar) {
-        t6.p(this.h == 0);
-        k0 I1 = qVar.I1(0, 3);
-        this.f = I1;
-        x xVar = this.b;
-        if (xVar != null) {
-            I1.b(xVar);
-            qVar.Q0();
-            qVar.G1(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
+    @Override // z3.i
+    public final void d(boolean z10) {
+        super.d(z10);
+        if (z10) {
+            this.n = false;
         }
-        this.h = 1;
-    }
-
-    @Override // c3.o
-    public final void d(long j10, long j11) {
-        int i10 = this.h;
-        t6.p((i10 == 0 || i10 == 5) ? false : true);
-        this.j = j11;
-        if (this.h == 2) {
-            this.h = 1;
-        }
-        if (this.h == 4) {
-            this.h = 3;
-        }
-    }
-
-    @Override // c3.o
-    public final List e() {
-        e9.l0 l0Var = n0.b;
-        return x1.e;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0077, code lost:
-    
-        if (r20.g != r14) goto L32;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007c, code lost:
-    
-        if (r2 == (-1)) goto L68;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x007e, code lost:
-    
-        r4 = r20.j;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0082, code lost:
-    
-        if (r4 == (-9223372036854775807L)) goto L37;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0084, code lost:
-    
-        r2 = new z3.l(r4, true);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x008f, code lost:
-    
-        r20.a.z(r20.e, 0, r20.g, r2, new wh.b(r20, 12));
-        java.util.Collections.sort(r11);
-        r20.i = new long[r11.size()];
-        r2 = r22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00b6, code lost:
-    
-        if (r2 >= r11.size()) goto L72;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00b8, code lost:
-    
-        r20.i[r2] = ((z3.g) r11.get(r2)).a;
-        r2 = r2 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c9, code lost:
-    
-        r20.e = e2.l0.b;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00cd, code lost:
-    
-        r20.h = 4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x008c, code lost:
-    
-        r2 = z3.l.c;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00c7, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x00d6, code lost:
-    
-        throw b2.w0.a(r0, "SubtitleParser failed.");
-     */
-    @Override // c3.o
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int f(p pVar, s sVar) {
-        int i10;
-        int i11 = this.h;
-        t6.p((i11 == 0 || i11 == 5) ? false : true);
-        if (this.h == 1) {
-            int b10 = pVar.getLength() != -1 ? c8.b(pVar.getLength()) : 1024;
-            if (b10 > this.e.length) {
-                this.e = new byte[b10];
-            }
-            this.g = 0;
-            this.h = 2;
-        }
-        int i12 = this.h;
-        ArrayList arrayList = this.c;
-        if (i12 == 2) {
-            byte[] bArr = this.e;
-            if (bArr.length == this.g) {
-                this.e = Arrays.copyOf(bArr, bArr.length + 1024);
-            }
-            byte[] bArr2 = this.e;
-            int i13 = this.g;
-            int read = pVar.read(bArr2, i13, bArr2.length - i13);
-            if (read != -1) {
-                this.g += read;
-            }
-            long length = pVar.getLength();
-            if (length != -1) {
-                i10 = 0;
-            } else {
-                i10 = 0;
-            }
-        } else {
-            i10 = 0;
-        }
-        if (this.h == 3) {
-            if (pVar.skip(pVar.getLength() != -1 ? c8.b(pVar.getLength()) : 1024) == -1) {
-                long j10 = this.j;
-                for (int f7 = j10 == -9223372036854775807L ? i10 : l0.f(this.i, j10, true); f7 < arrayList.size(); f7++) {
-                    g((g) arrayList.get(f7));
-                }
-                this.h = 4;
-            }
-        }
-        if (this.h == 4) {
-            return -1;
-        }
-        return i10;
-    }
-
-    public final void g(g gVar) {
-        this.f.getClass();
-        byte[] bArr = gVar.b;
-        int length = bArr.length;
-        e2.x xVar = this.d;
-        xVar.getClass();
-        xVar.L(bArr.length, bArr);
-        this.f.d(length, xVar);
-        this.f.c(gVar.a, 1, length, 0, null);
-    }
-
-    @Override // c3.o
-    public final void release() {
-        if (this.h == 5) {
-            return;
-        }
-        this.a.reset();
-        this.h = 5;
-    }
-
-    @Override // c3.o
-    public final o b() {
-        return this;
     }
 }

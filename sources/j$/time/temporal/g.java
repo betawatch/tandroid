@@ -2,7 +2,7 @@ package j$.time.temporal;
 
 import j$.time.DayOfWeek;
 import j$.time.LocalDate;
-import org.telegram.messenger.at;
+import org.telegram.messenger.hs;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -49,16 +49,16 @@ public abstract class g implements o {
                 if (!j(lVar)) {
                     throw new r("Unsupported field: DayOfQuarter");
                 }
-                long y3 = lVar.y(g.QUARTER_OF_YEAR);
-                if (y3 == 1) {
+                long y9 = lVar.y(g.QUARTER_OF_YEAR);
+                if (y9 == 1) {
                     long y10 = lVar.y(a.YEAR);
                     j$.time.chrono.r.c.getClass();
                     return j$.time.chrono.r.k(y10) ? s.e(1L, 91L) : s.e(1L, 90L);
                 }
-                if (y3 == 2) {
+                if (y9 == 2) {
                     return s.e(1L, 91L);
                 }
-                if (y3 == 3 || y3 == 4) {
+                if (y9 == 3 || y9 == 4) {
                     return s.e(1L, 92L);
                 }
                 return l();
@@ -71,10 +71,10 @@ public abstract class g implements o {
                 }
                 int j10 = lVar.j(a.DAY_OF_YEAR);
                 int j11 = lVar.j(a.MONTH_OF_YEAR);
-                long y3 = lVar.y(a.YEAR);
-                int i10 = (j11 - 1) / 3;
+                long y9 = lVar.y(a.YEAR);
+                int i3 = (j11 - 1) / 3;
                 j$.time.chrono.r.c.getClass();
-                return j10 - g.a[i10 + (j$.time.chrono.r.k(y3) ? 4 : 0)];
+                return j10 - g.a[i3 + (j$.time.chrono.r.k(y9) ? 4 : 0)];
             }
 
             @Override // j$.time.temporal.o
@@ -215,14 +215,14 @@ public abstract class g implements o {
                 if (!j(temporal)) {
                     throw new r("Unsupported field: WeekBasedYear");
                 }
-                int a2 = a.YEAR.b.a(j10, g.WEEK_BASED_YEAR);
+                int a10 = a.YEAR.b.a(j10, g.WEEK_BASED_YEAR);
                 LocalDate I = LocalDate.I(temporal);
                 int j11 = I.j(a.DAY_OF_WEEK);
-                int w9 = g.w(I);
-                if (w9 == 53 && g.G(a2) == 52) {
-                    w9 = 52;
+                int w10 = g.w(I);
+                if (w10 == 53 && g.G(a10) == 52) {
+                    w10 = 52;
                 }
-                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w9 - 1) * 7) + (j11 - r6.j(r0))));
+                return temporal.k(LocalDate.of(a10, 1, 4).plusDays(((w10 - 1) * 7) + (j11 - r6.j(r0))));
             }
 
             @Override // java.lang.Enum
@@ -232,11 +232,11 @@ public abstract class g implements o {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, at.L2, at.w4, 0, 91, at.M2, at.x4};
+        a = new int[]{0, 90, hs.L2, hs.w4, 0, 91, hs.M2, hs.x4};
     }
 
-    public static int G(int i10) {
-        LocalDate of2 = LocalDate.of(i10, 1, 1);
+    public static int G(int i3) {
+        LocalDate of2 = LocalDate.of(i3, 1, 1);
         if (of2.K() != DayOfWeek.THURSDAY) {
             return (of2.K() == DayOfWeek.WEDNESDAY && of2.O()) ? 53 : 52;
         }
@@ -246,18 +246,18 @@ public abstract class g implements o {
     public static int w(LocalDate localDate) {
         int ordinal = localDate.K().ordinal();
         int L = localDate.L() - 1;
-        int i10 = (3 - ordinal) + L;
-        int i11 = i10 - ((i10 / 7) * 7);
-        int i12 = i11 - 3;
-        if (i12 < -3) {
-            i12 = i11 + 4;
+        int i3 = (3 - ordinal) + L;
+        int i10 = i3 - ((i3 / 7) * 7);
+        int i11 = i10 - 3;
+        if (i11 < -3) {
+            i11 = i10 + 4;
         }
-        if (L < i12) {
-            return (int) s.e(1L, G(y(localDate.X(at.K2).U(-1L)))).d;
+        if (L < i11) {
+            return (int) s.e(1L, G(y(localDate.X(hs.K2).U(-1L)))).d;
         }
-        int i13 = ((L - i12) / 7) + 1;
-        if (i13 != 53 || i12 == -3 || (i12 == -2 && localDate.O())) {
-            return i13;
+        int i12 = ((L - i11) / 7) + 1;
+        if (i12 != 53 || i11 == -3 || (i11 == -2 && localDate.O())) {
+            return i12;
         }
         return 1;
     }

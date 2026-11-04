@@ -1,138 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
+import android.graphics.RectF;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class rt0 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.u5 a;
-    public final TextView b;
-    public final ImageView c;
-    public final ImageView d;
-    public boolean e;
-    public du0 f;
-    public org.telegram.ui.Components.d5 h;
-    public Drawable n;
+public final /* synthetic */ class rt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ TLRPC.TL_channels_getParticipants e;
 
-    public rt0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        setClipChildren(false);
-        linearLayout.setClipChildren(false);
-        org.telegram.ui.ActionBar.u5 u5Var = new org.telegram.ui.ActionBar.u5(context);
-        this.a = u5Var;
-        u5Var.setTypeface(org.telegram.messenger.i0.o());
-        u5Var.setTextSize(15);
-        org.telegram.ui.ActionBar.a7.Y(u5Var, org.telegram.ui.ActionBar.t6.G6, p6Var);
-        linearLayout.addView(u5Var, w7.b6.o(-1, -2));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.y6, p6Var);
-        textView.setLineSpacing(org.telegram.messenger.i0.L(2.0f), 1.0f);
-        linearLayout.addView(textView, w7.b6.q(-1, -2, 0.0f, 0, 0, 1, 0, 0));
-        addView(linearLayout, w7.b6.d(-1, -2.0f, 0, 62.0f, 8.0f, 48.0f, 9.0f));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_INSIDE;
-        imageView.setScaleType(scaleType);
-        addView(imageView, w7.b6.d(28, 28.0f, 0, 18.0f, 12.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.d = imageView2;
-        imageView2.setScaleType(scaleType);
-        imageView2.setImageResource(R.drawable.msg_arrowright);
-        org.telegram.ui.ActionBar.a7.t(imageView2, org.telegram.ui.ActionBar.t6.M6, p6Var, PorterDuff.Mode.SRC_ATOP);
-        addView(imageView2, w7.b6.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+    public /* synthetic */ rt0(ProfileActivity profileActivity, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_channels_getParticipants tL_channels_getParticipants, int i3) {
+        this.a = i3;
+        this.b = profileActivity;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.e = tL_channels_getParticipants;
     }
 
-    public final void a(du0 du0Var, boolean z10) {
-        boolean q6 = org.telegram.messenger.e20.i(org.telegram.messenger.e20.s0).q();
-        ImageView imageView = this.d;
-        if (q6 && du0Var.a == 12 && du0Var.b == R.drawable.filled_premium_status2) {
-            imageView.setVisibility(8);
-            if (this.h == null) {
-                this.h = new org.telegram.ui.Components.d5(org.telegram.messenger.i0.L(24.0f), 13, this, false);
-                if (isAttachedToWindow()) {
-                    this.h.a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                RectF rectF = ProfileActivity.T6;
+                ProfileActivity profileActivity = this.b;
+                profileActivity.getNotificationCenter().d(new rt0(profileActivity, this.c, this.d, this.e, 1));
+                break;
+            default:
+                ProfileActivity profileActivity2 = this.b;
+                if (this.c == null) {
+                    RectF rectF2 = ProfileActivity.T6;
+                    TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) this.d;
+                    profileActivity2.getMessagesController().Y3(tL_channels_channelParticipants.users, false);
+                    profileActivity2.getMessagesController().S3(tL_channels_channelParticipants.chats, false);
+                    if (tL_channels_channelParticipants.users.size() < 200) {
+                        profileActivity2.D1 = true;
+                    }
+                    if (this.e.offset == 0) {
+                        profileActivity2.C1.b();
+                        profileActivity2.u2.participants = new TLRPC.TL_chatParticipants();
+                        profileActivity2.getMessagesStorage().m1(tL_channels_channelParticipants.users, tL_channels_channelParticipants.chats, true, true);
+                        org.telegram.messenger.qr messagesStorage = profileActivity2.getMessagesStorage();
+                        messagesStorage.a.c(new org.telegram.messenger.dr(messagesStorage, profileActivity2.f1, tL_channels_channelParticipants.participants, 2));
+                    }
+                    for (int i3 = 0; i3 < tL_channels_channelParticipants.participants.size(); i3++) {
+                        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i3);
+                        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+                        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+                        long C1 = org.telegram.messenger.zi.C1(channelParticipant.peer);
+                        tL_chatChannelParticipant.user_id = C1;
+                        tL_chatChannelParticipant.date = tL_chatChannelParticipant.channelParticipant.date;
+                        if (profileActivity2.C1.h(C1) < 0) {
+                            TLRPC.ChatFull chatFull = profileActivity2.u2;
+                            if (chatFull.participants == null) {
+                                chatFull.participants = new TLRPC.TL_chatParticipants();
+                            }
+                            profileActivity2.u2.participants.participants.add(tL_chatChannelParticipant);
+                            profileActivity2.C1.k(tL_chatChannelParticipant, tL_chatChannelParticipant.user_id);
+                        }
+                    }
                 }
-            }
-            Long h = org.telegram.messenger.i20.h(org.telegram.messenger.e20.i(org.telegram.messenger.e20.s0).f());
-            b(h == null ? 0L : h.longValue(), false);
-        } else {
-            imageView.setVisibility(0);
-            org.telegram.ui.Components.d5 d5Var = this.h;
-            if (d5Var != null) {
-                d5Var.b();
-                this.h = null;
-            }
+                profileActivity2.B1 = false;
+                profileActivity2.T4();
+                profileActivity2.D5(true, false);
+                break;
         }
-        this.f = du0Var;
-        this.a.l(du0Var.c, false);
-        this.b.setText(du0Var.d);
-        this.c.setImageResource(du0Var.b);
-        this.e = z10;
-    }
-
-    public final void b(long j10, boolean z10) {
-        if (this.h == null) {
-            this.h = new org.telegram.ui.Components.d5(org.telegram.messenger.i0.L(24.0f), 13, this, false);
-            if (isAttachedToWindow()) {
-                this.h.a();
-            }
-        }
-        if (j10 != 0) {
-            this.h.j(j10, z10);
-            return;
-        }
-        if (this.n == null) {
-            Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_premium_prolfilestar).mutate();
-            this.n = mutate;
-            org.telegram.ui.ActionBar.a7.y(this, mutate, org.telegram.ui.ActionBar.t6.v6, null, PorterDuff.Mode.SRC_IN);
-        }
-        this.h.g(this.n, z10);
-    }
-
-    public final void c() {
-        this.h.setBounds((getWidth() - this.h.s) - org.telegram.messenger.i0.L(21.0f), (getHeight() - this.h.s) / 2, getWidth() - org.telegram.messenger.i0.L(21.0f), (getHeight() + this.h.s) / 2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.h != null) {
-            c();
-            this.h.k(Integer.valueOf(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.v6, false)));
-            this.h.draw(canvas);
-        }
-        if (this.e) {
-            canvas.drawRect(org.telegram.messenger.i0.L(62.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.t6.k0);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        org.telegram.ui.Components.d5 d5Var = this.h;
-        if (d5Var != null) {
-            d5Var.a();
-        }
-        super.onAttachedToWindow();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        org.telegram.ui.Components.d5 d5Var = this.h;
-        if (d5Var != null) {
-            d5Var.b();
-        }
-        super.onDetachedFromWindow();
     }
 }

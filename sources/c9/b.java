@@ -1,74 +1,48 @@
 package c9;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.util.Log;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b implements ServiceConnection {
-    public b9.c a;
-    public final /* synthetic */ c b;
+public final class b extends h0 {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
-    public b(c cVar) {
-        this.b = cVar;
+    public /* synthetic */ b(Object obj, int i3) {
+        this.h = i3;
+        this.n = obj;
     }
 
-    public static boolean a(b bVar) {
-        return bVar.a != null;
-    }
-
-    public final boolean b(Intent intent, Bundle bundle) {
-        b9.c cVar = this.a;
-        if (cVar != null) {
-            b9.a aVar = (b9.a) cVar;
-            Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
-            int i10 = h5.a.a;
-            if (intent == null) {
-                obtain.writeInt(0);
-            } else {
-                obtain.writeInt(1);
-                intent.writeToParcel(obtain, 0);
-            }
-            obtain.writeInt(1);
-            bundle.writeToParcel(obtain, 0);
-            Parcel H0 = aVar.H0(obtain, 1);
-            boolean z10 = H0.readInt() != 0;
-            H0.recycle();
-            if (z10) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        b9.c aVar;
-        if (this.b.a) {
-            Log.d("SAVerificationClientS", "onServiceConnected");
-        }
-        int i10 = b9.b.a;
-        if (iBinder == null) {
-            aVar = null;
-        } else {
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
-            aVar = queryLocalInterface instanceof b9.c ? (b9.c) queryLocalInterface : new b9.a(iBinder);
-        }
-        this.a = aVar;
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        this.a = null;
-        if (this.b.a) {
-            Log.d("SAVerificationClientS", "onServiceDisconnected");
+    @Override // c9.h0
+    public final void b() {
+        switch (this.h) {
+            case 0:
+                c cVar = (c) ((bg.a) this.n).b;
+                cVar.b.b("unlinkToDeath", new Object[0]);
+                cVar.n.asBinder().unlinkToDeath(cVar.k, 0);
+                cVar.n = null;
+                cVar.g = false;
+                return;
+            default:
+                synchronized (((c) this.n).f) {
+                    try {
+                        if (((c) this.n).l.get() > 0 && ((c) this.n).l.decrementAndGet() > 0) {
+                            ((c) this.n).b.b("Leaving the connection open for other ongoing calls.", new Object[0]);
+                            return;
+                        }
+                        c cVar2 = (c) this.n;
+                        if (cVar2.n != null) {
+                            cVar2.b.b("Unbind from service.", new Object[0]);
+                            c cVar3 = (c) this.n;
+                            cVar3.a.unbindService(cVar3.m);
+                            c cVar4 = (c) this.n;
+                            cVar4.g = false;
+                            cVar4.n = null;
+                            cVar4.m = null;
+                        }
+                        ((c) this.n).e();
+                        return;
+                    } finally {
+                    }
+                }
         }
     }
 }

@@ -1,28 +1,44 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class st0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PremiumPreviewFragment b;
+import android.animation.ValueAnimator;
+import android.graphics.RectF;
+import android.view.View;
 
-    public /* synthetic */ st0(PremiumPreviewFragment premiumPreviewFragment, int i10) {
-        this.a = i10;
-        this.b = premiumPreviewFragment;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class st0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
+
+    public /* synthetic */ st0(ProfileActivity profileActivity, int i3) {
+        this.a = i3;
+        this.b = profileActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i3 = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (i3) {
             case 0:
-                this.b.o0();
+                profileActivity.y0.setAlpha((int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f));
                 break;
             case 1:
-                PremiumPreviewFragment premiumPreviewFragment = this.b;
-                premiumPreviewFragment.a.postOnAnimation(new st0(premiumPreviewFragment, 0));
+                RectF rectF = ProfileActivity.T6;
+                profileActivity.getClass();
+                profileActivity.X4(valueAnimator.getAnimatedFraction());
+                break;
+            case 2:
+                RectF rectF2 = ProfileActivity.T6;
+                View view = profileActivity.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                }
+                profileActivity.L5(true);
                 break;
             default:
-                this.b.getMediaDataController().R0(false);
+                RectF rectF3 = ProfileActivity.T6;
+                profileActivity.L5(true);
                 break;
         }
     }

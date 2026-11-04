@@ -1,39 +1,11 @@
 package androidx.biometric;
 
-import a3.l0;
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import android.hardware.biometrics.BiometricManager;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class s implements androidx.emoji2.text.k {
-    public final Context a;
-
-    public s(Context context, int i10) {
-        switch (i10) {
-            case 1:
-                this.a = context.getApplicationContext();
-                break;
-            case 2:
-                this.a = context;
-                break;
-            default:
-                this.a = context.getApplicationContext();
-                break;
-        }
-    }
-
-    @Override // androidx.emoji2.text.k
-    public void a(v7.t tVar) {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new androidx.emoji2.text.a("EmojiCompatInitializer", 0));
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
-        threadPoolExecutor.execute(new l0(this, tVar, threadPoolExecutor, 11));
-    }
-
-    public PackageInfo b(int i10, String str) {
-        return this.a.getPackageManager().getPackageInfo(str, i10);
+public abstract class s {
+    public static int a(BiometricManager biometricManager, int i3) {
+        return biometricManager.canAuthenticate(i3);
     }
 }

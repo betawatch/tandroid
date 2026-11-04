@@ -1,75 +1,125 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class cy extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
-    public final ImageView a;
-    public final TextView b;
-    public final RadialProgressView c;
-    public boolean d;
-    public final /* synthetic */ vy e;
+public final class cy extends sj0 {
+    public final boolean c;
+    public final /* synthetic */ ey d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cy(vy vyVar, Context context) {
-        super(context);
-        this.e = vyVar;
-        org.telegram.ui.ActionBar.z6 z6Var = org.telegram.ui.ActionBar.a7.a;
-        ImageView imageView = new ImageView(getContext());
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.gif_empty);
-        int i10 = org.telegram.ui.ActionBar.t6.Af;
-        org.telegram.ui.ActionBar.p6 p6Var = vyVar.Z1;
-        org.telegram.ui.ActionBar.a7.t(imageView, i10, p6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, w7.b6.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        textView.setText(org.telegram.messenger.dd.L0(2131748224, null));
-        textView.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.a7.V(textView, i10, p6Var);
-        addView(textView, w7.b6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
-        RadialProgressView radialProgressView = new RadialProgressView(context, p6Var);
-        this.c = radialProgressView;
-        radialProgressView.setVisibility(8);
-        radialProgressView.setProgressColor(vyVar.A(org.telegram.ui.ActionBar.t6.h6));
-        addView(radialProgressView, w7.b6.e(-2, -2, 17));
+    public cy(ey eyVar, boolean z10) {
+        this.d = eyVar;
+        this.c = z10;
     }
 
-    public final void a(boolean z10) {
-        if (this.d != z10) {
-            this.d = z10;
-            this.a.setVisibility(z10 ? 8 : 0);
-            this.b.setVisibility(z10 ? 8 : 0);
-            this.c.setVisibility(z10 ? 0 : 8);
+    @Override // org.telegram.ui.Components.sj0
+    public final boolean D(u4.d1 d1Var) {
+        return true;
+    }
+
+    @Override // u4.h0
+    public final int b() {
+        boolean z10 = this.c;
+        ey eyVar = this.d;
+        return (z10 ? eyVar.o1 : eyVar.n1).size();
+    }
+
+    @Override // u4.h0
+    public final int d(int i3) {
+        return 0;
+    }
+
+    @Override // u4.h0
+    public final void t(u4.d1 d1Var, int i3) {
+        ArrayList<TLRPC.Document> arrayList;
+        org.telegram.messenger.ac k10;
+        k9 k9Var = (k9) d1Var.a;
+        ey eyVar = this.d;
+        boolean z10 = this.c;
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z10 ? eyVar.o1 : eyVar.n1).get(i3);
+        k9Var.setTag(stickerSetCovered);
+        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
+            TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.li.b0(eyVar.d1).m0(org.telegram.messenger.li.Z(stickerSetCovered.set), false);
+            arrayList = m0 == null ? null : m0.documents;
+        } else {
+            arrayList = stickerSetCovered.covers;
+        }
+        TLRPC.Document document = stickerSetCovered.cover;
+        if (document == null) {
+            if (arrayList == null || arrayList.isEmpty()) {
+                document = null;
+            } else {
+                if (stickerSetCovered.set != null) {
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        if (arrayList.get(i10).id == stickerSetCovered.set.thumb_document_id) {
+                            document = arrayList.get(i10);
+                            break;
+                        }
+                    }
+                }
+                document = null;
+                if (document == null) {
+                    document = arrayList.get(0);
+                }
+            }
+        }
+        if (document == null) {
+            return;
+        }
+        if (z10) {
+            k9Var.setColorFilter(org.telegram.messenger.zi.D4(document) ? org.telegram.ui.ActionBar.k6.o0(eyVar.a2) : null);
+        }
+        TLObject w10 = org.telegram.messenger.w7.w(stickerSetCovered.set.thumbs, 90, false, null, false);
+        org.telegram.messenger.jz d = org.telegram.messenger.t5.d(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.k6.c7, 0.2f, false);
+        if (d != null) {
+            d.e = 512;
+            d.f = 512;
+        }
+        if (w10 == null || org.telegram.messenger.zi.O4(document)) {
+            w10 = document;
+        }
+        boolean z11 = w10 instanceof TLRPC.Document;
+        if (z11) {
+            k10 = org.telegram.messenger.ac.c(org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false), document);
+        } else if (!(w10 instanceof TLRPC.PhotoSize)) {
+            return;
+        } else {
+            k10 = org.telegram.messenger.ac.k((TLRPC.PhotoSize) w10, document, stickerSetCovered.set.thumb_version);
+        }
+        org.telegram.messenger.ac acVar = k10;
+        if (acVar == null) {
+            return;
+        }
+        String str = !org.telegram.messenger.lc.e(z10 ? 16388 : 1) ? "30_30_firstframe" : "30_30";
+        if (z11 && (org.telegram.messenger.zi.L2(document, true) || org.telegram.messenger.zi.O4(document))) {
+            if (d != null) {
+                k9Var.p(org.telegram.messenger.ac.b(document), str, d, stickerSetCovered);
+                return;
+            } else {
+                k9Var.l(org.telegram.messenger.ac.b(document), str, acVar, null, 0, stickerSetCovered);
+                return;
+            }
+        }
+        if (acVar.p == 1) {
+            k9Var.k(acVar, str, "tgs", d, stickerSetCovered);
+        } else {
+            k9Var.k(acVar, null, "webp", d, stickerSetCovered);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.a30.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - org.telegram.messenger.i0.L(80.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        try {
-            this.c.setProgressColor(this.e.A(org.telegram.ui.ActionBar.t6.h6));
-            invalidate();
-        } catch (Exception e) {
-            org.telegram.messenger.f8.g(e, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
+        ay ayVar = new ay(this, this.d.getContext());
+        ayVar.u(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+        ayVar.setLayerNum(1);
+        ayVar.setAspectFit(true);
+        ayVar.setLayoutParams(new u4.p0(org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(34.0f)));
+        return new bj0(ayVar);
     }
 }

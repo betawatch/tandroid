@@ -1,36 +1,23 @@
 package f2;
 
-import org.telegram.messenger.at;
+import g2.n0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class f {
-    public final /* synthetic */ int a;
+public final class f {
+    public static final String c;
+    public static final String d;
+    public final String a;
     public final int b;
 
-    public /* synthetic */ f(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    static {
+        String str = n0.a;
+        c = Integer.toString(0, 36);
+        d = Integer.toString(1, 36);
     }
 
-    public static String a(int i10) {
-        return "" + ((char) ((i10 >> 24) & at.e4)) + ((char) ((i10 >> 16) & at.e4)) + ((char) ((i10 >> 8) & at.e4)) + ((char) (i10 & at.e4));
-    }
-
-    public static void c(StringBuilder sb2) {
-        if (sb2 != null) {
-            sb2.delete(0, sb2.length());
-        }
-    }
-
-    public abstract f b();
-
-    public String toString() {
-        switch (this.a) {
-            case 0:
-                return a(this.b);
-            default:
-                return super.toString();
-        }
+    public f(String str, int i3) {
+        this.a = str;
+        this.b = i3;
     }
 }

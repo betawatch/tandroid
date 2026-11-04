@@ -1,76 +1,89 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import java.util.ArrayList;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class eo extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public final /* synthetic */ int T;
-    public Object U;
+public final /* synthetic */ class eo implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vo b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ eo(int i10, int i11, int i12, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(i10, i11, context, p6Var);
-        this.T = i12;
+    public /* synthetic */ eo(vo voVar, int i3) {
+        this.a = i3;
+        this.b = voVar;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.T) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i3 = this.a;
+        int i10 = 1;
+        vo voVar = this.b;
+        switch (i3) {
             case 0:
-                canvas.save();
-                Path path = (Path) this.U;
-                path.rewind();
-                RectF rectF = org.telegram.messenger.i0.P;
-                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path.addRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), Path.Direction.CW);
-                canvas.clipPath(path);
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                canvas.restore();
-                return drawChild;
-            case 1:
-                canvas.save();
-                Path path2 = (Path) this.U;
-                path2.rewind();
-                RectF rectF2 = org.telegram.messenger.i0.P;
-                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path2.addRoundRect(rectF2, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), Path.Direction.CW);
-                canvas.clipPath(path2);
-                boolean drawChild2 = super.drawChild(canvas, view, j10);
-                canvas.restore();
-                return drawChild2;
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        int i12;
-        switch (this.T) {
-            case 2:
-                z60 z60Var = (z60) this.U;
-                if (this == z60Var.A && (i12 = z60Var.X) > 0) {
-                    i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11));
+                bi biVar = voVar.P1;
+                if (biVar.t2 != biVar.b2) {
+                    voVar.R1.setText(org.telegram.messenger.bd.M0(2131745547, null));
+                    bi biVar2 = voVar.P1;
+                    biVar2.F1(biVar2.b2);
+                    break;
+                } else {
+                    voVar.R1.setText(org.telegram.messenger.bd.M0(2131752138, null));
+                    bi biVar3 = voVar.P1;
+                    if (biVar3.j2 == null) {
+                        Context context = biVar3.getContext();
+                        org.telegram.ui.ActionBar.e6 e6Var = biVar3.J0;
+                        qi qiVar = new qi(context, e6Var, biVar3);
+                        qiVar.r = org.telegram.messenger.g0.L(80.0f);
+                        qiVar.x = 3;
+                        ci.j1 j1Var = new ci.j1(qiVar, context, e6Var, 14);
+                        qiVar.n = j1Var;
+                        ka kaVar = new ka(qiVar, context);
+                        qiVar.w = kaVar;
+                        j1Var.setAdapter(kaVar);
+                        j1Var.setClipToPadding(false);
+                        j1Var.setItemAnimator(null);
+                        j1Var.setLayoutAnimation(null);
+                        j1Var.setVerticalScrollBarEnabled(false);
+                        org.telegram.ui.ActionBar.r6.m(j1Var, 21, org.telegram.ui.ActionBar.k6.A5, e6Var);
+                        qiVar.addView(j1Var, b8.mf.c(-1.0f, -1));
+                        j1Var.setOnScrollListener(new ji(qiVar, i10));
+                        fi.g gVar = new fi.g(qiVar, qiVar.r, 2);
+                        qiVar.s = gVar;
+                        gVar.O = new ai.g2(qiVar, 9);
+                        j1Var.setLayoutManager(gVar);
+                        biVar3.j2 = qiVar;
+                        qiVar.setDelegate(new ra(biVar3, 1));
+                    }
+                    biVar3.F1(biVar3.j2);
+                    qi qiVar2 = voVar.P1.j2;
+                    boolean z10 = voVar.E1;
+                    ka kaVar2 = qiVar2.w;
+                    ((ArrayList) kaVar2.e).clear();
+                    WallpapersListActivity.E0((ArrayList) kaVar2.e, z10);
+                    kaVar2.f();
+                    break;
                 }
-                super.onMeasure(i10, i11);
+            case 1:
+                if (!voVar.P0()) {
+                    voVar.dismiss();
+                    break;
+                } else {
+                    voVar.T0(true);
+                    voVar.Z0(true);
+                    break;
+                }
+            case 2:
+                if (voVar.K1 == null) {
+                    voVar.V0(!voVar.E1);
+                    break;
+                }
                 break;
             default:
-                super.onMeasure(i10, i11);
+                voVar.K0(false);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eo(z60 z60Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
-        super(R.drawable.popup_fixed_alert4, i10, context, p6Var);
-        this.T = 2;
-        this.U = z60Var;
     }
 }

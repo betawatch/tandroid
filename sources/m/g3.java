@@ -1,128 +1,21 @@
 package m;
 
-import android.content.Context;
-import android.view.KeyEvent;
-import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
-import androidx.appcompat.widget.Toolbar;
-import java.util.ArrayList;
-import org.telegram.messenger.at;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class g3 implements l.y {
-    public l.l a;
-    public l.n b;
-    public final /* synthetic */ Toolbar c;
+public final class g3 extends ViewGroup.MarginLayoutParams {
+    public int a;
+    public int b;
 
-    public g3(Toolbar toolbar) {
-        this.c = toolbar;
+    public g3(g3 g3Var) {
+        super((ViewGroup.MarginLayoutParams) g3Var);
+        this.a = 0;
+        this.a = g3Var.a;
     }
 
-    @Override // l.y
-    public final boolean b(l.n nVar) {
-        Toolbar toolbar = this.c;
-        toolbar.c();
-        ViewParent parent = toolbar.n.getParent();
-        if (parent != toolbar) {
-            if (parent instanceof ViewGroup) {
-                ((ViewGroup) parent).removeView(toolbar.n);
-            }
-            toolbar.addView(toolbar.n);
-        }
-        View actionView = nVar.getActionView();
-        toolbar.r = actionView;
-        this.b = nVar;
-        ViewParent parent2 = actionView.getParent();
-        if (parent2 != toolbar) {
-            if (parent2 instanceof ViewGroup) {
-                ((ViewGroup) parent2).removeView(toolbar.r);
-            }
-            h3 h = Toolbar.h();
-            h.a = (toolbar.D & at.x1) | 8388611;
-            h.b = 2;
-            toolbar.r.setLayoutParams(h);
-            toolbar.addView(toolbar.r);
-        }
-        for (int childCount = toolbar.getChildCount() - 1; childCount >= 0; childCount--) {
-            View childAt = toolbar.getChildAt(childCount);
-            if (((h3) childAt.getLayoutParams()).b != 2 && childAt != toolbar.a) {
-                toolbar.removeViewAt(childCount);
-                toolbar.U.add(childAt);
-            }
-        }
-        toolbar.requestLayout();
-        nVar.C = true;
-        nVar.n.p(false);
-        KeyEvent.Callback callback = toolbar.r;
-        if (callback instanceof k.b) {
-            ((k.b) callback).onActionViewExpanded();
-        }
-        toolbar.t();
-        return true;
-    }
-
-    @Override // l.y
-    public final boolean c() {
-        return false;
-    }
-
-    @Override // l.y
-    public final void d() {
-        if (this.b != null) {
-            l.l lVar = this.a;
-            if (lVar != null) {
-                int size = lVar.f.size();
-                for (int i10 = 0; i10 < size; i10++) {
-                    if (this.a.getItem(i10) == this.b) {
-                        return;
-                    }
-                }
-            }
-            k(this.b);
-        }
-    }
-
-    @Override // l.y
-    public final void i(Context context, l.l lVar) {
-        l.n nVar;
-        l.l lVar2 = this.a;
-        if (lVar2 != null && (nVar = this.b) != null) {
-            lVar2.d(nVar);
-        }
-        this.a = lVar;
-    }
-
-    @Override // l.y
-    public final boolean j(l.e0 e0Var) {
-        return false;
-    }
-
-    @Override // l.y
-    public final boolean k(l.n nVar) {
-        Toolbar toolbar = this.c;
-        KeyEvent.Callback callback = toolbar.r;
-        if (callback instanceof k.b) {
-            ((k.b) callback).onActionViewCollapsed();
-        }
-        toolbar.removeView(toolbar.r);
-        toolbar.removeView(toolbar.n);
-        toolbar.r = null;
-        ArrayList arrayList = toolbar.U;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            toolbar.addView((View) arrayList.get(size));
-        }
-        arrayList.clear();
-        this.b = null;
-        toolbar.requestLayout();
-        nVar.C = false;
-        nVar.n.p(false);
-        toolbar.t();
-        return true;
-    }
-
-    @Override // l.y
-    public final void g(l.l lVar, boolean z10) {
+    public g3(ViewGroup.LayoutParams layoutParams) {
+        super(layoutParams);
+        this.a = 0;
     }
 }

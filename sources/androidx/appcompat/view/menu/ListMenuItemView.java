@@ -19,22 +19,22 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import f.a;
 import java.util.WeakHashMap;
-import l.l;
-import l.n;
-import l.z;
-import li.k;
+import k4.j;
+import l.k;
+import l.m;
+import l.y;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import r0.h0;
+import r0.i0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class ListMenuItemView extends LinearLayout implements z, AbsListView.SelectionBoundsAdjuster {
-    public final Drawable D;
-    public final boolean E;
-    public LayoutInflater F;
-    public boolean G;
-    public n a;
+public class ListMenuItemView extends LinearLayout implements y, AbsListView.SelectionBoundsAdjuster {
+    public final Drawable E;
+    public final boolean F;
+    public LayoutInflater G;
+    public boolean H;
+    public m a;
     public ImageView b;
     public RadioButton c;
     public TextView d;
@@ -53,10 +53,10 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
     }
 
     private LayoutInflater getInflater() {
-        if (this.F == null) {
-            this.F = LayoutInflater.from(getContext());
+        if (this.G == null) {
+            this.G = LayoutInflater.from(getContext());
         }
-        return this.F;
+        return this.G;
     }
 
     private void setSubMenuArrowVisible(boolean z10) {
@@ -83,43 +83,43 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
     /* JADX WARN: Removed duplicated region for block: B:13:0x003b  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x011b  */
-    @Override // l.z
+    @Override // l.y
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(n nVar) {
+    public final void b(m mVar) {
         boolean z10;
         String sb2;
         boolean z11;
-        this.a = nVar;
-        boolean isVisible = nVar.isVisible();
-        l lVar = nVar.n;
-        int i10 = 0;
+        this.a = mVar;
+        boolean isVisible = mVar.isVisible();
+        k kVar = mVar.n;
+        int i3 = 0;
         setVisibility(isVisible ? 0 : 8);
-        setTitle(nVar.e);
-        setCheckable(nVar.isCheckable());
-        if (lVar.o()) {
-            if ((lVar.n() ? nVar.j : nVar.h) != 0) {
+        setTitle(mVar.e);
+        setCheckable(mVar.isCheckable());
+        if (kVar.o()) {
+            if ((kVar.n() ? mVar.j : mVar.h) != 0) {
                 z10 = true;
-                lVar.n();
+                kVar.n();
                 if (z10) {
-                    n nVar2 = this.a;
-                    l lVar2 = nVar2.n;
-                    if (lVar2.o()) {
-                        if ((lVar2.n() ? nVar2.j : nVar2.h) != 0) {
+                    m mVar2 = this.a;
+                    k kVar2 = mVar2.n;
+                    if (kVar2.o()) {
+                        if ((kVar2.n() ? mVar2.j : mVar2.h) != 0) {
                             z11 = true;
                         }
                     }
                     z11 = false;
                 }
-                i10 = 8;
-                if (i10 == 0) {
+                i3 = 8;
+                if (i3 == 0) {
                     TextView textView = this.f;
-                    n nVar3 = this.a;
-                    l lVar3 = nVar3.n;
-                    Context context = lVar3.a;
-                    char c10 = lVar3.n() ? nVar3.j : nVar3.h;
-                    if (c10 == 0) {
+                    m mVar3 = this.a;
+                    k kVar3 = mVar3.n;
+                    Context context = kVar3.a;
+                    char c2 = kVar3.n() ? mVar3.j : mVar3.h;
+                    if (c2 == 0) {
                         sb2 = "";
                     } else {
                         Resources resources = context.getResources();
@@ -127,19 +127,19 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
                         if (ViewConfiguration.get(context).hasPermanentMenuKey()) {
                             sb3.append(resources.getString(R.string.abc_prepend_shortcut_label));
                         }
-                        int i11 = lVar3.n() ? nVar3.k : nVar3.i;
-                        n.c(sb3, i11, 65536, resources.getString(R.string.abc_menu_meta_shortcut_label));
-                        n.c(sb3, i11, TLObject.FLAG_12, resources.getString(R.string.abc_menu_ctrl_shortcut_label));
-                        n.c(sb3, i11, 2, resources.getString(R.string.abc_menu_alt_shortcut_label));
-                        n.c(sb3, i11, 1, resources.getString(R.string.abc_menu_shift_shortcut_label));
-                        n.c(sb3, i11, 4, resources.getString(R.string.abc_menu_sym_shortcut_label));
-                        n.c(sb3, i11, 8, resources.getString(R.string.abc_menu_function_shortcut_label));
-                        if (c10 == '\b') {
+                        int i10 = kVar3.n() ? mVar3.k : mVar3.i;
+                        m.c(sb3, i10, 65536, resources.getString(R.string.abc_menu_meta_shortcut_label));
+                        m.c(sb3, i10, TLObject.FLAG_12, resources.getString(R.string.abc_menu_ctrl_shortcut_label));
+                        m.c(sb3, i10, 2, resources.getString(R.string.abc_menu_alt_shortcut_label));
+                        m.c(sb3, i10, 1, resources.getString(R.string.abc_menu_shift_shortcut_label));
+                        m.c(sb3, i10, 4, resources.getString(R.string.abc_menu_sym_shortcut_label));
+                        m.c(sb3, i10, 8, resources.getString(R.string.abc_menu_function_shortcut_label));
+                        if (c2 == '\b') {
                             sb3.append(resources.getString(R.string.abc_menu_delete_shortcut_label));
-                        } else if (c10 == '\n') {
+                        } else if (c2 == '\n') {
                             sb3.append(resources.getString(R.string.abc_menu_enter_shortcut_label));
-                        } else if (c10 != ' ') {
-                            sb3.append(c10);
+                        } else if (c2 != ' ') {
+                            sb3.append(c2);
                         } else {
                             sb3.append(resources.getString(R.string.abc_menu_space_shortcut_label));
                         }
@@ -147,67 +147,67 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
                     }
                     textView.setText(sb2);
                 }
-                if (this.f.getVisibility() != i10) {
-                    this.f.setVisibility(i10);
+                if (this.f.getVisibility() != i3) {
+                    this.f.setVisibility(i3);
                 }
-                setIcon(nVar.getIcon());
-                setEnabled(nVar.isEnabled());
-                setSubMenuArrowVisible(nVar.hasSubMenu());
-                setContentDescription(nVar.q);
+                setIcon(mVar.getIcon());
+                setEnabled(mVar.isEnabled());
+                setSubMenuArrowVisible(mVar.hasSubMenu());
+                setContentDescription(mVar.q);
             }
         }
         z10 = false;
-        lVar.n();
+        kVar.n();
         if (z10) {
         }
-        i10 = 8;
-        if (i10 == 0) {
+        i3 = 8;
+        if (i3 == 0) {
         }
-        if (this.f.getVisibility() != i10) {
+        if (this.f.getVisibility() != i3) {
         }
-        setIcon(nVar.getIcon());
-        setEnabled(nVar.isEnabled());
-        setSubMenuArrowVisible(nVar.hasSubMenu());
-        setContentDescription(nVar.q);
+        setIcon(mVar.getIcon());
+        setEnabled(mVar.isEnabled());
+        setSubMenuArrowVisible(mVar.hasSubMenu());
+        setContentDescription(mVar.q);
     }
 
-    @Override // l.z
-    public n getItemData() {
+    @Override // l.y
+    public m getItemData() {
         return this.a;
     }
 
     @Override // android.view.View
     public final void onFinishInflate() {
         super.onFinishInflate();
-        WeakHashMap weakHashMap = h0.a;
+        WeakHashMap weakHashMap = i0.a;
         setBackground(this.s);
         TextView textView = (TextView) findViewById(R.id.title);
         this.d = textView;
-        int i10 = this.w;
-        if (i10 != -1) {
-            textView.setTextAppearance(this.x, i10);
+        int i3 = this.w;
+        if (i3 != -1) {
+            textView.setTextAppearance(this.x, i3);
         }
         this.f = (TextView) findViewById(R.id.shortcut);
         ImageView imageView = (ImageView) findViewById(R.id.submenuarrow);
         this.h = imageView;
         if (imageView != null) {
-            imageView.setImageDrawable(this.D);
+            imageView.setImageDrawable(this.E);
         }
         this.n = (ImageView) findViewById(R.id.group_divider);
         this.r = (LinearLayout) findViewById(R.id.content);
     }
 
     @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    public final void onMeasure(int i3, int i10) {
         if (this.b != null && this.y) {
             ViewGroup.LayoutParams layoutParams = getLayoutParams();
             LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.b.getLayoutParams();
-            int i12 = layoutParams.height;
-            if (i12 > 0 && layoutParams2.width <= 0) {
-                layoutParams2.width = i12;
+            int i11 = layoutParams.height;
+            if (i11 > 0 && layoutParams2.width <= 0) {
+                layoutParams2.width = i11;
             }
         }
-        super.onMeasure(i10, i11);
+        super.onMeasure(i3, i10);
     }
 
     public void setCheckable(boolean z10) {
@@ -295,20 +295,20 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
     }
 
     public void setForceShowIcon(boolean z10) {
-        this.G = z10;
+        this.H = z10;
         this.y = z10;
     }
 
     public void setGroupDividerEnabled(boolean z10) {
         ImageView imageView = this.n;
         if (imageView != null) {
-            imageView.setVisibility((this.E || !z10) ? 8 : 0);
+            imageView.setVisibility((this.F || !z10) ? 8 : 0);
         }
     }
 
     public void setIcon(Drawable drawable) {
-        l lVar = this.a.n;
-        boolean z10 = this.G;
+        k kVar = this.a.n;
+        boolean z10 = this.H;
         if (z10 || this.y) {
             ImageView imageView = this.b;
             if (imageView == null && drawable == null && !this.y) {
@@ -352,18 +352,18 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
         }
     }
 
-    public ListMenuItemView(Context context, AttributeSet attributeSet, int i10) {
+    public ListMenuItemView(Context context, AttributeSet attributeSet, int i3) {
         super(context, attributeSet);
-        k G = k.G(getContext(), attributeSet, a.r, i10);
-        this.s = G.v(5);
-        TypedArray typedArray = (TypedArray) G.c;
+        j F = j.F(getContext(), attributeSet, a.r, i3);
+        this.s = F.A(5);
+        TypedArray typedArray = (TypedArray) F.b;
         this.w = typedArray.getResourceId(1, -1);
         this.y = typedArray.getBoolean(7, false);
         this.x = context;
-        this.D = G.v(8);
+        this.E = F.A(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
-        this.E = obtainStyledAttributes.hasValue(0);
-        G.I();
+        this.F = obtainStyledAttributes.hasValue(0);
+        F.H();
         obtainStyledAttributes.recycle();
     }
 }

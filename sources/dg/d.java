@@ -1,161 +1,177 @@
 package dg;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.i0;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
-import w7.b6;
+import a3.u;
+import j$.util.List;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.zip.CRC32;
+import org.telegram.messenger.t0;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public class d extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final TextView c;
-    public final TextView d;
-    public boolean e;
-    public boolean f;
-    public final Drawable h;
-    public final int n;
-    public final p6 r;
-
-    public d(Context context, p6 p6Var) {
-        super(context);
-        this.e = true;
-        new SimpleDateFormat("d MMM yyyy");
-        this.r = p6Var;
-        TextPaint textPaint = new TextPaint();
-        textPaint.setTextSize(14.0f);
-        textPaint.setTypeface(i0.o());
-        int measureText = (int) textPaint.measureText("00 MMM 0000 - 00 MMM 000");
-        this.n = measureText;
-        TextView textView = new TextView(context);
-        this.a = textView;
-        sc.e.t(textView, 1, 15.0f);
-        addView(textView, b6.d(-2, -2.0f, 8388627, 16.0f, 0.0f, measureText, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 15.0f);
-        textView2.setTypeface(Typeface.DEFAULT_BOLD);
-        textView2.setGravity(8388627);
-        addView(textView2, b6.d(-2, -2.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
-        TextView textView3 = new TextView(context);
-        this.b = textView3;
-        textView3.setTextSize(1, 13.0f);
-        textView3.setTypeface(i0.o());
-        textView3.setGravity(8388629);
-        addView(textView3, b6.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
-        TextView textView4 = new TextView(context);
-        this.c = textView4;
-        textView4.setTextSize(1, 13.0f);
-        textView4.setTypeface(i0.o());
-        textView4.setGravity(8388629);
-        addView(textView4, b6.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
-        textView4.setVisibility(8);
-        textView2.setVisibility(8);
-        textView2.setText(dd.L0(2131742812, null));
-        Drawable drawable = getContext().getDrawable(R.drawable.msg_zoomout_stats);
-        this.h = drawable;
-        textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
-        textView2.setCompoundDrawablePadding(i0.L(4.0f));
-        textView2.setPadding(i0.L(8.0f), i0.L(4.0f), i0.L(8.0f), i0.L(4.0f));
-        textView2.setBackground(t6.J0(i0.L(3.0f), t6.w0(t6.Fi, p6Var)));
-        textView4.addOnLayoutChangeListener(new c(this, 0));
-        a();
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public abstract class d {
+    public static void a(TLRPC.GroupCall groupCall, TLRPC.GroupCall groupCall2) {
+        if ((groupCall2 instanceof TLRPC.TL_groupCall) && (groupCall instanceof TLRPC.TL_groupCall)) {
+            TLRPC.TL_groupCall tL_groupCall = (TLRPC.TL_groupCall) groupCall2;
+            if (tL_groupCall.min) {
+                TLRPC.TL_groupCall tL_groupCall2 = (TLRPC.TL_groupCall) groupCall;
+                tL_groupCall.can_change_join_muted = tL_groupCall2.can_change_join_muted;
+                tL_groupCall.can_start_video = tL_groupCall2.can_start_video;
+                tL_groupCall.creator = tL_groupCall2.creator;
+                tL_groupCall.can_change_messages_enabled = tL_groupCall2.can_change_messages_enabled;
+            }
+        }
     }
 
-    public final void a() {
-        int i10 = t6.j5;
-        TextView textView = this.a;
-        p6 p6Var = this.r;
-        a7.V(textView, i10, p6Var);
-        a7.V(this.b, i10, p6Var);
-        a7.V(this.c, i10, p6Var);
-        int i11 = t6.Tj;
-        a7.V(this.d, i11, p6Var);
-        a7.y(this, this.h, i11, p6Var, PorterDuff.Mode.SRC_IN);
-    }
-
-    public final void b(long j10, long j11) {
-        String format;
-        boolean z10 = this.e;
-        TextView textView = this.b;
-        if (!z10) {
-            textView.setVisibility(8);
-            this.c.setVisibility(8);
+    public static void b(TLRPC.Poll poll, long j10) {
+        if (poll == null) {
             return;
         }
-        if (this.f) {
-            j11 += 604800000;
+        int size = poll.answers.size();
+        for (int i3 = 0; i3 < size; i3++) {
+            poll.answers.get(i3).unshuffled_index = i3;
         }
-        if (j11 - j10 >= 86400000) {
-            format = dd.D0().B0().format(new Date(j10)) + " — " + dd.D0().B0().format(new Date(j11));
+        if (poll.creator || !poll.shuffle_answers) {
+            return;
+        }
+        CRC32 crc32 = new CRC32();
+        int size2 = poll.answers.size();
+        for (int i10 = 0; i10 < size2; i10++) {
+            TLRPC.PollAnswer pollAnswer = poll.answers.get(i10);
+            if (pollAnswer.option != null) {
+                crc32.reset();
+                String l10 = Long.toString(j10);
+                Charset charset = StandardCharsets.UTF_8;
+                crc32.update(l10.getBytes(charset));
+                crc32.update(pollAnswer.option);
+                crc32.update(Long.toString(poll.id).getBytes(charset));
+                pollAnswer.shuffle_hash = crc32.getValue();
+            }
+        }
+        ArrayList<TLRPC.PollAnswer> arrayList = new ArrayList<>(poll.answers);
+        poll.shuffled_answers = arrayList;
+        List.-EL.sort(arrayList, new u(6));
+    }
+
+    public static ArrayList c(Class cls, java.util.List list) {
+        ArrayList arrayList = new ArrayList();
+        if (list != null) {
+            for (Object obj : list) {
+                if (cls.isInstance(obj)) {
+                    arrayList.add(cls.cast(obj));
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    public static Object d(ArrayList arrayList, Class cls) {
+        if (arrayList == null) {
+            return null;
+        }
+        int size = arrayList.size();
+        int i3 = 0;
+        while (i3 < size) {
+            Object obj = arrayList.get(i3);
+            i3++;
+            if (cls.isInstance(obj)) {
+                return cls.cast(obj);
+            }
+        }
+        return null;
+    }
+
+    public static TLRPC.Document e(TL_stars.StarGift starGift) {
+        TLRPC.Document document = starGift.sticker;
+        ArrayList<TL_stars.StarGiftAttribute> arrayList = starGift.attributes;
+        if (arrayList != null && document == null) {
+            int size = arrayList.size();
+            int i3 = 0;
+            while (i3 < size) {
+                TL_stars.StarGiftAttribute starGiftAttribute = arrayList.get(i3);
+                i3++;
+                TL_stars.StarGiftAttribute starGiftAttribute2 = starGiftAttribute;
+                if (starGiftAttribute2 instanceof TL_stars.starGiftAttributeModel) {
+                    return ((TL_stars.starGiftAttributeModel) starGiftAttribute2).document;
+                }
+            }
+        }
+        return document;
+    }
+
+    public static String f(TLRPC.ChatTheme chatTheme) {
+        if (chatTheme instanceof TLRPC.TL_chatTheme) {
+            return ((TLRPC.TL_chatTheme) chatTheme).emoticon;
+        }
+        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
+            return ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift.title;
+        }
+        return null;
+    }
+
+    public static boolean g(Object obj, Class... clsArr) {
+        if (obj != null) {
+            for (Class cls : clsArr) {
+                if (cls.isInstance(obj)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static TLRPC.InputMedia h(TLRPC.MessageMedia messageMedia) {
+        TLRPC.InputMedia tL_inputMediaGeoPoint;
+        if (messageMedia instanceof TLRPC.TL_messageMediaVenue) {
+            tL_inputMediaGeoPoint = new TLRPC.TL_inputMediaVenue();
+            tL_inputMediaGeoPoint.address = messageMedia.address;
+            tL_inputMediaGeoPoint.title = messageMedia.title;
+            tL_inputMediaGeoPoint.provider = messageMedia.provider;
+            tL_inputMediaGeoPoint.venue_id = messageMedia.venue_id;
+            tL_inputMediaGeoPoint.venue_type = "";
+        } else if (messageMedia instanceof TLRPC.TL_messageMediaGeoLive) {
+            tL_inputMediaGeoPoint = new TLRPC.TL_inputMediaGeoLive();
+            tL_inputMediaGeoPoint.period = messageMedia.period;
+            int i3 = tL_inputMediaGeoPoint.flags;
+            tL_inputMediaGeoPoint.flags = i3 | 2;
+            int i10 = messageMedia.heading;
+            if (i10 != 0) {
+                tL_inputMediaGeoPoint.heading = i10;
+                tL_inputMediaGeoPoint.flags = i3 | 6;
+            }
+            int i11 = messageMedia.proximity_notification_radius;
+            if (i11 != 0) {
+                tL_inputMediaGeoPoint.proximity_notification_radius = i11;
+                tL_inputMediaGeoPoint.flags |= 8;
+            }
         } else {
-            format = dd.D0().B0().format(new Date(j10));
+            tL_inputMediaGeoPoint = new TLRPC.TL_inputMediaGeoPoint();
         }
-        textView.setText(format);
-        textView.setVisibility(0);
+        TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
+        tL_inputMediaGeoPoint.geo_point = tL_inputGeoPoint;
+        TLRPC.GeoPoint geoPoint = messageMedia.geo;
+        tL_inputGeoPoint.lat = geoPoint.lat;
+        tL_inputGeoPoint._long = geoPoint._long;
+        return tL_inputMediaGeoPoint;
     }
 
-    public final void c(boolean z10) {
-        this.e = z10;
-        TextView textView = this.a;
-        if (z10) {
-            textView.setLayoutParams(b6.d(-2, -2.0f, 8388627, 16.0f, 0.0f, this.n, 0.0f));
+    public static void i(String str, ArrayList arrayList) {
+        int i3;
+        int i10;
+        if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        this.c.setVisibility(8);
-        this.b.setVisibility(8);
-        textView.setLayoutParams(b6.d(-2, -2.0f, 8388627, 16.0f, 0.0f, 16.0f, 0.0f));
-        textView.requestLayout();
-    }
-
-    public final void d(long j10, boolean z10) {
-        b(j10, j10);
-        TextView textView = this.d;
-        textView.setVisibility(0);
-        TextView textView2 = this.a;
-        if (!z10) {
-            textView.setAlpha(1.0f);
-            textView.setTranslationX(0.0f);
-            textView.setTranslationY(0.0f);
-            textView.setScaleX(1.0f);
-            textView.setScaleY(1.0f);
-            textView2.setAlpha(0.0f);
-            return;
+        t0.m();
+        int length = str != null ? str.length() : 0;
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            TLRPC.MessageEntity messageEntity = (TLRPC.MessageEntity) arrayList.get(i11);
+            if (messageEntity == null || (i3 = messageEntity.offset) < 0 || i3 > length || (i10 = messageEntity.length) <= 0 || i10 > length - i3) {
+                arrayList.clear();
+                return;
+            }
         }
-        textView.setAlpha(0.0f);
-        textView.setScaleX(0.3f);
-        textView.setScaleY(0.3f);
-        textView.setPivotX(0.0f);
-        textView.setPivotY(i0.L(40.0f));
-        textView.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(200L).start();
-        textView2.setAlpha(1.0f);
-        textView2.setTranslationX(0.0f);
-        textView2.setTranslationY(0.0f);
-        textView2.setScaleX(1.0f);
-        textView2.setScaleY(1.0f);
-        textView2.setPivotX(0.0f);
-        textView2.setPivotY(0.0f);
-        textView2.animate().alpha(0.0f).scaleY(0.3f).scaleX(0.3f).setDuration(200L).start();
-    }
-
-    public void setTitle(String str) {
-        this.a.setText(str);
-    }
-
-    public void setUseWeekInterval(boolean z10) {
-        this.f = z10;
     }
 }

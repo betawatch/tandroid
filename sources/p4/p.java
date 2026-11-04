@@ -1,54 +1,64 @@
 package p4;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Executor;
+import android.media.session.MediaSession;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class p extends q {
+public final class p implements Parcelable {
+    public static final Parcelable.Creator<p> CREATOR = new n8.g(12);
+    public final MediaSession.Token b;
+    public d c;
     public final Object a = new Object();
-    public Executor b;
-    public n2.u c;
-    public m d;
-    public ArrayList e;
+    public a5.d d = null;
 
-    public String j() {
-        return null;
+    public p(MediaSession.Token token, k kVar) {
+        this.b = token;
+        this.c = kVar;
     }
 
-    public String k() {
-        return null;
-    }
-
-    public final void l(m mVar, ArrayList arrayList) {
-        if (mVar == null) {
-            throw new NullPointerException("groupRoute must not be null");
-        }
+    public final d a() {
+        d dVar;
         synchronized (this.a) {
-            try {
-                try {
-                    Executor executor = this.b;
-                    if (executor != null) {
-                        executor.execute(new com.google.android.gms.internal.cast.o(this, this.c, mVar, arrayList, false, 4));
-                    } else {
-                        this.d = mVar;
-                        this.e = new ArrayList(arrayList);
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                    throw th;
-                }
-            } catch (Throwable th3) {
-                th = th3;
-                throw th;
-            }
+            dVar = this.c;
+        }
+        return dVar;
+    }
+
+    public final void b(d dVar) {
+        synchronized (this.a) {
+            this.c = dVar;
         }
     }
 
-    public abstract void m(String str);
+    public final void c(a5.d dVar) {
+        synchronized (this.a) {
+            this.d = dVar;
+        }
+    }
 
-    public abstract void n(String str);
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
 
-    public abstract void o(List list);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof p) {
+            return this.b.equals(((p) obj).b);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        parcel.writeParcelable(this.b, i3);
+    }
 }

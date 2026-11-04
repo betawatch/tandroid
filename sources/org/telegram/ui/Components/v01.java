@@ -1,59 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class v01 extends tk0 {
-    public Context c;
-    public ArrayList d;
+public final class v01 extends u4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g11 b;
 
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
+    public /* synthetic */ v01(g11 g11Var, int i3) {
+        this.a = i3;
+        this.b = g11Var;
     }
 
-    @Override // s4.g0
-    public final int b() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0;
+    @Override // u4.t0
+    public final void b(RecyclerView recyclerView, int i3, int i10) {
+        switch (this.a) {
+            case 0:
+                g11 g11Var = this.b;
+                if (g11Var.l()) {
+                    g11Var.m();
+                    break;
+                }
+                break;
+            default:
+                g11 g11Var2 = this.b;
+                if (g11Var2.l()) {
+                    g11Var2.m();
+                    break;
+                }
+                break;
         }
-        return arrayList.size() + 1;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            org.telegram.ui.ActionBar.c7 c7Var = (org.telegram.ui.ActionBar.c7) ((ArrayList) this.d.get(i10 - 1)).get(0);
-            int c10 = c7Var.e == org.telegram.ui.ActionBar.t6.Be ? 0 : c7Var.c();
-            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) c1Var.a;
-            w8Var.a.setText(org.telegram.ui.ActionBar.d5.c(c7Var.e));
-            w8Var.b = c10;
-            w8Var.setWillNotDraw(c10 == 0);
-            w8Var.invalidate();
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        View w8Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            w8Var = new View(context);
-            w8Var.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(56.0f)));
-        } else {
-            w8Var = new org.telegram.ui.Cells.w8(context);
-            w8Var.setLayoutParams(new s4.o0(-1, -2));
-        }
-        return new dk0(w8Var);
     }
 }

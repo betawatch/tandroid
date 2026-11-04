@@ -1,136 +1,152 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLMethod;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wh implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ f1 e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a0.h d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ c1 f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ wh(f1 f1Var, long j10, long j11, Object obj, int i10, int i11) {
-        this.a = i11;
-        this.e = f1Var;
+    public /* synthetic */ wh(li liVar, rz rzVar, sz szVar, ArrayList arrayList, long j10, a0.h hVar, Runnable runnable) {
+        this.f = liVar;
+        this.h = rzVar;
+        this.n = szVar;
+        this.c = arrayList;
         this.b = j10;
-        this.d = j11;
-        this.f = obj;
-        this.c = i10;
+        this.d = hVar;
+        this.e = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                vi viVar = (vi) this.e;
-                long j10 = this.b;
-                long j11 = this.d;
-                r20 r20Var = (r20) this.f;
-                int i10 = this.c;
+                li liVar = (li) this.f;
+                rz rzVar = (rz) this.h;
+                sz szVar = (sz) this.n;
+                ArrayList arrayList = this.c;
+                sz.a(rzVar);
+                rz d = sz.d(szVar, "loadReplyMessagesForMessages: (encrypted) loading those messages from storage");
                 try {
-                    TL_bots.BotInfo H0 = viVar.H0(j10, j11);
-                    if (H0 != null) {
-                        i0.g3(new dg(viVar, r20Var, H0, i10, 7));
-                    } else if (r20Var != null) {
-                        i0.g3(new qf(r20Var, 0));
-                    }
-                    break;
-                } catch (Exception e) {
-                    f8.g(e, true);
-                    return;
-                }
-            case 1:
-                wp wpVar = (wp) this.e;
-                long j12 = this.b;
-                TLRPC.TL_messages_chatFull tL_messages_chatFull = (TLRPC.TL_messages_chatFull) this.f;
-                int i11 = this.c;
-                long j13 = this.d;
-                LongSparseIntArray longSparseIntArray = wpVar.G0;
-                a0.h hVar = wpVar.l1;
-                TLRPC.ChatFull chatFull = (TLRPC.ChatFull) hVar.f(j12);
-                if (chatFull != null) {
-                    tL_messages_chatFull.full_chat.inviterId = chatFull.inviterId;
-                }
-                hVar.k(tL_messages_chatFull.full_chat, j12);
-                long j14 = -j12;
-                wpVar.t7.M(j14);
-                TLRPC.PeerNotifySettings peerNotifySettings = tL_messages_chatFull.full_chat.notify_settings;
-                qt qtVar = wpVar.getNotificationsController().g0;
-                qtVar.getClass();
-                if (peerNotifySettings != null) {
-                    Utilities.e.c(new y8(qtVar, j14, 0L, peerNotifySettings, 6));
-                }
-                for (int i12 = 0; i12 < tL_messages_chatFull.full_chat.bot_info.size(); i12++) {
-                    wpVar.getMediaDataController().D1(j14, tL_messages_chatFull.full_chat.bot_info.get(i12));
-                }
-                int indexOfKey = longSparseIntArray.indexOfKey(j14);
-                if (tL_messages_chatFull.full_chat.blocked) {
-                    if (indexOfKey < 0) {
-                        longSparseIntArray.put(j14, 1);
-                        wpVar.getNotificationCenter().k(43, new Object[0]);
-                    }
-                } else if (indexOfKey >= 0) {
-                    longSparseIntArray.removeAt(indexOfKey);
-                    wpVar.getNotificationCenter().k(43, new Object[0]);
-                }
-                wpVar.r.k(tL_messages_chatFull.full_chat.exported_invite, j12);
-                wpVar.s1.remove(Long.valueOf(j12));
-                wpVar.w1.put(j12, System.currentTimeMillis());
-                wpVar.V3(tL_messages_chatFull.users, false);
-                wpVar.P3(tL_messages_chatFull.chats, false);
-                if (tL_messages_chatFull.full_chat.stickerset != null) {
-                    wpVar.getMediaDataController().Y(tL_messages_chatFull.full_chat.stickerset);
-                }
-                if (tL_messages_chatFull.full_chat.emojiset != null) {
-                    wpVar.getMediaDataController().Y(tL_messages_chatFull.full_chat.emojiset);
-                }
-                wpVar.getNotificationCenter().k(30, tL_messages_chatFull.full_chat, Integer.valueOf(i11), Boolean.FALSE, Boolean.TRUE);
-                TLRPC.Dialog dialog = (TLRPC.Dialog) wpVar.Q.f(j14);
-                if (dialog != null) {
-                    TLRPC.ChatFull chatFull2 = tL_messages_chatFull.full_chat;
-                    if ((chatFull2.flags & 2048) != 0) {
-                        int i13 = dialog.folder_id;
-                        int i14 = chatFull2.folder_id;
-                        if (i13 != i14) {
-                            dialog.folder_id = i14;
-                            wpVar.Q4(null);
-                            wpVar.getNotificationCenter().k(3, new Object[0]);
+                    ArrayList arrayList2 = new ArrayList();
+                    SQLiteDatabase sQLiteDatabase = liVar.getMessagesStorage().b;
+                    Locale locale = Locale.US;
+                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT m.data, m.mid, m.date, r.random_id FROM randoms_v2 as r INNER JOIN messages_v2 as m ON r.mid = m.mid AND r.uid = m.uid WHERE r.random_id IN(" + TextUtils.join(",", arrayList) + ")", new Object[0]);
+                    while (true) {
+                        boolean next = queryFinalized.next();
+                        long j10 = this.b;
+                        a0.h hVar = this.d;
+                        if (!next) {
+                            queryFinalized.dispose();
+                            if (hVar.m() != 0) {
+                                for (int i3 = 0; i3 < hVar.m(); i3++) {
+                                    ArrayList arrayList3 = (ArrayList) hVar.n(i3);
+                                    for (int i10 = 0; i10 < arrayList3.size(); i10++) {
+                                        TLRPC.MessageReplyHeader messageReplyHeader = ((zi) arrayList3.get(i10)).k.reply_to;
+                                        if (messageReplyHeader != null) {
+                                            messageReplyHeader.reply_to_random_id = 0L;
+                                        }
+                                    }
+                                }
+                            }
+                            sz.a(d);
+                            g0.h3(new zl(liVar, sz.d(szVar, "loadReplyMessagesForMessages (encrypted) runOnUIThread: posting notification"), j10, arrayList2, 3));
+                            Runnable runnable = this.e;
+                            if (runnable != null) {
+                                runnable.run();
+                                break;
+                            }
+                        } else {
+                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                            if (byteBufferValue != null) {
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                TLdeserialize.readAttachPath(byteBufferValue, liVar.getUserConfig().n);
+                                byteBufferValue.reuse();
+                                TLdeserialize.id = queryFinalized.intValue(1);
+                                TLdeserialize.date = queryFinalized.intValue(2);
+                                TLdeserialize.dialog_id = j10;
+                                long longValue = queryFinalized.longValue(3);
+                                ArrayList arrayList4 = (ArrayList) hVar.f(longValue);
+                                hVar.l(longValue);
+                                if (arrayList4 != null) {
+                                    zi ziVar = new zi(liVar.currentAccount, TLdeserialize, false, false);
+                                    arrayList2.add(ziVar);
+                                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
+                                        zi ziVar2 = (zi) arrayList4.get(i11);
+                                        ziVar2.C = ziVar;
+                                        ziVar2.m();
+                                        ziVar2.k.reply_to = new TLRPC.TL_messageReplyHeader();
+                                        TLRPC.MessageReplyHeader messageReplyHeader2 = ziVar2.k.reply_to;
+                                        messageReplyHeader2.flags |= 16;
+                                        messageReplyHeader2.reply_to_msg_id = ziVar.M1();
+                                    }
+                                }
+                            }
                         }
                     }
-                    int i15 = dialog.ttl_period;
-                    int i16 = tL_messages_chatFull.full_chat.ttl_period;
-                    if (i15 != i16) {
-                        dialog.ttl_period = i16;
-                        wpVar.getNotificationCenter().k(3, new Object[0]);
-                    }
-                    boolean z10 = dialog.view_forum_as_messages;
-                    boolean z11 = tL_messages_chatFull.full_chat.view_forum_as_messages;
-                    if (z10 != z11) {
-                        dialog.view_forum_as_messages = z11;
-                        is messagesStorage = wpVar.getMessagesStorage();
-                        messagesStorage.a.c(new gq(1, j13, messagesStorage, tL_messages_chatFull.full_chat.view_forum_as_messages));
-                        break;
-                    }
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
                 }
                 break;
             default:
-                ((is) this.e).getMessagesController().a0(null, null, null, this.b, true, 0, false, this.d, (TLMethod) this.f, this.c);
+                c00 c00Var = (c00) this.f;
+                TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) this.h;
+                HashSet hashSet = (HashSet) this.n;
+                int i12 = 0;
+                c00Var.getMessagesController().Y3(tL_messages_savedDialogs.users, false);
+                c00Var.getMessagesController().S3(tL_messages_savedDialogs.chats, false);
+                long j11 = this.b;
+                ArrayList arrayList5 = this.c;
+                c00Var.u(j11, arrayList5, this.d, false, 2, -1);
+                long j12 = -j11;
+                c00Var.getMessagesStorage().C1(c00Var.getConnectionsManager().getCurrentTime(), j12, (List) c00Var.a.f(j11), true);
+                c00Var.getMessagesStorage().j1(tL_messages_savedDialogs.messages, false, true, false, 0, false, 0, 0L);
+                int size = arrayList5.size();
+                while (i12 < size) {
+                    Object obj = arrayList5.get(i12);
+                    i12++;
+                    hashSet.remove(Long.valueOf(m5.o(((TLRPC.TL_forumTopic) obj).from_id)));
+                }
+                Iterator it = hashSet.iterator();
+                while (it.hasNext()) {
+                    long longValue2 = ((Long) it.next()).longValue();
+                    qr messagesStorage = c00Var.getMessagesStorage();
+                    messagesStorage.a.c(new mp(1, j12, longValue2, messagesStorage));
+                    c00Var.s(j11, longValue2);
+                }
+                Runnable runnable2 = this.e;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ wh(wp wpVar, long j10, TLRPC.TL_messages_chatFull tL_messages_chatFull, int i10, long j11) {
-        this.a = 1;
-        this.e = wpVar;
+    public /* synthetic */ wh(c00 c00Var, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
+        this.f = c00Var;
+        this.h = tL_messages_savedDialogs;
         this.b = j10;
-        this.f = tL_messages_chatFull;
-        this.c = i10;
-        this.d = j11;
+        this.c = arrayList;
+        this.d = hVar;
+        this.n = hashSet;
+        this.e = runnable;
     }
 }

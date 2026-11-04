@@ -1,35 +1,44 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class e21 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p21 b;
+public final class e21 extends u4.h0 {
+    public Context c;
+    public View d;
+    public int e;
 
-    public /* synthetic */ e21(p21 p21Var, int i10) {
-        this.a = i10;
-        this.b = p21Var;
+    public final void D(View view) {
+        if (this.d == view) {
+            return;
+        }
+        this.e++;
+        this.d = view;
+        g(1);
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                p21 p21Var = this.b;
-                if (p21Var.l()) {
-                    p21Var.m();
-                    break;
-                }
-                break;
-            default:
-                p21 p21Var2 = this.b;
-                if (p21Var2.l()) {
-                    p21Var2.m();
-                    break;
-                }
-                break;
+    @Override // u4.h0
+    public final int b() {
+        return 2;
+    }
+
+    @Override // u4.h0
+    public final int d(int i3) {
+        if (i3 == 0) {
+            return 0;
         }
+        return this.e;
+    }
+
+    @Override // u4.h0
+    public final u4.d1 x(ViewGroup viewGroup, int i3) {
+        return i3 == 0 ? new bj0(new sm(this.c, 13)) : new bj0(this.d);
+    }
+
+    @Override // u4.h0
+    public final void t(u4.d1 d1Var, int i3) {
     }
 }

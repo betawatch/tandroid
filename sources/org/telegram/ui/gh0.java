@@ -1,48 +1,63 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class gh0 extends ci.o {
-    public Runnable W;
+public final class gh0 extends sg.a {
+    public int c;
+    public int d;
+    public CharSequence e;
+    public CharSequence f;
+    public lh0 g;
+    public int h;
+    public boolean i;
 
-    @Override // ci.o, s4.j
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.i0.r(runnable);
-            this.W = null;
-        }
-        fh0 fh0Var = new fh0(this, 0);
-        this.W = fh0Var;
-        org.telegram.messenger.i0.g3(fh0Var);
+    public static gh0 b(int i3, String str, boolean z10) {
+        gh0 gh0Var = new gh0(1, true);
+        gh0Var.c = i3;
+        gh0Var.e = str;
+        gh0Var.i = z10;
+        return gh0Var;
     }
 
-    @Override // ci.o
-    public final void W() {
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.i0.r(runnable);
-            this.W = null;
-        }
-        if (org.telegram.messenger.v2.a) {
-            org.telegram.messenger.f8.b("chatItemAnimator disable notifications");
-        }
+    public static gh0 c(int i3, String str, String str2) {
+        gh0 gh0Var = new gh0(5, true);
+        gh0Var.c = i3;
+        gh0Var.e = str;
+        gh0Var.f = str2;
+        return gh0Var;
     }
 
-    @Override // ci.o, s4.j, s4.l0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.i0.r(runnable);
-        }
-        fh0 fh0Var = new fh0(this, 1);
-        this.W = fh0Var;
-        org.telegram.messenger.i0.g3(fh0Var);
+    public static gh0 d(int i3, String str) {
+        gh0 gh0Var = new gh0(4, true);
+        gh0Var.c = i3;
+        gh0Var.e = str;
+        return gh0Var;
     }
 
-    @Override // s4.j
-    public final void F() {
+    @Override // sg.a
+    public final boolean a(sg.a aVar) {
+        if (this == aVar) {
+            return true;
+        }
+        if (gh0.class != aVar.getClass()) {
+            return false;
+        }
+        gh0 gh0Var = (gh0) aVar;
+        return this.c == gh0Var.c && this.d == gh0Var.d && this.h == gh0Var.h && this.i == gh0Var.i && Objects.equals(this.e, gh0Var.e) && Objects.equals(this.f, gh0Var.f) && this.g == gh0Var.g;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && gh0.class == obj.getClass()) {
+            gh0 gh0Var = (gh0) obj;
+            if (this.c == gh0Var.c && this.h == gh0Var.h && ((this.a == 8 || (this.d == gh0Var.d && Objects.equals(this.e, gh0Var.e) && (this.a == 6 || Objects.equals(this.f, gh0Var.f)))) && this.g == gh0Var.g)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

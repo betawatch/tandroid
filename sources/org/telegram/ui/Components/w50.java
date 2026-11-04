@@ -1,69 +1,83 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class w50 implements i80 {
-    public final /* synthetic */ x50 a;
+public final /* synthetic */ class w50 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f60 b;
+    public final /* synthetic */ Runnable c;
 
-    public w50(x50 x50Var) {
-        this.a = x50Var;
+    public /* synthetic */ w50(f60 f60Var, Runnable runnable, int i3) {
+        this.a = i3;
+        this.b = f60Var;
+        this.c = runnable;
     }
 
-    @Override // org.telegram.ui.Components.i80
-    public final void b() {
-        c60 c60Var = this.a.c;
-        org.telegram.ui.ActionBar.k2 k2Var = c60Var.L1;
-        if (k2Var instanceof org.telegram.ui.ig0) {
-            org.telegram.ui.ig0 ig0Var = (org.telegram.ui.ig0) k2Var;
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = c60Var.i1;
-            org.telegram.ui.la0 la0Var = new org.telegram.ui.la0(1, ig0Var.n);
-            la0Var.S = ig0Var.s0;
-            la0Var.d0(tL_chatInviteExported);
-            ig0Var.presentFragment(la0Var);
-        } else {
-            org.telegram.ui.la0 la0Var2 = new org.telegram.ui.la0(1, c60Var.X1);
-            la0Var2.d0(c60Var.i1);
-            la0Var2.S = new v50(this);
-            c60Var.L1.presentFragment(la0Var2);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.u();
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                this.c.run();
+                f60 f60Var = this.b;
+                if (f60Var.J) {
+                    f60Var.u();
+                    break;
+                }
+                break;
+            case 2:
+                this.c.run();
+                f60 f60Var2 = this.b;
+                if (f60Var2.J) {
+                    f60Var2.u();
+                    break;
+                }
+                break;
+            case 3:
+                f60 f60Var3 = this.b;
+                Runnable runnable2 = this.c;
+                if (runnable2 == null) {
+                    f60Var3.getClass();
+                    break;
+                } else {
+                    int i3 = -f60Var3.K;
+                    f60Var3.K = i3;
+                    org.telegram.messenger.g0.G3(i3, view, null);
+                    org.telegram.messenger.p2.E.a();
+                    runnable2.run();
+                    break;
+                }
+            case 4:
+                Runnable runnable3 = this.c;
+                if (runnable3 != null) {
+                    runnable3.run();
+                }
+                f60 f60Var4 = this.b;
+                if (f60Var4.J) {
+                    f60Var4.u();
+                    break;
+                }
+                break;
+            default:
+                Runnable runnable4 = this.c;
+                if (runnable4 != null) {
+                    runnable4.run();
+                }
+                f60 f60Var5 = this.b;
+                if (f60Var5.J) {
+                    f60Var5.u();
+                    break;
+                }
+                break;
         }
-        c60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.i80
-    public final void d() {
-        c60 c60Var = this.a.c;
-        org.telegram.ui.ActionBar.k2 k2Var = c60Var.L1;
-        if (k2Var instanceof org.telegram.ui.ig0) {
-            ((org.telegram.ui.ig0) k2Var).k0(c60Var.i1);
-        } else {
-            TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
-            tL_messages_editExportedChatInvite.link = c60Var.i1.link;
-            tL_messages_editExportedChatInvite.revoked = true;
-            tL_messages_editExportedChatInvite.peer = org.telegram.messenger.wp.r1(c60Var.a).i1(-c60Var.X1);
-            ConnectionsManager.getInstance(c60Var.a).sendRequest(tL_messages_editExportedChatInvite, new u50(this, 0));
-        }
-        c60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.i80
-    public final void n() {
-        c60 c60Var = this.a.c;
-        org.telegram.ui.ActionBar.k2 k2Var = c60Var.L1;
-        if (k2Var instanceof org.telegram.ui.ig0) {
-            ((org.telegram.ui.ig0) k2Var).h0(c60Var.i1);
-        } else {
-            TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
-            tL_messages_deleteExportedChatInvite.link = c60Var.i1.link;
-            tL_messages_deleteExportedChatInvite.peer = org.telegram.messenger.wp.r1(c60Var.a).i1(-c60Var.X1);
-            ConnectionsManager.getInstance(c60Var.a).sendRequest(tL_messages_deleteExportedChatInvite, new u50(this, 1));
-        }
-        c60Var.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.i80
-    public final /* synthetic */ void g() {
     }
 }

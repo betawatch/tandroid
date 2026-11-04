@@ -2,24 +2,19 @@ package wd;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class f extends ed.c {
-    public g a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ g c;
-    public int d;
+public final class f extends hd.c {
+    public Object[] a;
+    public int b;
+    public int c;
+    public /* synthetic */ Object d;
+    public int e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(g gVar, ed.c cVar) {
-        super(cVar);
-        this.c = gVar;
-    }
-
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.b(null, this);
+        this.d = obj;
+        this.e |= TLObject.FLAG_31;
+        return b0.p(null, this);
     }
 }

@@ -1,32 +1,30 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class pz extends FrameLayout {
-    public ImageView a;
-    public TextView b;
-    public int c;
-    public boolean d;
-    public Boolean e;
+public final class pz {
+    public long a;
+    public int b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextView textView = this.b;
-        super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.t6.k0);
-        }
+    public pz(int i3, long j10) {
+        this.a = j10;
+        this.b = i3;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(48.0f), TLObject.FLAG_30));
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && pz.class == obj.getClass()) {
+            pz pzVar = (pz) obj;
+            if (this.a == pzVar.a && this.b == pzVar.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.b;
     }
 }

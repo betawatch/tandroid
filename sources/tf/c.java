@@ -1,93 +1,55 @@
 package tf;
 
-import java.nio.ShortBuffer;
-import org.telegram.messenger.video.AudioBufferConverter;
-import org.telegram.messenger.video.AudioConversions;
-import org.telegram.messenger.video.AudioDecoder;
+import i2.h;
+import i2.n;
+import java.io.IOException;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c extends a {
-    public final AudioDecoder b;
-    public final AudioBufferConverter c = new AudioBufferConverter();
-    public long d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public ShortBuffer i;
-    public boolean j;
+public final class c extends InputStream {
+    public final h a;
+    public final byte[] b = new byte[1];
+    public long c;
 
-    public c(String str) {
-        this.b = new AudioDecoder(str);
-    }
-
-    @Override // tf.a
-    public final short a() {
-        if (!this.j) {
-            throw new RuntimeException("Audio input has no remaining value.");
-        }
-        int i10 = this.f;
-        if (i10 < this.e) {
-            this.f = i10 + 1;
-            return (short) 0;
-        }
-        f();
-        ShortBuffer shortBuffer = this.i;
-        short s10 = (shortBuffer == null || shortBuffer.remaining() <= 0) ? (short) 0 : this.i.get();
-        f();
-        ShortBuffer shortBuffer2 = this.i;
-        if (shortBuffer2 != null && shortBuffer2.remaining() >= 1) {
-            return s10;
-        }
-        this.j = false;
-        return s10;
-    }
-
-    @Override // tf.a
-    public final int b() {
-        return this.b.getSampleRate();
-    }
-
-    @Override // tf.a
-    public final boolean c() {
-        return this.j;
-    }
-
-    @Override // tf.a
-    public final void d() {
-        this.i = null;
-        this.j = false;
-        AudioDecoder audioDecoder = this.b;
-        audioDecoder.stop();
-        audioDecoder.release();
-    }
-
-    @Override // tf.a
-    public final void e(int i10, int i11) {
-        this.g = i10;
-        this.h = i11;
-        this.j = true;
-        this.b.start();
-        this.e = AudioConversions.usToShorts(this.d, this.g, this.h);
-        this.f = 0;
-    }
-
-    public final void f() {
-        ShortBuffer shortBuffer = this.i;
-        if (shortBuffer == null || shortBuffer.remaining() <= 0) {
-            AudioDecoder audioDecoder = this.b;
-            AudioDecoder.DecodedBufferData decode = audioDecoder.decode();
-            if (decode.index < 0) {
-                this.i = null;
-                return;
-            }
-            this.i = this.c.convert(decode.byteBuffer.asShortBuffer(), audioDecoder.getSampleRate(), audioDecoder.getChannelCount(), this.g, this.h);
-            audioDecoder.releaseOutputBuffer(decode.index);
+    public c(h hVar, n nVar) {
+        this.a = hVar;
+        try {
+            this.c = hVar.open(nVar);
+        } catch (IOException e10) {
+            throw new RuntimeException(e10);
         }
     }
 
-    public c(String str, int i10) {
-        this.b = new AudioDecoder(str, i10);
+    @Override // java.io.InputStream
+    public final int available() {
+        return (int) this.c;
+    }
+
+    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // java.io.InputStream
+    public final int read() {
+        h hVar = this.a;
+        byte[] bArr = this.b;
+        int read = hVar.read(bArr, 0, 1);
+        this.c--;
+        if (read == -1) {
+            return -1;
+        }
+        return bArr[0] & 255;
+    }
+
+    @Override // java.io.InputStream
+    public final int read(byte[] bArr, int i3, int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        int read = this.a.read(bArr, i3, i10);
+        this.c -= read;
+        return read;
     }
 }

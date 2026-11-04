@@ -1,39 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.LayoutTransition;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class cl implements LayoutTransition.TransitionListener {
-    public bl a;
-    public int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.y c;
-    public final /* synthetic */ un d;
+public final class cl extends org.telegram.ui.Cells.a0 {
+    public final /* synthetic */ fl f;
 
-    public cl(un unVar, org.telegram.ui.ActionBar.y yVar) {
-        this.d = unVar;
-        this.c = yVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cl(fl flVar, Context context, int i3, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i3, context, e6Var);
+        this.f = flVar;
     }
 
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        int i11 = this.b - 1;
-        this.b = i11;
-        if (i11 != 0 || this.a == null) {
-            return;
-        }
-        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
-        this.a = null;
-    }
-
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        if (this.b == 0 && this.a == null) {
-            this.a = new bl(this, 0);
-            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
-        }
-        this.b++;
+    @Override // org.telegram.ui.Cells.a0
+    public final int getSideMenuWidth() {
+        wm wmVar = this.f.R;
+        int i3 = wm.jd;
+        return wmVar.l9();
     }
 }

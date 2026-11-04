@@ -1,74 +1,26 @@
 package a9;
 
-import java.util.Iterator;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class n extends l {
-    public static final Object[] f;
-    public static final n h;
-    public final transient Object[] d;
-    public final transient Object[] e;
+public final class n extends q6.a {
+    public static final Parcelable.Creator<n> CREATOR = new c(11);
+    public final int a;
+    public final b b;
 
-    static {
-        Object[] objArr = new Object[0];
-        f = objArr;
-        h = new n(objArr, objArr);
+    public n(int i3, b bVar) {
+        this.a = i3;
+        this.b = bVar;
     }
 
-    public n(Object[] objArr, Object[] objArr2) {
-        this.d = objArr;
-        this.e = objArr2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        int length = this.e.length;
-        return false;
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return 0;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        m mVar = this.b;
-        if (mVar == null) {
-            i iVar = k.b;
-            mVar = m.d;
-            this.b = mVar;
-        }
-        return mVar.listIterator(0);
-    }
-
-    @Override // a9.h
-    public final int l(Object[] objArr) {
-        System.arraycopy(this.d, 0, objArr, 0, 0);
-        return 0;
-    }
-
-    @Override // a9.h
-    public final int m() {
-        return 0;
-    }
-
-    @Override // a9.h
-    public final int n() {
-        return 0;
-    }
-
-    @Override // a9.h
-    public final Object[] o() {
-        return this.d;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return 0;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.r(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        j8.a.l(parcel, 3, this.b, i3);
+        j8.a.t(parcel, s6);
     }
 }

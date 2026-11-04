@@ -1,70 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Rect;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class kv extends zl0 {
-    public long h;
-    public boolean n;
-    public float r;
-    public final /* synthetic */ mv s;
+public final class kv extends u4.n0 {
+    public final /* synthetic */ ey a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kv(mv mvVar, Context context) {
-        super(context);
-        this.s = mvVar;
-        boolean z10 = mvVar.n;
-        this.n = z10;
-        this.r = z10 ? 1.0f : 0.0f;
-        setSmoothScrollingEnabled(true);
-        setHorizontalScrollBarEnabled(false);
-        setVerticalScrollBarEnabled(false);
-        setNestedScrollingEnabled(true);
-        org.telegram.ui.s71 s71Var = new org.telegram.ui.s71(this, context, 7);
-        this.b = s71Var;
-        s71Var.setOrientation(0);
-        addView(this.b, new FrameLayout.LayoutParams(-2, -1));
-        for (int i10 = 0; i10 < 8; i10++) {
-            int i11 = mv.e0[i10];
-            jv jvVar = new jv(this, context, mv.f0[i10]);
-            jvVar.setContentDescription(mv.f(i10));
-            this.b.addView(jvVar);
-        }
+    public kv(ey eyVar) {
+        this.a = eyVar;
     }
 
-    public final void d(MotionEvent motionEvent) {
-        if (!this.n || this.d) {
+    @Override // u4.n0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, u4.a1 a1Var) {
+        int R = RecyclerView.R(view);
+        ey eyVar = this.a;
+        u4.h0 adapter = eyVar.i0.getAdapter();
+        jx jxVar = eyVar.o0;
+        if (adapter == jxVar && R == jxVar.J) {
+            rect.set(0, 0, 0, 0);
             return;
         }
-        int action = motionEvent.getAction();
-        if (action != 0) {
-            if (action == 1) {
-                this.a = false;
-                return;
-            } else if (action != 2) {
-                return;
-            }
+        if (R == 0) {
+            jxVar.getClass();
         }
-        this.a = true;
-        if (!this.d) {
-            this.e = -1;
-        }
-        this.s.requestDisallowInterceptTouchEvent(true);
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.W1(this.r, org.telegram.messenger.i0.L(30.0f), org.telegram.messenger.i0.L(Math.min(5.7f, this.b.getChildCount()) * 32.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(30.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.zl0, android.widget.HorizontalScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        d(motionEvent);
-        return super.onTouchEvent(motionEvent);
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = org.telegram.messenger.g0.L(2.0f);
+        kx kxVar = eyVar.j0;
+        jxVar.getClass();
+        rect.right = kxVar.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
     }
 }

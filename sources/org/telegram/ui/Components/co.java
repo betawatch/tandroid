@@ -1,50 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class co implements View.OnClickListener {
+public final /* synthetic */ class co implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ vo b;
 
-    public /* synthetic */ co(Object obj, Context context, Object obj2, int i10, Object obj3, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = context;
-        this.e = obj2;
-        this.c = i10;
-        this.f = obj3;
+    public /* synthetic */ co(vo voVar, int i3) {
+        this.a = i3;
+        this.b = voVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                go goVar = (go) this.d;
-                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) this.e;
-                fo foVar = (fo) this.f;
-                goVar.a();
-                s4.F(this.b, p6Var, new i2.q(this.c, foVar, 8));
+                this.b.o1.f();
+                break;
+            case 1:
+                this.b.K0(true);
+                break;
+            case 2:
+                vo voVar = this.b;
+                org.telegram.ui.wm wmVar = voVar.s1;
+                org.telegram.ui.ActionBar.d2 g02 = org.telegram.ui.r41.g0(wmVar.getMessagesController().M0(Long.valueOf(-wmVar.a())), true);
+                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2();
+                b2Var.a = true;
+                g02.setResourceProvider(wmVar.getResourceProvider());
+                b2Var.c = new go(0);
+                b2Var.d = new co(voVar, 3);
+                b2Var.b = new co(voVar, 4);
+                b2Var.e = true;
+                voVar.O1 = g02;
+                wmVar.showAsSheet(g02, b2Var);
+                break;
+            case 3:
+                this.b.O0();
+                break;
+            case 4:
+                this.b.O1 = null;
+                break;
+            case 5:
+                this.b.O0();
+                break;
+            case 6:
+                this.b.O1 = null;
                 break;
             default:
-                org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) this.d;
-                ep epVar = (ep) this.e;
-                TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) this.f;
-                z2Var.dismiss();
-                Activity W = org.telegram.messenger.i0.W(this.b);
-                if (W != null) {
-                    org.telegram.messenger.wp.d1().edit().putBoolean("callmiconstart", epVar.a.q).apply();
-                    org.telegram.ui.Components.voip.n1.g(W, this.c, tL_inputGroupCallSlug, false, null, null);
-                    break;
-                }
+                vo voVar2 = this.b;
+                voVar2.L1.c(voVar2.x1);
                 break;
         }
     }

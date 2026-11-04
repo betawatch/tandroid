@@ -1,48 +1,43 @@
 package k2;
 
-import android.media.AudioTrack;
+import android.media.MediaFormat;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d0 {
-    public final c0 a;
-    public final int b;
-    public final a4.l c;
-    public int d;
-    public long e;
-    public long f;
-    public long g;
-    public long h;
-    public long i;
+public final class d0 implements c3.w, l1 {
+    public c3.w a;
+    public d0 b;
 
-    public d0(AudioTrack audioTrack, a4.l lVar) {
-        this.a = new c0(audioTrack);
-        this.b = audioTrack.getSampleRate();
-        this.c = lVar;
-        a(0);
+    @Override // c3.w
+    public final void a(long j10, long j11, d2.v vVar, MediaFormat mediaFormat) {
+        c3.w wVar = this.a;
+        if (wVar != null) {
+            wVar.a(j10, j11, vVar, mediaFormat);
+        }
     }
 
-    public final void a(int i10) {
-        this.d = i10;
-        if (i10 == 0) {
-            this.g = 0L;
-            this.h = -1L;
-            this.i = -9223372036854775807L;
-            this.e = System.nanoTime() / 1000;
-            this.f = 10000L;
-            return;
+    public final void b() {
+        d0 d0Var = this.b;
+        if (d0Var != null) {
+            d0Var.b();
         }
-        if (i10 == 1) {
-            this.f = 10000L;
-            return;
+    }
+
+    public final void c() {
+        d0 d0Var = this.b;
+        if (d0Var != null) {
+            d0Var.c();
         }
-        if (i10 == 2 || i10 == 3) {
-            this.f = 10000000L;
-        } else {
-            if (i10 != 4) {
-                throw new IllegalStateException();
-            }
-            this.f = 500000L;
+    }
+
+    @Override // k2.l1
+    public final void d(int i3, Object obj) {
+        if (i3 == 7) {
+            this.a = (c3.w) obj;
+        } else if (i3 == 8) {
+            this.b = (d0) obj;
+        } else if (i3 == 10000 && obj != null) {
+            throw new ClassCastException();
         }
     }
 }

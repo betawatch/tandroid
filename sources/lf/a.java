@@ -1,26 +1,42 @@
 package lf;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.view.View;
-import com.google.android.gms.internal.cast.o;
+import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.g4;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface a {
-    void c(o oVar);
+public final class a extends ThreadPoolExecutor implements AutoCloseable {
+    public final /* synthetic */ c0 a;
 
-    void g(o oVar);
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public a(c0 c0Var, PriorityBlockingQueue priorityBlockingQueue) {
+        super(1, 1, 60L, r5, priorityBlockingQueue);
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+        this.a = c0Var;
+    }
 
-    Bitmap i();
+    @Override // java.util.concurrent.ThreadPoolExecutor
+    public final void beforeExecute(Thread thread, Runnable runnable) {
+        CountDownLatch countDownLatch = (CountDownLatch) this.a.c;
+        if (countDownLatch != null) {
+            try {
+                countDownLatch.await();
+            } catch (InterruptedException e10) {
+                a8.g(e10, true);
+            }
+        }
+    }
 
-    void l(Canvas canvas);
-
-    Bitmap m();
-
-    void o(Canvas canvas);
-
-    boolean q();
-
-    View r();
+    @Override // java.lang.AutoCloseable
+    public final /* synthetic */ void close() {
+        g4.h(this);
+    }
 }

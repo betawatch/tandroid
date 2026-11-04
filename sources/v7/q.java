@@ -1,17 +1,37 @@
 package v7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import b8.ng;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public abstract class q {
-    public static void a(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
+    public static ng a;
+
+    public static synchronized p f(o oVar) {
+        p pVar;
+        synchronized (q.class) {
+            try {
+                if (a == null) {
+                    a = new ng(1);
+                }
+                pVar = (p) a.R0(oVar);
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
+        return pVar;
     }
+
+    public abstract void a(Rect rect, RectF rectF);
+
+    public abstract void b();
+
+    public abstract void c(Canvas canvas);
+
+    public abstract boolean d();
+
+    public abstract void e(float f10);
 }

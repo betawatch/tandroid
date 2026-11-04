@@ -1,46 +1,30 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mr implements Runnable {
+public final /* synthetic */ class mr implements org.telegram.messenger.kr {
     public final /* synthetic */ int a;
-    public final /* synthetic */ or b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ ContactsActivity b;
 
-    public /* synthetic */ mr(or orVar, String str, int i10) {
-        this.a = i10;
-        this.b = orVar;
-        this.c = str;
+    public /* synthetic */ mr(ContactsActivity contactsActivity, int i3) {
+        this.a = i3;
+        this.b = contactsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        fp fpVar;
+    @Override // org.telegram.messenger.kr
+    public final void a(int i3) {
         switch (this.a) {
             case 0:
-                or orVar = this.b;
-                orVar.getClass();
-                org.telegram.messenger.i0.g3(new mr(orVar, this.c, 1));
+                ContactsActivity contactsActivity = this.b;
+                contactsActivity.getClass();
+                contactsActivity.Y = i3 != 0;
+                if (i3 != 0) {
+                    contactsActivity.h0(false);
+                    break;
+                }
                 break;
             default:
-                or orVar2 = this.b;
-                orVar2.n = null;
-                pr prVar = orVar2.D;
-                TLRPC.Chat chat = prVar.n;
-                int i10 = prVar.d1;
-                ArrayList arrayList = (org.telegram.messenger.w3.T(chat) || prVar.r == null) ? null : new ArrayList(prVar.r.participants.participants);
-                ArrayList arrayList2 = i10 == 1 ? new ArrayList(prVar.getContactsController().e0) : null;
-                String str = this.c;
-                if (arrayList == null && arrayList2 == null) {
-                    orVar2.s = false;
-                    fpVar = null;
-                } else {
-                    fpVar = new fp(orVar2, str, arrayList, arrayList2, 3);
-                }
-                orVar2.h.h(str, i10 != 0, false, true, false, false, org.telegram.messenger.w3.T(prVar.n) ? prVar.M : 0L, false, prVar.N, 1, 0L, fpVar);
+                ContactsActivity.a0(this.b, i3);
                 break;
         }
     }

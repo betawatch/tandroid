@@ -1,50 +1,12 @@
 package i5;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a {
-    public final Integer a;
-    public final Object b;
-    public final d c;
-    public final b d;
+public abstract class a extends com.googlecode.mp4parser.b {
+    public int f;
 
-    public a(Integer num, Object obj, d dVar, b bVar) {
-        this.a = num;
-        if (obj == null) {
-            throw new NullPointerException("Null payload");
-        }
-        this.b = obj;
-        this.c = dVar;
-        this.d = bVar;
-    }
-
-    public final boolean equals(Object obj) {
-        b bVar;
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            b bVar2 = aVar.d;
-            Integer num = aVar.a;
-            Integer num2 = this.a;
-            if (num2 != null ? num2.equals(num) : num == null) {
-                if (this.b.equals(aVar.b) && this.c.equals(aVar.c) && ((bVar = this.d) != null ? bVar.equals(bVar2) : bVar2 == null)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        Integer num = this.a;
-        int hashCode = ((((((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003;
-        b bVar = this.d;
-        return (bVar != null ? bVar.hashCode() : 0) ^ hashCode;
-    }
-
-    public final String toString() {
-        return "Event{code=" + this.a + ", payload=" + this.b + ", priority=" + this.c + ", productData=" + this.d + "}";
+    public a(String str) {
+        super(str);
+        this.f = 1;
     }
 }

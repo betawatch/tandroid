@@ -1,38 +1,52 @@
 package c3;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.hardware.display.DisplayManager;
+import android.os.Handler;
+import android.view.Choreographer;
+import android.view.Choreographer$VsyncCallback;
+import g2.n0;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class c0 {
-    public static final c0 c = new c0(0, 0);
-    public final long a;
-    public final long b;
+public final class c0 extends a0 implements Choreographer$VsyncCallback {
+    public final Handler e;
 
-    public c0(long j10, long j11) {
-        this.a = j10;
-        this.b = j11;
+    public c0(Choreographer choreographer, DisplayManager displayManager) {
+        super(choreographer, displayManager);
+        this.e = n0.q(null);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // c3.a0
+    public final void a() {
+        this.b.registerDisplayListener(this, n0.q(null));
+        this.a.postVsyncCallback(this);
+    }
+
+    @Override // c3.a0
+    public final void b() {
+        this.b.unregisterDisplayListener(this);
+        this.e.removeCallbacksAndMessages(null);
+        this.a.removeVsyncCallback(this);
+        this.c = -9223372036854775807L;
+        this.d = -9223372036854775807L;
+    }
+
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayChanged(int i3) {
+        if (i3 == 0) {
+            this.a.postVsyncCallback(this);
         }
-        if (obj != null && c0.class == obj.getClass()) {
-            c0 c0Var = (c0) obj;
-            if (this.a == c0Var.a && this.b == c0Var.b) {
-                return true;
-            }
+    }
+
+    public final void onVsync(Choreographer.FrameData frameData) {
+        this.c = frameData.getFrameTimeNanos();
+        Choreographer.FrameTimeline[] frameTimelines = frameData.getFrameTimelines();
+        if (frameTimelines.length >= 2) {
+            long expectedPresentationTimeNanos = frameTimelines[1].getExpectedPresentationTimeNanos() - frameTimelines[0].getExpectedPresentationTimeNanos();
+            this.d = expectedPresentationTimeNanos != 0 ? expectedPresentationTimeNanos : -9223372036854775807L;
+        } else {
+            this.d = -9223372036854775807L;
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("[timeUs=");
-        sb2.append(this.a);
-        sb2.append(", position=");
-        return a1.g.q(sb2, this.b, "]");
+        this.e.postDelayed(new ai.s(this, 21), 500L);
     }
 }

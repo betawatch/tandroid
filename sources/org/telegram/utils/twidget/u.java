@@ -1,475 +1,442 @@
 package org.telegram.utils.twidget;
 
-import android.icu.text.Collator;
-import android.icu.text.DateFormat;
-import android.icu.text.ListFormatter;
-import android.icu.text.NumberFormat;
-import android.icu.text.PluralRules;
-import android.icu.text.RelativeDateTimeFormatter;
-import android.icu.util.Currency;
-import android.icu.util.TimeZone;
-import android.os.Build;
+import ai.d3;
+import android.app.Activity;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.Choreographer;
+import android.view.View;
+import gi.d1;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Locale;
-import org.json.JSONArray;
 import org.json.JSONObject;
+import org.telegram.messenger.bd;
+import org.telegram.messenger.hp;
+import org.telegram.messenger.qr;
+import org.telegram.messenger.sq;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.s1;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.h71;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.q2;
+import org.telegram.ui.Wallet.t2;
+import org.telegram.ui.hb1;
+import org.telegram.ui.na1;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public abstract class u {
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static DateFormat a(JSONObject jSONObject, String str, Locale locale) {
-        boolean z10;
-        int i10;
-        boolean z11;
-        String optString = jSONObject.optString("dateStyle");
-        optString.getClass();
-        int i11 = 2;
-        boolean z12 = true;
-        switch (optString.hashCode()) {
-            case -1078030475:
-                if (optString.equals("medium")) {
-                    z10 = false;
-                    break;
-                }
-                z10 = -1;
-                break;
-            case 3154575:
-                if (optString.equals("full")) {
-                    z10 = true;
-                    break;
-                }
-                z10 = -1;
-                break;
-            case 3327612:
-                if (optString.equals("long")) {
-                    z10 = 2;
-                    break;
-                }
-                z10 = -1;
-                break;
-            case 109413500:
-                if (optString.equals("short")) {
-                    z10 = 3;
-                    break;
-                }
-                z10 = -1;
-                break;
-            default:
-                z10 = -1;
-                break;
-        }
-        switch (z10) {
-            case false:
-                i10 = 2;
-                break;
-            case true:
-                i10 = 0;
-                break;
-            case true:
-                i10 = 1;
-                break;
-            case true:
-                i10 = 3;
-                break;
-            default:
-                i10 = -1;
-                break;
-        }
-        String optString2 = jSONObject.optString("timeStyle");
-        optString2.getClass();
-        switch (optString2.hashCode()) {
-            case -1078030475:
-                if (optString2.equals("medium")) {
-                    z11 = false;
-                    break;
-                }
-                z11 = -1;
-                break;
-            case 3154575:
-                if (optString2.equals("full")) {
-                    z11 = true;
-                    break;
-                }
-                z11 = -1;
-                break;
-            case 3327612:
-                if (optString2.equals("long")) {
-                    z11 = 2;
-                    break;
-                }
-                z11 = -1;
-                break;
-            case 109413500:
-                if (optString2.equals("short")) {
-                    z11 = 3;
-                    break;
-                }
-                z11 = -1;
-                break;
-            default:
-                z11 = -1;
-                break;
-        }
-        switch (z11) {
-            case false:
-                break;
-            case true:
-                i11 = 0;
-                break;
-            case true:
-                i11 = 1;
-                break;
-            case true:
-                i11 = 3;
-                break;
-            default:
-                i11 = -1;
-                break;
-        }
-        DateFormat dateInstance = (i10 < 0 || i11 < 0) ? i10 >= 0 ? DateFormat.getDateInstance(i10, locale) : i11 >= 0 ? DateFormat.getTimeInstance(i11, locale) : null : DateFormat.getDateTimeInstance(i10, i11, locale);
-        if (dateInstance == null) {
-            StringBuilder sb2 = new StringBuilder();
-            String optString3 = jSONObject.optString("era");
-            if (!optString3.isEmpty()) {
-                sb2.append(optString3.equals("long") ? "GGGG" : optString3.equals("narrow") ? "GGGGG" : "G");
-            }
-            String optString4 = jSONObject.optString("year");
-            if (!optString4.isEmpty()) {
-                sb2.append(optString4.equals("2-digit") ? "yy" : "y");
-            }
-            String optString5 = jSONObject.optString("month");
-            if (!optString5.isEmpty()) {
-                sb2.append(optString5.equals("long") ? "MMMM" : optString5.equals("short") ? "MMM" : optString5.equals("narrow") ? "MMMMM" : optString5.equals("2-digit") ? "MM" : "M");
-            }
-            String optString6 = jSONObject.optString("weekday");
-            if (!optString6.isEmpty()) {
-                sb2.append(optString6.equals("long") ? "EEEE" : optString6.equals("narrow") ? "EEEEE" : "EEE");
-            }
-            String optString7 = jSONObject.optString("day");
-            if (!optString7.isEmpty()) {
-                sb2.append(optString7.equals("2-digit") ? "dd" : "d");
-            }
-            String optString8 = jSONObject.optString("hour");
-            if (!optString8.isEmpty()) {
-                sb2.append(c(jSONObject, optString8.equals("2-digit")));
-            }
-            if (jSONObject.has("minute")) {
-                sb2.append("mm");
-            }
-            if (jSONObject.has("second")) {
-                sb2.append("ss");
-            }
-            if (sb2.length() == 0) {
-                boolean equals = str.equals("toLocaleTimeString");
-                if (!str.equals("toLocaleTimeString") && !str.equals("toLocaleString")) {
-                    z12 = false;
-                }
-                if (!equals) {
-                    sb2.append("yMd");
-                }
-                if (z12) {
-                    sb2.append(c(jSONObject, false));
-                    sb2.append("mmss");
-                }
-            }
-            String optString9 = jSONObject.optString("timeZoneName");
-            if (!optString9.isEmpty()) {
-                sb2.append(optString9.equals("long") ? "zzzz" : "z");
-            }
-            dateInstance = DateFormat.getInstanceForSkeleton(sb2.toString(), locale);
-        }
-        String optString10 = jSONObject.optString("timeZone");
-        if (!optString10.isEmpty()) {
-            dateInstance.setTimeZone(TimeZone.getTimeZone(optString10));
-        }
-        return dateInstance;
+public final class u {
+    public boolean A;
+    public final String a;
+    public final String b;
+    public final Context c;
+    public mb.b e;
+    public h0 f;
+    public f0 g;
+    public h71 h;
+    public int i;
+    public int j;
+    public int k;
+    public boolean l;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public int q;
+    public int r;
+    public String s;
+    public String t;
+    public String u;
+    public volatile String x;
+    public boolean y;
+    public boolean z;
+    public String v = "{}";
+    public String w = "{}";
+    public boolean m = false;
+    public final int d = 1;
+
+    public u(Context context, String str, String str2) {
+        this.c = context.getApplicationContext();
+        this.a = str;
+        this.b = str2;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00f8, code lost:
-    
-        if (r13.equals("date") != false) goto L51;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x01d6, code lost:
-    
-        if (r2.equals("day") == false) goto L91;
-     */
-    /* JADX WARN: Failed to find 'out' block for switch in B:74:0x01da. Please report as an issue. */
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-     */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0281 A[Catch: Exception -> 0x02a7, TryCatch #1 {Exception -> 0x02a7, blocks: (B:6:0x0016, B:8:0x0025, B:9:0x002a, B:11:0x0035, B:12:0x0044, B:14:0x004a, B:15:0x0053, B:16:0x0067, B:18:0x006c, B:20:0x0074, B:22:0x0091, B:25:0x00fa, B:27:0x009a, B:29:0x00a2, B:31:0x00ab, B:33:0x00b3, B:35:0x00bc, B:40:0x00ca, B:42:0x00d5, B:44:0x00db, B:46:0x00e9, B:48:0x00f2, B:50:0x010f, B:52:0x0117, B:54:0x0126, B:55:0x012f, B:58:0x013f, B:60:0x0145, B:61:0x0187, B:65:0x019d, B:67:0x01a3, B:75:0x01de, B:78:0x01ef, B:79:0x0203, B:81:0x01f6, B:84:0x01ff, B:85:0x01e1, B:86:0x01e4, B:87:0x01e7, B:99:0x020a, B:101:0x0212, B:102:0x021b, B:104:0x0217, B:105:0x014a, B:107:0x0150, B:108:0x0155, B:110:0x015b, B:111:0x015e, B:113:0x0166, B:114:0x016b, B:116:0x0171, B:117:0x0176, B:119:0x017e, B:120:0x0183, B:121:0x0220, B:123:0x0228, B:125:0x0231, B:127:0x0239, B:132:0x0277, B:133:0x027b, B:135:0x0281, B:136:0x0288, B:138:0x028e, B:139:0x0295, B:141:0x029b, B:142:0x02a2, B:144:0x024e, B:146:0x0254, B:152:0x026a, B:154:0x0272, B:155:0x004f, B:156:0x0038, B:158:0x003c), top: B:5:0x0016 }] */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x028e A[Catch: Exception -> 0x02a7, TryCatch #1 {Exception -> 0x02a7, blocks: (B:6:0x0016, B:8:0x0025, B:9:0x002a, B:11:0x0035, B:12:0x0044, B:14:0x004a, B:15:0x0053, B:16:0x0067, B:18:0x006c, B:20:0x0074, B:22:0x0091, B:25:0x00fa, B:27:0x009a, B:29:0x00a2, B:31:0x00ab, B:33:0x00b3, B:35:0x00bc, B:40:0x00ca, B:42:0x00d5, B:44:0x00db, B:46:0x00e9, B:48:0x00f2, B:50:0x010f, B:52:0x0117, B:54:0x0126, B:55:0x012f, B:58:0x013f, B:60:0x0145, B:61:0x0187, B:65:0x019d, B:67:0x01a3, B:75:0x01de, B:78:0x01ef, B:79:0x0203, B:81:0x01f6, B:84:0x01ff, B:85:0x01e1, B:86:0x01e4, B:87:0x01e7, B:99:0x020a, B:101:0x0212, B:102:0x021b, B:104:0x0217, B:105:0x014a, B:107:0x0150, B:108:0x0155, B:110:0x015b, B:111:0x015e, B:113:0x0166, B:114:0x016b, B:116:0x0171, B:117:0x0176, B:119:0x017e, B:120:0x0183, B:121:0x0220, B:123:0x0228, B:125:0x0231, B:127:0x0239, B:132:0x0277, B:133:0x027b, B:135:0x0281, B:136:0x0288, B:138:0x028e, B:139:0x0295, B:141:0x029b, B:142:0x02a2, B:144:0x024e, B:146:0x0254, B:152:0x026a, B:154:0x0272, B:155:0x004f, B:156:0x0038, B:158:0x003c), top: B:5:0x0016 }] */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x029b A[Catch: Exception -> 0x02a7, TryCatch #1 {Exception -> 0x02a7, blocks: (B:6:0x0016, B:8:0x0025, B:9:0x002a, B:11:0x0035, B:12:0x0044, B:14:0x004a, B:15:0x0053, B:16:0x0067, B:18:0x006c, B:20:0x0074, B:22:0x0091, B:25:0x00fa, B:27:0x009a, B:29:0x00a2, B:31:0x00ab, B:33:0x00b3, B:35:0x00bc, B:40:0x00ca, B:42:0x00d5, B:44:0x00db, B:46:0x00e9, B:48:0x00f2, B:50:0x010f, B:52:0x0117, B:54:0x0126, B:55:0x012f, B:58:0x013f, B:60:0x0145, B:61:0x0187, B:65:0x019d, B:67:0x01a3, B:75:0x01de, B:78:0x01ef, B:79:0x0203, B:81:0x01f6, B:84:0x01ff, B:85:0x01e1, B:86:0x01e4, B:87:0x01e7, B:99:0x020a, B:101:0x0212, B:102:0x021b, B:104:0x0217, B:105:0x014a, B:107:0x0150, B:108:0x0155, B:110:0x015b, B:111:0x015e, B:113:0x0166, B:114:0x016b, B:116:0x0171, B:117:0x0176, B:119:0x017e, B:120:0x0183, B:121:0x0220, B:123:0x0228, B:125:0x0231, B:127:0x0239, B:132:0x0277, B:133:0x027b, B:135:0x0281, B:136:0x0288, B:138:0x028e, B:139:0x0295, B:141:0x029b, B:142:0x02a2, B:144:0x024e, B:146:0x0254, B:152:0x026a, B:154:0x0272, B:155:0x004f, B:156:0x0038, B:158:0x003c), top: B:5:0x0016 }] */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x01ef A[Catch: Exception -> 0x02a7, TryCatch #1 {Exception -> 0x02a7, blocks: (B:6:0x0016, B:8:0x0025, B:9:0x002a, B:11:0x0035, B:12:0x0044, B:14:0x004a, B:15:0x0053, B:16:0x0067, B:18:0x006c, B:20:0x0074, B:22:0x0091, B:25:0x00fa, B:27:0x009a, B:29:0x00a2, B:31:0x00ab, B:33:0x00b3, B:35:0x00bc, B:40:0x00ca, B:42:0x00d5, B:44:0x00db, B:46:0x00e9, B:48:0x00f2, B:50:0x010f, B:52:0x0117, B:54:0x0126, B:55:0x012f, B:58:0x013f, B:60:0x0145, B:61:0x0187, B:65:0x019d, B:67:0x01a3, B:75:0x01de, B:78:0x01ef, B:79:0x0203, B:81:0x01f6, B:84:0x01ff, B:85:0x01e1, B:86:0x01e4, B:87:0x01e7, B:99:0x020a, B:101:0x0212, B:102:0x021b, B:104:0x0217, B:105:0x014a, B:107:0x0150, B:108:0x0155, B:110:0x015b, B:111:0x015e, B:113:0x0166, B:114:0x016b, B:116:0x0171, B:117:0x0176, B:119:0x017e, B:120:0x0183, B:121:0x0220, B:123:0x0228, B:125:0x0231, B:127:0x0239, B:132:0x0277, B:133:0x027b, B:135:0x0281, B:136:0x0288, B:138:0x028e, B:139:0x0295, B:141:0x029b, B:142:0x02a2, B:144:0x024e, B:146:0x0254, B:152:0x026a, B:154:0x0272, B:155:0x004f, B:156:0x0038, B:158:0x003c), top: B:5:0x0016 }] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01f4  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static String b(String str) {
-        NumberFormat percentInstance;
-        RelativeDateTimeFormatter.RelativeUnit relativeUnit;
+    public final void a(int i3, String str, long j10) {
+        h0 h0Var = this.f;
+        if (h0Var != null) {
+            long j11 = h0Var.t;
+            if (h0Var.u || j11 == 0) {
+                return;
+            }
+            WidgetSandboxNative.answerRequest(j11, j10, i3, str == null ? null : str.getBytes(StandardCharsets.UTF_8));
+        }
+    }
+
+    public final void b() {
+        int i3;
+        h0 h0Var = this.f;
+        if (h0Var == null || h0Var.u || h0Var.t == 0 || h0Var.C) {
+            return;
+        }
+        f0 f0Var = h0Var.F;
+        if (f0Var == null || (((i3 = h0Var.E) != 0 && Math.abs(f0Var.d - i3) > 1) || !f0Var.a())) {
+            h0Var.C = true;
+            WidgetSandboxNative.repaint(h0Var.t);
+        }
+    }
+
+    public final f0 c() {
+        h0 h0Var = this.f;
+        f0 f0Var = h0Var == null ? null : h0Var.F;
+        if (f0Var != null && (this.g == null || h0Var.v)) {
+            return f0Var;
+        }
+        f0 f0Var2 = this.g;
+        return (f0Var2 == null || Math.abs(f0Var2.d - this.j) > 1) ? f0Var != null ? f0Var : this.g : this.g;
+    }
+
+    public final void d(float f10, float f11, int i3, int i10) {
+        h0 h0Var = this.f;
+        if (h0Var != null) {
+            long j10 = h0Var.t;
+            if (h0Var.u || j10 == 0) {
+                return;
+            }
+            WidgetSandboxNative.hover(j10, i3, f10, f11, i10);
+        }
+    }
+
+    public final boolean e() {
+        h0 h0Var;
+        f0 f0Var;
+        if (this.r == this.q || (h0Var = this.f) == null || (f0Var = h0Var.F) == null) {
+            return false;
+        }
+        if (!f0Var.g && !h0Var.x) {
+            return false;
+        }
+        this.r = this.q;
+        if (this.e == null) {
+            return true;
+        }
+        p.b();
+        m h = p.h(this);
+        if (h == null) {
+            return true;
+        }
+        p.a(h);
+        return true;
+    }
+
+    public final void f(JSONObject jSONObject) {
+        d2 T;
+        gk0 gk0Var;
+        if (this.e != null) {
+            m h = p.h(this);
+            String optString = jSONObject.optString("kind");
+            View view = null;
+            if (!"openLink".equals(optString) && !"openTelegramLink".equals(optString)) {
+                if ("haptic".equals(optString)) {
+                    if (h != null && h.x > 0 && (gk0Var = h.w) != null) {
+                        view = gk0Var.W;
+                    }
+                    if (view != null) {
+                        String optString2 = jSONObject.optString("haptic");
+                        view.performHapticFeedback("selection".equals(optString2) ? 4 : "notification".equals(optString2) ? 16 : 3);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+            String optString3 = jSONObject.optString("url");
+            boolean equals = "openTelegramLink".equals(optString);
+            if (TextUtils.isEmpty(optString3) || p.i || (T = LaunchActivity.T()) == null || T.getParentActivity() == null) {
+                return;
+            }
+            Activity parentActivity = T.getParentActivity();
+            if (equals) {
+                sf.c.t(parentActivity, optString3);
+                return;
+            }
+            p.i = true;
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, T.getResourceProvider());
+            String M0 = bd.M0(2131742882, null);
+            s1 s1Var = alertDialog$Builder.a;
+            s1Var.S = M0;
+            s1Var.U = bd.a0(null, null, 2131742883, optString3);
+            alertDialog$Builder.k(bd.M0(2131747825, null), new na1(10, parentActivity, optString3));
+            alertDialog$Builder.h(bd.M0(2131752589, null), null);
+            s1Var.setOnDismissListener(new d1(7));
+            if (T.showDialog(s1Var) == null) {
+                p.i = false;
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void g(h0 h0Var) {
+        f0 f0Var;
+        m h;
+        h71 h71Var;
+        if (h0Var == this.f && (f0Var = h0Var.F) != null) {
+            if (this.g == null || h0Var.v) {
+                this.g = null;
+                this.k = f0Var.d;
+                boolean z10 = f0Var.h;
+                Object[] objArr = z10 != this.l;
+                this.l = z10;
+                int max = Math.max(1, f0Var.e);
+                boolean z11 = max != this.i;
+                this.i = max;
+                h71 h71Var2 = this.h;
+                if (h71Var2 != null) {
+                    g71 g71Var = h71Var2.a;
+                    if (z11) {
+                        g71Var.j();
+                    }
+                    g71Var.h();
+                }
+                if ((z11 || objArr != false) && this.e != null && (h = p.h(this)) != null && this.i > 0) {
+                    int f10 = p.f(this.k);
+                    int max2 = Math.max(50, Math.min(600, p.f(this.i)));
+                    boolean z12 = this.l;
+                    if (f10 > 0 && h.f == 0 && !h.k && p.l(h.a()).a(f10, max2, z12)) {
+                        qr a02 = qr.a0(h.b);
+                        a02.a.c(new sq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
+                    }
+                    gk0 gk0Var = h.u;
+                    if (gk0Var != null) {
+                        gk0Var.p0("frame off screen");
+                    }
+                }
+                if (!e() || z11 || (h71Var = this.h) == null) {
+                    return;
+                }
+                g71 g71Var2 = h71Var.a;
+                g71Var2.j();
+                g71Var2.h();
+            }
+        }
+    }
+
+    public final void h(String str, JSONObject jSONObject) {
+        m h;
         String str2;
-        RelativeDateTimeFormatter.AbsoluteUnit absoluteUnit;
-        RelativeDateTimeFormatter.Direction direction;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 24) {
-            try {
-                JSONObject jSONObject = new JSONObject(str);
-                JSONObject optJSONObject = jSONObject.optJSONObject("opts");
-                if (optJSONObject == null) {
-                    optJSONObject = new JSONObject();
+        if (this.e == null || (h = p.h(this)) == null) {
+            return;
+        }
+        String a10 = h.a();
+        JSONObject jSONObject2 = (JSONObject) p.c.get(a10);
+        if (jSONObject2 == null) {
+            jSONObject2 = new JSONObject();
+        }
+        try {
+            jSONObject2.put(str, jSONObject);
+        } catch (Exception unused) {
+        }
+        p.c.put(a10, jSONObject2);
+        for (m mVar : p.a.values()) {
+            if (mVar.t != null && a10.equals(mVar.a())) {
+                u uVar = mVar.t;
+                try {
+                    str2 = bd.E0().y.toLanguageTag();
+                } catch (Exception unused2) {
+                    str2 = null;
                 }
-                Object opt = jSONObject.opt("locale");
-                int i11 = 0;
-                String optString = opt instanceof String ? (String) opt : opt instanceof JSONArray ? ((JSONArray) opt).optString(0, "") : "";
-                Locale locale = optString.isEmpty() ? Locale.getDefault() : Locale.forLanguageTag(optString);
-                double optDouble = jSONObject.optDouble("value", 0.0d);
-                String optString2 = jSONObject.optString("kind");
-                switch (optString2.hashCode()) {
-                    case -1034364087:
-                        if (optString2.equals("number")) {
-                            String optString3 = optJSONObject.optString("style");
-                            int hashCode = optString3.hashCode();
-                            if (hashCode != -678927291) {
-                                if (hashCode == 575402001 && optString3.equals("currency")) {
-                                    percentInstance = NumberFormat.getCurrencyInstance(locale);
-                                    String optString4 = optJSONObject.optString("currency");
-                                    if (!optString4.isEmpty()) {
-                                        try {
-                                            percentInstance.setCurrency(Currency.getInstance(optString4));
-                                        } catch (Exception unused) {
-                                        }
-                                    }
-                                    if (optJSONObject.has("minimumFractionDigits")) {
-                                        percentInstance.setMinimumFractionDigits(optJSONObject.optInt("minimumFractionDigits"));
-                                    }
-                                    if (optJSONObject.has("maximumFractionDigits")) {
-                                        percentInstance.setMaximumFractionDigits(optJSONObject.optInt("maximumFractionDigits"));
-                                    }
-                                    if (optJSONObject.has("useGrouping")) {
-                                        percentInstance.setGroupingUsed(optJSONObject.optBoolean("useGrouping"));
-                                    }
-                                    return percentInstance.format(optDouble);
-                                }
-                            } else if (optString3.equals("percent")) {
-                                percentInstance = NumberFormat.getPercentInstance(locale);
-                                if (optJSONObject.has("minimumFractionDigits")) {
-                                }
-                                if (optJSONObject.has("maximumFractionDigits")) {
-                                }
-                                if (optJSONObject.has("useGrouping")) {
-                                }
-                                return percentInstance.format(optDouble);
-                            }
-                            percentInstance = NumberFormat.getNumberInstance(locale);
-                            if (optJSONObject.has("minimumFractionDigits")) {
-                            }
-                            if (optJSONObject.has("maximumFractionDigits")) {
-                            }
-                            if (optJSONObject.has("useGrouping")) {
-                            }
-                            return percentInstance.format(optDouble);
-                        }
-                        break;
-                    case -985163900:
-                        if (optString2.equals("plural")) {
-                            return PluralRules.forLocale(locale).select(optDouble);
-                        }
-                        break;
-                    case -554435892:
-                        if (optString2.equals("relative")) {
-                            String optString5 = jSONObject.optString("unit", "second");
-                            if (optString5.endsWith("s")) {
-                                optString5 = optString5.substring(0, optString5.length() - 1);
-                            }
-                            switch (optString5.hashCode()) {
-                                case -1074026988:
-                                    if (optString5.equals("minute")) {
-                                        relativeUnit = RelativeDateTimeFormatter.RelativeUnit.MINUTES;
-                                        break;
-                                    }
-                                    relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
-                                    break;
-                                case 99228:
-                                    if (optString5.equals("day")) {
-                                        relativeUnit = RelativeDateTimeFormatter.RelativeUnit.DAYS;
-                                        break;
-                                    }
-                                    relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
-                                    break;
-                                case 3208676:
-                                    if (optString5.equals("hour")) {
-                                        relativeUnit = RelativeDateTimeFormatter.RelativeUnit.HOURS;
-                                        break;
-                                    }
-                                    relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
-                                    break;
-                                case 3645428:
-                                    if (optString5.equals("week")) {
-                                        relativeUnit = RelativeDateTimeFormatter.RelativeUnit.WEEKS;
-                                        break;
-                                    }
-                                    relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
-                                    break;
-                                case 3704893:
-                                    if (optString5.equals("year")) {
-                                        relativeUnit = RelativeDateTimeFormatter.RelativeUnit.YEARS;
-                                        break;
-                                    }
-                                    relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
-                                    break;
-                                case 104080000:
-                                    if (optString5.equals("month")) {
-                                        relativeUnit = RelativeDateTimeFormatter.RelativeUnit.MONTHS;
-                                        break;
-                                    }
-                                    relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
-                                    break;
-                                default:
-                                    relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
-                                    break;
-                            }
-                            RelativeDateTimeFormatter relativeDateTimeFormatter = RelativeDateTimeFormatter.getInstance(locale);
-                            if (optJSONObject.optString("numeric").equals("auto")) {
-                                if (optDouble != 0.0d || !optString5.equals("second")) {
-                                    switch (optString5.hashCode()) {
-                                        case 99228:
-                                            break;
-                                        case 3645428:
-                                            if (optString5.equals("week")) {
-                                                i11 = 1;
-                                                break;
-                                            }
-                                            i11 = -1;
-                                            break;
-                                        case 3704893:
-                                            if (optString5.equals("year")) {
-                                                i11 = 2;
-                                                break;
-                                            }
-                                            i11 = -1;
-                                            break;
-                                        case 104080000:
-                                            if (optString5.equals("month")) {
-                                                i11 = 3;
-                                                break;
-                                            }
-                                            i11 = -1;
-                                            break;
-                                        default:
-                                            i11 = -1;
-                                            break;
-                                    }
-                                    str2 = null;
-                                    switch (i11) {
-                                        case 0:
-                                            absoluteUnit = RelativeDateTimeFormatter.AbsoluteUnit.DAY;
-                                            if (optDouble != -1.0d) {
-                                                direction = RelativeDateTimeFormatter.Direction.LAST;
-                                            } else if (optDouble == 0.0d) {
-                                                direction = RelativeDateTimeFormatter.Direction.THIS;
-                                            } else if (optDouble == 1.0d) {
-                                                direction = RelativeDateTimeFormatter.Direction.NEXT;
-                                            }
-                                            str2 = relativeDateTimeFormatter.format(direction, absoluteUnit);
-                                            break;
-                                        case 1:
-                                            absoluteUnit = RelativeDateTimeFormatter.AbsoluteUnit.WEEK;
-                                            if (optDouble != -1.0d) {
-                                            }
-                                            str2 = relativeDateTimeFormatter.format(direction, absoluteUnit);
-                                            break;
-                                        case 2:
-                                            absoluteUnit = RelativeDateTimeFormatter.AbsoluteUnit.YEAR;
-                                            if (optDouble != -1.0d) {
-                                            }
-                                            str2 = relativeDateTimeFormatter.format(direction, absoluteUnit);
-                                            break;
-                                        case 3:
-                                            absoluteUnit = RelativeDateTimeFormatter.AbsoluteUnit.MONTH;
-                                            if (optDouble != -1.0d) {
-                                            }
-                                            str2 = relativeDateTimeFormatter.format(direction, absoluteUnit);
-                                            break;
-                                    }
-                                } else {
-                                    str2 = relativeDateTimeFormatter.format(RelativeDateTimeFormatter.Direction.PLAIN, RelativeDateTimeFormatter.AbsoluteUnit.NOW);
-                                }
-                                if (str2 != null) {
-                                    return str2;
-                                }
-                            }
-                            return relativeDateTimeFormatter.format(Math.abs(optDouble), optDouble < 0.0d ? RelativeDateTimeFormatter.Direction.LAST : RelativeDateTimeFormatter.Direction.NEXT, relativeUnit);
-                        }
-                        break;
-                    case 3076014:
-                        break;
-                    case 3322014:
-                        if (optString2.equals("list") && i10 >= 26) {
-                            JSONArray optJSONArray = jSONObject.optJSONArray("value");
-                            ArrayList arrayList = new ArrayList();
-                            if (optJSONArray != null) {
-                                while (i11 < optJSONArray.length()) {
-                                    arrayList.add(String.valueOf(optJSONArray.opt(i11)));
-                                    i11++;
-                                }
-                            }
-                            return ListFormatter.getInstance(locale).format(arrayList);
-                        }
-                        break;
-                    case 103164673:
-                        if (optString2.equals("lower")) {
-                            return jSONObject.optString("value").toLowerCase(locale);
-                        }
-                        break;
-                    case 111499426:
-                        if (optString2.equals("upper")) {
-                            return jSONObject.optString("value").toUpperCase(locale);
-                        }
-                        break;
-                    case 346468911:
-                        if (optString2.equals("dateMethod")) {
-                            return a(optJSONObject, jSONObject.optString("method"), locale).format(new Date((long) optDouble));
-                        }
-                        break;
-                    case 950484197:
-                        if (optString2.equals("compare")) {
-                            return Integer.toString(Integer.signum(Collator.getInstance(locale).compare(jSONObject.optString("a"), jSONObject.optString("b"))));
-                        }
-                        break;
-                }
-            } catch (Exception unused2) {
+                String jSONObject3 = jSONObject2.toString();
+                uVar.t = str2;
+                uVar.u = jSONObject3;
             }
         }
-        return "";
+        if ("local".equals(str)) {
+            p.d.put(a10, h);
+            hb1 hb1Var = p.e;
+            org.telegram.messenger.g0.r(hb1Var);
+            org.telegram.messenger.g0.i3(hb1Var, 1000L);
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0010, code lost:
-    
-        if (r4.optBoolean("hour12") != false) goto L18;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static String c(JSONObject jSONObject, boolean z10) {
-        String str = "H";
-        if (!jSONObject.has("hour12")) {
-            String optString = jSONObject.optString("hourCycle");
-            if (!optString.equals("h11") && !optString.equals("h12")) {
-                if (!optString.equals("h23") && !optString.equals("h24")) {
-                    str = "j";
+    public final void i(long j10, JSONObject jSONObject) {
+        TLRPC.User user;
+        if (this.e == null) {
+            a(3, null, j10);
+            return;
+        }
+        m h = p.h(this);
+        if (h != null) {
+            long j11 = h.n;
+            if (j11 != 0) {
+                user = hp.s1(h.b).a2(Long.valueOf(j11));
+                d2 T = LaunchActivity.T();
+                if (h != null || !p.D(h) || user == null || !user.bot) {
+                    a(5, null, j10);
+                }
+                if (T == null || T.getContext() == null) {
+                    a(3, null, j10);
+                    return;
+                }
+                byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
+                Context context = T.getContext();
+                int i3 = h.b;
+                e6 resourceProvider = T.getResourceProvider();
+                k kVar = new k(h, this, j10, bytes);
+                ArrayList arrayList = t2.a;
+                q2 q2Var = new q2(new boolean[]{false}, kVar);
+                org.telegram.ui.Wallet.k0 x10 = org.telegram.ui.Wallet.k0.x(i3);
+                boolean[] zArr = {false};
+                d3 d3Var = new d3(zArr, context, i3, user, jSONObject, resourceProvider, q2Var);
+                if (x10.G()) {
+                    d3Var.run();
+                    return;
+                }
+                t2.a.add(d3Var);
+                x10.m0(d3Var);
+                org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.g(d3Var, zArr, q2Var, 8), 10000L);
+                return;
+            }
+        }
+        user = null;
+        d2 T2 = LaunchActivity.T();
+        if (h != null) {
+        }
+        a(5, null, j10);
+    }
+
+    public final void j(String str) {
+        if (str == null || str.equals(this.v)) {
+            return;
+        }
+        this.v = str;
+        h0 h0Var = this.f;
+        if (h0Var != null) {
+            long j10 = h0Var.t;
+            if (h0Var.u || j10 == 0) {
+                return;
+            }
+            WidgetSandboxNative.data(j10, str.getBytes(StandardCharsets.UTF_8));
+        }
+    }
+
+    public final synchronized void k(float f10, float f11, boolean z10) {
+        boolean z11 = f10 > 0.0f;
+        if (!z10) {
+            if (this.y && z11 == this.z) {
+                return;
+            }
+        }
+        this.y = z10;
+        this.z = z11;
+        String format = String.format(Locale.US, "{\"top\":0,\"right\":0,\"bottom\":%.2f,\"left\":0,\"cornerLeft\":0,\"cornerRight\":%.2f}", Float.valueOf(f10), Float.valueOf(f11));
+        if (format.equals(this.x)) {
+            return;
+        }
+        this.x = format;
+        org.telegram.messenger.g0.h3(new l(this, 2));
+    }
+
+    public final void l(String str) {
+        if (str == null || str.equals(this.s)) {
+            return;
+        }
+        this.s = str;
+        this.m = str.contains("\"dark\"");
+        h0 h0Var = this.f;
+        if (h0Var == null || h0Var.u || str.equals(h0Var.z)) {
+            return;
+        }
+        h0Var.z = str;
+        str.contains("\"dark\"");
+        long j10 = h0Var.t;
+        if (j10 != 0) {
+            WidgetSandboxNative.theme(j10, str.getBytes(StandardCharsets.UTF_8));
+        }
+    }
+
+    public final void m(boolean z10) {
+        this.n = z10;
+        h0 h0Var = this.f;
+        if (h0Var != null) {
+            h0Var.d(z10 && !this.p);
+        }
+    }
+
+    public final void n(int i3) {
+        if (i3 <= 0 || i3 == this.j) {
+            return;
+        }
+        this.j = i3;
+        h0 h0Var = this.f;
+        if (h0Var == null || i3 <= 0 || i3 == h0Var.E || h0Var.u) {
+            return;
+        }
+        h0Var.E = i3;
+        long j10 = h0Var.t;
+        if (j10 != 0) {
+            WidgetSandboxNative.width(j10, i3 / h0Var.j);
+        }
+    }
+
+    public final void o(int i3, float f10, float f11, int i10, boolean z10, boolean z11, int i11, int i12) {
+        h0 h0Var = this.f;
+        if (h0Var != null) {
+            long j10 = h0Var.t;
+            if (h0Var.u || j10 == 0) {
+                return;
+            }
+            WidgetSandboxNative.touch(j10, i3, f10, f11, i10, z10, z11, i11, i12);
+        }
+    }
+
+    public final void p() {
+        this.o = false;
+        if (this.f == null) {
+            return;
+        }
+        f0 c2 = c();
+        if (c2 != null) {
+            this.g = c2;
+        }
+        h0 h0Var = this.f;
+        if (!h0Var.u) {
+            h0Var.u = true;
+            h0Var.J = null;
+            h0Var.a.removeCallbacks(h0Var.N);
+            h0Var.a.removeCallbacks(h0Var.M);
+            h0Var.a.removeCallbacks(h0Var.O);
+            if (h0Var.B) {
+                Choreographer.getInstance().removeFrameCallback(h0Var.P);
+            }
+            h0Var.B = false;
+            synchronized (h0Var.q) {
+                try {
+                    f0 f0Var = h0Var.G;
+                    if (f0Var != null) {
+                        f0Var.a.c();
+                    }
+                    h0Var.G = null;
+                    h0Var.H = null;
+                } catch (Throwable th2) {
+                    throw th2;
                 }
             }
-            str = "h";
+            long j10 = h0Var.t;
+            h0Var.t = 0L;
+            if (j10 != 0) {
+                z.a.execute(new a0(j10));
+            }
         }
-        return z10 ? str.concat(str) : str;
+        this.f = null;
+        if (this.A) {
+            this.A = false;
+            if (this.e != null) {
+                p.C();
+            }
+        }
     }
 }

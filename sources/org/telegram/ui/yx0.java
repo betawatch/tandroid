@@ -1,40 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yx0 implements z4.e {
-    public int a;
-    public final /* synthetic */ zx0 b;
+public final class yx0 implements zx0 {
+    public final /* synthetic */ org.telegram.messenger.video.a a;
+    public final /* synthetic */ org.telegram.ui.Components.fc b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ei.k0 d;
+    public final /* synthetic */ org.telegram.messenger.video.d e;
 
-    public yx0(zx0 zx0Var) {
-        this.b = zx0Var;
+    public yx0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.fc fcVar, Context context, ei.k0 k0Var, org.telegram.messenger.video.d dVar) {
+        this.a = aVar;
+        this.b = fcVar;
+        this.c = context;
+        this.d = k0Var;
+        this.e = dVar;
     }
 
-    @Override // z4.e
-    public final void a(int i10) {
-        zx0 zx0Var = this.b;
-        ProfileActivity profileActivity = zx0Var.n;
-        int k10 = profileActivity.n0.D0.k(i10);
-        zx0Var.a(this.a != k10);
-        this.a = k10;
-        if (profileActivity.q0 == null) {
-            return;
-        }
-        if (profileActivity.S0.x()) {
-            org.telegram.messenger.i0.h3(new vv0(zx0Var, 6), 500L);
-        } else {
-            zx0Var.c();
-        }
+    @Override // org.telegram.ui.zx0
+    public final void f() {
+        org.telegram.messenger.g0.i3(new wx0(this.a, this.b, this.c, this.d, 2), 200L);
     }
 
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        ei.r rVar;
-        rVar = ((org.telegram.ui.ActionBar.k2) this.b.n).glassEngine;
-        rVar.g();
+    @Override // org.telegram.ui.zx0
+    public final void g() {
+        org.telegram.messenger.g0.i3(new qv0(8, this.a, this.b), 200L);
     }
 
-    @Override // z4.e
-    public final void c(int i10) {
+    @Override // org.telegram.ui.zx0
+    public final void i() {
+        this.e.run();
     }
 }

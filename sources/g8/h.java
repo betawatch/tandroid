@@ -2,58 +2,25 @@ package g8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.util.Arrays;
-import w7.h0;
+import android.widget.RemoteViews;
+import f6.c0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class h extends o6.a {
-    public static final Parcelable.Creator<h> CREATOR = new g(1);
-    public final int a;
-    public final int b;
-    public final long c;
-    public final long d;
-
-    public h(long j10, long j11, int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
-        this.c = j10;
-        this.d = j11;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof h) {
-            h hVar = (h) obj;
-            if (this.a == hVar.a && this.b == hVar.b && this.c == hVar.c && this.d == hVar.d) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), Integer.valueOf(this.a), Long.valueOf(this.d), Long.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        StringBuilder m10 = i0.a.m("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
-        m10.append(this.d);
-        m10.append(" system time ms: ");
-        m10.append(this.c);
-        return m10.toString();
-    }
+public final class h extends q6.a {
+    public static final Parcelable.Creator<h> CREATOR = new c0(10);
+    public String[] a;
+    public int[] b;
+    public RemoteViews c;
+    public byte[] d;
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        h0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        h0.s(parcel, 3, 8);
-        parcel.writeLong(this.c);
-        h0.s(parcel, 4, 8);
-        parcel.writeLong(this.d);
-        h0.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.n(parcel, 1, this.a);
+        j8.a.h(parcel, 2, this.b);
+        j8.a.l(parcel, 3, this.c, i3);
+        j8.a.d(parcel, 4, this.d);
+        j8.a.t(parcel, s6);
     }
 }

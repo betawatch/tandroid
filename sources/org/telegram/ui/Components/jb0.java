@@ -1,826 +1,243 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.BlendMode;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.ComposeShader;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
-import android.os.SystemClock;
-import android.view.View;
-import java.lang.ref.WeakReference;
-import java.util.List;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.drawable.TransitionDrawable;
+import android.util.StateSet;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class jb0 extends Drawable {
-    public static final boolean e0;
-    public static final boolean f0;
-    public Matrix A;
-    public boolean B;
-    public GradientDrawable C;
-    public org.telegram.messenger.m9 D;
-    public boolean E;
-    public boolean F;
-    public final Runnable G;
-    public PorterDuffColorFilter H;
-    public int I;
-    public float J;
-    public final float K;
-    public int L;
-    public float M;
-    public boolean N;
-    public final int O;
-    public final int P;
-    public nb0 Q;
-    public List R;
-    public int S;
-    public boolean T;
-    public int U;
-    public final yg.a V;
-    public final yg.a W;
-    public Bitmap X;
-    public Canvas Y;
-    public Paint Z;
-    public final int[] a;
-    public int a0;
-    public long b;
-    public final yg.a b0;
-    public WeakReference c;
-    public Bitmap c0;
-    public boolean d;
-    public int d0;
-    public final gr e;
-    public int f;
-    public boolean g;
-    public float h;
-    public int i;
-    public final RectF j;
-    public Bitmap k;
-    public Bitmap l;
-    public final Bitmap[] m;
-    public final Paint n;
-    public final Paint o;
-    public final Paint p;
-    public int q;
-    public Canvas r;
-    public Canvas s;
-    public boolean t;
-    public Bitmap u;
-    public BitmapShader v;
-    public BitmapShader w;
-    public Bitmap x;
-    public ImageReceiver y;
-    public boolean z;
+public final /* synthetic */ class jb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        int i10 = Build.VERSION.SDK_INT;
-        e0 = i10 < 28;
-        f0 = i10 >= 29;
+    public /* synthetic */ jb0(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    public jb0() {
-        this.a = new int[]{-12423849, -531317, -7888252, -133430};
-        this.e = new gr(0.33d, 0.0d, 0.0d, 1.0d);
-        this.h = 1.0f;
-        this.j = new RectF();
-        this.m = new Bitmap[3];
-        this.n = new Paint(2);
-        this.o = new Paint(2);
-        this.p = new Paint();
-        this.q = 100;
-        this.C = new GradientDrawable();
-        this.G = new ib0(this, 0);
-        this.J = 1.0f;
-        this.K = 1.0f;
-        this.L = org.telegram.messenger.at.e4;
-        this.M = 1.0f;
-        this.O = 60;
-        this.P = 80;
-        this.S = -1;
-        this.U = -16777216;
-        this.V = new yg.a();
-        this.W = new yg.a();
-        this.b0 = new yg.a();
-        h();
-    }
-
-    public static int g(int i10, int i11, int i12, int i13) {
-        boolean j10 = j(i10, i11, i12, i13);
-        boolean z10 = f0;
-        if (j10) {
-            if (z10) {
-                return -1;
-            }
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        if (z10) {
-            return -16777216;
-        }
-        int w02 = org.telegram.messenger.i0.w0(i12, org.telegram.messenger.i0.w0(i10, i11));
-        if (i13 != 0) {
-            w02 = org.telegram.messenger.i0.w0(i13, w02);
-        }
-        return (org.telegram.messenger.i0.V0(w02, true) & 16777215) | 1677721600;
-    }
-
-    public static boolean j(int i10, int i11, int i12, int i13) {
-        int w02 = org.telegram.messenger.i0.w0(i10, i11);
-        if (i12 != 0) {
-            w02 = org.telegram.messenger.i0.w0(w02, i12);
-        }
-        if (i13 != 0) {
-            w02 = org.telegram.messenger.i0.w0(w02, i13);
-        }
-        return org.telegram.messenger.i0.b(Color.red(w02), Color.green(w02), Color.blue(w02))[2] < 0.3f;
-    }
-
-    public final void a(Canvas canvas, int i10, float f7, float f10, float f11, float f12) {
-        List list = this.R;
-        if (list == null || this.y == null || i10 < 0 || i10 >= list.size()) {
-            return;
-        }
-        wf.c cVar = (wf.c) this.R.get(i10);
-        canvas.save();
-        canvas.translate(f7, f10);
-        canvas.scale(f11, f12);
-        canvas.concat(cVar.b);
-        this.y.A0(cVar.a);
-        this.y.h(canvas, null);
-        canvas.restore();
-    }
-
-    public final void b(Canvas canvas, RectF rectF, int i10) {
-        if (this.R == null || this.u == null) {
-            return;
-        }
-        a(canvas, i10, rectF.left, rectF.top, rectF.width() / this.u.getWidth(), rectF.height() / this.u.getHeight());
-    }
-
-    public final void c() {
-        int i10 = -1;
-        while (i10 < 3) {
-            int i11 = i10 + 1;
-            Utilities.generateGradient(i10 < 0 ? this.l : this.m[i10], this.i, i11 / 3.0f, this.a);
-            i10 = i11;
-        }
-    }
-
-    public final Bitmap d() {
-        return this.k;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        canvas.save();
-        Bitmap e = e();
-        float f7 = e != null ? bounds.top : this.f;
-        int width = this.k.getWidth();
-        int height = this.k.getHeight();
-        float width2 = bounds.width();
-        float height2 = bounds.height();
-        float f10 = width;
-        float f11 = height;
-        float max = Math.max(width2 / f10, height2 / f11);
-        float f12 = f10 * max;
-        float f13 = f11 * max;
-        float f14 = (width2 - f12) / 2.0f;
-        float f15 = (height2 - f13) / 2.0f;
-        if (this.g) {
-            int i10 = bounds.left;
-            f14 += i10;
-            int i11 = bounds.top;
-            f15 += i11;
-            canvas.clipRect(i10, i11, bounds.right, bounds.bottom);
-        }
-        boolean z10 = (Build.VERSION.SDK_INT < 28 || this.Q == null || this.k == null || e == null) ? false : true;
-        int i12 = this.q;
-        float f16 = 1.0f;
-        Paint paint = this.n;
-        float f17 = this.K;
-        Paint paint2 = this.o;
-        boolean z11 = z10;
-        RectF rectF = this.j;
-        if (i12 < 0) {
-            boolean z12 = e0;
-            if (!z11 && (!z12 || e == null)) {
-                canvas.drawColor(i0.b.o(-16777216, (int) (this.L * f17)));
-            }
-            if (e != null) {
-                if (z12) {
-                    int i13 = (((int) (this.L * this.J)) * (-this.q)) / 100;
-                    if (this.u != null) {
-                        Bitmap e7 = e();
-                        yg.a aVar = this.b0;
-                        if (aVar.a(e7) || this.c0 == null || this.d0 != i13) {
-                            int width3 = this.u.getWidth();
-                            int height3 = this.u.getHeight();
-                            this.d0 = i13;
-                            Bitmap bitmap = this.c0;
-                            if (bitmap == null || bitmap.getWidth() != width3 || this.c0.getHeight() != height3) {
-                                this.c0 = Bitmap.createBitmap(width3, height3, Bitmap.Config.ARGB_8888);
-                            }
-                            Utilities.applyAlphaInvert(e7, this.c0, i13);
-                        }
-                        aVar.b(e7);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((lb0) this.b).d();
+                break;
+            case 1:
+                tb0 tb0Var = (tb0) this.b;
+                tb0Var.getClass();
+                try {
+                    tb0Var.d.N.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 2:
+                ((hc0) this.b).l1.start();
+                break;
+            case 3:
+                py pyVar = ((kd0) this.b).c.m0;
+                if (pyVar != null) {
+                    pyVar.c(false, true, false);
+                    break;
+                }
+                break;
+            case 4:
+                md0 md0Var = (md0) this.b;
+                md0Var.r = false;
+                md0Var.invalidate();
+                break;
+            case 5:
+                ((od0) this.b).h = null;
+                break;
+            case 6:
+                od0 od0Var = (od0) ((mi.h0) this.b).c;
+                od0Var.d.q0(od0Var.e, false);
+                break;
+            case 7:
+                org.telegram.ui.tp0 tp0Var = (org.telegram.ui.tp0) this.b;
+                if (tp0Var.y) {
+                    tp0Var.h("pollPosition();");
+                }
+                if (tp0Var.H) {
+                    org.telegram.messenger.g0.i3(tp0Var.M, 500L);
+                    break;
+                }
+                break;
+            case 8:
+                ((FrameLayout) this.b).invalidate();
+                break;
+            case 9:
+                ie0 ie0Var = (ie0) ((ee0) this.b).b;
+                ie0Var.d.invalidate();
+                ie0Var.e.requestLayout();
+                break;
+            case 10:
+                ((ke0) this.b).f();
+                break;
+            case 11:
+                try {
+                    kg0 kg0Var = ((jg0) this.b).b;
+                    if (kg0Var.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) kg0Var.getParent()).removeView(kg0Var);
                     }
-                    float width4 = e.getWidth();
-                    float height4 = e.getHeight();
-                    float max2 = Math.max(width2 / width4, height2 / height4);
-                    float f18 = width4 * max2;
-                    float f19 = height4 * max2;
-                    float f20 = (width2 - f18) / 2.0f;
-                    float f21 = (height2 - f19) / 2.0f;
-                    rectF.set(f20, f21, f18 + f20, f19 + f21);
-                    if (this.c0 != null) {
-                        canvas.drawBitmap(this.k, (Rect) null, rectF, paint);
-                        canvas.drawBitmap(this.c0, (Rect) null, rectF, paint);
-                    } else {
-                        canvas.drawColor(i0.b.o(-16777216, (int) (this.L * f17)));
+                    kg0Var.R.run();
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            case 12:
+                ((RLottieNative) this.b).d();
+                break;
+            case 13:
+                li0 li0Var = (li0) this.b;
+                li0Var.y0 = null;
+                li0Var.j();
+                ki0 ki0Var = li0Var.h0;
+                if (ki0Var != null) {
+                    ki0Var.J();
+                    break;
+                }
+                break;
+            case 14:
+                ((ii0) this.b).I.a.setVisibility(4);
+                break;
+            case 15:
+                mi0 mi0Var = (mi0) this.b;
+                m51 m51Var = mi0Var.n;
+                if (m51Var != null) {
+                    boolean d02 = m51Var.d0();
+                    float S = mi0Var.n.S() / mi0Var.n.U();
+                    float f10 = mi0Var.s;
+                    if (S < f10) {
+                        mi0Var.n.q0((long) (f10 * r2.U()), false);
+                    } else if (S > mi0Var.w) {
+                        mi0Var.setPlaying(false);
+                        d02 = false;
                     }
-                    b(canvas, rectF, this.S);
+                    if (d02) {
+                        org.telegram.messenger.g0.i3(mi0Var.y, 16L);
+                    }
+                }
+                mi0Var.invalidate();
+                break;
+            case 16:
+                tj0 tj0Var = (tj0) this.b;
+                tj0Var.U1 = null;
+                tj0Var.T1 = null;
+                org.telegram.ui.Cells.y yVar = tj0Var.C1;
+                if (yVar != null) {
+                    Drawable current = yVar.getCurrent();
+                    if (current instanceof TransitionDrawable) {
+                        ((TransitionDrawable) current).resetTransition();
+                    }
+                }
+                org.telegram.ui.Cells.y yVar2 = tj0Var.C1;
+                if (yVar2 != null && yVar2.isStateful()) {
+                    tj0Var.C1.setState(StateSet.NOTHING);
+                    break;
+                }
+                break;
+            case 17:
+                gk0 gk0Var = (gk0) this.b;
+                if (gk0Var.f0 && gk0Var.k0() != gk0Var.j0) {
+                    gk0Var.q0("on screen, settled after start", true);
+                    break;
+                }
+                break;
+            case 18:
+                hl0 hl0Var = (hl0) this.b;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                int i3 = hl0Var.d;
+                org.telegram.messenger.w7.G(i3).y(arrayList);
+                org.telegram.messenger.w7.G(i3).Q(arrayList2);
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    org.telegram.messenger.w7.G(i3);
+                    if (org.telegram.messenger.w7.N(((org.telegram.messenger.zi) arrayList.get(i10)).k, false, true).exists()) {
+                        arrayList3.add((org.telegram.messenger.zi) arrayList.get(i10));
+                    }
+                }
+                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                    org.telegram.messenger.w7.G(i3);
+                    if (!org.telegram.messenger.w7.N(((org.telegram.messenger.zi) arrayList2.get(i11)).k, false, true).exists()) {
+                        arrayList4.add((org.telegram.messenger.zi) arrayList2.get(i11));
+                    }
+                }
+                org.telegram.messenger.g0.h3(new e7(hl0Var, arrayList3, arrayList4, 21));
+                break;
+            case 19:
+                ((jl0) this.b).invalidateSelf();
+                break;
+            case 20:
+                ((tl0) this.b).f.setVisibility(8);
+                break;
+            case 21:
+                ((org.telegram.ui.cw) this.b).q();
+                break;
+            case 22:
+                ((f60) this.b).s();
+                break;
+            case 23:
+                ((km0) this.b).setOverscrolling(false);
+                break;
+            case 24:
+                ((pm0) this.b).getClass();
+                break;
+            case 25:
+                org.telegram.ui.Cells.q1 q1Var = ((sm0) this.b).n;
+                if (q1Var != null) {
+                    q1Var.invalidate();
+                    break;
+                }
+                break;
+            case 26:
+                tm0 tm0Var = (tm0) this.b;
+                tm0Var.q = false;
+                tm0Var.b.run();
+                break;
+            case 27:
+                ((vn0) this.b).b.b1(1);
+                break;
+            case 28:
+                ro0 ro0Var = (ro0) this.b;
+                gi.i1[] i1VarArr = ro0Var.a;
+                if (ro0Var.b != 1) {
+                    for (gi.i1 i1Var : i1VarArr) {
+                        org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) i1Var.e;
+                        k5Var.setAlpha(1.0f);
+                        k5Var.setScaleX(1.0f);
+                        k5Var.setScaleY(1.0f);
+                        ((org.telegram.ui.ActionBar.k5) i1Var.f).setAlpha(0.0f);
+                    }
+                    ro0Var.F = false;
+                    org.telegram.messenger.g0.i3(ro0Var.H, 4000L);
+                    break;
                 } else {
-                    if (this.A == null) {
-                        this.A = new Matrix();
-                    }
-                    this.A.reset();
-                    this.A.setTranslate(f14, f15 + f7);
-                    float min = 1.0f / Math.min(this.k.getWidth() / bounds.width(), this.k.getHeight() / bounds.height());
-                    this.A.preScale(min, min);
-                    this.v.setLocalMatrix(this.A);
-                    this.A.reset();
-                    float width5 = e.getWidth();
-                    float height5 = e.getHeight();
-                    float max3 = Math.max(width2 / width5, height2 / height5);
-                    float f22 = (width2 - (width5 * max3)) / 2.0f;
-                    float f23 = ((height2 - (height5 * max3)) / 2.0f) + f7;
-                    this.A.setTranslate((int) f22, (int) f23);
-                    if (!this.z || max3 > 1.4f || max3 < 0.8f) {
-                        this.A.preScale(max3, max3);
-                        f16 = max3;
-                    }
-                    this.w.setLocalMatrix(this.A);
-                    paint2.setColorFilter(null);
-                    paint2.setAlpha((int) ((Math.abs(this.q) / 100.0f) * this.L * this.J));
-                    rectF.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-                    if (z11) {
-                        Paint e10 = this.Q.e(this.k, e, this.U, (int) (this.L * this.J), this.q, canvas.isHardwareAccelerated());
-                        this.Q.d(this.A);
-                        this.Q.c(rectF);
-                        float f24 = this.I;
-                        canvas.drawRoundRect(rectF, f24, f24, e10);
-                    } else {
-                        float f25 = this.I;
-                        canvas.drawRoundRect(rectF, f25, f25, paint2);
-                    }
-                    a(canvas, this.S, f22, f23, f16, f16);
-                }
-            }
-        } else {
-            if (this.I != 0) {
-                this.A.reset();
-                this.A.setTranslate(f14, f15);
-                float min2 = 1.0f / Math.min(this.k.getWidth() / bounds.width(), this.k.getHeight() / bounds.height());
-                this.A.preScale(min2, min2);
-                this.v.setLocalMatrix(this.A);
-                rectF.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-                if (!z11) {
-                    float f26 = this.I;
-                    canvas.drawRoundRect(rectF, f26, f26, paint);
-                }
-            } else {
-                canvas.translate(0.0f, f7);
-                GradientDrawable gradientDrawable = this.C;
-                if (gradientDrawable != null) {
-                    gradientDrawable.setBounds((int) f14, (int) f15, (int) (f14 + f12), (int) (f15 + f13));
-                    this.C.setAlpha((int) (f17 * 255.0f));
-                    this.C.draw(canvas);
-                } else {
-                    rectF.set(f14, f15, f12 + f14, f13 + f15);
-                    int alpha = paint.getAlpha();
-                    paint.setAlpha((int) (alpha * f17));
-                    if (!z11) {
-                        canvas.drawBitmap(this.k, (Rect) null, rectF, paint);
-                    }
-                    paint.setAlpha(alpha);
-                }
-            }
-            if (e != null) {
-                float width6 = e.getWidth();
-                float height6 = e.getHeight();
-                float max4 = Math.max(width2 / width6, height2 / height6);
-                float f27 = width6 * max4;
-                float f28 = height6 * max4;
-                float f29 = (width2 - f27) / 2.0f;
-                float f30 = (height2 - f28) / 2.0f;
-                rectF.set(f29, f30, f27 + f29, f28 + f30);
-                paint2.setColorFilter(this.H);
-                paint2.setAlpha((int) ((Math.abs(this.q) / 100.0f) * this.L * this.J));
-                if (z11) {
-                    Paint e11 = this.Q.e(this.k, e, this.U, (int) (this.L * this.J), this.q, canvas.isHardwareAccelerated());
-                    nb0 nb0Var = this.Q;
-                    RectF rectF2 = nb0Var.j;
-                    rectF2.set(0.0f, 0.0f, nb0Var.g, nb0Var.h);
-                    Matrix matrix = nb0Var.i;
-                    matrix.setRectToRect(rectF2, rectF, Matrix.ScaleToFit.FILL);
-                    nb0Var.d(matrix);
-                    this.Q.c(rectF);
-                    canvas.drawRect(rectF, e11);
-                } else {
-                    canvas.drawBitmap(e, (Rect) null, rectF, paint2);
-                }
-                paint2.setAlpha((int) ((Math.abs(this.q) / 100.0f) * this.L * this.J * 0.8f));
-                b(canvas, rectF, this.S);
-            }
-        }
-        canvas.restore();
-        y();
-    }
-
-    public final Bitmap e() {
-        Bitmap bitmap = this.u;
-        if (bitmap == null) {
-            return null;
-        }
-        if (this.x == null) {
-            return bitmap;
-        }
-        yg.a aVar = this.V;
-        boolean a2 = aVar.a(bitmap);
-        Bitmap bitmap2 = this.x;
-        yg.a aVar2 = this.W;
-        boolean a10 = aVar2.a(bitmap2);
-        boolean z10 = true;
-        boolean z11 = this.a0 != this.S;
-        if (!a2 && !a10 && !z11) {
-            z10 = false;
-        }
-        Bitmap bitmap3 = this.X;
-        if (bitmap3 != null && !z10) {
-            return bitmap3;
-        }
-        int width = this.u.getWidth();
-        int height = this.u.getHeight();
-        Bitmap bitmap4 = this.X;
-        if (bitmap4 == null || bitmap4.getWidth() != width || this.X.getHeight() != height) {
-            this.X = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            this.Y = new Canvas(this.X);
-        }
-        Bitmap.Config config = this.u.getConfig();
-        if (config == Bitmap.Config.ARGB_8888) {
-            Utilities.copyBitmaps(this.u, this.X);
-        } else if (config == Bitmap.Config.ALPHA_8) {
-            Utilities.expandAlphaToBlack(this.u, this.X);
-        }
-        if (this.Z == null) {
-            Paint paint = new Paint(3);
-            this.Z = paint;
-            paint.setAlpha(org.telegram.messenger.at.i3);
-        }
-        Canvas canvas = this.Y;
-        Paint paint2 = this.Z;
-        int i10 = this.S;
-        if (this.x != null && this.R != null) {
-            for (int i11 = 0; i11 < this.R.size(); i11++) {
-                if (i11 != i10) {
-                    wf.c cVar = (wf.c) this.R.get(i11);
-                    canvas.save();
-                    canvas.concat(cVar.b);
-                    canvas.drawBitmap(this.x, (Rect) null, cVar.a, paint2);
-                    canvas.restore();
-                }
-            }
-        }
-        this.a0 = this.S;
-        aVar.b(this.u);
-        aVar2.b(this.x);
-        return this.X;
-    }
-
-    public final int f() {
-        int[] iArr = this.a;
-        return g(iArr[0], iArr[1], iArr[2], iArr[3]);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        Bitmap bitmap = this.u;
-        return bitmap != null ? bitmap.getHeight() : super.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        Bitmap bitmap = this.u;
-        return bitmap != null ? bitmap.getWidth() : super.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public final void h() {
-        BlendMode blendMode;
-        Bitmap.Config config = Bitmap.Config.ARGB_8888;
-        int i10 = this.O;
-        int i11 = this.P;
-        Bitmap createBitmap = Bitmap.createBitmap(i10, i11, config);
-        this.k = createBitmap;
-        createBitmap.setHasAlpha(false);
-        for (int i12 = 0; i12 < 3; i12++) {
-            Bitmap createBitmap2 = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
-            this.m[i12] = createBitmap2;
-            createBitmap2.setHasAlpha(false);
-        }
-        this.r = new Canvas(this.k);
-        Bitmap createBitmap3 = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
-        this.l = createBitmap3;
-        createBitmap3.setHasAlpha(false);
-        this.s = new Canvas(this.l);
-        Utilities.generateGradient(this.k, this.i, this.e.getInterpolation(this.h), this.a);
-        if (f0) {
-            Paint paint = this.o;
-            blendMode = BlendMode.SOFT_LIGHT;
-            paint.setBlendMode(blendMode);
-        }
-    }
-
-    public final void i() {
-        invalidateSelf();
-        WeakReference weakReference = this.c;
-        if (weakReference != null && weakReference.get() != null) {
-            ((View) this.c.get()).invalidate();
-        }
-        if (this.t) {
-            org.telegram.messenger.at.e().k(org.telegram.messenger.at.j4, new Object[0]);
-            y();
-            Runnable runnable = this.G;
-            org.telegram.messenger.i0.r(runnable);
-            org.telegram.messenger.i0.h3(runnable, 16L);
-        }
-    }
-
-    public final void k() {
-        this.T = true;
-        ImageReceiver imageReceiver = this.y;
-        if (imageReceiver != null) {
-            imageReceiver.P();
-        }
-    }
-
-    public final void l() {
-        this.T = false;
-        ImageReceiver imageReceiver = this.y;
-        if (imageReceiver != null) {
-            imageReceiver.R();
-        }
-    }
-
-    public final void m(boolean z10) {
-        if (this.h < 1.0f) {
-            return;
-        }
-        this.F = true;
-        this.h = 0.0f;
-        this.E = z10;
-        i();
-    }
-
-    public final void n(int i10, int i11, int i12, int i13) {
-        o(i10, i11, i12, i13, 0, true);
-    }
-
-    public final void o(int i10, int i11, int i12, int i13, int i14, boolean z10) {
-        if (this.g && i12 == 0 && i13 == 0) {
-            this.C = new GradientDrawable(f9.d(i14), new int[]{i10, i11});
-        } else {
-            this.C = null;
-        }
-        int[] iArr = this.a;
-        if (iArr[0] == i10 && iArr[1] == i11 && iArr[2] == i12 && iArr[3] == i13) {
-            return;
-        }
-        iArr[0] = i10;
-        iArr[1] = i11;
-        iArr[2] = i12;
-        iArr[3] = i13;
-        Bitmap bitmap = this.k;
-        if (bitmap != null) {
-            Utilities.generateGradient(bitmap, this.i, this.e.getInterpolation(this.h), iArr);
-            if (z10) {
-                i();
-            }
-        }
-    }
-
-    public final void p() {
-        if (Build.VERSION.SDK_INT < 28 || this.Q != null || org.telegram.messenger.uz.o) {
-            return;
-        }
-        this.Q = new nb0();
-    }
-
-    public final void q(View view) {
-        this.c = new WeakReference(view);
-        ImageReceiver imageReceiver = this.y;
-        if (imageReceiver != null) {
-            imageReceiver.H0(view);
-        }
-    }
-
-    public final void r(float f7) {
-        this.J = f7;
-        i();
-    }
-
-    public final void s(Bitmap bitmap, int i10) {
-        this.q = i10;
-        this.u = bitmap;
-        if (bitmap == null) {
-            return;
-        }
-        boolean z10 = f0;
-        Paint paint = this.o;
-        if (z10) {
-            if (i10 >= 0) {
-                paint.setBlendMode(BlendMode.SOFT_LIGHT);
-            } else {
-                paint.setBlendMode(null);
-            }
-        }
-        boolean z11 = e0;
-        if (i10 >= 0) {
-            if (z11) {
-                paint.setXfermode(null);
-            }
-        } else {
-            if (z11) {
-                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-                return;
-            }
-            Bitmap bitmap2 = this.k;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            this.v = new BitmapShader(bitmap2, tileMode, tileMode);
-            Bitmap bitmap3 = this.u;
-            Shader.TileMode tileMode2 = Shader.TileMode.REPEAT;
-            this.w = new BitmapShader(bitmap3, tileMode2, tileMode2);
-            this.z = true;
-            paint.setShader(new ComposeShader(this.v, this.w, PorterDuff.Mode.DST_IN));
-            paint.setFilterBitmap(true);
-            this.A = new Matrix();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.L = i10;
-        this.n.setAlpha(i10);
-        this.o.setAlpha(i10);
-    }
-
-    public final void t(int i10) {
-        this.U = i10;
-        this.H = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-        i();
-    }
-
-    public final void u(int i10) {
-        this.i = i10;
-        if (i10 < 0) {
-            this.i = 0;
-        } else if (i10 > 7) {
-            this.i = 7;
-        }
-        Utilities.generateGradient(this.k, this.i, this.e.getInterpolation(this.h), this.a);
-    }
-
-    public final void v(int i10) {
-        this.I = i10;
-        this.A = new Matrix();
-        Bitmap bitmap = this.k;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        this.v = bitmapShader;
-        this.n.setShader(bitmapShader);
-        i();
-    }
-
-    public final void w(boolean z10) {
-        if (this.h < 1.0f || !org.telegram.messenger.tc.e(32)) {
-            i();
-            return;
-        }
-        this.F = false;
-        this.E = false;
-        this.B = z10;
-        this.h = 0.0f;
-        int i10 = this.i - 1;
-        this.i = i10;
-        if (i10 < 0) {
-            this.i = 7;
-        }
-        i();
-        this.s.drawBitmap(this.k, 0.0f, 0.0f, (Paint) null);
-        c();
-    }
-
-    public final void x() {
-        if (this.h < 1.0f) {
-            return;
-        }
-        this.F = false;
-        this.B = true;
-        this.E = true;
-        this.h = 0.0f;
-        i();
-        Utilities.generateGradient(this.l, this.i, 0.0f, this.a);
-        c();
-    }
-
-    public final void y() {
-        float interpolation;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j10 = elapsedRealtime - this.b;
-        if (j10 > 20) {
-            j10 = 17;
-        }
-        this.b = elapsedRealtime;
-        if (j10 <= 1) {
-            return;
-        }
-        boolean z10 = this.N;
-        if (z10 && this.h == 1.0f) {
-            this.h = 0.0f;
-        }
-        float f7 = this.h;
-        if (f7 < 1.0f) {
-            boolean z11 = true;
-            boolean z12 = this.t || this.F;
-            if (z10) {
-                float f10 = ((j10 / 12000.0f) * this.M) + f7;
-                this.h = f10;
-                if (f10 >= 1.0f) {
-                    this.h = 0.0f;
-                }
-                float f11 = this.h;
-                int i10 = (int) (f11 / 0.125f);
-                this.i = i10;
-                interpolation = 1.0f - ((f11 - (i10 * 0.125f)) / 0.125f);
-            } else {
-                boolean z13 = this.F;
-                gr grVar = this.e;
-                if (z13) {
-                    float interpolation2 = grVar.getInterpolation(f7);
-                    char c10 = interpolation2 <= 0.25f ? (char) 0 : interpolation2 <= 0.5f ? (char) 1 : interpolation2 <= 0.75f ? (char) 2 : (char) 3;
-                    org.telegram.messenger.m9 m9Var = this.D;
-                    if (m9Var != null) {
-                        this.h = ((Float) m9Var.l(this)).floatValue();
-                    } else {
-                        this.h = (j10 / (this.E ? 1000.0f : 2000.0f)) + this.h;
-                    }
-                    if (this.h > 1.0f) {
-                        this.h = 1.0f;
-                    }
-                    float interpolation3 = (this.D != null || this.d) ? this.h : grVar.getInterpolation(this.h);
-                    if (this.d && (interpolation3 == 0.0f || interpolation3 == 1.0f)) {
-                        this.d = false;
-                    }
-                    if ((c10 == 0 && interpolation3 > 0.25f) || ((c10 == 1 && interpolation3 > 0.5f) || (c10 == 2 && interpolation3 > 0.75f))) {
-                        if (this.E) {
-                            int i11 = this.i + 1;
-                            this.i = i11;
-                            if (i11 > 7) {
-                                this.i = 0;
-                            }
+                    ro0Var.F = !ro0Var.F;
+                    for (gi.i1 i1Var2 : i1VarArr) {
+                        org.telegram.ui.ActionBar.k5 k5Var2 = (org.telegram.ui.ActionBar.k5) i1Var2.e;
+                        org.telegram.ui.ActionBar.k5 k5Var3 = (org.telegram.ui.ActionBar.k5) i1Var2.f;
+                        k5Var2.setPivotX(0.0f);
+                        k5Var3.setPivotX(0.0f);
+                        if (ro0Var.F) {
+                            k5Var2.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
+                            k5Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
                         } else {
-                            int i12 = this.i - 1;
-                            this.i = i12;
-                            if (i12 < 0) {
-                                this.i = 7;
-                            }
+                            k5Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
+                            k5Var3.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
                         }
                     }
-                    if (interpolation3 > 0.25f) {
-                        interpolation3 = interpolation3 <= 0.5f ? interpolation3 - 0.25f : interpolation3 <= 0.75f ? interpolation3 - 0.5f : interpolation3 - 0.75f;
-                    }
-                    float f12 = interpolation3 / 0.25f;
-                    if (this.E) {
-                        interpolation = 1.0f - f12;
-                        if (this.h >= 1.0f) {
-                            int i13 = this.i + 1;
-                            this.i = i13;
-                            if (i13 > 7) {
-                                this.i = 0;
-                            }
-                            interpolation = 1.0f;
-                        }
-                    } else {
-                        interpolation = f12;
-                    }
-                    z11 = z12;
-                } else {
-                    org.telegram.messenger.m9 m9Var2 = this.D;
-                    if (m9Var2 != null) {
-                        this.h = ((Float) m9Var2.l(this)).floatValue();
-                    } else {
-                        this.h = (j10 / (this.B ? 300.0f : 500.0f)) + f7;
-                    }
-                    if (this.h > 1.0f) {
-                        this.h = 1.0f;
-                    }
-                    interpolation = (this.D != null || this.d) ? this.h : grVar.getInterpolation(this.h);
-                    if (this.d && (interpolation == 0.0f || interpolation == 1.0f)) {
-                        this.d = false;
-                    }
-                    if (this.E) {
-                        interpolation = 1.0f - interpolation;
-                        if (this.h >= 1.0f) {
-                            int i14 = this.i + 1;
-                            this.i = i14;
-                            if (i14 > 7) {
-                                this.i = 0;
-                            }
-                            interpolation = 1.0f;
-                        }
-                    }
-                    z11 = z12;
+                    org.telegram.messenger.g0.i3(ro0Var.H, 4000L);
+                    break;
                 }
-            }
-            if (z11) {
-                Utilities.generateGradient(this.k, this.i, interpolation, this.a);
-            } else {
-                Paint paint = this.p;
-                Bitmap[] bitmapArr = this.m;
-                if (interpolation != 1.0f) {
-                    int i15 = (int) (interpolation / 0.33333334f);
-                    if (i15 == 0) {
-                        this.r.drawBitmap(this.l, 0.0f, 0.0f, (Paint) null);
-                    } else {
-                        this.r.drawBitmap(bitmapArr[i15 - 1], 0.0f, 0.0f, (Paint) null);
-                    }
-                    paint.setAlpha((int) (((interpolation - (i15 * 0.33333334f)) / 0.33333334f) * 255.0f));
-                    this.r.drawBitmap(bitmapArr[i15], 0.0f, 0.0f, paint);
-                } else {
-                    this.r.drawBitmap(bitmapArr[2], 0.0f, 0.0f, paint);
-                }
-            }
-            i();
+            default:
+                ((gi.i1) this.b).setVisibility(8);
+                break;
         }
-    }
-
-    public jb0(boolean z10, int i10, int i11, int i12, int i13) {
-        this(i10, i11, i12, i13, z10, 0, false);
-    }
-
-    public jb0(int i10, int i11, int i12, int i13, boolean z10, int i14, boolean z11) {
-        this.a = new int[]{-12423849, -531317, -7888252, -133430};
-        this.e = new gr(0.33d, 0.0d, 0.0d, 1.0d);
-        this.h = 1.0f;
-        this.j = new RectF();
-        this.m = new Bitmap[3];
-        this.n = new Paint(2);
-        this.o = new Paint(2);
-        this.p = new Paint();
-        this.q = 100;
-        this.C = new GradientDrawable();
-        this.G = new ib0(this, 0);
-        this.J = 1.0f;
-        this.K = 1.0f;
-        this.L = org.telegram.messenger.at.e4;
-        this.M = 1.0f;
-        this.O = 60;
-        this.P = 80;
-        this.S = -1;
-        this.U = -16777216;
-        this.V = new yg.a();
-        this.W = new yg.a();
-        this.b0 = new yg.a();
-        if (z11) {
-            this.O = 80;
-            this.P = 80;
-        }
-        this.g = z10;
-        o(i10, i11, i12, i13, i14, false);
-        h();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

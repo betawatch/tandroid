@@ -1,94 +1,55 @@
 package org.telegram.messenger;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-import java.io.File;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import java.util.IdentityHashMap;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class ev extends dv {
-    public final TL_iv.pageBlockPhoto q0;
-    public final TLRPC.Photo r0;
-    public final TLRPC.PhotoSize s0;
-    public final TLRPC.TL_photoStrippedSize t0;
+public final class ev {
+    public final cv a;
+    public final ArrayList b;
+    public final int c;
+    public final int d;
+    public final fv e;
+    public int f;
+    public int g;
+    public fv h;
 
-    public ev(wv wvVar, Rect rect, int i10, TL_iv.pageBlockPhoto pageblockphoto, boolean z10) {
-        super(wvVar, rect, i10, z10);
-        this.q0 = pageblockphoto;
-        TLRPC.Photo v = wvVar.v(pageblockphoto.photo_id);
-        this.r0 = v;
-        if (v != null) {
-            this.s0 = b8.w(v.sizes, i0.Z0(false), false, null, false);
-            this.t0 = b8.R(v.sizes);
-        } else {
-            this.s0 = null;
-            this.t0 = null;
-        }
-        TLRPC.PhotoSize photoSize = this.s0;
-        int i11 = photoSize != null ? photoSize.w : 100;
-        int i12 = photoSize != null ? photoSize.h : 100;
-        int i13 = this.c;
-        int max = (int) ((i13 / Math.max(1, i11)) * i12);
-        Point point = i0.q;
-        int max2 = (int) (Math.max(point.x, point.y) * 0.55f);
-        if (max > max2) {
-            i13 = (int) ((max2 / Math.max(1, i12)) * i11);
-            max = max2;
-        }
-        this.b0 = i13;
-        this.c0 = max;
-        l0();
+    public ev(cv cvVar, ArrayList arrayList, int i3, int i10, fv fvVar, int i11, int i12, fv fvVar2) {
+        this.a = cvVar;
+        this.b = arrayList;
+        this.c = i3;
+        this.d = i10;
+        this.e = fvVar;
+        this.f = i11;
+        this.g = i12;
+        this.h = fvVar2;
     }
 
-    @Override // org.telegram.messenger.dv
-    public final void i0(boolean z10) {
-        TLRPC.PhotoSize photoSize;
-        TLRPC.Photo photo = this.r0;
-        if (photo == null || (photoSize = this.s0) == null) {
-            return;
+    public final TL_iv.RichText a(int i3) {
+        int i10 = i3 == this.c ? this.d : 0;
+        int i11 = i3 == this.f ? this.g : Integer.MAX_VALUE;
+        return (i10 == 0 && i11 == Integer.MAX_VALUE) ? (TL_iv.RichText) this.b.get(i3) : b(i3).b(i10, i11);
+    }
+
+    public final fv b(int i3) {
+        if (i3 == this.c) {
+            return this.e;
         }
-        TLRPC.TL_photoStrippedSize tL_photoStrippedSize = this.t0;
-        jc i10 = tL_photoStrippedSize != null ? jc.i(tL_photoStrippedSize, photo) : null;
-        wv wvVar = this.a;
-        ImageReceiver imageReceiver = this.X;
-        if (z10) {
-            imageReceiver.u0(null, null, jc.i(photoSize, photo), null, i10, "b1", null, photoSize.size, null, wvVar.b, 1);
-        } else {
-            imageReceiver.u0(null, null, null, null, i10, "b1", null, photoSize.size, null, wvVar.b, 1);
+        int i10 = this.f;
+        ArrayList arrayList = this.b;
+        cv cvVar = this.a;
+        if (i3 != i10) {
+            TL_iv.RichText richText = (TL_iv.RichText) arrayList.get(i3);
+            IdentityHashMap identityHashMap = new IdentityHashMap();
+            return new fv(richText, identityHashMap, cvVar.o(richText, 0, identityHashMap).length(), 0);
         }
-    }
-
-    @Override // org.telegram.messenger.dv
-    public final boolean k0() {
-        TLRPC.PhotoSize photoSize = this.s0;
-        if (photoSize != null) {
-            wv wvVar = this.a;
-            b8.G(wvVar.a);
-            File K = b8.K(photoSize, null, true, true);
-            b8.G(wvVar.a);
-            File K2 = b8.K(photoSize, null, false, true);
-            if (!K.exists() && (K2 == null || !K2.exists())) {
-                return false;
-            }
+        if (this.h == null) {
+            TL_iv.RichText richText2 = (TL_iv.RichText) arrayList.get(i3);
+            IdentityHashMap identityHashMap2 = new IdentityHashMap();
+            this.h = new fv(richText2, identityHashMap2, cvVar.o(richText2, 0, identityHashMap2).length(), 0);
         }
-        return true;
-    }
-
-    @Override // org.telegram.messenger.dv
-    public final TL_iv.PageBlock m0() {
-        return this.q0;
-    }
-
-    @Override // org.telegram.messenger.dv
-    public final String n0() {
-        return b8.r(null, this.s0);
-    }
-
-    @Override // org.telegram.messenger.dv
-    public final boolean q0() {
-        TL_iv.pageBlockPhoto pageblockphoto = this.q0;
-        return pageblockphoto != null && pageblockphoto.spoiler;
+        return this.h;
     }
 }

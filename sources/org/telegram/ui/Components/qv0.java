@@ -1,68 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qv0 {
-    public final d5 a;
-    public Drawable b;
+public final class qv0 extends u4.x {
+    public int e;
+    public final /* synthetic */ xv0 f;
 
-    public qv0(FrameLayout frameLayout) {
-        this(18, frameLayout);
+    public qv0(xv0 xv0Var) {
+        this.f = xv0Var;
+        this.d = 15;
+        this.e = -1;
     }
 
-    public final d5 a(TLObject tLObject, int i10, boolean z10) {
-        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i10, z10) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i10, z10) : b(null, null, i10, z10);
+    @Override // u4.v
+    public final boolean n(RecyclerView recyclerView, u4.d1 d1Var, u4.d1 d1Var2) {
+        int i3 = d1Var.f;
+        if (i3 == 3 || i3 != d1Var2.f) {
+            return false;
+        }
+        xv0 xv0Var = this.f;
+        if (xv0Var.K1 == null) {
+            return false;
+        }
+        int b10 = d1Var.b();
+        int b11 = d1Var2.b();
+        xv0Var.K1.documents.add(b11, xv0Var.K1.documents.remove(b10));
+        xv0Var.l1.j(b10, b11);
+        this.e = b11;
+        return true;
     }
 
-    public final d5 b(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
-        d5 d5Var = this.a;
-        if (chat != null && chat.verified) {
-            Drawable drawable = this.b;
-            if (drawable == null) {
-                drawable = new eq(org.telegram.ui.ActionBar.t6.f1, org.telegram.ui.ActionBar.t6.i1);
+    @Override // u4.v
+    public final void p(u4.d1 d1Var, int i3) {
+        xv0 xv0Var = this.f;
+        if (i3 != 0 || xv0Var.n1 == null || this.e <= 0) {
+            if (i3 == 2) {
+                xv0Var.n1 = ((org.telegram.ui.Cells.y7) d1Var.a).getSticker();
             }
-            this.b = drawable;
-            d5Var.g(drawable, z10);
-            d5Var.k(null);
-            return d5Var;
+        } else {
+            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
+            tL_stickers_changeStickerPosition.position = this.e;
+            tL_stickers_changeStickerPosition.sticker = org.telegram.messenger.li.a0(xv0Var.n1, "").document;
+            this.e = -1;
+            xv0Var.n1 = null;
         }
-        if (chat != null && org.telegram.messenger.o5.f(chat.emoji_status) != 0) {
-            d5Var.j(org.telegram.messenger.o5.f(chat.emoji_status), z10);
-            d5Var.k(Integer.valueOf(i10));
-            return d5Var;
-        }
-        if (user != null && user.verified) {
-            Drawable drawable2 = this.b;
-            if (drawable2 == null) {
-                drawable2 = new eq(org.telegram.ui.ActionBar.t6.f1, org.telegram.ui.ActionBar.t6.i1);
-            }
-            this.b = drawable2;
-            d5Var.g(drawable2, z10);
-            d5Var.k(null);
-            return d5Var;
-        }
-        if (user != null && org.telegram.messenger.o5.f(user.emoji_status) != 0) {
-            d5Var.j(org.telegram.messenger.o5.f(user.emoji_status), z10);
-            d5Var.k(Integer.valueOf(i10));
-            return d5Var;
-        }
-        if (user == null || !user.premium) {
-            d5Var.g(null, z10);
-            d5Var.k(null);
-            return d5Var;
-        }
-        d5Var.g((Drawable) ea.f.d().f, z10);
-        d5Var.k(Integer.valueOf(i10));
-        return d5Var;
     }
 
-    public qv0(int i10, View view) {
-        this.a = new d5(org.telegram.messenger.i0.L(i10), view);
+    @Override // u4.v
+    public final void q(u4.d1 d1Var) {
+    }
+
+    @Override // u4.v
+    public final void o(RecyclerView recyclerView, u4.d1 d1Var, u4.d1 d1Var2, int i3, int i10, int i11) {
     }
 }

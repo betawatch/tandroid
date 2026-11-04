@@ -5,7 +5,7 @@ import android.os.Build;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
 class MediaCodecUtils {
     static final String EXYNOS_PREFIX = "OMX.Exynos.";
@@ -22,7 +22,7 @@ class MediaCodecUtils {
     static final int[] ENCODER_COLOR_FORMATS = {19, 21, 2141391872, COLOR_QCOM_FORMATYUV420PackedSemiPlanar32m};
     static final int[] TEXTURE_COLOR_FORMATS = {2130708361};
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
@@ -65,11 +65,11 @@ class MediaCodecUtils {
     }
 
     public static Map<String, String> getCodecProperties(VideoCodecMimeType videoCodecMimeType, boolean z10) {
-        int i10 = 1.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
-        if (i10 == 1 || i10 == 2 || i10 == 3 || i10 == 4) {
+        int i3 = 1.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
+        if (i3 == 1 || i3 == 2 || i3 == 3 || i3 == 4) {
             return new HashMap();
         }
-        if (i10 == 5) {
+        if (i3 == 5) {
             return H264Utils.getDefaultH264Params(z10);
         }
         throw new IllegalArgumentException("Unsupported codec: " + videoCodecMimeType);
@@ -101,10 +101,10 @@ class MediaCodecUtils {
     }
 
     public static Integer selectColorFormat(int[] iArr, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        for (int i10 : iArr) {
-            for (int i11 : codecCapabilities.colorFormats) {
-                if (i11 == i10) {
-                    return Integer.valueOf(i11);
+        for (int i3 : iArr) {
+            for (int i10 : codecCapabilities.colorFormats) {
+                if (i10 == i3) {
+                    return Integer.valueOf(i10);
                 }
             }
         }

@@ -1,36 +1,40 @@
 package org.telegram.ui.web;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+import java.io.File;
+import java.io.FileInputStream;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public final class a1 extends TLObject {
-    public long a;
-    public long b;
-    public String c;
-    public c2 d;
+public final class a1 extends FileInputStream {
+    public final long a;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readInt64(z10);
-        this.b = inputSerializedData.readInt64(z10);
-        this.c = inputSerializedData.readString(z10);
-        c2 c2Var = new c2();
-        this.d = c2Var;
-        c2Var.readParams(inputSerializedData, z10);
+    public a1(long j10, long j11, File file) {
+        super(file);
+        this.a = j11;
+        if (j10 > 0 && skip(j10) != j10) {
+            throw new RuntimeException("BoundedInputStream failed to skip");
+        }
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt64(this.a);
-        outputSerializedData.writeInt64(this.b);
-        String str = this.c;
-        if (str == null) {
-            str = "";
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read() {
+        if (getChannel().position() >= this.a) {
+            return -1;
         }
-        outputSerializedData.writeString(str);
-        this.d.serializeToStream(outputSerializedData);
+        return super.read();
+    }
+
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i3, int i10) {
+        long position = getChannel().position();
+        long j10 = this.a;
+        if (position >= j10) {
+            return -1;
+        }
+        long position2 = j10 - getChannel().position();
+        if (i10 > position2) {
+            i10 = (int) position2;
+        }
+        return super.read(bArr, i3, i10);
     }
 }

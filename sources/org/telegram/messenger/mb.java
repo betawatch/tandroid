@@ -1,230 +1,237 @@
 package org.telegram.messenger;
 
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.TLRPC;
+import android.net.Uri;
+import android.os.AsyncTask;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.URL;
+import java.net.UnknownHostException;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class mb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+public final class mb extends AsyncTask {
+    public final nb a;
+    public boolean b = true;
+    public HttpURLConnection c;
+    public final boolean d;
+    public final /* synthetic */ zb e;
 
-    public /* synthetic */ mb(int i10, long j10, long j11, String str) {
-        this.a = 0;
-        this.d = i10;
-        this.e = str;
-        this.b = j10;
-        this.c = j11;
+    public mb(zb zbVar, nb nbVar) {
+        this.e = zbVar;
+        this.a = nbVar;
+        this.d = Uri.parse(nbVar.i.g).getQueryParameter("s") != null;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        SQLiteCursor queryFinalized;
-        long j10;
-        long j11;
-        int i10;
-        int i11;
-        long j12;
-        long j13;
-        int i12 = this.a;
-        int i13 = 0;
-        long j14 = this.c;
-        long j15 = this.b;
-        int i14 = this.d;
-        Object obj = this.e;
-        switch (i12) {
-            case 0:
-                at.f(i14).k(at.X1, (String) obj, Long.valueOf(j15), Long.valueOf(j14));
-                break;
-            case 1:
-                vi viVar = (vi) obj;
-                viVar.getClass();
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00c7, code lost:
+    
+        if (r2 == null) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x00dd, code lost:
+    
+        if (r2 == null) goto L53;
+     */
+    /* JADX WARN: Finally extract failed */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x00f4 A[Catch: all -> 0x00f2, TryCatch #14 {all -> 0x00f2, blocks: (B:81:0x00e5, B:83:0x00e9, B:85:0x00ef, B:86:0x011a, B:103:0x00f4, B:105:0x00f8, B:106:0x00fb, B:108:0x00ff, B:110:0x0105, B:112:0x0111, B:113:0x0114, B:115:0x0118), top: B:80:0x00e5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x00e9 A[Catch: all -> 0x00f2, TryCatch #14 {all -> 0x00f2, blocks: (B:81:0x00e5, B:83:0x00e9, B:85:0x00ef, B:86:0x011a, B:103:0x00f4, B:105:0x00f8, B:106:0x00fb, B:108:0x00ff, B:110:0x0105, B:112:0x0111, B:113:0x0114, B:115:0x0118), top: B:80:0x00e5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0121 A[Catch: all -> 0x0124, TRY_LEAVE, TryCatch #2 {all -> 0x0124, blocks: (B:88:0x011d, B:90:0x0121), top: B:87:0x011d }] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0130 A[Catch: Exception -> 0x0133, TRY_ENTER, TRY_LEAVE, TryCatch #10 {Exception -> 0x0133, blocks: (B:39:0x00d1, B:94:0x0130), top: B:2:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:95:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0126 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        InputStream inputStream;
+        ByteArrayOutputStream byteArrayOutputStream;
+        HttpURLConnection httpURLConnection;
+        InputStream inputStream2;
+        ByteArrayOutputStream byteArrayOutputStream2;
+        int read;
+        int responseCode;
+        String str = null;
+        try {
+            try {
+                HttpURLConnection httpURLConnection2 = (HttpURLConnection) new URL(this.a.i.g.replace("athumb://", "https://")).openConnection();
+                this.c = httpURLConnection2;
+                httpURLConnection2.setConnectTimeout(5000);
+                this.c.setReadTimeout(5000);
+                this.c.connect();
                 try {
-                    int[] iArr = new int[9];
-                    iArr[0] = -1;
-                    iArr[1] = -1;
-                    iArr[2] = -1;
-                    iArr[3] = -1;
-                    iArr[4] = -1;
-                    iArr[5] = -1;
-                    iArr[6] = -1;
-                    iArr[7] = -1;
-                    iArr[8] = -1;
-                    int i15 = 8;
-                    int[] iArr2 = new int[9];
-                    iArr2[0] = -1;
-                    iArr2[1] = -1;
-                    iArr2[2] = -1;
-                    iArr2[3] = -1;
-                    iArr2[4] = -1;
-                    iArr2[5] = -1;
-                    iArr2[6] = -1;
-                    iArr2[7] = -1;
-                    iArr2[8] = -1;
-                    int i16 = 7;
-                    int[] iArr3 = new int[9];
-                    iArr3[0] = 0;
-                    iArr3[1] = 0;
-                    iArr3[2] = 0;
-                    iArr3[3] = 0;
-                    iArr3[4] = 0;
-                    iArr3[5] = 0;
-                    iArr3[6] = 0;
-                    iArr3[7] = 0;
-                    iArr3[8] = 0;
-                    long j16 = this.b;
-                    int i17 = 4;
-                    long j17 = this.c;
-                    if (j16 != 0) {
-                        SQLiteDatabase sQLiteDatabase = viVar.getMessagesStorage().b;
-                        Locale locale = Locale.US;
-                        queryFinalized = sQLiteDatabase.queryFinalized("SELECT type, count, old FROM media_counts_topics WHERE uid = " + j17 + " AND topic_id = " + j16, new Object[0]);
-                    } else {
-                        SQLiteDatabase sQLiteDatabase2 = viVar.getMessagesStorage().b;
-                        Locale locale2 = Locale.US;
-                        queryFinalized = sQLiteDatabase2.queryFinalized("SELECT type, count, old FROM media_counts_v2 WHERE uid = " + j17, new Object[0]);
+                    HttpURLConnection httpURLConnection3 = this.c;
+                    if (httpURLConnection3 != null && (responseCode = httpURLConnection3.getResponseCode()) != 200 && responseCode != 202 && responseCode != 304) {
+                        this.b = false;
                     }
-                    while (queryFinalized.next()) {
-                        int intValue = queryFinalized.intValue(0);
-                        if (intValue >= 0 && intValue < 9) {
-                            int intValue2 = queryFinalized.intValue(1);
-                            iArr[intValue] = intValue2;
-                            iArr2[intValue] = intValue2;
-                            iArr3[intValue] = queryFinalized.intValue(2);
-                        }
-                    }
-                    queryFinalized.dispose();
-                    if (!o5.C(j17)) {
-                        TLRPC.TL_messages_getSearchCounters tL_messages_getSearchCounters = new TLRPC.TL_messages_getSearchCounters();
-                        tL_messages_getSearchCounters.peer = viVar.getMessagesController().i1(j17);
-                        if (j16 != 0) {
-                            if (j17 == viVar.getUserConfig().e()) {
-                                tL_messages_getSearchCounters.saved_peer_id = viVar.getMessagesController().i1(j16);
-                                tL_messages_getSearchCounters.flags |= 4;
-                            } else {
-                                tL_messages_getSearchCounters.top_msg_id = (int) j16;
-                                tL_messages_getSearchCounters.flags |= 1;
-                            }
-                        }
-                        int i18 = 0;
-                        boolean z10 = false;
-                        while (i18 < 9) {
-                            if (tL_messages_getSearchCounters.peer == null) {
-                                iArr[i18] = i13;
-                            } else if (iArr[i18] == -1 || iArr3[i18] == 1) {
-                                if (i18 == 0) {
-                                    i10 = i13;
-                                    tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterPhotoVideo());
-                                } else {
-                                    i10 = i13;
-                                    if (i18 == 1) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterDocument());
-                                    } else if (i18 == 2) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterRoundVoice());
-                                    } else if (i18 == 3) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterUrl());
-                                    } else if (i18 == i17) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterMusic());
-                                    } else if (i18 == 6) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterPhotos());
-                                    } else if (i18 == i16) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterVideo());
-                                    } else if (i18 == i15) {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterPoll());
-                                    } else {
-                                        tL_messages_getSearchCounters.filters.add(new TLRPC.TL_inputMessagesFilterGif());
-                                    }
-                                }
-                                if (iArr[i18] == -1) {
-                                    z10 = true;
-                                } else if (iArr3[i18] == 1) {
-                                    iArr[i18] = -1;
-                                }
-                                i18++;
-                                i13 = i10;
-                                i15 = 8;
-                                i16 = 7;
-                                i17 = 4;
-                            }
-                            i10 = i13;
-                            i18++;
-                            i13 = i10;
-                            i15 = 8;
-                            i16 = 7;
-                            i17 = 4;
-                        }
-                        if (tL_messages_getSearchCounters.filters.isEmpty()) {
-                            j10 = j16;
-                            j11 = j17;
-                        } else {
-                            j11 = j17;
-                            j10 = j16;
-                            viVar.getConnectionsManager().bindRequestToGuid(viVar.getConnectionsManager().sendRequest(tL_messages_getSearchCounters, new zf(viVar, iArr, j17, j16, 1)), i14);
-                        }
-                        if (!z10 || viVar.getConnectionsManager().getConnectionState() != 3) {
-                            i0.g3(new hg(viVar, j11, j10, iArr2, 1));
-                            break;
-                        }
-                    } else {
-                        int i19 = 0;
-                        while (i19 < 9) {
-                            if (iArr[i19] == -1) {
-                                SQLiteDatabase sQLiteDatabase3 = viVar.getMessagesStorage().b;
-                                Locale locale3 = Locale.US;
-                                SQLiteCursor queryFinalized2 = sQLiteDatabase3.queryFinalized("SELECT COUNT(mid) FROM media_v4 WHERE uid = " + j17 + " AND type = " + i19 + " LIMIT 1", new Object[0]);
-                                if (queryFinalized2.next()) {
-                                    iArr[i19] = queryFinalized2.intValue(0);
-                                } else {
-                                    iArr[i19] = 0;
-                                }
-                                queryFinalized2.dispose();
-                                i11 = i19;
-                                j13 = j16;
-                                long j18 = j17;
-                                vi viVar2 = viVar;
-                                viVar2.H1(j18, j13, i11, iArr[i19]);
-                                j12 = j18;
-                                viVar = viVar2;
-                            } else {
-                                i11 = i19;
-                                j12 = j17;
-                                j13 = j16;
-                            }
-                            i19 = i11 + 1;
-                            j17 = j12;
-                            j16 = j13;
-                        }
-                        i0.g3(new hg(viVar, j17, j16, iArr, 0));
-                        break;
-                    }
-                } catch (Exception e) {
-                    f8.g(e, true);
-                    return;
+                } catch (Exception e10) {
+                    a8.g(e10, false);
                 }
-                break;
-            default:
-                y00 y00Var = (y00) obj;
-                long j19 = -j15;
-                TLRPC.TL_forumTopic f7 = y00Var.f(j19, j14);
-                if (f7 != null) {
-                    f7.unread_mentions_count = i14;
-                    y00Var.y(j19, true);
-                    break;
+                inputStream2 = this.c.getInputStream();
+                try {
+                    byteArrayOutputStream2 = new ByteArrayOutputStream();
+                } catch (Throwable th2) {
+                    inputStream = inputStream2;
+                    th = th2;
+                    byteArrayOutputStream = null;
                 }
-                break;
+            } catch (Throwable th3) {
+                th = th3;
+                inputStream = null;
+                byteArrayOutputStream = null;
+                try {
+                    if (th instanceof SocketTimeoutException) {
+                        if (th instanceof UnknownHostException) {
+                            this.b = false;
+                        } else if (th instanceof SocketException) {
+                            if (th.getMessage() != null && th.getMessage().contains("ECONNRESET")) {
+                                this.b = false;
+                            }
+                        } else if (th instanceof FileNotFoundException) {
+                            this.b = false;
+                        }
+                    } else if (t0.s()) {
+                        this.b = false;
+                    }
+                    a8.g(th, false);
+                    try {
+                        httpURLConnection = this.c;
+                        if (httpURLConnection != null) {
+                            httpURLConnection.disconnect();
+                        }
+                    } catch (Throwable unused) {
+                    }
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (Throwable th4) {
+                            a8.g(th4, true);
+                        }
+                    }
+                    if (byteArrayOutputStream != null) {
+                        return null;
+                    }
+                    byteArrayOutputStream.close();
+                    return str;
+                } catch (Throwable th5) {
+                    try {
+                        HttpURLConnection httpURLConnection4 = this.c;
+                        if (httpURLConnection4 != null) {
+                            httpURLConnection4.disconnect();
+                        }
+                    } catch (Throwable unused2) {
+                    }
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (Throwable th6) {
+                            a8.g(th6, true);
+                        }
+                    }
+                    if (byteArrayOutputStream == null) {
+                        throw th5;
+                    }
+                    try {
+                        byteArrayOutputStream.close();
+                        throw th5;
+                    } catch (Exception unused3) {
+                        throw th5;
+                    }
+                }
+            }
+            try {
+                byte[] bArr = new byte[32768];
+                while (!isCancelled() && (read = inputStream2.read(bArr)) > 0) {
+                    byteArrayOutputStream2.write(bArr, 0, read);
+                }
+                this.b = false;
+                JSONArray jSONArray = new JSONObject(new String(byteArrayOutputStream2.toByteArray())).getJSONArray("results");
+                if (jSONArray.length() > 0) {
+                    String string = jSONArray.getJSONObject(0).getString("artworkUrl100");
+                    if (this.d) {
+                        try {
+                            HttpURLConnection httpURLConnection5 = this.c;
+                            if (httpURLConnection5 != null) {
+                                httpURLConnection5.disconnect();
+                            }
+                        } catch (Throwable unused4) {
+                        }
+                        if (inputStream2 != null) {
+                            try {
+                                inputStream2.close();
+                            } catch (Throwable th7) {
+                                a8.g(th7, true);
+                            }
+                        }
+                        try {
+                            byteArrayOutputStream2.close();
+                        } catch (Exception unused5) {
+                        }
+                        return string;
+                    }
+                    str = string.replace("100x100", "600x600");
+                    try {
+                        HttpURLConnection httpURLConnection6 = this.c;
+                        if (httpURLConnection6 != null) {
+                            httpURLConnection6.disconnect();
+                        }
+                    } catch (Throwable unused6) {
+                    }
+                } else {
+                    try {
+                        HttpURLConnection httpURLConnection7 = this.c;
+                        if (httpURLConnection7 != null) {
+                            httpURLConnection7.disconnect();
+                        }
+                    } catch (Throwable unused7) {
+                    }
+                }
+                try {
+                    inputStream2.close();
+                } catch (Throwable th8) {
+                    a8.g(th8, true);
+                }
+                byteArrayOutputStream2.close();
+            } catch (Throwable th9) {
+                inputStream = inputStream2;
+                th = th9;
+                byteArrayOutputStream = byteArrayOutputStream2;
+                if (th instanceof SocketTimeoutException) {
+                }
+                a8.g(th, false);
+                httpURLConnection = this.c;
+                if (httpURLConnection != null) {
+                }
+                if (inputStream != null) {
+                }
+                if (byteArrayOutputStream != null) {
+                }
+            }
+            return str;
+        } catch (Exception unused8) {
+            return str;
         }
     }
 
-    public /* synthetic */ mb(f1 f1Var, long j10, long j11, int i10, int i11) {
-        this.a = i11;
-        this.e = f1Var;
-        this.b = j10;
-        this.c = j11;
-        this.d = i10;
+    @Override // android.os.AsyncTask
+    public final void onCancelled() {
+        this.e.s.c(new lb(this, 0));
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        String str = (String) obj;
+        zb zbVar = this.e;
+        p5 p5Var = zbVar.s;
+        if (str != null) {
+            p5Var.c(new y4(18, this, str));
+        } else if (this.b) {
+            p5Var.c(new bb(zbVar, this.a.e, 0));
+        }
+        p5Var.c(new lb(this, 1));
     }
 }

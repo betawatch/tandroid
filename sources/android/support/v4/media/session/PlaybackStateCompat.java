@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class PlaybackStateCompat implements Parcelable {
     public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new z(4);
@@ -25,13 +25,13 @@ public final class PlaybackStateCompat implements Parcelable {
     public final Bundle w;
     public PlaybackState x;
 
-    public PlaybackStateCompat(int i10, long j10, long j11, float f7, long j12, int i11, CharSequence charSequence, long j13, ArrayList arrayList, long j14, Bundle bundle) {
-        this.a = i10;
+    public PlaybackStateCompat(int i3, long j10, long j11, float f10, long j12, int i10, CharSequence charSequence, long j13, ArrayList arrayList, long j14, Bundle bundle) {
+        this.a = i3;
         this.b = j10;
         this.c = j11;
-        this.d = f7;
+        this.d = f10;
         this.e = j12;
-        this.f = i11;
+        this.f = i10;
         this.h = charSequence;
         this.n = j13;
         this.r = new ArrayList(arrayList);
@@ -51,9 +51,9 @@ public final class PlaybackStateCompat implements Parcelable {
             for (PlaybackState.CustomAction customAction2 : j10) {
                 if (customAction2 != null) {
                     PlaybackState.CustomAction customAction3 = customAction2;
-                    Bundle l4 = b0.l(customAction3);
-                    a0.k(l4);
-                    customAction = new CustomAction(b0.f(customAction3), b0.o(customAction3), b0.m(customAction3), l4);
+                    Bundle l10 = b0.l(customAction3);
+                    a0.f(l10);
+                    customAction = new CustomAction(b0.f(customAction3), b0.o(customAction3), b0.m(customAction3), l10);
                     customAction.e = customAction3;
                 } else {
                     customAction = null;
@@ -64,9 +64,9 @@ public final class PlaybackStateCompat implements Parcelable {
         } else {
             arrayList = null;
         }
-        Bundle a2 = c0.a(playbackState);
-        a0.k(a2);
-        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(b0.r(playbackState), b0.q(playbackState), b0.i(playbackState), b0.p(playbackState), b0.g(playbackState), 0, b0.k(playbackState), b0.n(playbackState), arrayList, b0.h(playbackState), a2);
+        Bundle a10 = c0.a(playbackState);
+        a0.f(a10);
+        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(b0.r(playbackState), b0.q(playbackState), b0.i(playbackState), b0.p(playbackState), b0.g(playbackState), 0, b0.k(playbackState), b0.n(playbackState), arrayList, b0.h(playbackState), a10);
         playbackStateCompat.x = playbackState;
         return playbackStateCompat;
     }
@@ -96,25 +96,25 @@ public final class PlaybackStateCompat implements Parcelable {
         sb2.append(", custom actions=");
         sb2.append(this.r);
         sb2.append(", active item id=");
-        return a1.g.q(sb2, this.s, "}");
+        return a1.g.r(sb2, this.s, "}");
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
+    public final void writeToParcel(Parcel parcel, int i3) {
         parcel.writeInt(this.a);
         parcel.writeLong(this.b);
         parcel.writeFloat(this.d);
         parcel.writeLong(this.n);
         parcel.writeLong(this.c);
         parcel.writeLong(this.e);
-        TextUtils.writeToParcel(this.h, parcel, i10);
+        TextUtils.writeToParcel(this.h, parcel, i3);
         parcel.writeTypedList(this.r);
         parcel.writeLong(this.s);
         parcel.writeBundle(this.w);
         parcel.writeInt(this.f);
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static final class CustomAction implements Parcelable {
         public static final Parcelable.Creator<CustomAction> CREATOR = new e0();
         public final String a;
@@ -123,10 +123,10 @@ public final class PlaybackStateCompat implements Parcelable {
         public final Bundle d;
         public PlaybackState.CustomAction e;
 
-        public CustomAction(String str, CharSequence charSequence, int i10, Bundle bundle) {
+        public CustomAction(String str, CharSequence charSequence, int i3, Bundle bundle) {
             this.a = str;
             this.b = charSequence;
-            this.c = i10;
+            this.c = i3;
             this.d = bundle;
         }
 
@@ -140,9 +140,9 @@ public final class PlaybackStateCompat implements Parcelable {
         }
 
         @Override // android.os.Parcelable
-        public final void writeToParcel(Parcel parcel, int i10) {
+        public final void writeToParcel(Parcel parcel, int i3) {
             parcel.writeString(this.a);
-            TextUtils.writeToParcel(this.b, parcel, i10);
+            TextUtils.writeToParcel(this.b, parcel, i3);
             parcel.writeInt(this.c);
             parcel.writeBundle(this.d);
         }

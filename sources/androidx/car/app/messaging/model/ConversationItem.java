@@ -4,15 +4,15 @@ import androidx.car.app.model.Action;
 import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.q;
-import androidx.car.app.utils.h;
-import e0.l0;
+import androidx.car.app.utils.g;
+import b8.r0;
+import e0.k0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.r;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class ConversationItem implements q {
     private final List<Action> mActions;
@@ -21,7 +21,7 @@ public class ConversationItem implements q {
     private final String mId;
     private final boolean mIsGroupConversation;
     private final List<CarMessage> mMessages;
-    private final l0 mSelf;
+    private final k0 mSelf;
     private final CarText mTitle;
 
     public ConversationItem(f fVar) {
@@ -34,9 +34,9 @@ public class ConversationItem implements q {
         this.mSelf = validateSender(fVar.c);
         this.mIcon = fVar.d;
         this.mIsGroupConversation = fVar.e;
-        List<CarMessage> g10 = h.g(fVar.f);
-        Objects.requireNonNull(g10);
-        List<CarMessage> list = g10;
+        List<CarMessage> g7 = g.g(fVar.f);
+        Objects.requireNonNull(g7);
+        List<CarMessage> list = g7;
         this.mMessages = list;
         if (list.isEmpty()) {
             throw new IllegalStateException("Message list cannot be empty.");
@@ -44,14 +44,14 @@ public class ConversationItem implements q {
         c cVar = fVar.g;
         Objects.requireNonNull(cVar);
         this.mConversationCallbackDelegate = cVar;
-        this.mActions = h.g(fVar.h);
+        this.mActions = g.g(fVar.h);
     }
 
-    public static l0 validateSender(l0 l0Var) {
-        Objects.requireNonNull(l0Var);
-        Objects.requireNonNull(l0Var.a);
-        Objects.requireNonNull(l0Var.d);
-        return l0Var;
+    public static k0 validateSender(k0 k0Var) {
+        Objects.requireNonNull(k0Var);
+        Objects.requireNonNull(k0Var.a);
+        Objects.requireNonNull(k0Var.d);
+        return k0Var;
     }
 
     public boolean equals(Object obj) {
@@ -62,7 +62,7 @@ public class ConversationItem implements q {
             return false;
         }
         ConversationItem conversationItem = (ConversationItem) obj;
-        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && r.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
+        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && r0.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
     }
 
     public List<Action> getActions() {
@@ -85,7 +85,7 @@ public class ConversationItem implements q {
         return this.mMessages;
     }
 
-    public l0 getSelf() {
+    public k0 getSelf() {
         return this.mSelf;
     }
 
@@ -94,7 +94,7 @@ public class ConversationItem implements q {
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(r.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
+        return Objects.hash(Integer.valueOf(r0.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
     }
 
     public boolean isGroupConversation() {
@@ -104,18 +104,18 @@ public class ConversationItem implements q {
     private ConversationItem() {
         this.mId = "";
         this.mTitle = new CarText.Builder("").build();
-        l0 l0Var = new l0();
-        l0Var.a = "";
-        l0Var.b = null;
-        l0Var.c = null;
-        l0Var.d = null;
-        l0Var.e = false;
-        l0Var.f = false;
-        this.mSelf = l0Var;
+        k0 k0Var = new k0();
+        k0Var.a = "";
+        k0Var.b = null;
+        k0Var.c = null;
+        k0Var.d = null;
+        k0Var.e = false;
+        k0Var.f = false;
+        this.mSelf = k0Var;
         this.mIcon = null;
         this.mIsGroupConversation = false;
         this.mMessages = new ArrayList();
-        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new oa.d(1));
+        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new kb.a(2));
         this.mActions = Collections.EMPTY_LIST;
     }
 }

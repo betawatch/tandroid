@@ -1,94 +1,93 @@
 package org.telegram.ui.web;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.HashSet;
+import android.webkit.ValueCallback;
+import android.webkit.WebView;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.f8;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.ActionBar.q2;
-import org.telegram.ui.ActionBar.t6;
-import org.telegram.ui.Components.f5;
-import w7.b6;
+import org.telegram.ui.Components.iv0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes4.dex */
-public final class o1 extends FrameLayout implements k6 {
-    public final ImageView a;
-    public final TextView b;
-    public final q2 c;
-    public f5 d;
-    public String e;
-    public boolean f;
-    public ShapeDrawable h;
+public final /* synthetic */ class o1 implements ValueCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ WebView c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public o1(Context context) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        addView(imageView, b6.d(32, 32.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        a7.V(textView, t6.G6, null);
-        textView.setTextSize(1, 16.0f);
-        textView.setMaxLines(1);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        addView(textView, b6.d(-1, -2.0f, 55, 68.0f, 7.0f, 54.0f, 0.0f));
-        q2 q2Var = new q2(this, context, 11);
-        this.c = q2Var;
-        a7.V(q2Var, t6.y6, null);
-        q2Var.setTextSize(1, 13.0f);
-        q2Var.setMaxLines(1);
-        q2Var.setEllipsize(truncateAt);
-        q2Var.setPivotX(0.0f);
-        addView(q2Var, b6.d(-1, -2.0f, 55, 68.0f, 30.0f, 54.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        imageView2.setImageResource(R.drawable.ic_ab_other);
-        a7.t(imageView2, t6.A6, null, PorterDuff.Mode.SRC_IN);
-        addView(imageView2, b6.d(32, 32.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+    public /* synthetic */ o1(u1 u1Var, WebView webView, File file, n1 n1Var, int i3) {
+        this.a = i3;
+        this.b = u1Var;
+        this.c = webView;
+        this.d = file;
+        this.e = n1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.f) {
-            canvas.drawRect(org.telegram.messenger.i0.L(64.0f), getHeight() - 1, getWidth(), getHeight(), t6.k0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(56.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void updateColors() {
-        try {
-            ShapeDrawable shapeDrawable = this.h;
-            if (shapeDrawable != null) {
-                t6.C1(t6.r1(0.1f, t6.x0(null, t6.G6, false)), shapeDrawable);
-                ImageView imageView = this.a;
-                if (imageView != null) {
-                    imageView.invalidate();
+    @Override // android.webkit.ValueCallback
+    public final void onReceiveValue(Object obj) {
+        int i3 = 1;
+        switch (this.a) {
+            case 0:
+                u1 u1Var = (u1) this.b;
+                WebView webView = this.c;
+                File file = (File) this.d;
+                webView.saveWebArchive(file.getAbsolutePath(), false, new o1(u1Var, webView, file, (n1) this.e, 1));
+                return;
+            case 1:
+                u1 u1Var2 = (u1) this.b;
+                WebView webView2 = this.c;
+                File file2 = (File) this.d;
+                n1 n1Var = (n1) this.e;
+                webView2.evaluateJavascript(org.telegram.messenger.g0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "false"), new e0(i3));
+                try {
+                    za.p pVar = new za.p(file2);
+                    u1Var2.b = pVar;
+                    if (!((ArrayList) pVar.b).isEmpty()) {
+                        n1Var.a(((b1) ((ArrayList) u1Var2.b.b).get(0)).a());
+                        return;
+                    }
+                } catch (Exception e10) {
+                    a8.g(e10, true);
                 }
-            }
-        } catch (Exception e) {
-            f8.g(e, true);
+                n1Var.a(null);
+                return;
+            default:
+                ui.j jVar = (ui.j) this.b;
+                iv0 iv0Var = (iv0) this.d;
+                WebView webView3 = this.c;
+                d5.g gVar = (d5.g) this.e;
+                String str = (String) obj;
+                org.telegram.messenger.g0.r(iv0Var);
+                synchronized (jVar.a) {
+                    if (!jVar.u && jVar.o == webView3 && jVar.p == gVar && !jVar.r) {
+                        if (!"true".equals(str)) {
+                            a8.d("WEB proxy: Base64 bridge installation failed; transport stopped");
+                            jVar.q();
+                            return;
+                        } else {
+                            if (!jVar.j(webView3)) {
+                                jVar.h();
+                                return;
+                            }
+                            jVar.s = false;
+                            jVar.r = true;
+                            a8.b("WEB proxy: Base64 bridge ready");
+                            jVar.n(16, 0, new byte[]{1});
+                            return;
+                        }
+                    }
+                    return;
+                }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public /* synthetic */ o1(ui.j jVar, iv0 iv0Var, WebView webView, d5.g gVar) {
+        this.a = 2;
+        this.b = jVar;
+        this.d = iv0Var;
+        this.c = webView;
+        this.e = gVar;
     }
 }

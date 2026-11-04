@@ -1,44 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements r20 {
+public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ r1 b;
 
-    public /* synthetic */ j1(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ j1(r1 r1Var, int i3) {
+        this.a = i3;
+        this.b = r1Var;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                i0.g3(new ng((k1) this.b, (String) obj, (Runnable) this.c, 7));
-                break;
-            case 1:
-                h3 h3Var = (h3) this.b;
-                r20 r20Var = (r20) this.c;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                    h3Var.f = Utilities.z(tL_error.text).intValue();
-                } else if (tL_error.text.startsWith("BOOSTS_EMPTY")) {
-                    h3Var.b = true;
+                r1 r1Var = this.b;
+                try {
+                    r1Var.o(Collections.singletonList(r1.k), new m1(r1Var));
+                    break;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
                 }
-                h3Var.a = false;
-                r20Var.a(h3Var);
-                break;
             default:
-                rz rzVar = (rz) this.b;
-                pz pzVar = (pz) this.c;
-                rzVar.getClass();
-                pzVar.Q = ((Long) obj).longValue();
-                rzVar.r0(pzVar);
+                this.b.q();
                 break;
         }
     }

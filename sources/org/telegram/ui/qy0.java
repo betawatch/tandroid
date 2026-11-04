@@ -1,83 +1,46 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class qy0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ ty0 b;
+public final class qy0 extends sg.a {
+    public final org.telegram.messenger.iv c;
+    public final String d;
 
-    public qy0(ty0 ty0Var, String str) {
-        this.b = ty0Var;
-        this.a = str;
+    public qy0(int i3) {
+        super(i3, false);
+        this.c = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        ty0 ty0Var = this.b;
-        long j10 = ty0Var.h;
-        long j11 = ty0Var.f;
-        String str = this.a;
-        if (i10 == -1) {
-            if (!ty0Var.n && ty0Var.r) {
-                i17 = ((org.telegram.ui.ActionBar.k2) ty0Var).currentAccount;
-                org.telegram.messenger.wp.r1(i17).e7.edit().putInt("notify2_" + str, 0).apply();
-            }
-        } else if (i10 == 1) {
-            i11 = ((org.telegram.ui.ActionBar.k2) ty0Var).currentAccount;
-            SharedPreferences sharedPreferences = org.telegram.messenger.wp.r1(i11).e7;
-            SharedPreferences.Editor edit = sharedPreferences.edit();
-            edit.putBoolean("custom_" + str, true);
-            i12 = ((org.telegram.ui.ActionBar.k2) ty0Var).currentAccount;
-            TLRPC.Dialog dialog = (TLRPC.Dialog) org.telegram.messenger.wp.r1(i12).Q.f(j11);
-            if (ty0Var.r) {
-                edit.putInt("notify2_" + str, 0);
-                if (j10 == 0) {
-                    i16 = ((org.telegram.ui.ActionBar.k2) ty0Var).currentAccount;
-                    org.telegram.messenger.is.a0(i16).E1(j11, 0L);
-                    if (dialog != null) {
-                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
-                    }
-                }
-            } else {
-                edit.putInt("notify2_" + str, 2);
-                if (j10 == 0) {
-                    i13 = ((org.telegram.ui.ActionBar.k2) ty0Var).currentAccount;
-                    org.telegram.messenger.pt.t(i13).N(j11);
-                    i14 = ((org.telegram.ui.ActionBar.k2) ty0Var).currentAccount;
-                    org.telegram.messenger.is.a0(i14).E1(j11, 1L);
-                    if (dialog != null) {
-                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
-                        dialog.notify_settings = tL_peerNotifySettings;
-                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    }
-                }
-            }
-            edit.apply();
-            i15 = ((org.telegram.ui.ActionBar.k2) ty0Var).currentAccount;
-            org.telegram.messenger.pt.t(i15).c0(ty0Var.f, ty0Var.h, true);
-            if (ty0Var.s != null) {
-                si0 si0Var = new si0();
-                si0Var.d = j11;
-                si0Var.b = true;
-                int c10 = org.telegram.messenger.m5.c("notify2_", str, sharedPreferences, 0);
-                si0Var.c = c10;
-                if (c10 != 0) {
-                    si0Var.a = org.telegram.messenger.m5.c("notifyuntil_", str, sharedPreferences, 0);
-                }
-                ty0Var.s.w(si0Var);
-            }
+    public final boolean equals(Object obj) {
+        org.telegram.messenger.iv ivVar;
+        if (this == obj) {
+            return true;
         }
-        ty0Var.finishFragment();
+        if (obj == null || qy0.class != obj.getClass()) {
+            return false;
+        }
+        qy0 qy0Var = (qy0) obj;
+        if (this.a != qy0Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, qy0Var.d);
+        }
+        org.telegram.messenger.iv ivVar2 = this.c;
+        return ivVar2 == null || (ivVar = qy0Var.c) == null || ivVar2.d == ivVar.d;
+    }
+
+    public qy0(org.telegram.messenger.iv ivVar) {
+        super(2, false);
+        this.c = ivVar;
+    }
+
+    public qy0(int i3, String str) {
+        super(i3, false);
+        this.d = str;
+        this.c = null;
     }
 }

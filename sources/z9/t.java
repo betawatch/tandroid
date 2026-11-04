@@ -1,27 +1,56 @@
 package z9;
 
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.os.Process;
+import android.util.Log;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class t implements ja.d {
-    public static final t a = new t();
-    public static final ja.c b = ja.c.c("timestamp");
-    public static final ja.c c = ja.c.c(TeXSymbolParser.TYPE_ATTR);
-    public static final ja.c d = ja.c.c("app");
-    public static final ja.c e = ja.c.c("device");
-    public static final ja.c f = ja.c.c("log");
-    public static final ja.c g = ja.c.c("rollouts");
+public final class t implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
 
-    @Override // ja.a
-    public final void a(Object obj, Object obj2) {
-        ja.e eVar = (ja.e) obj2;
-        l0 l0Var = (l0) ((a2) obj);
-        eVar.f(b, l0Var.a);
-        eVar.d(c, l0Var.b);
-        eVar.d(d, l0Var.c);
-        eVar.d(e, l0Var.d);
-        eVar.d(f, l0Var.e);
-        eVar.d(g, l0Var.f);
+    public t(Runnable runnable) {
+        this.b = runnable;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        Process.setThreadPriority(10);
+        switch (this.a) {
+            case 0:
+                ((Runnable) this.b).run();
+                break;
+            default:
+                ExecutorService executorService = (ExecutorService) this.b;
+                try {
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", "Executing shutdown hook for awaitEvenIfOnMainThread task continuation executor", null);
+                    }
+                    executorService.shutdown();
+                    if (!executorService.awaitTermination(2L, TimeUnit.SECONDS)) {
+                        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                            Log.d("FirebaseCrashlytics", "awaitEvenIfOnMainThread task continuation executor did not shut down in the allocated time. Requesting immediate shutdown.", null);
+                        }
+                        executorService.shutdownNow();
+                        break;
+                    }
+                } catch (InterruptedException unused) {
+                    Locale locale = Locale.US;
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", "Interrupted while waiting for awaitEvenIfOnMainThread task continuation executor to shut down. Requesting immediate shutdown.", null);
+                    }
+                    executorService.shutdownNow();
+                    return;
+                }
+                break;
+        }
+    }
+
+    public t(ExecutorService executorService) {
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+        this.b = executorService;
     }
 }

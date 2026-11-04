@@ -1,50 +1,119 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.animation.LinearInterpolator;
+import ci.uc;
+import ei.c3;
+import java.security.SecureRandom;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.l10;
+import org.telegram.messenger.lc;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w2 b;
+public final class u2 {
+    public final e5 a;
+    public ValueAnimator b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public final g2 k;
+    public final int l;
+    public int m = 0;
+    public float n = 0.0f;
+    public int o;
+    public int p;
+    public boolean q;
+    public ValueAnimator r;
 
-    public /* synthetic */ u2(w2 w2Var, int i10) {
-        this.a = i10;
-        this.b = w2Var;
+    public u2(TLRPC.User user, g2 g2Var, int i3) {
+        this.k = g2Var;
+        this.l = i3;
+        boolean e10 = lc.e(512);
+        long m10 = l10.m(user);
+        if (!e10 || m10 == 0) {
+            return;
+        }
+        e5 e5Var = new e5(i3, 13, g2Var, false);
+        this.a = e5Var;
+        e5Var.j(m10, false);
+        e5Var.k(-16777216);
+        e5Var.w = this.m;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.b = ofFloat;
+        ofFloat.addUpdateListener(new uc(21, this, g2Var));
+        this.e = org.telegram.messenger.g0.L(12.0f) + this.c;
+        this.f = org.telegram.messenger.g0.L(12.0f) + this.d;
+        SecureRandom secureRandom = Utilities.b;
+        this.c = org.telegram.messenger.g0.L(12.0f) + secureRandom.nextInt(org.telegram.messenger.g0.L(16.0f));
+        this.d = org.telegram.messenger.g0.L(12.0f) + secureRandom.nextInt(org.telegram.messenger.g0.L(16.0f));
+        this.b.setInterpolator(new LinearInterpolator());
+        this.b.addListener(new t2(this));
+        this.b.setDuration(2000L);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w2 w2Var = this.b;
-                w2Var.n = floatValue;
-                w2Var.k.invalidate();
-                if (w2Var.n > 1.0f && w2Var.r == null) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(org.telegram.messenger.i0.L(12), 0);
-                    w2Var.r = ofInt;
-                    ofInt.addUpdateListener(new u2(w2Var, 2));
-                    w2Var.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
-                    w2Var.r.start();
-                    break;
-                }
-                break;
-            case 1:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                w2 w2Var2 = this.b;
-                w2Var2.m = intValue;
-                w2Var2.k.invalidate();
-                break;
-            default:
-                int intValue2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                w2 w2Var3 = this.b;
-                if (w2Var3.i <= w2Var3.o / 2) {
-                    intValue2 = -intValue2;
-                }
-                w2Var3.p = intValue2;
-                w2Var3.k.invalidate();
-                break;
+    public final void a(Canvas canvas) {
+        e5 e5Var = this.a;
+        if (e5Var == null) {
+            return;
+        }
+        canvas.save();
+        float f10 = this.n;
+        canvas.scale(f10, f10, this.o / 2.0f, org.telegram.messenger.g0.L(300.0f));
+        canvas.translate(this.i - this.p, this.j);
+        int i3 = this.g;
+        int i10 = this.h;
+        int i11 = this.l;
+        e5Var.setBounds(i3, i10, i3 + i11, i11 + i10);
+        e5Var.w = this.m;
+        e5Var.draw(canvas);
+        canvas.restore();
+    }
+
+    public final void b(int i3, int i10) {
+        c3 c3Var;
+        e5 e5Var = this.a;
+        if (e5Var == null) {
+            return;
+        }
+        this.i = i3;
+        this.j = i10;
+        this.k.invalidate();
+        if (this.q) {
+            return;
+        }
+        int i11 = 0;
+        Drawable drawable = e5Var.f[0];
+        if (!(drawable instanceof g5) || ((c3Var = ((g5) drawable).k) != null && c3Var.J())) {
+            int i12 = 1;
+            this.q = true;
+            this.p = this.i > this.o / 2 ? org.telegram.messenger.g0.L(12) : -org.telegram.messenger.g0.L(12);
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.setInterpolator(new xq(0.34d, 1.36d, 0.64d, 1.0d));
+            ofFloat.addUpdateListener(new s2(this, i11));
+            long j10 = 350;
+            ofFloat.setDuration(j10);
+            long j11 = hs.K2;
+            ofFloat.setStartDelay(j11);
+            ofFloat.start();
+            ValueAnimator ofInt = ValueAnimator.ofInt(0, hs.e4, hs.e4);
+            ofInt.setInterpolator(xq.f);
+            ofInt.addUpdateListener(new s2(this, i12));
+            ofInt.setStartDelay(j11);
+            ofInt.setDuration(j10);
+            ofInt.start();
         }
     }
 }

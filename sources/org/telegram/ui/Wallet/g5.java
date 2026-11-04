@@ -1,49 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import org.telegram.messenger.at;
-import org.telegram.messenger.vs;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class g5 implements vs {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TL_wallet.walletTransaction[] b;
-    public final /* synthetic */ q4 c;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final class g5 extends pr {
+    public final ShapeDrawable H;
+    public final /* synthetic */ w5 I;
 
-    public g5(int i10, TL_wallet.walletTransaction[] wallettransactionArr, q4 q4Var) {
-        this.a = i10;
-        this.b = wallettransactionArr;
-        this.c = q4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g5(w5 w5Var, Context context) {
+        super(context);
+        this.I = w5Var;
+        this.H = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(22.0f), w5Var.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
     }
 
-    @Override // org.telegram.messenger.vs
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        TL_wallet.walletTransaction[] wallettransactionArr;
-        TL_wallet.walletTransaction wallettransaction;
-        if (i10 == at.a4 || i10 == at.b4) {
-            ArrayList arrayList = k0.x(this.a).B().c;
-            int size = arrayList.size();
-            int i12 = 0;
-            while (true) {
-                wallettransactionArr = this.b;
-                if (i12 >= size) {
-                    wallettransaction = null;
-                    break;
-                }
-                Object obj = arrayList.get(i12);
-                i12++;
-                wallettransaction = (TL_wallet.walletTransaction) obj;
-                TL_wallet.walletTransaction wallettransaction2 = wallettransactionArr[0];
-                if (wallettransaction == wallettransaction2 || k0.i0(wallettransaction2, wallettransaction)) {
-                    break;
-                }
-            }
-            if (wallettransaction != null) {
-                wallettransactionArr[0] = wallettransaction;
-                this.c.a(wallettransaction);
-            }
+    @Override // org.telegram.ui.Components.pr, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int ceil = (int) Math.ceil(getMetadata().g.a);
+        if (ceil > 0) {
+            ShapeDrawable shapeDrawable = this.H;
+            shapeDrawable.getPaint().setColor(this.I.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
+            shapeDrawable.setBounds(0, 0, getWidth(), ceil);
+            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
+            shapeDrawable.draw(canvas);
         }
+        super.dispatchDraw(canvas);
     }
 }

@@ -4,7 +4,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class r0 implements t0 {
     public static final s0 b = new s0(r0.class, 0);
@@ -15,14 +15,14 @@ public final class r0 implements t0 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.t0
-    public final void b(Runnable runnable, Executor executor) {
+    public final void c(Runnable runnable, Executor executor) {
         if (executor == null) {
             throw new NullPointerException("Executor was null.");
         }
         try {
             executor.execute(runnable);
-        } catch (Exception e) {
-            b.c().logp(Level.SEVERE, "com.google.common.util.concurrent.ImmediateFuture", "addListener", c3.i0.n("RuntimeException while executing runnable ", runnable.toString(), " with executor ", String.valueOf(executor)), (Throwable) e);
+        } catch (Exception e10) {
+            b.c().logp(Level.SEVERE, "com.google.common.util.concurrent.ImmediateFuture", "addListener", com.google.android.recaptcha.internal.a.k("RuntimeException while executing runnable ", runnable.toString(), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 

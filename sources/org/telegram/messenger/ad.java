@@ -1,114 +1,34 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
-import java.io.File;
-import org.telegram.tgnet.ConnectionsManager;
+import android.icu.text.RelativeDateTimeFormatter;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class ad {
-    public String a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public boolean g;
-    public int h;
-    public int i;
-    public boolean j;
-    public int k;
-
-    public static ad a(String str) {
-        ad adVar = null;
-        if (str != null && str.length() != 0) {
-            String[] split = str.split("\\|");
-            if (split.length >= 4) {
-                adVar = new ad();
-                adVar.a = split[0];
-                adVar.b = split[1];
-                adVar.c = split[2].toLowerCase();
-                adVar.d = split[3];
-                if (split.length >= 5) {
-                    adVar.h = Utilities.z(split[4]).intValue();
-                }
-                adVar.e = split.length >= 6 ? split[5] : "";
-                adVar.f = split.length >= 7 ? split[6] : adVar.c;
-                if (split.length >= 8) {
-                    adVar.g = Utilities.z(split[7]).intValue() == 1;
-                }
-                if (split.length >= 9) {
-                    adVar.i = Utilities.z(split[8]).intValue();
-                }
-                if (split.length >= 10) {
-                    adVar.k = Utilities.z(split[9]).intValue();
-                } else {
-                    adVar.k = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                }
-                if (!TextUtils.isEmpty(adVar.e)) {
-                    adVar.e = adVar.e.replace("-", "_");
-                }
-            }
+public abstract class ad {
+    public static String a(long j10, Locale locale) {
+        RelativeDateTimeFormatter.RelativeUnit relativeUnit;
+        RelativeDateTimeFormatter relativeDateTimeFormatter = RelativeDateTimeFormatter.getInstance(locale);
+        boolean z10 = j10 > 0;
+        long max = Math.max(1L, Math.round(Math.abs(j10) / 1000.0d));
+        if (max < 60) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
+        } else if (max < 3600) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.MINUTES;
+            max = Math.round(max / 60.0d);
+        } else if (max < 86400) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.HOURS;
+            max = Math.round(max / 3600.0d);
+        } else if (max < 2592000) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.DAYS;
+            max = Math.round(max / 86400.0d);
+        } else if (max < 31536000) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.MONTHS;
+            max = Math.round(max / 2592000.0d);
+        } else {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.YEARS;
+            max = Math.round(max / 3.1536E7d);
         }
-        return adVar;
-    }
-
-    public final String b() {
-        if (this.d != null && !i() && !j()) {
-            return "local_" + this.c;
-        }
-        if (!j()) {
-            return this.c;
-        }
-        return "unofficial_" + this.c;
-    }
-
-    public final String c() {
-        return this.c.replace("_", "-");
-    }
-
-    public final File d() {
-        if (j()) {
-            return new File(w0.h(), a1.g.r(new StringBuilder("unofficial_base_"), this.c, ".xml"));
-        }
-        return null;
-    }
-
-    public final File e() {
-        if (i()) {
-            return new File(w0.h(), a1.g.r(new StringBuilder("remote_"), this.c, ".xml"));
-        }
-        if (j()) {
-            return new File(w0.h(), a1.g.r(new StringBuilder("unofficial_"), this.c, ".xml"));
-        }
-        if (TextUtils.isEmpty(this.d)) {
-            return null;
-        }
-        return new File(this.d);
-    }
-
-    public final String f() {
-        String str = this.e;
-        if (str == null) {
-            str = "";
-        }
-        TextUtils.isEmpty(this.f);
-        return this.a + "|" + this.b + "|" + this.c + "|" + this.d + "|" + this.h + "|" + str + "|" + this.f + "|" + (this.g ? 1 : 0) + "|" + this.i + "|" + this.k;
-    }
-
-    public final boolean g() {
-        return (!j() || TextUtils.isEmpty(this.e) || this.e.equals(this.c)) ? false : true;
-    }
-
-    public final boolean h() {
-        return (TextUtils.isEmpty(this.d) || i() || j()) ? false : true;
-    }
-
-    public final boolean i() {
-        return "remote".equals(this.d);
-    }
-
-    public final boolean j() {
-        return "unofficial".equals(this.d);
+        return relativeDateTimeFormatter.format(max, z10 ? RelativeDateTimeFormatter.Direction.NEXT : RelativeDateTimeFormatter.Direction.LAST, relativeUnit);
     }
 }

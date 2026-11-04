@@ -1,20 +1,11 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class w00 {
-    public int a = -1;
-    public long b;
-    public long c;
-    public int d;
-    public int e;
-    public int f;
-    public TLRPC.Message g;
-    public ArrayList h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
+    public HashSet a;
+    public HashSet b;
+    public HashSet c;
 }

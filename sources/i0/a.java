@@ -1,207 +1,234 @@
 package i0;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import b2.w;
-import b2.x;
-import c3.k0;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.dd;
-import org.telegram.messenger.f8;
-import org.telegram.messenger.i0;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.u1;
-import v7.t6;
+import android.graphics.Color;
+import org.telegram.messenger.hs;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class a {
-    public static /* synthetic */ String A(int i10) {
-        switch (i10) {
+public abstract class a {
+    public static final ThreadLocal a = new ThreadLocal();
+
+    public static int a(float[] fArr) {
+        int round;
+        int round2;
+        int i3 = 0;
+        float f10 = fArr[0];
+        float f11 = fArr[1];
+        float f12 = fArr[2];
+        float abs = (1.0f - Math.abs((f12 * 2.0f) - 1.0f)) * f11;
+        float f13 = f12 - (0.5f * abs);
+        float abs2 = (1.0f - Math.abs(((f10 / 60.0f) % 2.0f) - 1.0f)) * abs;
+        switch (((int) f10) / 60) {
+            case 0:
+                i3 = Math.round((abs + f13) * 255.0f);
+                round = Math.round((abs2 + f13) * 255.0f);
+                round2 = Math.round(f13 * 255.0f);
+                break;
             case 1:
-                return "IDLE";
+                i3 = Math.round((abs2 + f13) * 255.0f);
+                round = Math.round((abs + f13) * 255.0f);
+                round2 = Math.round(f13 * 255.0f);
+                break;
             case 2:
-                return "STARTING";
+                i3 = Math.round(f13 * 255.0f);
+                round = Math.round((abs + f13) * 255.0f);
+                round2 = Math.round((abs2 + f13) * 255.0f);
+                break;
             case 3:
-                return "RECORDING";
+                i3 = Math.round(f13 * 255.0f);
+                round = Math.round((abs2 + f13) * 255.0f);
+                round2 = Math.round((abs + f13) * 255.0f);
+                break;
             case 4:
-                return "PAUSING";
+                i3 = Math.round((abs2 + f13) * 255.0f);
+                round = Math.round(f13 * 255.0f);
+                round2 = Math.round((abs + f13) * 255.0f);
+                break;
             case 5:
-                return "PREVIEWING";
             case 6:
-                return "RESUMING";
-            case 7:
-                return "FINISHING";
-            case 8:
-                return "COMPLETED";
-            case 9:
-                return "ERROR";
-            case 10:
-                return "RELEASED";
+                i3 = Math.round((abs + f13) * 255.0f);
+                round = Math.round(f13 * 255.0f);
+                round2 = Math.round((abs2 + f13) * 255.0f);
+                break;
             default:
-                return "null";
+                round2 = 0;
+                round = 0;
+                break;
         }
+        return Color.rgb(m(i3), m(round), m(round2));
     }
 
-    public static int a(int i10, int i11, int i12, int i13) {
-        return i10 | i11 | i12 | 128 | i13;
-    }
-
-    public static boolean b(int i10, boolean z10) {
-        int i11 = i10 & 7;
-        if (i11 != 4) {
-            return z10 && i11 == 3;
+    public static int b(double d, double d10, double d11) {
+        ThreadLocal threadLocal = a;
+        double[] dArr = (double[]) threadLocal.get();
+        if (dArr == null) {
+            dArr = new double[3];
+            threadLocal.set(dArr);
         }
-        return true;
-    }
-
-    public static double c(double d, double d10, double d11) {
-        return (Math.cos(d) * d10) + d11;
-    }
-
-    public static int d(float f7, int i10, int i11) {
-        return Math.max(i11, i10 - i0.L(f7));
-    }
-
-    public static int e(int i10, int i11, int i12, int i13) {
-        return ((i10 - i11) * i12) + i13;
-    }
-
-    public static Drawable f(Context context, int i10) {
-        return context.getResources().getDrawable(i10).mutate();
-    }
-
-    public static Object g(int i10, ArrayList arrayList) {
-        return arrayList.get(arrayList.size() - i10);
-    }
-
-    public static Object h(HashMap hashMap, Uri uri, Uri uri2) {
-        t6.p(hashMap.containsKey(uri));
-        return hashMap.get(uri2);
-    }
-
-    public static String i(int i10, String str) {
-        return str + i10;
-    }
-
-    public static String j(int i10, String str, String str2) {
-        return str + i10 + str2;
-    }
-
-    public static String k(long j10, char c10, StringBuilder sb2) {
-        sb2.append(dd.E(j10, c10));
-        return sb2.toString();
-    }
-
-    public static StringBuilder l(int i10, String str, String str2) {
-        StringBuilder sb2 = new StringBuilder(str);
-        sb2.append(i10);
-        sb2.append(str2);
-        return sb2;
-    }
-
-    public static StringBuilder m(String str, int i10, String str2, int i11, String str3) {
-        StringBuilder sb2 = new StringBuilder(str);
-        sb2.append(i10);
-        sb2.append(str2);
-        sb2.append(i11);
-        sb2.append(str3);
-        return sb2;
-    }
-
-    public static HashMap n(Class cls, ma.a aVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, aVar);
-        return hashMap;
-    }
-
-    public static Map o(HashMap hashMap) {
-        return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-    }
-
-    public static void p(int i10, StringBuilder sb2) {
-        sb2.append(i10);
-        f8.b(sb2.toString());
-    }
-
-    public static void q(long j10, StringBuilder sb2) {
-        sb2.append(j10);
-        f8.b(sb2.toString());
-    }
-
-    public static void r(w wVar, k0 k0Var) {
-        k0Var.b(new x(wVar));
-    }
-
-    public static void s(String str, int i10, AlertDialog$Builder alertDialog$Builder, u1 u1Var) {
-        alertDialog$Builder.h(dd.L0(i10, str), u1Var);
-        alertDialog$Builder.p();
-    }
-
-    public static void t(StringBuilder sb2, int i10, String str, int i11, String str2) {
-        sb2.append(i10);
-        sb2.append(str);
-        sb2.append(i11);
-        sb2.append(str2);
-    }
-
-    public static int u(int i10, int i11, int i12, int i13) {
-        return ((i10 - i11) / i12) + i13;
-    }
-
-    public static Object v(int i10, ArrayList arrayList) {
-        return arrayList.remove(arrayList.size() - i10);
-    }
-
-    public static void w(String str, int i10, AlertDialog$Builder alertDialog$Builder, u1 u1Var) {
-        alertDialog$Builder.k(dd.L0(i10, str), u1Var);
-        alertDialog$Builder.p();
-    }
-
-    public static void x(n2.g gVar, n2.g gVar2) {
-        if (gVar == gVar2) {
-            return;
+        double d12 = (d + 16.0d) / 116.0d;
+        double d13 = (d10 / 500.0d) + d12;
+        double d14 = d12 - (d11 / 200.0d);
+        double pow = Math.pow(d13, 3.0d);
+        if (pow <= 0.008856d) {
+            pow = ((d13 * 116.0d) - 16.0d) / 903.3d;
         }
-        if (gVar2 != null) {
-            gVar2.b(null);
+        double pow2 = d > 7.9996247999999985d ? Math.pow(d12, 3.0d) : d / 903.3d;
+        double pow3 = Math.pow(d14, 3.0d);
+        if (pow3 <= 0.008856d) {
+            pow3 = ((d14 * 116.0d) - 16.0d) / 903.3d;
         }
-        if (gVar != null) {
-            gVar.a(null);
-        }
+        double d15 = pow * 95.047d;
+        dArr[0] = d15;
+        double d16 = pow2 * 100.0d;
+        dArr[1] = d16;
+        double d17 = pow3 * 108.883d;
+        dArr[2] = d17;
+        return e(d15, d16, d17);
     }
 
-    public static /* synthetic */ String y(int i10) {
-        switch (i10) {
-            case 1:
-                return "IDLE";
-            case 2:
-                return "STARTING";
-            case 3:
-                return "RECORDING";
-            case 4:
-                return "PAUSING";
-            case 5:
-                return "PREVIEWING";
-            case 6:
-                return "RESUMING";
-            case 7:
-                return "FINISHING";
-            case 8:
-                return "COMPLETED";
-            case 9:
-                return "ERROR";
-            case 10:
-                return "RELEASED";
-            default:
-                return "null";
+    public static void c(int i3, int i10, int i11, float[] fArr) {
+        float z10;
+        float abs;
+        float f10 = i3 / 255.0f;
+        float f11 = i10 / 255.0f;
+        float f12 = i11 / 255.0f;
+        float max = Math.max(f10, Math.max(f11, f12));
+        float min = Math.min(f10, Math.min(f11, f12));
+        float f13 = max - min;
+        float f14 = (max + min) / 2.0f;
+        if (max == min) {
+            z10 = 0.0f;
+            abs = 0.0f;
+        } else {
+            z10 = max == f10 ? ((f11 - f12) / f13) % 6.0f : max == f11 ? com.google.android.recaptcha.internal.a.z(f12, f10, f13, 2.0f) : com.google.android.recaptcha.internal.a.z(f10, f11, f13, 4.0f);
+            abs = f13 / (1.0f - Math.abs((2.0f * f14) - 1.0f));
         }
+        float f15 = (z10 * 60.0f) % 360.0f;
+        if (f15 < 0.0f) {
+            f15 += 360.0f;
+        }
+        fArr[0] = f15 < 0.0f ? 0.0f : Math.min(f15, 360.0f);
+        fArr[1] = abs < 0.0f ? 0.0f : Math.min(abs, 1.0f);
+        fArr[2] = f14 >= 0.0f ? Math.min(f14, 1.0f) : 0.0f;
     }
 
-    public static /* synthetic */ String z(int i10) {
-        return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "null" : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
+    public static void d(int i3, int i10, int i11, double[] dArr) {
+        if (dArr.length != 3) {
+            throw new IllegalArgumentException("outXyz must have a length of 3.");
+        }
+        double d = i3 / 255.0d;
+        double pow = d < 0.04045d ? d / 12.92d : Math.pow((d + 0.055d) / 1.055d, 2.4d);
+        double d10 = i10 / 255.0d;
+        double pow2 = d10 < 0.04045d ? d10 / 12.92d : Math.pow((d10 + 0.055d) / 1.055d, 2.4d);
+        double d11 = i11 / 255.0d;
+        double pow3 = d11 < 0.04045d ? d11 / 12.92d : Math.pow((d11 + 0.055d) / 1.055d, 2.4d);
+        dArr[0] = ((0.1805d * pow3) + (0.3576d * pow2) + (0.4124d * pow)) * 100.0d;
+        dArr[1] = ((0.0722d * pow3) + (0.7152d * pow2) + (0.2126d * pow)) * 100.0d;
+        dArr[2] = ((pow3 * 0.9505d) + (pow2 * 0.1192d) + (pow * 0.0193d)) * 100.0d;
+    }
+
+    public static int e(double d, double d10, double d11) {
+        double d12 = (((-0.4986d) * d11) + (((-1.5372d) * d10) + (3.2406d * d))) / 100.0d;
+        double d13 = ((0.0415d * d11) + ((1.8758d * d10) + ((-0.9689d) * d))) / 100.0d;
+        double d14 = ((1.057d * d11) + (((-0.204d) * d10) + (0.0557d * d))) / 100.0d;
+        return Color.rgb(m((int) Math.round((d12 > 0.0031308d ? (Math.pow(d12, 0.4166666666666667d) * 1.055d) - 0.055d : d12 * 12.92d) * 255.0d)), m((int) Math.round((d13 > 0.0031308d ? (Math.pow(d13, 0.4166666666666667d) * 1.055d) - 0.055d : d13 * 12.92d) * 255.0d)), m((int) Math.round((d14 > 0.0031308d ? (Math.pow(d14, 0.4166666666666667d) * 1.055d) - 0.055d : d14 * 12.92d) * 255.0d)));
+    }
+
+    public static int f(float f10, int i3, int i10) {
+        float f11 = 1.0f - f10;
+        return Color.argb((int) ((Color.alpha(i10) * f10) + (Color.alpha(i3) * f11)), (int) ((Color.red(i10) * f10) + (Color.red(i3) * f11)), (int) ((Color.green(i10) * f10) + (Color.green(i3) * f11)), (int) ((Color.blue(i10) * f10) + (Color.blue(i3) * f11)));
+    }
+
+    public static double g(int i3, int i10) {
+        if (Color.alpha(i10) != 255) {
+            throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i10));
+        }
+        if (Color.alpha(i3) < 255) {
+            i3 = k(i3, i10);
+        }
+        double h = h(i3) + 0.05d;
+        double h7 = h(i10) + 0.05d;
+        return Math.max(h, h7) / Math.min(h, h7);
+    }
+
+    public static double h(int i3) {
+        ThreadLocal threadLocal = a;
+        double[] dArr = (double[]) threadLocal.get();
+        if (dArr == null) {
+            dArr = new double[3];
+            threadLocal.set(dArr);
+        }
+        d(Color.red(i3), Color.green(i3), Color.blue(i3), dArr);
+        return dArr[1] / 100.0d;
+    }
+
+    public static int i(float f10, int i3, int i10) {
+        int alpha = Color.alpha(i10);
+        int i11 = hs.e4;
+        if (alpha != 255) {
+            throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(i10));
+        }
+        double d = f10;
+        if (g(o(i3, hs.e4), i10) < d) {
+            return -1;
+        }
+        int i12 = 0;
+        for (int i13 = 0; i13 <= 10 && i11 - i12 > 1; i13++) {
+            int i14 = (i12 + i11) / 2;
+            if (g(o(i3, i14), i10) < d) {
+                i12 = i14;
+            } else {
+                i11 = i14;
+            }
+        }
+        return i11;
+    }
+
+    public static void j(int i3, double[] dArr) {
+        d(Color.red(i3), Color.green(i3), Color.blue(i3), dArr);
+        double d = dArr[0];
+        double d10 = dArr[1];
+        double d11 = dArr[2];
+        if (dArr.length != 3) {
+            throw new IllegalArgumentException("outLab must have a length of 3.");
+        }
+        double n4 = n(d / 95.047d);
+        double n10 = n(d10 / 100.0d);
+        double n11 = n(d11 / 108.883d);
+        dArr[0] = Math.max(0.0d, (116.0d * n10) - 16.0d);
+        dArr[1] = (n4 - n10) * 500.0d;
+        dArr[2] = (n10 - n11) * 200.0d;
+    }
+
+    public static int k(int i3, int i10) {
+        int alpha = Color.alpha(i10);
+        int alpha2 = Color.alpha(i3);
+        int i11 = 255 - (((255 - alpha2) * (255 - alpha)) / hs.e4);
+        return Color.argb(i11, l(Color.red(i3), alpha2, Color.red(i10), alpha, i11), l(Color.green(i3), alpha2, Color.green(i10), alpha, i11), l(Color.blue(i3), alpha2, Color.blue(i10), alpha, i11));
+    }
+
+    public static int l(int i3, int i10, int i11, int i12, int i13) {
+        if (i13 == 0) {
+            return 0;
+        }
+        return com.google.android.recaptcha.internal.a.e(hs.e4, i10, i11 * i12, (i3 * hs.e4) * i10) / (i13 * hs.e4);
+    }
+
+    public static int m(int i3) {
+        if (i3 < 0) {
+            return 0;
+        }
+        return Math.min(i3, hs.e4);
+    }
+
+    public static double n(double d) {
+        return d > 0.008856d ? Math.pow(d, 0.3333333333333333d) : ((d * 903.3d) + 16.0d) / 116.0d;
+    }
+
+    public static int o(int i3, int i10) {
+        if (i10 < 0 || i10 > 255) {
+            throw new IllegalArgumentException("alpha must be between 0 and 255.");
+        }
+        return (i3 & 16777215) | (i10 << 24);
     }
 }

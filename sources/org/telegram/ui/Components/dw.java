@@ -1,34 +1,16 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class dw extends g.o {
-    public final /* synthetic */ vy c;
-
-    public dw(vy vyVar) {
-        this.c = vyVar;
-    }
-
-    @Override // g.o
-    public final int i(int i10) {
-        vy vyVar = this.c;
-        qy qyVar = vyVar.z0;
-        s4.g0 adapter = vyVar.D0.getAdapter();
-        ny nyVar = vyVar.y0;
-        if (adapter != nyVar) {
-            if (i10 == qyVar.y || !(qyVar.r.get(i10) == null || (qyVar.r.get(i10) instanceof TLRPC.Document))) {
-                return nyVar.d;
-            }
-            return 1;
+public final class dw extends org.telegram.ui.wm {
+    @Override // org.telegram.ui.wm, org.telegram.ui.ActionBar.d2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        org.telegram.ui.mj mjVar;
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || (mjVar = this.a0) == null) {
+            return;
         }
-        if (i10 == 0) {
-            return nyVar.d;
-        }
-        if (i10 == nyVar.s || !(nyVar.h.get(i10) == null || (nyVar.h.get(i10) instanceof TLRPC.Document))) {
-            return nyVar.d;
-        }
-        return 1;
+        mjVar.r1();
+        this.a0.postDelayed(new gp(this, 12), 100L);
     }
 }

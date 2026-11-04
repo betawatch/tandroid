@@ -1,19 +1,23 @@
 package z7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import b8.sa;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class z6 implements ja.d {
-    public static final z6 a = new z6();
+public final class z6 {
+    public final Long a;
+    public final Long b;
+    public final Long c;
+    public final Long d;
+    public final Long e;
+    public final Long f;
 
-    static {
-        sc.e.v(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, sc.e.s(sc.e.n(w.class, new s(1)), 2)), 4)), 5)), 6)));
-    }
-
-    @Override // ja.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public /* synthetic */ z6(sa saVar) {
+        this.a = saVar.a;
+        this.b = saVar.b;
+        this.c = saVar.c;
+        this.d = saVar.d;
+        this.e = saVar.e;
+        this.f = saVar.f;
     }
 }

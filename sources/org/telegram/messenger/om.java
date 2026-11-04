@@ -1,255 +1,27 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.hp0;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class om implements RequestDelegate {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ f1 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ TLObject h;
+public final /* synthetic */ class om implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q0.a b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ om(wp wpVar, long j10, String str, Runnable runnable, org.telegram.ui.ActionBar.k2 k2Var, TLRPC.TL_channels_updateUsername tL_channels_updateUsername, Runnable runnable2) {
-        this.b = wpVar;
-        this.d = j10;
-        this.c = str;
-        this.e = runnable;
-        this.g = k2Var;
-        this.h = tL_channels_updateUsername;
-        this.f = runnable2;
+    public /* synthetic */ om(q0.a aVar, int i3, int i10) {
+        this.a = i10;
+        this.b = aVar;
+        this.c = i3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        wp wpVar;
-        TLRPC.Photo photo;
-        wp wpVar2;
-        String str;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                wp wpVar3 = (wp) this.b;
-                Runnable runnable = (Runnable) this.e;
-                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.g;
-                TLRPC.TL_channels_updateUsername tL_channels_updateUsername = (TLRPC.TL_channels_updateUsername) this.h;
-                Runnable runnable2 = (Runnable) this.f;
-                if (!(tLObject instanceof TLRPC.TL_boolTrue) && (tL_error == null || !"USERNAME_NOT_MODIFIED".equals(tL_error.text))) {
-                    org.telegram.ui.Components.s4.e0(e20.s0, tL_error, k2Var, tL_channels_updateUsername, new Object[0]);
-                    runnable2.run();
-                    break;
-                } else {
-                    i0.g3(new xm(wpVar3, this.d, this.c, runnable, 7));
-                    break;
-                }
-            case 1:
-                wp wpVar4 = (wp) this.b;
-                TLRPC.TL_inputChatPhoto tL_inputChatPhoto = (TLRPC.TL_inputChatPhoto) this.f;
-                TLRPC.FileLocation fileLocation = (TLRPC.FileLocation) this.g;
-                TLRPC.FileLocation fileLocation2 = (TLRPC.FileLocation) this.h;
-                Runnable runnable3 = (Runnable) this.e;
-                if (tL_error == null) {
-                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    boolean z10 = false;
-                    if (tL_inputChatPhoto == null) {
-                        int size = updates.updates.size();
-                        int i10 = 0;
-                        while (true) {
-                            if (i10 < size) {
-                                TLRPC.Update update = updates.updates.get(i10);
-                                if (update instanceof TL_update.TL_updateNewChannelMessage) {
-                                    TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewChannelMessage) update).message.action;
-                                    if (messageAction instanceof TLRPC.TL_messageActionChatEditPhoto) {
-                                        photo = messageAction.photo;
-                                        if (photo instanceof TLRPC.TL_photo) {
-                                        }
-                                    } else {
-                                        continue;
-                                    }
-                                    i10++;
-                                } else {
-                                    if (update instanceof TL_update.TL_updateNewMessage) {
-                                        TLRPC.MessageAction messageAction2 = ((TL_update.TL_updateNewMessage) update).message.action;
-                                        if (messageAction2 instanceof TLRPC.TL_messageActionChatEditPhoto) {
-                                            photo = messageAction2.photo;
-                                            if (photo instanceof TLRPC.TL_photo) {
-                                            }
-                                        } else {
-                                            continue;
-                                        }
-                                    } else {
-                                        continue;
-                                    }
-                                    i10++;
-                                }
-                                wpVar.L3(updates, z10);
-                                i0.g3(new pi(10, wpVar, runnable3));
-                                break;
-                            } else {
-                                photo = null;
-                            }
-                        }
-                        if (photo != null) {
-                            TLRPC.PhotoSize w9 = b8.w(photo.sizes, at.g2, false, null, false);
-                            TLRPC.VideoSize videoSize = photo.video_sizes.isEmpty() ? null : photo.video_sizes.get(0);
-                            if (w9 == null || fileLocation == null) {
-                                wpVar2 = wpVar4;
-                            } else {
-                                wpVar4.getFileLoader().getClass();
-                                File K = b8.K(w9, null, true, true);
-                                wpVar4.getFileLoader().getClass();
-                                b8.K(fileLocation, null, true, true).renameTo(K);
-                                StringBuilder sb2 = new StringBuilder();
-                                sb2.append(fileLocation.volume_id);
-                                sb2.append("_");
-                                String p5 = a1.g.p(sb2, fileLocation.local_id, "@50_50");
-                                StringBuilder sb3 = new StringBuilder();
-                                wpVar2 = wpVar4;
-                                sb3.append(w9.location.volume_id);
-                                sb3.append("_");
-                                ic.D().R(p5, a1.g.p(sb3, w9.location.local_id, "@50_50"), jc.i(w9, photo), true);
-                            }
-                            TLRPC.PhotoSize w10 = b8.w(photo.sizes, 800, false, null, false);
-                            if (w10 != null && fileLocation2 != null) {
-                                wpVar2.getFileLoader().getClass();
-                                File K2 = b8.K(w10, null, true, true);
-                                wpVar2.getFileLoader().getClass();
-                                b8.K(fileLocation2, null, true, true).renameTo(K2);
-                            }
-                            if (videoSize != null && (str = this.c) != null) {
-                                wpVar2.getFileLoader().getClass();
-                                new File(str).renameTo(b8.K(videoSize, "mp4", true, true));
-                            }
-                            wpVar = wpVar2;
-                            wpVar.T0(-this.d);
-                            z10 = false;
-                            wpVar.L3(updates, z10);
-                            i0.g3(new pi(10, wpVar, runnable3));
-                        }
-                    }
-                    wpVar = wpVar4;
-                    wpVar.L3(updates, z10);
-                    i0.g3(new pi(10, wpVar, runnable3));
-                }
+                this.b.accept(Integer.valueOf(this.c));
                 break;
             default:
-                final u10 u10Var = (u10) this.b;
-                final kj kjVar = (kj) this.e;
-                final c3.s sVar = (c3.s) this.f;
-                final hp0 hp0Var = (hp0) this.g;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.h;
-                u10Var.getClass();
-                boolean z11 = tLObject instanceof TLRPC.TL_messages_translateResult;
-                final String str2 = this.c;
-                final long j10 = this.d;
-                if (!z11) {
-                    final int i11 = 1;
-                    i0.g3(new Runnable() { // from class: org.telegram.messenger.e10
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i11) {
-                                case 0:
-                                    u10 u10Var2 = u10Var;
-                                    u10Var2.getClass();
-                                    kj kjVar2 = kjVar;
-                                    TLRPC.Message message = kjVar2.k;
-                                    message.translatedToLanguage = str2;
-                                    message.translatedText = null;
-                                    is messagesStorage = u10Var2.getMessagesStorage();
-                                    c3.s sVar2 = sVar;
-                                    messagesStorage.X1(sVar2.a, kjVar2.k);
-                                    u10Var2.L.remove(sVar2);
-                                    i0.h3(hp0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j10)));
-                                    break;
-                                default:
-                                    u10 u10Var3 = u10Var;
-                                    u10Var3.getClass();
-                                    kj kjVar3 = kjVar;
-                                    TLRPC.Message message2 = kjVar3.k;
-                                    message2.translatedToLanguage = str2;
-                                    message2.translatedText = null;
-                                    is messagesStorage2 = u10Var3.getMessagesStorage();
-                                    c3.s sVar3 = sVar;
-                                    messagesStorage2.X1(sVar3.a, kjVar3.k);
-                                    u10Var3.L.remove(sVar3);
-                                    i0.h3(hp0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j10)));
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                } else {
-                    ArrayList<TLRPC.TL_textWithEntities> arrayList = ((TLRPC.TL_messages_translateResult) tLObject).result;
-                    if (arrayList.size() > 0) {
-                        i0.g3(new f10(u10Var, kjVar, str2, tL_textWithEntities, arrayList.get(0), sVar, hp0Var, j10));
-                        break;
-                    } else {
-                        final int i12 = 0;
-                        i0.g3(new Runnable() { // from class: org.telegram.messenger.e10
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i12) {
-                                    case 0:
-                                        u10 u10Var2 = u10Var;
-                                        u10Var2.getClass();
-                                        kj kjVar2 = kjVar;
-                                        TLRPC.Message message = kjVar2.k;
-                                        message.translatedToLanguage = str2;
-                                        message.translatedText = null;
-                                        is messagesStorage = u10Var2.getMessagesStorage();
-                                        c3.s sVar2 = sVar;
-                                        messagesStorage.X1(sVar2.a, kjVar2.k);
-                                        u10Var2.L.remove(sVar2);
-                                        i0.h3(hp0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j10)));
-                                        break;
-                                    default:
-                                        u10 u10Var3 = u10Var;
-                                        u10Var3.getClass();
-                                        kj kjVar3 = kjVar;
-                                        TLRPC.Message message2 = kjVar3.k;
-                                        message2.translatedToLanguage = str2;
-                                        message2.translatedText = null;
-                                        is messagesStorage2 = u10Var3.getMessagesStorage();
-                                        c3.s sVar3 = sVar;
-                                        messagesStorage2.X1(sVar3.a, kjVar3.k);
-                                        u10Var3.L.remove(sVar3);
-                                        i0.h3(hp0Var, Math.max(0L, 400 - (System.currentTimeMillis() - j10)));
-                                        break;
-                                }
-                            }
-                        });
-                        break;
-                    }
-                }
+                this.b.accept(Integer.valueOf(this.c));
+                break;
         }
-    }
-
-    public /* synthetic */ om(wp wpVar, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, String str, long j10, Runnable runnable) {
-        this.b = wpVar;
-        this.f = tL_inputChatPhoto;
-        this.g = fileLocation;
-        this.h = fileLocation2;
-        this.c = str;
-        this.d = j10;
-        this.e = runnable;
-    }
-
-    public /* synthetic */ om(u10 u10Var, kj kjVar, String str, c3.s sVar, hp0 hp0Var, long j10, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.b = u10Var;
-        this.e = kjVar;
-        this.c = str;
-        this.f = sVar;
-        this.g = hp0Var;
-        this.d = j10;
-        this.h = tL_textWithEntities;
     }
 }

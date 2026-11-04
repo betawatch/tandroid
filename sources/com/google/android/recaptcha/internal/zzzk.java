@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public enum zzzk implements zzsp {
     zza(0),
@@ -17,12 +17,12 @@ public enum zzzk implements zzsp {
 
     private final int zzm;
 
-    zzzk(int i10) {
-        this.zzm = i10;
+    zzzk(int i3) {
+        this.zzm = i3;
     }
 
-    public static zzzk zzb(int i10) {
-        switch (i10) {
+    public static zzzk zzb(int i3) {
+        switch (i3) {
             case 0:
                 return zza;
             case 1:

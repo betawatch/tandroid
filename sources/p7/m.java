@@ -1,58 +1,49 @@
 package p7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Locale;
-import w7.h0;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class m extends o6.a {
-    public static final Parcelable.Creator<m> CREATOR = new n(0);
-    public final f a;
-    public final long b;
-    public final int c;
-    public final String d;
-    public final e e;
-    public final boolean f;
-    public final int h;
-    public final int n;
-    public final String r;
+public final class m extends n {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ n e;
 
-    public m(f fVar, long j10, int i10, String str, e eVar, boolean z10, int i11, int i12, String str2) {
-        this.a = fVar;
-        this.b = j10;
-        this.c = i10;
-        this.d = str;
-        this.e = eVar;
-        this.f = z10;
-        this.h = i11;
-        this.n = i12;
-        this.r = str2;
+    public m(n nVar, int i3, int i10) {
+        this.e = nVar;
+        this.c = i3;
+        this.d = i10;
     }
 
-    public final String toString() {
-        Locale locale = Locale.US;
-        return "UsageInfo[documentId=" + this.a + ", timestamp=" + this.b + ", usageType=" + this.c + ", status=" + this.n + "]";
+    @Override // java.util.List
+    public final Object get(int i3) {
+        a.e(i3, this.d);
+        return this.e.get(i3 + this.c);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.k(parcel, 1, this.a, i10);
-        h0.s(parcel, 2, 8);
-        parcel.writeLong(this.b);
-        h0.s(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        h0.l(parcel, 4, this.d);
-        h0.k(parcel, 5, this.e, i10);
-        h0.s(parcel, 6, 4);
-        parcel.writeInt(this.f ? 1 : 0);
-        h0.s(parcel, 7, 4);
-        parcel.writeInt(this.h);
-        h0.s(parcel, 8, 4);
-        parcel.writeInt(this.n);
-        h0.l(parcel, 9, this.r);
-        h0.r(parcel, q6);
+    @Override // p7.i
+    public final int i() {
+        return this.e.j() + this.c + this.d;
+    }
+
+    @Override // p7.i
+    public final int j() {
+        return this.e.j() + this.c;
+    }
+
+    @Override // p7.i
+    public final Object[] l() {
+        return this.e.l();
+    }
+
+    @Override // p7.n, java.util.List
+    /* renamed from: n */
+    public final n subList(int i3, int i10) {
+        a.m(i3, i10, this.d);
+        int i11 = this.c;
+        return this.e.subList(i3 + i11, i10 + i11);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

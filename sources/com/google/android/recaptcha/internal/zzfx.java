@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import cd.c;
-import dd.a;
-import ed.j;
-import l9.b;
-import ld.p;
-import td.s;
-import td.t;
+import b8.ib;
+import dd.k;
+import fd.c;
+import hd.j;
+import od.p;
+import wd.s;
+import wd.t;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzfx extends j implements p {
     Object zza;
@@ -26,23 +26,23 @@ final class zzfx extends j implements p {
         this.zze = sVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, cVar);
         zzfxVar.zzf = obj;
         return zzfxVar;
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfx) create((zzgr) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzfx) create((zzgr) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x007a, code lost:
     
         if (r9 == r0) goto L36;
      */
-    @Override // ed.a
+    @Override // hd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -53,11 +53,11 @@ final class zzfx extends j implements p {
         zzgr zzgrVar3;
         zzfp zzfpVar2;
         zzds zzdsVar;
-        a aVar = a.a;
-        int i10 = this.zzb;
+        gd.a aVar = gd.a.a;
+        int i3 = this.zzb;
         try {
-            if (i10 == 0) {
-                b.b(obj);
+            if (i3 == 0) {
+                ib.b(obj);
                 zzgrVar = (zzgr) this.zzf;
                 zzfpVar = this.zzc.zza;
                 long j10 = this.zzd;
@@ -69,21 +69,21 @@ final class zzfx extends j implements p {
                     return aVar;
                 }
                 zzgrVar2 = zzgrVar;
-            } else if (i10 == 1) {
+            } else if (i3 == 1) {
                 zzgrVar = (zzgr) this.zza;
                 zzgrVar2 = (zzgr) this.zzf;
-                b.b(obj);
+                ib.b(obj);
             } else {
-                if (i10 != 2) {
-                    if (i10 != 3) {
-                        b.b(obj);
+                if (i3 != 2) {
+                    if (i3 != 3) {
+                        ib.b(obj);
                         zzgb zzgbVar = this.zzc;
                         zzdsVar = zzdv.zzb;
                         zzgbVar.zzf = zzdsVar;
-                        return Boolean.valueOf(((t) this.zze).A(ad.j.a));
+                        return Boolean.valueOf(((t) this.zze).C(k.a));
                     }
                     zzgrVar3 = (zzgr) this.zzf;
-                    b.b(obj);
+                    ib.b(obj);
                     this.zzf = null;
                     this.zzb = 4;
                     if (((zzhg) obj).zza(zzgrVar3.zza(), this) == aVar) {
@@ -92,10 +92,10 @@ final class zzfx extends j implements p {
                     zzgb zzgbVar2 = this.zzc;
                     zzdsVar = zzdv.zzb;
                     zzgbVar2.zzf = zzdsVar;
-                    return Boolean.valueOf(((t) this.zze).A(ad.j.a));
+                    return Boolean.valueOf(((t) this.zze).C(k.a));
                 }
                 zzgrVar3 = (zzgr) this.zzf;
-                b.b(obj);
+                ib.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzgb zzgbVar3 = this.zzc;
                 zzgbVar3.zze = zzxnVar;
@@ -121,9 +121,9 @@ final class zzfx extends j implements p {
                 obj = zzfpVar2.zzn(zzxnVar2, j112, this);
             }
             return aVar;
-        } catch (zzcg e) {
-            this.zzc.zzd = e;
-            throw e;
+        } catch (zzcg e10) {
+            this.zzc.zzd = e10;
+            throw e10;
         }
     }
 }

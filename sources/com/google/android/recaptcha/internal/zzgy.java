@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.ContentValues;
-import bd.i;
-import cd.c;
-import dd.a;
-import ed.j;
+import b8.ib;
+import dd.k;
+import ed.g;
+import fd.c;
+import hd.j;
 import java.util.List;
-import l9.b;
-import ld.p;
-import td.c0;
+import od.p;
+import wd.z;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 final class zzgy extends j implements p {
     final /* synthetic */ zzgz zza;
@@ -23,17 +23,17 @@ final class zzgy extends j implements p {
         this.zzb = zzzmVar;
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final c create(Object obj, c cVar) {
         return new zzgy(this.zza, this.zzb, cVar);
     }
 
-    @Override // ld.p
+    @Override // od.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgy) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
+        return ((zzgy) create((z) obj, (c) obj2)).invokeSuspend(k.a);
     }
 
-    @Override // ed.a
+    @Override // hd.a
     public final Object invokeSuspend(Object obj) {
         zzgo zzgoVar;
         zzgo zzgoVar2;
@@ -41,8 +41,8 @@ final class zzgy extends j implements p {
         zzgo zzgoVar4;
         zzgo zzgoVar5;
         zzgo zzgoVar6;
-        a aVar = a.a;
-        b.b(obj);
+        gd.a aVar = gd.a.a;
+        ib.b(obj);
         zzzm zzzmVar = this.zzb;
         zzgz zzgzVar = this.zza;
         synchronized (zzgs.class) {
@@ -60,9 +60,9 @@ final class zzgy extends j implements p {
                     int zzb = zzgoVar3.zzb() - 500;
                     if (zzb > 0) {
                         zzgoVar5 = zzgzVar.zzc;
-                        List i10 = i.i(zzgoVar5.zzd(), zzb);
+                        List h = g.h(zzgoVar5.zzd(), zzb);
                         zzgoVar6 = zzgzVar.zzc;
-                        zzgoVar6.zza(i10);
+                        zzgoVar6.zza(h);
                     }
                     zzgoVar4 = zzgzVar.zzc;
                     if (zzgoVar4.zzb() >= 20) {
@@ -73,6 +73,6 @@ final class zzgy extends j implements p {
                 throw th2;
             }
         }
-        return ad.j.a;
+        return k.a;
     }
 }

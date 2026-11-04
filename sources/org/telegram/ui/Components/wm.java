@@ -1,139 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class wm implements vx {
-    public final /* synthetic */ org.telegram.messenger.r20 a;
-    public final /* synthetic */ ag.v b;
+public final class wm implements TextWatcher {
+    public final /* synthetic */ vm a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.n4 c;
 
-    public wm(org.telegram.messenger.r20 r20Var, ag.v vVar) {
-        this.a = r20Var;
-        this.b = vVar;
+    public wm(org.telegram.ui.n4 n4Var, vm vmVar, int i3) {
+        this.c = n4Var;
+        this.a = vmVar;
+        this.b = i3;
     }
 
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ boolean A() {
-        return false;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        an anVar = (an) this.c.e;
+        vm vmVar = this.a;
+        if (vmVar.getTag() != null) {
+            return;
+        }
+        int i3 = this.b;
+        int i10 = i3 == 11 ? anVar.o0 : anVar.n0;
+        u4.d1 K = anVar.s.K(i10);
+        if (K != null && anVar.y != null) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
+            }
+            org.telegram.messenger.i6.l(editable, vmVar.getEditField().getPaint().getFontMetricsInt(), false);
+            anVar.y.setDirection(1);
+            anVar.y.setDelegate(vmVar);
+            anVar.y.setTranslationY(K.a.getY());
+            anVar.y.e();
+        }
+        if (i3 == 11) {
+            anVar.P = editable;
+        } else {
+            anVar.O = editable;
+        }
+        if (K != null) {
+            an.P(anVar, K.a, i10);
+        }
+        anVar.X();
     }
 
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ long a() {
-        return 0L;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ int f() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.gj gjVar, boolean z10, int i10) {
-        this.a.a(new jh.j(obj, document));
-        this.b.a(true);
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ float p() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
-        this.a.a(new jh.j(null, document));
-        this.b.a(true);
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ boolean z() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void i(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void l(String str) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void o(x41 x41Var) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void s(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void t(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void y(long j10) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void n() {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void e(Object obj, Object obj2) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.vx
-    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
     }
 }

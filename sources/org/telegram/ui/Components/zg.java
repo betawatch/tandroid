@@ -3,15 +3,15 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class zg extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ gh c;
 
-    public /* synthetic */ zg(gh ghVar, boolean z10, int i10) {
-        this.a = i10;
+    public /* synthetic */ zg(gh ghVar, boolean z10, int i3) {
+        this.a = i3;
         this.c = ghVar;
         this.b = z10;
     }
@@ -24,13 +24,13 @@ public final class zg extends AnimatorListenerAdapter {
                 bi biVar = ghVar.e;
                 boolean z10 = this.b;
                 if (z10) {
-                    biVar.r3.setVisibility(8);
+                    biVar.s3.setVisibility(8);
                 } else {
-                    biVar.y3.setVisibility(8);
+                    biVar.z3.setVisibility(8);
                 }
-                int L = z10 ? org.telegram.messenger.i0.L(36.0f) : 0;
-                for (int i10 = 0; i10 < biVar.r2.size(); i10++) {
-                    ((xh.j3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
+                int L = z10 ? org.telegram.messenger.g0.L(36.0f) : 0;
+                for (int i3 = 0; i3 < biVar.s2.size(); i3++) {
+                    ((ii.d4) biVar.s2.valueAt(i3)).setMeasureOffsetY(L);
                 }
                 if (ghVar.a == animator) {
                     ghVar.a = null;
@@ -40,9 +40,9 @@ public final class zg extends AnimatorListenerAdapter {
             default:
                 bi biVar2 = this.c.e;
                 boolean z11 = this.b;
-                biVar2.v3 = z11;
+                biVar2.w3 = z11;
                 if (!z11) {
-                    biVar2.w3.setVisibility(8);
+                    biVar2.x3.setVisibility(8);
                     break;
                 }
                 break;
@@ -55,16 +55,16 @@ public final class zg extends AnimatorListenerAdapter {
             case 0:
                 bi biVar = this.c.e;
                 if (this.b) {
-                    biVar.y3.setAlpha(0.0f);
-                    biVar.y3.setVisibility(0);
-                    int L = org.telegram.messenger.i0.L(36.0f);
-                    for (int i10 = 0; i10 < biVar.r2.size(); i10++) {
-                        ((xh.j3) biVar.r2.valueAt(i10)).setMeasureOffsetY(L);
+                    biVar.z3.setAlpha(0.0f);
+                    biVar.z3.setVisibility(0);
+                    int L = org.telegram.messenger.g0.L(36.0f);
+                    for (int i3 = 0; i3 < biVar.s2.size(); i3++) {
+                        ((ii.d4) biVar.s2.valueAt(i3)).setMeasureOffsetY(L);
                     }
                     break;
                 } else {
-                    biVar.r3.setAlpha(0.0f);
-                    biVar.r3.setVisibility(0);
+                    biVar.s3.setAlpha(0.0f);
+                    biVar.s3.setVisibility(0);
                     break;
                 }
             default:

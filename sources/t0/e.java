@@ -1,10 +1,10 @@
 package t0;
 
 import android.os.Bundle;
-import m2.t;
+import org.telegram.ui.Components.y00;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public interface e {
-    boolean o(t tVar, int i10, Bundle bundle);
+    boolean m(y00 y00Var, int i3, Bundle bundle);
 }

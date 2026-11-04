@@ -1,64 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.FrameLayout;
-import java.util.List;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public interface z4 {
-    k2 getBackgroundFragment();
+public final class z4 {
+    public static final z4 a;
+    public static final z4 b;
+    public static final /* synthetic */ z4[] c;
 
-    z2 getBottomSheet();
+    static {
+        z4 z4Var = new z4("ICON", 0);
+        a = z4Var;
+        z4 z4Var2 = new z4("TEXT", 1);
+        b = z4Var2;
+        c = new z4[]{z4Var, z4Var2};
+    }
 
-    List getFragmentStack();
+    public static z4 valueOf(String str) {
+        return (z4) Enum.valueOf(z4.class, str);
+    }
 
-    k2 getLastFragment();
-
-    c5 getMessageDrawableOutMediaStart();
-
-    c5 getMessageDrawableOutStart();
-
-    FrameLayout getOverlayContainerView();
-
-    Activity getParentActivity();
-
-    List getPulledDialogs();
-
-    k2 getSafeLastFragment();
-
-    float getThemeAnimationValue();
-
-    ViewGroup getView();
-
-    Window getWindow();
-
-    void setBackgroundView(View view);
-
-    void setDelegate(v4 v4Var);
-
-    void setDrawerLayoutContainer(s3 s3Var);
-
-    void setFragmentPanTranslationOffset(int i10);
-
-    void setFragmentStack(List list);
-
-    void setHighlightActionButtons(boolean z10);
-
-    void setInBubbleMode(boolean z10);
-
-    void setIsSheet(boolean z10);
-
-    void setNavigationBarColor(int i10);
-
-    void setPulledDialogs(List list);
-
-    void setRemoveActionBarExtraHeight(boolean z10);
-
-    void setUseAlphaAnimations(boolean z10);
-
-    void setWindow(Window window);
+    public static z4[] values() {
+        return (z4[]) c.clone();
+    }
 }

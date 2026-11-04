@@ -1,28 +1,27 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class kf extends i41 {
-    public final /* synthetic */ lf m1;
+public final class kf extends ey {
+    public final /* synthetic */ ChatActivityEnterView W2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kf(lf lfVar, Context context, org.telegram.ui.ActionBar.k2 k2Var, x41 x41Var, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, k2Var, x41Var, p6Var);
-        this.m1 = lfVar;
+    public kf(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.d2 d2Var, boolean z10, Context context, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z11, org.telegram.ui.ActionBar.e6 e6Var, boolean z12, boolean z13) {
+        super(d2Var, z10, true, true, context, true, chatFull, viewGroup, z11, e6Var, z12, z13);
+        this.W2 = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.i41, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
-    public final void dismiss() {
-        super.dismiss();
-        ChatActivityEnterView chatActivityEnterView = this.m1.a;
-        if (chatActivityEnterView.a3 == this) {
-            chatActivityEnterView.a3 = null;
+    @Override // org.telegram.ui.Components.ey, android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        ChatActivityEnterView chatActivityEnterView = this.W2;
+        if (chatActivityEnterView.W0 == null || chatActivityEnterView.p3 != 0) {
+            return;
         }
-        sf sfVar = chatActivityEnterView.Z2;
-        if (sfVar != null) {
-            sfVar.B(false);
-        }
+        chatActivityEnterView.a3.x(f10);
     }
 }

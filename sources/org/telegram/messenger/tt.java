@@ -1,36 +1,21 @@
 package org.telegram.messenger;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tt implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class tt {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public /* synthetic */ tt(int i10, int i11, Object obj, int i12) {
-        this.a = i12;
+    public tt(int i3, int i10, int i11, int i12, int i13, int i14) {
+        this.a = i3;
         this.b = i10;
         this.c = i11;
-        this.d = obj;
-    }
-
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                k20 k20Var = (k20) this.d;
-                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
-                k20Var.a(null, "CANCELLED");
-                break;
-            default:
-                org.telegram.ui.ActionBar.x1[] x1VarArr = (org.telegram.ui.ActionBar.x1[]) this.d;
-                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
-                x1VarArr[0] = null;
-                break;
-        }
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
     }
 }

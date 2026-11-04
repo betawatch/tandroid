@@ -1,11 +1,235 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import java.util.Random;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public interface a8 {
-    void Y0(int i10, int i11);
+public final class a8 {
+    public float f;
+    public boolean g;
+    public final Paint h;
+    public org.telegram.ui.Cells.q1 i;
+    public int p;
+    public int q;
+    public float r;
+    public final int[] b = new int[3];
+    public final float[] c = new float[8];
+    public final float[] d = new float[8];
+    public final float[] e = new float[8];
+    public final Random j = new Random();
+    public final float k = org.telegram.messenger.g0.L(6.0f) * 0.33f;
+    public final float l = org.telegram.messenger.g0.L(12.0f) * 0.36f;
+    public final float m = 120.0f;
+    public final int n = 61;
+    public final float[] o = new float[6];
+    public final bp[] a = new bp[2];
 
-    void dismiss();
+    public a8() {
+        for (int i3 = 0; i3 < 2; i3++) {
+            bp[] bpVarArr = this.a;
+            bp bpVar = new bp();
+            bpVarArr[i3] = bpVar;
+            bpVar.g = org.telegram.messenger.g0.L(24.0f);
+            bpVar.k = 1.0f;
+        }
+        this.h = new Paint(1);
+    }
 
-    void t1();
+    public final void a(float f10, float f11, float f12, int i3, Canvas canvas) {
+        if (org.telegram.messenger.lc.e(32)) {
+            Paint paint = this.h;
+            paint.setColor(i3);
+            paint.setAlpha((int) (this.n * f12));
+            b(canvas, f10, f11);
+        }
+    }
+
+    public final void b(Canvas canvas, float f10, float f11) {
+        float[] fArr;
+        float f12;
+        int[] iArr;
+        if (org.telegram.messenger.lc.e(32)) {
+            int i3 = 0;
+            int i10 = 0;
+            while (true) {
+                fArr = this.d;
+                if (i10 >= 8) {
+                    break;
+                }
+                float[] fArr2 = this.c;
+                float f13 = fArr2[i10];
+                float f14 = fArr[i10];
+                if (f13 != f14) {
+                    float[] fArr3 = this.e;
+                    float f15 = (fArr3[i10] * 16.0f) + f14;
+                    fArr[i10] = f15;
+                    float f16 = fArr3[i10];
+                    if ((f16 > 0.0f && f15 > fArr2[i10]) || (f16 < 0.0f && f15 < fArr2[i10])) {
+                        fArr[i10] = fArr2[i10];
+                    }
+                    this.i.invalidate();
+                }
+                i10++;
+            }
+            boolean z10 = true;
+            if (this.g) {
+                float f17 = this.f + 0.02f;
+                this.f = f17;
+                if (f17 > 1.0f) {
+                    this.g = false;
+                    this.f = 1.0f;
+                }
+            } else {
+                float f18 = this.f - 0.02f;
+                this.f = f18;
+                if (f18 < 0.0f) {
+                    this.g = true;
+                    this.f = 0.0f;
+                }
+            }
+            float f19 = fArr[7];
+            float f20 = fArr[6] * fArr[0];
+            if (f19 == 0.0f && f20 == 0.0f) {
+                return;
+            }
+            int i11 = 0;
+            while (true) {
+                f12 = this.l;
+                iArr = this.b;
+                if (i11 >= 3) {
+                    break;
+                }
+                iArr[i11] = (int) (fArr[i11] * f12);
+                i11++;
+            }
+            bp[] bpVarArr = this.a;
+            bp bpVar = bpVarArr[0];
+            while (i3 < bpVar.f) {
+                float[] fArr4 = bpVar.j;
+                fArr4[i3] = iArr[i3 / 2];
+                fArr4[i3 + 1] = 0.0f;
+                i3 += 2;
+                z10 = z10;
+            }
+            boolean z11 = z10;
+            for (int i12 = 0; i12 < 3; i12++) {
+                iArr[i12] = (int) (fArr[i12 + 3] * f12);
+            }
+            bp bpVar2 = bpVarArr[z11 ? 1 : 0];
+            for (int i13 = 0; i13 < bpVar2.f; i13 += 2) {
+                float[] fArr5 = bpVar2.j;
+                fArr5[i13] = iArr[i13 / 2];
+                fArr5[i13 + 1] = 0.0f;
+            }
+            float L = (this.k * f19) + (org.telegram.messenger.g0.L(4.0f) * f20) + org.telegram.messenger.g0.L(22.0f);
+            if (L > org.telegram.messenger.g0.L(26.0f)) {
+                L = org.telegram.messenger.g0.L(26.0f);
+            }
+            bp bpVar3 = bpVarArr[0];
+            bpVarArr[z11 ? 1 : 0].g = L;
+            bpVar3.g = L;
+            canvas.save();
+            float f21 = (float) (this.r + 0.6d);
+            this.r = f21;
+            canvas.rotate(f21, f10, f11);
+            canvas.save();
+            float f22 = (this.f * 0.04f) + 1.0f;
+            canvas.scale(f22, f22, f10, f11);
+            bp bpVar4 = bpVarArr[0];
+            Paint paint = this.h;
+            bpVar4.a(f10, f11, canvas, paint);
+            canvas.restore();
+            canvas.rotate(60.0f, f10, f11);
+            float y9 = com.google.android.recaptcha.internal.a.y(1.0f, this.f, 0.04f, 1.0f);
+            canvas.scale(y9, y9, f10, f11);
+            bpVarArr[z11 ? 1 : 0].a(f10, f11, canvas, paint);
+            canvas.restore();
+        }
+    }
+
+    public final void c(Canvas canvas, float f10, float f11, boolean z10, float f12, org.telegram.ui.ActionBar.e6 e6Var) {
+        if (org.telegram.messenger.lc.e(32)) {
+            int i3 = this.n;
+            Paint paint = this.h;
+            if (z10) {
+                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Bc, e6Var));
+                paint.setAlpha((int) (i3 * f12));
+            } else {
+                paint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.We, e6Var));
+                paint.setAlpha((int) (i3 * f12));
+            }
+            b(canvas, f10, f11);
+        }
+    }
+
+    public final void d(org.telegram.ui.Cells.q1 q1Var) {
+        this.i = q1Var;
+    }
+
+    public final void e(boolean z10, float[] fArr) {
+        float[] fArr2;
+        float[] fArr3;
+        float[] fArr4;
+        if (org.telegram.messenger.lc.e(32)) {
+            int i3 = 0;
+            boolean z11 = fArr != null && fArr[6] == 0.0f;
+            float f10 = fArr == null ? 0.0f : fArr[6];
+            float[] fArr5 = this.o;
+            if (fArr == null || f10 <= 0.4d) {
+                this.p = 0;
+            } else {
+                int i10 = this.q;
+                fArr5[i10] = f10;
+                int i11 = i10 + 1;
+                this.q = i11;
+                if (i11 > 5) {
+                    this.q = 0;
+                }
+                this.p++;
+            }
+            if (z11) {
+                for (int i12 = 0; i12 < 6; i12++) {
+                    fArr[i12] = (this.j.nextInt() % 500) / 1000.0f;
+                }
+            }
+            float f11 = this.m;
+            float f12 = z11 ? 2.0f * f11 : f11;
+            if (this.p > 6) {
+                float f13 = 0.0f;
+                for (int i13 = 0; i13 < 6; i13++) {
+                    f13 += fArr5[i13];
+                }
+                float f14 = f13 / 6.0f;
+                if (f14 > 0.52f) {
+                    f12 = a1.g.D(f14, 0.4f, f11, f12);
+                }
+            }
+            while (true) {
+                fArr2 = this.e;
+                fArr3 = this.d;
+                fArr4 = this.c;
+                if (i3 >= 7) {
+                    break;
+                }
+                if (fArr == null) {
+                    fArr4[i3] = 0.0f;
+                } else {
+                    fArr4[i3] = fArr[i3];
+                }
+                if (this.i == null) {
+                    fArr3[i3] = fArr4[i3];
+                } else if (i3 == 6) {
+                    fArr2[i3] = (fArr4[i3] - fArr3[i3]) / (80.0f + f11);
+                } else {
+                    fArr2[i3] = (fArr4[i3] - fArr3[i3]) / f12;
+                }
+                i3++;
+            }
+            float f15 = z10 ? 1.0f : 0.0f;
+            fArr4[7] = f15;
+            fArr2[7] = (f15 - fArr3[7]) / 120.0f;
+        }
+    }
 }

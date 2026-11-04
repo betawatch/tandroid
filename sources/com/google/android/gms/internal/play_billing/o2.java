@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class o2 implements t2 {
     public final e1 a;
@@ -19,42 +19,45 @@ public final class o2 implements t2 {
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final boolean b(Object obj) {
-        throw c3.i0.l(obj);
+        obj.getClass();
+        throw new ClassCastException();
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final void c(Object obj, i2 i2Var) {
-        throw c3.i0.l(obj);
+        obj.getClass();
+        throw new ClassCastException();
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final int d(e1 e1Var) {
         x2 x2Var = ((v1) e1Var).zzc;
-        int i10 = x2Var.d;
-        if (i10 != -1) {
-            return i10;
+        int i3 = x2Var.d;
+        if (i3 != -1) {
+            return i3;
         }
-        int i11 = 0;
-        for (int i12 = 0; i12 < x2Var.a; i12++) {
-            int i13 = x2Var.b[i12] >>> 3;
-            l1 l1Var = (l1) x2Var.c[i12];
+        int i10 = 0;
+        for (int i11 = 0; i11 < x2Var.a; i11++) {
+            int i12 = x2Var.b[i11] >>> 3;
+            l1 l1Var = (l1) x2Var.c[i11];
             int b10 = m1.b(8);
-            int b11 = m1.b(i13) + m1.b(16);
+            int b11 = m1.b(i12) + m1.b(16);
             int b12 = m1.b(24);
-            int n10 = l1Var.n();
-            i11 += b10 + b10 + b11 + m1.b(n10) + n10 + b12;
+            int j10 = l1Var.j();
+            i10 += b10 + b10 + b11 + m1.b(j10) + j10 + b12;
         }
-        x2Var.d = i11;
-        return i11;
+        x2Var.d = i10;
+        return i10;
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
-    public final void e(Object obj, byte[] bArr, int i10, int i11, h1 h1Var) {
+    public final void e(Object obj, byte[] bArr, int i3, int i10, h1 h1Var) {
         v1 v1Var = (v1) obj;
         if (v1Var.zzc == x2.f) {
             v1Var.zzc = x2.b();
         }
-        throw c3.i0.l(obj);
+        obj.getClass();
+        throw new ClassCastException();
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
@@ -76,7 +79,8 @@ public final class o2 implements t2 {
             x2Var.e = false;
         }
         t1 t1Var = p1.a;
-        throw c3.i0.l(obj);
+        obj.getClass();
+        throw new ClassCastException();
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2

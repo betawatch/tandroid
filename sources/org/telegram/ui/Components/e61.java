@@ -1,29 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class e61 extends h10 {
-    public final org.telegram.ui.ActionBar.n0 J;
-    public final /* synthetic */ f61 K;
+public final class e61 extends AnimatorListenerAdapter {
+    public boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ n61 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e61(f61 f61Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, p6Var);
-        this.K = f61Var;
-        org.telegram.ui.ActionBar.n0 n0Var = this.r;
-        this.J = n0Var;
-        n0Var.setImeOptions(268435459);
-        n0Var.setHint(org.telegram.messenger.dd.L0(2131743365, null));
-        n0Var.addTextChangedListener(new ag.a1(this, 21));
-        n0Var.setOnEditorActionListener(new t0(this, 11));
+    public e61(n61 n61Var, View view, float f10) {
+        this.d = n61Var;
+        this.b = view;
+        this.c = f10;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.K.J0(motionEvent, this.J);
-        return super.onInterceptTouchEvent(motionEvent);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        super.onAnimationCancel(animator);
+        this.a = true;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.a) {
+            return;
+        }
+        this.d.E(this.b, this.c);
     }
 }

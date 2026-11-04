@@ -1,20 +1,27 @@
 package z7;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class v {
-    public static final v a;
-    public static final /* synthetic */ v[] b;
+public final class v extends n {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e = 1;
 
-    static {
-        v vVar = new v("DEFAULT", 0);
-        a = vVar;
-        b = new v[]{vVar, new v("SIGNED", 1), new v("FIXED", 2)};
+    public v(int i3, Object[] objArr) {
+        this.c = objArr;
+        this.d = i3;
     }
 
-    public static v[] values() {
-        return (v[]) b.clone();
+    @Override // java.util.List
+    public final Object get(int i3) {
+        x7.x6.a(i3, this.e);
+        Object obj = this.c[i3 + i3 + this.d];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.e;
     }
 }

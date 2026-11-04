@@ -2,7 +2,7 @@ package org.telegram.ui.Components.voip;
 
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public final class o implements RendererCommon.RendererEvents {
     public final /* synthetic */ r a;
@@ -13,21 +13,21 @@ public final class o implements RendererCommon.RendererEvents {
 
     @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
-        int i10 = 0;
+        int i3 = 0;
         while (true) {
             r rVar = this.a;
-            if (i10 >= rVar.m0.size()) {
-                rVar.m0.clear();
+            if (i3 >= rVar.n0.size()) {
+                rVar.n0.clear();
                 return;
             } else {
-                org.telegram.messenger.i0.r((Runnable) rVar.m0.get(i10));
-                ((Runnable) rVar.m0.get(i10)).run();
-                i10++;
+                org.telegram.messenger.g0.r((Runnable) rVar.n0.get(i3));
+                ((Runnable) rVar.n0.get(i3)).run();
+                i3++;
             }
         }
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    public final void onFrameResolutionChanged(int i3, int i10, int i11) {
     }
 }

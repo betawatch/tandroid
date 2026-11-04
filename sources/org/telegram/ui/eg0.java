@@ -1,34 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class eg0 extends org.telegram.ui.Components.pp0 {
-    public final /* synthetic */ fg0 R2;
+public final /* synthetic */ class eg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eg0(fg0 fg0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context, null, str, false, str2, false, p6Var);
-        this.R2 = fg0Var;
+    public /* synthetic */ eg0(kg0 kg0Var, int i3) {
+        this.a = i3;
+        this.b = kg0Var;
     }
 
-    @Override // org.telegram.ui.Components.pp0
-    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String a02;
-        ig0 ig0Var = this.R2.K;
-        if (z10) {
-            if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.dd.a0(null, null, 2131749197, org.telegram.messenger.dd.G(i10, "Chats", new Object[0]));
-            } else {
-                long j10 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j10 == 0 || j10 == ig0Var.getUserConfig().e()) ? org.telegram.messenger.dd.L0(2131749195, null) : org.telegram.messenger.dd.a0(null, null, 2131749194, ig0Var.getMessagesController().A1(j10, true));
-            }
-            org.telegram.ui.Components.wb Q = org.telegram.ui.Components.cc.a0(ig0Var).Q(R.raw.forward, 36, org.telegram.messenger.i0.W2(a02));
-            Q.r = false;
-            Q.k(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            case 1:
+                this.b.g1(true, false);
+                break;
+            default:
+                this.b.g1(true, false);
+                break;
         }
     }
 }

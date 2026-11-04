@@ -1,35 +1,87 @@
 package org.telegram.ui.Components;
 
+import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class kh implements vi {
+public final class kh implements lj {
     public final /* synthetic */ bi a;
 
     public kh(bi biVar) {
         this.a = biVar;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void a(TLRPC.User user, boolean z10, int i10, long j10) {
-        org.telegram.ui.un unVar = (org.telegram.ui.un) this.a.W1;
-        if (unVar.r7()) {
-            org.telegram.messenger.pz g10 = org.telegram.messenger.pz.g(user, unVar.j6, unVar.D5, unVar.l4, null, null, z10, i10, 0);
-            g10.K = unVar.T8();
-            g10.O = 0L;
-            g10.L = false;
-            g10.Q = j10;
-            g10.R = unVar.e9();
-            g10.T = unVar.w5;
-            unVar.getSendMessagesHelper().r0(g10);
-            unVar.I6();
+    @Override // org.telegram.ui.Components.lj
+    public final void A() {
+        bi biVar = this.a;
+        lj ljVar = biVar.P1;
+        if (ljVar != null) {
+            ljVar.A();
+            return;
+        }
+        Object obj = biVar.X1;
+        if (obj instanceof lj) {
+            ((lj) obj).A();
+            return;
+        }
+        if (obj instanceof org.telegram.ui.yj0) {
+            org.telegram.ui.yj0 yj0Var = (org.telegram.ui.yj0) obj;
+            try {
+                Intent intent = new Intent("android.intent.action.GET_CONTENT");
+                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+                intent.setType("*/*");
+                yj0Var.startActivityForResult(intent, 21);
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
-        ((org.telegram.ui.un) this.a.W1).Ab(arrayList, str, z10, i10, j10, z11);
+    @Override // org.telegram.ui.Components.lj
+    public final void S() {
+        this.a.p1(true);
+    }
+
+    @Override // org.telegram.ui.Components.lj
+    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i3, long j10, boolean z11, long j11) {
+        bi biVar = this.a;
+        lj ljVar = biVar.P1;
+        if (ljVar != null) {
+            ljVar.n(arrayList, str, arrayList2, arrayList3, z10, i3, j10, z11, j11);
+            return;
+        }
+        Object obj = biVar.X1;
+        if (obj instanceof lj) {
+            ((lj) obj).n(arrayList, str, arrayList2, arrayList3, z10, i3, j10, z11, j11);
+            return;
+        }
+        if (obj instanceof org.telegram.ui.yj0) {
+            org.telegram.ui.yj0 yj0Var = (org.telegram.ui.yj0) obj;
+            ArrayList arrayList4 = new ArrayList();
+            int size = arrayList.size();
+            for (int i10 = 0; i10 < size; i10++) {
+                org.telegram.messenger.xy xyVar = new org.telegram.messenger.xy();
+                xyVar.c = (String) arrayList.get(i10);
+                arrayList4.add(xyVar);
+            }
+            yj0Var.K1(arrayList4);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lj
+    public final void p(ArrayList arrayList, boolean z10, int i3, long j10) {
+        bi biVar = this.a;
+        lj ljVar = biVar.P1;
+        if (ljVar != null) {
+            ljVar.p(arrayList, z10, i3, j10);
+            return;
+        }
+        org.telegram.ui.ActionBar.d2 d2Var = biVar.X1;
+        if (d2Var instanceof org.telegram.ui.wm) {
+            ((org.telegram.ui.wm) d2Var).p(arrayList, z10, i3, j10);
+        } else if (d2Var instanceof org.telegram.ui.yj0) {
+            ((org.telegram.ui.yj0) d2Var).K1(arrayList);
+        }
     }
 }

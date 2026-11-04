@@ -1,39 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sm implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fn b;
-    public final /* synthetic */ TLRPC.Chat c;
+public final class sm extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.la0 a;
 
-    public /* synthetic */ sm(fn fnVar, TLRPC.Chat chat, int i10) {
-        this.a = i10;
-        this.b = fnVar;
-        this.c = chat;
+    public sm(org.telegram.ui.Components.la0 la0Var) {
+        this.a = la0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        TLRPC.Chat chat = this.c;
-        fn fnVar = this.b;
-        switch (i10) {
-            case 0:
-                fnVar.p(chat);
-                break;
-            case 1:
-                fnVar.a(chat);
-                break;
-            case 2:
-                fnVar.a.Fa(chat);
-                break;
-            default:
-                org.telegram.ui.Components.cc.a0(fnVar.a).Q(R.raw.contact_check, 36, org.telegram.messenger.dd.a0(null, null, 2131742861, chat == null ? "" : chat.title)).k(true);
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        this.a.r(1.0f);
     }
 }

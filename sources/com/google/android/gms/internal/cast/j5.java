@@ -1,20 +1,48 @@
 package com.google.android.gms.internal.cast;
 
-import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public abstract class j5 {
-    public static final Charset a;
-    public static final byte[] b;
+public final class j5 {
+    public static final j5 a;
+    public static final j5 b;
+    public static final j5 c;
+    public static final j5 d;
+    public static final j5 e;
+    public static final j5 f;
+    public static final j5 h;
+    public static final j5 n;
+    public static final j5 r;
+    public static final j5 s;
+    public static final /* synthetic */ j5[] w;
 
     static {
-        Charset.forName("US-ASCII");
-        a = Charset.forName("UTF-8");
-        Charset.forName("ISO-8859-1");
-        byte[] bArr = new byte[0];
-        b = bArr;
-        ByteBuffer.wrap(bArr);
+        j5 j5Var = new j5("VOID", 0);
+        a = j5Var;
+        j5 j5Var2 = new j5("INT", 1);
+        b = j5Var2;
+        j5 j5Var3 = new j5("LONG", 2);
+        c = j5Var3;
+        j5 j5Var4 = new j5("FLOAT", 3);
+        d = j5Var4;
+        j5 j5Var5 = new j5("DOUBLE", 4);
+        e = j5Var5;
+        j5 j5Var6 = new j5("BOOLEAN", 5);
+        f = j5Var6;
+        j5 j5Var7 = new j5("STRING", 6);
+        h = j5Var7;
+        v4 v4Var = v4.c;
+        j5 j5Var8 = new j5("BYTE_STRING", 7);
+        n = j5Var8;
+        j5 j5Var9 = new j5("ENUM", 8);
+        r = j5Var9;
+        j5 j5Var10 = new j5("MESSAGE", 9);
+        s = j5Var10;
+        w = new j5[]{j5Var, j5Var2, j5Var3, j5Var4, j5Var5, j5Var6, j5Var7, j5Var8, j5Var9, j5Var10};
+    }
+
+    public static j5[] values() {
+        return (j5[]) w.clone();
     }
 }

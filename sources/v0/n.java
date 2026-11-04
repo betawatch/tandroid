@@ -1,11 +1,13 @@
 package v0;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+import ci.u0;
+
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class n {
-    public final b2.h a;
+    public final u0 a;
 
-    public n(b2.h hVar) {
-        this.a = hVar;
+    public n(u0 u0Var) {
+        this.a = u0Var;
     }
 }

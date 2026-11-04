@@ -1,40 +1,31 @@
 package o8;
 
-import android.content.Intent;
 import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
-import m8.i;
-import w7.h0;
+import com.google.android.gms.common.data.DataHolder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class b extends o6.a implements q {
-    public static final Parcelable.Creator<b> CREATOR = new i(19);
-    public final int a;
-    public final int b;
-    public final Intent c;
-
-    public b(int i10, int i11, Intent intent) {
-        this.a = i10;
-        this.b = i11;
-        this.c = intent;
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status a() {
-        return this.b == 0 ? Status.e : Status.r;
-    }
+public final class b extends q6.a {
+    public static final Parcelable.Creator<b> CREATOR = new n8.g(8);
+    public String a;
+    public DataHolder b;
+    public ParcelFileDescriptor c;
+    public long d;
+    public byte[] e;
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        h0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        h0.k(parcel, 3, this.c, i10);
-        h0.r(parcel, q6);
+    public final void writeToParcel(Parcel parcel, int i3) {
+        int s6 = j8.a.s(parcel, 20293);
+        j8.a.m(parcel, 2, this.a);
+        j8.a.l(parcel, 3, this.b, i3);
+        j8.a.l(parcel, 4, this.c, i3);
+        long j10 = this.d;
+        j8.a.r(parcel, 5, 8);
+        parcel.writeLong(j10);
+        j8.a.d(parcel, 6, this.e);
+        j8.a.t(parcel, s6);
+        this.c = null;
     }
 }

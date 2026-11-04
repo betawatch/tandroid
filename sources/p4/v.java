@@ -1,40 +1,51 @@
 package p4;
 
-import android.content.ComponentName;
-import com.google.android.gms.internal.vision.g3;
-import java.util.ArrayList;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class v {
-    public final g3 a;
-    public final ArrayList b = new ArrayList();
-    public final boolean c;
-    public final l2.f d;
-    public b2.u e;
+public final class v implements Parcelable {
+    public static final Parcelable.Creator<v> CREATOR = new n8.g(14);
+    public final String a;
+    public final CharSequence b;
+    public final int c;
+    public final Bundle d;
 
-    public v(g3 g3Var, boolean z10) {
-        this.a = g3Var;
-        this.d = (l2.f) g3Var.d;
-        this.c = z10;
+    public v(String str, int i3, Bundle bundle) {
+        this.a = str;
+        this.b = "";
+        this.c = i3;
+        this.d = bundle;
     }
 
-    public final w a(String str) {
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            w wVar = (w) obj;
-            if (wVar.b.equals(str)) {
-                return wVar;
-            }
-        }
-        return null;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
     public final String toString() {
-        return "MediaRouter.RouteProviderInfo{ packageName=" + ((ComponentName) this.d.b).getPackageName() + " }";
+        return "Action:mName='" + ((Object) this.b) + ", mIcon=" + this.c + ", mExtras=" + this.d;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i3) {
+        parcel.writeString(this.a);
+        TextUtils.writeToParcel(this.b, parcel, i3);
+        parcel.writeInt(this.c);
+        parcel.writeBundle(this.d);
+    }
+
+    public v(Parcel parcel) {
+        String readString = parcel.readString();
+        readString.getClass();
+        this.a = readString;
+        CharSequence charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        charSequence.getClass();
+        this.b = charSequence;
+        this.c = parcel.readInt();
+        this.d = parcel.readBundle(q.class.getClassLoader());
     }
 }

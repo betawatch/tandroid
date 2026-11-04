@@ -1,128 +1,114 @@
 package yd;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import td.e0;
+import java.util.concurrent.atomic.AtomicReferenceArray;
+import wd.c2;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class k {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(k.class, Object.class, "_next$volatile");
-    public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(k.class, Object.class, "_prev$volatile");
-    public static final /* synthetic */ AtomicReferenceFieldUpdater c = AtomicReferenceFieldUpdater.newUpdater(k.class, Object.class, "_removedRef$volatile");
-    private volatile /* synthetic */ Object _next$volatile = this;
-    private volatile /* synthetic */ Object _prev$volatile = this;
-    private volatile /* synthetic */ Object _removedRef$volatile;
+public final class k extends be.r {
+    public final c e;
+    public final /* synthetic */ AtomicReferenceArray f;
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x003e, code lost:
+    public k(long j10, k kVar, c cVar, int i3) {
+        super(j10, kVar, i3);
+        this.e = cVar;
+        this.f = new AtomicReferenceArray(e.b * 2);
+    }
+
+    @Override // be.r
+    public final int g() {
+        return e.b;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0059, code lost:
     
-        r6 = ((yd.q) r6).a;
+        n(r5, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0046, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x005c, code lost:
     
-        if (r5.compareAndSet(r4, r3, r6) == false) goto L29;
+        if (r0 == false) goto L60;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x004e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x005e, code lost:
     
-        if (r5.get(r4) == r3) goto L51;
+        kotlin.jvm.internal.j.b(r2);
      */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0061, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:?, code lost:
+    
+        return;
+     */
+    @Override // be.r
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k d() {
-        k kVar;
-        loop0: while (true) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = b;
-            k kVar2 = (k) atomicReferenceFieldUpdater.get(this);
-            kVar = kVar2;
-            while (true) {
-                k kVar3 = null;
-                while (true) {
-                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = a;
-                    Object obj = atomicReferenceFieldUpdater2.get(kVar);
-                    if (obj == this) {
-                        if (kVar2 != kVar) {
-                            while (!atomicReferenceFieldUpdater.compareAndSet(this, kVar2, kVar)) {
-                                if (atomicReferenceFieldUpdater.get(this) != kVar2) {
-                                    break;
-                                }
-                            }
-                            break loop0;
-                        }
-                        break;
-                    }
-                    if (h()) {
-                        return null;
-                    }
-                    if (obj == null) {
-                        break loop0;
-                    }
-                    if (obj instanceof p) {
-                        ((p) obj).a(kVar);
-                        break;
-                    }
-                    if (!(obj instanceof q)) {
-                        kotlin.jvm.internal.i.c(obj, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
-                        kVar3 = kVar;
-                        kVar = (k) obj;
-                    } else {
-                        if (kVar3 != null) {
-                            break;
-                        }
-                        kVar = (k) atomicReferenceFieldUpdater.get(kVar);
-                    }
-                }
-                kVar = kVar3;
-            }
+    public final void h(int i3, fd.h hVar) {
+        int i10 = e.b;
+        boolean z10 = i3 >= i10;
+        if (z10) {
+            i3 -= i10;
         }
-        return kVar;
-    }
-
-    public final void e(k kVar) {
+        this.f.get(i3 * 2);
         while (true) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = b;
-            k kVar2 = (k) atomicReferenceFieldUpdater.get(kVar);
-            if (f() != kVar) {
-                return;
-            }
-            while (!atomicReferenceFieldUpdater.compareAndSet(kVar, kVar2, this)) {
-                if (atomicReferenceFieldUpdater.get(kVar) != kVar2) {
+            Object l10 = l(i3);
+            boolean z11 = l10 instanceof c2;
+            c cVar = this.e;
+            if (z11 || (l10 instanceof s)) {
+                if (k(i3, l10, z10 ? e.j : e.k)) {
+                    n(i3, null);
+                    m(i3, !z10);
+                    if (z10) {
+                        kotlin.jvm.internal.j.b(cVar);
+                        return;
+                    }
+                    return;
+                }
+            } else {
+                if (l10 == e.j || l10 == e.k) {
                     break;
                 }
+                if (l10 != e.g && l10 != e.f) {
+                    if (l10 == e.i || l10 == e.d || l10 == e.l) {
+                        return;
+                    }
+                    throw new IllegalStateException(("unexpected state: " + l10).toString());
+                }
             }
-            if (h()) {
-                kVar.d();
-                return;
-            }
-            return;
         }
     }
 
-    public final Object f() {
-        while (true) {
-            Object obj = a.get(this);
-            if (!(obj instanceof p)) {
-                return obj;
+    public final boolean k(int i3, Object obj, Object obj2) {
+        AtomicReferenceArray atomicReferenceArray;
+        int i10 = (i3 * 2) + 1;
+        do {
+            atomicReferenceArray = this.f;
+            if (atomicReferenceArray.compareAndSet(i10, obj, obj2)) {
+                return true;
             }
-            ((p) obj).a(this);
+        } while (atomicReferenceArray.get(i10) == obj);
+        return false;
+    }
+
+    public final Object l(int i3) {
+        return this.f.get((i3 * 2) + 1);
+    }
+
+    public final void m(int i3, boolean z10) {
+        if (z10) {
+            c cVar = this.e;
+            kotlin.jvm.internal.j.b(cVar);
+            cVar.B((this.c * e.b) + i3);
         }
+        i();
     }
 
-    public final k g() {
-        k kVar;
-        Object f7 = f();
-        q qVar = f7 instanceof q ? (q) f7 : null;
-        if (qVar != null && (kVar = qVar.a) != null) {
-            return kVar;
-        }
-        kotlin.jvm.internal.i.c(f7, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode{ kotlinx.coroutines.internal.LockFreeLinkedListKt.Node }");
-        return (k) f7;
+    public final void n(int i3, Object obj) {
+        this.f.set(i3 * 2, obj);
     }
 
-    public boolean h() {
-        return f() instanceof q;
-    }
-
-    public String toString() {
-        return new j(this, e0.class, "classSimpleName", "getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;", 1) + '@' + e0.k(this);
+    public final void o(int i3, Object obj) {
+        this.f.set((i3 * 2) + 1, obj);
     }
 }

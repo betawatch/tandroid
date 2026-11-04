@@ -1,131 +1,34 @@
 package wg;
 
-import android.graphics.Color;
-import org.telegram.messenger.i0;
-import org.telegram.messenger.tc;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a7;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.t6;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public class b implements a {
-    public final p6 a;
-    public final int b;
-    public final float c;
-    public int d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ int c;
 
-    public b(int i10, p6 p6Var) {
-        this(p6Var, i10, tc.e(262144) ? 0.85f : 0.76f);
+    public /* synthetic */ b(e eVar, int i3, int i10) {
+        this.a = i10;
+        this.b = eVar;
+        this.c = i3;
     }
 
-    @Override // wg.a
-    public int E() {
-        a();
-        if (!b() || Color.alpha(t6.w0(this.n, this.a)) == 0) {
-            return this.h;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                e eVar = this.b;
+                eVar.postOnAnimation(new b(eVar, this.c, 1));
+                break;
+            default:
+                e eVar2 = this.b;
+                int i3 = this.c;
+                if (eVar2.e && !eVar2.r && i3 == eVar2.F) {
+                    eVar2.y = true;
+                    eVar2.requestRender();
+                    break;
+                }
+                break;
         }
-        return 0;
-    }
-
-    @Override // wg.a
-    public final float N() {
-        if (b()) {
-            return i0.N(1.0f);
-        }
-        return -1.0f;
-    }
-
-    @Override // wg.a
-    public final float X() {
-        if (b()) {
-            return i0.N(2.25f);
-        }
-        return -1.0f;
-    }
-
-    public final void a() {
-        if (this.r != a7.b) {
-            d();
-        }
-    }
-
-    public final boolean b() {
-        return this.n >= 0 && t6.i1(this.a);
-    }
-
-    @Override // wg.a
-    public final float b0() {
-        return i0.N(0.6f);
-    }
-
-    public boolean c() {
-        return i0.B(t6.w0(this.b, this.a)) < 0.721f;
-    }
-
-    public final void d() {
-        this.r = a7.b;
-        this.d = t6.r1(this.c, t6.w0(this.b, this.a));
-        if (c()) {
-            this.f = 687865855;
-            this.h = 352321535;
-            this.e = 0;
-        } else {
-            this.f = -1;
-            this.h = -1;
-            this.e = TLObject.FLAG_29;
-        }
-    }
-
-    @Override // wg.a
-    public final int h0() {
-        if (b()) {
-            return t6.w0(t6.ya, this.a);
-        }
-        return 0;
-    }
-
-    @Override // wg.a
-    public int j0() {
-        a();
-        return b() ? t6.w0(t6.xa, this.a) : this.e;
-    }
-
-    @Override // wg.a
-    public int n0() {
-        a();
-        return this.d;
-    }
-
-    @Override // wg.a
-    public int u() {
-        a();
-        if (!b() || Color.alpha(t6.w0(this.n, this.a)) == 0) {
-            return this.f;
-        }
-        return 0;
-    }
-
-    @Override // wg.a
-    public final int w() {
-        if (b()) {
-            return t6.w0(this.n, this.a);
-        }
-        return 0;
-    }
-
-    public b(p6 p6Var, int i10, float f7) {
-        this.n = -1;
-        this.r = a7.b;
-        this.a = p6Var;
-        this.b = i10;
-        this.c = f7;
-        d();
     }
 }

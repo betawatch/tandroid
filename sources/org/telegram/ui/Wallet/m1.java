@@ -1,88 +1,116 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.r20;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.q70;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.u10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.f60;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m1 implements r20 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ vh.d b;
-    public final /* synthetic */ vh.d c;
-    public final /* synthetic */ z2 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p6 e;
-    public final /* synthetic */ a2 f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class m1 implements n10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c2 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ m1(vh.d dVar, vh.d dVar2, e2 e2Var, a2 a2Var, z2 z2Var, org.telegram.ui.ActionBar.p6 p6Var, g gVar) {
-        this.b = dVar;
-        this.c = dVar2;
-        this.g = e2Var;
-        this.f = a2Var;
-        this.d = z2Var;
-        this.e = p6Var;
-        this.h = gVar;
+    public /* synthetic */ m1(c2 c2Var, Object obj, long j10, int i3, int i10) {
+        this.a = i10;
+        this.b = c2Var;
+        this.e = obj;
+        this.c = j10;
+        this.d = i3;
     }
 
-    @Override // org.telegram.messenger.r20
-    public final void a(Object obj) {
+    @Override // org.telegram.messenger.n10
+    public final void a(Object obj, Object obj2) {
+        final long j10;
+        final int i3;
+        final TL_wallet.tonConnectRequest tonconnectrequest;
+        TL_wallet.tonConnectSession tonconnectsession;
         switch (this.a) {
             case 0:
-                e2 e2Var = (e2) this.g;
-                g gVar = (g) this.h;
-                Boolean bool = (Boolean) obj;
-                vh.d dVar = this.b;
-                dVar.setEnabled(false);
-                vh.d dVar2 = this.c;
-                dVar2.setEnabled(false);
-                (bool.booleanValue() ? dVar2 : dVar).setLoading(true);
-                boolean booleanValue = bool.booleanValue();
-                z2 z2Var = this.d;
-                org.telegram.ui.ActionBar.p6 p6Var = this.e;
-                a2 a2Var = this.f;
-                e2Var.f(a2Var, booleanValue, new q70(dVar, dVar2, z2Var, p6Var, gVar, a2Var, 3));
-                break;
-            default:
-                boolean[] zArr = (boolean[]) this.g;
-                boolean[] zArr2 = (boolean[]) this.h;
-                String str = (String) obj;
-                vh.d dVar3 = this.b;
-                boolean z10 = false;
-                dVar3.setLoading(false);
-                vh.d dVar4 = this.c;
-                dVar4.setLoading(false);
-                z2 z2Var2 = this.d;
-                if (str != null) {
-                    if (!zArr[0]) {
-                        cc.c0(str, z2Var2.E, this.e);
-                        a2 a2Var2 = this.f;
-                        dVar3.setEnabled(!a2Var2.n && zArr2[0]);
-                        if (!a2Var2.n && !a2Var2.o) {
-                            z10 = true;
+                final f60 f60Var = (f60) this.e;
+                final TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                final c2 c2Var = this.b;
+                k0 k0Var = c2Var.b;
+                if (tL_error == null && tonconnectpending != null) {
+                    ArrayList<TL_wallet.tonConnectRequest> arrayList = tonconnectpending.requests;
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (true) {
+                        j10 = this.c;
+                        i3 = this.d;
+                        if (i10 < size) {
+                            TL_wallet.tonConnectRequest tonconnectrequest2 = arrayList.get(i10);
+                            i10++;
+                            TL_wallet.tonConnectRequest tonconnectrequest3 = tonconnectrequest2;
+                            if (tonconnectrequest3.session_id == j10 && tonconnectrequest3.msg_id == i3) {
+                                tonconnectrequest = tonconnectrequest3;
+                            }
+                        } else {
+                            tonconnectrequest = null;
                         }
-                        dVar4.setEnabled(z10);
+                    }
+                    if (tonconnectrequest != null && (tonconnectsession = tonconnectpending.session) != null && tonconnectsession.id == j10 && tonconnectrequest.expires > c2Var.f.getCurrentTime()) {
+                        final String t10 = k0Var.t();
+                        final byte[] bArr = k0Var.y() != null ? (byte[]) k0Var.y().clone() : null;
+                        k0Var.z(new n10() { // from class: org.telegram.ui.Wallet.r1
+                            @Override // org.telegram.messenger.n10
+                            public final void a(Object obj3, Object obj4) {
+                                c2 c2Var2 = c2.this;
+                                f60 f60Var2 = f60Var;
+                                TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
+                                TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
+                                String str = t10;
+                                byte[] bArr2 = bArr;
+                                long j11 = j10;
+                                int i11 = i3;
+                                h0 h0Var = (h0) obj3;
+                                String str2 = (String) obj4;
+                                c2Var2.getClass();
+                                if (h0Var != null && str2 == null) {
+                                    h0 b10 = h0Var.b();
+                                    Utilities.e.c(new ii.b1(c2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new s1(1, b10, f60Var2), j11, i11));
+                                } else {
+                                    c2Var2.h = false;
+                                    if (str2 == null) {
+                                        str2 = "Recovery phrase is unavailable";
+                                    }
+                                    f60Var2.a(null, str2);
+                                }
+                            }
+                        }, true, false);
                         break;
                     } else {
-                        cc.b0(str);
+                        c2Var.h = false;
+                        f60Var.a(null, "This request has expired or has already been answered");
                         break;
                     }
                 } else {
-                    z2Var2.dismiss();
+                    c2Var.h = false;
+                    f60Var.a(null, c2.z(tL_error, "getPending"));
+                    break;
+                }
+                break;
+            default:
+                u10 u10Var = (u10) this.e;
+                TLRPC.Bool bool = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                c2 c2Var2 = this.b;
+                c2Var2.getClass();
+                if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
+                    u10Var.a(c2.z(tL_error2, "closeSession"));
+                    break;
+                } else {
+                    c2Var2.e(this.d, this.c, u10Var);
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ m1(vh.d dVar, vh.d dVar2, z2 z2Var, boolean[] zArr, org.telegram.ui.ActionBar.p6 p6Var, a2 a2Var, boolean[] zArr2) {
-        this.b = dVar;
-        this.c = dVar2;
-        this.d = z2Var;
-        this.g = zArr;
-        this.e = p6Var;
-        this.f = a2Var;
-        this.h = zArr2;
     }
 }

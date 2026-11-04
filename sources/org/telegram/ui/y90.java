@@ -1,33 +1,49 @@
 package org.telegram.ui;
 
-import android.window.OnBackInvokedCallback;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class y90 implements OnBackInvokedCallback {
-    public final /* synthetic */ LaunchActivity a;
+public final /* synthetic */ class y90 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ la0 b;
+    public final /* synthetic */ org.telegram.messenger.sa c;
 
-    public y90(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public /* synthetic */ y90(la0 la0Var, org.telegram.messenger.sa saVar, int i3) {
+        this.a = i3;
+        this.b = la0Var;
+        this.c = saVar;
     }
 
-    public final void onBackInvoked() {
-        if (org.telegram.messenger.i0.Q1()) {
-            this.a.onBackPressed();
-            return;
-        }
-        if (this.a.d0(true)) {
-            LaunchActivity launchActivity = this.a;
-            ActionBarLayout actionBarLayout = launchActivity.q0;
-            if (actionBarLayout == null) {
-                launchActivity.onBackPressed();
-            } else if (!actionBarLayout.i1) {
-                actionBarLayout.H();
-            } else {
-                actionBarLayout.i1 = false;
-                actionBarLayout.e(false);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                la0 la0Var = this.b;
+                org.telegram.messenger.sa saVar = this.c;
+                if (la0Var.H != null && la0Var.getParentActivity() != null) {
+                    try {
+                        ((b8.ke) saVar).w();
+                        ((mb.b) org.telegram.messenger.t0.k()).initializeMaps(org.telegram.messenger.t0.b);
+                        ((b8.ke) la0Var.H).o(new aa0(la0Var, 0));
+                        la0Var.x0 = true;
+                        if (la0Var.y0) {
+                            ((b8.ke) la0Var.H).A();
+                            break;
+                        }
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        return;
+                    }
+                }
+                break;
+            default:
+                la0 la0Var2 = this.b;
+                org.telegram.messenger.sa saVar2 = this.c;
+                try {
+                    ((b8.ke) saVar2).w();
+                } catch (Exception unused) {
+                }
+                org.telegram.messenger.g0.h3(new y90(la0Var2, saVar2, 0));
+                break;
         }
     }
 }

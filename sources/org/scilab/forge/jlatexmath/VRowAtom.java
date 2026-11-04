@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class VRowAtom extends Atom {
     protected LinkedList<Atom> elements = new LinkedList<>();
@@ -34,18 +34,18 @@ public class VRowAtom extends Atom {
         if (this.halign != 5) {
             LinkedList linkedList = new LinkedList();
             ListIterator<Atom> listIterator = this.elements.listIterator();
-            float f7 = Float.NEGATIVE_INFINITY;
+            float f10 = Float.NEGATIVE_INFINITY;
             while (listIterator.hasNext()) {
                 Box createBox = listIterator.next().createBox(teXEnvironment);
                 linkedList.add(createBox);
-                if (f7 < createBox.getWidth()) {
-                    f7 = createBox.getWidth();
+                if (f10 < createBox.getWidth()) {
+                    f10 = createBox.getWidth();
                 }
             }
             StrutBox strutBox = new StrutBox(0.0f, teXEnvironment.getInterline(), 0.0f, 0.0f);
             ListIterator listIterator2 = linkedList.listIterator();
             while (listIterator2.hasNext()) {
-                verticalBox.add(new HorizontalBox((Box) listIterator2.next(), f7, this.halign));
+                verticalBox.add(new HorizontalBox((Box) listIterator2.next(), f10, this.halign));
                 if (this.addInterline && listIterator2.hasNext()) {
                     verticalBox.add(strutBox);
                 }
@@ -93,12 +93,12 @@ public class VRowAtom extends Atom {
         this.addInterline = z10;
     }
 
-    public void setHalign(int i10) {
-        this.halign = i10;
+    public void setHalign(int i3) {
+        this.halign = i3;
     }
 
-    public void setRaise(int i10, float f7) {
-        this.raise = new SpaceAtom(i10, f7, 0.0f, 0.0f);
+    public void setRaise(int i3, float f10) {
+        this.raise = new SpaceAtom(i3, f10, 0.0f, 0.0f);
     }
 
     public void setVtop(boolean z10) {

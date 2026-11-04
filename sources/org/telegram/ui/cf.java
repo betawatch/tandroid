@@ -1,69 +1,70 @@
 package org.telegram.ui;
 
 import android.view.View;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cf implements Runnable {
+public final /* synthetic */ class cf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ wm b;
     public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ TLRPC.InputPeer n;
+    public final /* synthetic */ int[] r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ bf w;
+    public final /* synthetic */ Object x;
 
-    public /* synthetic */ cf(un unVar, int i10, int i11) {
-        this.a = i11;
-        this.b = unVar;
-        this.c = i10;
+    public /* synthetic */ cf(wm wmVar, int i3, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, bf bfVar, int i10) {
+        this.a = i10;
+        this.b = wmVar;
+        this.c = i3;
+        this.d = arrayList;
+        this.e = str;
+        this.f = str2;
+        this.h = str3;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.x = obj;
+        this.s = z10;
+        this.w = bfVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.messenger.kj messageObject;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                wm.P0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.x, this.s, this.w);
                 break;
             case 1:
-                this.b.l(this.c, 0, false, 0, true, 0);
-                break;
-            case 2:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-            case 3:
-                un unVar = this.b;
-                vj vjVar = unVar.z0;
-                if (vjVar != null) {
-                    int childCount = vjVar.getChildCount();
-                    for (int i10 = 0; i10 < childCount; i10++) {
-                        View childAt = unVar.z0.getChildAt(i10);
-                        if ((childAt instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject.T(unVar.U3)) {
-                            q1Var.C3(this.c, true, true);
-                        }
-                    }
-                }
-                unVar.U3 = null;
-                break;
-            case 4:
-                this.b.actionBar.getActionBarMenuOnItemClick().b(this.c);
-                break;
-            case 5:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-            case 6:
-                un.b0(this.b, this.c);
-                break;
-            case 7:
-                this.b.actionBar.setSubtitle(org.telegram.messenger.dd.G(this.c, "messages", new Object[0]));
-                break;
-            case 8:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-            case 9:
-                un.N0(this.b, this.c);
+                wm.B0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.x, this.s, this.w);
                 break;
             default:
-                un.H1(this.b, this.c);
+                wm.G1(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.x, this.s, this.w);
                 break;
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ cf(wm wmVar, int i3, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, bf bfVar) {
+        this.a = 2;
+        this.b = wmVar;
+        this.c = i3;
+        this.d = arrayList;
+        this.h = strArr;
+        this.e = str;
+        this.f = str2;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.x = charSequence;
+        this.s = z10;
+        this.w = bfVar;
     }
 }

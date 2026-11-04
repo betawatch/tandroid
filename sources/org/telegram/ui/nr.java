@@ -1,63 +1,47 @@
 package org.telegram.ui;
 
+import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nr implements org.telegram.ui.Cells.d5, zf.l1 {
-    public final /* synthetic */ or a;
+public final /* synthetic */ class nr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsActivity b;
 
-    public /* synthetic */ nr(or orVar) {
-        this.a = orVar;
+    public /* synthetic */ nr(ContactsActivity contactsActivity, int i3) {
+        this.a = i3;
+        this.b = contactsActivity;
     }
 
-    @Override // zf.l1
-    public /* synthetic */ a0.h M() {
-        return null;
-    }
-
-    @Override // zf.l1
-    public /* synthetic */ boolean Y(int i10) {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.d5
-    public boolean c(org.telegram.ui.Cells.e5 e5Var, boolean z10) {
-        int intValue = ((Integer) e5Var.getTag()).intValue();
-        or orVar = this.a;
-        TLObject E = orVar.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ContactsActivity contactsActivity = this.b;
+                qe.c cVar = contactsActivity.a;
+                cVar.c(contactsActivity.r ? 0.0f : 1.0f);
+                qr qrVar = contactsActivity.b;
+                float f10 = cVar.f;
+                ArrayList arrayList = qrVar.O;
+                qrVar.M = f10;
+                for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                    ((org.telegram.ui.Cells.s4) arrayList.get(i3)).setLetterProgress(f10);
+                }
+                contactsActivity.b.Y(contactsActivity.r ? 1 : 2, false);
+                contactsActivity.d.v0(0);
+                ViewPropertyAnimator withEndAction = contactsActivity.d.animate().alpha(1.0f).setDuration(220L).setInterpolator(org.telegram.ui.Components.xq.h).withEndAction(new nr(contactsActivity, 1));
+                contactsActivity.f0 = withEndAction;
+                withEndAction.start();
+                if (contactsActivity.r) {
+                    cVar.e = 80L;
+                    cVar.a(1.0f);
+                    break;
+                }
+                break;
+            default:
+                this.b.f0 = null;
+                break;
         }
-        return orVar.D.m0((TLRPC.ChannelParticipant) E, !z10, e5Var);
-    }
-
-    @Override // zf.l1
-    public void i(int i10) {
-        or orVar = this.a;
-        pr prVar = orVar.D;
-        if (orVar.h.e()) {
-            return;
-        }
-        int i11 = orVar.r;
-        orVar.f();
-        if (orVar.r > i11) {
-            prVar.D0(i11);
-        }
-        if (orVar.s || orVar.r != 0 || i10 == 0) {
-            return;
-        }
-        prVar.b.e(false, true);
-    }
-
-    @Override // zf.l1
-    public /* synthetic */ a0.h x() {
-        return null;
-    }
-
-    @Override // zf.l1
-    public /* synthetic */ void c0(ArrayList arrayList) {
     }
 }

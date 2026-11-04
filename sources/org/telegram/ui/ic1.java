@@ -1,82 +1,59 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.util.LongSparseArray;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ic1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rc1 b;
+public final class ic1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ WallpapersListActivity a;
 
-    public /* synthetic */ ic1(rc1 rc1Var, int i10) {
-        this.a = i10;
-        this.b = rc1Var;
+    public ic1(WallpapersListActivity wallpapersListActivity) {
+        this.a = wallpapersListActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                int i10 = 0;
-                while (true) {
-                    bs[] bsVarArr = this.b.x.f;
-                    if (i10 >= bsVarArr.length) {
-                        break;
-                    } else {
-                        bsVarArr[i10].z(0.0f);
-                        i10++;
-                    }
-                }
-            case 1:
-                rc1 rc1Var = this.b;
-                EditTextBoldCursor editTextBoldCursor = rc1Var.n;
-                if (editTextBoldCursor != null) {
-                    if (editTextBoldCursor.length() != 0) {
-                        rc1Var.f0[2].P(49);
-                        rc1Var.f0[2].T(false, 0.0f);
-                        rc1Var.a.d();
-                        break;
-                    } else {
-                        rc1Var.K0(true);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                rc1 rc1Var2 = this.b;
-                EditTextBoldCursor editTextBoldCursor2 = rc1Var2.n;
-                if (editTextBoldCursor2 != null && editTextBoldCursor2.getVisibility() == 0) {
-                    rc1Var2.n.requestFocus();
-                    org.telegram.messenger.i0.J3(rc1Var2.n);
-                    break;
-                }
-                break;
-            case 3:
-                rc1 rc1Var3 = this.b;
-                tc0 tc0Var = rc1Var3.x;
-                if (tc0Var != null && tc0Var.getVisibility() == 0) {
-                    rc1Var3.x.f[0].requestFocus();
-                    break;
-                }
-                break;
-            case 4:
-                rc1 rc1Var4 = this.b;
-                if (rc1Var4.g0 != null) {
-                    rc1Var4.K0(false);
-                    break;
-                }
-                break;
-            case 5:
-                rc1.k0(this.b);
-                break;
-            case 6:
-                org.telegram.messenger.i0.h3(new ic1(this.b, 7), 150L);
-                break;
-            default:
-                for (bs bsVar : this.b.x.f) {
-                    bsVar.z(0.0f);
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i3) {
+        org.telegram.ui.ActionBar.y4 y4Var;
+        org.telegram.ui.ActionBar.y4 y4Var2;
+        WallpapersListActivity wallpapersListActivity = this.a;
+        LongSparseArray longSparseArray = wallpapersListActivity.f0;
+        if (i3 == -1) {
+            y4Var = ((org.telegram.ui.ActionBar.d2) wallpapersListActivity).simpleActionBar;
+            if (!y4Var.s()) {
+                wallpapersListActivity.finishFragment();
+                return;
+            }
+            longSparseArray.clear();
+            y4Var2 = ((org.telegram.ui.ActionBar.d2) wallpapersListActivity).simpleActionBar;
+            y4Var2.r();
+            wallpapersListActivity.I0();
+            return;
+        }
+        if (i3 != 4) {
+            if (i3 == 3) {
+                uw uwVar = new uw(org.telegram.ui.Cells.f1.l(3, "onlySelect", "dialogsType", true));
+                uwVar.D2 = new gc1(this);
+                wallpapersListActivity.presentFragment(uwVar);
+                return;
+            }
+            return;
+        }
+        if (wallpapersListActivity.getParentActivity() == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
+        String G = org.telegram.messenger.bd.G(longSparseArray.size(), "DeleteBackground", new Object[0]);
+        org.telegram.ui.ActionBar.s1 s1Var = alertDialog$Builder.a;
+        s1Var.S = G;
+        s1Var.U = org.telegram.messenger.bd.a0("DeleteChatBackgroundsAlert", null, 2131751555, new Object[0]);
+        alertDialog$Builder.k(org.telegram.messenger.bd.M0(2131751599, null), new gc1(this));
+        alertDialog$Builder.h(org.telegram.messenger.bd.M0(2131752589, null), null);
+        wallpapersListActivity.showDialog(s1Var);
+        TextView textView = (TextView) s1Var.d(-1);
+        if (textView != null) {
+            org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
         }
     }
 }

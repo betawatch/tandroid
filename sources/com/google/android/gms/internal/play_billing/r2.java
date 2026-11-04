@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class r2 extends f1 implements RandomAccess {
     public static final Object[] d;
@@ -18,55 +18,55 @@ public final class r2 extends f1 implements RandomAccess {
         e = new r2(objArr, 0, false);
     }
 
-    public r2(Object[] objArr, int i10, boolean z10) {
+    public r2(Object[] objArr, int i3, boolean z10) {
         super(z10);
         this.b = objArr;
-        this.c = i10;
+        this.c = i3;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        l();
-        if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a1.g.j(i10, this.c, "Index:", ", Size:"));
+    public final void add(int i3, Object obj) {
+        int i10;
+        h();
+        if (i3 < 0 || i3 > (i10 = this.c)) {
+            throw new IndexOutOfBoundsException(a1.g.n(i3, this.c, "Index:", ", Size:"));
         }
-        int i12 = i10 + 1;
+        int i11 = i3 + 1;
         Object[] objArr = this.b;
         int length = objArr.length;
-        if (i11 < length) {
-            System.arraycopy(objArr, i10, objArr, i12, i11 - i10);
+        if (i10 < length) {
+            System.arraycopy(objArr, i3, objArr, i11, i10 - i3);
         } else {
             Object[] objArr2 = new Object[Math.max(((length * 3) / 2) + 1, 10)];
-            System.arraycopy(this.b, 0, objArr2, 0, i10);
-            System.arraycopy(this.b, i10, objArr2, i12, this.c - i10);
+            System.arraycopy(this.b, 0, objArr2, 0, i3);
+            System.arraycopy(this.b, i3, objArr2, i11, this.c - i3);
             this.b = objArr2;
         }
-        this.b[i10] = obj;
+        this.b[i3] = obj;
         this.c++;
         ((AbstractList) this).modCount++;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        m(i10);
-        return this.b[i10];
+    public final Object get(int i3) {
+        i(i3);
+        return this.b[i3];
     }
 
-    public final void m(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a1.g.j(i10, this.c, "Index:", ", Size:"));
+    public final void i(int i3) {
+        if (i3 < 0 || i3 >= this.c) {
+            throw new IndexOutOfBoundsException(a1.g.n(i3, this.c, "Index:", ", Size:"));
         }
     }
 
     @Override // com.google.android.gms.internal.play_billing.f1, java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        l();
-        m(i10);
+    public final Object remove(int i3) {
+        h();
+        i(i3);
         Object[] objArr = this.b;
-        Object obj = objArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(objArr, i10 + 1, objArr, i10, (r2 - i10) - 1);
+        Object obj = objArr[i3];
+        if (i3 < this.c - 1) {
+            System.arraycopy(objArr, i3 + 1, objArr, i3, (r2 - i3) - 1);
         }
         this.c--;
         ((AbstractList) this).modCount++;
@@ -74,12 +74,12 @@ public final class r2 extends f1 implements RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        l();
-        m(i10);
+    public final Object set(int i3, Object obj) {
+        h();
+        i(i3);
         Object[] objArr = this.b;
-        Object obj2 = objArr[i10];
-        objArr[i10] = obj;
+        Object obj2 = objArr[i3];
+        objArr[i3] = obj;
         ((AbstractList) this).modCount++;
         return obj2;
     }
@@ -90,25 +90,25 @@ public final class r2 extends f1 implements RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.play_billing.z1
-    public final /* bridge */ /* synthetic */ z1 zzd(int i10) {
-        if (i10 >= this.c) {
-            return new r2(i10 == 0 ? d : Arrays.copyOf(this.b, i10), this.c, true);
+    public final /* bridge */ /* synthetic */ z1 zzd(int i3) {
+        if (i3 >= this.c) {
+            return new r2(i3 == 0 ? d : Arrays.copyOf(this.b, i3), this.c, true);
         }
         throw new IllegalArgumentException();
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
-        l();
-        int i10 = this.c;
+        h();
+        int i3 = this.c;
         int length = this.b.length;
-        if (i10 == length) {
+        if (i3 == length) {
             this.b = Arrays.copyOf(this.b, Math.max(((length * 3) / 2) + 1, 10));
         }
         Object[] objArr = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        objArr[i11] = obj;
+        int i10 = this.c;
+        this.c = i10 + 1;
+        objArr[i10] = obj;
         ((AbstractList) this).modCount++;
         return true;
     }

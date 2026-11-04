@@ -1,82 +1,15 @@
 package i9;
 
-import java.io.Serializable;
-import v7.t6;
+import java.math.BigInteger;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements Serializable {
-    public static final a c = new a(new int[0]);
-    public final int[] a;
-    public final int b;
+public abstract class a {
+    public static final /* synthetic */ int a = 0;
 
-    public a(int[] iArr) {
-        int length = iArr.length;
-        this.a = iArr;
-        this.b = length;
-    }
-
-    public final boolean a(int i10) {
-        int i11 = 0;
-        while (true) {
-            if (i11 >= this.b) {
-                i11 = -1;
-                break;
-            }
-            if (this.a[i11] == i10) {
-                break;
-            }
-            i11++;
-        }
-        return i11 >= 0;
-    }
-
-    public final int b(int i10) {
-        t6.j(i10, this.b);
-        return this.a[i10];
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            int i10 = aVar.b;
-            int i11 = this.b;
-            if (i11 == i10) {
-                for (int i12 = 0; i12 < i11; i12++) {
-                    if (b(i12) == aVar.b(i12)) {
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int i10 = 1;
-        for (int i11 = 0; i11 < this.b; i11++) {
-            i10 = (i10 * 31) + this.a[i11];
-        }
-        return i10;
-    }
-
-    public final String toString() {
-        int i10 = this.b;
-        if (i10 == 0) {
-            return "[]";
-        }
-        StringBuilder sb2 = new StringBuilder(i10 * 5);
-        sb2.append('[');
-        int[] iArr = this.a;
-        sb2.append(iArr[0]);
-        for (int i11 = 1; i11 < i10; i11++) {
-            sb2.append(", ");
-            sb2.append(iArr[i11]);
-        }
-        sb2.append(']');
-        return sb2.toString();
+    static {
+        new BigInteger("16a09e667f3bcc908b2fb1366ea957d3e3adec17512775099da2f590b0667322a", 16);
+        Math.log(10.0d);
+        Math.log(2.0d);
     }
 }

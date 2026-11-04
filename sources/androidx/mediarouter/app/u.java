@@ -3,16 +3,16 @@ package androidx.mediarouter.app;
 import android.app.Dialog;
 import android.content.res.Configuration;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class u extends androidx.fragment.app.p {
-    public boolean A0 = false;
-    public g.t B0;
-    public p4.s C0;
+    public boolean B0 = false;
+    public g.u C0;
+    public r4.r D0;
 
     public u() {
-        this.q0 = true;
-        Dialog dialog = this.v0;
+        this.r0 = true;
+        Dialog dialog = this.w0;
         if (dialog != null) {
             dialog.setCancelable(true);
         }
@@ -21,34 +21,34 @@ public class u extends androidx.fragment.app.p {
     @Override // androidx.fragment.app.p, androidx.fragment.app.s
     public final void I() {
         super.I();
-        g.t tVar = this.B0;
-        if (tVar == null || this.A0) {
+        g.u uVar = this.C0;
+        if (uVar == null || this.B0) {
             return;
         }
-        ((t) tVar).i(false);
+        ((t) uVar).i(false);
     }
 
     @Override // androidx.fragment.app.p
     public final Dialog O() {
-        if (this.A0) {
+        if (this.B0) {
             o0 o0Var = new o0(n());
-            this.B0 = o0Var;
-            o0Var.i(this.C0);
+            this.C0 = o0Var;
+            o0Var.i(this.D0);
         } else {
-            this.B0 = new t(n());
+            this.C0 = new t(n());
         }
-        return this.B0;
+        return this.C0;
     }
 
     @Override // androidx.fragment.app.s, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
-        this.U = true;
-        g.t tVar = this.B0;
-        if (tVar != null) {
-            if (this.A0) {
-                ((o0) tVar).j();
+        this.V = true;
+        g.u uVar = this.C0;
+        if (uVar != null) {
+            if (this.B0) {
+                ((o0) uVar).j();
             } else {
-                ((t) tVar).s();
+                ((t) uVar).s();
             }
         }
     }

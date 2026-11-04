@@ -1,154 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class i60 extends org.telegram.ui.Components.tk0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public org.telegram.ui.Components.voip.u f;
-    public String h;
-    public int n;
-    public final /* synthetic */ j60 r;
+public final /* synthetic */ class i60 implements org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
 
-    public i60(j60 j60Var, Context context) {
-        this.r = j60Var;
-        this.c = context;
-        C(true);
+    public /* synthetic */ i60(int i3, HashMap hashMap, boolean z10, boolean z11, int i10) {
+        this.a = i10;
+        this.b = i3;
+        this.c = hashMap;
+        this.d = z10;
+        this.e = z11;
     }
 
-    public static void E(i60 i60Var, String str) {
-        j60 j60Var = i60Var.r;
-        if (j60Var.N) {
-            if (TextUtils.isEmpty(str)) {
-                j60Var.d.setBackground(null);
-            } else {
-                org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, j60Var.d, j60Var.getResourceProvider());
-            }
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(org.telegram.ui.ActionBar.s1 s1Var, int i3) {
+        switch (this.a) {
+            case 0:
+                int i10 = this.b;
+                HashMap hashMap = this.c;
+                boolean z10 = this.d;
+                boolean z11 = this.e;
+                String str = LaunchActivity.E1;
+                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i10), hashMap, z10, z11, true));
+                break;
+            case 1:
+                int i11 = this.b;
+                HashMap hashMap2 = this.c;
+                boolean z12 = this.d;
+                boolean z13 = this.e;
+                String str2 = LaunchActivity.E1;
+                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i11), hashMap2, z12, z13, false));
+                break;
+            default:
+                int i12 = this.b;
+                HashMap hashMap3 = this.c;
+                boolean z14 = this.d;
+                boolean z15 = this.e;
+                String str3 = LaunchActivity.E1;
+                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i12), hashMap3, z14, z15, true));
+                break;
         }
-        if (i60Var.n != 0) {
-            j60Var.getConnectionsManager().cancelRequest(i60Var.n, true);
-            i60Var.n = 0;
-        }
-        org.telegram.ui.Components.voip.u uVar = i60Var.f;
-        if (uVar != null) {
-            org.telegram.messenger.i0.r(uVar);
-            i60Var.f = null;
-        }
-        i60Var.h = null;
-        int b10 = i60Var.b();
-        if (b10 > 0) {
-            i60Var.d.clear();
-            i60Var.e.clear();
-            i60Var.p(0, b10);
-        }
-        if (TextUtils.isEmpty(str)) {
-            j60Var.b.setVisibility(8);
-            j60Var.b.e(false, true);
-            return;
-        }
-        if (j60Var.b.getVisibility() != 0) {
-            j60Var.b.setVisibility(0);
-            j60Var.b.e(true, false);
-        } else {
-            j60Var.b.e(true, true);
-        }
-        org.telegram.ui.Components.voip.u uVar2 = new org.telegram.ui.Components.voip.u(29, i60Var, str);
-        i60Var.f = uVar2;
-        org.telegram.messenger.i0.h3(uVar2, 300L);
-    }
-
-    @Override // org.telegram.ui.Components.tk0
-    public final boolean D(s4.c1 c1Var) {
-        return d(c1Var.b()) == 0;
-    }
-
-    @Override // s4.g0
-    public final int b() {
-        return this.e.size() + this.d.size() + (!this.e.isEmpty() ? 1 : 0);
-    }
-
-    @Override // s4.g0
-    public final long c(int i10) {
-        if (d(i10) != 0) {
-            return -1L;
-        }
-        ArrayList arrayList = i10 > this.d.size() ? this.e : this.d;
-        if (i10 > this.d.size()) {
-            i10 = (i10 - this.d.size()) - 1;
-        }
-        return ((TLRPC.TL_messages_stickerSet) arrayList.get(i10)).set.id;
-    }
-
-    @Override // s4.g0
-    public final int d(int i10) {
-        return this.d.size() == i10 ? 1 : 0;
-    }
-
-    @Override // s4.g0
-    public final void t(s4.c1 c1Var, int i10) {
-        if (d(i10) != 0) {
-            return;
-        }
-        boolean z10 = i10 > this.d.size();
-        ArrayList arrayList = z10 ? this.e : this.d;
-        if (z10) {
-            i10 = (i10 - this.d.size()) - 1;
-        }
-        org.telegram.ui.Cells.k8 k8Var = (org.telegram.ui.Cells.k8) c1Var.a;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i10);
-        k8Var.d(tL_messages_stickerSet, i10 != arrayList.size() - 1, !z10);
-        String str = this.h;
-        String lowerCase = str != null ? str.toLowerCase(Locale.ROOT) : "";
-        j60 j60Var = this.r;
-        org.telegram.ui.ActionBar.p6 resourceProvider = j60Var.getResourceProvider();
-        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-        String str2 = stickerSet.title;
-        Locale locale = Locale.ROOT;
-        int indexOf = str2.toLowerCase(locale).indexOf(lowerCase);
-        if (indexOf != -1) {
-            SpannableString spannableString = new SpannableString(stickerSet.title);
-            spannableString.setSpan(new org.telegram.ui.Components.l00(org.telegram.ui.ActionBar.t6.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
-            k8Var.b.setText(spannableString);
-        }
-        int indexOf2 = stickerSet.short_name.toLowerCase(locale).indexOf(lowerCase);
-        if (indexOf2 != -1) {
-            String str3 = stickerSet.emojis ? "t.me/addemoji/" : "t.me/addstickers/";
-            int length = str3.length() + indexOf2;
-            StringBuilder t10 = a1.g.t(str3);
-            t10.append(stickerSet.short_name);
-            SpannableString spannableString2 = new SpannableString(t10.toString());
-            spannableString2.setSpan(new org.telegram.ui.Components.l00(org.telegram.ui.ActionBar.t6.q6, resourceProvider), length, lowerCase.length() + length, 0);
-            k8Var.c.setText(spannableString2);
-        }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = j60Var.r;
-        k8Var.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : j60Var.g0(j60Var.w) != null ? j60Var.g0(j60Var.w).id : 0L), false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.g0
-    public final s4.c1 w(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.k8 k8Var;
-        if (i10 != 0) {
-            int i11 = org.telegram.ui.ActionBar.t6.B6;
-            j60 j60Var = this.r;
-            org.telegram.ui.Cells.p4 p4Var = new org.telegram.ui.Cells.p4(this.c, i11, 21, 0, 0, false, false, j60Var.getResourceProvider());
-            p4Var.setText(org.telegram.messenger.dd.L0(j60Var.N ? 2131752119 : 2131752118, null));
-            k8Var = p4Var;
-        } else {
-            org.telegram.ui.Cells.k8 k8Var2 = new org.telegram.ui.Cells.k8(this.c, 3);
-            org.telegram.ui.ActionBar.a7.i(org.telegram.ui.ActionBar.t6.d6, k8Var2, null);
-            k8Var = k8Var2;
-        }
-        k8Var.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.dk0(k8Var);
     }
 }

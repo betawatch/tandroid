@@ -1,49 +1,27 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class n5 extends View {
-    public final /* synthetic */ int a = 0;
-    public final org.telegram.ui.Components.kp b;
+public final /* synthetic */ class n5 implements org.telegram.messenger.u10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v5 b;
 
-    public n5(Context context) {
-        super(context);
-        this.b = new org.telegram.ui.Components.kp(org.telegram.messenger.i0.L(36.0f), org.telegram.messenger.i0.L(2.0f), -13522392);
+    public /* synthetic */ n5(v5 v5Var, int i3) {
+        this.a = i3;
+        this.b = v5Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                int width = getWidth();
-                int height = getHeight();
-                org.telegram.ui.Components.kp kpVar = this.b;
-                kpVar.setBounds(0, 0, width, height);
-                kpVar.b(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.m5, false));
-                kpVar.setAlpha(org.telegram.messenger.at.e4);
-                kpVar.draw(canvas);
-                invalidate();
-                super.onDraw(canvas);
+                this.b.V = (org.telegram.messenger.e3) obj;
                 break;
             default:
-                int L = org.telegram.messenger.i0.L(1.0f);
-                int width2 = (getWidth() - L) - L;
-                int height2 = (getHeight() - L) - L;
-                org.telegram.ui.Components.kp kpVar2 = this.b;
-                kpVar2.setBounds(L, L, width2, height2);
-                kpVar2.draw(canvas);
-                invalidate();
+                org.telegram.messenger.g0.h3(new org.telegram.messenger.voip.l0(15, this.b, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
         }
-    }
-
-    public n5(Activity activity) {
-        super(activity);
-        this.b = new org.telegram.ui.Components.kp(org.telegram.messenger.i0.L(30.0f), org.telegram.messenger.i0.L(3.0f), org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.m5, false));
     }
 }

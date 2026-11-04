@@ -1,16 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class h81 extends s4.j {
-    public final /* synthetic */ k91 F;
+public final class h81 extends org.telegram.ui.Components.qt0 {
+    public boolean g0;
 
-    public h81(k91 k91Var) {
-        this.F = k91Var;
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.v0.g1();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i3, int i10) {
+        Q();
+        if (getKeyboardHeight() != 0 || this.g0) {
+            this.g0 = true;
+            setPadding(0, 0, 0, 0);
+        } else {
+            int i11 = org.telegram.messenger.hp.d1().getInt("kbd_height", org.telegram.messenger.g0.L(200.0f));
+            this.f = i11;
+            setPadding(0, 0, 0, i11);
+        }
+        super.onMeasure(i3, i10);
     }
 }

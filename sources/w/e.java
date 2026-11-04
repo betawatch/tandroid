@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class e implements AutoCloseable {
     public final String[] a;
@@ -42,12 +42,12 @@ public final class e implements AutoCloseable {
         int min = Math.min(arrayDeque.size(), 8);
         Iterator descendingIterator = arrayDeque.descendingIterator();
         while (descendingIterator.hasNext()) {
-            int i10 = min - 1;
+            int i3 = min - 1;
             if (min <= 0) {
                 break;
             }
             sb2.append(((d) descendingIterator.next()).a());
-            min = i10;
+            min = i3;
         }
         if (descendingIterator.hasNext()) {
             sb2.append("[...]");

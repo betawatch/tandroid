@@ -1,13 +1,21 @@
 package c8;
 
-import java.io.Closeable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a implements Closeable {
-    public static final a a = new a();
+public abstract class a {
+    public static final /* synthetic */ int a = 0;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
+    static {
+        a.class.getClassLoader();
+    }
+
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
+        }
+        return (Parcelable) creator.createFromParcel(parcel);
     }
 }

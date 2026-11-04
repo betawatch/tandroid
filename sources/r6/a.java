@@ -1,29 +1,43 @@
 package r6;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import p7.n;
-import w7.h0;
+import android.os.IBinder;
+import android.os.IInterface;
+import p6.h;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class a extends o6.a {
-    public static final Parcelable.Creator<a> CREATOR = new n(3);
-    public final boolean a;
-    public final int b;
-
-    public a(int i10, boolean z10) {
-        this.a = z10;
-        this.b = i10;
+public final class a extends h {
+    @Override // p6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 253600000;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = h0.q(parcel, 20293);
-        h0.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        h0.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        h0.r(parcel, q6);
+    @Override // p6.d
+    public final IInterface g(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.service.IClientNotificationTelemetryService");
+        return queryLocalInterface instanceof b ? (b) queryLocalInterface : new b(iBinder, "com.google.android.gms.common.internal.service.IClientNotificationTelemetryService", 7);
+    }
+
+    @Override // p6.d
+    public final m6.c[] i() {
+        return m7.b.c;
+    }
+
+    @Override // p6.d
+    public final String n() {
+        return "com.google.android.gms.common.internal.service.IClientNotificationTelemetryService";
+    }
+
+    @Override // p6.d
+    public final String o() {
+        return "com.google.android.gms.common.telemetry.notification.service.START";
+    }
+
+    @Override // p6.d
+    public final boolean q() {
+        return true;
     }
 }

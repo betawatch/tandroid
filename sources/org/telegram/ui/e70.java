@@ -1,27 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class e70 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LanguageSelectActivity b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ e70(LanguageSelectActivity languageSelectActivity, int i10) {
-        this.a = i10;
-        this.b = languageSelectActivity;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e70 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+
+    public /* synthetic */ e70(LaunchActivity launchActivity, int i3) {
+        this.a = i3;
+        this.b = launchActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        int i3 = this.a;
+        LaunchActivity launchActivity = this.b;
+        switch (i3) {
             case 0:
-                LanguageSelectActivity.d0(this.b);
+                launchActivity.y1 = false;
                 break;
             case 1:
-                LanguageSelectActivity.b0(this.b);
+                String str = LaunchActivity.E1;
+                org.telegram.messenger.g0.i3(new m60(launchActivity, 7), 30000L);
                 break;
             default:
-                this.b.a.f();
+                String str2 = LaunchActivity.E1;
+                org.telegram.messenger.g0.i3(new m60(launchActivity, 10), 30000L);
                 break;
         }
     }

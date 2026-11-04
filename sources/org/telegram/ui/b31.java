@@ -1,59 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.widget.LinearLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class b31 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ c31 f;
+public final class b31 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.Components.s70 b;
+    public final org.telegram.ui.Components.s70 c;
+    public final gi.d d;
+    public final gi.d e;
 
-    public b31(c31 c31Var, boolean z10, Runnable runnable, boolean[] zArr, boolean z11, Runnable runnable2) {
-        this.f = c31Var;
-        this.a = z10;
-        this.b = runnable;
-        this.c = zArr;
-        this.d = z11;
-        this.e = runnable2;
+    public b31(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.a = e6Var;
+        setOrientation(1);
+        int i3 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.Components.s70 a10 = b8.rf.a(context, 15.0f, i3, true, e6Var);
+        this.b = a10;
+        a10.setGravity(17);
+        addView(a10, b8.mf.t(-1, -2, 55, 32, 20, 32, 0));
+        org.telegram.ui.Components.s70 a11 = b8.rf.a(context, 13.0f, i3, false, e6Var);
+        this.c = a11;
+        a11.setGravity(17);
+        addView(a11, b8.mf.s(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        gi.d h = org.telegram.messenger.k5.h(24, context, e6Var, true);
+        this.d = h;
+        gi.d h7 = org.telegram.messenger.k5.h(24, context, e6Var, true);
+        this.e = h7;
+        linearLayout.addView(h, b8.mf.q(0, 42, 1.0f, org.telegram.messenger.hs.x1, 0, 0, 12, 0));
+        linearLayout.addView(h7, b8.mf.q(0, 42, 1.0f, org.telegram.messenger.hs.x1, 0, 0, 0, 0));
+        addView(linearLayout, b8.mf.t(-1, -2, 55, 24, 18, 24, 16));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        Runnable runnable;
-        c31 c31Var = this.f;
-        l0 l0Var = c31Var.s;
-        boolean z10 = this.a;
-        float f7 = z10 ? 1.0f : 0.0f;
-        c31Var.I = f7;
-        org.telegram.messenger.i0.X1(c31Var.c, c31Var.d, f7, c31Var.e);
-        l0Var.invalidate();
-        if (!z10) {
-            c31Var.w.setAlpha(c31Var.I);
-        }
-        if (c31Var.I < 0.5f && !z10 && (runnable = this.b) != null) {
-            boolean[] zArr = this.c;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                runnable.run();
-            }
-        }
-        if (!z10) {
-            if (this.d) {
-                c31Var.a.b = false;
-                c31Var.P.h0.invalidate();
-            }
-            org.telegram.messenger.at.e().k(org.telegram.messenger.at.k1, 4);
-        }
-        c31Var.K = null;
-        l0Var.invalidate();
-        Runnable runnable2 = this.e;
-        if (runnable2 != null) {
-            runnable2.run();
-        }
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.G6));
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void updateColors() {
+        int i3 = org.telegram.ui.ActionBar.k6.G6;
+        org.telegram.ui.ActionBar.e6 e6Var = this.a;
+        this.b.setTextColor(org.telegram.ui.ActionBar.k6.w0(i3, e6Var));
+        this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(i3, e6Var));
     }
 }

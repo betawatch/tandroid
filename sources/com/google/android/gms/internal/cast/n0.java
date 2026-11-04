@@ -1,60 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
-import java.util.Map;
+import android.content.Context;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class n0 extends j0 {
-    public final transient i0 d;
-    public final transient Object[] e;
-    public final transient int f;
+public final class n0 {
+    public static final i6.b i = new i6.b("ClientCastAnalytics", null);
+    public static final boolean j = true;
+    public final f6.g a;
+    public final t b;
+    public final c c;
+    public Long e;
+    public n5.r g;
+    public int h = 1;
+    public final String d = UUID.randomUUID().toString();
+    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
 
-    public n0(i0 i0Var, Object[] objArr, int i10) {
-        this.d = i0Var;
-        this.e = objArr;
-        this.f = i10;
+    public n0(Context context, i6.r rVar, f6.g gVar, t tVar, c cVar) {
+        this.a = gVar;
+        this.b = tVar;
+        this.c = cVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.d.get(key))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        g0 g0Var = this.b;
-        if (g0Var == null) {
-            g0Var = r();
-            this.b = g0Var;
-        }
-        return g0Var.listIterator(0);
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int l(Object[] objArr) {
-        g0 g0Var = this.b;
-        if (g0Var == null) {
-            g0Var = r();
-            this.b = g0Var;
-        }
-        return g0Var.l(objArr);
-    }
-
-    public final g0 r() {
-        return new m0(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.f;
+    public final void a(q1 q1Var, int i3) {
+        this.f.execute(new androidx.activity.g(this, q1Var, i3, 3));
     }
 }

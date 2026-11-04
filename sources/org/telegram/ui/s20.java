@@ -1,23 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.UndoView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class s20 extends UndoView {
-    public final /* synthetic */ a50 j0;
+public final class s20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x30 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s20(a50 a50Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.j0 = a50Var;
+    public /* synthetic */ s20(x30 x30Var, int i3) {
+        this.a = i3;
+        this.b = x30Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        if (this.j0.q2 != null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                x30 x30Var = this.b;
+                x30Var.N1.setVisibility(4);
+                x30Var.O1.setVisibility(4);
+                x30Var.M1.setVisibility(4);
+                break;
+            case 1:
+                this.b.Z1 = null;
+                break;
+            default:
+                x30 x30Var2 = this.b;
+                x30Var2.Z2 = null;
+                x30Var2.Y2.setColor(x30Var2.L3 == 3 ? -1163700 : -12761513);
+                x30Var2.X2.invalidate();
+                break;
         }
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
     }
 }

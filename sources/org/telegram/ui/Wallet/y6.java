@@ -1,53 +1,45 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import android.view.MotionEvent;
+import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes3.dex */
-public final class y6 extends lg.q {
-    public final /* synthetic */ a7 i0;
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class y6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n10 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y6(a7 a7Var, Context context) {
-        super(context, 1, 4);
-        this.i0 = a7Var;
+    public /* synthetic */ y6(n10 n10Var, int i3) {
+        this.a = i3;
+        this.b = n10Var;
     }
 
-    @Override // lg.q
-    public final void i() {
-        a7 a7Var = this.i0;
-        if (a7Var.e == this) {
-            a7.c(a7Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.a(null, "Wallet engine is closed");
+                break;
+            case 1:
+                this.b.a(null, "NO_WALLET_ENGINE");
+                break;
+            case 2:
+                this.b.a(null, "NO_WALLET_ENGINE");
+                break;
+            case 3:
+                this.b.a(null, "Recovery phrase is required");
+                break;
+            case 4:
+                this.b.a(null, "Transaction hash is required");
+                break;
+            case 5:
+                this.b.a(null, "NO_WALLET_ENGINE");
+                break;
+            case 6:
+                this.b.a(null, "NO_WALLET_ENGINE");
+                break;
+            default:
+                this.b.a(null, "NO_WALLET_ENGINE");
+                break;
         }
-    }
-
-    @Override // lg.q, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int round = Math.round(Math.min(i10, i11) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        super.onSurfaceTextureAvailable(surfaceTexture, round, round);
-    }
-
-    @Override // lg.q, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int round = Math.round(Math.min(i10, i11) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        this.D = round;
-        this.y = round;
-    }
-
-    @Override // lg.q, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int round = Math.round(Math.min(getWidth(), getHeight()) * 3.5f);
-        if (round > 0) {
-            surfaceTexture.setDefaultBufferSize(round, round);
-        }
-    }
-
-    @Override // lg.q, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.i0.y && super.onTouchEvent(motionEvent);
     }
 }

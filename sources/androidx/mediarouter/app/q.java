@@ -7,31 +7,31 @@ import android.os.Message;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public final class q implements IBinder.DeathRecipient {
     public final android.support.v4.media.session.e a = new android.support.v4.media.session.e(this);
     public android.support.v4.media.session.f b;
     public android.support.v4.media.session.g c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ g.t e;
+    public final /* synthetic */ g.u e;
 
-    public q(g.t tVar, int i10) {
-        this.d = i10;
-        this.e = tVar;
+    public q(g.u uVar, int i3) {
+        this.d = i3;
+        this.e = uVar;
     }
 
     public final void a(MediaMetadataCompat mediaMetadataCompat) {
         switch (this.d) {
             case 0:
                 t tVar = (t) this.e;
-                tVar.l0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
+                tVar.m0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
                 tVar.r();
                 tVar.q(false);
                 break;
             default:
                 o0 o0Var = (o0) this.e;
-                o0Var.b0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
+                o0Var.c0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
                 o0Var.f();
                 o0Var.k();
                 break;
@@ -42,7 +42,7 @@ public final class q implements IBinder.DeathRecipient {
         switch (this.d) {
             case 0:
                 t tVar = (t) this.e;
-                tVar.k0 = playbackStateCompat;
+                tVar.l0 = playbackStateCompat;
                 tVar.q(false);
                 break;
         }
@@ -57,29 +57,29 @@ public final class q implements IBinder.DeathRecipient {
         switch (this.d) {
             case 0:
                 t tVar = (t) this.e;
-                hf.b bVar = tVar.i0;
-                if (bVar != null) {
-                    bVar.p0(tVar.j0);
-                    tVar.i0 = null;
+                p4.q qVar = tVar.j0;
+                if (qVar != null) {
+                    qVar.H(tVar.k0);
+                    tVar.j0 = null;
                     break;
                 }
                 break;
             default:
                 o0 o0Var = (o0) this.e;
-                hf.b bVar2 = o0Var.Z;
-                if (bVar2 != null) {
-                    bVar2.p0(o0Var.a0);
-                    o0Var.Z = null;
+                p4.q qVar2 = o0Var.a0;
+                if (qVar2 != null) {
+                    qVar2.H(o0Var.b0);
+                    o0Var.a0 = null;
                     break;
                 }
                 break;
         }
     }
 
-    public final void e(int i10, Object obj, Bundle bundle) {
+    public final void e(int i3, Object obj, Bundle bundle) {
         android.support.v4.media.session.f fVar = this.b;
         if (fVar != null) {
-            Message obtainMessage = fVar.obtainMessage(i10, obj);
+            Message obtainMessage = fVar.obtainMessage(i3, obj);
             obtainMessage.setData(bundle);
             obtainMessage.sendToTarget();
         }

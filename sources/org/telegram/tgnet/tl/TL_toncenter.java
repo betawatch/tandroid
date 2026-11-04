@@ -8,17 +8,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
 public class TL_toncenter {
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class apiResponse extends TLObject {
         public static final int constructor = -1399980519;
         public TLRPC.TL_dataJSON response;
 
-        public static apiResponse TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (apiResponse) TLObject.TLdeserialize(apiResponse.class, -1399980519 != i10 ? null : new apiResponse(), inputSerializedData, i10, z10);
+        public static apiResponse TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (apiResponse) TLObject.TLdeserialize(apiResponse.class, -1399980519 != i3 ? null : new apiResponse(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -33,7 +33,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class createOnrampSession extends TLMethod<onrampSession> {
         public static final int constructor = -1575387914;
         public String address;
@@ -90,12 +90,12 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public onrampSession deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return onrampSession.TLdeserialize(inputSerializedData, i10, z10);
+        public onrampSession deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return onrampSession.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getOnrampAvailability extends TLMethod<onrampAvailability> {
         public static final int constructor = 784505169;
         public String base_currency;
@@ -116,12 +116,12 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public onrampAvailability deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return onrampAvailability.TLdeserialize(inputSerializedData, i10, z10);
+        public onrampAvailability deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return onrampAvailability.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getOnrampBaseCurrencies extends TLMethod<onrampBaseCurrencies> {
         public static final int constructor = 478932467;
         public String crypto_currency;
@@ -135,12 +135,12 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public onrampBaseCurrencies deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return onrampBaseCurrencies.TLdeserialize(inputSerializedData, i10, z10);
+        public onrampBaseCurrencies deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return onrampBaseCurrencies.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getOnrampLimits extends TLMethod<onrampLimits> {
         public static final int constructor = -2132258307;
         public String base_currency;
@@ -163,12 +163,12 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public onrampLimits deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return onrampLimits.TLdeserialize(inputSerializedData, i10, z10);
+        public onrampLimits deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return onrampLimits.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getOnrampProviders extends TLMethod<Vector<onrampProviderInfo>> {
         public static final int constructor = 1061028060;
         public String crypto_currency;
@@ -185,12 +185,12 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public Vector<onrampProviderInfo> deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return Vector.TLDeserialize(inputSerializedData, i10, z10, new d(14));
+        public Vector<onrampProviderInfo> deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return Vector.TLDeserialize(inputSerializedData, i3, z10, new d(14));
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getOnrampQuote extends TLMethod<onrampQuote> {
         public static final int constructor = -530168326;
         public String base_amount;
@@ -223,12 +223,12 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public onrampQuote deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return onrampQuote.TLdeserialize(inputSerializedData, i10, z10);
+        public onrampQuote deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return onrampQuote.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class getStreamingUrl extends TLMethod<streamingUrl> {
         public static final int constructor = -844143673;
 
@@ -238,12 +238,12 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public streamingUrl deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return streamingUrl.TLdeserialize(inputSerializedData, i10, z10);
+        public streamingUrl deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return streamingUrl.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class onrampAvailability extends TLObject {
         public static final int constructor = -104314509;
         public boolean allowed;
@@ -253,8 +253,8 @@ public class TL_toncenter {
         public ArrayList<onrampMethodAvailability> methods = new ArrayList<>();
         public String state;
 
-        public static onrampAvailability TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (onrampAvailability) TLObject.TLdeserialize(onrampAvailability.class, -104314509 != i10 ? null : new onrampAvailability(), inputSerializedData, i10, z10);
+        public static onrampAvailability TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (onrampAvailability) TLObject.TLdeserialize(onrampAvailability.class, -104314509 != i3 ? null : new onrampAvailability(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -289,13 +289,13 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class onrampBaseCurrencies extends TLObject {
         public ArrayList<String> currencies = new ArrayList<>();
 
-        public static onrampBaseCurrencies TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            if (i10 != 481674261) {
-                return (onrampBaseCurrencies) TLObject.TLdeserialize(onrampBaseCurrencies.class, null, inputSerializedData, i10, z10);
+        public static onrampBaseCurrencies TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            if (i3 != 481674261) {
+                return (onrampBaseCurrencies) TLObject.TLdeserialize(onrampBaseCurrencies.class, null, inputSerializedData, i3, z10);
             }
             onrampBaseCurrencies onrampbasecurrencies = new onrampBaseCurrencies();
             onrampbasecurrencies.readParams(inputSerializedData, z10);
@@ -313,7 +313,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class onrampLimits extends TLObject {
         public static final int constructor = 2078435198;
         public String base_currency;
@@ -323,8 +323,8 @@ public class TL_toncenter {
         public String crypto_min_amount;
         public String payment_method;
 
-        public static onrampLimits TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (onrampLimits) TLObject.TLdeserialize(onrampLimits.class, 2078435198 != i10 ? null : new onrampLimits(), inputSerializedData, i10, z10);
+        public static onrampLimits TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (onrampLimits) TLObject.TLdeserialize(onrampLimits.class, 2078435198 != i3 ? null : new onrampLimits(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -349,15 +349,15 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class onrampMethodAvailability extends TLObject {
         public static final int constructor = -1631009112;
         public boolean available;
         public int flags;
         public String payment_method;
 
-        public static onrampMethodAvailability TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (onrampMethodAvailability) TLObject.TLdeserialize(onrampMethodAvailability.class, -1631009112 != i10 ? null : new onrampMethodAvailability(), inputSerializedData, i10, z10);
+        public static onrampMethodAvailability TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (onrampMethodAvailability) TLObject.TLdeserialize(onrampMethodAvailability.class, -1631009112 != i3 ? null : new onrampMethodAvailability(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -378,7 +378,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class onrampProviderInfo extends TLObject {
         public static final int constructor = 230847874;
         public ArrayList<String> crypto_currencies = new ArrayList<>();
@@ -389,8 +389,8 @@ public class TL_toncenter {
         public boolean supports_limits;
         public boolean supports_quote;
 
-        public static onrampProviderInfo TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (onrampProviderInfo) TLObject.TLdeserialize(onrampProviderInfo.class, 230847874 != i10 ? null : new onrampProviderInfo(), inputSerializedData, i10, z10);
+        public static onrampProviderInfo TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (onrampProviderInfo) TLObject.TLdeserialize(onrampProviderInfo.class, 230847874 != i3 ? null : new onrampProviderInfo(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -421,7 +421,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class onrampQuote extends TLObject {
         public static final int constructor = 2055213545;
         public String base_amount;
@@ -436,8 +436,8 @@ public class TL_toncenter {
         public String payment_method;
         public String total_amount;
 
-        public static onrampQuote TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (onrampQuote) TLObject.TLdeserialize(onrampQuote.class, 2055213545 != i10 ? null : new onrampQuote(), inputSerializedData, i10, z10);
+        public static onrampQuote TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (onrampQuote) TLObject.TLdeserialize(onrampQuote.class, 2055213545 != i3 ? null : new onrampQuote(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -472,7 +472,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class onrampSession extends TLObject {
         public static final int constructor = -773575132;
         public int expires_date;
@@ -480,8 +480,8 @@ public class TL_toncenter {
         public String session_id;
         public String url;
 
-        public static onrampSession TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (onrampSession) TLObject.TLdeserialize(onrampSession.class, -773575132 != i10 ? null : new onrampSession(), inputSerializedData, i10, z10);
+        public static onrampSession TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (onrampSession) TLObject.TLdeserialize(onrampSession.class, -773575132 != i3 ? null : new onrampSession(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -502,7 +502,7 @@ public class TL_toncenter {
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class performApiRequest extends TLMethod<apiResponse> {
         public static final int constructor = -1921262239;
         public String endpoint;
@@ -527,19 +527,19 @@ public class TL_toncenter {
         }
 
         @Override // org.telegram.tgnet.TLMethod
-        public apiResponse deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return apiResponse.TLdeserialize(inputSerializedData, i10, z10);
+        public apiResponse deserializeResponseT(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return apiResponse.TLdeserialize(inputSerializedData, i3, z10);
         }
     }
 
-    /* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+    /* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
     public static class streamingUrl extends TLObject {
         public static final int constructor = 428373505;
         public int expires;
         public String url;
 
-        public static streamingUrl TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (streamingUrl) TLObject.TLdeserialize(streamingUrl.class, 428373505 != i10 ? null : new streamingUrl(), inputSerializedData, i10, z10);
+        public static streamingUrl TLdeserialize(InputSerializedData inputSerializedData, int i3, boolean z10) {
+            return (streamingUrl) TLObject.TLdeserialize(streamingUrl.class, 428373505 != i3 ? null : new streamingUrl(), inputSerializedData, i3, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject

@@ -1,40 +1,37 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.content.DialogInterface;
+import android.app.Dialog;
+import android.view.View;
+import org.telegram.ui.Components.fc;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class z1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b2 b;
+public interface z1 {
+    void a(boolean z10);
 
-    public /* synthetic */ z1(b2 b2Var, int i10) {
-        this.a = i10;
-        this.b = b2Var;
-    }
+    void b(boolean z10);
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                b2 b2Var = this.b;
-                DialogInterface.OnShowListener onShowListener = b2Var.r1;
-                if (onShowListener != null) {
-                    onShowListener.onShow(b2Var);
-                    break;
-                }
-                break;
-            default:
-                b2 b2Var2 = this.b;
-                b2Var2.u().removeView(b2Var2.o1);
-                DialogInterface.OnDismissListener onDismissListener = b2Var2.s1;
-                if (onDismissListener != null) {
-                    onDismissListener.onDismiss(b2Var2);
-                    break;
-                }
-                break;
-        }
-    }
+    View d();
+
+    void dismiss();
+
+    int e(int i3);
+
+    boolean f();
+
+    void h(int i3);
+
+    boolean j();
+
+    fc k();
+
+    void n(Runnable runnable);
+
+    void p();
+
+    boolean s();
+
+    boolean t(Dialog dialog);
+
+    boolean y();
 }

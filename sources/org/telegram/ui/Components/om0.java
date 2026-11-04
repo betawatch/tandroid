@@ -1,33 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class om0 extends s4.n {
-    public final /* synthetic */ sm0 b;
+public interface om0 {
+    void D();
 
-    public om0(sm0 sm0Var) {
-        this.b = sm0Var;
-    }
+    CharSequence getContentDescription();
 
-    @Override // s4.n
-    public final boolean a(int i10, int i11) {
-        sm0 sm0Var = this.b;
-        return ((pm0) sm0Var.n.get(i10)).equals(sm0Var.r.get(i11));
-    }
+    void k(boolean z10, float f10);
 
-    @Override // s4.n
-    public final boolean b(int i10, int i11) {
-        sm0 sm0Var = this.b;
-        return ((pm0) sm0Var.n.get(i10)).a.h == ((pm0) sm0Var.r.get(i11)).a.h;
-    }
-
-    @Override // s4.n
-    public final int d() {
-        return this.b.r.size();
-    }
-
-    @Override // s4.n
-    public final int e() {
-        return this.b.n.size();
-    }
+    int q0();
 }

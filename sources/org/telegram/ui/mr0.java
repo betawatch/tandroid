@@ -1,99 +1,143 @@
 package org.telegram.ui;
 
-import android.media.MediaExtractor;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.camera.Size;
-import org.telegram.ui.Components.AnimatedFileNative;
+import android.graphics.Point;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class mr0 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ PhotoViewer d;
+public final class mr0 implements r0.m, org.telegram.ui.Components.n51, org.telegram.ui.Components.eo0, org.telegram.ui.Components.om0, org.telegram.ui.Components.em0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public mr0(PhotoViewer photoViewer, String str, long j10, int i10) {
-        this.d = photoViewer;
-        this.a = str;
-        this.b = j10;
-        this.c = i10;
+    public /* synthetic */ mr0(Object obj, int i3) {
+        this.a = i3;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.d.x8 != this) {
-            return;
+    @Override // org.telegram.ui.Components.eo0
+    public void C0() {
+        ((StickersActivity) this.b).o0();
+    }
+
+    @Override // org.telegram.ui.Components.om0
+    public void D() {
+        int i3 = this.a;
+    }
+
+    @Override // r0.m
+    public r0.k1 R0(View view, r0.k1 k1Var) {
+        switch (this.a) {
+            case 0:
+                pr0 pr0Var = (pr0) this.b;
+                i0.b g7 = k1Var.a.g(519);
+                pr0Var.r = g7;
+                pr0Var.d.setPadding(g7.a, g7.b, g7.c, g7.d);
+                pr0Var.c.requestLayout();
+                break;
+            default:
+                w71 w71Var = (w71) this.b;
+                i0.b g10 = k1Var.a.g(519);
+                w71Var.n = g10;
+                w71Var.c.setPadding(g10.a, g10.b, g10.c, g10.d);
+                w71Var.b.requestLayout();
+                break;
         }
-        int E = MediaController.E(this.a);
-        int[] iArr = new int[11];
-        AnimatedFileNative.d(this.a, iArr, this.b);
-        boolean z10 = false;
-        this.d.k8 = (iArr[0] == 0 || ((iArr[10] != 0) && iArr[9] == 0)) ? false : true;
-        PhotoViewer photoViewer = this.d;
-        if (E == -1) {
-            E = iArr[3];
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public void W() {
+        ((StickersActivity) this.b).o0();
+    }
+
+    @Override // org.telegram.ui.Components.em0
+    public void Y(org.telegram.ui.Cells.t2 t2Var) {
+        m91 m91Var = ((i91) this.b).w0;
+        HashSet hashSet = m91.r1;
+        m91Var.Q0(t2Var);
+    }
+
+    @Override // org.telegram.ui.Components.n51
+    public void c(float f10) {
+        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+        bp0 bp0Var = secretMediaViewer.E;
+        if (bp0Var != null) {
+            long U = bp0Var.U();
+            if (U != -9223372036854775807L) {
+                secretMediaViewer.E.q0((long) (f10 * U), false);
+            }
+            secretMediaViewer.E.h0();
         }
-        photoViewer.g8 = E;
-        photoViewer.h8 = E;
-        if (this.d.k8) {
-            PhotoViewer photoViewer2 = this.d;
-            int i10 = iArr[1];
-            photoViewer2.c8 = i10;
-            photoViewer2.e8 = i10;
-            PhotoViewer photoViewer3 = this.d;
-            int i11 = iArr[2];
-            photoViewer3.d8 = i11;
-            photoViewer3.f8 = i11;
-            PhotoViewer photoViewer4 = this.d;
-            int max = Math.max(photoViewer4.c8, this.d.d8);
-            if (max > 1280) {
-                photoViewer4.Z7 = 4;
-            } else if (max > 854) {
-                photoViewer4.Z7 = 3;
-            } else if (max > 640) {
-                photoViewer4.Z7 = 2;
-            } else {
-                photoViewer4.Z7 = 1;
-            }
-            PhotoViewer photoViewer5 = this.d;
-            int i12 = this.c;
-            if (i12 == -1) {
-                i12 = photoViewer5.y2();
-            }
-            photoViewer5.Y7 = i12;
-            PhotoViewer photoViewer6 = this.d;
-            if (photoViewer6.g8 != 0 && photoViewer6.c2 != 1) {
-                Size q02 = photoViewer6.q0();
-                if (q02.getWidth() == photoViewer6.c8 && q02.getHeight() == photoViewer6.d8) {
-                    MediaController.v(q02.getWidth(), q02.getHeight(), photoViewer6.h8, false);
-                } else {
-                    MediaController.v(q02.getWidth(), q02.getHeight(), MediaController.Q(photoViewer6.d8, photoViewer6.c8, photoViewer6.h8, q02.getHeight(), q02.getWidth()), false);
-                }
-            }
-            PhotoViewer photoViewer7 = this.d;
-            String str = this.a;
-            MediaExtractor mediaExtractor = new MediaExtractor();
-            try {
-                try {
-                    mediaExtractor.setDataSource(str);
-                    int w9 = MediaController.w(mediaExtractor, false);
-                    if (w9 >= 0) {
-                        if (mediaExtractor.getTrackFormat(w9).getString("mime").equals("video/avc")) {
-                            z10 = true;
-                        }
-                    }
-                } catch (Exception e) {
-                    org.telegram.messenger.f8.g(e, true);
-                }
-                photoViewer7.l8 = z10;
-            } finally {
-                mediaExtractor.release();
+    }
+
+    @Override // org.telegram.ui.Components.n51
+    public void d(float f10) {
+        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
+        bp0 bp0Var = secretMediaViewer.E;
+        if (bp0Var != null) {
+            bp0Var.g0();
+            long U = secretMediaViewer.E.U();
+            if (U != -9223372036854775807L) {
+                secretMediaViewer.E.q0((long) (f10 * U), false);
             }
         }
-        if (this.d.x8 != this) {
-            return;
+    }
+
+    @Override // org.telegram.ui.Components.em0
+    public void finish() {
+        Point point = org.telegram.messenger.g0.q;
+        if (point.x > point.y) {
+            ((i91) this.b).w0.finishPreviewFragment();
         }
-        org.telegram.messenger.i0.g3(new pd0(this, this, iArr, 23));
+    }
+
+    @Override // org.telegram.ui.Components.om0
+    public CharSequence getContentDescription() {
+        switch (this.a) {
+            case 3:
+                return String.valueOf(Math.round((((m51) this.b).a.getProgress() * r0.b) + 0));
+            default:
+                w51 w51Var = (w51) this.b;
+                return String.valueOf(Math.round((w51Var.b.getProgress() * (w51Var.e - r1)) + w51Var.d));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.om0
+    public void k(boolean z10, float f10) {
+        switch (this.a) {
+            case 3:
+                ThemeActivity.d0(((m51) this.b).e, Math.round((r4.b * f10) + 0), false);
+                break;
+            default:
+                w51 w51Var = (w51) this.b;
+                ThemeActivity.p0(w51Var.r, Math.round(((w51Var.e - r1) * f10) + w51Var.d));
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.em0
+    public void m(float f10) {
+        Point point = org.telegram.messenger.g0.q;
+        if (point.x > point.y) {
+            ((i91) this.b).w0.movePreviewFragment(f10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.om0
+    public int q0() {
+        switch (this.a) {
+            case 3:
+                return ((m51) this.b).b;
+            default:
+                w51 w51Var = (w51) this.b;
+                return w51Var.e - w51Var.d;
+        }
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
     }
 }

@@ -1,562 +1,302 @@
 package d1;
 
 import android.content.Context;
-import android.content.IntentFilter;
-import android.database.SQLException;
-import android.graphics.Bitmap;
-import android.graphics.RectF;
-import android.graphics.SurfaceTexture;
-import android.graphics.Typeface;
-import android.media.metrics.NetworkEvent;
-import android.media.metrics.PlaybackErrorEvent;
-import android.media.metrics.PlaybackMetrics;
-import android.media.metrics.PlaybackStateEvent;
-import android.media.metrics.TrackChangeEvent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.PowerManager;
-import android.text.SpannableString;
+import android.os.Bundle;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Base64;
-import android.view.View;
-import b2.a2;
-import b2.l1;
-import b2.o1;
-import bi.i6;
-import com.google.android.gms.internal.play_billing.s0;
-import di.o;
-import di.p;
-import di.r;
-import e2.i0;
-import e2.j0;
-import e2.o0;
-import e2.u;
-import i2.c0;
-import i2.m1;
-import i2.p0;
-import i2.r1;
-import i2.w;
-import ig.a1;
-import ig.c1;
-import ig.q0;
-import ig.x0;
-import j9.e0;
-import j9.y;
-import java.io.InputStream;
-import java.nio.ByteBuffer;
+import b8.db;
+import com.google.android.gms.fido.common.Transport;
+import e7.b0;
+import e7.e0;
+import e7.i;
+import e7.i0;
+import e7.k;
+import e7.m;
+import e7.o;
+import e7.s;
+import e7.t;
+import e7.u;
+import e7.v;
+import e7.w;
+import e7.x;
+import e7.y;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
-import jg.e2;
-import jg.r0;
-import jg.s2;
-import jg.v2;
-import ji.j;
-import ji.k;
-import kotlin.jvm.internal.i;
-import l5.s;
-import n4.q;
-import org.telegram.messenger.f8;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.v61;
-import u2.g0;
+import java.util.LinkedHashMap;
+import java.util.concurrent.Executor;
+import kotlin.jvm.internal.j;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import p7.t0;
 import v0.h;
-import v7.t6;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class e extends b1.d {
+    public final Context e;
+    public h f;
+    public Executor g;
+    public CancellationSignal h;
+    public final c1.d i;
 
-    public /* synthetic */ e(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public e(Context context) {
+        j.e(context, "context");
+        this.e = context;
+        this.i = new c1.d(this, new Handler(Looper.getMainLooper()), 1);
     }
 
-    private final void a() {
-        PowerManager.WakeLock wakeLock;
-        hf.b bVar = (hf.b) this.b;
-        AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
-        synchronized (bVar) {
-            if (atomicBoolean.get() && (wakeLock = (PowerManager.WakeLock) bVar.c) != null) {
-                wakeLock.release();
-            }
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x00a2, code lost:
-    
-        return;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private final void b() {
-        k kVar = (k) this.b;
-        j jVar = (j) this.c;
-        byte[] bArr = new byte[65536];
+    public static v0.f e(u uVar) {
+        JSONObject jSONObject;
         try {
-            InputStream inputStream = jVar.b.getInputStream();
-            while (true) {
-                synchronized (kVar.a) {
-                    while (!kVar.u && kVar.m.get(Integer.valueOf(jVar.a)) == jVar && (!kVar.t || !jVar.e || jVar.c == 0)) {
-                        try {
-                            kVar.a.wait();
-                        } finally {
-                        }
-                    }
-                    if (kVar.u || kVar.m.get(Integer.valueOf(jVar.a)) != jVar) {
-                        break;
-                    }
-                    int read = inputStream.read(bArr, 0, (int) Math.min(65536L, jVar.c));
-                    if (read < 0) {
-                        kVar.e(jVar, true);
-                        return;
-                    }
-                    if (read != 0) {
-                        byte[] bArr2 = new byte[read];
-                        System.arraycopy(bArr, 0, bArr2, 0, read);
-                        synchronized (kVar.a) {
-                            try {
-                                if (kVar.u || kVar.m.get(Integer.valueOf(jVar.a)) != jVar || !kVar.t) {
-                                    break;
-                                }
-                                jVar.c -= read;
-                                kVar.n(2, jVar.a, bArr2);
-                            } finally {
-                            }
-                        }
-                    }
+            k kVar = uVar.f;
+            t0 t0Var = uVar.c;
+            try {
+                JSONObject jSONObject2 = new JSONObject();
+                if (t0Var != null && t0Var.p().length > 0) {
+                    jSONObject2.put("rawId", w6.b.c(t0Var.p()));
                 }
-            }
-        } catch (Exception unused) {
-            kVar.e(jVar, true);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:208:0x044b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        q qVar;
-        q qVar2;
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                f fVar = (f) this.b;
-                v0.f fVar2 = (v0.f) this.c;
-                h hVar = fVar.f;
-                if (hVar != null) {
-                    hVar.onResult(fVar2);
-                    return;
+                String str = uVar.n;
+                if (str != null) {
+                    jSONObject2.put("authenticatorAttachment", str);
+                }
+                String str2 = uVar.b;
+                if (str2 != null && kVar == null) {
+                    jSONObject2.put(TeXSymbolParser.TYPE_ATTR, str2);
+                }
+                String str3 = uVar.a;
+                if (str3 != null) {
+                    jSONObject2.put("id", str3);
+                }
+                String str4 = "response";
+                i iVar = uVar.e;
+                boolean z10 = true;
+                if (iVar != null) {
+                    jSONObject = iVar.b();
                 } else {
-                    i.h("callback");
-                    throw null;
-                }
-            case 1:
-                da.b bVar = (da.b) this.b;
-                CountDownLatch countDownLatch = (CountDownLatch) this.c;
-                try {
-                    s.a().d.e(bVar.h.a.b(i5.d.c), 1);
-                } catch (SQLException unused) {
-                }
-                countDownLatch.countDown();
-                return;
-            case 2:
-                ((i6) this.b).a((SpannableString) this.c);
-                return;
-            case 3:
-                di.s sVar = (di.s) this.b;
-                di.q qVar3 = (di.q) this.c;
-                synchronized (sVar.a) {
-                    try {
-                        if (sVar.s) {
-                            return;
-                        }
-                        ArrayList arrayList = (ArrayList) sVar.n.get(qVar3);
-                        if (arrayList != null) {
-                            int size = arrayList.size();
-                            int i10 = 0;
-                            int i11 = 0;
-                            while (i11 < size) {
-                                Object obj = arrayList.get(i11);
-                                i11++;
-                                if (((r) obj).a != null) {
-                                    o oVar = (o) sVar.h.get(qVar3);
-                                    Object obj2 = null;
-                                    if (oVar != null) {
-                                        qVar2 = oVar.a;
-                                    } else {
-                                        if (sVar.a()) {
-                                            try {
-                                                s0 c10 = sVar.w.a.c(qVar3.a, qVar3.b);
-                                                c10.b();
-                                                qVar = new q(c10, obj2);
-                                            } catch (LinkageError | OutOfMemoryError | RuntimeException e) {
-                                                if (sVar.c != null) {
-                                                    try {
-                                                        f8.g(e, true);
-                                                    } catch (LinkageError | RuntimeException unused2) {
-                                                    }
-                                                }
-                                                qVar = new q(obj2, e);
-                                            }
-                                            synchronized (sVar.a) {
-                                                try {
-                                                    if (sVar.s) {
-                                                        return;
-                                                    }
-                                                    if (oVar == null && ((Throwable) qVar.b) == null) {
-                                                        sVar.c(qVar3, qVar);
-                                                    }
-                                                    ArrayList arrayList2 = (ArrayList) sVar.n.remove(qVar3);
-                                                    if (arrayList2 == null) {
-                                                        return;
-                                                    }
-                                                    int size2 = arrayList2.size();
-                                                    while (i10 < size2) {
-                                                        Object obj3 = arrayList2.get(i10);
-                                                        i10++;
-                                                        r rVar = (r) obj3;
-                                                        try {
-                                                            p pVar = rVar.a;
-                                                            rVar.a = null;
-                                                            if (pVar != null) {
-                                                                pVar.g(qVar);
-                                                            }
-                                                        } catch (LinkageError | RuntimeException e7) {
-                                                            if (sVar.c != null) {
-                                                                try {
-                                                                    f8.g(e7, true);
-                                                                } catch (LinkageError | RuntimeException unused3) {
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                    return;
-                                                } finally {
-                                                }
-                                            }
-                                        }
-                                        qVar2 = new q(obj2, sVar.x);
-                                    }
-                                    qVar = qVar2;
-                                    synchronized (sVar.a) {
-                                    }
-                                }
-                            }
-                        }
-                        sVar.n.remove(qVar3);
-                        return;
-                    } finally {
-                    }
-                }
-            case 4:
-                ((h) this.b).g((w0.d) this.c);
-                return;
-            case 5:
-                ((h) this.b).onResult((v0.f) this.c);
-                return;
-            case 6:
-                e1.d dVar = (e1.d) this.b;
-                v0.c cVar = (v0.c) this.c;
-                h hVar2 = dVar.f;
-                if (hVar2 != null) {
-                    hVar2.onResult(cVar);
-                    return;
-                } else {
-                    i.h("callback");
-                    throw null;
-                }
-            case 7:
-                e2.c cVar2 = (e2.c) this.b;
-                Object apply = ((w) this.c).apply(cVar2.f);
-                cVar2.f = apply;
-                e2.b bVar2 = new e2.b(cVar2, apply, 1);
-                i0 i0Var = (i0) cVar2.c;
-                if (i0Var.a.getLooper().getThread().isAlive()) {
-                    i0Var.d(bVar2);
-                    return;
-                }
-                return;
-            case 8:
-                e2.w wVar = (e2.w) this.b;
-                Context context = (Context) this.c;
-                IntentFilter intentFilter = new IntentFilter();
-                intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-                context.registerReceiver(new androidx.mediarouter.app.f(wVar, 1), intentFilter);
-                return;
-            case 9:
-                androidx.mediarouter.app.f fVar3 = (androidx.mediarouter.app.f) this.b;
-                Context context2 = (Context) this.c;
-                e2.w wVar2 = (e2.w) fVar3.b;
-                ConnectivityManager connectivityManager = (ConnectivityManager) context2.getSystemService("connectivity");
-                int i12 = 0;
-                if (connectivityManager != null) {
-                    try {
-                        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-                        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-                            int type = activeNetworkInfo.getType();
-                            if (type != 0) {
-                                if (type != 1) {
-                                    if (type != 4 && type != 5) {
-                                        if (type != 6) {
-                                            i12 = type != 9 ? 8 : 7;
-                                        }
-                                        i12 = 5;
-                                    }
-                                }
-                                i12 = 2;
-                            }
-                            switch (activeNetworkInfo.getSubtype()) {
-                                case 1:
-                                case 2:
-                                    i12 = 3;
-                                    break;
-                                case 3:
-                                case 4:
-                                case 5:
-                                case 6:
-                                case 7:
-                                case 8:
-                                case 9:
-                                case 10:
-                                case 11:
-                                case 12:
-                                case 14:
-                                case 15:
-                                case 17:
-                                    i12 = 4;
-                                    break;
-                                case 13:
-                                    i12 = 5;
-                                    break;
-                                case 16:
-                                case 19:
-                                default:
-                                    i12 = 6;
-                                    break;
-                                case 18:
-                                    i12 = 2;
-                                    break;
-                                case 20:
-                                    if (Build.VERSION.SDK_INT >= 29) {
-                                        i12 = 9;
-                                        break;
-                                    }
-                                    break;
-                            }
-                        } else {
-                            i12 = 1;
-                        }
-                    } catch (SecurityException unused4) {
-                    }
-                }
-                if (Build.VERSION.SDK_INT < 31 || i12 != 5) {
-                    wVar2.c(i12);
-                    return;
-                } else {
-                    u.a(context2, wVar2);
-                    return;
-                }
-            case 10:
-                e0 e0Var = (e0) this.b;
-                y yVar = (y) this.c;
-                if (e0Var.a instanceof j9.a) {
-                    yVar.cancel(false);
-                    return;
-                }
-                return;
-            case 11:
-                o0 o0Var = (o0) this.b;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
-                hf.b bVar3 = (hf.b) o0Var.c;
-                bVar3.getClass();
-                if (atomicBoolean.get()) {
-                    new Thread(new e(12, bVar3, atomicBoolean), "ExoPlayer:WakeLockManager").start();
-                    return;
-                }
-                return;
-            case 12:
-                a();
-                return;
-            case 13:
-                ge.b bVar4 = (ge.b) this.b;
-                View view = (View) this.c;
-                ge.a aVar = (ge.a) bVar4.d;
-                if ((bVar4.a & 2) != 0) {
-                    if (!aVar.d1(view, bVar4.b, bVar4.c)) {
-                        bVar4.a |= 8;
-                        return;
-                    }
-                    bVar4.a &= -3;
-                    bVar4.e = null;
-                    view.performHapticFeedback(0);
-                    bVar4.a = (bVar4.a | 4) & (-11);
-                    bVar4.e = null;
-                    return;
-                }
-                return;
-            case 14:
-                ((j0) this.b).h((Typeface) this.c);
-                return;
-            case 15:
-                i2.i0 i0Var2 = (i2.i0) this.b;
-                p0 p0Var = (p0) this.c;
-                int i13 = i0Var2.J - p0Var.b;
-                i0Var2.J = i13;
-                boolean z11 = true;
-                if (p0Var.d) {
-                    i0Var2.K = p0Var.e;
-                    i0Var2.L = true;
-                }
-                if (i13 == 0) {
-                    o1 o1Var = ((m1) p0Var.f).a;
-                    int i14 = -1;
-                    if (!i0Var2.p0.a.p() && o1Var.p()) {
-                        i0Var2.q0 = -1;
-                        i0Var2.r0 = 0L;
-                    }
-                    if (!o1Var.p()) {
-                        List asList = Arrays.asList(((r1) o1Var).l);
-                        t6.p(asList.size() == i0Var2.p.size());
-                        for (int i15 = 0; i15 < asList.size(); i15++) {
-                            ((i2.e0) i0Var2.p.get(i15)).c = (o1) asList.get(i15);
-                        }
-                    }
-                    long j10 = -9223372036854775807L;
-                    if (i0Var2.L) {
-                        boolean z12 = ((m1) p0Var.f).a.p() && i0Var2.p0.a.p();
-                        boolean equals = ((m1) p0Var.f).b.equals(i0Var2.p0.b);
-                        boolean z13 = ((m1) p0Var.f).d == i0Var2.p0.s;
-                        if (z12 || (equals && z13)) {
-                            z11 = false;
-                        }
-                        if (z11) {
-                            i14 = i0Var2.m0();
-                            if (o1Var.p() || ((m1) p0Var.f).b.b()) {
-                                j10 = ((m1) p0Var.f).d;
-                            } else {
-                                m1 m1Var = (m1) p0Var.f;
-                                g0 g0Var = m1Var.b;
-                                long j11 = m1Var.d;
-                                Object obj4 = g0Var.a;
-                                l1 l1Var = i0Var2.o;
-                                o1Var.g(obj4, l1Var);
-                                j10 = j11 + l1Var.e;
-                            }
-                        }
-                        z10 = false;
+                    e7.j jVar = uVar.d;
+                    if (jVar != null) {
+                        jSONObject = jVar.b();
                     } else {
                         z10 = false;
-                        z11 = false;
+                        if (kVar != null) {
+                            try {
+                                JSONObject jSONObject3 = new JSONObject();
+                                jSONObject3.put("code", kVar.a.a);
+                                String str5 = kVar.b;
+                                if (str5 != null) {
+                                    jSONObject3.put("message", str5);
+                                }
+                                str4 = "error";
+                                jSONObject = jSONObject3;
+                            } catch (JSONException e10) {
+                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e10);
+                            }
+                        } else {
+                            jSONObject = null;
+                        }
                     }
-                    long j12 = j10;
-                    int i16 = i14;
-                    i0Var2.L = z10;
-                    i0Var2.D1((m1) p0Var.f, 1, z11, i0Var2.K, j12, i16, false);
-                    return;
                 }
-                return;
-            case 16:
-                c0 c0Var = (c0) this.b;
-                SurfaceTexture surfaceTexture = (SurfaceTexture) this.c;
-                ArrayList arrayList3 = c0Var.a.t0;
-                int size3 = arrayList3.size();
-                int i17 = 0;
-                while (i17 < size3) {
-                    Object obj5 = arrayList3.get(i17);
-                    i17++;
-                    ((v61) ((a2) obj5)).J.onSurfaceTextureUpdated(surfaceTexture);
+                if (jSONObject != null) {
+                    jSONObject2.put(str4, jSONObject);
                 }
-                return;
-            case 17:
-                q0 q0Var = (q0) this.b;
-                x0 x0Var = (x0) this.c;
-                q0Var.v = true;
-                ByteBuffer byteBuffer = (ByteBuffer) q0Var.h(q0Var.f(), true, false, false).b;
-                RectF f7 = q0Var.f();
-                Object obj6 = q0Var.a.b;
-                q0Var.w = new a5.a(byteBuffer, 0, f7);
-                q0Var.a(false);
-                x0Var.run();
-                return;
-            case 18:
-                c1 c1Var = (c1) this.b;
-                Runnable runnable = (Runnable) this.c;
-                a1 a1Var = c1Var.d;
-                if (a1Var == null || !a1Var.f) {
-                    return;
+                e7.g gVar = uVar.h;
+                if (gVar != null) {
+                    jSONObject2.put("clientExtensionResults", gVar.b());
+                } else if (z10) {
+                    jSONObject2.put("clientExtensionResults", new JSONObject());
                 }
-                a1.a(a1Var);
-                runnable.run();
-                return;
-            case 19:
-                ((j2.j) this.b).d.reportTrackChangeEvent((TrackChangeEvent) this.c);
-                return;
-            case 20:
-                ((j2.j) this.b).d.reportNetworkEvent((NetworkEvent) this.c);
-                return;
-            case 21:
-                ((j2.j) this.b).d.reportPlaybackErrorEvent((PlaybackErrorEvent) this.c);
-                return;
-            case 22:
-                ((j2.j) this.b).d.reportPlaybackMetrics((PlaybackMetrics) this.c);
-                return;
-            case 23:
-                ((j2.j) this.b).d.reportPlaybackStateEvent((PlaybackStateEvent) this.c);
-                return;
-            case 24:
-                r0 r0Var = (r0) this.b;
-                e2 e2Var = (e2) this.c;
-                e2Var.m();
-                r0Var.q0(e2Var, true);
-                return;
-            case 25:
-                ((e2) this.b).s((Bitmap) this.c);
-                return;
-            case 26:
-                v2 v2Var = (v2) this.b;
-                ArrayList arrayList4 = (ArrayList) this.c;
-                v2Var.G = false;
-                s2[] s2VarArr = (s2[]) arrayList4.toArray(new s2[0]);
-                v2Var.H = s2VarArr;
-                if (s2VarArr.length > 0) {
-                    v2Var.b0.setScaleX(0.3f);
-                    v2Var.b0.setScaleY(0.3f);
-                    v2Var.b0.setAlpha(0.0f);
-                    v2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(gr.f).start();
-                    return;
-                }
-                return;
-            case 27:
-                b();
-                return;
-            case 28:
-                k kVar = (k) this.b;
-                try {
-                    byte[] decode = Base64.decode(((String) this.c).substring(14), 2);
-                    if (decode.length >= 8 && decode.length <= 1048584) {
-                        kVar.m(decode);
-                        return;
-                    }
-                    kVar.h();
-                    return;
-                } catch (IllegalArgumentException e10) {
-                    f8.g(e10, true);
-                    kVar.h();
-                    return;
-                }
-            default:
-                ((k) this.b).m((byte[]) this.c);
-                return;
+                String jSONObject4 = jSONObject2.toString();
+                j.d(jSONObject4, "toJson(...)");
+                Bundle bundle = new Bundle();
+                bundle.putString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON", jSONObject4);
+                return new v0.f(jSONObject4, bundle);
+            } catch (JSONException e11) {
+                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e11);
+            }
+        } catch (Throwable th2) {
+            throw new w0.c(2, "The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage());
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final v d(v0.e request) {
+        e7.f fVar;
+        m mVar;
+        e7.f fVar2;
+        String str;
+        JSONArray jSONArray;
+        ArrayList arrayList;
+        long j10;
+        j.e(request, "request");
+        LinkedHashMap linkedHashMap = g.a;
+        String str2 = request.d;
+        Context context = this.e;
+        j.e(context, "context");
+        if (m6.d.e.d(context, m6.e.a) == 0) {
+            PackageManager packageManager = context.getPackageManager();
+            j.d(packageManager, "getPackageManager(...)");
+            if (Build.VERSION.SDK_INT >= 28) {
+                PackageInfo packageInfo = packageManager.getPackageInfo("com.google.android.gms", 0);
+                j.d(packageInfo, "getPackageInfo(...)");
+                j10 = f.s(packageInfo);
+            } else {
+                j10 = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
+            }
+            if (j10 > 241217000) {
+                return new v(str2);
+            }
+        }
+        JSONObject jSONObject = new JSONObject(str2);
+        byte[] a10 = db.a(jSONObject);
+        JSONObject jSONObject2 = jSONObject.getJSONObject("user");
+        String str3 = "id";
+        String string = jSONObject2.getString("id");
+        j.d(string, "getString(...)");
+        byte[] decode = Base64.decode(string, 11);
+        j.d(decode, "decode(...)");
+        String string2 = jSONObject2.getString("name");
+        String string3 = jSONObject2.getString("displayName");
+        String optString = jSONObject2.optString("icon", "");
+        j.b(string3);
+        if (string3.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions UserEntity missing displayName or they are unexpectedly empty");
+        }
+        if (decode.length == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions UserEntity missing user id or they are unexpectedly empty");
+        }
+        j.b(string2);
+        if (string2.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions UserEntity missing user name or they are unexpectedly empty");
+        }
+        b0 b0Var = new b0(string2, decode, optString, string3);
+        JSONObject jSONObject3 = jSONObject.getJSONObject("rp");
+        String string4 = jSONObject3.getString("id");
+        String optString2 = jSONObject3.optString("name", "");
+        String optString3 = jSONObject3.optString("icon", "");
+        j.b(optString3);
+        if (optString3.length() == 0) {
+            optString3 = null;
+        }
+        j.b(optString2);
+        if (optString2.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions rp name is missing or unexpectedly empty");
+        }
+        j.b(string4);
+        if (string4.length() == 0) {
+            throw new JSONException("PublicKeyCredentialCreationOptions rp ID is missing or unexpectedly empty");
+        }
+        y yVar = new y(string4, optString2, optString3);
+        JSONArray jSONArray2 = jSONObject.getJSONArray("pubKeyCredParams");
+        ArrayList arrayList2 = new ArrayList();
+        int length = jSONArray2.length();
+        int i3 = 0;
+        while (i3 < length) {
+            JSONObject jSONObject4 = jSONArray2.getJSONObject(i3);
+            LinkedHashMap linkedHashMap2 = g.a;
+            byte[] bArr = a10;
+            int i10 = (int) jSONObject4.getLong("alg");
+            String optString4 = jSONObject4.optString(TeXSymbolParser.TYPE_ATTR, "");
+            j.b(optString4);
+            if (optString4.length() == 0) {
+                throw new JSONException("PublicKeyCredentialCreationOptions PublicKeyCredentialParameter type missing or unexpectedly empty");
+            }
+            try {
+                o.a(i10);
+                arrayList2.add(new x(optString4, i10));
+            } catch (Throwable unused) {
+            }
+            i3++;
+            a10 = bArr;
+        }
+        byte[] bArr2 = a10;
+        y yVar2 = yVar;
+        ArrayList arrayList3 = new ArrayList();
+        LinkedHashMap linkedHashMap3 = g.a;
+        if (jSONObject.has("excludeCredentials")) {
+            JSONArray jSONArray3 = jSONObject.getJSONArray("excludeCredentials");
+            int length2 = jSONArray3.length();
+            int i11 = 0;
+            while (i11 < length2) {
+                JSONObject jSONObject5 = jSONArray3.getJSONObject(i11);
+                LinkedHashMap linkedHashMap4 = g.a;
+                String string5 = jSONObject5.getString(str3);
+                j.d(string5, "getString(...)");
+                y yVar3 = yVar2;
+                byte[] decode2 = Base64.decode(string5, 11);
+                j.d(decode2, "decode(...)");
+                String string6 = jSONObject5.getString(TeXSymbolParser.TYPE_ATTR);
+                j.b(string6);
+                if (string6.length() == 0) {
+                    throw new JSONException("PublicKeyCredentialDescriptor type value is not found or unexpectedly empty");
+                }
+                if (decode2.length == 0) {
+                    throw new JSONException("PublicKeyCredentialDescriptor id value is not found or unexpectedly empty");
+                }
+                if (jSONObject5.has("transports")) {
+                    str = str3;
+                    arrayList = new ArrayList();
+                    JSONArray jSONArray4 = jSONObject5.getJSONArray("transports");
+                    int length3 = jSONArray4.length();
+                    jSONArray = jSONArray3;
+                    int i12 = 0;
+                    while (i12 < length3) {
+                        try {
+                            JSONArray jSONArray5 = jSONArray4;
+                            arrayList.add(Transport.a(jSONArray4.getString(i12)));
+                            i12++;
+                            jSONArray4 = jSONArray5;
+                        } catch (c7.a e10) {
+                            throw new y0.a(new x0.a(4), e10.getMessage());
+                        }
+                    }
+                } else {
+                    str = str3;
+                    jSONArray = jSONArray3;
+                    arrayList = null;
+                }
+                arrayList3.add(new w(string6, decode2, arrayList));
+                i11++;
+                yVar2 = yVar3;
+                str3 = str;
+                jSONArray3 = jSONArray;
+            }
+        }
+        y yVar4 = yVar2;
+        LinkedHashMap linkedHashMap5 = g.a;
+        String optString5 = jSONObject.optString("attestation", "none");
+        j.b(optString5);
+        e7.e a11 = e7.e.a(optString5.length() != 0 ? optString5 : "none");
+        Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getLong("timeout") / 1000) : null;
+        if (jSONObject.has("authenticatorSelection")) {
+            JSONObject jSONObject6 = jSONObject.getJSONObject("authenticatorSelection");
+            boolean optBoolean = jSONObject6.optBoolean("requireResidentKey", false);
+            String optString6 = jSONObject6.optString("residentKey", "");
+            j.b(optString6);
+            e0 a12 = optString6.length() > 0 ? e0.a(optString6) : null;
+            Boolean valueOf2 = Boolean.valueOf(optBoolean);
+            String optString7 = jSONObject6.optString("authenticatorAttachment", "");
+            j.b(optString7);
+            e7.c a13 = optString7.length() > 0 ? e7.c.a(optString7) : null;
+            fVar = null;
+            mVar = new m(a13 == null ? null : a13.a, valueOf2, null, a12 == null ? null : a12.a);
+        } else {
+            fVar = null;
+            mVar = null;
+        }
+        if (jSONObject.has("extensions")) {
+            JSONObject jSONObject7 = jSONObject.getJSONObject("extensions");
+            String optString8 = jSONObject7.optString("appid", "");
+            j.b(optString8);
+            fVar2 = new e7.f(optString8.length() > 0 ? new s(optString8) : fVar, null, jSONObject7.optBoolean("uvm", false) ? new i0(true) : fVar, null, null, null, null, null, jSONObject7.optBoolean("thirdPartyPayment", false) ? new t(true) : fVar, null, null, null);
+        } else {
+            fVar2 = fVar;
+        }
+        return new v(yVar4, b0Var, bArr2, arrayList2, valueOf, arrayList3, mVar, null, null, a11.a, fVar2, null, null);
     }
 }

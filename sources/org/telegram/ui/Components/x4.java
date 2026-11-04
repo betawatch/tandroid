@@ -1,31 +1,94 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x4 implements c5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f5 b;
+public final class x4 {
+    public final View a;
+    public final Runnable b;
+    public int c;
+    public int d;
+    public boolean e;
+    public final long f;
+    public final TimeInterpolator g;
+    public boolean h;
+    public long i;
+    public int j;
 
-    public /* synthetic */ x4(f5 f5Var, int i10) {
-        this.a = i10;
-        this.b = f5Var;
+    public x4(View view) {
+        this.f = 200L;
+        this.g = xq.f;
+        this.a = view;
+        this.e = true;
     }
 
-    @Override // org.telegram.ui.Components.c5
-    public final void a(TLRPC.Document document) {
-        switch (this.a) {
-            case 0:
-                f5 f5Var = this.b;
-                f5Var.e = document;
-                f5Var.i(false);
-                break;
-            default:
-                f5 f5Var2 = this.b;
-                f5Var2.e = document;
-                f5Var2.i(false);
-                break;
+    public final int a(int i3, boolean z10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = this.f;
+        if (z10 || j10 <= 0 || this.e) {
+            this.d = i3;
+            this.c = i3;
+            this.h = false;
+            this.e = false;
+        } else if (this.d != i3) {
+            this.h = true;
+            this.d = i3;
+            this.j = this.c;
+            this.i = elapsedRealtime;
         }
+        if (this.h) {
+            float a10 = b8.be.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
+            if (elapsedRealtime - this.i >= 0) {
+                TimeInterpolator timeInterpolator = this.g;
+                if (timeInterpolator == null) {
+                    this.c = i0.a.f(a10, this.j, this.d);
+                } else {
+                    this.c = i0.a.f(timeInterpolator.getInterpolation(a10), this.j, this.d);
+                }
+            }
+            if (a10 >= 1.0f) {
+                this.h = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+        }
+        return this.c;
+    }
+
+    public x4(View view, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        xq xqVar = xq.f;
+        this.a = view;
+        this.f = j10;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public x4(View view, long j10, TimeInterpolator timeInterpolator, int i3) {
+        this.f = 200L;
+        xq xqVar = xq.f;
+        this.a = view;
+        this.f = j10;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public x4(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        xq xqVar = xq.f;
+        this.b = runnable;
+        this.f = j10;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 }

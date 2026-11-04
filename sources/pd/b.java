@@ -1,26 +1,17 @@
 package pd;
 
-import java.util.List;
-import java.util.Map;
+import a7.j;
+import java.util.Random;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public interface b extends a {
-    Object call(Object... objArr);
+public final class b extends a {
+    public final j b = new j(3);
 
-    Object callBy(Map map);
-
-    List getParameters();
-
-    h getReturnType();
-
-    List getTypeParameters();
-
-    i getVisibility();
-
-    boolean isAbstract();
-
-    boolean isFinal();
-
-    boolean isOpen();
+    @Override // pd.a
+    public final Random a() {
+        Object obj = this.b.get();
+        kotlin.jvm.internal.j.d(obj, "get(...)");
+        return (Random) obj;
+    }
 }

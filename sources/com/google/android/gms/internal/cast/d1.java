@@ -1,85 +1,39 @@
 package com.google.android.gms.internal.cast;
 
-import org.telegram.messenger.at;
-
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class d1 implements b0, g5 {
-    public static final d1 a = new d1();
-    public static final /* synthetic */ d1 b = new d1();
+public final class d1 extends c5 {
+    private static final f5 zzb = new c1();
+    private static final d1 zzd;
+    private int zze;
+    private String zzf = "";
+    private String zzg = "";
+    private e5 zzh = d5.d;
 
-    public static boolean a(int i10, byte[] bArr) {
-        int i11;
-        int i12 = 0;
-        while (i12 < i10 && bArr[i12] >= 0) {
-            i12++;
-        }
-        if (i12 < i10) {
-            while (i12 < i10) {
-                int i13 = i12 + 1;
-                i11 = bArr[i12];
-                if (i11 < 0) {
-                    if (i11 >= -32) {
-                        if (i11 >= -16) {
-                            if (i13 < i10 - 2) {
-                                int i14 = i12 + 2;
-                                int i15 = bArr[i13];
-                                if (i15 <= -65) {
-                                    if ((((i15 + at.x1) + (i11 << 28)) >> 30) == 0) {
-                                        int i16 = i12 + 3;
-                                        if (bArr[i14] <= 65471) {
-                                            i12 += 4;
-                                            if (bArr[i16] > 65471) {
-                                            }
-                                        }
-                                    }
-                                }
-                                i11 = -1;
-                                break;
-                            }
-                            i11 = s6.a(bArr, i13, i10);
-                            break;
-                        }
-                        if (i13 < i10 - 1) {
-                            int i17 = i12 + 2;
-                            char c10 = bArr[i13];
-                            if (c10 <= 65471 && ((i11 != -32 || c10 >= 65440) && (i11 != -19 || c10 < 65440))) {
-                                i12 += 3;
-                                if (bArr[i17] > 65471) {
-                                }
-                            }
-                            i11 = -1;
-                            break;
-                        }
-                        i11 = s6.a(bArr, i13, i10);
-                        break;
-                    }
-                    if (i13 < i10) {
-                        if (i11 >= -62) {
-                            i12 += 2;
-                            if (bArr[i13] > 65471) {
-                            }
-                        }
-                        i11 = -1;
-                        break;
-                    }
-                    break;
-                }
-                i12 = i13;
-            }
-        }
-        i11 = 0;
-        return i11 == 0;
+    static {
+        d1 d1Var = new d1();
+        zzd = d1Var;
+        c5.e(d1.class, d1Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.b0
-    public Object zza() {
-        g6.b bVar = t6.n;
-        g6.b bVar2 = d6.a.l;
-        n6.l.d("Must be called from the main thread.");
-        d6.a aVar = d6.a.n;
-        n6.l.g(aVar);
-        n6.l.d("Must be called from the main thread.");
-        return aVar.e.a;
+    @Override // com.google.android.gms.internal.cast.c5
+    public final Object h(int i3, c5 c5Var) {
+        int i10 = i3 - 1;
+        if (i10 == 0) {
+            return (byte) 1;
+        }
+        if (i10 == 2) {
+            return new d6(zzd, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဈ\u0001\u0003ࠞ", new Object[]{"zze", "zzf", "zzg", "zzh", x0.C});
+        }
+        if (i10 == 3) {
+            return new d1();
+        }
+        if (i10 == 4) {
+            return new t0(zzd);
+        }
+        if (i10 != 5) {
+            return null;
+        }
+        return zzd;
     }
 }

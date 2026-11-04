@@ -1,53 +1,42 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
-import org.telegram.tgnet.tl.TL_stories;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class yb extends hg.b {
-    public final String c;
-    public final TL_stories.Boost d;
-    public TL_stories.PrepaidGiveaway e;
-    public boolean f;
-    public final int g;
+public final class yb extends g11 {
+    public final /* synthetic */ tb f2;
+    public final /* synthetic */ x01[] g2;
+    public final /* synthetic */ pc h2;
 
-    public yb(int i10, String str) {
-        super(i10, false);
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yb(pc pcVar, pc pcVar2, Activity activity, Integer num, int i3, org.telegram.ui.ActionBar.e6 e6Var, int i10, int i11, tb tbVar, x01[] x01VarArr) {
+        super(pcVar2, activity, true, num, i3, true, e6Var, i10, i11);
+        this.h2 = pcVar;
+        this.f2 = tbVar;
+        this.g2 = x01VarArr;
     }
 
-    public final boolean equals(Object obj) {
-        TL_stories.PrepaidGiveaway prepaidGiveaway;
-        boolean z10 = this.f;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || yb.class != obj.getClass()) {
-            return false;
-        }
-        yb ybVar = (yb) obj;
-        TL_stories.Boost boost = ybVar.d;
-        boolean z11 = ybVar.f;
-        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
-        if (prepaidGiveaway2 != null && (prepaidGiveaway = ybVar.e) != null) {
-            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
-        }
-        TL_stories.Boost boost2 = this.d;
-        if (boost2 == null || boost == null) {
-            return true;
-        }
-        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == ybVar.g;
+    @Override // org.telegram.ui.g11
+    public final long getDialogId() {
+        return this.h2.a;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    @Override // org.telegram.ui.g11
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
     }
 
-    public yb(TL_stories.Boost boost, boolean z10, int i10) {
-        super(5, true);
-        this.d = boost;
-        this.f = z10;
-        this.g = i10;
+    @Override // org.telegram.ui.g11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.f2.a(Long.valueOf(l10 == null ? 0L : l10.longValue()), num, tL_starGiftUnique);
+        x01 x01Var = this.g2[0];
+        if (x01Var != null) {
+            this.h2.R = null;
+            x01Var.dismiss();
+        }
     }
 }

@@ -4,10 +4,10 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
 public class AuthenticatorService extends Service {
-    public static z0 a;
+    public static w0 a;
 
     @Override // android.app.Service
     public final IBinder onBind(Intent intent) {
@@ -15,7 +15,7 @@ public class AuthenticatorService extends Service {
             return null;
         }
         if (a == null) {
-            a = new z0(this);
+            a = new w0(this);
         }
         return a.getIBinder();
     }

@@ -1,33 +1,41 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lv implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class lv {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zx b;
+    public final /* synthetic */ mv b;
+    public final /* synthetic */ View c;
 
-    public /* synthetic */ lv(zx zxVar, int i10) {
-        this.a = i10;
-        this.b = zxVar;
+    public /* synthetic */ lv(mv mvVar, View view, int i3) {
+        this.a = i3;
+        this.b = mvVar;
+        this.c = view;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    public final void a(boolean z10) {
         switch (this.a) {
             case 0:
-                this.b.P4(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                zx zxVar = this.b;
-                zxVar.getClass();
-                zxVar.R4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                View view = this.c;
+                if (view instanceof ei.q) {
+                    this.b.P0.F0.i((ei.q) view, false);
+                    if (z10) {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.go(15), 500L);
+                        break;
+                    }
+                }
                 break;
             default:
-                zx zxVar2 = this.b;
-                zxVar2.getClass();
-                zxVar2.L4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                View view2 = this.c;
+                if (view2 instanceof ei.q) {
+                    this.b.P0.F0.i((ei.q) view2, false);
+                    if (z10) {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.go(15), 500L);
+                        break;
+                    }
+                }
                 break;
         }
     }

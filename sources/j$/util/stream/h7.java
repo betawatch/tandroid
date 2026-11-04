@@ -10,8 +10,8 @@ public final /* synthetic */ class h7 implements h5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ IntConsumer b;
 
-    public /* synthetic */ h7(IntConsumer intConsumer, int i10) {
-        this.a = i10;
+    public /* synthetic */ h7(IntConsumer intConsumer, int i3) {
+        this.a = i3;
         this.b = intConsumer;
     }
 
@@ -40,13 +40,13 @@ public final /* synthetic */ class h7 implements h5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i10) {
+    public final void accept(int i3) {
         switch (this.a) {
             case 0:
-                this.b.accept(i10);
+                this.b.accept(i3);
                 break;
             default:
-                ((o6) this.b).accept(i10);
+                ((o6) this.b).accept(i3);
                 break;
         }
     }
@@ -90,12 +90,12 @@ public final /* synthetic */ class h7 implements h5 {
 
     @Override // j$.util.stream.j5
     public final /* synthetic */ void end() {
-        int i10 = this.a;
+        int i3 = this.a;
     }
 
     @Override // j$.util.stream.j5
     public final /* synthetic */ void o(long j10) {
-        int i10 = this.a;
+        int i3 = this.a;
     }
 
     @Override // j$.util.stream.h5

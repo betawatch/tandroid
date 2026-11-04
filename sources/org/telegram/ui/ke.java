@@ -1,70 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final class ke extends FrameLayout {
-    public final org.telegram.ui.ActionBar.p6 a;
-    public final org.telegram.ui.Components.n5 b;
-    public final TextView c;
-    public final TextView d;
-    public final DecimalFormat e;
-    public boolean f;
+public final /* synthetic */ class ke implements org.telegram.messenger.n10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wm b;
 
-    public ke(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
-        super(context);
-        this.a = p6Var;
-        LinearLayout f7 = org.telegram.messenger.m5.f(context, 1);
-        addView(f7, w7.b6.d(-1, -2.0f, org.telegram.messenger.at.E1, 17.0f, 9.0f, 130.0f, 9.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.G6, p6Var);
-        f7.addView(textView, w7.b6.o(-1, -2));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.a7.V(textView2, org.telegram.ui.ActionBar.t6.y6, p6Var);
-        f7.addView(textView2, w7.b6.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
-        org.telegram.ui.Components.n5 n5Var = new org.telegram.ui.Components.n5(context);
-        this.b = n5Var;
-        n5Var.setTypeface(org.telegram.messenger.i0.o());
-        n5Var.setTextSize(1, 13.0f);
-        addView(n5Var, w7.b6.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
-        DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
-        decimalFormatSymbols.setDecimalSeparator('.');
-        DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
-        this.e = decimalFormat;
-        decimalFormat.setMinimumFractionDigits(2);
-        decimalFormat.setMaximumFractionDigits(12);
-        decimalFormat.setGroupingUsed(false);
+    public /* synthetic */ ke(wm wmVar, int i3) {
+        this.a = i3;
+        this.b = wmVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.f) {
-            org.telegram.ui.ActionBar.p6 p6Var = this.a;
-            Paint d = p6Var != null ? p6Var.d("paintDivider") : org.telegram.ui.ActionBar.t6.k0;
-            if (d != null) {
-                canvas.drawLine(org.telegram.messenger.dd.X ? 0.0f : org.telegram.messenger.i0.L(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.dd.X ? org.telegram.messenger.i0.L(17.0f) : 0), getMeasuredHeight() - 1, d);
-            }
+    @Override // org.telegram.messenger.n10
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                wm.g1(this.b, (Integer) obj, (Boolean) obj2);
+                break;
+            case 1:
+                wm.t1(this.b, (Long) obj, (Boolean) obj2);
+                break;
+            case 2:
+                wm wmVar = this.b;
+                si.b bVar = wmVar.O8;
+                bVar.a((Bitmap) obj2);
+                jh.d.c(bVar, wmVar.fragmentView);
+                wmVar.P8.d();
+                break;
+            default:
+                wm wmVar2 = this.b;
+                wmVar2.Q8 = (Bitmap) obj;
+                Paint paint = new Paint(1);
+                wmVar2.S8 = paint;
+                Bitmap bitmap = wmVar2.Q8;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+                wmVar2.R8 = bitmapShader;
+                paint.setShader(bitmapShader);
+                wmVar2.T8 = new Matrix();
+                si.b bVar2 = wmVar2.O8;
+                bVar2.a((Bitmap) obj2);
+                jh.d.c(bVar2, wmVar2.fragmentView);
+                wmVar2.P8.d();
+                break;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

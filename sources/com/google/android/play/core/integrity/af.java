@@ -1,18 +1,17 @@
 package com.google.android.play.core.integrity;
 
-import a9.c0;
-import a9.e0;
-import a9.j0;
-import a9.k0;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
+import c9.b0;
+import c9.g0;
+import c9.h0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-final class af extends k0 {
+final class af extends h0 {
     final /* synthetic */ byte[] a;
     final /* synthetic */ Long b;
     final /* synthetic */ Parcelable c;
@@ -21,48 +20,48 @@ final class af extends k0 {
     final /* synthetic */ aj f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public af(aj ajVar, TaskCompletionSource taskCompletionSource, byte[] bArr, Long l4, Parcelable parcelable, TaskCompletionSource taskCompletionSource2, IntegrityTokenRequest integrityTokenRequest) {
+    public af(aj ajVar, TaskCompletionSource taskCompletionSource, byte[] bArr, Long l10, Parcelable parcelable, TaskCompletionSource taskCompletionSource2, IntegrityTokenRequest integrityTokenRequest) {
         super(taskCompletionSource);
         this.a = bArr;
-        this.b = l4;
+        this.b = l10;
         this.c = parcelable;
         this.d = taskCompletionSource2;
         this.e = integrityTokenRequest;
         this.f = ajVar;
     }
 
-    @Override // a9.k0
+    @Override // c9.h0
     public final void a(Exception exc) {
-        if (exc instanceof a9.f) {
+        if (exc instanceof c9.d) {
             super.a(new IntegrityServiceException(-9, exc));
         } else {
             super.a(exc);
         }
     }
 
-    @Override // a9.k0
+    @Override // c9.h0
     public final void b() {
-        j0 j0Var;
+        g0 g0Var;
         try {
             aj ajVar = this.f;
-            e0 e0Var = (e0) ajVar.a.n;
-            Bundle a2 = aj.a(ajVar, this.a, this.b, this.c);
+            b0 b0Var = (b0) ajVar.a.n;
+            Bundle a10 = aj.a(ajVar, this.a, this.b, this.c);
             ai aiVar = new ai(this.f, this.d);
-            c0 c0Var = (c0) e0Var;
-            c0Var.getClass();
+            c9.z zVar = (c9.z) b0Var;
+            zVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(c0Var.c);
-            int i10 = a9.v.a;
+            obtain.writeInterfaceToken(zVar.c);
+            int i3 = c9.s.a;
             obtain.writeInt(1);
-            a2.writeToParcel(obtain, 0);
+            a10.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(aiVar);
-            c0Var.I0(obtain, 2);
-        } catch (RemoteException e) {
+            zVar.I0(obtain, 2);
+        } catch (RemoteException e10) {
             aj ajVar2 = this.f;
             IntegrityTokenRequest integrityTokenRequest = this.e;
-            j0Var = ajVar2.b;
-            j0Var.a(e, "requestIntegrityToken(%s)", integrityTokenRequest);
-            this.d.trySetException(new IntegrityServiceException(-100, e));
+            g0Var = ajVar2.b;
+            g0Var.a(e10, "requestIntegrityToken(%s)", integrityTokenRequest);
+            this.d.trySetException(new IntegrityServiceException(-100, e10));
         }
     }
 }

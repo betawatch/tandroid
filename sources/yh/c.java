@@ -1,48 +1,44 @@
 package yh;
 
-import org.telegram.messenger.ds;
-import org.telegram.messenger.vs;
-import org.telegram.messenger.wp;
-import org.telegram.ui.ActionBar.x1;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c implements ds {
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x1 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ vs e;
+    public final /* synthetic */ e b;
 
-    public /* synthetic */ c(vs vsVar, x1 x1Var, long j10, boolean z10, int i10) {
-        this.a = i10;
-        this.e = vsVar;
-        this.b = x1Var;
-        this.c = j10;
-        this.d = z10;
+    public /* synthetic */ c(e eVar, int i3) {
+        this.a = i3;
+        this.b = eVar;
     }
 
-    @Override // org.telegram.messenger.ds
-    public final void run(long j10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                e eVar = (e) this.e;
-                eVar.getClass();
-                this.b.dismiss();
-                if (j10 != 0) {
-                    eVar.b = -j10;
-                    eVar.c = eVar.getMessagesController().L0(Long.valueOf(j10));
-                    eVar.b0(this.c, this.d);
-                    break;
+                e eVar = this.b;
+                if (eVar.j.isEmpty()) {
+                    eVar.i = true;
+                    e.n = null;
+                    d dVar = eVar.f;
+                    if (dVar != null) {
+                        dVar.a = false;
+                        eVar.f = null;
+                    }
+                    eVar.d.removeView(eVar.e);
+                    if (eVar.d.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) eVar.d.getParent()).removeView(eVar.d);
+                        break;
+                    }
                 }
                 break;
             default:
-                z zVar = (z) this.e;
-                zVar.getClass();
-                this.b.dismiss();
-                if (j10 != 0) {
-                    zVar.K0(wp.r1(zVar.a).L0(Long.valueOf(j10)), this.c, this.d);
-                    break;
+                ArrayList arrayList = this.b.j;
+                for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                    ((View) arrayList.get(i3)).invalidate();
                 }
                 break;
         }

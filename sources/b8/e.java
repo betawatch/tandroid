@@ -1,130 +1,79 @@
 package b8;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.text.TextUtils;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.u0;
-import com.google.android.gms.common.api.m;
-import com.google.android.gms.common.api.q;
-import y8.f0;
-import y8.g0;
-import y8.v0;
-import y8.w0;
+import java.util.Map;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public final class e extends com.google.android.gms.common.api.internal.e {
-    public final /* synthetic */ int q = 1;
-    public final /* synthetic */ String r;
-    public final /* synthetic */ byte[] s;
-    public final Object t;
+public final class e extends bh {
+    public final Object b;
+    public int c;
+    public final /* synthetic */ g d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(m mVar, byte[] bArr, String str) {
-        super(m8.c.a, mVar);
-        this.s = bArr;
-        this.r = str;
-        this.t = new g(this);
+    public e(g gVar, int i3) {
+        super(0, false);
+        this.d = gVar;
+        Object[] objArr = gVar.c;
+        objArr.getClass();
+        this.b = objArr[i3];
+        this.c = i3;
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult, com.google.android.gms.common.api.internal.f
-    public final /* bridge */ /* synthetic */ void a(q qVar) {
-        switch (this.q) {
-            case 0:
-                a(qVar);
-                break;
-            default:
-                a(qVar);
-                break;
+    public final void a() {
+        int i3 = this.c;
+        Object obj = this.b;
+        g gVar = this.d;
+        if (i3 != -1 && i3 < gVar.size()) {
+            int i10 = this.c;
+            Object[] objArr = gVar.c;
+            objArr.getClass();
+            if (m1.a(obj, objArr[i10])) {
+                return;
+            }
         }
+        Object obj2 = g.s;
+        this.c = gVar.f(obj);
     }
 
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* bridge */ /* synthetic */ q d(Status status) {
-        switch (this.q) {
-            case 0:
-                return new f(status, null);
-            default:
-                return new g0(status, -1);
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        g gVar = this.d;
+        Map b10 = gVar.b();
+        if (b10 != null) {
+            return b10.get(this.b);
         }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.e
-    public final void n(com.google.android.gms.common.api.c cVar) {
-        Parcel obtain;
-        Parcel obtain2;
-        ApplicationInfo applicationInfo;
-        Bundle bundle;
-        int i10 = this.q;
-        byte[] bArr = this.s;
-        Object obj = this.t;
-        String str = this.r;
-        switch (i10) {
-            case 0:
-                a aVar = (a) cVar;
-                g gVar = (g) obj;
-                if (TextUtils.isEmpty(str)) {
-                    Context context = aVar.U;
-                    try {
-                        PackageManager packageManager = context.getPackageManager();
-                        if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null) {
-                            String str2 = (String) bundle.get("com.google.android.safetynet.ATTEST_API_KEY");
-                            if (str2 != null) {
-                                str = str2;
-                            }
-                        }
-                    } catch (PackageManager.NameNotFoundException unused) {
-                    }
-                    str = "";
-                }
-                d dVar = (d) aVar.v();
-                obtain = Parcel.obtain();
-                obtain.writeInterfaceToken("com.google.android.gms.safetynet.internal.ISafetyNetService");
-                int i11 = c.a;
-                if (gVar == null) {
-                    obtain.writeStrongBinder(null);
-                } else {
-                    obtain.writeStrongBinder(gVar);
-                }
-                obtain.writeByteArray(bArr);
-                obtain.writeString(str);
-                obtain2 = Parcel.obtain();
-                try {
-                    dVar.a.transact(7, obtain, obtain2, 0);
-                    obtain2.readException();
-                    return;
-                } finally {
-                }
-            default:
-                f0 f0Var = (f0) ((w0) cVar).v();
-                v0 v0Var = new v0();
-                v0Var.b = this;
-                obtain = Parcel.obtain();
-                obtain.writeInterfaceToken(f0Var.c);
-                int i12 = f8.a.a;
-                obtain.writeStrongBinder(v0Var);
-                obtain.writeString(str);
-                obtain.writeString((String) obj);
-                obtain.writeByteArray(bArr);
-                obtain2 = Parcel.obtain();
-                try {
-                    f0Var.b.transact(12, obtain, obtain2, 0);
-                    obtain2.readException();
-                    return;
-                } finally {
-                }
+        a();
+        int i3 = this.c;
+        if (i3 == -1) {
+            return null;
         }
+        Object[] objArr = gVar.d;
+        objArr.getClass();
+        return objArr[i3];
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(u0 u0Var, String str, String str2, byte[] bArr) {
-        super(x8.c.a, u0Var);
-        this.r = str;
-        this.t = str2;
-        this.s = bArr;
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        g gVar = this.d;
+        Map b10 = gVar.b();
+        Object obj2 = this.b;
+        if (b10 != null) {
+            return b10.put(obj2, obj);
+        }
+        a();
+        int i3 = this.c;
+        if (i3 == -1) {
+            gVar.put(obj2, obj);
+            return null;
+        }
+        Object[] objArr = gVar.d;
+        objArr.getClass();
+        Object obj3 = objArr[i3];
+        objArr[i3] = obj;
+        return obj3;
     }
 }

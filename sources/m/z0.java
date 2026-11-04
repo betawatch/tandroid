@@ -16,22 +16,22 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.textclassifier.TextClassifier;
 import android.widget.TextView;
+import b8.oc;
+import b8.sc;
+import b8.zd;
+import gi.w5;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import v7.r7;
-import v7.x7;
-import w7.r6;
-import w7.y7;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes.dex */
-public class z0 extends TextView implements u0.l {
-    public final e2.c a;
+public class z0 extends TextView implements u0.k {
+    public final g2.d a;
     public final w0 b;
     public final y c;
     public t d;
     public boolean e;
-    public l2.f f;
+    public w5 f;
     public Future h;
 
     public z0(Context context, AttributeSet attributeSet) {
@@ -48,9 +48,9 @@ public class z0 extends TextView implements u0.l {
     @Override // android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.b();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.b();
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
@@ -60,7 +60,7 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeMaxTextSize() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeMaxTextSize();
         }
         w0 w0Var = this.b;
@@ -72,7 +72,7 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeMinTextSize() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeMinTextSize();
         }
         w0 w0Var = this.b;
@@ -84,7 +84,7 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeStepGranularity() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeStepGranularity();
         }
         w0 w0Var = this.b;
@@ -96,7 +96,7 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public int[] getAutoSizeTextAvailableSizes() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeTextAvailableSizes();
         }
         w0 w0Var = this.b;
@@ -105,7 +105,7 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public int getAutoSizeTextType() {
-        if (s3.b) {
+        if (r3.b) {
             return super.getAutoSizeTextType() == 1 ? 1 : 0;
         }
         w0 w0Var = this.b;
@@ -117,7 +117,7 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return y7.d(super.getCustomSelectionActionModeCallback());
+        return x7.g0.d(super.getCustomSelectionActionModeCallback());
     }
 
     @Override // android.widget.TextView
@@ -132,28 +132,28 @@ public class z0 extends TextView implements u0.l {
 
     public x0 getSuperCaller() {
         if (this.f == null) {
-            int i10 = Build.VERSION.SDK_INT;
-            if (i10 >= 28) {
+            int i3 = Build.VERSION.SDK_INT;
+            if (i3 >= 28) {
                 this.f = new y0(this);
-            } else if (i10 >= 26) {
-                this.f = new l2.f(this, 2);
+            } else if (i3 >= 26) {
+                this.f = new w5(this, 11);
             }
         }
         return this.f;
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            return cVar.i();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            return dVar.v();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            return cVar.j();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            return dVar.w();
         }
         return null;
     }
@@ -178,7 +178,7 @@ public class z0 extends TextView implements u0.l {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                y7.a(this);
+                x7.g0.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -197,7 +197,7 @@ public class z0 extends TextView implements u0.l {
     }
 
     public p0.c getTextMetricsParamsCompat() {
-        return y7.a(this);
+        return x7.g0.a(this);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -205,22 +205,22 @@ public class z0 extends TextView implements u0.l {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        w7.s.a(editorInfo, onCreateInputConnection, this);
+        zd.a(editorInfo, onCreateInputConnection, this);
         return onCreateInputConnection;
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
+    public final void onLayout(boolean z10, int i3, int i10, int i11, int i12) {
+        super.onLayout(z10, i3, i10, i11, i12);
         w0 w0Var = this.b;
-        if (w0Var == null || s3.b) {
+        if (w0Var == null || r3.b) {
             return;
         }
         w0Var.i.a();
     }
 
     @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
+    public void onMeasure(int i3, int i10) {
         Future future = this.h;
         if (future != null) {
             try {
@@ -231,21 +231,21 @@ public class z0 extends TextView implements u0.l {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                y7.a(this);
+                x7.g0.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
         }
-        super.onMeasure(i10, i11);
+        super.onMeasure(i3, i10);
     }
 
     @Override // android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
+    public final void onTextChanged(CharSequence charSequence, int i3, int i10, int i11) {
+        super.onTextChanged(charSequence, i3, i10, i11);
         w0 w0Var = this.b;
         if (w0Var != null) {
             g1 g1Var = w0Var.i;
-            if (s3.b || !g1Var.f()) {
+            if (r3.b || !g1Var.f()) {
                 return;
             }
             g1Var.a();
@@ -259,56 +259,56 @@ public class z0 extends TextView implements u0.l {
     }
 
     @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithConfiguration(int i10, int i11, int i12, int i13) {
-        if (s3.b) {
-            super.setAutoSizeTextTypeUniformWithConfiguration(i10, i11, i12, i13);
+    public final void setAutoSizeTextTypeUniformWithConfiguration(int i3, int i10, int i11, int i12) {
+        if (r3.b) {
+            super.setAutoSizeTextTypeUniformWithConfiguration(i3, i10, i11, i12);
             return;
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.i(i10, i11, i12, i13);
+            w0Var.i(i3, i10, i11, i12);
         }
     }
 
     @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i10) {
-        if (s3.b) {
-            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i10);
+    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i3) {
+        if (r3.b) {
+            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i3);
             return;
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.j(iArr, i10);
+            w0Var.j(iArr, i3);
         }
     }
 
     @Override // android.widget.TextView
-    public void setAutoSizeTextTypeWithDefaults(int i10) {
-        if (s3.b) {
-            super.setAutoSizeTextTypeWithDefaults(i10);
+    public void setAutoSizeTextTypeWithDefaults(int i3) {
+        if (r3.b) {
+            super.setAutoSizeTextTypeWithDefaults(i3);
             return;
         }
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.k(i10);
+            w0Var.k(i3);
         }
     }
 
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.l();
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.y();
         }
     }
 
     @Override // android.view.View
-    public void setBackgroundResource(int i10) {
-        super.setBackgroundResource(i10);
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.m(i10);
+    public void setBackgroundResource(int i3) {
+        super.setBackgroundResource(i3);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.z(i3);
         }
     }
 
@@ -350,7 +350,7 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(y7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(x7.g0.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -359,34 +359,34 @@ public class z0 extends TextView implements u0.l {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((r6) getEmojiTextViewHelper().b.a).a(inputFilterArr));
+        super.setFilters(((x7.p) getEmojiTextViewHelper().b.a).a(inputFilterArr));
     }
 
     @Override // android.widget.TextView
-    public void setFirstBaselineToTopHeight(int i10) {
+    public void setFirstBaselineToTopHeight(int i3) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().c(i10);
+            getSuperCaller().E(i3);
         } else {
-            y7.b(this, i10);
+            x7.g0.b(this, i3);
         }
     }
 
     @Override // android.widget.TextView
-    public void setLastBaselineToBottomHeight(int i10) {
+    public void setLastBaselineToBottomHeight(int i3) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().a(i10);
+            getSuperCaller().t(i3);
         } else {
-            y7.c(this, i10);
+            x7.g0.c(this, i3);
         }
     }
 
     @Override // android.widget.TextView
-    public void setLineHeight(int i10) {
-        if (i10 < 0) {
+    public void setLineHeight(int i3) {
+        if (i3 < 0) {
             throw new IllegalArgumentException();
         }
-        if (i10 != getPaint().getFontMetricsInt(null)) {
-            setLineSpacing(i10 - r0, 1.0f);
+        if (i3 != getPaint().getFontMetricsInt(null)) {
+            setLineSpacing(i3 - r0, 1.0f);
         }
     }
 
@@ -394,32 +394,32 @@ public class z0 extends TextView implements u0.l {
         if (Build.VERSION.SDK_INT >= 29) {
             throw null;
         }
-        y7.a(this);
+        x7.g0.a(this);
         throw null;
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.q(colorStateList);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.D(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        e2.c cVar = this.a;
-        if (cVar != null) {
-            cVar.r(mode);
+        g2.d dVar = this.a;
+        if (dVar != null) {
+            dVar.E(mode);
         }
     }
 
-    @Override // u0.l
+    @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
         w0 w0Var = this.b;
         w0Var.l(colorStateList);
         w0Var.b();
     }
 
-    @Override // u0.l
+    @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
         w0 w0Var = this.b;
         w0Var.m(mode);
@@ -427,11 +427,11 @@ public class z0 extends TextView implements u0.l {
     }
 
     @Override // android.widget.TextView
-    public final void setTextAppearance(Context context, int i10) {
-        super.setTextAppearance(context, i10);
+    public final void setTextAppearance(Context context, int i3) {
+        super.setTextAppearance(context, i3);
         w0 w0Var = this.b;
         if (w0Var != null) {
-            w0Var.g(context, i10);
+            w0Var.g(context, i3);
         }
     }
 
@@ -456,33 +456,33 @@ public class z0 extends TextView implements u0.l {
         TextDirectionHeuristic textDirectionHeuristic;
         TextDirectionHeuristic textDirectionHeuristic2 = cVar.b;
         TextDirectionHeuristic textDirectionHeuristic3 = TextDirectionHeuristics.FIRSTSTRONG_RTL;
-        int i10 = 1;
+        int i3 = 1;
         if (textDirectionHeuristic2 != textDirectionHeuristic3 && textDirectionHeuristic2 != (textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR)) {
             if (textDirectionHeuristic2 == TextDirectionHeuristics.ANYRTL_LTR) {
-                i10 = 2;
+                i3 = 2;
             } else if (textDirectionHeuristic2 == TextDirectionHeuristics.LTR) {
-                i10 = 3;
+                i3 = 3;
             } else if (textDirectionHeuristic2 == TextDirectionHeuristics.RTL) {
-                i10 = 4;
+                i3 = 4;
             } else if (textDirectionHeuristic2 == TextDirectionHeuristics.LOCALE) {
-                i10 = 5;
+                i3 = 5;
             } else if (textDirectionHeuristic2 == textDirectionHeuristic) {
-                i10 = 6;
+                i3 = 6;
             } else if (textDirectionHeuristic2 == textDirectionHeuristic3) {
-                i10 = 7;
+                i3 = 7;
             }
         }
-        setTextDirection(i10);
+        setTextDirection(i3);
         getPaint().set(cVar.a);
         setBreakStrategy(cVar.c);
         setHyphenationFrequency(cVar.d);
     }
 
     @Override // android.widget.TextView
-    public final void setTextSize(int i10, float f7) {
-        boolean z10 = s3.b;
+    public final void setTextSize(int i3, float f10) {
+        boolean z10 = r3.b;
         if (z10) {
-            super.setTextSize(i10, f7);
+            super.setTextSize(i3, f10);
             return;
         }
         w0 w0Var = this.b;
@@ -491,61 +491,61 @@ public class z0 extends TextView implements u0.l {
             if (z10 || g1Var.f()) {
                 return;
             }
-            g1Var.g(f7, i10);
+            g1Var.g(f10, i3);
         }
     }
 
     @Override // android.widget.TextView
-    public final void setTypeface(Typeface typeface, int i10) {
+    public final void setTypeface(Typeface typeface, int i3) {
         Typeface typeface2;
         if (this.e) {
             return;
         }
-        if (typeface == null || i10 <= 0) {
+        if (typeface == null || i3 <= 0) {
             typeface2 = null;
         } else {
             Context context = getContext();
-            x7 x7Var = i0.f.a;
+            sc scVar = i0.e.a;
             if (context == null) {
                 throw new IllegalArgumentException("Context cannot be null");
             }
-            typeface2 = Typeface.create(typeface, i10);
+            typeface2 = Typeface.create(typeface, i3);
         }
         this.e = true;
         if (typeface2 != null) {
             typeface = typeface2;
         }
         try {
-            super.setTypeface(typeface, i10);
+            super.setTypeface(typeface, i3);
         } finally {
             this.e = false;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
-        b3.a(context);
+    public z0(Context context, AttributeSet attributeSet, int i3) {
+        super(context, attributeSet, i3);
+        a3.a(context);
         this.e = false;
         this.f = null;
-        a3.a(this, getContext());
-        e2.c cVar = new e2.c(this);
-        this.a = cVar;
-        cVar.k(attributeSet, i10);
+        z2.a(this, getContext());
+        g2.d dVar = new g2.d(this);
+        this.a = dVar;
+        dVar.x(attributeSet, i3);
         w0 w0Var = new w0(this);
         this.b = w0Var;
-        w0Var.f(attributeSet, i10);
+        w0Var.f(attributeSet, i3);
         w0Var.b();
         y yVar = new y();
         yVar.b = this;
         this.c = yVar;
-        getEmojiTextViewHelper().a(attributeSet, i10);
+        getEmojiTextViewHelper().a(attributeSet, i3);
     }
 
     @Override // android.widget.TextView
-    public final void setCompoundDrawablesRelativeWithIntrinsicBounds(int i10, int i11, int i12, int i13) {
+    public final void setCompoundDrawablesRelativeWithIntrinsicBounds(int i3, int i10, int i11, int i12) {
         Context context = getContext();
-        setCompoundDrawablesRelativeWithIntrinsicBounds(i10 != 0 ? r7.b(context, i10) : null, i11 != 0 ? r7.b(context, i11) : null, i12 != 0 ? r7.b(context, i12) : null, i13 != 0 ? r7.b(context, i13) : null);
+        setCompoundDrawablesRelativeWithIntrinsicBounds(i3 != 0 ? oc.b(context, i3) : null, i10 != 0 ? oc.b(context, i10) : null, i11 != 0 ? oc.b(context, i11) : null, i12 != 0 ? oc.b(context, i12) : null);
         w0 w0Var = this.b;
         if (w0Var != null) {
             w0Var.b();
@@ -553,9 +553,9 @@ public class z0 extends TextView implements u0.l {
     }
 
     @Override // android.widget.TextView
-    public final void setCompoundDrawablesWithIntrinsicBounds(int i10, int i11, int i12, int i13) {
+    public final void setCompoundDrawablesWithIntrinsicBounds(int i3, int i10, int i11, int i12) {
         Context context = getContext();
-        setCompoundDrawablesWithIntrinsicBounds(i10 != 0 ? r7.b(context, i10) : null, i11 != 0 ? r7.b(context, i11) : null, i12 != 0 ? r7.b(context, i12) : null, i13 != 0 ? r7.b(context, i13) : null);
+        setCompoundDrawablesWithIntrinsicBounds(i3 != 0 ? oc.b(context, i3) : null, i10 != 0 ? oc.b(context, i10) : null, i11 != 0 ? oc.b(context, i11) : null, i12 != 0 ? oc.b(context, i12) : null);
         w0 w0Var = this.b;
         if (w0Var != null) {
             w0Var.b();

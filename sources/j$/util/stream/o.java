@@ -11,8 +11,8 @@ public final /* synthetic */ class o implements BinaryOperator {
     public final /* synthetic */ int a;
     public final /* synthetic */ BiConsumer b;
 
-    public /* synthetic */ o(BiConsumer biConsumer, int i10) {
-        this.a = i10;
+    public /* synthetic */ o(BiConsumer biConsumer, int i3) {
+        this.a = i3;
         this.b = biConsumer;
     }
 

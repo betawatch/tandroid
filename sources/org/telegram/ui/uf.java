@@ -1,41 +1,30 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-4bb4254c3f909a6aa06dac2c65babe2119e031935d92dfb0e270cca8f5968401 */
+/* compiled from: r8-map-id-9e8ddc1fa2211541fa3d536e420570c3b9cfb819ea8a2b18c8dd2f7410191ee4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf implements View.OnClickListener {
+public final /* synthetic */ class uf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ wm b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ uf(un unVar, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = unVar;
-        this.c = arrayList;
+    public /* synthetic */ uf(wm wmVar, TLRPC.User user, int i3) {
+        this.a = i3;
+        this.b = wmVar;
+        this.c = user;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                un unVar = this.b;
-                si siVar = new si(unVar, unVar, unVar.getParentActivity(), unVar.xa, this.c);
-                boolean O9 = unVar.O9();
-                siVar.h0 = O9;
-                siVar.n = O9;
-                siVar.o0 = false;
-                unVar.M7(false);
-                unVar.showDialog(siVar);
+                wm wmVar = this.b;
+                wmVar.getClass();
+                wmVar.presentFragment(wm.ra(this.c.id));
                 break;
             default:
-                un unVar2 = this.b;
-                if (unVar2.getParentActivity() != null && unVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.cv(unVar2, unVar2.getParentActivity(), unVar2.xa, this.c).show();
-                    unVar2.M7(true);
-                    break;
-                }
+                this.b.Ma(this.c);
                 break;
         }
     }
